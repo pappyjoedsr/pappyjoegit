@@ -1,0 +1,1003 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE3B1003-AB72-445E-BFF6-1257C6EF7A3D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PappyjoeMVC</RootNamespace>
+    <AssemblyName>PappyjoeMVC</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.XtremeCalendarControl">
+      <HintPath>bin\Debug\references\Interop.XtremeCalendarControl.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>C:\Users\user\Downloads\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\Downloads\MySql.Data.DLL</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\addfinsed_treatment_controller.cs" />
+    <Compile Include="Controller\addfinsed_treatment_interface.cs" />
+    <Compile Include="Controller\AddItemInterface.cs" />
+    <Compile Include="Controller\AddItem_controller.cs" />
+    <Compile Include="Controller\AddNew_patient_controller.cs" />
+    <Compile Include="Controller\AddNew_patient_interface.cs" />
+    <Compile Include="Controller\Add_Appointment_controller.cs" />
+    <Compile Include="Controller\Add_Appointment_interface.cs" />
+    <Compile Include="Controller\Add_Attachments_controller.cs" />
+    <Compile Include="Controller\Add_Attachments_interface.cs" />
+    <Compile Include="Controller\add_category_controller.cs" />
+    <Compile Include="Controller\add_category_interface.cs" />
+    <Compile Include="Controller\Add_invoice_controller.cs" />
+    <Compile Include="Controller\Add_invoice_interface.cs" />
+    <Compile Include="Controller\add_receipt_controller.cs" />
+    <Compile Include="Controller\add_receipt_interface.cs" />
+    <Compile Include="Controller\add_treatmentplan_controller.cs" />
+    <Compile Include="Controller\add_treatmentplan_interface.cs" />
+    <Compile Include="Controller\add_unit_controller.cs" />
+    <Compile Include="Controller\add_unit_interface.cs" />
+    <Compile Include="Controller\Add_Vital_Signs_controller.cs" />
+    <Compile Include="Controller\Add_Vital_Signs_interface.cs" />
+    <Compile Include="Controller\Appointment_for_each_patient_group_controller.cs" />
+    <Compile Include="Controller\Appointment_for_each_patient_group_interface.cs" />
+    <Compile Include="Controller\Attachments_controller.cs" />
+    <Compile Include="Controller\Attachments_interface.cs" />
+    <Compile Include="Controller\autoid_generation_controller.cs" />
+    <Compile Include="Controller\autoid_generation_interface.cs" />
+    <Compile Include="Controller\Billing_controller.cs" />
+    <Compile Include="Controller\Billing_Interface.cs" />
+    <Compile Include="Controller\booking_controller.cs" />
+    <Compile Include="Controller\Booking_interface.cs" />
+    <Compile Include="Controller\calender_controller.cs" />
+    <Compile Include="Controller\calender_interface.cs" />
+    <Compile Include="Controller\ClinicalNotesAdd_controller.cs" />
+    <Compile Include="Controller\ClinicalNotesAdd_interface.cs" />
+    <Compile Include="Controller\Clinical_Findings_controller.cs" />
+    <Compile Include="Controller\Clinical_Findings_interface.cs" />
+    <Compile Include="Controller\Common_controller.cs" />
+    <Compile Include="Controller\Communication_controller.cs" />
+    <Compile Include="Controller\Communication_interface.cs" />
+    <Compile Include="Controller\communication_setting_controller.cs" />
+    <Compile Include="Controller\communication_setting_interface.cs" />
+    <Compile Include="Controller\contact_controller.cs" />
+    <Compile Include="Controller\contact_interface.cs" />
+    <Compile Include="Controller\Daily_Invoice_Report_controller.cs" />
+    <Compile Include="Controller\Daily_Invoice_Report_interface.cs" />
+    <Compile Include="Controller\Day_Wise_Receipt_controller.cs" />
+    <Compile Include="Controller\Day_Wise_Receipt_interface.cs" />
+    <Compile Include="Controller\doctorpractice_controller.cs" />
+    <Compile Include="Controller\doctorpractice_interface.cs" />
+    <Compile Include="Controller\DoctorWise_appointment_report_controller.cs" />
+    <Compile Include="Controller\DoctorWise_appointment_report_interface.cs" />
+    <Compile Include="Controller\doctor_controller.cs" />
+    <Compile Include="Controller\doctor_interface.cs" />
+    <Compile Include="Controller\Doctor_Wise_Invoice_controller.cs" />
+    <Compile Include="Controller\Doctor_Wise_Invoice_interface.cs" />
+    <Compile Include="Controller\Doctor_Wise_Receipt_controller.cs" />
+    <Compile Include="Controller\Doctor_Wise_Receipt_interface.cs" />
+    <Compile Include="Controller\editpracticedetails_controller.cs" />
+    <Compile Include="Controller\EMR_controller.cs" />
+    <Compile Include="Controller\EMR_Interface.cs" />
+    <Compile Include="Controller\expense_controller.cs" />
+    <Compile Include="Controller\expense_interface.cs" />
+    <Compile Include="Controller\export_controller.cs" />
+    <Compile Include="Controller\export_interface.cs" />
+    <Compile Include="Controller\finishedprocedre_controller.cs" />
+    <Compile Include="Controller\finishedprocedure_interface.cs" />
+    <Compile Include="Controller\frmimagezoom_controller.cs" />
+    <Compile Include="Controller\frmimagezoom_interface.cs" />
+    <Compile Include="Controller\invoice_controller.cs" />
+    <Compile Include="Controller\invoice_interface.cs" />
+    <Compile Include="Controller\ItemList_Controller.cs" />
+    <Compile Include="Controller\ItemList_inerface.cs" />
+    <Compile Include="Controller\LabDental_controller.cs" />
+    <Compile Include="Controller\LabDental_interface.cs" />
+    <Compile Include="Controller\LabMedical_controller.cs" />
+    <Compile Include="Controller\LabMedical_interface.cs" />
+    <Compile Include="Controller\Ledger_controller.cs" />
+    <Compile Include="Controller\Ledger_interface.cs" />
+    <Compile Include="Controller\login_controller.cs" />
+    <Compile Include="Controller\login_interface.cs" />
+    <Compile Include="Controller\Manufacture_controller.cs" />
+    <Compile Include="Controller\manufacture_interface.cs" />
+    <Compile Include="Controller\medical_history_controller.cs" />
+    <Compile Include="Controller\medical_history_interface.cs" />
+    <Compile Include="Controller\Monthly_Invoice_Report_controller.cs" />
+    <Compile Include="Controller\Monthly_Invoice_Report_interface.cs" />
+    <Compile Include="Controller\Month_Wise_Receipt_controller.cs" />
+    <Compile Include="Controller\Month_Wise_Receipt_interface.cs" />
+    <Compile Include="Controller\NewCreditAccount_controller.cs" />
+    <Compile Include="Controller\NewCreditAccount_interface.cs" />
+    <Compile Include="Controller\NewDebitAccount_controller.cs" />
+    <Compile Include="Controller\NewDebitAccount_interface.cs" />
+    <Compile Include="Controller\patients_controller.cs" />
+    <Compile Include="Controller\patients_interface.cs" />
+    <Compile Include="Controller\patient_edit_controller.cs" />
+    <Compile Include="Controller\patient_edit_interface.cs" />
+    <Compile Include="Controller\Paymode_Wise_Receipt_controller.cs" />
+    <Compile Include="Controller\Paymode_Wise_Receipt_interface.cs" />
+    <Compile Include="Controller\Practice_Controller.cs" />
+    <Compile Include="Controller\Practice_interface.cs" />
+    <Compile Include="Controller\PrescriptionAdd_controller.cs" />
+    <Compile Include="Controller\prescriptionAdd_interface.cs" />
+    <Compile Include="Controller\prescriptionshow_controller.cs" />
+    <Compile Include="Controller\prescriptionshow_interface.cs" />
+    <Compile Include="Controller\prescription_setting_controller.cs" />
+    <Compile Include="Controller\prescription_setting_interface.cs" />
+    <Compile Include="Controller\printout_controller.cs" />
+    <Compile Include="Controller\printout_interface.cs" />
+    <Compile Include="Controller\procedure_catalog_controller.cs" />
+    <Compile Include="Controller\procedure_catalog_interface.cs" />
+    <Compile Include="Controller\profile_details_controller.cs" />
+    <Compile Include="Controller\profile_details_interface.cs" />
+    <Compile Include="Controller\Receipt_controller.cs" />
+    <Compile Include="Controller\Receipt_interface.cs" />
+    <Compile Include="Controller\Reports_controller.cs" />
+    <Compile Include="Controller\Reports_interface.cs" />
+    <Compile Include="Controller\search_patient_controller.cs" />
+    <Compile Include="Controller\Setting_interface.cs" />
+    <Compile Include="Controller\Show_Appointment_controller.cs" />
+    <Compile Include="Controller\Show_Appointment_interface.cs" />
+    <Compile Include="Controller\Staff_controller.cs" />
+    <Compile Include="Controller\Staff_Interface.cs" />
+    <Compile Include="Controller\supplier_controller.cs" />
+    <Compile Include="Controller\supplier_interface.cs" />
+    <Compile Include="Controller\treatment_controller.cs" />
+    <Compile Include="Controller\treatment_interface.cs" />
+    <Compile Include="Controller\Vital_Signs_controller.cs" />
+    <Compile Include="Controller\Vital_Signs_interface.cs" />
+    <Compile Include="Model\addfinsed_treatment_model.cs" />
+    <Compile Include="Model\Additem_model.cs" />
+    <Compile Include="Model\addnew_patient_model.cs" />
+    <Compile Include="Model\Add_Appointment_model.cs" />
+    <Compile Include="Model\Add_Attachments_model.cs" />
+    <Compile Include="Model\add_category_model.cs" />
+    <Compile Include="Model\Add_invoice_model.cs" />
+    <Compile Include="Model\add_treatmentplan_model.cs" />
+    <Compile Include="Model\add_unit_model.cs" />
+    <Compile Include="Model\Add_Vital_Signs_model.cs" />
+    <Compile Include="Model\Appointment_report_model.cs" />
+    <Compile Include="Model\Attachments_model.cs" />
+    <Compile Include="Model\autoid_generation_model.cs" />
+    <Compile Include="Model\Billing_model.cs" />
+    <Compile Include="Model\booking_model.cs" />
+    <Compile Include="Model\calender_model.cs" />
+    <Compile Include="Model\casesheet_model.cs" />
+    <Compile Include="Model\ClinicalNotesAdd_model.cs" />
+    <Compile Include="Model\Clinical_Findings_model.cs" />
+    <Compile Include="Model\common_model.cs" />
+    <Compile Include="Model\Communication_model.cs" />
+    <Compile Include="Model\communication_setting_model.cs" />
+    <Compile Include="Model\Connection.cs" />
+    <Compile Include="Model\contact_model.cs" />
+    <Compile Include="Model\Daily_Invoice_Report_model.cs" />
+    <Compile Include="Model\doctorpractice_model.cs" />
+    <Compile Include="Model\doctor_model.cs" />
+    <Compile Include="Model\editpracticedetails_model.cs" />
+    <Compile Include="Model\EMR_model.cs" />
+    <Compile Include="Model\expense_model.cs" />
+    <Compile Include="Model\export_model.cs" />
+    <Compile Include="Model\GlobalVariables.cs" />
+    <Compile Include="Model\Inventory_model.cs" />
+    <Compile Include="Model\ItemList_Model.cs" />
+    <Compile Include="Model\LabDental_model.cs" />
+    <Compile Include="Model\LabMedical_model.cs" />
+    <Compile Include="Model\Ledger_model.cs" />
+    <Compile Include="Model\login_model.cs" />
+    <Compile Include="Model\manufacture_model.cs" />
+    <Compile Include="Model\medical_history_model.cs" />
+    <Compile Include="Model\NewAccount_model.cs" />
+    <Compile Include="Model\NewDebitAccount_model.cs" />
+    <Compile Include="Model\patients_model.cs" />
+    <Compile Include="Model\patient_edit_model.cs" />
+    <Compile Include="Model\Practice_Model.cs" />
+    <Compile Include="Model\prescription_model.cs" />
+    <Compile Include="Model\prescription_setting_model.cs" />
+    <Compile Include="Model\printlabel_model.cs" />
+    <Compile Include="Model\printout_model.cs" />
+    <Compile Include="Model\procedure_catalog_model.cs" />
+    <Compile Include="Model\profile_details_model.cs" />
+    <Compile Include="Model\Receipt_Model.cs" />
+    <Compile Include="Model\Reports_model.cs" />
+    <Compile Include="Model\Show_Appointment_model.cs" />
+    <Compile Include="Model\sms.cs" />
+    <Compile Include="Model\Staff_model.cs" />
+    <Compile Include="Model\supplier_model.cs" />
+    <Compile Include="Model\treatment_model.cs" />
+    <Compile Include="Model\Vital_Signs_model.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\AddAmount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddAmount.Designer.cs">
+      <DependentUpon>AddAmount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddFinishedprocedure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddFinishedprocedure.Designer.cs">
+      <DependentUpon>AddFinishedprocedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddNewPatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddNewPatients.Designer.cs">
+      <DependentUpon>AddNewPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddTreatmentPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddTreatmentPlan.Designer.cs">
+      <DependentUpon>AddTreatmentPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add_ invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Add_ invoice.Designer.cs">
+      <DependentUpon>Add_ invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add_Appointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Add_Appointment.designer.cs">
+      <DependentUpon>Add_Appointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add_Attachments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Add_Attachments.designer.cs">
+      <DependentUpon>Add_Attachments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add_receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Add_receipt.Designer.cs">
+      <DependentUpon>Add_receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add_Vital_Signs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Add_Vital_Signs.designer.cs">
+      <DependentUpon>Add_Vital_Signs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AppointmentBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AppointmentBooking.Designer.cs">
+      <DependentUpon>AppointmentBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Appointment_for_each_patient_group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Appointment_for_each_patient_group.designer.cs">
+      <DependentUpon>Appointment_for_each_patient_group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Attachments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Attachments.designer.cs">
+      <DependentUpon>Attachments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AutomaticId_generation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AutomaticId_generation.Designer.cs">
+      <DependentUpon>AutomaticId_generation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Billing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Billing.Designer.cs">
+      <DependentUpon>Billing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Calender_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Calender_Settings.Designer.cs">
+      <DependentUpon>Calender_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CaseSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CaseSheet.Designer.cs">
+      <DependentUpon>CaseSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClinicalNotesAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClinicalNotesAdd.designer.cs">
+      <DependentUpon>ClinicalNotesAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clinical_Findings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Clinical_Findings.designer.cs">
+      <DependentUpon>Clinical_Findings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Communication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Communication.designer.cs">
+      <DependentUpon>Communication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\communication_settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\communication_settings.Designer.cs">
+      <DependentUpon>communication_settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\consent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\consent.Designer.cs">
+      <DependentUpon>consent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contacts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Contacts.Designer.cs">
+      <DependentUpon>Contacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Daily_Invoice_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Daily_Invoice_Report.designer.cs">
+      <DependentUpon>Daily_Invoice_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Day_Wise_Receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Day_Wise_Receipt.designer.cs">
+      <DependentUpon>Day_Wise_Receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DischargeSummery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DischargeSummery.Designer.cs">
+      <DependentUpon>DischargeSummery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\doctorsPracticedetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\doctorsPracticedetails.Designer.cs">
+      <DependentUpon>doctorsPracticedetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DoctorWise_appointment_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DoctorWise_appointment_report.designer.cs">
+      <DependentUpon>DoctorWise_appointment_report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Doctor_Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Doctor_Profile.Designer.cs">
+      <DependentUpon>Doctor_Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Doctor_Wise_Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Doctor_Wise_Invoice.designer.cs">
+      <DependentUpon>Doctor_Wise_Invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Doctor_Wise_Receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Doctor_Wise_Receipt.designer.cs">
+      <DependentUpon>Doctor_Wise_Receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\EMR_settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EMR_settings.Designer.cs">
+      <DependentUpon>EMR_settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Expense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Expense.Designer.cs">
+      <DependentUpon>Expense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\exportdata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\exportdata.Designer.cs">
+      <DependentUpon>exportdata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FinishedProcedure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FinishedProcedure.Designer.cs">
+      <DependentUpon>FinishedProcedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmAddCategeory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmAddCategeory.Designer.cs">
+      <DependentUpon>frmAddCategeory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmAddItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmAddItems.Designer.cs">
+      <DependentUpon>frmAddItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmAddUnits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmAddUnits.Designer.cs">
+      <DependentUpon>frmAddUnits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmeditpracticedetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmeditpracticedetails.Designer.cs">
+      <DependentUpon>frmeditpracticedetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmimagezoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmimagezoom.designer.cs">
+      <DependentUpon>frmimagezoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmItemList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmItemList.Designer.cs">
+      <DependentUpon>FrmItemList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmManufacture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmManufacture.Designer.cs">
+      <DependentUpon>FrmManufacture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmSupplier.Designer.cs">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Invoice.Designer.cs">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LabDental.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LabDental.designer.cs">
+      <DependentUpon>LabDental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LabMedical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LabMedical.designer.cs">
+      <DependentUpon>LabMedical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ledger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Ledger.Designer.cs">
+      <DependentUpon>Ledger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MedicalCertificate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MedicalCertificate.Designer.cs">
+      <DependentUpon>MedicalCertificate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Medical_history.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Medical_history.Designer.cs">
+      <DependentUpon>Medical_history.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Monthly_Invoice_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Monthly_Invoice_Report.designer.cs">
+      <DependentUpon>Monthly_Invoice_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Month_Wise_Receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Month_Wise_Receipt.designer.cs">
+      <DependentUpon>Month_Wise_Receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New_CreditAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New_CreditAccount.designer.cs">
+      <DependentUpon>New_CreditAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\New_DebitAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\New_DebitAccount.designer.cs">
+      <DependentUpon>New_DebitAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\patients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\patients.Designer.cs">
+      <DependentUpon>patients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\patient_profile_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\patient_profile_details.Designer.cs">
+      <DependentUpon>patient_profile_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\patient_profile_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\patient_profile_Edit.Designer.cs">
+      <DependentUpon>patient_profile_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Paymode_Wise_Receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Paymode_Wise_Receipt.designer.cs">
+      <DependentUpon>Paymode_Wise_Receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PracticeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PracticeDetails.Designer.cs">
+      <DependentUpon>PracticeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Practice_Staff_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Practice_Staff_Setting.Designer.cs">
+      <DependentUpon>Practice_Staff_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PrescriptionAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PrescriptionAdd.Designer.cs">
+      <DependentUpon>PrescriptionAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\prescriptionShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\prescriptionShow.Designer.cs">
+      <DependentUpon>prescriptionShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Prescription_settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Prescription_settings.Designer.cs">
+      <DependentUpon>Prescription_settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\printout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\printout.Designer.cs">
+      <DependentUpon>printout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Print_label.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Print_label.Designer.cs">
+      <DependentUpon>Print_label.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\print_label_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\print_label_print.Designer.cs">
+      <DependentUpon>print_label_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Procedure_catalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Procedure_catalog.Designer.cs">
+      <DependentUpon>Procedure_catalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Receipt.Designer.cs">
+      <DependentUpon>Receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports.designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SearchAvailablePatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SearchAvailablePatient.Designer.cs">
+      <DependentUpon>SearchAvailablePatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Show_Appointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Show_Appointment.designer.cs">
+      <DependentUpon>Show_Appointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TreatmentPlans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TreatmentPlans.Designer.cs">
+      <DependentUpon>TreatmentPlans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Vital_Signs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Vital_Signs.designer.cs">
+      <DependentUpon>Vital_Signs.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\AddAmount.resx">
+      <DependentUpon>AddAmount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddFinishedprocedure.resx">
+      <DependentUpon>AddFinishedprocedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddNewPatients.resx">
+      <DependentUpon>AddNewPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddTreatmentPlan.resx">
+      <DependentUpon>AddTreatmentPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Add_ invoice.resx">
+      <DependentUpon>Add_ invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Add_Appointment.resx">
+      <DependentUpon>Add_Appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Add_Attachments.resx">
+      <DependentUpon>Add_Attachments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Add_receipt.resx">
+      <DependentUpon>Add_receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Add_Vital_Signs.resx">
+      <DependentUpon>Add_Vital_Signs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AppointmentBooking.resx">
+      <DependentUpon>AppointmentBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Appointment_for_each_patient_group.resx">
+      <DependentUpon>Appointment_for_each_patient_group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Attachments.resx">
+      <DependentUpon>Attachments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AutomaticId_generation.resx">
+      <DependentUpon>AutomaticId_generation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Billing.resx">
+      <DependentUpon>Billing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Calender_Settings.resx">
+      <DependentUpon>Calender_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CaseSheet.resx">
+      <DependentUpon>CaseSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClinicalNotesAdd.resx">
+      <DependentUpon>ClinicalNotesAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Clinical_Findings.resx">
+      <DependentUpon>Clinical_Findings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Communication.resx">
+      <DependentUpon>Communication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\communication_settings.resx">
+      <DependentUpon>communication_settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\consent.resx">
+      <DependentUpon>consent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Contacts.resx">
+      <DependentUpon>Contacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Daily_Invoice_Report.resx">
+      <DependentUpon>Daily_Invoice_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Day_Wise_Receipt.resx">
+      <DependentUpon>Day_Wise_Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DischargeSummery.resx">
+      <DependentUpon>DischargeSummery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\doctorsPracticedetails.resx">
+      <DependentUpon>doctorsPracticedetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DoctorWise_appointment_report.resx">
+      <DependentUpon>DoctorWise_appointment_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Doctor_Profile.resx">
+      <DependentUpon>Doctor_Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Doctor_Wise_Invoice.resx">
+      <DependentUpon>Doctor_Wise_Invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Doctor_Wise_Receipt.resx">
+      <DependentUpon>Doctor_Wise_Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EMR_settings.resx">
+      <DependentUpon>EMR_settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Expense.resx">
+      <DependentUpon>Expense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\exportdata.resx">
+      <DependentUpon>exportdata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FinishedProcedure.resx">
+      <DependentUpon>FinishedProcedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmAddCategeory.resx">
+      <DependentUpon>frmAddCategeory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmAddItems.resx">
+      <DependentUpon>frmAddItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmAddUnits.resx">
+      <DependentUpon>frmAddUnits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmeditpracticedetails.resx">
+      <DependentUpon>frmeditpracticedetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmimagezoom.resx">
+      <DependentUpon>frmimagezoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmItemList.resx">
+      <DependentUpon>FrmItemList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmManufacture.resx">
+      <DependentUpon>FrmManufacture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmSupplier.resx">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Invoice.resx">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LabDental.resx">
+      <DependentUpon>LabDental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LabMedical.resx">
+      <DependentUpon>LabMedical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ledger.resx">
+      <DependentUpon>Ledger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MedicalCertificate.resx">
+      <DependentUpon>MedicalCertificate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Medical_history.resx">
+      <DependentUpon>Medical_history.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Monthly_Invoice_Report.resx">
+      <DependentUpon>Monthly_Invoice_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Month_Wise_Receipt.resx">
+      <DependentUpon>Month_Wise_Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New_CreditAccount.resx">
+      <DependentUpon>New_CreditAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\New_DebitAccount.resx">
+      <DependentUpon>New_DebitAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\patients.resx">
+      <DependentUpon>patients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\patient_profile_details.resx">
+      <DependentUpon>patient_profile_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\patient_profile_Edit.resx">
+      <DependentUpon>patient_profile_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Paymode_Wise_Receipt.resx">
+      <DependentUpon>Paymode_Wise_Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PracticeDetails.resx">
+      <DependentUpon>PracticeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Practice_Staff_Setting.resx">
+      <DependentUpon>Practice_Staff_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PrescriptionAdd.resx">
+      <DependentUpon>PrescriptionAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\prescriptionShow.resx">
+      <DependentUpon>prescriptionShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Prescription_settings.resx">
+      <DependentUpon>Prescription_settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\printout.resx">
+      <DependentUpon>printout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Print_label.resx">
+      <DependentUpon>Print_label.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\print_label_print.resx">
+      <DependentUpon>print_label_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Procedure_catalog.resx">
+      <DependentUpon>Procedure_catalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Receipt.resx">
+      <DependentUpon>Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SearchAvailablePatient.resx">
+      <DependentUpon>SearchAvailablePatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Show_Appointment.resx">
+      <DependentUpon>Show_Appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TreatmentPlans.resx">
+      <DependentUpon>TreatmentPlans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Vital_Signs.resx">
+      <DependentUpon>Vital_Signs.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteicon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editicon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar_user_add %282%2911.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1435669279_question-balloon_basic_blue1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1435669277_gear_basic_blue small 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nophoto1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blank1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gry1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bill.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Borderblank.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TickRed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bordertick.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\billed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdultTooth.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pedo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1429953040_Log Out1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel_doc_icon1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\word_doc_icon1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\erase-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-image-icon-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print-icon %281%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
