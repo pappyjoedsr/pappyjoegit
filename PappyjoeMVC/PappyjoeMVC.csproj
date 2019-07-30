@@ -462,6 +462,12 @@
     <Compile Include="View\frmAddCategeory.Designer.cs">
       <DependentUpon>frmAddCategeory.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmAddDrug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmAddDrug.designer.cs">
+      <DependentUpon>frmAddDrug.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmAddItems.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -810,6 +816,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmAddCategeory.resx">
       <DependentUpon>frmAddCategeory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmAddDrug.resx">
+      <DependentUpon>frmAddDrug.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmAddItems.resx">
       <DependentUpon>frmAddItems.cs</DependentUpon>
