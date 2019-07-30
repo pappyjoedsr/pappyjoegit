@@ -468,12 +468,6 @@
     <Compile Include="View\frmAddDrug.designer.cs">
       <DependentUpon>frmAddDrug.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmAddItems.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmAddItems.Designer.cs">
-      <DependentUpon>frmAddItems.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\frmAddUnits.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -819,9 +813,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmAddDrug.resx">
       <DependentUpon>frmAddDrug.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\frmAddItems.resx">
-      <DependentUpon>frmAddItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmAddUnits.resx">
       <DependentUpon>frmAddUnits.cs</DependentUpon>
