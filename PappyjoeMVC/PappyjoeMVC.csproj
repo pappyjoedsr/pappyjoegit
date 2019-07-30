@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Interop.XtremeCalendarControl">
-      <HintPath>bin\Debug\references\Interop.XtremeCalendarControl.dll</HintPath>
+      <HintPath>C:\Interop.XtremeCalendarControl.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel">
@@ -43,7 +43,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\..\Downloads\MySql.Data.DLL</HintPath>
+      <HintPath>C:\MySql.Data.DLL</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -145,6 +145,8 @@
     <Compile Include="Controller\manufacture_interface.cs" />
     <Compile Include="Controller\medical_history_controller.cs" />
     <Compile Include="Controller\medical_history_interface.cs" />
+    <Compile Include="Controller\Monthly_appointment_count_controller.cs" />
+    <Compile Include="Controller\Monthly_appointment_count_interface.cs" />
     <Compile Include="Controller\Monthly_Invoice_Report_controller.cs" />
     <Compile Include="Controller\Monthly_Invoice_Report_interface.cs" />
     <Compile Include="Controller\Month_Wise_Receipt_controller.cs" />
@@ -550,6 +552,12 @@
     <Compile Include="View\Medical_history.Designer.cs">
       <DependentUpon>Medical_history.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Monthly_appointment_count.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Monthly_appointment_count.designer.cs">
+      <DependentUpon>Monthly_appointment_count.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Monthly_Invoice_Report.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -844,6 +852,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Medical_history.resx">
       <DependentUpon>Medical_history.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Monthly_appointment_count.resx">
+      <DependentUpon>Monthly_appointment_count.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Monthly_Invoice_Report.resx">
       <DependentUpon>Monthly_Invoice_Report.cs</DependentUpon>
