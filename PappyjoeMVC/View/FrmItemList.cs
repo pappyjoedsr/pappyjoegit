@@ -24,6 +24,12 @@ namespace PappyjoeMVC.View
             InitializeComponent();
         }
 
+        public FrmItemList(string formname)
+        {
+            InitializeComponent();
+            this.formname = formname;
+        }
+
         public void Setcontroller(ItemList_Controller controller)
         {
             cntrl = controller;

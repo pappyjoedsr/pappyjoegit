@@ -31,6 +31,7 @@ namespace PappyjoeMVC.View
         common_model cmodel = new common_model();
         public string invoiceid = "";
         addfinsed_treatment_model fmodel = new addfinsed_treatment_model();
+        public string jhjj;
         public Add__invoice()
         {
             InitializeComponent();

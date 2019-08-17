@@ -10,6 +10,14 @@ namespace PappyjoeMVC.Model
     public class common_model
     {
         Connection db = new Connection();
+        public string Load_CompanyName()
+        {
+            string clinicn = "";
+            string name = db.scalar("select name from tbl_practice_details");
+            clinicn = name.Replace("¤", "'");
+            return clinicn;
+        }
+
         public DataTable Get_CompanyNAme()
         {
             DataTable clinicname = db.table("select name,id,path from tbl_practice_details");
