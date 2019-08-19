@@ -104,8 +104,14 @@
     <Compile Include="Controller\communication_setting_interface.cs" />
     <Compile Include="Controller\contact_controller.cs" />
     <Compile Include="Controller\contact_interface.cs" />
+    <Compile Include="Controller\Daily_appointment_count_controller.cs" />
+    <Compile Include="Controller\Daily_appointment_count_interface.cs" />
     <Compile Include="Controller\Daily_Invoice_Report_controller.cs" />
     <Compile Include="Controller\Daily_Invoice_Report_interface.cs" />
+    <Compile Include="Controller\Daily_NewPatients_controller.cs" />
+    <Compile Include="Controller\Daily_NewPatients_interface.cs" />
+    <Compile Include="Controller\Daily_treatment_count_controller.cs" />
+    <Compile Include="Controller\Daily_treatment_count_interface.cs" />
     <Compile Include="Controller\Day_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Day_Wise_Receipt_interface.cs" />
     <Compile Include="Controller\doctorpractice_controller.cs" />
@@ -129,6 +135,8 @@
     <Compile Include="Controller\finishedprocedure_interface.cs" />
     <Compile Include="Controller\frmimagezoom_controller.cs" />
     <Compile Include="Controller\frmimagezoom_interface.cs" />
+    <Compile Include="Controller\Group_wise_report_controller.cs" />
+    <Compile Include="Controller\Group_wise_report_interface.cs" />
     <Compile Include="Controller\invoice_controller.cs" />
     <Compile Include="Controller\invoice_interface.cs" />
     <Compile Include="Controller\ItemList_Controller.cs" />
@@ -145,10 +153,14 @@
     <Compile Include="Controller\manufacture_interface.cs" />
     <Compile Include="Controller\medical_history_controller.cs" />
     <Compile Include="Controller\medical_history_interface.cs" />
+    <Compile Include="Controller\Missing_Checkout_Report_controller.cs" />
+    <Compile Include="Controller\Missing_Checkout_Report_interface.cs" />
     <Compile Include="Controller\Monthly_appointment_count_controller.cs" />
     <Compile Include="Controller\Monthly_appointment_count_interface.cs" />
     <Compile Include="Controller\Monthly_Invoice_Report_controller.cs" />
     <Compile Include="Controller\Monthly_Invoice_Report_interface.cs" />
+    <Compile Include="Controller\Monthly_new_patients_controller.cs" />
+    <Compile Include="Controller\Monthly_new_patients_interface.cs" />
     <Compile Include="Controller\Month_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Month_Wise_Receipt_interface.cs" />
     <Compile Include="Controller\NewCreditAccount_controller.cs" />
@@ -156,6 +168,8 @@
     <Compile Include="Controller\NewDebitAccount_controller.cs" />
     <Compile Include="Controller\NewDebitAccount_interface.cs" />
     <Compile Include="Controller\patients_controller.cs" />
+    <Compile Include="Controller\Patients_first_appointment_controller.cs" />
+    <Compile Include="Controller\Patients_first_appointment_interface.cs" />
     <Compile Include="Controller\patients_interface.cs" />
     <Compile Include="Controller\patient_edit_controller.cs" />
     <Compile Include="Controller\patient_edit_interface.cs" />
@@ -189,6 +203,8 @@
     <Compile Include="Controller\supplier_interface.cs" />
     <Compile Include="Controller\treatment_controller.cs" />
     <Compile Include="Controller\treatment_interface.cs" />
+    <Compile Include="Controller\Visiting_History_controller.cs" />
+    <Compile Include="Controller\Visiting_History_interface.cs" />
     <Compile Include="Controller\Vital_Signs_controller.cs" />
     <Compile Include="Controller\Vital_Signs_interface.cs" />
     <Compile Include="Model\addfinsed_treatment_model.cs" />
@@ -234,6 +250,7 @@
     <Compile Include="Model\NewAccount_model.cs" />
     <Compile Include="Model\NewDebitAccount_model.cs" />
     <Compile Include="Model\patients_model.cs" />
+    <Compile Include="Model\Patients_Report_model.cs" />
     <Compile Include="Model\patient_edit_model.cs" />
     <Compile Include="Model\Practice_Model.cs" />
     <Compile Include="Model\prescription_model.cs" />
@@ -249,6 +266,7 @@
     <Compile Include="Model\Staff_model.cs" />
     <Compile Include="Model\supplier_model.cs" />
     <Compile Include="Model\treatment_model.cs" />
+    <Compile Include="Model\Treatment_report_model.cs" />
     <Compile Include="Model\Vital_Signs_model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -384,11 +402,29 @@
     <Compile Include="View\Contacts.Designer.cs">
       <DependentUpon>Contacts.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Daily_appointment_count.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Daily_appointment_count.designer.cs">
+      <DependentUpon>Daily_appointment_count.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Daily_Invoice_Report.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Daily_Invoice_Report.designer.cs">
       <DependentUpon>Daily_Invoice_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Daily_NewPatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Daily_NewPatients.designer.cs">
+      <DependentUpon>Daily_NewPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Daily_treatment_count.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Daily_treatment_count.designer.cs">
+      <DependentUpon>Daily_treatment_count.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Day_Wise_Receipt.cs">
       <SubType>Form</SubType>
@@ -510,6 +546,12 @@
     <Compile Include="View\frmSupplier.Designer.cs">
       <DependentUpon>frmSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Group_wise_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Group_wise_report.designer.cs">
+      <DependentUpon>Group_wise_report.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Invoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -552,6 +594,12 @@
     <Compile Include="View\Medical_history.Designer.cs">
       <DependentUpon>Medical_history.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Missing_Checkout_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Missing_Checkout_Report.designer.cs">
+      <DependentUpon>Missing_Checkout_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Monthly_appointment_count.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -563,6 +611,12 @@
     </Compile>
     <Compile Include="View\Monthly_Invoice_Report.designer.cs">
       <DependentUpon>Monthly_Invoice_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Monthly_new_patients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Monthly_new_patients.designer.cs">
+      <DependentUpon>Monthly_new_patients.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Month_Wise_Receipt.cs">
       <SubType>Form</SubType>
@@ -587,6 +641,12 @@
     </Compile>
     <Compile Include="View\patients.Designer.cs">
       <DependentUpon>patients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Patients_first_appointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Patients_first_appointment.designer.cs">
+      <DependentUpon>Patients_first_appointment.cs</DependentUpon>
     </Compile>
     <Compile Include="View\patient_profile_details.cs">
       <SubType>Form</SubType>
@@ -690,6 +750,12 @@
     <Compile Include="View\TreatmentPlans.Designer.cs">
       <DependentUpon>TreatmentPlans.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Visiting_History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Visiting_History.designer.cs">
+      <DependentUpon>Visiting_History.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Vital_Signs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -772,8 +838,17 @@
     <EmbeddedResource Include="View\Contacts.resx">
       <DependentUpon>Contacts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Daily_appointment_count.resx">
+      <DependentUpon>Daily_appointment_count.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Daily_Invoice_Report.resx">
       <DependentUpon>Daily_Invoice_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Daily_NewPatients.resx">
+      <DependentUpon>Daily_NewPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Daily_treatment_count.resx">
+      <DependentUpon>Daily_treatment_count.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Day_Wise_Receipt.resx">
       <DependentUpon>Day_Wise_Receipt.cs</DependentUpon>
@@ -832,6 +907,9 @@
     <EmbeddedResource Include="View\frmSupplier.resx">
       <DependentUpon>frmSupplier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Group_wise_report.resx">
+      <DependentUpon>Group_wise_report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Invoice.resx">
       <DependentUpon>Invoice.cs</DependentUpon>
     </EmbeddedResource>
@@ -853,11 +931,17 @@
     <EmbeddedResource Include="View\Medical_history.resx">
       <DependentUpon>Medical_history.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Missing_Checkout_Report.resx">
+      <DependentUpon>Missing_Checkout_Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Monthly_appointment_count.resx">
       <DependentUpon>Monthly_appointment_count.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Monthly_Invoice_Report.resx">
       <DependentUpon>Monthly_Invoice_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Monthly_new_patients.resx">
+      <DependentUpon>Monthly_new_patients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Month_Wise_Receipt.resx">
       <DependentUpon>Month_Wise_Receipt.cs</DependentUpon>
@@ -870,6 +954,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\patients.resx">
       <DependentUpon>patients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Patients_first_appointment.resx">
+      <DependentUpon>Patients_first_appointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\patient_profile_details.resx">
       <DependentUpon>patient_profile_details.cs</DependentUpon>
@@ -921,6 +1008,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\TreatmentPlans.resx">
       <DependentUpon>TreatmentPlans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Visiting_History.resx">
+      <DependentUpon>Visiting_History.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Vital_Signs.resx">
       <DependentUpon>Vital_Signs.cs</DependentUpon>
