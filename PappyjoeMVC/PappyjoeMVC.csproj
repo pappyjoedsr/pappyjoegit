@@ -651,7 +651,7 @@
     <Compile Include="View\patient_profile_details.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\patient_profile_details.Designer.cs">
+    <Compile Include="View\patient_profile_details.designer.cs">
       <DependentUpon>patient_profile_details.cs</DependentUpon>
     </Compile>
     <Compile Include="View\patient_profile_Edit.cs">

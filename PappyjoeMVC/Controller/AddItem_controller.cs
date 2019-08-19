@@ -139,5 +139,15 @@ namespace PappyjoeMVC.Controller
         {
             _Model.update_inventryid(Item_Id);
         }
+        public DataTable get_drugdetails(int Item_Id)
+        {
+            DataTable dtb = _Model.get_drugdetails(Item_Id);
+            return dtb;
+        }
+        public DataTable fill_drugtype()
+        {
+            DataTable dtb = _Model.fill_drugtype();
+            return dtb;
+        }
     }
 }

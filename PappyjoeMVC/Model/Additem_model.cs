@@ -256,6 +256,16 @@ namespace PappyjoeMVC.Model
         {
             db.execute("update tbl_adddrug set inventory_id='0' where inventory_id='" + Item_Id + "'");
         }
+        public DataTable get_drugdetails(int Item_Id)
+        {
+            DataTable dtb_item = db.table("select type,	strength,strength_gr,instructions,inventory_id from tbl_adddrug where inventory_id='" + Item_Id + "'");
+            return dtb_item;
+        }
+        public DataTable fill_drugtype()
+        {
+            DataTable dt2 = db.table("SELECT * FROM tbl_drug_type WHERE id IN (SELECT MAX(id) FROM tbl_drug_type GROUP BY dr_type)");
+            return dt2;
+        }
     }
 }
  
