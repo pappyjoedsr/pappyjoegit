@@ -1115,10 +1115,10 @@ namespace PappyjoeMVC.View
                         {
                             string discount_string = "";
                             string Dr_name = "";
-                            System.Data.DataTable dt_dr = mdl.Get_DoctorName(dt_pt_sub.Rows[k]["dr_id"].ToString());
-                            if (dt_dr.Rows.Count > 0)
+                            string dt_dr = mdl.Get_DoctorName(dt_pt_sub.Rows[k]["dr_id"].ToString());
+                            if (dt_dr!="")
                             {
-                                Dr_name = dt_dr.Rows[0]["doctor_name"].ToString();
+                                Dr_name = dt_dr;
                             }
                             if (dt_pt_sub.Rows[k]["discount_type"].ToString() == "INR")
                             {
@@ -2355,11 +2355,10 @@ namespace PappyjoeMVC.View
         {
             toolStripButton3.BackColor = Color.SkyBlue;
             toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-            DataTable docnam = mdl.Get_DoctorName(doctor_id);
-            if (docnam.Rows.Count > 0)
+            string docnam = mdl.Get_DoctorName(doctor_id);
+            if (docnam != "")
             {
-                docname_id = docnam.Rows[0][0].ToString();
-                toolStripTextDoctor.Text = "Logged In As : " + docnam.Rows[0][0].ToString();
+                toolStripTextDoctor.Text = "Logged In As : " + docnam;
             }
             AllPatient_Flag = true;
             DataTable clinicname = mdl.Get_CompanyNAme();

@@ -192,10 +192,10 @@ namespace PappyjoeMVC.View
                     clinicn = clinicname.Rows[0]["name"].ToString();
                     toolStripButton1.Text = clinicn.Replace("¤", "'");
                 }
-                DataTable docnam = this.model.Get_DoctorName(doctor_id);
-                if (docnam.Rows.Count > 0)
+                string docnam = this.model.Get_DoctorName(doctor_id);
+                if (docnam != "")
                 {
-                    toolStripTextDoctor.Text = "Logged In As : " + docnam.Rows[0][0].ToString();
+                    toolStripTextDoctor.Text = "Logged In As : " + docnam;
                 }
                 DataTable rs_patients = this.model.Get_patient_id_name_gender(patient_id);
                 if (rs_patients.Rows[0]["pt_name"].ToString() != "")

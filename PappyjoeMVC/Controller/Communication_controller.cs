@@ -25,7 +25,7 @@ namespace PappyjoeMVC.Controller
         }
         public void Get_DoctorName(string id)
         {
-            DataTable dt = cmdl.Get_DoctorName(id);
+            string dt = cmdl.Get_DoctorName(id);
             intr.Get_DoctorName(dt);
         }
         public void Patient_search(string txtbox)

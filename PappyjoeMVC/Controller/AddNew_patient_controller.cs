@@ -100,9 +100,9 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = mdl.get_all_doctorname();
             return dtb;
         }
-        public DataTable Get_CompanyNAme()
+        public string Load_CompanyName()
         {
-            DataTable dtb = mdl.get_all_doctorname();
+            string dtb = mdl.Load_CompanyName();
             return dtb;
         }
         public DataTable load_medical()

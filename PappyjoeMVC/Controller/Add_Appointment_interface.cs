@@ -28,7 +28,7 @@ namespace PappyjoeMVC.Controller
         string booked_by { get; set; }
         void getapid(string apid);
         void clinicdetails(DataTable dt);
-        void Get_DoctorName(DataTable dt);
+        void Get_DoctorName(string dt);
         void getpatdetails(DataTable dt);
         void get_All_proceure(DataTable dt);
         void dt_appointment(DataTable dt);

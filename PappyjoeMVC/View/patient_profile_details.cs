@@ -55,10 +55,10 @@ namespace PappyjoeMVC.View
             {
                 toolStripButton1.Text = clinicname;
             }
-            DataTable docnam =this.cntrl.Get_DoctorName(doctor_id); 
-            if (docnam.Rows.Count > 0)
+            string docnam =this.cntrl.Get_DoctorName(doctor_id);
+            if (docnam != "")
             {
-                toolStripldoc.Text = "Logged In As :" + docnam.Rows[0][0].ToString();
+                toolStripldoc.Text = "Logged As:Dr." + docnam;
             }
             
             this.cntrl.Get_Patient_details(patient_id); 
@@ -150,10 +150,10 @@ namespace PappyjoeMVC.View
                         labGender.Hide();
                     }
                     int a = 0;
-                    if (rs_patients.Rows[0]["date_of_birth"].ToString() != "null")
+                    if (rs_patients.Rows[0]["date_of_birth"].ToString() != "")
                     {
-                        if (DateTime.Parse(rs_patients.Rows[0]["date_of_birth"].ToString()).ToString("MM/dd/yyyy") != "")
-                        {
+                        //if (DateTime.Parse(rs_patients.Rows[0]["date_of_birth"].ToString()).ToString("MM/dd/yyyy") != "")
+                        //{
                             txtDob.Text = DateTime.Parse(rs_patients.Rows[0]["date_of_birth"].ToString()).ToString("MM/dd/yyyy");
                             txtDob.BackColor = Color.White;
                             YX = YX + 30;
@@ -162,7 +162,7 @@ namespace PappyjoeMVC.View
                             labDob.Show();
                             labDob.Location = new Point(182, YX);
                             a = 1;
-                        }
+                        //}
                     }
                     else
                     {

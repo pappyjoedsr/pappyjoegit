@@ -97,10 +97,10 @@ namespace PappyjoeMVC.View
                     clinicn = clinicname.Rows[0]["name"].ToString();
                     toolStripButton1.Text = clinicn.Replace("¤", "'");
                     path = clinicname.Rows[0]["path"].ToString();
-                    System.Data.DataTable docnam = cmodel.Get_DoctorName(doctor_id);
-                    if (docnam.Rows.Count > 0)
+                    string docnam = cmodel.Get_DoctorName(doctor_id);
+                    if (docnam != "")
                     {
-                        toolStripTextDoctor.Text = "Logged In As : " + docnam.Rows[0][0].ToString();
+                        toolStripTextDoctor.Text = "Logged In As : " + docnam;
                     }
                     if (path != "")
                     {
@@ -451,11 +451,11 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                System.Data.DataTable doct = cmodel.Get_DoctorName(doctor_id);
+               string doct = cmodel.Get_DoctorName(doctor_id);
                 string doctor_name = "";
-                if (doct.Rows.Count > 0)
+                if (doct!="")
                 {
-                    doctor_name = doct.Rows[0]["doctor_name"].ToString();
+                    doctor_name = doct;
                 }
                 System.Data.DataTable patient = cmodel.Get_Patient_Details(patient_id);
                 string Pname = "", Gender = "", address = "", age = "", Mobile = "";

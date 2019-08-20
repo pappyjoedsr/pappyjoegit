@@ -39,10 +39,10 @@ namespace PappyjoeMVC.View
                     clinicn = clinicname.Rows[0][0].ToString();
                     toolStripButton1.Text = clinicn.Replace("¤", "'");
                 }
-                DataTable docnam = this.cntrl.Get_DoctorName(doctor_id);
-                if (docnam.Rows.Count > 0)
+                string docnam = this.cntrl.Get_DoctorName(doctor_id);
+                if (docnam != "")
                 {
-                    toolStripTextDoctor.Text = "Logged In As : " + docnam.Rows[0][0].ToString();
+                    toolStripTextDoctor.Text = "Logged In As : " + docnam;
                 }
                 Lab_msg.Top = 300;
                 panl_TreatmentAdd.Hide();

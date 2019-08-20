@@ -17,7 +17,7 @@ namespace PappyjoeMVC.Controller
         void selid(string id);
         void getid(String gid);
         void getcategory(DataTable dt);
-        void Get_DoctorName(DataTable dt);
+        void Get_DoctorName(string dt);
         void getpatdetails(DataTable dt);
         void getpayment(DataTable dt);
         void getattachment(DataTable dt);

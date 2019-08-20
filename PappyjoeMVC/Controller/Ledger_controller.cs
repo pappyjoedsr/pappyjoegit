@@ -17,9 +17,9 @@ namespace PappyjoeMVC.Controller
             intr = inttr;
             intr.SetController(this);
         }
-        public DataTable Get_DoctorName(string doctor_id)
+        public string Get_DoctorName(string doctor_id)
         {
-            DataTable dtb = cmodel.Get_DoctorName(doctor_id); 
+            string dtb = cmodel.Get_DoctorName(doctor_id); 
             return dtb;
         }
         public DataTable Get_CompanyNAme()  

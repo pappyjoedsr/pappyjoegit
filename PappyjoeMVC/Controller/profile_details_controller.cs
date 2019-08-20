@@ -33,9 +33,9 @@ namespace PappyjoeMVC.Controller
             string dtb = mdl.Load_CompanyName(); 
             return dtb;
         }
-        public DataTable Get_DoctorName(string doctor_id)
+        public string Get_DoctorName(string doctor_id)
         {
-            DataTable dtb = mdl.Get_DoctorName(doctor_id);
+            string dtb = mdl.Get_DoctorName(doctor_id);
             return dtb;
         }
         public void Get_Patient_details(string patient_id)

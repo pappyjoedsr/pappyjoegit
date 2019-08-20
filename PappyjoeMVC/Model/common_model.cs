@@ -23,9 +23,9 @@ namespace PappyjoeMVC.Model
             DataTable clinicname = db.table("select name,id,path from tbl_practice_details");
             return clinicname;
         }
-        public DataTable Get_DoctorName(string doctor_id)
+        public string Get_DoctorName(string doctor_id)
         {
-            DataTable docnam = db.table("select doctor_name from tbl_doctor Where id='" + doctor_id + "'");
+            string docnam = db.scalar("select doctor_name from tbl_doctor Where id='" + doctor_id + "'");
             return docnam;
         }
         public DataTable get_company_details()

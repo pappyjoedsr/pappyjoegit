@@ -26,6 +26,6 @@ namespace PappyjoeMVC.Controller
         void getpayment(DataTable dt);
         void Patient_search(DataTable dt);
         void Get_CompanyNAme(DataTable dt);
-        void Get_DoctorName(DataTable dt);
+        void Get_DoctorName(string dt);
     }
 }

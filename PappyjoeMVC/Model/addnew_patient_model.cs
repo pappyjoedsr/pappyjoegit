@@ -161,10 +161,10 @@ namespace PappyjoeMVC.Model
         public int Save()
         {
            int i = db.execute("insert into tbl_patient (pt_name,pt_id,aadhar_id,gender,date_of_birth,age,blood_group,family,relation,primary_mobile_number,secondary_mobile_number,landline_number,email_address,street_address,locality,city,pincode,date,group_id,refferedby,Opticket,Visited,doctorname,Occupation,Profile_Status)" +
-     " values('" + _name + "','" + _id + "','" + _aadhar + "','" + _gender + "','" +Convert.ToDateTime( _dob).ToString("yyyy/MM/dd") + "','" + _age + "','" + _blood + "','" + _accompained + "','null','" +_pmobile + "','" + _smobile + "','" +_landline + "','" + _email + "','" +_street+ "'," +
+     " values('" + _name + "','" + _id + "','" + _aadhar + "','" + _gender + "','" + _dob + "','" + _age + "','" + _blood + "','" + _accompained + "','null','" +_pmobile + "','" + _smobile + "','" +_landline + "','" + _email + "','" +_street+ "'," +
      "'" + _locality + "','" + _city + "','" +_pincode + "','" + Convert.ToDateTime( DateTime.Now.Date ).ToString("yyyy/MM/dd") + "','id4','" + _referred + "','" + _file + "','" +Convert.ToDateTime(_admit).ToString("yyyy/MM/dd") + "','" +_doctor + "','" + _occupation + "','Active')");
             return i;
-        }//insert into tbl_patient (pt_name,pt_id,aadhar_id,gender,date_of_birth,age,blood_group,family,relation,primary_mobile_number,secondary_mobile_number,landline_number,email_address,street_address,locality,city,pincode,date,group_id,Visited,doctorname,Profile_Status)
+        }
         public DataTable get_maxId()
         {
             DataTable rs_patient = db.table("SELECT MAX(Id) FROM tbl_patient");
