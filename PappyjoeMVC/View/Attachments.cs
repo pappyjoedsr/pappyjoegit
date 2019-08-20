@@ -28,7 +28,6 @@ namespace PappyjoeMVC.View
         Attachments_controller ctrlr;
         common_model cm = new common_model();
         Connection c = new Connection();
-        frmimagezoom frmimagezoom = null;
         public Attachments()
         {
             InitializeComponent();
@@ -95,15 +94,6 @@ namespace PappyjoeMVC.View
                 APTDelete = true;
             }
         }
-        public void Get_CompanyNAme(DataTable dt)
-        {
-            if (dt.Rows.Count > 0)
-            {
-                string clinicn = "";
-                clinicn = dt.Rows[0][0].ToString();
-                toolStripButton1.Text = clinicn.Replace("¤", "'");
-            }
-        }
         public void Get_DoctorName(DataTable dt1)
         {
             if (dt1.Rows.Count > 0)
@@ -164,9 +154,7 @@ namespace PappyjoeMVC.View
                 string doctor = "";
                 for (int i = 0; i < attach.Rows.Count; i++)
                 {
-                    RegistryKey regKeyAppRoot = Registry.CurrentUser.CreateSubKey("pappyjoe");
-                    string strWindowsState = (string)regKeyAppRoot.GetValue("Server");
-                    string paths = c.server();
+                    string paths = this.ctrlr.getserver();// c.server();
                     string path = attach.Rows[i]["path"].ToString();
                     if (decimal.Parse(attach.Rows[i]["dr_id"].ToString()) > 0)
                     {
@@ -198,8 +186,6 @@ namespace PappyjoeMVC.View
                         {
                             try
                             {
-                                string p = paths + path;
-
                                 using (FileStream stream = new FileStream(paths + path, FileMode.Open, FileAccess.Read))
                                 {
                                     Image image = Image.FromStream(stream);
@@ -272,8 +258,7 @@ namespace PappyjoeMVC.View
         {
             if (dt.Rows.Count > 0)
             {
-                string id;
-                id = dt.Rows[0][0].ToString();
+                string id = dt.Rows[0][0].ToString();
                 if (int.Parse(id) > 0)
                 {
                     MessageBox.Show("There is No Privilege to Add Attachment", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -311,7 +296,7 @@ namespace PappyjoeMVC.View
         {
             this.ctrlr.selid(doctor_id);
             toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-            this.ctrlr.Get_CompanyNAme();
+            toolStripButton1.Text =  this.ctrlr.Load_CompanyName();
             this.ctrlr.Get_DoctorName(doctor_id);
             txt_Category.Visible = false;
             lab_Category.Visible = false;
@@ -322,14 +307,13 @@ namespace PappyjoeMVC.View
             this.ctrlr.getcategory();
             this.ctrlr.getpatdetails(patient_id);
             this.m.getpayment(patient_id);
-             this.ctrlr.getattachment();
+            this.ctrlr.getattachment();
         }
         public void doctr_privillage_for_addnewPatient(DataTable dt)
         {
             if (dt.Rows.Count > 0)
             {
-                string id;
-                id = dt.Rows[0][0].ToString();
+                string id = dt.Rows[0][0].ToString();
                 if (int.Parse(id) > 0)
                 {
                     MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -372,16 +356,7 @@ namespace PappyjoeMVC.View
                         int i = this.ctrlr.inscatgry();
                         if (i > 0)
                         {
-                            Dgv_Category.Rows.Clear();
-                            this.ctrlr.getcategory();
-                            txt_Category.Text = "";
-                            Lab_Msg1.Visible = false;
-                            btn_CategoryCancel.Visible = false;
-                            txt_Category.Visible = false;
-                            lab_Category.Visible = false;
-                            btn_CategoryAdd.Visible = false;
-                            Dgv_Category.Location = new Point(0, 45);
-                            Btn_CategoryClose.Visible = false;
+                            setcontrolls_aftersave();
                         }
                         else
                         {
@@ -394,17 +369,8 @@ namespace PappyjoeMVC.View
                         int i = this.ctrlr.update();
                         if (i > 0)
                         {
-                            Dgv_Category.Rows.Clear();
-                            this.ctrlr.getcategory();
-                            txt_Category.Text = "";
+                            setcontrolls_aftersave();
                             btn_CategoryAdd.Text = "Save";
-                            Lab_Msg1.Visible = false;
-                            btn_CategoryCancel.Visible = false;
-                            txt_Category.Visible = false;
-                            lab_Category.Visible = false;
-                            btn_CategoryAdd.Visible = false;
-                            Dgv_Category.Location = new Point(0, 45);
-                            Btn_CategoryClose.Visible = false;
                         }
                         else
                         {
@@ -420,7 +386,15 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-
+        public void setcontrolls_aftersave()
+        {
+            Dgv_Category.Rows.Clear();
+            this.ctrlr.getcategory();
+            txt_Category.Text = "";
+            controll_visibility();
+            Dgv_Category.Location = new Point(0, 45);
+        }
+        
         private void btn_AddCategory_Click(object sender, EventArgs e)
         {
             txt_Category.Visible = true;
@@ -442,6 +416,11 @@ namespace PappyjoeMVC.View
 
         private void Btn_CategoryClose_Click(object sender, EventArgs e)
         {
+            controll_visibility();
+        }
+        public void controll_visibility()
+        {
+          
             Lab_Msg1.Visible = false;
             btn_CategoryCancel.Visible = false;
             txt_Category.Visible = false;
@@ -450,7 +429,6 @@ namespace PappyjoeMVC.View
             Dgv_Category.Location = new Point(0, 45);
             Btn_CategoryClose.Visible = false;
         }
-
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
             toolStripTextBox1.Clear();
@@ -574,19 +552,17 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-        public void getpath(DataTable dt)
+
+        public void getpath(string path1)
         {
             try
             {
-                RegistryKey regKeyAppRoot = Registry.CurrentUser.CreateSubKey("pappyjoe");
-                string strWindowsState = (string)regKeyAppRoot.GetValue("Server");
-                string path = "";
                 string realfile = "";
-                string paths = c.server();
-                if (dt.Rows.Count > 0)
+                string paths = this.ctrlr.getserver();
+                if (path1 != "")
                 {
-                    string path1 = dt.Rows[0]["path"].ToString();
-                    if (File.Exists(paths + path1) == true)
+                    realfile = paths + path1;
+                    if (File.Exists(realfile) == true)
                     {
                         if (File_Type.ToLower() == ".jpeg" || File_Type.ToLower() == ".jpg" || File_Type.ToLower() == ".gif" || File_Type.ToLower() == ".png")
                         {
@@ -601,15 +577,9 @@ namespace PappyjoeMVC.View
                             saveFileDialog1.Title = "Save an Image File";
                             saveFileDialog1.ShowDialog();
                             if (saveFileDialog1.FileName != "")
-                            {
+                            { 
                                 if (attach_id != 0)
                                 {
-                                    this.ctrlr.getpath();
-                                    if (dt.Rows.Count > 0)
-                                    {
-                                        path = dt.Rows[0]["path"].ToString();
-                                        realfile = c.server() + path;
-                                    }
                                     if (File.Exists(realfile))
                                     {
                                         System.IO.File.Copy(realfile, saveFileDialog1.FileName);
@@ -632,12 +602,6 @@ namespace PappyjoeMVC.View
                             {
                                 if (attach_id != 0)
                                 {
-                                    this.ctrlr.getpath();
-                                    if (dt.Rows.Count > 0)
-                                    {
-                                        path = dt.Rows[0]["path"].ToString();
-                                        realfile = c.server() + path;
-                                    }
                                     if (File.Exists(realfile))
                                     {
                                         System.IO.File.Copy(realfile, saveFileDialog1.FileName);
@@ -660,12 +624,6 @@ namespace PappyjoeMVC.View
                             {
                                 if (attach_id != 0)
                                 {
-                                    this.ctrlr.getpath();
-                                    if (dt.Rows.Count > 0)
-                                    {
-                                        path = dt.Rows[0]["path"].ToString();
-                                        realfile = c.server() + path;
-                                    }
                                     if (File.Exists(realfile))
                                     {
                                         System.IO.File.Copy(realfile, saveFileDialog1.FileName);
@@ -693,13 +651,10 @@ namespace PappyjoeMVC.View
 
         private void Dgv_Attachment_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int status = 0;
             string ext1 = "";
             attach_id = int.Parse(Dgv_Attachment.Rows[e.RowIndex].Cells[5].Value.ToString());
             ext1 = Dgv_Attachment.Rows[e.RowIndex].Cells[4].Value.ToString();
-            //string myFilePath = @"C:\MyFile.txt";
             File_Type = Path.GetExtension(ext1);
-            status = 0;
             if (e.ColumnIndex == 0)
             {
                 if (APTDelete == true)

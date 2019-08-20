@@ -150,7 +150,7 @@ namespace PappyjoeMVC.View
                         labGender.Hide();
                     }
                     int a = 0;
-                    if (rs_patients.Rows[0]["date_of_birth"].ToString() != "")
+                    if (rs_patients.Rows[0]["date_of_birth"].ToString() != "null")
                     {
                         if (DateTime.Parse(rs_patients.Rows[0]["date_of_birth"].ToString()).ToString("MM/dd/yyyy") != "")
                         {

@@ -657,7 +657,7 @@
     <Compile Include="View\patient_profile_Edit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\patient_profile_Edit.Designer.cs">
+    <Compile Include="View\patient_profile_Edit.designer.cs">
       <DependentUpon>patient_profile_Edit.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Paymode_Wise_Receipt.cs">

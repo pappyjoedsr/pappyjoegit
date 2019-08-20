@@ -196,5 +196,21 @@ namespace PappyjoeMVC.Model
         {
             int i = db.execute("insert into tbl_group (name) values('" + group + "')");
         }
+        public void delete_pt_medhistory(string patient_id)
+        {
+           db.execute("delete  from tbl_pt_medhistory where pt_id='" + patient_id + "'");
+        }
+        public void insert_pt_medhistory(string patient_id,string medical)
+        {
+            db.execute("insert into tbl_pt_medhistory (pt_id,med_id) values('" + patient_id + "','" + medical + "')");
+        }
+        public void delete_pt_group(string patient_id)
+        {
+            db.execute("delete from tbl_pt_group where pt_id='" + patient_id + "'");
+        }
+        public void insert_pt_group(string patient_id,string group)
+        {
+          db.execute("insert into  tbl_pt_group(pt_id,group_id) values('" + patient_id + "','" + group + "')");
+        }
     }
 }

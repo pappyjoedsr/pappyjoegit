@@ -11,6 +11,7 @@ namespace PappyjoeMVC.Controller
     {
         patient_edit_interface intr;
         patient_edit_model _model = new patient_edit_model();
+        Connection db = new Connection();
         public patient_edit_controller(patient_edit_interface inttr)
         {
             intr = inttr;
@@ -86,6 +87,27 @@ namespace PappyjoeMVC.Controller
         public void save_group(string group)
         {
             _model.save_group(group);
+        }
+        public void delete_pt_medhistory(string patient_id)
+        {
+            _model.delete_pt_medhistory(patient_id);
+        }
+        public string getserver()//connection
+        {
+            string ret = db.server();
+            return ret;
+        }
+        public void insert_pt_medhistory(string patient_id, string medical)
+        {
+            _model.insert_pt_medhistory(patient_id,medical);
+        }
+        public void delete_pt_group(string patient_id)
+        {
+            _model.delete_pt_group(patient_id);
+        }
+        public void insert_pt_group(string patient_id, string group)
+        {
+            _model.insert_pt_group(patient_id,group);
         }
     }
 }

@@ -14,6 +14,7 @@ namespace PappyjoeMVC.Controller
         Add_Attachments_model m = new Add_Attachments_model();
         Attachments_model mdl = new Attachments_model();
         common_model cmdl = new common_model();
+        Connection db = new Connection();
         public Attachments_controller(Attachments_interface inttr)
         {
             intr = inttr;
@@ -29,10 +30,10 @@ namespace PappyjoeMVC.Controller
             string k = mdl.getid(gid);
             intr.getid(k);
         }
-        public void Get_CompanyNAme()
+        public string Load_CompanyName()
         {
-            DataTable dt = cmdl.Get_CompanyNAme();
-            intr.Get_CompanyNAme(dt);
+            string dtb = cmdl.Load_CompanyName();
+            return dtb;
         }
         public void Get_DoctorName(string id)
         {
@@ -47,7 +48,7 @@ namespace PappyjoeMVC.Controller
         public void getpath()
         {
             mdl.atchid = intr.attachid;
-            DataTable dt = mdl.getpath();
+            string dt = mdl.getpath();
             intr.getpath(dt);
         }
         public void getpatdetails(string id)
@@ -97,6 +98,11 @@ namespace PappyjoeMVC.Controller
             mdl.atchid = intr.attachid;
             int p = mdl.delattach();
             return p;
+        }
+        public string getserver()
+        {
+            string ret = db.server();
+            return ret;
         }
     }
 }
