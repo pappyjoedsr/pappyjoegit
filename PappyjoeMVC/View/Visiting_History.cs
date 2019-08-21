@@ -26,13 +26,10 @@ namespace PappyjoeMVC.View
             try
             {
                 label2.Text = "0";
-                //Lab_Doctor.Location = new System.Drawing.Point(765, 27);
-                //comboBoxdoctor.Location = new System.Drawing.Point(842, 21);
                 comboBoxdoctor.Items.Add("All Doctor");
                 comboBoxdoctor.ValueMember = "0";
                 comboBoxdoctor.DisplayMember = "All Doctor";
                 System.Data.DataTable doctor_rs = this.cntrl.doctor_rs();
-                //db.table("select DISTINCT id,doctor_name from tbl_doctor where (login_type='doctor' or login_type='admin' and activate_login='yes') order by doctor_name");
                 if (doctor_rs.Rows.Count > 0)
                 {
                     for (int i = 0; i < doctor_rs.Rows.Count; i++)
@@ -67,7 +64,6 @@ namespace PappyjoeMVC.View
             {
                 Lab_Msg.Hide(); label2.Text = "";
                 DataTable dt1 = this.cntrl.search(dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd"), dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd"));
-                // db.table("select TA.pt_id,TA.pt_name,TA.booked_by,DATE_FORMAT(TA.book_datetime, '%d-%m-%Y') AS 'book_datetime',DATE_FORMAT(TA.start_datetime, '%d-%m-%Y %h:%l %p') AS 'start_datetime',TA.duration,TA.status,TA.schedule,TA.waiting,TA.checkout,TP.pt_id AS patient_id from tbl_appointment TA inner join tbl_patient TP on(TP.id=TA.pt_id) where TA.book_datetime between '" + dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd") + "' and '" + dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd") + "' and TA.status='Checked Out' and TP.Profile_Status !='Cancelled'");
                 dgvVisitingHistory.AutoGenerateColumns = false;
                 dgvVisitingHistory.DataSource = dt1;
                 if (dt1.Rows.Count > 0)
@@ -107,7 +103,6 @@ namespace PappyjoeMVC.View
                 {
                     label2.Text = ""; Lab_Msg.Hide();
                     drctid = comboBoxdoctor.SelectedItem.ToString();
-                    //string query = "SELECT id from tbl_doctor where doctor_name='" + drctid + "' ";
                     System.Data.DataTable dt = this.cntrl.Get_DoctorId(drctid);
                     if (dt.Rows.Count > 0)
                     {
@@ -116,7 +111,6 @@ namespace PappyjoeMVC.View
                     if (comboBoxdoctor.SelectedIndex == 0)
                     {
                         DataTable dt1 = this.cntrl.vishistCombo(dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd"), dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd"));
-                        //db.table("select TA.pt_id,TA.pt_name,TA.booked_by,TA.book_datetime,TA.start_datetime,TA.duration,TA.status,TA.schedule,TA.waiting,TA.checkout,TP.pt_id AS patient_id from tbl_appointment TA inner join tbl_patient TP on(TP.id=TA.pt_id) where TA.book_datetime between '" + dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd") + "' and '" + dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd") + "' and TA.status='Checked Out' and TP.Profile_Status !='Cancelled'");
                         dgvVisitingHistory.AutoGenerateColumns = false;
                         if (dt1.Rows.Count > 0)
                         {
@@ -135,7 +129,6 @@ namespace PappyjoeMVC.View
                     else if (comboBoxdoctor.SelectedIndex > 0)
                     {
                         DataTable dt1 = this.cntrl.vishistCombo1(dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd"), dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd"), Selected_drid);
-                        //db.table("select TA.pt_id,TA.pt_name,TA.booked_by,TA.book_datetime,TA.start_datetime,TA.duration,TA.status,TA.schedule,TA.waiting,TA.checkout,TP.pt_id AS patient_id from tbl_appointment TA inner join tbl_patient TP on(TP.id=TA.pt_id) where TA.book_datetime between '" + dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd") + "' and '" + dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd") + "' and TA.status='Checked Out' and dr_id='" + Selected_drid + "' and TP.Profile_Status !='Cancelled'");
                         dgvVisitingHistory.AutoGenerateColumns = false;
                         if (dt1.Rows.Count > 0)
                         {
@@ -165,12 +158,6 @@ namespace PappyjoeMVC.View
             {
                 if (dgvVisitingHistory.Rows.Count > 0)
                 {
-                    //string fromdate = dateTimePickerdailyappointcount1.Value.Day.ToString();
-                    //string frmonth = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dateTimePickerdailyappointcount1.Value.Month);
-                    //string fryear = dateTimePickerdailyappointcount1.Value.Year.ToString();
-                    //string todate = dateTimePickerdailyappointcount2.Value.Day.ToString();
-                    //string tomonth = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dateTimePickerdailyappointcount2.Value.Month);
-                    //string toyear = dateTimePickerdailyappointcount2.Value.Year.ToString();
                     string message = "Did you want Header on Print?";
                     string caption = "Verification";
                     MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -185,7 +172,6 @@ namespace PappyjoeMVC.View
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
                         System.Data.DataTable dtp = this.cntrl.Get_practiceDlNumber();
-                        // db.table("select name,contact_no,street_address,email,website  from tbl_practice_details");
                         if (dtp.Rows.Count > 0)
                         {
                             clinicn = dtp.Rows[0]["name"].ToString();
@@ -206,7 +192,6 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("</style>");
                     sWrite.WriteLine("</head>");
                     sWrite.WriteLine("<body >");
-                    //sWrite.WriteLine("<br><br><br>");
                     sWrite.WriteLine("<div>");
                     sWrite.WriteLine("<table align=center width=900> ");
                     sWrite.WriteLine("<col >");

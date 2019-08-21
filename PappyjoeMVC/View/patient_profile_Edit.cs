@@ -546,7 +546,7 @@ namespace PappyjoeMVC.View
                     RBtnFemale.Checked = true;
                 }
                 string aa = dt7.Rows[0]["date_of_birth"].ToString();
-                if (dt7.Rows[0]["date_of_birth"].ToString() != "null")
+                if (dt7.Rows[0]["date_of_birth"].ToString() != "")
                 {
                     DateTimePickerDob.Show();
                     txtDob.Hide();

@@ -46,7 +46,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                DataTable dtb = this.cntrl.dt_grp();//db.table("select * from tbl_group order by id");
+                DataTable dtb = this.cntrl.dt_grp();
                 if (dtb.Rows.Count > 0)
                 {
                     cmb_group.DataSource = dtb;
@@ -86,42 +86,15 @@ namespace PappyjoeMVC.View
                     label_empty.Visible = false;
                     if (cmb_type.Text == "Patients")
                     {
-                        //Lab_Discount.Visible = false; label4.Visible = false; Lab_cost.Visible = false;
-                        //Lab_tax.Visible = false;
-                        //Lab_Amount.Visible = false;
-                        //Lab_Paid.Visible = false;
-                        //Lab_Due.Visible = false; label9.Visible = false; label7.Visible = false;
-                        //label8.Visible = false; Lab_TotalIncome.Visible = false; Lab_totalExpense.Visible = false;
-                        //dgv_group.Rows.Clear();
-                        //dgv_group.ColumnCount = 0;
-                        //DataTable dtb_group = db.table("select cast(date as date) AS  'date' ,pt_id,pt_name,primary_mobile_number,email_address,doctorname,group_id from tbl_patient  WHERE tbl_patient.Profile_Status='Active' and group_id='" + cmb_group.Text + "' and date  between '" + date1 + "' and '" + date2 + "' GROUP BY id,pt_id,pt_name,date,primary_mobile_number,email_address,doctorname,group_id  having COUNT(pt_id)=1 ");
                         this.cntrl.dtb_group(cmb_group.Text, date1, date2);
 
                     }
                     else if (cmb_type.Text == "Procedure")
                     {
-                        //Lab_Discount.Visible = false;
-                        //label4.Visible = false;
-                        //Lab_cost.Visible = false;
-                        //Lab_tax.Visible = false;
-                        //Lab_Amount.Visible = false;
-                        //Lab_Paid.Visible = false;
-                        //Lab_Due.Visible = false;
-                        //label9.Visible = false;
-                        //label7.Visible = false;
-                        //label8.Visible = false;
-                        //Lab_TotalIncome.Visible = false;
-                        //Lab_totalExpense.Visible = false;
-                        //dgv_group.Rows.Clear();
-                        //dgv_group.ColumnCount = 0;
-                        //DataTable dtb_procedure = db.table("SELECT  cast(A.date as date) as date,A.procedure_name,B.doctor_name,p.group_id FROM tbl_completed_procedures A INNER JOIN tbl_doctor B ON A.dr_id=B.id inner join tbl_patient P on p.id=A.pt_id WHERE group_id='" + cmb_group.Text + "'and A.date between '" + date1 + "'and '" + date2 + "' and P.Profile_Status !='Cancelled' ");
                         this.cntrl.dtb_procedure(cmb_group.Text, date1, date2);
                     }
                     else if (cmb_type.Text == "Invoice")
                     {
-                        //label4.Visible = false;
-                        //Lab_cost.Visible = false;
-                        //label_empty.Visible = false;
                         Lab_Discount.Visible = true;
                         Lab_tax.Visible = true;
                         Lab_Amount.Visible = true;
@@ -133,8 +106,6 @@ namespace PappyjoeMVC.View
                         label9.Text = "Total Cost";
                         Lab_TotalIncome.Visible = true;
                         Lab_totalExpense.Visible = true;
-                        //dgv_group.Rows.Clear();
-                        //dgv_group.ColumnCount = 0;
                         dgv_group.ColumnCount = 12;
                         dgv_group.Columns[0].HeaderText = "SLNO";
                         dgv_group.Columns[1].HeaderText = "PATIENT NAME";
@@ -174,7 +145,6 @@ namespace PappyjoeMVC.View
                         dgv_group.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                         dgv_group.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                         dgv_group.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                        //DataTable dt1 = db.table("select tbl_invoices.pt_id,tbl_invoices.pt_name,invoice_no,services,unit,discount_type,tbl_invoices.date,tbl_doctor.doctor_name,total_discount,((cast(cost as decimal(17,1))* cast(unit as decimal(17,1)))+(CAST(total_tax as decimal(17,1)))-(CAST(total_discount as decimal(17,1))) ) as Cost,cost as Total_Cost,(((cast(cost as decimal(17,1))* cast(unit as decimal(17,1)))+(CAST(total_tax as decimal(17,1)))-(CAST(total_discount as decimal(17,1))))-(CAST(total as decimal(17,1))) ) as Payment,cast(total as decimal(17,1)) as due,group_id from tbl_invoices LEFT JOIN tbl_doctor on tbl_invoices.dr_id=tbl_doctor.id LEFT JOIN tbl_patient on tbl_invoices.pt_id=tbl_patient.id where  tbl_patient.Profile_Status='Active' and tbl_invoices.date between '" + date1 + "' and '" + date2 + "'and group_id='" + cmb_group.Text + "' order by date desc");
                         this.cntrl.dtb_invoice(date1, date2, cmb_group.Text);
 
                     }
@@ -193,9 +163,6 @@ namespace PappyjoeMVC.View
                         Lab_totalExpense.Visible = true;
                         label4.Visible = true;
                         Lab_cost.Visible = true;
-                        //dgv_group.Rows.Clear();
-                        //dgv_group.ColumnCount = 0;
-                        //DataTable dtp = db.table("SELECT distinct  A.pt_name,receipt_no ,A.invoice_no ,procedure_name, A.total ,A.amount_paid ,CAST((A.total-amount_paid) AS DECIMAL(17,2))  as 'DUE AFTER PAYMENT',payment_date, A.mode_of_payment ,d.doctor_name,group_id FROM tbl_payment A Left join tbl_doctor d on A.dr_id=d.id inner join tbl_patient P on p.id=A.pt_id  Where payment_date between '" + date1 + "' and '" + date2 + "' and P.group_id='" + cmb_group.Text + "' and P.Profile_Status !='Cancelled'");
                         this.cntrl.dtb_receipt(date1, date2, cmb_group.Text);
                     }
                 }
@@ -363,24 +330,6 @@ namespace PappyjoeMVC.View
                 dgv_group.Columns[13].HeaderText = "AMOUNT PAID";
                 dgv_group.Columns[14].HeaderText = "AMOUNT DUE";
 
-                //dgv_group.Columns[0].Width = 20;
-                //dgv_group.Columns[1].Width = 120;
-                //dgv_group.Columns[2].Width = 50;
-                //dgv_group.Columns[3].Width = 50;
-                //dgv_group.Columns[4].Width = 135;
-                //dgv_group.Columns[5].Width = 80;
-                //dgv_group.Columns[6].Width = 80;
-                //dgv_group.Columns[7].Width = 60;
-                //dgv_group.Columns[8].Width = 90;
-                //dgv_group.Columns[9].Width = 60;
-
-                //dgv_group.Columns[10].Width = 20;
-                //dgv_group.Columns[11].Width = 35;
-                //dgv_group.Columns[12].Width = 90;
-                //dgv_group.Columns[13].Width = 90;
-                //dgv_group.Columns[14].Width = 100;
-
-
                 dgv_group.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgv_group.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgv_group.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -401,7 +350,6 @@ namespace PappyjoeMVC.View
                 {
                     int sl_no = z + 1;
                     dgv_group.Rows.Add(sl_no, dtp.Rows[z]["pt_name"].ToString(), dtp.Rows[z]["invoice_no"].ToString(), dtp.Rows[z]["receipt_no"].ToString(), dtp.Rows[z]["procedure_name"].ToString(), dtp.Rows[z]["doctor_name"].ToString(), dtp.Rows[z]["group_id"].ToString(), Convert.ToDateTime(dtp.Rows[z]["payment_date"].ToString()).ToString("yyyy-MM-dd"), dtp.Rows[z]["mode_of_payment"].ToString(), "0.00", "0.00", "0.00", "0.00", dtp.Rows[z]["amount_paid"].ToString(), dtp.Rows[z]["DUE AFTER PAYMENT"].ToString());
-                    //DataTable dt_inv = db.table("SELECT distinct unit,CAST((C.unit*C.cost) AS DECIMAL(17,2)) as 'Total Cost',C.discountin_rs,C.tax_inrs ,CAST(((C.unit*C.cost)-C.discountin_rs) AS DECIMAL(17,2)) as 'Total Income',discount_type FROM  tbl_invoices C Where invoice_no='" + dtp.Rows[z]["invoice_no"].ToString() + "' and  C.services='" + dtp.Rows[z]["procedure_name"].ToString() + "'");
                     DataTable dt_inv = this.cntrl.dt_inv(dtp.Rows[z]["invoice_no"].ToString(), dtp.Rows[z]["procedure_name"].ToString());
                     if (dt_inv.Rows.Count > 0)
                     {
@@ -418,7 +366,6 @@ namespace PappyjoeMVC.View
                             dgv_group.Rows[z].Cells[11].Value = "";
                             discount = 0;
                         }
-                        // DgvReceiptReceivedPerDoctor.Rows[i].Cells["Discount_insr"].Value = dt_inv.Rows[0]["discountin_rs"].ToString();
                         dgv_group.Rows[z].Cells[10].Value = dt_inv.Rows[0]["tax_inrs"].ToString();
                         dgv_group.Rows[z].Cells[12].Value = dt_inv.Rows[0]["Total Income"].ToString();
                         tax = decimal.Parse(dt_inv.Rows[0]["tax_inrs"].ToString());
@@ -441,7 +388,6 @@ namespace PappyjoeMVC.View
                 Lab_Paid.Text = Convert.ToDecimal(Totalpaid).ToString("#0.00");
                 Lab_Due.Text = Convert.ToDecimal(Totaldue).ToString("#0.00");
             }
-
         }
 
         private void cmb_type_SelectedIndexChanged(object sender, EventArgs e)
@@ -483,7 +429,6 @@ namespace PappyjoeMVC.View
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
                         System.Data.DataTable dtp = this.cntrl.Get_practiceDlNumber();
-                            // db.table("select name,contact_no,street_address,email,website  from tbl_practice_details");
                         if (dtp.Rows.Count > 0)
                         {
                             clinicn = dtp.Rows[0]["name"].ToString();
@@ -676,14 +621,11 @@ namespace PappyjoeMVC.View
                             sWrite3.WriteLine("    <td align='center' width='3%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >Sl.</font></td>");
                             sWrite3.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>Patient Name</font></td>");
                             sWrite3.WriteLine("    <td align='left' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Invoice</font></td>");
-                            //sWrite3.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>Receipt</font></td>");
                             sWrite3.WriteLine("    <td align='left' width='11%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Procedure</font></td>");
                             sWrite3.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Invoice Date</font></td>");
                             sWrite3.WriteLine("    <td align='center' width='8%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Doctor </font></td>");
                             sWrite3.WriteLine("    <td align='center' width='8%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Group</font></td>");
-                            //sWrite3.WriteLine("    <td align='center' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Mode of payment</font></td>");
                             sWrite3.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Cost</font></td>");
-                            //sWrite3.WriteLine("    <td align='right' width='5%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Tax</font></td>");
                             sWrite3.WriteLine("    <td align='right' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Discount</font></td>");
                             sWrite3.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Amount</font></td>");
                             sWrite3.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Total Payment</font></td>");
@@ -705,9 +647,6 @@ namespace PappyjoeMVC.View
                                 sWrite3.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgv_group.Rows[j].Cells[9].Value.ToString() + "</font></td>");
                                 sWrite3.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgv_group.Rows[j].Cells[10].Value.ToString() + "</font></td>");
                                 sWrite3.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgv_group.Rows[j].Cells[11].Value.ToString() + "</font></td>");
-                                //sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgv_group.Rows[j].Cells[12].Value.ToString() + "</font></td>");
-                                //sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgv_group.Rows[j].Cells[13].Value.ToString() + "</font></td>");
-                                //sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgv_group.Rows[j].Cells[14].Value.ToString() + "</font></td>");
                                 k = k + 1;
                                 sWrite3.WriteLine("</tr>");
                             }
@@ -724,9 +663,6 @@ namespace PappyjoeMVC.View
                             sWrite3.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_Amount.Text + "</b></font></td>");
                             sWrite3.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_Paid.Text + "</b></font></td>");
                             sWrite3.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_Due.Text + "</b></font></td>");
-                            //sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_Amount.Text + "</b></font></td>");
-                            //sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_Paid.Text + "</b></font></td>");
-                            //sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_Due.Text + "</b></font></td>");
                             sWrite3.WriteLine("</tr>");
                             sWrite3.WriteLine("<tr>");
                             sWrite3.WriteLine("<td align=right colspan=6><FONT COLOR=black FACE='Segoe UI' SIZE=3 ><br><br><b> </b>&nbsp;&nbsp;  </font> </td> ");

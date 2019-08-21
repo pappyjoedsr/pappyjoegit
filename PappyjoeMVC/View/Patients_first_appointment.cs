@@ -12,7 +12,6 @@ namespace PappyjoeMVC.View
     {
         Patients_first_appointment_controller cntrl;
         public string names, ptids;
-        //string dr_id;
         public string doctor_id = "";
 
         public Patients_first_appointment()
@@ -31,7 +30,6 @@ namespace PappyjoeMVC.View
                 cmbDoctor.Items.Add("All Doctor");
                 cmbDoctor.ValueMember = "0";
                 cmbDoctor.DisplayMember = "All Doctor";
-                //System.Data.DataTable doctor_rs = db.table("select DISTINCT id,doctor_name from tbl_doctor where not login_type = 'staff' order by doctor_name");
                 DataTable doctor_rs = this.cntrl.doctor_rs();
                 if (doctor_rs.Rows.Count > 0)
                 {
@@ -45,7 +43,6 @@ namespace PappyjoeMVC.View
                 cmbDoctor.SelectedIndex = 0;
                 label_empty.Hide();
                 this.Grvpatientfirstappoint.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False;
-                //Select p = new Select();
                 if (label2.Text != "")
                 {
                     label2.Visible = true;
@@ -59,7 +56,6 @@ namespace PappyjoeMVC.View
                 DateTime now = DateTime.Now;
                 DateTime date = new DateTime(now.Year, now.Month, 1);
                 dateTimePickerfirstappoint1.Value = date;
-                //Select s = new Select();
                 string d1 = dateTimePickerfirstappoint1.Value.ToString("yyyy-MM-dd");
                 string d2 = dateTimePickerfirstappoint2.Value.ToString("yyyy-MM-dd");
                 Grvpatientfirstappoint.DataSource = this.cntrl.FirstAppointment(doctor_id, d1, d2);
@@ -105,7 +101,6 @@ namespace PappyjoeMVC.View
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
                         System.Data.DataTable dtp = this.cntrl.Get_practiceDlNumber();
-                        //db.table("select name,contact_no,street_address,email,website  from tbl_practice_details");
                         if (dtp.Rows.Count > 0)
                         {
                             clinicn = dtp.Rows[0]["name"].ToString();
@@ -202,7 +197,6 @@ namespace PappyjoeMVC.View
                     return;
                 }
                 label2.Visible = true;
-                //Select s = new Select();
                 Grvpatientfirstappoint.DataSource = this.cntrl.FirstAppointment(doctor_id, d1, d2);
                 this.Grvpatientfirstappoint.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 this.Grvpatientfirstappoint.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -320,4 +314,3 @@ namespace PappyjoeMVC.View
         }
     }
 }
-

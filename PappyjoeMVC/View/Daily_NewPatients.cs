@@ -30,7 +30,6 @@ namespace PappyjoeMVC.View
                 combodoctors.ValueMember = "0";
                 combodoctors.DisplayMember = "All Doctor";
                 System.Data.DataTable doctor_rs = this.cntrl.doctor_rs();
-                //db.table("select DISTINCT id,doctor_name from tbl_doctor where not login_type = 'staff' order by doctor_name");
                 if (doctor_rs.Rows.Count > 0)
                 {
                     for (int i = 0; i < doctor_rs.Rows.Count; i++)
@@ -103,7 +102,6 @@ namespace PappyjoeMVC.View
                     series.Points.Clear();
                 }
                 label4.Visible = true;
-                //Select d = new Select();
                 string doctor = combodoctors.Text;
                 string date1 = dateTimePickerdailynewpatient1.Value.ToString("yyyy-MM-dd");
                 string date2 = dateTimePickerdailynewpatient2.Value.ToString("yyyy-MM-dd");
@@ -153,7 +151,6 @@ namespace PappyjoeMVC.View
                     MessageBox.Show("From date should be less than to date", "From Date is grater ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dateTimePickerdailynewpatient1.Value = DateTime.Today;
                 }
-                //Select d = new Select();
                 string doctor = combodoctors.Text;
                 string date1 = dateTimePickerdailynewpatient1.Value.ToString("yyyy-MM-dd");
                 string date2 = dateTimePickerdailynewpatient1.Value.ToString("yyyy-MM-dd");
@@ -164,11 +161,11 @@ namespace PappyjoeMVC.View
                 Grvdailynewpatient.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
                 if (flag == 0)
                 {
-                    Grid_load(); //chartLoad();
+                    Grid_load(); 
                 }
                 if (flag == 1)
                 {
-                    chartLoad(); //Grid_load();
+                    chartLoad(); 
                 }
                 foreach (DataGridViewColumn column in Grvdailynewpatient.Columns)
                 {
@@ -207,7 +204,6 @@ namespace PappyjoeMVC.View
                     series.Points.Clear();
                 }
                 label4.Visible = true;
-                //Select d = new Select();
                 string doctor = combodoctors.Text;
                 if (doctor == "" || doctor == null)
                 {
@@ -286,19 +282,17 @@ namespace PappyjoeMVC.View
                 if (doctor != "All Doctor")
                 {
                     griddailytrreatmenttable = this.cntrl.griddailytrreatmenttable(doctor, date1, date2);
-                    //db.table("select DATE_FORMAT(date, '%d-%m-%Y') AS  'date' ,pt_id,pt_name,primary_mobile_number,email_address,doctorname from tbl_patient  WHERE tbl_patient.Profile_Status='Active' and doctorname='" + doctor + "' and date  between '" + date1 + "' and '" + date2 + "' GROUP BY id,pt_id,pt_name,date,primary_mobile_number,email_address,doctorname  having COUNT(pt_id)=1 ");
                 }
                 else
                 {
                     griddailytrreatmenttable = this.cntrl.griddailytrreatmenttable11(date1, date2);
-                    //db.table("select DATE_FORMAT(date, '%d-%m-%Y') AS  'date',pt_id,pt_name,primary_mobile_number,email_address,doctorname from tbl_patient  WHERE tbl_patient.Profile_Status='Active' and date  between '" + date1 + "' and '" + date2 + "' GROUP BY id,pt_id,pt_name,date,primary_mobile_number,email_address,doctorname  having COUNT(pt_id)=1 ");
                 }
                 btnviewchart.Visible = true;
                 int sl = 0;
                 for (int z = 0; z < griddailytrreatmenttable.Rows.Count; z++)
                 {
                     sl = z + 1;
-                    string sl_no = sl.ToString();// griddailytrreatmenttable.Rows[z]["sl"].ToString();
+                    string sl_no = sl.ToString();
                     string date = griddailytrreatmenttable.Rows[z]["date"].ToString();
                     string patient_id = griddailytrreatmenttable.Rows[z]["pt_id"].ToString();
                     string Patient_Name = griddailytrreatmenttable.Rows[z]["pt_name"].ToString();
@@ -313,7 +307,6 @@ namespace PappyjoeMVC.View
                 {
                     series.Points.Clear();
                 }
-                //Select s = new Select();
                 Grvdailynewpatient.DataSource = this.cntrl.Dailynewpatient(date1, date2, doctor);
                 Grvdailynewpatient.EnableHeadersVisualStyles = false;
                 Grvdailynewpatient.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
@@ -453,7 +446,6 @@ namespace PappyjoeMVC.View
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
                         System.Data.DataTable dtp = this.cntrl.Get_practiceDlNumber();
-                        //db.table("select name,contact_no,street_address,email,website  from tbl_practice_details");
                         if (dtp.Rows.Count > 0)
                         {
                             clinicn = dtp.Rows[0]["name"].ToString();

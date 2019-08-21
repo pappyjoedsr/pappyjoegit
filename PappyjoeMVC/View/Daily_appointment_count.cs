@@ -35,7 +35,6 @@ namespace PappyjoeMVC.View
                 comboBoxdoctor.Items.Add("All Doctor");
                 comboBoxdoctor.ValueMember = "0";
                 comboBoxdoctor.DisplayMember = "All Doctor";
-                //System.Data.DataTable doctor_rs = db.table("select DISTINCT id,doctor_name from tbl_doctor where login_type='doctor'or login_type='admin' and activate_login='yes' order by doctor_name");
                 DataTable doctor_rs = this.cntrl.doctor_rs();
                 if (doctor_rs.Rows.Count > 0)
                 {
@@ -73,7 +72,6 @@ namespace PappyjoeMVC.View
                 dataGridViewDailyappoinment.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                 dataGridViewDailyappoinment.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
                 dataGridViewDailyappoinment.EnableHeadersVisualStyles = false;
-                // dataGridViewDailyappoinment.Location = new System.Drawing.Point(5, 5);
                 foreach (DataGridViewColumn cl in dataGridViewDailyappoinment.Columns)
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -116,12 +114,6 @@ namespace PappyjoeMVC.View
                 System.Data.DataTable tbl2 = Grvdailyappointcount.DataSource as System.Data.DataTable;
                 if (dataGridViewDailyappoinment.Rows.Count > 0)
                 {
-                    //string fromdate = dateTimePickerdailyappointcount1.Value.Day.ToString();
-                    //string frmonth = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dateTimePickerdailyappointcount1.Value.Month);
-                    //string fryear = dateTimePickerdailyappointcount1.Value.Year.ToString();
-                    //string todate = dateTimePickerdailyappointcount2.Value.Day.ToString();
-                    //string tomonth = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dateTimePickerdailyappointcount2.Value.Month);
-                    //string toyear = dateTimePickerdailyappointcount2.Value.Year.ToString();
                     string message = "Did you want Header on Print?";
                     string caption = "Verification";
                     MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -134,7 +126,6 @@ namespace PappyjoeMVC.View
                     string strphone = "";
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        //System.Data.DataTable dtp = db.table("select name,contact_no,street_address,email,website  from tbl_practice_details");
                         DataTable dtp = this.cntrl.Get_practiceDlNumber();
                         if (dtp.Rows.Count > 0)
                         {
@@ -171,9 +162,6 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  <b> " + strphone + "</b> </font></center></td>");
                     sWrite.WriteLine("</tr>");
-                    //sWrite.WriteLine("<tr>");
-                    //sWrite.WriteLine("<td colspan=6 align=left><FONT COLOR=black FACE='Geneva, segoe UI' SIZE=3>  <b> " + stremail + "</b> </font></center></td>");
-                    //sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  " + "<b> From : </b>" + dateTimePickerdailyappointcount1.Value.ToString("dd/MM/yyyy") + " </font></center></td>");
                     sWrite.WriteLine("</tr>");
@@ -260,16 +248,11 @@ namespace PappyjoeMVC.View
                 if (comboBoxdoctor.SelectedIndex > 0)
                 {
 
-                    //gridviewtabledailyappoiment = db.table("SELECT B.pt_id,A.pt_name, B.primary_mobile_number ,B.email_address,A.start_datetime,A.booked_by,C.doctor_name  from tbl_appointment A inner join tbl_patient B on A.pt_id=B.id  inner join tbl_doctor C on A.dr_id=C.id where A.start_datetime   between '" + date1 + "' and '" + date2 + "' and A.dr_id='" + select_dr_id + "' and B.Profile_Status !='Cancelled'  order by book_datetime desc");
-                    ////dataGridViewDailyappoinment.DataSource = gridviewtabledailyappoiment;
                     gridviewtabledailyappoiment = this.cntrl.gridviewtabledailyappoiment(date1, date2, select_dr_id);
                     Grvdailyappointcount.DataSource = this.cntrl.Dailyappointcount_dOCTORwISE(date1, date2, select_dr_id);
                 }
                 else
                 {
-                    ////System.Data.DataTable gridviewtabledailyappoiment;
-                    //gridviewtabledailyappoiment = db.table("SELECT B.pt_id,A.pt_name,  B.primary_mobile_number ,B.email_address,A.start_datetime,A.booked_by,C.doctor_name  from tbl_appointment A inner join tbl_patient B on A.pt_id=B.id  inner join tbl_doctor C on A.dr_id=C.id where A.start_datetime   between '" + date1 + "' and '" + date2 + "' and B.Profile_Status !='Cancelled'   order by book_datetime desc");
-                    ////dataGridViewDailyappoinment.DataSource = gridviewtabledailyappoiment;
                     gridviewtabledailyappoiment = this.cntrl.gridviewtabledailyappoiment1(date1, date2);
                     Grvdailyappointcount.DataSource = this.cntrl.Dailyappointcount(date1, date2);
                 }
@@ -287,7 +270,6 @@ namespace PappyjoeMVC.View
                         dataGridViewDailyappoinment.Rows[i].Cells["email_id"].Value = gridviewtabledailyappoiment.Rows[i]["email_address"].ToString();
                         dataGridViewDailyappoinment.Rows[i].Cells["doctors"].Value = gridviewtabledailyappoiment.Rows[i]["doctor_name"].ToString();
                         dataGridViewDailyappoinment.Rows[i].Cells["book_datetime"].Value = Convert.ToDateTime(gridviewtabledailyappoiment.Rows[i]["start_datetime"].ToString()).ToString("dd-MM-yyyy hh:mm tt");
-                        //dataGridViewDailyappoinment.Rows[i].Cells["book_datetime"].Value = gridviewtabledailyappoiment.Rows[i]["start_datetime"].ToString();
                         dataGridViewDailyappoinment.Rows[i].Cells["booked_by"].Value = gridviewtabledailyappoiment.Rows[i]["booked_by"].ToString();
                         k = k + 1;
                     }
@@ -427,8 +409,6 @@ namespace PappyjoeMVC.View
             btnHidedatalist.Show();
             dataGridViewDailyappoinment.Show();
             fillgrid();
-            //dataGridViewDailyappoinment.Size = new System.Drawing.Size(1360, 372);
-            //dataGridViewDailyappoinment.Location = new System.Drawing.Point(1, 63);
             lAB_TOTAL.Visible = true;
             if (Grvdailyappointcount.Rows.Count < 1)
             {
@@ -447,13 +427,11 @@ namespace PappyjoeMVC.View
             try
             {
                 select_dr_id = "0";
-                //Select de = new Select();
                 if (comboBoxdoctor.SelectedIndex == -1)
                 { }
                 else
                 {
-                    drctid = comboBoxdoctor.SelectedItem.ToString();// SelectedValue.ToString();
-                                                                    //string query = "SELECT id from tbl_doctor where doctor_name='" + drctid + "' ";
+                    drctid = comboBoxdoctor.SelectedItem.ToString();
                     System.Data.DataTable dt = this.cntrl.Get_DoctorId(drctid);
                     if (dt.Rows.Count > 0)
                     {

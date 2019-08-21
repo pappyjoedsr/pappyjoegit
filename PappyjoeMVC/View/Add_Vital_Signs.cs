@@ -17,7 +17,6 @@ namespace PappyjoeMVC.View
     {
         Add_Vital_Signs_controller cntrl;
         Add_Vital_Signs_model _model = new Add_Vital_Signs_model();
-        common_model model=new common_model();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";
@@ -82,19 +81,19 @@ namespace PappyjoeMVC.View
                     //toolStripButton7.Visible = false;
                 }
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-                DataTable clinicname = this.model.Get_CompanyNAme();
+                DataTable clinicname = this.cntrl.Get_CompanyNAme();
                 if (clinicname.Rows.Count > 0)
                 {
                     string clinicn = "";
                     clinicn = clinicname.Rows[0]["Name"].ToString();
                     toolStripButton1.Text = clinicn.Replace("¤", "'");
                 }
-                DataTable docnam = this.model.Get_DoctorName(doctor_id);
+                DataTable docnam = this.cntrl.Get_DoctorName(doctor_id);
                 if (docnam.Rows.Count > 0)
                 {
                     toolStripTextDoctor.Text = "Logged In As : " + docnam.Rows[0][0].ToString();
                 }
-                DataTable rs_patients = this.model.Get_patient_id_name_gender(patient_id);
+                DataTable rs_patients = this.cntrl.Get_patient_id_name_gender(patient_id);
                 if (rs_patients.Rows[0]["pt_name"].ToString() != "")
                 {
                     linkLabel_Name.Text = rs_patients.Rows[0]["pt_name"].ToString();
@@ -105,7 +104,7 @@ namespace PappyjoeMVC.View
                 }
                 gender = rs_patients.Rows[0]["gender"].ToString();
                 int dr_index = 0;
-                DataTable dt = this.model.get_all_doctorname();
+                DataTable dt = this.cntrl.get_all_doctorname();
                 if (dt.Rows.Count > 0)
                 {
                     Cmb_doctor.DataSource = dt;
@@ -132,9 +131,10 @@ namespace PappyjoeMVC.View
 
         private void labelallpatient_Click(object sender, EventArgs e)
         {
-            //var form2 = new WindowsFormsApplication3.Patients();
-            //form2.doctor_id = doctor_id;
-            //form2.Show();
+            var form2 = new PappyjoeMVC.View.patients();
+            form2.doctor_id = doctor_id;
+            patients_controller cn = new patients_controller(form2);
+            form2.ShowDialog();
             //form2.Closed += (sender1, args) => this.Close();
             //this.Hide();
         }
@@ -154,7 +154,7 @@ namespace PappyjoeMVC.View
                 if (doctor_id != "1")
                 {
                     string id;
-                    id = this.model.doctr_privillage_for_addnewPatient(doctor_id);
+                    id = this.cntrl.doctr_privillage_for_addnewPatient(doctor_id);
                     if (int.Parse(id) > 0)
                     {
                         var form2 = new PappyjoeMVC.View.AddNewPatients();
@@ -193,7 +193,7 @@ namespace PappyjoeMVC.View
                 if (doctor_id != "1")
                 {
                     string id;
-                    id = this.model.permission_for_settings(doctor_id);
+                    id = this.cntrl.permission_for_settings(doctor_id);
                     if (int.Parse(id) > 0)
                     {
                         var form2 = new PappyjoeMVC.View.PracticeDetails();
@@ -235,7 +235,7 @@ namespace PappyjoeMVC.View
             {
                 if (toolStripTextBox1.Text != "")
                 {
-                    DataTable dtdr = this.model.Patient_search(toolStripTextBox1.Text);
+                    DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox1.Text);
                     listpatientsearch.DataSource = dtdr;
                     listpatientsearch.DisplayMember = "patient";
                     listpatientsearch.ValueMember = "id";
@@ -525,14 +525,14 @@ namespace PappyjoeMVC.View
                     i = this.cntrl.submit(patient_id, dr_id, doctor, temp_type, bp_type);
                     if (i > 0)
                     {
-                        //var form2 = new Pappyjoe.vital_signs();
-                        //if (doctor_id == "0" || doctor_id == "")
-                        //{ form2.staff_id = staff_id; }
-                        //else { form2.doctor_id = doctor_id; }
-                        //form2.patient_id = patient_id;
-                        //form2.Show();
-                        //form2.Closed += (sender1, args) => this.Close();
-                        //this.Hide();
+                        var form2 = new PappyjoeMVC.View.Vital_Signs();
+                        if (doctor_id == "0" || doctor_id == "")
+                        { form2.staff_id = staff_id; }
+                        else { form2.doctor_id = doctor_id; }
+                        form2.patient_id = patient_id;
+                        form2.Show();
+                        form2.Closed += (sender1, args) => this.Close();
+                        this.Hide();
                     }
                     else
                     {

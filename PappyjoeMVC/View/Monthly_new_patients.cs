@@ -39,7 +39,6 @@ namespace PappyjoeMVC.View
                 cmbDoctor.ValueMember = "0";
                 cmbDoctor.DisplayMember = "All Doctor";
                 System.Data.DataTable doctor_rs = this.cntrl.doctor_rs();
-                //db.table("select DISTINCT id,doctor_name from tbl_doctor where  not login_type = 'staff' and activate_login='yes' order by doctor_name");
                 if (doctor_rs.Rows.Count > 0)
                 {
                     for (int i = 0; i < doctor_rs.Rows.Count; i++)
@@ -72,7 +71,6 @@ namespace PappyjoeMVC.View
                     series.Points.Clear();
                 }
                 label4.Visible = true;
-                //Select d = new Select();
                 string doctor = cmbDoctor.Text;
                 string date1 = dateTimePickermonthnewpatient1.Value.ToString("yyyy-MM-dd");
                 string date2 = dateTimePickermonthnewpatient2.Value.ToString("yyyy-MM-dd");
@@ -124,12 +122,10 @@ namespace PappyjoeMVC.View
                 if (doctor != "All Doctor")
                 {
                     griddailytrreatmenttable = this.cntrl.grdDailytrtmentTable(doctor, date1, date2);
-                    //griddailytrreatmenttable = db.table("select  DATE_FORMAT(date, '%d-%m-%Y') AS  'date',pt_id,pt_name,primary_mobile_number,email_address,doctorname from tbl_patient  WHERE Profile_Status='Active' and  doctorname='" + doctor + "' and date  between '" + date1 + "' and '" + date2 + "' GROUP BY id,pt_id,pt_name,date,primary_mobile_number,email_address,doctorname  having COUNT(pt_id)=1 ");
                 }
                 else
                 {
                     griddailytrreatmenttable = this.cntrl.grdDailyTtrtmn1TB(date1, date2);
-                    //griddailytrreatmenttable = db.table("select DATE_FORMAT(date, '%d-%m-%Y') AS  'date',pt_id,pt_name,primary_mobile_number,email_address,doctorname from tbl_patient  WHERE Profile_Status='Active' and  date  between '" + date1 + "' and '" + date2 + "' GROUP BY id,pt_id,pt_name,date,primary_mobile_number,email_address,doctorname  having COUNT(pt_id)=1 ");
                 }
                 btnchart.Visible = true;
                 if (griddailytrreatmenttable.Rows.Count > 0)
@@ -158,7 +154,6 @@ namespace PappyjoeMVC.View
                 {
                     series.Points.Clear();
                 }
-                //Select s = new Select();
                 Grvmonthnewpatient.DataSource = this.cntrl.MonthlyNewPatient(date1, date2, doctor);
                 Grvmonthnewpatient.EnableHeadersVisualStyles = false;
                 Grvmonthnewpatient.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
@@ -174,7 +169,6 @@ namespace PappyjoeMVC.View
                     column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -216,7 +210,6 @@ namespace PappyjoeMVC.View
                     series.Points.Clear();
                 }
                 label4.Visible = true;
-                //Select d = new Select();
                 string doctor = cmbDoctor.Text;
                 if (doctor == "" || doctor == null)
                 {
@@ -241,14 +234,6 @@ namespace PappyjoeMVC.View
                 {
                     column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
-                //if (Grvmonthnewpatient.Rows.Count < 1)
-                //{
-                //    lblNoRecord.Show();
-                //}
-                //else
-                //{
-                //    lblNoRecord.Hide();
-                //}
             }
             catch (Exception ex)
             {
@@ -373,7 +358,6 @@ namespace PappyjoeMVC.View
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
                         System.Data.DataTable dtp = this.cntrl.Get_practiceDlNumber();
-                        //db.table("select name,contact_no,street_address,email,website  from tbl_practice_details");
                         if (dtp.Rows.Count > 0)
                         {
                             clinicn = dtp.Rows[0]["name"].ToString();
@@ -477,7 +461,6 @@ namespace PappyjoeMVC.View
                     series.Points.Clear();
                 }
                 label4.Visible = true;
-                //Select d = new Select();
                 string doctor = cmbDoctor.Text;
                 string date1 = dateTimePickermonthnewpatient1.Value.ToString("MM/dd/yyyy");
                 string date2 = dateTimePickermonthnewpatient2.Value.ToString("MM/dd/yyyy");

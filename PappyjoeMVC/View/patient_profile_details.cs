@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PappyjoeMVC.Model;
 using PappyjoeMVC.Controller;
@@ -85,7 +80,8 @@ namespace PappyjoeMVC.View
                     labPatientId.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
                     linkLabel_id.Text = rs_patients.Rows[0]["pt_id"].ToString();
                 }
-                DateTime date_of_submission = Convert.ToDateTime(DateTime.Now.ToString("MM/dd/yyyy"));
+                //DateTime date_of_submission = Convert.ToDateTime(DateTime.Now.ToString("MM/dd/yyyy"));
+                DateTime date_of_submission = DateTime.Now;
                 DateTime _effective_date = Convert.ToDateTime(rs_patients.Rows[0]["Visited"].ToString());
                 TimeSpan difference = date_of_submission - _effective_date;
                 try
@@ -150,7 +146,7 @@ namespace PappyjoeMVC.View
                         labGender.Hide();
                     }
                     int a = 0;
-                    if (rs_patients.Rows[0]["date_of_birth"].ToString() != "null")
+                    if (rs_patients.Rows[0]["date_of_birth"].ToString() != "")
                     {
                         if (DateTime.Parse(rs_patients.Rows[0]["date_of_birth"].ToString()).ToString("MM/dd/yyyy") != "")
                         {

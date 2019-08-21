@@ -166,5 +166,30 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.GetDoctorId_byLogintype(drid);
             return dt;
         }
+        public DataTable Get_CompanyNAme()
+        {
+            DataTable dt = cmodel.Get_CompanyNAme();
+            return dt;
+        }
+        public DataTable Get_DoctorName(string doctor_id)
+        {
+            DataTable dt = cmodel.Get_DoctorName(doctor_id);
+            return dt;
+        }
+        public DataTable Get_Practice_details()
+        {
+            DataTable d = cmodel.Get_Practice_details();
+            return d;
+        }
+        public DataTable get_all_doctorname()
+        {
+            DataTable dt = cmodel.get_all_doctorname();
+            return dt;
+        }
+        public DataTable Get_DoctorId(string name)
+        {
+            DataTable d = cmodel.Get_DoctorId(name);
+            return d;
+        }
     }
 }

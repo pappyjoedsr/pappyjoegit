@@ -32,7 +32,6 @@ namespace PappyjoeMVC.View
                 this.griddailyteatment.RowPostPaint += new DataGridViewRowPostPaintEventHandler(griddailyteatment_RowPostPaint);
                 griddailyteatment.Hide();
                 this.Grvdailytreatment.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False;
-                //Select  s = new Select();
                 this.chartdailytreatment.Titles.Add("Daily Treatments Count");
                 dateTimePickerdailytreatment1.MaxDate = DateTime.Now;
                 dateTimePickerdailytreatment2.MaxDate = DateTime.Now;
@@ -50,7 +49,6 @@ namespace PappyjoeMVC.View
                 comboBoxdoctor.ValueMember = "0";
                 comboBoxdoctor.DisplayMember = "All Doctors";
                 System.Data.DataTable doctor_rs = this.cntrl.doctor_rs();
-                //db.table("select DISTINCT id,doctor_name from tbl_doctor where login_type='doctor' or login_type='admin' and activate_login='yes' order by doctor_name");
                 if (doctor_rs.Rows.Count > 0)
                 {
                     for (int i = 0; i < doctor_rs.Rows.Count; i++)
@@ -98,7 +96,6 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                //Select s = new Select();
                 string date1 = dateTimePickerdailytreatment1.Value.ToString("yyyy-MM-dd");
                 string date2 = dateTimePickerdailytreatment2.Value.ToString("yyyy-MM-dd");
                 DataTable griddailytrreatmenttable = new DataTable();
@@ -107,13 +104,11 @@ namespace PappyjoeMVC.View
                     if (comboBoxdoctor.SelectedIndex == 0)
                     {
                         griddailytrreatmenttable = this.cntrl.grdDailytrtmnt(date1, date2);
-                        //db.table("SELECT  C.pt_id ,C.pt_name ,DATE_FORMAT(A.date,'%d-%m-%Y') as date,A.procedure_name,B.doctor_name,A.cost as 'COST' FROM tbl_completed_procedures A INNER JOIN tbl_doctor B ON A.dr_id=B.id INNER JOIN tbl_patient C ON A.pt_id=C.id WHERE A.date between '" + date1 + "' and '" + date2 + "'and C.Profile_Status !='Cancelled'");
                         Grvdailytreatment.DataSource = this.cntrl.DailytreatmentLoad(date1, date2);
                     }
                     else if (comboBoxdoctor.SelectedIndex > 0)
                     {
                         griddailytrreatmenttable = this.cntrl.grddlytrtment(date1, date2, Selected_drid);
-                        //db.table("SELECT  C.pt_id ,C.pt_name ,DATE_FORMAT(A.date,'%d-%m-%Y') as date,A.procedure_name,B.doctor_name,A.cost  as 'COST' FROM tbl_completed_procedures A INNER JOIN tbl_doctor B ON A.dr_id=B.id INNER JOIN tbl_patient C ON A.pt_id=C.id WHERE A.date between '" + date1 + "' and '" + date2 + "' and A.dr_id='" + Selected_drid + "' and C.Profile_Status !='Cancelled'");
                         Grvdailytreatment.DataSource = this.cntrl.Dailytreatment(date1, date2, Selected_drid);
                     }
                 }
@@ -122,32 +117,15 @@ namespace PappyjoeMVC.View
                     if (comboBoxdoctor.SelectedIndex == 0)
                     {
                         griddailytrreatmenttable = this.cntrl.gridtreatment1(date1, date2);
-                        //db.table("SELECT C.pt_id ,C.pt_name , DATE_FORMAT(A.date,'%d-%m-%Y') as date,A.procedure_name,B.doctor_name FROM tbl_completed_procedures A INNER JOIN tbl_doctor B ON A.dr_id=B.id INNER JOIN tbl_patient C ON A.pt_id=C.id WHERE A.date between '" + date1 + "' and '" + date2 + "' and C.Profile_Status !='Cancelled'");
                         Grvdailytreatment.DataSource = this.cntrl.DailytreatmentLoad(date1, date2);
                     }
                     else if (comboBoxdoctor.SelectedIndex > 0)
                     {
                         griddailytrreatmenttable = this.cntrl.Gridtrtment2(date1, date2, Selected_drid);
-                        //db.table("SELECT  C.pt_id ,C.pt_name ,DATE_FORMAT(A.date,'%d-%m-%Y') as date,A.procedure_name,B.doctor_name FROM tbl_completed_procedures A INNER JOIN tbl_doctor B ON A.dr_id=B.id INNER JOIN tbl_patient C ON A.pt_id=C.id WHERE A.date between '" + date1 + "' and '" + date2 + "' and dr_id='" + Selected_drid + "' and C.Profile_Status !='Cancelled'");
                         Grvdailytreatment.DataSource = this.cntrl.Dailytreatment(date1, date2, Selected_drid);
                     }
                 }
-                //griddailyteatment.DataSource = griddailytrreatmenttable;
                 btnviewchart.Visible = true;
-
-
-                //griddailyteatment.EnableHeadersVisualStyles = false;
-                //griddailyteatment.Columns[0].HeaderText = "SLNO";
-                //griddailyteatment.Columns[0].Width = 100;
-                //griddailyteatment.Columns[0].Visible = false;
-                //griddailyteatment.Columns[1].HeaderText = "PATIENT ID";
-                //griddailyteatment.Columns[1].Width = 150;
-                //griddailyteatment.Columns[2].HeaderText = "PATIENT NAME";
-                //griddailyteatment.Columns[2].Width = 130;
-                //griddailyteatment.Columns[3].HeaderText = "PERFORMED ON";
-                //griddailyteatment.Columns[3].Width = 250;
-                //griddailyteatment.Columns[4].HeaderText = "SERVICES";
-                //griddailyteatment.Columns[4].Width = 270;
                 griddailyteatment.Rows.Clear();
                 int k = 1;
                 for (int i = 0; i < griddailytrreatmenttable.Rows.Count; i++)
@@ -167,10 +145,6 @@ namespace PappyjoeMVC.View
                 }
                 if (Chk_Cost.Checked)
                 {
-                    //griddailyteatment.Columns[5].HeaderText = "DOCTOR";
-                    //griddailyteatment.Columns[5].Width = 165;
-                    //griddailyteatment.Columns[6].HeaderText = "COST";
-                    //griddailyteatment.Columns[6].Width = 100;
                     this.griddailyteatment.Columns[6].Visible = true;
                     for (int g = 0; g < griddailytrreatmenttable.Rows.Count; g++)
                     {
@@ -181,8 +155,6 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    //griddailyteatment.Columns[5].HeaderText = "DOCTOR";
-                    //griddailyteatment.Columns[5].Width = 165;
                     this.griddailyteatment.Columns[6].Visible = false;
                     this.griddailyteatment.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
@@ -281,16 +253,11 @@ namespace PappyjoeMVC.View
 
             if (griddailyteatment.Visible)
             {
-                //GridStyle();
-                //griddailyteatment.Location = new Point(22, 50);
-                //griddailyteatment.Size = new Size(1306, 378);
                 int row = griddailyteatment.Rows.Count;
                 label2.Text = row.ToString();
                 griddailyteatment.Show();
                 chartdailytreatment.Hide();
                 btngrddailytreatment.Visible = true;
-                //chartdailytreatment.Location = new Point(22, 50);
-                // chartdailytreatment.Size = new Size(1306, 378);
             }
             else
             {
@@ -298,8 +265,6 @@ namespace PappyjoeMVC.View
                 chartdailytreatment.Show();
                 btngrddailytreatment.Visible = true;
                 chartdailytreatment.Location = new Point(22, 50);
-                //chartdailytreatment.Size = new Size(1306, 378);
-                //this.Grvdailytreatment.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False;
                 int row = griddailyteatment.Rows.Count;
                 label2.Text = row.ToString();
             }
@@ -325,8 +290,6 @@ namespace PappyjoeMVC.View
             this.Grvdailytreatment.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             this.Grvdailytreatment.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             GridStyle();
-            // griddailyteatment.Location = new Point(22, 50);
-            // griddailyteatment.Size = new Size(1306, 378);
             int row = griddailyteatment.Rows.Count;
             label2.Text = row.ToString();
             griddailyteatment.Show();
@@ -452,14 +415,6 @@ namespace PappyjoeMVC.View
             {
                 if (griddailyteatment.Rows.Count > 0)
                 {
-                    //DataTable tbl = griddailyteatment.DataSource as DataTable;
-                    //DataTable tbl1 = Grvdailytreatment.DataSource as DataTable;
-                    //string frdate = dateTimePickerdailytreatment1.Value.Day.ToString();
-                    //string frmonth = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dateTimePickerdailytreatment1.Value.Month);
-                    //string fryear = dateTimePickerdailytreatment1.Value.Year.ToString();
-                    //string todate = dateTimePickerdailytreatment2.Value.Day.ToString();
-                    //string tomonth = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dateTimePickerdailytreatment2.Value.Month);
-                    //string toyear = dateTimePickerdailytreatment2.Value.Year.ToString();
                     string today = DateTime.Now.ToString("d/M/yyyy");
                     string message = "Do you want Header on Print?";
                     string caption = "Verification";
@@ -476,7 +431,6 @@ namespace PappyjoeMVC.View
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
                         System.Data.DataTable dtp = this.cntrl.Get_practiceDlNumber();
-                        //db.table("select name,contact_no,street_address,email,website  from tbl_practice_details");
                         if (dtp.Rows.Count > 0)
                         {
                             clinicn = dtp.Rows[0]["name"].ToString();
@@ -595,7 +549,6 @@ namespace PappyjoeMVC.View
                     }
                     drctid = comboBoxdoctor.SelectedItem.ToString();
                     Lab_Msg.Hide();
-                    //string query = "SELECT id from tbl_doctor where doctor_name='" + drctid + "' ";
                     System.Data.DataTable dt = this.cntrl.Get_DoctorId(drctid);
                     if (dt.Rows.Count > 0)
                     {

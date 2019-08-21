@@ -31,7 +31,6 @@ namespace PappyjoeMVC.View
                 comboBoxdoctor.ValueMember = "0";
                 comboBoxdoctor.DisplayMember = "All Doctor";
                 System.Data.DataTable doctor_rs = this.cntrl.doctor_rs();
-                //db.table("select DISTINCT id,doctor_name from tbl_doctor where (login_type='doctor' or login_type='admin') and activate_login='yes' order by doctor_name");
                 if (doctor_rs.Rows.Count > 0)
                 {
                     for (int i = 0; i < doctor_rs.Rows.Count; i++)
@@ -66,7 +65,6 @@ namespace PappyjoeMVC.View
                 if (cmbCondition.Text == "Checked Out")
                 {
                     DataTable dt1 = this.cntrl.btn_shwClick(dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd"), dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd"), cmbCondition.Text);
-                    //db.table("select TA.pt_id,TP.pt_id AS patient_id,TA.pt_name ,DATE_FORMAT(TA.book_datetime, '%d-%m-%Y') AS 'book_datetime',TA.status,DATE_FORMAT(TA.start_datetime, '%d-%m-%Y %h:%l %p') AS 'start_datetime',TA.duration,TA.booked_by from tbl_appointment TA inner join tbl_patient TP  on(TP.id=TA.pt_id) where TA.start_datetime between '" + dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd") + " 00:01:00" + "' and '" + dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd") + " 23:59:00" + "' and TA.status='" + cmbCondition.Text + "' and TP.Profile_Status !='Cancelled' ");
                     dgvMissingCheckout.AutoGenerateColumns = false;
                     dgvMissingCheckout.DataSource = dt1;
                     if (dt1.Rows.Count > 0)
@@ -83,8 +81,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    DataTable dt1 = this.cntrl.showMissing(dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd"), dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd"));//db.table("select TA.pt_id,TP.pt_id AS patient_id,TA.pt_name ,DATE_FORMAT(TA.book_datetime, '%d-%m-%Y') AS 'book_datetime',TA.status,DATE_FORMAT(TA.start_datetime, '%d-%m-%Y %h:%l %p') AS 'start_datetime',TA.duration,TA.booked_by from tbl_appointment TA inner join tbl_patient TP on(TP.id=TA.pt_id) where TA.start_datetime between '" + dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd") + " 00:01:00" + "' and '" + dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd") + " 23:59:00" + "' and TA.status='scheduled'and TP.Profile_Status !='Cancelled'");
-                    dgvMissingCheckout.AutoGenerateColumns = false;
+                    DataTable dt1 = this.cntrl.showMissing(dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd"), dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd"));                  dgvMissingCheckout.AutoGenerateColumns = false;
                     dgvMissingCheckout.DataSource = dt1;
                     if (dt1.Rows.Count > 0)
                     {
@@ -127,7 +124,6 @@ namespace PappyjoeMVC.View
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
                         System.Data.DataTable dtp = this.cntrl.Get_practiceDlNumber();
-                        //db.table("select name,contact_no,street_address,email,website  from tbl_practice_details");
                         if (dtp.Rows.Count > 0)
                         {
                             clinicn = dtp.Rows[0]["name"].ToString();
@@ -166,9 +162,6 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=7 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  <b> " + strphone + "</b> </font></center></td>");
                     sWrite.WriteLine("</tr>");
-                    //sWrite.WriteLine("<tr>");
-                    //sWrite.WriteLine("<td colspan=6 align=left><FONT COLOR=black FACE='Geneva, segoe UI' SIZE=3>  <b> " + stremail + "</b> </font></center></td>");
-                    //sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=7 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  " + "<b> From:</b>" + dateTimePickerdailyappointcount1.Value.ToString("dd/MM/yyyy") + "</font></center></td>");
                     sWrite.WriteLine("</tr>");
@@ -330,7 +323,6 @@ namespace PappyjoeMVC.View
                 {
                     label2.Text = "";
                     drctid = comboBoxdoctor.SelectedItem.ToString();
-                    //string query = "SELECT id from tbl_doctor where doctor_name='" + drctid + "' ";
                     System.Data.DataTable dt = this.cntrl.Get_DoctorId(drctid);
                     if (dt.Rows.Count > 0)
                     {
@@ -340,7 +332,6 @@ namespace PappyjoeMVC.View
                     {
                         if (comboBoxdoctor.SelectedIndex == 0)
                         {
-                            //DataTable dt1 = db.table("select TA.pt_id,TP.pt_id AS patient_id,TA.pt_name ,TA.book_datetime,TA.status,TA.start_datetime,TA.duration,TA.booked_by from tbl_appointment TA inner join tbl_patient TP  on(TP.id=TA.pt_id) where TA.book_datetime between '" + dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd") + "' and '" + dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd") + "' and TA.status='Checked Out'and  TP.Profile_Status !='Cancelled'");
                             DataTable dt1 = this.cntrl.DocComb(dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd"), dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd"));
                             dgvMissingCheckout.AutoGenerateColumns = false;
                             dgvMissingCheckout.DataSource = dt1;
@@ -349,7 +340,6 @@ namespace PappyjoeMVC.View
                         }
                         else if (comboBoxdoctor.SelectedIndex > 0)
                         {
-                            //DataTable dt1 = db.table("select TA.pt_id,TP.pt_id AS patient_id,TA.pt_name ,TA.book_datetime,TA.status,TA.start_datetime,TA.duration,TA.booked_by from tbl_appointment TA inner join tbl_patient TP  on(TP.id=TA.pt_id) where TA.book_datetime between '" + dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd") + "' and '" + dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd") + "' and TA.status='Checked Out' and dr_id='" + Selected_drid + "' and TP.Profile_Status !='Cancelled'");
                             DataTable dt1 = this.cntrl.DocComb1(dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd"), dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd"), Selected_drid);
                             dgvMissingCheckout.AutoGenerateColumns = false;
                             dgvMissingCheckout.DataSource = dt1;
@@ -361,7 +351,6 @@ namespace PappyjoeMVC.View
                     {
                         if (comboBoxdoctor.SelectedIndex == 0)
                         {
-                            //DataTable dt1 = db.table("select TA.pt_id,TP.pt_id AS patient_id,TA.pt_name ,TA.book_datetime,TA.status,TA.start_datetime,TA.duration,TA.booked_by from tbl_appointment TA inner join tbl_patient TP on(TP.id=TA.pt_id) where TA.book_datetime between '" + dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd") + "' and '" + dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd") + "' and TA.status='scheduled' and TP.Profile_Status !='Cancelled'");
                             DataTable dt1 = this.cntrl.DocComb2(dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd"), dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd"));
                             dgvMissingCheckout.AutoGenerateColumns = false;
                             dgvMissingCheckout.DataSource = dt1;
@@ -370,7 +359,6 @@ namespace PappyjoeMVC.View
                         }
                         else if (comboBoxdoctor.SelectedIndex > 0)
                         {
-                            //DataTable dt1 = db.table("select TA.pt_id,TP.pt_id AS patient_id,TA.pt_name ,TA.book_datetime,TA.status,TA.start_datetime,TA.duration,TA.booked_by from tbl_appointment TA inner join tbl_patient TP on(TP.id=TA.pt_id) where TA.book_datetime between '" + dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd") + "' and '" + dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd") + "' and TA.status='scheduled' and dr_id='" + Selected_drid + "' and TP.Profile_Status !='Cancelled'");
                             DataTable dt1 = this.cntrl.DocComb3(dateTimePickerdailyappointcount1.Value.ToString("yyyy-MM-dd"), dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd"), Selected_drid);
                             dgvMissingCheckout.AutoGenerateColumns = false;
                             dgvMissingCheckout.DataSource = dt1;
