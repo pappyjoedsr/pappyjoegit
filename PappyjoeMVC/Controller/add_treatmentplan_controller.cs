@@ -85,9 +85,9 @@ namespace PappyjoeMVC.Controller
             string dtb = cmodel.permission_for_settings(doctor_id);
             return dtb;
         }
-        public DataTable Get_DoctorName(string doctor_id)
+        public string Get_DoctorName(string doctor_id)
         {
-            DataTable dtb = cmodel.Get_DoctorName(doctor_id);
+            string dtb = cmodel.Get_DoctorName(doctor_id);
             return dtb;
         }
         public DataTable get_all_doctorname()

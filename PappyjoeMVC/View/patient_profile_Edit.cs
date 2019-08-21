@@ -238,7 +238,7 @@ namespace PappyjoeMVC.View
                 DateTimePickerAdmitDate.Value = Convert.ToDateTime(value); 
             }
         }
-        string dob = "null";
+        string dob = "";
         public string Dob
         {
             get
@@ -299,18 +299,17 @@ namespace PappyjoeMVC.View
                                     this.cntrl.insert_pt_group(patient_id, gridgroups.Rows[d].Cells[0].Value.ToString());
                                 }
                             }
-                            string server = this.cntrl.getserver();
                             if (path != "")
                             {
 
                                 try
                                 {
-                                if (File.Exists(@"\\" + server + "\\Pappyjoe_utilities\\patient_image\\" + patient_id))
+                                if (File.Exists(@"\\" + this.cntrl.getserver() + "\\Pappyjoe_utilities\\patient_image\\" + patient_id))
                                 {
                                 }
                                 else
                                 {
-                                    System.IO.File.Copy(path, @"\\" + server + "\\Pappyjoe_utilities\\patient_image\\" + patient_id);
+                                    System.IO.File.Copy(path, @"\\" + this.cntrl.getserver() + "\\Pappyjoe_utilities\\patient_image\\" + patient_id);
                                 }
                             }
                                 catch (Exception ex)
@@ -485,6 +484,12 @@ namespace PappyjoeMVC.View
         private void cmbDoctorName_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void txtDob_Click(object sender, EventArgs e)
+        {
+            DateTimePickerDob.Show();
+            txtDob.Hide();
         }
 
         public patient_profile_Edit()

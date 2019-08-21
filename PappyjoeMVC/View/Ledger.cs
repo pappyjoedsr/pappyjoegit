@@ -34,10 +34,10 @@ namespace PappyjoeMVC.View
         private void Ledger_Load(object sender, EventArgs e)
         {
             toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-            System.Data.DataTable docnam = this.cntrl.Get_DoctorName(doctor_id);
-            if (docnam.Rows.Count > 0)
+            string docnam = this.cntrl.Get_DoctorName(doctor_id);
+            if (docnam != "")
             {
-                toolStripTextDoctor.Text = "Logged In As : " + docnam.Rows[0][0].ToString();
+                toolStripTextDoctor.Text = "Logged In As : " + docnam;
             }
             DataTable clinicname = this.cntrl.Get_CompanyNAme();
             if (clinicname.Rows.Count > 0)
@@ -229,10 +229,10 @@ namespace PappyjoeMVC.View
             try
             {
                 string doctor_name = "";
-                System.Data.DataTable doct = this.cntrl.Get_DoctorName(doctor_id);
-                if (doct.Rows.Count > 0)
+               string doct = this.cntrl.Get_DoctorName(doctor_id);
+                if (doct!="")
                 {
-                    doctor_name = doct.Rows[0]["doctor_name"].ToString();
+                    doctor_name = doct;
                 }
                 System.Data.DataTable patient = this.cntrl.Get_Patient_Details(patient_id);
                 string Pname = "", Gender = "", address = "", DOA = "", age = "", Mobile = "";

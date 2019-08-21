@@ -26,7 +26,7 @@ namespace PappyjoeMVC.Controller
         string grpid { get; set; }
         string brthpid { get; set; }
         void Get_CompanyNAme(DataTable dt);
-        void Get_DoctorName(DataTable dt);
+        void Get_DoctorName(string dt);
         void Patient_search(DataTable dt);
         void setController(Communication_controller controller);
         //sms centre

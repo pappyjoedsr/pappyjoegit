@@ -70,10 +70,10 @@ namespace PappyjoeMVC.View
                     toolStripButton1.Text = clinicn.Replace("¤", "'");
                 }
                 listpatientsearch.Hide();
-                System.Data.DataTable docnam = cmodel.Get_DoctorName(doctor_id);
-                if (docnam.Rows.Count > 0)
+                string docnam = cmodel.Get_DoctorName(doctor_id);
+                if (docnam != "")
                 {
-                    toolStripTextDoctor.Text = "Logged In As : " + docnam.Rows[0][0].ToString();
+                    toolStripTextDoctor.Text = "Logged In As : " + docnam;
                 }
                 txt_ReceiptNo.Show();
                 DataTable receipt = this.cntrl.receipt_number();

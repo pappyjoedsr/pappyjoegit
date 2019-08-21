@@ -79,10 +79,10 @@ namespace PappyjoeMVC.View
                     toolStripButton1.Text = clinicn.Replace("¤", "'");
                 }
                 //System.Data.DataTable docnam = db.table("select doctor_name from tbl_doctor Where id='" + doctor_id + "'");
-                System.Data.DataTable docnam = this.cntrl.Get_DoctorName(doctor_id);
-                if (docnam.Rows.Count > 0)
+                string docnam = this.cntrl.Get_DoctorName(doctor_id);
+                if (docnam != "")
                 {
-                    toolStripTextDoctor.Text = "Logged In As : " + docnam.Rows[0][0].ToString();
+                    toolStripTextDoctor.Text = "Logged In As : " + docnam;
                 }
                 listpatientsearch.Hide();
                 dataGridView1.Rows.Clear();
@@ -1599,11 +1599,11 @@ namespace PappyjoeMVC.View
             {
                 //int p = 0;
                 //System.Data.DataTable doct = db.table("select doctor_name from tbl_doctor where id='" + doctor_id + "'");
-                System.Data.DataTable doct = this.cntrl.Get_DoctorName(doctor_id);
+                string doct = this.cntrl.Get_DoctorName(doctor_id);
                 string doctor_name = "";
-                if (doct.Rows.Count > 0)
+                if (doct!="")
                 {
-                    doctor_name = doct.Rows[0][0].ToString();
+                    doctor_name = doct;
                 }
                 //System.Data.DataTable patient = db.table("select pt_name,gender,street_address,city,primary_mobile_number,date,date_of_birth,age from tbl_patient where id='" + patient_id + "'");
                 System.Data.DataTable patient = this.cntrl.patient_information(patient_id);

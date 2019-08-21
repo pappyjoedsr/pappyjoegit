@@ -640,6 +640,7 @@
             this.txtDob.Name = "txtDob";
             this.txtDob.Size = new System.Drawing.Size(207, 20);
             this.txtDob.TabIndex = 170;
+            this.txtDob.Click += new System.EventHandler(this.txtDob_Click);
             // 
             // txtLandLineNbr
             // 

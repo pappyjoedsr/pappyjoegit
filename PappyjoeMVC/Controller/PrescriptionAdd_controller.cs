@@ -30,9 +30,9 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = cmodel.Get_patient_id_name_gender(patient_id);
             return dtb;
         }
-        public DataTable Get_DoctorName(string doctor_id)
+        public string Get_DoctorName(string doctor_id)
         {
-            DataTable dtb = cmodel.Get_DoctorName(doctor_id);
+            string dtb = cmodel.Get_DoctorName(doctor_id);
             return dtb;
         }
         public DataTable get_all_doctorname()
