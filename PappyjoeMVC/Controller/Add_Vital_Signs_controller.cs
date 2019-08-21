@@ -26,9 +26,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = model.Get_CompanyNAme();
             return dt;
         }
-        public DataTable Get_DoctorName(string doctor_id)
+        public string Get_DoctorName(string doctor_id)
         {
-            DataTable d = model.Get_DoctorName(doctor_id);
+            string d = model.Get_DoctorName(doctor_id);
             return d;
         }
         public DataTable Get_patient_id_name_gender(string patient_id)

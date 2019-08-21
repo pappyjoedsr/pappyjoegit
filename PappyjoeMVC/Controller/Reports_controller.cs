@@ -171,9 +171,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = cmodel.Get_CompanyNAme();
             return dt;
         }
-        public DataTable Get_DoctorName(string doctor_id)
+        public string Get_DoctorName(string doctor_id)
         {
-            DataTable dt = cmodel.Get_DoctorName(doctor_id);
+            string dt = cmodel.Get_DoctorName(doctor_id);
             return dt;
         }
         public DataTable Get_Practice_details()

@@ -17,7 +17,7 @@ namespace PappyjoeMVC.View
     {
         Reports_controller cntrl;
         Reports_model _model = new Reports_model();
-        common_model model = new common_model();
+        //common_model model = new common_model();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";
@@ -124,10 +124,10 @@ namespace PappyjoeMVC.View
                     clinicn = clinicname.Rows[0]["name"].ToString();
                     toolStripButton1.Text = clinicn.Replace("¤", "'");
                 }
-                DataTable docnam = this.cntrl.Get_DoctorName(doctor_id);
-                if (docnam.Rows.Count > 0)
+                string docnam = this.cntrl.Get_DoctorName(doctor_id);
+                if (docnam!="")
                 {
-                    toolStripTextBDoctor.Text = "Logged In As : " + docnam.Rows[0]["doctor_name"].ToString();
+                    toolStripTextBDoctor.Text = "Logged In As : " + docnam;
                 }
                 listpatientsearch.Hide();
                 standardCursor = Cursors.Arrow;
