@@ -247,7 +247,6 @@ namespace PappyjoeMVC.View
                 string date2 = dateTimePickerdailyappointcount2.Value.ToString("yyyy-MM-dd") + " 23:59:00";
                 if (comboBoxdoctor.SelectedIndex > 0)
                 {
-
                     gridviewtabledailyappoiment = this.cntrl.gridviewtabledailyappoiment(date1, date2, select_dr_id);
                     Grvdailyappointcount.DataSource = this.cntrl.Dailyappointcount_dOCTORwISE(date1, date2, select_dr_id);
                 }
@@ -277,7 +276,6 @@ namespace PappyjoeMVC.View
                 this.Grvdailyappointcount.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 this.Grvdailyappointcount.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -426,16 +424,15 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                select_dr_id = "0";
                 if (comboBoxdoctor.SelectedIndex == -1)
                 { }
                 else
                 {
                     drctid = comboBoxdoctor.SelectedItem.ToString();
-                    System.Data.DataTable dt = this.cntrl.Get_DoctorId(drctid);
-                    if (dt.Rows.Count > 0)
+                    string dt = this.cntrl.Get_DoctorId(drctid);
+                    if (dt!="")
                     {
-                        select_dr_id = dt.Rows[0]["Id"].ToString();
+                        select_dr_id = dt.ToString();
                     }
                     fillgrid();
                     if (dataGridViewDailyappoinment.Rows.Count < 1)
@@ -462,4 +459,3 @@ namespace PappyjoeMVC.View
         }
     }
 }
-

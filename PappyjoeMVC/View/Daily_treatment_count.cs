@@ -15,7 +15,6 @@ namespace PappyjoeMVC.View
         public bool combo_flag = false;
         public string Selected_drid = "";
         public string drctid = "";
-
         public Daily_treatment_count()
         {
             InitializeComponent();
@@ -489,8 +488,6 @@ namespace PappyjoeMVC.View
                             sWrite.WriteLine("    <td align='right' width='10%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI'SIZE=3>Cost</font></td>");
                         }
                         sWrite.WriteLine("</tr>");
-
-
                         for (int i = 0; i < griddailyteatment.Rows.Count; i++)
                         {
                             sWrite.WriteLine("<tr>");
@@ -549,10 +546,10 @@ namespace PappyjoeMVC.View
                     }
                     drctid = comboBoxdoctor.SelectedItem.ToString();
                     Lab_Msg.Hide();
-                    System.Data.DataTable dt = this.cntrl.Get_DoctorId(drctid);
-                    if (dt.Rows.Count > 0)
+                    string dt = this.cntrl.Get_DoctorId(drctid);
+                    if (dt!="")
                     {
-                        Selected_drid = dt.Rows[0][0].ToString();
+                        Selected_drid = dt.ToString();
                     }
                     if (combo_flag == false)
                     {

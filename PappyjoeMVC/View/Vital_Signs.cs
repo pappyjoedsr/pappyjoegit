@@ -16,8 +16,6 @@ namespace PappyjoeMVC.View
     public partial class Vital_Signs : Form,Vital_Signs_interface
     {
         Vital_Signs_controller cntrl;
-        Vital_Signs_model _model = new Vital_Signs_model();
-        //common_model model = new common_model();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";

@@ -27,26 +27,17 @@ namespace PappyjoeMVC.Controller
         {
             DataTable dt = _model.Test_type();
             return dt;
-            //intr.fill_TestType(dt);
         }
         public DataTable fill_Unit()
         {
             DataTable dt = _model.tbUnit();
             return dt;
-            //intr.fill_Unit(dt);
         }
         public DataTable fill_Test()
         {
             DataTable dt = _model.test_temp();
             return dt;
-            //intr.fill_Test(dt);
         }
-        //public DataTable fill_Template()
-        //{
-        //    DataTable dt = _model.testtypetemp();
-        //    return dt;
-        //    //intr.fill_Template(dt);
-        //}
         public int Maintest_save(string txtMainTest)
         {
             _model.MainTest = intr.Main_Test;
@@ -139,9 +130,9 @@ namespace PappyjoeMVC.Controller
             int i = _model.TempName_save();
             return i;
         }
-        public DataTable Get_Maxid()
+        public int Get_Maxid()
         {
-            DataTable dt = _model.select_Maxid();
+            int dt = _model.select_Maxid();
             return dt;
         }
         public DataTable Get_test_byId(int cmbTesttemp)
@@ -156,11 +147,6 @@ namespace PappyjoeMVC.Controller
         }
         public int Insert_mediTemplate(int Id, int MainTestId, int TestId,object Units, string NormalValue)
         {
-            //_model.Temp_id = intr.id;
-            //_model.TempItem = intr.tempitem;
-            //_model.cmbMainTemp = intr.cmbmaintemp;
-            //_model.CmbUnit = intr.cmbUnit;
-            //_model.Normal = intr.norm;
             int i = _model.Insert_mediTemplate(Id, MainTestId, TestId, Units, NormalValue);
             return i;
         }
@@ -200,14 +186,14 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.TempAddItem_test(cmbTesttemp);
             return dt;
         }
-        public DataTable TempAddItem_normM(int test)
+        public string TempAddItem_normM(int test)
         {
-            DataTable dt = _model.TempAddItem_normM(test);
+            string dt = _model.TempAddItem_normM(test);
             return dt;
         }
-        public DataTable TempAddItem_normF(int test)
+        public string TempAddItem_normF(int test)
         {
-            DataTable dt = _model.TempAddItem_normF(test);
+            string dt = _model.TempAddItem_normF(test);
             return dt;
         }
         public DataTable TempAddItem_normal(int test)
@@ -220,9 +206,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.MainTest_byId(txtMtid);
             return dt;
         }
-        public DataTable MainTest_countById(int txtMtid)
+        public string MainTest_countById(int txtMtid)
         {
-            DataTable dt = _model.MainTest_countById(txtMtid);
+            string dt = _model.MainTest_countById(txtMtid);
             return dt;
         }
         public int delete_Maintest(string id)
@@ -235,9 +221,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.Testtype_byID(txtTtypeid);
             return dt;
         }
-        public DataTable testtype_countById(int txtTtypeid)
+        public string testtype_countById(int txtTtypeid)
         {
-            DataTable dt = _model.testtype_countById(txtTtypeid);
+            string dt = _model.testtype_countById(txtTtypeid);
             return dt;
         }
         public int delete_testtype(string id)
@@ -250,9 +236,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.Unit_byID(txtunitid);
             return dt;
         }
-        public DataTable UnitCount_byID(int txtunitid)
+        public string UnitCount_byID(int txtunitid)
         {
-            DataTable dt = _model.UnitCount_byID(txtunitid);
+            string dt = _model.UnitCount_byID(txtunitid);
             return dt;
         }
         public int del_unit(string id)
@@ -265,9 +251,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.test_ByID(txttestid);
             return dt;
         }
-        public DataTable testCount_byId(int txttestid)
+        public int testCount_byId(int txttestid)
         {
-            DataTable dt = _model.testCount_byId(txttestid);
+            int dt = _model.testCount_byId(txttestid);
             return dt;
         }
         public int test_delete(string id)

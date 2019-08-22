@@ -25,7 +25,7 @@ namespace PappyjoeMVC.Controller
        }
        public void Get_DoctorId(string name)
        {
-           DataTable dt = cmdl.Get_DoctorId(name);
+            string dt = cmdl.Get_DoctorId(name);
            intr.Get_DoctorId(dt);
        }
        public void getdata3(string invdate, string invdate2, int dr_id)

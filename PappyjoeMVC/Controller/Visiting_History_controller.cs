@@ -22,9 +22,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.search(d1, d2);
             return dt;
         }
-        public DataTable Get_DoctorId(string name)
+        public string Get_DoctorId(string name)
         {
-            DataTable d = model.Get_DoctorId(name);
+            string d = model.Get_DoctorId(name);
             return d;
         }
         public DataTable vishistCombo(string d1, string d2)

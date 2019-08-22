@@ -72,11 +72,11 @@ namespace PappyjoeMVC.View
                 cl.Width = 100;
             }
         }
-        public void Get_DoctorId(DataTable dt)
+        public void Get_DoctorId(string dt)
         {
-            if (dt.Rows.Count > 0)
+            if (dt!="")
             {
-                select_dr_id = dt.Rows[0]["Id"].ToString();
+                select_dr_id = dt.ToString();
                 ID = int.Parse(select_dr_id);
             }
         }

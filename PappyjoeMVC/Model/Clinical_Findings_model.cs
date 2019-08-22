@@ -58,7 +58,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable dt_medical(string patient_id)
         {
-            System.Data.DataTable dt_medical = db.table("SELECT med_id FROM  tbl_pt_medhistory WHERE pt_id = '" + patient_id + "'");
+            DataTable dt_medical = db.table("SELECT med_id FROM  tbl_pt_medhistory WHERE pt_id = '" + patient_id + "'");
             return dt_medical;
         }
         public DataTable dt_cf(string clinic_id,string patient_id)

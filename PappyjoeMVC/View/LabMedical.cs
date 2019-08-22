@@ -475,7 +475,7 @@ namespace PappyjoeMVC.View
                     if (!string.IsNullOrWhiteSpace(txttemp.Text))
                     {
                         this.cntrl.Tempname_save();
-                        DataTable id = this.cntrl.Get_Maxid();
+                        int id = this.cntrl.Get_Maxid();
                         DataTable test = this.cntrl.Get_test_byId(Convert.ToInt32(cmbTesttemp.SelectedValue));
                         DataTable Normavalue = this.cntrl.Normavalue(Convert.ToInt32(test.Rows[0][0].ToString()));
                         for (int r = 0; r < dgvtempitem.Rows.Count; r++)
@@ -489,7 +489,7 @@ namespace PappyjoeMVC.View
                             {
                                 norm = dgvtempitem.Rows[r].Cells[10].Value.ToString();
                             }
-                            this.cntrl.Insert_mediTemplate(Convert.ToInt32(id.Rows[0][0].ToString()), Convert.ToInt32(dgvtempitem.Rows[r].Cells[7].Value.ToString()), Convert.ToInt32(dgvtempitem.Rows[r].Cells[8].Value.ToString()), dgvtempitem.Rows[r].Cells[4].Value, norm);
+                            this.cntrl.Insert_mediTemplate(id, Convert.ToInt32(dgvtempitem.Rows[r].Cells[7].Value.ToString()), Convert.ToInt32(dgvtempitem.Rows[r].Cells[8].Value.ToString()), dgvtempitem.Rows[r].Cells[4].Value, norm);
                         }
                         MessageBox.Show("Successfully Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dgvtempitem.Rows.Clear();
@@ -535,8 +535,8 @@ namespace PappyjoeMVC.View
                 DataTable testname = this.cntrl.TempAddItem_testname(cmbTesttemp.SelectedValue.ToString());
                 DataTable Unitname = this.cntrl.TempAddItem_unitname(cmbTesttemp.SelectedValue.ToString());
                 DataTable test = this.cntrl.TempAddItem_test(Convert.ToInt32(cmbTesttemp.SelectedValue));
-                DataTable NormavalueM = this.cntrl.TempAddItem_normM(Convert.ToInt32(test.Rows[0][0].ToString()));
-                DataTable NormavalueF = this.cntrl.TempAddItem_normF(Convert.ToInt32(test.Rows[0][0].ToString()));
+                string NormavalueM = this.cntrl.TempAddItem_normM(Convert.ToInt32(test.Rows[0][0].ToString()));
+                string NormavalueF = this.cntrl.TempAddItem_normF(Convert.ToInt32(test.Rows[0][0].ToString()));
                 DataTable Normavalue = this.cntrl.TempAddItem_normal(Convert.ToInt32(test.Rows[0][0].ToString()));
 
                 if (grid_data_id != 0)
@@ -550,8 +550,8 @@ namespace PappyjoeMVC.View
                             dgvtempitem.Rows[Ro].Cells[2].Value = testname.Rows[0][1].ToString();
                             dgvtempitem.Rows[Ro].Cells[3].Value = testtype.Rows[0][1].ToString();
                             dgvtempitem.Rows[Ro].Cells[4].Value = Unitname.Rows[0][0].ToString();
-                            dgvtempitem.Rows[Ro].Cells[5].Value = NormavalueM.Rows[0][0].ToString();
-                            dgvtempitem.Rows[Ro].Cells[6].Value = NormavalueF.Rows[0][0].ToString();
+                            dgvtempitem.Rows[Ro].Cells[5].Value = NormavalueM;
+                            dgvtempitem.Rows[Ro].Cells[6].Value = NormavalueF;
                             dgvtempitem.Rows[Ro].Cells[7].Value = Maintest.Rows[0][0].ToString();
                             dgvtempitem.Rows[Ro].Cells[8].Value = testname.Rows[0][0].ToString();
                             dgvtempitem.Rows[Ro].Cells[9].Value = testtype.Rows[0][0].ToString();
@@ -561,7 +561,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    dgvtempitem.Rows.Add("", Maintest.Rows[0][1].ToString(), testname.Rows[0][1].ToString(), testtype.Rows[0][1].ToString(), Unitname.Rows.Count > 0 ? Unitname.Rows[0][0].ToString() : "", NormavalueM.Rows[0][0].ToString(), NormavalueF.Rows[0][0].ToString(), Maintest.Rows[0][0].ToString(), testname.Rows[0][0].ToString(), testtype.Rows[0][0].ToString(), Normavalue.Rows[0][0].ToString());
+                    dgvtempitem.Rows.Add("", Maintest.Rows[0][1].ToString(), testname.Rows[0][1].ToString(), testtype.Rows[0][1].ToString(), Unitname.Rows.Count > 0 ? Unitname.Rows[0][0].ToString() : "", NormavalueM, NormavalueF, Maintest.Rows[0][0].ToString(), testname.Rows[0][0].ToString(), testtype.Rows[0][0].ToString(), Normavalue.Rows[0][0].ToString());
                     grid_id = grid_id + 1;
                 }
             }
@@ -606,7 +606,7 @@ namespace PappyjoeMVC.View
                     }
                     else if (e.ColumnIndex == 4)
                     {
-                        DataTable MAIN_TEST = this.cntrl.MainTest_countById(Convert.ToInt32(txtMtid.Text));
+                        string MAIN_TEST = this.cntrl.MainTest_countById(Convert.ToInt32(txtMtid.Text));
                         DialogResult res = MessageBox.Show("Are you sure you want to delete?", "Delete confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                         txtId.Clear();
                         txtMainTest.Clear();
@@ -615,7 +615,7 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            if (Convert.ToInt32(MAIN_TEST.Rows[0][0].ToString()) > 0)
+                            if (Convert.ToInt32(MAIN_TEST) > 0)
                             {
                                 MessageBox.Show("Cannot Delete", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 txtId.Clear();
@@ -683,7 +683,7 @@ namespace PappyjoeMVC.View
                     }
                     else if (e.ColumnIndex == 4)
                     {
-                        DataTable MAIN_TEST = this.cntrl.testtype_countById(Convert.ToInt32(txtTtypeid.Text));
+                        string MAIN_TEST = this.cntrl.testtype_countById(Convert.ToInt32(txtTtypeid.Text));
                         DialogResult res = MessageBox.Show("Are you sure you want to delete?", "Delete confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                         txtTestType.Text = "";
                         txtTtypeid.Text = "";
@@ -692,7 +692,7 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            if (Convert.ToInt32(MAIN_TEST.Rows[0][0].ToString()) > 0)
+                            if (Convert.ToInt32(MAIN_TEST) > 0)
                             {
                                 MessageBox.Show("Cannot Delete", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 txtTestType.Text = "";
@@ -747,7 +747,7 @@ namespace PappyjoeMVC.View
                     }
                     else if (e.ColumnIndex == 4)
                     {
-                        DataTable Unitcheck = this.cntrl.UnitCount_byID(Convert.ToInt32(txtunitid.Text));
+                        string Unitcheck = this.cntrl.UnitCount_byID(Convert.ToInt32(txtunitid.Text));
                         DialogResult res = MessageBox.Show("Are you sure you want to delete?", "Delete confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                         txtunitid.Text = "";
                         txtUnitadd.Text = "";
@@ -756,7 +756,7 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            if (Convert.ToInt32(Unitcheck.Rows[0][0].ToString()) > 0)
+                            if (Convert.ToInt32(Unitcheck) > 0)
                             {
                                 MessageBox.Show("Cannot Delete", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 txtunitid.Text = "";
@@ -833,7 +833,7 @@ namespace PappyjoeMVC.View
                     }
                     else if (e.ColumnIndex == 8)
                     {
-                        DataTable Testcheck = this.cntrl.testCount_byId(Convert.ToInt32(txttestid.Text));
+                        int Testcheck = this.cntrl.testCount_byId(Convert.ToInt32(txttestid.Text));
                         DialogResult res = MessageBox.Show("Are you sure you want to delete?", "Delete confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                         txttestid.Text = "";
                         txtName.Text = "";
@@ -845,7 +845,7 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            if (Convert.ToInt32(Testcheck.Rows[0][0].ToString()) > 0)
+                            if (Convert.ToInt32(Testcheck )>0)
                             {
                                 MessageBox.Show("Cannot Delete", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 txttestid.Text = "";

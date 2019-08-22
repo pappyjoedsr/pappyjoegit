@@ -30,7 +30,7 @@ namespace PappyjoeMVC.Controller
        }
        public void Get_DoctorId(string name)
        {
-           DataTable dt = cmdl.Get_DoctorId(name);
+            string dt = cmdl.Get_DoctorId(name);
            intr.Get_DoctorId(dt);
        }
        public void mnthrcpt(string rcdte,string rcdte2)

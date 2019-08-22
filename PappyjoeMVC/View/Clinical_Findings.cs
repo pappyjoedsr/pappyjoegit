@@ -1,26 +1,22 @@
-﻿using System;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Printing;
 using System.IO;
 using System.Net.Mail;
-using System.Drawing.Printing;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Clinical_Findings : Form,Clinical_Findings_interface
+    public partial class Clinical_Findings : Form, Clinical_Findings_interface
     {
         Clinical_Findings_controller cntrl;
         public string doctor_id = "";
         public string patient_id = "";
         public string staff_id = "";
-        public string clinic_id="0";
+        public string clinic_id = "0";
 
         public Clinical_Findings()
         {
@@ -38,7 +34,6 @@ namespace PappyjoeMVC.View
                 if (doctor_id != "1")
                 {
                     string id = this.cntrl.user_priv_EMRCF_A(doctor_id);
-                    //id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRCF' and Permission='A'");
                     if (int.Parse(id) > 0)
                     {
                         BtnAdd.Enabled = false;
@@ -47,7 +42,6 @@ namespace PappyjoeMVC.View
                     {
                         BtnAdd.Enabled = true;
                     }
-                    //id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRCF' and Permission='E'");
                     id = this.cntrl.user_priv_EMRC_E(doctor_id);
                     if (int.Parse(id) > 0)
                     {
@@ -57,7 +51,6 @@ namespace PappyjoeMVC.View
                     {
                         editToolStripMenuItem1.Enabled = true;
                     }
-                    //id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRCF' and Permission='D'");
                     id = this.cntrl.usr_priv_EMRCF_D(doctor_id);
                     if (int.Parse(id) > 0)
                     {
@@ -68,9 +61,7 @@ namespace PappyjoeMVC.View
                         deleteToolStripMenuItem1.Enabled = true;
                     }
                 }
-                //Privilege set ends
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-                //System.Data.DataTable clinicname = db.table("select name from tbl_practice_details");
                 System.Data.DataTable clinicname = this.cntrl.Get_CompanyNAme();
                 if (clinicname.Rows.Count > 0)
                 {
@@ -78,7 +69,6 @@ namespace PappyjoeMVC.View
                     clinicn = clinicname.Rows[0][0].ToString();
                     toolStripButton1.Text = clinicn.Replace("¤", "'");
                 }
-                //System.Data.DataTable docnam = db.table("select doctor_name from tbl_doctor Where id='" + doctor_id + "'");
                 string docnam = this.cntrl.Get_DoctorName(doctor_id);
                 if (docnam != "")
                 {
@@ -86,8 +76,6 @@ namespace PappyjoeMVC.View
                 }
                 listpatientsearch.Hide();
                 dataGridView1.Rows.Clear();
-                //panel_sendemail.Hide();
-                //DataTable rs_patients = db.table("select * from tbl_patient where id='" + patient_id + "'");
                 DataTable rs_patients = this.cntrl.Get_Patient_Details(patient_id);
                 if (rs_patients.Rows[0]["pt_name"].ToString() != "")
                 {
@@ -103,7 +91,6 @@ namespace PappyjoeMVC.View
                 dataGridView1.RowHeadersVisible = false;
                 dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 string heading = "";
-                //System.Data.DataTable dt_cf_main = db.table("SELECT tbl_clinical_findings.id,tbl_clinical_findings.date,tbl_doctor.doctor_name FROM tbl_clinical_findings join tbl_doctor on tbl_clinical_findings.dr_id=tbl_doctor.id  where tbl_clinical_findings.pt_id='" + patient_id + "' ORDER BY tbl_clinical_findings.date DESC");
                 System.Data.DataTable dt_cf_main = this.cntrl.dt_cf_main(patient_id);
                 int i = 0;
                 for (int j = 0; j < dt_cf_main.Rows.Count; j++)
@@ -116,7 +103,6 @@ namespace PappyjoeMVC.View
                     dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.LightGray;
                     dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.LightGray;
                     dataGridView1.Rows[i].Cells[4].Style.BackColor = Color.LightGray;
-                    //System.Data.DataTable dt_cf_Complaints = db.table("SELECT complaint_id FROM tbl_pt_chief_compaints where tbl_pt_chief_compaints.clinical_finding_id='" + dt_cf_main.Rows[j]["id"].ToString() + "' ORDER BY tbl_pt_chief_compaints.id");
                     System.Data.DataTable dt_cf_Complaints = this.cntrl.dt_cf_Complaints(dt_cf_main.Rows[j]["id"].ToString());
                     if (dt_cf_Complaints.Rows.Count > 0)
                     {
@@ -180,7 +166,6 @@ namespace PappyjoeMVC.View
                             }
                         }
                     }
-                    //System.Data.DataTable dt_cf_observe = db.table("SELECT observation_id FROM tbl_pt_observation where tbl_pt_observation.clinical_finding_id='" + dt_cf_main.Rows[j]["id"].ToString() + "' ORDER BY tbl_pt_observation.id");
                     System.Data.DataTable dt_cf_observe = this.cntrl.dt_cf_observe(dt_cf_main.Rows[j]["id"].ToString());
                     if (dt_cf_observe.Rows.Count > 0)
                     {
@@ -249,7 +234,6 @@ namespace PappyjoeMVC.View
                             }
                         }
                     }
-                    //System.Data.DataTable dt_cf_investigation = db.table("SELECT investigation_id FROM tbl_pt_investigations where tbl_pt_investigations.clinical_finding_id='" + dt_cf_main.Rows[j]["id"].ToString() + "' ORDER BY tbl_pt_investigations.id");
                     System.Data.DataTable dt_cf_investigation = this.cntrl.dt_cf_investigation(dt_cf_main.Rows[j]["id"].ToString());
                     if (dt_cf_investigation.Rows.Count > 0)
                     {
@@ -318,7 +302,6 @@ namespace PappyjoeMVC.View
                             }
                         }
                     }
-                    //System.Data.DataTable dt_cf_diagnosis = db.table("SELECT diagnosis_id FROM tbl_pt_diagnosis where tbl_pt_diagnosis.clinical_finding_id='" + dt_cf_main.Rows[j]["id"].ToString() + "' ORDER BY tbl_pt_diagnosis.id");
                     System.Data.DataTable dt_cf_diagnosis = this.cntrl.dt_cf_diagnosis(dt_cf_main.Rows[j]["id"].ToString());
                     if (dt_cf_diagnosis.Rows.Count > 0)
                     {
@@ -387,7 +370,6 @@ namespace PappyjoeMVC.View
                             }
                         }
                     }
-                    //System.Data.DataTable dt_cf_note = db.table("SELECT note_name FROM tbl_pt_note where tbl_pt_note.clinical_findings_id='" + dt_cf_main.Rows[j]["id"].ToString() + "' ORDER BY tbl_pt_note.id");
                     System.Data.DataTable dt_cf_note = this.cntrl.dt_cf_note(dt_cf_main.Rows[j]["id"].ToString());
                     if (dt_cf_note.Rows.Count > 0)
                     {
@@ -490,7 +472,6 @@ namespace PappyjoeMVC.View
                 if (doctor_id != "1")
                 {
                     string id = this.cntrl.user_priv_EMRCF_A(doctor_id);
-                    //id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRCF' and Permission='A'");
                     if (int.Parse(id) > 0)
                     {
                         MessageBox.Show("There is No Privilege to Add Clinical findings", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -528,9 +509,7 @@ namespace PappyjoeMVC.View
             try
             {
                 {
-                    //System.Data.DataTable dtp = db.table("select * from tbl_practice_details");
                     System.Data.DataTable dtp = this.cntrl.get_company_details();
-                    //System.Data.DataTable dt1 = db.table("select * from tbl_patient where id='" + patient_id + "'");
                     System.Data.DataTable dt1 = this.cntrl.Get_Patient_Details(patient_id);
                     using (System.Drawing.Font printFont = new System.Drawing.Font("Segoe UI", 18.0f))
                     {
@@ -627,9 +606,8 @@ namespace PappyjoeMVC.View
                         yy = yy + 20;
                         using (System.Drawing.Font printFontm = new System.Drawing.Font("Segoe UI", 8.0f))
                         {
-                            //System.Data.DataTable dt_medical = db.table("SELECT med_id FROM  tbl_pt_medhistory WHERE pt_id = '" + patient_id + "'");
-                            System.Data.DataTable dt_medical = this.cntrl.dt_medical(patient_id);
-                            if (dt_medical.Rows.Count > 0)
+                            DataTable dt_medical = this.cntrl.dt_medical(patient_id);
+                            if (dt_medical.Rows.Count>0)
                             {
                                 int k = 0;
                                 string medical_history = "";
@@ -650,7 +628,6 @@ namespace PappyjoeMVC.View
                         g.DrawLine(pen, new System.Drawing.Point(20, yy), new System.Drawing.Point(800, yy));
                         yy = yy + 30;
                         Dexist = 0;
-                        //System.Data.DataTable dt_cf = db.table("SELECT tbl_clinical_findings.id,tbl_clinical_findings.date,tbl_doctor.doctor_name FROM tbl_clinical_findings join tbl_doctor on tbl_clinical_findings.dr_id=tbl_doctor.id where tbl_clinical_findings.id='" + clinic_id + "' and tbl_clinical_findings.pt_id='" + patient_id + "'");
                         System.Data.DataTable dt_cf = this.cntrl.dt_cf(clinic_id, patient_id);
                         if (dt_cf.Rows.Count > 0)
                         {
@@ -668,7 +645,6 @@ namespace PappyjoeMVC.View
                         }
                         using (System.Drawing.Font printFont2 = new System.Drawing.Font("Segoe UI", 11.0f))
                         {
-                            //System.Data.DataTable dt_cf_Complaints = db.table("SELECT  complaint_id FROM tbl_pt_chief_compaints  where tbl_pt_chief_compaints.clinical_finding_id='" + clinic_id + "' ORDER BY tbl_pt_chief_compaints.id");
                             System.Data.DataTable dt_cf_Complaints = this.cntrl.dt_cf_Complaints_clinic_id(clinic_id);
                             if (dt_cf_Complaints.Rows.Count > 0)
                             {
@@ -731,7 +707,6 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                             }
-                            //System.Data.DataTable dt_cf_observe = db.table("SELECT observation_id FROM tbl_pt_observation where tbl_pt_observation.clinical_finding_id='" + clinic_id + "' ORDER BY tbl_pt_observation.id");
                             System.Data.DataTable dt_cf_observe = this.cntrl.dt_cf_observe_clinicid(clinic_id);
                             if (dt_cf_observe.Rows.Count > 0)
                             {
@@ -803,7 +778,6 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                             }
-                            //System.Data.DataTable dt_cf_investigation = db.table("SELECT investigation_id FROM tbl_pt_investigations where tbl_pt_investigations.clinical_finding_id='" + clinic_id + "' ORDER BY tbl_pt_investigations.id");
                             System.Data.DataTable dt_cf_investigation = this.cntrl.dt_cf_investigation_clinicid(clinic_id);
                             if (dt_cf_investigation.Rows.Count > 0)
                             {
@@ -876,8 +850,6 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                             }
-                            //// diagnosis
-                            //System.Data.DataTable dt_cf_diagnosis = db.table("SELECT diagnosis_id FROM tbl_pt_diagnosis where tbl_pt_diagnosis.clinical_finding_id='" + clinic_id + "' ORDER BY tbl_pt_diagnosis.id");
                             System.Data.DataTable dt_cf_diagnosis = this.cntrl.dt_cf_diagnosis_clinicid(clinic_id);
                             if (dt_cf_diagnosis.Rows.Count > 0)
                             {
@@ -895,7 +867,6 @@ namespace PappyjoeMVC.View
                                 Dexist = 1;
                                 e.Graphics.DrawString("Diagnosis", printFont2, Brushes.Gray, 20, yy);
                                 e.Graphics.DrawString("o", printFont2, Brushes.Gray, 200, yy);
-                                // Max line
                                 int partLength = 80;
                                 string sentence = dt_cf_diagnosis.Rows[0]["diagnosis_id"].ToString();
                                 string[] words = sentence.Split(' ');
@@ -924,7 +895,6 @@ namespace PappyjoeMVC.View
                                 for (int k = 1; k < dt_cf_diagnosis.Rows.Count; k++)
                                 {
                                     e.Graphics.DrawString("o", printFont2, Brushes.Gray, 200, yy);
-                                    // Max line
                                     partLength = 80;
                                     sentence = dt_cf_diagnosis.Rows[k]["diagnosis_id"].ToString();
                                     words = sentence.Split(' ');
@@ -952,8 +922,6 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                             }
-                            //Note
-                            //System.Data.DataTable dt_cf_note = db.table("SELECT note_name FROM tbl_pt_note where tbl_pt_note.clinical_findings_id='" + clinic_id + "' ORDER BY tbl_pt_note.id");
                             System.Data.DataTable dt_cf_note = this.cntrl.dt_cf_note_clincid(clinic_id);
                             if (dt_cf_note.Rows.Count > 0)
                             {
@@ -970,7 +938,6 @@ namespace PappyjoeMVC.View
                                 Dexist = 1;
                                 e.Graphics.DrawString("Notes", printFont2, Brushes.Gray, 20, yy);
                                 e.Graphics.DrawString("o", printFont2, Brushes.Gray, 200, yy);
-                                // Max line
                                 int partLength = 80;
                                 string sentence = dt_cf_note.Rows[0]["note_name"].ToString();
                                 string[] words = sentence.Split(' ');
@@ -999,7 +966,6 @@ namespace PappyjoeMVC.View
                                 for (int k = 1; k < dt_cf_note.Rows.Count; k++)
                                 {
                                     e.Graphics.DrawString("o", printFont2, Brushes.Gray, 200, yy);
-                                    // Max line
                                     partLength = 80;
                                     sentence = dt_cf_note.Rows[k]["note_name"].ToString();
                                     words = sentence.Split(' ');
@@ -1046,7 +1012,6 @@ namespace PappyjoeMVC.View
             {
                 if (toolStripTextBox1.Text != "")
                 {
-                    //System.Data.DataTable dtdr = db.table("select id,CONCAT (pt_name ,',' , age, ',' ,gender) as patient from tbl_patient where (pt_name like '" + toolStripTextBox1.Text + "%'   or pt_id like '%" + toolStripTextBox1.Text + "%' or primary_mobile_number like '%" + toolStripTextBox1.Text + "%') and Profile_Status='Active'");
                     System.Data.DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox1.Text);
                     listpatientsearch.DataSource = dtdr;
                     listpatientsearch.DisplayMember = "patient";
@@ -1114,7 +1079,6 @@ namespace PappyjoeMVC.View
                 if (doctor_id != "1")
                 {
                     string id = this.cntrl.usr_priv_EMRCF_D(doctor_id);
-                    //id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRCF' and Permission='D'");
                     if (int.Parse(id) > 0)
                     {
                         MessageBox.Show("There is No Privilege to Delete Clinical findings", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -1143,17 +1107,11 @@ namespace PappyjoeMVC.View
                     DialogResult res = MessageBox.Show("Are you sure you want to delete..?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (res == DialogResult.Yes)
                     {
-                        //db.execute("delete from tbl_clinical_findings where id='" + clinic_id + "'");
                         this.cntrl.del_clinic_findings(clinic_id);
-                        //db.execute("delete from tbl_pt_chief_compaints where clinical_finding_id='" + clinic_id + "'");
                         this.cntrl.del_cheif_comp(clinic_id);
-                        //db.execute("delete from tbl_pt_observation where clinical_finding_id='" + clinic_id + "'");
                         this.cntrl.del_observ(clinic_id);
-                        //db.execute("delete from tbl_pt_investigations where clinical_finding_id='" + clinic_id + "'");
                         this.cntrl.del_invest(clinic_id);
-                        //db.execute("delete from tbl_pt_diagnosis where clinical_finding_id='" + clinic_id + "'");
                         this.cntrl.del_diagno(clinic_id);
-                        //db.execute("delete from tbl_pt_note where clinical_findings_id='" + clinic_id + "'");
                         this.cntrl.del_note(clinic_id);
                         dataGridView1.Rows.Clear();
                         dataGridView1.ColumnCount = 5;
@@ -1162,7 +1120,6 @@ namespace PappyjoeMVC.View
                         dataGridView1.RowHeadersVisible = false;
                         dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                         string heading = "";
-                        //System.Data.DataTable dt_cf_main = db.table("SELECT tbl_clinical_findings.id,tbl_clinical_findings.date,tbl_doctor.doctor_name FROM tbl_clinical_findings join tbl_doctor on tbl_clinical_findings.dr_id=tbl_doctor.id  where tbl_clinical_findings.pt_id='" + patient_id + "' ORDER BY tbl_clinical_findings.date DESC");
                         System.Data.DataTable dt_cf_main = this.cntrl.dt_cf_main(patient_id);
                         int i = 0;
                         for (int j = 0; j < dt_cf_main.Rows.Count; j++)
@@ -1175,7 +1132,6 @@ namespace PappyjoeMVC.View
                             dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.LightGray;
                             dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.LightGray;
                             dataGridView1.Rows[i].Cells[4].Style.BackColor = Color.LightGray;
-                            //System.Data.DataTable dt_cf_Complaints = db.table("SELECT complaint_id FROM tbl_pt_chief_compaints where tbl_pt_chief_compaints.clinical_finding_id='" + dt_cf_main.Rows[j]["id"].ToString() + "' ORDER BY tbl_pt_chief_compaints.id");
                             System.Data.DataTable dt_cf_Complaints = this.cntrl.dt_cf_Complaints(dt_cf_main.Rows[j]["id"].ToString());
                             if (dt_cf_Complaints.Rows.Count > 0)
                             {
@@ -1240,7 +1196,6 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                             }
-                            //System.Data.DataTable dt_cf_observe = db.table("SELECT observation_id FROM tbl_pt_observation where tbl_pt_observation.clinical_finding_id='" + dt_cf_main.Rows[j]["id"].ToString() + "' ORDER BY tbl_pt_observation.id");
                             System.Data.DataTable dt_cf_observe = this.cntrl.dt_cf_observe(dt_cf_main.Rows[j]["id"].ToString());
                             if (dt_cf_observe.Rows.Count > 0)
                             {
@@ -1310,7 +1265,6 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                             }
-                            //System.Data.DataTable dt_cf_investigation = db.table("SELECT investigation_id FROM tbl_pt_investigations where tbl_pt_investigations.clinical_finding_id='" + dt_cf_main.Rows[j]["id"].ToString() + "' ORDER BY tbl_pt_investigations.id");
                             System.Data.DataTable dt_cf_investigation = this.cntrl.dt_cf_investigation(dt_cf_main.Rows[j]["id"].ToString());
                             if (dt_cf_investigation.Rows.Count > 0)
                             {
@@ -1381,7 +1335,6 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                             }
-                            //System.Data.DataTable dt_cf_diagnosis = db.table("SELECT diagnosis_id FROM tbl_pt_diagnosis where tbl_pt_diagnosis.clinical_finding_id='" + dt_cf_main.Rows[j]["id"].ToString() + "' ORDER BY tbl_pt_diagnosis.id");
                             System.Data.DataTable dt_cf_diagnosis = this.cntrl.dt_cf_diagnosis(dt_cf_main.Rows[j]["id"].ToString());
                             if (dt_cf_diagnosis.Rows.Count > 0)
                             {
@@ -1450,7 +1403,6 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                             }
-                            //System.Data.DataTable dt_cf_note = db.table("SELECT note_name FROM tbl_pt_note where tbl_pt_note.clinical_findings_id='" + dt_cf_main.Rows[j]["id"].ToString() + "' ORDER BY tbl_pt_note.id");
                             System.Data.DataTable dt_cf_note = this.cntrl.dt_cf_note(dt_cf_main.Rows[j]["id"].ToString());
                             if (dt_cf_note.Rows.Count > 0)
                             {
@@ -1546,7 +1498,6 @@ namespace PappyjoeMVC.View
                 if (doctor_id != "1")
                 {
                     string id = this.cntrl.user_priv_EMRC_E(doctor_id);
-                    //id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRCF' and Permission='E'");
                     if (int.Parse(id) > 0)
                     {
                         MessageBox.Show("There is No Privilege to Edit Clinical findings", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -1597,15 +1548,12 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                //int p = 0;
-                //System.Data.DataTable doct = db.table("select doctor_name from tbl_doctor where id='" + doctor_id + "'");
                 string doct = this.cntrl.Get_DoctorName(doctor_id);
                 string doctor_name = "";
-                if (doct!="")
+                if (doct != "")
                 {
                     doctor_name = doct;
                 }
-                //System.Data.DataTable patient = db.table("select pt_name,gender,street_address,city,primary_mobile_number,date,date_of_birth,age from tbl_patient where id='" + patient_id + "'");
                 System.Data.DataTable patient = this.cntrl.patient_information(patient_id);
                 string Pname = "", Gender = "", address = "", DOA = "", age = "", Mobile = "", DOB = "";
                 if (patient.Rows.Count > 0)
@@ -1620,7 +1568,6 @@ namespace PappyjoeMVC.View
                 }
                 string contact_no = "";
                 string clinic_name = "";
-                //System.Data.DataTable dtp = db.table("select name,contact_no from tbl_practice_details");
                 System.Data.DataTable dtp = this.cntrl.Get_Practice_details();
                 if (dtp.Rows.Count > 0)
                 {
@@ -1661,12 +1608,9 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine(" </tr>");
                 sWrite.WriteLine("</table>");
 
-                // Clinicl findings
-                //System.Data.DataTable dt_clinical_Findings = db.table("SELECT id , date FROM tbl_clinical_findings  where id='" + clinic_id + "' ");
                 System.Data.DataTable dt_clinical_Findings = this.cntrl.dt_cf_id_date(clinic_id);
                 int i = 0;
                 sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
-                //System.Data.DataTable dt_cf_Complaints = db.table("SELECT complaint_id FROM tbl_pt_chief_compaints where tbl_pt_chief_compaints.clinical_finding_id='" + dt_clinical_Findings.Rows[0]["id"].ToString() + "' ORDER BY tbl_pt_chief_compaints.id");
                 System.Data.DataTable dt_cf_Complaints = this.cntrl.dt_cf_Complaints(dt_clinical_Findings.Rows[0]["id"].ToString());
                 if (dt_cf_Complaints.Rows.Count > 0)
                 {
@@ -1680,7 +1624,6 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("</tr>");
                     }
                 }
-                //System.Data.DataTable dt_cf_observe = db.table("SELECT observation_id FROM tbl_pt_observation where tbl_pt_observation.clinical_finding_id='" + dt_clinical_Findings.Rows[0]["id"].ToString() + "' ORDER BY tbl_pt_observation.id");
                 System.Data.DataTable dt_cf_observe = this.cntrl.dt_cf_observe(dt_clinical_Findings.Rows[0]["id"].ToString());
                 if (dt_cf_observe.Rows.Count > 0)
                 {
@@ -1695,7 +1638,6 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("</tr>");
                     }
                 }
-                //System.Data.DataTable dt_cf_investigation = db.table("SELECT investigation_id FROM tbl_pt_investigations where tbl_pt_investigations.clinical_finding_id='" + dt_clinical_Findings.Rows[0]["id"].ToString() + "' ORDER BY tbl_pt_investigations.id");
                 System.Data.DataTable dt_cf_investigation = this.cntrl.dt_cf_investigation(dt_clinical_Findings.Rows[0]["id"].ToString());
                 if (dt_cf_investigation.Rows.Count > 0)
                 {
@@ -1709,7 +1651,6 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("</tr>");
                     }
                 }
-                //System.Data.DataTable dt_cf_diagnosis = db.table("SELECT diagnosis_id FROM tbl_pt_diagnosis where tbl_pt_diagnosis.clinical_finding_id='" + dt_clinical_Findings.Rows[0]["id"].ToString() + "' ORDER BY tbl_pt_diagnosis.id");
                 System.Data.DataTable dt_cf_diagnosis = this.cntrl.dt_cf_diagnosis(dt_clinical_Findings.Rows[0]["id"].ToString());
                 if (dt_cf_diagnosis.Rows.Count > 0)
                 {
@@ -1723,10 +1664,9 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("</tr>");
                     }
                 }
-                //System.Data.DataTable dt_cf_note = db.table("SELECT note_name FROM tbl_pt_note where tbl_pt_note.clinical_findings_id='" + dt_clinical_Findings.Rows[0]["id"].ToString() + "' ORDER BY tbl_pt_note.id");
                 System.Data.DataTable dt_cf_note = this.cntrl.dt_cf_note(dt_clinical_Findings.Rows[0]["id"].ToString());
                 if (dt_cf_note.Rows.Count > 0)
-                { 
+                {
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<th align='left' width='230px' bgcolor='#0099FF' ><FONT COLOR=white FACE='Geneva, Segoe UI' SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;NOTE</font></th>");
                     sWrite.WriteLine("</tr>");
@@ -1758,43 +1698,40 @@ namespace PappyjoeMVC.View
                 sWrite.Close();
                 // mail senting...
                 string email = "", emailName = "", emailPass = "";
-                //string query = "select email_address,pt_name from tbl_patient where id='" + patient_id + "'";
-                //System.Data.DataTable sr = db.table(query);
                 System.Data.DataTable sr = this.cntrl.getpatemail(patient_id);
                 if (sr.Rows.Count > 0)
                 {
                     email = sr.Rows[0]["email_address"].ToString();
                     if (email != "")
                     {
-                        //System.Data.DataTable sms = db.table("select emailName,emailPass from tbl_SmsEmailConfig");
                         System.Data.DataTable sms = this.cntrl.send_email();
                         if (sms.Rows.Count > 0)
                         {
                             emailName = sms.Rows[0]["emailName"].ToString();
                             emailPass = sms.Rows[0]["emailPass"].ToString();
-               
-                                StreamReader reader = new StreamReader(Apppath + "\\Clinic_findings.html");
-                                string readFile = reader.ReadToEnd();
-                                string StrContent = "";
-                                StrContent = readFile;
-                                MailMessage message = new MailMessage();
-                                message.From = new MailAddress(email);
-                                message.To.Add(email);
-                                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                                message.Subject = "Clinical Findings";
-                                message.Body = StrContent.ToString();
-                                message.IsBodyHtml = true;
-                                smtp.Port = 587;
-                                smtp.Host = "smtp.gmail.com";
-                                smtp.EnableSsl = true;
-                                smtp.UseDefaultCredentials = false;
-                                smtp.Credentials = new System.Net.NetworkCredential(emailName, emailPass);
-                                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                                message.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
-                                smtp.Send(message);
-                                MessageBox.Show("Email is Sent To : " + email, "Success ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                reader.Close();
-                            
+
+                            StreamReader reader = new StreamReader(Apppath + "\\Clinic_findings.html");
+                            string readFile = reader.ReadToEnd();
+                            string StrContent = "";
+                            StrContent = readFile;
+                            MailMessage message = new MailMessage();
+                            message.From = new MailAddress(email);
+                            message.To.Add(email);
+                            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                            message.Subject = "Clinical Findings";
+                            message.Body = StrContent.ToString();
+                            message.IsBodyHtml = true;
+                            smtp.Port = 587;
+                            smtp.Host = "smtp.gmail.com";
+                            smtp.EnableSsl = true;
+                            smtp.UseDefaultCredentials = false;
+                            smtp.Credentials = new System.Net.NetworkCredential(emailName, emailPass);
+                            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                            message.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+                            smtp.Send(message);
+                            MessageBox.Show("Email is Sent To : " + email, "Success ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            reader.Close();
+
                         }
                         else
                         {
@@ -1832,9 +1769,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                //System.Data.DataTable dtp = db.table("select * from tbl_practice_details");
                 System.Data.DataTable dtp = this.cntrl.get_company_details();
-                //System.Data.DataTable dt1 = db.table("select * from tbl_patient where id='" + patient_id + "'");
                 System.Data.DataTable dt1 = this.cntrl.Get_Patient_Details(patient_id);
                 using (System.Drawing.Font printFont = new System.Drawing.Font("Times New Roman", 16))
                 {
@@ -1929,7 +1864,6 @@ namespace PappyjoeMVC.View
                     yy = yy + 20;
                     yy = yy + 30;
                     Dexist = 0;
-                    //System.Data.DataTable dt_cf = db.table("SELECT tbl_clinical_findings.id,tbl_clinical_findings.date,tbl_doctor.doctor_name FROM tbl_clinical_findings join tbl_doctor on tbl_clinical_finding s.dr_id=tbl_doctor.id where tbl_clinical_findings.id='" + clinic_id + "' and tbl_clinical_findings.pt_id='" + patient_id + "'");
                     System.Data.DataTable dt_cf = this.cntrl.dt_cf(clinic_id, patient_id);
                     if (dt_cf.Rows.Count > 0)
                     {
@@ -1948,7 +1882,6 @@ namespace PappyjoeMVC.View
                     using (System.Drawing.Font printFont2 = new System.Drawing.Font("Times New Roman", 11))
                     {
                         System.Data.DataTable dt_cf_Complaints = this.cntrl.dt_cf_Complaints(clinic_id);
-                        //db.table("SELECT  complaint_id FROM tbl_pt_chief_compaints  where tbl_pt_chief_compaints.clinical_finding_id='" + clinic_id + "' ORDER BY tbl_pt_chief_compaints.id");
                         if (dt_cf_Complaints.Rows.Count > 0)
                         {
                             yy = yy + 40;
@@ -1966,7 +1899,6 @@ namespace PappyjoeMVC.View
                         }
                         // Observation
                         System.Data.DataTable dt_cf_observe = this.cntrl.dt_cf_observe(clinic_id);
-                        //db.table("SELECT observation_id FROM tbl_pt_observation where tbl_pt_observation.clinical_finding_id='" + clinic_id + "' ORDER BY tbl_pt_observation.id");
                         if (dt_cf_observe.Rows.Count > 0)
                         {
                             if (Dexist == 1)
@@ -1993,7 +1925,6 @@ namespace PappyjoeMVC.View
                         }
                         // Investigation
                         System.Data.DataTable dt_cf_investigation = this.cntrl.dt_cf_investigation(clinic_id);
-                        //db.table("SELECT investigation_id FROM tbl_pt_investigations where tbl_pt_investigations.clinical_finding_id='" + clinic_id + "' ORDER BY tbl_pt_investigations.id");
                         if (dt_cf_investigation.Rows.Count > 0)
                         {
                             if (Dexist == 1)
@@ -2020,7 +1951,6 @@ namespace PappyjoeMVC.View
                         }
                         // diagnosis
                         System.Data.DataTable dt_cf_diagnosis = this.cntrl.dt_cf_diagnosis(clinic_id);
-                        //db.table("SELECT diagnosis_id FROM tbl_pt_diagnosis where tbl_pt_diagnosis.clinical_finding_id='" + clinic_id + "' ORDER BY tbl_pt_diagnosis.id");
                         if (dt_cf_diagnosis.Rows.Count > 0)
                         {
                             if (Dexist == 1)
@@ -2048,7 +1978,6 @@ namespace PappyjoeMVC.View
                         }
                         //Note
                         System.Data.DataTable dt_cf_note = this.cntrl.dt_cf_note(clinic_id);
-                        ///db.table("SELECT note_name FROM tbl_pt_note where tbl_pt_note.clinical_findings_id='" + clinic_id + "' ORDER BY tbl_pt_note.id");
                         if (dt_cf_note.Rows.Count > 0)
                         {
                             if (Dexist == 1)

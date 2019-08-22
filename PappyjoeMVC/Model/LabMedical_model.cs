@@ -61,36 +61,6 @@ namespace PappyjoeMVC.Model
             get { return txttemp; }
             set { txttemp = value; }
         }
-        //private string id;
-        //public string Temp_id
-        //{
-        //    get { return id; }
-        //    set { id = value; }
-        //}
-        //private string cmbmaintesttemp;
-        //public string TempItem
-        //{
-        //    get { return cmbmaintesttemp; }
-        //    set { cmbmaintesttemp = value; }
-        //}
-        //private string cmbTesttemp;
-        //public string cmbMainTemp
-        //{
-        //    get { return cmbTesttemp; }
-        //    set { cmbTesttemp = value; }
-        //}
-        //private string Unitname;
-        //public string cmbUnitname
-        //{
-        //    get { return Unitname; }
-        //    set { Unitname = value; }
-        //}
-        //private string norm;
-        //public string Normal
-        //{
-        //    get { return norm; }
-        //    set { norm = value; }
-        //}
         public DataTable Main_test()
         {
             DataTable dt = db.table("select id,Main_test  from tbl_Lab_Medi_MainTest");
@@ -111,11 +81,6 @@ namespace PappyjoeMVC.Model
             DataTable tbMaintesttemp = db.table("select id,Main_test from tbl_Lab_Medi_MainTest");
             return tbMaintesttemp;
         }
-        //public DataTable testtypetemp()
-        //{
-        //    DataTable tbtesttypetemp = db.table("SELECT id, Name from tbl_Lab_Medi_TestType");
-        //    return tbtesttypetemp;
-        //}
         public int Main_test_save(string txtMainTest)
         {
             int s = db.execute("insert into tbl_Lab_Medi_MainTest (Main_test) values('" + txtMainTest + "')");
@@ -191,9 +156,9 @@ namespace PappyjoeMVC.Model
             int i = db.execute("insert into Lab_Medi_TemplateMain (TemplateName) values('" + txttemp + "') ");
             return i;
         }
-        public DataTable select_Maxid()
+        public int select_Maxid()
         {
-            DataTable id = db.table("select MAX(id) from Lab_Medi_TemplateMain");
+            int id = db.execute("select MAX(id) from Lab_Medi_TemplateMain");
             return id;
         }
         public DataTable Get_testnameid_ById(int cmbTesttemp)
@@ -246,14 +211,14 @@ namespace PappyjoeMVC.Model
             DataTable test = db.table("select id , Name from Lab_Medi_Test where id ='" + cmbTesttemp + "' ");
             return test;
         }
-        public DataTable TempAddItem_normM(int test)
+        public string TempAddItem_normM(int test)
         {
-            DataTable NormavalueM = db.table("select NormalValueM  from Lab_Medi_Test  where id = '" + test + "' ");
+            string NormavalueM = db.scalar("select NormalValueM  from Lab_Medi_Test  where id = '" + test + "' ");
             return NormavalueM;
         }
-        public DataTable TempAddItem_normF(int test)
+        public string TempAddItem_normF(int test)
         {
-            DataTable NormavalueF = db.table("select NormalValueF  from Lab_Medi_Test  where id = '" + test + "' ");
+            string NormavalueF = db.scalar("select NormalValueF  from Lab_Medi_Test  where id = '" + test + "' ");
             return NormavalueF;
         }
         public DataTable TempAddItem_normal(int test)
@@ -266,9 +231,9 @@ namespace PappyjoeMVC.Model
             DataTable MAIN_TEST = db.table("select * from tbl_Lab_Medi_MainTest where id='" + txtMtid + "' ");
             return MAIN_TEST;
         }
-        public DataTable MainTest_countById(int txtMtid)
+        public string MainTest_countById(int txtMtid)
         {
-            DataTable MAIN_TEST = db.table("select count(*) from Lab_Medi_Template where MainTestId ='" + txtMtid + "'");
+            string MAIN_TEST = db.scalar("select count(*) from Lab_Medi_Template where MainTestId ='" + txtMtid + "'");
             return MAIN_TEST;
         }
         public int delete_Maintest(string id)
@@ -281,9 +246,9 @@ namespace PappyjoeMVC.Model
             DataTable TEST_TYPE = db.table("select * from tbl_Lab_Medi_TestType where id='" + txtTtypeid + "' ");
             return TEST_TYPE;
         }
-        public DataTable testtype_countById(int txtTtypeid)
+        public string testtype_countById(int txtTtypeid)
         {
-            DataTable MAIN_TEST = db.table("select count(*) from Lab_Medi_Test where TestTypeID ='" + txtTtypeid + "'");
+            string MAIN_TEST = db.scalar("select count(*) from Lab_Medi_Test where TestTypeID ='" + txtTtypeid + "'");
             return MAIN_TEST;
         }
         public int delete_testtype(string id)
@@ -296,9 +261,9 @@ namespace PappyjoeMVC.Model
             DataTable Unit = db.table("select * from Lab_Medi_Unit where id='" + txtunitid + "' ");
             return Unit;
         }
-        public DataTable UnitCount_byID(int txtunitid)
+        public string UnitCount_byID(int txtunitid)
         {
-            DataTable Unitcheck = db.table("select count(*) from Lab_Medi_Test where UnitId ='" + txtunitid + "'");
+            string Unitcheck = db.scalar("select count(*) from Lab_Medi_Test where UnitId ='" + txtunitid + "'");
             return Unitcheck;
         }
         public int del_unit(string id)
@@ -311,9 +276,9 @@ namespace PappyjoeMVC.Model
             DataTable Test = db.table("select * from Lab_Medi_Test where id='" + txttestid + "' ");
             return Test;
         }
-        public DataTable testCount_byId(int txttestid)
+        public int testCount_byId(int txttestid)
         {
-            DataTable Testcheck = db.table("select count(*) from Lab_Medi_Template where TestId ='" + txttestid + "' ");
+            int Testcheck = db.execute("select count(*) from Lab_Medi_Template where TestId ='" + txttestid + "' ");
             return Testcheck;
         }
         public int test_delete(string id)

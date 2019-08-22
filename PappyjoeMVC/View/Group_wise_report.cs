@@ -1,24 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Group_wise_report : Form,Group_wise_report_interface
+    public partial class Group_wise_report : Form, Group_wise_report_interface
     {
         Group_wise_report_controller cntrl;
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";
-
         public Group_wise_report()
         {
             InitializeComponent();
@@ -60,13 +54,11 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         public decimal balance;
         public decimal balance1;
         decimal totalpayment = 0; decimal totalcredit = 0;
         public decimal credit;
         decimal totalinvoice = 0;
-
         public void Fill_Grid()
         {
             try
@@ -87,7 +79,6 @@ namespace PappyjoeMVC.View
                     if (cmb_type.Text == "Patients")
                     {
                         this.cntrl.dtb_group(cmb_group.Text, date1, date2);
-
                     }
                     else if (cmb_type.Text == "Procedure")
                     {
@@ -134,7 +125,6 @@ namespace PappyjoeMVC.View
                         dgv_group.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                         dgv_group.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                         dgv_group.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-
                         dgv_group.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                         dgv_group.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                         dgv_group.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -146,7 +136,6 @@ namespace PappyjoeMVC.View
                         dgv_group.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                         dgv_group.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                         this.cntrl.dtb_invoice(date1, date2, cmb_group.Text);
-
                     }
                     else if (cmb_type.Text == "Receipt")
                     {
@@ -166,7 +155,6 @@ namespace PappyjoeMVC.View
                         this.cntrl.dtb_receipt(date1, date2, cmb_group.Text);
                     }
                 }
-
                 else
                 {
                     Lab_cost.Text = "0.00";
@@ -183,7 +171,7 @@ namespace PappyjoeMVC.View
             }
         }
 
-        public void Patients(DataTable dtb_group )
+        public void Patients(DataTable dtb_group)
         {
             if (dtb_group.Rows.Count > 0)
             {
@@ -278,7 +266,6 @@ namespace PappyjoeMVC.View
                     }
                     else
                         discount = 0;
-
                     decimal cost = decimal.Parse(dt1.Rows[z]["Cost"].ToString());
                     decimal total_cost = decimal.Parse(dt1.Rows[z]["Total_Cost"].ToString());
                     decimal total_payment = decimal.Parse(dt1.Rows[z]["Payment"].ToString());
@@ -345,7 +332,6 @@ namespace PappyjoeMVC.View
                 dgv_group.Columns[14].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 decimal tax = 0, discount = 0, amount = 0, paid = 0, due = 0;
                 decimal Totaltax = 0, Totaldiscount = 0, Totalamount = 0, Totalpaid = 0, Totaldue = 0, totaocost = 0;
-
                 for (int z = 0; z < dtp.Rows.Count; z++)
                 {
                     int sl_no = z + 1;
@@ -420,7 +406,6 @@ namespace PappyjoeMVC.View
                     MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                     DialogResult result;
                     result = MessageBox.Show(message, caption, buttons);
-                    int c = 0;
                     string strclinicname = ""; string clinicn = "";
                     string strStreet = "";
                     string stremail = "";
@@ -569,7 +554,6 @@ namespace PappyjoeMVC.View
                                 k = k + 1;
                                 sWrite1.WriteLine("</tr>");
                             }
-
                             sWrite1.WriteLine("<tr>");
                             sWrite1.WriteLine("<td align=right colspan=6><FONT COLOR=black FACE='Segoe UI' SIZE=3 ><br><br><b> </b>&nbsp;&nbsp;  </font> </td> ");
                             sWrite1.WriteLine("</tr>");
@@ -784,7 +768,7 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } 
+            }
         }
 
         private void cmb_group_SelectedIndexChanged(object sender, EventArgs e)

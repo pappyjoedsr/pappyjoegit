@@ -18,7 +18,6 @@ namespace PappyjoeMVC.View
     public partial class Expense : Form, expense_interface
     {
         expense_controller cntrl;
-        expense_model _model = new expense_model();
         public string doctor_id = "";
         public int Incom_ID = 0;
         public int rowindex = 0;
