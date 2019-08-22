@@ -104,7 +104,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Communication();
             form2.doctor_id = doctor_id;
-            communication_Controller controller= new communication_Controller(form2);
+            Communication_controller controller = new Communication_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
