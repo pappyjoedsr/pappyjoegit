@@ -58,21 +58,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripTextDoctor = new System.Windows.Forms.ToolStripTextBox();
-            this.linkLabel_Name = new System.Windows.Forms.LinkLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.listpatientsearch = new System.Windows.Forms.ListBox();
-            this.btn_Close = new System.Windows.Forms.Button();
-            this.btn_Add = new System.Windows.Forms.Button();
-            this.label41 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.linkLabel_id = new System.Windows.Forms.LinkLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripBAttachment = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -85,10 +72,24 @@
             this.toolStripButton8 = new System.Windows.Forms.ToolStripDropDownButton();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextDoctor = new System.Windows.Forms.ToolStripTextBox();
+            this.linkLabel_Name = new System.Windows.Forms.LinkLabel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.labelallpatient = new System.Windows.Forms.Label();
+            this.listpatientsearch = new System.Windows.Forms.ListBox();
+            this.btn_Close = new System.Windows.Forms.Button();
+            this.btn_Add = new System.Windows.Forms.Button();
+            this.label41 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.linkLabel_id = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.panel6.SuspendLayout();
             this.label26.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -234,7 +235,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label12.Location = new System.Drawing.Point(68, 25);
+            this.label12.Location = new System.Drawing.Point(48, 25);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 13);
             this.label12.TabIndex = 68;
@@ -428,7 +429,7 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.DarkGray;
-            this.panel5.Location = new System.Drawing.Point(-1, 90);
+            this.panel5.Location = new System.Drawing.Point(-1, 88);
             this.panel5.Name = "panel5";
             this.panel5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel5.Size = new System.Drawing.Size(1364, 1);
@@ -450,6 +451,7 @@
             this.toolStripButton11,
             this.toolStripButton10,
             this.toolStripButton7,
+            this.toolStripButton12,
             this.toolStripButton8,
             this.toolStripSeparator2,
             this.toolStripButton9,
@@ -462,150 +464,6 @@
             this.toolStrip1.TabIndex = 294;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripTextBox1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(250, 40);
-            this.toolStripTextBox1.Text = "Search by Patient Name, id, Mobile No";
-            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
-            this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
-            // 
-            // toolStripTextDoctor
-            // 
-            this.toolStripTextDoctor.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripTextDoctor.BackColor = System.Drawing.Color.DodgerBlue;
-            this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.toolStripTextDoctor.Name = "toolStripTextDoctor";
-            this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 40);
-            this.toolStripTextDoctor.Text = "doctorname";
-            // 
-            // linkLabel_Name
-            // 
-            this.linkLabel_Name.AutoSize = true;
-            this.linkLabel_Name.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel_Name.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.linkLabel_Name.Location = new System.Drawing.Point(129, 6);
-            this.linkLabel_Name.Name = "linkLabel_Name";
-            this.linkLabel_Name.Size = new System.Drawing.Size(0, 13);
-            this.linkLabel_Name.TabIndex = 74;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel3.Location = new System.Drawing.Point(191, 42);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1, 48);
-            this.panel3.TabIndex = 302;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.labelallpatient);
-            this.panel1.Location = new System.Drawing.Point(2, 42);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(143, 45);
-            this.panel1.TabIndex = 301;
-            // 
-            // listpatientsearch
-            // 
-            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.listpatientsearch.FormattingEnabled = true;
-            this.listpatientsearch.ItemHeight = 21;
-            this.listpatientsearch.Location = new System.Drawing.Point(1015, 40);
-            this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(250, 42);
-            this.listpatientsearch.TabIndex = 295;
-            // 
-            // btn_Close
-            // 
-            this.btn_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Close.BackColor = System.Drawing.Color.Tomato;
-            this.btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Close.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Close.ForeColor = System.Drawing.Color.White;
-            this.btn_Close.Location = new System.Drawing.Point(1265, 94);
-            this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(94, 30);
-            this.btn_Close.TabIndex = 300;
-            this.btn_Close.Text = "CLOSE";
-            this.btn_Close.UseVisualStyleBackColor = false;
-            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
-            // 
-            // btn_Add
-            // 
-            this.btn_Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Add.BackColor = System.Drawing.Color.LimeGreen;
-            this.btn_Add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Add.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Add.ForeColor = System.Drawing.Color.White;
-            this.btn_Add.Location = new System.Drawing.Point(1185, 94);
-            this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(80, 30);
-            this.btn_Add.TabIndex = 293;
-            this.btn_Add.Text = "SAVE ";
-            this.btn_Add.UseVisualStyleBackColor = false;
-            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label41.Location = new System.Drawing.Point(19, 98);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(109, 20);
-            this.label41.TabIndex = 299;
-            this.label41.Text = "APPOINTMENT";
-            // 
-            // panel8
-            // 
-            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel8.BackColor = System.Drawing.Color.DarkGray;
-            this.panel8.Location = new System.Drawing.Point(-1, 126);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1364, 1);
-            this.panel8.TabIndex = 298;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.linkLabel_id);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.linkLabel_Name);
-            this.panel2.Controls.Add(this.label21);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(196, 43);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(414, 42);
-            this.panel2.TabIndex = 296;
-            // 
-            // linkLabel_id
-            // 
-            this.linkLabel_id.AutoSize = true;
-            this.linkLabel_id.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel_id.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.linkLabel_id.Location = new System.Drawing.Point(128, 25);
-            this.linkLabel_id.Name = "linkLabel_id";
-            this.linkLabel_id.Size = new System.Drawing.Size(0, 13);
-            this.linkLabel_id.TabIndex = 73;
-            // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -617,6 +475,11 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(103, 37);
             this.toolStripButton1.Text = "Pappyjoe Clinic";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
             // 
             // toolStripBAttachment
             // 
@@ -640,6 +503,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
             this.toolStripButton2.Text = "Calendar";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -675,6 +539,7 @@
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(72, 37);
             this.toolStripButton5.Text = "Inventory";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton6
             // 
@@ -742,7 +607,6 @@
             // 
             // settingsToolStripMenuItem
             // 
-            this.settingsToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -751,10 +615,16 @@
             // 
             // logoutToolStripMenuItem
             // 
-            this.logoutToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1429953040_Log_Out;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
             // 
             // toolStripButton9
             // 
@@ -781,13 +651,58 @@
             this.toolStripDropDownButton1.ToolTipText = "Add new Patient";
             this.toolStripDropDownButton1.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
             // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripTextBox1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(250, 40);
+            this.toolStripTextBox1.Text = "Search by Patient Name, id, Mobile No";
+            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
+            this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
+            // 
+            // toolStripTextDoctor
+            // 
+            this.toolStripTextDoctor.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripTextDoctor.BackColor = System.Drawing.Color.DodgerBlue;
+            this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStripTextDoctor.Name = "toolStripTextDoctor";
+            this.toolStripTextDoctor.ReadOnly = true;
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 40);
+            this.toolStripTextDoctor.Text = "doctorname";
+            // 
+            // linkLabel_Name
+            // 
+            this.linkLabel_Name.AutoSize = true;
+            this.linkLabel_Name.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel_Name.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.linkLabel_Name.Location = new System.Drawing.Point(129, 6);
+            this.linkLabel_Name.Name = "linkLabel_Name";
+            this.linkLabel_Name.Size = new System.Drawing.Size(0, 13);
+            this.linkLabel_Name.TabIndex = 74;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.Location = new System.Drawing.Point(192, 40);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1, 48);
+            this.panel3.TabIndex = 302;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelallpatient);
+            this.panel1.Location = new System.Drawing.Point(2, 42);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(143, 45);
+            this.panel1.TabIndex = 301;
+            // 
             // labelallpatient
             // 
             this.labelallpatient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelallpatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelallpatient.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelallpatient.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.labelallpatient.Image = global::PappyjoeMVC.Properties.Resources.SP;
             this.labelallpatient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelallpatient.Location = new System.Drawing.Point(4, 4);
             this.labelallpatient.Name = "labelallpatient";
@@ -795,6 +710,95 @@
             this.labelallpatient.TabIndex = 248;
             this.labelallpatient.Text = "All Patients";
             this.labelallpatient.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelallpatient.Click += new System.EventHandler(this.labelallpatient_Click);
+            // 
+            // listpatientsearch
+            // 
+            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.listpatientsearch.FormattingEnabled = true;
+            this.listpatientsearch.ItemHeight = 21;
+            this.listpatientsearch.Location = new System.Drawing.Point(1015, 40);
+            this.listpatientsearch.Name = "listpatientsearch";
+            this.listpatientsearch.Size = new System.Drawing.Size(250, 42);
+            this.listpatientsearch.TabIndex = 295;
+            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
+            // 
+            // btn_Close
+            // 
+            this.btn_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Close.BackColor = System.Drawing.Color.Tomato;
+            this.btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Close.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Close.ForeColor = System.Drawing.Color.White;
+            this.btn_Close.Location = new System.Drawing.Point(1265, 94);
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(94, 30);
+            this.btn_Close.TabIndex = 300;
+            this.btn_Close.Text = "CLOSE";
+            this.btn_Close.UseVisualStyleBackColor = false;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
+            // 
+            // btn_Add
+            // 
+            this.btn_Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Add.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_Add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Add.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add.ForeColor = System.Drawing.Color.White;
+            this.btn_Add.Location = new System.Drawing.Point(1185, 94);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(80, 30);
+            this.btn_Add.TabIndex = 293;
+            this.btn_Add.Text = "SAVE ";
+            this.btn_Add.UseVisualStyleBackColor = false;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label41.Location = new System.Drawing.Point(19, 98);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(109, 20);
+            this.label41.TabIndex = 299;
+            this.label41.Text = "APPOINTMENT";
+            // 
+            // panel8
+            // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.BackColor = System.Drawing.Color.DarkGray;
+            this.panel8.Location = new System.Drawing.Point(-1, 126);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1364, 1);
+            this.panel8.TabIndex = 298;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.linkLabel_id);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.linkLabel_Name);
+            this.panel2.Controls.Add(this.label21);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Location = new System.Drawing.Point(196, 43);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(414, 42);
+            this.panel2.TabIndex = 296;
+            // 
+            // linkLabel_id
+            // 
+            this.linkLabel_id.AutoSize = true;
+            this.linkLabel_id.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel_id.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.linkLabel_id.Location = new System.Drawing.Point(128, 25);
+            this.linkLabel_id.Name = "linkLabel_id";
+            this.linkLabel_id.Size = new System.Drawing.Size(0, 13);
+            this.linkLabel_id.TabIndex = 73;
             // 
             // pictureBox1
             // 
@@ -805,6 +809,17 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 72;
             this.pictureBox1.TabStop = false;
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.toolStripButton12.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
+            this.toolStripButton12.Text = "Lab Tracking";
             // 
             // Add_Appointment
             // 
@@ -825,8 +840,7 @@
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_Appointment";
-            this.Text = "Add Appointment";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Add_Appointment";
             this.Load += new System.EventHandler(this.Add_Appointment_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -907,5 +921,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.LinkLabel linkLabel_id;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
     }
 }
