@@ -285,7 +285,7 @@
     <Compile Include="View\AddNewPatients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\AddNewPatients.Designer.cs">
+    <Compile Include="View\AddNewPatients.designer.cs">
       <DependentUpon>AddNewPatients.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AddTreatmentPlan.cs">
