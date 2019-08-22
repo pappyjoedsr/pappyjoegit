@@ -12,7 +12,6 @@ namespace PappyjoeMVC.View
         Monthly_new_patients_controller cntrl;
         public string doctor_id = "";
         public int flag = 0;
-
         public Monthly_new_patients()
         {
             InitializeComponent();
@@ -289,7 +288,6 @@ namespace PappyjoeMVC.View
                         ExcelApp.Cells[4, 2].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
                         ExcelApp.Cells[3, 2].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
                         ExcelApp.Cells[2, 2].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
-
                         for (int i = 1; i < dataGridmonthlypatient.Columns.Count + 1; i++)
                         {
                             ExcelApp.Cells[5, i] = dataGridmonthlypatient.Columns[i - 1].HeaderText;
@@ -499,4 +497,3 @@ namespace PappyjoeMVC.View
         }
     }
 }
-

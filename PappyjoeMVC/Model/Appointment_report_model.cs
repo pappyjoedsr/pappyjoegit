@@ -9,9 +9,9 @@ namespace PappyjoeMVC.Model
             System.Data.DataTable gp_rs = db.table("SELECT id,group_id FROM tbl_pt_group WHERE id IN (SELECT MAX(id) FROM tbl_pt_group GROUP BY group_id)");
             return gp_rs;
         }
-        public DataTable grp_id(string gpid)
+        public string grp_id(string gpid)
         {
-            DataTable query = db.table("SELECT DISTINCT id from tbl_pt_group where group_id='" + gpid + "'");
+            string query = db.scalar("SELECT DISTINCT id from tbl_pt_group where group_id='" + gpid + "'");
             return query;
         }
         public DataTable dtb_grid(string date1, string date2)
@@ -59,14 +59,14 @@ namespace PappyjoeMVC.Model
             DataTable dfd = db.table("SELECT tbl_doctor.doctor_name AS 'DOCTOR',COUNT(*) AS 'APPOINTMENTS' FROM tbl_appointment INNER JOIN tbl_doctor ON tbl_appointment.dr_id = tbl_doctor.id  right join tbl_patient  on tbl_patient.id = tbl_appointment.pt_id      where  tbl_appointment.book_datetime >= '" + d1 + "' and tbl_appointment.book_datetime<='" + d2 + "' and tbl_appointment.dr_id ='" + drctr + "'   group by tbl_doctor.doctor_name");
             return dfd;
         }
-        public DataTable get_docId(string drid)
+        public string get_docId(string drid)
         {
-            DataTable query = db.table("SELECT id from tbl_doctor where doctor_name='" + drid + "' and  login_type='doctor'");
+            string query = db.scalar("SELECT id from tbl_doctor where doctor_name='" + drid + "' and  login_type='doctor'");
             return query;
         }
-        public DataTable doc_name_login(string drid)
+        public string doc_name_login(string drid)
         {
-            DataTable query = db.table("SELECT id from tbl_doctor where doctor_name='" + drid + "' and  (login_type='doctor' or login_type='admin' ) and activate_login='yes'");
+            string query = db.scalar("SELECT id from tbl_doctor where doctor_name='" + drid + "' and  (login_type='doctor' or login_type='admin' ) and activate_login='yes'");
             return query;
         }
         public DataTable doctor_rs()
@@ -76,7 +76,6 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Monthlyappointcount(string d1, string d2)
         {
-            //string query = "select DATENAME(MONTH,book_datetime)+' ' + DATENAME(YEAR,book_datetime) AS 'MONTH', COUNT(*) AS 'APPOINTMENT' from tbl_appointment right join tbl_patient  on tbl_patient.id = tbl_appointment.pt_id  where book_datetime between '" + d1 + "' and '" + d2 + "' and tbl_patient.Profile_Status !='Cancelled' GROUP BY DATENAME(MONTH,book_datetime)+' ' + DATENAME(YEAR,book_datetime)";
             DataTable dfd = db.table("select date_format(book_datetime,'%b %Y') AS 'MONTH', COUNT(*) AS 'APPOINTMENT' from tbl_appointment right join tbl_patient  on tbl_patient.id = tbl_appointment.pt_id  where book_datetime between '" + d1 + "' and '" + d2 + "' and tbl_patient.Profile_Status !='Cancelled' GROUP BY date_format(book_datetime,'%b %Y')");
             return dfd;
         }
@@ -92,15 +91,15 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Monthlyappointcount_DoctrWise(string d1, string d2, string drctr)
         {
-            //string query = "select MONTHNAME(book_datetime)+' ' +  YEAR(book_datetime) AS 'MONTH', COUNT(*) AS 'APPOINTMENT' from tbl_appointment right join tbl_patient  on tbl_patient.id = tbl_appointment.pt_id where book_datetime between '" + d1 + "' and '" + d2 + "' and tbl_appointment.dr_id  ='" + drctr + "' and tbl_patient.Profile_Status !='Cancelled' GROUP BY MONTHNAME(book_datetime)+' ' + YEAR(book_datetime)";
             DataTable dfd = db.table("select date_format(book_datetime,'%b %Y') AS 'MONTH', COUNT(*) AS 'APPOINTMENT' from tbl_appointment right join tbl_patient  on tbl_patient.id = tbl_appointment.pt_id  where book_datetime between '" + d1 + "' and '" + d2 + "' and tbl_appointment.dr_id  ='" + drctr + "' and tbl_patient.Profile_Status !='Cancelled' GROUP BY date_format(book_datetime,'%b %Y')");
             return dfd;
         }
-        public DataTable Docname_logDocAdmin(string drctid)
+        public string Docname_logDocAdmin(string drctid)
         {
-            DataTable dt = db.table("SELECT id from tbl_doctor where doctor_name = '" + drctid + "' and(login_type= 'doctor' or login_type = 'admin') ");
+            string dt = db.scalar("SELECT id from tbl_doctor where doctor_name = '" + drctid + "' and(login_type= 'doctor' or login_type = 'admin') ");
             return dt;
         }
+
         public DataTable gridviewtabledailyappoiment(string date1, string date2, string select_dr_id)
         {
             DataTable gridviewtabledailyappoiment = db.table("SELECT B.pt_id,A.pt_name, B.primary_mobile_number ,B.email_address,A.start_datetime,A.booked_by,C.doctor_name  from tbl_appointment A inner join tbl_patient B on A.pt_id=B.id  inner join tbl_doctor C on A.dr_id=C.id where A.start_datetime   between '" + date1 + "' and '" + date2 + "' and A.dr_id='" + select_dr_id + "' and B.Profile_Status !='Cancelled'  order by book_datetime desc");

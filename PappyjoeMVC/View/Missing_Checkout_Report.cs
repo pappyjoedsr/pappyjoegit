@@ -323,10 +323,10 @@ namespace PappyjoeMVC.View
                 {
                     label2.Text = "";
                     drctid = comboBoxdoctor.SelectedItem.ToString();
-                    System.Data.DataTable dt = this.cntrl.Get_DoctorId(drctid);
-                    if (dt.Rows.Count > 0)
+                    string dt = this.cntrl.Get_DoctorId(drctid);
+                    if (dt!="")
                     {
-                        Selected_drid = dt.Rows[0][0].ToString();
+                        Selected_drid = dt.ToString();
                     }
                     if (cmbCondition.Text == "Checked Out")
                     {

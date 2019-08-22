@@ -784,6 +784,21 @@ namespace PappyjoeMVC.View
             }
         }
 
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton11_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public AddNewPatients()
         {
             InitializeComponent();

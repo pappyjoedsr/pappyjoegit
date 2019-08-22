@@ -33,9 +33,9 @@ namespace PappyjoeMVC.Model
             DataTable docnam = db.table("select * from tbl_practice_details");
             return docnam;
         }
-        public DataTable Get_DoctorId(string name)
+        public string Get_DoctorId(string name)
         {
-            DataTable docnam = db.table("select id from tbl_doctor Where doctor_name='" + name + "'");
+            string docnam = db.scalar("select id from tbl_doctor Where doctor_name='" + name + "'");
             return docnam;
         }
         public DataTable Get_adminId()

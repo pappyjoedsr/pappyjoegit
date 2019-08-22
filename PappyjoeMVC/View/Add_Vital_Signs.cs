@@ -16,7 +16,6 @@ namespace PappyjoeMVC.View
     public partial class Add_Vital_Signs : Form, Add_Vital_Signs_interface
     {
         Add_Vital_Signs_controller cntrl;
-        Add_Vital_Signs_model _model = new Add_Vital_Signs_model();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";
@@ -78,7 +77,6 @@ namespace PappyjoeMVC.View
                 if (doctor_id == "0" || doctor_id == "")
                 {
                     doctor_id = "0";
-                    //toolStripButton7.Visible = false;
                 }
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
                 DataTable clinicname = this.cntrl.Get_CompanyNAme();

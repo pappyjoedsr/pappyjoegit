@@ -23,46 +23,39 @@ namespace PappyjoeMVC.Controller
             intr = inttr;
             intr.setcontroller(this);
         }
-
         public string invoice_to_combo(string doctor_id)
         {
-            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTINC' and Permission='A'");
-            //string s = _model.invoice_to_combo(doctor_id);
-            return id;
+            string s = _model.invoice_to_combo(doctor_id);
+            return s;
         }
         public string reciept_combo(string doctor_id)
         {
-            //string s = _model.reciept_combo(doctor_id);
-            string s = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTINCM' and Permission='A'");
+            string s = _model.reciept_combo(doctor_id);
             return s;
         }
         public string payment_combo(string doctor_id)
         {
-            //string s = _model.payment_combo(doctor_id);
-            string s = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTPAY' and Permission='A'");
+            string s = _model.payment_combo(doctor_id);
             return s;
         }
         public string appoint_combo(string doctor_id)
         {
-            //string s = _model.appoint_combo(doctor_id);
-            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTAPT' and Permission='A'");
-            return id;
+            string s = _model.appoint_combo(doctor_id);
+            return s;
         }
         public string patient_combo(string doctor_id)
         {
-            //string s = _model.patient_combo(doctor_id);
-            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTPAT' and Permission='A'");
-            return id;
+            string s = _model.patient_combo(doctor_id);
+            return s;
         }
         public string emr_combo(string doctor_id)
         {
-            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTEMR' and Permission='A'");
-            return id;
+            string s = _model.emr_combo(doctor_id);
+            return s;
         }
         public string inventory_combo(string doctor_id)
         {
-            //string s = _model.inventory_combo(doctor_id);
-            string s = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTINV' and Permission='A'");
+            string s = _model.inventory_combo(doctor_id);
             return s;
         }
         public DataTable Patient_search(string patid)
@@ -168,28 +161,28 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable Get_CompanyNAme()
         {
-            DataTable dt = cmodel.Get_CompanyNAme();
-            return dt;
+            DataTable d = cmodel.Get_CompanyNAme();
+            return d;
         }
         public string Get_DoctorName(string doctor_id)
         {
             string dt = cmodel.Get_DoctorName(doctor_id);
             return dt;
         }
-        public DataTable Get_Practice_details()
-        {
-            DataTable d = cmodel.Get_Practice_details();
-            return d;
-        }
         public DataTable get_all_doctorname()
         {
             DataTable dt = cmodel.get_all_doctorname();
             return dt;
         }
-        public DataTable Get_DoctorId(string name)
+        public DataTable Get_Practice_details()
         {
-            DataTable d = cmodel.Get_DoctorId(name);
-            return d;
+            DataTable dt = cmodel.Get_Practice_details();
+            return dt;
+        }
+        public string Get_DoctorId(string name)
+        {
+            string dt = cmodel.Get_DoctorId(name);
+            return dt;
         }
     }
 }

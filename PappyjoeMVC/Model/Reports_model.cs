@@ -11,42 +11,42 @@ namespace PappyjoeMVC.Model
     {
         Connection db = new Connection();
 
-        //public string invoice_to_combo(string doctor_id)
-        //{
-        //    string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTINC' and Permission='A'");
-        //    return id;
-        //}
-        //public string reciept_combo(string doctor_id)
-        //{
-        //    string s=db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTINCM' and Permission='A'");
-        //    return s;
-        //}
-        //public string payment_combo(string doctor_id)
-        //{
-        //    string s = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTPAY' and Permission='A'");
-        //    return s;
-        //}
-        //public string appoint_combo(string doctor_id)
-        //{
-        //    string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTAPT' and Permission='A'");
-        //    return id;
-        //}
-        //public string patient_combo(string doctor_id)
-        //{
-        //    string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTPAT' and Permission='A'");
-        //    return id;
-        ////}
-        //public string emr_combo(string doctor_id)
-        //{
-        //    string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTEMR' and Permission='A'");
-        //    return id;
-        //}
-        //public string inventory_combo(string doctor_id)
-        //{
-        //    string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTINV' and Permission='A'");
-        //    return id;
-        //}
-        //public DataTable docname(string doctor_id)
+        public string invoice_to_combo(string doctor_id)
+        {
+            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTINC' and Permission='A'");
+            return id;
+        }
+        public string reciept_combo(string doctor_id)
+        {
+            string s = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTINCM' and Permission='A'");
+            return s;
+        }
+        public string payment_combo(string doctor_id)
+        {
+            string s = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTPAY' and Permission='A'");
+            return s;
+        }
+        public string appoint_combo(string doctor_id)
+        {
+            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTAPT' and Permission='A'");
+            return id;
+        }
+        public string patient_combo(string doctor_id)
+        {
+            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTPAT' and Permission='A'");
+            return id;
+        }
+        public string emr_combo(string doctor_id)
+        {
+            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTEMR' and Permission='A'");
+            return id;
+        }
+        public string inventory_combo(string doctor_id)
+        {
+            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='RPTINV' and Permission='A'");
+            return id;
+        }
+        //public DataTable docname(string doctor_id)  
         //{
         //    DataTable docnam = db.table("select doctor_name from tbl_doctor Where id='" + doctor_id + "'");
         //    return docnam;

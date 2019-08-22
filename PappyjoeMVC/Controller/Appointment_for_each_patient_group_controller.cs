@@ -23,9 +23,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.gp_rs();
             return dt;
         }
-        public DataTable grp_id(string gpid)
+        public string grp_id(string gpid)
         {
-            DataTable tf = _model.grp_id(gpid);
+            string tf = _model.grp_id(gpid);
             return tf;
         }
         public DataTable dtb_grid(string date1, string date2)

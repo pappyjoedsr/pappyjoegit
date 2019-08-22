@@ -114,9 +114,9 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.get_template(idtemp);
             return dtb;
         }
-        public DataTable Get_DoctorId(string name)
+        public string Get_DoctorId(string name)
         {
-            DataTable dtb = cmodel.Get_DoctorId(name);
+            string dtb = cmodel.Get_DoctorId(name);
             return dtb;
         }
         public DataTable get_inventoryid(string id)

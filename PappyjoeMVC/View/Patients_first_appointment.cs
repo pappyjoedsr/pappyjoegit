@@ -13,7 +13,6 @@ namespace PappyjoeMVC.View
         Patients_first_appointment_controller cntrl;
         public string names, ptids;
         public string doctor_id = "";
-
         public Patients_first_appointment()
         {
             InitializeComponent();
@@ -258,7 +257,6 @@ namespace PappyjoeMVC.View
                         ExcelApp.Cells[4, 2].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
                         ExcelApp.Cells[3, 2].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
                         ExcelApp.Cells[2, 2].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
-
                         for (int i = 1; i < Grvpatientfirstappoint.Columns.Count + 1; i++)
                         {
                             ExcelApp.Cells[5, i] = Grvpatientfirstappoint.Columns[i - 1].HeaderText;

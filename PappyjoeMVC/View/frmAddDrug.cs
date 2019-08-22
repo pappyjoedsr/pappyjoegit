@@ -325,7 +325,6 @@ namespace PappyjoeMVC.View
                 cmb_Unit1.SelectedIndex = 0;
             }
         }
-
         private void btn_Addunit1_Click(object sender, EventArgs e)
         {
             frmAddUnits frm = new frmAddUnits();

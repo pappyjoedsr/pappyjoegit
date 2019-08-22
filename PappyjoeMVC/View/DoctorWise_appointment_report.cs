@@ -19,7 +19,6 @@ namespace PappyjoeMVC.View
         public string doctor_id = "";
         public string select_dr_id = "0";
         string drctid = "";
-
         public DoctorWise_appointment_report()
         {
             InitializeComponent();
@@ -38,7 +37,6 @@ namespace PappyjoeMVC.View
                 comboBoxdoctor.Items.Add("All Doctor");
                 comboBoxdoctor.ValueMember = "0";
                 comboBoxdoctor.DisplayMember = "All Doctor";
-                //System.Data.DataTable doctor_rs = db.table("select DISTINCT id,doctor_name from tbl_doctor where login_type='doctor' or login_type='admin' and activate_login='yes' order by doctor_name");
                 DataTable doctor_rs = this.cntrl.get_all_doctorname();
                 if (doctor_rs.Rows.Count > 0)
                 {
@@ -119,17 +117,15 @@ namespace PappyjoeMVC.View
             try
             {
                 select_dr_id = "0";
-                //Select sd = new Select();
                 if (comboBoxdoctor.SelectedIndex == -1)
                 { }
                 else
                 {
                     drctid = comboBoxdoctor.SelectedItem.ToString();
-                    //string query = "SELECT id from tbl_doctor where doctor_name='" + drctid + "'";
-                    System.Data.DataTable dt = this.cntrl.Get_DoctorId(drctid);
-                    if (dt.Rows.Count > 0)
+                    string dt = this.cntrl.Get_DoctorId(drctid);
+                    if (dt!="")
                     {
-                        select_dr_id = dt.Rows[0]["Id"].ToString();
+                        select_dr_id = dt.ToString();
                     }
                     fillGrid();
                     if (dataGridVieweachdoctorappoinmt.Rows.Count < 1)
@@ -147,7 +143,7 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        public void fillGrid() //aswini
+        public void fillGrid() 
         {
             try
             {
@@ -159,7 +155,6 @@ namespace PappyjoeMVC.View
                     dateTimePickerappointeachdoctor1.Value = DateTime.Today;
                     return;
                 }
-                //Select sd = new Select();
                 foreach (var series in chartappointeachdoctor.Series)
                 {
                     series.Points.Clear();
@@ -170,12 +165,10 @@ namespace PappyjoeMVC.View
                 if (comboBoxdoctor.SelectedIndex == 0)
                 {
                     datatableeachdoctorappoinment = this.cntrl.dt_docApt(date1, date2);
-                    //db.table("select  A.pt_name,A.book_datetime,A.start_datetime,A.duration,C.primary_mobile_number,C.Pt_id,C.email_address, B.doctor_name,A.schedule,A.waiting,A.engaged,A.checkout from tbl_appointment A inner join tbl_doctor B on A.dr_id=B.id inner join tbl_patient C on A.pt_id=C.id where A.start_datetime between '" + date1 + "' and  '" + date2 + "' and C.Profile_Status !='Cancelled' order by A.book_datetime desc");
                     Grvappointforeachdoctor.DataSource = this.cntrl.Appointcountforeachdoctor(date1, date2);
                 }
                 else
                 {
-                    //datatableeachdoctorappoinment = db.table("select A.pt_name,A.book_datetime,A.start_datetime ,A.duration,C.primary_mobile_number,C.Pt_id,C.email_address, B.doctor_name,A.schedule,A.waiting,A.engaged,A.checkout from tbl_appointment A inner join tbl_doctor B on A.dr_id=B.id inner join tbl_patient C on A.pt_id=C.id where A.start_datetime between '" + date1 + "' and  '" + date2 + "' and A.dr_id = '" + select_dr_id + "' and C.Profile_Status !='Cancelled'  order by A.book_datetime desc");
                     datatableeachdoctorappoinment = this.cntrl.dt_docApt1(date1, date2, select_dr_id);
                     Grvappointforeachdoctor.DataSource = this.cntrl.Appointcountforeachdoctor_DoctrWise(date1, date2, select_dr_id);
                 }
@@ -241,7 +234,6 @@ namespace PappyjoeMVC.View
                 }
             }
             dataGridVieweachdoctorappoinmt.Location = new System.Drawing.Point(5, 5);
-            // dataGridVieweachdoctorappoinmt.Size = new System.Drawing.Size(1104, 570);
         }
 
         private void btn_Graph_Click(object sender, EventArgs e)
@@ -257,12 +249,11 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                string drid = comboBoxdoctor.SelectedItem.ToString();// SelectedValue.ToString();
-                //string query = "SELECT id from tbl_doctor where doctor_name='" + drid + "' and  login_type='doctor'";
-                System.Data.DataTable dt = this.cntrl.get_docId(drid); ;
-                if (dt.Rows.Count > 0)
+                string drid = comboBoxdoctor.SelectedItem.ToString();
+                string dt = this.cntrl.get_docId(drid); ;
+                if (dt!="")
                 {
-                    select_dr_id = dt.Rows[0]["Id"].ToString();
+                    select_dr_id = dt;
                 }
                 fillGrid();
                 chartappointeachdoctor.Hide();
@@ -275,7 +266,6 @@ namespace PappyjoeMVC.View
                     Lab_Msg.Hide();
                 }
                 dataGridVieweachdoctorappoinmt.Location = new System.Drawing.Point(1, 3);
-                // dataGridVieweachdoctorappoinmt.Size = new System.Drawing.Size(1104, 570);//1362, 388);
                 dataGridVieweachdoctorappoinmt.Show();
             }
             catch (Exception ex)
@@ -385,22 +375,15 @@ namespace PappyjoeMVC.View
                 else
                 {
                     string drid = comboBoxdoctor.SelectedItem.ToString();
-                    //string query = "SELECT id from tbl_doctor where doctor_name='" + drid + "' and  (login_type='doctor' or login_type='admin' ) and activate_login='yes'";
-                    System.Data.DataTable dt = this.cntrl.doc_name_login(drid);
-                    if (dt.Rows.Count > 0)
+                    string dt = this.cntrl.doc_name_login(drid);
+                    if (dt!="")
                     {
-                        select_dr_id = dt.Rows[0]["Id"].ToString();
+                        select_dr_id = dt;
                     }
                 }
                 if (dataGridVieweachdoctorappoinmt.Rows.Count > 0)
                 {
                     System.Data.DataTable tbl1 = dataGridVieweachdoctorappoinmt.DataSource as System.Data.DataTable;
-                    //string fromdate = dateTimePickerappointeachdoctor1.Value.Day.ToString();
-                    //string frmonth = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dateTimePickerappointeachdoctor1.Value.Month);
-                    //string fryear = dateTimePickerappointeachdoctor1.Value.Year.ToString();
-                    //string todate = dateTimePickerappointeachdoctor2.Value.Day.ToString();
-                    //string tomonth = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dateTimePickerappointeachdoctor2.Value.Month);
-                    //string toyear = dateTimePickerappointeachdoctor2.Value.Year.ToString();
                     string message = "Did you want Header on Print?";
                     string caption = "Verification";
                     MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -415,7 +398,6 @@ namespace PappyjoeMVC.View
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
                         System.Data.DataTable dtp = this.cntrl.Get_practiceDlNumber();
-                        //db.table("select name,contact_no,street_address,email,website  from tbl_practice_details");
                         if (dtp.Rows.Count > 0)
                         {
                             clinicn = dtp.Rows[0]["name"].ToString();
@@ -520,6 +502,5 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
     }
 }

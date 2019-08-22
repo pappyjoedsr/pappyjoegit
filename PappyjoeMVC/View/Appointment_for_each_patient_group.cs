@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using PappyjoeMVC.Model;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms.DataVisualization.Charting;
-using System.IO;
 using System.Globalization;
+using System.IO;
 using System.Windows.Forms;
-using PappyjoeMVC.Model;
-using PappyjoeMVC.Controller;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Appointment_for_each_patient_group : Form,Appointment_for_each_patient_group_interface
+    public partial class Appointment_for_each_patient_group : Form, Appointment_for_each_patient_group_interface
     {
         Appointment_for_each_patient_group_controller cntrl;
         Appointment_report_model _model = new Appointment_report_model();
@@ -126,10 +121,10 @@ namespace PappyjoeMVC.View
                 else
                 {
                     gpid = cmbptgrp.SelectedItem.ToString();
-                    System.Data.DataTable dt = this.cntrl.grp_id(gpid);
-                    if (dt.Rows.Count > 0)
+                    string dt = this.cntrl.grp_id(gpid);
+                    if (dt!="")
                     {
-                        select_id = dt.Rows[0]["Id"].ToString();
+                        select_id = dt.ToString();
                     }
                     if (cmbptgrp.SelectedIndex == 0)
                     {
@@ -157,10 +152,8 @@ namespace PappyjoeMVC.View
                     int count = 0, k = 1;
                     for (int i = 0; i < dtb_grid.Rows.Count; i++)
                     {
-                        //System.Data.DataTable dt_group = db.table(" select * from tbl_pt_group where pt_id='" + dtb_grid.Rows[i]["id"].ToString() + "'");
                         DataTable dt_group = this.cntrl.dt_group(dtb_grid.Rows[i]["id"].ToString());
                         dataGridViewappoinmentpatientgroup.Rows.Add();
-
                         dataGridViewappoinmentpatientgroup.Rows[i].Cells["Sino"].Value = k;
                         dataGridViewappoinmentpatientgroup.Rows[i].Cells["pt_id"].Value = dtb_grid.Rows[i]["pt_id"].ToString();
                         dataGridViewappoinmentpatientgroup.Rows[i].Cells["pt_name"].Value = dtb_grid.Rows[i]["pt_name"].ToString();
@@ -245,8 +238,6 @@ namespace PappyjoeMVC.View
             }
             label6.Visible = true;
             fillAll();
-            //dataGridViewappoinmentpatientgroup.Size = new System.Drawing.Size(1141, 561);
-            //dataGridViewappoinmentpatientgroup.Location = new System.Drawing.Point(5, 5);
             chartappointeachpatientgroup.Hide();
             dataGridViewappoinmentpatientgroup.Show();
             dataGridViewappoinmentpatientgroup.Show();
@@ -266,8 +257,6 @@ namespace PappyjoeMVC.View
             fillAll();
             if (dataGridViewappoinmentpatientgroup.Visible)
             {
-                // dataGridViewappoinmentpatientgroup.Size = new System.Drawing.Size(1141, 561);
-                //  dataGridViewappoinmentpatientgroup.Location = new System.Drawing.Point(5, 5);
                 chartappointeachpatientgroup.Hide();
                 dataGridViewappoinmentpatientgroup.Show();
             }

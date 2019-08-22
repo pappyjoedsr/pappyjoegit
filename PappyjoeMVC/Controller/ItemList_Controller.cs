@@ -22,9 +22,9 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = cmdl.Get_CompanyNAme();
             return dtb;
         }
-        public DataTable Get_DoctorId(string doctor_id)
+        public string Get_DoctorId(string doctor_id)
         {
-            DataTable dtb = cmdl.Get_DoctorId(doctor_id);
+            string dtb = cmdl.Get_DoctorId(doctor_id);
             return dtb;
         }
         public void Fill_manufactureCombo()

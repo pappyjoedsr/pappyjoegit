@@ -12,7 +12,6 @@ namespace PappyjoeMVC.View
         Daily_NewPatients_controller cntrl;
         public string doctor_id = "";
         public int flag = 0;
-
         public Daily_NewPatients()
         {
             InitializeComponent();
@@ -411,14 +410,11 @@ namespace PappyjoeMVC.View
                 else
                     MessageBox.Show("No records found, Please change the date and try again!..", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void btnprint_Click(object sender, EventArgs e)
         {

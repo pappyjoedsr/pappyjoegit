@@ -16,8 +16,7 @@ namespace PappyjoeMVC.View
     public partial class Reports : Form, Reports_interface
     {
         Reports_controller cntrl;
-        Reports_model _model = new Reports_model();
-        //common_model model = new common_model();
+        common_model model = new common_model();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";
@@ -1587,6 +1586,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
             Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
@@ -1645,65 +1645,107 @@ namespace PappyjoeMVC.View
 
         private void lblappointmenteachpatientgroup_Click(object sender, EventArgs e)
         {
-            var form2 = new Appointment_for_each_patient_group();
-            Appointment_for_each_patient_group_controller controlr = new Appointment_for_each_patient_group_controller(form2);
-            form2.ShowDialog();
+            Appointment_for_each_patient_group d = new Appointment_for_each_patient_group();
+            Appointment_for_each_patient_group_controller cn = new Appointment_for_each_patient_group_controller(d);
+            d.ShowDialog();
         }
 
         private void lblappointmenteachdoctor_Click(object sender, EventArgs e)
         {
-            var form2 = new DoctorWise_appointment_report();
-            DoctorWise_appointment_report_controller controlr = new DoctorWise_appointment_report_controller(form2);
-            form2.ShowDialog();
+            DoctorWise_appointment_report v = new DoctorWise_appointment_report();
+            DoctorWise_appointment_report_controller cn = new DoctorWise_appointment_report_controller(v);
+            v.ShowDialog();
         }
 
-        private void lbldaily_Click(object sender, EventArgs e)
+        private void lblmonthappointmentcount_Click(object sender, EventArgs e)
         {
-            var form2 = new Daily_Invoice_Report();
-            Daily_Invoice_Report_controller controlr = new Daily_Invoice_Report_controller(form2);
-            form2.ShowDialog();
+            Monthly_appointment_count c = new Monthly_appointment_count();
+            Monthly_appointment_count_controller bn = new Monthly_appointment_count_controller(c);
+            c.ShowDialog(); 
         }
 
-        private void lblMonthlySummary_Click(object sender, EventArgs e)
+        private void lbldailyappointcount_Click(object sender, EventArgs e)
         {
-            var form2 = new Monthly_Invoice_Report();
-            Monthly_Invoice_Report_controller controlr = new Monthly_Invoice_Report_controller(form2);
-            form2.ShowDialog();
+            Daily_appointment_count d = new Daily_appointment_count();
+            Daily_appointment_count_controller c = new Daily_appointment_count_controller(d);
+            d.ShowDialog();
         }
 
-        private void label14_Click(object sender, EventArgs e)
+        private void lblMissingCheckoutReports_Click(object sender, EventArgs e)
         {
-            var form2 = new Doctor_Wise_Invoice();
-            Doctor_Wise_Invoice_controller controlr = new Doctor_Wise_Invoice_controller(form2);
-            form2.ShowDialog();
+            Missing_Checkout_Report m = new Missing_Checkout_Report();
+            Missing_Checkout_Report_controller c = new Missing_Checkout_Report_controller(m);
+            m.ShowDialog();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void lblVisitingHistory_Click(object sender, EventArgs e)
         {
-            var form2 = new Day_Wise_Receipt();
-            Day_Wise_Receipt_controller controlr = new Day_Wise_Receipt_controller(form2);
-            form2.ShowDialog();
+            Visiting_History v = new Visiting_History();
+            Visiting_History_controller c = new Visiting_History_controller(v);
+            v.ShowDialog();
         }
 
-        private void Lab_Receipt_Month_Click(object sender, EventArgs e)
+        private void lbldailynewpatient_Click(object sender, EventArgs e)
         {
-            var form2 = new Month_Wise_Receipt();
-            Month_Wise_Receipt_controller controlr = new Month_Wise_Receipt_controller(form2);
-            form2.ShowDialog();
+            Daily_NewPatients d = new Daily_NewPatients();
+            Daily_NewPatients_controller c = new Daily_NewPatients_controller(d);
+            d.ShowDialog();
         }
 
-        private void Lab_Receipt_PerDoctor_Click(object sender, EventArgs e)
+        private void lblfirstappoint_Click(object sender, EventArgs e)
         {
-            var form2 = new Doctor_Wise_Receipt();
-            Doctor_Wise_Receipt_controller controlr = new Doctor_Wise_Receipt_controller(form2);
-            form2.ShowDialog();
+            Patients_first_appointment f = new Patients_first_appointment();
+            f.doctor_id = doctor_id;
+            Patients_first_appointment_controller c = new Patients_first_appointment_controller(f);
+            f.ShowDialog();
         }
 
-        private void lab_receipt_ModeOfPayment_Click(object sender, EventArgs e)
+        private void lblmonthnewpatient_Click(object sender, EventArgs e)
         {
-            var form2 = new Paymode_Wise_Receipt();
-            Paymode_Wise_Receipt_controller controlr = new Paymode_Wise_Receipt_controller(form2);
-            form2.ShowDialog();
+            Monthly_new_patients m = new Monthly_new_patients();
+            m.doctor_id = doctor_id;
+            Monthly_new_patients_controller c = new Monthly_new_patients_controller(m);
+            m.ShowDialog();
+        }
+
+        private void lblgroupwisereport_Click(object sender, EventArgs e)
+        {
+            Group_wise_report g = new Group_wise_report();
+            g.patient_id = patient_id;
+            Group_wise_report_controller r = new Group_wise_report_controller(g);
+            g.ShowDialog();
+        }
+
+        private void lbldailytreatmentcount_Click(object sender, EventArgs e)
+        {
+            Daily_treatment_count d = new Daily_treatment_count();
+            d.doctor_id = doctor_id;
+            Daily_treatment_count_controller c = new Daily_treatment_count_controller(d);
+            d.ShowDialog();
+        }
+
+        private void lbleachcategory_Click(object sender, EventArgs e)
+        {
+            //Treatment_for_each_category t = new Treatment_for_each_category();
+            //t.doctor_id = doctor_id;
+            //Treatment_for_each_category_controller c = new Treatment_for_each_category_controller(t);
+            //t.ShowDialog();
+        }
+
+        private void lbltreatmenteachdoctor_Click(object sender, EventArgs e)
+        {
+            //Treatment_for_each_doctor t = new Treatment_for_each_doctor();
+            //t.doctor_id = doctor_id;
+            //Treatment_for_each_doctor_controller c = new Treatment_for_each_doctor_controller(t);
+            //t.ShowDialog();
+        }
+
+        private void lblmonthtreatment_Click(object sender, EventArgs e)
+        {
+            //Monthly_treatment_count m = new Monthly_treatment_count();
+            //m.doctor_id = doctor_id;
+            //Monthly_treatment_count_controller c = new Monthly_treatment_count_controller(m);
+            //m.ShowDialog();
         }
 
         private void Chk_Type_CheckedChanged(object sender, EventArgs e)
@@ -1741,10 +1783,10 @@ namespace PappyjoeMVC.View
                 select_dr_id = "0";
                 if (combodoctors.SelectedIndex >= 0)
                 {
-                    System.Data.DataTable dt = this.cntrl.Get_DoctorId(combodoctors.SelectedItem.ToString());
-                    if (dt.Rows.Count > 0)
+                    string dt = this.cntrl.Get_DoctorId(combodoctors.SelectedItem.ToString());
+                    if (dt!="")
                     {
-                        select_dr_id = dt.Rows[0]["Id"].ToString();
+                        select_dr_id = dt.ToString();
                     }
                 }
                 comborepcategory_SelectedIndexChanged(sender, e);
