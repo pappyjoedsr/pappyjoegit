@@ -17,7 +17,7 @@ namespace PappyjoeMVC.View
     {
         Reports_controller cntrl;
         Reports_model _model = new Reports_model();
-        common_model model = new common_model();
+        //common_model model = new common_model();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";
@@ -117,17 +117,17 @@ namespace PappyjoeMVC.View
                     panl_Expanse.Hide();
                     panelpatients.Hide();
                 }
-                DataTable clinicname = this.model.Get_CompanyNAme();
+                DataTable clinicname = this.cntrl.Get_CompanyNAme();
                 if (clinicname.Rows.Count > 0)
                 {
                     string clinicn = "";
                     clinicn = clinicname.Rows[0]["name"].ToString();
                     toolStripButton1.Text = clinicn.Replace("¤", "'");
                 }
-                DataTable docnam = this.model.Get_DoctorName(doctor_id);
-                if (docnam.Rows.Count > 0)
+                string docnam = this.cntrl.Get_DoctorName(doctor_id);
+                if (docnam!="")
                 {
-                    toolStripTextBDoctor.Text = "Logged In As : " + docnam.Rows[0]["doctor_name"].ToString();
+                    toolStripTextBDoctor.Text = "Logged In As : " + docnam;
                 }
                 listpatientsearch.Hide();
                 standardCursor = Cursors.Arrow;
@@ -147,7 +147,7 @@ namespace PappyjoeMVC.View
                 combodoctors.Items.Add("All Doctors");
                 combodoctors.ValueMember = "0";
                 combodoctors.DisplayMember = "All Doctors";
-                DataTable dt = this.model.get_all_doctorname();
+                DataTable dt = this.cntrl.get_all_doctorname();
                 if (dt.Rows.Count > 0)
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
@@ -885,7 +885,7 @@ namespace PappyjoeMVC.View
                     string today = DateTime.Now.ToString("dd/MM/yyyy");
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        System.Data.DataTable dtp = this.model.Get_Practice_details();
+                        System.Data.DataTable dtp = this.cntrl.Get_Practice_details();
                         if (dtp.Rows.Count > 0)
                         {
                             string clinicn = "";
@@ -1741,7 +1741,7 @@ namespace PappyjoeMVC.View
                 select_dr_id = "0";
                 if (combodoctors.SelectedIndex >= 0)
                 {
-                    System.Data.DataTable dt = this.model.Get_DoctorId(combodoctors.SelectedItem.ToString());
+                    System.Data.DataTable dt = this.cntrl.Get_DoctorId(combodoctors.SelectedItem.ToString());
                     if (dt.Rows.Count > 0)
                     {
                         select_dr_id = dt.Rows[0]["Id"].ToString();

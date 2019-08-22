@@ -35,7 +35,6 @@ namespace PappyjoeMVC.View
                 Cmb_Doctor.Items.Add("All Doctor");
                 Cmb_Doctor.ValueMember = "0";
                 Cmb_Doctor.DisplayMember = "All Doctor";
-                //System.Data.DataTable doctor_rs = db.table("select DISTINCT id,doctor_name from tbl_doctor   where login_type='doctor' or login_type='admin' and activate_login='yes' order by doctor_name");
                 DataTable doctor_rs = this.cntrl.doctor_rs();
                 if (doctor_rs.Rows.Count > 0)
                 {
@@ -59,7 +58,6 @@ namespace PappyjoeMVC.View
                 Grvmonthlyappointcount.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                 Grvmonthlyappointcount.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
                 Grvmonthlyappointcount.EnableHeadersVisualStyles = false;
-                //  Grvmonthlyappointcount.Location = new System.Drawing.Point(5, 5);
                 foreach (DataGridViewColumn cl in Grvmonthlyappointcount.Columns)
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -68,7 +66,6 @@ namespace PappyjoeMVC.View
                 dataGridViewmonthlyappoinment.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                 dataGridViewmonthlyappoinment.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
                 dataGridViewmonthlyappoinment.EnableHeadersVisualStyles = false;
-                //dataGridViewmonthlyappoinment.Location = new System.Drawing.Point(5, 5);
                 foreach (DataGridViewColumn cl in dataGridViewmonthlyappoinment.Columns)
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -140,8 +137,6 @@ namespace PappyjoeMVC.View
             Fillgrid();
             dataGridViewmonthlyappoinment.Show();
             btnchartview.Show();
-            //dataGridViewmonthlyappoinment.Size = new System.Drawing.Size(1359, 319);
-            //dataGridViewmonthlyappoinment.Location = new System.Drawing.Point(2, 100);
             if (dataGridViewmonthlyappoinment.Rows.Count < 1)
             {
                 Lab_Msg.Show();
@@ -167,23 +162,17 @@ namespace PappyjoeMVC.View
                 {
                     series.Points.Clear();
                 }
-                //Select d = new Select();
                 string date1 = dateTimePickermonthlyappoint1.Value.ToString("yyyy-MM-dd") + " 00:01:00";
                 string date2 = dateTimePickermonthlyappoint2.Value.ToString("yyyy-MM-dd") + " 23:59:00";
                 System.Data.DataTable datatableeachdoctorappoinment;
                 if (Cmb_Doctor.SelectedIndex == 0)
                 {
 
-                    //datatableeachdoctorappoinment = db.table("select A.pt_name,B.primary_mobile_number ,B.email_address,B.pt_id,A.book_datetime,A.start_datetime,A.booked_by,C.doctor_name  from tbl_appointment A inner join tbl_patient B on A.pt_id=B.id  inner join tbl_doctor C on A.dr_id=C.id  where start_datetime between '" + dateTimePickermonthlyappoint1.Value.ToString("yyyy-MM-dd") + " 00:01:00" + "' and '" + dateTimePickermonthlyappoint2.Value.ToString("yyyy-MM-dd") + " 23:59:00" + " 23:59:00" + "' and B.Profile_Status !='Cancelled' order by A.pt_id asc");
-                    ////dataGridViewmonthlyappoinment.DataSource = datatableeachdoctorappoinment;
                     datatableeachdoctorappoinment = this.cntrl.datatableeachdoctorappoinment(dateTimePickermonthlyappoint1.Value.ToString("yyyy-MM-dd"), dateTimePickermonthlyappoint2.Value.ToString("yyyy-MM-dd"));
                     Grvmonthlyappointcount.DataSource = this.cntrl.Monthlyappointcount(date1, date2);
                 }
                 else
                 {
-                    ////System.Data.DataTable datatableeachdoctorappoinment;
-                    //datatableeachdoctorappoinment = db.table("select A.pt_name,B.primary_mobile_number ,B.email_address,B.pt_id,A.book_datetime,A.start_datetime,A.booked_by,C.doctor_name  from tbl_appointment A inner join tbl_patient B on A.pt_id=B.id  inner join tbl_doctor C on A.dr_id=C.id  where start_datetime between '" + dateTimePickermonthlyappoint1.Value.ToString("yyyy-MM-dd") + " 00:01:00" + "' and '" + dateTimePickermonthlyappoint2.Value.ToString("yyyy-MM-dd") + " 23:59:00" + "' and dr_id='" + select_dr_id + "' and B.Profile_Status !='Cancelled' order by A.pt_id asc");
-                    ////dataGridViewmonthlyappoinment.DataSource = datatableeachdoctorappoinment;
                     datatableeachdoctorappoinment = this.cntrl.datatableeachdoctorappoinment1(dateTimePickermonthlyappoint1.Value.ToString("yyyy-MM-dd"), dateTimePickermonthlyappoint2.Value.ToString("yyyy-MM-dd"), select_dr_id);
                     Grvmonthlyappointcount.DataSource = this.cntrl.Monthlyappointcount_DoctrWise(date1, date2, select_dr_id);
                 }
@@ -240,7 +229,6 @@ namespace PappyjoeMVC.View
                 else
                 {
                     drctid = Cmb_Doctor.SelectedItem.ToString();
-                    //string query = "SELECT id from tbl_doctor where doctor_name='" + drctid + "' and (login_type='doctor' or login_type='admin') ";
                     System.Data.DataTable dt = this.cntrl.Docname_logDocAdmin(drctid);
                     if (dt.Rows.Count > 0)
                     {
@@ -364,12 +352,6 @@ namespace PappyjoeMVC.View
                 System.Data.DataTable tbl2 = Grvmonthlyappointcount.DataSource as System.Data.DataTable;
                 if (dataGridViewmonthlyappoinment.Rows.Count > 0)
                 {
-                    //string fromdate = dateTimePickermonthlyappoint1.Value.Day.ToString();
-                    //string frmonth = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dateTimePickermonthlyappoint1.Value.Month);
-                    //string fryear = dateTimePickermonthlyappoint1.Value.Year.ToString();
-                    //string todate = dateTimePickermonthlyappoint2.Value.Day.ToString();
-                    //string tomonth = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dateTimePickermonthlyappoint2.Value.Month);
-                    //string toyear = dateTimePickermonthlyappoint2.Value.Year.ToString();
                     string message = "Did you want Header on Print?";
                     string caption = "Verification";
                     MessageBoxButtons buttons = MessageBoxButtons.YesNo;

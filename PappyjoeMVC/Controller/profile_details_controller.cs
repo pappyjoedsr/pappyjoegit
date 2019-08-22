@@ -27,15 +27,15 @@ namespace PappyjoeMVC.Controller
         {
             DataTable dtb = mdl.Get_Advance(pt_id);
             return dtb;
-        }
-        public DataTable Get_CompanyNAme()
+        } 
+        public string Load_CompanyName()
         {
-            DataTable dtb = mdl.Get_CompanyNAme();
+            string dtb = mdl.Load_CompanyName(); 
             return dtb;
         }
-        public DataTable Get_DoctorName(string doctor_id)
+        public string Get_DoctorName(string doctor_id)
         {
-            DataTable dtb = mdl.Get_DoctorName(doctor_id);
+            string dtb = mdl.Get_DoctorName(doctor_id);
             return dtb;
         }
         public void Get_Patient_details(string patient_id)
@@ -73,6 +73,10 @@ namespace PappyjoeMVC.Controller
             string dtb = mdl.permission_for_settings(doctor_id);
             return dtb;
         }
-        
+        public string getserver()
+        {
+            string ret = db.server();
+            return ret;
+        }
     }
 }

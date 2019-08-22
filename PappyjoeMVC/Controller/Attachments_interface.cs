@@ -17,15 +17,14 @@ namespace PappyjoeMVC.Controller
         void selid(string id);
         void getid(String gid);
         void getcategory(DataTable dt);
-        void Get_CompanyNAme(DataTable dt);
-        void Get_DoctorName(DataTable dt);
+        void Get_DoctorName(string dt);
         void getpatdetails(DataTable dt);
         void getpayment(DataTable dt);
         void getattachment(DataTable dt);
         void getattachment2(DataTable dt);
         void privillage_A(DataTable dt);
         void Patient_search(DataTable dt);
-        void getpath(DataTable dt);
+        void getpath(string dt);
         void doctr_privillage_for_addnewPatient(DataTable dt);
         void setController(Attachments_controller controller);
     }

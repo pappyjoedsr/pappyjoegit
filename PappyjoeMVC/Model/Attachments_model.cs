@@ -45,9 +45,9 @@ namespace PappyjoeMVC.Model
             string i = c.scalar("select id from tbl_User_Previlege where UserID=" + uid + " and Category='EMRF' and Permission='A'");
             return i;
         }
-        public DataTable getpath()
+        public string  getpath()
         {
-            DataTable dt = c.table("SELECT path FROM tbl_attachments WHERE id='" + attachid + "'");
+            string dt = c.scalar("SELECT path FROM tbl_attachments WHERE id='" + attachid + "'");
             return dt;
         }
         public string getid(string gid)

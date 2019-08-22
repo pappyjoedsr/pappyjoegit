@@ -24,6 +24,11 @@ namespace PappyjoeMVC.View
             InitializeComponent();
         }
 
+        public FrmItemList(string formname)
+        {
+            InitializeComponent();
+            this.formname = formname;
+        }
         public void Setcontroller(ItemList_Controller controller)
         {
             cntrl = controller;
@@ -157,7 +162,7 @@ namespace PappyjoeMVC.View
 
         private void btn_AddNewItem_Click(object sender, EventArgs e)
         {
-            var form2 = new frmAddItems();
+            var form2 = new frmAddDrug();
             AddItem_controller controller = new AddItem_controller(form2);
             form2.ShowDialog();
         }
@@ -208,9 +213,9 @@ namespace PappyjoeMVC.View
                         DataTable dtb = this.cntrl.Get_itemDetails(itemcode);
                         if (dtb.Rows.Count > 0)
                         {
-                            frmAddItems frm = new frmAddItems(dtb);
-                            AddItem_controller cntrl = new AddItem_controller(frm);
-                            frm.ShowDialog();
+                            var form2 = new frmAddDrug();
+                            AddItem_controller controller = new AddItem_controller(form2);
+                            form2.ShowDialog();
                         }
                     }
                     else if (Dgv_Product.CurrentCell.OwningColumn.Name == "ColDelete")

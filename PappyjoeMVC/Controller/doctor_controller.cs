@@ -24,9 +24,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt11 = db.table("select * from tbl_city order by id");
             return dt11;
         }
-        public DataTable Get_DoctorName(string dridd)
+        public string Get_DoctorName(string dridd)
         {
-            DataTable dt = cmdl.Get_DoctorName(dridd);
+            string dt = cmdl.Get_DoctorName(dridd);
            return dt;
         }
         public DataTable  get_companyName()

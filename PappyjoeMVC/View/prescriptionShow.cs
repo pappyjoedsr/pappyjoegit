@@ -102,10 +102,10 @@ namespace PappyjoeMVC.View
                     clinicn = clinicname.Rows[0][0].ToString();
                     toolStripButton10.Text = clinicn.Replace("¤", "'");
                     path = clinicname.Rows[0]["path"].ToString();
-                    System.Data.DataTable docnam = this.cntrl.Get_DoctorName(doctor_id);// db.table("select doctor_name from tbl_doctor Where id='" + doctor_id + "'");
-                    if (docnam.Rows.Count > 0)
+                    string docnam = this.cntrl.Get_DoctorName(doctor_id);
+                    if (docnam != "")
                     {
-                        toolStripTextDoctor.Text = "Logged In As : " + docnam.Rows[0][0].ToString();
+                        toolStripTextDoctor.Text = "Logged In As : " + docnam;
                     }
                     if (path != "")
                     {
@@ -824,11 +824,11 @@ namespace PappyjoeMVC.View
             try
             {
                 int p = 0;
-                System.Data.DataTable doct = this.cntrl.Get_DoctorName(doctor_id);// db.table("select doctor_name from tbl_doctor where id='" + doctor_id + "'");
+               string doct = this.cntrl.Get_DoctorName(doctor_id);// db.table("select doctor_name from tbl_doctor where id='" + doctor_id + "'");
                 string doctor_name = "";
-                if (doct.Rows.Count > 0)
+                if (doct!="")
                 {
-                    doctor_name = doct.Rows[0][0].ToString();
+                    doctor_name = doct;
                 }
                 System.Data.DataTable patient = this.cntrl.get_emailpatientdetails(patient_id);// db.table("select pt_name,gender,street_address,city,primary_mobile_number,date,date_of_birth from tbl_patient where id='" + patient_id + "'");
                 string Pname = "", Gender = "", address = "", DOA = "", age = "", Mobile = "";

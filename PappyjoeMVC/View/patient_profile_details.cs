@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PappyjoeMVC.Model;
 using PappyjoeMVC.Controller;
@@ -15,7 +10,6 @@ namespace PappyjoeMVC.View
     {
         public string patient_id = "0";
         public string doctor_id = "0", admin_id = "0";
-        //byte[] Loadimg = null;
         profile_details_controller cntrl;
         Connection db = new Connection();
         public string ptid { get; set; }
@@ -51,17 +45,15 @@ namespace PappyjoeMVC.View
                 lblAdvance.Text = "Available advance: " + string.Format("{0:C}", 0);
             }
             BTNCunsultation.Hide();
-            DataTable clinicname = this.cntrl.Get_CompanyNAme();
-            if (clinicname.Rows.Count > 0)
+            string clinicname = this.cntrl.Load_CompanyName();
+            if (clinicname !="")
             {
-                string clinicn = "";
-                clinicn = clinicname.Rows[0][0].ToString();
-                toolStripButton1.Text = clinicn.Replace("¤", "'");
+                toolStripButton1.Text = clinicname;
             }
-            DataTable docnam =this.cntrl.Get_DoctorName(doctor_id); 
-            if (docnam.Rows.Count > 0)
+            string docnam =this.cntrl.Get_DoctorName(doctor_id);
+            if (docnam != "")
             {
-                toolStripldoc.Text = "Logged In As :" + docnam.Rows[0][0].ToString();
+                toolStripldoc.Text = "Logged As:Dr." + docnam;
             }
             
             this.cntrl.Get_Patient_details(patient_id); 
@@ -88,12 +80,12 @@ namespace PappyjoeMVC.View
                     labPatientId.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
                     linkLabel_id.Text = rs_patients.Rows[0]["pt_id"].ToString();
                 }
-                DateTime date_of_submission = Convert.ToDateTime(DateTime.Now.ToString("MM/dd/yyyy"));
+                //DateTime date_of_submission = Convert.ToDateTime(DateTime.Now.ToString("MM/dd/yyyy"));
+                DateTime date_of_submission = DateTime.Now;
                 DateTime _effective_date = Convert.ToDateTime(rs_patients.Rows[0]["Visited"].ToString());
                 TimeSpan difference = date_of_submission - _effective_date;
                 try
                 {
-                    buttoncunsultation();
                     int YX = 20;
                     if (rs_patients.Rows[0]["pt_name"].ToString() != "")
                     {
@@ -156,8 +148,8 @@ namespace PappyjoeMVC.View
                     int a = 0;
                     if (rs_patients.Rows[0]["date_of_birth"].ToString() != "")
                     {
-                        if (DateTime.Parse(rs_patients.Rows[0]["date_of_birth"].ToString()).ToString("MM/dd/yyyy") != "")
-                        {
+                        //if (DateTime.Parse(rs_patients.Rows[0]["date_of_birth"].ToString()).ToString("MM/dd/yyyy") != "")
+                        //{
                             txtDob.Text = DateTime.Parse(rs_patients.Rows[0]["date_of_birth"].ToString()).ToString("MM/dd/yyyy");
                             txtDob.BackColor = Color.White;
                             YX = YX + 30;
@@ -166,7 +158,7 @@ namespace PappyjoeMVC.View
                             labDob.Show();
                             labDob.Location = new Point(182, YX);
                             a = 1;
-                        }
+                        //}
                     }
                     else
                     {
@@ -454,7 +446,7 @@ namespace PappyjoeMVC.View
                     }
                     try
                     {
-                        string curFile = db.server() + "\\Pappyjoe_utilities\\patient_image\\" + patient_id;
+                        string curFile = this.cntrl.getserver() + "\\Pappyjoe_utilities\\patient_image\\" + patient_id;
                         if (System.IO.File.Exists(curFile))
                         {
                             pictureBox_PatientPhoto.Image = Image.FromFile(curFile);
@@ -796,7 +788,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Clinical_Findings();
             form2.doctor_id = doctor_id;
-            form2.patient_id = patient_id;// listpatientsearch.SelectedValue.ToString();
+            form2.patient_id = patient_id;
             listpatientsearch.Visible = false;
             Clinical_Findings_controller controller = new Clinical_Findings_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
@@ -826,19 +818,5 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.ShowDialog();
         }
-
-        public void buttoncunsultation()
-        {
-            DataTable cunsultaionview = this.cntrl.main_settings(); 
-            if (cunsultaionview.Rows.Count > 0)
-            {
-                BTNCunsultation.Show();
-            }
-            else
-            {
-                BTNCunsultation.Hide();
-            }
-        }
-
     }
 }

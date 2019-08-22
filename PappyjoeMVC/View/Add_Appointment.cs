@@ -289,11 +289,11 @@ namespace PappyjoeMVC.View
                 contact_no = dt.Rows[0]["contact_no"].ToString();
             }
         }
-        public void Get_DoctorName(DataTable dt1)
+        public void Get_DoctorName(string dt1)
         {
-            if (dt1.Rows.Count > 0)
+            if (dt1!="")
             {
-                toolStripTextDoctor.Text = "Logged In As : " + dt1.Rows[0][0].ToString();
+                toolStripTextDoctor.Text = "Logged In As : " + dt1;
             }
         }
         public void getdocid(DataTable dt)

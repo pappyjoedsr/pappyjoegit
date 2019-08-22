@@ -31,6 +31,7 @@ namespace PappyjoeMVC.View
         common_model cmodel = new common_model();
         public string invoiceid = "";
         addfinsed_treatment_model fmodel = new addfinsed_treatment_model();
+        public string jhjj;
         public Add__invoice()
         {
             InitializeComponent();
@@ -54,10 +55,10 @@ namespace PappyjoeMVC.View
                 clinicn = clinicname.Rows[0]["name"].ToString();
                 toolStripButton1.Text = clinicn.Replace("¤", "'");
             }
-            DataTable docnam = cmodel.Get_DoctorName(doctor_id);// db.table("select doctor_name from tbl_doctor Where id='" + doctor_id + "'");
-            if (docnam.Rows.Count > 0)
+            string docnam = cmodel.Get_DoctorName(doctor_id);// db.table("select doctor_name from tbl_doctor Where id='" + doctor_id + "'");
+            if (docnam != "")
             {
-                toolStripTextDoctor.Text = "Logged In As : " + docnam.Rows[0][0].ToString();
+                toolStripTextDoctor.Text = "Logged As:Dr." + docnam;
             }
             panel3.Hide();
             panel6.Hide();
@@ -234,12 +235,12 @@ namespace PappyjoeMVC.View
                     string drid = dt2.Rows[i]["dr_id"].ToString();
                     try
                     {
-                        DataTable  dr_Name = cmodel.Get_DoctorName(drid);//  db.scalar("select doctor_name from tbl_doctor where id='" + drid + "'");
-                        DGV_Invoice.Rows.Add(dt2.Rows[i][4].ToString(), dt2.Rows[i][5].ToString(), dt2.Rows[i][6].ToString(), dt2.Rows[i][7].ToString(), dt2.Rows[i][8].ToString(), dt2.Rows[i][9].ToString(), dt2.Rows[i][10].ToString(), dt2.Rows[i][18].ToString(), dt2.Rows[i][19].ToString(), dt2.Rows[i][17].ToString(), dr_Name.Rows[0]["doctor_name"].ToString(), "0");
+                        string  dr_Name = cmodel.Get_DoctorName(drid);//  db.scalar("select doctor_name from tbl_doctor where id='" + drid + "'");
+                        DGV_Invoice.Rows.Add(dt2.Rows[i][4].ToString(), dt2.Rows[i][5].ToString(), dt2.Rows[i][6].ToString(), dt2.Rows[i][7].ToString(), dt2.Rows[i][8].ToString(), dt2.Rows[i][9].ToString(), dt2.Rows[i][10].ToString(), dt2.Rows[i][18].ToString(), dt2.Rows[i][19].ToString(), dt2.Rows[i][17].ToString(), dr_Name, "0");
                         i++;
                         DGV_Invoice.Rows[DGV_Invoice.Rows.Count - 1].Cells[17].Value = PappyjoeMVC.Properties.Resources.deleteicon;
                         img.ImageLayout = DataGridViewImageCellLayout.Normal;
-                        Cmb_Doctor.Text = dr_Name.Rows[0]["doctor_name"].ToString();
+                        Cmb_Doctor.Text = dr_Name;
                         DTP_Date.Value = Convert.ToDateTime(dt2.Rows[0][11].ToString());
                         RTB_Notes.Text = dt2.Rows[0][12].ToString();
                         txt_TotalCost.Text = dt2.Rows[0][13].ToString();

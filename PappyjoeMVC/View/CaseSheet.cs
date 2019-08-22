@@ -131,11 +131,11 @@ namespace PappyjoeMVC.View
                 string startDateTime = dtpfrom.Value.ToString("yyyy-MM-dd HH:mm");
                 string startDateTime1 = dTPToDate.Value.ToString("yyyy-MM-dd HH:mm");
                 string date2d = dTPToDate.Value.ToString("MM/dd/yyyy");
-                System.Data.DataTable doct = mdl.Get_DoctorName(doctor_id);
+               string doct = mdl.Get_DoctorName(doctor_id);
                 string doctor_name = "";
-                if (doct.Rows.Count > 0)
+                if (doct!="")
                 {
-                    doctor_name = doct.Rows[0][0].ToString();
+                    doctor_name = doct;
                 }
                 System.Data.DataTable patient = mdl.Get_Patient_Details(patient_id);
                 string Pname = "", Gender = "", address = "", city = "", DOA = "", age = "", Mobile = "";

@@ -63,9 +63,9 @@ namespace PappyjoeMVC.Controller
             _model.Email = intr.Email;
             _model.Locality = intr.Locality;
         }
-        public DataTable get_maxId()
+        public string get_maxId()
         {
-            DataTable dtb = _model.get_maxId();
+            string dtb = _model.get_maxId();
             return dtb;
         }
         public void save_medical(string pat_id,string medical)
@@ -100,9 +100,9 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = mdl.get_all_doctorname();
             return dtb;
         }
-        public DataTable Get_CompanyNAme()
+        public string Load_CompanyName()
         {
-            DataTable dtb = mdl.get_all_doctorname();
+            string dtb = mdl.Load_CompanyName();
             return dtb;
         }
         public DataTable load_medical()
@@ -134,6 +134,11 @@ namespace PappyjoeMVC.Controller
         {
             _model.Group = intr.Group;
             _model.insert_group();
-        } 
+        }
+        public string getserver()
+        {
+            string ret = db.server();
+            return ret;
+        }
     }
 }

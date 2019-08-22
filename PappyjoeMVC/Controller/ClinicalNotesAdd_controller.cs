@@ -179,9 +179,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = model.Get_CompanyNAme();
             return dt;
         }
-        public DataTable Get_DoctorName(string doctor_id)
+        public string Get_DoctorName(string doctor_id)
         {
-            DataTable dt = model.Get_DoctorName(doctor_id);
+            string dt = model.Get_DoctorName(doctor_id);
             return dt;
         }
         public DataTable get_total_payment(string ptid)

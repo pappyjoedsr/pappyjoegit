@@ -52,7 +52,7 @@ namespace PappyjoeMVC.View
             DateTimePickerAdmitDate.Show();
             txtAdmitDate.Hide();
         }
-
+         
         private void txtSecondaryMobNbr_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
@@ -65,7 +65,7 @@ namespace PappyjoeMVC.View
                 e.Handled = false;
             }
         }
-
+       
         private void txtLandLineNbr_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
@@ -238,7 +238,7 @@ namespace PappyjoeMVC.View
                 DateTimePickerAdmitDate.Value = Convert.ToDateTime(value); 
             }
         }
-        string dob = "null";
+        string dob = "";
         public string Dob
         {
             get
@@ -282,49 +282,34 @@ namespace PappyjoeMVC.View
                                 pictureBox_PatientPhoto.Image = PappyjoeMVC.Properties.Resources.nophoto;
                                 txtPic.Text = "";
                             }
-                            int delete = db.execute("delete  from tbl_pt_medhistory where pt_id='" + patient_id + "'");
+                            this.cntrl.delete_pt_medhistory(patient_id);
                             for (int q = 0; q < grmedical.Rows.Count; q++)
                             {
                                 if (Convert.ToBoolean(grmedical.Rows[q].Cells[1].Value) == true)
                                 {
-                                    int medi = db.execute("insert into tbl_pt_medhistory (pt_id,med_id) values('" + patient_id + "','" + grmedical.Rows[q].Cells[0].Value.ToString() + "')");
+                                    this.cntrl.insert_pt_medhistory(patient_id, grmedical.Rows[q].Cells[0].Value.ToString());
                                 }
                             }
                             ///////update pt_group ////////   
-                            int dele = db.execute("delete from tbl_pt_group where pt_id='" + patient_id + "'");
+                            this.cntrl.delete_pt_group(patient_id);
                             for (int d = 0; d < gridgroups.Rows.Count; d++)
                             {
                                 if (Convert.ToBoolean(gridgroups.Rows[d].Cells[1].Value) == true)
                                 {
-                                    int inse = db.execute("insert into  tbl_pt_group(pt_id,group_id) values('" + patient_id + "','" + gridgroups.Rows[d].Cells[0].Value.ToString() + "')");
+                                    this.cntrl.insert_pt_group(patient_id, gridgroups.Rows[d].Cells[0].Value.ToString());
                                 }
                             }
-                            //string imagepath = "";
-                            //try
-                            //{
-                            //    imagepath = db.server() + "\\Pappyjoe_utilities\\patient_image\\" + patient_id;
-                            //    if (!File.Exists(imagepath))
-                            //    {
-                            //        string p = db.server() + "\\Pappyjoe_utilities\\patient_image\\" + patient_id;
-                            //        string realfile = System.IO.Path.GetFileName(path);
-                            //        System.IO.File.Copy(path, db.server() + "\\Pappyjoe_utilities\\patient_image\\" + realfile);
-                            //    }
-                            //}
-                            //catch (Exception ex)
-                            //{ }
-                            RegistryKey regKeyAppRoot = Registry.CurrentUser.CreateSubKey("Pappyjoe");
-                            string strWindowsState = (string)regKeyAppRoot.GetValue("Server");
                             if (path != "")
                             {
 
                                 try
                                 {
-                                if (File.Exists(@"\\" + strWindowsState + "\\Pappyjoe_utilities\\patient_image\\" + patient_id))
+                                if (File.Exists(@"\\" + this.cntrl.getserver() + "\\Pappyjoe_utilities\\patient_image\\" + patient_id))
                                 {
                                 }
                                 else
                                 {
-                                    System.IO.File.Copy(path, @"\\" + strWindowsState + "\\Pappyjoe_utilities\\patient_image\\" + patient_id);
+                                    System.IO.File.Copy(path, @"\\" + this.cntrl.getserver() + "\\Pappyjoe_utilities\\patient_image\\" + patient_id);
                                 }
                             }
                                 catch (Exception ex)
@@ -348,7 +333,7 @@ namespace PappyjoeMVC.View
                     {
                         MessageBox.Show("Enter valid Mobile Number", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
+                } 
             }
             catch (Exception ex)
             {
@@ -501,6 +486,12 @@ namespace PappyjoeMVC.View
             e.Handled = true;
         }
 
+        private void txtDob_Click(object sender, EventArgs e)
+        {
+            DateTimePickerDob.Show();
+            txtDob.Hide();
+        }
+
         public patient_profile_Edit()
         {
             InitializeComponent();
@@ -519,7 +510,6 @@ namespace PappyjoeMVC.View
             DateTimePickerDob.MaxDate = DateTime.Now.Date;
             try
             {
-               
                 if (doctor_id != "1")
                 {
                     string id;
@@ -609,7 +599,7 @@ namespace PappyjoeMVC.View
                 cmbDoctorName.Text = dt7.Rows[0]["doctorname"].ToString();
                 try
                 {
-                    string curFile = db.server() + "\\Pappyjoe_utilities\\patient_image\\" + patient_id;
+                    string curFile =this.cntrl.getserver() + "\\Pappyjoe_utilities\\patient_image\\" + patient_id;
                     if (System.IO.File.Exists(curFile))
                     {
                         pictureBox_PatientPhoto.Image = Image.FromFile(curFile);

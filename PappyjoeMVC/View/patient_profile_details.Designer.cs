@@ -852,6 +852,7 @@
             this.BTNCunsultation.TabIndex = 264;
             this.BTNCunsultation.Text = "Registration Fees";
             this.BTNCunsultation.UseVisualStyleBackColor = false;
+            //this.BTNCunsultation.Click += new System.EventHandler(this.BTNCunsultation_Click);
             // 
             // panel8
             // 

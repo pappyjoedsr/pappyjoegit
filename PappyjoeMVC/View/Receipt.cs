@@ -76,10 +76,10 @@ namespace PappyjoeMVC.View
                     string clinicn = "";
                     clinicn = clinicname.Rows[0][0].ToString();
                     toolStripButton1.Text = clinicn.Replace("¤", "'");
-                    System.Data.DataTable docnam = this.cntrl.Get_DoctorName(doctor_id);// db.table("select doctor_name from tbl_doctor Where id='" + doctor_id + "'");
-                    if (docnam.Rows.Count > 0)
+                    string docnam = this.cntrl.Get_DoctorName(doctor_id);
+                    if (docnam != "")
                     {
-                        toolStriptextdoctor.Text = "Logged In As : " + docnam.Rows[0][0].ToString();
+                        toolStriptextdoctor.Text = "Logged In As : " + docnam;
                     }
                     try
                     {
@@ -311,10 +311,10 @@ namespace PappyjoeMVC.View
                 string str_pincode = "";
                 string str_email = "";
                 string str_website = "";
-                System.Data.DataTable doctor = this.cntrl.Get_DoctorName(doctor_id);// db.table("select doctor_name from tbl_doctor where id= '" + doctor_id.ToString() + "'");
-                if (doctor.Rows.Count > 0)
+                string doctor = this.cntrl.Get_DoctorName(doctor_id);// db.table("select doctor_name from tbl_doctor where id= '" + doctor_id.ToString() + "'");
+                if (doctor!="")
                 {
-                    doctorName = doctor.Rows[0][0].ToString();
+                    doctorName = doctor;
                     streetaddress = dtp.Rows[0]["street_address"].ToString();
                     contact_no = dtp.Rows[0]["contact_no"].ToString();
                     str_locality = dtp.Rows[0]["locality"].ToString();

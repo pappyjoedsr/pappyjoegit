@@ -529,18 +529,7 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        //public void Bindgrid_expense(DataTable dtb)
-        //{
-        //    this.cntrl.expense_search4(dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
-        //    Grid_expense.DataSource = dtb;
-        //    if (Grid_expense.Rows.Count > 0)
-        //    {
-        //        for (int i = 0; i < Grid_expense.Rows.Count; i++)
-        //        {
-        //            Grid_expense.Rows[i].Cells[0].Value = (i + 1).ToString();
-        //        }
-        //    }
-        //}
+       
         public void fill_dgv_debit(DataTable dtb)
         {
             if(dtb.Rows.Count>0)
@@ -566,7 +555,6 @@ namespace PappyjoeMVC.View
             {
                 Dgv_Debit.RowsDefaultCellStyle.ForeColor = Color.DarkSlateGray;
                 Dgv_Debit.RowsDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 8, FontStyle.Regular);
-                //Dgv_Debit.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI",9, FontStyle.Regular);
                 Dgv_Debit.Columns["colAmount"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                 Dgv_Debit.Columns["colAmount"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             }

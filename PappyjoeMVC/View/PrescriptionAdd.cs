@@ -868,10 +868,10 @@ namespace PappyjoeMVC.View
                     linkLabel_id.Text = patient.Rows[0][1].ToString();
                     Patient_mobile = patient.Rows[0][4].ToString();
                 }
-                DataTable docnam = this.cntrl.Get_DoctorName(doctor_id);
-                if (docnam.Rows.Count > 0)
+                string docnam = this.cntrl.Get_DoctorName(doctor_id);
+                if (docnam != "")
                 {
-                    toolStripTextDoctor.Text = "Logged In As : " + docnam.Rows[0][0].ToString();
+                    toolStripTextDoctor.Text = "Logged In As : " + docnam;
                 }
                 DataTable dt3 = this.cntrl.get_all_doctorname();
                 cmbDoctor.DataSource = dt3;

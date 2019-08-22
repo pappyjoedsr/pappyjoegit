@@ -15,7 +15,7 @@ namespace PappyjoeMVC.Controller
         void privilege_D(string doctor_id);
         void privilege_E(string doctor_id);
         void Get_CompanyNAme(DataTable dt);
-        void Get_DoctorName(DataTable dt);
+        void Get_DoctorName(string dt);
         void show(DataTable dt);
         void getdays(DataTable dt);
         void Patient_search(DataTable dt);

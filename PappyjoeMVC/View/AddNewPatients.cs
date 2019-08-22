@@ -1,32 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Microsoft.Win32;
+using PappyjoeMVC.Controller;
+using PappyjoeMVC.Model;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using PappyjoeMVC.Controller;
-using System.Drawing.Printing;
 using System.Drawing.Imaging;
+using System.Drawing.Printing;
 using System.IO;
-using Microsoft.Win32;
-using PappyjoeMVC.Model;
+using System.Windows.Forms;
 
 
 namespace PappyjoeMVC.View
 {
-    public partial class AddNewPatients : Form,AddNew_patient_interface
+    public partial class AddNewPatients : Form, AddNew_patient_interface
     {
-        AddNew_patient_controller cntrl;common_model mdl=new common_model();
+        AddNew_patient_controller cntrl; common_model mdl = new common_model();
         public string patient_name = "", doctor_id = "", staff_id = "", PatientId = "", path = "";
         string pat_id = "";
         int medhisStatus = 0, selectGrp = 0;
         public int statusForNewPatient = 0; string clinicn = "";
         public static bool SetFlag = false;
-        private bool setFlag;
-
         public string PatientName
         {
             get { return this.txtPatName.Text; }
@@ -58,12 +51,32 @@ namespace PappyjoeMVC.View
                 else
                     radFemale.Checked = true;
             }
-           
+
         }
         public string DOB
         {
-            get { return this.DTP_Dob.Text; }
-            set { DTP_Dob.Text = value; }
+            get
+            {
+                if (DateTime.Now.Date.ToString("MM/dd/yyyy") == DTP_Dob.Value.ToString("MM/dd/yyyy"))
+                {
+                    return null;
+                }
+                else
+                {
+                    return DTP_Dob.Value.ToString("yyyy-MM-dd");
+                }
+            }
+            set
+            {
+                if (value == null)
+                {
+
+                }
+                else
+                {
+                    DTP_Dob.Text = value;
+                }
+            }
         }
         public string ReferredBy
         {
@@ -87,7 +100,8 @@ namespace PappyjoeMVC.View
         }
         public string Age
         {
-            get {
+            get
+            {
                 if (this.txtxAge.Text != "")
                 { }
                 else
@@ -96,9 +110,19 @@ namespace PappyjoeMVC.View
             }
             set { txtxAge.Text = value.ToString(); }
         }
-        public string DateofAdmit
+        public string DateofAdmit 
         {
-            get { return this.dateTimePickervisited.Text; }
+            get
+            {
+                if (DateTime.Now.Date.ToString("MM/dd/yyyy") == dateTimePickervisited.Value.ToString("MM/dd/yyyy"))
+                {
+                    return DateTime.Now.Date.ToString("yyyy-MM-dd");
+                }
+                else
+                {
+                    return dateTimePickervisited.Value.ToString("yyyy-MM-dd");
+                }
+            }
             set { dateTimePickervisited.Text = value; }
         }
         public string Occupation
@@ -186,7 +210,7 @@ namespace PappyjoeMVC.View
         }
         public void validatenumber()
         {
-            DataTable patSearchnumber = this.cntrl.Get_pnonenumber(txtPMobNumber.Text); 
+            DataTable patSearchnumber = this.cntrl.Get_pnonenumber(txtPMobNumber.Text);
             if (patSearchnumber.Rows.Count > 0)
             {
                 MessageBox.Show("User with same Number already exists", "Number exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -208,7 +232,7 @@ namespace PappyjoeMVC.View
         private void txtPatName_Leave(object sender, EventArgs e)
         {
             Lab_UsernameAvailable.Show();
-            DataTable patSearch = this.cntrl.Get_patient_details(txtPatName.Text); 
+            DataTable patSearch = this.cntrl.Get_patient_details(txtPatName.Text);
             if (patSearch.Rows.Count > 0)
             {
                 Lab_UsernameAvailable.Text = "User with same name already exists";
@@ -254,24 +278,9 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    Lab_UsernameAvailable.Show();
-                    DataTable patSearch = this.cntrl.Get_patient_details(txtPatName.Text);
-                    if (patSearch.Rows.Count > 0)
-                    {
-                        Lab_UsernameAvailable.Text = "User with same name already exists";
-                        Lab_UsernameAvailable.ForeColor = Color.Red;
-                        Lab_ViewDetails.Show();
-                    }
-                    else
-                    {
-                        Lab_UsernameAvailable.Text = "User Available";
-                        Lab_UsernameAvailable.ForeColor = Color.LimeGreen;
-                        Lab_ViewDetails.Hide();
-                    }
                     if (txtPMobNumber.Text != "")
                     {
                         int i = 0;
-                        //Addfunction();
                         string smsName1 = PappyjoeMVC.Model.GlobalVariables.smsName.ToString();
                         string smsPass1 = PappyjoeMVC.Model.GlobalVariables.smsPass.ToString();
                         i = this.cntrl.Save();
@@ -280,15 +289,14 @@ namespace PappyjoeMVC.View
                         if (i > 0)
                         {
                             txtPic.Text = "";
-                            DataTable rs_patient = this.cntrl.get_maxId(); 
-                            pat_id = rs_patient.Rows[0][0].ToString();
+                            pat_id = this.cntrl.get_maxId();
                             if (medhisStatus == 0)
                             {
                                 for (int count = 0; count < grmedical.Rows.Count; count++)
                                 {
                                     if (Convert.ToBoolean(grmedical.Rows[count].Cells[1].Value) == true)
                                     {
-                                        this.cntrl.save_medical(pat_id, grmedical.Rows[count].Cells[0].Value.ToString()); //db.execute("insert into tbl_pt_medhistory (pt_id,med_id) values('" + pat_id + "','" + grmedical.Rows[count].Cells[0].Value.ToString() + "')");
+                                        this.cntrl.save_medical(pat_id, grmedical.Rows[count].Cells[0].Value.ToString());
                                     }
                                 }
                             }
@@ -309,7 +317,7 @@ namespace PappyjoeMVC.View
                                 {
                                     if (Convert.ToBoolean(gridgroups.Rows[count].Cells[1].Value) == true)
                                     {
-                                        this.cntrl.save_group(pat_id, gridgroups.Rows[count].Cells[0].Value.ToString()); 
+                                        this.cntrl.save_group(pat_id, gridgroups.Rows[count].Cells[0].Value.ToString());
                                     }
                                 }
                             }
@@ -323,7 +331,7 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                             }
-                            DataTable cmd = this.cntrl.automaticid(); 
+                            DataTable cmd = this.cntrl.automaticid();
                             if (cmd.Rows.Count > 0)
                             {
                                 int n = 0;
@@ -333,54 +341,24 @@ namespace PappyjoeMVC.View
                                     this.cntrl.update_autogenerateid(n);
                                 }
                             }
-                            RegistryKey regKeyAppRoot = Registry.CurrentUser.CreateSubKey("Pappyjoe");
-                            string strWindowsState = (string)regKeyAppRoot.GetValue("Server");
+                            //a.SendSMS(smsName1, smsPass1, txtPMobNumber.Text, "Dear " + txtPatName.Text + " welcome to " + toolStripButton1.Text);
                             if (path != "")
                             {
 
                                 try
                                 {
-                                    if (File.Exists(@"\\" + strWindowsState + "\\Pappyjoe_utilities\\patient_image\\" + pat_id))
+                                    if (File.Exists(@"\\" + this.cntrl.getserver() + "\\Pappyjoe_utilities\\patient_image\\" + pat_id))
                                     {
                                     }
                                     else
                                     {
-                                        System.IO.File.Copy(path, @"\\" + strWindowsState + "\\Pappyjoe_utilities\\patient_image\\" + pat_id);
+                                        System.IO.File.Copy(path, @"\\" + this.cntrl.getserver() + "\\Pappyjoe_utilities\\patient_image\\" + pat_id);
                                     }
                                 }
                                 catch (Exception ex)
                                 {
                                 }
                             }
-                            //RegistryKey regKeyAppRoot = Registry.CurrentUser.CreateSubKey("Pappyjoe");
-                            //string strWindowsState = (string)regKeyAppRoot.GetValue("Server");
-                            //pathlength();
-                            //if (path != "")
-                            //{
-                            //    try
-                            //    {
-                            //        if (File.Exists(@"\\" + strWindowsState + "\\Pappyjoe_utilities\\patient_image\\" + pat_id))
-                            //        {
-                            //        }
-                            //        else
-                            //        {
-                            //            System.IO.File.Copy(open.FileName, @"\\" + strWindowsState + "\\Pappyjoe_utilities\\patient_image\\" + pat_id);
-                            //        }
-
-                            //        //if (File.Exists(@"\\" + strWindowsState + "\\Pappyjoe_utilities\\Attachments\\" + realfile))
-                            //        //{
-                            //        //}
-                            //        //else
-                            //        //{
-                            //        //    System.IO.File.Copy(open2.FileName, @"\\" + strWindowsState + "\\Pappyjoe_utilities\\Attachments\\" + realfile);
-                            //        //}
-                            //    }
-                            //    catch (Exception ex)
-                            //    {
-                            //        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            //    }
-                            //}
                             if (statusForNewPatient == 1)
                             {
                                 ActiveForm.Close();
@@ -438,19 +416,6 @@ namespace PappyjoeMVC.View
             txtOccupation.Text = "";
             txtReferedby.Text = "";
         }
-        public int len;
-        public void pathlength()
-        {
-            string fullpath = Application.StartupPath.Substring(0, Application.StartupPath.Length);
-            if (fullpath.Substring((Application.StartupPath.Length) - 1) == "e")
-            {
-                len = 11;
-            }
-            else if (fullpath.Substring((Application.StartupPath.Length - 1)) == "g")
-            {
-                len = 10;
-            }
-        }
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             grmedical.Visible = false;
@@ -458,7 +423,7 @@ namespace PappyjoeMVC.View
             dataGridViewmedical.Visible = true;
             btnMED_Add.Visible = true;
             btnMED_Cancle.Visible = true;
-            DataTable dt = this.cntrl.load_medical(); 
+            DataTable dt = this.cntrl.load_medical();
             dataGridViewmedical.DataSource = dt;
             btnAddNew.Visible = false;
         }
@@ -530,7 +495,6 @@ namespace PappyjoeMVC.View
         {
             selectGrp = 1;
             this.cntrl.check_group(grouptext.Text);
-            //insertgroup();
             DataTable dt1 = this.cntrl.load_group();
             grouptext.Text = "";
             gridgroups.DataSource = dt1;
@@ -539,7 +503,6 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                //DataTable checkdatacc = db.table("Select * from tbl_group where name ='" + grouptext.Text + "'");
                 if (checkdatacc.Rows.Count > 0)
                 {
                     MessageBox.Show("Group  " + grouptext.Text + " already exist");
@@ -548,7 +511,7 @@ namespace PappyjoeMVC.View
                 {
                     if (grouptext.Text != "")
                     {
-                       this.cntrl.insert_group();
+                        this.cntrl.insert_group();
                         grouptext.Text = "";
                         btn_addgrps.Visible = true;
                         gridgroups.Visible = true;
@@ -861,10 +824,10 @@ namespace PappyjoeMVC.View
                     txtxAge.Text = ""; txtPic.Text = "";
                     doctornamebind();
                     btnAddNew.Visible = true;
-                    DataTable docnam = mdl.Get_DoctorName(doctor_id); // this.cntrl.get_doctorname(doctor_id); 
-                    if (docnam.Rows.Count > 0)
+                    string docnam = mdl.Get_DoctorName(doctor_id); 
+                    if (docnam!="")
                     {
-                        toolStripldoc.Text = "Logged As:Dr." + docnam.Rows[0][0].ToString();
+                        toolStripldoc.Text = "Logged As:Dr." + docnam;
                     }
                     DataTable auto = this.cntrl.data_from_automaticid();
                     if (auto.Rows.Count > 0)
@@ -876,12 +839,7 @@ namespace PappyjoeMVC.View
                         }
                     }
                     this.Size = new System.Drawing.Size(500, 500);
-                    DataTable clinicname = this.cntrl.Get_CompanyNAme(); 
-                    if (clinicname.Rows.Count > 0)
-                    {
-                        clinicn = clinicname.Rows[0][0].ToString();
-                        toolStripButton1.Text = clinicn.Replace("¤", "'");
-                    }
+                    toolStripButton1.Text = this.cntrl.Load_CompanyName();
                     if (statusForNewPatient == 1)
                     {
                         txtPatName.Text = patient_name;
@@ -894,7 +852,7 @@ namespace PappyjoeMVC.View
                     txtReferedby.Visible = true;
                     grmedical.Visible = true;
                     DTP_Dob.MaxDate = DateTime.Now.Date;
-                    DataTable dt = this.cntrl.load_medical(); 
+                    DataTable dt = this.cntrl.load_medical();
                     grmedical.DataSource = dt;
                     DataTable dt1 = this.cntrl.load_group();
                     grouptext.Text = "";
@@ -952,7 +910,7 @@ namespace PappyjoeMVC.View
                 if (doctor_id != "0")
                 {
                     int dr_index = 0;
-                    DataTable dt = this.cntrl.get_all_doctorname(); 
+                    DataTable dt = this.cntrl.get_all_doctorname();
                     if (dt.Rows.Count > 0)
                     {
                         ddldoctor.DataSource = dt;
