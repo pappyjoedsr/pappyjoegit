@@ -15,7 +15,6 @@ namespace PappyjoeMVC.View
         public int total = 0;
         private string select_dr_id = "0";
         private string drctid = "";
-
         public Monthly_appointment_count()
         {
             InitializeComponent();
@@ -229,10 +228,10 @@ namespace PappyjoeMVC.View
                 else
                 {
                     drctid = Cmb_Doctor.SelectedItem.ToString();
-                    System.Data.DataTable dt = this.cntrl.Docname_logDocAdmin(drctid);
-                    if (dt.Rows.Count > 0)
+                    string dt = this.cntrl.Docname_logDocAdmin(drctid);
+                    if (dt!="")
                     {
-                        select_dr_id = dt.Rows[0]["Id"].ToString();
+                        select_dr_id = dt;
                     }
                     Fillgrid();
                     if (Grvmonthlyappointcount.Rows.Count < 1)
@@ -245,7 +244,6 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -335,13 +333,14 @@ namespace PappyjoeMVC.View
                         checkStr = "1";
                         MessageBox.Show("Successfully Exported to Excel", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
                 }
                 else
                     MessageBox.Show("No records found,please change the date and try again!..", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
-            { }
+            {
+                MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnprint_Click(object sender, EventArgs e)
@@ -387,7 +386,6 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("</style>");
                     sWrite.WriteLine("</head>");
                     sWrite.WriteLine("<body >");
-                    //sWrite.WriteLine("<br><br><br>");
                     sWrite.WriteLine("<div>");
                     sWrite.WriteLine("<table align=center>");
                     sWrite.WriteLine("<col >");
@@ -405,7 +403,6 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("</tr>");
                     }
 
-
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=7 align=left><FONT COLOR=black FACE='Segoe UI'  SIZE=3>  <b> " + strclinicname + "</b> </font></td>");
@@ -416,9 +413,6 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=7 align=left><FONT COLOR=black FACE='Segoe UI'  SIZE=2>  <b> " + strphone + "</b> </font></center></td>");
                     sWrite.WriteLine("</tr>");
-                    //sWrite.WriteLine("<tr>");
-                    //sWrite.WriteLine("<td colspan=6 align=left><FONT COLOR=black FACE='Segoe UI'  SIZE=2>  <b> " + stremail + "</b> </font></center></td>");
-                    //sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=7 align=left><FONT COLOR=black FACE='Segoe UI'  SIZE=2>  " + " <b>From :</b>" + "" + dateTimePickermonthlyappoint1.Value.ToString("dd/MM/yyyy") + "</font></center></td>");
                     sWrite.WriteLine("</tr>");

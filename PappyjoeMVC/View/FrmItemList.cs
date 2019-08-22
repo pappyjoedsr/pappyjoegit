@@ -43,10 +43,10 @@ namespace PappyjoeMVC.View
                 clinicn = dtb.Rows[0][0].ToString();
                 toolStripButton1.Text = clinicn.Replace("¤", "'");
             }
-            DataTable dt_doctor = cntrl.Get_DoctorId(doctor_id);
-            if (dt_doctor.Rows.Count > 0)
+            string dt_doctor = cntrl.Get_DoctorId(doctor_id);
+            if (dt_doctor!="")
             {
-                toolStripTextDoctor.Text = "Logged In As : " + dt_doctor.Rows[0][0].ToString();
+                toolStripTextDoctor.Text = "Logged In As : " + dt_doctor.ToString();
             }
             btn_ItemList.BackColor = Color.SteelBlue;
             panel_main.Hide();

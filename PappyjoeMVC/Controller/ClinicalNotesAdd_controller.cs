@@ -229,9 +229,9 @@ namespace PappyjoeMVC.Controller
             DataTable d = _model.get_note(id);
             return d;
         }
-        public DataTable Get_DoctorId(string name)
+        public string Get_DoctorId(string name)
         {
-            DataTable d = model.Get_DoctorId(name);
+            string d = model.Get_DoctorId(name);
             return d;
         }
         public int insertInto_clinical_findings(string ptid, string dt, string date)

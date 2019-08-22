@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
     public interface Monthly_Invoice_Report_interface
     {
         void getdocname(DataTable dt);
-        void Get_DoctorId(DataTable dt);
+        void Get_DoctorId(string dt);
         void getdata(DataTable dt);
         void getdata2(DataTable dt);
         void practicedetails(DataTable dt);

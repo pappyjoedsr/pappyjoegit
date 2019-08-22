@@ -48,9 +48,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.Dailyappointcount(d5,d6);
             return dt;
         }
-        public DataTable Get_DoctorId(string name)
+        public string Get_DoctorId(string name)
         {
-            DataTable dt = model.Get_DoctorId(name);
+            string dt = model.Get_DoctorId(name);
             return dt;
         }
     }

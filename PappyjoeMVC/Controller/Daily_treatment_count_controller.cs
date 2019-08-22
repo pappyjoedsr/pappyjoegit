@@ -56,9 +56,9 @@ namespace PappyjoeMVC.Controller
             DataTable d = cmn.Get_practiceDlNumber();
             return d;
         }
-        public DataTable Get_DoctorId(string name)
+        public string Get_DoctorId(string name)
         {
-            DataTable d = cmn.Get_DoctorId(name);
+            string d = cmn.Get_DoctorId(name);
             return d;
         }
     }

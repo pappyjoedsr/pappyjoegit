@@ -43,9 +43,9 @@ namespace PappyjoeMVC.Controller
             DataTable d = _model.Monthlyappointcount_DoctrWise(d1,d2,drctr);
             return d;
         }
-        public DataTable Docname_logDocAdmin(string drctid)
+        public string Docname_logDocAdmin(string drctid)
         {
-            DataTable dt = _model.Docname_logDocAdmin(drctid);
+            string dt = _model.Docname_logDocAdmin(drctid);
             return dt;
         }
         public DataTable Get_practiceDlNumber()

@@ -39,11 +39,11 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-        public void Get_DoctorId(DataTable dt)
+        public void Get_DoctorId(string dt)
         {
-            if (dt.Rows.Count > 0)
+            if (dt!="")
             {
-               ID = dt.Rows[0]["Id"].ToString();
+               ID = dt.ToString();
             }
         }
         public void receiptReceivedLoad()

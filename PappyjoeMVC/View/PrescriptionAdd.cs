@@ -437,10 +437,10 @@ namespace PappyjoeMVC.View
             try
             {
                 String d_id = "0";
-                DataTable dr_tb = this.cntrl.Get_DoctorId(cmbDoctor.Text);
-                if (dr_tb.Rows.Count > 0)
+                string dr_tb = this.cntrl.Get_DoctorId(cmbDoctor.Text);
+                if (dr_tb!="")
                 {
-                    d_id = dr_tb.Rows[0][0].ToString();
+                    d_id = dr_tb.ToString();
                 }
                 else
                 {
@@ -506,8 +506,8 @@ namespace PappyjoeMVC.View
                     if (dataGridView_drugnew.Rows.Count > 0)
                     {
                         prescription_check();
-                        DataTable dt0 = this.cntrl.Get_DoctorId(cmbDoctor.Text);
-                        if (dt0.Rows.Count > 0)
+                        string dt0 = this.cntrl.Get_DoctorId(cmbDoctor.Text);
+                        if (dt0!="")
                         {
                             this.cntrl.update_prescription_main(Txtnote.Text, Prescription_bill_status, prescription_id);
                             this.cntrl.delete_prescription(prescription_id);
@@ -516,7 +516,7 @@ namespace PappyjoeMVC.View
                             {
                                 if (dataGridView_drugnew[13, i].Value.ToString() != "")
                                 { strstatus = dataGridView_drugnew[13, i].Value.ToString(); }
-                                this.cntrl.save_prescription(Convert.ToInt32( prescription_id), patient_id, cmbDoctor.Text, dt0.Rows[0][0].ToString(), dateTimePicker1.Value.ToString("yyyy-MM-dd"), dataGridView_drugnew[0, i].Value.ToString(), dataGridView_drugnew[1, i].Value.ToString(), dataGridView_drugnew[2, i].Value.ToString(), dataGridView_drugnew[3, i].Value.ToString(), dataGridView_drugnew[4, i].Value.ToString(), dataGridView_drugnew[5, i].Value.ToString(), dataGridView_drugnew[6, i].Value.ToString(), dataGridView_drugnew[7, i].Value.ToString(), dataGridView_drugnew[8, i].Value.ToString(), dataGridView_drugnew[9, i].Value.ToString(), dataGridView_drugnew[11, i].Value.ToString(), strstatus, dataGridView_drugnew[10, i].Value.ToString());
+                                this.cntrl.save_prescription(Convert.ToInt32( prescription_id), patient_id, cmbDoctor.Text, dt0.ToString(), dateTimePicker1.Value.ToString("yyyy-MM-dd"), dataGridView_drugnew[0, i].Value.ToString(), dataGridView_drugnew[1, i].Value.ToString(), dataGridView_drugnew[2, i].Value.ToString(), dataGridView_drugnew[3, i].Value.ToString(), dataGridView_drugnew[4, i].Value.ToString(), dataGridView_drugnew[5, i].Value.ToString(), dataGridView_drugnew[6, i].Value.ToString(), dataGridView_drugnew[7, i].Value.ToString(), dataGridView_drugnew[8, i].Value.ToString(), dataGridView_drugnew[9, i].Value.ToString(), dataGridView_drugnew[11, i].Value.ToString(), strstatus, dataGridView_drugnew[10, i].Value.ToString());
                             }
                             savebut.Text = "SAVE PRESCRIPTION";
                             var form2 = new prescriptionShow();

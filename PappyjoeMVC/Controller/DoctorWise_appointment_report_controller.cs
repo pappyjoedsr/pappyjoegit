@@ -23,9 +23,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = model.get_all_doctorname();
             return dt; 
         }
-        public DataTable Get_DoctorId(string name)
+        public string Get_DoctorId(string name)
         {
-            DataTable dt = model.Get_DoctorId(name);
+            string dt = model.Get_DoctorId(name);
             return dt;
         }
         public DataTable dt_docApt(string date1, string date2)
@@ -48,14 +48,14 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.Appointcountforeachdoctor_DoctrWise(d1,d2,drctr);
             return dt;
         }
-        public DataTable get_docId(string drid)
+        public string get_docId(string drid)
         {
-            DataTable dt = _model.get_docId(drid);
+            string dt = _model.get_docId(drid);
             return dt;
         }
-        public DataTable doc_name_login(string drid)
+        public string doc_name_login(string drid)
         {
-            DataTable dt = _model.doc_name_login(drid);
+            string dt = _model.doc_name_login(drid);
             return dt;
         }
         public DataTable Get_practiceDlNumber()

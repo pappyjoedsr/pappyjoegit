@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
     public interface Month_Wise_Receipt_interface
     {
         void getdocname(DataTable dt);
-        void Get_DoctorId(DataTable dt);
+        void Get_DoctorId(string dt);
         void mnthrcpt(DataTable dt);
         void mnthrcpt2(DataTable dt);
         void getinvdata(DataTable dt);

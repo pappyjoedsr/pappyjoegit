@@ -12,7 +12,7 @@ namespace PappyjoeMVC.Controller
         string invoice { get; set; }
         string dr_id { get; set; }
         void getdocname(DataTable dt);
-        void Get_DoctorId(DataTable dt);
+        void Get_DoctorId(string dt);
         void getinvoice(DataTable dt);
         void getinvoice2(DataTable dt);
         void getpay(DataTable dt);

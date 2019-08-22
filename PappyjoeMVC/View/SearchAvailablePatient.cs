@@ -65,8 +65,8 @@ namespace PappyjoeMVC.View
                 {
                     id = dgvPatient.CurrentRow.Cells["colid"].Value.ToString();
                     string name = dgvPatient.CurrentRow.Cells["coldoctName"].Value.ToString();
-                   DataTable dtb= mdl.Get_DoctorId(name);// cn.scalar("select id from tbl_doctor where doctor_name='" + name + "'");
-                    drctId = dtb.Rows[0][0].ToString();
+                    string dtb = mdl.Get_DoctorId(name);// cn.scalar("select id from tbl_doctor where doctor_name='" + name + "'");
+                    drctId = dtb.ToString();
                     if (id != "")
                     {
 
