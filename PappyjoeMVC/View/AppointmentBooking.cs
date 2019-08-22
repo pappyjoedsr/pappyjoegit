@@ -414,7 +414,7 @@ namespace PappyjoeMVC.View
                             //{
                             //    clinic = clinicname.Rows[0][0].ToString();
                             //}
-                            sms a = new sms();
+                            sms_model a = new sms_model();
                             DataTable pat = this.cntrl.Get_Patient_Details(patient_id);// db.table("select * from tbl_patient where id='" + patient_id + "'");
                             DataTable smsreminder = this.cntrl.Get_reminderSmS();// db.table("select * from tbl_appt_reminder_sms");
                             if (smsreminder.Rows.Count > 0)

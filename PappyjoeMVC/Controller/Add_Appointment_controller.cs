@@ -21,7 +21,7 @@ namespace PappyjoeMVC.Controller
         }
         public void smsreminder()
         {
-            DataTable dt = mdl.smsreminder();
+           DataTable dt = mdl.smsreminder();
            intr.smsreminder(dt);
         }
         public void smsdetails()
@@ -56,8 +56,8 @@ namespace PappyjoeMVC.Controller
         }
         public void Get_DoctorName(string id)
         {
-            DataTable dt = cmdl.Get_DoctorName(id);
-            intr.Get_DoctorName(dt);
+            string e = cmdl.Get_DoctorName(id);
+            intr.Get_DoctorName(e);
         }
         public void get_all_doctorname()
         {

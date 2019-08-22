@@ -262,7 +262,7 @@
     <Compile Include="Model\Receipt_Model.cs" />
     <Compile Include="Model\Reports_model.cs" />
     <Compile Include="Model\Show_Appointment_model.cs" />
-    <Compile Include="Model\sms.cs" />
+    <Compile Include="Model\sms_model.cs" />
     <Compile Include="Model\Staff_model.cs" />
     <Compile Include="Model\supplier_model.cs" />
     <Compile Include="Model\treatment_model.cs" />
