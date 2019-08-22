@@ -38,6 +38,11 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.select_invoice(invoices);
             return dtb;
         }
+        public string Load_CompanyName()
+        {
+            string dtb = cmodel.Load_CompanyName();
+            return dtb;
+        }
         public DataTable Get_Advance(string invoices)
         {
             DataTable dtb = cmodel.Get_Advance(invoices);

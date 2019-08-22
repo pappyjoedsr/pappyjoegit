@@ -564,7 +564,6 @@ namespace PappyjoeMVC.View
         {
             selectGrp = 1;
             this.cntrl.check_group(grouptext.Text);
-            //insertgroup();
             DataTable dt1 = this.cntrl.load_group();
             grouptext.Text = "";
             gridgroups.DataSource = dt1;
@@ -573,7 +572,6 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                //DataTable checkdatacc = db.table("Select * from tbl_group where name ='" + grouptext.Text + "'");
                 if (checkdatacc.Rows.Count > 0)
                 {
                     MessageBox.Show("Group  " + grouptext.Text + " already exist");

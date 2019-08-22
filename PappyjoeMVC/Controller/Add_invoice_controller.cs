@@ -24,6 +24,11 @@ namespace PappyjoeMVC.Controller
             DataTable admin = db.table("select id from tbl_doctor where login_type='admin'");
             return admin;
         }
+        public string Load_CompanyName()
+        {
+            string dtb = cmodel.Load_CompanyName();
+            return dtb;
+        }
         public DataTable Get_invoice_prefix()
         {
             DataTable invno = db.table("select invoice_prefix,invoice_number,invoive_automation from tbl_invoice_automaticid where invoive_automation='Yes'");

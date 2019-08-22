@@ -62,13 +62,13 @@ namespace PappyjoeMVC.View
                 {
                     toolStripButton7.Visible = false;
                 }
-                DataTable clinicname = cmodel.Get_CompanyNAme();
-                if (clinicname.Rows.Count > 0)
-                {
-                    string clinicn = "";
-                    clinicn = clinicname.Rows[0]["name"].ToString();
-                    toolStripButton1.Text = clinicn.Replace("¤", "'");
-                }
+                //DataTable clinicname = cmodel.Get_CompanyNAme();
+                //if (clinicname.Rows.Count > 0)
+                //{
+                //    string clinicn = "";
+                //    clinicn = clinicname.Rows[0]["name"].ToString();
+                    toolStripButton1.Text = this.cntrl.Load_CompanyName();
+                //}
                 listpatientsearch.Hide();
                 string docnam = cmodel.Get_DoctorName(doctor_id);
                 if (docnam != "")
