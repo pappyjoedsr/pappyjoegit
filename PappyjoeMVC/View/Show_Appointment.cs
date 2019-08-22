@@ -477,6 +477,16 @@ namespace PappyjoeMVC.View
             form2.ShowDialog();
         }
 
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView2.Rows.Count > 0 && e.ColumnIndex == 3)

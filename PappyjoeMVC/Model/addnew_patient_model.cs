@@ -165,9 +165,9 @@ namespace PappyjoeMVC.Model
      "'" + _locality + "','" + _city + "','" +_pincode + "','" + Convert.ToDateTime( DateTime.Now.Date ).ToString("yyyy/MM/dd") + "','id4','" + _referred + "','" + _file + "','" +Convert.ToDateTime(_admit).ToString("yyyy/MM/dd") + "','" +_doctor + "','" + _occupation + "','Active')");
             return i;
         }
-        public DataTable get_maxId()
+        public string get_maxId()
         {
-            DataTable rs_patient = db.table("SELECT MAX(Id) FROM tbl_patient");
+            string rs_patient = db.scalar("SELECT MAX(Id) FROM tbl_patient");
             return rs_patient;
         }
         public void save_medical(string pat_id,string medical)
