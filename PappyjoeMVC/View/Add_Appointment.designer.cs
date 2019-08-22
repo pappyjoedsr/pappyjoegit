@@ -58,21 +58,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripTextDoctor = new System.Windows.Forms.ToolStripTextBox();
-            this.linkLabel_Name = new System.Windows.Forms.LinkLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.listpatientsearch = new System.Windows.Forms.ListBox();
-            this.btn_Close = new System.Windows.Forms.Button();
-            this.btn_Add = new System.Windows.Forms.Button();
-            this.label41 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.linkLabel_id = new System.Windows.Forms.LinkLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripBAttachment = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -82,12 +69,26 @@
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripDropDownButton();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextDoctor = new System.Windows.Forms.ToolStripTextBox();
+            this.linkLabel_Name = new System.Windows.Forms.LinkLabel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.labelallpatient = new System.Windows.Forms.Label();
+            this.listpatientsearch = new System.Windows.Forms.ListBox();
+            this.btn_Close = new System.Windows.Forms.Button();
+            this.btn_Add = new System.Windows.Forms.Button();
+            this.label41 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.linkLabel_id = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6.SuspendLayout();
             this.label26.SuspendLayout();
@@ -234,7 +235,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label12.Location = new System.Drawing.Point(68, 25);
+            this.label12.Location = new System.Drawing.Point(48, 25);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 13);
             this.label12.TabIndex = 68;
@@ -428,7 +429,7 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.DarkGray;
-            this.panel5.Location = new System.Drawing.Point(-1, 90);
+            this.panel5.Location = new System.Drawing.Point(-1, 88);
             this.panel5.Name = "panel5";
             this.panel5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel5.Size = new System.Drawing.Size(1364, 1);
@@ -450,6 +451,7 @@
             this.toolStripButton11,
             this.toolStripButton10,
             this.toolStripButton7,
+            this.toolStripButton12,
             this.toolStripButton8,
             this.toolStripSeparator2,
             this.toolStripButton9,
@@ -462,16 +464,203 @@
             this.toolStrip1.TabIndex = 294;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton1.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(103, 37);
+            this.toolStripButton1.Text = "Pappyjoe Clinic";
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
+            // 
+            // toolStripBAttachment
+            // 
+            this.toolStripBAttachment.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripBAttachment.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripBAttachment.ForeColor = System.Drawing.Color.White;
+            this.toolStripBAttachment.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBAttachment.Image")));
+            this.toolStripBAttachment.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBAttachment.Name = "toolStripBAttachment";
+            this.toolStripBAttachment.Size = new System.Drawing.Size(72, 37);
+            this.toolStripBAttachment.Text = "Fast Track";
+            this.toolStripBAttachment.Visible = false;
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton2.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
+            this.toolStripButton2.Text = "Calendar";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton3.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(60, 37);
+            this.toolStripButton3.Text = "Records";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton4.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(114, 37);
+            this.toolStripButton4.Text = "Communications";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton5.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(72, 37);
+            this.toolStripButton5.Text = "Inventory";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton6.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(59, 37);
+            this.toolStripButton6.Text = "Reports";
+            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
+            // 
+            // toolStripButton11
+            // 
+            this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton11.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
+            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton11.Name = "toolStripButton11";
+            this.toolStripButton11.Size = new System.Drawing.Size(62, 37);
+            this.toolStripButton11.Text = "Consent";
+            this.toolStripButton11.Visible = false;
+            this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton10.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(62, 37);
+            this.toolStripButton10.Text = "Expense";
+            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton7.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(56, 37);
+            this.toolStripButton7.Text = "Profiles";
+            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.toolStripButton12.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
+            this.toolStripButton12.Text = "Lab Tracking";
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton8.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem,
+            this.logoutToolStripMenuItem});
+            this.toolStripButton8.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
+            this.toolStripButton8.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(33, 37);
+            this.toolStripButton8.Text = "toolStripButton8";
+            this.toolStripButton8.ToolTipText = "Settings";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.ToolTipText = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Image = global::PappyjoeMVC.Properties.Resources._1435669279_question_balloon_basic_blue;
+            this.toolStripButton9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(29, 37);
+            this.toolStripButton9.Text = "toolStripButton9";
+            this.toolStripButton9.ToolTipText = "Pappyjoe Version 18.4";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.Image = global::PappyjoeMVC.Properties.Resources.appbar_user_add__2_1;
+            this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(32, 37);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.ToolTipText = "Add new Patient";
+            this.toolStripDropDownButton1.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
             // 
             // toolStripTextBox1
             // 
@@ -506,7 +695,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel3.Location = new System.Drawing.Point(191, 42);
+            this.panel3.Location = new System.Drawing.Point(192, 40);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1, 48);
             this.panel3.TabIndex = 302;
@@ -519,6 +708,21 @@
             this.panel1.Size = new System.Drawing.Size(143, 45);
             this.panel1.TabIndex = 301;
             // 
+            // labelallpatient
+            // 
+            this.labelallpatient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelallpatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelallpatient.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelallpatient.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.labelallpatient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelallpatient.Location = new System.Drawing.Point(4, 4);
+            this.labelallpatient.Name = "labelallpatient";
+            this.labelallpatient.Size = new System.Drawing.Size(106, 38);
+            this.labelallpatient.TabIndex = 248;
+            this.labelallpatient.Text = "All Patients";
+            this.labelallpatient.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelallpatient.Click += new System.EventHandler(this.labelallpatient_Click);
+            // 
             // listpatientsearch
             // 
             this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -530,6 +734,7 @@
             this.listpatientsearch.Name = "listpatientsearch";
             this.listpatientsearch.Size = new System.Drawing.Size(250, 42);
             this.listpatientsearch.TabIndex = 295;
+            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
             // 
             // btn_Close
             // 
@@ -537,7 +742,7 @@
             this.btn_Close.BackColor = System.Drawing.Color.Tomato;
             this.btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Close.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Close.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Close.ForeColor = System.Drawing.Color.White;
             this.btn_Close.Location = new System.Drawing.Point(1265, 94);
             this.btn_Close.Name = "btn_Close";
@@ -553,7 +758,7 @@
             this.btn_Add.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_Add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Add.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.ForeColor = System.Drawing.Color.White;
             this.btn_Add.Location = new System.Drawing.Point(1185, 94);
             this.btn_Add.Name = "btn_Add";
@@ -606,196 +811,6 @@
             this.linkLabel_id.Size = new System.Drawing.Size(0, 13);
             this.linkLabel_id.TabIndex = 73;
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton1.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(103, 37);
-            this.toolStripButton1.Text = "Pappyjoe Clinic";
-            // 
-            // toolStripBAttachment
-            // 
-            this.toolStripBAttachment.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripBAttachment.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripBAttachment.ForeColor = System.Drawing.Color.White;
-            this.toolStripBAttachment.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBAttachment.Image")));
-            this.toolStripBAttachment.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripBAttachment.Name = "toolStripBAttachment";
-            this.toolStripBAttachment.Size = new System.Drawing.Size(72, 37);
-            this.toolStripBAttachment.Text = "Fast Track";
-            this.toolStripBAttachment.Visible = false;
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton2.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
-            this.toolStripButton2.Text = "Calendar";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton3.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(60, 37);
-            this.toolStripButton3.Text = "Records";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton4.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(114, 37);
-            this.toolStripButton4.Text = "Communications";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton5.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(72, 37);
-            this.toolStripButton5.Text = "Inventory";
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton6.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(59, 37);
-            this.toolStripButton6.Text = "Reports";
-            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
-            // 
-            // toolStripButton11
-            // 
-            this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton11.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
-            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton11.Name = "toolStripButton11";
-            this.toolStripButton11.Size = new System.Drawing.Size(62, 37);
-            this.toolStripButton11.Text = "Consent";
-            this.toolStripButton11.Visible = false;
-            this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton10.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(62, 37);
-            this.toolStripButton10.Text = "Expense";
-            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton7.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(56, 37);
-            this.toolStripButton7.Text = "Profiles";
-            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
-            // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem,
-            this.logoutToolStripMenuItem});
-            this.toolStripButton8.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
-            this.toolStripButton8.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(33, 37);
-            this.toolStripButton8.Text = "toolStripButton8";
-            this.toolStripButton8.ToolTipText = "Settings";
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            this.settingsToolStripMenuItem.ToolTipText = "Settings";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
-            // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1429953040_Log_Out;
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = global::PappyjoeMVC.Properties.Resources._1435669279_question_balloon_basic_blue;
-            this.toolStripButton9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(29, 37);
-            this.toolStripButton9.Text = "toolStripButton9";
-            this.toolStripButton9.ToolTipText = "Pappyjoe Version 18.4";
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.Image = global::PappyjoeMVC.Properties.Resources.appbar_user_add__2_1;
-            this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(32, 37);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.ToolTipText = "Add new Patient";
-            this.toolStripDropDownButton1.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
-            // 
-            // labelallpatient
-            // 
-            this.labelallpatient.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelallpatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelallpatient.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelallpatient.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.labelallpatient.Image = global::PappyjoeMVC.Properties.Resources.SP;
-            this.labelallpatient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelallpatient.Location = new System.Drawing.Point(4, 4);
-            this.labelallpatient.Name = "labelallpatient";
-            this.labelallpatient.Size = new System.Drawing.Size(106, 38);
-            this.labelallpatient.TabIndex = 248;
-            this.labelallpatient.Text = "All Patients";
-            this.labelallpatient.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -825,8 +840,7 @@
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_Appointment";
-            this.Text = "Add Appointment";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Add_Appointment";
             this.Load += new System.EventHandler(this.Add_Appointment_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -907,5 +921,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.LinkLabel linkLabel_id;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
     }
 }

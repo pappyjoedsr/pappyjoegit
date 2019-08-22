@@ -20,7 +20,7 @@ namespace PappyjoeMVC.View
         public string id1;
         int tabstatus = 0;
         int tabstatus1 = 0;
-        sms a = new sms();
+        sms_model a = new sms_model();
         Communication_controller ctrlr;
         Communication_model mdl = new Communication_model();
         public Communication()

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Model
 {
-    public class sms
+    public class sms_model
     {
 
         private WebProxy objProxy1 = null;

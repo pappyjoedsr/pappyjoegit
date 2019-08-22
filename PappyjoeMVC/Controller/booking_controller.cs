@@ -37,12 +37,12 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable get_All_proceure()
         {
-            DataTable dtb = addmodel.get_All_proceure();
+            DataTable dtb = addmodel.get_All_procedure();
             return dtb;
         }
         public DataTable getdocid(string d)
         {
-            DataTable dtb = addmodel.getdocid(d);
+            DataTable dtb = addmodel.getdoctrname(d);
             return dtb;
         }
         public DataTable search_patient(string search)
@@ -125,20 +125,20 @@ namespace PappyjoeMVC.Controller
             return dtb;
             //intr.Appointment_for_newPAtient(dtb);
         }
-        public int insappointment(DateTime book_datetime, DateTime start_datetime, string duration, string note, string pt_id, string pt_name, string dr_id, string mobile_no, string email_id,  string plan_new_procedure, string booked_by)
+        public int insappointment(DateTime book_datetime, DateTime start_datetime, string duration, string note, string pt_id, string pt_name, string dr_id, string mobile_no, string email_id, string plan_new_procedure, string booked_by)
         {
-            addmodel.book_datetime = book_datetime;
-            addmodel.start_date = start_datetime;
-            addmodel.duration = duration;
-            addmodel.note = note;
-            addmodel.patient_id = pt_id;
-            addmodel.pt_name = pt_name;
-            addmodel.dr_id = dr_id;
-            addmodel.pt_mobile = mobile_no;
-            addmodel.pt_email = email_id;
-            addmodel.plan_new_procedure = plan_new_procedure;
-            addmodel.booked_by = booked_by;
-            int i = addmodel.insappointment();
+            //addmodel.book_datetime = book_datetime;
+            //addmodel.start_date = start_datetime;
+            //addmodel.duration = duration;
+            //addmodel.note = note;
+            //addmodel.patient_id = pt_id;
+            //addmodel.pt_name = pt_name;
+            //addmodel.dr_id = dr_id;
+            //addmodel.pt_mobile = mobile_no;
+            //addmodel.pt_email = email_id;
+            //addmodel.plan_new_procedure = plan_new_procedure;
+            //addmodel.booked_by = booked_by;
+            int i = addmodel.insappointment(book_datetime.ToString(), start_datetime.ToString(), duration, note, pt_id, pt_name, dr_id, mobile_no, email_id, plan_new_procedure, booked_by);
             return i;
         }
         public DataTable appointmentId()

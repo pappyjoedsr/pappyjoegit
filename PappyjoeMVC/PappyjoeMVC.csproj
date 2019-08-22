@@ -327,7 +327,7 @@
     <Compile Include="View\AppointmentBooking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\AppointmentBooking.Designer.cs">
+    <Compile Include="View\AppointmentBooking.designer.cs">
       <DependentUpon>AppointmentBooking.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Appointment_for_each_patient_group.cs">

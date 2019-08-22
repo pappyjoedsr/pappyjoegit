@@ -10,26 +10,24 @@ namespace PappyjoeMVC.Model
     public class Show_Appointment_model
     {
         Connection c = new Connection();
-        private string ap_id = "";
-        public string apid
-        {
-            get { return ap_id; }
-            set { ap_id = value; }
-        }
         public string privilege_A(string doctor_id)
         {
-            string id = c.scalar("select id from tbl_User_Previlege where UserID=" + doctor_id + " and Category='APT' and Permission='A'");
+            string id = c.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='APT' and Permission='A'");
             return id;
         }
-    
         public string privilege_D(string doctor_id)
         {
-            string id = c.scalar("select id from tbl_User_Previlege where UserID=" + doctor_id + " and Category='APT' and Permission='D'");
+            string id = c.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='APT' and Permission='D'");
             return id;
+        }
+        public string settingsprivilage(string doctrid)
+        {
+            string b = c.scalar("select id from tbl_User_Privilege where UserID=" + doctrid + " and Category='CLMS' and Permission='A'");
+            return b;
         }
         public string privilege_E(string doctor_id)
         {
-            string id = c.scalar("select id from tbl_User_Previlege where UserID=" + doctor_id + " and Category='APT' and Permission='E'");
+            string id = c.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='APT' and Permission='E'");
             return id;
         }
         public DataTable show(string patid)
@@ -38,9 +36,9 @@ namespace PappyjoeMVC.Model
             ",tbl_appointment.start_datetime,tbl_appointment.status,tbl_appointment.schedule,tbl_appointment.waiting,tbl_appointment.engaged,tbl_appointment.checkout,tbl_appointment.id as a_id,tbl_doctor.doctor_name FROM  tbl_appointment LEFT JOIN tbl_patient on tbl_appointment.pt_id=tbl_patient.ID LEFT JOIN tbl_doctor ON tbl_appointment.dr_id=tbl_doctor.id  WHERE  tbl_appointment.pt_id= '" + patid + "'");
             return dt;
         }
-        public int delete()
+        public int delete(string apntid)
         {
-            int j = c.execute("delete from tbl_appointment where id='" + ap_id + "'");
+            int j = c.execute("delete from tbl_appointment where id='" + apntid + "'");
             return j;
         }
     }

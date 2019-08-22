@@ -24,6 +24,21 @@ namespace PappyjoeMVC.Controller
             string e= mdl.privilege_A(doctor_id);
             intr.privilege_A(e);
         }
+        public void doctr_privillage_for_addnewPatient(string doctor_id)
+        {
+            string e = cmdl.doctr_privillage_for_addnewPatient(doctor_id);
+            intr.doctr_privillage_for_addnewPatient(e);
+        }
+        public void settingsprivilage(string doctrid)
+        {
+            string b = mdl.settingsprivilage(doctrid);
+            intr.settingsprivilage(b);
+        }
+        public void Get_Patient_Details(string patientid)
+        {
+            DataTable dt = cmdl.Get_Patient_Details(patientid);
+            intr.Get_Patient_Details(dt);
+        }
         public void privilege_D(string doctor_id)
         {
             string e = mdl.privilege_D(doctor_id);
@@ -49,31 +64,15 @@ namespace PappyjoeMVC.Controller
             DataTable dt = mdl.show(patid);
             intr.show(dt);
         }
-        public void getdays(string patid)
-        {
-            DataTable dt = am.getdays(patid);
-            intr.getdays(dt);
-        }
         public void Patient_search(string txtbox)
         {
             DataTable dt = cmdl.Patient_search(txtbox);
             intr.Patient_search(dt);
         }
-        public int delete()
+        public int delete(string apntid)
         {
-            mdl.apid = intr.apid;
-            int j = mdl.delete();
+            int j = mdl.delete(apntid);
             return j;
-        }
-        public string doctr_privillage_for_addnewPatient(string doctor_id)
-        {
-            string dtb = cmdl.doctr_privillage_for_addnewPatient(doctor_id);
-            return dtb;
-        }
-        public string permission_for_settings(string doctor_id)
-        {
-            string dtb = cmdl.permission_for_settings(doctor_id);
-            return dtb;
         }
     }
 }
