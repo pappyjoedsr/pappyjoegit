@@ -41,6 +41,11 @@ namespace PappyjoeMVC.Controller
             DataTable d = model.get_all_doctorname();
             return d;
         }
+        public string Load_CompanyName()
+        {
+            string dtb = model.Load_CompanyName();
+            return dtb;
+        }
         public string doctr_privillage_for_addnewPatient(string doctor_id)
         {
             string d = model.doctr_privillage_for_addnewPatient(doctor_id);

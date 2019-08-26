@@ -48,13 +48,13 @@ namespace PappyjoeMVC.View
                     admin_id = admin.Rows[0]["id"].ToString();
                 }
             }
-            DataTable clinicname = cmodel.Get_CompanyNAme();// db.table("select name from tbl_practice_details");
-            if (clinicname.Rows.Count > 0)
-            {
-                string clinicn = "";
-                clinicn = clinicname.Rows[0]["name"].ToString();
-                toolStripButton1.Text = clinicn.Replace("¤", "'");
-            }
+            //DataTable clinicname = cmodel.Get_CompanyNAme();// db.table("select name from tbl_practice_details");
+            //if (clinicname.Rows.Count > 0)
+            //{
+            //    string clinicn = "";
+            //    clinicn = clinicname.Rows[0]["name"].ToString();
+                toolStripButton1.Text = this.cntrl.Load_CompanyName();// clinicn.Replace("¤", "'");
+            //}
             string docnam = cmodel.Get_DoctorName(doctor_id);// db.table("select doctor_name from tbl_doctor Where id='" + doctor_id + "'");
             if (docnam != "")
             {
