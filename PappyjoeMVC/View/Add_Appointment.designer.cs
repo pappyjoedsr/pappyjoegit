@@ -69,6 +69,7 @@
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripDropDownButton();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,7 +90,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabel_id = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.panel6.SuspendLayout();
             this.label26.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -590,6 +590,17 @@
             this.toolStripButton7.Text = "Profiles";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.toolStripButton12.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
+            this.toolStripButton12.Text = "Lab Tracking";
+            // 
             // toolStripButton8
             // 
             this.toolStripButton8.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -809,17 +820,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 72;
             this.pictureBox1.TabStop = false;
-            // 
-            // toolStripButton12
-            // 
-            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.toolStripButton12.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
-            this.toolStripButton12.Text = "Lab Tracking";
             // 
             // Add_Appointment
             // 
