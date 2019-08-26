@@ -140,7 +140,7 @@ namespace PappyjoeMVC.Model
         }
         public int save_details(string _PName, string _ptag, string _address, string _locality, string _country, string _state, string _city, string _pincode, string _phone, string _email, string _website, string _Pspeci, string _DInum1, string _DInumbr2)
         {
-          int i=  db.execute("insert into tbl_practice_details (name,tagline,street_address,locality,country_id,state_id,city_id,pincode,contact_no,email,website,specialization,path,Dl_Number,Dl_Number2)values('" + _PName + "','" + _ptag + "','" + _address + "','" + _locality + "','" + _country+ "','" + _state + "','" + _city + "','" +_pincode + "','" +_phone + "','" + _email + "','" + _website + "','" + _Pspeci + "','Null','" + _DInum1 + "','" + _DInumbr2 + "')");
+          int i=  db.execute("insert into tbl_practice_details (name,tagline,street_address,locality,country_id,state_id,city_id,pincode,contact_no,email,website,specialization,path,Dl_Number,Dl_Number2)values('" + _PName + "','" + _ptag + "','" + _address + "','" + _locality + "','" + _country+ "','" + _state + "','" + _city + "','" +_pincode + "','" +_phone + "','" + _email + "','" + _website + "','" + _Pspeci + "','','" + _DInum1 + "','" + _DInumbr2 + "')");
             return i;
         }
         public int Update_details(string _PName, string _ptag, string _address, string _locality, string _country, string _state, string _city, string _pincode, string _phone, string _email, string _website, string _imgpath, string _Pspeci, string _DInum1, string _DInumbr2)

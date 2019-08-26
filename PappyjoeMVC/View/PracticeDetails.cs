@@ -69,7 +69,8 @@ namespace PappyjoeMVC.View
         {
             if (cmb_state.Items.Count > 0)
             {
-                int selectedValue1; string cmb = "City";
+                int selectedValue1;
+                string cmb = "City";
                 bool parseOK1 = Int32.TryParse(cmb_state.SelectedValue.ToString(), out selectedValue1);
                 frmeditpracticedetails frm = new frmeditpracticedetails(selectedValue1, cmb);
                 frm.frameid = "4";
@@ -163,7 +164,7 @@ namespace PappyjoeMVC.View
         private void PracticeDetails_Load(object sender, EventArgs e)
         {
             focus = true;
-            label16.Hide();
+             label16.Hide();
             panel_main.Visible = false;
             DataTable dt_country = this.cntrl.Fill_CountryCombo();
             FillCountryCombo(dt_country);
@@ -196,6 +197,7 @@ namespace PappyjoeMVC.View
                     Get_CmbName(dtb3, "Specialization");
                     string clini_name = dtb_details.Rows[0]["name"].ToString();
                     txtname.Text = clini_name.Replace("¤", "'");
+                    toolStripButton1.Text = txtname.Text;
                     txttagline.Text = dtb_details.Rows[0]["tagline"].ToString();
                     cmb_state.Text = dtb_details.Rows[0]["name"].ToString();
                     cmb_specialization.Text = dtb_details.Rows[0]["name"].ToString();
@@ -208,7 +210,7 @@ namespace PappyjoeMVC.View
                     txtdruglicenseno.Text = dtb_details.Rows[0]["Dl_Number"].ToString();
                     txttaxno.Text = dtb_details.Rows[0]["Dl_Number2"].ToString();
                     txtpath.Text = dtb_details.Rows[0]["path"].ToString();
-                    if (path != "")
+                    if (txtpath.Text != "")
                     {
                         pictureBox1.Image = Image.FromFile(db.server() + txtpath.Text);
                     }
