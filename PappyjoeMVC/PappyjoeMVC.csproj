@@ -68,7 +68,6 @@
     <Compile Include="Controller\Add_Appointment_controller.cs" />
     <Compile Include="Controller\Add_Appointment_interface.cs" />
     <Compile Include="Controller\Add_Attachments_controller.cs" />
-    <Compile Include="Controller\Add_Attachments_interface.cs" />
     <Compile Include="Controller\add_category_controller.cs" />
     <Compile Include="Controller\add_category_interface.cs" />
     <Compile Include="Controller\Add_invoice_controller.cs" />

@@ -10,58 +10,64 @@ namespace PappyjoeMVC.Controller
 {
     public class Add_Attachments_controller
     {
-        Add_Attachments_interface intr;
-        Add_Attachments_model mdl = new Add_Attachments_model();
+        Connection db = new Connection();
         common_model cmdl = new common_model();
-        public Add_Attachments_controller(Add_Attachments_interface inttr)
+        Add_Attachments_model mdl = new Add_Attachments_model();
+        public string selectdoctrid()
         {
-            intr = inttr;
-            intr.setController(this);
+            string id= mdl.selectdoctrid();
+            return id;
         }
-        public void selid()
+        public string clinicname()
         {
-            DataTable dt = mdl.selid();
-            intr.selid(dt);
+            string dt = mdl.clinicname();
+            return dt;
         }
-        public void Get_CompanyNAme()
+        public string Get_DoctorName(string doctrid)
         {
-            DataTable dt = cmdl.Get_CompanyNAme();
-            intr.Get_CompanyNAme(dt);
+            string id = cmdl.Get_DoctorName(doctrid);
+            return id;
         }
-        public void Get_DoctorName(string id)
+        public string doctr_privillage_for_addnewPatient(string doctor_id)
         {
-            string dt = cmdl.Get_DoctorName(id);
-            intr.Get_DoctorName(dt);
+            string e = cmdl.doctr_privillage_for_addnewPatient(doctor_id);
+            return e;
         }
-        public void getcategory()
+        public DataTable GetCategory()
         {
-            DataTable dt = mdl.getcategory();
-            intr.getcategory(dt);
+            DataTable dt = mdl.GetCategory();
+            return dt;
         }
-        public void getpatdetails(string id)
+        public DataTable GetPatientDetails(string patntid)
         {
-            DataTable dt = mdl.getpatdetails(id);
-            intr.getpatdetails(dt);
+            DataTable dt = mdl.GetPatientDetails(patntid);
+            return dt;
         }
-        public void getpayment(string patid)
+        public string GetPayment(string patntid)
         {
-            DataTable dt = mdl.getpayment(patid);
-            intr.getpayment(dt);
+            string pay = mdl.GetPayment(patntid);
+            return pay;
         }
-        public int insattach()
-        {
-            mdl.patid = intr.patid;
-            mdl.image = intr.image;
-            mdl.docid = intr.id;
-            mdl.path = intr.path;
-            mdl.categryname = intr.catgryname;
-            int j = mdl.insattach();
-            return j;
-        }
-        public void Patient_search(string txtbox)
+        public DataTable Patient_search(string txtbox)
         {
             DataTable dt = cmdl.Patient_search(txtbox);
-            intr.Patient_search(dt);
+            return dt;
         }
+        public string getserver()
+        {
+            string server = db.server();
+            return server;
+        }
+        public string settingsprivilage(string doctrid)
+        {
+            string id = mdl.settingsprivilage(doctrid);
+            return id;
+        }
+        public int insattach(string patientid, string imgname, string path, string doctrid, string catgryname)
+        {
+            int j = mdl.insattach(patientid,imgname,path,doctrid,catgryname);
+            return j;
+        }
+
     }
 }
