@@ -104,7 +104,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Communication();
             form2.doctor_id = doctor_id;
-            Communication_controller controller= new Communication_controller(form2);
+            Communication_controller controller = new Communication_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -229,12 +229,9 @@ namespace PappyjoeMVC.View
                 contact_no = dt.Rows[0]["contact_no"].ToString();
             }
         }
-        public void Get_DoctorName(string dt1)
+        public void Get_DoctorName(string doctr)
         {
-            if (dt1 != "")
-            {
-                toolStripTextDoctor.Text = "Logged In As : " + dt1;
-            }
+           toolStripTextDoctor.Text = "Logged In As : " + doctr;
         }
         public void getdoctrname(DataTable dt)
         {
