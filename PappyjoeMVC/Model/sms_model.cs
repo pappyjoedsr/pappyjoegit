@@ -70,7 +70,7 @@ namespace PappyjoeMVC.Model
             throw new NotImplementedException();
         }
 
-        public string SendSMS2(string User, string password, string Mobile_Number, string Message, string SID, string Sname, string scheduledDate, string systemdate)
+        public string SendSMS(string User, string password, string Mobile_Number, string Message, string SID, string Sname, string scheduledDate, string systemdate)
         {
             //user=drtoms&passwd=gknco113&RID=10&mobilenumber=9037851234&message=hi dear&SenderName=DRTOMS&schedulerName=AS1&ScheduledDateTime=20/11/2015 12:10:00 PM&systemcurrenttime=20/11/2015 10:40:00 AM&interval=0
 

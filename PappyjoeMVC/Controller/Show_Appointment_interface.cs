@@ -9,16 +9,16 @@ namespace PappyjoeMVC.Controller
 {
     public interface Show_Appointment_interface
     {
-        string patient_id { get; set; }
-        string apid { get; set; }
+        void show(DataTable dt);
         void privilege_A(string doctor_id);
         void privilege_D(string doctor_id);
         void privilege_E(string doctor_id);
         void Get_CompanyNAme(DataTable dt);
         void Get_DoctorName(string dt);
-        void show(DataTable dt);
-        void getdays(DataTable dt);
+        void Get_Patient_Details(DataTable dt);
         void Patient_search(DataTable dt);
+        void settingsprivilage(string doctrid);
+        void doctr_privillage_for_addnewPatient(string doctor_id);
         void setController(Show_Appointment_controller controller);
     }
 }
