@@ -13,12 +13,6 @@ namespace PappyjoeMVC.Controller
         Practice_Model Pmdl=new Practice_Model();
         common_model mdl = new common_model();
         Connection db = new Connection();
-        //Practice_interface intr;
-        //public Practice_Controller(Practice_interface inttr)
-        //{
-        //    intr = inttr;
-        //    intr.SetController(this);
-        //}
         public DataTable GetData()
         {
             DataTable dtb = Pmdl.get_data();
@@ -72,7 +66,6 @@ namespace PappyjoeMVC.Controller
                 isva = true;
             else
                 isva = false;
-
             return isva;
         }
         public string Load_CompanyName()

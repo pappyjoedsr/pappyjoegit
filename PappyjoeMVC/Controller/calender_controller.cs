@@ -10,19 +10,11 @@ namespace PappyjoeMVC.Controller
 {
   public class calender_controller
     {
-        Connection db = new Connection();
-        calender_interface intr;
         calender_model _model = new calender_model();
-        public calender_controller(calender_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
-       
-        public void get_practicetimingvalues()
+        public DataTable get_practicetimingvalues()
         {
             DataTable dt = _model.get_practicetimingvalues();
-            intr.FormLoad(dt);
+            return dt;
         }
         public int update(string slot)
         {

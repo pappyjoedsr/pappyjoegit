@@ -86,84 +86,9 @@ namespace PappyjoeMVC.View
             editpracticedetails_controller controller = new editpracticedetails_controller(frm);
             frm.ShowDialog();
         }
-        //public string Name
-        //{
-        //    get { return this.txtname.Text; }
-        //    set { this.txtname.Text = value; }
-        //}
-        //public string Tag
-        //{
-        //    get { return this.txttagline.Text; }
-        //    set { this.txttagline.Text = value; }
-        //}
-        //public string State
-        //{
-        //    get { return this.cmb_state.SelectedValue.ToString(); }
-        //    set { this.cmb_state.Text = value; }
-        //}
-        //public string Specialization
-        //{
-        //    get { return this.cmb_specialization.SelectedValue.ToString(); }
-        //    set { this.cmb_specialization.Text = value; }
-        //}
-        //public string Address
-        //{
-        //    get { return this.txtstreet.Text; }
-        //    set { this.txtstreet.Text = value; }
-        //}
-        //public string Locality
-        //{
-        //    get { return this.txtlocality.Text; }
-        //    set { this.txtlocality.Text = value; }
-        //}
-        //public string Country
-        //{
-        //    get { return this.cmb_country.SelectedValue.ToString(); }
-        //    set { this.cmb_country.Text = value; }
-        //}
-        //public string City
-        //{
-        //    get { return this.cmb_city.SelectedValue.ToString(); }
-        //    set { this.cmb_city.Text = value; }
-        //}
-        //public string PinCode
-        //{
-        //    get { return this.txtpincode.Text; }
-        //    set { this.txtpincode.Text = value; }
-        //}
-        //public string Phone
-        //{
-        //    get { return this.txtcontactnumber.Text; }
-        //    set { this.txtcontactnumber.Text = value; }
-        //}
-        //public string Email
-        //{
-        //    get { return this.txtemail.Text; }
-        //    set { this.txtemail.Text = value; }
-        //}
-        //public string Website
-        //{
-        //    get { return this.txtwebsite.Text; }
-        //    set { this.txtwebsite.Text = value; }
-        //}
-        //public string Imagepath
-        //{
-        //    get { return this.txtpath.Text; }
-        //    set { this.txtpath.Text = value; }
-        //}
-        //public string DINumber1
-        //{
-        //    get { return this.txtdruglicenseno.Text; }
-        //    set { this.txtdruglicenseno.Text = value; }
-        //}
-        //public string DINumber2
-        //{
-        //    get { return this.txttaxno.Text; }
-        //    set { this.txttaxno.Text = value; }
-        //}
         private void PracticeDetails_Load(object sender, EventArgs e)
         {
-            focus = true;
+            //focus = true;
              label16.Hide();
             panel_main.Visible = false;
             DataTable dt_country = this.cntrl.Fill_CountryCombo();
@@ -453,11 +378,6 @@ namespace PappyjoeMVC.View
                 cmb_city.DataSource = null;
             }
         }
-
-        //private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        //{
-        //}
-
         private void button_billing_Click(object sender, EventArgs e)
         {
             errorProvider1.Dispose();
@@ -536,7 +456,7 @@ namespace PappyjoeMVC.View
             staff.TopLevel = false;
             panel_main.Controls.Add(staff);
             staff.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            Staff_controller controller = new Staff_controller(staff);
+            //Staff_controller controller = new Staff_controller(staff);
             staff.Show();
         }
 
@@ -562,7 +482,6 @@ namespace PappyjoeMVC.View
             communication.TopLevel = false;
             panel_main.Controls.Add(communication);
             communication.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            communication_setting_controller controller = new communication_setting_controller(communication);
             communication.Show();
         }
 
@@ -627,7 +546,6 @@ namespace PappyjoeMVC.View
             calender.TopLevel = false;
             panel_main.Controls.Add(calender);
             calender.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            calender_controller controller = new calender_controller(calender);
             calender.Show();
         }
 
@@ -718,8 +636,6 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
-
-          
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -766,7 +682,7 @@ namespace PappyjoeMVC.View
             LabDental_controller controller = new LabDental_controller(dental);
             dental.Show();
         }
-        bool focus = false;
+        //bool focus = false;
         private void PracticeDetails_Paint(object sender, PaintEventArgs e)
         {
             //if (focus)
@@ -792,8 +708,8 @@ namespace PappyjoeMVC.View
 
         private void txtname_Leave(object sender, EventArgs e)
         {
-            focus = false;
-            this.Refresh();
+            //focus = false;
+            //this.Refresh();
         }
 
         private void toolStripButton10_Click(object sender, EventArgs e)

@@ -10,107 +10,6 @@ namespace PappyjoeMVC.Model
     public class Practice_Model
     {
         Connection db = new Connection();
-
-        //private string _PName = "";
-
-        //public string PNAme
-        //{
-        //    get { return _PName; }
-        //    set { _PName = value; }
-        //}
-
-        //private string _ptag = "";
-
-        //public string PTabg
-        //{
-        //    get { return _ptag; }
-        //    set { _ptag = value; }
-        //}
-        //private string _Pspeci = "";
-
-        //public string PSpeciali
-        //{
-        //    get { return _Pspeci; }
-        //    set { _Pspeci = value; }
-        //}
-        //private string _address = "";
-
-        //public string Address
-        //{
-        //    get { return _address; }
-        //    set { _address = value; }
-        //}
-        //private string _locality = "";
-
-        //public string Locality
-        //{
-        //    get { return _locality; }
-        //    set { _locality = value; }
-        //}
-        //private string _country = "";
-
-        //public string Country
-        //{
-        //    get { return _country; }
-        //    set { _country = value; }
-        //}
-        //private string _state;
-        //public string State
-        //{
-        //    get { return _state; }
-        //    set { _state = value; }
-        //}
-        //private string _city;
-        //public string City
-        //{
-        //    get { return _city; }
-        //    set { _city = value; }
-        //}
-
-        //private string _pincode;
-        //public string PinCode
-        //{
-        //    get { return _pincode; }
-        //    set { _pincode = value; }
-        //}
-        //private string _phone;
-        //public string Phone
-        //{
-        //    get { return _phone; }
-        //    set { _phone = value; }
-        //}
-        //private string _email;
-        //public string Email
-        //{
-        //    get { return _email; }
-        //    set { _email = value; }
-        //}
-        //private string _website;
-        //public string Website
-        //{
-        //    get { return _website; }
-        //    set { _website = value; }
-        //}
-        //private string _imgpath;
-        //public string ImagePath
-        //{
-        //    get { return _imgpath; }
-        //    set { _imgpath = value; }
-        //}
-        //private string _DInum1;
-        //public string DINumber1
-        //{
-        //    get { return _DInum1; }
-        //    set { _DInum1 = value; }
-        //}
-
-        //private string _DInumbr2;
-        //public string DINumber2
-        //{
-        //    get { return _DInumbr2; }
-        //    set { _DInumbr2 = value; }
-        //}
-
         public DataTable get_data()
         {
             DataTable dtb_details = db.table("select * from  tbl_practice_details");
@@ -122,7 +21,6 @@ namespace PappyjoeMVC.Model
             if (cmb== "Country")
             {
               dtb_details = db.table("select * from  tbl_country where id='" + id + "'");
-               
             }
             else if(cmb== "City")
             {
@@ -153,16 +51,6 @@ namespace PappyjoeMVC.Model
             DataTable dtb = db.table("select * from tbl_country order by id");
             return dtb;
         }
-        //public DataTable Fill_City_Combo()
-        //{
-        //    DataTable dtb = db.table("select * from tbl_city where order by id");
-        //    return dtb;
-        //}
-        //public DataTable Fill_State_Combo(string country)
-        //{
-        //    DataTable dtb = db.table("select * from tbl_state where country_id ='" + country + "'  order by id");
-        //    return dtb;
-        //}
         public DataTable Fill_Specialization_Combo()
         {
             DataTable dtb = db.table("select * from tbl_specialization order by id");

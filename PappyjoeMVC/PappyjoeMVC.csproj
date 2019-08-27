@@ -91,7 +91,6 @@
     <Compile Include="Controller\booking_controller.cs" />
     <Compile Include="Controller\Booking_interface.cs" />
     <Compile Include="Controller\calender_controller.cs" />
-    <Compile Include="Controller\calender_interface.cs" />
     <Compile Include="Controller\ClinicalNotesAdd_controller.cs" />
     <Compile Include="Controller\ClinicalNotesAdd_interface.cs" />
     <Compile Include="Controller\Clinical_Findings_controller.cs" />
@@ -100,7 +99,6 @@
     <Compile Include="Controller\Communication_controller.cs" />
     <Compile Include="Controller\Communication_interface.cs" />
     <Compile Include="Controller\communication_setting_controller.cs" />
-    <Compile Include="Controller\communication_setting_interface.cs" />
     <Compile Include="Controller\contact_controller.cs" />
     <Compile Include="Controller\contact_interface.cs" />
     <Compile Include="Controller\Daily_appointment_count_controller.cs" />
@@ -197,7 +195,6 @@
     <Compile Include="Controller\Show_Appointment_controller.cs" />
     <Compile Include="Controller\Show_Appointment_interface.cs" />
     <Compile Include="Controller\Staff_controller.cs" />
-    <Compile Include="Controller\Staff_Interface.cs" />
     <Compile Include="Controller\supplier_controller.cs" />
     <Compile Include="Controller\supplier_interface.cs" />
     <Compile Include="Controller\treatment_controller.cs" />

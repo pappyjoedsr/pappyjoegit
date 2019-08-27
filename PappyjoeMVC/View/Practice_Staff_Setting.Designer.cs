@@ -359,7 +359,7 @@
             this.label55.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label55.Location = new System.Drawing.Point(7, 13);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(122, 25);
+            this.label55.Size = new System.Drawing.Size(121, 25);
             this.label55.TabIndex = 2;
             this.label55.Text = "Practice Staff";
             // 
@@ -374,7 +374,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl1.Location = new System.Drawing.Point(9, 48);
+            this.tabControl1.Location = new System.Drawing.Point(9, 68);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1133, 620);
@@ -441,7 +441,7 @@
             this.panel_manage.Controls.Add(this.button__manage_addoctor);
             this.panel_manage.Controls.Add(this.btn_Refresh);
             this.panel_manage.Controls.Add(this.dataGridView_Staff);
-            this.panel_manage.Location = new System.Drawing.Point(3, 4);
+            this.panel_manage.Location = new System.Drawing.Point(3, 1);
             this.panel_manage.Name = "panel_manage";
             this.panel_manage.Size = new System.Drawing.Size(1081, 567);
             this.panel_manage.TabIndex = 47;
@@ -451,6 +451,7 @@
             this.button__manage_addoctor.BackColor = System.Drawing.Color.LimeGreen;
             this.button__manage_addoctor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button__manage_addoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button__manage_addoctor.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button__manage_addoctor.ForeColor = System.Drawing.Color.White;
             this.button__manage_addoctor.Location = new System.Drawing.Point(873, 17);
             this.button__manage_addoctor.Name = "button__manage_addoctor";
@@ -466,6 +467,7 @@
             this.btn_Refresh.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_Refresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
             this.btn_Refresh.Location = new System.Drawing.Point(974, 17);
             this.btn_Refresh.Name = "btn_Refresh";
@@ -572,7 +574,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(215, 180);
+            this.label13.Location = new System.Drawing.Point(241, 180);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(14, 18);
             this.label13.TabIndex = 314;
@@ -583,7 +585,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(215, 266);
+            this.label12.Location = new System.Drawing.Point(241, 266);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(14, 18);
             this.label12.TabIndex = 313;
@@ -594,7 +596,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(215, 390);
+            this.label11.Location = new System.Drawing.Point(241, 390);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(14, 18);
             this.label11.TabIndex = 312;
@@ -605,7 +607,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(214, 137);
+            this.label9.Location = new System.Drawing.Point(240, 137);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(14, 18);
             this.label9.TabIndex = 311;
@@ -616,7 +618,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(215, 96);
+            this.label8.Location = new System.Drawing.Point(241, 96);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(14, 18);
             this.label8.TabIndex = 310;
@@ -625,10 +627,11 @@
             // labPasword
             // 
             this.labPasword.AutoSize = true;
+            this.labPasword.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labPasword.ForeColor = System.Drawing.Color.Red;
-            this.labPasword.Location = new System.Drawing.Point(690, 180);
+            this.labPasword.Location = new System.Drawing.Point(690, 181);
             this.labPasword.Name = "labPasword";
-            this.labPasword.Size = new System.Drawing.Size(77, 13);
+            this.labPasword.Size = new System.Drawing.Size(84, 13);
             this.labPasword.TabIndex = 100;
             this.labPasword.Text = "Can\'t be empty";
             this.labPasword.Visible = false;
@@ -636,7 +639,8 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(155, 96);
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(181, 96);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 13);
             this.label10.TabIndex = 52;
@@ -649,7 +653,7 @@
             this.cmbStaffType.Items.AddRange(new object[] {
             "DOCTOR ",
             "STAFF"});
-            this.cmbStaffType.Location = new System.Drawing.Point(269, 92);
+            this.cmbStaffType.Location = new System.Drawing.Point(269, 94);
             this.cmbStaffType.Name = "cmbStaffType";
             this.cmbStaffType.Size = new System.Drawing.Size(139, 21);
             this.cmbStaffType.TabIndex = 51;
@@ -659,6 +663,7 @@
             // 
             // text_mobile
             // 
+            this.text_mobile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_mobile.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.text_mobile.Location = new System.Drawing.Point(270, 222);
             this.text_mobile.MaxLength = 10;
@@ -674,7 +679,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline);
             this.label1.Location = new System.Drawing.Point(20, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 25);
+            this.label1.Size = new System.Drawing.Size(104, 25);
             this.label1.TabIndex = 32;
             this.label1.Text = "ADD STAFF";
             // 
@@ -842,10 +847,11 @@
             // label_doctor_error
             // 
             this.label_doctor_error.AutoSize = true;
+            this.label_doctor_error.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_doctor_error.ForeColor = System.Drawing.Color.Red;
-            this.label_doctor_error.Location = new System.Drawing.Point(426, 136);
+            this.label_doctor_error.Location = new System.Drawing.Point(424, 140);
             this.label_doctor_error.Name = "label_doctor_error";
-            this.label_doctor_error.Size = new System.Drawing.Size(77, 13);
+            this.label_doctor_error.Size = new System.Drawing.Size(84, 13);
             this.label_doctor_error.TabIndex = 33;
             this.label_doctor_error.Text = "Can\'t be empty";
             // 
@@ -864,19 +870,21 @@
             // label_email_error
             // 
             this.label_email_error.AutoSize = true;
+            this.label_email_error.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_email_error.ForeColor = System.Drawing.Color.Red;
-            this.label_email_error.Location = new System.Drawing.Point(431, 265);
+            this.label_email_error.Location = new System.Drawing.Point(424, 266);
             this.label_email_error.Name = "label_email_error";
-            this.label_email_error.Size = new System.Drawing.Size(211, 13);
+            this.label_email_error.Size = new System.Drawing.Size(223, 13);
             this.label_email_error.TabIndex = 34;
             this.label_email_error.Text = "Enter a valid email (eg. abc@example.com)";
             // 
             // choosecolor
             // 
             this.choosecolor.AutoSize = true;
-            this.choosecolor.Location = new System.Drawing.Point(316, 355);
+            this.choosecolor.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.choosecolor.Location = new System.Drawing.Point(316, 348);
             this.choosecolor.Name = "choosecolor";
-            this.choosecolor.Size = new System.Drawing.Size(33, 13);
+            this.choosecolor.Size = new System.Drawing.Size(35, 13);
             this.choosecolor.TabIndex = 48;
             this.choosecolor.Text = "Close";
             this.choosecolor.Click += new System.EventHandler(this.choosecolor_Click);
@@ -884,23 +892,26 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(125, 222);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(151, 222);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 13);
+            this.label3.Size = new System.Drawing.Size(87, 13);
             this.label3.TabIndex = 36;
             this.label3.Text = "Mobile Number";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(176, 136);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(202, 136);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 35;
             this.label2.Text = "Name";
             // 
             // text_reg_no
             // 
+            this.text_reg_no.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_reg_no.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.text_reg_no.Location = new System.Drawing.Point(270, 304);
             this.text_reg_no.Name = "text_reg_no";
@@ -910,14 +921,16 @@
             // label67
             // 
             this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(156, 178);
+            this.label67.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.Location = new System.Drawing.Point(182, 178);
             this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(53, 13);
+            this.label67.Size = new System.Drawing.Size(56, 13);
             this.label67.TabIndex = 35;
             this.label67.Text = "Password";
             // 
             // text_email
             // 
+            this.text_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_email.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.text_email.Location = new System.Drawing.Point(270, 264);
             this.text_email.Name = "text_email";
@@ -929,25 +942,28 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(108, 265);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(134, 265);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 13);
+            this.label4.Size = new System.Drawing.Size(104, 13);
             this.label4.TabIndex = 29;
             this.label4.Text = "Email ID/UserName";
             // 
             // label68
             // 
             this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(424, 184);
+            this.label68.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.Location = new System.Drawing.Point(424, 180);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(91, 13);
+            this.label68.Size = new System.Drawing.Size(100, 13);
             this.label68.TabIndex = 35;
             this.label68.Text = "Confirm Password";
             // 
             // text_PassConfrim
             // 
+            this.text_PassConfrim.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_PassConfrim.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_PassConfrim.Location = new System.Drawing.Point(538, 176);
+            this.text_PassConfrim.Location = new System.Drawing.Point(538, 179);
             this.text_PassConfrim.Name = "text_PassConfrim";
             this.text_PassConfrim.PasswordChar = '*';
             this.text_PassConfrim.Size = new System.Drawing.Size(138, 20);
@@ -957,16 +973,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(98, 306);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(124, 306);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 13);
+            this.label5.Size = new System.Drawing.Size(114, 13);
             this.label5.TabIndex = 31;
             this.label5.Text = "Registration Number";
             // 
             // text_password
             // 
+            this.text_password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_password.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_password.Location = new System.Drawing.Point(270, 179);
+            this.text_password.Location = new System.Drawing.Point(270, 178);
             this.text_password.Name = "text_password";
             this.text_password.PasswordChar = '*';
             this.text_password.Size = new System.Drawing.Size(138, 20);
@@ -976,14 +994,16 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(121, 347);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(147, 347);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 13);
+            this.label6.Size = new System.Drawing.Size(91, 13);
             this.label6.TabIndex = 27;
             this.label6.Text = "Calendar Colour";
             // 
             // text_doctorname
             // 
+            this.text_doctorname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_doctorname.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.text_doctorname.Location = new System.Drawing.Point(270, 136);
             this.text_doctorname.Name = "text_doctorname";
@@ -995,18 +1015,20 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(135, 388);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(161, 388);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 13);
+            this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 30;
             this.label7.Text = "Activate login";
             // 
             // radio_login_yes
             // 
             this.radio_login_yes.AutoSize = true;
+            this.radio_login_yes.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio_login_yes.Location = new System.Drawing.Point(270, 391);
             this.radio_login_yes.Name = "radio_login_yes";
-            this.radio_login_yes.Size = new System.Drawing.Size(43, 17);
+            this.radio_login_yes.Size = new System.Drawing.Size(40, 17);
             this.radio_login_yes.TabIndex = 6;
             this.radio_login_yes.TabStop = true;
             this.radio_login_yes.Text = "Yes";
@@ -1017,6 +1039,7 @@
             // 
             this.button_closedoctor.BackColor = System.Drawing.Color.Tomato;
             this.button_closedoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_closedoctor.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_closedoctor.ForeColor = System.Drawing.Color.White;
             this.button_closedoctor.Location = new System.Drawing.Point(970, 11);
             this.button_closedoctor.Name = "button_closedoctor";
@@ -1029,9 +1052,10 @@
             // radio_login_no
             // 
             this.radio_login_no.AutoSize = true;
+            this.radio_login_no.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio_login_no.Location = new System.Drawing.Point(344, 392);
             this.radio_login_no.Name = "radio_login_no";
-            this.radio_login_no.Size = new System.Drawing.Size(39, 17);
+            this.radio_login_no.Size = new System.Drawing.Size(40, 17);
             this.radio_login_no.TabIndex = 7;
             this.radio_login_no.TabStop = true;
             this.radio_login_no.Text = "No";
@@ -1043,6 +1067,7 @@
             this.button_savedoctor.BackColor = System.Drawing.Color.LimeGreen;
             this.button_savedoctor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_savedoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_savedoctor.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_savedoctor.ForeColor = System.Drawing.Color.White;
             this.button_savedoctor.Location = new System.Drawing.Point(865, 12);
             this.button_savedoctor.Name = "button_savedoctor";
@@ -1054,9 +1079,9 @@
             // 
             // Lab_InvalidNumber
             // 
-            this.Lab_InvalidNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lab_InvalidNumber.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_InvalidNumber.ForeColor = System.Drawing.Color.Red;
-            this.Lab_InvalidNumber.Location = new System.Drawing.Point(431, 221);
+            this.Lab_InvalidNumber.Location = new System.Drawing.Point(424, 223);
             this.Lab_InvalidNumber.Name = "Lab_InvalidNumber";
             this.Lab_InvalidNumber.Size = new System.Drawing.Size(101, 23);
             this.Lab_InvalidNumber.TabIndex = 98;
@@ -1066,10 +1091,11 @@
             // lab_Activation
             // 
             this.lab_Activation.AutoSize = true;
+            this.lab_Activation.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_Activation.ForeColor = System.Drawing.Color.Red;
-            this.lab_Activation.Location = new System.Drawing.Point(396, 396);
+            this.lab_Activation.Location = new System.Drawing.Point(424, 396);
             this.lab_Activation.Name = "lab_Activation";
-            this.lab_Activation.Size = new System.Drawing.Size(109, 13);
+            this.lab_Activation.Size = new System.Drawing.Size(118, 13);
             this.lab_Activation.TabIndex = 315;
             this.lab_Activation.Text = "Choose activate login";
             // 
@@ -4372,7 +4398,7 @@
             this.chkEMRTP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRTP.Location = new System.Drawing.Point(146, 195);
             this.chkEMRTP.Name = "chkEMRTP";
-            this.chkEMRTP.Size = new System.Drawing.Size(109, 19);
+            this.chkEMRTP.Size = new System.Drawing.Size(108, 19);
             this.chkEMRTP.TabIndex = 20;
             this.chkEMRTP.Text = "Treatment Plans";
             this.chkEMRTP.UseVisualStyleBackColor = true;

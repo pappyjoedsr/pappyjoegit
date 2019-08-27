@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Practice_Staff_Setting : Form,Staff_Interface
+    public partial class Practice_Staff_Setting : Form
     {
-        Staff_controller cntrl;
+        Staff_controller cntrl = new Staff_controller();
         public string idd = "";
         int status_pre = 0;
         DataTable dt_mail = new DataTable();
@@ -25,11 +20,6 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        public void SetController(Staff_controller controller)
-        {
-            cntrl = controller;
-        }
-
         private void Practice_Staff_Setting_Load(object sender, EventArgs e)
         {
             try
@@ -59,7 +49,8 @@ namespace PappyjoeMVC.View
                 {
                     chkPMT.Checked = false;
                 }
-                this.cntrl.Fill_StaffGrid();
+                DataTable dtb = this.cntrl.Fill_StaffGrid();
+                FillStaffGrid(dtb);
                 panel_color.Hide();
                 dataGridView_Staff.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
                 dataGridView_Staff.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -103,11 +94,10 @@ namespace PappyjoeMVC.View
                 RefreshCheckboxes();
                 cmbStaffType.SelectedIndex = 0;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
         }
         public void FillStaffGrid(DataTable dtb)
         {
@@ -129,7 +119,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -140,7 +130,7 @@ namespace PappyjoeMVC.View
             try
             {
                 id = dataGridView_Staff.Rows[e.RowIndex].Cells[0].Value.ToString();
-                if (dataGridView_Staff.CurrentCell.ColumnIndex==4)
+                if (dataGridView_Staff.CurrentCell.ColumnIndex == 4)
                 {
                     string Active_Login = dataGridView_Staff.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                     if (Active_Login == "Yes")
@@ -157,7 +147,7 @@ namespace PappyjoeMVC.View
                         if (res == DialogResult.Yes)
                         {
                             dataGridView_Staff.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "No";
-                           this.cntrl. Update_Login(id);
+                            this.cntrl.Update_Login(id);
                         }
                     }
                     if (Active_Login == "No")
@@ -178,19 +168,19 @@ namespace PappyjoeMVC.View
                         }
                     }
                 }
-                if(e.RowIndex>=0)
+                if (e.RowIndex >= 0)
                 {
-                    if(dataGridView_Staff.CurrentCell.OwningColumn.Name== "Edit")
+                    if (dataGridView_Staff.CurrentCell.OwningColumn.Name == "Edit")
                     {
-                        //id = dataGridView_Staff.Rows[currentRow].Cells[0].Value.ToString();
-                        //var form2 = new DOCTOR_PROFILE();
-                        //form2.doctor_id = doctor_id;
-                        //form2.doc = id;
-                        //form2.Show();
+                        id = dataGridView_Staff.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        var form2 = new Doctor_Profile();
+                        form2.doctor_id = id;
+                        form2.doc = id;
+                        form2.Show();
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -198,11 +188,10 @@ namespace PappyjoeMVC.View
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-            this.cntrl.Fill_StaffGrid();
+            DataTable dtb = this.cntrl.Fill_StaffGrid();
+            FillStaffGrid(dtb);
         }
-
         //notification
-
         public void refresh()
         {
             button_refresh.Hide();
@@ -236,13 +225,15 @@ namespace PappyjoeMVC.View
             dataGridView_notification.Columns.Add(col3);
             col3.Width = 100;
             col3.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.cntrl.Get_DctrDetails();
-            this.cntrl.GetDctr_notificationvalue();
+            DataTable dtb = this.cntrl.Get_DctrDetails();
+            GetDctrDetails(dtb);
+            DataTable dtb1 = this.cntrl.GetDctr_notificationvalue();
+            GetNotificationData(dtb1);
         }
         public void GetDctrDetails(DataTable dtb)
         {
             dataGridView_notification.DataSource = null;
-            if (dtb.Rows.Count>0)
+            if (dtb.Rows.Count > 0)
             {
                 dataGridView_notification.DataSource = dtb;
             }
@@ -253,7 +244,7 @@ namespace PappyjoeMVC.View
             {
                 if (dt4.Rows.Count > 0)
                 {
-                    for (int i = 0; i < dataGridView_notification.Rows.Count; i++)
+                    for (int i = 0; i < dt4.Rows.Count; i++)
                     {
                         DataGridViewRow row = new DataGridViewRow();
                         row = dataGridView_notification.Rows[i];
@@ -311,6 +302,19 @@ namespace PappyjoeMVC.View
                     refresh();
                 }
             }
+            else if (tabControl1.SelectedIndex == 3)
+            {
+                if (status_pre == 1)//Admin User only
+                {
+                    DataTable dtUserprivilege = this.cntrl.User_privillage();
+                    dataGridView_users.DataSource = dtUserprivilege;
+                    dataGridView_users.ClearSelection();
+                }
+                else
+                {
+                    this.tabControl1.TabPages[3].Dispose();
+                }
+            }
         }
 
         private void button_notification_Save_Click(object sender, EventArgs e)
@@ -325,10 +329,10 @@ namespace PappyjoeMVC.View
                     DataTable dt_doc = this.cntrl.Get_Doctor_notification(idd);
                     if (Convert.ToBoolean(dataGridView_notification.Rows[i].Cells[0].Value) == true)
                     {
-                        if(dt_doc.Rows.Count>0)
+                        if (dt_doc.Rows.Count > 0)
                         {
                             DataTable dt_notification = this.cntrl.ifexsists_dctrnotification(idd);
-                            this.cntrl.Update_notification(dt_notification,idd); 
+                            this.cntrl.Update_notification(dt_notification, idd);
                         }
                         else
                         {
@@ -337,7 +341,7 @@ namespace PappyjoeMVC.View
                     }
                     else// if checkbox1 confirm sms not checked
                     {
-                        if(dt_doc.Rows.Count>0)
+                        if (dt_doc.Rows.Count > 0)
                         {
                             DataTable dt_notification = this.cntrl.ifexsists_dctrnotification(idd);
                             this.cntrl.update_confirm_sms(dt_notification, idd);
@@ -348,7 +352,7 @@ namespace PappyjoeMVC.View
                         if (dt_doc.Rows.Count > 0)
                         {
                             DataTable dt_notification = this.cntrl.ifexsists_dctrnotification(idd);
-                            this.cntrl.update_shedule_sms1(dt_notification,idd);
+                            this.cntrl.update_shedule_sms1(dt_notification, idd);
                         }
                         else
                         {
@@ -360,11 +364,11 @@ namespace PappyjoeMVC.View
                         if (dt_doc.Rows.Count > 0)
                         {
                             DataTable dt_notification = this.cntrl.ifexsists_dctrnotification(idd);
-                            this.cntrl.update_shedule_sms0(dt_notification,idd);
+                            this.cntrl.update_shedule_sms0(dt_notification, idd);
                         }
                     }
                     if (Convert.ToBoolean(dataGridView_notification.Rows[i].Cells[2].Value) == true)// for checkbox 3 confirm email
-                     {
+                    {
                         if (dt_doc.Rows.Count > 0)
                         {
                             DataTable dt_notification = this.cntrl.ifexsists_dctrnotification(idd);
@@ -406,7 +410,7 @@ namespace PappyjoeMVC.View
                 }
                 MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -425,7 +429,6 @@ namespace PappyjoeMVC.View
             //Rasmi User privilege
             if (status_pre == 1)//Admin User only
             {
-
                 if (e.Index == 2)//User Privilege tab page fill- becoz 1 & 2 Remove, Automaticaly rearranged index 3 to 1 
                 {
                     DataTable dtUserprivilege = this.cntrl.User_privillage();
@@ -614,7 +617,7 @@ namespace PappyjoeMVC.View
             {
                 int r = e.RowIndex;
                 userid = dataGridView_users.Rows[r].Cells[0].Value.ToString();
-               DataTable dt= this.cntrl.Get_userPrivillageData(userid);
+                DataTable dt = this.cntrl.Get_userPrivillageData(userid);
                 RefreshCheckboxes();
                 SetCheckboxfromDB(dt);
             }
@@ -1089,11 +1092,6 @@ namespace PappyjoeMVC.View
             if (cmbStaffType.SelectedItem != null)
             {
                 errorProvider1.Dispose();
-                //labStafType.Hide();
-            }
-            else
-            {
-                //labStafType.Show();
             }
         }
 
@@ -1179,7 +1177,7 @@ namespace PappyjoeMVC.View
         }
         private void text_email_Leave(object sender, EventArgs e)
         {
-            dt_mail = this.cntrl.GetMailId();
+            string _mail = this.cntrl.GetMailId(text_email.Text);
             if (dt_mail.Rows.Count == 0)
             {
                 flag_mail = true;
@@ -1317,52 +1315,6 @@ namespace PappyjoeMVC.View
             panel_manage.Hide();
             errorProvider1.Dispose();
         }
-        public string SName
-        {
-            get { return this.text_doctorname.Text; }
-            set { this.text_doctorname.Text = value; }
-        }
-        public string Type
-        {
-            get { return this.cmbStaffType.Text; }
-            set { this.cmbStaffType.Text = value; }
-        }
-        public string Password
-        {
-            get { return this.text_password.Text; }
-            set { this.text_password.Text = value; }
-        }
-        public string ConfirmPassword
-        {
-            get { return this.text_PassConfrim.Text; }
-            set { this.text_PassConfrim.Text = value; }
-        }
-        public string MobileNumber
-        {
-            get { return this.text_mobile.Text; }
-            set { this.text_mobile.Text = value; }
-        }
-        public string EmailId
-        {
-            get { return this.text_email.Text; }
-            set { this.text_email.Text = value; }
-        }
-        public string Registration
-        {
-            get { return this.text_reg_no.Text; }
-            set { this.text_reg_no.Text = value; }
-        }
-        public string CalendrColor
-        {
-            get { return calendrcolor; }
-            set { calendrcolor = value; }
-        }
-        public string ActivateLogin
-        {
-            get { return status; }
-            set { status = value; }
-        }
-
         private void button_savedoctor_Click(object sender, EventArgs e)
         {
             if (radio_login_no.Checked == true)
@@ -1377,7 +1329,7 @@ namespace PappyjoeMVC.View
             {
                 if (radio_login_no.Checked == true || radio_login_yes.Checked == true)
                 {
-                    this.cntrl.save_staff();
+                    this.cntrl.save_staff(text_doctorname.Text, text_mobile.Text, text_email.Text, text_reg_no.Text, calendrcolor, status, cmbStaffType.Text, text_PassConfrim.Text);
                     MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     text_doctorname.Clear();
                     text_email.Clear();
@@ -1387,7 +1339,8 @@ namespace PappyjoeMVC.View
                     text_password.Clear();
                     radio_login_yes.Checked = false;
                     radio_login_no.Checked = false;
-                    this.cntrl.Fill_StaffGrid();
+                    DataTable dtb = this.cntrl.Fill_StaffGrid();
+                    FillStaffGrid(dtb);
                 }
                 else
                 {
@@ -1402,14 +1355,14 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show("Please Confirm the password Correctly..", "Password Mismatch", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void button_closedoctor_Click(object sender, EventArgs e)
         {
             panel_manage.Show();
             errorProvider1.Dispose();
-            this.cntrl.Fill_StaffGrid();
+            DataTable dtb = this.cntrl.Fill_StaffGrid();
+            FillStaffGrid(dtb);
         }
 
         private void Practice_Staff_Setting_Activated(object sender, EventArgs e)

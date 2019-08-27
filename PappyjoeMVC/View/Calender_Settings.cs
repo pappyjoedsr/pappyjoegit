@@ -1,27 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Calender_Settings : Form,calender_interface
+    public partial class Calender_Settings : Form
     {
-        calender_controller cntrl;
-        string clinicid = "",slot;
+        calender_controller cntrl=new calender_controller();
+        string  slot;
         public Calender_Settings()
         {
             InitializeComponent();
-        }
-        public void SetController(calender_controller controller)
-        {
-            cntrl = controller;
         }
         private void combo_slot_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -37,12 +27,12 @@ namespace PappyjoeMVC.View
                 errorProvider1.Dispose();
                 label2.Hide();
             }
-
-            this.cntrl.get_practicetimingvalues();
+            DataTable dtb = this.cntrl.get_practicetimingvalues();
+            FormLoad(dtb);
         }
         public void FormLoad(DataTable visit)
         {
-            if(visit.Rows.Count>0)
+            if (visit.Rows.Count > 0)
             {
                 string slot = visit.Rows[0][2].ToString() + "minutes";
                 combo_slot.Text = slot;
@@ -62,7 +52,7 @@ namespace PappyjoeMVC.View
                 label2.Hide();
                 slot = combo_slot.Text.Substring(0, combo_slot.Text.IndexOf("m")).ToString();
                 int i = this.cntrl.update(slot);
-                if(i>0)
+                if (i > 0)
                 {
                     MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
