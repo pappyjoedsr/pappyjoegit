@@ -146,9 +146,7 @@
     <Compile Include="Controller\Month_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Month_Wise_Receipt_interface.cs" />
     <Compile Include="Controller\NewCreditAccount_controller.cs" />
-    <Compile Include="Controller\NewCreditAccount_interface.cs" />
     <Compile Include="Controller\NewDebitAccount_controller.cs" />
-    <Compile Include="Controller\NewDebitAccount_interface.cs" />
     <Compile Include="Controller\patients_controller.cs" />
     <Compile Include="Controller\Patients_first_appointment_controller.cs" />
     <Compile Include="Controller\patients_interface.cs" />

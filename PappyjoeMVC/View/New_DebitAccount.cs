@@ -1,36 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
 
 namespace PappyjoeMVC.View
 {
-    public partial class New_DebitAccount : Form,NewDebitAccount_interface
+    public partial class New_DebitAccount : Form
     {
-        NewDebitAccount_controller cntrl;
+        NewDebitAccount_controller cntrl=new NewDebitAccount_controller();
         public New_DebitAccount()
         {
             InitializeComponent();
-        }
-        public void SetController(NewDebitAccount_controller controller)
-        {
-            cntrl = controller;
-        }
-        public string AccountName
-        {
-            get { return this.txtAccountName.Text; }
-            set { this.txtAccountName.Text = value; }
-        }
-        public string Ledger
-        {
-            get { return this.cmbLedger.Text; }
-            set { this.cmbLedger.Text = value; }
         }
         private void New_DebitAccount_Load(object sender, EventArgs e)
         {
@@ -61,7 +41,7 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        int i = this.cntrl.insert();
+                        int i = this.cntrl.insert( txtAccountName.Text, cmbLedger.Text);
                         MessageBox.Show("Successfully Submited !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtAccountName.Clear();
                     }

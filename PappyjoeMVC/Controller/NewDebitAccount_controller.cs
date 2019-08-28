@@ -1,22 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.Controller
 {
     public class NewDebitAccount_controller
     {
-        NewDebitAccount_interface intr;
         NewDebitAccount_model _model = new NewDebitAccount_model();
-        public NewDebitAccount_controller(NewDebitAccount_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
         public DataTable load_ledger()
         {
             DataTable dtb = _model.load_ledger();
@@ -27,11 +16,9 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.Submit(txtAccountName);
             return dtb;
         }
-        public int insert()
+        public int insert(string txtAccountName, string cmbLedge)
         {
-            _model.AccountName = intr.AccountName;
-            _model.Ledger = intr.Ledger;
-            int i = _model.insert();
+            int i = _model.insert(txtAccountName, cmbLedge);
             return i;
         }
     }
