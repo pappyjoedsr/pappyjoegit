@@ -26,7 +26,6 @@ namespace PappyjoeMVC.View
         private void Lnk_AddNewCrdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var form2 = new New_CreditAccount();
-            NewCreditAccount_controller ctrl = new NewCreditAccount_controller(form2);
             form2.ShowDialog();
         }
         public void btn_normal()
@@ -267,7 +266,6 @@ namespace PappyjoeMVC.View
         private void Lnk_AddNew_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var form2 = new New_DebitAccount();
-            NewDebitAccount_controller ctrl = new NewDebitAccount_controller(form2);
             form2.ShowDialog();
         }
 
