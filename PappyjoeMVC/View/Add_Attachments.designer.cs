@@ -73,9 +73,9 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripDropDownButton();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,6 +83,7 @@
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextDoctor = new System.Windows.Forms.ToolStripTextBox();
             this.btn_Save = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -372,7 +373,7 @@
             this.Pb_5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Pb_5.BackColor = System.Drawing.Color.Gainsboro;
             this.Pb_5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Pb_5.Image = ((System.Drawing.Image)(resources.GetObject("Pb_5.Image")));
+            this.Pb_5.Image = global::PappyjoeMVC.Properties.Resources.upload;
             this.Pb_5.Location = new System.Drawing.Point(165, 338);
             this.Pb_5.Name = "Pb_5";
             this.Pb_5.Size = new System.Drawing.Size(150, 150);
@@ -388,7 +389,6 @@
             this.PB_8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PB_8.BackColor = System.Drawing.Color.Gainsboro;
             this.PB_8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PB_8.Image = global::PappyjoeMVC.Properties.Resources.upload;
             this.PB_8.Location = new System.Drawing.Point(1011, 338);
             this.PB_8.Name = "PB_8";
             this.PB_8.Size = new System.Drawing.Size(150, 150);
@@ -418,7 +418,6 @@
             this.PB_4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PB_4.BackColor = System.Drawing.Color.Gainsboro;
             this.PB_4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PB_4.Image = global::PappyjoeMVC.Properties.Resources.upload;
             this.PB_4.Location = new System.Drawing.Point(1011, 101);
             this.PB_4.Name = "PB_4";
             this.PB_4.Size = new System.Drawing.Size(150, 150);
@@ -491,7 +490,7 @@
             this.PB_6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PB_6.BackColor = System.Drawing.Color.Gainsboro;
             this.PB_6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PB_6.Image = ((System.Drawing.Image)(resources.GetObject("PB_6.Image")));
+            this.PB_6.Image = global::PappyjoeMVC.Properties.Resources.upload;
             this.PB_6.Location = new System.Drawing.Point(444, 338);
             this.PB_6.Name = "PB_6";
             this.PB_6.Size = new System.Drawing.Size(150, 150);
@@ -569,9 +568,9 @@
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
             this.listpatientsearch.ItemHeight = 21;
-            this.listpatientsearch.Location = new System.Drawing.Point(1020, 40);
+            this.listpatientsearch.Location = new System.Drawing.Point(1011, 31);
             this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(251, 84);
+            this.listpatientsearch.Size = new System.Drawing.Size(251, 42);
             this.listpatientsearch.TabIndex = 277;
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
@@ -589,14 +588,15 @@
             this.toolStripButton4,
             this.toolStripButton5,
             this.toolStripButton6,
+            this.toolStripButton7,
             this.toolStripButton11,
             this.toolStripButton10,
-            this.toolStripButton7,
             this.toolStripButton8,
             this.toolStripSeparator2,
             this.toolStripButton9,
             this.toolStripDropDownButton1,
             this.toolStripTextBox1,
+            this.toolStripButton12,
             this.toolStripTextDoctor});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -643,6 +643,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
             this.toolStripButton2.Text = "Calendar";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -678,6 +679,7 @@
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(72, 37);
             this.toolStripButton5.Text = "Inventory";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton6
             // 
@@ -691,6 +693,17 @@
             this.toolStripButton6.Text = "Reports";
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton7.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(56, 37);
+            this.toolStripButton7.Text = "Profiles";
+            // 
             // toolStripButton11
             // 
             this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -702,6 +715,7 @@
             this.toolStripButton11.Size = new System.Drawing.Size(62, 37);
             this.toolStripButton11.Text = "Consent";
             this.toolStripButton11.Visible = false;
+            this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
             // 
             // toolStripButton10
             // 
@@ -715,18 +729,6 @@
             this.toolStripButton10.Text = "Expense";
             this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
             // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton7.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(56, 37);
-            this.toolStripButton7.Text = "Profiles";
-            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
-            // 
             // toolStripButton8
             // 
             this.toolStripButton8.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -734,10 +736,11 @@
             this.toolStripButton8.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
             this.logoutToolStripMenuItem});
+            this.toolStripButton8.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
             this.toolStripButton8.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(13, 37);
+            this.toolStripButton8.Size = new System.Drawing.Size(33, 37);
             this.toolStripButton8.Text = "toolStripButton8";
             this.toolStripButton8.ToolTipText = "Settings";
             // 
@@ -746,12 +749,14 @@
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -763,10 +768,11 @@
             // 
             this.toolStripButton9.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Image = global::PappyjoeMVC.Properties.Resources._1435669279_question_balloon_basic_blue;
             this.toolStripButton9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(23, 37);
+            this.toolStripButton9.Size = new System.Drawing.Size(29, 37);
             this.toolStripButton9.Text = "toolStripButton9";
             this.toolStripButton9.ToolTipText = "Pappyjoe Version 16.2";
             // 
@@ -774,12 +780,14 @@
             // 
             this.toolStripDropDownButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.Image = global::PappyjoeMVC.Properties.Resources.appbar_user_add__2_1;
             this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(23, 37);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(32, 37);
             this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.ToolTipText = "Add new Patient";
+            this.toolStripDropDownButton1.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
             // 
             // toolStripTextBox1
             // 
@@ -790,6 +798,18 @@
             this.toolStripTextBox1.Text = "Search by Patient Name, id, Mobile No";
             this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.toolStripButton12.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
+            this.toolStripButton12.Text = "Lab Tracking";
+            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
             // 
             // toolStripTextDoctor
             // 
@@ -874,7 +894,7 @@
             // 
             this.Lab_Pt_Id.AutoSize = true;
             this.Lab_Pt_Id.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Pt_Id.Location = new System.Drawing.Point(68, 25);
+            this.Lab_Pt_Id.Location = new System.Drawing.Point(48, 28);
             this.Lab_Pt_Id.Name = "Lab_Pt_Id";
             this.Lab_Pt_Id.Size = new System.Drawing.Size(60, 13);
             this.Lab_Pt_Id.TabIndex = 68;
@@ -933,6 +953,7 @@
             this.Text = "Add_Attachments";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Add_Attachments_Load);
+            this.Resize += new System.EventHandler(this.Add_Attachments_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_1)).EndInit();
@@ -1020,5 +1041,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label Lab_due;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
     }
 }

@@ -285,7 +285,7 @@ namespace PappyjoeMVC.View
                 var form2 = new Add_Attachments();
                 form2.doctor_id = doctor_id;
                 form2.patient_id = patient_id;
-                Add_Attachments_controller ctrlr = new Add_Attachments_controller(form2);
+                //Add_Attachments_controller ctrlr = new Add_Attachments_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -306,7 +306,7 @@ namespace PappyjoeMVC.View
             Dgv_Category.Location = new Point(0, 45);
             this.ctrlr.getcategory();
             this.ctrlr.getpatdetails(patient_id);
-            this.m.getpayment(patient_id);
+            this.m.GetPayment(patient_id);
             this.ctrlr.getattachment();
         }
         public void doctr_privillage_for_addnewPatient(DataTable dt)

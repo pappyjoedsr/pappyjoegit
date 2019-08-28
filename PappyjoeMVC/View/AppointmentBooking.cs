@@ -350,12 +350,11 @@ namespace PappyjoeMVC.View
                         if (dtpSearch.Rows.Count <= 0)
                         {
                             //int j = db.execute("insert into tbl_appointment (book_datetime,start_datetime,duration,note,pt_id,pt_name,dr_id,mobile_no,email_id,notify_patient,notify_doctor,plan_new_procedure,status,booked_by ) values('" + Convert.ToDateTime(Dateonly).ToString("yyyy-MM-dd") + "','" + Convert.ToDateTime(StartT).ToString("yyyy-MM-dd HH:mm") + "','" + diff1 + "','" + txtDescription.Text + "','" + patient_id + "','" + txt_p_name.Text + "','" + dr_id + "','" + txt_p_mobile.Text + "','" + txt_p_email.Text + "','yes','yes','" + compoprocedure.Text + "','scheduled','" + Name + "')");
-                            this.cntrl.insappointment(Dateonly, Convert.ToDateTime(StartT), diff1, txtDescription.Text, patient_id, txt_p_name.Text, dr_id, txt_p_mobile.Text, txt_p_email.Text, compoprocedure.Text, Name);
+                            this.cntrl.insappointment(Dateonly, Convert.ToDateTime(StartT) ,diff1 ,txtDescription.Text, patient_id , txt_p_name.Text , dr_id ,txt_p_mobile.Text , txt_p_email.Text , compoprocedure.Text, Name);
                         }
                         else
                         {
                             this.cntrl.insappointment(Dateonly, Convert.ToDateTime(StartT), diff1, txtDescription.Text, patient_id, patient_name, dr_id, lab_p_ph.Text, lab_p_email.Text, compoprocedure.Text, Name);
-
                             /*int j = db.execute("insert into tbl_appointment (book_datetime,start_datetime,duration,note,pt_id,pt_name,dr_id,mobile_no,email_id,notify_patient,notify_doctor,plan_new_procedure,status,booked_by ) values('" + Convert.ToDateTime(Dateonly).ToString("yyyy-MM-dd") + "','" + Convert.ToDateTime(StartT).ToString("yyyy-MM-dd HH:mm") + "','" + diff1 + "','" + txtDescription.Text + "','" + patient_id + "','" + patient_name + "','" + dr_id + "','" + lab_p_ph.Text + "','" + lab_p_email.Text + "','yes*///','yes','" + compoprocedure.Text + "','scheduled','" + Name + "')");
                         }
 
@@ -390,24 +389,26 @@ namespace PappyjoeMVC.View
                         string clinic = "", locality = "", contact_no = "";
 
                         System.Data.DataTable clinicname = this.cntrl.clinicdetails();// db.table("select name,locality,contact_no from tbl_practice_details");
-                        //if (clinicname.Rows.Count > 0)
-                        //{
-                        //    string clinicn = "";
-                        //    clinicn = clinicname.Rows[0][0].ToString();
-                        //    clinic = clinicn.Replace("¤", "'");
-                        //    locality = clinicname.Rows[0][1].ToString();
-                        //    contact_no = clinicname.Rows[0][2].ToString();
-                        //}
+                        if (clinicname.Rows.Count > 0)
+                        {
+                            string clinicn = "";
+                            clinicn = clinicname.Rows[0][0].ToString();
+                            clinic = clinicn.Replace("¤", "'");
+                            locality = clinicname.Rows[0][1].ToString();
+                            contact_no = clinicname.Rows[0][2].ToString();
+                        }
+
+
                         if (checkBox1.Checked)
                         {
                             string text = "";
                             string smsName = "", smsPass = "";
                             DataTable sms = this.cntrl.clinicdetails();// db.table("select smsName,smsPass from tbl_SmsEmailConfig");
-                            //if (sms.Rows.Count > 0)
-                            //{
-                            //    smsName = sms.Rows[0]["smsName"].ToString();
-                            //    smsPass = sms.Rows[0]["smsPass"].ToString();
-                            //}
+                            if (sms.Rows.Count > 0)
+                            {
+                                smsName = sms.Rows[0]["smsName"].ToString();
+                                smsPass = sms.Rows[0]["smsPass"].ToString();
+                            }
                             //DataTable clinicname = db.table("select name from tbl_practice_details");
                             //if (clinicname.Rows.Count > 0)
                             //{
@@ -465,13 +466,17 @@ namespace PappyjoeMVC.View
                             {
                                 string text = "";
                                 string smsName = "", smsPass = "";
-                                //DataTable sms = this.cntrl.clinicdetails();// db.table("select smsName,smsPass from tbl_SmsEmailConfig");
-                                //if (sms.Rows.Count > 0)
+                                DataTable sms = this.cntrl.clinicdetails();// db.table("select smsName,smsPass from tbl_SmsEmailConfig");
+                                if (sms.Rows.Count > 0)
+                                {
+                                    smsName = sms.Rows[0]["smsName"].ToString();
+                                    smsPass = sms.Rows[0]["smsPass"].ToString();
+                                }
+                                //DataTable clinicname = db.table("select name from tbl_practice_details");
+                                //if (clinicname.Rows.Count > 0)
                                 //{
-                                //    smsName = sms.Rows[0]["smsName"].ToString();
-                                //    smsPass = sms.Rows[0]["smsPass"].ToString();
+                                //    clinic = clinicname.Rows[0][0].ToString();
                                 //}
-                                
                                 sms_model a = new sms_model();
                                 //DataTable pat = db.table("select * from tbl_patient where id='" + patient_id + "'");
                                 //if (pat.Rows.Count > 0)

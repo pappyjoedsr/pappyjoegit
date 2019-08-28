@@ -25,7 +25,7 @@ namespace PappyjoeMVC
             PracticeDetails details = new PracticeDetails();
             details.Visible = false;
             Practice_Model Pmdl;
-            Practice_Controller controller = new Practice_Controller(details);
+            //Practice_Controller controller = new Practice_Controller(details);
             details.ShowDialog();
 
             //Application.EnableVisualStyles();

@@ -15,7 +15,7 @@ namespace PappyjoeMVC.Controller
         void dt_appointment(DataTable dt);
         void getdoctrname(DataTable dt);
         void getpatdetails(DataTable dt);
-        void Get_DoctorName(string dt);
+        void Get_DoctorName(string doctrid);
         void getappointment(DataTable dt);
         void Patient_search(DataTable dt);
         void smsreminder(DataTable dt);

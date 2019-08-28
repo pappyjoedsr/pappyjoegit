@@ -80,7 +80,6 @@ namespace PappyjoeMVC.View
                     if (int.Parse(id) > 0)
                     {
                         var form2 = new PappyjoeMVC.View.PracticeDetails();
-                        Practice_Controller cnt = new Practice_Controller(form2);
                         form2.doctor_id = doctor_id;
                         form2.ShowDialog();
                     }
@@ -92,7 +91,7 @@ namespace PappyjoeMVC.View
                 else
                 {
                     var form2 = new PappyjoeMVC.View.PracticeDetails();
-                    Practice_Controller cnt = new Practice_Controller(form2);
+                    //Practice_Controller cnt = new Practice_Controller(form2);
                     form2.doctor_id = doctor_id;
                     form2.ShowDialog();
                 }

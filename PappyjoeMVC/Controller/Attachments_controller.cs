@@ -42,7 +42,7 @@ namespace PappyjoeMVC.Controller
         }
         public void getcategory()
         {
-            DataTable dt =m.getcategory();
+            DataTable dt =m.GetCategory();
             intr.getcategory(dt);
         }
         public void getpath()
@@ -53,7 +53,7 @@ namespace PappyjoeMVC.Controller
         }
         public void getpatdetails(string id)
         {
-            DataTable dt = m.getpatdetails(id);
+            DataTable dt = m.GetPatientDetails(id);
             intr.getpatdetails(dt);
         }
         public void getattachment()

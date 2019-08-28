@@ -10,15 +10,7 @@ namespace PappyjoeMVC.Controller
 {
   public  class communication_setting_controller
     {
-        communication_setting_interface intr;
         communication_setting_model _model = new communication_setting_model();
-       
-        public communication_setting_controller(communication_setting_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
-
         public DataTable getsmstabledata()
         {
             DataTable sms = _model.getsmstabledata();
@@ -29,33 +21,23 @@ namespace PappyjoeMVC.Controller
             DataTable sms = _model.Getsmaname();
             return sms;
         }
-        public void update_sms()
+        public void update_sms(string _sms_uname, string _smspassword)
         {
-            GetModwelData(_model);
-            _model.update_sms();
+            _model.update_sms(_sms_uname, _smspassword);
         }
-        public void GetModwelData(communication_setting_model usr)
+       
+        public void save_sms(string _sms_uname, string _smspassword)
         {
-            usr.SMSUserName = intr.SMSUName;
-            usr.SMSPassword = intr.SMSPassword;
-            usr.EmailUname = intr.EmailUNAme;
-            usr.EmailPassword = intr.EmailPassword;
+            _model.save_sms( _sms_uname,  _smspassword);
         }
-        public void save_sms()
+        public void update_email(string _emailuname, string _emailpaswsword)
         {
-            GetModwelData(_model);
-            _model.save_sms();
-        }
-         public void update_email()
-        {
-            GetModwelData(_model);
-            _model.update_email();
+            _model.update_email(_emailuname, _emailpaswsword);
         }
 
-        public void Save_email()
+        public void Save_email(string _emailuname, string _emailpaswsword)
         {
-            GetModwelData(_model);
-            _model.Save_email();
+            _model.Save_email(_emailuname, _emailpaswsword);
         }
     }
 }
