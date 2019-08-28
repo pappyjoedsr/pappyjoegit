@@ -24,9 +24,9 @@ namespace PappyjoeMVC.Model
       {
           int i = db.execute("insert into tbl_services (service) values('" + text + "')");
       }
-      public DataTable max_serviceId()
+      public string max_serviceId()
       {
-          DataTable dt = db.table("select MAX(id) as id from tbl_services");
+            string dt = db.scalar("select MAX(id) as id from tbl_services");
           return dt;
       }
       public void update_service(string text, string serviceid)
@@ -48,9 +48,9 @@ namespace PappyjoeMVC.Model
       {
           int i = db.execute("insert into tbl_specialization (name) values('" + name + "')");
       }
-      public DataTable max_specilizationid()
+      public string max_specilizationid()
       {
-          DataTable dt = db.table("select MAX(id) as id from tbl_specialization");
+            string dt = db.scalar("select MAX(id) as id from tbl_specialization");
           return dt;
       }
       public void update_sspecilization(string name, string Specializationid)
@@ -85,9 +85,9 @@ namespace PappyjoeMVC.Model
       {
           int i = db.execute("insert into tbl_college (college) values('" + name + "')");
       }
-      public DataTable max_collegeid()
+      public string max_collegeid()
       {
-          DataTable dt = db.table("select MAX(id) as id from tbl_college");
+            string dt = db.scalar("select MAX(id) as id from tbl_college");
           return dt;
       }
       public void update_college(string name, string collegeid)
@@ -109,9 +109,9 @@ namespace PappyjoeMVC.Model
       {
           int i = db.execute("insert into tbl_memberships (name) values('" + name + "')");
       }
-      public DataTable max_memberid()
+      public string max_memberid()
       {
-          DataTable dt = db.table("select MAX(id) as id from tbl_memberships");
+            string dt = db.scalar("select MAX(id) as id from tbl_memberships");
           return dt;
       }
       public void update_member(string name, string membershipid)
@@ -145,9 +145,9 @@ namespace PappyjoeMVC.Model
       {
           int i = db.execute("insert into tbl_reg_council (name) values('" + name + "')");
       }
-      public DataTable max_councilid()
+      public string max_councilid()
       {
-          DataTable dt = db.table("select MAX(id) as id from tbl_reg_council");
+            string dt = db.scalar("select MAX(id) as id from tbl_reg_council");
           return dt;
       }
       //degree
@@ -155,9 +155,9 @@ namespace PappyjoeMVC.Model
       {
           int i = db.execute("insert into tbl_degree (degree) values('" + text + "')");
       }
-      public DataTable max_degreeid()
+      public string max_degreeid()
       {
-          DataTable dt = db.table("select MAX(id) as id from tbl_degree");
+            string dt = db.scalar("select MAX(id) as id from tbl_degree");
           return dt;
       }
       public void update_degree(string text, string degreeid)

@@ -11,21 +11,21 @@ namespace PappyjoeMVC.Controller
 {
    public interface EMR_Interface
     {
-        void SetController(EMR_controller controller);
-        //complaints
-        string Complaints { get; set; }
-        void FillGrid(DataTable dtb);
-        //observation
-        void FillObservationGrid(DataTable dtb);
-        string Observation { get; set; }
-        //Diagnosis
-        string Diagnosis { get; set; }
-        void FiiDiagnosisGrid(DataTable dtb);
-        //Investigation
-        void FillInvsetgation(DataTable stb);
-        string Investgation { get; set; }
-        //notes
-        void FillNotes(DataTable dtb);
-        string Note { get; set; }
+        //void SetController(EMR_controller controller);
+        ////complaints
+        //string Complaints { get; set; }
+        ////void FillGrid(DataTable dtb);
+        ////observation
+        ////void FillObservationGrid(DataTable dtb);
+        //string Observation { get; set; }
+        ////Diagnosis
+        //string Diagnosis { get; set; }
+        ////void /*FiiDiagnosisGrid*/(DataTable dtb);
+        ////Investigation
+        //void FillInvsetgation(DataTable stb);
+        //string Investgation { get; set; }
+        ////notes
+        ////void FillNotes(DataTable dtb);
+        //string Note { get; set; }
     }
 }

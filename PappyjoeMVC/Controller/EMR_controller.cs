@@ -10,37 +10,24 @@ namespace PappyjoeMVC.Controller
 {
    public  class EMR_controller
     {
-        EMR_Interface intr;
         EMR_model _selectedvalue = new EMR_model();
-        Connection db = new Connection();
-        public EMR_controller(EMR_Interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
-        public void Fill_grid()
+        public DataTable Fill_grid()
         {
             DataTable dtb = _selectedvalue.Fii_ComplaintsGrid();
-            intr.FillGrid(dtb);
+            return dtb;
         }
         public DataTable Check_complaints(string complaints)
         {
             DataTable dtb = _selectedvalue.Check_complaints(complaints);
             return dtb;
         }
-        public void save_complaints()
+        public void save_complaints(string Complaints)
         {
-            Get_modelvalue(_selectedvalue);
-            _selectedvalue.save_complaints();
+            _selectedvalue.save_complaints(Complaints);
         }
-        public void Get_modelvalue(EMR_model usr)
+        public void update_complaints(string id, string Complaints)
         {
-            usr.Complaints = intr.Complaints;
-        }
-        public void update_complaints(string id)
-        {
-            Get_modelvalue(_selectedvalue);
-            _selectedvalue.update_complaints(id);
+            _selectedvalue.update_complaints(id, Complaints);
         }
         public void Delete_complaints(string id)
         {
@@ -51,141 +38,117 @@ namespace PappyjoeMVC.Controller
             DataTable dtb= _selectedvalue.search_complaints(text);
             return dtb;
         }
-        public void Fill_observationGrid()
+        public DataTable Fill_observationGrid()
         {
             DataTable dtb = _selectedvalue.Fill_observationGrid();
-            intr.FillObservationGrid(dtb);
+            return dtb;
         }
         public DataTable Check_observation(string name)
         {
             DataTable dtb = _selectedvalue.Check_observation(name);
             return dtb;
         }
-        public int save_observation()
+        public int save_observation(string Observation)
         {
-            Get_model_observalue(_selectedvalue);
-            int i = _selectedvalue.save_observation();
+            int i = _selectedvalue.save_observation(Observation);
             return i;
-        }
-        public void Get_model_observalue(EMR_model usr)
-        {
-            usr.Observation = intr.Observation;
         }
         public void delete_observation(string id)
         {
             _selectedvalue.delete_observation(id);
         }
-        public int Update_observation(string id)
+        public int Update_observation(string id, string Observation)
         {
-            Get_model_observalue(_selectedvalue);
-            int i = _selectedvalue.Update_observation(id);
+            int i = _selectedvalue.Update_observation(id,Observation);
             return i;
         }
-        public void SearchObservation(string name)
+        public DataTable SearchObservation(string name)
         {
             DataTable dtb=_selectedvalue.search_observation(name);
-            intr.FillObservationGrid(dtb);
+            return dtb; 
         }
         //Diagnosis
-        public void fill_diagnosisGrid()
+        public DataTable fill_diagnosisGrid()
         {
             DataTable dtb = _selectedvalue.fill_diagnosisGrid();
-            intr.FiiDiagnosisGrid(dtb);
+            return dtb;
         }
         public DataTable check_diagnosis(string name)
         {
             DataTable dtb = _selectedvalue.check_diagnosis(name);
             return dtb;
         }
-        public void save_diagnosis()
+        public void save_diagnosis(string Diagnosis)
         {
-            Get_Diagmodelvalue(_selectedvalue);
-            _selectedvalue.save_diagnosis();
+            _selectedvalue.save_diagnosis( Diagnosis);
         }
-        public void update_diagnosis(string name)
+        public void update_diagnosis(string name,string Diagnosis)
         {
-            Get_Diagmodelvalue(_selectedvalue);
-            _selectedvalue.update_diagnosis(name);
+            _selectedvalue.update_diagnosis(name, Diagnosis);
         }
         public void delete(string id)
         {
             _selectedvalue.delete(id);
         }
-        public void Get_Diagmodelvalue(EMR_model usr)
-        {
-            usr.Diagnosis = intr.Diagnosis;
-        }
-        public void search_diagnosis(string name)
+        public DataTable search_diagnosis(string name)
         {
             DataTable dtb = _selectedvalue.search_diagnosis(name);
-            intr.FiiDiagnosisGrid(dtb);
+            return dtb;
         }
-        public void Fill_investgation()
+        public DataTable Fill_investgation()
         {
             DataTable dtb = _selectedvalue.Fill_investgation();
-            intr.FillInvsetgation(dtb);
+            return dtb;
         }
         public DataTable check_invest(string name)
         {
             DataTable dtb = _selectedvalue.check_invest(name);
             return dtb;
         }
-        public void save_investgation()
+        public void save_investgation(string Investgation)
         {
-            Get_Investdelvalue(_selectedvalue);
-            _selectedvalue.save_investgation();
+            _selectedvalue.save_investgation(Investgation);
         }
-        public void Get_Investdelvalue(EMR_model usr)
+        public void update_investgation(string id,string Investgation)
         {
-            usr.Invetsgation = intr.Investgation;
-        }
-        public void update_investgation(string id)
-        {
-            Get_Investdelvalue(_selectedvalue);
-            _selectedvalue.update_investgation(id);
+            _selectedvalue.update_investgation(id,Investgation);
         }
         public void delete_investigation(string id)
         {
             _selectedvalue.delete_investigation(id);
         }
-        public void search_investgation(string name)
+        public DataTable search_investgation(string name)
         {
             DataTable dtb = _selectedvalue.search_investgation(name);
-            intr.FillInvsetgation(dtb);
+            return dtb;
         }
         //note
-        public void Fill_notegrid()
+        public DataTable Fill_notegrid()
         {
             DataTable dtb = _selectedvalue. Fill_notegrid();
-            intr.FillNotes(dtb);
+            return dtb;
         }
         public DataTable check_notes(string note)
         {
             DataTable dtb = _selectedvalue.check_notes(note);
             return dtb;
         }
-        public void save_note()
+        public void save_note(string Note)
         {
-            Get_notedelvalue(_selectedvalue);
-            _selectedvalue.save_note();
+            _selectedvalue.save_note(Note);
         }
-        public void Get_notedelvalue(EMR_model usr)
+        public void update_note(string id,string Note)
         {
-            usr.Note = intr.Note;
-        }
-        public void update_note(string id)
-        {
-            Get_notedelvalue(_selectedvalue);
-            _selectedvalue.update_note(id);
+            _selectedvalue.update_note(id, Note);
         }
         public void delete_note(string id)
         {
             _selectedvalue.delete_note(id);
         }
-        public void search_note(string note)
+        public DataTable search_note(string note)
         {
             DataTable dtb = _selectedvalue.search_note(note);
-            intr.FillNotes(dtb);
+            return dtb;
         }
     }
 }

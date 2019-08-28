@@ -9,16 +9,10 @@ namespace PappyjoeMVC.Controller
 {
     public class doctor_controller
     {
-        doctor_interface intr;
         Connection db = new Connection();
         doctor_model _model = new doctor_model();
         doctorpractice_model mdl = new doctorpractice_model();
         common_model cmdl = new common_model();
-        public doctor_controller(doctor_interface inttr)
-        {
-            intr = inttr;
-            intr.Setcontroller(this);
-        }
         public DataTable load_city()
         {
             DataTable dt11 = db.table("select * from tbl_city order by id");
@@ -210,32 +204,25 @@ namespace PappyjoeMVC.Controller
             return dtb;
         }
         //
-        public int update_doctor(string doctor_id)
+        public int update_doctor(string doctor_id, string _drname, string _number, string _email, string _gender, string _year, string _about, string _path)
         {
-            _model.DrName = intr.DrName;
-            _model.Gender = intr.Gender;
-            _model.Number = intr.Number;
-            _model.Year = intr.Year;
-            _model.About = intr.About;
-            _model.Email = intr.Email;
-            _model.Password = intr.Password;
-            int i = _model.update_doctor(doctor_id);
+            int i = _model.update_doctor(doctor_id,  _drname,  _number,  _email,  _gender,  _year,  _about, _path);
             return i;
         }
-        public int update_dremail(string doctor_id)
-        {
-            int i = _model.update_dremail(doctor_id);
-            return i;
-        }
+        //public int update_dremail(string doctor_id, string _email, string _password)//asw not found
+        //{
+        //    int i = _model.update_dremail(doctor_id, _email,  _password);
+        //    return i;
+        //}
         public DataTable get_dr_password(string doctor_id)
         {
             DataTable dtb = _model.get_dr_password(doctor_id);
             return dtb;
         }
-        public void update_logintable(string doctor, string paswd)
-        {
-            _model.update_logintable(doctor, paswd);
-        }
+        //public void update_logintable(string doctor, string paswd)//not found
+        //{
+        //    _model.update_logintable(doctor, paswd);
+        //}
         public DataTable get_doctor_details(string doctor_id)
         {
             DataTable dtb = _model.get_doctor_details(doctor_id);
@@ -283,15 +270,14 @@ namespace PappyjoeMVC.Controller
          {
              _model.delete_clinicspecilization(clinicspecial, clinicid);
          }
-         public void update_clinicdetails()
+         public void update_clinicdetails(string _clinicname, string _tagline, string _clinicnumber, string _clinicemail, string _website, string _clinicAbout)
          {
-             _model.ClinicName = intr.ClinicName;
-             _model.Tagline = intr.Tagline;
-             _model.ClinicNumber = intr.ClinicNumber;
-             _model.ClinicEmail = intr.ClinicEmail;
-             _model.Website = intr.Website;
-             _model.About = intr.About;
-             _model.update_clinicdetails();
+             _model.update_clinicdetails(_clinicname,  _tagline,  _clinicnumber,  _clinicemail,  _website,  _clinicAbout);
          }
+        public DataTable Patient_search(string _Patientid)
+        {
+            DataTable dtb = cmdl.Patient_search(_Patientid);
+            return dtb;
+        }
     }
 }

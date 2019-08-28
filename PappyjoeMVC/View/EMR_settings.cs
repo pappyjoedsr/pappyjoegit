@@ -1,39 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Model;
-using PappyjoeMVC.Controller;
 
 namespace PappyjoeMVC.View
 {
-    public partial class EMR_settings : Form,EMR_Interface
+    public partial class EMR_settings : Form
     {
         EMR_controller cntrl;
-        public string id_comp = ""; string id="";
-        string  id_diag, id_invest, id_notes;
+        public string id_comp = ""; string id = "";
+        string id_diag, id_invest, id_notes;
         public EMR_settings()
         {
             InitializeComponent();
         }
         public void SetController(EMR_controller controller)
         {
-            cntrl=controller;
+            cntrl = controller;
         }
-        
+
         private void EMR_settings_Load(object sender, EventArgs e)
         {
             tabControl1.TabPages.Remove(tabPage6);
-            this.cntrl.Fill_grid();
-            this.cntrl.Fill_observationGrid();
-            this.cntrl.fill_diagnosisGrid();
-            this.cntrl.Fill_investgation();
-            this.cntrl.Fill_notegrid();
+            DataTable dtb = this.cntrl.Fill_grid();
+            FillGrid(dtb);
+            DataTable dt_obser = this.cntrl.Fill_observationGrid();
+            FillObservationGrid(dt_obser);
+            DataTable dt_diagnosis = this.cntrl.fill_diagnosisGrid();
+            FiiDiagnosisGrid(dtb);
+            DataTable dt_invest = this.cntrl.Fill_investgation();
+            FillInvsetgation(dtb);
+            DataTable dtb_notes = this.cntrl.Fill_notegrid();
+            FillNotes(dtb);
             label3.Hide();
             label6.Hide();
             label9.Hide();
@@ -82,15 +81,10 @@ namespace PappyjoeMVC.View
             }
         }
         //complaints
-        public string Complaints
-        {
-            get { return this.text_complaints.Text; }
-            set { this.text_complaints.Text = value; }
-        }
         public void FillGrid(DataTable dt2)
         {
             dataGridView_comp.Rows.Clear();
-            if (dt2.Rows.Count>0)
+            if (dt2.Rows.Count > 0)
             {
                 int i = 0;
                 while (i < dt2.Rows.Count)
@@ -107,7 +101,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void button_comp_save_Click(object sender, EventArgs e)
         {
             if (text_complaints.Text != "")
@@ -123,41 +116,42 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        this.cntrl.save_complaints();
+                        this.cntrl.save_complaints(text_complaints.Text);
                         text_complaints.Clear();
-                        this.cntrl.Fill_grid();
+                        DataTable dtb = this.cntrl.Fill_grid();
+                        FillGrid(dtb);
                     }
                 }
                 else
                 {
-                    this.cntrl.update_complaints(id_comp);
+                    this.cntrl.update_complaints(id_comp, text_complaints.Text);
                     text_complaints.Clear();
-                    this.cntrl.Fill_grid();
+                    DataTable dtb = this.cntrl.Fill_grid();
+                    FillGrid(dtb);
                     button_comp_save.Text = "Save";
                 }
             }
             else
             {
-                errorProvider1.SetError(text_complaints,"error");
+                errorProvider1.SetError(text_complaints, "error");
                 label6.Show();
             }
-           
         }
 
         private void dataGridView_comp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex>=0)
+            if (e.RowIndex >= 0)
             {
                 try
                 {
                     int r = e.RowIndex;
                     id_comp = dataGridView_comp.Rows[r].Cells[0].Value.ToString();
-                    if(dataGridView_comp.CurrentCell.OwningColumn.Name== "Edit")
+                    if (dataGridView_comp.CurrentCell.OwningColumn.Name == "Edit")
                     {
                         text_complaints.Text = dataGridView_comp.CurrentRow.Cells[1].Value.ToString();
                         button_comp_save.Text = "Update";
                     }
-                    if(dataGridView_comp.CurrentCell.OwningColumn.Name == "Delete")
+                    if (dataGridView_comp.CurrentCell.OwningColumn.Name == "Delete")
                     {
                         DialogResult res = MessageBox.Show("Are you sure you want to delete this ?", "Delete confirmation",
                               MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -180,7 +174,8 @@ namespace PappyjoeMVC.View
 
         private void button_comp_refresh_Click(object sender, EventArgs e)
         {
-            this.cntrl.Fill_grid();
+            DataTable dtb = this.cntrl.Fill_grid();
+            FillGrid(dtb);
             text_complaints.Clear();
             text_comp_search.Clear();
             button_comp_save.Text = "Save";
@@ -191,7 +186,7 @@ namespace PappyjoeMVC.View
             dataGridView_comp.RowHeadersVisible = false;
             dataGridView_comp.RowCount = 0;
             DataTable dt2 = this.cntrl.Search_complaints(text_comp_search.Text);
-            if(dt2.Rows.Count>0)
+            if (dt2.Rows.Count > 0)
             {
                 int i = 0;
                 while (i < dt2.Rows.Count)
@@ -203,29 +198,22 @@ namespace PappyjoeMVC.View
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message,"Error!..",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        MessageBox.Show(ex.Message, "Error!..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
         }
-
-        //observation
-        public string Observation
-        {
-            get { return this.text_observation.Text; }
-            set { this.text_observation.Text = value; }
-        }
         public void FillObservationGrid(DataTable dt2)
         {
             dataGridView_observation.Rows.Clear();
-            if (dt2.Rows.Count>0)
+            if (dt2.Rows.Count > 0)
             {
                 int i = 0;
                 while (i < dt2.Rows.Count)
                 {
                     try
                     {
-                        dataGridView_observation.Rows.Add(dt2.Rows[i]["id"].ToString(),dt2.Rows[i]["observations"].ToString());
+                        dataGridView_observation.Rows.Add(dt2.Rows[i]["id"].ToString(), dt2.Rows[i]["observations"].ToString());
                         i++;
                     }
                     catch (Exception ex)
@@ -252,22 +240,24 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            int i = this.cntrl.save_observation();
+                            int i = this.cntrl.save_observation(text_observation.Text);
                             if (i > 0)
                             {
                                 text_observation.Clear();
-                                this.cntrl.Fill_observationGrid();
+                                DataTable dtb = this.cntrl.Fill_observationGrid();
+                                FillObservationGrid(dtb);
                             }
                         }
                     }
                     else
                     {
-                        int i =this.cntrl.Update_observation(id);
+                        int i = this.cntrl.Update_observation(id,text_observation.Text);
                         if (i > 0)
                         {
                             text_observation.Clear();
                             button_save_observations.Text = "Save";
-                            this.cntrl.Fill_observationGrid();
+                            DataTable dtb = this.cntrl.Fill_observationGrid();
+                            FillObservationGrid(dtb);
                         }
                     }
                 }
@@ -277,7 +267,7 @@ namespace PappyjoeMVC.View
                     label3.Show();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -292,7 +282,6 @@ namespace PappyjoeMVC.View
                 {
                     try
                     {
-                       
                         text_observation.Text = dataGridView_observation.Rows[e.RowIndex].Cells[1].Value.ToString();
                         button_save_observations.Text = "Update";
                     }
@@ -313,10 +302,10 @@ namespace PappyjoeMVC.View
                         else
                         {
                             cntrl.delete_observation(id);
-                            this.cntrl.Fill_observationGrid();
+                            DataTable dtb = this.cntrl.Fill_observationGrid();
+                            FillObservationGrid(dtb);
                         }
                     }
-
                 }
             }
             catch (Exception ex)
@@ -330,24 +319,20 @@ namespace PappyjoeMVC.View
             text_observ_search.Clear();
             text_observation.Clear();
             button_save_observations.Text = "Save";
-            this.cntrl.Fill_observationGrid();
+            DataTable dtb = this.cntrl.Fill_observationGrid();
+            FillObservationGrid(dtb);
         }
         private void text_observ_search_KeyUp(object sender, KeyEventArgs e)
         {
             dataGridView_comp.RowHeadersVisible = false;
             dataGridView_comp.RowCount = 0;
-            this.cntrl.SearchObservation(text_observ_search.Text);
+            DataTable dtb = this.cntrl.SearchObservation(text_observ_search.Text);
+            FillObservationGrid(dtb);
         }
-        //Diagnosis
-        public string Diagnosis
-        {
-            get { return this.text_diagnosis.Text; }
-            set { this.text_diagnosis.Text = value; }
-        }
-
         private void button_refresh_Click(object sender, EventArgs e)
         {
-            this.cntrl.fill_diagnosisGrid();
+            DataTable dtb = this.cntrl.fill_diagnosisGrid();
+            FiiDiagnosisGrid(dtb);
             text_diagnosis_search.Clear();
             text_diagnosis.Clear();
             button_Save.Text = "Save";
@@ -372,18 +357,17 @@ namespace PappyjoeMVC.View
                 }
                 if (dataGridView_diag.CurrentCell.OwningColumn.Name == "Dia_Delete")
                 {
-                    
-                        DialogResult res = MessageBox.Show("Are you sure you want to delete this ?", "Delete confirmation",
-                                      MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (res == DialogResult.No)
-                        {
-                        }
-                        else
-                        {
-                            cntrl.delete(id_diag);
-                            this.cntrl.fill_diagnosisGrid();
-                        }
-
+                    DialogResult res = MessageBox.Show("Are you sure you want to delete this ?", "Delete confirmation",
+                                  MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (res == DialogResult.No)
+                    {
+                    }
+                    else
+                    {
+                        cntrl.delete(id_diag);
+                        DataTable dtb = this.cntrl.fill_diagnosisGrid();
+                        FiiDiagnosisGrid(dtb);
+                    }
                 }
             }
             catch (Exception ex)
@@ -396,7 +380,8 @@ namespace PappyjoeMVC.View
         {
             dataGridView_diag.RowHeadersVisible = false;
             dataGridView_diag.RowCount = 0;
-            this.cntrl.search_diagnosis(text_diagnosis_search.Text);
+            DataTable dtb = this.cntrl.search_diagnosis(text_diagnosis_search.Text);
+            FiiDiagnosisGrid(dtb);
         }
 
         public void FiiDiagnosisGrid(DataTable dt2)
@@ -408,7 +393,8 @@ namespace PappyjoeMVC.View
                 try
                 {
                     dataGridView_diag.Rows.Add(dt2.Rows[i]["id"].ToString(), dt2.Rows[i]["diagnosis"].ToString());
-                    i++;                }
+                    i++;
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Error!..", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -418,7 +404,8 @@ namespace PappyjoeMVC.View
 
         private void button_inves_refresh_Click(object sender, EventArgs e)
         {
-            this.cntrl.Fill_investgation();
+            DataTable dtb = this.cntrl.Fill_investgation();
+            FillInvsetgation(dtb);
             text_investigation.Clear();
             text_investigation_search.Clear();
             button_inves_save.Text = "Save";
@@ -445,25 +432,26 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            this.cntrl.save_investgation();
+                            this.cntrl.save_investgation(text_investigation.Text);
                             text_investigation.Clear();
-                            this.cntrl.Fill_investgation();
+                            DataTable dtb = this.cntrl.Fill_investgation();
+                            FillInvsetgation(dtb);
                         }
                     }
                     else
                     {
-                        this.cntrl.update_investgation(id_invest);
+                        this.cntrl.update_investgation(id_invest, text_investigation.Text);
                         text_investigation.Clear();
                         button_inves_save.Text = "Save";
-                        this.cntrl.Fill_investgation();
+                        DataTable dtb = this.cntrl.Fill_investgation();
+                        FillInvsetgation(dtb);
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
         }
 
         private void dataGridView_invest_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -471,7 +459,7 @@ namespace PappyjoeMVC.View
             try
             {
                 id_invest = dataGridView_invest.Rows[e.RowIndex].Cells[0].Value.ToString();
-                if (dataGridView_invest.CurrentCell.OwningColumn.Name== "Inv_Edit")
+                if (dataGridView_invest.CurrentCell.OwningColumn.Name == "Inv_Edit")
                 {
                     text_investigation.Text = dataGridView_invest.Rows[e.RowIndex].Cells[1].Value.ToString();
                     button_inves_save.Text = "Update";
@@ -488,7 +476,8 @@ namespace PappyjoeMVC.View
                         else
                         {
                             this.cntrl.delete_investigation(id_invest);
-                            this.cntrl.Fill_investgation();
+                            DataTable dtb = this.cntrl.Fill_investgation();
+                            FillInvsetgation(dtb);
                         }
                     }
                 }
@@ -503,7 +492,8 @@ namespace PappyjoeMVC.View
         {
             dataGridView_invest.RowHeadersVisible = false;
             dataGridView_invest.RowCount = 0;
-            this.cntrl.search_investgation(text_investigation_search.Text);
+            DataTable dtb = this.cntrl.search_investgation(text_investigation_search.Text);
+            FillInvsetgation(dtb);
         }
 
         private void button_Save_Click(object sender, EventArgs e)
@@ -519,7 +509,7 @@ namespace PappyjoeMVC.View
                 {
                     if (button_Save.Text == "Save")
                     {
-                      DataTable checkdataDIAG=this.cntrl.check_diagnosis(text_diagnosis.Text);
+                        DataTable checkdataDIAG = this.cntrl.check_diagnosis(text_diagnosis.Text);
                         if (checkdataDIAG.Rows.Count > 0)
                         {
                             MessageBox.Show("This Record " + text_diagnosis.Text + "  already exists", "Duplication encountered ", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -527,33 +517,28 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            this.cntrl.save_diagnosis();
+                            this.cntrl.save_diagnosis(text_diagnosis.Text);
                             text_diagnosis.Clear();
-                            this.cntrl.fill_diagnosisGrid();
+                            DataTable dtb = this.cntrl.fill_diagnosisGrid();
+                            FiiDiagnosisGrid(dtb);
                         }
                     }
                     else
                     {
-                        this.cntrl.update_diagnosis(id_diag);
+                        this.cntrl.update_diagnosis(id_diag, text_diagnosis.Text);
                         text_diagnosis.Clear();
                         button_Save.Text = "Save";
-                        this.cntrl.fill_diagnosisGrid();
+                        DataTable dtb = this.cntrl.fill_diagnosisGrid();
+                        FiiDiagnosisGrid(dtb);
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-          
         }
         //Investigation
-        public string Investgation
-        {
-            get { return this.text_investigation.Text; }
-            set { this.text_investigation.Text = value; }
-        }
-
         private void button_notes_save_Click(object sender, EventArgs e)
         {
             try
@@ -567,7 +552,7 @@ namespace PappyjoeMVC.View
                 {
                     if (button_notes_save.Text == "Save")
                     {
-                        DataTable checkdataNOTE= this.cntrl.check_notes(text_notes.Text);
+                        DataTable checkdataNOTE = this.cntrl.check_notes(text_notes.Text);
                         if (checkdataNOTE.Rows.Count > 0)
                         {
                             MessageBox.Show("This Record " + text_notes.Text + "  already exists", "Duplication encountered ", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -575,21 +560,23 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            this.cntrl.save_note();
+                            this.cntrl.save_note(text_notes.Text);
                             text_notes.Clear();
-                            this.cntrl.Fill_notegrid();
+                            DataTable dtb = this.cntrl.Fill_notegrid();
+                            FillNotes(dtb);
                         }
                     }
                     else
                     {
-                        this.cntrl.update_note(id_notes);
+                        this.cntrl.update_note(id_notes,text_notes.Text);
                         text_notes.Clear();
-                        this.cntrl.Fill_notegrid();
+                        DataTable dtb = this.cntrl.Fill_notegrid();
+                        FillNotes(dtb);
                         button_notes_save.Text = "Save";
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -609,7 +596,6 @@ namespace PappyjoeMVC.View
                 {
                     MessageBox.Show(ex.Message, "Error!..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                
             }
             if (dataGridView_notes.CurrentCell.OwningColumn.Name == "No_Delete")
             {
@@ -623,7 +609,8 @@ namespace PappyjoeMVC.View
                     else
                     {
                         this.cntrl.delete_note(id_notes);
-                        this.cntrl.Fill_notegrid();
+                        DataTable dtb = this.cntrl.Fill_notegrid();
+                        FillNotes(dtb);
                     }
                 }
             }
@@ -631,7 +618,8 @@ namespace PappyjoeMVC.View
 
         private void button_notes_refresh_Click(object sender, EventArgs e)
         {
-            this.cntrl.Fill_notegrid();
+            DataTable dtb = this.cntrl.Fill_notegrid();
+            FillNotes(dtb);
             text_notes.Clear();
             text_notes_search.Clear();
             button_notes_save.Text = "Save";
@@ -647,14 +635,14 @@ namespace PappyjoeMVC.View
         public void FillInvsetgation(DataTable dt2)
         {
             dataGridView_invest.Rows.Clear();
-            if (dt2.Rows.Count>0)
+            if (dt2.Rows.Count > 0)
             {
                 int i = 0;
                 while (i < dt2.Rows.Count)
                 {
                     try
                     {
-                        dataGridView_invest.Rows.Add(dt2.Rows[i]["id"].ToString(),dt2.Rows[i]["investigation"].ToString());
+                        dataGridView_invest.Rows.Add(dt2.Rows[i]["id"].ToString(), dt2.Rows[i]["investigation"].ToString());
                         i++;
                     }
                     catch (Exception ex)
@@ -668,8 +656,8 @@ namespace PappyjoeMVC.View
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
             Font TabFont;
-            Brush BackBrush = new SolidBrush(Color.Transparent); //Set background color
-            Brush ForeBrush = new SolidBrush(Color.DarkSlateGray);//Set foreground color
+            Brush BackBrush = new SolidBrush(Color.Transparent);
+            Brush ForeBrush = new SolidBrush(Color.DarkSlateGray);
             if (e.Index == this.tabControl1.SelectedIndex)
             {
                 TabFont = new Font(e.Font, FontStyle.Italic);
@@ -706,7 +694,7 @@ namespace PappyjoeMVC.View
             {
                 try
                 {
-                    dataGridView_notes.Rows.Add(dt2.Rows[i]["id"].ToString(),dt2.Rows[i]["notes"].ToString());
+                    dataGridView_notes.Rows.Add(dt2.Rows[i]["id"].ToString(), dt2.Rows[i]["notes"].ToString());
                     i++;
                 }
                 catch (Exception ex)
@@ -714,11 +702,6 @@ namespace PappyjoeMVC.View
                     MessageBox.Show(ex.Message, "Error!..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        }
-        public string Note
-        {
-            get { return this.text_notes.Text; }
-            set { this.text_notes.Text = value; }
         }
     }
 }
