@@ -11,72 +11,67 @@ namespace PappyjoeMVC.Controller
   public class Practice_Controller
     {
         Practice_Model Pmdl=new Practice_Model();
-        Practice_interface intr;
-        public Practice_Controller(Practice_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
-        public void GetData()
+        common_model mdl = new common_model();
+        Connection db = new Connection();
+        public DataTable GetData()
         {
             DataTable dtb = Pmdl.get_data();
-            intr.GetData(dtb);
+            return dtb;
+        }
+        public DataTable Get_CountryNme(string id, string cmb)
+        {
+            DataTable dtb = Pmdl.Get_CountryName(id, cmb);
+            return dtb;
+        }
+        public int Save_details(string _PName, string _ptag, string _address, string _locality, string _country, string _state, string _city, string _pincode, string _phone, string _email, string _website, string _Pspeci, string _DInum1, string _DInumbr2)
+        {
+            int i = Pmdl.save_details(_PName, _ptag, _address, _locality, _country, _state, _city, _pincode, _phone, _email, _website, _Pspeci, _DInum1, _DInumbr2);
+            return i;
         }
 
-        public void Get_CountryNme(string id,string cmb)
+        public DataTable Fill_CountryCombo()
         {
-            DataTable dtb = Pmdl.Get_CountryName(id,cmb);
-            intr.Get_CmbName(dtb,cmb);
+            DataTable dtb = Pmdl.Fill_Country_Combo();
+            return dtb;
         }
-        public int Save_details()
-        {
-            get_PracticeVlaue(Pmdl);
-            int i = Pmdl.save_details();
-            return i;
-        }
-        public void get_PracticeVlaue(Practice_Model mdl)
-        {
-            mdl.PNAme = intr.Name;
-            mdl.PTabg = intr.Tag;
-            mdl.PSpeciali = intr.Specialization;
-            mdl.Address = intr.Address;
-            mdl.City = intr.City;
-            mdl.Country = intr.Country;
-            mdl.State = intr.State;
-            mdl.Email = intr.Email;
-            mdl.Phone = intr.Phone;
-            mdl.PinCode = intr.PinCode;
-            mdl.Locality = intr.Locality;
-            mdl.Website = intr.Website;
-            mdl.ImagePath = intr.Imagepath;
-            mdl.DINumber1 = intr.DINumber1;
-            mdl.DINumber2 = intr.DINumber2;
-        }
-        public void Fill_CountryCombo()
-        {
-          DataTable dtb= Pmdl.Fill_Country_Combo();
-            intr.FillCountryCombo(dtb);
-        }
-        public void Fill_SpecializationCombo()
+        public DataTable Fill_SpecializationCombo()
         {
             DataTable dtb = Pmdl.Fill_Specialization_Combo();
-            intr.FilSpecializationCombo(dtb);
+            return dtb;
         }
-        public int Update_details()
+        public int Update_details(string _PName, string _ptag, string _address, string _locality, string _country, string _state, string _city, string _pincode, string _phone, string _email, string _website, string _imgpath, string _Pspeci, string _DInum1, string _DInumbr2)
         {
-            get_PracticeVlaue(Pmdl);
-            int i = Pmdl.Update_details();
+            int i = Pmdl.Update_details(_PName, _ptag, _address, _locality, _country, _state, _city, _pincode, _phone, _email, _website, _imgpath, _Pspeci, _DInum1, _DInumbr2);
             return i;
         }
-        public void country_selectedIndexChanged(string countryid)
+        public DataTable country_selectedIndexChanged(string countryid)
         {
-            DataTable dtb=Pmdl.country_selectedindex(countryid);
-            intr.FillStateCombo(dtb);
+            DataTable dtb = Pmdl.country_selectedindex(countryid);
+            return dtb;
         }
-        public void state_selectedIndexChanged(string countryid)
+        public DataTable state_selectedIndexChanged(string countryid)
         {
             DataTable dtb = Pmdl.state_selectedindex(countryid);
-            intr.FillCityCombo(dtb);
+            return dtb;
+        }
+        public string getserver()
+        {
+            string ret = db.server();
+            return ret;
+        }
+        public bool checkmail(string email)
+        {
+            bool isva = false;
+            if (Connection.checkforemail(email))
+                isva = true;
+            else
+                isva = false;
+            return isva;
+        }
+        public string Load_CompanyName()
+        {
+            string dtb = mdl.Load_CompanyName();
+            return dtb;
         }
     }
 }

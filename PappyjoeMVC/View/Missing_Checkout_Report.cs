@@ -8,18 +8,14 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Missing_Checkout_Report : Form, Missing_Checkout_Report_interface
+    public partial class Missing_Checkout_Report : Form
     {
-        Missing_Checkout_Report_controller cntrl;
+        Missing_Checkout_Report_controller cntrl = new Missing_Checkout_Report_controller();
         public string drctid = "";
         public string Selected_drid = "";
         public Missing_Checkout_Report()
         {
             InitializeComponent();
-        }
-        public void setcontroller(Missing_Checkout_Report_controller controller)
-        {
-            cntrl = controller;
         }
 
         private void Missing_Checkout_Report_Load(object sender, EventArgs e)

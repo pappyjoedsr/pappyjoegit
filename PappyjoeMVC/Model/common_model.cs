@@ -1,8 +1,4 @@
-﻿ using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Data;
 
 namespace PappyjoeMVC.Model
@@ -40,7 +36,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Get_adminId()
         {
-            DataTable dtb= db.table("select id from tbl_doctor where login_type='admin'");
+            DataTable dtb = db.table("select id from tbl_doctor where login_type='admin'");
             return dtb;
         }
         public DataTable get_all_doctorname()
@@ -70,27 +66,27 @@ namespace PappyjoeMVC.Model
         }
         public string privillage_E(string doctor_id)
         {
-          string  id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PAT' and Permission='E'");
+            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PAT' and Permission='E'");
             return id;
         }
         public string privillage_D(string doctor_id)
         {
-          string  id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PAT' and Permission='D'");
+            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PAT' and Permission='D'");
             return id;
         }
         public DataTable get_patient_date(string patient_id)
         {
-            DataTable dtb= db.table("select date from tbl_patient where id='" + patient_id + "'");
+            DataTable dtb = db.table("select date from tbl_patient where id='" + patient_id + "'");
             return dtb;
         }
         public DataTable Get_Practice_details()
         {
-            DataTable dtb= db.table("select name,contact_no,path,street_address,locality from tbl_practice_details");
+            DataTable dtb = db.table("select name,contact_no,path,street_address,locality from tbl_practice_details");
             return dtb;
         }
         public DataTable Get_practiceDlNumber()
         {
-          DataTable dtp = db.table("select name,street_address,locality,pincode,contact_no,email,website,Dl_Number,Dl_Number2 from tbl_practice_details");
+            DataTable dtp = db.table("select name,street_address,locality,pincode,contact_no,email,website,Dl_Number,Dl_Number2 from tbl_practice_details");
             return dtp;
         }
         public DataTable send_email()
@@ -108,26 +104,26 @@ namespace PappyjoeMVC.Model
             DataTable dt3 = db.table("select * from  tbl_addproceduresettings order by id");
             return dt3;
         }
-       
+
         public DataTable Patient_search(string _Patientid)
         {
-           DataTable dtdr = db.table("select id, CONCAT(pt_name, ',', age, ',', gender) as patient from tbl_patient where (pt_name like '" +_Patientid+ "%'   or pt_id like '%" + _Patientid + "%' or primary_mobile_number like '%" +_Patientid+ "%') and Profile_Status = 'Active'");
+            DataTable dtdr = db.table("select id, CONCAT(pt_name, ',', age, ',', gender) as patient from tbl_patient where (pt_name like '" + _Patientid + "%'   or pt_id like '%" + _Patientid + "%' or primary_mobile_number like '%" + _Patientid + "%') and Profile_Status = 'Active'");
             return dtdr;
         }
         public string permission_for_settings(string doctor_id)
-        { 
-           string a =  db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='CLMS' and Permission='A'");
-           return a;
+        {
+            string a = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='CLMS' and Permission='A'");
+            return a;
         }
         public void save_review(string date, string patient_id)
         {
             int iii = db.execute("insert into  tbl_review(fix_datetime,review_datetime,pt_id,status) values('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + date + "','" + patient_id + "','YES')");
         }
-        public void save_appointment(string date,string patient_id,string pat_name,string dr_id,string Patient_mobile,string dr_name)
+        public void save_appointment(string date, string patient_id, string pat_name, string dr_id, string Patient_mobile, string dr_name)
         {
-            string sqlstr = "insert into tbl_appointment (book_datetime,start_datetime,duration,note,pt_id,pt_name,dr_id,mobile_no,email_id,notify_patient,notify_doctor,plan_new_procedure,status,booked_by ) values('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + date + "','5','Review Appointment','" + patient_id + "','" + pat_name + "','" +dr_id + "','" + Patient_mobile + "','','yes','yes','','scheduled','" +dr_name + "')";
+            string sqlstr = "insert into tbl_appointment (book_datetime,start_datetime,duration,note,pt_id,pt_name,dr_id,mobile_no,email_id,notify_patient,notify_doctor,plan_new_procedure,status,booked_by ) values('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + date + "','5','Review Appointment','" + patient_id + "','" + pat_name + "','" + dr_id + "','" + Patient_mobile + "','','yes','yes','','scheduled','" + dr_name + "')";
         }
-        public DataTable get_reviewId(string patient_id,string reviewdate)
+        public DataTable get_reviewId(string patient_id, string reviewdate)
         {
             DataTable dt_review = db.table("SELECT id FROM tbl_review where  pt_id='" + patient_id + "' and fix_datetime='" + DateTime.Now.ToString("yyyy-MM-dd") + "' and review_datetime='" + reviewdate + "' ORDER BY id");
             return dt_review;
@@ -135,8 +131,8 @@ namespace PappyjoeMVC.Model
 
         public DataTable get_total_payment(string ptid)
         {
-          DataTable pay = db.table("select total_payment from tbl_invoices where pt_id='" + ptid + "'");
-          return pay;
+            DataTable pay = db.table("select total_payment from tbl_invoices where pt_id='" + ptid + "'");
+            return pay;
         }
         public string privillage_A(string doctor_id)
         {

@@ -10,19 +10,15 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Appointment_for_each_patient_group : Form, Appointment_for_each_patient_group_interface
+    public partial class Appointment_for_each_patient_group : Form
     {
-        Appointment_for_each_patient_group_controller cntrl;
+        Appointment_for_each_patient_group_controller cntrl=new Appointment_for_each_patient_group_controller();
         Appointment_report_model _model = new Appointment_report_model();
         public string select_id = "0";
         public string gpid = " ";
         public Appointment_for_each_patient_group()
         {
             InitializeComponent();
-        }
-        public void setcontroller(Appointment_for_each_patient_group_controller controller)
-        {
-            cntrl = controller;
         }
 
         private void Appointment_for_each_patient_group_Load(object sender, EventArgs e)
@@ -122,7 +118,7 @@ namespace PappyjoeMVC.View
                 {
                     gpid = cmbptgrp.SelectedItem.ToString();
                     string dt = this.cntrl.grp_id(gpid);
-                    if (dt!="")
+                    if (dt != "")
                     {
                         select_id = dt.ToString();
                     }

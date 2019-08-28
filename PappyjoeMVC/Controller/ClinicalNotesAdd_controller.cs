@@ -1,23 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
     public class ClinicalNotesAdd_controller
     {
-        ClinicalNotesAdd_interface intr;
         ClinicalNotesAdd_model _model = new ClinicalNotesAdd_model();
         common_model model = new common_model();
-        public ClinicalNotesAdd_controller(ClinicalNotesAdd_interface inttr)
-        {
-            intr = inttr;
-            intr.setcontroller(this);
-        }
         public DataTable investigation_cell(string idinv)
         {
             DataTable dt = _model.investigation_cell(idinv);
@@ -73,10 +62,10 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.CheckInvest(investtextbox);
             return dt;
         }
-        public int investigation_insert()
+        public int investigation_insert(string investtextbox)
         {
-            _model.Investigation = intr.Investigation;
-            int i = _model.investigation_insert();
+            //_model.Investigation = intr.Investigation;
+            int i = _model.investigation_insert(investtextbox);
             return i;
         }
         public DataTable Show_investigation()
@@ -89,10 +78,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.CheckdataDiag(diagtext);
             return dt;
         }
-        public int Insert_diagno()
+        public int Insert_diagno(string diagtext)
         {
-            _model.Diagnosis = intr.Diagnosis;
-            int i = _model.Insert_diagno();
+            int i = _model.Insert_diagno(diagtext);
             return i;
         }
         public DataTable show_diagno()
@@ -105,10 +93,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.checkdataAcc(comptext);
             return dt;
         }
-        public int insert_compl()
+        public int insert_compl(string comptextbox)
         {
-            _model.complaint = intr.Complaints;
-            int i = _model.insert_compl();
+            int i = _model.insert_compl(comptextbox);
             return i;
         }
         public DataTable show_compl()
@@ -116,10 +103,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.show_compl();
             return dt;
         }
-        public int Update_compl(int rowvalue)
+        public int Update_compl(string comptextbox, int rowvalue)
         {
-            _model.complaint = intr.Complaints;
-            int i = _model.Update_compl(rowvalue);
+            int i = _model.Update_compl(comptextbox,rowvalue);
             return i;
         }
         public DataTable checkdataNote(string notetextbox)
@@ -127,10 +113,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.checkdataNote(notetextbox);
             return dt;
         }
-        public int insert_note()
+        public int insert_note(string notetextbox)
         {
-            _model.Notes = intr.Notes;
-            int i = _model.insert_note();
+            int i = _model.insert_note(notetextbox);
             return i;
         }
         public DataTable show_note()
@@ -143,10 +128,9 @@ namespace PappyjoeMVC.Controller
             DataTable d = _model.checkdataOB(obsertextbox);
             return d;
         }
-        public int insert_Observ()
+        public int insert_Observ(string obsertextbox)
         {
-            _model.Observation = intr.Observation;
-            int i = _model.insert_Observ();
+            int i = _model.insert_Observ(obsertextbox);
             return i;
         }
         public DataTable show_observation()
@@ -201,7 +185,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable getdatafrom_clinicalFindings(string id, string ptid)
         {
-            DataTable d = _model.getdatafrom_clinicalFindings(id,ptid);
+            DataTable d = _model.getdatafrom_clinicalFindings(id, ptid);
             return d;
         }
         public DataTable getComplaints(string id)
@@ -236,7 +220,7 @@ namespace PappyjoeMVC.Controller
         }
         public int insertInto_clinical_findings(string ptid, string dt, string date)
         {
-            int i = _model.insertInto_clinical_findings(ptid,dt,date);
+            int i = _model.insertInto_clinical_findings(ptid, dt, date);
             return i;
         }
         public DataTable MaxId_clinic_findings()
@@ -246,7 +230,7 @@ namespace PappyjoeMVC.Controller
         }
         public int insrtto_investi(int treat, string one)
         {
-            int i = _model.insrtto_investi(treat,one);
+            int i = _model.insrtto_investi(treat, one);
             return i;
         }
         public int insrtto_diagno(int treat, string one)
@@ -266,17 +250,17 @@ namespace PappyjoeMVC.Controller
         }
         public int insrtto_chief_comp(int treat, string one)
         {
-            int i = _model.insrtto_chief_comp(treat,one);
+            int i = _model.insrtto_chief_comp(treat, one);
             return i;
         }
         public int Update_clinical_findings(string ptid, string dt, string id)
         {
-            int i = _model.Update_clinical_findings(ptid,dt,id);
+            int i = _model.Update_clinical_findings(ptid, dt, id);
             return i;
         }
         public int Update_date_of_clinical(string date, string ptid, string id)
         {
-            int i = _model.Update_date_of_clinical(date,ptid,id);
+            int i = _model.Update_date_of_clinical(date, ptid, id);
             return i;
         }
         public int del_investi(string id)
@@ -306,7 +290,7 @@ namespace PappyjoeMVC.Controller
         }
         public int Add_investi(string id, string grid)
         {
-            int i = _model.Add_investi(id,grid);
+            int i = _model.Add_investi(id, grid);
             return i;
         }
         public int Add_diagno(string id, string grid)

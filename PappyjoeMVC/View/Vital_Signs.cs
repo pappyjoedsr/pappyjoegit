@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.Model;
-
 
 namespace PappyjoeMVC.View
 {
-    public partial class Vital_Signs : Form,Vital_Signs_interface
+    public partial class Vital_Signs : Form
     {
-        Vital_Signs_controller cntrl;
+        Vital_Signs_controller cntrl=new Vital_Signs_controller();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";
@@ -27,15 +20,10 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        public void setcontroller(Vital_Signs_controller controller)
-        {
-            cntrl = controller;
-        }
 
         private void btn_ADD_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Add_Vital_Signs();
-            Add_Vital_Signs_controller cnt = new Add_Vital_Signs_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
@@ -75,7 +63,7 @@ namespace PappyjoeMVC.View
                     form2.ShowDialog();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -92,7 +80,6 @@ namespace PappyjoeMVC.View
                     if (int.Parse(id) > 0)
                     {
                         var form2 = new PappyjoeMVC.View.PracticeDetails();
-                        Practice_Controller cnt = new Practice_Controller(form2);
                         form2.doctor_id = doctor_id;
                         form2.ShowDialog();
                     }
@@ -104,7 +91,7 @@ namespace PappyjoeMVC.View
                 else
                 {
                     var form2 = new PappyjoeMVC.View.PracticeDetails();
-                    Practice_Controller cnt = new Practice_Controller(form2);
+                    //Practice_Controller cnt = new Practice_Controller(form2);
                     form2.doctor_id = doctor_id;
                     form2.ShowDialog();
                 }
@@ -185,7 +172,7 @@ namespace PappyjoeMVC.View
                     toolStripButton1.Text = clinicn.Replace("¤", "'");
                 }
                 string docnam = this.cntrl.Get_DoctorName(doctor_id);
-                if (docnam!="")
+                if (docnam != "")
                 {
                     toolStripTextDoctor.Text = "Logged In As : " + docnam;
                 }
@@ -406,7 +393,7 @@ namespace PappyjoeMVC.View
             var form2 = new Vital_Signs();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Vital_Signs_controller controller = new Vital_Signs_controller(form2);
+            //Vital_Signs_controller controller = new Vital_Signs_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -490,7 +477,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            Reports_controller controller = new Reports_controller(form2);
+            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -500,7 +487,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            expense_controller controller = new expense_controller(form2);
+            //expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
 
@@ -510,7 +497,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                doctor_controller controlr = new doctor_controller(form2);
+                //doctor_controller controlr = new doctor_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -533,7 +520,7 @@ namespace PappyjoeMVC.View
             var form2 = new Clinical_Findings();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Clinical_Findings_controller controller = new Clinical_Findings_controller(form2);
+            //Clinical_Findings_controller controller = new Clinical_Findings_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

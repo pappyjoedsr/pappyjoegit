@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
 
 namespace PappyjoeMVC.View
 {
-    public partial class LabMedical : Form,LabMedical_interface
+    public partial class LabMedical : Form
     {
-        LabMedical_controller cntrl;
+        LabMedical_controller cntrl = new LabMedical_controller();
         public string doctor_id;
         int check = 0;
         int flag;
@@ -25,55 +20,6 @@ namespace PappyjoeMVC.View
         public LabMedical()
         {
             InitializeComponent();
-        }
-        public void setcontroller(LabMedical_controller controller)
-        {
-            cntrl = controller;
-        }
-        public string Main_Test
-        {
-            get { return this.txtMainTest.Text; }
-            set { this.txtMainTest.Text = value; }
-        }
-        public string Test_type
-        {
-            get { return this.txtTestType.Text; }
-            set { this.txtTestType.Text = value; }
-        }
-        public string Units
-        {
-            get { return this.txtUnitadd.Text; }
-            set { this.txtUnitadd.Text = value; }
-        }
-        public string TestName
-        {
-            get { return this.txtName.Text; }
-            set { this.txtName.Text = value; }
-        }
-        public string txtNVmale
-        {
-            get { return this.txtNVMale.Text; }
-            set { this.txtNVMale.Text = value; }
-        }
-        public string txtNVfemale
-        {
-            get { return this.txtNVFemale.Text; }
-            set { this.txtNVFemale.Text = value; }
-        }
-        public int Cmbtesttype
-        {
-            get { return Convert.ToInt32( this.cmbTesttype.SelectedValue); }
-            set { this.cmbTesttype.SelectedValue = value; }
-        }
-        public int CmbUnit
-        {
-            get { return Convert.ToInt32(this.cmbUnit.SelectedValue); }
-            set { this.cmbUnit.SelectedValue = value; }
-        }
-        public string TempName
-        {
-            get { return this.txttemp.Text; }
-            set { this.txttemp.Text = value; }
         }
 
         public void Fill_dgvMainTest(DataTable dtb)
@@ -185,7 +131,8 @@ namespace PappyjoeMVC.View
                 btntestcancel.Hide();
                 btncanclunit.Hide();
                 btnCancel.Hide();
-                this.cntrl.Main_test_Dgv();
+                DataTable dt= this.cntrl.Main_test_Dgv();
+                Fill_dgvMainTest(dt);
                 this.dgvLabMaster.Columns[1].Visible = false;
 
                 DataTable tbTesttype = this.cntrl.fill_TestType();
@@ -280,9 +227,10 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        this.cntrl.Update_Main_test(txtMtid.Text);
+                        this.cntrl.Update_Main_test(txtMtid.Text, txtMainTest.Text);
                     }
-                    this.cntrl.Main_test_Dgv();
+                    DataTable dt = this.cntrl.Main_test_Dgv();
+                    Fill_dgvMainTest(dt);
                     this.dgvLabMaster.Columns[1].Visible = false;
                 }
                 else
@@ -304,16 +252,20 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                this.cntrl.tpMain_testtype();
+                DataTable dt= this.cntrl.tpMain_testtype();
+                fill_TestType(dt);
                 this.dtgTestType.Columns[0].Visible = false;
 
-                this.cntrl.tpMain_unit();
+                DataTable dt1= this.cntrl.tpMain_unit();
+                fill_Unit(dt1);
                 this.dgvUnit.Columns[0].Visible = false;
 
-                this.cntrl.tpMain_test();
+                DataTable dt2= this.cntrl.tpMain_test();
+                fill_Test(dt2);
                 this.dgvTest.Columns[0].Visible = false;
 
-                this.cntrl.tpMain_template();
+                DataTable dt3= this.cntrl.tpMain_template();
+                fill_Template(dt3);
                 this.dgvtemplateadd.Columns[0].Visible = false;
 
                 DataTable TEMPLATE_View = this.cntrl.Template_view();
@@ -372,16 +324,18 @@ namespace PappyjoeMVC.View
                     txtTestType.Text = mystring.Replace("'", " ");
                     if (btnTesttype_save.Text == "SAVE")
                     {
-                        this.cntrl.Save_Testtype();
+                        this.cntrl.Save_Testtype(txtTestType.Text);
+
                         MessageBox.Show("Successfully Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        this.cntrl.Update_testtype(txtTtypeid.Text);
+                        this.cntrl.Update_testtype(txtTtypeid.Text, txtTestType.Text);
                         MessageBox.Show("Data updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
-                    this.cntrl.tpMain_testtype();
+                    DataTable dt= this.cntrl.tpMain_testtype();
+                    fill_TestType(dt);
                 }
                 else
                 {
@@ -409,15 +363,16 @@ namespace PappyjoeMVC.View
 
                     if (btnSaveunit.Text == "SAVE")
                     {
-                        this.cntrl.SaveUnit();
+                        this.cntrl.SaveUnit(txtUnitadd.Text);
                         MessageBox.Show("Successfully Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        this.cntrl.UpdateUnit(Convert.ToInt32(txtunitid.Text));
+                        this.cntrl.UpdateUnit(Convert.ToInt32(txtunitid.Text),txtUnitadd.Text);
                         MessageBox.Show("Data updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    this.cntrl.tpMain_unit();
+                    DataTable dt= this.cntrl.tpMain_unit();
+                    fill_Unit(dt);
                 }
                 else
                 {
@@ -443,17 +398,18 @@ namespace PappyjoeMVC.View
                     txtName.Text = mystring.Replace("'", " ");
                     if (btnSavetest.Text == "SAVE")
                     {
-                        this.cntrl.SaveTest();
+                        this.cntrl.SaveTest(txtName.Text, txtNVMale.Text, txtNVFemale.Text, Convert.ToInt32(cmbTesttype.SelectedValue), Convert.ToInt32(cmbUnit.SelectedValue));
                         MessageBox.Show("Successfully Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        this.cntrl.Update_test(Convert.ToInt32(txttestid.Text));
+                        this.cntrl.Update_test(txtName.Text, Convert.ToInt32(cmbTesttype.SelectedValue), txtNVMale.Text, txtNVFemale.Text, Convert.ToInt32(cmbUnit.SelectedValue), Convert.ToInt32(txttestid.Text));
                         MessageBox.Show("Data updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 
-                this.cntrl.tpMain_test();
+                DataTable dt= this.cntrl.tpMain_test();
+                fill_Test(dt);
                 txtName.Clear();
                 txttestid.Clear();
                 txtNVFemale.Clear();
@@ -474,7 +430,7 @@ namespace PappyjoeMVC.View
                 {
                     if (!string.IsNullOrWhiteSpace(txttemp.Text))
                     {
-                        this.cntrl.Tempname_save();
+                        this.cntrl.Tempname_save(txttemp.Text);
                         int id = this.cntrl.Get_Maxid();
                         DataTable test = this.cntrl.Get_test_byId(Convert.ToInt32(cmbTesttemp.SelectedValue));
                         DataTable Normavalue = this.cntrl.Normavalue(Convert.ToInt32(test.Rows[0][0].ToString()));
@@ -505,7 +461,7 @@ namespace PappyjoeMVC.View
                 {
                     if (flag == 1)
                     {
-                        this.cntrl.Update_temp_name(Convert.ToInt32(txtId.Text));
+                        this.cntrl.Update_temp_name(Convert.ToInt32(txtId.Text),txttemp.Text);
                     }
                     else
                     {
@@ -513,7 +469,8 @@ namespace PappyjoeMVC.View
                     }
                     MessageBox.Show(" Data updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                this.cntrl.tpMain_template();
+                DataTable dt= this.cntrl.tpMain_template();
+                fill_Template(dt);
                 DataTable TEMPLATE_View = this.cntrl.Template_view();
                 dgvTesttemplate.DataSource = TEMPLATE_View;
                 txtId.Clear();
@@ -624,7 +581,8 @@ namespace PappyjoeMVC.View
                             else
                             {
                                 this.cntrl.delete_Maintest(id);
-                                this.cntrl.Main_test_Dgv();
+                                DataTable dt = this.cntrl.Main_test_Dgv();
+                                Fill_dgvMainTest(dt);
                             }
                         }
                     }
@@ -701,7 +659,8 @@ namespace PappyjoeMVC.View
                             else
                             {
                                 this.cntrl.delete_testtype(id);
-                                this.cntrl.tpMain_testtype();
+                                DataTable dt= this.cntrl.tpMain_testtype();
+                                fill_TestType(dt);
                             }
                         }
                     }
@@ -765,7 +724,8 @@ namespace PappyjoeMVC.View
                             else
                             {
                                 this.cntrl.del_unit(id);
-                                this.cntrl.tpMain_unit();
+                                DataTable dt= this.cntrl.tpMain_unit();
+                                fill_Unit(dt);
                             }
                         }
                     }
@@ -845,7 +805,7 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            if (Convert.ToInt32(Testcheck )>0)
+                            if (Convert.ToInt32(Testcheck) > 0)
                             {
                                 MessageBox.Show("Cannot Delete", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 txttestid.Text = "";
@@ -856,7 +816,8 @@ namespace PappyjoeMVC.View
                             else
                             {
                                 this.cntrl.test_delete(id);
-                                this.cntrl.tpMain_test();
+                                DataTable dt= this.cntrl.tpMain_test();
+                                fill_Test(dt);
                             }
                         }
                     }
@@ -926,7 +887,8 @@ namespace PappyjoeMVC.View
                     else
                     {
                         this.cntrl.dele_temp(id);
-                        this.cntrl.tpMain_template();
+                        DataTable dt= this.cntrl.tpMain_template();
+                        fill_Template(dt);
                         DataTable TEMPLATE_View = this.cntrl.Template_view();
                         dgvTesttemplate.DataSource = TEMPLATE_View;
                     }
@@ -972,7 +934,8 @@ namespace PappyjoeMVC.View
                 else
                 {
                 }
-                this.cntrl.tpMain_template();
+                DataTable dt= this.cntrl.tpMain_template();
+                fill_Template(dt);
             }
             catch (Exception ex)
             {
@@ -1058,7 +1021,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                this.cntrl.Update_temp_name(Convert.ToInt32(txtId.Text));
+                this.cntrl.Update_temp_name(Convert.ToInt32(txtId.Text), txttemp.Text);
                 this.cntrl.delete_labTemp_main(Convert.ToInt32(txtId.Text));
                 for (int r = 0; r < dgvtempitem.Rows.Count; r++)
                 {
@@ -1075,7 +1038,8 @@ namespace PappyjoeMVC.View
                 }
                 txtId.Clear();
                 txttemp.Clear();
-                this.cntrl.tpMain_template();
+                DataTable dt= this.cntrl.tpMain_template();
+                fill_Template(dt);
                 pnlAddtemplate.Show();
                 pnl2.Hide();
             }

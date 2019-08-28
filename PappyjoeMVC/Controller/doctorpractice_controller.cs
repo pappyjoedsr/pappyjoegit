@@ -9,14 +9,7 @@ namespace PappyjoeMVC.Controller
 {
   public  class doctorpractice_controller
     {
-        Connection db = new Connection();
-        doctorpractice_interface intr;
         doctorpractice_model _model = new doctorpractice_model();
-        public doctorpractice_controller(doctorpractice_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
         public DataTable load_services()
         {
             DataTable dt_maintest = _model.load_services();
@@ -31,9 +24,9 @@ namespace PappyjoeMVC.Controller
         {
           _model.save_service(text);
         }
-        public DataTable max_serviceId()
+        public string max_serviceId()
         {
-            DataTable dt = _model.max_serviceId();
+            string dt = _model.max_serviceId();
             return dt;
         }
         public void update_service(string text,string serviceid)
@@ -50,9 +43,9 @@ namespace PappyjoeMVC.Controller
         {
             _model.save_degree(text);
         }
-        public DataTable max_degreeid()
+        public string max_degreeid()
         {
-            DataTable dt = _model.max_degreeid();
+            string dt = _model.max_degreeid();
             return dt;
         }
         public void update_degree(string text, string degreeid)
@@ -96,9 +89,9 @@ namespace PappyjoeMVC.Controller
         {
             _model.save_council(name);
         }
-        public DataTable max_councilid()
+        public string max_councilid()
         {
-            DataTable dt = _model.max_councilid();
+            string dt = _model.max_councilid();
             return dt;
         }
       //member
@@ -116,9 +109,9 @@ namespace PappyjoeMVC.Controller
         {
             _model.save_member(name); 
         }
-        public DataTable max_memberid()
+        public string max_memberid()
         {
-            DataTable dt = _model.max_memberid(); 
+            string dt = _model.max_memberid(); 
             return dt;
         }
         public void update_member(string name,string membershipid)
@@ -148,9 +141,9 @@ namespace PappyjoeMVC.Controller
         {
             _model.save_college(name);
         }
-        public DataTable max_collegeid()
+        public string max_collegeid()
         {
-            DataTable dt = _model.max_collegeid(); 
+            string dt = _model.max_collegeid(); 
             return dt;
         }
         public void update_college(string name, string collegeid)
@@ -167,9 +160,9 @@ namespace PappyjoeMVC.Controller
        {
            this._model.save_specilization(name);
        }
-        public DataTable max_specilizationid()
+        public string max_specilizationid()
         {
-            DataTable dt = this._model.max_specilizationid();
+            string dt = this._model.max_specilizationid();
             return dt;
         }
         public void update_sspecilization(string name, string Specializationid)

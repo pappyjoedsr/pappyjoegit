@@ -624,7 +624,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            Reports_controller controller = new Reports_controller(form2);
+            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -634,7 +634,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            expense_controller controller = new expense_controller(form2);
+            //expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
 
@@ -644,7 +644,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                doctor_controller controlr = new doctor_controller(form2);
+                //doctor_controller controlr = new doctor_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -702,7 +702,6 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new PracticeDetails();
                     form2.doctor_id = doctor_id;
-                    Practice_Controller controller = new Practice_Controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -716,7 +715,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new PracticeDetails();
                 form2.doctor_id = doctor_id;
-                Practice_Controller controller = new Practice_Controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();

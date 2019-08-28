@@ -11,33 +11,33 @@ using PappyjoeMVC.Controller;
 
 namespace PappyjoeMVC.View
 {
-    public partial class communication_settings : Form,communication_setting_interface
+    public partial class communication_settings : Form
     {
         public communication_settings()
         {
             InitializeComponent();
         }
-        communication_setting_controller cntrl;
-        public string SMSUName
-        {
-            get { return this.textSmsUname.Text; }
-            set { this.textSmsUname.Text = value; }
-        }
-        public string SMSPassword
-        {
-            get { return this.textSmsPassword.Text; }
-            set { this.textSmsPassword.Text = value; }
-        }
-        public string EmailUNAme
-        {
-            get { return this.textEmailUname.Text; }
-            set { this.textEmailUname.Text = value; }
-        }
-        public string EmailPassword
-        {
-            get { return this.textEmailPassword.Text; }
-            set { this.textEmailPassword.Text = value; }
-        }
+        communication_setting_controller cntrl=new communication_setting_controller();
+        //public string SMSUName
+        //{
+        //    get { return this.textSmsUname.Text; }
+        //    set { this.textSmsUname.Text = value; }
+        //}
+        //public string SMSPassword
+        //{
+        //    get { return this.textSmsPassword.Text; }
+        //    set { this.textSmsPassword.Text = value; }
+        //}
+        //public string EmailUNAme
+        //{
+        //    get { return this.textEmailUname.Text; }
+        //    set { this.textEmailUname.Text = value; }
+        //}
+        //public string EmailPassword
+        //{
+        //    get { return this.textEmailPassword.Text; }
+        //    set { this.textEmailPassword.Text = value; }
+        //}
         public void SetController(communication_setting_controller controller)
         {
             cntrl = controller;
@@ -98,12 +98,12 @@ namespace PappyjoeMVC.View
                 DataTable sms = this.cntrl.Getsmaname();
                 if (sms.Rows.Count > 0)
                 {
-                    this.cntrl.update_sms();
+                    this.cntrl.update_sms(textSmsUname.Text, textSmsPassword.Text);
                     MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    this.cntrl.save_sms();
+                    this.cntrl.save_sms(textSmsUname.Text, textSmsPassword.Text);
                     MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 DataTable sms1 = this.cntrl.getsmstabledata();
@@ -166,12 +166,12 @@ namespace PappyjoeMVC.View
                 DataTable sms = this.cntrl.Getsmaname();
                 if (sms.Rows.Count > 0)
                 {
-                    this.cntrl.update_email();
+                    this.cntrl.update_email(textEmailUname.Text, textEmailPassword.Text);
                     MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    this.cntrl.Save_email();
+                    this.cntrl.Save_email(textEmailUname.Text, textEmailPassword.Text);
                     MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 DataTable sms1 = this.cntrl.getsmstabledata();

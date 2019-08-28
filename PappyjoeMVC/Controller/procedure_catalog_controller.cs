@@ -9,53 +9,45 @@ namespace PappyjoeMVC.Controller
 {
    public class procedure_catalog_controller
     {
-        procedure_catalog_interface intr;
-         procedure_catalog_model _model=new procedure_catalog_model();   
-        public procedure_catalog_controller(procedure_catalog_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
-        public void FormLoad()
+         //procedure_catalog_interface intr;
+        procedure_catalog_model _model=new procedure_catalog_model();   
+        //public procedure_catalog_controller(procedure_catalog_interface inttr)
+        //{
+        //    intr = inttr;
+        //    intr.SetController(this);
+        //}
+        public DataTable FormLoad()
         {
             DataTable dtb = _model.FormLoad();
-            intr.FormLoad(dtb);
-        }
-        public void get_procedure_category_value()
-        {
-            DataTable dtb=_model.get_procedure_category_value();
-            intr.AddCategory(dtb); 
-        }
-        public DataTable Get_category_name()
-        {
-            _model.TextCategory = intr.TextCategory;
-            DataTable dt = _model.Get_category_name();
-            return dt;
-        }
-        public void save()
-        {
-            _model.TextCategory = intr.TextCategory;
-            _model.save();
-        }
-        public void get_procedureName()
-        {
-            _model.ProcedureName = intr.ProcedureName;
-            DataTable dtb = _model.get_procedureName();
-            intr.GetProcedureName(dtb);
-        }
-        public DataTable get_procedureid()
-        {
-            _model.ProcedureName = intr.ProcedureName;
-            DataTable dtb = _model.get_procedureName();
             return dtb;
         }
-        public int save_addprocedure()
+        public DataTable get_procedure_category_value()
         {
-            _model.ProcedureName = intr.ProcedureName;
-            _model.ProcedCost = intr.ProcedCost;
-            _model.ComboCategory = intr.ComboCategory;
-            _model.Notes = intr.Notes;
-            int i = _model.save_addprocedure();
+            DataTable dtb=_model.get_procedure_category_value();
+            return dtb; 
+        }
+        public DataTable Get_category_name(string TextCategory)
+        {
+             DataTable dt = _model.Get_category_name(TextCategory);
+            return dt;
+        }
+        public void save(string TextCategory)
+        {
+            _model.save(TextCategory);
+        }
+        public DataTable get_procedureName(string ProcedureName)
+        {
+            DataTable dtb = _model.get_procedureName(ProcedureName);
+            return dtb;
+        }
+        public DataTable get_procedureid(string ProcedureName)
+        {
+            DataTable dtb = _model.get_procedureName(ProcedureName);
+            return dtb;
+        }
+        public int save_addprocedure(string _procName, string _procost, string _comboCategory, string _notes)
+        {
+            int i = _model.save_addprocedure(_procName,  _procost,  _comboCategory,  _notes);
             return i;
         }
         public string Get_GST_id()

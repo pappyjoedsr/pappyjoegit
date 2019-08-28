@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using PappyjoeMVC.Model;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Reports : Form, Reports_interface
+    public partial class Reports : Form
     {
-        Reports_controller cntrl;
+        Reports_controller cntrl = new Reports_controller();
         common_model model = new common_model();
         public string doctor_id = "0";
         public string staff_id = "0";
@@ -42,14 +37,9 @@ namespace PappyjoeMVC.View
         public int totaldiscount;
         string drid = "";
         string select_dr_id = "0";
-
         public Reports()
         {
             InitializeComponent();
-        }
-        public void setcontroller(Reports_controller controller)
-        {
-            cntrl = controller;
         }
 
         private void Reports_Load(object sender, EventArgs e)
@@ -124,7 +114,7 @@ namespace PappyjoeMVC.View
                     toolStripButton1.Text = clinicn.Replace("¤", "'");
                 }
                 string docnam = this.cntrl.Get_DoctorName(doctor_id);
-                if (docnam!="")
+                if (docnam != "")
                 {
                     toolStripTextBDoctor.Text = "Logged In As : " + docnam;
                 }
@@ -212,7 +202,8 @@ namespace PappyjoeMVC.View
                     paneldailysummary.Show();
                     paneldailysummary.Height = 891;
                     combodoctors.Visible = true;
-                    this.cntrl.inv_main(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"));
+                    DataTable dt = this.cntrl.inv_main(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"));
+                    Load_invoiceReport(dt);
                 }
                 else if (comborepcategory.Text == "RECEIPT")
                 {
@@ -231,7 +222,8 @@ namespace PappyjoeMVC.View
                     to.Visible = true;
                     combodoctors.Visible = true;
                     to.Text = "To";
-                    this.cntrl.reciept(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"));
+                    DataTable dt = this.cntrl.reciept(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"));
+                    Load_recieptReport(dt);
                 }
                 else if (comborepcategory.Text == "APPOINTMENTS")
                 {
@@ -241,7 +233,8 @@ namespace PappyjoeMVC.View
                     to.Visible = true;
                     combodoctors.Visible = true;
                     to.Text = "To";
-                    this.cntrl.appointment_invMain(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"));
+                    DataTable dt = this.cntrl.appointment_invMain(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"));
+                    Load_appointmentReport(dt);
                 }
                 else if (comborepcategory.Text == "PATIENTS")
                 {
@@ -250,7 +243,8 @@ namespace PappyjoeMVC.View
                     dateTimePickerrepo2.Visible = true;
                     to.Visible = true;
                     to.Text = "To";
-                    this.cntrl.Patient_invMain(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"));
+                    DataTable dt = this.cntrl.Patient_invMain(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"));
+                    Load_patientReport(dt);
                 }
                 else if (comborepcategory.Text == "EMR")
                 {
@@ -261,7 +255,8 @@ namespace PappyjoeMVC.View
                     dateTimePickerrepo2.Visible = true;
                     to.Visible = true;
                     to.Text = "To";
-                    this.cntrl.EMR_invMain(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"));
+                    DataTable dt = this.cntrl.EMR_invMain(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"));
+                    Load_EMRReport(dt);
                 }
                 else if (comborepcategory.Text == "EXPENSE")
                 {
@@ -283,20 +278,24 @@ namespace PappyjoeMVC.View
                     {
                         if (rad_Expense.Checked)
                         {
-                            this.cntrl.expence_checked(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"), "Expense");
+                            DataTable dt = this.cntrl.expence_checked(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"), "Expense");
+                            Load_expenseReport(dt);
                         }
                         else if (rad_income.Checked)
                         {
-                            this.cntrl.expence_checked(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"), "Income");
+                            DataTable dt = this.cntrl.expence_checked(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"), "Income");
+                            Load_expenseReport(dt);
                         }
                         else
                         {
-                            this.cntrl.expense_income_notChecked(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"));
+                            DataTable dt = this.cntrl.expense_income_notChecked(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"));
+                            Load_expenseReport(dt);
                         }
                     }
                     else
                     {
-                        this.cntrl.expense_income_notChecked(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"));
+                        DataTable dt = this.cntrl.expense_income_notChecked(dateTimePickerepo1.Value.ToString("yyyy-MM-dd"), dateTimePickerrepo2.Value.ToString("yyyy-MM-dd"));
+                        Load_expenseReport(dt);
                     }
                 }
                 else if (comborepcategory.Text == "INVENTORY")
@@ -309,7 +308,8 @@ namespace PappyjoeMVC.View
                     dateTimePickerrepo2.Visible = true;
                     to.Visible = true;
                     to.Text = "To";
-                    this.cntrl.Inventory_dt_stock();
+                    DataTable dt = this.cntrl.Inventory_dt_stock();
+                    Load_inventoryReport(dt);
                 }
             }
             catch (Exception ex)
@@ -601,7 +601,7 @@ namespace PappyjoeMVC.View
                         }
                         this.Grvreports.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     }
-                    
+
                 }
                 else
                 {
@@ -1587,7 +1587,6 @@ namespace PappyjoeMVC.View
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1597,7 +1596,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
 
@@ -1607,7 +1605,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                doctor_controller controlr = new doctor_controller(form2);
+                //doctor_controller controlr = new doctor_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -1646,49 +1644,42 @@ namespace PappyjoeMVC.View
         private void lblappointmenteachpatientgroup_Click(object sender, EventArgs e)
         {
             Appointment_for_each_patient_group d = new Appointment_for_each_patient_group();
-            Appointment_for_each_patient_group_controller cn = new Appointment_for_each_patient_group_controller(d);
             d.ShowDialog();
         }
 
         private void lblappointmenteachdoctor_Click(object sender, EventArgs e)
         {
             DoctorWise_appointment_report v = new DoctorWise_appointment_report();
-            DoctorWise_appointment_report_controller cn = new DoctorWise_appointment_report_controller(v);
             v.ShowDialog();
         }
 
         private void lblmonthappointmentcount_Click(object sender, EventArgs e)
         {
             Monthly_appointment_count c = new Monthly_appointment_count();
-            Monthly_appointment_count_controller bn = new Monthly_appointment_count_controller(c);
-            c.ShowDialog(); 
+            c.ShowDialog();
         }
 
         private void lbldailyappointcount_Click(object sender, EventArgs e)
         {
             Daily_appointment_count d = new Daily_appointment_count();
-            Daily_appointment_count_controller c = new Daily_appointment_count_controller(d);
             d.ShowDialog();
         }
 
         private void lblMissingCheckoutReports_Click(object sender, EventArgs e)
         {
             Missing_Checkout_Report m = new Missing_Checkout_Report();
-            Missing_Checkout_Report_controller c = new Missing_Checkout_Report_controller(m);
             m.ShowDialog();
         }
 
         private void lblVisitingHistory_Click(object sender, EventArgs e)
         {
             Visiting_History v = new Visiting_History();
-            Visiting_History_controller c = new Visiting_History_controller(v);
             v.ShowDialog();
         }
 
         private void lbldailynewpatient_Click(object sender, EventArgs e)
         {
             Daily_NewPatients d = new Daily_NewPatients();
-            Daily_NewPatients_controller c = new Daily_NewPatients_controller(d);
             d.ShowDialog();
         }
 
@@ -1696,7 +1687,6 @@ namespace PappyjoeMVC.View
         {
             Patients_first_appointment f = new Patients_first_appointment();
             f.doctor_id = doctor_id;
-            Patients_first_appointment_controller c = new Patients_first_appointment_controller(f);
             f.ShowDialog();
         }
 
@@ -1704,7 +1694,6 @@ namespace PappyjoeMVC.View
         {
             Monthly_new_patients m = new Monthly_new_patients();
             m.doctor_id = doctor_id;
-            Monthly_new_patients_controller c = new Monthly_new_patients_controller(m);
             m.ShowDialog();
         }
 
@@ -1712,7 +1701,6 @@ namespace PappyjoeMVC.View
         {
             Group_wise_report g = new Group_wise_report();
             g.patient_id = patient_id;
-            Group_wise_report_controller r = new Group_wise_report_controller(g);
             g.ShowDialog();
         }
 
@@ -1720,7 +1708,6 @@ namespace PappyjoeMVC.View
         {
             Daily_treatment_count d = new Daily_treatment_count();
             d.doctor_id = doctor_id;
-            Daily_treatment_count_controller c = new Daily_treatment_count_controller(d);
             d.ShowDialog();
         }
 
@@ -1750,7 +1737,7 @@ namespace PappyjoeMVC.View
 
         private void Chk_Type_CheckedChanged(object sender, EventArgs e)
         {
-            if(Chk_Type.Checked)
+            if (Chk_Type.Checked)
             {
                 rad_Expense.Enabled = true;
                 rad_income.Enabled = true;
@@ -1784,7 +1771,7 @@ namespace PappyjoeMVC.View
                 if (combodoctors.SelectedIndex >= 0)
                 {
                     string dt = this.cntrl.Get_DoctorId(combodoctors.SelectedItem.ToString());
-                    if (dt!="")
+                    if (dt != "")
                     {
                         select_dr_id = dt.ToString();
                     }

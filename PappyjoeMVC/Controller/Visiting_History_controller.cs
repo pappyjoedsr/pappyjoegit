@@ -5,13 +5,8 @@ namespace PappyjoeMVC.Controller
 {
     public class Visiting_History_controller
     {
-        //Visiting_History_interface intr;
         Appointment_report_model _model = new Appointment_report_model();
         common_model model = new common_model();
-        public Visiting_History_controller(Visiting_History_interface intr)
-        {
-            intr.setcontroller(this);
-        }
         public DataTable doctor_rs()
         {
             DataTable d = _model.doctor_rs();

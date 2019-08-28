@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Patients_first_appointment : Form,Patients_first_appointment_interface
+    public partial class Patients_first_appointment : Form
     {
-        Patients_first_appointment_controller cntrl;
+        Patients_first_appointment_controller cntrl=new Patients_first_appointment_controller();
         public string names, ptids;
         public string doctor_id = "";
         public Patients_first_appointment()

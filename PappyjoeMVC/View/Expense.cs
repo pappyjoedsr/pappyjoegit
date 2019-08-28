@@ -1,23 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Drawing.Printing;
 using System.IO;
-using System.Reflection;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.Model;
+using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Expense : Form, expense_interface
+    public partial class Expense : Form
     {
-        expense_controller cntrl;
+        expense_controller cntrl = new expense_controller();
         public string doctor_id = "";
         public int Incom_ID = 0;
         public int rowindex = 0;
@@ -31,69 +23,9 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        public void setcontroller(expense_controller controller)
-        {
-            cntrl = controller;
-        }
-        public string AccountName
-        {
-            get { return this.comboBoxincomacc.Text; }
-            set { this.comboBoxincomacc.Text = value; }
-        }
-        public string date
-        {
-            get { return this.dateTimePickerincome.Text; }
-            set { this.dateTimePickerincome.Text = value; }
-        }
-        public string description
-        {
-            get { return this.textBoxdescincome.Text; }
-            set { this.textBoxdescincome.Text = value; }
-        }
-        public string expense
-        {
-            get { return this.comboBoxincomacc.Text; }
-            set { this.comboBoxincomacc.Text = value; }
-        }
-        public string name
-        {
-            get { return this.textBoxnameofincome.Text; }
-            set { this.textBoxnameofincome.Text = value; }
-        }
-        public string amount_income
-        {
-            get { return this.txtamountincome.Text; }
-            set { this.txtamountincome.Text = value; }
-        }
-        public string debit_date
-        {
-            get { return dateTimePickerdate.Text; }
-            set { dateTimePickerdate.Text = value; }
-        }
-        public string debit_description
-        {
-            get { return textBox_add_template.Text; }
-            set { textBox_add_template.Text = value; }
-        }
-        public string debit_amount
-        {
-            get { return textamount.Text; }
-            set { textamount.Text = value; }
-        }
-        public string debit_ledger
-        {
-            get { return textperson.Text; }
-            set { textperson.Text = value; }
-        }
-        public string debit_accname
-        {
-            get { return comboaccountname.Text; }
-            set { comboaccountname.Text = value; }
-        }
         private void Lnk_AddNewCrdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var form2 = new New_CreditAccount();
-            NewCreditAccount_controller ctrl = new NewCreditAccount_controller(form2);
             form2.ShowDialog();
         }
         public void btn_normal()
@@ -126,7 +58,8 @@ namespace PappyjoeMVC.View
                 grpb_Credit.Visible = false;
                 Lab_Debits.BackColor = Color.DodgerBlue;
                 Lab_Debits.ForeColor = Color.White;
-                this.cntrl.fill_dgv_debit();
+                DataTable dtb = this.cntrl.fill_dgv_debit();
+                fill_dgv_debit(dtb);
             }
             catch (Exception ex)
             {
@@ -146,9 +79,10 @@ namespace PappyjoeMVC.View
                 panel1.Hide();
                 lab_Credits.BackColor = Color.DodgerBlue;
                 lab_Credits.ForeColor = Color.White;
-                this.cntrl.Fillgrid();
+                DataTable dtb = this.cntrl.Fillgrid();
+                Fill_dgv_credit(dtb);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -201,9 +135,9 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -215,21 +149,23 @@ namespace PappyjoeMVC.View
                 {
                     if (btnincomesubmit.Text == "Submit")
                     {
-                        int i = this.cntrl.submit_credit();
+                        int i = this.cntrl.submit_credit(dateTimePickerincome.Value.ToString("yyyy-MM-dd"), comboBoxincomacc.Text, textBoxdescincome.Text, textBoxnameofincome.Text, txtamountincome.Text);
                         if (i > 0)
                         {
                             MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             clear_Credit();
-                            this.cntrl.Fillgrid();
+                            DataTable dtb = this.cntrl.Fillgrid();
+                            Fill_dgv_credit(dtb);
                             comboBoxincomacc_SelectedIndexChanged(null, null);
                         }
                     }
                     else if (btnincomesubmit.Text == "Update")
                     {
-                        this.cntrl.update_dgv_credit(Incom_ID);
+                        this.cntrl.update_dgv_credit(Incom_ID, dateTimePickerincome.Value.ToString("yyyy-MM-dd"), comboBoxincomacc.Text, textBoxdescincome.Text, txtamountincome.Text, textBoxnameofincome.Text);
                         MessageBox.Show("Income Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         clear_Credit();
-                        this.cntrl.Fillgrid();
+                        DataTable dtb = this.cntrl.Fillgrid();
+                        Fill_dgv_credit(dtb);
                         btnincomesubmit.Text = "Submit";
                         comboBoxincomacc_SelectedIndexChanged(null, null);
                     }
@@ -240,7 +176,7 @@ namespace PappyjoeMVC.View
                     txtamountincome.Focus();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -267,7 +203,7 @@ namespace PappyjoeMVC.View
                 comboBoxincomacc.ValueMember = "id";
                 Check_Value1 = 1;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -312,7 +248,8 @@ namespace PappyjoeMVC.View
                                     if (j > 0)
                                     {
                                         dgv_credit.Rows.RemoveAt(index);
-                                        this.cntrl.Fillgrid();
+                                        DataTable dtb = this.cntrl.Fillgrid();
+                                        Fill_dgv_credit(dtb);
                                     }
                                 }
                             }
@@ -320,7 +257,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -329,7 +266,6 @@ namespace PappyjoeMVC.View
         private void Lnk_AddNew_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var form2 = new New_DebitAccount();
-            NewDebitAccount_controller ctrl = new NewDebitAccount_controller(form2);
             form2.ShowDialog();
         }
 
@@ -343,7 +279,7 @@ namespace PappyjoeMVC.View
                 comboaccountname.ValueMember = "id";
                 Check_Value = 1;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -362,7 +298,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -384,24 +320,26 @@ namespace PappyjoeMVC.View
                 {
                     if (btnsubmit.Text == "Submit")
                     {
-                        int i = this.cntrl.submit_debit();
+                        int i = this.cntrl.submit_debit(dateTimePickerdate.Value.ToString("yyyy-MM-dd"), comboaccountname.Text, textBox_add_template.Text, textamount.Text, textperson.Text);
                         if (i > 0)
                         {
                             MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             dateTimePickerdate.Text = DateTime.Now.ToShortDateString();
-                            this.cntrl.fill_dgv_debit();
+                            DataTable dtb = this.cntrl.fill_dgv_debit();
+                            fill_dgv_debit(dtb);
                             clear_Debit();
                             comboaccountname_SelectedIndexChanged(null, null);
                         }
                     }
                     else if (btnsubmit.Text == "Update")
                     {
-                        int i = this.cntrl.update_dgv_debit(rowindex);
+                        int i = this.cntrl.update_dgv_debit(rowindex, dateTimePickerdate.Value.ToString("yyyy-MM-dd"), comboaccountname.Text, textBox_add_template.Text, textamount.Text, textperson.Text);
                         if (i > 0)
                         {
                             MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             dateTimePickerdate.Text = DateTime.Now.ToShortDateString();
-                            this.cntrl.fill_dgv_debit();
+                            DataTable dtb = this.cntrl.fill_dgv_debit();
+                            fill_dgv_debit(dtb);
                             clear_Debit();
                             btnsubmit.Text = "Submit";
                             comboaccountname_SelectedIndexChanged(null, null);
@@ -409,7 +347,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -491,9 +429,9 @@ namespace PappyjoeMVC.View
                 comboBoxincomacc.DisplayMember = "name";
                 comboBoxincomacc.ValueMember = "id";
                 Check_Value1 = 1;
-                this.cntrl.expense_search4(dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
+                DataTable dtb = this.cntrl.expense_search4(dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -509,7 +447,7 @@ namespace PappyjoeMVC.View
                 Check_Value = 1;
                 this.cntrl.expense_search4(dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -528,10 +466,10 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-       
+
         public void fill_dgv_debit(DataTable dtb)
         {
-            if(dtb.Rows.Count>0)
+            if (dtb.Rows.Count > 0)
             {
                 Dgv_Debit.RowCount = 0;
                 int row = 0;
@@ -624,7 +562,8 @@ namespace PappyjoeMVC.View
                                     if (j > 0)
                                     {
                                         Dgv_Debit.Rows.RemoveAt(index);
-                                        this.cntrl.fill_dgv_debit();
+                                        DataTable dtb = this.cntrl.fill_dgv_debit();
+                                        fill_dgv_debit(dtb);
                                     }
                                 }
                             }
@@ -632,7 +571,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -782,7 +721,8 @@ namespace PappyjoeMVC.View
                     {
                         Grid_expense.Columns.Remove("Column");
                     }
-                    this.cntrl.expense_search(comboSearch.Text, exp_Type, dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
+                    DataTable dtb = this.cntrl.expense_search(comboSearch.Text, exp_Type, dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
+                    fill_search(dtb);
                 }
                 if (check_Type.Checked && !check_Account.Checked)
                 {
@@ -790,7 +730,8 @@ namespace PappyjoeMVC.View
                     {
                         Grid_expense.Columns.Remove("Column");
                     }
-                    this.cntrl.expense_search2(exp_Type, dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
+                    DataTable dtb = this.cntrl.expense_search2(exp_Type, dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
+                    fill_search(dtb);
                 }
                 if (!check_Type.Checked && check_Account.Checked)
                 {
@@ -798,7 +739,8 @@ namespace PappyjoeMVC.View
                     {
                         Grid_expense.Columns.Remove("Column");
                     }
-                    this.cntrl.expense_search3(comboSearch.Text, dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
+                    DataTable dtb = this.cntrl.expense_search3(comboSearch.Text, dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
+                    fill_search2(dtb);
                 }
                 if (!check_Type.Checked && !check_Account.Checked)
                 {
@@ -806,7 +748,8 @@ namespace PappyjoeMVC.View
                     {
                         Grid_expense.Columns.Remove("Column");
                     }
-                    this.cntrl.expense_search4(dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
+                    DataTable dtb = this.cntrl.expense_search4(dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
+                    fill_search2(dtb);
                 }
             }
             catch
@@ -912,7 +855,7 @@ namespace PappyjoeMVC.View
                 int c = 0; string strStreet = "";
                 string strclinicname = "";
                 string strphone = "";
-                DataTable dtp=this.cntrl.print();
+                DataTable dtp = this.cntrl.print();
                 if (dtp.Rows.Count > 0)
                 {
                     strphone = dtp.Rows[0]["contact_no"].ToString();
@@ -1168,7 +1111,7 @@ namespace PappyjoeMVC.View
                 int r = e.RowIndex;
                 id = Grid_expense.Rows[r].Cells[0].Value.ToString();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

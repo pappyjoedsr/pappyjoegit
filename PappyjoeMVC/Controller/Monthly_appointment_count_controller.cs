@@ -1,23 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.Controller
 {
     public class Monthly_appointment_count_controller
     {
-        Monthly_appointment_count_interface intr;
         Appointment_report_model _model = new Appointment_report_model();
         common_model model = new common_model();
-        public Monthly_appointment_count_controller(Monthly_appointment_count_interface inttr)
-        {
-            intr = inttr;
-            intr.setcontroller(this);
-        }
         public DataTable doctor_rs()
         {
             DataTable dt = _model.doctor_rs();
@@ -25,7 +14,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable Monthlyappointcount(string d1, string d2)
         {
-            DataTable dt = _model.Monthlyappointcount(d1,d2);
+            DataTable dt = _model.Monthlyappointcount(d1, d2);
             return dt;
         }
         public DataTable datatableeachdoctorappoinment(string d1, string d2)
@@ -35,12 +24,12 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable datatableeachdoctorappoinment1(string d1, string d2, string select_dr_id)
         {
-            DataTable d = _model.datatableeachdoctorappoinment1(d1,d2,select_dr_id);
+            DataTable d = _model.datatableeachdoctorappoinment1(d1, d2, select_dr_id);
             return d;
         }
         public DataTable Monthlyappointcount_DoctrWise(string d1, string d2, string drctr)
         {
-            DataTable d = _model.Monthlyappointcount_DoctrWise(d1,d2,drctr);
+            DataTable d = _model.Monthlyappointcount_DoctrWise(d1, d2, drctr);
             return d;
         }
         public string Docname_logDocAdmin(string drctid)

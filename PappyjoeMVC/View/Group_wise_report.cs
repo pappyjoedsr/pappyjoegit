@@ -7,19 +7,15 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Group_wise_report : Form, Group_wise_report_interface
+    public partial class Group_wise_report : Form
     {
-        Group_wise_report_controller cntrl;
+        Group_wise_report_controller cntrl=new Group_wise_report_controller();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";
         public Group_wise_report()
         {
             InitializeComponent();
-        }
-        public void setcontroller(Group_wise_report_controller controller)
-        {
-            cntrl = controller;
         }
 
         private void Group_wise_report_Load(object sender, EventArgs e)
@@ -78,11 +74,13 @@ namespace PappyjoeMVC.View
                     label_empty.Visible = false;
                     if (cmb_type.Text == "Patients")
                     {
-                        this.cntrl.dtb_group(cmb_group.Text, date1, date2);
+                        DataTable d= this.cntrl.dtb_group(cmb_group.Text, date1, date2);
+                        Patients(d);
                     }
                     else if (cmb_type.Text == "Procedure")
                     {
-                        this.cntrl.dtb_procedure(cmb_group.Text, date1, date2);
+                        DataTable d= this.cntrl.dtb_procedure(cmb_group.Text, date1, date2);
+                        Procedure(d);
                     }
                     else if (cmb_type.Text == "Invoice")
                     {
@@ -135,7 +133,8 @@ namespace PappyjoeMVC.View
                         dgv_group.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                         dgv_group.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                         dgv_group.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                        this.cntrl.dtb_invoice(date1, date2, cmb_group.Text);
+                        DataTable d= this.cntrl.dtb_invoice(date1, date2, cmb_group.Text);
+                        Invoice(d);
                     }
                     else if (cmb_type.Text == "Receipt")
                     {
@@ -152,7 +151,8 @@ namespace PappyjoeMVC.View
                         Lab_totalExpense.Visible = true;
                         label4.Visible = true;
                         Lab_cost.Visible = true;
-                        this.cntrl.dtb_receipt(date1, date2, cmb_group.Text);
+                        DataTable d= this.cntrl.dtb_receipt(date1, date2, cmb_group.Text);
+                        Receipt(d);
                     }
                 }
                 else

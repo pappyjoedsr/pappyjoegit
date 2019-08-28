@@ -14,25 +14,19 @@ using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Doctor_Profile : Form, doctor_interface
+    public partial class Doctor_Profile : Form
     {
-        doctor_controller cntrl;
+        doctor_controller cntrl =new doctor_controller();
         public string doctor_id = "";
         public string patient_id = "0";
         public string doc = "0";
         Connection db = new Connection();
         string clinicpath; 
-        string clinicid, clinicservice, clinicspecial;
-        bool flagDuplication = false;
+        string  clinicservice, clinicspecial;
         public Doctor_Profile()
         {
             InitializeComponent();
         }
-        public void Setcontroller(doctor_controller controller)
-        {
-            cntrl = controller;
-        }
-
         private void cmbDrProfile_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbDrProfile.Text == "SERVICES")
@@ -129,7 +123,6 @@ namespace PappyjoeMVC.View
         {
             doctorsPracticedetails frm = new doctorsPracticedetails();
             frm.frameid = "1";
-            doctorpractice_controller cntroller = new doctorpractice_controller(frm);
             frm.ShowDialog(this);
         }
 
@@ -137,7 +130,6 @@ namespace PappyjoeMVC.View
         {
             doctorsPracticedetails frm = new doctorsPracticedetails();
             frm.frameid = "6";
-            doctorpractice_controller cntroller = new doctorpractice_controller(frm);
             frm.ShowDialog(this);
         }
 
@@ -145,7 +137,6 @@ namespace PappyjoeMVC.View
         {
             doctorsPracticedetails frm = new doctorsPracticedetails();
             frm.frameid = "2";
-            doctorpractice_controller cntroller = new doctorpractice_controller(frm);
             frm.ShowDialog(this);
         }
 
@@ -153,7 +144,6 @@ namespace PappyjoeMVC.View
         {
             doctorsPracticedetails frm = new doctorsPracticedetails();
             frm.frameid = "3";
-            doctorpractice_controller cntroller = new doctorpractice_controller(frm);
             frm.ShowDialog(this);
         }
 
@@ -161,7 +151,6 @@ namespace PappyjoeMVC.View
         {
             doctorsPracticedetails frm = new doctorsPracticedetails();
             frm.frameid = "4";
-            doctorpractice_controller cntroller = new doctorpractice_controller(frm);
             frm.ShowDialog(this);
         }
 
@@ -169,7 +158,6 @@ namespace PappyjoeMVC.View
         {
             doctorsPracticedetails frm = new doctorsPracticedetails();
             frm.frameid = "5";
-            doctorpractice_controller cntroller = new doctorpractice_controller(frm);
             frm.ShowDialog(this);
         }
 
@@ -381,7 +369,7 @@ namespace PappyjoeMVC.View
                     {
                         int rowindex = Convert.ToInt32(dataGridView_services.CurrentRow.Cells["Colm_Id"].Value.ToString());
                         string drid = dataGridView_services.CurrentRow.Cells["ColmDr_id"].Value.ToString();
-                        if (rowindex != null && drid != null)
+                        if (rowindex >0 && drid != null)
                         {
                             this.cntrl.delete_dr_service(rowindex, drid);
                             DataTable service = this.cntrl.load_servicegrid(doctor_id);
@@ -411,7 +399,7 @@ namespace PappyjoeMVC.View
                     {
                         int rowindex = Convert.ToInt32(dataGridView_specialization.CurrentRow.Cells["colm_Spec_id"].Value.ToString());
                         string drid = dataGridView_specialization.CurrentRow.Cells["ColmDr_id_Spec"].Value.ToString();
-                        if (rowindex != null && drid != null)
+                        if (rowindex>0 && drid != null)
                         {
                             this.cntrl.delete_dr_specilization(rowindex, drid);
                             DataTable special = this.cntrl.load_dr_specilizaion(doctor_id);
@@ -482,7 +470,7 @@ namespace PappyjoeMVC.View
                 combo_education_year.Items.Add(i.ToString());
                 combo_eperience_from.Items.Add(i.ToString());
                 combo_experience_to.Items.Add(i.ToString());
-                combo_award_year.Items.Add(i.ToString());
+                combo_award_year.Items.Add( i.ToString());
                 combo_reg_year.Items.Add(i.ToString());
             }
             fill_all_combo();
@@ -507,7 +495,7 @@ namespace PappyjoeMVC.View
                 DataTable clinicname = this.cntrl.get_companyName();
                 if (clinicname.Rows.Count > 0)
                 {
-                    string clinicn = "";
+                    string clinicn = ""; 
                     clinicn = clinicname.Rows[0]["name"].ToString();
                     toolStripButton1.Text = clinicn.Replace("¤", "'");
                 }
@@ -545,7 +533,6 @@ namespace PappyjoeMVC.View
                 try
                 {
                     string curFile = db.server() + "\\Pappyjoe_utilities\\doctor_image\\" + doctor_id;
-
                     if (System.IO.File.Exists(curFile))
                     {
                         pictureBox_Docter_Image.Image = Image.FromFile(curFile);
@@ -555,7 +542,6 @@ namespace PappyjoeMVC.View
                         pictureBox_Docter_Image.Image = PappyjoeMVC.Properties.Resources.nophoto;
                     }
                 }
-
                 catch (Exception ex)
                 {
                     pictureBox_Docter_Image.Image = PappyjoeMVC.Properties.Resources.nophoto;
@@ -883,7 +869,7 @@ namespace PappyjoeMVC.View
                         if (regid != null)
                         {
                             this.cntrl.delete_council(doctor_id, regid);
-                       }
+                        }
                         DataTable register = this.cntrl.load_council(doctor_id);
                         dataGridView_reg.DataSource = register;
                     }
@@ -960,6 +946,11 @@ namespace PappyjoeMVC.View
             else
             {
                 errorProvider1.Dispose();
+                string gender = "";
+                if (radio_male.Checked == true)
+                    gender= "Male";
+                else
+                    gender= "Female";
                 DataTable dt = this.cntrl.get_doctor_deteils(doctor_id);
                 string mobile = text_phone.Text;
                 string email = dt.Rows[0]["email_id"].ToString();
@@ -969,7 +960,7 @@ namespace PappyjoeMVC.View
                     {
                         RegistryKey regKeyAppRoot = Registry.CurrentUser.CreateSubKey("pappyjoe");
                         string strWindowsState = (string)regKeyAppRoot.GetValue("Server");
-                        if (path != "")
+                        if (txtPic.Text != "")
                         {
                             try
                             {
@@ -978,7 +969,7 @@ namespace PappyjoeMVC.View
                                 }
                                 else
                                 {
-                                    System.IO.File.Copy(path, @"\\" + strWindowsState + "\\Pappyjoe_utilities\\doctor_image\\" + doctor_id);
+                                    System.IO.File.Copy(txtPic.Text, @"\\" + strWindowsState + "\\Pappyjoe_utilities\\doctor_image\\" + doctor_id);
                                 }
                             }
                             catch (Exception ex)
@@ -986,11 +977,11 @@ namespace PappyjoeMVC.View
                                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-                        this.cntrl.update_doctor(doctor_id);
+                        this.cntrl.update_doctor(doctor_id, text_drname.Text,text_phone.Text, text_email.Text, gender, combo_year.Text, rich_about.Text, txtPic.Text);
                     }
                     else
                     {
-                        this.cntrl.update_doctor(doctor_id); 
+                        this.cntrl.update_doctor(doctor_id, text_drname.Text, text_phone.Text, text_email.Text, gender, combo_year.Text, rich_about.Text, txtPic.Text); 
                         MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -1000,59 +991,7 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-        public string DrName
-        {
-            get { return text_drname.Text; }
-            set { text_drname.Text = value; }
-        }
-        public string Number
-        {
-            get { return text_phone.Text; }
-            set { text_phone.Text = value; }
-        }
-        public string About
-        {
-            get { return rich_about.Text; }
-            set { rich_about.Text = value; }
-        }
-        public string Year
-        {
-            get { return combo_year.Text; }
-            set { combo_year.Text = value; }
-        }
-        public string Gender
-        {
-            get
-            {
-                if (radio_male.Checked == true)
-                    return "Male";
-                else
-                    return "Female";
-            }
-            set
-            {
-                if (value == "Male")
-                    radio_male.Checked = true;
-                else
-                    radio_female.Checked = true;
-            }
-        }
-        public string Email
-        {
-            get { return text_email.Text; }
-            set { text_email.Text = value; }
-        }
-        public string Password
-        {
-            get { return textPassword.Text; }
-            set { textPassword.Text = value; }
-        }
-        public string path
-        {
-            get { return txtPic.Text; }
-            set { txtPic.Text = value; }
-        }
-
+      
         private void pictureBox_Docter_Image_Click(object sender, EventArgs e)
         {
             DialogResult ok = MessageBox.Show("Do you wish to add image now?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -1130,43 +1069,10 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
-        public string ClinicName
-        {
-            get { return text_clinic_name.Text; }
-            set { text_clinic_name.Text = value; }
-        }
-        public string Website
-        {
-            get { return text_website.Text; }
-            set { text_website.Text = value; }
-        }
-        public string Tagline
-        {
-            get { return text_tagline.Text; }
-            set { text_tagline.Text = value; }
-        }
-        public string ClinicAbout
-        {
-            get { return rich_clinic_about.Text; }
-            set { rich_clinic_about.Text = value; }
-        }
-        public string ClinicNumber
-        {
-            get { return text_clinic_mobile.Text; }
-            set { text_clinic_mobile.Text = value; }
-        }
-        public string ClinicEmail
-        {
-            get { return text_clinic_email.Text; }
-            set { text_clinic_email.Text = value; }
-        }
-
         private void button_clinic_servaddnew_Click(object sender, EventArgs e)
         {
             doctorsPracticedetails frm = new doctorsPracticedetails();
             frm.frameid = "1";
-            doctorpractice_controller cntroller = new doctorpractice_controller(frm);
             frm.ShowDialog(this);
         }
 
@@ -1174,7 +1080,6 @@ namespace PappyjoeMVC.View
         {
             doctorsPracticedetails frm = new doctorsPracticedetails();
             frm.frameid = "6";
-            doctorpractice_controller cntroller = new doctorpractice_controller(frm);
             frm.ShowDialog(this);
         }
 
@@ -1367,7 +1272,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                this.cntrl.update_clinicdetails();
+                this.cntrl.update_clinicdetails(text_clinic_name.Text, text_tagline.Text, text_clinic_mobile.Text, text_clinic_email.Text, text_website.Text, rich_clinic_about.Text);
                 MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch(Exception ex)
@@ -1381,17 +1286,6 @@ namespace PappyjoeMVC.View
             panel_clinicaldetails.Hide();
             panel_edit_dr.Show();
         }
-
-        private void panel_edit_dr_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void listpatientsearch_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
             toolStripTextBox1.Clear();
@@ -1421,7 +1315,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            Reports_controller controller = new Reports_controller(form2);
+            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1431,7 +1325,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            expense_controller controller = new expense_controller(form2);
+            //expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
 
@@ -1441,18 +1335,22 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                doctor_controller controlr = new doctor_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
             if (toolStripTextBox1.Text != "")
             {
-                DataTable dtdr = db.table("select id,(pt_name +',' + age + ',' +gender) as patient from tbl_patient where (pt_name like '" + toolStripTextBox1.Text + "%'   or pt_id like '%" + toolStripTextBox1.Text + "%' or primary_mobile_number like '%" + toolStripTextBox1.Text + "%') and Profile_Status !='Cancelled'");
+                DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox1.Text);
                 listpatientsearch.DataSource = dtdr;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
@@ -1464,7 +1362,6 @@ namespace PappyjoeMVC.View
                 {
                     listpatientsearch.Visible = true;
                 }
-                //listpatientsearch.Location = new Point(toolStrip1.Width - 350, 32);
             }
             else
             {
@@ -1474,11 +1371,11 @@ namespace PappyjoeMVC.View
 
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
-            var form2 = new patients();
+            var form2 = new patient_profile_details();
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
-            patients_controller controller = new patients_controller(form2);
+            profile_details_controller controller = new profile_details_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

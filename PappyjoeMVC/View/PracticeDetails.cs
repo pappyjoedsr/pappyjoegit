@@ -15,13 +15,13 @@ using Microsoft.Win32;
 
 namespace PappyjoeMVC.View
 {
-    public partial class PracticeDetails : Form,Practice_interface
+    public partial class PracticeDetails : Form
     {
         public PracticeDetails()
         {
             InitializeComponent();
         }
-        Practice_Controller cntrl;
+        Practice_Controller cntrl=new Practice_Controller();
         public string doctor_id = "1", staff_id = "";
         public int len;
         Connection db = new Connection();
@@ -69,7 +69,8 @@ namespace PappyjoeMVC.View
         {
             if (cmb_state.Items.Count > 0)
             {
-                int selectedValue1; string cmb = "City";
+                int selectedValue1;
+                string cmb = "City";
                 bool parseOK1 = Int32.TryParse(cmb_state.SelectedValue.ToString(), out selectedValue1);
                 frmeditpracticedetails frm = new frmeditpracticedetails(selectedValue1, cmb);
                 frm.frameid = "4";
@@ -85,92 +86,23 @@ namespace PappyjoeMVC.View
             editpracticedetails_controller controller = new editpracticedetails_controller(frm);
             frm.ShowDialog();
         }
-        public string Name
-        {
-            get { return this.txtname.Text; }
-            set { this.txtname.Text = value; }
-        }
-        public string Tag
-        {
-            get { return this.txttagline.Text; }
-            set { this.txttagline.Text = value; }
-        }
-        public string State
-        {
-            get { return this.cmb_state.SelectedValue.ToString(); }
-            set { this.cmb_state.Text = value; }
-        }
-        public string Specialization
-        {
-            get { return this.cmb_specialization.SelectedValue.ToString(); }
-            set { this.cmb_specialization.Text = value; }
-        }
-        public string Address
-        {
-            get { return this.txtstreet.Text; }
-            set { this.txtstreet.Text = value; }
-        }
-        public string Locality
-        {
-            get { return this.txtlocality.Text; }
-            set { this.txtlocality.Text = value; }
-        }
-        public string Country
-        {
-            get { return this.cmb_country.SelectedValue.ToString(); }
-            set { this.cmb_country.Text = value; }
-        }
-        public string City
-        {
-            get { return this.cmb_city.SelectedValue.ToString(); }
-            set { this.cmb_city.Text = value; }
-        }
-        public string PinCode
-        {
-            get { return this.txtpincode.Text; }
-            set { this.txtpincode.Text = value; }
-        }
-        public string Phone
-        {
-            get { return this.txtcontactnumber.Text; }
-            set { this.txtcontactnumber.Text = value; }
-        }
-        public string Email
-        {
-            get { return this.txtemail.Text; }
-            set { this.txtemail.Text = value; }
-        }
-        public string Website
-        {
-            get { return this.txtwebsite.Text; }
-            set { this.txtwebsite.Text = value; }
-        }
-        public string Imagepath
-        {
-            get { return this.txtpath.Text; }
-            set { this.txtpath.Text = value; }
-        }
-        public string DINumber1
-        {
-            get { return this.txtdruglicenseno.Text; }
-            set { this.txtdruglicenseno.Text = value; }
-        }
-        public string DINumber2
-        {
-            get { return this.txttaxno.Text; }
-            set { this.txttaxno.Text = value; }
-        }
         private void PracticeDetails_Load(object sender, EventArgs e)
         {
-            focus = true;
-            label16.Hide();
+            //focus = true;
+             label16.Hide();
             panel_main.Visible = false;
-            this.cntrl.Fill_CountryCombo();
-            this.cntrl.country_selectedIndexChanged(Country);
-            this.cntrl.state_selectedIndexChanged(State);
-            this.cntrl.Fill_SpecializationCombo();
+            DataTable dt_country = this.cntrl.Fill_CountryCombo();
+            FillCountryCombo(dt_country);
+            DataTable dtb_state = this.cntrl.country_selectedIndexChanged(cmb_country.SelectedValue.ToString());
+            FillStateCombo(dtb_state);
+            DataTable dtb_city = this.cntrl.state_selectedIndexChanged(cmb_state.SelectedValue.ToString());
+            FillCityCombo(dtb_city);
+            DataTable dt_speci = this.cntrl.Fill_SpecializationCombo();
+            FilSpecializationCombo(dt_speci);
+            toolStripButton1.Text = this.cntrl.Load_CompanyName();
             txtname.Text = "";
-            this.cntrl.GetData();
+            DataTable dtb = this.cntrl.GetData();
+            GetData(dtb);
         }
 
         public void GetData(DataTable dtb_details)
@@ -180,12 +112,17 @@ namespace PappyjoeMVC.View
                 btn_Save.Text = "Save";
                 if (dtb_details.Rows.Count > 0)
                 {
-                    this.cntrl.Get_CountryNme(dtb_details.Rows[0]["country_id"].ToString(), "Country");
-                    this.cntrl.Get_CountryNme(dtb_details.Rows[0]["city_id"].ToString(), "City");
-                    this.cntrl.Get_CountryNme(dtb_details.Rows[0]["state_id"].ToString(), "State");
-                    this.cntrl.Get_CountryNme(dtb_details.Rows[0]["specialization"].ToString(), "Specialization");
+                    DataTable dtb = this.cntrl.Get_CountryNme(dtb_details.Rows[0]["country_id"].ToString(), "Country");
+                    Get_CmbName(dtb, "Country");
+                    DataTable dtb1 = this.cntrl.Get_CountryNme(dtb_details.Rows[0]["city_id"].ToString(), "City");
+                    Get_CmbName(dtb1, "City");
+                    DataTable dtb2 = this.cntrl.Get_CountryNme(dtb_details.Rows[0]["state_id"].ToString(), "State");
+                    Get_CmbName(dtb2, "State");
+                    DataTable dtb3 = this.cntrl.Get_CountryNme(dtb_details.Rows[0]["specialization"].ToString(), "Specialization");
+                    Get_CmbName(dtb3, "Specialization");
                     string clini_name = dtb_details.Rows[0]["name"].ToString();
                     txtname.Text = clini_name.Replace("¤", "'");
+                    toolStripButton1.Text = txtname.Text;
                     txttagline.Text = dtb_details.Rows[0]["tagline"].ToString();
                     cmb_state.Text = dtb_details.Rows[0]["name"].ToString();
                     cmb_specialization.Text = dtb_details.Rows[0]["name"].ToString();
@@ -197,10 +134,10 @@ namespace PappyjoeMVC.View
                     txtwebsite.Text = dtb_details.Rows[0]["website"].ToString();
                     txtdruglicenseno.Text = dtb_details.Rows[0]["Dl_Number"].ToString();
                     txttaxno.Text = dtb_details.Rows[0]["Dl_Number2"].ToString();
-                    path = dtb_details.Rows[0]["path"].ToString();
-                    if (path != "")
+                    txtpath.Text = dtb_details.Rows[0]["path"].ToString();
+                    if (txtpath.Text != "")
                     {
-                        pictureBox1.Image = Image.FromFile(db.server() + path);
+                        pictureBox1.Image = Image.FromFile(db.server() + txtpath.Text);
                     }
                     btn_Save.Text = "Update";
                 }
@@ -244,44 +181,34 @@ namespace PappyjoeMVC.View
                     clinicname = txtname.Text;
                     Name = clinicname.Replace("'", "¤");
                     string tagname = "";
+                    string tagn1 = "";
                     tagname = txttagline.Text;
-                    Tag = tagname.Replace("'", " ");
+                    tagn1 = tagname.Replace("'", " ");
                     if (btn_Save.Text == "Update")
                     {
-                        RegistryKey regKeyAppRoot = Registry.CurrentUser.CreateSubKey("Pappyjoe");
-                        string strWindowsState = (string)regKeyAppRoot.GetValue("Server");
-                        pathlength();
-                        string paths = Application.StartupPath.Substring(0, Application.StartupPath.Length - len);
                         string realfile = System.IO.Path.GetFileName(open.FileName);
+                        int i = cntrl.Update_details(Name, tagn1, txtstreet.Text, txtlocality.Text, cmb_country.SelectedValue.ToString(), cmb_state.SelectedValue.ToString(), cmb_city.SelectedValue.ToString(), txtpincode.Text, txtcontactnumber.Text, txtemail.Text, txtwebsite.Text, txtpath.Text, cmb_specialization.SelectedValue.ToString(), txtdruglicenseno.Text, txttaxno.Text);
+                        string server = this.cntrl.getserver();
                         try
                         {
-                            if (File.Exists(@"\\" + strWindowsState + "\\Pappyjoe_utilities\\Logo\\" + realfile))
+                            if (File.Exists(@"\\" + server + "\\Pappyjoe_utilities\\Logo\\" + realfile))
                             {
                             }
                             else
                             {
-                                System.IO.File.Copy(open.FileName, @"\\" + strWindowsState + "\\Pappyjoe_utilities\\Logo\\" + realfile);
+                                System.IO.File.Copy(open.FileName, @"\\" + server + "\\Pappyjoe_utilities\\Logo\\" + realfile);
                             }
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        if (realfile == "")
-                        {
-                            Imagepath = path.Replace("\\", "\\\\");
-                        }
-                        else
-                        {
-                            Imagepath = "\\" + "\\Pappyjoe_utilities" + "\\" + "\\Logo\\" + "\\" + realfile;
-                        }
-                        int i = cntrl.Update_details();
                         if (i > 0)
                             MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        int i = cntrl.Save_details();
+                        int i = cntrl.Save_details(Name, tagn1, txtstreet.Text, txtlocality.Text, cmb_country.SelectedValue.ToString(), cmb_state.SelectedValue.ToString(), cmb_city.SelectedValue.ToString(), txtpincode.Text, txtcontactnumber.Text, txtemail.Text, txtwebsite.Text, cmb_specialization.SelectedValue.ToString(), txtdruglicenseno.Text, txttaxno.Text);
                         btn_Save.Text = "Update";
                         if (i > 0)
                             MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -406,22 +333,26 @@ namespace PappyjoeMVC.View
 
         private void cmb_country_Click(object sender, EventArgs e)
         {
-            this.cntrl.Fill_CountryCombo();
+            DataTable dtb = this.cntrl.Fill_CountryCombo();
+            FillCountryCombo(dtb);
         }
 
         private void cmb_state_Click(object sender, EventArgs e)
         {
-            this.cntrl.country_selectedIndexChanged(Country);
+            DataTable dtb = this.cntrl.country_selectedIndexChanged(cmb_country.SelectedValue.ToString());
+            FillStateCombo(dtb);
         }
 
         private void cmb_city_Click(object sender, EventArgs e)
         {
-            this.cntrl.state_selectedIndexChanged(State);
+            DataTable dtb = this.cntrl.state_selectedIndexChanged(cmb_state.SelectedValue.ToString());
+            FillCityCombo(dtb);
         }
 
         private void cmb_specialization_Click(object sender, EventArgs e)
         {
-            this.cntrl.Fill_SpecializationCombo();
+            DataTable dtb = this.cntrl.Fill_SpecializationCombo();
+            FilSpecializationCombo(dtb);
         }
 
         private void cmb_country_SelectedIndexChanged(object sender, EventArgs e)
@@ -429,7 +360,8 @@ namespace PappyjoeMVC.View
             if(cmb_country.DataSource != null)
             {
                 string countryId = cmb_country.SelectedValue.ToString();
-                this.cntrl.country_selectedIndexChanged(countryId);
+                DataTable dtb = this.cntrl.country_selectedIndexChanged(countryId);
+                FillStateCombo(dtb);
             }
         }
 
@@ -438,18 +370,14 @@ namespace PappyjoeMVC.View
             if (cmb_state.DataSource != null)
             {
                 string stateId = cmb_state.SelectedValue.ToString();
-                this.cntrl.state_selectedIndexChanged(stateId);
+                DataTable dtb = this.cntrl.state_selectedIndexChanged(stateId);
+                FillCityCombo(dtb);
             }
             else
             {
                 cmb_city.DataSource = null;
             }
         }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-        }
-
         private void button_billing_Click(object sender, EventArgs e)
         {
             errorProvider1.Dispose();
@@ -459,9 +387,9 @@ namespace PappyjoeMVC.View
             bill.TopLevel = false;
             panel_main.Controls.Add(bill);
             bill.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            Billing_controller controller = new Billing_controller(bill);
+            //Billing_controller controller = new Billing_controller(bill);
             bill.Show();
-        }
+        } 
         public void backColor_change()
         {
             button_practice.BackColor = Color.DodgerBlue;
@@ -528,7 +456,7 @@ namespace PappyjoeMVC.View
             staff.TopLevel = false;
             panel_main.Controls.Add(staff);
             staff.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            Staff_controller controller = new Staff_controller(staff);
+            //Staff_controller controller = new Staff_controller(staff);
             staff.Show();
         }
 
@@ -541,7 +469,7 @@ namespace PappyjoeMVC.View
             emr.TopLevel = false;
             panel_main.Controls.Add(emr);
             emr.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            EMR_controller controller = new EMR_controller(emr);
+            //EMR_controller controller = new EMR_controller(emr);
             emr.Show();
         }
 
@@ -554,7 +482,6 @@ namespace PappyjoeMVC.View
             communication.TopLevel = false;
             panel_main.Controls.Add(communication);
             communication.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            communication_setting_controller controller = new communication_setting_controller(communication);
             communication.Show();
         }
 
@@ -619,7 +546,6 @@ namespace PappyjoeMVC.View
             calender.TopLevel = false;
             panel_main.Controls.Add(calender);
             calender.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            calender_controller controller = new calender_controller(calender);
             calender.Show();
         }
 
@@ -632,7 +558,7 @@ namespace PappyjoeMVC.View
             catalog.TopLevel = false;
             panel_main.Controls.Add(catalog);
             catalog.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            procedure_catalog_controller controller = new procedure_catalog_controller(catalog);
+            //procedure_catalog_controller controller = new procedure_catalog_controller(catalog);
             catalog.Show();
         }
 
@@ -697,7 +623,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Doctor_Profile();
             form2.doctor_id = doctor_id;
-            doctor_controller controller = new doctor_controller(form2);
+            //doctor_controller controller = new doctor_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -710,8 +636,6 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
-
-          
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -727,7 +651,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            Reports_controller controller = new Reports_controller(form2);
+            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -742,7 +666,7 @@ namespace PappyjoeMVC.View
             labmedical.TopLevel = false;
             panel_main.Controls.Add(labmedical);
             labmedical.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            LabMedical_controller controller = new LabMedical_controller(labmedical);
+            //LabMedical_controller controller = new LabMedical_controller(labmedical);
             labmedical.Show();
         }
 
@@ -755,10 +679,9 @@ namespace PappyjoeMVC.View
             dental.TopLevel = false;
             panel_main.Controls.Add(dental);
             dental.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            LabDental_controller controller = new LabDental_controller(dental);
             dental.Show();
         }
-        bool focus = false;
+        //bool focus = false;
         private void PracticeDetails_Paint(object sender, PaintEventArgs e)
         {
             //if (focus)
@@ -784,15 +707,15 @@ namespace PappyjoeMVC.View
 
         private void txtname_Leave(object sender, EventArgs e)
         {
-            focus = false;
-            this.Refresh();
+            //focus = false;
+            //this.Refresh();
         }
 
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            expense_controller controller = new expense_controller(form2);    
+            //expense_controller controller = new expense_controller(form2);    
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

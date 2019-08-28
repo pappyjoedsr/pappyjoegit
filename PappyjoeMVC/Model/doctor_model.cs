@@ -9,12 +9,12 @@ namespace PappyjoeMVC.Model
   public class doctor_model
     { 
       Connection db = new Connection();
-      private string _service = "";
-      public string service
-      {
-          get { return _service; }
-          set { _service = value; }
-      }
+      //private string _service = "";
+      //public string service
+      //{
+      //    get { return _service; }
+      //    set { _service = value; }
+      //}
       public string get_servicecount(string doctor_id)
       {
           string c = db.scalar("select count(service_id) from tbl_dr_service where dr_id='" + doctor_id + "'"); 
@@ -151,55 +151,55 @@ namespace PappyjoeMVC.Model
           DataTable dt = db.table("select email_id,registration_number,calendar_color,activate_login,login_type from tbl_doctor where id='" + doctor_id + "'");
           return dt;
       }
-      private string _drname = "";
-      public string DrName
-      {
-          get { return _drname; }
-          set { _drname = value; }
-      }
-      private string _number = "";
-      public string Number
-      {
-          get { return _number; }
-          set { _number = value; }
-      }
-      private string _about = "";
-      public string About
-      {
-          get { return _about; }
-          set { _about = value; }
-      }
-      private string _year = "";
-      public string Year
-      {
-          get { return _year; }
-          set { _year = value; }
-      }
-      private string _gender = "";
-      public string Gender
-      {
-          get { return _gender; }
-          set { _gender = value; }
-      }
-      private string _email = "";
-      public string Email
-      {
-          get { return _email; }
-          set { _email = value; }
-      }
-      private string _password = "";
-      public string Password
-      {
-          get { return _password; }
-          set { _password = value; }
-      }
-      private string _path = "";
-      public string Path
-      {
-          get { return _path; }
-          set { _path = value; }
-      }
-      public int update_doctor(string doctor_id)
+      //private string _drname = "";
+      //public string DrName
+      //{
+      //    get { return _drname; }
+      //    set { _drname = value; }
+      //}
+      //private string _number = "";
+      //public string Number
+      //{
+      //    get { return _number; }
+      //    set { _number = value; }
+      //}
+      //private string _about = "";
+      //public string About
+      //{
+      //    get { return _about; }
+      //    set { _about = value; }
+      //}
+      //private string _year = "";
+      //public string Year
+      //{
+      //    get { return _year; }
+      //    set { _year = value; }
+      //}
+      //private string _gender = "";
+      //public string Gender
+      //{
+      //    get { return _gender; }
+      //    set { _gender = value; }
+      //}
+      //private string _email = "";
+      //public string Email
+      //{
+      //    get { return _email; }
+      //    set { _email = value; }
+      //}
+      //private string _password = "";
+      //public string Password
+      //{
+      //    get { return _password; }
+      //    set { _password = value; }
+      //}
+      //private string _path = "";
+      //public string Path
+      //{
+      //    get { return _path; }
+      //    set { _path = value; }
+      //}
+      public int update_doctor(string doctor_id,string _drname,string _number,string _email,string _gender,string _year,string _about,string _path)
       {
           int update;
           if(_path=="")
@@ -212,12 +212,12 @@ namespace PappyjoeMVC.Model
           }
           return update;
       }
-      public int update_dremail(string doctor_id)
+      public int update_dremail(string doctor_id,string _email,string _password)
       {
           int i = db.execute("update tbl_doctor set email_id='" + _email + "', password='" + _password + "' where id='" + doctor_id + "'");
           return i;
       }
-      public void update_logintable(string doctor, string paswd)
+      public void update_logintable(string doctor, string _email, string _password, string paswd)
       {
           db.execute("update tbl_login set username='" + _email + "',password='" + _password + "' where username='" + doctor + "' and password='" + paswd + "'");
       }
@@ -232,24 +232,24 @@ namespace PappyjoeMVC.Model
           return dtb;
       }
       ////Clinical details
-      private string _clinicname = "";
-      public string ClinicName
-      {
-          get { return _clinicname; }
-          set { _clinicname = value; }
-      }
-      private string _website = ""; 
-      public string Website
-      {
-          get { return _website; }
-          set { _website = value; }
-      }
-      private string _tagline = "";
-      public string Tagline
-      {
-          get { return _tagline; }
-          set { _tagline = value; }
-      }
+      //private string _clinicname = "";
+      //public string ClinicName
+      //{
+      //    get { return _clinicname; }
+      //    set { _clinicname = value; }
+      //}
+      //private string _website = ""; 
+      //public string Website
+      //{
+      //    get { return _website; }
+      //    set { _website = value; }
+      //}
+      //private string _tagline = "";
+      //public string Tagline
+      //{
+      //    get { return _tagline; }
+      //    set { _tagline = value; }
+      //}
       //private string _services = "";
       //public string Services
       //{
@@ -259,27 +259,27 @@ namespace PappyjoeMVC.Model
       //private string _specilization = "";
       //public string Specilization
       //{
-      //    get { return _specilization; }
-      //    set { _specilization = value; }
+      ////    get { return _specilization; }
+      ////    set { _specilization = value; }
+      ////}
+      //private string _clinicAbout = "";
+      //public string ClinicAbout
+      //{
+      //    get { return _clinicAbout; }
+      //    set { _clinicAbout = value; }
       //}
-      private string _clinicAbout = "";
-      public string ClinicAbout
-      {
-          get { return _clinicAbout; }
-          set { _clinicAbout = value; }
-      }
-      private string _clinicnumber = "";
-      public string ClinicNumber
-      {
-          get { return _clinicnumber; }
-          set { _clinicnumber = value; }
-      }
-      private string _clinicemail= "";
-      public string ClinicEmail
-      {
-          get { return _clinicemail; }
-          set { _clinicemail = value; }
-      }
+      //private string _clinicnumber = "";
+      //public string ClinicNumber
+      //{
+      //    get { return _clinicnumber; }
+      //    set { _clinicnumber = value; }
+      //}
+      //private string _clinicemail= "";
+      //public string ClinicEmail
+      //{
+      //    get { return _clinicemail; }
+      //    set { _clinicemail = value; }
+      //}
       public void save_clinic_service(string clinicid, string ser_id)
       {
           db.execute("insert into tbl_clinic_services (clinic_id,service_id) values('" + clinicid + "','" + ser_id + "')");
@@ -312,7 +312,7 @@ namespace PappyjoeMVC.Model
       {
           db.execute("delete from tbl_clinic_specialization where special_id='" + clinicspecial + "' and clinic_id='" + clinicid + "'");
       }
-      public void update_clinicdetails()
+      public void update_clinicdetails(string _clinicname , string _tagline, string _clinicnumber, string _clinicemail, string _website , string _clinicAbout)
       {
           int clinic1 = db.execute("update tbl_practice_details set name='" + _clinicname + "',tagline='" + _tagline + "',contact_no='" + _clinicnumber + "',email='" + _clinicemail + "',website='" + _website + "',about='" + _clinicAbout + "'");
       }
