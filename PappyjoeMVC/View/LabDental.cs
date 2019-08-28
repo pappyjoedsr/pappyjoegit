@@ -1,71 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
 
 namespace PappyjoeMVC.View
 {
-    public partial class LabDental : Form,LabDental_interface
+    public partial class LabDental : Form
     {
-        LabDental_controller cntrl;
+        LabDental_controller cntrl = new LabDental_controller();
         public LabDental()
         {
             InitializeComponent();
-        }
-        public void SetController(LabDental_controller controller)
-        {
-            cntrl = controller;
-        }
-        public string worktypes
-        {
-            get { return this.txtworktype.Text; }
-            set { this.txtworktype.Text = value; }
-        }
-        public string worknames
-        {
-            get { return this.txtworkname.Text; }
-            set { this.txtworkname.Text = value; }
-        }
-        public string shades
-        {
-            get { return this.txtshade.Text; }
-            set { this.txtshade.Text = value; }
-        }
-        public string alloys
-        {
-            get { return this.txtalloy.Text; }
-            set { this.txtalloy.Text = value; }
-        }
-        public string labnames
-        {
-            get { return this.txtLabname.Text; }
-            set { this.txtLabname.Text = value; }
-        }
-        public string address
-        {
-            get { return this.txtAddress.Text; }
-            set { this.txtAddress.Text = value; }
-        }
-        public string phones
-        {
-            get { return this.txtPhone.Text; }
-            set { this.txtPhone.Text = value; }
-        }
-        public string excecutive
-        {
-            get { return this.txtExecutive.Text; }
-            set { this.txtExecutive.Text = value; }
-        }
-        public string cmbLabtype
-        {
-            get { return Convert.ToString( this.cmblabtype.SelectedItem); }
-            set { this.cmblabtype.SelectedItem = value; }
         }
 
         private void LabDental_Load(object sender, EventArgs e)
@@ -138,13 +84,13 @@ namespace PappyjoeMVC.View
                     txtalloy.Text = mystring.Replace("'", " ");
                     if (button1.Text == "SAVE")
                     {
-                        this.cntrl.DentalWork_Save();
+                        this.cntrl.DentalWork_Save(txtworktype.Text, txtworkname.Text, txtshade.Text, txtalloy.Text);
                     }
                     else
                     {
                         if (txtwork.Text != "")
                         {
-                            this.cntrl.DentalWork_update(txtwork.Text);
+                            this.cntrl.DentalWork_update(txtworktype.Text, txtworkname.Text, txtshade.Text, txtalloy.Text, txtwork.Text);
                             button1.Text = "SAVE";
                         }
                     }
@@ -192,13 +138,13 @@ namespace PappyjoeMVC.View
 
                     if (button2.Text == "SAVE")
                     {
-                        this.cntrl.Laborat_Save();
+                        this.cntrl.Laborat_Save(txtLabname.Text, txtAddress.Text, txtPhone.Text, txtExecutive.Text, cmblabtype.Text);
                     }
                     else
                     {
                         if (txtlabid.Text != "")
                         {
-                            this.cntrl.Labora_Update(txtlabid.Text);
+                            this.cntrl.Labora_Update(txtLabname.Text, txtAddress.Text, txtPhone.Text, txtExecutive.Text, cmblabtype.Text, txtlabid.Text);
                             button2.Text = "SAVE";
                         }
                     }

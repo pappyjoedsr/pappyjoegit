@@ -116,7 +116,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            expense_controller controller = new expense_controller(form2);
+            //expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)

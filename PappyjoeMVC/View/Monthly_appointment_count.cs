@@ -8,9 +8,9 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Monthly_appointment_count : Form, Monthly_appointment_count_interface
+    public partial class Monthly_appointment_count : Form
     {
-        Monthly_appointment_count_controller cntrl;
+        Monthly_appointment_count_controller cntrl=new Monthly_appointment_count_controller();
         public string doctor_id = "";
         public int total = 0;
         private string select_dr_id = "0";
@@ -18,10 +18,6 @@ namespace PappyjoeMVC.View
         public Monthly_appointment_count()
         {
             InitializeComponent();
-        }
-        public void setcontroller(Monthly_appointment_count_controller controller)
-        {
-            cntrl = controller;
         }
 
         private void Monthly_appointment_count_Load(object sender, EventArgs e)

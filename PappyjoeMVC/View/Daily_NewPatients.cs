@@ -7,20 +7,15 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Daily_NewPatients : Form, Daily_NewPatients_interface
+    public partial class Daily_NewPatients : Form
     {
-        Daily_NewPatients_controller cntrl;
+        Daily_NewPatients_controller cntrl=new Daily_NewPatients_controller();
         public string doctor_id = "";
         public int flag = 0;
         public Daily_NewPatients()
         {
             InitializeComponent();
         }
-        public void setcontroller(Daily_NewPatients_controller controller)
-        {
-            cntrl = controller;
-        }
-
         private void Daily_NewPatients_Load(object sender, EventArgs e)
         {
             try

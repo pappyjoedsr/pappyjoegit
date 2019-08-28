@@ -7,7 +7,7 @@ namespace PappyjoeMVC.Model
         Connection db = new Connection();
         public DataTable doctor_rs()
         {
-            System.Data.DataTable doctor_rs = db.table("select DISTINCT id,doctor_name from tbl_doctor where not login_type = 'staff' order by doctor_name");
+            DataTable doctor_rs = db.table("select DISTINCT id,doctor_name from tbl_doctor where not login_type = 'staff' order by doctor_name");
             return doctor_rs;
         }
         public DataTable DailyNewPatient(string d1, string d2, string doctor)

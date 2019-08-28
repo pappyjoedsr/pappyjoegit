@@ -1,23 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-
 namespace PappyjoeMVC.Controller
 {
     public class Clinical_Findings_controller
     {
-        Clinical_Findings_interface intr;
         Clinical_Findings_model _model = new Clinical_Findings_model();
         common_model model = new common_model();
-        public Clinical_Findings_controller(Clinical_Findings_interface inttr)
-        {
-            intr = inttr;
-            intr.setcontroller(this);
-        }
         public string user_priv_EMRCF_A(string doctor_id)
         {
             string s = _model.user_priv_EMRCF_A(doctor_id);

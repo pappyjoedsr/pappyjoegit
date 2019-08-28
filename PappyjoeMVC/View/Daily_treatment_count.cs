@@ -8,9 +8,9 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Daily_treatment_count : Form, Daily_treatment_count_interface
+    public partial class Daily_treatment_count : Form
     {
-        Daily_treatment_count_controller cntrl;
+        Daily_treatment_count_controller cntrl=new Daily_treatment_count_controller();
         public string doctor_id = "";
         public bool combo_flag = false;
         public string Selected_drid = "";
@@ -19,11 +19,6 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        public void setcontroller(Daily_treatment_count_controller controller)
-        {
-            cntrl = controller;
-        }
-
         private void Daily_treatment_count_Load(object sender, EventArgs e)
         {
             try

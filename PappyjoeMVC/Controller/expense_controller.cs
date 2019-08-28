@@ -1,50 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
     public class expense_controller
     {
-        Connection db = new Connection();
-        expense_interface intr;
         expense_model _model = new expense_model();
-        public expense_controller(expense_interface inttr)
-        {
-            intr = inttr;
-            intr.setcontroller(this);
-        }
         public DataTable load_accountname()
         {
             DataTable dtb = _model.load_accountname();
             return dtb;
         }
-        public void Fillgrid()
+        public DataTable Fillgrid()
         {
             DataTable dtb = _model.Fill_dgv_credit();
-            intr.Fill_dgv_credit(dtb);
+            return dtb;
         }
-        public int submit_credit()
+        public int submit_credit(string datevisitedincome, string comboBoxincomacc, string textBoxdescincome, string textBoxnameofincome, string txtamountincome)
         {
-            _model.date = intr.date;
-            _model.expense = intr.expense;
-            _model.description = intr.description;
-            _model.amount_income = intr.amount_income;
-            _model.name = intr.name;
-            int i = _model.submit_credit();
+            int i = _model.submit_credit(datevisitedincome, comboBoxincomacc, textBoxdescincome, textBoxnameofincome, txtamountincome);
             return i;
         }
-        public int submit_debit()
+        public int submit_debit(string datevisited, string comboaccountname, string textBox_add_template, string textamount, string textperson)
         {
-            _model.debit_date = intr.debit_date;
-            _model.debit_description = intr.debit_description;
-            _model.debit_ledger = intr.debit_ledger;
-            _model.debit_amount = intr.debit_amount;
-            _model.debit_accname = intr.debit_accname;
-            int i = _model.submit_debit();
+            int i = _model.submit_debit(datevisited, comboaccountname, textBox_add_template, textamount, textperson);
             return i;
         }
         public DataTable show_ledger(string comboBoxincomacc)
@@ -67,29 +45,20 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.debit_loadledger(comboaccountname);
             return dtb;
         }
-        public void fill_dgv_debit()
+        public DataTable fill_dgv_debit()
         {
             DataTable dtb = _model.fill_dgv_debit();
-            intr.fill_dgv_debit(dtb);
+            return dtb;
+            //intr.fill_dgv_debit(dtb);
         }
-        public int update_dgv_credit(int Incom_ID)
+        public int update_dgv_credit(int Incom_ID, string datevisitedincome, string comboBoxincomacc, string textBoxdescincome, string txtamountincome, string textBoxnameofincome)
         {
-            _model.date = intr.date;
-            _model.expense = intr.expense;
-            _model.description = intr.description;
-            _model.amount_income = intr.amount_income;
-            _model.name = intr.name;
-            int i = _model.Update_dgv_credit(Incom_ID);
+            int i = _model.Update_dgv_credit(Incom_ID, datevisitedincome, comboBoxincomacc, textBoxdescincome, txtamountincome, textBoxnameofincome);
             return i;
         }
-        public int update_dgv_debit(int rowindex)
+        public int update_dgv_debit(int rowindex, string datevisited, string comboaccountname, string textBox_add_template, string textamount, string textperson)
         {
-            _model.debit_date = intr.debit_date;
-            _model.debit_description = intr.debit_description;
-            _model.debit_ledger = intr.debit_ledger;
-            _model.debit_amount = intr.debit_amount;
-            _model.debit_accname = intr.debit_accname;
-            int i = _model.Update_dgv_debit(rowindex);
+            int i = _model.Update_dgv_debit(rowindex, datevisited, comboaccountname, textBox_add_template, textamount, textperson);
             return i;
         }
         public int dgv_debit_delete(int rowindex)
@@ -117,25 +86,25 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.expense_checked();
             return dt;
         }
-        public void expense_search(string account, string type, string date1, string date2)
+        public DataTable expense_search(string account, string type, string date1, string date2)
         {
             DataTable dtb = _model.expense_search(account, type, date1, date2);
-            intr.fill_search(dtb);
+            return dtb;
         }
-        public void expense_search2(string type, string date1, string date2)
+        public DataTable expense_search2(string type, string date1, string date2)
         {
             DataTable dtb = _model.expense_search2(type, date1, date2);
-            intr.fill_search(dtb);
+            return dtb;
         }
-        public void expense_search3(string account, string date1, string date2)
+        public DataTable expense_search3(string account, string date1, string date2)
         {
             DataTable dtb = _model.expense_search3(account, date1, date2);
-            intr.fill_search2(dtb);
+            return dtb;
         }
-        public void expense_search4(string date1, string date2)
+        public DataTable expense_search4(string date1, string date2)
         {
             DataTable dtb = _model.expense_search4(date1, date2);
-            intr.fill_search2(dtb);
+            return dtb;
         }
         public DataTable print()
         {

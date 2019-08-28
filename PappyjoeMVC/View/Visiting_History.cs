@@ -7,18 +7,14 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Visiting_History : Form, Visiting_History_interface
+    public partial class Visiting_History : Form
     {
-        Visiting_History_controller cntrl;
+        Visiting_History_controller cntrl=new Visiting_History_controller();
         public string drctid = "";
         public string Selected_drid = "";
         public Visiting_History()
         {
             InitializeComponent();
-        }
-        public void setcontroller(Visiting_History_controller controller)
-        {
-            cntrl = controller;
         }
 
         private void Visiting_History_Load(object sender, EventArgs e)

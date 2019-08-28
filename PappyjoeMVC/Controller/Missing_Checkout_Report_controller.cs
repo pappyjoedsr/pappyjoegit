@@ -1,23 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
     public class Missing_Checkout_Report_controller
     {
-        Missing_Checkout_Report_interface intr;
         Appointment_report_model _model = new Appointment_report_model();
         common_model model = new common_model();
-        public Missing_Checkout_Report_controller(Missing_Checkout_Report_interface inttr)
-        {
-            intr = inttr;
-            intr.setcontroller(this);
-        }
         public DataTable doctor_rs()
         {
             DataTable d = _model.doctor_rs();
@@ -25,12 +14,12 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable btn_shwClick(string d1, string d2, string cmbCon)
         {
-            DataTable d = _model.btn_shwClick(d1,d2,cmbCon);
+            DataTable d = _model.btn_shwClick(d1, d2, cmbCon);
             return d;
         }
         public DataTable showMissing(string d1, string d2)
         {
-            DataTable d = _model.showMissing(d1,d2);
+            DataTable d = _model.showMissing(d1, d2);
             return d;
         }
         public DataTable Get_practiceDlNumber()
@@ -45,12 +34,12 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable DocComb(string d1, string d2)
         {
-            DataTable d = _model.DocComb(d1,d2);
+            DataTable d = _model.DocComb(d1, d2);
             return d;
         }
         public DataTable DocComb1(string d1, string d2, string Selected_drid)
         {
-            DataTable d = _model.DocComb1(d1,d2,Selected_drid);
+            DataTable d = _model.DocComb1(d1, d2, Selected_drid);
             return d;
         }
         public DataTable DocComb2(string d1, string d2)
@@ -60,7 +49,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable DocComb3(string d1, string d2, string Selected_drid)
         {
-            DataTable d = _model.DocComb3(d1,d1,Selected_drid);
+            DataTable d = _model.DocComb3(d1, d1, Selected_drid);
             return d;
         }
     }

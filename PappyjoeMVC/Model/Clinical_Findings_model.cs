@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 
 namespace PappyjoeMVC.Model
 {
@@ -61,7 +56,7 @@ namespace PappyjoeMVC.Model
             DataTable dt_medical = db.table("SELECT med_id FROM  tbl_pt_medhistory WHERE pt_id = '" + patient_id + "'");
             return dt_medical;
         }
-        public DataTable dt_cf(string clinic_id,string patient_id)
+        public DataTable dt_cf(string clinic_id, string patient_id)
         {
             System.Data.DataTable dt_cf = db.table("SELECT tbl_clinical_findings.id,tbl_clinical_findings.date,tbl_doctor.doctor_name FROM tbl_clinical_findings join tbl_doctor on tbl_clinical_findings.dr_id=tbl_doctor.id where tbl_clinical_findings.id='" + clinic_id + "' and tbl_clinical_findings.pt_id='" + patient_id + "'");
             return dt_cf;
@@ -93,12 +88,12 @@ namespace PappyjoeMVC.Model
         }
         public int del_clinic_findings(string clinic_id)
         {
-            int u=db.execute("delete from tbl_clinical_findings where id='" + clinic_id + "'");
+            int u = db.execute("delete from tbl_clinical_findings where id='" + clinic_id + "'");
             return u;
         }
         public int del_cheif_comp(string clinic_id)
         {
-            int i=db.execute("delete from tbl_pt_chief_compaints where clinical_finding_id='" + clinic_id + "'");
+            int i = db.execute("delete from tbl_pt_chief_compaints where clinical_finding_id='" + clinic_id + "'");
             return i;
         }
         public int del_observ(string clinic_id)

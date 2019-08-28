@@ -1,31 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PappyjoeMVC.View
 {
-    public partial class DoctorWise_appointment_report : Form,DoctorWise_appointment_report_interface
+    public partial class DoctorWise_appointment_report : Form
     {
-        DoctorWise_appointment_report_controller cntrl;
+        DoctorWise_appointment_report_controller cntrl=new DoctorWise_appointment_report_controller();
         public string doctor_id = "";
         public string select_dr_id = "0";
         string drctid = "";
         public DoctorWise_appointment_report()
         {
             InitializeComponent();
-        }
-        public void setcontroller(DoctorWise_appointment_report_controller controller)
-        {
-            cntrl = controller;
         }
 
         private void DoctorWise_appointment_report_Load(object sender, EventArgs e)
@@ -123,7 +114,7 @@ namespace PappyjoeMVC.View
                 {
                     drctid = comboBoxdoctor.SelectedItem.ToString();
                     string dt = this.cntrl.Get_DoctorId(drctid);
-                    if (dt!="")
+                    if (dt != "")
                     {
                         select_dr_id = dt.ToString();
                     }
@@ -143,7 +134,7 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        public void fillGrid() 
+        public void fillGrid()
         {
             try
             {
@@ -251,7 +242,7 @@ namespace PappyjoeMVC.View
             {
                 string drid = comboBoxdoctor.SelectedItem.ToString();
                 string dt = this.cntrl.get_docId(drid); ;
-                if (dt!="")
+                if (dt != "")
                 {
                     select_dr_id = dt;
                 }
@@ -376,7 +367,7 @@ namespace PappyjoeMVC.View
                 {
                     string drid = comboBoxdoctor.SelectedItem.ToString();
                     string dt = this.cntrl.doc_name_login(drid);
-                    if (dt!="")
+                    if (dt != "")
                     {
                         select_dr_id = dt;
                     }

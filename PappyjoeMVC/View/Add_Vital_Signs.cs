@@ -13,9 +13,9 @@ using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Add_Vital_Signs : Form, Add_Vital_Signs_interface
+    public partial class Add_Vital_Signs : Form//, Add_Vital_Signs_interface
     {
-        Add_Vital_Signs_controller cntrl;
+        Add_Vital_Signs_controller cntrl = new Add_Vital_Signs_controller();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";
@@ -25,50 +25,6 @@ namespace PappyjoeMVC.View
         public Add_Vital_Signs()
         {
             InitializeComponent();
-        }
-        public void setcontroller(Add_Vital_Signs_controller controller)
-        {
-            cntrl = controller;
-        }
-        public string txtpulse
-        {
-            get { return this.text_Pulse.Text; }
-            set { this.text_Pulse.Text = value; }
-        }
-        public string temp
-        {
-            get { return this.text_Temp.Text; }
-            set { this.text_Temp.Text = value; }
-        }
-        public string bp
-        {
-            get { return this.text_Bp_Syst.Text; }
-            set { this.text_Bp_Syst.Text = value; }
-        }
-        public string bp_dias
-        {
-            get { return this.text_Bp_Dias.Text; }
-            set { this.text_Bp_Dias.Text = value; }
-        }
-        public string Weight
-        {
-            get { return this.text_Weight.Text; }
-            set { this.text_Weight.Text = value; }
-        }
-        public string resp
-        {
-            get { return this.text_Resp.Text; }
-            set { this.text_Resp.Text = value; }
-        }
-        public string txtheight
-        {
-            get { return this.Txtheight.Text; }
-            set { this.Txtheight.Text = value; }
-        }
-        public string date
-        {
-            get { return this.dtp_date.Text; }
-            set { this.dtp_date.Text = value; }
         }
         private void Add_Vital_Signs_Load(object sender, EventArgs e)
         {
@@ -141,7 +97,7 @@ namespace PappyjoeMVC.View
         {
             var dlg = new Expense();
             dlg.doctor_id = doctor_id;
-            expense_controller ctrl = new expense_controller(dlg);
+            //expense_controller ctrl = new expense_controller(dlg);
             dlg.ShowDialog();
         }
 
@@ -491,7 +447,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new PappyjoeMVC.View.Vital_Signs();
             if (doctor_id == "0" || doctor_id == "") { form2.staff_id = staff_id; } else { form2.doctor_id = doctor_id; }
-            Vital_Signs_controller controller = new Vital_Signs_controller(form2);
+            //Vital_Signs_controller controller = new Vital_Signs_controller(form2);
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
@@ -520,7 +476,7 @@ namespace PappyjoeMVC.View
                         doctor = Cmb_doctor.Text;
                         dr_id = Cmb_doctor.SelectedValue.ToString();
                     }
-                    i = this.cntrl.submit(patient_id, dr_id, doctor, temp_type, bp_type);
+                    i = this.cntrl.submit(patient_id, dr_id, doctor, temp_type, bp_type, text_Pulse.Text, text_Temp.Text, text_Bp_Syst.Text, text_Bp_Dias.Text, text_Weight.Text, text_Resp.Text, dtp_date.Text, Txtheight.Text);
                     if (i > 0)
                     {
                         var form2 = new PappyjoeMVC.View.Vital_Signs();
@@ -528,9 +484,9 @@ namespace PappyjoeMVC.View
                         { form2.staff_id = staff_id; }
                         else { form2.doctor_id = doctor_id; }
                         form2.patient_id = patient_id;
-                        form2.Show();
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
+                        form2.ShowDialog();
                     }
                     else
                     {
@@ -631,7 +587,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            Reports_controller controller = new Reports_controller(form2);
+            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

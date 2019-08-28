@@ -1,28 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.Controller
 {
     public class Reports_controller
     {
         Connection db = new Connection();
-        Reports_interface intr;
         Reports_model _model = new Reports_model();
         common_model cmodel = new common_model();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";
-
-        public Reports_controller(Reports_interface inttr)
-        {
-            intr = inttr;
-            intr.setcontroller(this);
-        }
         public string invoice_to_combo(string doctor_id)
         {
             string s = _model.invoice_to_combo(doctor_id);
@@ -73,10 +61,10 @@ namespace PappyjoeMVC.Controller
             string dtb = cmodel.permission_for_settings(doctor_id);
             return dtb;
         }
-        public void inv_main(string date1,string date2)
+        public DataTable inv_main(string date1, string date2)
         {
-            DataTable dt = _model.invoice_main(date1,date2);
-            intr.Load_invoiceReport(dt);
+            DataTable dt = _model.invoice_main(date1, date2);
+            return dt;
         }
         public DataTable dr_invoice(string invoice, string dr_id)
         {
@@ -88,66 +76,66 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.invoice(invMain);
             return dt;
         }
-        public void reciept(string date1, string date2)
+        public DataTable reciept(string date1, string date2)
         {
             DataTable dt = _model.reciept(date1, date2);
-            intr.Load_recieptReport(dt);
+            return dt;
         }
-        
+
         public DataTable reciept_invoice(string invMain)
         {
             DataTable dt = _model.reciept_invoice(invMain);
             return dt;
-        }  
-        public DataTable patient_reciept(string date1,string date2)
+        }
+        public DataTable patient_reciept(string date1, string date2)
         {
             DataTable dt = _model.patient_reciept(date1, date2);
             return dt;
         }
-        public void appointment_invMain(string date1,string date2)
+        public DataTable appointment_invMain(string date1, string date2)
         {
-            DataTable dt = _model.Appointment_invMain(date1,date2);
-            intr.Load_appointmentReport(dt);
+            DataTable dt = _model.Appointment_invMain(date1, date2);
+            return dt;
         }
         public DataTable Appointment_grvShow(string date1, string date2)
         {
             DataTable dt = _model.Appointment_grvShow(date1, date2);
             return dt;
         }
-        public void Patient_invMain(string date1, string date2)
+        public DataTable Patient_invMain(string date1, string date2)
         {
             DataTable dt = _model.Patient_invMain(date1, date2);
-            intr.Load_patientReport(dt);
+            return dt;
         }
         public DataTable Patient_grv_Show(string date1, string date2)
         {
-            DataTable dt = _model.Patient_grvShow(date1,date2);
+            DataTable dt = _model.Patient_grvShow(date1, date2);
             return dt;
         }
-        public void EMR_invMain(string date1, string date2)
+        public DataTable EMR_invMain(string date1, string date2)
         {
-            DataTable dt = _model.EMR_invMain(date1,date2);
-            intr.Load_EMRReport(dt);
+            DataTable dt = _model.EMR_invMain(date1, date2);
+            return dt;
         }
         public DataTable EMR_grvShow(string date1, string date2)
         {
             DataTable dt = _model.EMR_grvShow(date1, date2);
             return dt;
         }
-        public void expence_checked(string date1, string date2, string type)
+        public DataTable expence_checked(string date1, string date2, string type)
         {
-            DataTable dt = _model.expence_checked(date1,date2,type);
-            intr.Load_expenseReport(dt);
+            DataTable dt = _model.expence_checked(date1, date2, type);
+            return dt;
         }
-        public void expense_income_notChecked(string date1,string date2)
+        public DataTable expense_income_notChecked(string date1, string date2)
         {
-            DataTable dt = _model.expence_income_notChecked(date1,date2);
-            intr.Load_expenseReport(dt);
+            DataTable dt = _model.expence_income_notChecked(date1, date2);
+            return dt;
         }
-        public void Inventory_dt_stock()
+        public DataTable Inventory_dt_stock()
         {
             DataTable dt = _model.Inventory_dt_stock();
-            intr.Load_inventoryReport(dt);
+            return dt;
         }
         public DataTable inventory_gv_Show(string dr)
         {
