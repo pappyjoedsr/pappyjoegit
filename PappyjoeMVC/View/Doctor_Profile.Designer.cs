@@ -83,6 +83,7 @@
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextDoctor = new System.Windows.Forms.ToolStripTextBox();
             this.panel_edit_dr = new System.Windows.Forms.Panel();
+            this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.txtPic = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -168,6 +169,10 @@
             this.col_regNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Del_Reg = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridView_awards = new System.Windows.Forms.DataGridView();
+            this.award_colm_Dr_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Award_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Del_Awrd = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridView_experience = new System.Windows.Forms.DataGridView();
             this.Exp_Dr_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_from = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -255,11 +260,6 @@
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_clinic_specialdelete = new System.Windows.Forms.Button();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.listpatientsearch = new System.Windows.Forms.ListBox();
-            this.award_colm_Dr_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Award_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Del_Awrd = new System.Windows.Forms.DataGridViewImageColumn();
             this.toolStrip1.SuspendLayout();
             this.panel_edit_dr.SuspendLayout();
             this.panel_DoctorProfile_Add.SuspendLayout();
@@ -570,7 +570,20 @@
             this.panel_edit_dr.Name = "panel_edit_dr";
             this.panel_edit_dr.Size = new System.Drawing.Size(1370, 627);
             this.panel_edit_dr.TabIndex = 31;
-            this.panel_edit_dr.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_edit_dr_Paint);
+            // 
+            // listpatientsearch
+            // 
+            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.listpatientsearch.FormattingEnabled = true;
+            this.listpatientsearch.ItemHeight = 21;
+            this.listpatientsearch.Location = new System.Drawing.Point(1050, 0);
+            this.listpatientsearch.Name = "listpatientsearch";
+            this.listpatientsearch.Size = new System.Drawing.Size(250, 84);
+            this.listpatientsearch.TabIndex = 70;
+            this.listpatientsearch.Visible = false;
+            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
             // 
             // txtPic
             // 
@@ -613,6 +626,7 @@
             this.button2.Text = "GO BACK";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // cmbDrProfile
             // 
@@ -1683,6 +1697,38 @@
             this.dataGridView_awards.TabIndex = 5;
             this.dataGridView_awards.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_awards_CellClick);
             // 
+            // award_colm_Dr_id
+            // 
+            this.award_colm_Dr_id.DataPropertyName = "dr_id";
+            this.award_colm_Dr_id.HeaderText = "id";
+            this.award_colm_Dr_id.Name = "award_colm_Dr_id";
+            this.award_colm_Dr_id.ReadOnly = true;
+            this.award_colm_Dr_id.Visible = false;
+            // 
+            // Award_name
+            // 
+            this.Award_name.DataPropertyName = "name";
+            this.Award_name.HeaderText = "Name";
+            this.Award_name.Name = "Award_name";
+            this.Award_name.ReadOnly = true;
+            this.Award_name.Width = 531;
+            // 
+            // year
+            // 
+            this.year.DataPropertyName = "year";
+            this.year.HeaderText = "Year";
+            this.year.Name = "year";
+            this.year.ReadOnly = true;
+            this.year.Width = 127;
+            // 
+            // Del_Awrd
+            // 
+            this.Del_Awrd.HeaderText = "";
+            this.Del_Awrd.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.Del_Awrd.Name = "Del_Awrd";
+            this.Del_Awrd.ReadOnly = true;
+            this.Del_Awrd.Width = 30;
+            // 
             // dataGridView_experience
             // 
             this.dataGridView_experience.AllowUserToAddRows = false;
@@ -2289,7 +2335,7 @@
             this.panel_clinicaldetails.Controls.Add(this.text_clinic_special);
             this.panel_clinicaldetails.Controls.Add(this.dataGridView_clinic_special);
             this.panel_clinicaldetails.Controls.Add(this.button_clinic_specialdelete);
-            this.panel_clinicaldetails.Location = new System.Drawing.Point(3, 199);
+            this.panel_clinicaldetails.Location = new System.Drawing.Point(3, 218);
             this.panel_clinicaldetails.Name = "panel_clinicaldetails";
             this.panel_clinicaldetails.Size = new System.Drawing.Size(1363, 708);
             this.panel_clinicaldetails.TabIndex = 32;
@@ -2763,52 +2809,6 @@
             // openFileDialog2
             // 
             this.openFileDialog2.FileName = "openFileDialog2";
-            // 
-            // listpatientsearch
-            // 
-            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.listpatientsearch.FormattingEnabled = true;
-            this.listpatientsearch.ItemHeight = 21;
-            this.listpatientsearch.Location = new System.Drawing.Point(1050, 0);
-            this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(250, 84);
-            this.listpatientsearch.TabIndex = 70;
-            this.listpatientsearch.Visible = false;
-            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
-            // 
-            // award_colm_Dr_id
-            // 
-            this.award_colm_Dr_id.DataPropertyName = "dr_id";
-            this.award_colm_Dr_id.HeaderText = "id";
-            this.award_colm_Dr_id.Name = "award_colm_Dr_id";
-            this.award_colm_Dr_id.ReadOnly = true;
-            this.award_colm_Dr_id.Visible = false;
-            // 
-            // Award_name
-            // 
-            this.Award_name.DataPropertyName = "name";
-            this.Award_name.HeaderText = "Name";
-            this.Award_name.Name = "Award_name";
-            this.Award_name.ReadOnly = true;
-            this.Award_name.Width = 531;
-            // 
-            // year
-            // 
-            this.year.DataPropertyName = "year";
-            this.year.HeaderText = "Year";
-            this.year.Name = "year";
-            this.year.ReadOnly = true;
-            this.year.Width = 127;
-            // 
-            // Del_Awrd
-            // 
-            this.Del_Awrd.HeaderText = "";
-            this.Del_Awrd.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.Del_Awrd.Name = "Del_Awrd";
-            this.Del_Awrd.ReadOnly = true;
-            this.Del_Awrd.Width = 30;
             // 
             // Doctor_Profile
             // 

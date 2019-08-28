@@ -10,10 +10,10 @@ using System.Windows.Forms;
 using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
-    public partial class doctorsPracticedetails : Form,doctorpractice_interface
+    public partial class doctorsPracticedetails : Form
     {
         public string frameid = "0";
-        doctorpractice_controller cntrl;
+        doctorpractice_controller cntrl=new doctorpractice_controller();
         string serviceid = "0";
         string Specializationid = "0";
         string degreeid = "0";
@@ -25,10 +25,7 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        public void SetController(doctorpractice_controller controller)
-        {
-            cntrl = controller;
-        }
+      
         private void doctorsPracticedetails_Load(object sender, EventArgs e)
         {
             if (button_services.Text == "Save")
@@ -154,10 +151,10 @@ namespace PappyjoeMVC.View
                         {
                             this.cntrl.save_service(textBox_services.Text);
                             string services = "0";
-                            DataTable dt = this.cntrl.max_serviceId();
-                            if (dt.Rows.Count > 0)
+                            string dt = this.cntrl.max_serviceId();
+                            if (dt!="")
                             {
-                                services = dt.Rows[0]["id"].ToString();
+                                services = dt;
                             }
                             dataGridView_services.Rows.Add(services.ToString(), 1, textBox_services.Text);
                             dataGridView_services.Rows[dataGridView_services.Rows.Count - 1].Cells[1].Value = dataGridView_services.Rows.Count;
@@ -294,10 +291,10 @@ namespace PappyjoeMVC.View
                         {
                             this.cntrl.save_degree(textBox_degree.Text);
                             string degree = "0";
-                            DataTable dt = this.cntrl.max_degreeid();
-                            if (dt.Rows.Count > 0)
+                            string id = this.cntrl.max_degreeid();
+                            if (id != "")
                             {
-                                degree = dt.Rows[0]["id"].ToString();
+                                degree = id;
                             }
                             dataGridView_degree.Rows.Add(degree.ToString(), 1, textBox_degree.Text);
                             dataGridView_degree.Rows[dataGridView_degree.Rows.Count - 1].Cells[1].Value = dataGridView_degree.Rows.Count;
@@ -449,10 +446,10 @@ namespace PappyjoeMVC.View
                         {
                             this.cntrl.save_council(textBox_council.Text);
                             string council = "0";
-                            DataTable dt = this.cntrl.max_councilid();
-                            if (dt.Rows.Count > 0)
+                            string dt = this.cntrl.max_councilid();
+                            if (dt!="")
                             {
-                                council = dt.Rows[0]["id"].ToString();
+                                council = dt;
                             }
                             dataGridView_council.Rows.Add(council.ToString(), 1, textBox_council.Text);
                             dataGridView_council.Rows[dataGridView_council.Rows.Count - 1].Cells[1].Value = dataGridView_council.Rows.Count;
@@ -574,10 +571,10 @@ namespace PappyjoeMVC.View
                         {
                             this.cntrl.save_member(textBox_membership.Text);
                             string membership = "0";
-                            DataTable dt = this.cntrl.max_memberid();
-                            if (dt.Rows.Count > 0)
+                            string dt = this.cntrl.max_memberid();
+                            if (dt!="")
                             {
-                                membership = dt.Rows[0]["id"].ToString();
+                                membership = dt;
                             }
                             dataGridView_membership.Rows.Add(membership.ToString(), 1, textBox_membership.Text);
                             dataGridView_membership.Rows[dataGridView_membership.Rows.Count - 1].Cells[1].Value = dataGridView_membership.Rows.Count;
@@ -698,10 +695,10 @@ namespace PappyjoeMVC.View
                         {
                             this.cntrl.save_college(textBox_college.Text);
                             string college = "0";
-                            DataTable dt = this.cntrl.max_collegeid();
-                            if (dt.Rows.Count > 0)
+                            string dt = this.cntrl.max_collegeid();
+                            if (dt!="")
                             {
-                                college = dt.Rows[0]["id"].ToString();
+                                college = dt;
                             }
                             dataGridView_college.Rows.Add(college.ToString(), 1, textBox_college.Text);
                             dataGridView_college.Rows[dataGridView_college.Rows.Count - 1].Cells[1].Value = dataGridView_college.Rows.Count;
@@ -754,10 +751,10 @@ namespace PappyjoeMVC.View
                         {
                             this.cntrl.save_specilization(specializationtextbox.Text);
                             string specialization = "0";
-                            DataTable dt = this.cntrl.max_specilizationid();
-                            if (dt.Rows.Count > 0)
+                           string dt = this.cntrl.max_specilizationid();
+                            if (dt!="")
                             {
-                                specialization = dt.Rows[0]["id"].ToString();
+                                specialization = dt;
                             }
                             dataGridView_Specialization.Rows.Add(specialization.ToString(), 1, specializationtextbox.Text);
                             dataGridView_Specialization.Rows[dataGridView_Specialization.Rows.Count - 1].Cells[1].Value = dataGridView_Specialization.Rows.Count;

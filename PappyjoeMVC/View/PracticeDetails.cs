@@ -387,9 +387,9 @@ namespace PappyjoeMVC.View
             bill.TopLevel = false;
             panel_main.Controls.Add(bill);
             bill.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            Billing_controller controller = new Billing_controller(bill);
+            //Billing_controller controller = new Billing_controller(bill);
             bill.Show();
-        }
+        } 
         public void backColor_change()
         {
             button_practice.BackColor = Color.DodgerBlue;
@@ -469,7 +469,7 @@ namespace PappyjoeMVC.View
             emr.TopLevel = false;
             panel_main.Controls.Add(emr);
             emr.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            EMR_controller controller = new EMR_controller(emr);
+            //EMR_controller controller = new EMR_controller(emr);
             emr.Show();
         }
 
@@ -558,7 +558,7 @@ namespace PappyjoeMVC.View
             catalog.TopLevel = false;
             panel_main.Controls.Add(catalog);
             catalog.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            procedure_catalog_controller controller = new procedure_catalog_controller(catalog);
+            //procedure_catalog_controller controller = new procedure_catalog_controller(catalog);
             catalog.Show();
         }
 
@@ -623,7 +623,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Doctor_Profile();
             form2.doctor_id = doctor_id;
-            doctor_controller controller = new doctor_controller(form2);
+            //doctor_controller controller = new doctor_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

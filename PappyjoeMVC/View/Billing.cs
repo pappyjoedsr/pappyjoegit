@@ -12,27 +12,13 @@ using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Billing : Form,Billing_Interface
+    public partial class Billing : Form
     {
-        Billing_controller cntrl;
+        Billing_controller cntrl=new Billing_controller();
         public string BillId = "";
-        public string Taxname
-        {
-            get { return this.text_taxname.Text; }
-            set{ this.text_taxname.Text = value; }
-        }
-        public string Tax
-        {
-            get { return this.text_taxvalue.Text; }
-            set { this.text_taxvalue.Text = value; }
-        }
         public Billing()
         {
             InitializeComponent();
-        }
-        public void SetController(Billing_controller controller)
-        {
-            cntrl = controller;
         }
         public void FillBillGrid(DataTable dtb)
         {
@@ -58,7 +44,7 @@ namespace PappyjoeMVC.View
                 {
                     if (buttonsave.Text == "Save")
                     {
-                      int i=this.cntrl.save();
+                      int i=this.cntrl.save(text_taxname.Text, text_taxvalue.Text);
                         if(i>0)
                         {
                             MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -66,7 +52,7 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        int i = this.cntrl.update(BillId);
+                        int i = this.cntrl.update(BillId, text_taxname.Text, text_taxvalue.Text);
                         if(i>0)
                         {
                             MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -90,7 +76,8 @@ namespace PappyjoeMVC.View
 
         private void Billing_Load(object sender, EventArgs e)
         {
-            this.cntrl.Fill_BillGrid();
+            DataTable dtb= this.cntrl.Fill_BillGrid();
+            FillBillGrid(dtb);
             dataGridView_Billing.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             dataGridView_Billing.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView_Billing.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
@@ -123,7 +110,8 @@ namespace PappyjoeMVC.View
                             if (i > 0)
                             {
                                 dataGridView_Billing.Rows.RemoveAt(dataGridView_Billing.CurrentRow.Index);
-                                this.cntrl.Fill_BillGrid();
+                                DataTable dtb= this.cntrl.Fill_BillGrid();
+                                FillBillGrid(dtb);
                             }
                         }
                     }

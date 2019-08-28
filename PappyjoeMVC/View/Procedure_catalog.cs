@@ -1,54 +1,50 @@
-﻿using System;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Procedure_catalog : Form,procedure_catalog_interface
+    public partial class Procedure_catalog : Form
     {
-        procedure_catalog_controller cntrl;
+        procedure_catalog_controller cntrl=new procedure_catalog_controller();
         string idd = null;
         int refresh;
         public Procedure_catalog()
         {
             InitializeComponent();
         }
-        public string ProcedureName
-        {
-            get { return this.txt_procedurename.Text; }
-            set { txt_procedurename.Text = value; }
-        }
-        public string ProcedCost
-        {
-            get { return this.txt_procedurecost.Text; }
-            set { txt_procedurecost.Text = value; }
-        }
-        public string Notes
-        {
-            get { return this.richnotes.Text; }
-            set { richnotes.Text = value; }
-        }
-        public string ComboCategory
-        {
-            get { return this.comboaddunder.Text; }
-            set { comboaddunder.Text = value; }
-        }
-        public string TextCategory
-        {
-            get { return this.txt_AddCategory.Text; }
-            set { txt_AddCategory.Text = value; }
-        }
-        public void SetController(procedure_catalog_controller controller)
-        {
-            cntrl = controller;
-        }
+        //public string ProcedureName
+        //{
+        //    get { return this.txt_procedurename.Text; }
+        //    set { txt_procedurename.Text = value; }
+        //}
+        //public string ProcedCost
+        //{
+        //    get { return this.txt_procedurecost.Text; }
+        //    set { txt_procedurecost.Text = value; }
+        //}
+        //public string Notes
+        //{
+        //    get { return this.richnotes.Text; }
+        //    set { richnotes.Text = value; }
+        //}
+        //public string ComboCategory
+        //{
+        //    get { return this.comboaddunder.Text; }
+        //    set { comboaddunder.Text = value; }
+        //}
+        //public string TextCategory
+        //{
+        //    get { return this.txt_AddCategory.Text; }
+        //    set { txt_AddCategory.Text = value; }
+        //}
+        //public void SetController(procedure_catalog_controller controller)
+        //{
+        //    cntrl = controller;
+        //}
 
         private void Procedure_catalog_Load(object sender, EventArgs e)
         {
@@ -68,7 +64,8 @@ namespace PappyjoeMVC.View
                 comboaddunder.Hide();
             }
             refresh = 1;
-            this.cntrl.FormLoad();
+            DataTable dtb = this.cntrl.FormLoad();
+            FormLoad(dtb);
             Dgv_Procedure.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkGray;
             Dgv_Procedure.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             Dgv_Procedure.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 11, FontStyle.Bold);
@@ -108,7 +105,6 @@ namespace PappyjoeMVC.View
                 {
                     abc = id + "," + taxname;
                 }
-                //string abc = id + "," + taxname;
                 string abc1 = id + "," + procedurename;
                 string abc2 = id + "," + cost;
                 string abc3 = id + "," + category;
@@ -155,7 +151,8 @@ namespace PappyjoeMVC.View
             if (checkaddunder.Checked == true)
             {
                 comboaddunder.Show();
-                this.cntrl.get_procedure_category_value();
+                DataTable dtb = this.cntrl.get_procedure_category_value();
+                AddCategory(dtb);
                 btnAddNewCategory.Show();
             }
             else
@@ -169,7 +166,7 @@ namespace PappyjoeMVC.View
         }
         public void AddCategory(DataTable dt)
         {
-            if(dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
             {
                 comboaddunder.DataSource = dt;
                 comboaddunder.DisplayMember = "name";
@@ -180,7 +177,8 @@ namespace PappyjoeMVC.View
 
         private void comboaddunder_Click(object sender, EventArgs e)
         {
-            this.cntrl.get_procedure_category_value();
+            DataTable dtb = this.cntrl.get_procedure_category_value();
+            AddCategory(dtb);
         }
 
         private void btnAddNewCategory_Click(object sender, EventArgs e)
@@ -204,10 +202,10 @@ namespace PappyjoeMVC.View
         {
             if (txt_AddCategory.Text != "")
             {
-                DataTable dt =this.cntrl. Get_category_name();   //db.table("select * from tbl_procedure_category where name='" + txt_AddCategory.Text + "'");
+                DataTable dt = this.cntrl.Get_category_name(txt_AddCategory.Text);  
                 if (dt.Rows.Count <= 0)
                 {
-                    this.cntrl.save();
+                    this.cntrl.save(txt_AddCategory.Text);
                     txt_AddCategory.Hide();
                     buttonSaveCategory.Hide();
                     btnAddNewCategory.Text = "Add New";
@@ -246,7 +244,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    this.cntrl.get_procedureName();
+                  DataTable dtb= this.cntrl.get_procedureName(txt_procedurename.Text);
                 }
             }
         }
@@ -260,8 +258,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    int i = this.cntrl.save_addprocedure();
-                    DataTable dtb = this.cntrl.get_procedureid();
+                    int i = this.cntrl.save_addprocedure(txt_procedurename.Text, txt_procedurecost.Text, comboaddunder.Text, richnotes.Text);
+                    DataTable dtb = this.cntrl.get_procedureid(txt_procedurename.Text);
                     string p = dtb.Rows[0]["id"].ToString();
                     int pid = int.Parse(p);
                     if (chk_gst.Checked == true)
@@ -280,17 +278,15 @@ namespace PappyjoeMVC.View
                     txt_procedurecost.Clear();
                     comboaddunder.Text = null;
                     richnotes.Clear();
-                    //checkadditionaltax.Checked = false;
                     chk_igst.Checked = false;
                     chk_gst.Checked = false;
-                    //checkvat.Checked = false;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
     }
 }

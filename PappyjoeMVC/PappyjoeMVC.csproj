@@ -87,7 +87,6 @@
     <Compile Include="Controller\autoid_generation_controller.cs" />
     <Compile Include="Controller\autoid_generation_interface.cs" />
     <Compile Include="Controller\Billing_controller.cs" />
-    <Compile Include="Controller\Billing_Interface.cs" />
     <Compile Include="Controller\booking_controller.cs" />
     <Compile Include="Controller\Booking_interface.cs" />
     <Compile Include="Controller\calender_controller.cs" />
@@ -112,11 +111,9 @@
     <Compile Include="Controller\Day_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Day_Wise_Receipt_interface.cs" />
     <Compile Include="Controller\doctorpractice_controller.cs" />
-    <Compile Include="Controller\doctorpractice_interface.cs" />
     <Compile Include="Controller\DoctorWise_appointment_report_controller.cs" />
     <Compile Include="Controller\DoctorWise_appointment_report_interface.cs" />
     <Compile Include="Controller\doctor_controller.cs" />
-    <Compile Include="Controller\doctor_interface.cs" />
     <Compile Include="Controller\Doctor_Wise_Invoice_controller.cs" />
     <Compile Include="Controller\Doctor_Wise_Invoice_interface.cs" />
     <Compile Include="Controller\Doctor_Wise_Receipt_controller.cs" />
@@ -183,7 +180,6 @@
     <Compile Include="Controller\printout_controller.cs" />
     <Compile Include="Controller\printout_interface.cs" />
     <Compile Include="Controller\procedure_catalog_controller.cs" />
-    <Compile Include="Controller\procedure_catalog_interface.cs" />
     <Compile Include="Controller\profile_details_controller.cs" />
     <Compile Include="Controller\profile_details_interface.cs" />
     <Compile Include="Controller\Receipt_controller.cs" />
