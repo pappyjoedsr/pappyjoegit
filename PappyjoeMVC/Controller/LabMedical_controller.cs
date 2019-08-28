@@ -1,27 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.Controller
 {
     public class LabMedical_controller
     {
         LabMedical_model _model = new LabMedical_model();
-        LabMedical_interface intr;
-        public LabMedical_controller(LabMedical_interface inttr)
-        {
-            intr = inttr;
-            intr.setcontroller(this);
-        }
 
-        public void Main_test_Dgv()
+        public DataTable Main_test_Dgv()
         {
             DataTable dt = _model.Main_test();
-            intr.Fill_dgvMainTest(dt);
+            return dt;
         }
         public DataTable fill_TestType()
         {
@@ -40,35 +29,33 @@ namespace PappyjoeMVC.Controller
         }
         public int Maintest_save(string txtMainTest)
         {
-            _model.MainTest = intr.Main_Test;
             int i = _model.Main_test_save(txtMainTest);
             return i;
         }
-        public int Update_Main_test(string mtid)
+        public int Update_Main_test(string mtid,string txtMainTest)
         {
-            _model.MainTest = intr.Main_Test;
-            int i = _model.Update_Maintest(mtid);
+            int i = _model.Update_Maintest(mtid, txtMainTest);
             return i;
         }
-        public void tpMain_testtype()
+        public DataTable tpMain_testtype()
         {
             DataTable dt = _model.tpMain_testtype();
-            intr.fill_TestType(dt);
+            return dt;
         }
-        public void tpMain_unit()
+        public DataTable tpMain_unit()
         {
             DataTable dt = _model.tpMain_unit();
-            intr.fill_Unit(dt);
+            return dt;
         }
-        public void tpMain_test()
+        public DataTable tpMain_test()
         {
             DataTable dt = _model.tpMain_test();
-            intr.fill_Test(dt);
+            return dt;
         }
-        public void tpMain_template()
+        public DataTable tpMain_template()
         {
             DataTable dt = _model.tpMain_template();
-            intr.fill_Template(dt);
+            return dt;
         }
         public DataTable Template_view()
         {
@@ -80,54 +67,39 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.tbtesttemp();
             return dt;
         }
-        public int Save_Testtype()
+        public int Save_Testtype(string txtTestType)
         {
-            _model.Test_Type = intr.Test_type;
-            int i = _model.Save_testtype();
+            int i = _model.Save_testtype(txtTestType);
             return i;
         }
-        public int Update_testtype(string txtTtypeid)
+        public int Update_testtype(string txtTtypeid,string txtTestType)
         {
-            _model.Test_Type = intr.Test_type;
-            int i = _model.Update_testtype(txtTtypeid);
+            int i = _model.Update_testtype(txtTtypeid, txtTestType);
             return i;
         }
-        public int SaveUnit()
+        public int SaveUnit(string txtUnitadd)
         {
-            _model.Unit = intr.Units;
-            int i = _model.Save_unit();
+            int i = _model.Save_unit(txtUnitadd);
             return i;
         }
-        public int UpdateUnit(int txtunitid)
+        public int UpdateUnit(int txtunitid,string txtUnitadd)
         {
-            _model.Unit = intr.Units;
-            int i = _model.Update_unit(txtunitid);
+            int i = _model.Update_unit(txtunitid, txtUnitadd);
             return i;
         }
-        public int SaveTest()
+        public int SaveTest(string txtName, string txtNVMale, string txtNVFemale, int cmbTesttype, int cmbUnit)
         {
-            _model.testName = intr.TestName;
-            _model.txtNVfemale = intr.txtNVfemale;
-            _model.txtNVmale = intr.txtNVmale;
-            _model.Cmbtesttype = intr.Cmbtesttype;
-            _model.CmbUnit = intr.CmbUnit;
-            int i = _model.Save_test();
+            int i = _model.Save_test(txtName,txtNVMale, txtNVFemale,cmbTesttype, cmbUnit);
             return i;
         }
-        public int Update_test(int txttestid)
+        public int Update_test( string txtName, int cmbTesttype, string txtNVMale, string txtNVFemale, int cmbUnit,int txttestid)
         {
-            _model.testName = intr.TestName;
-            _model.txtNVfemale = intr.txtNVfemale;
-            _model.txtNVmale = intr.txtNVmale;
-            _model.Cmbtesttype = intr.Cmbtesttype;
-            _model.CmbUnit = intr.CmbUnit;
-            int i = _model.Update_test(txttestid);
+            int i = _model.Update_test(txttestid, txtName, cmbTesttype, txtNVMale, txtNVFemale, cmbUnit);
             return i;
         }
-        public int Tempname_save()
+        public int Tempname_save(string txttemp)
         {
-            _model.Temp_Name = intr.TempName;
-            int i = _model.TempName_save();
+            int i = _model.TempName_save(txttemp);
             return i;
         }
         public int Get_Maxid()
@@ -145,21 +117,20 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.Normavalue(test);
             return dt;
         }
-        public int Insert_mediTemplate(int Id, int MainTestId, int TestId,object Units, string NormalValue)
+        public int Insert_mediTemplate(int Id, int MainTestId, int TestId, object Units, string NormalValue)
         {
             int i = _model.Insert_mediTemplate(Id, MainTestId, TestId, Units, NormalValue);
             return i;
         }
-        public int Update_temp_name(int txtId)
+        public int Update_temp_name(int txtId,string txttemp)
         {
-            _model.Temp_Name = intr.TempName;
-            int i = _model.Update_temp_name(txtId);
+            int i = _model.Update_temp_name(txtId, txttemp);
             return i;
         }
         public int Update_temp_Ids(int cmbmaintesttemp, int cmbTesttemp, int txtId)
         {
             int i = _model.Update_temp_Ids(cmbmaintesttemp, cmbTesttemp, txtId);
-            return i;   
+            return i;
         }
         public DataTable TempAddItem_mainTest(string cmbmaintesttemp)
         {

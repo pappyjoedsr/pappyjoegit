@@ -624,7 +624,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            Reports_controller controller = new Reports_controller(form2);
+            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -634,7 +634,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            expense_controller controller = new expense_controller(form2);
+            //expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
 

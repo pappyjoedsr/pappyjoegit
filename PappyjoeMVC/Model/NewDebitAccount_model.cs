@@ -16,24 +16,12 @@ namespace PappyjoeMVC.Model
             DataTable dtb = db.table("select * from tbl_ledger_Group where type='Dr' order by Id");
             return dtb;
         }
-        public string AccountName
-        {
-            get { return txtAccountName; }
-            set { txtAccountName = value; }
-        }
-        public string Ledger
-        {
-            get { return cmbLedger; }
-            set { cmbLedger = value; }
-        }
-        private string txtAccountName;
         public  DataTable Submit(string txtAccountName)
         {
             DataTable i = db.table("Select * from tbl_expense_type where name ='" + txtAccountName + "' ");
             return i;
         }
-        private string cmbLedger;
-        public int insert()
+        public int insert(string txtAccountName,string cmbLedger)
         {
             int i = db.execute("insert into tbl_expense_type (name,Group_Name,Expense_type) values('" + txtAccountName + "','" + cmbLedger + "','Dr')");
             return i;

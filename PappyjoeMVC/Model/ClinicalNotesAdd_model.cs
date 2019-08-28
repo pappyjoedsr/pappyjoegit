@@ -1,46 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-
+﻿using System.Data;
 namespace PappyjoeMVC.Model
 {
     public class ClinicalNotesAdd_model
     {
         Connection db = new Connection();
-
-        private string investtextbox;
-        public string Investigation
-        {
-            get { return this.investtextbox; }
-            set { this.investtextbox = value; }
-        }
-        private string diagtext;
-        public string Diagnosis
-        {
-            get { return this.diagtext; }
-            set { this.diagtext = value; }
-        }
-        private string comptextbox;
-        public string complaint
-        {
-            get { return this.comptextbox; }
-            set { this.comptextbox = value; }
-        }
-        private string notetextbox;
-        public string Notes
-        {
-            get { return this.notetextbox; }
-            set { this.notetextbox = value; }
-        }
-        private string obsertextbox;
-        public string Observation
-        {
-            get { return this.obsertextbox; }
-            set { this.obsertextbox = value; }
-        }
         public DataTable investigation_cell(string idinv)
         {
             DataTable dt2 = db.table("select id,investigation from tbl_investigation where id='" + idinv + "'");
@@ -96,7 +59,7 @@ namespace PappyjoeMVC.Model
             DataTable checkdataINVEST = db.table("Select * from tbl_investigation where investigation ='" + investtextbox);
             return checkdataINVEST;
         }
-        public int investigation_insert()
+        public int investigation_insert(string investtextbox)
         {
             int i = db.execute("insert into tbl_investigation(investigation) values('" + investtextbox + "')");
             return i;
@@ -111,7 +74,7 @@ namespace PappyjoeMVC.Model
             DataTable checkdataDIAG = db.table("Select * from tbl_diagnosis where diagnosis ='" + diagtext + "'");
             return checkdataDIAG;
         }
-        public int Insert_diagno()
+        public int Insert_diagno(string diagtext)
         {
             int i = db.execute("insert into tbl_diagnosis(diagnosis) values('" + diagtext + "')");
             return i;
@@ -126,7 +89,7 @@ namespace PappyjoeMVC.Model
             DataTable checkdatacc = db.table("Select * from tbl_complaints where name ='" + comptext + "'");
             return checkdatacc;
         }
-        public int insert_compl()
+        public int insert_compl(string comptextbox)
         {
             int i = db.execute("insert into tbl_complaints(name) values('" + comptextbox + "')");
             return i;
@@ -136,7 +99,7 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table("select id,name from tbl_complaints");
             return dt;
         }
-        public int Update_compl(int rowvalue)
+        public int Update_compl(string comptextbox, int rowvalue)
         {
             int i = db.execute("update tbl_complaints set name='" + comptextbox + "' where id='" + rowvalue + "' ");
             return i;
@@ -146,7 +109,7 @@ namespace PappyjoeMVC.Model
             DataTable checkdataNOTE = db.table("Select * from tbl_notes where notes ='" + notetextbox + "'");
             return checkdataNOTE;
         }
-        public int insert_note()
+        public int insert_note(string notetextbox)
         {
             int i = db.execute("insert into tbl_notes(notes) values('" + notetextbox + "')");
             return i;
@@ -161,7 +124,7 @@ namespace PappyjoeMVC.Model
             DataTable checkdataOB = db.table("Select * from tbl_observations where observations ='" + obsertextbox + "'");
             return checkdataOB;
         }
-        public int insert_Observ()
+        public int insert_Observ(string obsertextbox)
         {
             int i = db.execute("insert into tbl_observations(observations) values('" + obsertextbox + "')");
             return i;

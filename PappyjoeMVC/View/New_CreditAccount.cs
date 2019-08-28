@@ -1,35 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
-    public partial class New_CreditAccount : Form,NewCreditAccount_interface
+    public partial class New_CreditAccount : Form
     {
-        NewCreditAccount_controller cntrl;
+        NewCreditAccount_controller cntrl=new NewCreditAccount_controller();
         public New_CreditAccount()
         {
             InitializeComponent();
-        }
-        public void SetController(NewCreditAccount_controller controller)
-        {
-            cntrl = controller;
-        }
-        public string AccountName
-        {
-            get { return this.txtAccountName.Text; }
-            set { this.txtAccountName.Text = value; }
-        }
-        public string Ledger
-        {
-            get { return this.cmbLedger.Text; }
-            set { this.cmbLedger.Text = value; }
         }
         private void NewAccount_Load(object sender, EventArgs e)
         {
@@ -40,7 +20,7 @@ namespace PappyjoeMVC.View
                 cmbLedger.DisplayMember = "Group_Name";
                 cmbLedger.ValueMember = "Id";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -60,7 +40,7 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        this.cntrl.submit_data();
+                        this.cntrl.submit_data(txtAccountName.Text, cmbLedger.Text);
                         MessageBox.Show("Successfully Submited !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtAccountName.Clear();
                     }

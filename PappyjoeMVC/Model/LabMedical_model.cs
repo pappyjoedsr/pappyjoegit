@@ -10,57 +10,6 @@ namespace PappyjoeMVC.Model
     public class LabMedical_model
     {
         Connection db = new Connection();
-        private string txtMainTest;
-        public string MainTest
-        {
-            get { return txtMainTest; }
-            set { txtMainTest = value; }
-        }
-        private string txtTestType;
-        public string Test_Type
-        {
-            get { return txtTestType; }
-            set { txtTestType = value; }
-        }
-        private string txtUnitadd;
-        public string Unit
-        {
-            get { return txtUnitadd; }
-            set { txtUnitadd = value; }
-        }
-        private string txtName, txtNVMale, txtNVFemale;
-        public string testName
-        {
-            get { return txtName; }
-            set { txtName = value; }
-        }
-        public string txtNVmale
-        {
-            get { return txtNVMale; }
-            set { txtNVMale = value; }
-        }
-        public string txtNVfemale
-        {
-            get { return txtNVFemale; }
-            set { txtNVFemale = value; }
-        }
-        private int cmbTesttype, CcmbUnit;
-        public int Cmbtesttype
-        {
-            get { return cmbTesttype; }
-            set { cmbTesttype = value; }
-        }
-        public int CmbUnit
-        {
-            get { return CcmbUnit; }
-            set { CcmbUnit = value; }
-        }
-        private string txttemp;
-        public string Temp_Name
-        {
-            get { return txttemp; }
-            set { txttemp = value; }
-        }
         public DataTable Main_test()
         {
             DataTable dt = db.table("select id,Main_test  from tbl_Lab_Medi_MainTest");
@@ -86,7 +35,7 @@ namespace PappyjoeMVC.Model
             int s = db.execute("insert into tbl_Lab_Medi_MainTest (Main_test) values('" + txtMainTest + "')");
             return s;
         }
-        public int Update_Maintest(string mtid)
+        public int Update_Maintest(string mtid,string txtMainTest)
         {
             int i = db.execute("Update tbl_Lab_Medi_MainTest set Main_test= '" + txtMainTest + "' where id ='" + Convert.ToInt32(mtid) + "'");
             return i;
@@ -121,37 +70,37 @@ namespace PappyjoeMVC.Model
             System.Data.DataTable tbtesttemp = db.table("select id,Name from Lab_Medi_Test");
             return tbtesttemp;
         }
-        public int Save_testtype()
+        public int Save_testtype(string txtTestType)
         {
             int i = db.execute("insert into tbl_Lab_Medi_TestType (Name) values('" + txtTestType + "') ");
             return i;
         }
-        public int Update_testtype(string txtTtypeid)
+        public int Update_testtype(string txtTtypeid,string txtTestType)
         {
             int i = db.execute("Update tbl_Lab_Medi_TestType set Name= '" + txtTestType + "' where id ='" + Convert.ToInt32(txtTtypeid) + "'");
             return i;
         }
-        public int Save_unit()
+        public int Save_unit(string txtUnitadd)
         {
             int i = db.execute("insert into Lab_Medi_Unit (Name) values('" + txtUnitadd + "') ");
             return i;
         }
-        public int Update_unit(int txtunitid)
+        public int Update_unit(int txtunitid,string txtUnitadd)
         {
             int i = db.execute("Update Lab_Medi_Unit set Name= '" + txtUnitadd + "' where id ='" + Convert.ToInt32(txtunitid) + "'");
             return i;
         }
-        public int Save_test()
+        public int Save_test(string txtName,string txtNVMale,string txtNVFemale,int cmbTesttype,int cmbUnit)
         {
-            int i = db.execute("INSERT INTO Lab_Medi_Test (Name,NormalValueM,NormalValueF,TestTypeID,UnitId)VALUES('" + txtName + "','" + txtNVMale + "','" + txtNVFemale + "','" + cmbTesttype + "','" + CcmbUnit + "')");
+            int i = db.execute("INSERT INTO Lab_Medi_Test (Name,NormalValueM,NormalValueF,TestTypeID,UnitId)VALUES('" + txtName + "','" + txtNVMale + "','" + txtNVFemale + "','" + cmbTesttype + "','" + cmbUnit + "')");
             return i;
         }
-        public int Update_test(int txttestid)
+        public int Update_test(int txttestid,string txtName,int cmbTesttype,string txtNVMale,string txtNVFemale,int cmbUnit)
         {
-            int i = db.execute("Update Lab_Medi_Test set Name= '" + txtName + "' ,TestTypeID='" + Convert.ToInt32(cmbTesttype) + "',NormalValueM = '" + txtNVMale + "', NormalValueF= '" + txtNVFemale + "',UnitId ='" + Convert.ToInt32(CcmbUnit) + "'  where id ='" + Convert.ToInt32(txttestid) + "'");
+            int i = db.execute("Update Lab_Medi_Test set Name= '" + txtName + "' ,TestTypeID='" + Convert.ToInt32(cmbTesttype) + "',NormalValueM = '" + txtNVMale + "', NormalValueF= '" + txtNVFemale + "',UnitId ='" + cmbUnit + "'  where id ='" + txttestid + "'");
             return i;
         }
-        public int TempName_save()
+        public int TempName_save(string txttemp)
         {
             int i = db.execute("insert into Lab_Medi_TemplateMain (TemplateName) values('" + txttemp + "') ");
             return i;
@@ -176,7 +125,7 @@ namespace PappyjoeMVC.Model
             int i = db.execute("insert into Lab_Medi_Template (Id,MainTestId,TestId,Units,NormalValue)values('" + Id + "', '" + MainTestId + "','" + TestId + "','" + Units + "','" + NormalValue + "')");
             return i;
         }
-        public int Update_temp_name(int txtId)
+        public int Update_temp_name(int txtId,string txttemp)
         {
             int i = db.execute("Update Lab_Medi_TemplateMain set TemplateName= '" + txttemp + "' where id ='" + txtId + "'");
             return i;

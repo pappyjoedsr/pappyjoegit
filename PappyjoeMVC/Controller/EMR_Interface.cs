@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using PappyjoeMVC.Controller;
 using PappyjoeMVC.Model;
 using System.Data;
-using System.Data;
 
 namespace PappyjoeMVC.Controller
 {

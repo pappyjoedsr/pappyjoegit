@@ -1,58 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
 
 namespace PappyjoeMVC.View
 {
-    public partial class ClinicalNotesAdd : Form,ClinicalNotesAdd_interface
+    public partial class ClinicalNotesAdd : Form
     {
-        ClinicalNotesAdd_controller cntrl;
+        ClinicalNotesAdd_controller cntrl=new ClinicalNotesAdd_controller();
         public string doctor_id = "";
         public string staff_id = "";
         public string clinic_id = "";
-        string idcomp, iddiag, idobs, idinv, idnote= "";
+        string idcomp, iddiag, idobs, idinv, idnote = "";
         public string patient_id = "";
         static int rowvalue;
         public ClinicalNotesAdd()
         {
             InitializeComponent();
-        }
-
-        public void setcontroller(ClinicalNotesAdd_controller controller)
-        {
-            cntrl = controller;
-        }
-        public string Investigation
-        {
-            get { return this.investtextbox.Text; }
-            set { this.investtextbox.Text = value; }
-        }
-        public string Diagnosis
-        {
-            get { return this.diagtext.Text.Replace("'", ""); }
-            set { this.diagtext.Text = value; }
-        }
-        public string Complaints
-        {
-            get { return this.comptextbox.Text.Replace("'", ""); }
-            set { this.comptextbox.Text = value; }
-        }
-        public string Notes
-        {
-            get { return this.notetextbox.Text.Replace("'", ""); }
-            set { this.notetextbox.Text = value; }
-        }
-        public string Observation
-        {
-            get { return this.obsertextbox.Text.Replace("'", ""); }
-            set { this.obsertextbox.Text = value; }
         }
 
         private void investigationgrid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -331,7 +296,7 @@ namespace PappyjoeMVC.View
                 {
                     if (investtextbox.Text != "")
                     {
-                        this.cntrl.investigation_insert();
+                        this.cntrl.investigation_insert(investtextbox.Text);
                         DataTable dt2 = this.cntrl.Show_investigation();
                         investigationgrid.DataSource = dt2;
                         label17.Hide();
@@ -372,7 +337,7 @@ namespace PappyjoeMVC.View
                 {
                     if (diagtext.Text != "")
                     {
-                        this.cntrl.Insert_diagno();
+                        this.cntrl.Insert_diagno(diagtext.Text);
                         DataTable dt3 = this.cntrl.show_diagno();
                         diagnosisgrid.DataSource = dt3;
                         label11.Hide();
@@ -400,7 +365,7 @@ namespace PappyjoeMVC.View
             }
         }
 
-        
+
         private void compsave_Click(object sender, EventArgs e)
         {
             try
@@ -416,7 +381,7 @@ namespace PappyjoeMVC.View
                     {
                         if (comptextbox.Text != "")
                         {
-                            this.cntrl.insert_compl();
+                            this.cntrl.insert_compl(comptextbox.Text);
                             DataTable dt = this.cntrl.show_compl();
                             complaintgrid.DataSource = dt;
                             lad_compAddNew.Hide();
@@ -442,7 +407,7 @@ namespace PappyjoeMVC.View
                     if (comptextbox.Text != "")
                     {
                         int i = 0;
-                        this.cntrl.Update_compl(rowvalue);
+                        this.cntrl.Update_compl(comptextbox.Text,rowvalue);
                         if (i > 0)
                         {
                             DataTable dt = this.cntrl.show_compl();
@@ -479,7 +444,7 @@ namespace PappyjoeMVC.View
                 {
                     if (notetextbox.Text != "")
                     {
-                        this.cntrl.insert_note();
+                        this.cntrl.insert_note(notetextbox.Text);
                         DataTable dt4 = this.cntrl.show_note();
                         notegrid.DataSource = dt4;
                         label14.Hide();
@@ -520,7 +485,7 @@ namespace PappyjoeMVC.View
                 {
                     if (obsertextbox.Text != "")
                     {
-                        this.cntrl.insert_Observ();
+                        this.cntrl.insert_Observ(obsertextbox.Text);
                         DataTable dt1 = this.cntrl.show_observation();
                         observationgrid.DataSource = dt1;
                         label12.Hide();
@@ -1021,7 +986,7 @@ namespace PappyjoeMVC.View
             {
                 if (doctor_id != "1")
                 {
-                    string privid=this.cntrl.userPrivilege_for_ClinicalNotes_Add(doctor_id);
+                    string privid = this.cntrl.userPrivilege_for_ClinicalNotes_Add(doctor_id);
                     if (int.Parse(privid) > 0)
                     {
                         btnSave.Enabled = false;
@@ -1286,7 +1251,7 @@ namespace PappyjoeMVC.View
         private void btnCancel_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Clinical_Findings();
-            Clinical_Findings_controller cn = new Clinical_Findings_controller(form2);
+            //Clinical_Findings_controller cn = new Clinical_Findings_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
@@ -1306,7 +1271,7 @@ namespace PappyjoeMVC.View
                     {
                         int treat = 0;
                         string dt = this.cntrl.Get_DoctorId(Cmb_doctor.Text);
-                        if (dt!="")
+                        if (dt != "")
                         {
                             this.cntrl.insertInto_clinical_findings(patient_id, dt.ToString(), dateTimePicker1.Value.ToString("yyyy-MM-dd"));
                             DataTable treatment = this.cntrl.MaxId_clinic_findings();
@@ -1327,7 +1292,7 @@ namespace PappyjoeMVC.View
                                         if (investigationgrid1[1, i].Value != null)
                                         {
                                             string one = investigationgrid1[1, i].Value.ToString();
-                                            this.cntrl.insrtto_investi(treat,one);
+                                            this.cntrl.insrtto_investi(treat, one);
                                         }
                                     }
                                 }
@@ -1350,7 +1315,7 @@ namespace PappyjoeMVC.View
                                         if (notesgrid1[1, i].Value != null)
                                         {
                                             string one = notesgrid1[1, i].Value.ToString();
-                                            this.cntrl.insrtto_note(treat,one);
+                                            this.cntrl.insrtto_note(treat, one);
                                         }
                                     }
                                 }
@@ -1361,7 +1326,7 @@ namespace PappyjoeMVC.View
                                         if (observationgrid1[1, i].Value != null)
                                         {
                                             string one = observationgrid1[1, i].Value.ToString();
-                                            this.cntrl.insrtto_obser(treat,one);
+                                            this.cntrl.insrtto_obser(treat, one);
                                         }
                                     }
                                 }
@@ -1377,7 +1342,7 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                                 var form2 = new PappyjoeMVC.View.Clinical_Findings();
-                                Clinical_Findings_controller cn = new Clinical_Findings_controller(form2);
+                                //Clinical_Findings_controller cn = new Clinical_Findings_controller(form2);
                                 form2.doctor_id = doctor_id;
                                 form2.patient_id = patient_id;
                                 form2.Closed += (sender1, args) => this.Close();
@@ -1405,7 +1370,7 @@ namespace PappyjoeMVC.View
                          || complaintgrid1.Rows[0].Cells[1].Value != null && complaintgrid1.Rows[0].Cells[1].Value.ToString() != "")
                     {
                         string dt = this.cntrl.Get_DoctorId(Cmb_doctor.Text);
-                        if (dt!= "")
+                        if (dt != "")
                         {
                             this.cntrl.Update_clinical_findings(patient_id, dt.ToString(), clinic_id);
                         }
@@ -1419,46 +1384,46 @@ namespace PappyjoeMVC.View
                         this.cntrl.del_note(clinic_id);
                         this.cntrl.del_obser(clinic_id);
                         this.cntrl.del_chiefComp(clinic_id);
-                        
-                            for (int i = 0; i < investigationgrid1.Rows.Count; i++)
-                            {
-                                if (investigationgrid1[1, i].Value != null)
-                                {
-                                    this.cntrl.Add_investi(clinic_id, investigationgrid1[1, i].Value.ToString());
-                                }
-                            }
-                            for (int i = 0; i < diagnosisgrid1.Rows.Count; i++)
-                            {
 
-                                if (diagnosisgrid1[1, i].Value != null)
-                                {
-                                    this.cntrl.Add_diagno(clinic_id, diagnosisgrid1[1, i].Value.ToString());
-                                }
-                            }
-                            for (int i = 0; i < notesgrid1.Rows.Count; i++)
+                        for (int i = 0; i < investigationgrid1.Rows.Count; i++)
+                        {
+                            if (investigationgrid1[1, i].Value != null)
                             {
-                                if (notesgrid1[1, i].Value != null)
-                                {
-                                    this.cntrl.Add_note(clinic_id, notesgrid1[1, i].Value.ToString());
-                                }
+                                this.cntrl.Add_investi(clinic_id, investigationgrid1[1, i].Value.ToString());
                             }
-                            for (int i = 0; i < observationgrid1.Rows.Count; i++)
+                        }
+                        for (int i = 0; i < diagnosisgrid1.Rows.Count; i++)
+                        {
+
+                            if (diagnosisgrid1[1, i].Value != null)
                             {
-                                if (observationgrid1[1, i].Value != null)
-                                {
-                                    this.cntrl.Add_observ(clinic_id, observationgrid1[1, i].Value.ToString());
-                                }
+                                this.cntrl.Add_diagno(clinic_id, diagnosisgrid1[1, i].Value.ToString());
                             }
-                            for (int i = 0; i < complaintgrid1.Rows.Count; i++)
+                        }
+                        for (int i = 0; i < notesgrid1.Rows.Count; i++)
+                        {
+                            if (notesgrid1[1, i].Value != null)
                             {
-                                if (complaintgrid1[1, i].Value != null)
-                                {
-                                    this.cntrl.Add_cheifComp(clinic_id, complaintgrid1[1, i].Value.ToString());
-                                }
+                                this.cntrl.Add_note(clinic_id, notesgrid1[1, i].Value.ToString());
                             }
-                        
+                        }
+                        for (int i = 0; i < observationgrid1.Rows.Count; i++)
+                        {
+                            if (observationgrid1[1, i].Value != null)
+                            {
+                                this.cntrl.Add_observ(clinic_id, observationgrid1[1, i].Value.ToString());
+                            }
+                        }
+                        for (int i = 0; i < complaintgrid1.Rows.Count; i++)
+                        {
+                            if (complaintgrid1[1, i].Value != null)
+                            {
+                                this.cntrl.Add_cheifComp(clinic_id, complaintgrid1[1, i].Value.ToString());
+                            }
+                        }
+
                         var form2 = new PappyjoeMVC.View.Clinical_Findings();
-                        Clinical_Findings_controller vn = new Clinical_Findings_controller(form2);
+                        //Clinical_Findings_controller vn = new Clinical_Findings_controller(form2);
                         form2.patient_id = patient_id;
                         form2.doctor_id = doctor_id;
                         form2.Closed += (sender1, args) => this.Close();
