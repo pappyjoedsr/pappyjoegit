@@ -10,6 +10,6 @@ namespace PappyjoeMVC.Model
     {
         public static string smsName = "";
         public static string smsPass = "";
-        public static string Version = "Pappyjoe Version 18.4";
+        public static string Version = "Pappyjoe Version 19.5";
     }
 }

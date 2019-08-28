@@ -83,7 +83,6 @@
     <Compile Include="Controller\Appointment_for_each_patient_group_controller.cs" />
     <Compile Include="Controller\Appointment_for_each_patient_group_interface.cs" />
     <Compile Include="Controller\Attachments_controller.cs" />
-    <Compile Include="Controller\Attachments_interface.cs" />
     <Compile Include="Controller\autoid_generation_controller.cs" />
     <Compile Include="Controller\autoid_generation_interface.cs" />
     <Compile Include="Controller\Billing_controller.cs" />
@@ -133,7 +132,6 @@
     <Compile Include="Controller\finishedprocedre_controller.cs" />
     <Compile Include="Controller\finishedprocedure_interface.cs" />
     <Compile Include="Controller\frmimagezoom_controller.cs" />
-    <Compile Include="Controller\frmimagezoom_interface.cs" />
     <Compile Include="Controller\Group_wise_report_controller.cs" />
     <Compile Include="Controller\Group_wise_report_interface.cs" />
     <Compile Include="Controller\invoice_controller.cs" />
@@ -1098,6 +1096,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Print-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

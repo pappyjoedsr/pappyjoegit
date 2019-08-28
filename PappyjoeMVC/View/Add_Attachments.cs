@@ -405,37 +405,37 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                open5.ShowDialog();
+                open6.ShowDialog();
                 string ext = Path.GetExtension(open5.FileName);
                 if (ext.ToLower() == ".jpeg" || ext.ToLower() == ".jpg" || ext.ToLower() == ".gif" || ext.ToLower() == ".png")
                 {
-                    PB_4.Image = Image.FromFile(open5.FileName);
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    pth = open5.FileName;
-                    p5 = 0;
-                    photo = PB_4.Image;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
+                    Pb_5.Image = Image.FromFile(open5.FileName);
+                    Pb_5.BackgroundImageLayout = ImageLayout.Zoom;
+                    pth = open6.FileName;
+                    p6 = 0;
+                    photo = Pb_5.Image;
+                    txt_path5.Text = System.IO.Path.GetFileName(open6.FileName);
                 }
                 else if (ext.ToLower() == ".docx" || ext.ToLower() == ".doc")
                 {
-                    PB_4.Image = PappyjoeMVC.Properties.Resources.word_doc_icon;
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
-                    p5 = 0;
+                    Pb_5.Image = PappyjoeMVC.Properties.Resources.word_doc_icon;
+                    Pb_5.BackgroundImageLayout = ImageLayout.Zoom;
+                    txt_path5.Text = System.IO.Path.GetFileName(open6.FileName);
+                    p6 = 0;
                 }
                 else if (ext.ToLower() == ".xls" || ext.ToLower() == ".xlsx")
                 {
-                    PB_4.Image = PappyjoeMVC.Properties.Resources.excel_doc_icon;
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
-                    p5 = 0;
+                    Pb_5.Image = PappyjoeMVC.Properties.Resources.excel_doc_icon;
+                    Pb_5.BackgroundImageLayout = ImageLayout.Zoom;
+                    txt_path5.Text = System.IO.Path.GetFileName(open6.FileName);
+                    p6 = 0;
                 }
                 else if (ext.ToLower() == ".pdf")
                 {
-                    PB_4.Image = PappyjoeMVC.Properties.Resources.pdf;
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
-                    p5 = 0;
+                    Pb_5.Image = PappyjoeMVC.Properties.Resources.pdf;
+                    Pb_5.BackgroundImageLayout = ImageLayout.Zoom;
+                    txt_path5.Text = System.IO.Path.GetFileName(open6.FileName);
+                    p6 = 0;
                 }
             }
             catch(Exception ex)
@@ -445,37 +445,37 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                open5.ShowDialog();
-                string ext = Path.GetExtension(open5.FileName);
+                open7.ShowDialog();
+                string ext = Path.GetExtension(open6.FileName);
                 if (ext.ToLower() == ".jpeg" || ext.ToLower() == ".jpg" || ext.ToLower() == ".gif" || ext.ToLower() == ".png")
                 {
-                    PB_4.Image = Image.FromFile(open5.FileName);
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    pth = open5.FileName;
-                    p5 = 0;
-                    photo = PB_4.Image;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
+                    PB_6.Image = Image.FromFile(open7.FileName);
+                    PB_6.BackgroundImageLayout = ImageLayout.Zoom;
+                    pth = open7.FileName;
+                    p7 = 0;
+                    photo = PB_6.Image;
+                    txt_path6.Text = System.IO.Path.GetFileName(open7.FileName);
                 }
                 else if (ext.ToLower() == ".docx" || ext.ToLower() == ".doc")
                 {
-                    PB_4.Image = PappyjoeMVC.Properties.Resources.word_doc_icon;
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
-                    p5 = 0;
+                    PB_6.Image = PappyjoeMVC.Properties.Resources.word_doc_icon;
+                    PB_6.BackgroundImageLayout = ImageLayout.Zoom;
+                    txt_path6.Text = System.IO.Path.GetFileName(open7.FileName);
+                    p7 = 0;
                 }
                 else if (ext.ToLower() == ".xls" || ext.ToLower() == ".xlsx")
                 {
-                    PB_4.Image = PappyjoeMVC.Properties.Resources.excel_doc_icon;
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
-                    p5 = 0;
+                    PB_6.Image = PappyjoeMVC.Properties.Resources.excel_doc_icon;
+                    PB_6.BackgroundImageLayout = ImageLayout.Zoom;
+                    txt_path6.Text = System.IO.Path.GetFileName(open7.FileName);
+                    p7 = 0;
                 }
                 else if (ext.ToLower() == ".pdf")
                 {
-                    PB_4.Image = PappyjoeMVC.Properties.Resources.pdf;
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
-                    p5 = 0;
+                    PB_6.Image = PappyjoeMVC.Properties.Resources.pdf;
+                    PB_6.BackgroundImageLayout = ImageLayout.Zoom;
+                    txt_path6.Text = System.IO.Path.GetFileName(open7.FileName);
+                    p7 = 0;
                 }
             }
             catch(Exception ex)
@@ -485,37 +485,37 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                open5.ShowDialog();
-                string ext = Path.GetExtension(open5.FileName);
+                open8.ShowDialog();
+                string ext = Path.GetExtension(open8.FileName);
                 if (ext.ToLower() == ".jpeg" || ext.ToLower() == ".jpg" || ext.ToLower() == ".gif" || ext.ToLower() == ".png")
                 {
-                    PB_4.Image = Image.FromFile(open5.FileName);
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    pth = open5.FileName;
-                    p5 = 0;
-                    photo = PB_4.Image;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
+                    PB_7.Image = Image.FromFile(open8.FileName);
+                    PB_7.BackgroundImageLayout = ImageLayout.Zoom;
+                    pth = open8.FileName;
+                    p8 = 0;
+                    photo = PB_7.Image;
+                    txt_path7.Text = System.IO.Path.GetFileName(open8.FileName);
                 }
                 else if (ext.ToLower() == ".docx" || ext.ToLower() == ".doc")
                 {
-                    PB_4.Image = PappyjoeMVC.Properties.Resources.word_doc_icon;
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
-                    p5 = 0;
+                    PB_7.Image = PappyjoeMVC.Properties.Resources.word_doc_icon;
+                    PB_7.BackgroundImageLayout = ImageLayout.Zoom;
+                    txt_path7.Text = System.IO.Path.GetFileName(open8.FileName);
+                    p8 = 0;
                 }
                 else if (ext.ToLower() == ".xls" || ext.ToLower() == ".xlsx")
                 {
-                    PB_4.Image = PappyjoeMVC.Properties.Resources.excel_doc_icon;
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
-                    p5 = 0;
+                    PB_7.Image = PappyjoeMVC.Properties.Resources.excel_doc_icon;
+                    PB_7.BackgroundImageLayout = ImageLayout.Zoom;
+                    txt_path7.Text = System.IO.Path.GetFileName(open8.FileName);
+                    p8 = 0;
                 }
                 else if (ext.ToLower() == ".pdf")
                 {
-                    PB_4.Image = PappyjoeMVC.Properties.Resources.pdf;
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
-                    p5 = 0;
+                    PB_7.Image = PappyjoeMVC.Properties.Resources.pdf;
+                    PB_7.BackgroundImageLayout = ImageLayout.Zoom;
+                    txt_path7.Text = System.IO.Path.GetFileName(open8.FileName);
+                    p8 = 0;
                 }
             }
             catch(Exception ex)
@@ -525,37 +525,37 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                open5.ShowDialog();
-                string ext = Path.GetExtension(open5.FileName);
+                open9.ShowDialog();
+                string ext = Path.GetExtension(open9.FileName);
                 if (ext.ToLower() == ".jpeg" || ext.ToLower() == ".jpg" || ext.ToLower() == ".gif" || ext.ToLower() == ".png")
                 {
-                    PB_4.Image = Image.FromFile(open5.FileName);
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    pth = open5.FileName;
-                    p5 = 0;
-                    photo = PB_4.Image;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
+                    PB_8.Image = Image.FromFile(open9.FileName);
+                    PB_8.BackgroundImageLayout = ImageLayout.Zoom;
+                    pth = open9.FileName;
+                    p9 = 0;
+                    photo = PB_8.Image;
+                    txt_path8.Text = System.IO.Path.GetFileName(open9.FileName);
                 }
                 else if (ext.ToLower() == ".docx" || ext.ToLower() == ".doc")
                 {
-                    PB_4.Image = PappyjoeMVC.Properties.Resources.word_doc_icon;
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
-                    p5 = 0;
+                    PB_8.Image = PappyjoeMVC.Properties.Resources.word_doc_icon;
+                    PB_8.BackgroundImageLayout = ImageLayout.Zoom;
+                    txt_path8.Text = System.IO.Path.GetFileName(open9.FileName);
+                    p9 = 0;
                 }
                 else if (ext.ToLower() == ".xls" || ext.ToLower() == ".xlsx")
                 {
-                    PB_4.Image = PappyjoeMVC.Properties.Resources.excel_doc_icon;
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
-                    p5 = 0;
+                    PB_8.Image = PappyjoeMVC.Properties.Resources.excel_doc_icon;
+                    PB_8.BackgroundImageLayout = ImageLayout.Zoom;
+                    txt_path8.Text = System.IO.Path.GetFileName(open9.FileName);
+                    p9 = 0;
                 }
                 else if (ext.ToLower() == ".pdf")
                 {
-                    PB_4.Image = PappyjoeMVC.Properties.Resources.pdf;
-                    PB_4.BackgroundImageLayout = ImageLayout.Zoom;
-                    txt_path4.Text = System.IO.Path.GetFileName(open5.FileName);
-                    p5 = 0;
+                    PB_8.Image = PappyjoeMVC.Properties.Resources.pdf;
+                    PB_8.BackgroundImageLayout = ImageLayout.Zoom;
+                    txt_path8.Text = System.IO.Path.GetFileName(open9.FileName);
+                    p9 = 0;
                 }
             }
             catch(Exception ex)
@@ -618,11 +618,11 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
-            //var form2 = new Reports();
-            //form2.doctor_id = doctor_id;
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
-            //form2.ShowDialog();
+            var form2 = new Reports();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
         private void toolStripButton11_Click(object sender, EventArgs e)
         {
@@ -632,17 +632,6 @@ namespace PappyjoeMVC.View
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
-        }
-        private void toolStripButton7_Click(object sender, EventArgs e)
-        {
-            if (PappyjoeMVC.Model.Connection.MyGlobals.loginType != "staff")
-            {
-                var form2 = new Doctor_Profile();
-                form2.doctor_id = doctor_id;
-                form2.Closed += (sender1, args) => this.Close();
-                this.Hide();
-                form2.ShowDialog();
-            }
         }
         private void toolStripButton12_Click(object sender, EventArgs e)
         {
@@ -739,6 +728,17 @@ namespace PappyjoeMVC.View
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            if (PappyjoeMVC.Model.Connection.MyGlobals.loginType != "staff")
+            {
+                var form2 = new Doctor_Profile();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
+        }
         private void btn_Delete2_Click(object sender, EventArgs e)
         {
             Pb_2.Image = PappyjoeMVC.Properties.Resources.upload;
@@ -794,10 +794,12 @@ namespace PappyjoeMVC.View
         }
         private void btn_Close_Click(object sender, EventArgs e)
         {
-            Attachments frm = new Attachments();
-            frm.doctor_id = doctor_id;
-            frm.patient_id = patient_id;
-            frm.ShowDialog(this);
+            var form2 = new Attachments();
+            form2.patient_id = patient_id;
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
         private void btn_Save_Click(object sender, EventArgs e)
         {

@@ -94,7 +94,6 @@ namespace PappyjoeMVC.Model
             }
             return i;
         }
-
         public string scalar(string s)
         {
             string r = "";
@@ -105,7 +104,7 @@ namespace PappyjoeMVC.Model
                 r = cmd.ExecuteScalar().ToString();
                 this.CloseConnection();
             }
-            catch { r = "0"; }
+            catch {r = "0"; }
             con.Close();
             return r;
         }

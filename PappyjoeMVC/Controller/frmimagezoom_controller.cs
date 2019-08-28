@@ -10,18 +10,17 @@ namespace PappyjoeMVC.Controller
 {
     public class frmimagezoom_controller
     {
-
-        frmimagezoom_interface intr;
+        Connection db = new Connection();
         Attachments_model mdl = new Attachments_model();
-        public frmimagezoom_controller(frmimagezoom_interface inttr)
+        public string getserver()
         {
-            intr = inttr;
-            intr.setController(this);
+            string server = db.server();
+            return server;
         }
-        public void attach(int atid)
+        public DataTable attach(int attachid)
         {
-            DataTable dt = mdl.attach(atid);
-            intr.attach(dt);
+            DataTable dt = mdl.attach(attachid);
+            return dt;
         }
     }
 }
