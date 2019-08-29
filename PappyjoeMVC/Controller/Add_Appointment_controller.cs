@@ -10,99 +10,93 @@ namespace PappyjoeMVC.Controller
 {
     public class Add_Appointment_controller
     {
-        Add_Appointment_interface intr;
-        Add_Appointment_model mdl = new Add_Appointment_model();
-        common_model cmdl = new common_model();
         sms_model s = new sms_model();
-        public Add_Appointment_controller(Add_Appointment_interface inttr)
-        {
-            intr = inttr;
-            intr.setController(this);
-        }
-        public void smsreminder()
+        common_model cmdl = new common_model();
+        Add_Appointment_model mdl = new Add_Appointment_model();
+        public DataTable smsreminder()
         {
            DataTable dt = mdl.smsreminder();
-           intr.smsreminder(dt);
+           return dt;
         }
-        public void smsdetails()
+        public DataTable smsdetails()
         {
             DataTable dt = mdl.smsdetails();
-            intr.smsdetails(dt);
+            return dt;
         }
         public string SendSMS(string User, string password, string Mobile_Number, string Message)
         {
             string val = s.SendSMS(User, password, Mobile_Number, Message);
             return val;
         }
-        public string SendSMS2(string User, string password, string Mobile_Number, string Message, string SID, string Sname, string scheduledDate, string systemdate)
+        public string SendSMS(string User, string password, string Mobile_Number, string Message, string SID, string Sname, string scheduledDate, string systemdate)
         {
             string val = s.SendSMS(User, password, Mobile_Number, Message, SID, Sname, scheduledDate, systemdate);
             return val;
         }
-        public void Get_Patient_Details(string patntid)
+        public DataTable Get_Patient_Details(string patntid)
         {
             DataTable dt = cmdl.Get_Patient_Details(patntid);
-            intr.Get_Patient_Details(dt);
+            return dt;
         }
-        public void send_email()
+        public DataTable send_email()
         {
             DataTable dt = cmdl.send_email();
-            intr.send_email(dt);
+            return dt;
         }
-        public void Get_Practice_details()
+        public DataTable Get_Practice_details()
         {
             DataTable dt = cmdl.Get_Practice_details();
-            intr.Get_Practice_details(dt);
+            return dt; ;
         }
-        public void Get_DoctorName(string id)
+        public string Get_DoctorName(string id)
         {
             string e = cmdl.Get_DoctorName(id);
-            intr.Get_DoctorName(e);
+            return e;
         }
-        public void get_all_doctorname()
+        public DataTable get_all_doctorname()
         {
             DataTable dt = cmdl.get_all_doctorname();
-            intr.get_all_doctorname(dt);
+            return dt;
         }
-        public void get_All_procedure()
+        public DataTable get_All_procedure()
         {
             DataTable dt = mdl.get_All_procedure();
-            intr.get_All_procedure(dt);
+            return dt;
         }
-        public void getdoctrname(string id)
+        public string getdoctrname(string id)
         {
-            DataTable dt = mdl.getdoctrname(id);
-            intr.getdoctrname(dt);
+            string t = mdl.getdoctrname(id);
+            return t;
         }
-        public void dt_appointment(string appointmntid)
+        public DataTable dt_appointment(string appointmntid)
         {
             DataTable dt = mdl.dt_appointment(appointmntid);
-            intr.dt_appointment(dt);
+            return dt;
         }
-        public void getpatdetails(string patid)
+        public DataTable getpatdetails(string patid)
         {
             DataTable dt = mdl.getpatdetails(patid);
-            intr.getpatdetails(dt);
+            return dt;
         }
-        public void getappointment(string doctrid)
+        public DataTable getappointment(string doctrid)
         {
             DataTable dt = mdl.getappointment(doctrid);
-            intr.getappointment(dt);
+            return dt;
         }
-        public void Patient_search(string txtbox)
+        public DataTable Patient_search(string txtbox)
         {
             DataTable dt = cmdl.Patient_search(txtbox);
-            intr.Patient_search(dt);
+            return dt;
         }
-        public void doctr_privillage_for_addnewPatient(string doctor_id)
+        public string doctr_privillage_for_addnewPatient(string doctor_id)
         {
             string e = cmdl.doctr_privillage_for_addnewPatient(doctor_id);
-            intr.doctr_privillage_for_addnewPatient(e);
+            return e; ;
         }
-        public void settingsprivilage(string doctrid)
+        public string settingsprivilage(string doctrid)
         {
             string b = mdl.settingsprivilage(doctrid);
-            intr.settingsprivilage(b);
+            return b;
         }
         public int inssms(string pt_id, string send_datetime, string message)
         {

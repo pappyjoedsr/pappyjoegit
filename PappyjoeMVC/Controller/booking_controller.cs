@@ -40,9 +40,9 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = addmodel.get_All_procedure();
             return dtb;
         }
-        public DataTable getdocid(string d)
+        public string getdocid(string d)
         {
-            DataTable dtb = addmodel.getdoctrname(d);
+            string dtb = addmodel.getdoctrname(d);
             return dtb;
         }
         public DataTable search_patient(string search)
