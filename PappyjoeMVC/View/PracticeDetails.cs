@@ -443,7 +443,7 @@ namespace PappyjoeMVC.View
             contct.TopLevel = false;
             panel_main.Controls.Add(contct);
             contct.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            contact_controller controller = new contact_controller(contct);
+            //contact_controller controller = new contact_controller(contct);
             contct.Show();
         }
 
@@ -494,7 +494,7 @@ namespace PappyjoeMVC.View
             prescription.TopLevel = false;
             panel_main.Controls.Add(prescription);
             prescription.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            prescription_setting_controller controller = new prescription_setting_controller(prescription);
+            //prescription_setting_controller controller = new prescription_setting_controller(prescription);
             prescription.Show();
         }
 
@@ -507,7 +507,7 @@ namespace PappyjoeMVC.View
             medical.TopLevel = false;
             panel_main.Controls.Add(medical);
             medical.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            medical_history_controller controller = new medical_history_controller(medical);
+            //medical_history_controller controller = new medical_history_controller(medical);
             medical.Show();
         }
 
@@ -520,7 +520,7 @@ namespace PappyjoeMVC.View
             atuoid.TopLevel = false;
             panel_main.Controls.Add(atuoid);
             atuoid.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            autoid_generation_controller controller = new autoid_generation_controller(atuoid);
+            //autoid_generation_controller controller = new autoid_generation_controller(atuoid);
             atuoid.Show();
         }
 
@@ -533,7 +533,6 @@ namespace PappyjoeMVC.View
             print.TopLevel = false;
             panel_main.Controls.Add(print);
             print.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            printout_controller controller = new printout_controller(print);
             print.Show();
         }
 
@@ -558,7 +557,6 @@ namespace PappyjoeMVC.View
             catalog.TopLevel = false;
             panel_main.Controls.Add(catalog);
             catalog.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //procedure_catalog_controller controller = new procedure_catalog_controller(catalog);
             catalog.Show();
         }
 

@@ -26,7 +26,7 @@ namespace PappyjoeMVC.View
         private void Lnk_AddNewCrdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var form2 = new New_CreditAccount();
-            NewCreditAccount_controller ctrl = new NewCreditAccount_controller(form2);
+            //NewCreditAccount_controller ctrl = new NewCreditAccount_controller(form2);
             form2.ShowDialog();
         }
         public void btn_normal()
@@ -267,7 +267,7 @@ namespace PappyjoeMVC.View
         private void Lnk_AddNew_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var form2 = new New_DebitAccount();
-            NewDebitAccount_controller ctrl = new NewDebitAccount_controller(form2);
+            //NewDebitAccount_controller ctrl = new NewDebitAccount_controller(form2);
             form2.ShowDialog();
         }
 
@@ -413,10 +413,10 @@ namespace PappyjoeMVC.View
             }
             grp_Debit.Height = 636;
             grp_Debit.Width = 1070;
-            grp_Debit.Location = new Point(6, 10);
-            Dgv_Debit.Location = new Point(8, 265);
-            grpb_Credit.Location = new Point(6, 10);
-            dgv_credit.Location = new Point(8, 265);
+            grp_Debit.Location = new Point(6,10);
+            Dgv_Debit.Location = new Point(8,265);
+            grpb_Credit.Location = new Point(6,10);
+            dgv_credit.Location = new Point(8,265);
         }
         public void pageloadhide()
         {

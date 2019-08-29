@@ -24,7 +24,7 @@ namespace PappyjoeMVC.View
         public Show_Appointment()
         {
             InitializeComponent();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       }
+        }
         public void setController(Show_Appointment_controller controller)
         {
             ctrlr = controller;

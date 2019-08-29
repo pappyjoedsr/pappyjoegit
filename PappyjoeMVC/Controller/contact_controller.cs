@@ -11,30 +11,20 @@ namespace PappyjoeMVC.Controller
 {
    public  class contact_controller
     {
-        Connection db = new Connection();
         contact_model mdl = new contact_model();
-        contact_interface intr;
-        public contact_controller(contact_interface inttr)
+        public int Save(string Contact_Name)
         {
-            intr = inttr;
-            intr.SetController(this);
-        }
-       
-        public int Save()
-        {
-            mdl.ContactName = intr.Contact_Name;
-            int i = mdl.Save_data();
+            int i = mdl.Save_data(Contact_Name);
             return i;
         }
-        public void FillGrid()
+        public DataTable FillGrid()
         {
             DataTable dtb = mdl.FillGrid();
-            intr.Fill_ContactGrid(dtb);
+            return dtb;
         }
-        public int Update(string id)
+        public int Update(string id, string Contact_Name)
         {
-            mdl.ContactName = intr.Contact_Name;
-            int i = mdl.Update_data(id);
+            int i = mdl.Update_data(id, Contact_Name);
             return i;
         }
         public int Delete_data(string id)
@@ -42,10 +32,10 @@ namespace PappyjoeMVC.Controller
             int i = mdl.Delete_data(id);
             return i;
         }
-        public void search(string name)
+        public DataTable search(string name)
         {
             DataTable dtb = mdl.search(name);
-            intr.Fill_ContactGrid(dtb);
+            return dtb;
         }
     }
 }

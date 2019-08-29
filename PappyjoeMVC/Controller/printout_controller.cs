@@ -9,173 +9,55 @@ namespace PappyjoeMVC.Controller
 {
   public  class printout_controller
     {
-        printout_interface intr;
+       
         printout_model mdl =new printout_model();
         common_model cmdl = new common_model();
-        public printout_controller(printout_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
+       
         public DataTable Get_practice_details()
         {
-            DataTable dt = new DataTable();
-            try
-            {
-                dt= mdl.Get_practice_details();
-               
-            }
-            catch(Exception ex)
-            {
-
-            }
+            DataTable dt= mdl.Get_practice_details();
             return dt;
         }
-        public void get_prescription_printdetails()
+        public DataTable get_prescription_printdetails()
         {
             DataTable dt = mdl.get_prescription_printdetails();
-            intr.Load_prescription_printdetails(dt);
+            return dt;
         }
         public DataTable Get_prescription_id()
         {
             DataTable dt = mdl.get_prescription_printdetails();
             return dt;
         }
-        public int save(string orientation, string color, string includeheader, string includelogo, string logotype, string patientdetails , string medhistory , string patientno , string address , string phone, string email , string bloodgroup , string genderdob, string Doctor)
+        public int save(string _size, string _orintation, string _color, string _topmargine, string _left_margine, string _bottommargin, string _rightmargin, string includeheader, string header, string _lefttext, string _righttext, string includelogo, string logotype, string patientdetails, string medhistory, string patientno, string address, string phone, string email, string bloodgroup, string genderdob, string _footer_top, string _header_top, string _leftsign, string _rightsign, string Doctor)
         {
-            mdl.PaperSize = intr.PaperSize;
-            mdl.TopMargine = intr.TopMargine;
-            mdl.LeftMargine = intr.LeftMargine;
-            mdl.Bottommargin = intr.Bottommargin;
-            mdl.RightMargin = intr.RightMargin;
-            mdl.orintation = orientation;
-            mdl.color = color;
-            mdl.includeheader = includeheader;
-            mdl.header = intr.header;
-            mdl.LeftText = intr.LeftText;
-            mdl.Righttext = intr.Righttext;
-            mdl.includelogo = includelogo;
-            mdl.logotype = logotype;
-            mdl.patientdetails = patientdetails;
-            mdl.medhistory = medhistory;
-            mdl.patientno = patientno;
-            mdl.address = address;
-            mdl.phone = phone;
-            mdl.email = email;
-            mdl.bloodgroup = bloodgroup;
-            mdl.genderdob = genderdob;
-            mdl.FooterTop = intr.FooterTop;
-            mdl.header_top = intr.header_top;
-            mdl.LeftSign = intr.LeftSign;
-            mdl.Rightsign = intr.Rightsign;
-            mdl.Doctor = Doctor;
-            int i = mdl.save_data();
+            int i = mdl.save_data( _size,  _orintation,  _color,  _topmargine,  _left_margine,  _bottommargin,  _rightmargin,  includeheader,  header,  _lefttext,  _righttext,  includelogo,  logotype,  patientdetails,  medhistory,  patientno,  address,  phone,  email,  bloodgroup,  genderdob,  _footer_top,  _header_top,  _leftsign,  _rightsign,  Doctor);
             return i;
         }
        
-     public int Update(string orientation, string color, string includeheader, string includelogo, string logotype, string patientdetails, string medhistory, string patientno, string address, string phone, string email, string bloodgroup, string genderdob, string Doctor)
+     public int Update(string _size, string _orintation, string _color, string _topmargine, string _left_margine, string _bottommargin, string _rightmargin, string includeheader, string header, string _lefttext, string _righttext, string includelogo, string logotype, string patientdetails, string medhistory, string patientno, string address, string phone, string email, string bloodgroup, string genderdob, string _footer_top, string _header_top, string _leftsign, string _rightsign, string Doctor)
         {
-            mdl.PaperSize = intr.PaperSize;
-            mdl.TopMargine = intr.TopMargine;
-            mdl.LeftMargine = intr.LeftMargine;
-            mdl.Bottommargin = intr.Bottommargin;
-            mdl.RightMargin = intr.RightMargin;
-            mdl.orintation = orientation;
-            mdl.color = color;
-            mdl.includeheader = includeheader;
-            mdl.header = intr.header;
-            mdl.LeftText = intr.LeftText;
-            mdl.Righttext = intr.Righttext;
-            mdl.includelogo = includelogo;
-            mdl.logotype = logotype;
-            mdl.patientdetails = patientdetails;
-            mdl.medhistory = medhistory;
-            mdl.patientno = patientno;
-            mdl.address = address;
-            mdl.phone = phone;
-            mdl.email = email;
-            mdl.bloodgroup = bloodgroup;
-            mdl.genderdob = genderdob;
-            mdl.FooterTop = intr.FooterTop;
-            mdl.header_top = intr.header_top;
-            mdl.LeftSign = intr.LeftSign;
-            mdl.Rightsign = intr.Rightsign;
-            mdl.Doctor = Doctor;
-            int i = mdl.Update();
+            int i = mdl.Update(_size, _orintation, _color, _topmargine, _left_margine, _bottommargin, _rightmargin, includeheader, header, _lefttext, _righttext, includelogo, logotype, patientdetails, medhistory, patientno, address, phone, email, bloodgroup, genderdob, _footer_top, _header_top, _leftsign, _rightsign, Doctor);
             return i;
         }
-
         //invoice
-        public void invoice_printdetails()
+        public DataTable invoice_printdetails()
         {
             DataTable dtb = mdl.invoice_printdetails();
-            intr.load_invoicePrint_details(dtb);
+            return dtb;
         }
         public string  get_invoiceprintCount()
         {
             string c = mdl.get_invoiceprintCount();
             return c;
         }
-       public int save_invoice(string orientation, string color, string includeheader, string includelogo, string logotype, string patientdetails, string medhistory, string patientno, string address, string phone, string email, string bloodgroup, string genderdob,string Doctor)
+       public int save_invoice(string _size1, string _orintation1, string _color1, string _topmargine1, string _left_margine1, string _bottommargin1, string _rightmargin1, string includeheader1, string header1, string _lefttext1, string _righttext1, string includelogo1, string logotype1, string patientdetails1, string medhistory1, string patientno1, string address1, string phone1, string email1, string bloodgroup1, string genderdob1, string _footer_top1, string _header_top1, string _leftsign1, string _rightsign1, string _doctor1)
         {
-            mdl.PaperSize1 = intr.PaperSize1;
-            mdl.TopMargine1 = intr.TopMargine1;
-            mdl.LeftMargine1 = intr.LeftMargine1;
-            mdl.Bottommargin1 = intr.Bottommargin1;
-            mdl.RightMargin1 = intr.RightMargin1;
-            mdl.orintation1 = orientation;
-            mdl.color1 = color;
-            mdl.includeheader1 = includeheader;
-            mdl.header1 = intr.header1;
-            mdl.LeftText1 = intr.LeftText1;
-            mdl.Righttext1 = intr.Righttext1;
-            mdl.includelogo1 = includelogo;
-            mdl.logotype1 = logotype;
-            mdl.patientdetails1 = patientdetails;
-            mdl.medhistory1 = medhistory;
-            mdl.patientno1 = patientno;
-            mdl.address1 = address;
-            mdl.phone1 = phone; 
-            mdl.email1 = email;
-            mdl.bloodgroup1 = bloodgroup;
-            mdl.genderdob1 = genderdob;
-            mdl.FooterTop1 = intr.FooterTop1;
-            mdl.header_top1 = intr.header_top1;
-            mdl.LeftSign1 = intr.LeftSign1;
-            mdl.Rightsign1 = intr.Rightsign1;
-            mdl.Doctor1 = Doctor;
-            int i = mdl.save_invoice();
+            int i = mdl.save_invoice( _size1,  _orintation1,  _color1,  _topmargine1,  _left_margine1,  _bottommargin1,  _rightmargin1,  includeheader1,  header1,  _lefttext1,  _righttext1,  includelogo1,  logotype1,  patientdetails1,  medhistory1,  patientno1,  address1,  phone1,  email1,  bloodgroup1,  genderdob1,  _footer_top1,  _header_top1,  _leftsign1,  _rightsign1,  _doctor1);
             return i;
         }
-        public int update_invoicePrint(string orientation, string color, string includeheader, string includelogo, string logotype, string patientdetails, string medhistory, string patientno, string address, string phone, string email, string bloodgroup, string genderdob,string Doctor)
+        public int update_invoicePrint(string _size1, string _orintation1, string _color1, string _topmargine1, string _left_margine1, string _bottommargin1, string _rightmargin1, string includeheader1, string header1, string _lefttext1, string _righttext1, string includelogo1, string logotype1, string patientdetails1, string medhistory1, string patientno1, string address1, string phone1, string email1, string bloodgroup1, string genderdob1, string _footer_top1, string _header_top1, string _leftsign1, string _rightsign1, string _doctor1)
         {
-            mdl.PaperSize1 = intr.PaperSize1;
-            mdl.TopMargine1 = intr.TopMargine1;
-            mdl.LeftMargine1 = intr.LeftMargine1;
-            mdl.Bottommargin1 = intr.Bottommargin1;
-            mdl.RightMargin1 = intr.RightMargin1;
-            mdl.orintation1 = orientation;
-            mdl.color1 = color;
-            mdl.includeheader1 = includeheader;
-            mdl.header1 = intr.header1;
-            mdl.LeftText1 = intr.LeftText1;
-            mdl.Righttext1 = intr.Righttext1;
-            mdl.includelogo1 = includelogo;
-            mdl.logotype1 = logotype;
-            mdl.patientdetails1 = patientdetails;
-            mdl.medhistory1 = medhistory;
-            mdl.patientno1 = patientno;
-            mdl.address1 = address;
-            mdl.phone1 = phone;
-            mdl.email1 = email;
-            mdl.bloodgroup1 = bloodgroup;
-            mdl.genderdob1 = genderdob;
-            mdl.FooterTop1 = intr.FooterTop1;
-            mdl.header_top1 = intr.header_top1;
-            mdl.LeftSign1 = intr.LeftSign1;
-            mdl.Rightsign1 = intr.Rightsign1;
-            mdl.Doctor1 = Doctor;
-            int i = mdl.update_invoicePrint();
+            int i = mdl.update_invoicePrint(_size1, _orintation1, _color1, _topmargine1, _left_margine1, _bottommargin1, _rightmargin1, includeheader1, header1, _lefttext1, _righttext1, includelogo1, logotype1, patientdetails1, medhistory1, patientno1, address1, phone1, email1, bloodgroup1, genderdob1, _footer_top1, _header_top1, _leftsign1, _rightsign1, _doctor1);
             return i;
         }
         public DataTable Get_companydetails()
@@ -184,75 +66,23 @@ namespace PappyjoeMVC.Controller
             return dtb;
         }
         //receipt
-        public void load_receipt_print()
+        public DataTable load_receipt_print()
         {
             DataTable dtb = mdl.load_receipt_print();
-            intr.Load_ReceiptPrint(dtb);
+            return dtb;
         }
         public string get_receiptprintCount()
         {
             string c = mdl.get_receiptprintCount();
             return c;
         }
-        public void save_receipt(string orientation, string color, string includeheader, string includelogo, string logotype, string patientdetails, string medhistory, string patientno, string address, string phone, string email, string bloodgroup, string genderdob,string Doctor)
+        public void save_receipt(string _size2, string _orintation2, string _color2, string _topmargine2, string _left_margine2, string _bottommargin2, string _rightmargin2, string _includeheader2, string _header2, string _lefttext2, string _righttext2, string _includelogo2, string _logotype2, string _patientdetails2, string _medhistory2, string _patientno2, string _address2, string _phone2, string _email2, string _bloodgroup2, string _genderdob2, string _footer_top2, string _header_top2, string _leftsign2, string _rightsign2, string _doctor2)
         {
-            mdl.PaperSize2 = intr.PaperSize2;
-            mdl.TopMargine2 = intr.TopMargine2;
-            mdl.LeftMargine2 = intr.LeftMargine2;
-            mdl.Bottommargin2 = intr.Bottommargin2;
-            mdl.RightMargin2 = intr.RightMargin2;
-            mdl.orintation2 = orientation;
-            mdl.color2 = color;
-            mdl.includeheader2 = includeheader;
-            mdl.header2 = intr.header2;
-            mdl.LeftText2 = intr.LeftText2;
-            mdl.Righttext2 = intr.Righttext2;
-            mdl.includelogo2 = includelogo;
-            mdl.logotype2 = logotype;
-            mdl.patientdetails2 = patientdetails;
-            mdl.medhistory2 = medhistory;
-            mdl.patientno2 = patientno;
-            mdl.address2 = address;
-            mdl.phone2 = phone;
-            mdl.email2 = email;
-            mdl.bloodgroup2 = bloodgroup;
-            mdl.genderdob2 = genderdob;
-            mdl.FooterTop2 = intr.FooterTop2;
-            mdl.header_top2 = intr.header_top2;
-            mdl.LeftSign2 = intr.LeftSign2;
-            mdl.Rightsign2 = intr.Rightsign2;
-            mdl.Doctor2 = Doctor;
-            mdl.save_receipt();
+            mdl.save_receipt( _size2,  _orintation2,  _color2,  _topmargine2,  _left_margine2,  _bottommargin2,  _rightmargin2,  _includeheader2,  _header2,  _lefttext2,  _righttext2,  _includelogo2,  _logotype2,  _patientdetails2,  _medhistory2,  _patientno2,  _address2,  _phone2,  _email2,  _bloodgroup2,  _genderdob2,  _footer_top2,  _header_top2,  _leftsign2,  _rightsign2,  _doctor2);
         }
-        public void update_receipt(string orientation, string color, string includeheader, string includelogo, string logotype, string patientdetails, string medhistory, string patientno, string address, string phone, string email, string bloodgroup, string genderdob,string Doctor)
+        public void update_receipt(string _size2, string _orintation2, string _color2, string _topmargine2, string _left_margine2, string _bottommargin2, string _rightmargin2, string _includeheader2, string _header2, string _lefttext2, string _righttext2, string _includelogo2, string _logotype2, string _patientdetails2, string _medhistory2, string _patientno2, string _address2, string _phone2, string _email2, string _bloodgroup2, string _genderdob2, string _footer_top2, string _header_top2, string _leftsign2, string _rightsign2, string _doctor2)
         {
-            mdl.PaperSize2 = intr.PaperSize2;
-            mdl.TopMargine2 = intr.TopMargine2;
-            mdl.LeftMargine2 = intr.LeftMargine2;
-            mdl.Bottommargin2 = intr.Bottommargin2;
-            mdl.RightMargin2 = intr.RightMargin2;
-            mdl.orintation2 = orientation;
-            mdl.color2 = color;
-            mdl.includeheader2 = includeheader;
-            mdl.header2 = intr.header2;
-            mdl.LeftText2 = intr.LeftText2;
-            mdl.Righttext2 = intr.Righttext2;
-            mdl.includelogo2 = includelogo;
-            mdl.logotype2 = logotype;
-            mdl.patientdetails2 = patientdetails;
-            mdl.medhistory2 = medhistory;
-            mdl.patientno2 = patientno;
-            mdl.address2 = address;
-            mdl.phone2 = phone;
-            mdl.email2 = email;
-            mdl.bloodgroup2 = bloodgroup;
-            mdl.genderdob2 = genderdob;
-            mdl.FooterTop2 = intr.FooterTop2;
-            mdl.header_top2 = intr.header_top2;
-            mdl.LeftSign2 = intr.LeftSign2;
-            mdl.Rightsign2 = intr.Rightsign2;
-            mdl.Doctor2 = Doctor;
-            mdl.update_receipt();
+            mdl.update_receipt(_size2, _orintation2, _color2, _topmargine2, _left_margine2, _bottommargin2, _rightmargin2, _includeheader2, _header2, _lefttext2, _righttext2, _includelogo2, _logotype2, _patientdetails2, _medhistory2, _patientno2, _address2, _phone2, _email2, _bloodgroup2, _genderdob2, _footer_top2, _header_top2, _leftsign2, _rightsign2, _doctor2);
         }
     }
 }
