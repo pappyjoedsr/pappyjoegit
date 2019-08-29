@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Show_Appointment));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labl_Lab = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
@@ -92,6 +92,7 @@
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextDoctor = new System.Windows.Forms.ToolStripTextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -123,7 +124,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 97);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(184, 619);
+            this.panel1.Size = new System.Drawing.Size(173, 619);
             this.panel1.TabIndex = 262;
             // 
             // labl_Lab
@@ -139,6 +140,7 @@
             this.labl_Lab.TabIndex = 68;
             this.labl_Lab.Text = "Lab";
             this.labl_Lab.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labl_Lab.Click += new System.EventHandler(this.labl_Lab_Click);
             // 
             // label44
             // 
@@ -154,6 +156,7 @@
             this.label44.TabIndex = 58;
             this.label44.Text = "Vital Signs";
             this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label44.Click += new System.EventHandler(this.label44_Click);
             // 
             // labelledger
             // 
@@ -168,6 +171,7 @@
             this.labelledger.TabIndex = 49;
             this.labelledger.Text = "Ledger";
             this.labelledger.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelledger.Click += new System.EventHandler(this.labelledger_Click);
             // 
             // labelinvoice
             // 
@@ -182,6 +186,7 @@
             this.labelinvoice.TabIndex = 48;
             this.labelinvoice.Text = "Invoice/Bills";
             this.labelinvoice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelinvoice.Click += new System.EventHandler(this.labelinvoice_Click);
             // 
             // labelpayment
             // 
@@ -196,6 +201,7 @@
             this.labelpayment.TabIndex = 47;
             this.labelpayment.Text = "Receipts";
             this.labelpayment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelpayment.Click += new System.EventHandler(this.labelpayment_Click);
             // 
             // labelattachment
             // 
@@ -210,6 +216,7 @@
             this.labelattachment.TabIndex = 46;
             this.labelattachment.Text = "Attachments";
             this.labelattachment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelattachment.Click += new System.EventHandler(this.labelattachment_Click);
             // 
             // labelprescription
             // 
@@ -224,6 +231,7 @@
             this.labelprescription.TabIndex = 45;
             this.labelprescription.Text = "Prescriptions";
             this.labelprescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelprescription.Click += new System.EventHandler(this.labelprescription_Click);
             // 
             // labelfinished
             // 
@@ -238,6 +246,7 @@
             this.labelfinished.TabIndex = 44;
             this.labelfinished.Text = "Finished Treatments";
             this.labelfinished.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelfinished.Click += new System.EventHandler(this.labelfinished_Click);
             // 
             // labeltreatment
             // 
@@ -252,6 +261,7 @@
             this.labeltreatment.TabIndex = 43;
             this.labeltreatment.Text = "Treatment Plans";
             this.labeltreatment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labeltreatment.Click += new System.EventHandler(this.labeltreatment_Click);
             // 
             // labelclinical
             // 
@@ -266,6 +276,7 @@
             this.labelclinical.TabIndex = 42;
             this.labelclinical.Text = "Clinical Findings";
             this.labelclinical.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelclinical.Click += new System.EventHandler(this.labelclinical_Click);
             // 
             // labelappointment
             // 
@@ -281,6 +292,7 @@
             this.labelappointment.TabIndex = 40;
             this.labelappointment.Text = "Appointment";
             this.labelappointment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelappointment.Click += new System.EventHandler(this.labelappointment_Click);
             // 
             // labelprofile
             // 
@@ -296,6 +308,7 @@
             this.labelprofile.TabIndex = 39;
             this.labelprofile.Text = "Profile";
             this.labelprofile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelprofile.Click += new System.EventHandler(this.labelprofile_Click);
             // 
             // label3
             // 
@@ -467,36 +480,36 @@
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AllowUserToResizeColumns = false;
             this.dataGridView2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.GridColor = System.Drawing.Color.White;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(1147, 517);
+            this.dataGridView2.Size = new System.Drawing.Size(1151, 517);
             this.dataGridView2.TabIndex = 52;
             this.dataGridView2.Visible = false;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
@@ -513,9 +526,9 @@
             this.panelmain.Controls.Add(this.label41);
             this.panelmain.Controls.Add(this.Lab_Msg);
             this.panelmain.Controls.Add(this.btn_Add);
-            this.panelmain.Location = new System.Drawing.Point(186, 97);
+            this.panelmain.Location = new System.Drawing.Point(182, 97);
             this.panelmain.Name = "panelmain";
-            this.panelmain.Size = new System.Drawing.Size(1155, 600);
+            this.panelmain.Size = new System.Drawing.Size(1159, 600);
             this.panelmain.TabIndex = 256;
             this.panelmain.Visible = false;
             // 
@@ -527,7 +540,7 @@
             this.panel6.Controls.Add(this.dataGridView2);
             this.panel6.Location = new System.Drawing.Point(4, 80);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1147, 517);
+            this.panel6.Size = new System.Drawing.Size(1151, 517);
             this.panel6.TabIndex = 277;
             // 
             // panel11
@@ -540,7 +553,7 @@
             this.panel11.Controls.Add(this.label16);
             this.panel11.Location = new System.Drawing.Point(0, 43);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1157, 31);
+            this.panel11.Size = new System.Drawing.Size(1161, 31);
             this.panel11.TabIndex = 58;
             // 
             // radioButton3
@@ -592,7 +605,7 @@
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
             this.panel3.Location = new System.Drawing.Point(-12, 40);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1169, 1);
+            this.panel3.Size = new System.Drawing.Size(1173, 1);
             this.panel3.TabIndex = 276;
             // 
             // label41
@@ -628,7 +641,7 @@
             this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Add.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.ForeColor = System.Drawing.Color.White;
-            this.btn_Add.Location = new System.Drawing.Point(1077, 9);
+            this.btn_Add.Location = new System.Drawing.Point(1081, 9);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 29);
             this.btn_Add.TabIndex = 59;
@@ -828,14 +841,14 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -881,8 +894,18 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 43);
             this.toolStripTextDoctor.Text = "doctorname";
+            // 
+            // panel8
+            // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.BackColor = System.Drawing.Color.DarkGray;
+            this.panel8.Location = new System.Drawing.Point(0, 91);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1405, 1);
+            this.panel8.TabIndex = 273;
             // 
             // Show_Appointment
             // 
@@ -890,6 +913,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1351, 699);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
@@ -982,6 +1006,6 @@
         private System.Windows.Forms.ToolStripButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextDoctor;
-
+        private System.Windows.Forms.Panel panel8;
     }
 }

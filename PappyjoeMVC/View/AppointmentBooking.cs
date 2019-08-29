@@ -93,10 +93,10 @@ namespace PappyjoeMVC.View
                 {
                     if (gpl_app_id != "0")
                     {
-                        DataTable doctor = this.cntrl.getdocid(app_Doctor_id);
-                        if (doctor.Rows.Count > 0)
+                        string doctor = this.cntrl.getdocid(app_Doctor_id);
+                        if (doctor!="")
                         {
-                            int index = combodoctor.FindString(Convert.ToString(doctor.Rows[0]["doctor_name"].ToString()));
+                            int index = combodoctor.FindString(Convert.ToString(doctor));
                             if (index >= 0)
                             {
                                 combodoctor.SelectedIndex = index;

@@ -23,12 +23,9 @@ namespace PappyjoeMVC.Controller
             try
             {
                 dt= mdl.Get_practice_details();
-               
             }
-            catch(Exception ex)
-            {
-
-            }
+            catch
+            { }
             return dt;
         }
         public void get_prescription_printdetails()
