@@ -10,99 +10,99 @@ namespace PappyjoeMVC.Controller
 {
     public class Attachments_controller
     {
-        Attachments_interface intr;
-        Add_Attachments_model m = new Add_Attachments_model();
-        Attachments_model mdl = new Attachments_model();
         common_model cmdl = new common_model();
         Connection db = new Connection();
-        public Attachments_controller(Attachments_interface inttr)
+        Attachments_model mdl = new Attachments_model();
+        Add_Attachments_model m = new Add_Attachments_model();
+        public string privillage_A(string doctrid)
         {
-            intr = inttr;
-            intr.setController(this);
+            string id = cmdl.privillage_A(doctrid);
+            return id;
         }
-        public void selid(string id)
+        public string getprevid(string id)
         {
-            string t = mdl.selid(id);
-            intr.selid(t);
-        }
-        public void getid(string gid)
-        {
-            string k = mdl.getid(gid);
-            intr.getid(k);
+            string k = mdl.getprevid(id);
+            return k;
         }
         public string Load_CompanyName()
         {
             string dtb = cmdl.Load_CompanyName();
             return dtb;
         }
-        public void Get_DoctorName(string id)
+        public string Get_DoctorName(string doctr)
         {
-            string dt = cmdl.Get_DoctorName(id);
-            intr.Get_DoctorName(dt);
+            string dt = cmdl.Get_DoctorName(doctr);
+            return dt;
         }
-        public void getcategory()
+        public string GetPayment(string paymnt)
         {
-            DataTable dt =m.GetCategory();
-            intr.getcategory(dt);
+            string dt = m.GetPayment(paymnt);
+            return dt;
         }
-        public void getpath()
+        public DataTable GetCategory()
         {
-            mdl.atchid = intr.attachid;
-            string dt = mdl.getpath();
-            intr.getpath(dt);
+            DataTable dt = m.GetCategory();
+            return dt;
         }
-        public void getpatdetails(string id)
+        public DataTable GetPatientDetails(string id)
         {
             DataTable dt = m.GetPatientDetails(id);
-            intr.getpatdetails(dt);
+            return dt;
         }
-        public void getattachment()
+        public DataTable getattachment(string patntid)
         {
-            mdl.patid = intr.patid;
-            DataTable dt = mdl.getattachment();
-            intr.getattachment(dt);
-        }
-        public void getattachment2()
-        {
-            mdl.patid = intr.patid;
-            mdl.categryname = intr.catgryname;
-            DataTable dt = mdl.getattachment2();
-            intr.getattachment2(dt);
-        }
-        public int inscatgry()
-        {
-            mdl.categryname = intr.catgryname;
-            int j = mdl.inscatgry();
-            return j;
-        }
-        public void Patient_search(string txtbox)
-        {
-            DataTable dt = cmdl.Patient_search(txtbox);
-            intr.Patient_search(dt);
-        }
-        public int update()
-        {
-            mdl.catid = intr.catgryid;
-            mdl.categryname = intr.catgryname;
-            int i=mdl.update();
-            return i;
-        }
-        public int delete()
-        {
-            mdl.catid = intr.catgryid;
-            int j = mdl.delete();
-            return j;
-        }
-        public int delattach()
-        {
-            mdl.atchid = intr.attachid;
-            int p = mdl.delattach();
-            return p;
+            DataTable dt = mdl.getattachment(patntid);
+            return dt;
         }
         public string getserver()
         {
-            string ret = db.server();
-            return ret;
+            string server = db.server();
+            return server;
+        }
+        public int inscatgry(string catgryname)
+        {
+            int j = mdl.inscatgry(catgryname);
+            return j;
+        }
+        public int update(string catgryname,string catgryid)
+        {
+            int i = mdl.update(catgryname, catgryid);
+            return i;
+        }
+        public DataTable getattachment2(string patntid,string catgryname)
+        {
+            DataTable dt = mdl.getattachment2(patntid, catgryname);
+            return dt;
+        }
+        public int delete(string catgryid)
+        {
+            int j = mdl.delete(catgryid);
+            return j;
+        }
+        public int delattach(int attachid)
+        {
+            int p = mdl.delattach(attachid);
+            return p;
+        }
+        public string getpath(int attachid)
+        {
+            string dt = mdl.getpath(attachid);
+            return dt;
+        }
+        public string doctr_privillage_for_addnewPatient(string doctor_id)
+        {
+            string e = cmdl.doctr_privillage_for_addnewPatient(doctor_id);
+            return e;
+        }
+        public string settingsprivilage(string doctor_id)
+        {
+            string e = m.settingsprivilage(doctor_id);
+            return e;
+        }
+        public DataTable Patient_search(string txtbox)
+        {
+            DataTable dt = cmdl.Patient_search(txtbox);
+            return dt;
         }
     }
 }

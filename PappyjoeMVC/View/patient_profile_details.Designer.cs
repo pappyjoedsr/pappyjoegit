@@ -426,6 +426,7 @@
             this.labl_Lab.TabIndex = 69;
             this.labl_Lab.Text = "Lab";
             this.labl_Lab.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labl_Lab.Click += new System.EventHandler(this.labl_Lab_Click);
             // 
             // label44
             // 

@@ -73,9 +73,9 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripDropDownButton();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -389,6 +389,7 @@
             this.PB_8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PB_8.BackColor = System.Drawing.Color.Gainsboro;
             this.PB_8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PB_8.Image = global::PappyjoeMVC.Properties.Resources.upload1;
             this.PB_8.Location = new System.Drawing.Point(1011, 338);
             this.PB_8.Name = "PB_8";
             this.PB_8.Size = new System.Drawing.Size(150, 150);
@@ -418,6 +419,7 @@
             this.PB_4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PB_4.BackColor = System.Drawing.Color.Gainsboro;
             this.PB_4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PB_4.Image = global::PappyjoeMVC.Properties.Resources.upload1;
             this.PB_4.Location = new System.Drawing.Point(1011, 101);
             this.PB_4.Name = "PB_4";
             this.PB_4.Size = new System.Drawing.Size(150, 150);
@@ -588,9 +590,9 @@
             this.toolStripButton4,
             this.toolStripButton5,
             this.toolStripButton6,
+            this.toolStripButton10,
             this.toolStripButton7,
             this.toolStripButton11,
-            this.toolStripButton10,
             this.toolStripButton8,
             this.toolStripSeparator2,
             this.toolStripButton9,
@@ -693,6 +695,18 @@
             this.toolStripButton6.Text = "Reports";
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton10.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(62, 37);
+            this.toolStripButton10.Text = "Expense";
+            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
+            // 
             // toolStripButton7
             // 
             this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -703,6 +717,7 @@
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size(56, 37);
             this.toolStripButton7.Text = "Profiles";
+            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
             // toolStripButton11
             // 
@@ -716,18 +731,6 @@
             this.toolStripButton11.Text = "Consent";
             this.toolStripButton11.Visible = false;
             this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton10.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(62, 37);
-            this.toolStripButton10.Text = "Expense";
-            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
             // 
             // toolStripButton8
             // 

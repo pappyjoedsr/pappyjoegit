@@ -66,7 +66,6 @@
     <Compile Include="Controller\AddNew_patient_controller.cs" />
     <Compile Include="Controller\AddNew_patient_interface.cs" />
     <Compile Include="Controller\Add_Appointment_controller.cs" />
-    <Compile Include="Controller\Add_Appointment_interface.cs" />
     <Compile Include="Controller\Add_Attachments_controller.cs" />
     <Compile Include="Controller\add_category_controller.cs" />
     <Compile Include="Controller\add_category_interface.cs" />
@@ -81,7 +80,6 @@
     <Compile Include="Controller\Add_Vital_Signs_controller.cs" />
     <Compile Include="Controller\Appointment_for_each_patient_group_controller.cs" />
     <Compile Include="Controller\Attachments_controller.cs" />
-    <Compile Include="Controller\Attachments_interface.cs" />
     <Compile Include="Controller\autoid_generation_controller.cs" />
     <Compile Include="Controller\Billing_controller.cs" />
     <Compile Include="Controller\booking_controller.cs" />
@@ -117,7 +115,6 @@
     <Compile Include="Controller\finishedprocedre_controller.cs" />
     <Compile Include="Controller\finishedprocedure_interface.cs" />
     <Compile Include="Controller\frmimagezoom_controller.cs" />
-    <Compile Include="Controller\frmimagezoom_interface.cs" />
     <Compile Include="Controller\Group_wise_report_controller.cs" />
     <Compile Include="Controller\invoice_controller.cs" />
     <Compile Include="Controller\invoice_interface.cs" />
@@ -165,7 +162,6 @@
     <Compile Include="Controller\search_patient_controller.cs" />
     <Compile Include="Controller\Setting_interface.cs" />
     <Compile Include="Controller\Show_Appointment_controller.cs" />
-    <Compile Include="Controller\Show_Appointment_interface.cs" />
     <Compile Include="Controller\Staff_controller.cs" />
     <Compile Include="Controller\supplier_controller.cs" />
     <Compile Include="Controller\supplier_interface.cs" />
@@ -1065,6 +1061,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Print-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

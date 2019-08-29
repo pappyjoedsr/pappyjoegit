@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Add_Appointment : Form,Add_Appointment_interface
+    public partial class Add_Appointment : Form
     {
         int j=0;
         public DateTime StartT,StartT1,EndTime,Dateonly ;
         public static string gender, smsName = "", smsPass = "",appointid="", p_mobile = "", p_email = "";
         public string doctor_id = "", appointment_id, patient_id = "",send_on_day,name = "", diff1 = "0",send_before_day,day_time, pat_id, doc,before_time, patient_name = "", clinicn = "", locality = "", contact_no = "", text = "", dr_id = "", emailName = "", emailPass = "";
-        Add_Appointment_controller ctrlr;
+        Add_Appointment_controller ctrlr=new Add_Appointment_controller();
         public Add_Appointment()
         {
             InitializeComponent();
@@ -32,7 +32,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new patients();
             form2.doctor_id = doctor_id;
-            patients_controller controller = new patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -42,12 +41,11 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
-            //var form2 = new Reports();
-            //form2.doctor_id = doctor_id;
-            //Reports_controller controller = new Reports_controller(form2);
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
-            //form2.ShowDialog();
+            var form2 = new Reports();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
@@ -55,16 +53,16 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                //doctor_controller controlr = new doctor_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
             }
         }
-        public void doctr_privillage_for_addnewPatient(string doctrid)
+        private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
             try
             {
+                string doctrid = this.ctrlr.doctr_privillage_for_addnewPatient(doctor_id);
                 if (doctor_id != "1")
                 {
                     string id;
@@ -73,7 +71,6 @@ namespace PappyjoeMVC.View
                     {
                         var form2 = new AddNewPatients();
                         form2.doctor_id = doctor_id;
-                        AddNew_patient_controller controller = new AddNew_patient_controller(form2);
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
                         form2.ShowDialog(); ;
@@ -87,7 +84,6 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new AddNewPatients();
                     form2.doctor_id = doctor_id;
-                    AddNew_patient_controller controller = new AddNew_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -96,15 +92,10 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             { MessageBox.Show("Error!..", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-        private void toolStripDropDownButton1_Click(object sender, EventArgs e)
-        {
-            this.ctrlr.doctr_privillage_for_addnewPatient(doctor_id);
-        }
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             var form2 = new Communication();
             form2.doctor_id = doctor_id;
-            Communication_controller controller = new Communication_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -116,17 +107,13 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            //expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.ctrlr.settingsprivilage(doctor_id);
-        }
-        public void settingsprivilage(string doctrid)
-        {
             try
             {
+                string doctrid = this.ctrlr.settingsprivilage(doctor_id);
                 if (doctor_id != "1")
                 {
                     string id;
@@ -165,7 +152,6 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
-            profile_details_controller controller = new profile_details_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -174,14 +160,9 @@ namespace PappyjoeMVC.View
         {
             var form2 = new patients();
             form2.doctor_id = doctor_id;
-            patients_controller controller = new patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
-        }
-        public void setController(Add_Appointment_controller controller)
-        {
-            ctrlr = controller;
         }
         private void InitializeControls()
         {
@@ -201,7 +182,6 @@ namespace PappyjoeMVC.View
             var form2 = new Show_Appointment();
             form2.patient_id = patient_id;
             form2.doctor_id = doctor_id;
-            Show_Appointment_controller ctrlr = new Show_Appointment_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -229,15 +209,11 @@ namespace PappyjoeMVC.View
                 contact_no = dt.Rows[0]["contact_no"].ToString();
             }
         }
-        public void Get_DoctorName(string doctr)
+        public void getdoctrname(string dt)
         {
-           toolStripTextDoctor.Text = "Logged In As : " + doctr;
-        }
-        public void getdoctrname(DataTable dt)
-        {
-            if(dt.Rows.Count>0)
+            if(dt!="")
             {
-                int index = Cmb_doctor.FindString(Convert.ToString(dt.Rows[0]["doctor_name"].ToString()));
+                int index = Cmb_doctor.FindString(dt);
                 if (index >= 0)
                 {
                     Cmb_doctor.SelectedIndex = index;
@@ -257,7 +233,8 @@ namespace PappyjoeMVC.View
                     if (dt.Rows.Count > 0)
                     {
                         doc = dt.Rows[0]["dr_id"].ToString();
-                        this.ctrlr.getdoctrname(dt.Rows[0]["dr_id"].ToString());
+                        string dct=this.ctrlr.getdoctrname(dt.Rows[0]["dr_id"].ToString());
+                        getdoctrname(dct);
                         if (dt.Rows[0]["plan_new_procedure"].ToString() != "")
                         {
                             int index = compoprocedure.FindString(Convert.ToString(dt.Rows[0]["plan_new_procedure"].ToString()));
@@ -287,12 +264,6 @@ namespace PappyjoeMVC.View
             }
             catch (Exception ex)
             { MessageBox.Show("Error!..", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error); }
-        }
-        public void get_All_procedure(DataTable dt)
-        {
-            compoprocedure.DataSource = dt; 
-            compoprocedure.DisplayMember = "name";
-            compoprocedure.ValueMember = "id";
         }
         public void get_all_doctorname(DataTable dt)
         {
@@ -384,14 +355,6 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             { MessageBox.Show("Error!..", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-        public string SendSMS(string val)
-        {
-            return val;
-        }
-        public string SendSMS2(string val)
-        {
-            return val;
-        }
         public void Get_Patient_Details(DataTable pat)
         {
             try
@@ -400,7 +363,7 @@ namespace PappyjoeMVC.View
                 {
                     string number = "91" + pat.Rows[0]["primary_mobile_number"].ToString();
                     text = "Dear " + pat.Rows[0]["pt_name"].ToString() + " " + "Your appointment for " + compoprocedure.Text + " has been confirmed at " + StartT1.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " with " + "Dr " + Cmb_doctor.Text + " Regards " + clinicn + "," + contact_no;
-                    this.ctrlr.SendSMS(smsName, smsPass, number, text);
+                    string smspatnt=this.ctrlr.SendSMS(smsName, smsPass, number, text);
                     string txt = "Dear " + pat.Rows[0]["pt_name"].ToString() + " " + "Your appointment for " + compoprocedure.Text + " has been confirmed at " + StartT1.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " with " + "Dr " + Cmb_doctor.Text + "Regards";
                     this.ctrlr.inssms(patient_id, DateTime.Now.ToString("yyyy-MM-dd hh:mm"), txt);
                     //For Remainder SMS
@@ -409,7 +372,7 @@ namespace PappyjoeMVC.View
                         if (dpStartTimeDate.Value > DateTime.Now.Date)
                         {
                             text = "Dear " + pat.Rows[0]["pt_name"].ToString() + ", " + "Today you have an appointment at " + clinicn + " on " + StartT1.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " for " + compoprocedure.Text + " .Regards  " + clinicn + "," + contact_no;
-                            this.ctrlr.SendSMS2(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT1.ToString("dd/MM/yyyy") + " 09:10:00 am", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+                            string smspatnt2=this.ctrlr.SendSMS(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT1.ToString("dd/MM/yyyy") + " 09:10:00 am", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
                         }
                     }
                     if (before_time != null)
@@ -417,7 +380,7 @@ namespace PappyjoeMVC.View
                         if (dpStartTimeDate.Value > DateTime.Now.Date)
                         {
                             text = "Dear " + pat.Rows[0]["pt_name"].ToString() + ", " + "Today you have an appointment at " + clinicn + " on " + StartT1.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " for " + compoprocedure.Text + " .Regards  " + clinicn + "," + contact_no;
-                            this.ctrlr.SendSMS2(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT1.ToString("dd/MM/yyyy") + before_time, DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+                            string smspatnt3=this.ctrlr.SendSMS(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT1.ToString("dd/MM/yyyy") + before_time, DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
                         }
                     }
                 }//SMS End Patient
@@ -436,12 +399,20 @@ namespace PappyjoeMVC.View
                 toolStripButton8.ToolTipText = "Settings";
                 toolStripDropDownButton1.ToolTipText = "Add New";
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-                this.ctrlr.Get_Practice_details();
-                this.ctrlr.Get_DoctorName(doctor_id);
-                this.ctrlr.getpatdetails(patient_id);
-                this.ctrlr.get_all_doctorname();
-                this.ctrlr.get_All_procedure();
-                this.ctrlr.dt_appointment(appointment_id);
+                DataTable dt=this.ctrlr.Get_Practice_details();
+                Get_Practice_details(dt);
+                string doctr=this.ctrlr.Get_DoctorName(doctor_id);
+                toolStripTextDoctor.Text = "Logged In As : " + doctr;
+                DataTable ptntdtls=this.ctrlr.getpatdetails(patient_id);
+                getpatdetails(ptntdtls);
+                DataTable dctrs=this.ctrlr.get_all_doctorname();
+                get_all_doctorname(dctrs);
+                DataTable procedure=this.ctrlr.get_All_procedure();
+                compoprocedure.DataSource = procedure;
+                compoprocedure.DisplayMember = "name";
+                compoprocedure.ValueMember = "id";
+                DataTable apnt=this.ctrlr.dt_appointment(appointment_id);
+                dt_appointment(apnt);
             }
             catch (Exception ex)
             { MessageBox.Show("Error!..", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error); }
@@ -517,9 +488,12 @@ namespace PappyjoeMVC.View
                         }
                         if (checkBox1.Checked)
                         {
-                            this.ctrlr.smsdetails();
-                            this.ctrlr.Get_Patient_Details(patient_id);
-                            this.ctrlr.smsreminder();
+                            DataTable sms=this.ctrlr.smsdetails();
+                            smsdetails(sms);
+                            DataTable ptnt=this.ctrlr.Get_Patient_Details(patient_id);
+                            Get_Patient_Details(ptnt);
+                            DataTable rem=this.ctrlr.smsreminder();
+                            smsreminder(rem);
                         }
                         if (checkBox3.Checked)
                         {
@@ -527,14 +501,14 @@ namespace PappyjoeMVC.View
                             {
                                 string number = "91" + dr_mobile;
                                 text = "You have an appointment on " + dpStartTimeDate.Value.ToShortDateString() + " " + cmbStartTime.Text + " With " + patient_name + " for " + compoprocedure.Text + " at " + clinicn + "," + contact_no;
-                                this.ctrlr.SendSMS(smsName, smsPass, number, text);
+                                string smsdctr=this.ctrlr.SendSMS(smsName, smsPass, number, text);
                                 //For Remainder SMS
                                 if (day_time != null)
                                 {
                                     if (dpStartTimeDate.Value > DateTime.Now.Date)
                                     {
                                         text = "You have an appointment on " + dpStartTimeDate.Value.ToShortDateString() + " " + cmbStartTime.Text + " With " + patient_name + " for " + compoprocedure.Text + " at " + clinicn + "," + contact_no;
-                                        this.ctrlr.SendSMS2(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT1.ToString("dd/MM/yyyy") + " 09:10:00 am", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+                                        string smsdctr2=this.ctrlr.SendSMS(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT1.ToString("dd/MM/yyyy") + " 09:10:00 am", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
                                     }
                                 }
                                 if (before_time != null)
@@ -542,20 +516,22 @@ namespace PappyjoeMVC.View
                                     if (dpStartTimeDate.Value > DateTime.Now.Date)
                                     {
                                         text = "You have an appointment on " + dpStartTimeDate.Value.ToShortDateString() + " " + cmbStartTime.Text + " With " + patient_name + " for " + compoprocedure.Text + " at " + clinicn + "," + contact_no;
-                                        this.ctrlr.SendSMS2(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT1.ToString("dd/MM/yyyy") + before_time, DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+                                        string smsdctr3=this.ctrlr.SendSMS(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT1.ToString("dd/MM/yyyy") + before_time, DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
                                     }
                                 }
                             }
                         }//Doctor SMS End
                         if (checkBox2.Checked)
                         {
-                            this.ctrlr.send_email();
+                            DataTable email=this.ctrlr.send_email();
+                            send_email(email);
                         }// email end
                         if (checkBox4.Checked) // Doctor Email
                         {
                             if (dr_email != "")
                             {
-                                this.ctrlr.send_email();
+                                DataTable email = this.ctrlr.send_email();
+                                send_email(email);
                             }
                         }// Doctor Email end
                         if (j > 0)
@@ -563,7 +539,6 @@ namespace PappyjoeMVC.View
                             var form2 = new PappyjoeMVC.View.Show_Appointment();
                             form2.patient_id = patient_id;
                             form2.doctor_id = doctor_id;
-                            Show_Appointment_controller ctrlr = new Show_Appointment_controller(form2);
                             form2.Closed += (sender1, args) => this.Close();
                             this.Hide();
                             form2.ShowDialog();
@@ -587,7 +562,8 @@ namespace PappyjoeMVC.View
             try
             {
                 dr_id = Cmb_doctor.GetItemText(Cmb_doctor.SelectedValue);
-                this.ctrlr.getappointment(dr_id);
+                DataTable getapnt=this.ctrlr.getappointment(dr_id);
+                getappointment(getapnt);
             }
             catch (Exception ex)
             { MessageBox.Show("Error!..", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error); }
@@ -625,7 +601,8 @@ namespace PappyjoeMVC.View
         }
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
-            this.ctrlr.Patient_search(toolStripTextBox1.Text);
+            DataTable srch=this.ctrlr.Patient_search(toolStripTextBox1.Text);
+            Patient_search(srch);
         }
     }
 }

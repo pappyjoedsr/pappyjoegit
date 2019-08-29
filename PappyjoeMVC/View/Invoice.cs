@@ -1227,11 +1227,9 @@ namespace PappyjoeMVC.View
 
         private void labelappointment_Click(object sender, EventArgs e)
         {
-
             var form2 = new Show_Appointment();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Show_Appointment_controller controller = new Show_Appointment_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1275,7 +1273,6 @@ namespace PappyjoeMVC.View
             var form2 = new Attachments();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Attachments_controller controller = new Attachments_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
