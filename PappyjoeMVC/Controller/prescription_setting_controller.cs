@@ -11,75 +11,57 @@ namespace PappyjoeMVC.Controller
   public class prescription_setting_controller
     {
         prescription_setting_model _model = new prescription_setting_model();
-        prescription_setting_interface intr;
-        public prescription_setting_controller(prescription_setting_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
         public DataTable get_drug()
         {
             DataTable dt = _model.get_drug();
             return dt;
         }
-        public void fill_type_combo()
+        public DataTable fill_type_combo()
         {
             DataTable dtb = _model.fill_type_combo();
-            intr.FillTypeCombo(dtb);
+            return dtb;
         }
-        public void fill_unit_combo()
+        public DataTable fill_unit_combo()
         {
             DataTable dtb = _model.Fill_unit_combo();
-            intr.FillUnitCombo(dtb);
+            return dtb;
         }
-        public void get_value_from_drugtype(string type)
+        public DataTable get_value_from_drugtype(string type)
         {
             DataTable dtb = _model.get_value_from_drugtype(type);
-            intr.SaveDrugType(dtb);
+            return dtb;
         }
-        public void SaveDrug()
+        public void SaveDrug(string StrType)
         {
-            _model.StrType = intr.StrType;
-            _model.save_drugtype();
+            _model.save_drugtype(StrType);
         }
-        public void check_unit(string unit)
+        public DataTable check_unit(string unit)
         {
             DataTable dtb = _model.check_unit(unit);
-            intr.CheckUnit(dtb);
-        }
-        public void save_unit()
-        {
-            _model.StrUnit = intr.StrUnit;
-            _model.save_unit();
-        }
-        public DataTable check_drugname(string name)
-        {
-            DataTable dtb = _model.check_drugname(name);
             return dtb;
         }
-        public int Save_Drug()
+        public void save_unit(string StrUnit)
         {
-            _model.Drugname = intr.DrugName;
-            _model.StrType = intr.StrType;
-            _model.StrUnit = intr.StrUnit;
-            _model.Strength_gr = intr.Strength_gr;
-            _model.Instruction = intr.Instruction;
-            int i = _model.Save_Drug();
+            _model.save_unit( StrUnit);
+        }
+        public string check_drugname(string name)
+        {
+            string dtb = _model.check_drugname(name);
+            return dtb;
+        }
+        public int Save_Drug(string _drugname, string _strtype, string _strunit, string _strengthgr, string _intstructuion)
+        {
+            int i = _model.Save_Drug(_drugname,_strtype,_strunit,_strengthgr,_intstructuion);
             return i;
         }
-        public DataTable check_exists_drug(string id)
+        public string check_exists_drug(string id)
         {
-            DataTable dtb=_model.check_exists_drug(id);
+            string dtb=_model.check_exists_drug(id);
             return dtb;
         }
-        public int Update_drug(string id)
+        public int Update_drug(string id, string _drugname, string _strtype, string _strunit, string _strengthgr, string _intstructuion)
         {
-            _model.Drugname = intr.DrugName;
-            _model.StrType = intr.StrType;
-            _model.StrUnit = intr.StrUnit;
-            _model.Strength_gr = intr.Strength_gr;
-            _model.Instruction = intr.Instruction;
-            int i = _model.Update_drug(id);
+            int i = _model.Update_drug(id, _drugname, _strtype, _strunit, _strengthgr, _intstructuion);
             return i;
         }
         public int delete_drug(string id)

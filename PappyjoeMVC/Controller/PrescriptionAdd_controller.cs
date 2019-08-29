@@ -75,19 +75,19 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.load_template();
             return dtb;
         }
-        public DataTable check_drugname(string name)
+        public string check_drugname(string name)
         {
-            DataTable dtb = pmodel.check_drugname(name);
+            string dtb = pmodel.check_drugname(name);
             return dtb;
         }
         public void  Save_Drug(string name,string type,string unit,string strength,string instruction)
         {
-            pmodel.Drugname = name;
-            pmodel.StrType = type;
-            pmodel.StrUnit = unit;
-            pmodel.Strength_gr = strength;
-            pmodel.Instruction = instruction;
-            pmodel.Save_Drug();
+            //pmodel.Drugname = name;
+            //pmodel.StrType = type;
+            //pmodel.StrUnit = unit;
+            //pmodel.Strength_gr = strength;
+            //pmodel.Instruction = instruction;
+            pmodel.Save_Drug(name, type, unit, strength, instruction);
         }
         public DataTable Get_Stock(string id)
         {

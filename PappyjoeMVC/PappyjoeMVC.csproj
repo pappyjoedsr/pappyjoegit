@@ -81,7 +81,6 @@
     <Compile Include="Controller\Appointment_for_each_patient_group_controller.cs" />
     <Compile Include="Controller\Attachments_controller.cs" />
     <Compile Include="Controller\autoid_generation_controller.cs" />
-    <Compile Include="Controller\autoid_generation_interface.cs" />
     <Compile Include="Controller\Billing_controller.cs" />
     <Compile Include="Controller\booking_controller.cs" />
     <Compile Include="Controller\Booking_interface.cs" />
@@ -93,7 +92,6 @@
     <Compile Include="Controller\Communication_interface.cs" />
     <Compile Include="Controller\communication_setting_controller.cs" />
     <Compile Include="Controller\contact_controller.cs" />
-    <Compile Include="Controller\contact_interface.cs" />
     <Compile Include="Controller\Daily_appointment_count_controller.cs" />
     <Compile Include="Controller\Daily_Invoice_Report_controller.cs" />
     <Compile Include="Controller\Daily_Invoice_Report_interface.cs" />
@@ -131,7 +129,6 @@
     <Compile Include="Controller\Manufacture_controller.cs" />
     <Compile Include="Controller\manufacture_interface.cs" />
     <Compile Include="Controller\medical_history_controller.cs" />
-    <Compile Include="Controller\medical_history_interface.cs" />
     <Compile Include="Controller\Missing_Checkout_Report_controller.cs" />
     <Compile Include="Controller\Monthly_appointment_count_controller.cs" />
     <Compile Include="Controller\Monthly_Invoice_Report_controller.cs" />
@@ -155,9 +152,7 @@
     <Compile Include="Controller\prescriptionshow_controller.cs" />
     <Compile Include="Controller\prescriptionshow_interface.cs" />
     <Compile Include="Controller\prescription_setting_controller.cs" />
-    <Compile Include="Controller\prescription_setting_interface.cs" />
     <Compile Include="Controller\printout_controller.cs" />
-    <Compile Include="Controller\printout_interface.cs" />
     <Compile Include="Controller\procedure_catalog_controller.cs" />
     <Compile Include="Controller\profile_details_controller.cs" />
     <Compile Include="Controller\profile_details_interface.cs" />

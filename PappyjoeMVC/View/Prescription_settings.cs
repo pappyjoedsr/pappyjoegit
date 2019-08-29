@@ -1,45 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Prescription_settings : Form,prescription_setting_interface
+    public partial class Prescription_settings : Form
     {
-        prescription_setting_controller cntrl;
+        prescription_setting_controller cntrl=new prescription_setting_controller();
         public string id = "";
         public Prescription_settings()
         {
             InitializeComponent();
         }
-        public void SetController(prescription_setting_controller controller)
-        {
-            cntrl = controller;
-        }
-
-        private void Prescription_settings_Load(object sender, EventArgs e)
+          private void Prescription_settings_Load(object sender, EventArgs e)
         {
             DataTable dt = this.cntrl.get_drug();
             dataGridView_prescription.DataSource = dt;
             label30.Hide();
-            //label34.Hide();
             label39.Hide();
             linkLabel3.Hide();
             linkLabel2.Hide();
             label30.Hide();
             text_unit.Hide();
             text_type.Hide();
-
-            this.cntrl.fill_type_combo();
-            this.cntrl.fill_unit_combo();
-           
+            DataTable dtb = this.cntrl.fill_type_combo();
+            FillTypeCombo(dtb);
+            DataTable dtb_unit= this.cntrl.fill_unit_combo();
+            FillUnitCombo(dtb);
             dataGridView_prescription.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             dataGridView_prescription.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView_prescription.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Regular);
@@ -55,7 +44,6 @@ namespace PappyjoeMVC.View
             dataGridView_prescription.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            //dataGridView_prescription.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -66,7 +54,7 @@ namespace PappyjoeMVC.View
         }
         public void FillTypeCombo(DataTable dtb)
         {
-            if(dtb.Rows.Count>0)
+            if (dtb.Rows.Count > 0)
             {
                 combotype.DataSource = dtb;
                 combotype.DisplayMember = "dr_type";
@@ -82,36 +70,12 @@ namespace PappyjoeMVC.View
                 combo_unit.ValueMember = "id";
             }
         }
-        public string StrType
-        {
-            get { return this.text_type.Text; }
-            set { this.text_type.Text = value; }
-        }
-        public string StrUnit
-        {
-            get { return this.text_unit.Text; }
-            set { this.text_unit.Text = value; }
-        }
-        public string DrugName
-        {
-            get { return this.txtitemname.Text; }
-            set { this.txtitemname.Text = value; }
-        }
-        public string Strength_gr 
-        {
-            get { return this.text_strength.Text; }
-            set { this.text_strength.Text = value; }
-        }
-        public string Instruction
-        {
-            get { return this.rich_instruction.Text; }
-            set { this.rich_instruction.Text = value; }
-        }
+   
         private void button_save_Click(object sender, EventArgs e)
         {
             try
             {
-               
+                string StrUnit = "", StrType="";
                 if (String.IsNullOrWhiteSpace(txtitemname.Text))
                 {
                     errorProvider1.SetError(txtitemname, "error");
@@ -135,8 +99,11 @@ namespace PappyjoeMVC.View
                         errorProvider1.SetError(text_type, "error");
                         label34.Show();
                     }
-                    StrType = text_type.Text;
-                    this.cntrl.get_value_from_drugtype(StrType);
+                    DataTable dt_drug_type = this.cntrl.get_value_from_drugtype(text_type.Text);
+                    if (dt_drug_type.Rows.Count == 0)
+                    {
+                        this.cntrl.SaveDrug(text_type.Text);
+                    }
                 }
                 if (text_unit.Visible == false)
                 {
@@ -144,23 +111,26 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    //strunit = text_unit.Text;
-                    this.cntrl.check_unit(StrUnit);
+                   DataTable dt_drug_unit = this.cntrl.check_unit(StrUnit);
+                    if (dt_drug_unit.Rows.Count == 0)
+                    {
+                        this.cntrl.save_unit(text_unit.Text);
+                    }
                 }
                 if (StrType != "" && StrUnit != "")
                 {
                     if (button_save.Text == "Save")
                     {
-                      DataTable dtb= this.cntrl.check_drugname(txtitemname.Text);
-                        if(dtb.Rows.Count>0)
+                        string name = this.cntrl.check_drugname(txtitemname.Text);
+                        if (name!="")
                         {
                             MessageBox.Show("Drug " + txtitemname.Text + "' already existed", "Duplication Encountered", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
                         else
                         {
-                            int i = this.cntrl.Save_Drug();
-                            if(i>0)
+                            int i = this.cntrl.Save_Drug(txtitemname.Text, text_type.Text, text_unit.Text, text_strength.Text, rich_instruction.Text);
+                            if (i > 0)
                             {
                                 MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
@@ -168,14 +138,14 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        DataTable dtb = this.cntrl.check_exists_drug(id);
-                        if (dtb.Rows.Count > 0)
+                        string dtb = this.cntrl.check_exists_drug(id);
+                        if (dtb!="")
                         {
                             MessageBox.Show("Cannot edit this drug, It is used in prescriptions...", "Edit Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
-                            int i = this.cntrl.Update_drug(id);
+                            int i = this.cntrl.Update_drug(id,txtitemname.Text, text_type.Text, text_unit.Text, text_strength.Text, rich_instruction.Text);
                         }
                     }
                     DataTable dt = this.cntrl.get_drug();
@@ -199,24 +169,18 @@ namespace PappyjoeMVC.View
                     combo_unit.Show();
                     linkLabel3.Hide();
                     text_unit.Hide();
-                    this.cntrl.fill_type_combo();
-                    this.cntrl.fill_unit_combo();
+                    DataTable dtb_typr = this.cntrl.fill_type_combo();
+                    FillTypeCombo(dtb_typr);
+                    DataTable dtb_unit = this.cntrl.fill_unit_combo();
+                    FillUnitCombo(dtb_unit);
                 }
-               
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
         }
-        public void SaveDrugType(DataTable dt_drug_type)
-        {
-            if (dt_drug_type.Rows.Count == 0)
-            {
-                this.cntrl.SaveDrug();
-            }
-        }
+      
         private void txtitemname_TextChanged(object sender, EventArgs e)
         {
             errorProvider1.Dispose();
@@ -229,13 +193,6 @@ namespace PappyjoeMVC.View
             label34.Hide();
             errorProvider1.Dispose();
         }
-        public void CheckUnit(DataTable dt_drug_unit)
-        {
-            if (dt_drug_unit.Rows.Count == 0)
-            {
-                this.cntrl.save_unit();
-            }
-        }
        
         private void dataGridView_prescription_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -245,7 +202,7 @@ namespace PappyjoeMVC.View
                 {
                     int r = e.RowIndex;
                     id = dataGridView_prescription.Rows[r].Cells["pid"].Value.ToString();
-                    if(dataGridView_prescription.CurrentCell.OwningColumn.Name=="edit")
+                    if (dataGridView_prescription.CurrentCell.OwningColumn.Name == "edit")
                     {
                         txtitemname.Text = dataGridView_prescription.CurrentRow.Cells["pname"].Value.ToString();
                         combotype.Text = dataGridView_prescription.CurrentRow.Cells["ptype"].Value.ToString();
@@ -254,7 +211,7 @@ namespace PappyjoeMVC.View
                         rich_instruction.Text = dataGridView_prescription.CurrentRow.Cells["pinstruction"].Value.ToString();
                         button_save.Text = "Update"; button_cancel.Visible = true;
                     }
-                    else if(dataGridView_prescription.CurrentCell.OwningColumn.Name == "delete")
+                    else if (dataGridView_prescription.CurrentCell.OwningColumn.Name == "delete")
                     {
                         DialogResult res = MessageBox.Show("Are you sure you want to delete this record?", "Delete confirmation",
                       MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -264,15 +221,15 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            DataTable dtb = this.cntrl.check_exists_drug(id);
-                            if (dtb.Rows.Count > 0)
+                            string dtb = this.cntrl.check_exists_drug(id);
+                            if (dtb!="")
                             {
                                 MessageBox.Show("Cannot edit this drug, It is used in prescriptions...", "Edit Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             else
                             {
                                 int i = this.cntrl.delete_drug(id);
-                                if(i>0)
+                                if (i > 0)
                                 {
                                     DataTable dt = this.cntrl.get_drug();
                                     dataGridView_prescription.DataSource = dt;
@@ -286,9 +243,9 @@ namespace PappyjoeMVC.View
                     MessageBox.Show("Drug name not found..!!", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -342,7 +299,8 @@ namespace PappyjoeMVC.View
             combotype.Text = "";
             text_unit.Clear();
             rich_instruction.Clear();
-            text_strength.Clear(); button_save.Text = "Save";
+            text_strength.Clear();
+            button_save.Text = "Save";
             combotype.Show();
             button_addtype.Show();
             text_type.Hide();

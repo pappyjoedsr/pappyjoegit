@@ -351,7 +351,7 @@
             this.text_invoice_number.TabIndex = 11;
             this.text_invoice_number.TextChanged += new System.EventHandler(this.text_invoice_number_TextChanged);
             this.text_invoice_number.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_invoice_number_KeyPress);
-            this.text_invoice_number.KeyUp += new System.Windows.Forms.KeyEventHandler(this.text_invoice_number_KeyUp);
+            //this.text_invoice_number.KeyUp += new System.Windows.Forms.KeyEventHandler(this.text_invoice_number_KeyUp);
             // 
             // tabPage3
             // 
@@ -478,7 +478,7 @@
             this.text_receipt_number.TabIndex = 20;
             this.text_receipt_number.TextChanged += new System.EventHandler(this.text_receipt_number_TextChanged);
             this.text_receipt_number.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_receipt_number_KeyPress);
-            this.text_receipt_number.KeyUp += new System.Windows.Forms.KeyEventHandler(this.text_receipt_number_KeyUp);
+            //this.text_receipt_number.KeyUp += new System.Windows.Forms.KeyEventHandler(this.text_receipt_number_KeyUp);
             // 
             // errorProvider1
             // 
