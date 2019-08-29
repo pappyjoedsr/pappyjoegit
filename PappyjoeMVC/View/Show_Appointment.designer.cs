@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Show_Appointment));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labl_Lab = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
@@ -92,6 +92,7 @@
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextDoctor = new System.Windows.Forms.ToolStripTextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -121,7 +122,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 97);
+            this.panel1.Location = new System.Drawing.Point(3, 95);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(184, 619);
             this.panel1.TabIndex = 262;
@@ -133,7 +134,7 @@
             this.labl_Lab.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labl_Lab.ForeColor = System.Drawing.Color.DimGray;
             this.labl_Lab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labl_Lab.Location = new System.Drawing.Point(14, 293);
+            this.labl_Lab.Location = new System.Drawing.Point(18, 295);
             this.labl_Lab.Name = "labl_Lab";
             this.labl_Lab.Size = new System.Drawing.Size(166, 32);
             this.labl_Lab.TabIndex = 68;
@@ -148,7 +149,7 @@
             this.label44.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.ForeColor = System.Drawing.Color.DimGray;
             this.label44.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label44.Location = new System.Drawing.Point(14, 113);
+            this.label44.Location = new System.Drawing.Point(18, 115);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(166, 32);
             this.label44.TabIndex = 58;
@@ -162,7 +163,7 @@
             this.labelledger.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelledger.ForeColor = System.Drawing.Color.DimGray;
             this.labelledger.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelledger.Location = new System.Drawing.Point(14, 444);
+            this.labelledger.Location = new System.Drawing.Point(18, 446);
             this.labelledger.Name = "labelledger";
             this.labelledger.Size = new System.Drawing.Size(166, 32);
             this.labelledger.TabIndex = 49;
@@ -176,7 +177,7 @@
             this.labelinvoice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelinvoice.ForeColor = System.Drawing.Color.DimGray;
             this.labelinvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelinvoice.Location = new System.Drawing.Point(14, 376);
+            this.labelinvoice.Location = new System.Drawing.Point(18, 378);
             this.labelinvoice.Name = "labelinvoice";
             this.labelinvoice.Size = new System.Drawing.Size(166, 32);
             this.labelinvoice.TabIndex = 48;
@@ -190,7 +191,7 @@
             this.labelpayment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelpayment.ForeColor = System.Drawing.Color.DimGray;
             this.labelpayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelpayment.Location = new System.Drawing.Point(14, 410);
+            this.labelpayment.Location = new System.Drawing.Point(18, 412);
             this.labelpayment.Name = "labelpayment";
             this.labelpayment.Size = new System.Drawing.Size(166, 32);
             this.labelpayment.TabIndex = 47;
@@ -204,7 +205,7 @@
             this.labelattachment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelattachment.ForeColor = System.Drawing.Color.DimGray;
             this.labelattachment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelattachment.Location = new System.Drawing.Point(14, 325);
+            this.labelattachment.Location = new System.Drawing.Point(18, 327);
             this.labelattachment.Name = "labelattachment";
             this.labelattachment.Size = new System.Drawing.Size(166, 32);
             this.labelattachment.TabIndex = 46;
@@ -218,7 +219,7 @@
             this.labelprescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelprescription.ForeColor = System.Drawing.Color.DimGray;
             this.labelprescription.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelprescription.Location = new System.Drawing.Point(14, 255);
+            this.labelprescription.Location = new System.Drawing.Point(18, 257);
             this.labelprescription.Name = "labelprescription";
             this.labelprescription.Size = new System.Drawing.Size(166, 32);
             this.labelprescription.TabIndex = 45;
@@ -232,7 +233,7 @@
             this.labelfinished.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelfinished.ForeColor = System.Drawing.Color.DimGray;
             this.labelfinished.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelfinished.Location = new System.Drawing.Point(14, 219);
+            this.labelfinished.Location = new System.Drawing.Point(18, 221);
             this.labelfinished.Name = "labelfinished";
             this.labelfinished.Size = new System.Drawing.Size(166, 32);
             this.labelfinished.TabIndex = 44;
@@ -246,7 +247,7 @@
             this.labeltreatment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labeltreatment.ForeColor = System.Drawing.Color.DimGray;
             this.labeltreatment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labeltreatment.Location = new System.Drawing.Point(14, 185);
+            this.labeltreatment.Location = new System.Drawing.Point(18, 187);
             this.labeltreatment.Name = "labeltreatment";
             this.labeltreatment.Size = new System.Drawing.Size(166, 32);
             this.labeltreatment.TabIndex = 43;
@@ -260,7 +261,7 @@
             this.labelclinical.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelclinical.ForeColor = System.Drawing.Color.DimGray;
             this.labelclinical.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelclinical.Location = new System.Drawing.Point(14, 149);
+            this.labelclinical.Location = new System.Drawing.Point(18, 151);
             this.labelclinical.Name = "labelclinical";
             this.labelclinical.Size = new System.Drawing.Size(166, 32);
             this.labelclinical.TabIndex = 42;
@@ -275,7 +276,7 @@
             this.labelappointment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelappointment.ForeColor = System.Drawing.Color.White;
             this.labelappointment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelappointment.Location = new System.Drawing.Point(3, 58);
+            this.labelappointment.Location = new System.Drawing.Point(7, 60);
             this.labelappointment.Name = "labelappointment";
             this.labelappointment.Size = new System.Drawing.Size(166, 32);
             this.labelappointment.TabIndex = 40;
@@ -290,7 +291,7 @@
             this.labelprofile.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelprofile.ForeColor = System.Drawing.Color.DimGray;
             this.labelprofile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelprofile.Location = new System.Drawing.Point(14, 26);
+            this.labelprofile.Location = new System.Drawing.Point(18, 28);
             this.labelprofile.Name = "labelprofile";
             this.labelprofile.Size = new System.Drawing.Size(166, 32);
             this.labelprofile.TabIndex = 39;
@@ -301,7 +302,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label3.Location = new System.Drawing.Point(1, 361);
+            this.label3.Location = new System.Drawing.Point(5, 363);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(179, 13);
             this.label3.TabIndex = 15;
@@ -311,7 +312,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label2.Location = new System.Drawing.Point(1, 96);
+            this.label2.Location = new System.Drawing.Point(5, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(179, 13);
             this.label2.TabIndex = 14;
@@ -321,7 +322,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label1.Location = new System.Drawing.Point(1, 9);
+            this.label1.Location = new System.Drawing.Point(5, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 13);
             this.label1.TabIndex = 0;
@@ -332,7 +333,7 @@
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel7.BackColor = System.Drawing.Color.DarkGray;
-            this.panel7.Location = new System.Drawing.Point(179, 24);
+            this.panel7.Location = new System.Drawing.Point(190, 26);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1, 737);
             this.panel7.TabIndex = 261;
@@ -342,7 +343,7 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(0, 33);
+            this.panel5.Location = new System.Drawing.Point(4, 27);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1375, 10);
             this.panel5.TabIndex = 260;
@@ -350,7 +351,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
-            this.panel4.Location = new System.Drawing.Point(179, -24);
+            this.panel4.Location = new System.Drawing.Point(183, -22);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1, 49);
             this.panel4.TabIndex = 259;
@@ -362,8 +363,9 @@
             this.labelallpatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelallpatient.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelallpatient.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.labelallpatient.Image = global::PappyjoeMVC.Properties.Resources.SP;
             this.labelallpatient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelallpatient.Location = new System.Drawing.Point(3, 50);
+            this.labelallpatient.Location = new System.Drawing.Point(0, 39);
             this.labelallpatient.Name = "labelallpatient";
             this.labelallpatient.Size = new System.Drawing.Size(109, 38);
             this.labelallpatient.TabIndex = 258;
@@ -376,7 +378,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(683, 60);
+            this.label8.Location = new System.Drawing.Point(687, 62);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 17);
             this.label8.TabIndex = 264;
@@ -391,9 +393,9 @@
             this.panel2.Controls.Add(this.linkLabel_Name);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(179, 46);
+            this.panel2.Location = new System.Drawing.Point(193, 42);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(414, 42);
+            this.panel2.Size = new System.Drawing.Size(414, 46);
             this.panel2.TabIndex = 263;
             // 
             // linkLabel_id
@@ -401,7 +403,7 @@
             this.linkLabel_id.AutoSize = true;
             this.linkLabel_id.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel_id.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.linkLabel_id.Location = new System.Drawing.Point(128, 25);
+            this.linkLabel_id.Location = new System.Drawing.Point(132, 21);
             this.linkLabel_id.Name = "linkLabel_id";
             this.linkLabel_id.Size = new System.Drawing.Size(0, 13);
             this.linkLabel_id.TabIndex = 73;
@@ -409,7 +411,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(7, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(39, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -421,7 +423,7 @@
             this.linkLabel_Name.AutoSize = true;
             this.linkLabel_Name.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel_Name.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.linkLabel_Name.Location = new System.Drawing.Point(129, 6);
+            this.linkLabel_Name.Location = new System.Drawing.Point(133, 2);
             this.linkLabel_Name.Name = "linkLabel_Name";
             this.linkLabel_Name.Size = new System.Drawing.Size(0, 13);
             this.linkLabel_Name.TabIndex = 74;
@@ -430,7 +432,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label21.Location = new System.Drawing.Point(48, 6);
+            this.label21.Location = new System.Drawing.Point(52, 2);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(77, 13);
             this.label21.TabIndex = 69;
@@ -440,11 +442,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label12.Location = new System.Drawing.Point(48, 26);
+            this.label12.Location = new System.Drawing.Point(69, 20);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 13);
+            this.label12.Size = new System.Drawing.Size(60, 13);
             this.label12.TabIndex = 68;
-            this.label12.Text = "Patient ID:";
+            this.label12.Text = "Patient ID :";
             // 
             // listpatientsearch
             // 
@@ -453,7 +455,7 @@
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
             this.listpatientsearch.ItemHeight = 21;
-            this.listpatientsearch.Location = new System.Drawing.Point(996, 40);
+            this.listpatientsearch.Location = new System.Drawing.Point(1000, 42);
             this.listpatientsearch.Name = "listpatientsearch";
             this.listpatientsearch.Size = new System.Drawing.Size(229, 42);
             this.listpatientsearch.TabIndex = 265;
@@ -467,34 +469,34 @@
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AllowUserToResizeColumns = false;
             this.dataGridView2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.GridColor = System.Drawing.Color.White;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.Size = new System.Drawing.Size(1147, 517);
             this.dataGridView2.TabIndex = 52;
@@ -513,7 +515,7 @@
             this.panelmain.Controls.Add(this.label41);
             this.panelmain.Controls.Add(this.Lab_Msg);
             this.panelmain.Controls.Add(this.btn_Add);
-            this.panelmain.Location = new System.Drawing.Point(186, 97);
+            this.panelmain.Location = new System.Drawing.Point(193, 94);
             this.panelmain.Name = "panelmain";
             this.panelmain.Size = new System.Drawing.Size(1155, 600);
             this.panelmain.TabIndex = 256;
@@ -525,7 +527,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.dataGridView2);
-            this.panel6.Location = new System.Drawing.Point(4, 80);
+            this.panel6.Location = new System.Drawing.Point(8, 82);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1147, 517);
             this.panel6.TabIndex = 277;
@@ -538,7 +540,7 @@
             this.panel11.Controls.Add(this.radioButton3);
             this.panel11.Controls.Add(this.radioButton4);
             this.panel11.Controls.Add(this.label16);
-            this.panel11.Location = new System.Drawing.Point(0, 43);
+            this.panel11.Location = new System.Drawing.Point(4, 43);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(1157, 31);
             this.panel11.TabIndex = 58;
@@ -547,7 +549,7 @@
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.radioButton3.Location = new System.Drawing.Point(1064, 10);
+            this.radioButton3.Location = new System.Drawing.Point(1068, 7);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(54, 17);
             this.radioButton3.TabIndex = 44;
@@ -560,7 +562,7 @@
             this.radioButton4.AutoSize = true;
             this.radioButton4.Checked = true;
             this.radioButton4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.radioButton4.Location = new System.Drawing.Point(1021, 10);
+            this.radioButton4.Location = new System.Drawing.Point(1025, 7);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(46, 17);
             this.radioButton4.TabIndex = 43;
@@ -577,7 +579,7 @@
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label16.Location = new System.Drawing.Point(848, 9);
+            this.label16.Location = new System.Drawing.Point(852, 5);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(172, 17);
             this.label16.TabIndex = 42;
@@ -590,7 +592,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
-            this.panel3.Location = new System.Drawing.Point(-12, 40);
+            this.panel3.Location = new System.Drawing.Point(-8, 39);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1169, 1);
             this.panel3.TabIndex = 276;
@@ -600,7 +602,7 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label41.Location = new System.Drawing.Point(6, 10);
+            this.label41.Location = new System.Drawing.Point(10, 8);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(130, 21);
             this.label41.TabIndex = 275;
@@ -612,7 +614,7 @@
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(146, 233);
+            this.Lab_Msg.Location = new System.Drawing.Point(150, 235);
             this.Lab_Msg.Name = "Lab_Msg";
             this.Lab_Msg.Size = new System.Drawing.Size(653, 25);
             this.Lab_Msg.TabIndex = 269;
@@ -628,7 +630,7 @@
             this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Add.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.ForeColor = System.Drawing.Color.White;
-            this.btn_Add.Location = new System.Drawing.Point(1077, 9);
+            this.btn_Add.Location = new System.Drawing.Point(1081, 8);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 29);
             this.btn_Add.TabIndex = 59;
@@ -661,7 +663,7 @@
             this.toolStripTextDoctor});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1351, 43);
+            this.toolStrip1.Size = new System.Drawing.Size(1351, 40);
             this.toolStrip1.TabIndex = 266;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -828,14 +830,14 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -881,8 +883,18 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 43);
             this.toolStripTextDoctor.Text = "doctorname";
+            // 
+            // panel8
+            // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.BackColor = System.Drawing.Color.DarkGray;
+            this.panel8.Location = new System.Drawing.Point(0, 90);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1375, 1);
+            this.panel8.TabIndex = 267;
             // 
             // Show_Appointment
             // 
@@ -890,6 +902,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1351, 699);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
@@ -900,8 +913,10 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelmain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Show_Appointment";
-            this.Text = "Show_Appointment";
+            this.Text = "Appointments";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Show_Appointment_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -982,6 +997,6 @@
         private System.Windows.Forms.ToolStripButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextDoctor;
-
+        private System.Windows.Forms.Panel panel8;
     }
 }
