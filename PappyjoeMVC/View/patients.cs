@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using PappyjoeMVC.Model;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
     public partial class patients : Form, patients_interface
@@ -125,7 +120,7 @@ namespace PappyjoeMVC.View
                         catch (Exception ex)
                         { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -200,7 +195,7 @@ namespace PappyjoeMVC.View
                 LabVitalSign_Click(null, null);
             }
         }
-      
+
         private void LabVitalSign_Click(object sender, EventArgs e)
         {
             try
@@ -424,7 +419,7 @@ namespace PappyjoeMVC.View
             lab_To.Show();
             dateTimePicketo.Show();
             lab_7.Visible = true;
-            lab_Change_AppoinmtName.Visible = true; 
+            lab_Change_AppoinmtName.Visible = true;
             panl_DisplayingPatient.Show();
             lab_7.Text = "";
             butt_Go.Show();
@@ -676,7 +671,7 @@ namespace PappyjoeMVC.View
             }
         }
 
-     
+
 
         private void labeltreatment_Click_1(object sender, EventArgs e)
         {
@@ -1116,7 +1111,7 @@ namespace PappyjoeMVC.View
                             string discount_string = "";
                             string Dr_name = "";
                             string dt_dr = mdl.Get_DoctorName(dt_pt_sub.Rows[k]["dr_id"].ToString());
-                            if (dt_dr!="")
+                            if (dt_dr != "")
                             {
                                 Dr_name = dt_dr;
                             }
@@ -1862,7 +1857,7 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            } 
+            }
         }
 
         private void printlabel_Click(object sender, EventArgs e)
@@ -1873,7 +1868,7 @@ namespace PappyjoeMVC.View
 
         private void addnewpatient_Click(object sender, EventArgs e)
         {
-             if (doctor_id != "1")
+            if (doctor_id != "1")
             {
                 string id;
                 id = mdl.doctr_privillage_for_addnewPatient(doctor_id);// db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PAT' and Permission='A'");
@@ -1904,7 +1899,7 @@ namespace PappyjoeMVC.View
         {
             if (DGV_Patients.RowCount > 0)
             {
-               if (left_button_click == 0 && Inactive_Flag == false)
+                if (left_button_click == 0 && Inactive_Flag == false)
                 {
                     //if (e.ColumnIndex == 2 || e.ColumnIndex==1||e.ColumnIndex==3||e.ColumnIndex==4||e.ColumnIndex==5||e.ColumnIndex==6||e.ColumnIndex==7||e.ColumnIndex==8)
                     if (e.RowIndex >= 0)
@@ -2237,12 +2232,12 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                    this.cntrl.recently_visited(d,todate);
+                    this.cntrl.recently_visited(d, todate);
                     //sqlstr = "SELECT  DISTINCT A.id AS Pid,P.pt_id 'Patient Id',P.pt_name 'Patient Name', P.gender Gender,P.age Age,P. primary_mobile_number Mobile ,P.street_address 'Street Address',P.locality Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d + "' and '" + todate + "' and A.status<>'CANCELLED' and A.status <>'scheduled' ";
                 }
                 else
                 {
-                    this.cntrl.recently_visited_search(d,todate,txt_Search.Text);
+                    this.cntrl.recently_visited_search(d, todate, txt_Search.Text);
                     //sqlstr = "SELECT  DISTINCT A.id AS Pid,P.pt_id 'Patient Id',P.pt_name 'Patient Name', P.gender Gender,P.age Age,P. primary_mobile_number Mobile ,P.street_address 'Street Address',P.locality Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d + "' and '" + todate + "' and A.status<>'CANCELLED' and A.status <>'scheduled' and (P.pt_id like '%" + txt_Search.Text + "%' or P.pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%') ";
                 }
             }
@@ -2415,10 +2410,10 @@ namespace PappyjoeMVC.View
                 this.cntrl.group();
             }
         }
-     
+
         public void Load_Group(DataTable dt_gd)
         {
-            for(int j = 0; j < dt_gd.Rows.Count; j++)
+            for (int j = 0; j < dt_gd.Rows.Count; j++)
             {
                 grgroup.Rows.Add(dt_gd.Rows[j]["id"].ToString(), dt_gd.Rows[j]["name"].ToString());
             }
@@ -2427,7 +2422,7 @@ namespace PappyjoeMVC.View
                 grgroup.CurrentCell.Selected = false;
             }
         }
-       public void Create_Datagrid(DataTable dtb)
+        public void Create_Datagrid(DataTable dtb)
         {
             if (dtb.Columns.Count > 0)
             {
