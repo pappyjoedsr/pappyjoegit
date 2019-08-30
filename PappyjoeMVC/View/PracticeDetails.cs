@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using PappyjoeMVC.Model;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using PappyjoeMVC.Controller;
-using System.Data;
-using PappyjoeMVC.Model; 
 using System.IO;
-using Microsoft.Win32;
+using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
@@ -21,7 +14,7 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        Practice_Controller cntrl=new Practice_Controller();
+        Practice_Controller cntrl = new Practice_Controller();
         public string doctor_id = "1", staff_id = "";
         public int len;
         Connection db = new Connection();
@@ -41,10 +34,6 @@ namespace PappyjoeMVC.View
         exportdata exprt = new exportdata();
         LabMedical labmedical = new LabMedical();
         LabDental dental = new LabDental();
-        public void SetController(Practice_Controller controller)
-        {
-            cntrl = controller;
-        }
         private void btnaddstate_Click(object sender, EventArgs e)
         {
             if (cmb_country.Items.Count > 0)
@@ -89,7 +78,7 @@ namespace PappyjoeMVC.View
         private void PracticeDetails_Load(object sender, EventArgs e)
         {
             //focus = true;
-             label16.Hide();
+            label16.Hide();
             panel_main.Visible = false;
             DataTable dt_country = this.cntrl.Fill_CountryCombo();
             FillCountryCombo(dt_country);
@@ -148,15 +137,15 @@ namespace PappyjoeMVC.View
             }
         }
 
-        public void Get_CmbName(DataTable dtb,string cmd)
+        public void Get_CmbName(DataTable dtb, string cmd)
         {
-            if(dtb.Rows.Count>0)
+            if (dtb.Rows.Count > 0)
             {
-                if(cmd== "Country")
+                if (cmd == "Country")
                 {
                     cmb_country.Text = dtb.Rows[0]["country"].ToString();
                 }
-                else if(cmd=="City")
+                else if (cmd == "City")
                 {
                     cmb_city.Text = dtb.Rows[0]["city"].ToString();
                 }
@@ -164,7 +153,7 @@ namespace PappyjoeMVC.View
                 {
                     cmb_state.Text = dtb.Rows[0]["state"].ToString();
                 }
-                else if(cmd == "Specialization")
+                else if (cmd == "Specialization")
                 {
                     cmb_specialization.Text = dtb.Rows[0]["name"].ToString();
                 }
@@ -270,12 +259,12 @@ namespace PappyjoeMVC.View
                 label16.Show();
             }
             else
-            { 
+            {
                 label16.Hide();
                 errorProvider1.Dispose();
             }
         }
-       
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             open.ShowDialog();
@@ -289,11 +278,11 @@ namespace PappyjoeMVC.View
                 txtpath.Text = System.IO.Path.GetFileName(open.FileName);
             }
         }
-        
+
         public void FillCountryCombo(DataTable dtb)
         {
             cmb_country.DataSource = null;
-            if (dtb.Rows.Count>0)
+            if (dtb.Rows.Count > 0)
             {
                 cmb_country.DataSource = dtb;
                 cmb_country.DisplayMember = "country";
@@ -357,7 +346,7 @@ namespace PappyjoeMVC.View
 
         private void cmb_country_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmb_country.DataSource != null)
+            if (cmb_country.DataSource != null)
             {
                 string countryId = cmb_country.SelectedValue.ToString();
                 DataTable dtb = this.cntrl.country_selectedIndexChanged(countryId);
@@ -389,7 +378,7 @@ namespace PappyjoeMVC.View
             bill.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             //Billing_controller controller = new Billing_controller(bill);
             bill.Show();
-        } 
+        }
         public void backColor_change()
         {
             button_practice.BackColor = Color.DodgerBlue;
@@ -410,7 +399,7 @@ namespace PappyjoeMVC.View
         }
         public void form_hide()
         {
-            calender.Hide(); 
+            calender.Hide();
             communication.Hide();
             catalog.Hide();
             bill.Hide();
@@ -424,7 +413,7 @@ namespace PappyjoeMVC.View
             staff.Hide();
             labmedical.Hide();
             dental.Hide();
-            panel_main.Show(); 
+            panel_main.Show();
         }
 
         private void button_practice_Click(object sender, EventArgs e)
@@ -489,7 +478,7 @@ namespace PappyjoeMVC.View
         {
             errorProvider1.Dispose();
             backColor_change();
-            button_prescription.BackColor = Color.SteelBlue; 
+            button_prescription.BackColor = Color.SteelBlue;
             form_hide();
             prescription.TopLevel = false;
             panel_main.Controls.Add(prescription);
