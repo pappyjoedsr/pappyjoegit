@@ -9,13 +9,7 @@ namespace PappyjoeMVC.Controller
 {
   public class AddItem_controller
     {
-        AddItemInterface intr;
         Additem_model _Model =new Additem_model();
-        public AddItem_controller(AddItemInterface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
         public DataTable fill_category()
         {
             DataTable dtb = _Model.fill_category();
@@ -31,43 +25,15 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _Model.fill_unit();
             return dtb;
         }
-        public int Save_data(string isOneUnitOnly)
+        public int Save_data(string _itemname, string _itemcode, string _manufacture, string _category, string _location, string _packing, string _isbatch, string _Sales1, string _SalesMin, string _SalesMax, string _Purch_Rate, string _punit, string _sUnit, int _unitmf, string _Purch_Rate2, string _Sales2, string _SalesMin1, string _SalesMax1, string _isOneUnitOnly, string _ReorderQty, string _CostBase, string _istax, string _MinimumStock)
         {
-            Put_data_to_model(isOneUnitOnly);
-            int i = _Model.Save_data();
+            int i = _Model.Save_data( _itemname,  _itemcode,  _manufacture,  _category,  _location,  _packing,  _isbatch,  _Sales1,  _SalesMin,  _SalesMax,  _Purch_Rate,  _punit,  _sUnit,  _unitmf,  _Purch_Rate2,  _Sales2,  _SalesMin1,  _SalesMax1,  _isOneUnitOnly,  _ReorderQty,  _CostBase,  _istax,  _MinimumStock);
             return i;
         }
-        public void Put_data_to_model(string isOneUnitOnly)
+       
+        public int update_data(int id, string _itemname, string _itemcode, string _manufacture, string _category, string _location, string _packing, string _isbatch, string _Sales1, string _SalesMin, string _SalesMax, string _Purch_Rate, string _punit, string _sUnit, int _unitmf, string _Purch_Rate2, string _Sales2, string _SalesMin1, string _SalesMax1, string _isOneUnitOnly, string _ReorderQty, string _CostBase, string _istax, string _MinimumStock)
         {
-            _Model.ItemCode = intr.ItemCode;
-            _Model.ItemName = intr.ItemName;
-            _Model.Packing = intr.Packing;
-            _Model.Location = intr.Location;
-            _Model.Category = intr.Category;
-            _Model.Manufacture = intr.Manufacture;
-            _Model.PUnit = intr.PUnit;
-            _Model.SUnit = intr.SUnit;
-            _Model.UnitMF = intr.UnitMF;
-            _Model.Sales_Rate = intr.Sales_Rate;
-            _Model.Sales_Rate_min = intr.Sales_Rate_min;
-            _Model.Sales_Rate_Max = intr.Sales_Rate_Max;
-            _Model.Sales_Rate2 = intr.Sales_Rate2;
-            _Model.Sales_Rate_min2 = intr.Sales_Rate_min2;
-            _Model.Sales_Rate_Max2 = intr.Sales_Rate_Max2;
-            _Model.Purch_Rate = intr.Purch_Rate;
-            _Model.Purch_Rate2 = intr.Purch_Rate2;
-            _Model.ISBAtch = intr.ISBatch;
-            _Model.ISTax = intr.ISTax;
-            _Model.CostBase = intr.CostBase;
-            _Model.ReorderQty = intr.ReorderQty;
-            _Model.MinimumStock = intr.MinimumStock;
-            _Model.isOneUnitOnly = isOneUnitOnly;
-
-        }
-        public int update_data(string isOneUnitOnly,int id)
-        {
-            Put_data_to_model(isOneUnitOnly);
-            int i = _Model.update_data(id);
+            int i = _Model.update_data(id, _itemname, _itemcode, _manufacture, _category, _location, _packing, _isbatch, _Sales1, _SalesMin, _SalesMax, _Purch_Rate, _punit, _sUnit, _unitmf, _Purch_Rate2, _Sales2, _SalesMin1, _SalesMax1, _isOneUnitOnly, _ReorderQty, _CostBase, _istax, _MinimumStock);
             return i;
         }
         public DataTable load_itemcode()
@@ -80,10 +46,9 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _Model.Get_Item_unitmf(id);
             return dtb;
         }
-        
-       public DataTable get_PurchNumber(string id)
+       public string get_PurchNumber(string id)
         {
-            DataTable dtb = _Model.get_PurchNumber(id);
+            string dtb = _Model.get_PurchNumber(id);
             return dtb;
         }
         public DataTable get_tbl_PURCHIT_details(string id)
@@ -101,39 +66,27 @@ namespace PappyjoeMVC.Controller
             string maxId = _Model.get_max_itemid();
             return maxId;
         }
-        public void savedrugtable(string itemid)
+        public void savedrugtable(string itemid, string _itemname, string _type, string _strength, string _strength_gr, string _instructions)
         {
-            add_drugdatas();
-            _Model.savedrugtable(itemid);
+            _Model.savedrugtable(itemid,  _itemname,  _type,  _strength,  _strength_gr,  _instructions);
         }
-        public DataTable get_drugid(string Item_Id)
+        public string get_drugid(string Item_Id)
         {
-            DataTable dtb = _Model.get_drugid(Item_Id);
+            string dtb = _Model.get_drugid(Item_Id);
             return dtb;
         }
-        public void update_drug(string itemid)
+        public void update_drug(string itemid, string _itemname, string _type, string _strength, string _strength_gr, string _instructions)
         {
-            add_drugdatas();
-            _Model.update_drug(itemid);
+            _Model.update_drug( itemid,  _itemname,  _type,  _strength,  _strength_gr,  _instructions);
         }
-        public DataTable select_id_drug()
+        public DataTable select_id_drug(string _itemname, string _type, string _strength, string _strength_gr, string _instructions)
         {
-            add_drugdatas();
-            DataTable dt= _Model.select_id_drug();
+            DataTable dt= _Model.select_id_drug( _itemname,  _type,  _strength,  _strength_gr,  _instructions);
             return dt;
         }
-        public void update(string Item_Id, string id)
+        public void update(string Item_Id, string id, string _itemname, string _type, string _strength, string _strength_gr, string _instructions)
         {
-            add_drugdatas();
-            _Model.update(Item_Id,id);
-        }
-        public void add_drugdatas()
-        {
-            _Model.type = intr.type;
-            _Model.ItemName = intr.ItemName;
-            _Model.strength = intr.strength;
-            _Model.strength_gr = intr.strength_gr;
-            _Model.instructions = intr.instructions;
+            _Model.update(Item_Id,id, _itemname, _type, _strength, _strength_gr,_instructions);
         }
         public void update_inventryid(string Item_Id)
         {

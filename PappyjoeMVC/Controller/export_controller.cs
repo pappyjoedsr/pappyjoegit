@@ -9,17 +9,12 @@ namespace PappyjoeMVC.Controller
 {
   public class export_controller
     {
-        export_interface intr;
+        
         export_model _model = new export_model();
-        public export_controller(export_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
-        public void Get_AllDoctor()
+        public DataTable Get_AllDoctor()
         {
             DataTable dtb = _model.Get_AllDoctor();
-            intr.Fill_Combo(dtb);
+            return dtb;
         }
         public DataTable Get_addProcedure()
         {

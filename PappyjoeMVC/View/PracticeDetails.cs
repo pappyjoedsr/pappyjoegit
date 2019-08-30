@@ -93,10 +93,16 @@ namespace PappyjoeMVC.View
             panel_main.Visible = false;
             DataTable dt_country = this.cntrl.Fill_CountryCombo();
             FillCountryCombo(dt_country);
-            DataTable dtb_state = this.cntrl.country_selectedIndexChanged(cmb_country.SelectedValue.ToString());
-            FillStateCombo(dtb_state);
-            DataTable dtb_city = this.cntrl.state_selectedIndexChanged(cmb_state.SelectedValue.ToString());
-            FillCityCombo(dtb_city);
+            if(cmb_country.SelectedIndex>=0)
+            {
+                DataTable dtb_state = this.cntrl.country_selectedIndexChanged(cmb_country.SelectedValue.ToString());
+                FillStateCombo(dtb_state);
+            }
+            if(cmb_state.SelectedIndex>=0)
+            {
+                DataTable dtb_city = this.cntrl.state_selectedIndexChanged(cmb_state.SelectedValue.ToString());
+                FillCityCombo(dtb_city);
+            }
             DataTable dt_speci = this.cntrl.Fill_SpecializationCombo();
             FilSpecializationCombo(dt_speci);
             toolStripButton1.Text = this.cntrl.Load_CompanyName();
@@ -569,7 +575,7 @@ namespace PappyjoeMVC.View
             exprt.TopLevel = false;
             exprt.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             panel_main.Controls.Add(exprt);
-            export_controller cntroller = new export_controller(exprt);
+            //export_controller cntroller = new export_controller(exprt);
             exprt.Show();
         }
 

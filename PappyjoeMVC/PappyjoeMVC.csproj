@@ -61,7 +61,6 @@
   <ItemGroup>
     <Compile Include="Controller\addfinsed_treatment_controller.cs" />
     <Compile Include="Controller\addfinsed_treatment_interface.cs" />
-    <Compile Include="Controller\AddItemInterface.cs" />
     <Compile Include="Controller\AddItem_controller.cs" />
     <Compile Include="Controller\AddNew_patient_controller.cs" />
     <Compile Include="Controller\AddNew_patient_interface.cs" />
@@ -111,7 +110,6 @@
     <Compile Include="Controller\EMR_Interface.cs" />
     <Compile Include="Controller\expense_controller.cs" />
     <Compile Include="Controller\export_controller.cs" />
-    <Compile Include="Controller\export_interface.cs" />
     <Compile Include="Controller\finishedprocedre_controller.cs" />
     <Compile Include="Controller\finishedprocedure_interface.cs" />
     <Compile Include="Controller\frmimagezoom_controller.cs" />

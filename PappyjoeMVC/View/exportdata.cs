@@ -1,39 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
-using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
-    public partial class exportdata : Form,export_interface
+    public partial class exportdata : Form
     {
-        export_controller cntrl;
+        export_controller cntrl = new export_controller();
         public exportdata()
         {
             InitializeComponent();
         }
-        public void SetController(export_controller controller)
-        {
-            cntrl = controller; 
-        }
-
         private void exportdata_Load(object sender, EventArgs e)
         {
             dtpFrom.Format = DateTimePickerFormat.Short;
             dtpFrom.Value = DateTime.Today;
             dtpTo.Format = DateTimePickerFormat.Short;
             dtpTo.Value = DateTime.Today;
-            this.cntrl.Get_AllDoctor();
+            DataTable dtb = this.cntrl.Get_AllDoctor();
+            Fill_Combo(dtb);
         }
         public void Fill_Combo(DataTable dtb)
         {
-            if(dtb.Rows.Count>0)
+            if (dtb.Rows.Count > 0)
             {
                 cmbDoctor.DisplayMember = "doctor_name";
                 cmbDoctor.ValueMember = "id";
@@ -90,11 +80,10 @@ namespace PappyjoeMVC.View
                                 ExcelApp.Cells[i + 4, j + 1].Borders.Color = Color.FromArgb(0, 102, 204);
                                 ExcelApp.Cells[i + 4, j + 1].Font.Size = 8;
                             }
-
                         }
-
                         catch (Exception ex)
                         {
+                            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     ExcelApp.ActiveWorkbook.SaveAs("Procedure Catalog(" + DateTime.Now.ToString("dd-MM-yyyy hh-mm-ss") + ").xls", Microsoft.Office.Interop.Excel.XlFileFormat.xlXMLSpreadsheet, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange);
@@ -153,12 +142,13 @@ namespace PappyjoeMVC.View
                                 }
                                 catch (Exception ex)
                                 {
+                                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
                         }
                         catch (Exception ex)
                         {
-
+                            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     ExcelApp.ActiveWorkbook.SaveAs("Contacts(" + DateTime.Now.ToString("dd-MM-yyyy hh-mm-ss") + ").xls", Microsoft.Office.Interop.Excel.XlFileFormat.xlXMLSpreadsheet, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange);
@@ -176,7 +166,7 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        DataTable appt = this.cntrl.get_all_appointments(dtpFrom.Value, dtpTo.Value); 
+                        DataTable appt = this.cntrl.get_all_appointments(dtpFrom.Value, dtpTo.Value);
                         dataGridView_appt.DataSource = appt;
                     }
                     Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
@@ -242,6 +232,7 @@ namespace PappyjoeMVC.View
                         }
                         catch (Exception ex)
                         {
+                            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     ExcelApp.ActiveWorkbook.SaveAs("Appointment(" + DateTime.Now.ToString("dd-MM-yyyy hh-mm-ss") + ").xls", Microsoft.Office.Interop.Excel.XlFileFormat.xlXMLSpreadsheet, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange);
@@ -253,13 +244,13 @@ namespace PappyjoeMVC.View
                 {
                     if (cmbDoctor.SelectedIndex > 0)
                     {
-                        DataTable treat = this.cntrl.doctor_wise_treatment(cmbDoctor.Text, dtpFrom.Value, dtpTo.Value);// db.table("SELECT tbl_treatment_plan_main.date,tbl_patient.pt_id,tbl_patient.pt_name,tbl_doctor.doctor_name, tbl_treatment_plan.procedure_name, tbl_treatment_plan.note, tbl_treatment_plan.discount, tbl_treatment_plan.cost FROM  tbl_treatment_plan INNER JOIN tbl_treatment_plan_main ON tbl_treatment_plan.plan_main_id = tbl_treatment_plan_main.id INNER JOIN tbl_patient ON tbl_treatment_plan.pt_id = tbl_patient.id INNER JOIN tbl_doctor ON tbl_treatment_plan_main.dr_id= tbl_doctor.id where tbl_doctor.doctor_name='" + cmbDoctor.Text + "' and tbl_treatment_plan_main.date between '" + dtpFrom.Value + "' and '" + dtpTo.Value + "'");
+                        DataTable treat = this.cntrl.doctor_wise_treatment(cmbDoctor.Text, dtpFrom.Value, dtpTo.Value);
                         dataGridView_treatment.DataSource = treat;
                         dataGridView_treatment.Columns.RemoveAt(3);
                     }
                     else
                     {
-                        DataTable treat = this.cntrl.all_tratment(dtpFrom.Value, dtpTo.Value);//  db.table("SELECT tbl_treatment_plan_main.date,tbl_patient.pt_id,tbl_patient.pt_name,tbl_doctor.doctor_name, tbl_treatment_plan.procedure_name, tbl_treatment_plan.note, tbl_treatment_plan.discount, tbl_treatment_plan.cost FROM  tbl_treatment_plan INNER JOIN tbl_treatment_plan_main ON tbl_treatment_plan.plan_main_id = tbl_treatment_plan_main.id INNER JOIN tbl_patient ON tbl_treatment_plan.pt_id = tbl_patient.id INNER JOIN tbl_doctor ON tbl_treatment_plan_main.dr_id= tbl_doctor.id where tbl_treatment_plan_main.date between '" + dtpFrom.Value + "' and '" + dtpTo.Value + "'");
+                        DataTable treat = this.cntrl.all_tratment(dtpFrom.Value, dtpTo.Value);
                         dataGridView_treatment.DataSource = treat;
                     }
                     Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
@@ -325,12 +316,14 @@ namespace PappyjoeMVC.View
                         }
                         catch (Exception ex)
                         {
+                            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     ExcelApp.ActiveWorkbook.SaveAs("Treatment(" + DateTime.Now.ToString("dd-MM-yyyy hh-mm-ss") + ").xls", Microsoft.Office.Interop.Excel.XlFileFormat.xlXMLSpreadsheet, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange);
                     ExcelApp.ActiveWorkbook.Saved = true;
                     ExcelApp.Quit();
-                    this.cntrl.Get_AllDoctor();
+                    DataTable dtb = this.cntrl.Get_AllDoctor();
+                    Fill_Combo(dtb);
                     checkStr = "1";
                 }
                 if (check_expense.Checked == true)
@@ -382,6 +375,7 @@ namespace PappyjoeMVC.View
                         }
                         catch (Exception ex)
                         {
+                            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     ExcelApp.ActiveWorkbook.SaveAs("Expense(" + DateTime.Now.ToString("dd-MM-yyyy hh-mm-ss") + ").xls", Microsoft.Office.Interop.Excel.XlFileFormat.xlXMLSpreadsheet, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange);
@@ -393,13 +387,13 @@ namespace PappyjoeMVC.View
                 {
                     if (cmbDoctor.SelectedIndex > 0)
                     {
-                        DataTable prescription = this.cntrl.doctor_wise_prescription(cmbDoctor.Text, dtpFrom.Value, dtpTo.Value);// db.table("select tbl_prescription.date,tbl_prescription.dr_name,tbl_patient.pt_id,tbl_patient.pt_name,tbl_prescription.drug_name,tbl_prescription.drug_type,tbl_prescription.strength,tbl_prescription.strength_gr,tbl_prescription.food,tbl_prescription.morning,tbl_prescription.noon,tbl_prescription.night,tbl_prescription.add_instruction,((tbl_prescription.duration_unit  + ' '+ tbl_prescription.duration_period)) as duration_period1  from tbl_prescription INNER JOIN tbl_patient ON tbl_patient.id=tbl_prescription.pt_id where tbl_prescription.date between '" + dtpFrom.Value + "' and '" + dtpTo.Value + "'");
+                        DataTable prescription = this.cntrl.doctor_wise_prescription(cmbDoctor.Text, dtpFrom.Value, dtpTo.Value);
                         dataGridView_prescription.DataSource = prescription;
                         dataGridView_prescription.Columns.RemoveAt(1);
                     }
                     else
                     {
-                        DataTable prescription = this.cntrl.All_prescription(dtpFrom.Value, dtpTo.Value);//  db.table("select tbl_prescription.date,tbl_prescription.dr_name,tbl_patient.pt_id,tbl_patient.pt_name,tbl_prescription.drug_name,tbl_prescription.drug_type,tbl_prescription.strength,tbl_prescription.strength_gr,tbl_prescription.food,tbl_prescription.morning,tbl_prescription.noon,tbl_prescription.night,tbl_prescription.add_instruction,(tbl_prescription.duration_unit  + ' '+ tbl_prescription.duration_period) as duration_period1   from tbl_prescription INNER JOIN tbl_patient ON tbl_patient.id=tbl_prescription.pt_id where tbl_prescription.date between '" + dtpFrom.Value + "' and '" + dtpTo.Value + "'");
+                        DataTable prescription = this.cntrl.All_prescription(dtpFrom.Value, dtpTo.Value);
                         dataGridView_prescription.DataSource = prescription;
                     }
                     Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
@@ -465,11 +459,13 @@ namespace PappyjoeMVC.View
                                 }
                                 catch (Exception ex)
                                 {
+                                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
                         }
                         catch (Exception ex)
                         {
+                            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     ExcelApp.ActiveWorkbook.SaveAs("Prescription(" + DateTime.Now.ToString("dd-MM-yyyy hh-mm-ss") + ").xls", Microsoft.Office.Interop.Excel.XlFileFormat.xlXMLSpreadsheet, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange);

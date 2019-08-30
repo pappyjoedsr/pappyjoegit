@@ -10,15 +10,15 @@ using System.Windows.Forms;
 using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
-    public partial class frmAddDrug : Form, AddItemInterface
+    public partial class frmAddDrug : Form
     {
         AddItem_controller cntrl;
         public bool editFlag = false;
         DataTable dt_ForEditItems = new DataTable();
         public static int Item_Id;
-        public bool cal_flag = false; string  isOneUnitOnly = "", unit2 = "";
+        public bool cal_flag = false; string  isOneUnitOnly = "", unit2 = "", _isbatch="", _istax="", _sUnit="";
         private DataTable dtb;
-
+        int UnitMF = 0;
         public frmAddDrug()
         {
             InitializeComponent();
@@ -45,8 +45,8 @@ namespace PappyjoeMVC.View
             {
                 decimal Unit2_Avg = 0;
                 DataTable dt = this.cntrl.Get_Item_unitmf(dt_ForEditItems.Rows[0]["id"].ToString());
-                DataTable bt_purNo = this.cntrl.get_PurchNumber(dt_ForEditItems.Rows[0]["id"].ToString());
-                DataTable dt_purch = this.cntrl.get_tbl_PURCHIT_details(bt_purNo.Rows[0][0].ToString());
+                string bt_purNo = this.cntrl.get_PurchNumber(dt_ForEditItems.Rows[0]["id"].ToString());
+                DataTable dt_purch = this.cntrl.get_tbl_PURCHIT_details(bt_purNo);
                 DataTable dtb_Avg = this.cntrl.Get_PURCHIT_wit_itemid(dt_ForEditItems.Rows[0]["id"].ToString());
                 Item_Id = Convert.ToInt32(dt.Rows[0]["id"].ToString());
                 if (dt_ForEditItems.Rows.Count > 0)
@@ -835,6 +835,30 @@ namespace PappyjoeMVC.View
                         return;
                     }
                 }
+                if (Chk_HavebatchNo.Checked == true)
+                {
+                    _isbatch="true";
+                }
+                else
+                {
+                    _isbatch = "false";
+                }
+                if (Chk_Taxable.Checked == true)
+                {
+                    _istax="true";
+                }
+                else
+                {
+                    _istax=" false";
+                }
+                if (chk_OneUnitOnly.Checked == true)
+                {
+                    _sUnit= "null";
+                }
+                else
+                {
+                    _sUnit=cmb_unit2.Text;
+                }
                 if (save.Text == "SAVE")
                 {
                     if (itemcheck() == 1)
@@ -842,7 +866,7 @@ namespace PappyjoeMVC.View
                         MessageBox.Show("The item code already exists !..", "Duplication encountered", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-                    int i = this.cntrl.Save_data(isOneUnitOnly);
+                    int i = this.cntrl.Save_data(txt_ItemName.Text, txt_ItemCode.Text, Cmb_Manufacture.SelectedValue.ToString(), Cmb_Category.SelectedValue.ToString(), txt_Location.Text, txt_Packing.Text, _isbatch, txt_SalesRate.Text, txt_SalesRateMin.Text, txt_SalesRateMax.Text, txt_PurchaseRate.Text, cmb_Unit1.Text, _sUnit, UnitMF, txt_PurchRate2.Text, txt_SalesRate2.Text, txt_SalesRateMin2.Text, txt_SalesRateMax2.Text, isOneUnitOnly, txt_reorderStockQty.Text, txt_CostBase.Text, _istax, txt_minimumStockforSale.Text);//isOneUnitOnly);
                     if (i > 0)
                     {
 
@@ -850,7 +874,7 @@ namespace PappyjoeMVC.View
                         {
                             string rs_item = this.cntrl.get_max_itemid();
                             string itemid = rs_item;
-                            this.cntrl.savedrugtable(itemid);
+                            this.cntrl.savedrugtable(itemid,txt_ItemName.Text, cmbdrugtype.Text, txtstrength.Text, cmbstrength.Text, txtinstructions.Text);
                         }
                         MessageBox.Show("Item added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         clear();
@@ -858,26 +882,26 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    int i = this.cntrl.update_data(isOneUnitOnly, Item_Id);
+                    int i = this.cntrl.update_data(Item_Id, txt_ItemName.Text, txt_ItemCode.Text, Cmb_Manufacture.SelectedValue.ToString(), Cmb_Category.SelectedValue.ToString(), txt_Location.Text, txt_Packing.Text, _isbatch, txt_SalesRate.Text, txt_SalesRateMin.Text, txt_SalesRateMax.Text, txt_PurchaseRate.Text, cmb_Unit1.Text, _sUnit, UnitMF, txt_PurchRate2.Text, txt_SalesRate2.Text, txt_SalesRateMin2.Text, txt_SalesRateMax2.Text, isOneUnitOnly, txt_reorderStockQty.Text, txt_CostBase.Text, _istax, txt_minimumStockforSale.Text);
                     if (i > 0)
                     {
                         if (chkprescription.Checked == true)
                         {
-                            DataTable rs_item = this.cntrl.get_drugid(Item_Id.ToString());
-                            if (rs_item.Rows.Count > 0)
+                            string rs_item = this.cntrl.get_drugid(Item_Id.ToString());
+                            if (rs_item!="")
                             {
-                                this.cntrl.update_drug(Item_Id.ToString());
+                                this.cntrl.update_drug(Item_Id.ToString(), txt_ItemName.Text, cmbdrugtype.Text, txtstrength.Text, cmbstrength.Text, txtinstructions.Text);
                             }
                             else
                             {
-                                DataTable rs_additem = this.cntrl.select_id_drug();
+                                DataTable rs_additem = this.cntrl.select_id_drug(txt_ItemName.Text, cmbdrugtype.Text, txtstrength.Text, cmbstrength.Text, txtinstructions.Text);
                                 if (rs_additem.Rows.Count > 0)
                                 {
-                                    this.cntrl.update(Item_Id.ToString(), rs_additem.Rows[0]["id"].ToString()); 
+                                    this.cntrl.update(Item_Id.ToString(), rs_additem.Rows[0]["id"].ToString(), txt_ItemName.Text, cmbdrugtype.Text, txtstrength.Text, cmbstrength.Text, txtinstructions.Text); 
                                 }
                                 else
                                 {
-                                    this.cntrl.savedrugtable(Item_Id.ToString());
+                                    this.cntrl.savedrugtable(Item_Id.ToString(), txt_ItemName.Text, cmbdrugtype.Text, txtstrength.Text, cmbstrength.Text, txtinstructions.Text);//Item_Id.ToString());
                                 }
                             }
                         }
@@ -908,196 +932,7 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-        public string ItemCode
-        {
-            get { return this.txt_ItemCode.Text; }
-            set { this.txt_ItemCode.Text = value; }
-        }
-        public string ItemName
-        {
-            get { return this.txt_ItemName.Text; }
-            set { this.txt_ItemName.Text = value; }
-        }
-        public string Packing
-        {
-            get { return this.txt_Packing.Text; }
-            set { this.txt_Packing.Text = value; }
-        }
-        public string Location
-        {
-            get { return this.txt_Location.Text; }
-            set { this.txt_Location.Text = value; }
-        }
-        public string Category
-        {
-            get { return this.Cmb_Category.SelectedValue.ToString(); }
-            set { this.Cmb_Category.SelectedValue = value; }
-        }
-        public string Manufacture
-        {
-            get { return Cmb_Manufacture.SelectedValue.ToString(); }
-            set { this.Cmb_Manufacture.SelectedValue = value; }
-        }
-        public string PUnit
-        {
-            get { return this.cmb_Unit1.Text; }
-            set { this.cmb_Unit1.Text = value; }
-        }
-        public string SUnit
-        {
-            get
-            {
-                if (chk_OneUnitOnly.Checked == true)
-                {
-                    return "null";
-                }
-                else
-                {
-                    return this.cmb_unit2.Text;
-                }
-            }
-            set
-            {
-                if (chk_OneUnitOnly.Checked == true)
-                {
-                    cmb_unit2.Text = "";
-                }
-                else
-                {
-                    this.cmb_unit2.Text = value;
-                }
-            }
-        }
-        public int UnitMF
-        {
-            get { return Convert.ToInt32(this.txt_UnitMF.Text); }
-            set { this.txt_UnitMF.Text = value.ToString(); }
-        }
-        public decimal Sales_Rate
-        {
-            get { return Convert.ToDecimal(txt_SalesRate.Text); }
-            set { this.txt_SalesRate.Text = value.ToString(); }
-        }
-        public decimal Sales_Rate_min
-        {
-            get { return Convert.ToDecimal(txt_SalesRateMin.Text); }
-            set { this.txt_SalesRateMin.Text = value.ToString(); }
-        }
-        public decimal Sales_Rate_Max
-        {
-            get { return Convert.ToDecimal(txt_SalesRateMax.Text); }
-            set { this.txt_SalesRateMax.Text = value.ToString(); }
-        }
-        public decimal Sales_Rate2
-        {
-            get { return Convert.ToDecimal(txt_SalesRate2.Text); }
-            set { this.txt_SalesRate2.Text = value.ToString(); }
-        }
-        public decimal Sales_Rate_min2
-        {
-            get { return Convert.ToDecimal(txt_SalesRateMin2.Text); }
-            set { this.txt_SalesRateMin2.Text = value.ToString(); }
-        }
-        public decimal Sales_Rate_Max2
-        {
-            get { return Convert.ToDecimal(txt_SalesRateMax2.Text); }
-            set { this.txt_SalesRateMax2.Text = value.ToString(); }
-        }
-        public decimal CostBase
-        {
-            get { return Convert.ToDecimal(txt_CostBase.Text); }
-            set { this.txt_CostBase.Text = value.ToString(); }
-        }
-        public decimal Purch_Rate2
-        {
-            get { return Convert.ToDecimal(txt_PurchRate2.Text); }
-            set { this.txt_PurchRate2.Text = value.ToString(); }
-        }
-        public decimal Purch_Rate
-        {
-            get { return Convert.ToDecimal(txt_PurchaseRate.Text); }
-            set { this.txt_PurchaseRate.Text = value.ToString(); }
-        }
-        public int ReorderQty
-        {
-            get { return Convert.ToInt32(txt_reorderStockQty.Text); }
-            set { this.txt_reorderStockQty.Text = value.ToString(); }
-        }
-        public int MinimumStock
-        {
-            get { return Convert.ToInt32(txt_minimumStockforSale.Text); }
-            set { this.txt_minimumStockforSale.Text = value.ToString(); }
-        }
-        public bool ISBatch
-        {
-            get
-            {
-                if (Chk_HavebatchNo.Checked == true)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            set
-            {
-                if (value == true)
-                {
-                    Chk_HavebatchNo.Checked = true;
-                }
-                else
-                {
-                    Chk_HavebatchNo.Checked = false;
-                }
-            }
-        }
-        public bool ISTax
-        {
-            get
-            {
-                if (Chk_Taxable.Checked == true)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            set
-            {
-                if (value == true)
-                {
-                    Chk_Taxable.Checked = true;
-                }
-                else
-                {
-                    Chk_Taxable.Checked = false;
-                }
-            }
-        }
-        public string type
-        {
-            get { return this.cmbdrugtype.Text; }
-            set { this.cmbdrugtype.Text = value; }
-        }
-        public string strength
-        {
-            get { return this.txtstrength.Text; }
-            set { this.txtstrength.Text = value; }
-        }
-        public string strength_gr
-        {
-            get { return this.cmbstrength.Text; }
-            set { this.cmbstrength.Text = value; }
-        }
-        public string instructions
-        {
-            get { return this.txtinstructions.Text; }
-            set { this.txtinstructions.Text = value; }
-        }
+      
         public void checkNull()
         {
             if (string.IsNullOrWhiteSpace(txt_reorderStockQty.Text))
