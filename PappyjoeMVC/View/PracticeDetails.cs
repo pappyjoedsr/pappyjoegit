@@ -671,19 +671,19 @@ namespace PappyjoeMVC.View
         //bool focus = false;
         private void PracticeDetails_Paint(object sender, PaintEventArgs e)
         {
-            //if (focus)
-            //{ 
-            //    txtname.BorderStyle = BorderStyle.None;
-            //    Pen p = new Pen(Color.Gray);
-            //    Graphics g = e.Graphics;
-            //    //int variance = 3,Hight_Variance=6;
-            //    g.DrawRectangle(Pens.Gray, 0, 0, Width +12 , Height + 12);
-            //    //g.DrawRectangle(p, new Rectangle(txtname.Location.X - variance, txtname.Location.Y - Hight_Variance, txtname.Width + variance, txtname.Height + Hight_Variance));
-            //}
-            //else
-            //{
-            //    txtname.BorderStyle = BorderStyle.FixedSingle;
-            //}
+            ////if (focus)
+            ////{ 
+            ////    txtname.BorderStyle = BorderStyle.None;
+            ////    Pen p = new Pen(Color.Gray);
+            ////    Graphics g = e.Graphics;
+            ////    //int variance = 3,Hight_Variance=6;
+            ////    g.DrawRectangle(Pens.Gray, 0, 0, Width +12 , Height + 12);
+            ////    //g.DrawRectangle(p, new Rectangle(txtname.Location.X - variance, txtname.Location.Y - Hight_Variance, txtname.Width + variance, txtname.Height + Hight_Variance));
+            ////}
+            ////else
+            ////{
+            ////    txtname.BorderStyle = BorderStyle.FixedSingle;
+            ////}
         }
 
         private void txtname_Enter(object sender, EventArgs e)
