@@ -68,7 +68,7 @@ namespace PappyjoeMVC.Controller
         }
         public void savedrugtable(string itemid, string _itemname, string _type, string _strength, string _strength_gr, string _instructions)
         {
-            _Model.savedrugtable(itemid,  _itemname,  _type,  _strength,  _strength_gr,  _instructions);
+            _Model.savedrugtable(itemid,_itemname,_type,_strength,_strength_gr,_instructions);
         }
         public string get_drugid(string Item_Id)
         {

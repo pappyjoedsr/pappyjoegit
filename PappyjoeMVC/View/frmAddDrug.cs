@@ -12,30 +12,22 @@ namespace PappyjoeMVC.View
 {
     public partial class frmAddDrug : Form
     {
-        AddItem_controller cntrl;
+        AddItem_controller cntrl=new AddItem_controller();
         public bool editFlag = false;
         DataTable dt_ForEditItems = new DataTable();
         public static int Item_Id;
-        public bool cal_flag = false; string  isOneUnitOnly = "", unit2 = "", _isbatch="", _istax="", _sUnit="";
-        private DataTable dtb;
+        public bool cal_flag = false; string  isOneUnitOnly = "",  _isbatch="", _istax="", _sUnit="";
         int UnitMF = 0;
         public frmAddDrug()
         {
             InitializeComponent();
         }
-
         public frmAddDrug(DataTable dtb)
         {
             InitializeComponent();
             dt_ForEditItems = dtb;
             editFlag = true;
         }
-
-        public void SetController(AddItem_controller controller)
-        {
-            cntrl = controller;
-        }
-
         private void frmAddDrug_Load(object sender, EventArgs e)
         {
             BTnClose.Visible = false;
@@ -901,7 +893,7 @@ namespace PappyjoeMVC.View
                                 }
                                 else
                                 {
-                                    this.cntrl.savedrugtable(Item_Id.ToString(), txt_ItemName.Text, cmbdrugtype.Text, txtstrength.Text, cmbstrength.Text, txtinstructions.Text);//Item_Id.ToString());
+                                    this.cntrl.savedrugtable(Item_Id.ToString(), txt_ItemName.Text, cmbdrugtype.Text, txtstrength.Text, cmbstrength.Text, txtinstructions.Text);
                                 }
                             }
                         }
@@ -981,7 +973,6 @@ namespace PappyjoeMVC.View
         {
             string formname = "ItemAdd";
             var form2 = new FrmItemList(formname);
-            ItemList_Controller controller = new ItemList_Controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog(); 

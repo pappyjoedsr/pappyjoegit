@@ -9,14 +9,8 @@ namespace PappyjoeMVC.Controller
 {
    public class ItemList_Controller
     {
-        ItemList_inerface intr;
         ItemList_Model _model = new ItemList_Model();
         common_model cmdl = new common_model();
-        public ItemList_Controller(ItemList_inerface inttr)
-        {
-            intr = inttr;
-            intr.Setcontroller(this);
-        }
         public DataTable Get_CompanyNAme()
         {
             DataTable dtb = cmdl.Get_CompanyNAme();
@@ -27,40 +21,40 @@ namespace PappyjoeMVC.Controller
             string dtb = cmdl.Get_DoctorId(doctor_id);
             return dtb;
         }
-        public void Fill_manufactureCombo()
+        public DataTable  Fill_manufactureCombo()
         {
             DataTable dtb = _model.Fill_manufactureCombo();
-            intr.Fill_ManufactureCombo(dtb);
+            return dtb;
         }
-        public void Fill_Grid()
+        public DataTable Fill_Grid()
         {
             DataTable dtb = _model.Fill_Grid();
-            intr.Fill_Grid(dtb);
+            return dtb;
         }
-        public void Get_manufacturename( string name)
+        public DataTable Get_manufacturename( string name)
         {
             DataTable dtb = _model.Get_manufacturename(name);
-            intr.Get_manufacturename(dtb);
+            return dtb;
         }
-        public void get_items_with_manufacture(int manufactr)
+        public DataTable get_items_with_manufacture(int manufactr)
         {
             DataTable dtb = _model.get_items_with_manufacture(manufactr);
-            intr.Fill_Grid(dtb);
+            return dtb;
         }
-        public void Search(string name)
+        public DataTable Search(string name)
         {
             DataTable dtb = _model.Search(name);
-            intr.Fill_Grid(dtb);
+            return dtb;
         }
         public DataTable manufactureName(string name)
         {
             DataTable dtb = _model.Get_manufacturename(name);
             return dtb;
         }
-        public void Search_wit_manufacture(string name, string manufacture)
+        public DataTable Search_wit_manufacture(string name, string manufacture)
         {
             DataTable dtb = _model.Search_wit_manufacture(name, manufacture);
-            intr.Fill_Grid(dtb);
+            return dtb;
         }
         public DataTable Get_itemDetails(string id)
         {

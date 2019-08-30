@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.View
 {
-    public partial class FrmItemList : Form,ItemList_inerface
+    public partial class FrmItemList : Form
     {
         public static bool Item_flag = false;
-        ItemList_Controller cntrl;
+        ItemList_Controller cntrl = new ItemList_Controller();
         frmSupplier suplier = new frmSupplier();
         FrmManufacture manufacture = new FrmManufacture();
         public string doctor_id = "";
@@ -29,22 +23,19 @@ namespace PappyjoeMVC.View
             InitializeComponent();
             this.formname = formname;
         }
-        public void Setcontroller(ItemList_Controller controller)
-        {
-            cntrl = controller;
-        }
+
         private void FrmItemList_Load(object sender, EventArgs e)
         {
             toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
             DataTable dtb = cntrl.Get_CompanyNAme();
-            if(dtb.Rows.Count>0)
+            if (dtb.Rows.Count > 0)
             {
                 string clinicn = "";
                 clinicn = dtb.Rows[0][0].ToString();
                 toolStripButton1.Text = clinicn.Replace("¤", "'");
             }
             string dt_doctor = cntrl.Get_DoctorId(doctor_id);
-            if (dt_doctor!="")
+            if (dt_doctor != "")
             {
                 toolStripTextDoctor.Text = "Logged In As : " + dt_doctor.ToString();
             }
@@ -53,9 +44,11 @@ namespace PappyjoeMVC.View
             Cmb_Manufacture.Items.Add("All Manufacture");
             Cmb_Manufacture.ValueMember = "0";
             Cmb_Manufacture.DisplayMember = "All Manufacture";
-            cntrl.Fill_manufactureCombo();
+            DataTable dt_manu = this.cntrl.Fill_manufactureCombo();
+            Fill_ManufactureCombo(dt_manu);
             string manufacture = Cmb_Manufacture.SelectedIndex.ToString();
-            cntrl.Fill_Grid();
+            DataTable dt_fill = this.cntrl.Fill_Grid();
+            Fill_Grid(dtb);
             Dgv_Product.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             Dgv_Product.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             Dgv_Product.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
@@ -63,7 +56,7 @@ namespace PappyjoeMVC.View
         }
         public void Fill_ManufactureCombo(DataTable gp_rs)
         {
-            if(gp_rs.Rows.Count>0)
+            if (gp_rs.Rows.Count > 0)
             {
                 for (int i = 0; i < gp_rs.Rows.Count; i++)
                 {
@@ -82,7 +75,7 @@ namespace PappyjoeMVC.View
                 Dgv_Product.RowCount = 0;
                 for (int i = 0; i < dtb.Rows.Count; i++)
                 {
-                    Dgv_Product.Rows.Add(); 
+                    Dgv_Product.Rows.Add();
                     Dgv_Product.Rows[i].Cells["id"].Value = dtb.Rows[i]["id"].ToString();
                     Dgv_Product.Rows[i].Cells["Colid"].Value = dtb.Rows[i]["item_code"].ToString();
                     Dgv_Product.Rows[i].Cells["Colname"].Value = dtb.Rows[i]["item_name"].ToString();
@@ -102,10 +95,11 @@ namespace PappyjoeMVC.View
             btn_ItemList.BackColor = Color.SteelBlue;
             btn_Manufacture.BackColor = Color.DodgerBlue;
             btnSuplier.BackColor = Color.DodgerBlue;
-            manufacture.Hide(); 
+            manufacture.Hide();
             suplier.Hide();
             panel_main.Hide();
-            cntrl.Fill_Grid();
+            DataTable dtb = this.cntrl.Fill_Grid();
+            Fill_Grid(dtb);
         }
 
         private void Cmb_Manufacture_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,11 +108,13 @@ namespace PappyjoeMVC.View
             {
                 string selectedValue;
                 selectedValue = Cmb_Manufacture.Text;
-                this.cntrl.Get_manufacturename(selectedValue);
+               DataTable dtb= this.cntrl.Get_manufacturename(selectedValue);
+                Get_manufacturename(dtb);
             }
             else
             {
-                cntrl.Fill_Grid();
+                DataTable dtb = this.cntrl.Fill_Grid();
+                Fill_Grid(dtb);
             }
         }
 
@@ -126,7 +122,8 @@ namespace PappyjoeMVC.View
         {
             if (dt_manu.Rows.Count > 0)
             {
-                this.cntrl.get_items_with_manufacture(Convert.ToInt32(dt_manu.Rows[0][0].ToString()));
+                DataTable dtb = this.cntrl.get_items_with_manufacture(Convert.ToInt32(dt_manu.Rows[0][0].ToString()));
+                Fill_Grid(dtb);
             }
         }
         public static bool search_flag = false;
@@ -139,7 +136,8 @@ namespace PappyjoeMVC.View
             {
                 if (Cmb_Manufacture.SelectedIndex <= 0)
                 {
-                    this.cntrl.Search(txt_search.Text);
+                   DataTable dtb= this.cntrl.Search(txt_search.Text);
+                    Fill_Grid(dtb);
                 }
                 else
                 {
@@ -147,7 +145,8 @@ namespace PappyjoeMVC.View
                     if (manufactr != "")
                     {
                         DataTable dt_manu = this.cntrl.manufactureName(manufactr);
-                        this.cntrl.Search_wit_manufacture(txt_search.Text, dt_manu.Rows[0][0].ToString());
+                        DataTable dtb= this.cntrl.Search_wit_manufacture(txt_search.Text, dt_manu.Rows[0][0].ToString());
+                        Fill_Grid(dtb);
                     }
                 }
             }
@@ -155,7 +154,8 @@ namespace PappyjoeMVC.View
             {
                 if (Cmb_Manufacture.SelectedIndex <= 0)
                 {
-                   this. cntrl.Fill_Grid();
+                    DataTable dtb = this.cntrl.Fill_Grid();
+                    Fill_Grid(dtb);
                 }
             }
         }
@@ -163,7 +163,6 @@ namespace PappyjoeMVC.View
         private void btn_AddNewItem_Click(object sender, EventArgs e)
         {
             var form2 = new frmAddDrug();
-            //AddItem_controller controller = new AddItem_controller(form2);
             form2.ShowDialog();
         }
 
@@ -180,7 +179,6 @@ namespace PappyjoeMVC.View
             manufacture.TopLevel = false;
             panel_main.Controls.Add(manufacture);
             manufacture.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            Manufacture_controller cntrl = new Manufacture_controller(manufacture);
             manufacture.Show();
         }
 
@@ -197,7 +195,6 @@ namespace PappyjoeMVC.View
             suplier.TopLevel = false;
             panel_main.Controls.Add(suplier);
             suplier.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            supplier_controller cntrl = new supplier_controller(suplier);
             suplier.Show();
         }
 
@@ -214,7 +211,6 @@ namespace PappyjoeMVC.View
                         if (dtb.Rows.Count > 0)
                         {
                             var form2 = new frmAddDrug();
-                            //AddItem_controller controller = new AddItem_controller(form2);
                             form2.ShowDialog();
                         }
                     }
@@ -225,7 +221,7 @@ namespace PappyjoeMVC.View
                         if (res == DialogResult.Yes)
                         {
                             int index = Dgv_Product.CurrentRow.Index;
-                            DataTable dt =this.cntrl. get_stock(itemcode);
+                            DataTable dt = this.cntrl.get_stock(itemcode);
                             if (dt.Rows[0][0].ToString() != "")
                             {
                                 if (Convert.ToDecimal(dt.Rows[0][0].ToString()) > 0)
@@ -243,7 +239,8 @@ namespace PappyjoeMVC.View
                                 if (i > 0)
                                 {
                                     Dgv_Product.Rows.RemoveAt(index);
-                                    this.cntrl.Fill_Grid();
+                                   DataTable dtb= this.cntrl.Fill_Grid();
+                                    Fill_Grid(dtb);
                                 }
                             }
                         }
@@ -256,7 +253,8 @@ namespace PappyjoeMVC.View
         {
             if (search_flag == false)
             {
-                this.cntrl.Fill_Grid();
+              DataTable dtb=  this.cntrl.Fill_Grid();
+                Fill_Grid(dtb);
             }
         }
 
@@ -267,7 +265,6 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
-           
         }
     }
 }

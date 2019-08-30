@@ -10,87 +10,26 @@ using System.Windows.Forms;
 using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
-    public partial class frmSupplier : Form,supplier_interface
+    public partial class frmSupplier : Form
     {
-        supplier_controller cntrl;
+        supplier_controller cntrl=new supplier_controller();
         int SupplierNumber = 0;
         int supplerName = 0;
         string id;
         public string flag = "";
-        public string Code
-        {
-            get { return this.txtSupplierCode.Text; }
-            set { this.txtSupplierCode.Text = value; }
-        }
-        public string Name
-        {
-            get { return this.txtSupplierName.Text; }
-            set { this.txtSupplierName.Text = value; }
-        }
-        public string Balance
-        {
-            get { return this.txtOB.Text; }
-            set { this.txtOB.Text = value; }
-        }
-        public string Email
-        {
-            get { return this.txtEmail.Text; }
-            set { this.txtEmail.Text = value; }
-        }
-        public string CName
-        {
-            get { return this.txtContactPerson.Text; }
-            set { this.txtContactPerson.Text = value; }
-        }
-        public string Web
-        {
-            get { return this.txtWeb.Text; }
-            set { this.txtWeb.Text = value; }
-        }
-        public string Fax
-        {
-            get { return this.txt_fax.Text; }
-            set { this.txt_fax.Text = value; }
-        }
-        public string Phone
-        {
-            get { return this.txtPhone.Text; }
-            set { this.txtPhone.Text = value; }
-        }
-        public string Phone2
-        {
-            get { return this.txtphone2.Text; }
-            set { this.txtphone2.Text = value; }
-        }
-        public string Address1
-        {
-            get { return this.txtAddress1.Text; }
-            set { this.txtAddress1.Text = value; }
-        }
-        public string Address2
-        {
-            get { return this.txtaddress2.Text; }
-            set { this.txtaddress2.Text = value; }
-        }
-        public string Address3
-        {
-            get { return this.txtAddresss3.Text; }
-            set { this.txtAddresss3.Text = value; }
-        }
         public frmSupplier()
         {
             InitializeComponent();
-        }
-        public void Setcontroller(supplier_controller controller)
-        {
-            cntrl = controller;
         }
         private void frmSupplier_Load(object sender, EventArgs e)
         {
             try
             {
-                this.cntrl.Document_number();
-                this.cntrl.load_grid(); txtSupplierName.Clear();
+               string dt_doc=this.cntrl.Document_number();
+                DocumentNumber(dt_doc);
+                DataTable dtb= this.cntrl.load_grid();
+                LoadGrid(dtb);
+                txtSupplierName.Clear();
                 dgvSupplier.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
                 dgvSupplier.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                 dgvSupplier.EnableHeadersVisualStyles = false;
@@ -106,15 +45,15 @@ namespace PappyjoeMVC.View
             }
         }
 
-        public void DocumentNumber(DataTable supplier_Count)
+        public void DocumentNumber(string supplier_Count)
         {
-            if (String.IsNullOrWhiteSpace(supplier_Count.Rows[0][0].ToString()))
+            if (String.IsNullOrWhiteSpace(supplier_Count))
             {
                 txtSupplierCode.Text = "1";
             }
             else
             {
-                int Count = Convert.ToInt32(supplier_Count.Rows[0][0]);
+                int Count = Convert.ToInt32(supplier_Count);
                 int incrValue = Convert.ToInt32(Count);
                 incrValue += 1;
                 txtSupplierCode.Text = incrValue.ToString();
@@ -176,7 +115,7 @@ namespace PappyjoeMVC.View
                     {
                         if (supplerName == 1 || SupplierNumber == 1)
                         {
-                            int i = this.cntrl.Save();
+                            int i = this.cntrl.Save(txtSupplierCode.Text, txtSupplierName.Text, txtContactPerson.Text, txtPhone.Text, txtphone2.Text, txtEmail.Text, txt_fax.Text, txtWeb.Text, txtAddress1.Text, txtaddress2.Text, txtAddresss3.Text, txtOB.Text);
                             btnSaveSupplier.Text = "SAVE SUPPLIER";
                             btn_Cancel.Visible = false;
                         }
@@ -188,13 +127,15 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        this.cntrl.update(id);
+                        this.cntrl.update(id, txtSupplierCode.Text, txtSupplierName.Text, txtContactPerson.Text, txtPhone.Text, txtphone2.Text, txtEmail.Text, txt_fax.Text, txtWeb.Text, txtAddress1.Text, txtaddress2.Text, txtAddresss3.Text, txtOB.Text);
                         btnSaveSupplier.Text = "Save Supplier";
                         btn_Cancel.Visible = false;
                     }
                     Clear();
-                    this.cntrl.Document_number();
-                    this.cntrl.load_grid();
+                   string sup_code= this.cntrl.Document_number();
+                    DocumentNumber(sup_code);
+                    DataTable dtb= this.cntrl.load_grid();
+                    LoadGrid(dtb);
                     txtSupplierName.Focus();
                 }
                 else
@@ -238,7 +179,8 @@ namespace PappyjoeMVC.View
                         id = dgvSupplier.CurrentRow.Cells["Supplier_Code"].Value.ToString();
                         if (id != "")
                         {
-                            this.cntrl.Get_suplierDetails(id);
+                          DataTable dtb=this.cntrl.Get_suplierDetails(id);
+                            Fill_SuplierDetails(dtb);
                         }
                     }
                     else if (dgvSupplier.CurrentCell.OwningColumn.Name == "ColDelete")
@@ -255,11 +197,13 @@ namespace PappyjoeMVC.View
                             int i = this.cntrl.delete(id);
                             if (i > 0)
                             {
-                                this.cntrl.load_grid();
+                               DataTable dtb=this.cntrl.load_grid();
+                                LoadGrid(dtb);
                                 btnSaveSupplier.Text = "SAVE SUPPLIER";
                             }
                         }
-                        this.cntrl.Document_number();
+                      string dt_doc=this.cntrl.Document_number();
+                        DocumentNumber(dt_doc);
                     }
                 }
             }

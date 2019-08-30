@@ -606,7 +606,7 @@ namespace PappyjoeMVC.View
             form_hide();
             var form2 = new FrmItemList();
             form2.doctor_id = doctor_id;
-            ItemList_Controller controller = new ItemList_Controller(form2);
+            //ItemList_Controller controller = new ItemList_Controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
