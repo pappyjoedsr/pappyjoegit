@@ -454,7 +454,7 @@ namespace PappyjoeMVC.View
         {
             errorProvider1.Dispose();
             backColor_change();
-            button_billing.BackColor = Color.SteelBlue;
+            button_contacts.BackColor = Color.SteelBlue;
             form_hide();
             contct.TopLevel = false;
             panel_main.Controls.Add(contct);
