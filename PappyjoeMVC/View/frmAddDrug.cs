@@ -12,7 +12,7 @@ namespace PappyjoeMVC.View
 {
     public partial class frmAddDrug : Form
     {
-        AddItem_controller cntrl;
+        AddItem_controller cntrl=new AddItem_controller();
         public bool editFlag = false;
         DataTable dt_ForEditItems = new DataTable();
         public static int Item_Id;
