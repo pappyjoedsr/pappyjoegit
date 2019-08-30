@@ -200,6 +200,7 @@ namespace PappyjoeMVC.View
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             var form2 = new patients();
+            patients_controller cnt = new patients_controller(form2);
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
@@ -380,6 +381,7 @@ namespace PappyjoeMVC.View
         private void labeltreatment_Click(object sender, EventArgs e)
         {
             var form2 = new TreatmentPlans();
+            treatment_controller cnt = new treatment_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
