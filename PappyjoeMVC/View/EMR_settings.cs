@@ -8,7 +8,7 @@ namespace PappyjoeMVC.View
 {
     public partial class EMR_settings : Form
     {
-        EMR_controller cntrl;
+        EMR_controller cntrl=new EMR_controller();
         public string id_comp = ""; string id = "";
         string id_diag, id_invest, id_notes;
         public EMR_settings()
@@ -28,11 +28,11 @@ namespace PappyjoeMVC.View
             DataTable dt_obser = this.cntrl.Fill_observationGrid();
             FillObservationGrid(dt_obser);
             DataTable dt_diagnosis = this.cntrl.fill_diagnosisGrid();
-            FiiDiagnosisGrid(dtb);
+            FiiDiagnosisGrid(dt_diagnosis);
             DataTable dt_invest = this.cntrl.Fill_investgation();
-            FillInvsetgation(dtb);
+            FillInvsetgation(dt_invest);
             DataTable dtb_notes = this.cntrl.Fill_notegrid();
-            FillNotes(dtb);
+            FillNotes(dtb_notes);
             label3.Hide();
             label6.Hide();
             label9.Hide();

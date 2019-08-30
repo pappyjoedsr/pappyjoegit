@@ -115,9 +115,9 @@ namespace PappyjoeMVC.View
                     Get_CmbName(dtb2, "State");
                     DataTable dtb3 = this.cntrl.Get_CountryNme(dtb_details.Rows[0]["specialization"].ToString(), "Specialization");
                     Get_CmbName(dtb3, "Specialization");
-                    string clini_name = dtb_details.Rows[0]["name"].ToString();
-                    txtname.Text = clini_name.Replace("¤", "'");
-                    toolStripButton1.Text = txtname.Text;
+                        string clini_name = dtb_details.Rows[0]["name"].ToString();
+                        txtname.Text = clini_name.Replace("¤", "'");
+                        toolStripButton1.Text = txtname.Text;
                     txttagline.Text = dtb_details.Rows[0]["tagline"].ToString();
                     cmb_state.Text = dtb_details.Rows[0]["name"].ToString();
                     cmb_specialization.Text = dtb_details.Rows[0]["name"].ToString();
@@ -135,6 +135,10 @@ namespace PappyjoeMVC.View
                         pictureBox1.Image = Image.FromFile(db.server() + txtpath.Text);
                     }
                     btn_Save.Text = "Update";
+                }
+                else
+                {
+                    toolStripButton1.Text = "";
                 }
             }
             catch (Exception ex)
@@ -184,20 +188,37 @@ namespace PappyjoeMVC.View
                         string realfile = System.IO.Path.GetFileName(open.FileName);
                         int i = cntrl.Update_details(Name, tagn1, txtstreet.Text, txtlocality.Text, cmb_country.SelectedValue.ToString(), cmb_state.SelectedValue.ToString(), cmb_city.SelectedValue.ToString(), txtpincode.Text, txtcontactnumber.Text, txtemail.Text, txtwebsite.Text, txtpath.Text, cmb_specialization.SelectedValue.ToString(), txtdruglicenseno.Text, txttaxno.Text);
                         string server = this.cntrl.getserver();
-                        try
+                        if (realfile != "")
                         {
-                            if (File.Exists(@"\\" + server + "\\Pappyjoe_utilities\\Logo\\" + realfile))
+                            try
                             {
+                                if (File.Exists(@"\\" + server + "\\Pappyjoe_utilities\\Logo\\" + realfile))
+                                {
+                                }
+                                else
+                                {
+                                    System.IO.File.Copy(open.FileName, @"\\" + server + "\\Pappyjoe_utilities\\Logo\\" + realfile);
+                                }
                             }
-                            else
+                            catch (Exception ex)
                             {
-                                System.IO.File.Copy(open.FileName, @"\\" + server + "\\Pappyjoe_utilities\\Logo\\" + realfile);
+                                MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        //try
+                        //{
+                        //    if (File.Exists(@"\\" + server + "\\Pappyjoe_utilities\\Logo\\" + realfile))
+                        //    {
+                        //    }
+                        //    else
+                        //    {
+                        //        System.IO.File.Copy(open.FileName, @"\\" + server + "\\Pappyjoe_utilities\\Logo\\" + realfile);
+                        //    }
+                        //}
+                        //catch (Exception ex)
+                        //{
+                        //    MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //}
                         if (i > 0)
                             MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -446,7 +467,7 @@ namespace PappyjoeMVC.View
         {
             errorProvider1.Dispose();
             backColor_change();
-            button_billing.BackColor = Color.SteelBlue;
+            button_practicestaff.BackColor = Color.SteelBlue;
             form_hide();
             staff.TopLevel = false;
             panel_main.Controls.Add(staff);

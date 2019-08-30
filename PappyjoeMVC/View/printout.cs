@@ -16,7 +16,7 @@ namespace PappyjoeMVC.View
 {
     public partial class printout : Form
     {
-        printout_controller cntrl;
+        printout_controller cntrl=new printout_controller();
         string orientation="", color="";
         string includeheader="",header, lefttext, righttext, includelogo, logotype;
         string patientdetails="", medhistory="", patientno, address, phone, email, bloodgroup, genderdob, Doctor;
