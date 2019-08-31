@@ -1191,6 +1191,16 @@ namespace PappyjoeMVC.View
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
+        private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
+        {
+            var form2 = new patient_profile_details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = listpatientsearch.SelectedValue.ToString();
+            listpatientsearch.Visible = false;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (doctor_id != "1")
@@ -1270,16 +1280,6 @@ namespace PappyjoeMVC.View
             listpatientsearch.Visible = false;
             }
         }
-        private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
-        {
-            var form2 = new PappyjoeMVC.View.patient_profile_details();
-            form2.doctor_id = doctor_id;
-            form2.patient_id = listpatientsearch.SelectedValue.ToString();
-            listpatientsearch.Visible = false;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.ShowDialog();
-        } 
     }
 }
     
