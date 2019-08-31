@@ -144,7 +144,7 @@ namespace PappyjoeMVC.Model
             get { return _footer_top; }
             set { _footer_top = value; }
         }
-        private string _fullwidth = "";
+        //private string _fullwidth = "";
         //public string FullWidth
         //{
         //    get { return _fullwidth; }

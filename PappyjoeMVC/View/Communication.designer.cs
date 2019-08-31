@@ -88,8 +88,6 @@
             this.btn_Group_Deselect = new System.Windows.Forms.Button();
             this.btn_Group_SelectAll = new System.Windows.Forms.Button();
             this.dgv_Group = new System.Windows.Forms.DataGridView();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grp_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_StaffBack = new System.Windows.Forms.Button();
             this.btn_Staff_Search = new System.Windows.Forms.Button();
             this.txt_StaffSearch = new System.Windows.Forms.TextBox();
@@ -192,6 +190,8 @@
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grp_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel19.SuspendLayout();
             this.panl_templates.SuspendLayout();
             this.Panl_AddTemplate.SuspendLayout();
@@ -713,19 +713,6 @@
             this.dgv_Group.Size = new System.Drawing.Size(450, 524);
             this.dgv_Group.TabIndex = 1;
             this.dgv_Group.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Group_CellClick);
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Group Name";
-            this.name.Name = "name";
-            // 
-            // grp_id
-            // 
-            this.grp_id.DataPropertyName = "group_id";
-            this.grp_id.HeaderText = "Group id";
-            this.grp_id.Name = "grp_id";
-            this.grp_id.Visible = false;
             // 
             // btn_StaffBack
             // 
@@ -1254,6 +1241,7 @@
             this.lab_Msg.Size = new System.Drawing.Size(126, 17);
             this.lab_Msg.TabIndex = 26;
             this.lab_Msg.Text = "No records Found !";
+            this.lab_Msg.Visible = false;
             // 
             // DGV_transactional
             // 
@@ -1795,7 +1783,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 40);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // toolStripTextBox1
@@ -1845,12 +1833,13 @@
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -1937,6 +1926,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
             this.toolStripButton2.Text = "Calendar";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -1972,6 +1962,7 @@
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(72, 37);
             this.toolStripButton5.Text = "Inventory";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton6
             // 
@@ -2032,6 +2023,20 @@
             this.toolStripButton12.Name = "toolStripButton12";
             this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
             this.toolStripButton12.Text = "Lab Tracking";
+            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Group Name";
+            this.name.Name = "name";
+            // 
+            // grp_id
+            // 
+            this.grp_id.DataPropertyName = "id";
+            this.grp_id.HeaderText = "Group id";
+            this.grp_id.Name = "grp_id";
+            this.grp_id.Visible = false;
             // 
             // Communication
             // 
@@ -2224,13 +2229,13 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.Label msg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grp_id;
         private System.Windows.Forms.Label no;
         private System.Windows.Forms.DataGridViewTextBoxColumn pt_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn patient_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sl_No;
         private System.Windows.Forms.DataGridViewTextBoxColumn templates;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grp_id;
     }
 }

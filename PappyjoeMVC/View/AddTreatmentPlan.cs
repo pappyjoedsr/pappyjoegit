@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PappyjoeMVC.Controller;
-using System.Data;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
@@ -235,7 +234,7 @@ namespace PappyjoeMVC.View
                 chk84.Checked = false; chk85.Checked = false;
                 panl_TreatmentAdd.Show();
             }
-            catch (Exception ex)
+            catch
             {
             }
         }
@@ -1603,7 +1602,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Communication();
             form2.doctor_id = doctor_id;
-            Communication_controller controllr = new Communication_controller(form2);
+            form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

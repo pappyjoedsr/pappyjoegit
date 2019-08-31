@@ -1937,7 +1937,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Communication();
             form2.doctor_id = doctor_id;
-            Communication_controller controllr = new Communication_controller(form2);
+            form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

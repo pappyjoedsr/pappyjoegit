@@ -90,7 +90,6 @@
     <Compile Include="Controller\Clinical_Findings_controller.cs" />
     <Compile Include="Controller\Common_controller.cs" />
     <Compile Include="Controller\Communication_controller.cs" />
-    <Compile Include="Controller\Communication_interface.cs" />
     <Compile Include="Controller\communication_setting_controller.cs" />
     <Compile Include="Controller\contact_controller.cs" />
     <Compile Include="Controller\contact_interface.cs" />

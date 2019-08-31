@@ -382,7 +382,7 @@ namespace PappyjoeMVC.View
                                         System.IO.File.Copy(path, @"\\" + strWindowsState + "\\Pappyjoe_utilities\\patient_image\\" + pat_id);
                                     }
                                 }
-                                catch (Exception ex)
+                                catch
                                 {
                                 }
                             }
@@ -816,7 +816,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Communication();
             form2.doctor_id = doctor_id;
-            Communication_controller controllr = new Communication_controller(form2);
+            form2.patient_id=Patient_Id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
