@@ -42,7 +42,7 @@ namespace PappyjoeMVC.View
                 bool parseOK = Int32.TryParse(cmb_country.SelectedValue.ToString(), out selectedValue);
                 frmeditpracticedetails frm = new frmeditpracticedetails(selectedValue, cmb);
                 frm.frameid = "3";
-                editpracticedetails_controller controller = new editpracticedetails_controller(frm);
+                //editpracticedetails_controller controller = new editpracticedetails_controller(frm);
                 frm.ShowDialog();
             }
         }
@@ -51,7 +51,7 @@ namespace PappyjoeMVC.View
         {
             frmeditpracticedetails frm = new frmeditpracticedetails();
             frm.frameid = "2";
-            editpracticedetails_controller controller = new editpracticedetails_controller(frm);
+            //editpracticedetails_controller controller = new editpracticedetails_controller(frm);
             frm.ShowDialog();
         }
         private void btnaddcity_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace PappyjoeMVC.View
                 bool parseOK1 = Int32.TryParse(cmb_state.SelectedValue.ToString(), out selectedValue1);
                 frmeditpracticedetails frm = new frmeditpracticedetails(selectedValue1, cmb);
                 frm.frameid = "4";
-                editpracticedetails_controller controller = new editpracticedetails_controller(frm);
+                //editpracticedetails_controller controller = new editpracticedetails_controller(frm);
                 frm.ShowDialog();
             }
         }
@@ -72,7 +72,7 @@ namespace PappyjoeMVC.View
         {
             frmeditpracticedetails frm = new frmeditpracticedetails();
             frm.frameid = "1";
-            editpracticedetails_controller controller = new editpracticedetails_controller(frm);
+            //editpracticedetails_controller controller = new editpracticedetails_controller(frm);
             frm.ShowDialog();
         }
         private void PracticeDetails_Load(object sender, EventArgs e)

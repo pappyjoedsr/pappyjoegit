@@ -309,6 +309,16 @@ namespace PappyjoeMVC.View
                         string smsName1 = PappyjoeMVC.Model.GlobalVariables.smsName.ToString();
                         string smsPass1 = PappyjoeMVC.Model.GlobalVariables.smsPass.ToString();
                         i = this.cntrl.Save();
+                        DataTable cmd = this.cntrl.automaticid();
+                        if (cmd.Rows.Count > 0)
+                        {
+                            int n = 0;
+                            n = int.Parse(cmd.Rows[0]["patient_number"].ToString()) + 1;
+                            if (n != 0)
+                            {
+                                this.cntrl.update_autogenerateid(n);
+                            }
+                        }
                         //a.SendSMS(smsName1, smsPass1, txtPMobNumber.Text, "Dear " + txtPatName.Text + " welcome to " + toolStripButton1.Text);
                         Clear_data();
                         if (i > 0)
@@ -357,16 +367,7 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                             }
-                            DataTable cmd = this.cntrl.automaticid();
-                            if (cmd.Rows.Count > 0)
-                            {
-                                int n = 0;
-                                n = int.Parse(cmd.Rows[0]["patient_number"].ToString()) + 1;
-                                if (n != 0)
-                                {
-                                    this.cntrl.update_autogenerateid(n);
-                                }
-                            }
+                           
                             RegistryKey regKeyAppRoot = Registry.CurrentUser.CreateSubKey("Pappyjoe");
                             string strWindowsState = (string)regKeyAppRoot.GetValue("Server");
                             if (path != "")

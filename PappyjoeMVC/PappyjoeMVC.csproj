@@ -117,7 +117,6 @@
     <Compile Include="Controller\invoice_controller.cs" />
     <Compile Include="Controller\invoice_interface.cs" />
     <Compile Include="Controller\ItemList_Controller.cs" />
-    <Compile Include="Controller\ItemList_inerface.cs" />
     <Compile Include="Controller\LabDental_controller.cs" />
     <Compile Include="Controller\LabMedical_controller.cs" />
     <Compile Include="Controller\Ledger_controller.cs" />
@@ -158,7 +157,6 @@
     <Compile Include="Controller\Receipt_interface.cs" />
     <Compile Include="Controller\Reports_controller.cs" />
     <Compile Include="Controller\search_patient_controller.cs" />
-    <Compile Include="Controller\Setting_interface.cs" />
     <Compile Include="Controller\Show_Appointment_controller.cs" />
     <Compile Include="Controller\Staff_controller.cs" />
     <Compile Include="Controller\supplier_controller.cs" />

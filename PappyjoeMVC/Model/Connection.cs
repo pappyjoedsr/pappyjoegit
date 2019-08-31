@@ -202,14 +202,14 @@ namespace PappyjoeMVC.Model
                 isvalid = true;
             return isvalid;
         }
-        //public MySqlDataReader read(string s)
-        //{
-        //    this.OpenConnection();
-        //    MySqlCommand cmd = new MySqlCommand(s, con);
-        //    MySqlDataReader reader = cmd.ExecuteReader();
-        //    this.CloseConnection();
-        //    return reader;
-        //}
+        public MySqlDataReader read(string s)
+        {
+            this.OpenConnection();
+            MySqlCommand cmd = new MySqlCommand(s, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            this.CloseConnection();
+            return reader;
+        }
         public int id(int s)
         {
             int a = 0;
