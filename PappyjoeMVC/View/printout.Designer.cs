@@ -77,8 +77,8 @@
             this.panel_pateintdetails = new System.Windows.Forms.Panel();
             this.chkdoctor = new System.Windows.Forms.CheckBox();
             this.check_blood = new System.Windows.Forms.CheckBox();
-            this.check_gender = new System.Windows.Forms.CheckBox();
             this.check_email = new System.Windows.Forms.CheckBox();
+            this.check_gender = new System.Windows.Forms.CheckBox();
             this.check_phone = new System.Windows.Forms.CheckBox();
             this.check_patient_number = new System.Windows.Forms.CheckBox();
             this.check_address = new System.Windows.Forms.CheckBox();
@@ -276,8 +276,8 @@
             this.panel_pateintdetails2 = new System.Windows.Forms.Panel();
             this.chkdoctor2 = new System.Windows.Forms.CheckBox();
             this.check_blood2 = new System.Windows.Forms.CheckBox();
-            this.check_gender2 = new System.Windows.Forms.CheckBox();
             this.check_email2 = new System.Windows.Forms.CheckBox();
+            this.check_gender2 = new System.Windows.Forms.CheckBox();
             this.check_phone2 = new System.Windows.Forms.CheckBox();
             this.check_patient_number2 = new System.Windows.Forms.CheckBox();
             this.check_address2 = new System.Windows.Forms.CheckBox();
@@ -968,16 +968,6 @@
             this.check_blood.Text = "Exclude blood group";
             this.check_blood.UseVisualStyleBackColor = true;
             // 
-            // check_gender
-            // 
-            this.check_gender.AutoSize = true;
-            this.check_gender.Location = new System.Drawing.Point(3, 118);
-            this.check_gender.Name = "check_gender";
-            this.check_gender.Size = new System.Drawing.Size(105, 17);
-            this.check_gender.TabIndex = 0;
-            this.check_gender.Text = "Exclude Gender ";
-            this.check_gender.UseVisualStyleBackColor = true;
-            // 
             // check_email
             // 
             this.check_email.AutoSize = true;
@@ -988,6 +978,16 @@
             this.check_email.Text = "Exclude email";
             this.check_email.UseVisualStyleBackColor = true;
             this.check_email.Visible = false;
+            // 
+            // check_gender
+            // 
+            this.check_gender.AutoSize = true;
+            this.check_gender.Location = new System.Drawing.Point(3, 118);
+            this.check_gender.Name = "check_gender";
+            this.check_gender.Size = new System.Drawing.Size(105, 17);
+            this.check_gender.TabIndex = 0;
+            this.check_gender.Text = "Exclude Gender ";
+            this.check_gender.UseVisualStyleBackColor = true;
             // 
             // check_phone
             // 
@@ -2027,7 +2027,7 @@
             this.btn_invoice_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_invoice_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_invoice_save.ForeColor = System.Drawing.Color.White;
-            this.btn_invoice_save.Location = new System.Drawing.Point(149, 418);
+            this.btn_invoice_save.Location = new System.Drawing.Point(150, 418);
             this.btn_invoice_save.Name = "btn_invoice_save";
             this.btn_invoice_save.Size = new System.Drawing.Size(98, 29);
             this.btn_invoice_save.TabIndex = 0;
@@ -2047,6 +2047,7 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "Preview";
             this.button2.UseVisualStyleBackColor = false;
+            //this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // printPreviewControl1
             // 
@@ -3477,16 +3478,6 @@
             this.check_blood2.Text = "Exclude blood group";
             this.check_blood2.UseVisualStyleBackColor = true;
             // 
-            // check_gender2
-            // 
-            this.check_gender2.AutoSize = true;
-            this.check_gender2.Location = new System.Drawing.Point(3, 118);
-            this.check_gender2.Name = "check_gender2";
-            this.check_gender2.Size = new System.Drawing.Size(105, 17);
-            this.check_gender2.TabIndex = 0;
-            this.check_gender2.Text = "Exclude Gender ";
-            this.check_gender2.UseVisualStyleBackColor = true;
-            // 
             // check_email2
             // 
             this.check_email2.AutoSize = true;
@@ -3497,6 +3488,16 @@
             this.check_email2.Text = "Exclude email";
             this.check_email2.UseVisualStyleBackColor = true;
             this.check_email2.Visible = false;
+            // 
+            // check_gender2
+            // 
+            this.check_gender2.AutoSize = true;
+            this.check_gender2.Location = new System.Drawing.Point(3, 118);
+            this.check_gender2.Name = "check_gender2";
+            this.check_gender2.Size = new System.Drawing.Size(105, 17);
+            this.check_gender2.TabIndex = 0;
+            this.check_gender2.Text = "Exclude Gender ";
+            this.check_gender2.UseVisualStyleBackColor = true;
             // 
             // check_phone2
             // 

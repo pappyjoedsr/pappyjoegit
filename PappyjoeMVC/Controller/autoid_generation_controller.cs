@@ -9,48 +9,35 @@ namespace PappyjoeMVC.Controller
 {
    public  class autoid_generation_controller
     {
-        autoid_generation_interface intr;
         autoid_generation_model _model=new autoid_generation_model();
-            
-        public autoid_generation_controller(autoid_generation_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
-        public void load_patientid()
+        public DataTable load_patientid()
         {
             DataTable dtb = _model.load_patientid();
-            intr.LoadPatientId(dtb);
-        }
-        public void load_Invoiceid()
-        {
-            DataTable dtb = _model.load_Invoiceid();
-            intr.LoadInvoiceId(dtb);
-        }
-        public void load_receiptid()
-        {
-            DataTable dtb = _model.load_receiptid();
-            intr.LoadReceiptId(dtb);
-        }
-        public DataTable patient_prefix()
-        {
-            DataTable dtb = _model.patient_prefix();
             return dtb;
         }
-        public int save_patientid( string Check)
+        public DataTable load_Invoiceid()
         {
-            _model.patient_Check = Check;
-            _model.patient_Number = intr.PtNumber;
-            _model.patient_Prefix = intr.ptPrefix;
-            int i = _model.save_patientid();
+            DataTable dtb = _model.load_Invoiceid();
+            return dtb;
+        }
+        public DataTable load_receiptid()
+        {
+            DataTable dtb = _model.load_receiptid();
+            return dtb;
+        }
+        public string patient_prefix()
+        {
+            string dtb = _model.patient_prefix();
+            return dtb;
+        }
+        public int save_patientid(string _pt_num, string _pt_prefix, string Check)
+        {
+            int i = _model.save_patientid( _pt_num,_pt_prefix, Check);
             return i;
         }
-        public int update_patientid(string Check)
+        public int update_patientid(string _pt_num, string _pt_prefix,string Check)
         {
-            _model.patient_Check = Check;
-            _model.patient_Number = intr.PtNumber;
-            _model.patient_Prefix = intr.ptPrefix;
-            int i = _model.update_patientid();
+            int i = _model.update_patientid(_pt_num, _pt_prefix, Check);
             return i;
         }
         public DataTable Invoice_prefix()
@@ -58,20 +45,14 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.load_Invoiceid();
             return dtb;
         }
-        public int save_invoice(string check)
+        public int save_invoice(string InvNumber, string InvPrefix, string check)
         {
-            _model.InvNumber = intr.InvNumber;
-            _model.InvPrefix = intr.InvPrefix;
-            _model.Inv_Check = check;
-            int i = _model.save_invoice();
+            int i = _model.save_invoice(InvNumber, InvPrefix, check);
             return i;
         }
-        public int update_invoice(string check)
+        public int update_invoice(string InvNumber, string InvPrefix, string check)
         {
-            _model.InvNumber = intr.InvNumber;
-            _model.InvPrefix = intr.InvPrefix;
-            _model.Inv_Check = check;
-            int i = _model.update_invoice();
+            int i = _model.update_invoice(InvNumber, InvPrefix, check);
             return i;
         }
         public DataTable Recipt_prefix()
@@ -79,20 +60,14 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.load_receiptid();
             return dtb;
         }
-        public int save_receipt(string check)
+        public int save_receipt(string ReciptNumber, string ReciptPrefix, string check)
         {
-            _model.ReciptNumber = intr.ReciptNumber;
-            _model.ReciptPrefix = intr.ReciptPrefix;
-            _model.Recipt_Check = check;
-            int i = _model.save_receipt();
+            int i = _model.save_receipt(ReciptNumber, ReciptPrefix, check);
             return i;
         }
-        public int update_receipt(string check)
+        public int update_receipt(string ReciptNumber, string ReciptPrefix, string check)
         {
-            _model.ReciptNumber = intr.ReciptNumber;
-            _model.ReciptPrefix = intr.ReciptPrefix;
-            _model.Recipt_Check = check;
-            int i = _model.update_receipt();
+            int i = _model.update_receipt(ReciptNumber, ReciptPrefix, check);
             return i;
         }
     }

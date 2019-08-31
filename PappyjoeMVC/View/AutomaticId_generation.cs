@@ -11,26 +11,25 @@ using PappyjoeMVC.Model;
 using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
-    public partial class AutomaticId_generation : Form, autoid_generation_interface
+    public partial class AutomaticId_generation : Form
     {
-        autoid_generation_controller cntrl;
+        autoid_generation_controller cntrl=new autoid_generation_controller();
         public string ptcheck = "", invcheck = "", reciptcheck = "";
         public AutomaticId_generation()
         {
             InitializeComponent();
-        }
-        public void SetController(autoid_generation_controller controller)
-        {
-            cntrl = controller;
         }
         private void AutomaticId_generation_Load(object sender, EventArgs e)
         {
             label5.Hide();
             label7.Hide();
             label12.Hide();
-            this.cntrl.load_patientid();
-            this.cntrl.load_Invoiceid();
-            this.cntrl.load_receiptid();
+            DataTable dtb= this.cntrl.load_patientid();
+            LoadPatientId(dtb);
+            DataTable dtb_invoice= this.cntrl.load_Invoiceid();
+            LoadInvoiceId(dtb_invoice);
+            DataTable dtb_recepit= this.cntrl.load_receiptid();
+            LoadReceiptId(dtb_recepit);
         }
         public void LoadPatientId(DataTable patient)
         {
@@ -96,63 +95,28 @@ namespace PappyjoeMVC.View
             errorProvider1.Dispose();
             label5.Hide();
         }
-        public string PtNumber
+        private void button_save_Click(object sender, EventArgs e)//patient
         {
-            get { return this.text_number.Text; }
-            set { this.text_number.Text = value; }
-        }
-        public string ptPrefix
-        {
-            get { return this.text_prefix.Text; }
-            set { this.text_prefix.Text = value; }
-        }
-
-        private void button_save_Click(object sender, EventArgs e)
-        {
-            DataTable cmd = this.cntrl.patient_prefix();
-            if (cmd.Rows.Count == 0)
-            {
-                if (text_number.Text == "")
-                {
-                    errorProvider1.SetError(text_number, "error");
-                    label5.Show();
-                    return;
-                }
-                else
-                {
-                    if (check_patient.Checked == true)
-                    {
-                        ptcheck = "Yes";
-                        int i = this.cntrl.save_patientid(ptcheck);
-                        if (i > 0)
-                        {
-                            MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    else
-                    {
-                        ptcheck = "No";
-                        int j = this.cntrl.save_patientid(ptcheck);
-                        //int j = db.execute("insert into tbl_patient_automaticid (patient_number,patient_prefix,patient_automation) values ('" + text_number.Text + "','" + text_prefix.Text + "','No')");
-                        if (j > 0)
-                        {
-                            MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-            }
+            string cmd = this.cntrl.patient_prefix();
             if (text_number.Text == "")
             {
                 errorProvider1.SetError(text_number, "error");
                 label5.Show();
+                return;
             }
             else
             {
                 if (check_patient.Checked == true)
                 {
                     ptcheck = "Yes";
-                    int i = this.cntrl.update_patientid(ptcheck);
-                    //int i = db.execute("update tbl_patient_automaticid set patient_number='" + text_number.Text + "', patient_prefix='" + text_prefix.Text + "',patient_automation='Yes'");
+                }
+                else
+                {
+                    ptcheck = "No";
+                }
+                if (cmd == "")
+                {
+                    int i = this.cntrl.save_patientid(text_number.Text, text_prefix.Text, ptcheck);
                     if (i > 0)
                     {
                         MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -160,72 +124,42 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    ptcheck = "No";
-                    int i = this.cntrl.update_patientid(ptcheck);
-                    MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int i = this.cntrl.update_patientid(text_number.Text, text_prefix.Text, ptcheck);
+                    if (i > 0)
+                    {
+                        MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
         }
-
-        public string InvNumber
-        {
-            get { return this.text_invoice_number.Text; }
-            set { this.text_invoice_number.Text = value; }
-        }
-        public string InvPrefix
-        {
-            get { return this.text_invoice_prefix.Text; }
-            set { this.text_invoice_prefix.Text = value; }
-        }
-
         private void button_invoice_save_Click(object sender, EventArgs e)
         {
             DataTable cmd = this.cntrl.Invoice_prefix();
-            if (cmd.Rows.Count == 0)
+            if (text_invoice_number.Text == "")
             {
-                if (text_invoice_number.Text == "")
-                {
-                    errorProvider1.SetError(text_invoice_number, "error");
-                    label7.Show();
-                    return;
-                }
-                else
-                {
-                    if (check_invoice.Checked == true)
-                    {
-                        invcheck = "Yes";
-                        this.cntrl.save_invoice(invcheck);
-                        MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        invcheck = "No";
-                        this.cntrl.save_invoice(invcheck);
-                        MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
+                errorProvider1.SetError(text_invoice_number, "error");
+                label7.Show();
+                return;
             }
             else
             {
-                if (text_invoice_number.Text == "")
+                if (check_invoice.Checked == true)
                 {
-                    errorProvider1.SetError(text_invoice_number, "error");
-                    label7.Show();
+                    invcheck = "Yes";
                 }
                 else
                 {
-                    if (check_invoice.Checked == true)
-                    {
-                        invcheck = "Yes";
-                        this.cntrl.update_invoice(invcheck);
-                        MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        invcheck = "No";
-                        this.cntrl.update_invoice(invcheck);
-                        MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    invcheck = "No";
+                }
+                if (cmd.Rows.Count == 0)
+                {
+                    this.cntrl.save_invoice(text_invoice_number.Text, text_invoice_prefix.Text,invcheck);
+                    MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    this.cntrl.update_invoice(text_invoice_number.Text, text_invoice_prefix.Text,invcheck);
+                    MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -233,50 +167,30 @@ namespace PappyjoeMVC.View
         private void button_receipt_save_Click(object sender, EventArgs e)
         {
             DataTable cmd = this.cntrl.Recipt_prefix();
-            if (cmd.Rows.Count == 0)
+            if (text_receipt_number.Text == "")
             {
-                if (text_receipt_number.Text == "")
-                {
-                    errorProvider1.SetError(text_receipt_number, "error");
-                    label12.Show();
-                }
-                else
-                {
-                    if (check_receipt.Checked == true)
-                    {
-                        reciptcheck = "Yes";
-                        this.cntrl.save_receipt(reciptcheck);
-                        MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        reciptcheck = "No";
-                        this.cntrl.save_receipt(reciptcheck);
-                        MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
+                errorProvider1.SetError(text_receipt_number, "error");
+                label12.Show();
             }
             else
             {
-                if (text_receipt_number.Text == "")
+                if (check_receipt.Checked == true)
                 {
-                    errorProvider1.SetError(text_receipt_number, "error");
-                    label12.Show();
+                    reciptcheck = "Yes";
                 }
                 else
                 {
-                    if (check_receipt.Checked == true)
-                    {
-                        reciptcheck = "Yes";
-                        this.cntrl.update_receipt(reciptcheck);
-                        MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        reciptcheck = "Yes";
-                        this.cntrl.update_receipt(reciptcheck);
-                        MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    reciptcheck = "No";
+                }
+                if (cmd.Rows.Count == 0)
+                {
+                    this.cntrl.save_receipt(text_receipt_number.Text, text_receipt_prefix.Text,reciptcheck);
+                    MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    this.cntrl.update_receipt(text_receipt_number.Text, text_receipt_prefix.Text,reciptcheck);
+                    MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -325,19 +239,6 @@ namespace PappyjoeMVC.View
             errorProvider1.Dispose();
             label7.Hide();
         }
-
-        private void text_invoice_number_KeyUp(object sender, KeyEventArgs e)
-        {
-            //if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
-            //{ e.Handled = true; }
-        }
-
-        private void text_receipt_number_KeyUp(object sender, KeyEventArgs e)
-        {
-            //if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
-            //{ e.Handled = true; }
-        }
-
         private void text_receipt_number_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
@@ -348,17 +249,6 @@ namespace PappyjoeMVC.View
         {
             if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))
             { e.Handled = true; }
-        }
-
-        public string ReciptNumber
-        {
-            get { return this.text_receipt_number.Text; }
-            set { this.text_receipt_number.Text = value; }
-        }
-        public string ReciptPrefix
-        {
-            get { return this.text_receipt_prefix.Text; }
-            set { this.text_receipt_prefix.Text = value; }
         }
     }
 }

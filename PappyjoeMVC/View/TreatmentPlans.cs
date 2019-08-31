@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using PappyjoeMVC.Model;
+using System;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
-    public partial class TreatmentPlans : Form,treatment_interface
+    public partial class TreatmentPlans : Form, treatment_interface
     {
         treatment_controller cntrl;
-        Connection db = new Connection();common_model cmodel = new common_model();
+        Connection db = new Connection(); common_model cmodel = new common_model();
         public string doctor_id = "";
         public string patient_id = "";
         string logo_name = "";
@@ -33,7 +28,7 @@ namespace PappyjoeMVC.View
         }
         private void TreatmentPlans_Load(object sender, EventArgs e)
         {
-             if (doctor_id != "1")
+            if (doctor_id != "1")
             {
                 string privid;
                 privid = this.cntrl.check_privillege(doctor_id);
@@ -75,7 +70,7 @@ namespace PappyjoeMVC.View
                 toolStripButton1.Text = clinicn.Replace("¤", "'");
                 path = clinicname.Rows[0]["path"].ToString();
                 string docnam = cmodel.Get_DoctorName(doctor_id);
-                if (docnam!="")
+                if (docnam != "")
                 {
                     toolStripTextDoctor.Text = "Logged In As : " + docnam;
                 }
@@ -209,7 +204,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !.....", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -227,7 +222,7 @@ namespace PappyjoeMVC.View
                         {
                             btnEnabled = btnEnabled + 1;
                             dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[7].Value = "2";
-                            dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[1].Value = PappyjoeMVC .Properties.Resources.Bordertick;
+                            dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[1].Value = PappyjoeMVC.Properties.Resources.Bordertick;
                         }
                         else if (dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[7].Value.ToString() == "2")
                         {
@@ -246,7 +241,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !.....", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -270,7 +265,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !.....", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -298,7 +293,7 @@ namespace PappyjoeMVC.View
                     dlt_Privilage();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !.....", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -394,7 +389,7 @@ namespace PappyjoeMVC.View
                     MessageBox.Show("Please select the Treatment..!", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
             }
@@ -610,7 +605,7 @@ namespace PappyjoeMVC.View
             int Dexist = 0;
             string clinicn = "";
             string Clinic = "";
-            System.Data.DataTable dtp =cmodel.get_company_details();
+            System.Data.DataTable dtp = cmodel.get_company_details();
             if (dtp.Rows.Count > 0)
             {
                 clinicn = dtp.Rows[0]["name"].ToString();
@@ -830,15 +825,17 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.ShowDialog();
         }
+
         private void labelallpatient_Click(object sender, EventArgs e)
         {
-            var form2 = new Communication();
+            var form2 = new patients();
             form2.doctor_id = doctor_id;
-            form2.patient_id = patient_id; ;
+            patients_controller controllr = new patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
         }
+
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             var form2 = new patients();
@@ -1092,5 +1089,5 @@ namespace PappyjoeMVC.View
 
         }
     }
-   
+
 }

@@ -119,8 +119,8 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                DataTable checkdataname = this.cntrl.check_drugname(drugnametextbox.Text);
-                if (checkdataname.Rows.Count > 0)
+                string checkdataname = this.cntrl.check_drugname(drugnametextbox.Text);
+                if (checkdataname!="")
                 {
                     MessageBox.Show("Drug " + drugnametextbox.Text + "' already exist", "Duplication Encountered", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

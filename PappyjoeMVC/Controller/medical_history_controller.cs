@@ -11,64 +11,53 @@ namespace PappyjoeMVC.Controller
   public class medical_history_controller
     {
         medical_history_model _model = new medical_history_model();
-        medical_history_interface intr;
-        public medical_history_controller(medical_history_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
-
         public DataTable Check_medical(string name)
         {
             DataTable dtb = _model.Check_medical(name);
             return dtb;
         }
-        public int save_medical()
+        public int save_medical(string medical)
         {
-            _model.Medical = intr.medical;
-            int i = _model.save_medical();
+            int i = _model.save_medical(medical);
             return i;
         }
-        public void load_medical()
+        public DataTable load_medical()
         {
             DataTable dtb = _model.load_medical();
-            intr.LoadMedical(dtb);
+            return dtb;
         }
-        public void update_medical(string id)
+        public void update_medical(string id, string medical)
         {
-            _model.Medical = intr.medical;
-            _model.update_medical(id);
+            _model.update_medical(id, medical);
         }
         public void delete_medical(string id)
         {
             _model.delete_medical(id);
         }
-        public void seaerh_medical(string name)
+        public DataTable seaerh_medical(string name)
         {
             DataTable dtb = _model.seaerh_medical(name);
-            intr.LoadMedical(dtb);
+            return dtb;
         }
         //group
-        public void Load_Group()
+        public DataTable Load_Group()
         {
             DataTable dtb = _model.Load_Group();
-            intr.LoadGroup(dtb);
+            return dtb;
         }
         public DataTable check_groupname(string name)
         {
             DataTable dt = _model.check_groupname(name);
             return dt;
         }
-        public int save_group()
+        public int save_group(string group)
         {
-            _model.Group = intr.group;
-            int i = _model.save_group();
+            int i = _model.save_group(group);
             return i;
         }
-        public int update_group(string id)
+        public int update_group(string id,string group)
         {
-            _model.Group = intr.group;
-            int i= _model.update_group(id);
+            int i= _model.update_group(id,group);
             return i;
         }
         public DataTable exsists_ptgroup(string name)

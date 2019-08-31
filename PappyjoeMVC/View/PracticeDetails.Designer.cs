@@ -221,10 +221,10 @@
             this.button_practice.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_practice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_practice.ForeColor = System.Drawing.Color.White;
-            this.button_practice.Location = new System.Drawing.Point(0, 39);
+            this.button_practice.Location = new System.Drawing.Point(1, 39);
             this.button_practice.Name = "button_practice";
             this.button_practice.Size = new System.Drawing.Size(192, 37);
-            this.button_practice.TabIndex = 69;
+            this.button_practice.TabIndex = 73;
             this.button_practice.Text = "Practice Details";
             this.button_practice.UseVisualStyleBackColor = false;
             this.button_practice.Click += new System.EventHandler(this.button_practice_Click);
@@ -1013,7 +1013,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 613);
+            this.button1.Location = new System.Drawing.Point(1, 613);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(192, 129);
             this.button1.TabIndex = 149;
@@ -1052,7 +1052,7 @@
             this.btnLab.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLab.ForeColor = System.Drawing.Color.White;
-            this.btnLab.Location = new System.Drawing.Point(0, 363);
+            this.btnLab.Location = new System.Drawing.Point(1, 363);
             this.btnLab.Name = "btnLab";
             this.btnLab.Size = new System.Drawing.Size(192, 37);
             this.btnLab.TabIndex = 151;

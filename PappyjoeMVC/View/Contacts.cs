@@ -12,32 +12,22 @@ using PappyjoeMVC.Controller;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Contacts : Form,contact_interface
+    public partial class Contacts : Form
     {
-        contact_controller cntrl;
+        contact_controller cntrl=new contact_controller();
         public string ContactId = "";
         public Contacts()
         {
             InitializeComponent();
         }
 
-        public void SetController(contact_controller controller)
-        {
-            cntrl = controller;
-        }
-        public string Contact_Name
-        {
-            get { return this.text_contact.Text; }
-            set { this.text_contact.Text = value; }
-        }
-      
         private void buttonsave_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(text_contact.Text))
             {
                 if(buttonsave.Text=="Save")
                 {
-                    int i =this.cntrl.Save();
+                    int i =this.cntrl.Save(text_contact.Text);
                     if(i>0)
                     {
                         MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -45,14 +35,15 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    int i = this.cntrl.Update(ContactId);
+                    int i = this.cntrl.Update(ContactId, text_contact.Text);
                     if (i > 0)
                     {
                         MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 text_contact.Clear();
-                this.cntrl.FillGrid();
+               DataTable dtb= this.cntrl.FillGrid();
+                Fill_ContactGrid(dtb);
             }
             else
             {
@@ -97,7 +88,8 @@ namespace PappyjoeMVC.View
                             if (i > 0)
                             {
                                 dgv_Contact.Rows.RemoveAt(dgv_Contact.CurrentRow.Index);
-                                this.cntrl.FillGrid();
+                                DataTable dtb= this.cntrl.FillGrid();
+                                Fill_ContactGrid(dtb);
                             }
                         }
                     }
@@ -124,7 +116,8 @@ namespace PappyjoeMVC.View
 
         private void Contacts_Load(object sender, EventArgs e)
         {
-            this.cntrl.FillGrid();
+            DataTable dtb= this.cntrl.FillGrid();
+            Fill_ContactGrid(dtb);
             dgv_Contact.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             dgv_Contact.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv_Contact.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
@@ -137,7 +130,8 @@ namespace PappyjoeMVC.View
 
         private void text_search_KeyUp(object sender, KeyEventArgs e)
         {
-            this.cntrl.search(text_search.Text);
+          DataTable dtb= this.cntrl.search(text_search.Text);
+          Fill_ContactGrid(dtb);
         }
     }
 }

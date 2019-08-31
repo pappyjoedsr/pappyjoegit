@@ -163,7 +163,7 @@ namespace PappyjoeMVC.View
         private void btn_AddNewItem_Click(object sender, EventArgs e)
         {
             var form2 = new frmAddDrug();
-            AddItem_controller controller = new AddItem_controller(form2);
+            //AddItem_controller controller = new AddItem_controller(form2);
             form2.ShowDialog();
         }
 
@@ -214,7 +214,7 @@ namespace PappyjoeMVC.View
                         if (dtb.Rows.Count > 0)
                         {
                             var form2 = new frmAddDrug();
-                            AddItem_controller controller = new AddItem_controller(form2);
+                            //AddItem_controller controller = new AddItem_controller(form2);
                             form2.ShowDialog();
                         }
                     }

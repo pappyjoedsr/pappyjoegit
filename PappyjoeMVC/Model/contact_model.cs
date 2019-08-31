@@ -12,25 +12,17 @@ namespace PappyjoeMVC.Model
     public class contact_model
     {
         Connection db = new Connection();
-        private string _contactname;
-        public string ContactName
-        {
-            get { return _contactname; }
-            set { _contactname = value; }
-        }
-
-        public int Save_data()
+        public int Save_data(string _contactname)
         {
            int i = db.execute("insert into tbl_contacts (contact) values('" + _contactname + "')");
             return i;
         }
-
         public DataTable FillGrid()
         {
             DataTable dtb = db.table("select * from tbl_contacts order by id");
             return dtb;
         }
-        public int Update_data(string id)
+        public int Update_data(string id,string _contactname)
         {
             int i = db.execute("update tbl_contacts  set contact='" + _contactname + "' where id='"+id+"'");
             return i;

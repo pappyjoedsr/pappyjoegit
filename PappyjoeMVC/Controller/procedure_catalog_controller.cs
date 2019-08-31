@@ -9,13 +9,7 @@ namespace PappyjoeMVC.Controller
 {
    public class procedure_catalog_controller
     {
-         //procedure_catalog_interface intr;
-        procedure_catalog_model _model=new procedure_catalog_model();   
-        //public procedure_catalog_controller(procedure_catalog_interface inttr)
-        //{
-        //    intr = inttr;
-        //    intr.SetController(this);
-        //}
+        procedure_catalog_model _model=new procedure_catalog_model();  
         public DataTable FormLoad()
         {
             DataTable dtb = _model.FormLoad();

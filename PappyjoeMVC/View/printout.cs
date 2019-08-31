@@ -14,12 +14,12 @@ using System.Drawing.Printing;
 
 namespace PappyjoeMVC.View
 {
-    public partial class printout : Form,printout_interface
+    public partial class printout : Form
     {
-        printout_controller cntrl;
-        string orientation, color, orientation1, color1;
-        string includeheader, lefttext, righttext, includelogo, logotype, includeheader1, lefttext1, righttext1, includelogo1, logotype1;
-        string patientdetails, medhistory, patientno, address, phone, email, bloodgroup, genderdob, Doctor, patientdetails1, medhistory1, patientno1, address1, phone1, email1, bloodgroup1, genderdob1, Doctor1;
+        printout_controller cntrl=new printout_controller();
+        string orientation="", color="";
+        string includeheader="",header, lefttext, righttext, includelogo, logotype;
+        string patientdetails="", medhistory="", patientno, address, phone, email, bloodgroup, genderdob, Doctor;
         int topmargin1 = 0;
         PaperSize paperSize;
         public bool prescription_flag = false;
@@ -30,19 +30,6 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-
-        //private void button_medical_saveforall_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void tabPage1_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-       
-
         private void button_prescription_preview_Click(object sender, EventArgs e)
         {
             try
@@ -123,8 +110,6 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Printer Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
-
-       
 
         private void tabControl2_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -678,7 +663,6 @@ namespace PappyjoeMVC.View
             {
             }
         }
-
      
         private void tabControl1_TabIndexChanged(object sender, EventArgs e)
         {
@@ -755,7 +739,7 @@ namespace PappyjoeMVC.View
                     }
                     if (check_address1.Checked == true)
                     {
-                        address = "0";
+                        address = "0";  
                     }
                     else
                     {
@@ -777,6 +761,14 @@ namespace PappyjoeMVC.View
                     {
                         bloodgroup = "1";
                     }
+                    if (chkdoctor.Checked == true)
+                    {
+                        Doctor = "0";
+                    }
+                    else
+                    {
+                        Doctor = "1";
+                    }
                 }
                 else
                 {
@@ -787,6 +779,7 @@ namespace PappyjoeMVC.View
                     phone = "1";
                     email = "1";
                     bloodgroup = "1";
+                    Doctor = "1";
                 }
                 if (check_gender1.Checked == true)
                 {
@@ -800,18 +793,18 @@ namespace PappyjoeMVC.View
                 int count = Convert.ToInt32(c);
                 if (count == 0)
                 {
-                    int insert = this.cntrl.save_invoice(orientation, color, includeheader, includelogo, logotype, patientdetails, medhistory, patientno, address, phone, email, bloodgroup, genderdob,Doctor1);
+                    int insert = this.cntrl.save_invoice(combo_paper_size1.Text, orientation, color, combo_topmargin1.Text, combo_leftmargin1.Text, combo_bottommargin1.Text, combo_rightmargin1.Text, includeheader, header, lefttext, righttext, includelogo, logotype, patientdetails, medhistory, patientno, address, phone, email, bloodgroup, genderdob, combo_footer_topmargin1.Text, rich_fullwidth1.Text, rich_leftsign1.Text, rich_rightsign1.Text, Doctor);
                     MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    int update = this.cntrl.update_invoicePrint(orientation, color, includeheader, includelogo, logotype, patientdetails, medhistory, patientno, address, phone, email, bloodgroup, genderdob,Doctor1);
+                    int update = this.cntrl.update_invoicePrint(combo_paper_size1.Text, orientation, color, combo_topmargin1.Text, combo_leftmargin1.Text, combo_bottommargin1.Text, combo_rightmargin1.Text, includeheader, header, lefttext, righttext, includelogo, logotype, patientdetails, medhistory, patientno, address, phone, email, bloodgroup, genderdob, combo_footer_topmargin1.Text, rich_fullwidth1.Text, rich_leftsign1.Text, rich_rightsign1.Text, Doctor);
                     MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 
             }
             catch(Exception ex)
-             {
+            {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -1310,73 +1303,6 @@ namespace PappyjoeMVC.View
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public string PaperSize
-        {
-            get { return this.combo_paper_size.Text; }
-            set { this.combo_paper_size.Text = value; }
-        }
-        public string TopMargine
-        {
-            get { return this.combo_topmargin.Text; }
-            set { this.combo_topmargin.Text = value; }
-        }
-        public string Bottommargin
-        {
-            get { return this.combo_bottommargin.Text; }
-            set { this.combo_bottommargin.Text = value; }
-        }
-
-        public string LeftMargine
-        {
-            get { return this.combo_leftmargin.Text; }
-            set { this.combo_leftmargin.Text = value; }
-        }
-        public string RightMargin
-        {
-            get { return this.combo_rightmargin.Text; }
-            set { this.combo_rightmargin.Text = value; }
-        }
-
-        public string header
-        {
-            get { return this.text_header.Text; }
-            set { this.text_header.Text = value; }
-        }
-        public string LeftText
-        {
-            get { return this.text_left_text.Text; }
-            set { this.text_left_text.Text = value; }
-        }
-        public string Righttext
-        {
-            get { return this.text_right_text.Text; }
-            set { this.text_right_text.Text = value; }
-        }
-        public string FooterTop
-        {
-            get { return this.combo_footer_topmargin.Text; }
-            set { this.combo_footer_topmargin.Text = value; }
-        }
-        public string LeftSign
-        {
-            get { return this.rich_leftsign.Text; }
-            set { this.rich_leftsign.Text = value; }
-        }
-        public string Rightsign
-        {
-            get { return this.rich_rightsign.Text; }
-            set { this.rich_rightsign.Text = value; }
-        }
-        public string header_top
-        {
-            get { return this.rich_fullwidth.Text; }
-            set { this.rich_fullwidth.Text = value; }
-        }
         private void btn_receiptprint_Click(object sender, EventArgs e)
         {
             try
@@ -1492,15 +1418,13 @@ namespace PappyjoeMVC.View
                 int count = Convert.ToInt32(c);
                 if (count == 0)
                 {
-                    this.cntrl.save_receipt(orientation, color, includeheader, includelogo, logotype, patientdetails, medhistory, patientno, address, phone, email, bloodgroup, genderdob, Doctor);
+                   this.cntrl.save_receipt(combo_paper_size2.Text, orientation, color, combo_topmargin2.Text, combo_leftmargin2.Text, combo_bottommargin2.Text, combo_rightmargin2.Text, includeheader, header, lefttext, righttext, includelogo, logotype, patientdetails, medhistory, patientno, address, phone, email, bloodgroup, genderdob, combo_footer_topmargin2.Text, rich_fullwidth2.Text, rich_leftsign2.Text, rich_rightsign2.Text, Doctor);
                     MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 else
                 {
-                    this.cntrl.update_receipt(orientation, color, includeheader, includelogo, logotype, patientdetails, medhistory, patientno, address, phone, email, bloodgroup, genderdob, Doctor);
+                  this.cntrl.update_receipt(combo_paper_size2.Text, orientation, color, combo_topmargin2.Text, combo_leftmargin2.Text, combo_bottommargin2.Text, combo_rightmargin2.Text, includeheader, header, lefttext, righttext, includelogo, logotype, patientdetails, medhistory, patientno, address, phone, email, bloodgroup, genderdob, combo_footer_topmargin2.Text, rich_fullwidth2.Text, rich_leftsign2.Text, rich_rightsign2.Text, Doctor);
                     MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
             }
             catch(Exception ex)
@@ -1508,8 +1432,6 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-       
         private void printout_Load(object sender, EventArgs e)
         {
             try
@@ -1530,7 +1452,8 @@ namespace PappyjoeMVC.View
                 radio_headeryes.Checked = true;
                 check_show_patient.Checked = true;
                 chkdoctor.Checked = true;
-                this.cntrl.get_prescription_printdetails();
+                DataTable dtb= this.cntrl.get_prescription_printdetails();
+                Load_prescription_printdetails(dtb);
                 combo_footer_topmargin.SelectedIndex = 1;
                 //invoice
                 radio_potrait1.Checked = true;
@@ -1540,9 +1463,11 @@ namespace PappyjoeMVC.View
                 radio_headeryes1.Checked = true;
                 check_show_patient1.Checked = true;
                 chkdoctor1.Checked = true;
-                this.cntrl.invoice_printdetails();
+              DataTable dtb_invoice=this.cntrl.invoice_printdetails();
+                load_invoicePrint_details(dtb);
                 //receipt
-                this.cntrl.load_receipt_print();
+              DataTable dtb_receipt=  this.cntrl.load_receipt_print();
+                Load_ReceiptPrint(dtb);
             }
             catch (Exception ex)
             {
@@ -1615,7 +1540,6 @@ namespace PappyjoeMVC.View
             printPreviewControl4.Document = printDocument_receipt;
             printPreviewControl4.Show();
         }
-
         private void printDocument_receipt_PrintPage(object sender, PrintPageEventArgs e)
         {
             try
@@ -2151,7 +2075,7 @@ namespace PappyjoeMVC.View
             }
         }
 
-        private void button_prescription_save_Click(object sender, EventArgs e)
+        private void button_prescription_save_Click(object sender, EventArgs e)//compl
         {
             try
             {
@@ -2264,7 +2188,7 @@ namespace PappyjoeMVC.View
                 DataTable dtb = this.cntrl.Get_prescription_id();
                 if (dtb.Rows.Count > 0)
                 {
-                    int i = this.cntrl.Update(orientation, color, includeheader, includelogo, logotype, patientdetails, medhistory, patientno, address, phone, email, bloodgroup, genderdob, Doctor);
+                    int i = this.cntrl.Update(combo_paper_size.Text, orientation, color, combo_topmargin.Text, combo_leftmargin.Text, combo_bottommargin.Text, combo_rightmargin.Text, includeheader, header, lefttext, righttext, includelogo, logotype, patientdetails, medhistory, patientno, address, phone, email, bloodgroup, genderdob, combo_footer_topmargin.Text, rich_fullwidth.Text, rich_leftsign.Text, rich_rightsign.Text, Doctor);
                     if (i > 0)
                     {
                         MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -2272,7 +2196,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    int i = this.cntrl.save(orientation, color, includeheader, includelogo, logotype, patientdetails, medhistory, patientno, address, phone, email, bloodgroup, genderdob, Doctor);
+                    int i = this.cntrl.save(combo_paper_size.Text, orientation, color, combo_topmargin.Text, combo_leftmargin.Text, combo_bottommargin.Text, combo_rightmargin.Text, includeheader, header, lefttext, righttext, includelogo, logotype, patientdetails, medhistory, patientno, address, phone, email, bloodgroup, genderdob, combo_footer_topmargin.Text, rich_fullwidth.Text, rich_leftsign.Text, rich_rightsign.Text, Doctor);
                     if (i > 0)
                     {
                         MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -2378,68 +2302,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-        //invoice
-        public string PaperSize1
-        {
-            get { return this.combo_paper_size1.Text; }
-            set { this.combo_paper_size1.Text = value; }
-        }
-        public string TopMargine1
-        {
-            get { return this.combo_topmargin1.Text; }
-            set { this.combo_topmargin1.Text = value; }
-        }
-        public string LeftMargine1
-        {
-            get { return this.combo_leftmargin1.Text; }
-            set { this.combo_leftmargin1.Text = value; }
-        }
-        public string Bottommargin1
-        {
-            get { return this.combo_bottommargin1.Text; }
-            set { this.combo_bottommargin1.Text = value; }
-        }
-        public string RightMargin1
-        {
-            get { return this.combo_rightmargin1.Text; }
-            set { this.combo_rightmargin1.Text = value; }
-        }
-        public string header1
-        {
-            get { return this.text_header1.Text; }
-            set { this.text_header1.Text = value; }
-        }
-        public string LeftText1
-        {
-            get { return this.text_left_text1.Text; }
-            set { this.text_left_text1.Text = value; }
-        }
-        public string Righttext1
-        {
-            get { return this.text_right_text1.Text; }
-            set { this.text_right_text1.Text = value; }
-        }
-        public string FooterTop1
-        {
-            get { return this.combo_footer_topmargin1.Text; }
-            set { this.combo_footer_topmargin1.Text = value; }
-        }
-        public string LeftSign1
-        {
-            get { return this.rich_leftsign1.Text; }
-            set { this.rich_leftsign1.Text = value; }
-        }
-        public string Rightsign1
-        {
-            get { return this.rich_rightsign1.Text; }
-            set { this.rich_rightsign1.Text = value; }
-        }
-        public string header_top1
-        {
-            get { return this.rich_fullwidth1.Text; }
-            set { this.rich_fullwidth1.Text = value; }
-        }
-
         //Receipt   check_show_patient2
         public void Load_ReceiptPrint(DataTable Receipt_print)
         {
@@ -2559,70 +2421,6 @@ namespace PappyjoeMVC.View
                     radio_headerno2.Checked = true;
                 }
             }
-        }
-
-
-        public string PaperSize2
-        {
-            get { return this.combo_paper_size.Text; }
-            set { this.combo_paper_size.Text = value; }
-        }
-        public string TopMargine2
-        {
-            get { return this.combo_topmargin2.Text; }
-            set { this.combo_topmargin2.Text = value; }
-        }
-        public string Bottommargin2
-        {
-            get { return this.combo_bottommargin2.Text; }
-            set { this.combo_bottommargin2.Text = value; }
-        }
-
-        public string LeftMargine2
-        {
-            get { return this.combo_leftmargin2.Text; }
-            set { this.combo_leftmargin2.Text = value; }
-        }
-        public string RightMargin2
-        {
-            get { return this.combo_rightmargin2.Text; }
-            set { this.combo_rightmargin2.Text = value; }
-        }
-
-        public string header2
-        {
-            get { return this.text_header2.Text; }
-            set { this.text_header2.Text = value; }
-        }
-        public string LeftText2
-        {
-            get { return this.text_left_text2.Text; }
-            set { this.text_left_text2.Text = value; }
-        }
-        public string Righttext2
-        {
-            get { return this.text_right_text2.Text; }
-            set { this.text_right_text2.Text = value; }
-        }
-        public string FooterTop2
-        {
-            get { return this.combo_footer_topmargin2.Text; }
-            set { this.combo_footer_topmargin2.Text = value; }
-        }
-        public string LeftSign2
-        {
-            get { return this.rich_leftsign2.Text; }
-            set { this.rich_leftsign2.Text = value; }
-        }
-        public string Rightsign2
-        {
-            get { return this.rich_rightsign2.Text; }
-            set { this.rich_rightsign2.Text = value; }
-        }
-        public string header_top2
-        {
-            get { return this.rich_fullwidth2.Text; }
-            set { this.rich_fullwidth2.Text = value; }
         }
     }
 }

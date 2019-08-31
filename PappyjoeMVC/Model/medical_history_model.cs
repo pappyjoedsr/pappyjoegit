@@ -10,24 +10,12 @@ namespace PappyjoeMVC.Model
     public class medical_history_model
     {
         Connection db = new Connection();
-        private string _medical = "";
-        public string Medical
-        {
-            get { return _medical; }
-            set { _medical = value; }
-        }
-        private string _group = "";
-        public string Group
-        {
-            get { return _group; }
-            set { _group = value; }
-        }
         public DataTable Check_medical(string name)
         {
             DataTable checkdatacc = db.table("Select * from tbl_medhistory where name ='" + name + "'");
             return checkdatacc;
         }
-        public int save_medical()
+        public int save_medical(string _medical)
         {
             int i = db.execute("insert into tbl_medhistory (name) values('" + _medical + "')");
             return i;
@@ -37,7 +25,7 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table("select * from tbl_medhistory order by id");
             return dt;
         }
-        public void update_medical(string id)
+        public void update_medical(string id, string _medical)
         {
             int i = db.execute("update tbl_medhistory set name='" + _medical + "' where id='" + id + "'");
         }
@@ -50,7 +38,6 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table("select * from tbl_medhistory where name like '%" + name + "%'");
             return dt;
         }
-
         //group
         public DataTable Load_Group()
         {
@@ -62,12 +49,12 @@ namespace PappyjoeMVC.Model
             DataTable checkdatacc = db.table("Select * from tbl_group where name ='" + name + "'");
             return checkdatacc;
         }
-        public int save_group()
+        public int save_group(string _group)
         {
             int i = db.execute("insert into tbl_group (name) values('" + _group + "')");
             return i;
         }
-        public int update_group(string groupid)
+        public int update_group(string groupid, string _group)
         {
             int i = db.execute("update tbl_group set name='" + _group + "' where id='" + groupid + "'");
             return i;

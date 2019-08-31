@@ -2027,7 +2027,12 @@ namespace PappyjoeMVC.View
 
         private void labelappointment_Click(object sender, EventArgs e)
         {
-
+            var form2 = new PappyjoeMVC.View.Show_Appointment();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
 
         private void label44_Click(object sender, EventArgs e)

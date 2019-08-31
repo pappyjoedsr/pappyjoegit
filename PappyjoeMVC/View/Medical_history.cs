@@ -11,25 +11,25 @@ using PappyjoeMVC.Model;
 using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
-    public partial class Medical_history : Form,medical_history_interface
+    public partial class Medical_history : Form
     {
         public Medical_history()
         {
             InitializeComponent();
         }
-        medical_history_controller cntrl;
+        medical_history_controller cntrl=new medical_history_controller();
         public string id = "";
         string groupid = "0";
-        public string medical
-        {
-            get { return this.text_medhist.Text; }
-            set { this.text_medhist.Text = value; }
-        }
-        public string group
-        {
-            get { return this.textBox_group.Text; }
-            set { this.textBox_group.Text = value; }
-        }
+        //public string medical
+        //{
+        //    get { return this.text_medhist.Text; }
+        //    set { this.text_medhist.Text = value; }
+        //}
+        //public string group
+        //{
+        //    get { return this.textBox_group.Text; }
+        //    set { this.textBox_group.Text = value; }
+        //}
         public void SetController(medical_history_controller controller)
         {
             cntrl = controller;
@@ -64,12 +64,12 @@ namespace PappyjoeMVC.View
                 {
                     if (button_add.Text == "Update")
                     {
-                        this.cntrl.update_medical(id);
+                        this.cntrl.update_medical(id, text_medhist.Text);
                         MessageBox.Show("Updated Successfully..", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        DataTable dtb = this.cntrl.Check_medical(medical);
+                        DataTable dtb = this.cntrl.Check_medical(text_medhist.Text);
                         if (dtb.Rows.Count > 0)
                         {
                             MessageBox.Show("Medical History " + text_medhist.Text + " already existed", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -77,7 +77,7 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            int i = this.cntrl.save_medical();
+                            int i = this.cntrl.save_medical(text_medhist.Text);
                             if (i > 0)
                             {
                                 MessageBox.Show("Saved Successfully..", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -85,7 +85,8 @@ namespace PappyjoeMVC.View
                         }
                     }
                     text_medhist.Clear();
-                    this.cntrl.load_medical();
+                    DataTable dt= this.cntrl.load_medical();
+                    LoadMedical(dt);
                 }
             }
             catch(Exception ex)
@@ -110,7 +111,8 @@ namespace PappyjoeMVC.View
 
         private void Medical_history_Load(object sender, EventArgs e)
         {
-            this.cntrl.load_medical();
+            DataTable dtv = this.cntrl.load_medical();
+            LoadMedical(dtv);
             Dgv_medhist.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             Dgv_medhist.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             Dgv_medhist.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
@@ -119,7 +121,8 @@ namespace PappyjoeMVC.View
             {
                 cl.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            this.cntrl.Load_Group();
+           DataTable td_grp= this.cntrl.Load_Group();
+            LoadGroup(td_grp );
             dataGridView_group.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             dataGridView_group.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView_group.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
@@ -154,13 +157,15 @@ namespace PappyjoeMVC.View
                         else
                         {
                             this.cntrl.delete_medical(id);
-                            this.cntrl.load_medical();
+                           DataTable dtb= this.cntrl.load_medical();
+                            LoadMedical(dtb);
                         }
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
+
             }
         }
 
@@ -173,7 +178,8 @@ namespace PappyjoeMVC.View
 
         private void text_search_KeyUp(object sender, KeyEventArgs e)
         {
-            this.cntrl.seaerh_medical(text_search.Text);
+           DataTable dtb= this.cntrl.seaerh_medical(text_search.Text);
+            LoadMedical(dtb);
         }
         public void LoadGroup(DataTable dt_maintest)
         {
@@ -212,7 +218,7 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        int i = this.cntrl.save_group();
+                        int i = this.cntrl.save_group(textBox_group.Text);
                         if(i>0)
                         {
                             MessageBox.Show("Saved Successfully..", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -221,14 +227,15 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    int i = this.cntrl.update_group(groupid);
+                    int i = this.cntrl.update_group(groupid, textBox_group.Text);
                     if (i > 0)
                     {
                         MessageBox.Show("Updated Successfully..", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 textBox_group.Text = "";
-                this.cntrl.Load_Group();
+              DataTable dt=this.cntrl.Load_Group();
+                LoadGroup(dt);
                 button_group.Text = "Save";
                 groupid = "0";
             }
@@ -270,12 +277,9 @@ namespace PappyjoeMVC.View
                         else
                         {
                             this.cntrl.delete_group(groupid);
-                            this.cntrl.Load_Group();
+                           DataTable dt= this.cntrl.Load_Group();
+                            LoadGroup(dt);
                         }
-                    }
-                    else
-                    {
-
                     }
                 }
             }
