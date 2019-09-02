@@ -100,7 +100,6 @@
     <Compile Include="Controller\DoctorWise_appointment_report_controller.cs" />
     <Compile Include="Controller\doctor_controller.cs" />
     <Compile Include="Controller\Doctor_Wise_Invoice_controller.cs" />
-    <Compile Include="Controller\Doctor_Wise_Invoice_interface.cs" />
     <Compile Include="Controller\Doctor_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Doctor_Wise_Receipt_interface.cs" />
     <Compile Include="Controller\editpracticedetails_controller.cs" />

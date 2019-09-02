@@ -185,18 +185,6 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-        public void practicedetails(DataTable dt)
-        {
-            if (dt.Rows.Count > 0)
-            {
-                clinicn = dt.Rows[0]["name"].ToString();
-                strclinicname = clinicn.Replace("¤", "'");
-                strphone = dt.Rows[0]["contact_no"].ToString();
-                strStreet = dt.Rows[0]["street_address"].ToString();
-                stremail = dt.Rows[0]["email"].ToString();
-                strwebsite = dt.Rows[0]["website"].ToString();
-            }
-        }
         private void buttonClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -288,7 +276,16 @@ namespace PappyjoeMVC.View
                     int sl = 0;
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        this.ctrlr.practicedetails();
+                        DataTable dt=this.ctrlr.practicedetails();
+                            if (dt.Rows.Count > 0)
+                            {
+                                clinicn = dt.Rows[0]["name"].ToString();
+                                strclinicname = clinicn.Replace("¤", "'");
+                                strphone = dt.Rows[0]["contact_no"].ToString();
+                                strStreet = dt.Rows[0]["street_address"].ToString();
+                                stremail = dt.Rows[0]["email"].ToString();
+                                strwebsite = dt.Rows[0]["website"].ToString();
+                            }
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
                     StreamWriter sWrite = new StreamWriter(Apppath + "\\MonthlyInvoiceReport.html");
