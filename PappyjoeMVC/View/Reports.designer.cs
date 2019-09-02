@@ -746,6 +746,7 @@
             this.lbldaily.Size = new System.Drawing.Size(101, 17);
             this.lbldaily.TabIndex = 0;
             this.lbldaily.Text = "DAILY INVOICE";
+            this.lbldaily.Click += new System.EventHandler(this.lbldaily_Click);
             // 
             // lblrelatedrepo
             // 

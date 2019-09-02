@@ -10,48 +10,42 @@ namespace PappyjoeMVC.Controller
 {
    public class Daily_Invoice_Report_controller
     {
-       Daily_Invoice_Report_interface intr;
        common_model cmdl = new common_model();
        Daily_Invoice_Report_model mdl=new Daily_Invoice_Report_model();
-       public Daily_Invoice_Report_controller(Daily_Invoice_Report_interface inttr)
-        {
-            intr = inttr;
-            intr.setController(this);
-        }
-       public void getdocname()
+       public DataTable getdocname()
        {
            DataTable dt = mdl.getdocname();
-           intr.getdocname(dt);
+           return dt;
        }
-       public void practicedetails()
+       public DataTable practicedetails()
        {
            DataTable dt = mdl.practicedetails();
-           intr.practicedetails(dt);
+           return dt;
        }
-       public void getinvoice(string invdate)
+       public DataTable getinvoice(string invdate)
        {
            DataTable dt = mdl.getinvoice(invdate);
-           intr.getinvoice(dt);
+           return dt;
        }
-       public void getinvoice2(string invdate, string doctrid)
+       public DataTable getinvoice2(string invdate, string doctrid)
        {
            DataTable dt = mdl.getinvoice2(invdate,doctrid);
-           intr.getinvoice2(dt);
+           return dt;
        }
-       public void getpay(string invdate)
+       public DataTable getpay(string invdate)
        {
            DataTable dt = mdl.getpay(invdate);
-           intr.getpay(dt);
+           return dt;
        }
-       public void getpay2(string invdate, string doctrid)
+       public DataTable getpay2(string invdate, string doctrid)
        {
            DataTable dt = mdl.getpay2(invdate, doctrid);
-           intr.getpay2(dt);
-       }
-       public void Get_DoctorId(string name)
+           return dt;
+        }
+       public string Get_DoctorId(string name)
        {
             string dt = cmdl.Get_DoctorId(name);
-           intr.Get_DoctorId(dt);
+            return dt; ;
        }
     }
 }

@@ -1734,7 +1734,14 @@ namespace PappyjoeMVC.View
             //Monthly_treatment_count_controller c = new Monthly_treatment_count_controller(m);
             //m.ShowDialog();
         }
-
+        private void lbldaily_Click(object sender, EventArgs e)
+        {
+            var form2 = new Daily_Invoice_Report();
+            form2.patient_id = patient_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            //this.Hide();
+            form2.ShowDialog();
+        }
         private void Chk_Type_CheckedChanged(object sender, EventArgs e)
         {
             if (Chk_Type.Checked)
