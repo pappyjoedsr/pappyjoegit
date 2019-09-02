@@ -10,38 +10,32 @@ namespace PappyjoeMVC.Controller
 {
     public class Monthly_Invoice_Report_controller
     {
-       Monthly_Invoice_Report_interface intr;
        common_model cmdl = new common_model();
        Daily_Invoice_Report_model dm = new Daily_Invoice_Report_model();
-       public Monthly_Invoice_Report_controller(Monthly_Invoice_Report_interface inttr)
-        {
-            intr = inttr;
-            intr.setController(this);
-        }
-       public void getdocname()
+       public DataTable getdocname()
        {
            DataTable dt = dm.getdocname();
-           intr.getdocname(dt);
+           return dt;
        }
-       public void Get_DoctorId(string name)
+       public string Get_DoctorId(string name)
        {
-            string dt = cmdl.Get_DoctorId(name);
-           intr.Get_DoctorId(dt);
+           string dt = cmdl.Get_DoctorId(name);
+           return dt;
        }
-        public void getdata(string invdate,string invdate2,int dr_id)
+       public DataTable getdata(string invdate,string invdate2,int dr_id)
        {
            DataTable dt = dm.getdata(invdate,invdate2,dr_id);
-           intr.getdata(dt);
+           return dt;
        }
-        public void getdata2(string invdate, string invdate2)
-        {
+       public DataTable getdata2(string invdate, string invdate2)
+       {
             DataTable dt = dm.getdata2(invdate, invdate2);
-            intr.getdata(dt);
-        }
-        public void practicedetails()
-        {
+            return dt;
+       }
+       public DataTable practicedetails()
+       {
             DataTable dt = dm.practicedetails();
-            intr.practicedetails(dt);
-        }
+            return dt;
+       }
     }
 }

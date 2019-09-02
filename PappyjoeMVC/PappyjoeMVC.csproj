@@ -128,7 +128,6 @@
     <Compile Include="Controller\Missing_Checkout_Report_controller.cs" />
     <Compile Include="Controller\Monthly_appointment_count_controller.cs" />
     <Compile Include="Controller\Monthly_Invoice_Report_controller.cs" />
-    <Compile Include="Controller\Monthly_Invoice_Report_interface.cs" />
     <Compile Include="Controller\Monthly_new_patients_controller.cs" />
     <Compile Include="Controller\Month_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Month_Wise_Receipt_interface.cs" />

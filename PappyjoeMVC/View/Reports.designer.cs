@@ -734,6 +734,7 @@
             this.lblMonthlySummary.Size = new System.Drawing.Size(128, 17);
             this.lblMonthlySummary.TabIndex = 1;
             this.lblMonthlySummary.Text = "MONTHLY INVOICE";
+            this.lblMonthlySummary.Click += new System.EventHandler(this.lblMonthlySummary_Click);
             // 
             // lbldaily
             // 
