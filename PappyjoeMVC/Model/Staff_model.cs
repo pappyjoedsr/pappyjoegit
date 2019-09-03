@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 
 namespace PappyjoeMVC.Model
 {
@@ -12,17 +7,17 @@ namespace PappyjoeMVC.Model
         Connection db = new Connection();
         public DataTable dtb_staff()
         {
-         DataTable dtb=db.table("select id,doctor_name,mobile_number,login_type,activate_login from tbl_doctor order by id");
+            DataTable dtb = db.table("select id,doctor_name,mobile_number,login_type,activate_login from tbl_doctor order by id");
             return dtb;
         }
         public DataTable Get_DctrDetails()
         {
-            DataTable dtb= db.table("select id,doctor_name from tbl_doctor order by id");
+            DataTable dtb = db.table("select id,doctor_name from tbl_doctor order by id");
             return dtb;
         }
         public DataTable Get_NotificationValue()
         {
-            DataTable dtb= db.table("SELECT tbl_doctor.id, tbl_doctor.doctor_name, tbl_doctors_notification.confirm_sms, tbl_doctors_notification.schedule_sms, tbl_doctors_notification.confirm_email,  tbl_doctors_notification.schedule_email FROM tbl_doctor INNER JOIN tbl_doctors_notification ON tbl_doctor.id = tbl_doctors_notification.dr_id");
+            DataTable dtb = db.table("SELECT tbl_doctor.id, tbl_doctor.doctor_name, tbl_doctors_notification.confirm_sms, tbl_doctors_notification.schedule_sms, tbl_doctors_notification.confirm_email,  tbl_doctors_notification.schedule_email FROM tbl_doctor INNER JOIN tbl_doctors_notification ON tbl_doctor.id = tbl_doctors_notification.dr_id");
             return dtb;
         }
         public DataTable Get_Dctr_Notification(string idd)
@@ -32,8 +27,8 @@ namespace PappyjoeMVC.Model
         }
         public DataTable dtb_ifexists_dctrnotification(string idd)
         {
-          DataTable dtb= db.table("select * from tbl_doctors_notification where dr_id='" + idd + "'");
-          return dtb;
+            DataTable dtb = db.table("select * from tbl_doctors_notification where dr_id='" + idd + "'");
+            return dtb;
         }
 
         public void Update_Notification(DataTable dtb, string idd)
@@ -48,7 +43,7 @@ namespace PappyjoeMVC.Model
         {
             int j = db.execute("update tbl_doctors_notification set dr_id='" + dtb.Rows[0]["dr_id"].ToString() + "',confirm_sms='0',schedule_sms='" + dtb.Rows[0]["schedule_sms"].ToString() + "',confirm_email='" + dtb.Rows[0]["confirm_email"].ToString() + "',schedule_email='" + dtb.Rows[0]["schedule_email"].ToString() + "'where dr_id='" + idd + "'");
         }
-        public void update_shedule_sms1 (DataTable dtb, string idd)
+        public void update_shedule_sms1(DataTable dtb, string idd)
         {
             int j = db.execute("update tbl_doctors_notification set dr_id='" + dtb.Rows[0]["dr_id"].ToString() + "',confirm_sms='" + dtb.Rows[0]["confirm_sms"].ToString() + "',schedule_sms='1',confirm_email='" + dtb.Rows[0]["confirm_email"].ToString() + "',schedule_email='" + dtb.Rows[0]["schedule_email"].ToString() + "'where dr_id='" + idd + "'");
         }
@@ -108,16 +103,16 @@ namespace PappyjoeMVC.Model
         {
             DataTable dtUserprivilege = db.table("select Category,Permission from tbl_User_Privilege where UserID = '" + userid + "'");
             return dtUserprivilege;
-        } 
+        }
         public string get_mailId(string email)
         {
-            string mail= db.scalar("select doctor_name from tbl_doctor where email_id='"+ email+"'");
+            string mail = db.scalar("select doctor_name from tbl_doctor where email_id='" + email + "'");
             return mail;
         }
-        public int Save_Staff(string _sname , string _mobile , string _email , string _registratn , string _color , string _status , string _stafftype ,  string _confirmpswd )
+        public int Save_Staff(string _sname, string _mobile, string _email, string _registratn, string _color, string _status, string _stafftype, string _confirmpswd)
         {
-         int i=db.execute("insert into tbl_doctor(doctor_name,mobile_number,email_id,registration_number,calendar_color,status,login_type,activate_login,password) values('" + _sname + "','" + _mobile + "','" + _email + "','" + _registratn + "','" + _color + "','" + _status + "','" + _stafftype + "','" + _status + "','" + _confirmpswd + "')");
-         int j = db.execute("insert into tbl_login(username,password,type) values ('" + _email + "','" + _confirmpswd+ "','" + _stafftype + "')");
+            int i = db.execute("insert into tbl_doctor(doctor_name,mobile_number,email_id,registration_number,calendar_color,status,login_type,activate_login,password) values('" + _sname + "','" + _mobile + "','" + _email + "','" + _registratn + "','" + _color + "','" + _status + "','" + _stafftype + "','" + _status + "','" + _confirmpswd + "')");
+            int j = db.execute("insert into tbl_login(username,password,type) values ('" + _email + "','" + _confirmpswd + "','" + _stafftype + "')");
             return i;
         }
         public void update_loginstatus(string id)

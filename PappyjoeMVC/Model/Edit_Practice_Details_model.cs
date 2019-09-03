@@ -1,29 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 
 namespace PappyjoeMVC.Model
 {
-     public class Edit_Practice_Details_model
+    public class Edit_Practice_Details_model
     {
         Connection db = new Connection();
-        
+
         //specialization
         public void save_country(string Country)
         {
-           db.execute("insert into tbl_country(country,country_code) values('" +Country + "','0')");
+            db.execute("insert into tbl_country(country,country_code) values('" + Country + "','0')");
         }
         public DataTable Load_All_Country()
         {
-          DataTable dtb = db.table("select * from tbl_country order by Id");
+            DataTable dtb = db.table("select * from tbl_country order by Id");
             return dtb;
         }
         public void upate_country(string Id, string Country)
         {
-           db.execute("update tbl_country set country='" +Country + "' where Id='" + Id + "'");
+            db.execute("update tbl_country set country='" + Country + "' where Id='" + Id + "'");
         }
 
         public DataTable Get_States_Of_Country(string country)
@@ -31,13 +26,13 @@ namespace PappyjoeMVC.Model
             DataTable dt_country = db.table("select * from tbl_state where country_id ='" + country + "'");
             return dt_country;
         }
-        public void Save_state(string CountryID ,string State)
+        public void Save_state(string CountryID, string State)
         {
-            int i = db.execute("insert into tbl_state(country_id,state)values('" +CountryID + "','" +State + "')");
+            int i = db.execute("insert into tbl_state(country_id,state)values('" + CountryID + "','" + State + "')");
         }
-        public void  update_state(string Id, string State, string Country_Id)
+        public void update_state(string Id, string State, string Country_Id)
         {
-           db.execute("update tbl_state set state='" + State + "',country_id='" + Country_Id + "' where Id='" + Id + "'");
+            db.execute("update tbl_state set state='" + State + "',country_id='" + Country_Id + "' where Id='" + Id + "'");
         }
         public DataTable Load_allState()
         {
@@ -46,7 +41,7 @@ namespace PappyjoeMVC.Model
         }
         public void Save_city(string City, string State_Id)
         {
-           db.execute("insert into tbl_city(state_id,city)values('" + State_Id + "','" + City + "')");
+            db.execute("insert into tbl_city(state_id,city)values('" + State_Id + "','" + City + "')");
         }
         public void City_update(string Id, string City, string State_Id)
         {
@@ -69,7 +64,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Load_cityOf_State(string SateId)
         {
-            DataTable dtb = db.table("select * from tbl_city where state_id='"+ SateId + "'  order by Id");
+            DataTable dtb = db.table("select * from tbl_city where state_id='" + SateId + "'  order by Id");
             return dtb;
         }
         public string check_city(string country)
@@ -89,7 +84,7 @@ namespace PappyjoeMVC.Model
         }
         public string check_state(string state)
         {
-            string  dt_country = db.scalar("Select state from tbl_state where state ='" + state + "'");
+            string dt_country = db.scalar("Select state from tbl_state where state ='" + state + "'");
             return dt_country;
         }
         public DataTable Get_Country_Name(string country_id)
@@ -109,11 +104,11 @@ namespace PappyjoeMVC.Model
         }
         public void Save_Specialization(string Specialization)
         {
-           db.execute("insert into tbl_specialization(name)values('" + Specialization + "')");
+            db.execute("insert into tbl_specialization(name)values('" + Specialization + "')");
         }
         public void Specialization_update(string Id, string Specialization)
         {
-             db.execute("update tbl_specialization set name='" + Specialization + "' where id='" + Id + "'");
+            db.execute("update tbl_specialization set name='" + Specialization + "' where id='" + Id + "'");
         }
         public string check_specialization(string speci)
         {
@@ -126,5 +121,5 @@ namespace PappyjoeMVC.Model
             return i;
         }
     }
-  
+
 }

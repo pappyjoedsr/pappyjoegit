@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 namespace PappyjoeMVC.Model
 {
     public class Login_model
@@ -28,7 +23,7 @@ namespace PappyjoeMVC.Model
         }
         public void update_activation()
         {
-           db.execute("UPDATE tbl_activation set registrationdate=NULL,hexacode=NULL,actcode='0'");
+            db.execute("UPDATE tbl_activation set registrationdate=NULL,hexacode=NULL,actcode='0'");
         }
         public DataTable Get_userdetails()
         {
@@ -37,7 +32,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Get_Doctor_Activation()
         {
-            DataTable doctor = db.table("select id,doctor_name,activate_login from tbl_doctor where email_id='" +_uname + "' and password='" + paswrd + "'");
+            DataTable doctor = db.table("select id,doctor_name,activate_login from tbl_doctor where email_id='" + _uname + "' and password='" + paswrd + "'");
             return doctor;
         }
         public DataTable Get_smsconfig()

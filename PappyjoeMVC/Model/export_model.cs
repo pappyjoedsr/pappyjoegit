@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-   public class Export_model
+    public class Export_model
     {
         Connection db = new Connection();
         public DataTable Get_AllDoctor()

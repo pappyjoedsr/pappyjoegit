@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 namespace PappyjoeMVC.Model
 {
     public class Add_Invoice_model
@@ -24,7 +19,7 @@ namespace PappyjoeMVC.Model
             DataTable dt_tp = db.table("SELECT id, plan_main_id,procedure_name,procedure_id,cost from tbl_treatment_plan where pt_id='" + patient_id + "' and status='1'");
             return dt_tp;
         }
-        public DataTable Get_invoice_deatils(string ptid,string invoiceid)
+        public DataTable Get_invoice_deatils(string ptid, string invoiceid)
         {
             DataTable dt2 = db.table("select * from tbl_invoices where pt_id='" + ptid + "' and invoice_no='" + invoiceid + "'");
             return dt2;
@@ -62,8 +57,8 @@ namespace PappyjoeMVC.Model
         }
         public DataTable get_invoice_doctorname(string patient_id)
         {
-          DataTable dt_cf = db.table("SELECT tbl_doctor.doctor_name, tbl_invoices_main.date,tbl_invoices.invoice_no FROM tbl_invoices INNER JOIN tbl_doctor ON tbl_invoices.dr_id = tbl_doctor.id INNER JOIN tbl_invoices_main ON tbl_invoices.invoice_main_id = tbl_invoices_main.id WHERE tbl_invoices_main.pt_id = '" + patient_id + "'");
-          return dt_cf;
+            DataTable dt_cf = db.table("SELECT tbl_doctor.doctor_name, tbl_invoices_main.date,tbl_invoices.invoice_no FROM tbl_invoices INNER JOIN tbl_doctor ON tbl_invoices.dr_id = tbl_doctor.id INNER JOIN tbl_invoices_main ON tbl_invoices.invoice_main_id = tbl_invoices_main.id WHERE tbl_invoices_main.pt_id = '" + patient_id + "'");
+            return dt_cf;
         }
     }
 }

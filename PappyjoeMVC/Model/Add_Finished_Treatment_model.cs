@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 namespace PappyjoeMVC.Model
 {
     public class Add_Finished_Treatment_model
@@ -27,7 +22,6 @@ namespace PappyjoeMVC.Model
             get { return _search; }
             set { _search = value; }
         }
-        //
         public DataTable Load_finishedtreatments(string patient_id)
         {
             DataTable dt_tp = db.table("SELECT id, plan_main_id,procedure_name,procedure_id,cost from tbl_treatment_plan where pt_id='" + patient_id + "' and status='1'");
@@ -113,14 +107,13 @@ namespace PappyjoeMVC.Model
         }
         public DataTable get_completed_details(string mainid)
         {
-           DataTable dt_pt_sub = db.table("SELECT tbl_completed_procedures.id,tbl_completed_procedures.procedure_name,tbl_completed_procedures.cost,tbl_completed_procedures.discount_inrs,tbl_completed_procedures.discount_type,tbl_completed_procedures.discount,tbl_completed_procedures.total,tbl_completed_procedures.note,tbl_completed_procedures.status,tbl_completed_procedures.tooth,tbl_doctor.doctor_name,tbl_completed_procedures.quantity FROM tbl_completed_procedures join tbl_doctor on tbl_completed_procedures.dr_id=tbl_doctor.id  where tbl_completed_procedures.plan_main_id='" + mainid + "' ORDER BY tbl_completed_procedures.date");
+            DataTable dt_pt_sub = db.table("SELECT tbl_completed_procedures.id,tbl_completed_procedures.procedure_name,tbl_completed_procedures.cost,tbl_completed_procedures.discount_inrs,tbl_completed_procedures.discount_type,tbl_completed_procedures.discount,tbl_completed_procedures.total,tbl_completed_procedures.note,tbl_completed_procedures.status,tbl_completed_procedures.tooth,tbl_doctor.doctor_name,tbl_completed_procedures.quantity FROM tbl_completed_procedures join tbl_doctor on tbl_completed_procedures.dr_id=tbl_doctor.id  where tbl_completed_procedures.plan_main_id='" + mainid + "' ORDER BY tbl_completed_procedures.date");
             return dt_pt_sub;
         }
-
         public DataTable get_plamManin_id(string treatment_complete_id)
         {
-         DataTable dtb=  db.table("SELECT plan_main_id,completed _id FROM tbl_completed_procedures  where id='" + treatment_complete_id + "'");
-          return dtb;
+            DataTable dtb = db.table("SELECT plan_main_id,completed _id FROM tbl_completed_procedures  where id='" + treatment_complete_id + "'");
+            return dtb;
         }
         public void update_status1(string plan_main_id)
         {

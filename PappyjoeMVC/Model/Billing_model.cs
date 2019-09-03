@@ -1,9 +1,4 @@
-﻿ using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 
 namespace PappyjoeMVC.Model
 {
@@ -20,7 +15,7 @@ namespace PappyjoeMVC.Model
             DataTable dtb = db.table("select * from tbl_tax order by id");
             return dtb;
         }
-        public int update(string id,string TaxName,string Tax)
+        public int update(string id, string TaxName, string Tax)
         {
             int i = db.execute("update tbl_tax set tax_name='" + TaxName + "',tax_value='" + Tax + "' where id='" + id + "'");
             Fill_BillGrid();

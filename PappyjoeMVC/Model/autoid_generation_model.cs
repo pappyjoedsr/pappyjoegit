@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 namespace PappyjoeMVC.Model
 {
-  public class Autoid_Generation_model
+    public class Autoid_Generation_model
     {
         Connection db = new Connection();
         public DataTable load_patientid()
@@ -29,9 +24,9 @@ namespace PappyjoeMVC.Model
             string cmd = db.scalar("select patient_prefix from tbl_patient_automaticid");
             return cmd;
         }
-        public int save_patientid(string _pt_num , string  _pt_prefix ,string _ptCheck)
+        public int save_patientid(string _pt_num, string _pt_prefix, string _ptCheck)
         {
-            int i = db.execute("insert into tbl_patient_automaticid (patient_number,patient_prefix,patient_automation) values ('" + _pt_num + "','" + _pt_prefix + "','"+ _ptCheck + "')");
+            int i = db.execute("insert into tbl_patient_automaticid (patient_number,patient_prefix,patient_automation) values ('" + _pt_num + "','" + _pt_prefix + "','" + _ptCheck + "')");
             return i;
         }
         public int update_patientid(string _pt_num, string _pt_prefix, string _ptCheck)
@@ -41,8 +36,8 @@ namespace PappyjoeMVC.Model
         }
         public int save_invoice(string _InvNumber, string _InvPrefix, string _invCheck)
         {
-           int i = db.execute("insert into tbl_invoice_automaticid (invoice_number,invoice_prefix,invoive_automation) values('" + _InvNumber + "','" + _InvPrefix + "','"+ _invCheck + "')");
-           return i;
+            int i = db.execute("insert into tbl_invoice_automaticid (invoice_number,invoice_prefix,invoive_automation) values('" + _InvNumber + "','" + _InvPrefix + "','" + _invCheck + "')");
+            return i;
         }
         public int update_invoice(string _InvNumber, string _InvPrefix, string _invCheck)
         {
@@ -51,7 +46,7 @@ namespace PappyjoeMVC.Model
         }
         public int save_receipt(string _reciptNumber, string _reciptPrefix, string _reciptCheck)
         {
-            int i = db.execute("insert into tbl_receipt_automationid (receipt_number,receipt_prefix,receipt_automation) values ('" +_reciptNumber + "','" +_reciptPrefix + "','"+_reciptCheck+"')");
+            int i = db.execute("insert into tbl_receipt_automationid (receipt_number,receipt_prefix,receipt_automation) values ('" + _reciptNumber + "','" + _reciptPrefix + "','" + _reciptCheck + "')");
             return i;
         }
         public int update_receipt(string _reciptNumber, string _reciptPrefix, string _reciptCheck)

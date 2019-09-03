@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 
 namespace PappyjoeMVC.Model
 {
-   public  class EMR_model
+    public class EMR_model
     {
         Connection db = new Connection();
         //complaints
@@ -25,7 +20,7 @@ namespace PappyjoeMVC.Model
         {
             int i = db.execute("insert into tbl_complaints (name,display_status) values('" + Complaints + "','Yes')");
         }
-        public void update_complaints(string id_comp,string Complaints)
+        public void update_complaints(string id_comp, string Complaints)
         {
             int i = db.execute("update tbl_complaints set name='" + Complaints + "',display_status='Yes' where id='" + id_comp + "'");
         }
@@ -60,7 +55,7 @@ namespace PappyjoeMVC.Model
         }
         public int Update_observation(string id, string _observation)
         {
-            int i = db.execute("update tbl_observations set observations='" + _observation+ "',display_status='Yes' where id= '" + id + "'");
+            int i = db.execute("update tbl_observations set observations='" + _observation + "',display_status='Yes' where id= '" + id + "'");
             return i;
         }
         public DataTable search_observation(string text)
@@ -83,7 +78,7 @@ namespace PappyjoeMVC.Model
         {
             int i = db.execute("insert into tbl_diagnosis (diagnosis,display_status) values('" + _diagnosis + "','Yes')");
         }
-        public void update_diagnosis(string id_diag,string _diagnosis)
+        public void update_diagnosis(string id_diag, string _diagnosis)
         {
             int i = db.execute("Update tbl_diagnosis set diagnosis='" + _diagnosis + "',display_status='Yes' where id='" + id_diag + "'");
         }
@@ -111,7 +106,7 @@ namespace PappyjoeMVC.Model
         {
             int i = db.execute("insert into tbl_investigation (investigation,display_status) values ('" + _investgation + "','Yes')");
         }
-        public void update_investgation(string id_invest,string _investgation)
+        public void update_investgation(string id_invest, string _investgation)
         {
             int i = db.execute("update tbl_investigation set investigation='" + _investgation + "',display_status='Yes'where id='" + id_invest + "'");
         }
@@ -139,7 +134,7 @@ namespace PappyjoeMVC.Model
         {
             int i = db.execute("insert into tbl_notes (notes) values ('" + _note + "')");
         }
-        public void update_note(string id_notes,string _note)
+        public void update_note(string id_notes, string _note)
         {
             int i = db.execute("update tbl_notes set notes='" + _note + "'where id='" + id_notes + "'");
         }

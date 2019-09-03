@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 namespace PappyjoeMVC.Model
 {
-   public class Procedure_Catalog_model
+    public class Procedure_Catalog_model
     {
         Connection db = new Connection();
         //private string _procName = "";
@@ -44,7 +39,7 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table(" select A.id,A.name,A.cost,A.category,A.notes,T.tax_name from tbl_addproceduresettings A left join tbl_proceduretax  P ON P.procedure_id = A.id left join tbl_tax T on T.id= P.tax_id ORDER BY A.id Desc");
             return dt;
         }
-        public DataTable get_procedure_category_value ()
+        public DataTable get_procedure_category_value()
         {
             DataTable dt = db.table("select * from tbl_procedure_category");
             return dt;
@@ -58,14 +53,14 @@ namespace PappyjoeMVC.Model
         {
             db.execute("insert into tbl_procedure_category (name) values('" + TextCategory + "')");
         }
-        public DataTable get_procedureName (string _procName)
+        public DataTable get_procedureName(string _procName)
         {
             DataTable checkdatacc = db.table("Select id,name from tbl_addproceduresettings where name ='" + _procName + "'");
             return checkdatacc;
         }
-        public int save_addprocedure(string _procName , string _procost, string _comboCategory , string _notes )
+        public int save_addprocedure(string _procName, string _procost, string _comboCategory, string _notes)
         {
-            int i = db.execute("insert into tbl_addproceduresettings (name,cost,category,notes) values('" + _procName + "','" + _procost + "','" +_comboCategory + "','" + _notes + "')");
+            int i = db.execute("insert into tbl_addproceduresettings (name,cost,category,notes) values('" + _procName + "','" + _procost + "','" + _comboCategory + "','" + _notes + "')");
             return i;
         }
         public string Get_GST_id()

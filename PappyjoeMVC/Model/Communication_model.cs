@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Model
 {
     public class Communication_model
     {
-        Connection db= new Connection();
+        Connection db = new Connection();
         public int Save_data(string tmplate)
         {
             int i = db.execute("insert  into tbl_templates(template) values('" + tmplate + "')");
             return i;
         }
-        public int inssms(string patntid,string msg)
+        public int inssms(string patntid, string msg)
         {
             int i = db.execute("insert into tbl_pt_sms_communication (pt_id,send_datetime,type,message_status,message) values('" + patntid + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm") + "','patient','sent','" + msg + "')");
             return i;
@@ -25,7 +21,7 @@ namespace PappyjoeMVC.Model
             int i = db.execute("insert into tbl_pt_sms_communication (pt_id,send_datetime,type,message_status,message) values('" + patntid + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm") + "','patient','sent','" + msg + "')");
             return i;
         }
-        public int insmsstaff(string patntid,string msg)
+        public int insmsstaff(string patntid, string msg)
         {
             int i = db.execute("insert into tbl_pt_sms_communication (pt_id,send_datetime,type,message_status,message) values('" + patntid + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm") + "','staff','sent','" + msg + "')");
             return i;
