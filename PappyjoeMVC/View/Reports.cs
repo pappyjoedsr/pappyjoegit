@@ -1758,6 +1758,14 @@ namespace PappyjoeMVC.View
             //this.Hide();
             form2.ShowDialog();
         }
+        private void label2_Click(object sender, EventArgs e)
+        {
+            var form2 = new Day_Wise_Receipt();
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            //this.Hide();
+            form2.ShowDialog();
+        }
         private void Chk_Type_CheckedChanged(object sender, EventArgs e)
         {
             if (Chk_Type.Checked)

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Day_Wise_Receipt : Form,Day_Wise_Receipt_interface
+    public partial class Day_Wise_Receipt : Form
     {
         public Day_Wise_Receipt()
         {
@@ -23,85 +23,88 @@ namespace PappyjoeMVC.View
         DataTable dtb_Receipt = new DataTable();
         decimal tax = 0, discount = 0, amount = 0, paid = 0, due = 0,Totaltax = 0, Totaldiscount = 0, Totalamount = 0, Totalpaid = 0, Totaldue = 0;
         public string doctor_id = "", qty = "", DrctName = "", checkStr = "0", PathName = "", strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "";
-        Day_Wise_Receipt_controller ctrlr;
-        //PappyjoeMVC.Model.select s = new PappyjoeMVC.Model.select();
-        public void setController(Day_Wise_Receipt_controller controller)
-        {
-            ctrlr = controller;
-        }
-        public void getdocname(DataTable doctor_rs)
-        {
-            if (doctor_rs.Rows.Count > 0)
-            {
-                for (int i = 0; i < doctor_rs.Rows.Count; i++)
-                {
-                    cmb_doctor.Items.Add(doctor_rs.Rows[i]["doctor_name"].ToString());
-                    cmb_doctor.ValueMember = doctor_rs.Rows[i]["id"].ToString();
-                    cmb_doctor.DisplayMember = doctor_rs.Rows[i]["doctor_name"].ToString();
-                }
-            }
-        }
+        Day_Wise_Receipt_controller ctrlr=new Day_Wise_Receipt_controller();
         private void Day_Wise_Receipt_Load(object sender, EventArgs e)
         {
-            cmb_flag = true;
-            cmb_doctor.Items.Add("All Doctor");
-            cmb_doctor.ValueMember = "0";
-            cmb_doctor.DisplayMember = "All Doctor";
-            this.ctrlr.getdocname();
-            cmb_doctor.SelectedIndex = 0;
-            string date1 = DTP_From.Value.ToString("yyyy-MM-dd");
-            string date2 = Dtp_ReceiptTO.Value.ToString("yyyy-MM-dd");
-            DataTable dtb =this.ctrlr.ReceiptReceivedPerDay(date1, date2);
-            fillDGV_Receipt(dtb, date1, date2);
-            DGV_Receipt.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
-            DGV_Receipt.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            DGV_Receipt.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 8, FontStyle.Regular);
-            DGV_Receipt.EnableHeadersVisualStyles = false;
-            DGV_Receipt.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_Receipt.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_Receipt.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_Receipt.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_Receipt.Columns[12].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_Receipt.Columns[13].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_Receipt.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_Receipt.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_Receipt.Columns[12].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_Receipt.Columns[13].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_Receipt.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_Receipt.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_Receipt.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            foreach (DataGridViewColumn cl in DGV_Receipt.Columns)
+            try
             {
-                cl.SortMode = DataGridViewColumnSortMode.NotSortable;
-                cl.Width = 100;
+                cmb_flag = true;
+                cmb_doctor.Items.Add("All Doctor");
+                cmb_doctor.ValueMember = "0";
+                cmb_doctor.DisplayMember = "All Doctor";
+                DataTable doctor_rs = this.ctrlr.getdocname();
+                if (doctor_rs.Rows.Count > 0)
+                {
+                    for (int i = 0; i < doctor_rs.Rows.Count; i++)
+                    {
+                        cmb_doctor.Items.Add(doctor_rs.Rows[i]["doctor_name"].ToString());
+                        cmb_doctor.ValueMember = doctor_rs.Rows[i]["id"].ToString();
+                        cmb_doctor.DisplayMember = doctor_rs.Rows[i]["doctor_name"].ToString();
+                    }
+                }
+                cmb_doctor.SelectedIndex = 0;
+                string date1 = DTP_From.Value.ToString("yyyy-MM-dd");
+                string date2 = Dtp_ReceiptTO.Value.ToString("yyyy-MM-dd");
+                DataTable dtb = this.ctrlr.ReceiptReceivedPerDay(date1, date2);
+                fillDGV_Receipt(dtb, date1, date2);
+                DGV_Receipt.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
+                DGV_Receipt.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                DGV_Receipt.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 8, FontStyle.Regular);
+                DGV_Receipt.EnableHeadersVisualStyles = false;
+                DGV_Receipt.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_Receipt.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_Receipt.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_Receipt.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_Receipt.Columns[12].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_Receipt.Columns[13].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_Receipt.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_Receipt.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_Receipt.Columns[12].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_Receipt.Columns[13].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_Receipt.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_Receipt.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_Receipt.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                foreach (DataGridViewColumn cl in DGV_Receipt.Columns)
+                {
+                    cl.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    cl.Width = 100;
+                }
+                cmb_flag = false;
             }
-            cmb_flag = false;
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public void getinvdata(DataTable dt_inv)
         {
-            for (int i = 0; i < dt_inv.Rows.Count;i++ )
+            try
             {
-                DGV_Receipt.Rows[i].Cells["ColTotao_Cost"].Value = dt_inv.Rows[0]["Total Cost"].ToString();
-                if (dt_inv.Rows[0]["discountin_rs"].ToString() != "0")
+                for (int i = 0; i < dt_inv.Rows.Count; i++)
                 {
-                    DGV_Receipt.Rows[i].Cells["COlDIS"].Value = dt_inv.Rows[0]["discountin_rs"].ToString();
-                    discount = decimal.Parse(dt_inv.Rows[0]["discountin_rs"].ToString());
+                    DGV_Receipt.Rows[i].Cells["ColTotao_Cost"].Value = dt_inv.Rows[0]["Total Cost"].ToString();
+                    if (dt_inv.Rows[0]["discountin_rs"].ToString() != "0")
+                    {
+                        DGV_Receipt.Rows[i].Cells["COlDIS"].Value = dt_inv.Rows[0]["discountin_rs"].ToString();
+                        discount = decimal.Parse(dt_inv.Rows[0]["discountin_rs"].ToString());
+                    }
+                    else
+                    {
+                        DGV_Receipt.Rows[i].Cells["COlDIS"].Value = " ";
+                        discount = 0;
+                    }
+                    DGV_Receipt.Rows[i].Cells["ColTax"].Value = dt_inv.Rows[0]["tax_inrs"].ToString();
+                    DGV_Receipt.Rows[i].Cells["ColTotalIncome"].Value = dt_inv.Rows[0]["Total Income"].ToString();
+                    qty = dt_inv.Rows[i]["unit"].ToString();
+                    tax = decimal.Parse(dt_inv.Rows[0]["tax_inrs"].ToString());
+                    amount = decimal.Parse(dt_inv.Rows[0]["Total Income"].ToString());
                 }
-                else
-                {
-                    DGV_Receipt.Rows[i].Cells["COlDIS"].Value = " ";
-                    discount = 0;
-                }
-                DGV_Receipt.Rows[i].Cells["ColTax"].Value = dt_inv.Rows[0]["tax_inrs"].ToString();
-                DGV_Receipt.Rows[i].Cells["ColTotalIncome"].Value = dt_inv.Rows[0]["Total Income"].ToString();
-                qty=dt_inv.Rows[i]["unit"].ToString() ;
-                tax = decimal.Parse(dt_inv.Rows[0]["tax_inrs"].ToString());
-                amount = decimal.Parse(dt_inv.Rows[0]["Total Income"].ToString());
             }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public void fillDGV_Receipt(DataTable dtb_Receipt, string d1, string d2)
         {
-            try {
+            try
+            {
                 DGV_Receipt.RowCount = 0;
                 if (dtb_Receipt.Rows.Count > 0)
                 {
@@ -119,7 +122,8 @@ namespace PappyjoeMVC.View
                         DGV_Receipt.Rows[i].Cells["ColModeofpayment"].Value = dtb_Receipt.Rows[i]["mode_of_payment"].ToString();
                         DGV_Receipt.Rows[i].Cells["DATE"].Value = Convert.ToDateTime(dtb_Receipt.Rows[i]["payment_date"].ToString()).ToString("dd-MM-yyyy");
                         DGV_Receipt.Rows[i].Cells["ColDrName"].Value = dtb_Receipt.Rows[i]["doctor_name"].ToString();
-                        this.ctrlr.getinvdata(dtb_Receipt.Rows[i]["invoice_no"].ToString(), dtb_Receipt.Rows[i]["procedure_name"].ToString());
+                        DataTable inv=this.ctrlr.getinvdata(dtb_Receipt.Rows[i]["invoice_no"].ToString(), dtb_Receipt.Rows[i]["procedure_name"].ToString());
+                        getinvdata(inv);
                         DGV_Receipt.Rows[i].Cells["ColProcedure"].Value = dtb_Receipt.Rows[i]["procedure_name"].ToString() + " (Qty:" + qty + ")";
                         due = decimal.Parse(dtb_Receipt.Rows[i]["Total Amount Due"].ToString());
                         paid = decimal.Parse(dtb_Receipt.Rows[i]["amount_paid"].ToString());
@@ -150,31 +154,15 @@ namespace PappyjoeMVC.View
                     Lab_Due.Text = "0.00";
                 }
             }
-            catch(Exception ex)
-            { MessageBox.Show("No records found,please change the date and try again!..", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void btn_Show_Click(object sender, EventArgs e)
         {
-            string date1 = DTP_From.Value.ToString("yyyy-MM-dd");
-            string date2 = Dtp_ReceiptTO.Value.ToString("yyyy-MM-dd");
-            if (cmb_doctor.SelectedIndex == 0)
+            try
             {
-                DataTable dtb = this.ctrlr.ReceiptReceivedPerDay(date1, date2);
-                fillDGV_Receipt(dtb, date1, date2);
-            }
-            else if (cmb_doctor.SelectedIndex > 0)
-            {
-                string doctor = cmb_doctor.SelectedItem.ToString();
-                DataTable dtb = this.ctrlr.ReceiptReceivedPerDay_DoctrWise(date1, date2, doctor);
-                fillDGV_Receipt(dtb, date1, date2);
-            }
-        }
-        private void cmb_doctor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string date1 = DTP_From.Value.ToString("yyyy-MM-dd");
-            string date2 = Dtp_ReceiptTO.Value.ToString("yyyy-MM-dd");
-            if (cmb_flag == false)
-            {
+                string date1 = DTP_From.Value.ToString("yyyy-MM-dd");
+                string date2 = Dtp_ReceiptTO.Value.ToString("yyyy-MM-dd");
                 if (cmb_doctor.SelectedIndex == 0)
                 {
                     DataTable dtb = this.ctrlr.ReceiptReceivedPerDay(date1, date2);
@@ -182,11 +170,37 @@ namespace PappyjoeMVC.View
                 }
                 else if (cmb_doctor.SelectedIndex > 0)
                 {
-                    DrctName = cmb_doctor.SelectedItem.ToString();
-                    DataTable dtb = this.ctrlr.ReceiptReceivedPerDay_DoctrWise(date1, date2, DrctName);
+                    string doctor = cmb_doctor.SelectedItem.ToString();
+                    DataTable dtb = this.ctrlr.ReceiptReceivedPerDay_DoctrWise(date1, date2, doctor);
                     fillDGV_Receipt(dtb, date1, date2);
                 }
             }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+        private void cmb_doctor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string date1 = DTP_From.Value.ToString("yyyy-MM-dd");
+                string date2 = Dtp_ReceiptTO.Value.ToString("yyyy-MM-dd");
+                if (cmb_flag == false)
+                {
+                    if (cmb_doctor.SelectedIndex == 0)
+                    {
+                        DataTable dtb = this.ctrlr.ReceiptReceivedPerDay(date1, date2);
+                        fillDGV_Receipt(dtb, date1, date2);
+                    }
+                    else if (cmb_doctor.SelectedIndex > 0)
+                    {
+                        DrctName = cmb_doctor.SelectedItem.ToString();
+                        DataTable dtb = this.ctrlr.ReceiptReceivedPerDay_DoctrWise(date1, date2, DrctName);
+                        fillDGV_Receipt(dtb, date1, date2);
+                    }
+                }
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void Chk_RemoveAmountDue_CheckedChanged(object sender, EventArgs e)
         {
@@ -197,18 +211,7 @@ namespace PappyjoeMVC.View
             else
             { DGV_Receipt.Columns["ColTotalDue"].Visible = true; }
         }
-        public void practicedetails(DataTable dt)
-        {
-            if (dt.Rows.Count > 0)
-            {
-                clinicn = dt.Rows[0]["name"].ToString();
-                strclinicname = clinicn.Replace("¤", "'");
-                strphone = dt.Rows[0]["contact_no"].ToString();
-                strStreet = dt.Rows[0]["street_address"].ToString();
-                stremail = dt.Rows[0]["email"].ToString();
-                strwebsite = dt.Rows[0]["website"].ToString();
-            }
-        }
+       
         private void btnprint_Click(object sender, EventArgs e)
         {
             try {
@@ -229,7 +232,16 @@ namespace PappyjoeMVC.View
                     result = MessageBox.Show(message, caption, buttons);
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        this.ctrlr.practicedetails();
+                        DataTable dt=this.ctrlr.practicedetails();
+                            if (dt.Rows.Count > 0)
+                            {
+                                clinicn = dt.Rows[0]["name"].ToString();
+                                strclinicname = clinicn.Replace("¤", "'");
+                                strphone = dt.Rows[0]["contact_no"].ToString();
+                                strStreet = dt.Rows[0]["street_address"].ToString();
+                                stremail = dt.Rows[0]["email"].ToString();
+                                strwebsite = dt.Rows[0]["website"].ToString();
+                            }
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
                     StreamWriter sWrite = new StreamWriter(Apppath + "\\ReceiptReceivedPerDay.html");
@@ -343,8 +355,8 @@ namespace PappyjoeMVC.View
                     System.Diagnostics.Process.Start(Apppath + "\\ReceiptReceivedPerDay.html");
                 }
             }
-            catch(Exception ex)
-            { MessageBox.Show("Printing Error ", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void btn_Export_Click(object sender, EventArgs e)
         {
@@ -485,7 +497,7 @@ namespace PappyjoeMVC.View
                     MessageBox.Show("No records found,please change the date and try again!..", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
-            { MessageBox.Show("Data Loading Error", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void btn_Close_Click(object sender, EventArgs e)
         {
