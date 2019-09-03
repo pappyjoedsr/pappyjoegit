@@ -16,7 +16,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Doctor_Profile : Form
     {
-        doctor_controller cntrl =new doctor_controller();
+        Doctor_Controller cntrl =new Doctor_Controller();
         public string doctor_id = "";
         public string patient_id = "0";
         public string doc = "0";

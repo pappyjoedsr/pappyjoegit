@@ -7,7 +7,7 @@ using System.Data;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-    public class doctor_controller
+    public class Doctor_Controller
     {
         Connection db = new Connection();
         doctor_model _model = new doctor_model();

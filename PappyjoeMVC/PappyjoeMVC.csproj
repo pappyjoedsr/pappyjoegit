@@ -98,7 +98,7 @@
     <Compile Include="Controller\Day_Wise_Receipt_interface.cs" />
     <Compile Include="Controller\doctorpractice_controller.cs" />
     <Compile Include="Controller\DoctorWise_appointment_report_controller.cs" />
-    <Compile Include="Controller\doctor_controller.cs" />
+    <Compile Include="Controller\Doctor_Controller.cs" />
     <Compile Include="Controller\Doctor_Wise_Invoice_controller.cs" />
     <Compile Include="Controller\Doctor_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Doctor_Wise_Receipt_interface.cs" />
