@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.View;
-using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Add_Vital_Signs : Form//, Add_Vital_Signs_interface
+    public partial class Add_Vital_Signs : Form
     {
         Add_Vital_Signs_controller cntrl = new Add_Vital_Signs_controller();
         public string doctor_id = "0";
@@ -38,12 +31,12 @@ namespace PappyjoeMVC.View
                 //DataTable clinicname = this.cntrl.Get_CompanyNAme();
                 //if (clinicname.Rows.Count > 0)
                 //{
-                    //string clinicn = "";
-                    //clinicn = clinicname.Rows[0]["Name"].ToString();
-                    toolStripButton1.Text = this.cntrl.Load_CompanyName();
+                //string clinicn = "";
+                //clinicn = clinicname.Rows[0]["Name"].ToString();
+                toolStripButton1.Text = this.cntrl.Load_CompanyName();
                 //}
                 string docnam = this.cntrl.Get_DoctorName(doctor_id);
-                if (docnam!="")
+                if (docnam != "")
                 {
                     toolStripTextDoctor.Text = "Logged In As : " + docnam;
                 }
@@ -77,7 +70,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -133,11 +126,11 @@ namespace PappyjoeMVC.View
                     //this.Hide();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
