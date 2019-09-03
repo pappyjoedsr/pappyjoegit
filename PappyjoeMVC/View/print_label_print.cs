@@ -11,9 +11,9 @@ using System.Drawing.Printing;
 
 namespace PappyjoeMVC.View
 {
-    public partial class print_label_print : Form
+    public partial class Print_Label_Print : Form
     {
-        public print_label_print()
+        public Print_Label_Print()
         {
             InitializeComponent();
         }

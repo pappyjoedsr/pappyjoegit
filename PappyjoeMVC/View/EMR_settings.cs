@@ -6,12 +6,12 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class EMR_settings : Form
+    public partial class EMR_Settings : Form
     {
         EMR_controller cntrl=new EMR_controller();
         public string id_comp = ""; string id = "";
         string id_diag, id_invest, id_notes;
-        public EMR_settings()
+        public EMR_Settings()
         {
             InitializeComponent();
         }

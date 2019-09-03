@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
-    public partial class consent : Form
+    public partial class Consent : Form
     {
         common_model mdl = new common_model();
         public string patient_id { get; set; }
@@ -19,7 +19,7 @@ namespace PappyjoeMVC.View
         string PId = "";
         string PGender = "";
         string PAge = "";
-        public consent()
+        public Consent()
         {
             InitializeComponent();
         }

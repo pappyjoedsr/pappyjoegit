@@ -11,9 +11,9 @@ using PappyjoeMVC.Model;
 using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
-    public partial class Medical_history : Form
+    public partial class Medical_History : Form
     {
-        public Medical_history()
+        public Medical_History()
         {
             InitializeComponent();
         }

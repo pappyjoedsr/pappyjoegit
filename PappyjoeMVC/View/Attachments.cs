@@ -414,7 +414,7 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            var form2 = new patients();
+            var form2 = new Patients();
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
@@ -480,7 +480,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    var form2 = new AddNewPatients();
+                    var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
@@ -503,7 +503,7 @@ namespace PappyjoeMVC.View
                     id = doctrid;
                     if (int.Parse(id) > 0)
                     {
-                        var form2 = new PracticeDetails();
+                        var form2 = new Practice_Details();
                         form2.doctor_id = doctor_id;
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
@@ -516,7 +516,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    var form2 = new PracticeDetails();
+                    var form2 = new Practice_Details();
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
@@ -554,7 +554,7 @@ namespace PappyjoeMVC.View
         }
         private void labelprofile_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.patient_profile_details();
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
@@ -590,7 +590,7 @@ namespace PappyjoeMVC.View
         }
         private void labeltreatment_Click(object sender, EventArgs e)
         {
-            var form2 = new TreatmentPlans();
+            var form2 = new Treatment_Plans();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
@@ -599,7 +599,7 @@ namespace PappyjoeMVC.View
         }
         private void labelfinished_Click(object sender, EventArgs e)
         {
-            var form2 = new FinishedProcedure();
+            var form2 = new Finished_Procedure();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
@@ -608,7 +608,7 @@ namespace PappyjoeMVC.View
         }
         private void labelprescription_Click(object sender, EventArgs e)
         {
-            var form2 = new prescriptionShow();
+            var form2 = new Prescription_Show();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
@@ -657,7 +657,7 @@ namespace PappyjoeMVC.View
         }
         private void labelallpatient_Click(object sender, EventArgs e)
         {
-            var form2 = new patients();
+            var form2 = new Patients();
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
@@ -665,7 +665,7 @@ namespace PappyjoeMVC.View
         }
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.patient_profile_details();
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
@@ -748,7 +748,7 @@ namespace PappyjoeMVC.View
                     {
                         if (File_Type.ToLower() == ".jpeg" || File_Type.ToLower() == ".jpg" || File_Type.ToLower() == ".gif" || File_Type.ToLower() == ".png")
                         {
-                            frmimagezoom frm = new frmimagezoom();
+                            Image_Zoom frm = new Image_Zoom();
                             frm.attach_id = attach_id;
                             frm.ShowDialog(this);
                         }

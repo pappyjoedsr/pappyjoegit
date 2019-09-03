@@ -6,11 +6,11 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Prescription_settings : Form
+    public partial class Prescription_Settings : Form
     {
         prescription_setting_controller cntrl=new prescription_setting_controller();
         public string id = "";
-        public Prescription_settings()
+        public Prescription_Settings()
         {
             InitializeComponent();
         }

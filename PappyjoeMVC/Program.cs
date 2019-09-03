@@ -22,7 +22,7 @@ namespace PappyjoeMVC
             //login_controller controller = new login_controller(details);
             //details.ShowDialog();
 
-            PracticeDetails details = new PracticeDetails();
+            Practice_Details details = new Practice_Details();
             details.Visible = false;
             Practice_Model Pmdl;
             //Practice_Controller controller = new Practice_Controller(details);
