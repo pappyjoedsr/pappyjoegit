@@ -15,9 +15,9 @@ namespace PappyjoeMVC.View
     public partial class Item_List : Form
     {
         public static bool Item_flag = false;
-        ItemList_Controller cntrl;
-        frmSupplier suplier = new frmSupplier();
-        FrmManufacture manufacture = new FrmManufacture();
+        Item_List_Controller cntrl;
+        Supplier suplier = new Supplier();
+        Manufacture manufacture = new Manufacture();
         public string doctor_id = "";
         public Item_List()
         {
@@ -29,7 +29,7 @@ namespace PappyjoeMVC.View
             InitializeComponent();
             this.formname = formname;
         }
-        public void Setcontroller(ItemList_Controller controller)
+        public void Setcontroller(Item_List_Controller controller)
         {
             cntrl = controller;
         }
@@ -176,7 +176,7 @@ namespace PappyjoeMVC.View
             panel_main.Show();
             manufacture.Close();
             if (manufacture == null || manufacture.IsDisposed)
-                manufacture = new FrmManufacture();
+                manufacture = new Manufacture();
             manufacture.TopLevel = false;
             panel_main.Controls.Add(manufacture);
             manufacture.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -193,7 +193,7 @@ namespace PappyjoeMVC.View
             panel_main.Show();
             suplier.Close();
             if (suplier == null || suplier.IsDisposed)
-                suplier = new frmSupplier();
+                suplier = new Supplier();
             suplier.TopLevel = false;
             panel_main.Controls.Add(suplier);
             suplier.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

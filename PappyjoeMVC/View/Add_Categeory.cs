@@ -12,7 +12,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Add_Categeory : Form,add_category_interface
     {
-        add_category_controller cntrl; string Id;
+        Add_Category_controller cntrl; string Id;
         public Add_Categeory()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace PappyjoeMVC.View
             get { return this.txtDescription.Text; }
             set { this.txtDescription.Text = value; }
         }
-        public void SetController(add_category_controller controller)
+        public void SetController(Add_Category_controller controller)
         {
             cntrl = controller;
         }

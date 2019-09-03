@@ -22,9 +22,9 @@ namespace PappyjoeMVC.View
         public string[] tooth = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
         public string id;
         public string plan_p_id = "0";
-        addfinsed_treatment_controller cntrl;
+        Addfinsed_Treatment_controller cntrl;
         //common_model cmodel = new common_model();
-        public void SetController(addfinsed_treatment_controller controller)
+        public void SetController(Addfinsed_Treatment_controller controller)
         {
             cntrl = controller;
         }
@@ -1399,7 +1399,7 @@ namespace PappyjoeMVC.View
                     var form2 = new Finished_Procedure();
                     form2.doctor_id = doctor_id;
                     form2.patient_id = patient_id;
-                    finishedprocedre_controller controller = new finishedprocedre_controller(form2);
+                    Finished_Procedre_controller controller = new Finished_Procedre_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -1420,7 +1420,7 @@ namespace PappyjoeMVC.View
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
             a.patient_id = linkLabel_id.Text.ToString();
-            patient_edit_controller controller = new patient_edit_controller(a);
+            Patient_Edit_controller controller = new Patient_Edit_controller(a);
             a.ShowDialog();
         }
 
@@ -1428,7 +1428,7 @@ namespace PappyjoeMVC.View
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
             a.patient_id = linkLabel_id.Text.ToString();
-            patient_edit_controller controller = new patient_edit_controller(a);
+            Patient_Edit_controller controller = new Patient_Edit_controller(a);
             a.ShowDialog();
         }
 
@@ -1437,7 +1437,7 @@ namespace PappyjoeMVC.View
             var form2 = new Finished_Procedure();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            finishedprocedre_controller controller = new finishedprocedre_controller(form2);
+            Finished_Procedre_controller controller = new Finished_Procedre_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1486,7 +1486,7 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    AddNew_patient_controller controller = new AddNew_patient_controller(form2);
+                    Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -1496,7 +1496,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                AddNew_patient_controller controller = new AddNew_patient_controller(form2);
+                Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -1536,7 +1536,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            patients_controller controllr = new patients_controller(form2);
+            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

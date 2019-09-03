@@ -17,7 +17,7 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        communication_setting_controller cntrl=new communication_setting_controller();
+        Communication_Setting_controller cntrl=new Communication_Setting_controller();
         //public string SMSUName
         //{
         //    get { return this.textSmsUname.Text; }
@@ -38,7 +38,7 @@ namespace PappyjoeMVC.View
         //    get { return this.textEmailPassword.Text; }
         //    set { this.textEmailPassword.Text = value; }
         //}
-        public void SetController(communication_setting_controller controller)
+        public void SetController(Communication_Setting_controller controller)
         {
             cntrl = controller;
         }

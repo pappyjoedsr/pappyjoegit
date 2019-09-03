@@ -8,12 +8,12 @@ using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.Controller
 {
-    public class addfinsed_treatment_controller
+    public class Addfinsed_Treatment_controller
     {
         addfinsed_treatment_interface intr;
         addfinsed_treatment_model _model=new addfinsed_treatment_model();
         common_model cmodel = new common_model();
-        public addfinsed_treatment_controller(addfinsed_treatment_interface inttr)
+        public Addfinsed_Treatment_controller(addfinsed_treatment_interface inttr)
         {
             intr = inttr;
             intr.SetController(this);

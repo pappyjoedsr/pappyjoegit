@@ -59,105 +59,105 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\addfinsed_treatment_controller.cs" />
+    <Compile Include="Controller\Addfinsed_Treatment_controller.cs" />
     <Compile Include="Controller\addfinsed_treatment_interface.cs" />
-    <Compile Include="Controller\AddItem_controller.cs" />
-    <Compile Include="Controller\AddNew_patient_controller.cs" />
+    <Compile Include="Controller\Add_Item_controller.cs" />
+    <Compile Include="Controller\Add_New_patient_controller.cs" />
     <Compile Include="Controller\AddNew_patient_interface.cs" />
     <Compile Include="Controller\Add_Appointment_controller.cs" />
     <Compile Include="Controller\Add_Attachments_controller.cs" />
-    <Compile Include="Controller\add_category_controller.cs" />
+    <Compile Include="Controller\Add_Category_controller.cs" />
     <Compile Include="Controller\add_category_interface.cs" />
-    <Compile Include="Controller\Add_invoice_controller.cs" />
+    <Compile Include="Controller\Add_Invoice_controller.cs" />
     <Compile Include="Controller\Add_invoice_interface.cs" />
-    <Compile Include="Controller\add_receipt_controller.cs" />
+    <Compile Include="Controller\Add_Receipt_controller.cs" />
     <Compile Include="Controller\add_receipt_interface.cs" />
-    <Compile Include="Controller\add_treatmentplan_controller.cs" />
+    <Compile Include="Controller\Add_Treatmentplan_controller.cs" />
     <Compile Include="Controller\add_treatmentplan_interface.cs" />
-    <Compile Include="Controller\add_unit_controller.cs" />
+    <Compile Include="Controller\Add_Unit_controller.cs" />
     <Compile Include="Controller\add_unit_interface.cs" />
     <Compile Include="Controller\Add_Vital_Signs_controller.cs" />
     <Compile Include="Controller\Appointment_for_each_patient_group_controller.cs" />
     <Compile Include="Controller\Attachments_controller.cs" />
-    <Compile Include="Controller\autoid_generation_controller.cs" />
+    <Compile Include="Controller\Autoid_Generation_controller.cs" />
     <Compile Include="Controller\Billing_controller.cs" />
-    <Compile Include="Controller\booking_controller.cs" />
+    <Compile Include="Controller\Booking_controller.cs" />
     <Compile Include="Controller\Booking_interface.cs" />
-    <Compile Include="Controller\calender_controller.cs" />
-    <Compile Include="Controller\ClinicalNotesAdd_controller.cs" />
+    <Compile Include="Controller\Calender_controller.cs" />
+    <Compile Include="Controller\Clinical_Notes_Add_controller.cs" />
     <Compile Include="Controller\Clinical_Findings_controller.cs" />
     <Compile Include="Controller\Common_controller.cs" />
     <Compile Include="Controller\Communication_controller.cs" />
-    <Compile Include="Controller\communication_setting_controller.cs" />
-    <Compile Include="Controller\contact_controller.cs" />
-    <Compile Include="Controller\Daily_appointment_count_controller.cs" />
+    <Compile Include="Controller\Communication_Setting_controller.cs" />
+    <Compile Include="Controller\Contact_controller.cs" />
+    <Compile Include="Controller\Daily_Appointment_Count_controller.cs" />
     <Compile Include="Controller\Daily_Invoice_Report_controller.cs" />
     <Compile Include="Controller\Daily_NewPatients_controller.cs" />
-    <Compile Include="Controller\Daily_treatment_count_controller.cs" />
+    <Compile Include="Controller\Daily_Treatment_Count_controller.cs" />
     <Compile Include="Controller\Day_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Day_Wise_Receipt_interface.cs" />
-    <Compile Include="Controller\doctorpractice_controller.cs" />
+    <Compile Include="Controller\Doctor_Practice_controller.cs" />
     <Compile Include="Controller\DoctorWise_appointment_report_controller.cs" />
     <Compile Include="Controller\Doctor_Controller.cs" />
     <Compile Include="Controller\Doctor_Wise_Invoice_controller.cs" />
     <Compile Include="Controller\Doctor_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Doctor_Wise_Receipt_interface.cs" />
-    <Compile Include="Controller\editpracticedetails_controller.cs" />
+    <Compile Include="Controller\Edit_Practice_Details_controller.cs" />
     <Compile Include="Controller\EMR_controller.cs" />
     <Compile Include="Controller\EMR_Interface.cs" />
-    <Compile Include="Controller\expense_controller.cs" />
-    <Compile Include="Controller\export_controller.cs" />
-    <Compile Include="Controller\finishedprocedre_controller.cs" />
-    <Compile Include="Controller\finishedprocedure_interface.cs" />
-    <Compile Include="Controller\frmimagezoom_controller.cs" />
-    <Compile Include="Controller\Group_wise_report_controller.cs" />
-    <Compile Include="Controller\invoice_controller.cs" />
+    <Compile Include="Controller\Expense_controller.cs" />
+    <Compile Include="Controller\Export_controller.cs" />
+    <Compile Include="Controller\Finished_Procedre_controller.cs" />
+    <Compile Include="Controller\Finished_Procedure_interface.cs" />
+    <Compile Include="Controller\Image_Zoom_controller.cs" />
+    <Compile Include="Controller\Group_Wise_Report_controller.cs" />
+    <Compile Include="Controller\Invoice_controller.cs" />
     <Compile Include="Controller\invoice_interface.cs" />
-    <Compile Include="Controller\ItemList_Controller.cs" />
+    <Compile Include="Controller\Item_List_Controller.cs" />
     <Compile Include="Controller\LabDental_controller.cs" />
     <Compile Include="Controller\LabMedical_controller.cs" />
     <Compile Include="Controller\Ledger_controller.cs" />
     <Compile Include="Controller\Ledger_interface.cs" />
-    <Compile Include="Controller\login_controller.cs" />
+    <Compile Include="Controller\Login_controller.cs" />
     <Compile Include="Controller\login_interface.cs" />
     <Compile Include="Controller\Manufacture_controller.cs" />
     <Compile Include="Controller\manufacture_interface.cs" />
-    <Compile Include="Controller\medical_history_controller.cs" />
+    <Compile Include="Controller\Medical_History_controller.cs" />
     <Compile Include="Controller\Missing_Checkout_Report_controller.cs" />
-    <Compile Include="Controller\Monthly_appointment_count_controller.cs" />
+    <Compile Include="Controller\Monthly_Appointment_count_controller.cs" />
     <Compile Include="Controller\Monthly_Invoice_Report_controller.cs" />
-    <Compile Include="Controller\Monthly_new_patients_controller.cs" />
+    <Compile Include="Controller\Monthly_New_Patients_controller.cs" />
     <Compile Include="Controller\Month_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Month_Wise_Receipt_interface.cs" />
-    <Compile Include="Controller\NewCreditAccount_controller.cs" />
-    <Compile Include="Controller\NewDebitAccount_controller.cs" />
-    <Compile Include="Controller\patients_controller.cs" />
-    <Compile Include="Controller\Patients_first_appointment_controller.cs" />
+    <Compile Include="Controller\New_Credit_Account_controller.cs" />
+    <Compile Include="Controller\New_Debit_Account_controller.cs" />
+    <Compile Include="Controller\Patients_controller.cs" />
+    <Compile Include="Controller\Patients_First_Appointment_controller.cs" />
     <Compile Include="Controller\patients_interface.cs" />
-    <Compile Include="Controller\patient_edit_controller.cs" />
+    <Compile Include="Controller\Patient_Edit_controller.cs" />
     <Compile Include="Controller\patient_edit_interface.cs" />
     <Compile Include="Controller\Paymode_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Paymode_Wise_Receipt_interface.cs" />
     <Compile Include="Controller\Practice_Controller.cs" />
     <Compile Include="Controller\Practice_interface.cs" />
-    <Compile Include="Controller\PrescriptionAdd_controller.cs" />
-    <Compile Include="Controller\prescriptionAdd_interface.cs" />
-    <Compile Include="Controller\prescriptionshow_controller.cs" />
+    <Compile Include="Controller\Prescription_Add_controller.cs" />
+    <Compile Include="Controller\Prescription_Add_interface.cs" />
+    <Compile Include="Controller\Prescription_Show_controller.cs" />
     <Compile Include="Controller\prescriptionshow_interface.cs" />
-    <Compile Include="Controller\prescription_setting_controller.cs" />
-    <Compile Include="Controller\printout_controller.cs" />
-    <Compile Include="Controller\procedure_catalog_controller.cs" />
-    <Compile Include="Controller\profile_details_controller.cs" />
+    <Compile Include="Controller\Prescription_Setting_controller.cs" />
+    <Compile Include="Controller\Printout_controller.cs" />
+    <Compile Include="Controller\Procedure_Catalog_controller.cs" />
+    <Compile Include="Controller\Profile_Details_controller.cs" />
     <Compile Include="Controller\profile_details_interface.cs" />
     <Compile Include="Controller\Receipt_controller.cs" />
     <Compile Include="Controller\Receipt_interface.cs" />
     <Compile Include="Controller\Reports_controller.cs" />
-    <Compile Include="Controller\search_patient_controller.cs" />
+    <Compile Include="Controller\Search_Patient_controller.cs" />
     <Compile Include="Controller\Show_Appointment_controller.cs" />
     <Compile Include="Controller\Staff_controller.cs" />
-    <Compile Include="Controller\supplier_controller.cs" />
+    <Compile Include="Controller\Supplier_controller.cs" />
     <Compile Include="Controller\supplier_interface.cs" />
-    <Compile Include="Controller\treatment_controller.cs" />
+    <Compile Include="Controller\Treatment_controller.cs" />
     <Compile Include="Controller\treatment_interface.cs" />
     <Compile Include="Controller\Visiting_History_controller.cs" />
     <Compile Include="Controller\Vital_Signs_controller.cs" />
@@ -488,17 +488,17 @@
     <Compile Include="View\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmManufacture.cs">
+    <Compile Include="View\Manufacture.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmManufacture.Designer.cs">
-      <DependentUpon>FrmManufacture.cs</DependentUpon>
+    <Compile Include="View\Manufacture.Designer.cs">
+      <DependentUpon>Manufacture.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmSupplier.cs">
+    <Compile Include="View\Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmSupplier.Designer.cs">
-      <DependentUpon>frmSupplier.cs</DependentUpon>
+    <Compile Include="View\Supplier.Designer.cs">
+      <DependentUpon>Supplier.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Group_wise_report.cs">
       <SubType>Form</SubType>
@@ -855,11 +855,11 @@
     <EmbeddedResource Include="View\Item_List.resx">
       <DependentUpon>Item_List.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmManufacture.resx">
-      <DependentUpon>FrmManufacture.cs</DependentUpon>
+    <EmbeddedResource Include="View\Manufacture.resx">
+      <DependentUpon>Manufacture.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmSupplier.resx">
-      <DependentUpon>frmSupplier.cs</DependentUpon>
+    <EmbeddedResource Include="View\Supplier.resx">
+      <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Group_wise_report.resx">
       <DependentUpon>Group_wise_report.cs</DependentUpon>

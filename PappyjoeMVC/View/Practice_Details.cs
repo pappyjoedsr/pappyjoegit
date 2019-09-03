@@ -593,7 +593,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Add_New_Patients();
             form2.doctor_id = doctor_id;
-            AddNew_patient_controller controller = new AddNew_patient_controller(form2);
+            Add_New_patient_controller controller = new Add_New_patient_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -603,7 +603,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            patients_controller controller = new patients_controller(form2);
+            Patients_controller controller = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -644,7 +644,7 @@ namespace PappyjoeMVC.View
         private void button2_Click(object sender, EventArgs e)
         {
             var form2 = new Appointment_Booking();
-            booking_controller controller = new booking_controller(form2);
+            Booking_controller controller = new Booking_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -653,7 +653,7 @@ namespace PappyjoeMVC.View
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form2 = new Login();
-            login_controller controller = new login_controller(form2);
+            Login_controller controller = new Login_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

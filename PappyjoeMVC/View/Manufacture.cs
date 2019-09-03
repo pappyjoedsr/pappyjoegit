@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
-    public partial class FrmManufacture : Form
+    public partial class Manufacture : Form
     {
-        public FrmManufacture()
+        public Manufacture()
         {
             InitializeComponent();
         }

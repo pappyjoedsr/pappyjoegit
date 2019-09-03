@@ -9,7 +9,7 @@ using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-   public  class contact_controller
+   public  class Contact_controller
     {
         contact_model mdl = new contact_model();
         public int Save(string Contact_Name)

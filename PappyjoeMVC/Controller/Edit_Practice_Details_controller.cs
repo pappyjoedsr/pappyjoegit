@@ -8,7 +8,7 @@ using System.Data;
 using System.Collections;
 namespace PappyjoeMVC.Controller
 {
-    public class editpracticedetails_controller
+    public class Edit_Practice_Details_controller
     {
         editpracticedetails_model _selectedvalue=new editpracticedetails_model();
         Connection db = new Connection();

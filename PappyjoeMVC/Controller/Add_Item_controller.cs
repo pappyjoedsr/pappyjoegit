@@ -7,7 +7,7 @@ using PappyjoeMVC.Model;
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
-  public class AddItem_controller
+  public class Add_Item_controller
     {
         Additem_model _Model =new Additem_model();
         public DataTable fill_category()

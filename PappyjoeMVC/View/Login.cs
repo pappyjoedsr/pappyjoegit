@@ -17,7 +17,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Login : Form,login_interface
     {
-        login_controller cntrl;
+        Login_controller cntrl;
         public string hexcodes1 = "";
         public string hexcodes2 = "";
         public int intAgain;
@@ -38,7 +38,7 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        public void setcontroller(login_controller controller)
+        public void setcontroller(Login_controller controller)
         {
             cntrl = controller;
         }

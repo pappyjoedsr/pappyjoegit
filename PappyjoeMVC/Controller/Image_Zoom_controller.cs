@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Controller
 {
-    public class frmimagezoom_controller
+    public class Image_Zoom_controller
     {
         Connection db = new Connection();
         Attachments_model mdl = new Attachments_model();

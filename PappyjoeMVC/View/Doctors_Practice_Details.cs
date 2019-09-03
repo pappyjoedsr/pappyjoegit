@@ -13,7 +13,7 @@ namespace PappyjoeMVC.View
     public partial class Doctors_Practice_Details : Form
     {
         public string frameid = "0";
-        doctorpractice_controller cntrl=new doctorpractice_controller();
+        Doctor_Practice_controller cntrl=new Doctor_Practice_controller();
         string serviceid = "0";
         string Specializationid = "0";
         string degreeid = "0";

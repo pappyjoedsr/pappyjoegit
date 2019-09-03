@@ -8,7 +8,7 @@ using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.Controller
 {
-  public class calender_controller
+  public class Calender_controller
     {
         calender_model _model = new calender_model();
         public DataTable get_practicetimingvalues()

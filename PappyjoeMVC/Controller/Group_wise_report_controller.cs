@@ -3,7 +3,7 @@ using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-    public class Group_wise_report_controller
+    public class Group_Wise_Report_controller
     {
         Patients_Report_model _model = new Patients_Report_model();
         common_model mdl = new common_model();

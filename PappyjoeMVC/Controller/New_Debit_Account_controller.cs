@@ -3,7 +3,7 @@ using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-    public class NewDebitAccount_controller
+    public class New_Debit_Account_controller
     {
         NewDebitAccount_model _model = new NewDebitAccount_model();
         public DataTable load_ledger()

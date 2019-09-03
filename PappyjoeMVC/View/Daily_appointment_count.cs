@@ -10,7 +10,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Daily_Appointment_Count : Form
     {
-        Daily_appointment_count_controller cntrl=new Daily_appointment_count_controller();
+        Daily_Appointment_Count_controller cntrl=new Daily_Appointment_Count_controller();
         string drctid = "";
         public string select_dr_id = "0";
         public string doctor_id = "";

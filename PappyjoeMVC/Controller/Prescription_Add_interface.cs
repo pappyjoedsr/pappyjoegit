@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Controller
 {
-   public interface prescriptionAdd_interface
+   public interface Prescription_Add_interface
     {
-        void SetController(PrescriptionAdd_controller controller);
+        void SetController(Prescription_Add_controller controller);
     }
 }

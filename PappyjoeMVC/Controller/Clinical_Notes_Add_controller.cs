@@ -3,7 +3,7 @@ using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-    public class ClinicalNotesAdd_controller
+    public class Clinical_Notes_Add_controller
     {
         ClinicalNotesAdd_model _model = new ClinicalNotesAdd_model();
         common_model model = new common_model();

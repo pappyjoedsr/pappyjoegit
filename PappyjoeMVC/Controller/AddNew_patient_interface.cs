@@ -31,7 +31,7 @@ namespace PappyjoeMVC.Controller
         string Pincode { get; set; }
         string Medical { get; set; }
         string Group { get; set; }
-        void SetController(AddNew_patient_controller controller);
+        void SetController(Add_New_patient_controller controller);
         void insertMED(DataTable dtb);
         void insertgroup(DataTable dtb);
     }

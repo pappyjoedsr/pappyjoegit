@@ -7,7 +7,7 @@ using PappyjoeMVC.Model;
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
-   public class procedure_catalog_controller
+   public class Procedure_Catalog_controller
     {
         procedure_catalog_model _model=new procedure_catalog_model();  
         public DataTable FormLoad()

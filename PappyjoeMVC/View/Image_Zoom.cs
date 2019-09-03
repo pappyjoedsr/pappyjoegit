@@ -20,7 +20,7 @@ namespace PappyjoeMVC.View
         private Point firstPoint = new Point();
         private Image imgOriginal;
         public static string paths = "";
-        frmimagezoom_controller ctrlr=new frmimagezoom_controller();
+        Image_Zoom_controller ctrlr=new Image_Zoom_controller();
         public Image_Zoom()
         {
             InitializeComponent();

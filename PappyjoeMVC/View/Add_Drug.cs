@@ -12,7 +12,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Add_Drug : Form
     {
-        AddItem_controller cntrl=new AddItem_controller();
+        Add_Item_controller cntrl=new Add_Item_controller();
         public bool editFlag = false;
         DataTable dt_ForEditItems = new DataTable();
         public static int Item_Id;
@@ -31,7 +31,7 @@ namespace PappyjoeMVC.View
             editFlag = true;
         }
 
-        public void SetController(AddItem_controller controller)
+        public void SetController(Add_Item_controller controller)
         {
             cntrl = controller;
         }
@@ -316,7 +316,7 @@ namespace PappyjoeMVC.View
         private void btn_Addunit_Click(object sender, EventArgs e)
         {
             Add_Units frm = new Add_Units();
-            add_unit_controller cntrl = new add_unit_controller(frm);
+            Add_Unit_controller cntrl = new Add_Unit_controller(frm);
             frm.ShowDialog();
             DataTable dtb = this.cntrl.fill_unit();
             if (dtb.Rows.Count > 0)
@@ -328,7 +328,7 @@ namespace PappyjoeMVC.View
         private void btn_Addunit1_Click(object sender, EventArgs e)
         {
             Add_Units frm = new Add_Units();
-            add_unit_controller cntrl = new add_unit_controller(frm);
+            Add_Unit_controller cntrl = new Add_Unit_controller(frm);
             frm.ShowDialog();
             DataTable dtb = this.cntrl.fill_unit();
             if (dtb.Rows.Count > 0)
@@ -341,7 +341,7 @@ namespace PappyjoeMVC.View
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Add_Categeory fr = new Add_Categeory();
-            add_category_controller cntrl = new add_category_controller(fr);
+            Add_Category_controller cntrl = new Add_Category_controller(fr);
             fr.ShowDialog();
             DataTable dt_Category = this.cntrl.fill_category();
             if (dt_Category.Rows.Count > 0)

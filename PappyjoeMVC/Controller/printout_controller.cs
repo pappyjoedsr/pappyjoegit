@@ -7,7 +7,7 @@ using PappyjoeMVC.Model;
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
-  public  class printout_controller
+  public  class Printout_controller
     {
        
         printout_model mdl =new printout_model();

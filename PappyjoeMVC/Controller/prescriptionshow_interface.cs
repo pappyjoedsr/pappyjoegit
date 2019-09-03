@@ -8,7 +8,7 @@ namespace PappyjoeMVC.Controller
 {
     public interface prescriptionshow_interface
     {
-        void SetController(prescriptionshow_controller controller);
+        void SetController(Prescription_Show_controller controller);
         void Load_MainGrid(DataTable dtb);
 
 

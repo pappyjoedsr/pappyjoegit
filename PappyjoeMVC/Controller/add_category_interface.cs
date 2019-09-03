@@ -12,7 +12,7 @@ namespace PappyjoeMVC.Controller
          string Number { get; set; }
         string Name { get; set; }
         string Decsription { get; set; }
-        void SetController(add_category_controller controller);
+        void SetController(Add_Category_controller controller);
         void Load_Data(DataTable dtb);
     }
 }

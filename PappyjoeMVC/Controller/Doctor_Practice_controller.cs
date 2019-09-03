@@ -7,7 +7,7 @@ using System.Data;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-  public  class doctorpractice_controller
+  public  class Doctor_Practice_controller
     {
         doctorpractice_model _model = new doctorpractice_model();
         public DataTable load_services()

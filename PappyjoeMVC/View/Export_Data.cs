@@ -7,7 +7,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Export_Data : Form
     {
-        export_controller cntrl = new export_controller();
+        Export_controller cntrl = new Export_controller();
         public Export_Data()
         {
             InitializeComponent();

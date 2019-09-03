@@ -7,11 +7,11 @@ using System.Data;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-  public class add_category_controller
+  public class Add_Category_controller
     {
         add_category_interface intr;
         add_category_model _model = new add_category_model();
-        public add_category_controller(add_category_interface inttr)
+        public Add_Category_controller(add_category_interface inttr)
         {
             intr = inttr;
             intr.SetController(this);

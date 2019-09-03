@@ -10,14 +10,14 @@ using System.Windows.Forms;
 using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
-    public partial class frmSupplier : Form
+    public partial class Supplier : Form
     {
-        supplier_controller cntrl=new supplier_controller();
+        Supplier_controller cntrl=new Supplier_controller();
         int SupplierNumber = 0;
         int supplerName = 0;
         string id;
         public string flag = "";
-        public frmSupplier()
+        public Supplier()
         {
             InitializeComponent();
         }

@@ -6,7 +6,7 @@ namespace PappyjoeMVC.View
 {
     public partial class New_Credit_Account : Form
     {
-        NewCreditAccount_controller cntrl=new NewCreditAccount_controller();
+        New_Credit_Account_controller cntrl=new New_Credit_Account_controller();
         public New_Credit_Account()
         {
             InitializeComponent();

@@ -9,7 +9,7 @@ namespace PappyjoeMVC.Controller
 {
     public interface profile_details_interface
     {
-        void Setcontroller(profile_details_controller cntroller);
+        void Setcontroller(Profile_Details_controller cntroller);
         void patientload(DataTable dtb);
     }
 }

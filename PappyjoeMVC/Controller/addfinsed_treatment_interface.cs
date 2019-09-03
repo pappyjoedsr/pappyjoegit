@@ -12,7 +12,7 @@ namespace PappyjoeMVC.Controller
        string Procedure { get; set; }
         decimal Procedure_cost { get; set; }
         string Search { get; set; }
-        void SetController(addfinsed_treatment_controller controller);
+        void SetController(Addfinsed_Treatment_controller controller);
         void Load_finishedtreatments(DataTable dtb);
         void load_proceduresgrid(DataTable dtb);
         void Load_TreatmentPlans(DataTable dtb);

@@ -26,7 +26,7 @@ namespace PappyjoeMVC.View
             combobox = cmb;
         }
 
-        editpracticedetails_controller contrl;
+        Edit_Practice_Details_controller contrl;
         public string frameid = "0";
         public string Country_id = "", State_id = "", City_id = "", Speci_id = "";
         public int state_index = 0, country_index = 0, city_index = 0, sepci_index = 0;
@@ -65,7 +65,7 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public void SetController(editpracticedetails_controller controller)
+        public void SetController(Edit_Practice_Details_controller controller)
         {
             contrl = controller;
         }

@@ -12,14 +12,14 @@ namespace PappyjoeMVC.View
 {
     public partial class Add_Units : Form,add_unit_interface
     {
-        add_unit_controller cntrl;
+        Add_Unit_controller cntrl;
         public string unitName = "";
         public string unit_id = "";
         public Add_Units()
         {
             InitializeComponent();
         }
-        public void SetController(add_unit_controller controller)
+        public void SetController(Add_Unit_controller controller)
         {
             cntrl = controller;
         }

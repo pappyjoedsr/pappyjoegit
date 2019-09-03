@@ -9,7 +9,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Expense : Form
     {
-        expense_controller cntrl = new expense_controller();
+        Expense_controller cntrl = new Expense_controller();
         public string doctor_id = "";
         public int Incom_ID = 0;
         public int rowindex = 0;

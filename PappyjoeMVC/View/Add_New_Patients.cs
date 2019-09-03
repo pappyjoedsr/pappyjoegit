@@ -14,7 +14,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Add_New_Patients : Form, AddNew_patient_interface
     {
-        AddNew_patient_controller cntrl; common_model mdl = new common_model();
+        Add_New_patient_controller cntrl; common_model mdl = new common_model();
         public string patient_name = "", doctor_id = "", staff_id = "", PatientId = "", path = "";
         string pat_id = "";
         int medhisStatus = 0, selectGrp = 0;
@@ -423,7 +423,7 @@ namespace PappyjoeMVC.View
                             else
                             {
                                 var form2 = new Patient_Profile_Details();
-                                profile_details_controller cntrl = new profile_details_controller(form2);
+                                Profile_Details_controller cntrl = new Profile_Details_controller(form2);
                                 form2.patient_id = pat_id;
                                 form2.doctor_id = doctor_id;
                                 form2.Closed += (sender1, args) => this.Close();
@@ -807,7 +807,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            patients_controller controllr = new patients_controller(form2);
+            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -865,7 +865,7 @@ namespace PappyjoeMVC.View
             SetFlag = true;
         }
 
-        public void SetController(AddNew_patient_controller controller)
+        public void SetController(Add_New_patient_controller controller)
         {
             cntrl = controller;
         }

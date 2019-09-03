@@ -7,7 +7,7 @@ using PappyjoeMVC.Model;
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
-   public class ItemList_Controller
+   public class Item_List_Controller
     {
         ItemList_Model _model = new ItemList_Model();
         common_model cmdl = new common_model();

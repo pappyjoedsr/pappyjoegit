@@ -8,7 +8,7 @@ namespace PappyjoeMVC.Controller
 {
     public interface patients_interface
     {
-       void Setcontroller(patients_controller controller);
+       void Setcontroller(Patients_controller controller);
         void Create_Datagrid(DataTable dtb);
         void Load_Group(DataTable dtb);
         void Appointment_Data(DataTable dtb);

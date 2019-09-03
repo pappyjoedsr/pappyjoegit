@@ -7,7 +7,7 @@ namespace PappyjoeMVC.View
 {
     public partial class New_Debit_Account : Form
     {
-        NewDebitAccount_controller cntrl=new NewDebitAccount_controller();
+        New_Debit_Account_controller cntrl=new New_Debit_Account_controller();
         public New_Debit_Account()
         {
             InitializeComponent();

@@ -22,7 +22,7 @@ namespace PappyjoeMVC.View
         public string patient_id = "0";
         public string patient_name;
         public int status1 = 0;
-        booking_controller cntrl;
+        Booking_controller cntrl;
         public CalendarEvent EditingEvent;
         public Boolean IsNewEvent = true;
         private System.Windows.Forms.CheckBox chkMeeting;
@@ -40,7 +40,7 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        public void SetController(booking_controller controller)
+        public void SetController(Booking_controller controller)
         {
             cntrl = controller;
         }

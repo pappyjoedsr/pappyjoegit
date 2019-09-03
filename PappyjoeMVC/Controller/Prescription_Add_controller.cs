@@ -7,15 +7,15 @@ using System.Data;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-    public class PrescriptionAdd_controller
+    public class Prescription_Add_controller
     {
-        prescriptionAdd_interface intr;
+        Prescription_Add_interface intr;
         common_model cmodel = new common_model();
         prescription_setting_model pmodel = new prescription_setting_model();
         prescription_model _model = new prescription_model();
         Inventory_model inmodel = new Inventory_model();
         //addfinsed_treatment_model fmodel = new addfinsed_treatment_model();
-        public PrescriptionAdd_controller(prescriptionAdd_interface inttr)
+        public Prescription_Add_controller(Prescription_Add_interface inttr)
         {
             intr = inttr;
             intr.SetController(this);

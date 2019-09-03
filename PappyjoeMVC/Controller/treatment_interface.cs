@@ -9,7 +9,7 @@ namespace PappyjoeMVC.Controller
 {
    public interface treatment_interface
     {
-        void SetController(treatment_controller controller);
+        void SetController(Treatment_controller controller);
         void load_treatment(DataTable dtb);
     }
 }

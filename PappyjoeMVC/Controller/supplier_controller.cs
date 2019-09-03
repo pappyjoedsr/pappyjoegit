@@ -7,7 +7,7 @@ using System.Data;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-   public class supplier_controller
+   public class Supplier_controller
     {
         supplier_model _model = new supplier_model();
         public string Document_number()

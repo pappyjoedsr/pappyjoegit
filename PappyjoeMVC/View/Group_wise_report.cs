@@ -9,7 +9,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Group_wise_report : Form
     {
-        Group_wise_report_controller cntrl=new Group_wise_report_controller();
+        Group_Wise_Report_controller cntrl=new Group_Wise_Report_controller();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";

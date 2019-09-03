@@ -8,7 +8,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Prescription_Settings : Form
     {
-        prescription_setting_controller cntrl=new prescription_setting_controller();
+        Prescription_Setting_controller cntrl=new Prescription_Setting_controller();
         public string id = "";
         public Prescription_Settings()
         {

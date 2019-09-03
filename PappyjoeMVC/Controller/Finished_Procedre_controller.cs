@@ -8,13 +8,13 @@ using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-    public  class finishedprocedre_controller
+    public  class Finished_Procedre_controller
     {
-        finishedprocedure_interface intr;
+        Finished_Procedure_interface intr;
         addfinsed_treatment_model _model = new addfinsed_treatment_model();
         Connection db = new Connection();
         common_model cmodel = new common_model();
-        public finishedprocedre_controller(finishedprocedure_interface inttr)
+        public Finished_Procedre_controller(Finished_Procedure_interface inttr)
         {
             intr = inttr;
             intr.Setcontroller(this);

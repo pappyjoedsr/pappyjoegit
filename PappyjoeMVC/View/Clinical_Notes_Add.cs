@@ -8,7 +8,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Clinical_Notes_Add : Form
     {
-        ClinicalNotesAdd_controller cntrl=new ClinicalNotesAdd_controller();
+        Clinical_Notes_Add_controller cntrl=new Clinical_Notes_Add_controller();
         public string doctor_id = "";
         public string staff_id = "";
         public string clinic_id = "";
@@ -606,7 +606,7 @@ namespace PappyjoeMVC.View
         private void linkLabel_Name_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
-            patient_edit_controller cnt = new patient_edit_controller(a);
+            Patient_Edit_controller cnt = new Patient_Edit_controller(a);
             a.patient_id = linkLabel_id.Text.ToString();
             a.Show();
         }
@@ -614,7 +614,7 @@ namespace PappyjoeMVC.View
         private void linkLabel_id_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
-            patient_edit_controller cnt = new patient_edit_controller(a);
+            Patient_Edit_controller cnt = new Patient_Edit_controller(a);
             a.patient_id = linkLabel_id.Text.ToString();
             a.Show();
         }
@@ -658,7 +658,7 @@ namespace PappyjoeMVC.View
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
-            profile_details_controller cnt = new profile_details_controller(form2);
+            Profile_Details_controller cnt = new Profile_Details_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
@@ -870,7 +870,7 @@ namespace PappyjoeMVC.View
                     else
                     {
                         var form2 = new Add_New_Patients();
-                        AddNew_patient_controller cn = new AddNew_patient_controller(form2);
+                        Add_New_patient_controller cn = new Add_New_patient_controller(form2);
                         form2.doctor_id = doctor_id;
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
@@ -880,7 +880,7 @@ namespace PappyjoeMVC.View
                 else
                 {
                     var form2 = new Add_New_Patients();
-                    AddNew_patient_controller cn = new AddNew_patient_controller(form2);
+                    Add_New_patient_controller cn = new Add_New_patient_controller(form2);
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();

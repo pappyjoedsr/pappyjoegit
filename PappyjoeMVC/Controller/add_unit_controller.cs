@@ -7,11 +7,11 @@ using System.Data;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-  public  class add_unit_controller
+  public  class Add_Unit_controller
     {
         add_unit_interface intr;
         add_unit_model _model = new add_unit_model();
-        public add_unit_controller(add_unit_interface inttr )
+        public Add_Unit_controller(add_unit_interface inttr )
         {
             intr = inttr;
             intr.SetController(this);

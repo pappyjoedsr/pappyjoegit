@@ -18,7 +18,7 @@ namespace PappyjoeMVC.Controller
         string TotalDiscount { get; set; }
         string GrandTotal { get; set; }
         string search_patientname{ get;set;}
-        void SetController(add_treatmentplan_controller controller);
+        void SetController(Add_Treatmentplan_controller controller);
         void insertTreatment(DataTable dtb);
     }
 }

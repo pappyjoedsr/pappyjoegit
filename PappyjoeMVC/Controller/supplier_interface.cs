@@ -21,7 +21,7 @@ namespace PappyjoeMVC.Controller
         string Address1 { get; set; }
         string Address2 { get; set; }
         string Address3 { get; set; }
-        void Setcontroller(supplier_controller controller);
+        void Setcontroller(Supplier_controller controller);
         void DocumentNumber(DataTable dtb);
         void LoadGrid(DataTable dbt);
         void Fill_SuplierDetails(DataTable dtb);

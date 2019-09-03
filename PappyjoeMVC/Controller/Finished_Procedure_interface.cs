@@ -7,9 +7,9 @@ using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-    public interface finishedprocedure_interface
+    public interface Finished_Procedure_interface
     {
-        void Setcontroller(finishedprocedre_controller controller);
+        void Setcontroller(Finished_Procedre_controller controller);
         void Load_Data(DataTable dtb);
     }
 }

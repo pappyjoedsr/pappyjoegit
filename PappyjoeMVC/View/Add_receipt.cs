@@ -29,14 +29,14 @@ namespace PappyjoeMVC.View
         string id15; public string staff_id = "";
         public string inv, inv_number, services;
         DataGridViewLinkColumn Deletelink1 = new DataGridViewLinkColumn();
-        add_receipt_controller cntrl;
+        Add_Receipt_controller cntrl;
         public string[] invoices = new string[100];
         common_model cmodel = new common_model();
         public Add_Receipt()
         {
             InitializeComponent();
         }
-        public void SetController(add_receipt_controller controller)
+        public void SetController(Add_Receipt_controller controller)
         {
             cntrl = controller;
         }
@@ -1227,7 +1227,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            patients_controller controllr = new patients_controller(form2);
+            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1351,7 +1351,7 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    AddNew_patient_controller controller = new AddNew_patient_controller(form2);
+                    Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -1361,7 +1361,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                AddNew_patient_controller controller = new AddNew_patient_controller(form2);
+                Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();

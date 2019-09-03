@@ -7,12 +7,12 @@ using System.Data;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-    public class login_controller
+    public class Login_controller
     {
         login_interface intr;
         login_model _model = new login_model();
         Connection db = new Connection();
-        public login_controller(login_interface inttr)
+        public Login_controller(login_interface inttr)
         {
             intr = inttr;
             intr.setcontroller(this);

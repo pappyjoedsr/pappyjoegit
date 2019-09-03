@@ -7,14 +7,14 @@ using PappyjoeMVC.Model;
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
-    public  class prescriptionshow_controller
+    public  class Prescription_Show_controller
     {
         prescriptionshow_interface intr;
         prescription_model _model = new prescription_model();
         Connection db = new Connection();
         common_model cmodel = new common_model();
         booking_model bmodel = new booking_model();
-        public prescriptionshow_controller(prescriptionshow_interface inttr)
+        public Prescription_Show_controller(prescriptionshow_interface inttr)
         {
             intr = inttr;
             intr.SetController(this);

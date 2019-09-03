@@ -7,13 +7,13 @@ using System.Data;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-    public  class add_receipt_controller
+    public  class Add_Receipt_controller
     {
         add_receipt_interface intr;
         Receipt_Model _model = new Receipt_Model();
         common_model cmodel = new common_model();
         Connection db = new Connection();
-        public  add_receipt_controller(add_receipt_interface inttr)
+        public  Add_Receipt_controller(add_receipt_interface inttr)
         {
             intr = inttr;
             intr.SetController(this);
