@@ -10,77 +10,18 @@ using System.Windows.Forms;
 using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
-    public partial class FrmManufacture : Form,manufacture_interface
+    public partial class FrmManufacture : Form
     {
         public FrmManufacture()
         {
             InitializeComponent();
         }
-        Manufacture_controller cntrl;
+        Manufacture_controller cntrl=new Manufacture_controller();
         public static string id;
-        public string Code
-        {
-            get { return this.txt_Code.Text; }
-            set { this.txt_Code.Text = value; }
-        }
-        public string Name
-        {
-            get { return this.txt_name.Text; }
-            set { this.txt_name.Text = value; }
-        }
-        public string Shortname
-        {
-            get { return this.txt_Shrtname.Text; }
-            set { this.txt_Shrtname.Text = value; }
-        }
-        public string Email
-        {
-            get { return this.txt_Email.Text; }
-            set { this.txt_Email.Text = value; }
-        }
-        public string CName
-        {
-            get { return this.txt_Contactname.Text; }
-            set { this.txt_Contactname.Text = value; }
-        }
-        public string Web
-        {
-            get { return this.Txt_Web.Text; }
-            set { this.Txt_Web.Text = value; }
-        }
-        public string Fax
-        {
-            get { return this.Txt_Fax.Text; }
-            set { this.Txt_Fax.Text = value; }
-        }
-        public string Phone
-        {
-            get { return this.txt_phone.Text; }
-            set { this.txt_phone.Text = value; }
-        }
-        public string Address1
-        {
-            get { return this.txt_Address1.Text; }
-            set { this.txt_Address1.Text = value; }
-        }
-        public string Address2
-        {
-            get { return this.txt_Address2.Text; }
-            set { this.txt_Address2.Text = value; }
-        }
-        public string Address3
-        {
-            get { return this.txt_Address3.Text; }
-            set { this.txt_Address3.Text = value; }
-        }
-        public void SetController(Manufacture_controller controller)
-        {
-            cntrl = controller;
-        }
-
         private void FrmManufacture_Load(object sender, EventArgs e)
         {
-            this.cntrl.Load_grid();
+           DataTable dtb= this.cntrl.Load_grid();
+            Fill_grid(dtb);
             txt_name.Text = "";
             Dgv_Manufacture.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             Dgv_Manufacture.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -120,19 +61,21 @@ namespace PappyjoeMVC.View
               
                 if (btn_Save.Text == "SAVE")
                 {
-                    i = this.cntrl.Save();
+                    i = this.cntrl.Save(txt_name.Text, txt_Code.Text, txt_Shrtname.Text, txt_Address1.Text, txt_Address2.Text, txt_Address3.Text, txt_phone.Text, Txt_Fax.Text, txt_Contactname.Text, txt_Email.Text, Txt_Web.Text);
                     if (i > 0)
                     {
-                        this.cntrl.Load_grid();
+                       DataTable dtb= this.cntrl.Load_grid();
+                        Fill_grid(dtb);
                         clear();
                     }
                 }
                 else if (btn_Save.Text == "UPDATE")
                 {
-                    i = this.cntrl.update(id);
+                    i = this.cntrl.update(id, txt_name.Text, txt_Code.Text, txt_Shrtname.Text, txt_Address1.Text, txt_Address2.Text, txt_Address3.Text, txt_phone.Text, Txt_Fax.Text, txt_Contactname.Text, txt_Email.Text, Txt_Web.Text);
                     if (i > 0)
                     {
-                        this.cntrl.Load_grid();
+                      DataTable dt=this.cntrl.Load_grid();
+                        Fill_grid(dt);
                         clear();
                         btn_Save.Text = "SAVE"; cancel.Visible = false;
                     }
@@ -222,7 +165,8 @@ namespace PappyjoeMVC.View
                             if (i > 0)
                             {
                                 Dgv_Manufacture.Rows.RemoveAt(index);
-                                this.cntrl.Load_grid();
+                               DataTable dtb= this.cntrl.Load_grid();
+                                Fill_grid(dtb);
                             }
                         }
                     }

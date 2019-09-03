@@ -9,23 +9,16 @@ namespace PappyjoeMVC.Controller
 {
    public class supplier_controller
     {
-        supplier_interface intr;
         supplier_model _model = new supplier_model();
-        public supplier_controller(supplier_interface inttr)
+        public string Document_number()
         {
-            intr = inttr;
-            intr.Setcontroller(this);
+            string dtb = _model.Document_number();
+            return dtb;
         }
-        public void Document_number()
-        {
-            DataTable dtb = _model.Document_number();
-            intr.DocumentNumber(dtb);
-        }
-
-        public void load_grid()
+        public DataTable load_grid()
         {
             DataTable dtb = _model.load_grid();
-            intr.LoadGrid(dtb);
+            return dtb;
         }
         public DataTable get_suppliername(string name)
         {
@@ -37,37 +30,20 @@ namespace PappyjoeMVC.Controller
             DataTable dtb =_model. get_suplier_phone(name);
             return dtb;
         }
-        public int Save()
+        public int Save(string _code, string _name, string _Cname, string _phone, string _phone2, string _email, string _fax, string _web, string _address1, string _address2, string _address3, string _balance)
         {
-            get_datas();
-            int i = _model.save();
+            int i = _model.save( _code,  _name,  _Cname,  _phone,  _phone2,  _email,  _fax,  _web,  _address1,  _address2,  _address3,  _balance);
             return i;
         }
-        public void get_datas()
+        public int update(string id, string _code, string _name, string _Cname, string _phone, string _phone2, string _email, string _fax, string _web, string _address1, string _address2, string _address3, string _balance)
         {
-            _model.Code = intr.Code;
-            _model.Name = intr.Name;
-            _model.CName = intr.CName;
-            _model.Email = intr.Email;
-            _model.Phone = intr.Phone;
-            _model.Phone2 = intr.Phone2;
-            _model.Web = intr.Web;
-            _model.Fax = intr.Fax;
-            _model.Address1 = intr.Address1;
-            _model.Address2 = intr.Address2;
-            _model.Address3 = intr.Address3;
-            _model.Balance = intr.Balance;
-        }
-        public int update(string id)
-        {
-            get_datas();
-            int i = _model.update(id);
+            int i = _model.update(id,_code, _name, _Cname, _phone, _phone2, _email, _fax, _web, _address1, _address2, _address3, _balance);
             return i;
         }
-        public void Get_suplierDetails(string id)
+        public DataTable Get_suplierDetails(string id)
         {
             DataTable dtb = _model.Get_suplierDetails(id);
-            intr.Fill_SuplierDetails(dtb);
+            return dtb;
         }
         public int delete(string id)
         {

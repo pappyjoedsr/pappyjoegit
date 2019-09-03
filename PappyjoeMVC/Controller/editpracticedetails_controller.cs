@@ -10,179 +10,137 @@ namespace PappyjoeMVC.Controller
 {
     public class editpracticedetails_controller
     {
-        Setting_interface intr;
-        editpracticedetails_model _selectedvalue=new editpracticedetails_model(0,0,"");
+        editpracticedetails_model _selectedvalue=new editpracticedetails_model();
         Connection db = new Connection();
-        public editpracticedetails_controller(Setting_interface intrr )
+        public void  save(string Country)
         {
-            intr = intrr;
-            intrr.SetController(this);
+            _selectedvalue.save_country(Country);
         }
-        private void getuservalues(editpracticedetails_model us)
+        public void Country_update(string Id, string Country)
         {
-            us.Country = intr.Country;
+            _selectedvalue.upate_country(Id,Country);
         }
-        public void  save()
+        public string check_country(string country)
         {
-            _selectedvalue.Country = intr.Country; 
-            _selectedvalue.save_country();
-            Load_Country();
+            string dt_country = _selectedvalue.check_country(country);
+            return dt_country;
         }
-        public void Country_update(string Id)
-        {
-            _selectedvalue.Country = intr.Country; 
-            _selectedvalue.upate_country(Id);
-            Load_Country();
-        }
-        public void check_country(string country)
-        {
-            DataTable dt_country = db.table("Select * from tbl_country where country ='" + country + "'");
-            intr.checkValue(dt_country);
-        }
-        public void Load_Country()
+        public DataTable Load_Country()
         {
             DataTable dtb = _selectedvalue.Load_All_Country();
-            intr.AddUsertoGrid(dtb);
+            return dtb;
         }
-
-        public void Use_country(string country)//lll
+        public DataTable Use_country(string country)
         {
             DataTable dt_country = _selectedvalue.Get_States_Of_Country(country);
-            intr.check_Country_use(dt_country);
+            return dt_country;
         }
         public int  Delete_Country(string country)
         {
-          int i=  db.execute("delete from tbl_country where id='" + country + "'");
+            int i = _selectedvalue.Delete_Country(country);
             return i;
         }
-        public void LoadState_wit_Country(string country)
+        public DataTable LoadState_wit_Country(string country)
         {
             DataTable dtb = _selectedvalue.Get_States_Of_Country(country);
-            intr.AddStatetoGrid(dtb);
+            return dtb;
         }
-        public void Save_State()
+        public void Save_State(string CountryID, string State)
         {
-            _selectedvalue.State = intr.State;
-            _selectedvalue.CountryID = intr.Country_Id;
-            _selectedvalue.Save_state(); Fill_State_Grid();
+            _selectedvalue.Save_state( CountryID,  State); 
         }
-        public void check_state(string state)
+        public string check_state(string state)
         {
-            DataTable dt_country = db.table("Select * from tbl_state where state ='" + state + "'");
-            intr.check_StateValue(dt_country);
+            string dt_country = _selectedvalue.check_state(state);
+            return dt_country;
         }
-        public void FillCountryCombo()//no usewww
+        public DataTable FillCountryCombo()
         {
             DataTable dtb_country = _selectedvalue.Load_All_Country();
-            intr.Country_ComboFill(dtb_country);
+            return dtb_country;
         }
-        public void Get_Country_Name(string country_id)
+        public DataTable Get_Country_Name(string country_id)
         {
-            DataTable dtb = db.table("select * from tbl_country where Id='" + country_id + "'");
-            intr.GetCountryName(dtb);
+            DataTable dtb = _selectedvalue.Get_Country_Name(country_id);
+            return dtb;
         }
-        public void Use_State(string stateid)
-        {
-            DataTable dt_state = db.table("select * from tbl_city where state_id='" + stateid + "' order by id");
-            intr.CheckStateUse(dt_state);
-        }  
         public int Delete_State(string state)
         {
-           int i= db.execute("delete  from tbl_state where id='" + state + "'");
-            Fill_State_Grid();
+            int i = _selectedvalue.Delete_State(state);
             return i;
         }
-        public void State_update(string Id)
+        public void State_update(string Id,string State, string Country_Id)
         {
-            _selectedvalue.State = intr.State;
-            _selectedvalue.CountryID = intr.Country_Id;
-            _selectedvalue.update_state(Id);
-            Fill_State_Grid();
-
+            _selectedvalue.update_state(Id, State, Country_Id);
         }
-        public void Fill_State_Grid()
+        public DataTable Fill_State_Grid(string CountryID)
         {
-            DataTable dtb_state = _selectedvalue.Get_States_Of_Country(_selectedvalue.CountryID);
-            intr.AddStatetoGrid(dtb_state);
+            DataTable dtb_state = _selectedvalue.Get_States_Of_Country(CountryID);
+            return dtb_state;
         }
 
         //city
-        public void FillStateCombo()
+        public DataTable FillStateCombo()
         {
             DataTable dtb_country = _selectedvalue.Load_allState();
-            intr.State_ComboFill(dtb_country);
+            return dtb_country;
         }
-        public void Fill_City_Grid(string stateId)
+        public DataTable Fill_City_Grid(string stateId)
         {
             DataTable dtb = _selectedvalue.Load_cityOf_State(stateId);
-            intr.AddCitytoGrid(dtb);
+            return dtb;
         }
-        public void check_city(string country)
+        public string check_city(string country)
         {
-            DataTable dt_country = db.table("Select * from tbl_city where city ='" + country + "'");
-            intr.checkValueCity(dt_country);
+            string dt_country = _selectedvalue.check_city(country);
+            return dt_country;
         }
-        public void Save_City()
+        public void Save_City(string City,string State_Id)
         {
-            get_cityVlaue(_selectedvalue);
-            _selectedvalue.Save_city();
+            _selectedvalue.Save_city(City, State_Id);
         }
-        public void get_cityVlaue(editpracticedetails_model mdl)
+        public void City_update(string Id, string City, string State_Id)
         {
-            mdl.City = intr.City;
-            mdl.SateId = intr.State_Id;
+            _selectedvalue.City_update(Id, City, State_Id);
         }
-        public void City_update(string Id)
+        public DataTable Get_state_Name(string country_id)
         {
-            get_cityVlaue(_selectedvalue);
-            int i = db.execute("update tbl_city set city='" + _selectedvalue.City + "',state_id='"+_selectedvalue.SateId+"' where Id='" + Id + "'");
+            DataTable dtb = _selectedvalue.Get_state_Name(country_id);
+            return dtb;
         }
-        public void Get_state_Name(string country_id)
+        public DataTable Use_City(string cityid)
         {
-            DataTable dtb = db.table("select * from tbl_state where Id='" + country_id + "'");
-            intr.GetStateName(dtb);
-        }
-        public void Use_City(string cityid)
-        {
-            DataTable dt_state = db.table("select * from tbl_practice_details where city_id='" + cityid + "' order by id");
-            intr.CheckCityUse(dt_state);
+            DataTable dt_state = _selectedvalue.Use_City(cityid);
+            return dt_state;
         }
         public int Delete_City(string city)
         {
-            int i = db.execute("delete  from tbl_city where id='" + city + "'");
+            int i = _selectedvalue.Delete_City(city);
             return i;
         }
 
         //spcilization
-        public void Fill_Specilization_Grid()
+        public DataTable Fill_Specilization_Grid()
         {
-            DataTable dtb = db.table("select * from tbl_specialization order by Id");
-            intr.AddSpecilizationtoGrid(dtb);
+            DataTable dtb = _selectedvalue.Fill_Specilization_Grid();
+            return dtb;
         }
-        public void check_specialization(string speci)
+        public string check_specialization(string speci)
         {
-            DataTable dt_country = db.table("Select * from tbl_specialization where name ='" + speci + "'");
-            intr.checkValueSpecialization(dt_country);
+            string dt_country = _selectedvalue.check_specialization(speci);
+            return dt_country;
         }
-        public void Save_Specialization()
+        public void Save_Specialization(string Specialization)
         {
-            get_SpeciVlaue(_selectedvalue);
-            int i = db.execute("insert into tbl_specialization(name)values('" + _selectedvalue.Specialization + "')");
-            Fill_Specilization_Grid();
+            _selectedvalue.Save_Specialization(Specialization);
         }
-        public void get_SpeciVlaue(editpracticedetails_model mdl)
+        public void Specialization_update(string Id,string Specialization)
         {
-            mdl.Specialization = intr.Specialization;
-        }
-        public void Specialization_update(string Id)
-        {
-            get_SpeciVlaue(_selectedvalue);
-            int i = db.execute("update tbl_specialization set name='" + _selectedvalue.Specialization + "' where id='" + Id + "'");
-            Fill_Specilization_Grid();
+            _selectedvalue.Specialization_update(Id,Specialization);
         }
         public int Delete_Specialization(string city)
         {
-            int i = db.execute("delete  from tbl_specialization where id='" + city + "'");
+            int i = _selectedvalue.Delete_Specialization(city);
             return i;
         }
     }
