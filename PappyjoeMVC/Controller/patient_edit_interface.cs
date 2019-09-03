@@ -31,7 +31,7 @@ namespace PappyjoeMVC.Controller
         string Visited { get; set; }
         string Dob { get; set; }
         string Gender { get; set; }
-        void Setcontroller(patient_edit_controller controller);
+        void Setcontroller(Patient_Edit_controller controller);
         void Fill_modeical(DataTable dtb);
         void Fill_Group(DataTable dtb);
 

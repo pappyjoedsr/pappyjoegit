@@ -7,14 +7,14 @@ using System.Data;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-    public class invoice_controller
+    public class Invoice_controller
     {
         invoice_interface intr;
         Connection db = new Connection();
         Add_invoice_model Add_inv_model = new Add_invoice_model();
         Inventory_model inv_model = new Inventory_model();
         common_model cmodel = new common_model();
-        public invoice_controller(invoice_interface inttr)
+        public Invoice_controller(invoice_interface inttr)
         {
             intr = inttr;
             intr.Setcontroller(this);

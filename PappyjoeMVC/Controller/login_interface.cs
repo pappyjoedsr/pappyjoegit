@@ -12,7 +12,7 @@ namespace PappyjoeMVC.Controller
         string Username { get; set; }
         string Password { get; set; }
 
-        void setcontroller(login_controller controller);
+        void setcontroller(Login_controller controller);
 
         void Load_Login(DataTable dtb);
     }

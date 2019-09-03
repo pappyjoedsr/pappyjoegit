@@ -7,12 +7,12 @@ using System.Data;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-    public class patient_edit_controller
+    public class Patient_Edit_controller
     {
         patient_edit_interface intr;
         patient_edit_model _model = new patient_edit_model();
         Connection db = new Connection();
-        public patient_edit_controller(patient_edit_interface inttr)
+        public Patient_Edit_controller(patient_edit_interface inttr)
         {
             intr = inttr;
             intr.Setcontroller(this);

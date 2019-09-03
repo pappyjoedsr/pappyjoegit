@@ -7,7 +7,7 @@ using PappyjoeMVC.Model;
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
-   public  class autoid_generation_controller
+   public  class Autoid_Generation_controller
     {
         autoid_generation_model _model=new autoid_generation_model();
         public DataTable load_patientid()

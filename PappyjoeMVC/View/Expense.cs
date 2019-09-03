@@ -9,7 +9,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Expense : Form
     {
-        expense_controller cntrl = new expense_controller();
+        Expense_controller cntrl = new Expense_controller();
         public string doctor_id = "";
         public int Incom_ID = 0;
         public int rowindex = 0;
@@ -25,7 +25,7 @@ namespace PappyjoeMVC.View
         }
         private void Lnk_AddNewCrdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var form2 = new New_CreditAccount();
+            var form2 = new New_Credit_Account();
             form2.ShowDialog();
         }
         public void btn_normal()
@@ -265,7 +265,7 @@ namespace PappyjoeMVC.View
 
         private void Lnk_AddNew_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var form2 = new New_DebitAccount();
+            var form2 = new New_Debit_Account();
             form2.ShowDialog();
         }
 

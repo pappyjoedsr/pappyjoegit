@@ -1,6 +1,6 @@
 ﻿namespace PappyjoeMVC.View
 {
-    partial class EMR_settings
+    partial class EMR_Settings
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EMR_settings));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EMR_Settings));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_Complaint = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();

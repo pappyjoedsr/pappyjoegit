@@ -8,7 +8,7 @@ namespace PappyjoeMVC.Controller
 {
     public interface Add_invoice_interface
     {
-        void SetController(Add_invoice_controller controller);
+        void SetController(Add_Invoice_controller controller);
         void Load_procedureGrid(DataTable dtb);
         void load_invoice_details(DataTable dtb);
         void Load_planed_procedure(DataTable dtb);

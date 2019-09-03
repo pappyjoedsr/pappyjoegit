@@ -7,13 +7,13 @@ using System.Data;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-  public  class profile_details_controller
+  public  class Profile_Details_controller
     {
         profile_details_interface intr;
         profile_details_model _model =new profile_details_model();
         common_model mdl = new common_model();
         Connection db = new Connection();
-        public profile_details_controller(profile_details_interface inttr)
+        public Profile_Details_controller(profile_details_interface inttr)
         {
             intr = inttr;
             intr.Setcontroller(this);

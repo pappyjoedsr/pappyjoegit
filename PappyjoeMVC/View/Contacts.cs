@@ -14,7 +14,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Contacts : Form
     {
-        contact_controller cntrl=new contact_controller();
+        Contact_controller cntrl=new Contact_controller();
         public string ContactId = "";
         public Contacts()
         {

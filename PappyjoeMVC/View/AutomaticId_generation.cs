@@ -13,7 +13,7 @@ namespace PappyjoeMVC.View
 {
     public partial class AutomaticId_generation : Form
     {
-        autoid_generation_controller cntrl=new autoid_generation_controller();
+        Autoid_Generation_controller cntrl=new Autoid_Generation_controller();
         public string ptcheck = "", invcheck = "", reciptcheck = "";
         public AutomaticId_generation()
         {

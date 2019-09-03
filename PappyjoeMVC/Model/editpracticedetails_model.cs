@@ -10,54 +10,9 @@ namespace PappyjoeMVC.Model
      public class editpracticedetails_model
     {
         Connection db = new Connection();
-        private string _country="";
-
-        public string Country
-        {
-            get { return _country; }
-            set { _country = value; }
-        }
-        public editpracticedetails_model(int id, int slno, string country)
-        {
-            Country = country;
-        }
-      
-        //state
-        private string _state;
-        private string _countryId;
-        public string State
-        {
-            get { return _state; }
-            set { _state = value; }
-        }
-        public string CountryID
-        {
-            get { return _countryId; }
-            set { _countryId = value; }
-        }
-
-        //city
-        private string _city;
-        private string _state_id;
-        public string City
-        {
-            get { return _city; }
-            set { _city = value; }
-        }
-        public string SateId
-        {
-            get { return _state_id; }
-            set { _state_id = value; }
-        }
-
+        
         //specialization
-        private string _speciaization;
-        public string Specialization
-        {
-            get { return _speciaization; }
-            set { _speciaization = value; }
-        }
-        public void save_country()
+        public void save_country(string Country)
         {
            db.execute("insert into tbl_country(country,country_code) values('" +Country + "','0')");
         }
@@ -66,7 +21,7 @@ namespace PappyjoeMVC.Model
           DataTable dtb = db.table("select * from tbl_country order by Id");
             return dtb;
         }
-        public void upate_country(string Id)
+        public void upate_country(string Id, string Country)
         {
            db.execute("update tbl_country set country='" +Country + "' where Id='" + Id + "'");
         }
@@ -76,28 +31,99 @@ namespace PappyjoeMVC.Model
             DataTable dt_country = db.table("select * from tbl_state where country_id ='" + country + "'");
             return dt_country;
         }
-        public void Save_state()
+        public void Save_state(string CountryID ,string State)
         {
             int i = db.execute("insert into tbl_state(country_id,state)values('" +CountryID + "','" +State + "')");
         }
-        public void  update_state(string Id)
+        public void  update_state(string Id, string State, string Country_Id)
         {
-           db.execute("update tbl_state set state='" + State + "',country_id='" + CountryID + "' where Id='" + Id + "'");
-
+           db.execute("update tbl_state set state='" + State + "',country_id='" + Country_Id + "' where Id='" + Id + "'");
         }
         public DataTable Load_allState()
         {
             DataTable dtb_country = db.table("select * from tbl_state order by Id");
             return dtb_country;
         }
-        public void Save_city()
+        public void Save_city(string City, string State_Id)
         {
-           db.execute("insert into tbl_city(state_id,city)values('" + SateId + "','" + City + "')");
+           db.execute("insert into tbl_city(state_id,city)values('" + State_Id + "','" + City + "')");
+        }
+        public void City_update(string Id, string City, string State_Id)
+        {
+            int i = db.execute("update tbl_city set city='" + City + "',state_id='" + State_Id + "' where Id='" + Id + "'");
+        }
+        public DataTable Get_state_Name(string country_id)
+        {
+            DataTable dtb = db.table("select * from tbl_state where Id='" + country_id + "'");
+            return dtb;
+        }
+        public DataTable Use_City(string cityid)
+        {
+            DataTable dt_state = db.table("select * from tbl_practice_details where city_id='" + cityid + "' order by id");
+            return dt_state;
+        }
+        public int Delete_City(string city)
+        {
+            int i = db.execute("delete  from tbl_city where id='" + city + "'");
+            return i;
         }
         public DataTable Load_cityOf_State(string SateId)
         {
             DataTable dtb = db.table("select * from tbl_city where state_id='"+ SateId + "'  order by Id");
             return dtb;
+        }
+        public string check_city(string country)
+        {
+            string dt_country = db.scalar("Select * from tbl_city where city ='" + country + "'");
+            return dt_country;
+        }
+        public string check_country(string country)
+        {
+            string dt_country = db.scalar("Select country from tbl_country where country ='" + country + "'");
+            return dt_country;
+        }
+        public int Delete_Country(string country)
+        {
+            int i = db.execute("delete from tbl_country where id='" + country + "'");
+            return i;
+        }
+        public string check_state(string state)
+        {
+            string  dt_country = db.scalar("Select state from tbl_state where state ='" + state + "'");
+            return dt_country;
+        }
+        public DataTable Get_Country_Name(string country_id)
+        {
+            DataTable dtb = db.table("select * from tbl_country where Id='" + country_id + "'");
+            return dtb;
+        }
+        public int Delete_State(string state)
+        {
+            int i = db.execute("delete  from tbl_state where id='" + state + "'");
+            return i;
+        }
+        public DataTable Fill_Specilization_Grid()
+        {
+            DataTable dtb = db.table("select * from tbl_specialization order by Id");
+            return dtb;
+        }
+        public void Save_Specialization(string Specialization)
+        {
+           db.execute("insert into tbl_specialization(name)values('" + Specialization + "')");
+        }
+        public void Specialization_update(string Id, string Specialization)
+        {
+             db.execute("update tbl_specialization set name='" + Specialization + "' where id='" + Id + "'");
+        }
+        public string check_specialization(string speci)
+        {
+            string dt_country = db.scalar("Select name from tbl_specialization where name ='" + speci + "'");
+            return dt_country;
+        }
+        public int Delete_Specialization(string city)
+        {
+            int i = db.execute("delete  from tbl_specialization where id='" + city + "'");
+            return i;
         }
     }
   

@@ -1,6 +1,6 @@
 ﻿namespace PappyjoeMVC.View
 {
-    partial class Daily_appointment_count
+    partial class Daily_Appointment_Count
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Daily_appointment_count));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Daily_Appointment_Count));
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Lab_Msg = new System.Windows.Forms.Label();

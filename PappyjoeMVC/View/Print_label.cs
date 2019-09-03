@@ -10,11 +10,11 @@ using System.Windows.Forms;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
-    public partial class Print_label : Form
+    public partial class Print_Label : Form
     {
         printlabel_model mdl = new printlabel_model();
         patients_model _model = new patients_model();
-        public Print_label()
+        public Print_Label()
         {
             InitializeComponent();
         }
@@ -123,7 +123,7 @@ namespace PappyjoeMVC.View
 
             if (dt_Return.Rows.Count > 0)
             {
-                print_label_print objfrmPrint = new print_label_print();
+                Print_Label_Print objfrmPrint = new Print_Label_Print();
                 objfrmPrint.dt_Load = dt_Return;
                 objfrmPrint.ShowDialog();
             }

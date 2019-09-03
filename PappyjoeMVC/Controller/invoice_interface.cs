@@ -8,7 +8,7 @@ namespace PappyjoeMVC.Controller
 {
     public interface invoice_interface
     {
-        void Setcontroller(invoice_controller controller);
+        void Setcontroller(Invoice_controller controller);
         void Load_MainTable(DataTable dtb);
         void set_totalPayment(DataTable dtb);
     }

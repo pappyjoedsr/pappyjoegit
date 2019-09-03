@@ -1,6 +1,6 @@
 ﻿namespace PappyjoeMVC.View
 {
-    partial class Monthly_new_patients
+    partial class Monthly_New_Patients
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monthly_new_patients));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monthly_New_Patients));
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.emailaddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();

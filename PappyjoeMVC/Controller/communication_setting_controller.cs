@@ -8,7 +8,7 @@ using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-  public  class communication_setting_controller
+  public  class Communication_Setting_controller
     {
         communication_setting_model _model = new communication_setting_model();
         public DataTable getsmstabledata()

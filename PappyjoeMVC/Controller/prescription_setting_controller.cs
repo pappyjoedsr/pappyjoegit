@@ -8,7 +8,7 @@ using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-  public class prescription_setting_controller
+  public class Prescription_Setting_controller
     {
         prescription_setting_model _model = new prescription_setting_model();
         public DataTable get_drug()

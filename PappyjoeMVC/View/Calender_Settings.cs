@@ -7,7 +7,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Calender_Settings : Form
     {
-        calender_controller cntrl=new calender_controller();
+        Calender_controller cntrl=new Calender_controller();
         string  slot;
         public Calender_Settings()
         {

@@ -13,11 +13,11 @@ using PappyjoeMVC.Controller;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
-    public partial class patient_profile_Edit : Form,patient_edit_interface
+    public partial class Patient_Profile_Edit : Form,patient_edit_interface
     {
         public string patient_id = "";
         public string doctor_id = "";
-        patient_edit_controller cntrl;
+        Patient_Edit_controller cntrl;
         common_model mdl = new common_model();
         Connection db = new Connection();
         public string aa, bb, gg, caaa, uaaa, ubbb, loadedPath = "";
@@ -316,10 +316,10 @@ namespace PappyjoeMVC.View
                                 {
                                 }
                             }
-                            var form2 = new patient_profile_details();
+                            var form2 = new Patient_Profile_Details();
                             form2.doctor_id = doctor_id;
                             form2.patient_id = patient_id;
-                            profile_details_controller controller = new profile_details_controller(form2);
+                            Profile_Details_controller controller = new Profile_Details_controller(form2);
                             form2.Closed += (sender1, args) => this.Close();
                             this.Hide();
                             form2.ShowDialog();
@@ -378,9 +378,9 @@ namespace PappyjoeMVC.View
                     if (i > 0)
                     {
                         MessageBox.Show("Patient Deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        var form2 = new patients();
+                        var form2 = new Patients();
                         form2.doctor_id = doctor_id;
-                        patients_controller controller = new patients_controller(form2);
+                        Patients_controller controller = new Patients_controller(form2);
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
                         form2.ShowDialog();
@@ -467,10 +467,10 @@ namespace PappyjoeMVC.View
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            var form2 = new patient_profile_details();
+            var form2 = new Patient_Profile_Details();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            profile_details_controller controller = new profile_details_controller(form2);
+            Profile_Details_controller controller = new Profile_Details_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -492,11 +492,11 @@ namespace PappyjoeMVC.View
             txtDob.Hide();
         }
 
-        public patient_profile_Edit()
+        public Patient_Profile_Edit()
         {
             InitializeComponent();
         }
-        public void Setcontroller(patient_edit_controller cntroller)
+        public void Setcontroller(Patient_Edit_controller cntroller)
         {
             cntrl = cntroller;
         }

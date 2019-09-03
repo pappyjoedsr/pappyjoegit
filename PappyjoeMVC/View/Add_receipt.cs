@@ -12,7 +12,7 @@ using PappyjoeMVC.Controller;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
-    public partial class Add_receipt : Form,add_receipt_interface
+    public partial class Add_Receipt : Form,add_receipt_interface
     {
         public string doctor_id = "";
         public string patient_id = "0";
@@ -29,14 +29,14 @@ namespace PappyjoeMVC.View
         string id15; public string staff_id = "";
         public string inv, inv_number, services;
         DataGridViewLinkColumn Deletelink1 = new DataGridViewLinkColumn();
-        add_receipt_controller cntrl;
+        Add_Receipt_controller cntrl;
         public string[] invoices = new string[100];
         common_model cmodel = new common_model();
-        public Add_receipt()
+        public Add_Receipt()
         {
             InitializeComponent();
         }
-        public void SetController(add_receipt_controller controller)
+        public void SetController(Add_Receipt_controller controller)
         {
             cntrl = controller;
         }
@@ -830,7 +830,7 @@ namespace PappyjoeMVC.View
             columns_GridView3 = e.ColumnIndex;
             if (DGV_MainGrid.CurrentCell.OwningColumn.Name == "ColPayNow")
             {
-                var form2 = new AddAmount();
+                var form2 = new Add_Amount();
                 form2.StartPosition = FormStartPosition.CenterParent;
                 form2.ShowDialog();
                 decimal Amount = PappyjoeMVC.Model.Connection.MyGlobals.PaidAmount;
@@ -1225,9 +1225,9 @@ namespace PappyjoeMVC.View
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            var form2 = new patients();
+            var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            patients_controller controllr = new patients_controller(form2);
+            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1316,7 +1316,7 @@ namespace PappyjoeMVC.View
                 id = this.cntrl.permission_for_settings(doctor_id);
                 if (int.Parse(id) > 0)
                 {
-                    var form2 = new PracticeDetails();
+                    var form2 = new Practice_Details();
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
@@ -1329,7 +1329,7 @@ namespace PappyjoeMVC.View
             }
             else
             {
-                var form2 = new PracticeDetails();
+                var form2 = new Practice_Details();
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
@@ -1349,9 +1349,9 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    var form2 = new AddNewPatients();
+                    var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    AddNew_patient_controller controller = new AddNew_patient_controller(form2);
+                    Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -1359,9 +1359,9 @@ namespace PappyjoeMVC.View
             }
             else
             {
-                var form2 = new AddNewPatients();
+                var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                AddNew_patient_controller controller = new AddNew_patient_controller(form2);
+                Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();

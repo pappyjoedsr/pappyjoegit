@@ -7,7 +7,7 @@ using PappyjoeMVC.Model;
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
-    public class booking_controller
+    public class Booking_controller
     {
         booking_interface intr;
         booking_model _model = new booking_model();
@@ -15,7 +15,7 @@ namespace PappyjoeMVC.Controller
         common_model cmodel = new common_model();
         Add_Appointment_model addmodel = new Add_Appointment_model();
         addnew_patient_model pmodel  = new addnew_patient_model();
-        public booking_controller(booking_interface intttr)
+        public Booking_controller(booking_interface intttr)
         {
             intr = intttr;
             intr.SetController(this);

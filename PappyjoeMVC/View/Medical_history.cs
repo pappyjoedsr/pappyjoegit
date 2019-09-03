@@ -11,13 +11,13 @@ using PappyjoeMVC.Model;
 using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
-    public partial class Medical_history : Form
+    public partial class Medical_History : Form
     {
-        public Medical_history()
+        public Medical_History()
         {
             InitializeComponent();
         }
-        medical_history_controller cntrl=new medical_history_controller();
+        Medical_History_controller cntrl=new Medical_History_controller();
         public string id = "";
         string groupid = "0";
         //public string medical
@@ -30,7 +30,7 @@ namespace PappyjoeMVC.View
         //    get { return this.textBox_group.Text; }
         //    set { this.textBox_group.Text = value; }
         //}
-        public void SetController(medical_history_controller controller)
+        public void SetController(Medical_History_controller controller)
         {
             cntrl = controller;
         }

@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.View;
-using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Add_Vital_Signs : Form//, Add_Vital_Signs_interface
+    public partial class Add_Vital_Signs : Form
     {
         Add_Vital_Signs_controller cntrl = new Add_Vital_Signs_controller();
         public string doctor_id = "0";
@@ -38,12 +31,12 @@ namespace PappyjoeMVC.View
                 //DataTable clinicname = this.cntrl.Get_CompanyNAme();
                 //if (clinicname.Rows.Count > 0)
                 //{
-                    //string clinicn = "";
-                    //clinicn = clinicname.Rows[0]["Name"].ToString();
-                    toolStripButton1.Text = this.cntrl.Load_CompanyName();
+                //string clinicn = "";
+                //clinicn = clinicname.Rows[0]["Name"].ToString();
+                toolStripButton1.Text = this.cntrl.Load_CompanyName();
                 //}
                 string docnam = this.cntrl.Get_DoctorName(doctor_id);
-                if (docnam!="")
+                if (docnam != "")
                 {
                     toolStripTextDoctor.Text = "Logged In As : " + docnam;
                 }
@@ -77,7 +70,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -85,9 +78,9 @@ namespace PappyjoeMVC.View
 
         private void labelallpatient_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.patients();
+            var form2 = new PappyjoeMVC.View.Patients();
             form2.doctor_id = doctor_id;
-            patients_controller cn = new patients_controller(form2);
+            Patients_controller cn = new Patients_controller(form2);
             form2.ShowDialog();
             //form2.Closed += (sender1, args) => this.Close();
             //this.Hide();
@@ -111,8 +104,8 @@ namespace PappyjoeMVC.View
                     id = this.cntrl.doctr_privillage_for_addnewPatient(doctor_id);
                     if (int.Parse(id) > 0)
                     {
-                        var form2 = new PappyjoeMVC.View.AddNewPatients();
-                        AddNew_patient_controller cnt = new AddNew_patient_controller(form2);
+                        var form2 = new PappyjoeMVC.View.Add_New_Patients();
+                        Add_New_patient_controller cnt = new Add_New_patient_controller(form2);
                         form2.doctor_id = doctor_id;
                         form2.ShowDialog();
                         //form2.Closed += (sender1, args) => this.Close();
@@ -125,19 +118,19 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    var form2 = new PappyjoeMVC.View.AddNewPatients();
-                    AddNew_patient_controller cnt = new AddNew_patient_controller(form2);
+                    var form2 = new PappyjoeMVC.View.Add_New_Patients();
+                    Add_New_patient_controller cnt = new Add_New_patient_controller(form2);
                     form2.doctor_id = doctor_id;
                     form2.ShowDialog();
                     //form2.Closed += (sender1, args) => this.Close();
                     //this.Hide();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -150,7 +143,7 @@ namespace PappyjoeMVC.View
                     id = this.cntrl.permission_for_settings(doctor_id);
                     if (int.Parse(id) > 0)
                     {
-                        var form2 = new PappyjoeMVC.View.PracticeDetails();
+                        var form2 = new PappyjoeMVC.View.Practice_Details();
                         form2.doctor_id = doctor_id;
                         form2.ShowDialog();
                         //form2.Closed += (sender1, args) => this.Close();
@@ -163,7 +156,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    var form2 = new PappyjoeMVC.View.PracticeDetails();
+                    var form2 = new PappyjoeMVC.View.Practice_Details();
                     form2.doctor_id = doctor_id;
                     form2.ShowDialog();
                     //form2.Closed += (sender1, args) => this.Close();
@@ -214,8 +207,8 @@ namespace PappyjoeMVC.View
 
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.patient_profile_details();
-            profile_details_controller cntr = new profile_details_controller(form2);
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            Profile_Details_controller cntr = new Profile_Details_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
@@ -226,8 +219,8 @@ namespace PappyjoeMVC.View
 
         private void labelallpatient_Click_1(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.patients();
-            patients_controller ctr = new patients_controller(form2);
+            var form2 = new PappyjoeMVC.View.Patients();
+            Patients_controller ctr = new Patients_controller(form2);
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
             //form2.Closed += (sender1, args) => this.Close();
@@ -563,9 +556,9 @@ namespace PappyjoeMVC.View
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            var form2 = new patients();
+            var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            patients_controller controllr = new patients_controller(form2);
+            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

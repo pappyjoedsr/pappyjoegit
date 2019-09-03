@@ -9,42 +9,20 @@ namespace PappyjoeMVC.Controller
 {
   public  class Manufacture_controller
     {
-        manufacture_interface intr;
         manufacture_model _model = new manufacture_model();
-        public Manufacture_controller(manufacture_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
-        public void Load_grid()
+        public DataTable Load_grid()
         {
             DataTable dtb = _model.Load_grid();
-            intr.Fill_grid(dtb);
+            return dtb;
         }
-        public int Save()
+        public int Save(string _name, string _code, string _shrtname, string _address1, string _address2, string _address3, string _phone, string string_fax, string Cname, string _email, string _web)
         {
-            Put_datas();
-            int i = _model.Save();
+            int i = _model.Save( _name,  _code,  _shrtname,  _address1,  _address2,  _address3,  _phone,  string_fax,  Cname,  _email,  _web);
             return i;
         }
-        public void Put_datas()
+        public int update(string id, string _name, string _code, string _shrtname, string _address1, string _address2, string _address3, string _phone, string string_fax, string Cname, string _email, string _web)
         {
-            _model.Code = intr.Code;
-            _model.Name = intr.Name;
-            _model.Shortname = intr.Shortname;
-            _model.CName = intr.CName;
-            _model.Email = intr.Email;
-            _model.Web = intr.Web;
-            _model.Fax = intr.Fax;
-            _model.Phone = intr.Phone;
-            _model.Address1 = intr.Address1;
-            _model.Address2 = intr.Address2;
-            _model.Address3 = intr.Address3;
-        }
-        public int update(string id)
-        {
-            Put_datas();
-            int i = _model.update(id);
+            int i = _model.update(id, _name, _code, _shrtname, _address1, _address2, _address3, _phone, string_fax, Cname, _email, _web);
             return i;
         }
         public DataTable get_manufacture(string id)

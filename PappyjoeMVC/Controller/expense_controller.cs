@@ -2,7 +2,7 @@
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
-    public class expense_controller
+    public class Expense_controller
     {
         expense_model _model = new expense_model();
         public DataTable load_accountname()

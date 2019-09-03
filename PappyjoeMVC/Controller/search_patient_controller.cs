@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Controller
 {
-   public class search_patient_controller
+   public class Search_Patient_controller
     {
 
     }

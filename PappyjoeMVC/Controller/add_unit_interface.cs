@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
     public interface add_unit_interface
     {
         string Units { get; set; }
-        void SetController(add_unit_controller controller);
+        void SetController(Add_Unit_controller controller);
         void LoadData(DataTable dtb);
     }
 }

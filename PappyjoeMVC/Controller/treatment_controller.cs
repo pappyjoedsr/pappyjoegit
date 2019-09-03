@@ -8,12 +8,12 @@ using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-    public class treatment_controller
+    public class Treatment_controller
     {
         treatment_interface intr;
         treatment_model _model = new treatment_model();
         common_model cmodel = new common_model();
-        public treatment_controller(treatment_interface inttr)
+        public Treatment_controller(treatment_interface inttr)
         {
             intr = inttr;
             intr.SetController(this);

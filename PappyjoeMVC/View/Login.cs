@@ -17,7 +17,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Login : Form,login_interface
     {
-        login_controller cntrl;
+        Login_controller cntrl;
         public string hexcodes1 = "";
         public string hexcodes2 = "";
         public int intAgain;
@@ -38,7 +38,7 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        public void setcontroller(login_controller controller)
+        public void setcontroller(Login_controller controller)
         {
             cntrl = controller;
         }
@@ -346,7 +346,7 @@ namespace PappyjoeMVC.View
                             DOCTORID = doctor.Rows[0][0].ToString();
                             PappyjoeMVC.Model.Connection.MyGlobals.loginType = type;
                             PappyjoeMVC.Model.Connection.MyGlobals.Doctor_id = DOCTORID;
-                            var form2 = new FrmMain();
+                            var form2 = new Main();
                             //form2.doctor_id = DOCTORID;
                             form2.Show();
                             form2.Closed += (sender1, args) => this.Close();

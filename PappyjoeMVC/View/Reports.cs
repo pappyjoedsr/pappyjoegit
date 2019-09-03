@@ -156,9 +156,9 @@ namespace PappyjoeMVC.View
 
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
-            var form2 = new AddNewPatients();
+            var form2 = new Add_New_Patients();
             form2.doctor_id = doctor_id;
-            AddNew_patient_controller cnt = new AddNew_patient_controller(form2);
+            Add_New_patient_controller cnt = new Add_New_patient_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1564,9 +1564,9 @@ namespace PappyjoeMVC.View
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            var form2 = new patients();
+            var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            patients_controller controllr = new patients_controller(form2);
+            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1649,19 +1649,19 @@ namespace PappyjoeMVC.View
 
         private void lblappointmenteachdoctor_Click(object sender, EventArgs e)
         {
-            DoctorWise_appointment_report v = new DoctorWise_appointment_report();
+            Doctor_Wise_Appointment_Report v = new Doctor_Wise_Appointment_Report();
             v.ShowDialog();
         }
 
         private void lblmonthappointmentcount_Click(object sender, EventArgs e)
         {
-            Monthly_appointment_count c = new Monthly_appointment_count();
+            Monthly_Appointment_Count c = new Monthly_Appointment_Count();
             c.ShowDialog();
         }
 
         private void lbldailyappointcount_Click(object sender, EventArgs e)
         {
-            Daily_appointment_count d = new Daily_appointment_count();
+            Daily_Appointment_Count d = new Daily_Appointment_Count();
             d.ShowDialog();
         }
 
@@ -1679,20 +1679,20 @@ namespace PappyjoeMVC.View
 
         private void lbldailynewpatient_Click(object sender, EventArgs e)
         {
-            Daily_NewPatients d = new Daily_NewPatients();
+            Daily_New_Patients d = new Daily_New_Patients();
             d.ShowDialog();
         }
 
         private void lblfirstappoint_Click(object sender, EventArgs e)
         {
-            Patients_first_appointment f = new Patients_first_appointment();
+            Patients_First_Appointment f = new Patients_First_Appointment();
             f.doctor_id = doctor_id;
             f.ShowDialog();
         }
 
         private void lblmonthnewpatient_Click(object sender, EventArgs e)
         {
-            Monthly_new_patients m = new Monthly_new_patients();
+            Monthly_New_Patients m = new Monthly_New_Patients();
             m.doctor_id = doctor_id;
             m.ShowDialog();
         }
@@ -1706,7 +1706,7 @@ namespace PappyjoeMVC.View
 
         private void lbldailytreatmentcount_Click(object sender, EventArgs e)
         {
-            Daily_treatment_count d = new Daily_treatment_count();
+            Daily_Treatment_Count d = new Daily_Treatment_Count();
             d.doctor_id = doctor_id;
             d.ShowDialog();
         }

@@ -7,12 +7,12 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Procedure_catalog : Form
+    public partial class Procedure_Catalog : Form
     {
-        procedure_catalog_controller cntrl=new procedure_catalog_controller();
+        Procedure_Catalog_controller cntrl=new Procedure_Catalog_controller();
         string idd = null;
         int refresh;
-        public Procedure_catalog()
+        public Procedure_Catalog()
         {
             InitializeComponent();
         }

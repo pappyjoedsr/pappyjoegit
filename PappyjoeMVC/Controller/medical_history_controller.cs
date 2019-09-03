@@ -8,7 +8,7 @@ using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.Controller
 {
-  public class medical_history_controller
+  public class Medical_History_controller
     {
         medical_history_model _model = new medical_history_model();
         public DataTable Check_medical(string name)

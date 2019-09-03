@@ -3,7 +3,7 @@ using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-    public class Daily_appointment_count_controller
+    public class Daily_Appointment_Count_controller
     {
         Appointment_report_model _model = new Appointment_report_model();
         common_model model = new common_model();

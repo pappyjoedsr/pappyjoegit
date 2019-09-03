@@ -1,6 +1,6 @@
 ﻿namespace PappyjoeMVC.View
 {
-    partial class Patients_first_appointment
+    partial class Patients_First_Appointment
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patients_first_appointment));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patients_First_Appointment));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel2 = new System.Windows.Forms.Panel();

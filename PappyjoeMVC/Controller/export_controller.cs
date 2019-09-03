@@ -7,7 +7,7 @@ using System.Data;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-  public class export_controller
+  public class Export_controller
     {
         
         export_model _model = new export_model();
