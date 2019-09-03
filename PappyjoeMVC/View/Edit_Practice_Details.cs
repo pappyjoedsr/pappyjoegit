@@ -12,7 +12,7 @@ using PappyjoeMVC.Controller;
 
 namespace PappyjoeMVC.View 
 {
-    public partial class Edit_Practice_Details : Form, Setting_interface
+    public partial class Edit_Practice_Details : Form
     {
         public Edit_Practice_Details()
         {
@@ -49,7 +49,7 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        this.contrl.Country_update(Country_id);
+                        this.contrl.Country_update(Country_id, Txt_Country.Text);
                         btn_CountrySave.Text = "Save";
                         btn_Cancel.Text = "Close";
                     }
@@ -78,7 +78,7 @@ namespace PappyjoeMVC.View
             }
             else
             {
-                this.contrl.save();
+                this.contrl.save(Txt_Country.Text);
             }
         }
        
@@ -292,11 +292,11 @@ namespace PappyjoeMVC.View
             get { return this.Cmb_Country.SelectedValue.ToString(); }
             set { this.Cmb_Country.Text = value; }
         }
-        public void Save_State()
-        {
-            this.contrl.Save_State();
+        ////public void Save_State()
+        ////{
+        ////    this.contrl.Save_State();
            
-        }
+        ////}
         public void AddStatetoGrid(DataTable dtb)
         {
             Dgv_State.Rows.Clear();
@@ -328,7 +328,7 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        this.contrl.State_update(State_id);
+                        this.contrl.State_update(State_id, txt_State.Text,Cmb_Country.SelectedValue.ToString());
                         btn_StateSave.Text = "Save";
                         btn_Cancel.Text = "Close";
                     }
@@ -356,7 +356,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    this.contrl.Save_State();
+                    this.contrl.Save_State(Cmb_Country.SelectedValue.ToString(),txt_State.Text);
                 }
             }
             catch(Exception ex)
@@ -419,7 +419,7 @@ namespace PappyjoeMVC.View
                     if (i > 0)
                     {
                         Dgv_State.Rows.RemoveAt(state_index);
-                        this.contrl.Fill_State_Grid();
+                        this.contrl.Fill_State_Grid(Cmb_Country.SelectedValue.ToString());
                     }
                 }
             }
@@ -503,8 +503,8 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        this.contrl.City_update(City_id);
-                        this.contrl.Fill_City_Grid(State_Id);
+                        this.contrl.City_update(City_id, txt_city.Text, cmbstate.SelectedValue.ToString());
+                        this.contrl.Fill_City_Grid(cmbstate.SelectedValue.ToString());
                         btn_city.Text = "Save";
                         btn_Cancel.Text = "Close";
                     }
@@ -531,8 +531,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    this.contrl.Save_City();
-                    this.contrl.Fill_City_Grid(State_Id);
+                    this.contrl.Save_City(txt_city.Text, State_Id);
+                    this.contrl.Fill_City_Grid(cmbstate.SelectedValue.ToString());
                 }
             }
             catch (Exception ex)
@@ -583,7 +583,7 @@ namespace PappyjoeMVC.View
                     if (i > 0)
                     {
                         DGV_city.Rows.RemoveAt(city_index);
-                        this.contrl.Fill_City_Grid(State_Id);
+                        this.contrl.Fill_City_Grid(cmbstate.SelectedValue.ToString());
                     }
                 }
             }
@@ -624,11 +624,11 @@ namespace PappyjoeMVC.View
                 {
                     if (btnsavespecialization.Text == "Save")
                     {
-                        this.contrl.check_specialization(Specialization);
+                        this.contrl.check_specialization(txt_speciliztn.Text);
                     }
                     else
                     {
-                        this.contrl.Specialization_update(Speci_id);
+                        this.contrl.Specialization_update(Speci_id, txt_speciliztn.Text);
                         btnsavespecialization.Text = "Save";
                         btn_Cancel.Text = "Close";
                     }
@@ -656,7 +656,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    this.contrl.Save_Specialization();
+                    this.contrl.Save_Specialization(txt_speciliztn.Text);
                 }
             }
             catch (Exception ex)

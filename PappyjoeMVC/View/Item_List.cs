@@ -12,7 +12,7 @@ using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Item_List : Form,ItemList_inerface
+    public partial class Item_List : Form
     {
         public static bool Item_flag = false;
         ItemList_Controller cntrl;
@@ -180,7 +180,7 @@ namespace PappyjoeMVC.View
             manufacture.TopLevel = false;
             panel_main.Controls.Add(manufacture);
             manufacture.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            Manufacture_controller cntrl = new Manufacture_controller(manufacture);
+            //Manufacture_controller cntrl = new Manufacture_controller(manufacture);
             manufacture.Show();
         }
 
@@ -197,7 +197,7 @@ namespace PappyjoeMVC.View
             suplier.TopLevel = false;
             panel_main.Controls.Add(suplier);
             suplier.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            supplier_controller cntrl = new supplier_controller(suplier);
+            //supplier_controller cntrl = new supplier_controller(suplier);
             suplier.Show();
         }
 

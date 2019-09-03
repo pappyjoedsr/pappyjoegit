@@ -866,7 +866,7 @@ namespace PappyjoeMVC.View
                         MessageBox.Show("The item code already exists !..", "Duplication encountered", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-                    int i = this.cntrl.Save_data(txt_ItemName.Text, txt_ItemCode.Text, Cmb_Manufacture.SelectedValue.ToString(), Cmb_Category.SelectedValue.ToString(), txt_Location.Text, txt_Packing.Text, _isbatch, txt_SalesRate.Text, txt_SalesRateMin.Text, txt_SalesRateMax.Text, txt_PurchaseRate.Text, cmb_Unit1.Text, _sUnit, UnitMF, txt_PurchRate2.Text, txt_SalesRate2.Text, txt_SalesRateMin2.Text, txt_SalesRateMax2.Text, isOneUnitOnly, txt_reorderStockQty.Text, txt_CostBase.Text, _istax, txt_minimumStockforSale.Text);//isOneUnitOnly);
+                    int i = this.cntrl.Save_data(txt_ItemName.Text, txt_ItemCode.Text, Cmb_Manufacture.SelectedValue.ToString(), Cmb_Category.SelectedValue.ToString(), txt_Location.Text, txt_Packing.Text, _isbatch, txt_SalesRate.Text, txt_SalesRateMin.Text, txt_SalesRateMax.Text, txt_PurchaseRate.Text, cmb_Unit1.Text, _sUnit, UnitMF, txt_PurchRate2.Text, txt_SalesRate2.Text, txt_SalesRateMin2.Text, txt_SalesRateMax2.Text, isOneUnitOnly, txt_reorderStockQty.Text, txt_CostBase.Text, _istax, txt_minimumStockforSale.Text);
                     if (i > 0)
                     {
 
@@ -901,7 +901,7 @@ namespace PappyjoeMVC.View
                                 }
                                 else
                                 {
-                                    this.cntrl.savedrugtable(Item_Id.ToString(), txt_ItemName.Text, cmbdrugtype.Text, txtstrength.Text, cmbstrength.Text, txtinstructions.Text);//Item_Id.ToString());
+                                    this.cntrl.savedrugtable(Item_Id.ToString(), txt_ItemName.Text, cmbdrugtype.Text, txtstrength.Text, cmbstrength.Text, txtinstructions.Text);
                                 }
                             }
                         }
@@ -981,7 +981,7 @@ namespace PappyjoeMVC.View
         {
             string formname = "ItemAdd";
             var form2 = new Item_List(formname);
-            ItemList_Controller controller = new ItemList_Controller(form2);
+            //ItemList_Controller controller = new ItemList_Controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog(); 
