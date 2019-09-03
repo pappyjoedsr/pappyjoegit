@@ -1742,6 +1742,22 @@ namespace PappyjoeMVC.View
             //this.Hide();
             form2.ShowDialog();
         }
+        private void lblMonthlySummary_Click(object sender, EventArgs e)
+        {
+            var form2 = new Monthly_Invoice_Report();
+            form2.doctor_id= doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            //this.Hide();
+            form2.ShowDialog();
+        }
+        private void label14_Click(object sender, EventArgs e)
+        {
+            var form2 = new Doctor_Wise_Invoice();
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            //this.Hide();
+            form2.ShowDialog();
+        }
         private void Chk_Type_CheckedChanged(object sender, EventArgs e)
         {
             if (Chk_Type.Checked)

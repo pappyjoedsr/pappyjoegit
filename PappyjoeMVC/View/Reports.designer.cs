@@ -722,6 +722,7 @@
             this.label14.Size = new System.Drawing.Size(157, 17);
             this.label14.TabIndex = 2;
             this.label14.Text = "DOCTOR WISE INVOICE ";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // lblMonthlySummary
             // 
@@ -734,6 +735,7 @@
             this.lblMonthlySummary.Size = new System.Drawing.Size(128, 17);
             this.lblMonthlySummary.TabIndex = 1;
             this.lblMonthlySummary.Text = "MONTHLY INVOICE";
+            this.lblMonthlySummary.Click += new System.EventHandler(this.lblMonthlySummary_Click);
             // 
             // lbldaily
             // 
