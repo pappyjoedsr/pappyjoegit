@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Doctor_Wise_Invoice : Form,Doctor_Wise_Invoice_interface
+    public partial class Doctor_Wise_Invoice : Form
     {
         public Doctor_Wise_Invoice()
         {
@@ -21,40 +21,30 @@ namespace PappyjoeMVC.View
         int ID = 0,c = 0;
         Double sum = 0, sum1 = 0, sum2 = 0;
         public string doctor_id = "",select_dr_id="",checkStr = "0",PathName = "",strclinicname = "", strStreet = "", stremail = "", strwebsite = "", strphone = "", clinicn = "";
-        Doctor_Wise_Invoice_controller ctrlr;
-        public void setController(Doctor_Wise_Invoice_controller controller)
-        {
-            ctrlr = controller;
-        }
-        public void getdocname(DataTable doctor_rs)
-        {
-            if (doctor_rs.Rows.Count > 0)
-            {
-                for (int i = 0; i < doctor_rs.Rows.Count; i++)
-                {
-                    combodoctors.Items.Add(doctor_rs.Rows[i]["doctor_name"].ToString());
-                    combodoctors.ValueMember = doctor_rs.Rows[i]["id"].ToString();
-                    combodoctors.DisplayMember = doctor_rs.Rows[i]["doctor_name"].ToString();
-                }
-            }
-        }
+        Doctor_Wise_Invoice_controller ctrlr=new Doctor_Wise_Invoice_controller();
         private void Doctor_Wise_Invoice_Load(object sender, EventArgs e)
         {
-            combodoctors.Items.Add("All Doctor");
-            combodoctors.ValueMember = "0";
-            combodoctors.DisplayMember = "All Doctor";
-            this.ctrlr.getdocname();
-            combodoctors.SelectedIndex = 0;
-            select_dr_id = "0";
-            pageload();
-        }
-        public void Get_DoctorId(string dt)
-        {
-            if (dt!="")
+            try
             {
-                select_dr_id = dt.ToString();
-                ID = int.Parse(select_dr_id);
+                combodoctors.Items.Add("All Doctor");
+                combodoctors.ValueMember = "0";
+                combodoctors.DisplayMember = "All Doctor";
+                DataTable doctor_rs = this.ctrlr.getdocname();
+                if (doctor_rs.Rows.Count > 0)
+                {
+                    for (int i = 0; i < doctor_rs.Rows.Count; i++)
+                    {
+                        combodoctors.Items.Add(doctor_rs.Rows[i]["doctor_name"].ToString());
+                        combodoctors.ValueMember = doctor_rs.Rows[i]["id"].ToString();
+                        combodoctors.DisplayMember = doctor_rs.Rows[i]["doctor_name"].ToString();
+                    }
+                }
+                combodoctors.SelectedIndex = 0;
+                select_dr_id = "0";
+                pageload();
             }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public void pageload()
         {
@@ -81,15 +71,19 @@ namespace PappyjoeMVC.View
                 else
                 {
                     string drid = combodoctors.SelectedItem.ToString();
-                    this.ctrlr.Get_DoctorId(drid);
+                    select_dr_id=this.ctrlr.Get_DoctorId(drid);
+                    ID = int.Parse(select_dr_id);
                 }
                 if (ID != 0)
                 {
-                    this.ctrlr.getdata3(dptMonthly_From.Text, dptMonthly_To.Text, ID);
+                    DataTable dt3=this.ctrlr.getdata3(dptMonthly_From.Text, dptMonthly_To.Text, ID);
+                    getdata3(dt3);
                 }
                 else
-                { this.ctrlr.getdata4(dptMonthly_From.Text, dptMonthly_To.Text); }
-               
+                {
+                    DataTable dt4=this.ctrlr.getdata4(dptMonthly_From.Text, dptMonthly_To.Text);
+                    getdata4(dt4);
+                }
                 for (int i = 0; i < dgvMonthlyReports.Rows.Count; i++)
                 {
                     double s = Convert.ToDouble(dgvMonthlyReports.Rows[i].Cells["total_payment"].Value);
@@ -103,57 +97,67 @@ namespace PappyjoeMVC.View
                 lbltotal2.Text = sum1.ToString("0.00");
                 lbltotal3.Text = sum2.ToString("0.00");
             }
-            catch(Exception ex)
-            { MessageBox.Show("Data Loading Error ", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public void getdata3(DataTable dt1)
         {
-            if (dt1.Rows.Count >0)
+            try
             {
-                lblNoRecord.Hide();
-                for (int i = 0; i < dt1.Rows.Count; i++)
+                if (dt1.Rows.Count > 0)
                 {
-                    dgvMonthlyReports.Rows.Add();
-                    dgvMonthlyReports.Rows[i].Cells["Slno"].Value = i + 1;
-                    dgvMonthlyReports.Rows[i].Cells["pt_name"].Value = dt1.Rows[i]["pt_name"].ToString();
-                    dgvMonthlyReports.Rows[i].Cells["doctor_name"].Value = dt1.Rows[i]["doctor_name"].ToString();
-                    dgvMonthlyReports.Rows[i].Cells["invoice_no"].Value = dt1.Rows[i]["invoice_no"].ToString();
-                    dgvMonthlyReports.Rows[i].Cells["services"].Value = dt1.Rows[i]["services"].ToString();
-                    dgvMonthlyReports.Rows[i].Cells["Invoice_date"].Value = Convert.ToDateTime(dt1.Rows[i]["date"].ToString()).ToString("dd/MM/yyy");
-                    dgvMonthlyReports.Rows[i].Cells["grant_total"].Value = Convert.ToDecimal(dt1.Rows[i]["Cost"].ToString()).ToString();
-                    dgvMonthlyReports.Rows[i].Cells["total_payment"].Value = Convert.ToDecimal(dt1.Rows[i]["Payment"].ToString()).ToString();
-                    dgvMonthlyReports.Rows[i].Cells["due"].Value = Convert.ToDecimal(dt1.Rows[i]["due"].ToString()).ToString("0.00");
-                    dgvMonthlyReports.Rows[i].Cells[6].Style.ForeColor = Color.Blue;
-                    dgvMonthlyReports.Rows[i].Cells[7].Style.ForeColor = Color.ForestGreen;
-                    dgvMonthlyReports.Rows[i].Cells[8].Style.ForeColor = Color.Red;
+                    lblNoRecord.Hide();
+                    for (int i = 0; i < dt1.Rows.Count; i++)
+                    {
+                        dgvMonthlyReports.Rows.Add();
+                        dgvMonthlyReports.Rows[i].Cells["Slno"].Value = i + 1;
+                        dgvMonthlyReports.Rows[i].Cells["pt_name"].Value = dt1.Rows[i]["pt_name"].ToString();
+                        dgvMonthlyReports.Rows[i].Cells["doctor_name"].Value = dt1.Rows[i]["doctor_name"].ToString();
+                        dgvMonthlyReports.Rows[i].Cells["invoice_no"].Value = dt1.Rows[i]["invoice_no"].ToString();
+                        dgvMonthlyReports.Rows[i].Cells["services"].Value = dt1.Rows[i]["services"].ToString();
+                        dgvMonthlyReports.Rows[i].Cells["Invoice_date"].Value = Convert.ToDateTime(dt1.Rows[i]["date"].ToString()).ToString("dd/MM/yyy");
+                        dgvMonthlyReports.Rows[i].Cells["grant_total"].Value = Convert.ToDecimal(dt1.Rows[i]["Cost"].ToString()).ToString();
+                        dgvMonthlyReports.Rows[i].Cells["total_payment"].Value = Convert.ToDecimal(dt1.Rows[i]["Payment"].ToString()).ToString();
+                        dgvMonthlyReports.Rows[i].Cells["due"].Value = Convert.ToDecimal(dt1.Rows[i]["due"].ToString()).ToString("0.00");
+                        dgvMonthlyReports.Rows[i].Cells[6].Style.ForeColor = Color.Blue;
+                        dgvMonthlyReports.Rows[i].Cells[7].Style.ForeColor = Color.ForestGreen;
+                        dgvMonthlyReports.Rows[i].Cells[8].Style.ForeColor = Color.Red;
+                    }
                 }
+                else
+                { lblNoRecord.Show(); }
             }
-            else
-            { lblNoRecord.Show(); }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public void getdata4(DataTable dt1)
         {
-           if (dt1.Rows.Count>0)
+            try
             {
-                lblNoRecord.Hide();
-                for (int i = 0; i < dt1.Rows.Count; i++)
+                if (dt1.Rows.Count > 0)
                 {
-                    dgvMonthlyReports.Rows.Add();
-                    dgvMonthlyReports.Rows[i].Cells["Slno"].Value = i + 1;
-                    dgvMonthlyReports.Rows[i].Cells["pt_name"].Value = dt1.Rows[i]["pt_name"].ToString();
-                    dgvMonthlyReports.Rows[i].Cells["doctor_name"].Value = dt1.Rows[i]["doctor_name"].ToString();
-                    dgvMonthlyReports.Rows[i].Cells["invoice_no"].Value = dt1.Rows[i]["invoice_no"].ToString();
-                    dgvMonthlyReports.Rows[i].Cells["services"].Value = dt1.Rows[i]["services"].ToString();
-                    dgvMonthlyReports.Rows[i].Cells["Invoice_date"].Value = Convert.ToDateTime(dt1.Rows[i]["date"].ToString()).ToString("dd/MM/yyy");
-                    dgvMonthlyReports.Rows[i].Cells["grant_total"].Value = Convert.ToDecimal(dt1.Rows[i]["Cost"].ToString()).ToString();
-                    dgvMonthlyReports.Rows[i].Cells["total_payment"].Value = Convert.ToDecimal(dt1.Rows[i]["Payment"].ToString()).ToString();
-                    dgvMonthlyReports.Rows[i].Cells["due"].Value = Convert.ToDecimal(dt1.Rows[i]["due"].ToString()).ToString("0.00");
-                    dgvMonthlyReports.Rows[i].Cells[6].Style.ForeColor = Color.Blue;
-                    dgvMonthlyReports.Rows[i].Cells[7].Style.ForeColor = Color.ForestGreen;
-                    dgvMonthlyReports.Rows[i].Cells[8].Style.ForeColor = Color.Red;
+                    lblNoRecord.Hide();
+                    for (int i = 0; i < dt1.Rows.Count; i++)
+                    {
+                        dgvMonthlyReports.Rows.Add();
+                        dgvMonthlyReports.Rows[i].Cells["Slno"].Value = i + 1;
+                        dgvMonthlyReports.Rows[i].Cells["pt_name"].Value = dt1.Rows[i]["pt_name"].ToString();
+                        dgvMonthlyReports.Rows[i].Cells["doctor_name"].Value = dt1.Rows[i]["doctor_name"].ToString();
+                        dgvMonthlyReports.Rows[i].Cells["invoice_no"].Value = dt1.Rows[i]["invoice_no"].ToString();
+                        dgvMonthlyReports.Rows[i].Cells["services"].Value = dt1.Rows[i]["services"].ToString();
+                        dgvMonthlyReports.Rows[i].Cells["Invoice_date"].Value = Convert.ToDateTime(dt1.Rows[i]["date"].ToString()).ToString("dd/MM/yyy");
+                        dgvMonthlyReports.Rows[i].Cells["grant_total"].Value = Convert.ToDecimal(dt1.Rows[i]["Cost"].ToString()).ToString();
+                        dgvMonthlyReports.Rows[i].Cells["total_payment"].Value = Convert.ToDecimal(dt1.Rows[i]["Payment"].ToString()).ToString();
+                        dgvMonthlyReports.Rows[i].Cells["due"].Value = Convert.ToDecimal(dt1.Rows[i]["due"].ToString()).ToString("0.00");
+                        dgvMonthlyReports.Rows[i].Cells[6].Style.ForeColor = Color.Blue;
+                        dgvMonthlyReports.Rows[i].Cells[7].Style.ForeColor = Color.ForestGreen;
+                        dgvMonthlyReports.Rows[i].Cells[8].Style.ForeColor = Color.Red;
+                    }
                 }
+                else { lblNoRecord.Show(); }
             }
-           else { lblNoRecord.Show(); }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void btnselect_Click(object sender, EventArgs e)
         {
@@ -168,18 +172,6 @@ namespace PappyjoeMVC.View
             base.OnClick(e);
             e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
         }
-        public void practicedetails(DataTable dt)
-        {
-            if (dt.Rows.Count > 0)
-            {
-                clinicn = dt.Rows[0]["name"].ToString();
-                strclinicname = clinicn.Replace("¤", "'");
-                strphone = dt.Rows[0]["contact_no"].ToString();
-                strStreet = dt.Rows[0]["street_address"].ToString();
-                stremail = dt.Rows[0]["email"].ToString();
-                strwebsite = dt.Rows[0]["website"].ToString();
-            }
-        }
         private void btnprint_Click(object sender, EventArgs e)
         {
             try {
@@ -192,7 +184,16 @@ namespace PappyjoeMVC.View
                 result = MessageBox.Show(message, caption, buttons);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    this.ctrlr.practicedetails();
+                        DataTable dt=this.ctrlr.practicedetails();
+                            if (dt.Rows.Count > 0)
+                            {
+                                clinicn = dt.Rows[0]["name"].ToString();
+                                strclinicname = clinicn.Replace("¤", "'");
+                                strphone = dt.Rows[0]["contact_no"].ToString();
+                                strStreet = dt.Rows[0]["street_address"].ToString();
+                                stremail = dt.Rows[0]["email"].ToString();
+                                strwebsite = dt.Rows[0]["website"].ToString();
+                            }
                 }
                 string Apppath = System.IO.Directory.GetCurrentDirectory();
                 StreamWriter sWrite = new StreamWriter(Apppath + "\\DoctorwiseInvoiceReport.html");
@@ -298,8 +299,8 @@ namespace PappyjoeMVC.View
             else
             { MessageBox.Show("Record Not Found,please change the date and try again !..", "Data not found", MessageBoxButtons.OK, MessageBoxIcon.Information); } 
             }
-            catch(Exception ex)
-            { MessageBox.Show("Printing Error", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error);  }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void dptMonthly_From_CloseUp(object sender, EventArgs e)
         {
@@ -373,6 +374,8 @@ namespace PappyjoeMVC.View
                         }
                         for (int i = 0; i <= dgvMonthlyReports.Rows.Count; i++)
                         {
+                            try
+                            {
                                 for (int j = 0; j < dgvMonthlyReports.Columns.Count; j++)
                                 {
                                     ExcelApp.Cells[i + 6, j + 1] = dgvMonthlyReports.Rows[i].Cells[j].Value.ToString();
@@ -380,6 +383,8 @@ namespace PappyjoeMVC.View
                                     ExcelApp.Cells[i + 6, j + 1].Borders.Color = Color.FromArgb(0, 102, 204);
                                     ExcelApp.Cells[i + 6, j + 1].Font.Size = 8;
                                 }
+                            }
+                            catch { }
                         }
                         ExcelApp.ActiveWorkbook.SaveAs(PathName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
                         ExcelApp.ActiveWorkbook.Saved = true;
@@ -392,7 +397,7 @@ namespace PappyjoeMVC.View
                     MessageBox.Show("No records found,please change the date and try again!..", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
-            { MessageBox.Show("Data Loading Error", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
     }
 }

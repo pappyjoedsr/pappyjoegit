@@ -11,9 +11,9 @@ using PappyjoeMVC.Controller;
 
 namespace PappyjoeMVC.View
 {
-    public partial class communication_settings : Form
+    public partial class Communication_Settings : Form
     {
-        public communication_settings()
+        public Communication_Settings()
         {
             InitializeComponent();
         }

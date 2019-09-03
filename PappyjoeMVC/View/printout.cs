@@ -14,9 +14,9 @@ using System.Drawing.Printing;
 
 namespace PappyjoeMVC.View
 {
-    public partial class printout : Form
+    public partial class Printout : Form
     {
-        printout_controller cntrl;
+        printout_controller cntrl=new printout_controller();
         string orientation="", color="";
         string includeheader="",header, lefttext, righttext, includelogo, logotype;
         string patientdetails="", medhistory="", patientno, address, phone, email, bloodgroup, genderdob, Doctor;
@@ -26,7 +26,7 @@ namespace PappyjoeMVC.View
         public bool invoice_flag = false;
         public bool receipr_flag = false;
         Connection db = new Connection();
-        public printout()
+        public Printout()
         {
             InitializeComponent();
         }

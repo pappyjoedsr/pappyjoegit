@@ -10,150 +10,144 @@ namespace PappyjoeMVC.Controller
 {
     public class Communication_controller
     {
-        Communication_interface intr;
-        Communication_model mdl = new Communication_model();
+        sms_model s = new sms_model();
         common_model cmdl = new common_model();
-        public Communication_controller(Communication_interface inttr)
-        {
-            intr = inttr;
-            intr.setController(this);
-        }
-        public void Get_CompanyNAme()
+        Communication_model mdl = new Communication_model();
+        public DataTable Get_CompanyNAme()
         {
             DataTable dt = cmdl.Get_CompanyNAme();
-            intr.Get_CompanyNAme(dt);
+            return dt;
         }
-        public void Get_DoctorName(string id)
+        public string SendSMS(string User, string password, string Mobile_Number, string Message)
+        {
+            string val = s.SendSMS(User, password, Mobile_Number, Message);
+            return val;
+        }
+        public string SendSMS(string User, string password, string Mobile_Number, string Message, string SID, string Sname, string scheduledDate, string systemdate)
+        {
+            string val = s.SendSMS(User, password, Mobile_Number, Message, SID, Sname, scheduledDate, systemdate);
+            return val;
+        }
+        public string Get_DoctorName(string id)
         {
             string dt = cmdl.Get_DoctorName(id);
-            intr.Get_DoctorName(dt);
+            return dt;
         }
-        public void Patient_search(string txtbox)
+        public DataTable Patient_search(string txtbox)
         {
             DataTable dt = cmdl.Patient_search(txtbox);
-            intr.Patient_search(dt);
+            return dt;
         }
         //sms centre 
-        public int insmsstaff()
+        public int insmsstaff(string patntid,string msg)
         {
-            mdl.patid = intr.patid;
-            mdl.message = intr.message;
-            int j = mdl.insmsstaff();
+            int j = mdl.insmsstaff(patntid,msg);
             return j;
         }
-        public int inssmsgrp()
+        public int inssmsgrp(string patntid, string msg)
         {
-            mdl.patid = intr.patid;
-            mdl.message = intr.message;
-            int k = mdl.insmsgrp();
+            int k = mdl.insmsgrp(patntid, msg);
             return k;
         }
-        public int insbrthsms()
+        public int insbrthsms(string patntid, string msg)
         {
-            mdl.brthpid = intr.brthpid;
-            mdl.message = intr.message;
-            int s = mdl.insbrthsms();
+            int s = mdl.insbrthsms(patntid, msg);
             return s;
         }
-       public void selgrp()
+       public DataTable selgrp()
         {
             DataTable dt = mdl.selgrp();
-            intr.selgrp(dt);
+            return dt;
         }
-       
-        public void selsms()
+        public DataTable selsms()
         {
             DataTable dt = mdl.selsms();
-            intr.selsms(dt);
+            return dt;
         }
-        public int inssms()
+        public int inssms(string patntid,string date, string msg)
         {
-            mdl.patid = intr.patid;
-            mdl.message = intr.message;
-            int j = mdl.inssms();
+            int j = mdl.inssms(patntid,msg);
             return j;
         }
-        public int Save()
+        public int Save(string tmplate)
         {
-            mdl.template = intr.template;
-            int i = mdl.Save_data();
+            int i = mdl.Save_data(tmplate);
             return i;
         }
-        public void LoadData()
+        public DataTable LoadData()
         {
             DataTable dt = mdl.LoadData();
-            intr.LoadData(dt);
+            return dt;
         } 
-        public void selecttemp()
+        public DataTable selecttemp()
         {
             DataTable dt = mdl.selecttemp();
-            intr.selecttemp(dt);
+            return dt;
         }
-        public void LoadGrp()
+        public DataTable LoadGrp()
         {
             DataTable dt = mdl.LoadGrp();
-            intr.LoadGrp(dt);
+            return dt;
         }     
-        public void LoadStaff()
+        public DataTable LoadStaff()
         {
             DataTable dt = mdl.LoadStaff();
-            intr.LoadStaff(dt);
+            return dt;
         } 
-        public void srch(string pname)
+        public DataTable srch(string pname)
         {
             DataTable dt = mdl.srch(pname);
-            intr.srch(dt);
+            return dt;
         }
-        public void srchstaff(string dname)
+        public DataTable srchstaff(string dname)
         {
             DataTable dt = mdl.srchstaff(dname);
-            intr.srchstaff(dt);
+            return dt;
         }
-        public void back()
+        public DataTable back()
         {
             DataTable dt = mdl.back();
-            intr.back(dt);
+            return dt;
         }
-        public void staffback()
+        public DataTable staffback()
         {
             DataTable dt = mdl.Staffback();
-            intr.staffback(dt);
+            return dt;
         }
         //end
         //delivery report
-        public void status(string stime,string etime)
+        public DataTable status(string stime,string etime)
         {
             DataTable dt = mdl.status(stime, etime);
-            intr.status(dt);
+            return dt;
         }
-        public void failcount(string stime, string etime)
+        public int failcount(string stime, string etime)
         {
-            DataTable dt = mdl.failcount(stime, etime);
-            intr.failcount(dt);
+            int t = Convert.ToInt32(mdl.failcount(stime, etime));
+            return t;
         }
-        public void smscount(string stime, string etime)
+        public int smscount(string stime, string etime)
         {
-            DataTable dt = mdl.smscount(stime, etime);
-            intr.smscount(dt);
+            int dt = Convert.ToInt32(mdl.smscount(stime, etime));
+            return dt;
         }
         //end
         //upcoming followup and birthday wish
-        public void upfollowup(string stime, string etime)
+        public DataTable upfollowup(string stime, string etime)
         {
             DataTable dt = mdl.upfollowup(stime, etime);
-            intr.upfollowup(dt);
+            return dt;
         }
-        public void upbirthday(string smonth,string sday,string emonth,string eday)
+        public DataTable upbirthday(string smonth,string sday,string emonth,string eday)
         {
             DataTable dt = mdl.upbirthday(smonth, sday, emonth, eday);
-            intr.upbirthday(dt);
+            return dt;
         }
-        public void birthdaytemp()
+        public DataTable birthdaytemp()
         {
             DataTable dt = mdl.birthdaytemp();
-            intr.birthdaytemp(dt);
+            return dt;
         }
-       
         public string doctr_privillage_for_addnewPatient(string doctor_id)
         {
             string dtb = cmdl.doctr_privillage_for_addnewPatient(doctor_id);

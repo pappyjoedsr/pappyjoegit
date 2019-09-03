@@ -93,7 +93,7 @@ namespace PappyjoeMVC.Model
             get { return _pin; }
             set { _pin = value; }
         }
-        private string _groupid = "";
+        //private string _groupid = "";
         //public string groupid
         //{
         //    get { return _groupid; }

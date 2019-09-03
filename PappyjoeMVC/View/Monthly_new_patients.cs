@@ -7,12 +7,12 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Monthly_new_patients : Form
+    public partial class Monthly_New_Patients : Form
     {
         Monthly_new_patients_controller cntrl=new Monthly_new_patients_controller();
         public string doctor_id = "";
         public int flag = 0;
-        public Monthly_new_patients()
+        public Monthly_New_Patients()
         {
             InitializeComponent();
         }

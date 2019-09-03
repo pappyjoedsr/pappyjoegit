@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Patients_first_appointment : Form
+    public partial class Patients_First_Appointment : Form
     {
         Patients_first_appointment_controller cntrl=new Patients_first_appointment_controller();
         public string names, ptids;
         public string doctor_id = "";
-        public Patients_first_appointment()
+        public Patients_First_Appointment()
         {
             InitializeComponent();
         }

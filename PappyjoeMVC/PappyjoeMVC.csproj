@@ -88,12 +88,10 @@
     <Compile Include="Controller\Clinical_Findings_controller.cs" />
     <Compile Include="Controller\Common_controller.cs" />
     <Compile Include="Controller\Communication_controller.cs" />
-    <Compile Include="Controller\Communication_interface.cs" />
     <Compile Include="Controller\communication_setting_controller.cs" />
     <Compile Include="Controller\contact_controller.cs" />
     <Compile Include="Controller\Daily_appointment_count_controller.cs" />
     <Compile Include="Controller\Daily_Invoice_Report_controller.cs" />
-    <Compile Include="Controller\Daily_Invoice_Report_interface.cs" />
     <Compile Include="Controller\Daily_NewPatients_controller.cs" />
     <Compile Include="Controller\Daily_treatment_count_controller.cs" />
     <Compile Include="Controller\Day_Wise_Receipt_controller.cs" />
@@ -102,7 +100,6 @@
     <Compile Include="Controller\DoctorWise_appointment_report_controller.cs" />
     <Compile Include="Controller\doctor_controller.cs" />
     <Compile Include="Controller\Doctor_Wise_Invoice_controller.cs" />
-    <Compile Include="Controller\Doctor_Wise_Invoice_interface.cs" />
     <Compile Include="Controller\Doctor_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Doctor_Wise_Receipt_interface.cs" />
     <Compile Include="Controller\editpracticedetails_controller.cs" />
@@ -129,7 +126,6 @@
     <Compile Include="Controller\Missing_Checkout_Report_controller.cs" />
     <Compile Include="Controller\Monthly_appointment_count_controller.cs" />
     <Compile Include="Controller\Monthly_Invoice_Report_controller.cs" />
-    <Compile Include="Controller\Monthly_Invoice_Report_interface.cs" />
     <Compile Include="Controller\Monthly_new_patients_controller.cs" />
     <Compile Include="Controller\Month_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Month_Wise_Receipt_interface.cs" />
@@ -228,35 +224,35 @@
     <Compile Include="Model\Vital_Signs_model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\AddAmount.cs">
+    <Compile Include="View\Add_Amount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\AddAmount.Designer.cs">
-      <DependentUpon>AddAmount.cs</DependentUpon>
+    <Compile Include="View\Add_Amount.Designer.cs">
+      <DependentUpon>Add_Amount.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\AddFinishedprocedure.cs">
+    <Compile Include="View\Add_Finished_Procedure.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\AddFinishedprocedure.Designer.cs">
-      <DependentUpon>AddFinishedprocedure.cs</DependentUpon>
+    <Compile Include="View\Add_Finished_Procedure.Designer.cs">
+      <DependentUpon>Add_Finished_Procedure.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\AddNewPatients.cs">
+    <Compile Include="View\Add_New_Patients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\AddNewPatients.designer.cs">
-      <DependentUpon>AddNewPatients.cs</DependentUpon>
+    <Compile Include="View\Add_New_Patients.designer.cs">
+      <DependentUpon>Add_New_Patients.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\AddTreatmentPlan.cs">
+    <Compile Include="View\Add_Treatment_Plan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\AddTreatmentPlan.Designer.cs">
-      <DependentUpon>AddTreatmentPlan.cs</DependentUpon>
+    <Compile Include="View\Add_Treatment_Plan.Designer.cs">
+      <DependentUpon>Add_Treatment_Plan.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Add_ invoice.cs">
+    <Compile Include="View\Add_ Invoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Add_ invoice.Designer.cs">
-      <DependentUpon>Add_ invoice.cs</DependentUpon>
+    <Compile Include="View\Add_ Invoice.Designer.cs">
+      <DependentUpon>Add_ Invoice.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Add_Appointment.cs">
       <SubType>Form</SubType>
@@ -270,11 +266,11 @@
     <Compile Include="View\Add_Attachments.designer.cs">
       <DependentUpon>Add_Attachments.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Add_receipt.cs">
+    <Compile Include="View\Add_Receipt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Add_receipt.Designer.cs">
-      <DependentUpon>Add_receipt.cs</DependentUpon>
+    <Compile Include="View\Add_Receipt.Designer.cs">
+      <DependentUpon>Add_Receipt.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Add_Vital_Signs.cs">
       <SubType>Form</SubType>
@@ -282,11 +278,11 @@
     <Compile Include="View\Add_Vital_Signs.designer.cs">
       <DependentUpon>Add_Vital_Signs.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\AppointmentBooking.cs">
+    <Compile Include="View\Appointment_Booking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\AppointmentBooking.designer.cs">
-      <DependentUpon>AppointmentBooking.cs</DependentUpon>
+    <Compile Include="View\Appointment_Booking.designer.cs">
+      <DependentUpon>Appointment_Booking.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Appointment_for_each_patient_group.cs">
       <SubType>Form</SubType>
@@ -324,11 +320,11 @@
     <Compile Include="View\CaseSheet.Designer.cs">
       <DependentUpon>CaseSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ClinicalNotesAdd.cs">
+    <Compile Include="View\Clinical_Notes_Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ClinicalNotesAdd.designer.cs">
-      <DependentUpon>ClinicalNotesAdd.cs</DependentUpon>
+    <Compile Include="View\Clinical_Notes_Add.designer.cs">
+      <DependentUpon>Clinical_Notes_Add.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Clinical_Findings.cs">
       <SubType>Form</SubType>
@@ -342,17 +338,17 @@
     <Compile Include="View\Communication.designer.cs">
       <DependentUpon>Communication.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\communication_settings.cs">
+    <Compile Include="View\Communication_Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\communication_settings.Designer.cs">
-      <DependentUpon>communication_settings.cs</DependentUpon>
+    <Compile Include="View\Communication_Settings.Designer.cs">
+      <DependentUpon>Communication_Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\consent.cs">
+    <Compile Include="View\Consent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\consent.Designer.cs">
-      <DependentUpon>consent.cs</DependentUpon>
+    <Compile Include="View\Consent.Designer.cs">
+      <DependentUpon>Consent.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Contacts.cs">
       <SubType>Form</SubType>
@@ -360,11 +356,11 @@
     <Compile Include="View\Contacts.Designer.cs">
       <DependentUpon>Contacts.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Daily_appointment_count.cs">
+    <Compile Include="View\Daily_Appointment_Count.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Daily_appointment_count.designer.cs">
-      <DependentUpon>Daily_appointment_count.cs</DependentUpon>
+    <Compile Include="View\Daily_Appointment_Count.designer.cs">
+      <DependentUpon>Daily_Appointment_Count.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Daily_Invoice_Report.cs">
       <SubType>Form</SubType>
@@ -372,17 +368,17 @@
     <Compile Include="View\Daily_Invoice_Report.designer.cs">
       <DependentUpon>Daily_Invoice_Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Daily_NewPatients.cs">
+    <Compile Include="View\Daily_New_Patients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Daily_NewPatients.designer.cs">
-      <DependentUpon>Daily_NewPatients.cs</DependentUpon>
+    <Compile Include="View\Daily_New_Patients.designer.cs">
+      <DependentUpon>Daily_New_Patients.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Daily_treatment_count.cs">
+    <Compile Include="View\Daily_Treatment_Count.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Daily_treatment_count.designer.cs">
-      <DependentUpon>Daily_treatment_count.cs</DependentUpon>
+    <Compile Include="View\Daily_Treatment_Count.designer.cs">
+      <DependentUpon>Daily_Treatment_Count.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Day_Wise_Receipt.cs">
       <SubType>Form</SubType>
@@ -390,23 +386,23 @@
     <Compile Include="View\Day_Wise_Receipt.designer.cs">
       <DependentUpon>Day_Wise_Receipt.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DischargeSummery.cs">
+    <Compile Include="View\Discharge_Summery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\DischargeSummery.Designer.cs">
-      <DependentUpon>DischargeSummery.cs</DependentUpon>
+    <Compile Include="View\Discharge_Summery.Designer.cs">
+      <DependentUpon>Discharge_Summery.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\doctorsPracticedetails.cs">
+    <Compile Include="View\Doctors_Practice_Details.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\doctorsPracticedetails.Designer.cs">
-      <DependentUpon>doctorsPracticedetails.cs</DependentUpon>
+    <Compile Include="View\Doctors_Practice_Details.Designer.cs">
+      <DependentUpon>Doctors_Practice_Details.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DoctorWise_appointment_report.cs">
+    <Compile Include="View\Doctor_Wise_Appointment_Report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\DoctorWise_appointment_report.designer.cs">
-      <DependentUpon>DoctorWise_appointment_report.cs</DependentUpon>
+    <Compile Include="View\Doctor_Wise_Appointment_Report.designer.cs">
+      <DependentUpon>Doctor_Wise_Appointment_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Doctor_Profile.cs">
       <SubType>Form</SubType>
@@ -426,11 +422,11 @@
     <Compile Include="View\Doctor_Wise_Receipt.designer.cs">
       <DependentUpon>Doctor_Wise_Receipt.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\EMR_settings.cs">
+    <Compile Include="View\EMR_Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\EMR_settings.Designer.cs">
-      <DependentUpon>EMR_settings.cs</DependentUpon>
+    <Compile Include="View\EMR_Settings.Designer.cs">
+      <DependentUpon>EMR_Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Expense.cs">
       <SubType>Form</SubType>
@@ -438,59 +434,59 @@
     <Compile Include="View\Expense.Designer.cs">
       <DependentUpon>Expense.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\exportdata.cs">
+    <Compile Include="View\Export_Data.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\exportdata.Designer.cs">
-      <DependentUpon>exportdata.cs</DependentUpon>
+    <Compile Include="View\Export_Data.Designer.cs">
+      <DependentUpon>Export_Data.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FinishedProcedure.cs">
+    <Compile Include="View\Finished_Procedure.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FinishedProcedure.Designer.cs">
-      <DependentUpon>FinishedProcedure.cs</DependentUpon>
+    <Compile Include="View\Finished_Procedure.Designer.cs">
+      <DependentUpon>Finished_Procedure.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmAddCategeory.cs">
+    <Compile Include="View\Add_Categeory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmAddCategeory.Designer.cs">
-      <DependentUpon>frmAddCategeory.cs</DependentUpon>
+    <Compile Include="View\Add_Categeory.Designer.cs">
+      <DependentUpon>Add_Categeory.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmAddDrug.cs">
+    <Compile Include="View\Add_Drug.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmAddDrug.designer.cs">
-      <DependentUpon>frmAddDrug.cs</DependentUpon>
+    <Compile Include="View\Add_Drug.designer.cs">
+      <DependentUpon>Add_Drug.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmAddUnits.cs">
+    <Compile Include="View\Add_Units.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmAddUnits.Designer.cs">
-      <DependentUpon>frmAddUnits.cs</DependentUpon>
+    <Compile Include="View\Add_Units.Designer.cs">
+      <DependentUpon>Add_Units.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmeditpracticedetails.cs">
+    <Compile Include="View\Edit_Practice_Details.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmeditpracticedetails.Designer.cs">
-      <DependentUpon>frmeditpracticedetails.cs</DependentUpon>
+    <Compile Include="View\Edit_Practice_Details.Designer.cs">
+      <DependentUpon>Edit_Practice_Details.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmimagezoom.cs">
+    <Compile Include="View\Image_Zoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmimagezoom.designer.cs">
-      <DependentUpon>frmimagezoom.cs</DependentUpon>
+    <Compile Include="View\Image_Zoom.designer.cs">
+      <DependentUpon>Image_Zoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmItemList.cs">
+    <Compile Include="View\Item_List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmItemList.Designer.cs">
-      <DependentUpon>FrmItemList.cs</DependentUpon>
+    <Compile Include="View\Item_List.Designer.cs">
+      <DependentUpon>Item_List.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmMain.cs">
+    <Compile Include="View\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmMain.Designer.cs">
-      <DependentUpon>FrmMain.cs</DependentUpon>
+    <Compile Include="View\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmManufacture.cs">
       <SubType>Form</SubType>
@@ -540,17 +536,17 @@
     <Compile Include="View\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MedicalCertificate.cs">
+    <Compile Include="View\Medical_Certificate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MedicalCertificate.Designer.cs">
-      <DependentUpon>MedicalCertificate.cs</DependentUpon>
+    <Compile Include="View\Medical_Certificate.Designer.cs">
+      <DependentUpon>Medical_Certificate.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Medical_history.cs">
+    <Compile Include="View\Medical_History.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Medical_history.Designer.cs">
-      <DependentUpon>Medical_history.cs</DependentUpon>
+    <Compile Include="View\Medical_History.Designer.cs">
+      <DependentUpon>Medical_History.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Missing_Checkout_Report.cs">
       <SubType>Form</SubType>
@@ -558,11 +554,11 @@
     <Compile Include="View\Missing_Checkout_Report.designer.cs">
       <DependentUpon>Missing_Checkout_Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Monthly_appointment_count.cs">
+    <Compile Include="View\Monthly_Appointment_Count.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Monthly_appointment_count.designer.cs">
-      <DependentUpon>Monthly_appointment_count.cs</DependentUpon>
+    <Compile Include="View\Monthly_Appointment_Count.designer.cs">
+      <DependentUpon>Monthly_Appointment_Count.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Monthly_Invoice_Report.cs">
       <SubType>Form</SubType>
@@ -570,11 +566,11 @@
     <Compile Include="View\Monthly_Invoice_Report.designer.cs">
       <DependentUpon>Monthly_Invoice_Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Monthly_new_patients.cs">
+    <Compile Include="View\Monthly_New_Patients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Monthly_new_patients.designer.cs">
-      <DependentUpon>Monthly_new_patients.cs</DependentUpon>
+    <Compile Include="View\Monthly_New_Patients.designer.cs">
+      <DependentUpon>Monthly_New_Patients.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Month_Wise_Receipt.cs">
       <SubType>Form</SubType>
@@ -582,41 +578,41 @@
     <Compile Include="View\Month_Wise_Receipt.designer.cs">
       <DependentUpon>Month_Wise_Receipt.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\New_CreditAccount.cs">
+    <Compile Include="View\New_Credit_Account.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\New_CreditAccount.designer.cs">
-      <DependentUpon>New_CreditAccount.cs</DependentUpon>
+    <Compile Include="View\New_Credit_Account.designer.cs">
+      <DependentUpon>New_Credit_Account.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\New_DebitAccount.cs">
+    <Compile Include="View\New_Debit_Account.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\New_DebitAccount.designer.cs">
-      <DependentUpon>New_DebitAccount.cs</DependentUpon>
+    <Compile Include="View\New_Debit_Account.designer.cs">
+      <DependentUpon>New_Debit_Account.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\patients.cs">
+    <Compile Include="View\Patients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\patients.Designer.cs">
-      <DependentUpon>patients.cs</DependentUpon>
+    <Compile Include="View\Patients.Designer.cs">
+      <DependentUpon>Patients.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Patients_first_appointment.cs">
+    <Compile Include="View\Patients_First_Appointment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Patients_first_appointment.designer.cs">
-      <DependentUpon>Patients_first_appointment.cs</DependentUpon>
+    <Compile Include="View\Patients_First_Appointment.designer.cs">
+      <DependentUpon>Patients_First_Appointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\patient_profile_details.cs">
+    <Compile Include="View\Patient_Profile_Details.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\patient_profile_details.designer.cs">
-      <DependentUpon>patient_profile_details.cs</DependentUpon>
+    <Compile Include="View\Patient_Profile_Details.designer.cs">
+      <DependentUpon>Patient_Profile_Details.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\patient_profile_Edit.cs">
+    <Compile Include="View\Patient_Profile_Edit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\patient_profile_Edit.designer.cs">
-      <DependentUpon>patient_profile_Edit.cs</DependentUpon>
+    <Compile Include="View\Patient_Profile_Edit.designer.cs">
+      <DependentUpon>Patient_Profile_Edit.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Paymode_Wise_Receipt.cs">
       <SubType>Form</SubType>
@@ -624,11 +620,11 @@
     <Compile Include="View\Paymode_Wise_Receipt.designer.cs">
       <DependentUpon>Paymode_Wise_Receipt.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\PracticeDetails.cs">
+    <Compile Include="View\Practice_Details.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\PracticeDetails.Designer.cs">
-      <DependentUpon>PracticeDetails.cs</DependentUpon>
+    <Compile Include="View\Practice_Details.Designer.cs">
+      <DependentUpon>Practice_Details.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Practice_Staff_Setting.cs">
       <SubType>Form</SubType>
@@ -636,47 +632,47 @@
     <Compile Include="View\Practice_Staff_Setting.Designer.cs">
       <DependentUpon>Practice_Staff_Setting.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\PrescriptionAdd.cs">
+    <Compile Include="View\Prescription_Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\PrescriptionAdd.Designer.cs">
-      <DependentUpon>PrescriptionAdd.cs</DependentUpon>
+    <Compile Include="View\Prescription_Add.Designer.cs">
+      <DependentUpon>Prescription_Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\prescriptionShow.cs">
+    <Compile Include="View\Prescription_Show.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\prescriptionShow.Designer.cs">
-      <DependentUpon>prescriptionShow.cs</DependentUpon>
+    <Compile Include="View\Prescription_Show.Designer.cs">
+      <DependentUpon>Prescription_Show.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Prescription_settings.cs">
+    <Compile Include="View\Prescription_Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Prescription_settings.Designer.cs">
-      <DependentUpon>Prescription_settings.cs</DependentUpon>
+    <Compile Include="View\Prescription_Settings.Designer.cs">
+      <DependentUpon>Prescription_Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\printout.cs">
+    <Compile Include="View\Printout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\printout.Designer.cs">
-      <DependentUpon>printout.cs</DependentUpon>
+    <Compile Include="View\Printout.Designer.cs">
+      <DependentUpon>Printout.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Print_label.cs">
+    <Compile Include="View\Print_Label.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Print_label.Designer.cs">
-      <DependentUpon>Print_label.cs</DependentUpon>
+    <Compile Include="View\Print_Label.Designer.cs">
+      <DependentUpon>Print_Label.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\print_label_print.cs">
+    <Compile Include="View\Print_Label_Print.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\print_label_print.Designer.cs">
-      <DependentUpon>print_label_print.cs</DependentUpon>
+    <Compile Include="View\Print_Label_Print.Designer.cs">
+      <DependentUpon>Print_Label_Print.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Procedure_catalog.cs">
+    <Compile Include="View\Procedure_Catalog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Procedure_catalog.Designer.cs">
-      <DependentUpon>Procedure_catalog.cs</DependentUpon>
+    <Compile Include="View\Procedure_Catalog.Designer.cs">
+      <DependentUpon>Procedure_Catalog.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Receipt.cs">
       <SubType>Form</SubType>
@@ -690,11 +686,11 @@
     <Compile Include="View\Reports.designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SearchAvailablePatient.cs">
+    <Compile Include="View\Search_Available_Patient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\SearchAvailablePatient.Designer.cs">
-      <DependentUpon>SearchAvailablePatient.cs</DependentUpon>
+    <Compile Include="View\Search_Available_Patient.Designer.cs">
+      <DependentUpon>Search_Available_Patient.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Show_Appointment.cs">
       <SubType>Form</SubType>
@@ -702,11 +698,11 @@
     <Compile Include="View\Show_Appointment.designer.cs">
       <DependentUpon>Show_Appointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TreatmentPlans.cs">
+    <Compile Include="View\Treatment_Plans.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TreatmentPlans.Designer.cs">
-      <DependentUpon>TreatmentPlans.cs</DependentUpon>
+    <Compile Include="View\Treatment_Plans.Designer.cs">
+      <DependentUpon>Treatment_Plans.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Visiting_History.cs">
       <SubType>Form</SubType>
@@ -730,20 +726,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\AddAmount.resx">
-      <DependentUpon>AddAmount.cs</DependentUpon>
+    <EmbeddedResource Include="View\Add_Amount.resx">
+      <DependentUpon>Add_Amount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\AddFinishedprocedure.resx">
-      <DependentUpon>AddFinishedprocedure.cs</DependentUpon>
+    <EmbeddedResource Include="View\Add_Finished_Procedure.resx">
+      <DependentUpon>Add_Finished_Procedure.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\AddNewPatients.resx">
-      <DependentUpon>AddNewPatients.cs</DependentUpon>
+    <EmbeddedResource Include="View\Add_New_Patients.resx">
+      <DependentUpon>Add_New_Patients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\AddTreatmentPlan.resx">
-      <DependentUpon>AddTreatmentPlan.cs</DependentUpon>
+    <EmbeddedResource Include="View\Add_Treatment_Plan.resx">
+      <DependentUpon>Add_Treatment_Plan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Add_ invoice.resx">
-      <DependentUpon>Add_ invoice.cs</DependentUpon>
+    <EmbeddedResource Include="View\Add_ Invoice.resx">
+      <DependentUpon>Add_ Invoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Add_Appointment.resx">
       <DependentUpon>Add_Appointment.cs</DependentUpon>
@@ -751,14 +747,14 @@
     <EmbeddedResource Include="View\Add_Attachments.resx">
       <DependentUpon>Add_Attachments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Add_receipt.resx">
-      <DependentUpon>Add_receipt.cs</DependentUpon>
+    <EmbeddedResource Include="View\Add_Receipt.resx">
+      <DependentUpon>Add_Receipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Add_Vital_Signs.resx">
       <DependentUpon>Add_Vital_Signs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\AppointmentBooking.resx">
-      <DependentUpon>AppointmentBooking.cs</DependentUpon>
+    <EmbeddedResource Include="View\Appointment_Booking.resx">
+      <DependentUpon>Appointment_Booking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Appointment_for_each_patient_group.resx">
       <DependentUpon>Appointment_for_each_patient_group.cs</DependentUpon>
@@ -778,8 +774,8 @@
     <EmbeddedResource Include="View\CaseSheet.resx">
       <DependentUpon>CaseSheet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ClinicalNotesAdd.resx">
-      <DependentUpon>ClinicalNotesAdd.cs</DependentUpon>
+    <EmbeddedResource Include="View\Clinical_Notes_Add.resx">
+      <DependentUpon>Clinical_Notes_Add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Clinical_Findings.resx">
       <DependentUpon>Clinical_Findings.cs</DependentUpon>
@@ -787,38 +783,38 @@
     <EmbeddedResource Include="View\Communication.resx">
       <DependentUpon>Communication.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\communication_settings.resx">
-      <DependentUpon>communication_settings.cs</DependentUpon>
+    <EmbeddedResource Include="View\Communication_Settings.resx">
+      <DependentUpon>Communication_Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\consent.resx">
-      <DependentUpon>consent.cs</DependentUpon>
+    <EmbeddedResource Include="View\Consent.resx">
+      <DependentUpon>Consent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Contacts.resx">
       <DependentUpon>Contacts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Daily_appointment_count.resx">
-      <DependentUpon>Daily_appointment_count.cs</DependentUpon>
+    <EmbeddedResource Include="View\Daily_Appointment_Count.resx">
+      <DependentUpon>Daily_Appointment_Count.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Daily_Invoice_Report.resx">
       <DependentUpon>Daily_Invoice_Report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Daily_NewPatients.resx">
-      <DependentUpon>Daily_NewPatients.cs</DependentUpon>
+    <EmbeddedResource Include="View\Daily_New_Patients.resx">
+      <DependentUpon>Daily_New_Patients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Daily_treatment_count.resx">
-      <DependentUpon>Daily_treatment_count.cs</DependentUpon>
+    <EmbeddedResource Include="View\Daily_Treatment_Count.resx">
+      <DependentUpon>Daily_Treatment_Count.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Day_Wise_Receipt.resx">
       <DependentUpon>Day_Wise_Receipt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\DischargeSummery.resx">
-      <DependentUpon>DischargeSummery.cs</DependentUpon>
+    <EmbeddedResource Include="View\Discharge_Summery.resx">
+      <DependentUpon>Discharge_Summery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\doctorsPracticedetails.resx">
-      <DependentUpon>doctorsPracticedetails.cs</DependentUpon>
+    <EmbeddedResource Include="View\Doctors_Practice_Details.resx">
+      <DependentUpon>Doctors_Practice_Details.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\DoctorWise_appointment_report.resx">
-      <DependentUpon>DoctorWise_appointment_report.cs</DependentUpon>
+    <EmbeddedResource Include="View\Doctor_Wise_Appointment_Report.resx">
+      <DependentUpon>Doctor_Wise_Appointment_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Doctor_Profile.resx">
       <DependentUpon>Doctor_Profile.cs</DependentUpon>
@@ -829,35 +825,35 @@
     <EmbeddedResource Include="View\Doctor_Wise_Receipt.resx">
       <DependentUpon>Doctor_Wise_Receipt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\EMR_settings.resx">
-      <DependentUpon>EMR_settings.cs</DependentUpon>
+    <EmbeddedResource Include="View\EMR_Settings.resx">
+      <DependentUpon>EMR_Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Expense.resx">
       <DependentUpon>Expense.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\exportdata.resx">
-      <DependentUpon>exportdata.cs</DependentUpon>
+    <EmbeddedResource Include="View\Export_Data.resx">
+      <DependentUpon>Export_Data.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FinishedProcedure.resx">
-      <DependentUpon>FinishedProcedure.cs</DependentUpon>
+    <EmbeddedResource Include="View\Finished_Procedure.resx">
+      <DependentUpon>Finished_Procedure.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmAddCategeory.resx">
-      <DependentUpon>frmAddCategeory.cs</DependentUpon>
+    <EmbeddedResource Include="View\Add_Categeory.resx">
+      <DependentUpon>Add_Categeory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmAddDrug.resx">
-      <DependentUpon>frmAddDrug.cs</DependentUpon>
+    <EmbeddedResource Include="View\Add_Drug.resx">
+      <DependentUpon>Add_Drug.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmAddUnits.resx">
-      <DependentUpon>frmAddUnits.cs</DependentUpon>
+    <EmbeddedResource Include="View\Add_Units.resx">
+      <DependentUpon>Add_Units.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmeditpracticedetails.resx">
-      <DependentUpon>frmeditpracticedetails.cs</DependentUpon>
+    <EmbeddedResource Include="View\Edit_Practice_Details.resx">
+      <DependentUpon>Edit_Practice_Details.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmimagezoom.resx">
-      <DependentUpon>frmimagezoom.cs</DependentUpon>
+    <EmbeddedResource Include="View\Image_Zoom.resx">
+      <DependentUpon>Image_Zoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmItemList.resx">
-      <DependentUpon>FrmItemList.cs</DependentUpon>
+    <EmbeddedResource Include="View\Item_List.resx">
+      <DependentUpon>Item_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmManufacture.resx">
       <DependentUpon>FrmManufacture.cs</DependentUpon>
@@ -883,74 +879,74 @@
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MedicalCertificate.resx">
-      <DependentUpon>MedicalCertificate.cs</DependentUpon>
+    <EmbeddedResource Include="View\Medical_Certificate.resx">
+      <DependentUpon>Medical_Certificate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Medical_history.resx">
-      <DependentUpon>Medical_history.cs</DependentUpon>
+    <EmbeddedResource Include="View\Medical_History.resx">
+      <DependentUpon>Medical_History.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Missing_Checkout_Report.resx">
       <DependentUpon>Missing_Checkout_Report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Monthly_appointment_count.resx">
-      <DependentUpon>Monthly_appointment_count.cs</DependentUpon>
+    <EmbeddedResource Include="View\Monthly_Appointment_Count.resx">
+      <DependentUpon>Monthly_Appointment_Count.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Monthly_Invoice_Report.resx">
       <DependentUpon>Monthly_Invoice_Report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Monthly_new_patients.resx">
-      <DependentUpon>Monthly_new_patients.cs</DependentUpon>
+    <EmbeddedResource Include="View\Monthly_New_Patients.resx">
+      <DependentUpon>Monthly_New_Patients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Month_Wise_Receipt.resx">
       <DependentUpon>Month_Wise_Receipt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\New_CreditAccount.resx">
-      <DependentUpon>New_CreditAccount.cs</DependentUpon>
+    <EmbeddedResource Include="View\New_Credit_Account.resx">
+      <DependentUpon>New_Credit_Account.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\New_DebitAccount.resx">
-      <DependentUpon>New_DebitAccount.cs</DependentUpon>
+    <EmbeddedResource Include="View\New_Debit_Account.resx">
+      <DependentUpon>New_Debit_Account.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\patients.resx">
-      <DependentUpon>patients.cs</DependentUpon>
+    <EmbeddedResource Include="View\Patients.resx">
+      <DependentUpon>Patients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Patients_first_appointment.resx">
-      <DependentUpon>Patients_first_appointment.cs</DependentUpon>
+    <EmbeddedResource Include="View\Patients_First_Appointment.resx">
+      <DependentUpon>Patients_First_Appointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\patient_profile_details.resx">
-      <DependentUpon>patient_profile_details.cs</DependentUpon>
+    <EmbeddedResource Include="View\Patient_Profile_Details.resx">
+      <DependentUpon>Patient_Profile_Details.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\patient_profile_Edit.resx">
-      <DependentUpon>patient_profile_Edit.cs</DependentUpon>
+    <EmbeddedResource Include="View\Patient_Profile_Edit.resx">
+      <DependentUpon>Patient_Profile_Edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Paymode_Wise_Receipt.resx">
       <DependentUpon>Paymode_Wise_Receipt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\PracticeDetails.resx">
-      <DependentUpon>PracticeDetails.cs</DependentUpon>
+    <EmbeddedResource Include="View\Practice_Details.resx">
+      <DependentUpon>Practice_Details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Practice_Staff_Setting.resx">
       <DependentUpon>Practice_Staff_Setting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\PrescriptionAdd.resx">
-      <DependentUpon>PrescriptionAdd.cs</DependentUpon>
+    <EmbeddedResource Include="View\Prescription_Add.resx">
+      <DependentUpon>Prescription_Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\prescriptionShow.resx">
-      <DependentUpon>prescriptionShow.cs</DependentUpon>
+    <EmbeddedResource Include="View\Prescription_Show.resx">
+      <DependentUpon>Prescription_Show.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Prescription_settings.resx">
-      <DependentUpon>Prescription_settings.cs</DependentUpon>
+    <EmbeddedResource Include="View\Prescription_Settings.resx">
+      <DependentUpon>Prescription_Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\printout.resx">
-      <DependentUpon>printout.cs</DependentUpon>
+    <EmbeddedResource Include="View\Printout.resx">
+      <DependentUpon>Printout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Print_label.resx">
-      <DependentUpon>Print_label.cs</DependentUpon>
+    <EmbeddedResource Include="View\Print_Label.resx">
+      <DependentUpon>Print_Label.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\print_label_print.resx">
-      <DependentUpon>print_label_print.cs</DependentUpon>
+    <EmbeddedResource Include="View\Print_Label_Print.resx">
+      <DependentUpon>Print_Label_Print.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Procedure_catalog.resx">
-      <DependentUpon>Procedure_catalog.cs</DependentUpon>
+    <EmbeddedResource Include="View\Procedure_Catalog.resx">
+      <DependentUpon>Procedure_Catalog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Receipt.resx">
       <DependentUpon>Receipt.cs</DependentUpon>
@@ -958,14 +954,14 @@
     <EmbeddedResource Include="View\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\SearchAvailablePatient.resx">
-      <DependentUpon>SearchAvailablePatient.cs</DependentUpon>
+    <EmbeddedResource Include="View\Search_Available_Patient.resx">
+      <DependentUpon>Search_Available_Patient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Show_Appointment.resx">
       <DependentUpon>Show_Appointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TreatmentPlans.resx">
-      <DependentUpon>TreatmentPlans.cs</DependentUpon>
+    <EmbeddedResource Include="View\Treatment_Plans.resx">
+      <DependentUpon>Treatment_Plans.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Visiting_History.resx">
       <DependentUpon>Visiting_History.cs</DependentUpon>

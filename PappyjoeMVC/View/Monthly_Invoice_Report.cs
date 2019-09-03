@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Monthly_Invoice_Report : Form,Monthly_Invoice_Report_interface
+    public partial class Monthly_Invoice_Report : Form
     {
         public Monthly_Invoice_Report()
         {
@@ -21,64 +21,54 @@ namespace PappyjoeMVC.View
         int ID = 0,slno = 0;
         Double sum = 0, sum1 = 0, sum2 = 0, sum3 = 0;
         public string doctor_id = "",select_dr_id = "0",strclinicname = "", strStreet = "", stremail = "", strwebsite = "", strphone = "",clinicn = "",PathName = "";
-        Monthly_Invoice_Report_controller ctrlr;
-        public void setController(Monthly_Invoice_Report_controller controller)
-        {
-            ctrlr = controller;
-        }
-        public void getdocname(DataTable doctor_rs)
-        {
-            if (doctor_rs.Rows.Count > 0)
-            {
-                for (int i = 0; i < doctor_rs.Rows.Count; i++)
-                {
-                    combodoctors.Items.Add(doctor_rs.Rows[i]["doctor_name"].ToString());
-                    combodoctors.ValueMember = doctor_rs.Rows[i]["id"].ToString();
-                    combodoctors.DisplayMember = doctor_rs.Rows[i]["doctor_name"].ToString();
-                }
-            }
-        }
+        Monthly_Invoice_Report_controller ctrlr=new Monthly_Invoice_Report_controller();
         private void Monthly_Invoice_Report_Load(object sender, EventArgs e)
         {
-            dgvMonthlyReports.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
-            dgvMonthlyReports.EnableHeadersVisualStyles = false;
-            this.dgvMonthlyReports.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False;
-            dgvMonthlyReports.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            foreach (DataGridViewColumn cl in dgvMonthlyReports.Columns)
+            try
             {
-                cl.SortMode = DataGridViewColumnSortMode.NotSortable;
+                dgvMonthlyReports.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
+                dgvMonthlyReports.EnableHeadersVisualStyles = false;
+                this.dgvMonthlyReports.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False;
+                dgvMonthlyReports.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                foreach (DataGridViewColumn cl in dgvMonthlyReports.Columns)
+                {
+                    cl.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
+                combodoctors.Items.Add("All Doctor");
+                combodoctors.ValueMember = "0";
+                combodoctors.DisplayMember = "All Doctor";
+                DataTable doctor_rs = this.ctrlr.getdocname();
+                if (doctor_rs.Rows.Count > 0)
+                {
+                    for (int i = 0; i < doctor_rs.Rows.Count; i++)
+                    {
+                        combodoctors.Items.Add(doctor_rs.Rows[i]["doctor_name"].ToString());
+                        combodoctors.ValueMember = doctor_rs.Rows[i]["id"].ToString();
+                        combodoctors.DisplayMember = doctor_rs.Rows[i]["doctor_name"].ToString();
+                    }
+                }
+                combodoctors.SelectedIndex = 0;
+                dptMonthly_From.Value = DateTime.Now.AddMonths(-1).Date;
+                dptMonthly_To.Value = DateTime.Now.Date;
+                gridload();
+                dgvMonthlyReports.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvMonthlyReports.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvMonthlyReports.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvMonthlyReports.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvMonthlyReports.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvMonthlyReports.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvMonthlyReports.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvMonthlyReports.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvMonthlyReports.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvMonthlyReports.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                foreach (DataGridViewColumn cl in dgvMonthlyReports.Columns)
+                {
+                    cl.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    cl.Width = 100;
+                }
             }
-            combodoctors.Items.Add("All Doctor");
-            combodoctors.ValueMember = "0";
-            combodoctors.DisplayMember = "All Doctor";
-            this.ctrlr.getdocname();
-            combodoctors.SelectedIndex = 0;
-            dptMonthly_From.Value = DateTime.Now.AddMonths(-1).Date;
-            dptMonthly_To.Value = DateTime.Now.Date;
-            gridload();
-            dgvMonthlyReports.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvMonthlyReports.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvMonthlyReports.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvMonthlyReports.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvMonthlyReports.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvMonthlyReports.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvMonthlyReports.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvMonthlyReports.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvMonthlyReports.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvMonthlyReports.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            foreach (DataGridViewColumn cl in dgvMonthlyReports.Columns)
-            {
-                cl.SortMode = DataGridViewColumnSortMode.NotSortable;
-                cl.Width = 100;
-            }
-        }
-        public void Get_DoctorId(string dt)
-        {
-            if (dt!="")
-            {
-                select_dr_id = dt.ToString();
-                ID = int.Parse(select_dr_id);
-            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public void getdata(DataTable dt1)
         {
@@ -114,8 +104,8 @@ namespace PappyjoeMVC.View
                 else
                 {  lblNoRecord.Show(); }
             }
-            catch(Exception ex)
-            { MessageBox.Show("Data Loading Error", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public void getdata2(DataTable dt1)
         {
@@ -151,51 +141,49 @@ namespace PappyjoeMVC.View
                 else
                 {  lblNoRecord.Show(); }
             }
-            catch(Exception ex)
-            { MessageBox.Show("Data Loading Error ", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public void gridload()
         {
-            lblNoRecord.Hide();
-            DataTable dt1 = new DataTable();
-            dgvMonthlyReports.Rows.Clear();
-            sum = 0; sum1 = 0; sum2 = 0; sum3 = 0;
-            if (combodoctors.SelectedIndex == -1){ }
-            else
+            try
             {
-                string drid = combodoctors.SelectedItem.ToString();
-                this.ctrlr.Get_DoctorId(drid);
+                lblNoRecord.Hide();
+                DataTable dt1 = new DataTable();
+                dgvMonthlyReports.Rows.Clear();
+                sum = 0; sum1 = 0; sum2 = 0; sum3 = 0;
+                if (combodoctors.SelectedIndex == -1) { }
+                else
+                {
+                    string drid = combodoctors.SelectedItem.ToString();
+                    select_dr_id = this.ctrlr.Get_DoctorId(drid);
+                    ID = int.Parse(select_dr_id);
+                }
+                if (ID != 0)
+                {
+                    DataTable data = this.ctrlr.getdata(dptMonthly_From.Text, dptMonthly_To.Text, ID);
+                    getdata(data);
+                }
+                else
+                {
+                    DataTable data2 = this.ctrlr.getdata2(dptMonthly_From.Text, dptMonthly_To.Text);
+                    getdata2(data2);
+                }
+
+                for (int i = 0; i < dgvMonthlyReports.Rows.Count; i++)
+                {
+                    sum += Convert.ToDouble(dgvMonthlyReports.Rows[i].Cells["grant_total"].Value);
+                    sum1 += Convert.ToDouble(dgvMonthlyReports.Rows[i].Cells["total_payment"].Value);
+                    sum2 += Convert.ToDouble(dgvMonthlyReports.Rows[i].Cells["due"].Value);
+                    sum3 += Convert.ToDouble(dgvMonthlyReports.Rows[i].Cells["AMOUNT"].Value);
+                }
+                lbltotal1.Text = sum.ToString("0.00");
+                LabTotal3.Text = sum3.ToString("0.00");
+                lbltotal2.Text = sum1.ToString("0.00");
+                lbltotal3.Text = sum2.ToString("0.00");
             }
-            if (ID != 0)
-            {
-              this.ctrlr.getdata(dptMonthly_From.Text,dptMonthly_To.Text,ID);
-            }
-            else
-            {this.ctrlr.getdata2(dptMonthly_From.Text,dptMonthly_To.Text); }
-           
-            for (int i = 0; i < dgvMonthlyReports.Rows.Count; i++)
-            {
-                sum += Convert.ToDouble(dgvMonthlyReports.Rows[i].Cells["grant_total"].Value);
-                sum1 += Convert.ToDouble(dgvMonthlyReports.Rows[i].Cells["total_payment"].Value);
-                sum2 += Convert.ToDouble(dgvMonthlyReports.Rows[i].Cells["due"].Value);
-                sum3 += Convert.ToDouble(dgvMonthlyReports.Rows[i].Cells["AMOUNT"].Value);
-            }
-            lbltotal1.Text = sum.ToString("0.00");
-            LabTotal3.Text = sum3.ToString("0.00");
-            lbltotal2.Text = sum1.ToString("0.00");
-            lbltotal3.Text = sum2.ToString("0.00");
-        }
-        public void practicedetails(DataTable dt)
-        {
-            if (dt.Rows.Count > 0)
-            {
-                clinicn = dt.Rows[0]["name"].ToString();
-                strclinicname = clinicn.Replace("¤", "'");
-                strphone = dt.Rows[0]["contact_no"].ToString();
-                strStreet = dt.Rows[0]["street_address"].ToString();
-                stremail = dt.Rows[0]["email"].ToString();
-                strwebsite = dt.Rows[0]["website"].ToString();
-            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void buttonClose_Click_1(object sender, EventArgs e)
         {
@@ -250,6 +238,8 @@ namespace PappyjoeMVC.View
                         }
                         for (int i = 0; i <= dgvMonthlyReports.Rows.Count; i++)
                         {
+                            try
+                            {
                                 for (int j = 0; j < dgvMonthlyReports.Columns.Count; j++)
                                 {
                                     ExcelApp.Cells[i + 6, j + 1] = dgvMonthlyReports.Rows[i].Cells[j].Value.ToString();
@@ -257,6 +247,8 @@ namespace PappyjoeMVC.View
                                     ExcelApp.Cells[i + 6, j + 1].Borders.Color = Color.FromArgb(0, 102, 204);
                                     ExcelApp.Cells[i + 6, j + 1].Font.Size = 8;
                                 }
+                            }
+                            catch { }
                         }
                         ExcelApp.ActiveWorkbook.SaveAs(PathName, Microsoft.Office.Interop.Excel.XlFileFormat.xlXMLSpreadsheet, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange);
                         ExcelApp.ActiveWorkbook.Saved = true;
@@ -268,7 +260,7 @@ namespace PappyjoeMVC.View
                     MessageBox.Show("No records found,please change the date and try again!..", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
-            { MessageBox.Show("Data Loading Error ", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void btnprint_Click(object sender, EventArgs e)
         {
@@ -284,7 +276,16 @@ namespace PappyjoeMVC.View
                     int sl = 0;
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        this.ctrlr.practicedetails();
+                        DataTable dt=this.ctrlr.practicedetails();
+                            if (dt.Rows.Count > 0)
+                            {
+                                clinicn = dt.Rows[0]["name"].ToString();
+                                strclinicname = clinicn.Replace("¤", "'");
+                                strphone = dt.Rows[0]["contact_no"].ToString();
+                                strStreet = dt.Rows[0]["street_address"].ToString();
+                                stremail = dt.Rows[0]["email"].ToString();
+                                strwebsite = dt.Rows[0]["website"].ToString();
+                            }
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
                     StreamWriter sWrite = new StreamWriter(Apppath + "\\MonthlyInvoiceReport.html");
@@ -393,8 +394,8 @@ namespace PappyjoeMVC.View
                 else
                 {MessageBox.Show("No Record Found,please change the date and try again !..", "Data not found", MessageBoxButtons.OK, MessageBoxIcon.Information);}
             }
-            catch(Exception ex)
-            { MessageBox.Show("Printing Error", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void dptMonthly_From_CloseUp(object sender, EventArgs e)
         {
@@ -412,7 +413,7 @@ namespace PappyjoeMVC.View
             var dateTo = dptMonthly_To.Value.ToShortDateString();
             if (Convert.ToDateTime(dateFrom).Date > Convert.ToDateTime(dateTo).Date)
             {
-                MessageBox.Show("From date should be less than two date");
+                MessageBox.Show("From date should be less than to date");
                 dptMonthly_To.Value = DateTime.Today;
             }
         }

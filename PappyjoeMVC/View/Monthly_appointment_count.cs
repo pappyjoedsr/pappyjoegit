@@ -8,14 +8,14 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Monthly_appointment_count : Form
+    public partial class Monthly_Appointment_Count : Form
     {
         Monthly_appointment_count_controller cntrl=new Monthly_appointment_count_controller();
         public string doctor_id = "";
         public int total = 0;
         private string select_dr_id = "0";
         private string drctid = "";
-        public Monthly_appointment_count()
+        public Monthly_Appointment_Count()
         {
             InitializeComponent();
         }

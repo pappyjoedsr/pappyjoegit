@@ -478,7 +478,7 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        var form2 = new ClinicalNotesAdd();
+                        var form2 = new Clinical_Notes_Add();
                         //ClinicalNotesAdd_controller cnt = new ClinicalNotesAdd_controller(form2);
                         form2.doctor_id = doctor_id;
                         form2.patient_id = patient_id;
@@ -489,7 +489,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    var form2 = new ClinicalNotesAdd();
+                    var form2 = new Clinical_Notes_Add();
                     //ClinicalNotesAdd_controller cnt = new ClinicalNotesAdd_controller(form2);
                     form2.doctor_id = doctor_id;
                     form2.patient_id = patient_id;
@@ -1040,7 +1040,7 @@ namespace PappyjoeMVC.View
 
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.patient_profile_details();
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
             profile_details_controller dnt = new profile_details_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
@@ -1506,7 +1506,7 @@ namespace PappyjoeMVC.View
                     {
                         if (clinic_id != "0")
                         {
-                            var form2 = new PappyjoeMVC.View.ClinicalNotesAdd();
+                            var form2 = new PappyjoeMVC.View.Clinical_Notes_Add();
                             //ClinicalNotesAdd_controller cnt = new ClinicalNotesAdd_controller(form2);
                             form2.clinic_id = clinic_id;
                             form2.patient_id = patient_id;
@@ -1521,7 +1521,7 @@ namespace PappyjoeMVC.View
                 {
                     if (clinic_id != "0")
                     {
-                        var form2 = new PappyjoeMVC.View.ClinicalNotesAdd();
+                        var form2 = new PappyjoeMVC.View.Clinical_Notes_Add();
                         //ClinicalNotesAdd_controller cnt = new ClinicalNotesAdd_controller(form2);
                         form2.clinic_id = clinic_id;
                         form2.patient_id = patient_id;
@@ -2016,7 +2016,7 @@ namespace PappyjoeMVC.View
 
         private void labelprofile_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.patient_profile_details();
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
             profile_details_controller cn = new profile_details_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
@@ -2048,7 +2048,7 @@ namespace PappyjoeMVC.View
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.patients();
+            var form2 = new PappyjoeMVC.View.Patients();
             patients_controller cn = new patients_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
@@ -2091,7 +2091,7 @@ namespace PappyjoeMVC.View
 
         private void labelprescription_Click(object sender, EventArgs e)
         {
-            var form2 = new prescriptionShow();
+            var form2 = new Prescription_Show();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             prescriptionshow_controller controller = new prescriptionshow_controller(form2);

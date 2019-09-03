@@ -13,7 +13,7 @@ using PappyjoeMVC.Controller;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
-    public partial class patient_profile_Edit : Form,patient_edit_interface
+    public partial class Patient_Profile_Edit : Form,patient_edit_interface
     {
         public string patient_id = "";
         public string doctor_id = "";
@@ -316,7 +316,7 @@ namespace PappyjoeMVC.View
                                 {
                                 }
                             }
-                            var form2 = new patient_profile_details();
+                            var form2 = new Patient_Profile_Details();
                             form2.doctor_id = doctor_id;
                             form2.patient_id = patient_id;
                             profile_details_controller controller = new profile_details_controller(form2);
@@ -378,7 +378,7 @@ namespace PappyjoeMVC.View
                     if (i > 0)
                     {
                         MessageBox.Show("Patient Deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        var form2 = new patients();
+                        var form2 = new Patients();
                         form2.doctor_id = doctor_id;
                         patients_controller controller = new patients_controller(form2);
                         form2.Closed += (sender1, args) => this.Close();
@@ -467,7 +467,7 @@ namespace PappyjoeMVC.View
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            var form2 = new patient_profile_details();
+            var form2 = new Patient_Profile_Details();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             profile_details_controller controller = new profile_details_controller(form2);
@@ -492,7 +492,7 @@ namespace PappyjoeMVC.View
             txtDob.Hide();
         }
 
-        public patient_profile_Edit()
+        public Patient_Profile_Edit()
         {
             InitializeComponent();
         }

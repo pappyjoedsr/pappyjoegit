@@ -121,42 +121,42 @@ namespace PappyjoeMVC.View
 
         private void button_add_service_Click(object sender, EventArgs e)
         {
-            doctorsPracticedetails frm = new doctorsPracticedetails();
+            Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "1";
             frm.ShowDialog(this);
         }
 
         private void button_add_special_Click(object sender, EventArgs e)
         {
-            doctorsPracticedetails frm = new doctorsPracticedetails();
+            Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "6";
             frm.ShowDialog(this);
         }
 
         private void button_education_adddegree_Click(object sender, EventArgs e)
         {
-            doctorsPracticedetails frm = new doctorsPracticedetails();
+            Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "2";
             frm.ShowDialog(this);
         }
 
         private void button_education_add_college_Click(object sender, EventArgs e)
         {
-            doctorsPracticedetails frm = new doctorsPracticedetails();
+            Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "3";
             frm.ShowDialog(this);
         }
 
         private void button_add_membership_Click(object sender, EventArgs e)
         {
-            doctorsPracticedetails frm = new doctorsPracticedetails();
+            Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "4";
             frm.ShowDialog(this);
         }
 
         private void button_reg_add_Click(object sender, EventArgs e)
         {
-            doctorsPracticedetails frm = new doctorsPracticedetails();
+            Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "5";
             frm.ShowDialog(this);
         }
@@ -1071,14 +1071,14 @@ namespace PappyjoeMVC.View
         }
         private void button_clinic_servaddnew_Click(object sender, EventArgs e)
         {
-            doctorsPracticedetails frm = new doctorsPracticedetails();
+            Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "1";
             frm.ShowDialog(this);
         }
 
         private void button_clinic_specialaddnew_Click(object sender, EventArgs e)
         {
-            doctorsPracticedetails frm = new doctorsPracticedetails();
+            Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "6";
             frm.ShowDialog(this);
         }
@@ -1293,7 +1293,7 @@ namespace PappyjoeMVC.View
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            var form2 = new patients();
+            var form2 = new Patients();
             form2.doctor_id = doctor_id;
             patients_controller controllr = new patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
@@ -1305,7 +1305,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Communication();
             form2.doctor_id = doctor_id;
-            Communication_controller controllr = new Communication_controller(form2);
+            form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1371,7 +1371,7 @@ namespace PappyjoeMVC.View
 
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
-            var form2 = new patient_profile_details();
+            var form2 = new Patient_Profile_Details();
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;

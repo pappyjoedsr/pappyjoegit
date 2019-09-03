@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Daily_Invoice_Report : Form,Daily_Invoice_Report_interface
+    public partial class Daily_Invoice_Report : Form
     {
         public Daily_Invoice_Report()
         {
@@ -25,43 +25,11 @@ namespace PappyjoeMVC.View
         public string drid, patient_id = "", select_dr_id = "", dte;
         string strclinicname = "", strStreet = "", stremail = "", strwebsite = "", strphone = "", clinicn = "", PathName = "";
         public decimal totalcost, totalpay,totalpaid,totalinvoice = 0,credit,balance,balance1, totalcredit = 0,totalpayment = 0;
-        Daily_Invoice_Report_controller ctrlr;
-        public string invoice
-        {
-            get { return this.dte; }
-            set { this.dte= value; }
-        }
-        public string dr_id
-        {
-            get { return this.select_dr_id; }
-            set { this.select_dr_id = value; }
-        }
-        public void setController(Daily_Invoice_Report_controller controller)
-        {
-            ctrlr = controller;
-        }
-        public void getdocname(DataTable doctor_rs)
-        {
-            if (doctor_rs.Rows.Count > 0)
-            {
-                for (int i = 0; i < doctor_rs.Rows.Count; i++)
-                {
-                    combodoctors.Items.Add(doctor_rs.Rows[i]["doctor_name"].ToString());
-                    combodoctors.ValueMember = doctor_rs.Rows[i]["id"].ToString();
-                    combodoctors.DisplayMember = doctor_rs.Rows[i]["doctor_name"].ToString();
-                }
-            }
-        }
-        public void Get_DoctorId(string dt)
-        {
-            if (dt!="")
-            {
-                select_dr_id = dt.ToString();
-            }
-        }
+        Daily_Invoice_Report_controller ctrlr=new Daily_Invoice_Report_controller();
         public void getinvoice(DataTable invMain)
         {
-            try {
+            try
+            {
             if (invMain.Rows.Count == 0)
             {
                 label_empty.Show();
@@ -96,9 +64,9 @@ namespace PappyjoeMVC.View
                 invcount = invMain.Rows.Count;
             }
             }
-                }
+            }
             catch (Exception ex)
-            { MessageBox.Show("Data Loading Error ", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public void getinvoice2(DataTable invMain)
         {
@@ -140,7 +108,7 @@ namespace PappyjoeMVC.View
                 }
             }
             catch (Exception ex)
-            { MessageBox.Show("Data Loading Error ", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public void getpay(DataTable payMain)
         {
@@ -173,7 +141,7 @@ namespace PappyjoeMVC.View
                 }
             }
             catch (Exception ex)
-            { MessageBox.Show("Data Loading Error ", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public void getpay2(DataTable payMain)
         {
@@ -189,7 +157,7 @@ namespace PappyjoeMVC.View
                     DateTime d = Convert.ToDateTime(date);
                     string day = d.Day.ToString();
                     string month = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(d.Month);
-                    string year = d.Year.ToString();
+                    string year = d.Year.ToString();   
                     string invoiceno = payMain.Rows[u]["invoice_no"].ToString();
                     string[] invoice1 = new string[100];
                     invoice1 = invoiceno.Split(',');
@@ -206,7 +174,7 @@ namespace PappyjoeMVC.View
                 }
             }
             catch (Exception ex)
-            { MessageBox.Show("Data Loading Error ", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void Daily_Invoice_Report_Load(object sender, EventArgs e)
         {
@@ -219,12 +187,21 @@ namespace PappyjoeMVC.View
                 combodoctors.Items.Add("All Doctors");
                 combodoctors.ValueMember = "0";
                 combodoctors.DisplayMember = "All Doctors";
-                this.ctrlr.getdocname();
+                DataTable doctor_rs = this.ctrlr.getdocname();
+                    if (doctor_rs.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < doctor_rs.Rows.Count; i++)
+                        {
+                            combodoctors.Items.Add(doctor_rs.Rows[i]["doctor_name"].ToString());
+                            combodoctors.ValueMember = doctor_rs.Rows[i]["id"].ToString();
+                            combodoctors.DisplayMember = doctor_rs.Rows[i]["doctor_name"].ToString();
+                        }
+                    }
                 combodoctors.SelectedIndex = 0;
                 select_dr_id = "0";
             }
-            catch(Exception ex)
-            { MessageBox.Show("Please contact your system administrator..!!", "Network Not Ready", MessageBoxButtons.OK, MessageBoxIcon.Information);}
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void combodoctors_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -236,7 +213,7 @@ namespace PappyjoeMVC.View
                 else
                 {
                     drid = combodoctors.SelectedItem.ToString();
-                    this.ctrlr.Get_DoctorId(drid);
+                    select_dr_id=this.ctrlr.Get_DoctorId(drid);
                 }
                 Grvsummary.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 Grvsummary.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -251,13 +228,17 @@ namespace PappyjoeMVC.View
                 }
                 if (select_dr_id == "0")
                 {
-                    this.ctrlr.getinvoice(dateTimePickerdaily1.Text);
-                    this.ctrlr.getpay(dateTimePickerdaily1.Text);
+                    DataTable inv=this.ctrlr.getinvoice(dateTimePickerdaily1.Text);
+                    getinvoice(inv);
+                    DataTable pay=this.ctrlr.getpay(dateTimePickerdaily1.Text);
+                    getpay(pay);
                 }
                 else
                 {
-                    this.ctrlr.getinvoice2(dateTimePickerdaily1.Text, select_dr_id);
-                    this.ctrlr.getpay2(dateTimePickerdaily1.Text, select_dr_id);
+                    DataTable inv2=this.ctrlr.getinvoice2(dateTimePickerdaily1.Text, select_dr_id);
+                    getinvoice2(inv2);
+                    DataTable pay2=this.ctrlr.getpay2(dateTimePickerdaily1.Text, select_dr_id);
+                    getpay2(pay2);
                 }
                 if (Grvsummary.Rows.Count == 0)
                 {
@@ -279,7 +260,7 @@ namespace PappyjoeMVC.View
                 }
             }
             catch (Exception ex)
-            { MessageBox.Show("Please contact your system administrator..!!", "Network Not Ready", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void btn_show_Click(object sender, EventArgs e)
         {
@@ -297,8 +278,8 @@ namespace PappyjoeMVC.View
                 lbltotal1.Text = "00.00";
                 lbltotal2.Text = "00.00";
                 lbltotal3.Text = "00.00";
-                MessageBox.Show("Please contact your system administrator..!!", "Network Not Ready", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
         }
         private void btnEXPORT_Click(object sender, EventArgs e)
         {
@@ -344,6 +325,8 @@ namespace PappyjoeMVC.View
                         }
                         for (int i = 0; i <= Grvsummary.Rows.Count; i++)
                         {
+                            try
+                            {
                                 for (int j = 0; j < Grvsummary.Columns.Count; j++)
                                 {
                                     ExcelApp.Cells[i + 5, j + 1] = Grvsummary.Rows[i].Cells[j].Value.ToString();
@@ -351,6 +334,8 @@ namespace PappyjoeMVC.View
                                     ExcelApp.Cells[i + 5, j + 1].Borders.Color = Color.FromArgb(0, 102, 204);
                                     ExcelApp.Cells[i + 5, j + 1].Font.Size = 8;
                                 }
+                            }
+                            catch { }
                         }
                         ExcelApp.ActiveWorkbook.SaveAs(PathName, Microsoft.Office.Interop.Excel.XlFileFormat.xlXMLSpreadsheet, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange);
                         ExcelApp.ActiveWorkbook.Saved = true;
@@ -362,28 +347,16 @@ namespace PappyjoeMVC.View
                     MessageBox.Show("No records found,please change the date and try again!..", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
-            { MessageBox.Show("Data Loading Error ", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+             this.Close();
         }
         private void Grvsummary_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
         {
             base.OnClick(e);
             e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
-        }
-        public void practicedetails(DataTable dt)
-        {
-            if (dt.Rows.Count > 0)
-            {
-                clinicn = dt.Rows[0]["name"].ToString();
-                strclinicname = clinicn.Replace("¤", "'");
-                strphone = dt.Rows[0]["contact_no"].ToString();
-                strStreet = dt.Rows[0]["street_address"].ToString();
-                stremail = dt.Rows[0]["email"].ToString();
-                strwebsite = dt.Rows[0]["website"].ToString();
-            }
         }
         private void btnprint_Click(object sender, EventArgs e)
         {
@@ -395,10 +368,18 @@ namespace PappyjoeMVC.View
                     MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                     DialogResult result;
                     result = MessageBox.Show(message, caption, buttons);
-                    
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        this.ctrlr.practicedetails();
+                       DataTable dt=this.ctrlr.practicedetails();
+                            if (dt.Rows.Count > 0)
+                            {
+                                clinicn = dt.Rows[0]["name"].ToString();
+                                strclinicname = clinicn.Replace("¤", "'");
+                                strphone = dt.Rows[0]["contact_no"].ToString();
+                                strStreet = dt.Rows[0]["street_address"].ToString();
+                                stremail = dt.Rows[0]["email"].ToString();
+                                strwebsite = dt.Rows[0]["website"].ToString();
+                            }
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
                     StreamWriter sWrite = new StreamWriter(Apppath + "\\DailyInvoiceReport.html");
@@ -505,7 +486,7 @@ namespace PappyjoeMVC.View
                 { MessageBox.Show("No Record Found,Please change the date and try again !..", "Data not found", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             }
             catch (Exception ex)
-            { MessageBox.Show("Printing  Error", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void Grvsummary_DataSourceChanged(object sender, EventArgs e)
         {
