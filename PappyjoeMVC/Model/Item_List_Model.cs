@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-   public  class ItemList_Model
+   public  class Item_List_Model
     {
         Connection db = new Connection();
         public DataTable  Fill_manufactureCombo()

@@ -7,7 +7,7 @@ using System.Data;
 
 namespace PappyjoeMVC.Model
 {
-   public class add_unit_model
+   public class Add_Unit_model
     {
         Connection db = new Connection();
         private string _unit = "";

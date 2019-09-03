@@ -2,7 +2,7 @@
 
 namespace PappyjoeMVC.Model
 {
-    public class communication_setting_model
+    public class Communication_Setting_model
     {
         Connection db = new Connection();
         public DataTable getsmstabledata()

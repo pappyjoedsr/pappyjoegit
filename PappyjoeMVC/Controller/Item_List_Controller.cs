@@ -9,8 +9,8 @@ namespace PappyjoeMVC.Controller
 {
    public class Item_List_Controller
     {
-        ItemList_Model _model = new ItemList_Model();
-        common_model cmdl = new common_model();
+        Item_List_Model _model = new Item_List_Model();
+        Common_model cmdl = new Common_model();
         public DataTable Get_CompanyNAme()
         {
             DataTable dtb = cmdl.Get_CompanyNAme();

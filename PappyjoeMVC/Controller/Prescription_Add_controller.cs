@@ -10,9 +10,9 @@ namespace PappyjoeMVC.Controller
     public class Prescription_Add_controller
     {
         Prescription_Add_interface intr;
-        common_model cmodel = new common_model();
-        prescription_setting_model pmodel = new prescription_setting_model();
-        prescription_model _model = new prescription_model();
+        Common_model cmodel = new Common_model();
+        Prescription_Setting_model pmodel = new Prescription_Setting_model();
+        Prescription_model _model = new Prescription_model();
         Inventory_model inmodel = new Inventory_model();
         //addfinsed_treatment_model fmodel = new addfinsed_treatment_model();
         public Prescription_Add_controller(Prescription_Add_interface inttr)

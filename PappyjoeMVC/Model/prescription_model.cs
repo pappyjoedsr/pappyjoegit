@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-    public class prescription_model
+    public class Prescription_model
     {
         Connection db = new Connection();
         public DataTable getPrescriptionMain(string prescription_id,string ptid)

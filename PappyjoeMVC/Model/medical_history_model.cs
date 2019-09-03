@@ -7,7 +7,7 @@ using System.Data;
 
 namespace PappyjoeMVC.Model
 {
-    public class medical_history_model
+    public class Medical_history_model
     {
         Connection db = new Connection();
         public DataTable Check_medical(string name)

@@ -7,7 +7,7 @@ using System.Data;
 
 namespace PappyjoeMVC.Model
 {
-   public class prescription_setting_model
+   public class Prescription_Setting_model
     {
         Connection db = new Connection();
         public DataTable get_drug()

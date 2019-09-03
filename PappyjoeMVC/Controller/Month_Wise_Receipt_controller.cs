@@ -11,7 +11,7 @@ namespace PappyjoeMVC.Controller
     public class Month_Wise_Receipt_controller
     {
        Month_Wise_Receipt_interface intr;
-       common_model cmdl = new common_model();
+       Common_model cmdl = new Common_model();
        Daily_Invoice_Report_model mdl=new Daily_Invoice_Report_model();
        public Month_Wise_Receipt_controller(Month_Wise_Receipt_interface inttr)
         {

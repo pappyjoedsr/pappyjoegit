@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
 {
     public class Edit_Practice_Details_controller
     {
-        editpracticedetails_model _selectedvalue=new editpracticedetails_model();
+        Edit_Practice_Details_model _selectedvalue=new Edit_Practice_Details_model();
         Connection db = new Connection();
         public void  save(string Country)
         {

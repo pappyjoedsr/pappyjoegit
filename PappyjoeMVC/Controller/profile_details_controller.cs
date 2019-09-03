@@ -10,8 +10,8 @@ namespace PappyjoeMVC.Controller
   public  class Profile_Details_controller
     {
         profile_details_interface intr;
-        profile_details_model _model =new profile_details_model();
-        common_model mdl = new common_model();
+        profile_Details_model _model =new profile_Details_model();
+        Common_model mdl = new Common_model();
         Connection db = new Connection();
         public Profile_Details_controller(profile_details_interface inttr)
         {

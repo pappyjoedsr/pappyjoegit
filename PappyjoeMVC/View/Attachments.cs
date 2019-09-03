@@ -384,7 +384,7 @@ namespace PappyjoeMVC.View
         {
             string id=this.ctrlr.privillage_A(doctor_id);
             privillage_A(id);
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+            toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
             toolStripButton1.Text = this.ctrlr.Load_CompanyName();
             dctr=this.ctrlr.Get_DoctorName(doctor_id);
             if (dctr != "")

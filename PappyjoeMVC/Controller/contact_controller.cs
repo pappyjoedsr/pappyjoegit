@@ -11,7 +11,7 @@ namespace PappyjoeMVC.Controller
 {
    public  class Contact_controller
     {
-        contact_model mdl = new contact_model();
+        Contact_model mdl = new Contact_model();
         public int Save(string Contact_Name)
         {
             int i = mdl.Save_data(Contact_Name);

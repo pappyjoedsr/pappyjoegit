@@ -406,7 +406,7 @@ namespace PappyjoeMVC.View
                 }
                 toolStripButton8.ToolTipText = "Settings";
                 toolStripDropDownButton1.ToolTipText = "Add New";
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
                 DataTable dt=this.ctrlr.Get_Practice_details();
                 Get_Practice_details(dt);
                 string doctr=this.ctrlr.Get_DoctorName(doctor_id);

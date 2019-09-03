@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-    class casesheet_model
+    class Casesheet_model
     {
         Connection db = new Connection();
         public DataTable vitalSign_btwn_date(string patient_id, string startDateTime, string startDateTime1)

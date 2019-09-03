@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-   public class add_category_model
+   public class Add_Category_model
     {
         Connection db = new Connection();
         private string _number = "";

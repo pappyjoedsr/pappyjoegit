@@ -10,8 +10,8 @@ namespace PappyjoeMVC.Controller
   public  class Printout_controller
     {
        
-        printout_model mdl =new printout_model();
-        common_model cmdl = new common_model();
+        Printout_model mdl =new Printout_model();
+        Common_model cmdl = new Common_model();
        
         public DataTable Get_practice_details()
         {

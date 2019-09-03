@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
 {
     public class Doctor_Wise_Invoice_controller
     {
-       common_model cmdl = new common_model();
+       Common_model cmdl = new Common_model();
        Daily_Invoice_Report_model dm = new Daily_Invoice_Report_model();
        public DataTable getdocname()
        {

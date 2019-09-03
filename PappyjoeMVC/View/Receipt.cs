@@ -69,7 +69,7 @@ namespace PappyjoeMVC.View
                     }
                 }
                 //Privilege ends
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
                 System.Data.DataTable clinicname = this.cntrl.Get_CompanyNAme();// db.table("select name,path from tbl_practice_details");
                 if (clinicname.Rows.Count > 0)
                 {

@@ -16,7 +16,7 @@ namespace PappyjoeMVC.View
     public partial class Medical_Certificate : Form
     {
         public string patient_id = "0";
-        common_model mdl = new common_model();
+        Common_model mdl = new Common_model();
         Connection db = new Connection();
         public Medical_Certificate()
         {

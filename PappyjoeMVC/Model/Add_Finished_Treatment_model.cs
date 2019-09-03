@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-    public class addfinsed_treatment_model
+    public class Add_Finished_Treatment_model
     {
         Connection db = new Connection();
         private string _proceduretxt = "";

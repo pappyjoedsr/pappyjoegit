@@ -7,7 +7,7 @@ using System.Data;
 
 namespace PappyjoeMVC.Model
 {
-     public class editpracticedetails_model
+     public class Edit_Practice_Details_model
     {
         Connection db = new Connection();
         

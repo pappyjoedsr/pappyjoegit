@@ -11,9 +11,9 @@ namespace PappyjoeMVC.Controller
     {
         Add_invoice_interface intr;
         Connection db = new Connection();
-        Add_invoice_model _model = new Add_invoice_model();
-        addfinsed_treatment_model fmodel = new addfinsed_treatment_model();
-        common_model cmodel = new common_model();
+        Add_Invoice_model _model = new Add_Invoice_model();
+        Add_Finished_Treatment_model fmodel = new Add_Finished_Treatment_model();
+        Common_model cmodel = new Common_model();
         public Add_Invoice_controller(Add_invoice_interface inttr)
         {
             intr = inttr;

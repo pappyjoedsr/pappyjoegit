@@ -9,7 +9,7 @@ namespace PappyjoeMVC.Controller
 {
   public  class Manufacture_controller
     {
-        manufacture_model _model = new manufacture_model();
+        Manufacture_model _model = new Manufacture_model();
         public DataTable Load_grid()
         {
             DataTable dtb = _model.Load_grid();

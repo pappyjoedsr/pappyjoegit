@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-  public class printlabel_model
+  public class Print_Label_model
     {
        
 

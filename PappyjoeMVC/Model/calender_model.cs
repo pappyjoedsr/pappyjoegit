@@ -7,7 +7,7 @@ using PappyjoeMVC.Controller;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-  public class calender_model
+  public class Calender_model
     {
         Connection db = new Connection();
         public DataTable get_practicetimingvalues()

@@ -476,7 +476,7 @@ namespace PappyjoeMVC.View
             fill_all_combo();
             cmbDrProfile.Text = "Select values";
             toolStripButton7.BackColor = Color.SkyBlue;
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+            toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
 
             if (PappyjoeMVC.Model.Connection.MyGlobals.loginType != "staff")
             {

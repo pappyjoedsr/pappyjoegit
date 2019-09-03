@@ -9,7 +9,7 @@ namespace PappyjoeMVC.Controller
 {
    public class Procedure_Catalog_controller
     {
-        procedure_catalog_model _model=new procedure_catalog_model();  
+        Procedure_Catalog_model _model=new Procedure_Catalog_model();  
         public DataTable FormLoad()
         {
             DataTable dtb = _model.FormLoad();

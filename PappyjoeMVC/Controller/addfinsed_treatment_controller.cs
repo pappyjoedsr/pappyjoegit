@@ -11,8 +11,8 @@ namespace PappyjoeMVC.Controller
     public class Addfinsed_Treatment_controller
     {
         addfinsed_treatment_interface intr;
-        addfinsed_treatment_model _model=new addfinsed_treatment_model();
-        common_model cmodel = new common_model();
+        Add_Finished_Treatment_model _model=new Add_Finished_Treatment_model();
+        Common_model cmodel = new Common_model();
         public Addfinsed_Treatment_controller(addfinsed_treatment_interface inttr)
         {
             intr = inttr;

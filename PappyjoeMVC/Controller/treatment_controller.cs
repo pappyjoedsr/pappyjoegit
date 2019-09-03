@@ -11,8 +11,8 @@ namespace PappyjoeMVC.Controller
     public class Treatment_controller
     {
         treatment_interface intr;
-        treatment_model _model = new treatment_model();
-        common_model cmodel = new common_model();
+        Treatment_model _model = new Treatment_model();
+        Common_model cmodel = new Common_model();
         public Treatment_controller(treatment_interface inttr)
         {
             intr = inttr;

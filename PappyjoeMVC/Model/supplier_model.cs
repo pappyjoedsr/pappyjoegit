@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-  public class supplier_model
+  public class Supplier_model
     {
         Connection db = new Connection();
         public string Document_number()

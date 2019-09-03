@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
 {
   public class Prescription_Setting_controller
     {
-        prescription_setting_model _model = new prescription_setting_model();
+        Prescription_Setting_model _model = new Prescription_Setting_model();
         public DataTable get_drug()
         {
             DataTable dt = _model.get_drug();

@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
 {
     public class Attachments_controller
     {
-        common_model cmdl = new common_model();
+        Common_model cmdl = new Common_model();
         Connection db = new Connection();
         Attachments_model mdl = new Attachments_model();
         Add_Attachments_model m = new Add_Attachments_model();

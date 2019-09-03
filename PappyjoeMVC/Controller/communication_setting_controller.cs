@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
 {
   public  class Communication_Setting_controller
     {
-        communication_setting_model _model = new communication_setting_model();
+        Communication_Setting_model _model = new Communication_Setting_model();
         public DataTable getsmstabledata()
         {
             DataTable sms = _model.getsmstabledata();

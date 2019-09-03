@@ -12,7 +12,7 @@ namespace PappyjoeMVC.Controller
         Receipt_interface intr;
         Connection db = new Connection();
         Receipt_Model Model = new Receipt_Model();
-        common_model cmodel =new common_model();
+        Common_model cmodel =new Common_model();
         public Receipt_controller(Receipt_interface inttr)
         {
             intr = inttr;

@@ -61,7 +61,7 @@ namespace PappyjoeMVC.View
                         deleteToolStripMenuItem1.Enabled = true;
                     }
                 }
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
                 System.Data.DataTable clinicname = this.cntrl.Get_CompanyNAme();
                 if (clinicname.Rows.Count > 0)
                 {

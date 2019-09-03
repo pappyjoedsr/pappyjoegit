@@ -357,13 +357,13 @@ namespace PappyjoeMVC.View
                                 if (String.IsNullOrWhiteSpace(sms.Rows[0]["smsName"].ToString()) || String.IsNullOrWhiteSpace(sms.Rows[0]["smsPass"].ToString()))
                                 {
                                     MessageBox.Show("SMS Service not Activated!!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    PappyjoeMVC.Model.GlobalVariables.smsName = "";
-                                    PappyjoeMVC.Model.GlobalVariables.smsPass = "";
+                                    PappyjoeMVC.Model.Global_Variables.smsName = "";
+                                    PappyjoeMVC.Model.Global_Variables.smsPass = "";
                                 }
                                 else
                                 {
-                                    PappyjoeMVC.Model.GlobalVariables.smsName = sms.Rows[0]["smsName"].ToString();
-                                    PappyjoeMVC.Model.GlobalVariables.smsPass = sms.Rows[0]["smsPass"].ToString();
+                                    PappyjoeMVC.Model.Global_Variables.smsName = sms.Rows[0]["smsName"].ToString();
+                                    PappyjoeMVC.Model.Global_Variables.smsPass = sms.Rows[0]["smsPass"].ToString();
                                 }
                                 if (String.IsNullOrWhiteSpace(sms.Rows[0]["emailName"].ToString()) || String.IsNullOrWhiteSpace(sms.Rows[0]["emailPass"].ToString()))
                                 {

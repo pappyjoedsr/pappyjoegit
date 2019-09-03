@@ -33,7 +33,7 @@ namespace PappyjoeMVC.View
                     editpatient.Enabled = true;
                 }
             }
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+            toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
             DataTable dtadvance = this.cntrl.Get_Advance(patient_id); 
             if (dtadvance.Rows.Count > 0)
             {

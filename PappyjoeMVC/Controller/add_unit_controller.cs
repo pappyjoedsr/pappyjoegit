@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
   public  class Add_Unit_controller
     {
         add_unit_interface intr;
-        add_unit_model _model = new add_unit_model();
+        Add_Unit_model _model = new Add_Unit_model();
         public Add_Unit_controller(add_unit_interface inttr )
         {
             intr = inttr;

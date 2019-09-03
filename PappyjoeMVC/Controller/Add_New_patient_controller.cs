@@ -11,8 +11,8 @@ namespace PappyjoeMVC.Controller
     {
         AddNew_patient_interface intr;
         Connection db = new Connection();
-        common_model mdl = new common_model();
-        addnew_patient_model _model = new addnew_patient_model();
+        Common_model mdl = new Common_model();
+        Add_New_Patient_model _model = new Add_New_Patient_model();
         public Add_New_patient_controller(AddNew_patient_interface inttr)
         {
             intr = inttr;

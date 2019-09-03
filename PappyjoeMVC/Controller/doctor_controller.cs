@@ -10,9 +10,9 @@ namespace PappyjoeMVC.Controller
     public class Doctor_Controller
     {
         Connection db = new Connection();
-        doctor_model _model = new doctor_model();
-        doctorpractice_model mdl = new doctorpractice_model();
-        common_model cmdl = new common_model();
+        Doctor_model _model = new Doctor_model();
+        Doctor_Practice_model mdl = new Doctor_Practice_model();
+        Common_model cmdl = new Common_model();
         public DataTable load_city()
         {
             DataTable dt11 = db.table("select * from tbl_city order by id");

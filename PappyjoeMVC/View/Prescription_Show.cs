@@ -93,7 +93,7 @@ namespace PappyjoeMVC.View
                     }
                 }
                 //Privilege set ends
-                toolStripButton18.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                toolStripButton18.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
                 dataGridView1.Size = new System.Drawing.Size(this.Width - 312, 617);
                 System.Data.DataTable clinicname = this.cntrl.Get_CompanyNAme();// db.table("select name,path from tbl_practice_details");
                 if (clinicname.Rows.Count > 0)
@@ -1525,7 +1525,7 @@ namespace PappyjoeMVC.View
                 clinic = clinicname.Rows[0][0].ToString();
                 contact_no = clinicname.Rows[0][1].ToString();
             }
-            sms_model a = new sms_model();
+            SMS_model a = new SMS_model();
             System.Data.DataTable pat = this.cntrl.get_patientnumber(patient_id);// db.table("select pt_name,primary_mobile_number from tbl_patient where id='" + patient_id + "'");
             System.Data.DataTable smsreminder = this.cntrl.remindersms();// db.table("select * from tbl_appt_reminder_sms");
             if (pat.Rows.Count > 0)

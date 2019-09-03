@@ -9,7 +9,7 @@ namespace PappyjoeMVC.Controller
 {
   public class Add_Item_controller
     {
-        Additem_model _Model =new Additem_model();
+        Add_Item_model _Model =new Add_Item_model();
         public DataTable fill_category()
         {
             DataTable dtb = _Model.fill_category();

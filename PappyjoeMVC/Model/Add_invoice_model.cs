@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-    public class Add_invoice_model
+    public class Add_Invoice_model
     {
         Connection db = new Connection();
         public DataTable load_tax()

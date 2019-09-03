@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
   public class Export_controller
     {
         
-        export_model _model = new export_model();
+        Export_model _model = new Export_model();
         public DataTable Get_AllDoctor()
         {
             DataTable dtb = _model.Get_AllDoctor();

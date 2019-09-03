@@ -11,7 +11,7 @@ namespace PappyjoeMVC.Controller
   public class Practice_Controller
     {
         Practice_Model Pmdl=new Practice_Model();
-        common_model mdl = new common_model();
+        Common_model mdl = new Common_model();
         Connection db = new Connection();
         public DataTable GetData()
         {

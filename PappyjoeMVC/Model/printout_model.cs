@@ -7,7 +7,7 @@ using PappyjoeMVC.Controller;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-   public class printout_model
+   public class Printout_model
     {
         Connection db = new Connection();
         public DataTable Get_practice_details()

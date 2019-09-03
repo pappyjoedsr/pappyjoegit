@@ -9,7 +9,7 @@ namespace PappyjoeMVC.Controller
 {
    public class Supplier_controller
     {
-        supplier_model _model = new supplier_model();
+        Supplier_model _model = new Supplier_model();
         public string Document_number()
         {
             string dtb = _model.Document_number();

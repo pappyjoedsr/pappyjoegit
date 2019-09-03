@@ -10,11 +10,11 @@ namespace PappyjoeMVC.Controller
     public class Booking_controller
     {
         booking_interface intr;
-        booking_model _model = new booking_model();
+        Booking_model _model = new Booking_model();
         Connection db = new Connection();
-        common_model cmodel = new common_model();
+        Common_model cmodel = new Common_model();
         Add_Appointment_model addmodel = new Add_Appointment_model();
-        addnew_patient_model pmodel  = new addnew_patient_model();
+        Add_New_Patient_model pmodel  = new Add_New_Patient_model();
         public Booking_controller(booking_interface intttr)
         {
             intr = intttr;

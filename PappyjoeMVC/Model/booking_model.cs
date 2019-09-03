@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-    public class booking_model
+    public class Booking_model
     {
         Connection db = new Connection();
        

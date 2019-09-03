@@ -11,7 +11,7 @@ namespace PappyjoeMVC.Controller
     public class Add_Vital_Signs_controller
     {
         Add_Vital_Signs_model _model = new Add_Vital_Signs_model();
-        common_model model = new common_model();
+        Common_model model = new Common_model();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";

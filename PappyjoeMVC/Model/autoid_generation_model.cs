@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-  public class autoid_generation_model
+  public class Autoid_Generation_model
     {
         Connection db = new Connection();
         public DataTable load_patientid()

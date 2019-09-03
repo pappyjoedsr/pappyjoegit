@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
     public class Login_controller
     {
         login_interface intr;
-        login_model _model = new login_model();
+        Login_model _model = new Login_model();
         Connection db = new Connection();
         public Login_controller(login_interface inttr)
         {

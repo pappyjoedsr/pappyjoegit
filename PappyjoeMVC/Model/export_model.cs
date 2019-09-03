@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-   public class export_model
+   public class Export_model
     {
         Connection db = new Connection();
         public DataTable Get_AllDoctor()

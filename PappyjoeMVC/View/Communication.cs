@@ -297,7 +297,7 @@ namespace PappyjoeMVC.View
             try
             {
                 toolStripButton4.BackColor = Color.SkyBlue;
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
                 listpatientsearch.Hide();
                 DataTable dt = this.ctrlr.Get_CompanyNAme();
                 if (dt.Rows.Count > 0)

@@ -11,8 +11,8 @@ namespace PappyjoeMVC.Controller
   public class Add_Treatmentplan_controller
     {
         add_treatmentplan_interface intr;
-        add_treatmentplan_model _Model=new add_treatmentplan_model();
-        common_model cmodel=new common_model();
+        Add_Treatmentplan_model _Model=new Add_Treatmentplan_model();
+        Common_model cmodel=new Common_model();
         Connection db = new Connection();
         public Add_Treatmentplan_controller(add_treatmentplan_interface inttr)
         {

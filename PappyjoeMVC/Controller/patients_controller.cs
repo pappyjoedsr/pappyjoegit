@@ -10,8 +10,8 @@ namespace PappyjoeMVC.Controller
    public class Patients_controller
     {
         patients_interface intr;
-        patients_model _model = new patients_model();
-        common_model cmodel = new common_model();
+        Patients_model _model = new Patients_model();
+        Common_model cmodel = new Common_model();
         public Patients_controller(patients_interface inttr)
         {
             intr = inttr;

@@ -6,7 +6,7 @@ namespace PappyjoeMVC.Controller
     public class Monthly_Appointment_count_controller
     {
         Appointment_report_model _model = new Appointment_report_model();
-        common_model model = new common_model();
+        Common_model model = new Common_model();
         public DataTable doctor_rs()
         {
             DataTable dt = _model.doctor_rs();

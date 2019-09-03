@@ -7,7 +7,7 @@ using System.Data;
 
 namespace PappyjoeMVC.Model
 {
-  public  class profile_details_model
+  public  class profile_Details_model
     {
         Connection db = new Connection();
         public string get_dctr_privillage(string doctor_id)

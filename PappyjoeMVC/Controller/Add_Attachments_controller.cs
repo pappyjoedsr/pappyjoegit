@@ -11,7 +11,7 @@ namespace PappyjoeMVC.Controller
     public class Add_Attachments_controller
     {
         Connection db = new Connection();
-        common_model cmdl = new common_model();
+        Common_model cmdl = new Common_model();
         Add_Attachments_model mdl = new Add_Attachments_model();
         public string selectdoctrid()
         {

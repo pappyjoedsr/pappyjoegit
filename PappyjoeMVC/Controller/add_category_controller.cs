@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
   public class Add_Category_controller
     {
         add_category_interface intr;
-        add_category_model _model = new add_category_model();
+        Add_Category_model _model = new Add_Category_model();
         public Add_Category_controller(add_category_interface inttr)
         {
             intr = inttr;

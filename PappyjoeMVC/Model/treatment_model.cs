@@ -7,7 +7,7 @@ using System.Data;
 
 namespace PappyjoeMVC.Model
 {
-    public class treatment_model
+    public class Treatment_model
     {
         Connection db = new Connection();
         public string check_privillege(string doctor_id)

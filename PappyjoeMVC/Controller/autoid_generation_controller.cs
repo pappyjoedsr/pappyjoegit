@@ -9,7 +9,7 @@ namespace PappyjoeMVC.Controller
 {
    public  class Autoid_Generation_controller
     {
-        autoid_generation_model _model=new autoid_generation_model();
+        Autoid_Generation_model _model=new Autoid_Generation_model();
         public DataTable load_patientid()
         {
             DataTable dtb = _model.load_patientid();

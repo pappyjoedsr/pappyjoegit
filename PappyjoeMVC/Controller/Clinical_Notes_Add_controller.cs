@@ -5,8 +5,8 @@ namespace PappyjoeMVC.Controller
 {
     public class Clinical_Notes_Add_controller
     {
-        ClinicalNotesAdd_model _model = new ClinicalNotesAdd_model();
-        common_model model = new common_model();
+        Clinical_Notes_Add_model _model = new Clinical_Notes_Add_model();
+        Common_model model = new Common_model();
         public DataTable investigation_cell(string idinv)
         {
             DataTable dt = _model.investigation_cell(idinv);

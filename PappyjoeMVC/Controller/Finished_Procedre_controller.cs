@@ -11,9 +11,9 @@ namespace PappyjoeMVC.Controller
     public  class Finished_Procedre_controller
     {
         Finished_Procedure_interface intr;
-        addfinsed_treatment_model _model = new addfinsed_treatment_model();
+        Add_Finished_Treatment_model _model = new Add_Finished_Treatment_model();
         Connection db = new Connection();
-        common_model cmodel = new common_model();
+        Common_model cmodel = new Common_model();
         public Finished_Procedre_controller(Finished_Procedure_interface inttr)
         {
             intr = inttr;

@@ -9,7 +9,7 @@ using System.Data;
 
 namespace PappyjoeMVC.Model
 {
-    public class contact_model
+    public class Contact_model
     {
         Connection db = new Connection();
         public int Save_data(string _contactname)

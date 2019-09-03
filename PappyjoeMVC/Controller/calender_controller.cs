@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
 {
   public class Calender_controller
     {
-        calender_model _model = new calender_model();
+        Calender_model _model = new Calender_model();
         public DataTable get_practicetimingvalues()
         {
             DataTable dt = _model.get_practicetimingvalues();

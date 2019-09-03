@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-  public class patient_edit_model
+  public class Patient_Edit_model
     {
         Connection db = new Connection();
         private string _patname = "";

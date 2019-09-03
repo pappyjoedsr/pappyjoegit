@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
     public  class Ledger_controller
     {
         Ledger_interface intr;
-        common_model cmodel = new common_model();
+        Common_model cmodel = new Common_model();
         Ledger_model _model = new Ledger_model();
         public Ledger_controller(Ledger_interface inttr)
         {

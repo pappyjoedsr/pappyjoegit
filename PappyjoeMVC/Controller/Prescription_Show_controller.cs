@@ -10,10 +10,10 @@ namespace PappyjoeMVC.Controller
     public  class Prescription_Show_controller
     {
         prescriptionshow_interface intr;
-        prescription_model _model = new prescription_model();
+        Prescription_model _model = new Prescription_model();
         Connection db = new Connection();
-        common_model cmodel = new common_model();
-        booking_model bmodel = new booking_model();
+        Common_model cmodel = new Common_model();
+        Booking_model bmodel = new Booking_model();
         public Prescription_Show_controller(prescriptionshow_interface inttr)
         {
             intr = inttr;

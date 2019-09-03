@@ -11,7 +11,7 @@ namespace PappyjoeMVC.View
     public partial class Treatment_Plans : Form, treatment_interface
     {
         Treatment_controller cntrl;
-        Connection db = new Connection(); common_model cmodel = new common_model();
+        Connection db = new Connection(); Common_model cmodel = new Common_model();
         public string doctor_id = "";
         public string patient_id = "";
         string logo_name = "";
@@ -61,7 +61,7 @@ namespace PappyjoeMVC.View
                     deleteToolStripMenuItem1.Enabled = true;
                 }
             }
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+            toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
             DataTable clinicname = cmodel.Get_CompanyNAme();
             if (clinicname.Rows.Count > 0)
             {

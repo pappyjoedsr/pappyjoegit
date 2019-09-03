@@ -13,7 +13,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Consent : Form
     {
-        common_model mdl = new common_model();
+        Common_model mdl = new Common_model();
         public string patient_id { get; set; }
         public string doctor_id { get; set; }
         string PId = "";

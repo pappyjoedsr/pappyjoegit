@@ -9,7 +9,7 @@ namespace PappyjoeMVC.Controller
 {
   public  class Doctor_Practice_controller
     {
-        doctorpractice_model _model = new doctorpractice_model();
+        Doctor_Practice_model _model = new Doctor_Practice_model();
         public DataTable load_services()
         {
             DataTable dt_maintest = _model.load_services();

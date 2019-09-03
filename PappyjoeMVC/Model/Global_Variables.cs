@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Model
 {
-   public class GlobalVariables
+   public class Global_Variables
     {
         public static string smsName = "";
         public static string smsPass = "";

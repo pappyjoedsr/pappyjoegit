@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-   public class manufacture_model
+   public class Manufacture_model
     {
         Connection db = new Connection();
         public DataTable Load_grid()

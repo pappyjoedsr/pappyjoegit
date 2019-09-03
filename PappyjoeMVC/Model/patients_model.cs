@@ -2,7 +2,7 @@
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-    public class patients_model
+    public class Patients_model
     {
         Connection db = new Connection();
         public DataTable Get_all_Patients()

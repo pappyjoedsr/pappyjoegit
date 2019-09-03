@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
     public class Patient_Edit_controller
     {
         patient_edit_interface intr;
-        patient_edit_model _model = new patient_edit_model();
+        Patient_Edit_model _model = new Patient_Edit_model();
         Connection db = new Connection();
         public Patient_Edit_controller(patient_edit_interface inttr)
         {

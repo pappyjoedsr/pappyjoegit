@@ -10,8 +10,8 @@ namespace PappyjoeMVC.Controller
 {
     public class Communication_controller
     {
-        sms_model s = new sms_model();
-        common_model cmdl = new common_model();
+        SMS_model s = new SMS_model();
+        Common_model cmdl = new Common_model();
         Communication_model mdl = new Communication_model();
         public DataTable Get_CompanyNAme()
         {

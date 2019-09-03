@@ -6,7 +6,7 @@ namespace PappyjoeMVC.Controller
     public class Missing_Checkout_Report_controller
     {
         Appointment_report_model _model = new Appointment_report_model();
-        common_model model = new common_model();
+        Common_model model = new Common_model();
         public DataTable doctor_rs()
         {
             DataTable d = _model.doctor_rs();
