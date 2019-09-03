@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-  public  class Add_Unit_controller
+    public class Add_Unit_controller
     {
         add_unit_interface intr;
         Add_Unit_model _model = new Add_Unit_model();
-        public Add_Unit_controller(add_unit_interface inttr )
+        public Add_Unit_controller(add_unit_interface inttr)
         {
             intr = inttr;
             intr.SetController(this);
@@ -43,7 +38,7 @@ namespace PappyjoeMVC.Controller
             int j = _model.delete(id);
             return j;
         }
-     
+
 
     }
 }

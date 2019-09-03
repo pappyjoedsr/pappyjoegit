@@ -1,10 +1,5 @@
 ﻿using PappyjoeMVC.Model;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Controller
 {
@@ -15,8 +10,8 @@ namespace PappyjoeMVC.Controller
         Add_Appointment_model mdl = new Add_Appointment_model();
         public DataTable smsreminder()
         {
-           DataTable dt = mdl.smsreminder();
-           return dt;
+            DataTable dt = mdl.smsreminder();
+            return dt;
         }
         public DataTable smsdetails()
         {
@@ -105,12 +100,12 @@ namespace PappyjoeMVC.Controller
         }
         public int apntupdate(string strtdatetime, string duratn, string note, string dr_id, string procedure, string bookedby, string appointmentid)
         {
-            int i = mdl.apntupdate(strtdatetime,duratn,note,dr_id,procedure, bookedby, appointmentid);
+            int i = mdl.apntupdate(strtdatetime, duratn, note, dr_id, procedure, bookedby, appointmentid);
             return i;
         }
-        public int insappointment(string book_datetime,string start_datetime,string duration,string note,string pt_id,string pt_name,string dr_id,string mob_no,string email_id,string procedure,string booked_by)
+        public int insappointment(string book_datetime, string start_datetime, string duration, string note, string pt_id, string pt_name, string dr_id, string mob_no, string email_id, string procedure, string booked_by)
         {
-            int j = mdl.insappointment(book_datetime,start_datetime,duration,note,pt_id,pt_name,dr_id,mob_no,email_id,procedure,booked_by);
+            int j = mdl.insappointment(book_datetime, start_datetime, duration, note, pt_id, pt_name, dr_id, mob_no, email_id, procedure, booked_by);
             return j;
         }
     }

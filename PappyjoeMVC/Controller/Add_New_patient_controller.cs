@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
-   public class Add_New_patient_controller
+    public class Add_New_patient_controller
     {
         AddNew_patient_interface intr;
         Connection db = new Connection();
@@ -20,7 +15,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable Get_pnonenumber(string number)
         {
-            DataTable patSearchnumber = db.table("select primary_mobile_number from tbl_patient where primary_mobile_number ='" + number+ "'  and Profile_Status !='Cancelled'");
+            DataTable patSearchnumber = db.table("select primary_mobile_number from tbl_patient where primary_mobile_number ='" + number + "'  and Profile_Status !='Cancelled'");
             return patSearchnumber;
         }
         public DataTable Get_patient_details(string name)
@@ -68,7 +63,7 @@ namespace PappyjoeMVC.Controller
             string dtb = _model.get_maxId();
             return dtb;
         }
-        public void save_medical(string pat_id,string medical)
+        public void save_medical(string pat_id, string medical)
         {
             _model.save_medical(pat_id, medical);
         }

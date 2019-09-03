@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
-using PappyjoeMVC.View;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-   public  class Billing_controller
+    public class Billing_controller
     {
         Billing_model mdl = new Billing_model();
         public int save(string TaxName, string Tax)
@@ -21,13 +15,13 @@ namespace PappyjoeMVC.Controller
         {
             DataTable dtb = mdl.Fill_BillGrid();
             return dtb;
-        } 
+        }
         public int update(string id, string TaxName, string Tax)
         {
             int i = mdl.update(id, TaxName, Tax);
             return i;
         }
-        public int Delete (string id)
+        public int Delete(string id)
         {
             int l = mdl.Delete(id);
             return l;

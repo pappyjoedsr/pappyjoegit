@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
-   public class Procedure_Catalog_controller
+    public class Procedure_Catalog_controller
     {
-        Procedure_Catalog_model _model=new Procedure_Catalog_model();  
+        Procedure_Catalog_model _model = new Procedure_Catalog_model();
         public DataTable FormLoad()
         {
             DataTable dtb = _model.FormLoad();
@@ -17,12 +12,12 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable get_procedure_category_value()
         {
-            DataTable dtb=_model.get_procedure_category_value();
-            return dtb; 
+            DataTable dtb = _model.get_procedure_category_value();
+            return dtb;
         }
         public DataTable Get_category_name(string TextCategory)
         {
-             DataTable dt = _model.Get_category_name(TextCategory);
+            DataTable dt = _model.Get_category_name(TextCategory);
             return dt;
         }
         public void save(string TextCategory)
@@ -41,7 +36,7 @@ namespace PappyjoeMVC.Controller
         }
         public int save_addprocedure(string _procName, string _procost, string _comboCategory, string _notes)
         {
-            int i = _model.save_addprocedure(_procName,  _procost,  _comboCategory,  _notes);
+            int i = _model.save_addprocedure(_procName, _procost, _comboCategory, _notes);
             return i;
         }
         public string Get_GST_id()
@@ -51,7 +46,7 @@ namespace PappyjoeMVC.Controller
         }
         public void save_proceduretax(int id1, int pid)
         {
-            _model.save_proceduretax(id1,pid);
+            _model.save_proceduretax(id1, pid);
         }
         public string Get_IGST_id()
         {

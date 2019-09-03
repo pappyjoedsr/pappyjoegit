@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;  
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
     public class Doctor_Controller
@@ -21,12 +16,12 @@ namespace PappyjoeMVC.Controller
         public string Get_DoctorName(string dridd)
         {
             string dt = cmdl.Get_DoctorName(dridd);
-           return dt;
+            return dt;
         }
-        public DataTable  get_companyName()
+        public DataTable get_companyName()
         {
             DataTable dtb = cmdl.Get_CompanyNAme();
-           return dtb;
+            return dtb;
         }
         public string get_servicecount(string doctor_id)
         {
@@ -206,7 +201,7 @@ namespace PappyjoeMVC.Controller
         //
         public int update_doctor(string doctor_id, string _drname, string _number, string _email, string _gender, string _year, string _about, string _path)
         {
-            int i = _model.update_doctor(doctor_id,  _drname,  _number,  _email,  _gender,  _year,  _about, _path);
+            int i = _model.update_doctor(doctor_id, _drname, _number, _email, _gender, _year, _about, _path);
             return i;
         }
         //public int update_dremail(string doctor_id, string _email, string _password)//asw not found
@@ -229,7 +224,7 @@ namespace PappyjoeMVC.Controller
             return dtb;
         }
         //clinical details
-        public DataTable  practice_id()
+        public DataTable practice_id()
         {
             DataTable dtb = cmdl.Get_CompanyNAme();
             return dtb;
@@ -238,42 +233,42 @@ namespace PappyjoeMVC.Controller
         {
             _model.save_clinic_service(clinicid, ser_id);
         }
-         public DataTable load_clinic_services(string clinicid)
+        public DataTable load_clinic_services(string clinicid)
         {
             DataTable dtb = _model.load_clinic_services(clinicid);
             return dtb;
         }
         public DataTable get_companydetails()
-         {
-             DataTable dtb = cmdl.get_company_details();
-             return dtb;
-         }
-         public DataTable clinic_service(string clinicid)
+        {
+            DataTable dtb = cmdl.get_company_details();
+            return dtb;
+        }
+        public DataTable clinic_service(string clinicid)
         {
             DataTable dtb = _model.clinic_service(clinicid);
             return dtb;
         }
         public void delete_clinic_service(string clinicservice, string clinicid)
-         {
-             _model.delete_clinic_service(clinicservice, clinicid);
-         }
-         public DataTable cinic_specilization(string clinicid)
-         {
-             DataTable dtb = _model.cinic_specilization(clinicid);
-             return dtb;
-         }
-         public void save_clinic_specilization(string clinicid, string spc_id)
-         {
-             _model.save_clinic_specilization(clinicid, spc_id);
-         }
-         public void delete_clinicspecilization(string clinicspecial,string clinicid)
-         {
-             _model.delete_clinicspecilization(clinicspecial, clinicid);
-         }
-         public void update_clinicdetails(string _clinicname, string _tagline, string _clinicnumber, string _clinicemail, string _website, string _clinicAbout)
-         {
-             _model.update_clinicdetails(_clinicname,  _tagline,  _clinicnumber,  _clinicemail,  _website,  _clinicAbout);
-         }
+        {
+            _model.delete_clinic_service(clinicservice, clinicid);
+        }
+        public DataTable cinic_specilization(string clinicid)
+        {
+            DataTable dtb = _model.cinic_specilization(clinicid);
+            return dtb;
+        }
+        public void save_clinic_specilization(string clinicid, string spc_id)
+        {
+            _model.save_clinic_specilization(clinicid, spc_id);
+        }
+        public void delete_clinicspecilization(string clinicspecial, string clinicid)
+        {
+            _model.delete_clinicspecilization(clinicspecial, clinicid);
+        }
+        public void update_clinicdetails(string _clinicname, string _tagline, string _clinicnumber, string _clinicemail, string _website, string _clinicAbout)
+        {
+            _model.update_clinicdetails(_clinicname, _tagline, _clinicnumber, _clinicemail, _website, _clinicAbout);
+        }
         public DataTable Patient_search(string _Patientid)
         {
             DataTable dtb = cmdl.Patient_search(_Patientid);

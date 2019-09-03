@@ -1,10 +1,5 @@
 ﻿using PappyjoeMVC.Model;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Controller
 {
@@ -15,7 +10,7 @@ namespace PappyjoeMVC.Controller
         Add_Attachments_model mdl = new Add_Attachments_model();
         public string selectdoctrid()
         {
-            string id= mdl.selectdoctrid();
+            string id = mdl.selectdoctrid();
             return id;
         }
         public string clinicname()
@@ -65,7 +60,7 @@ namespace PappyjoeMVC.Controller
         }
         public int insattach(string patientid, string imgname, string path, string doctrid, string catgryname)
         {
-            int j = mdl.insattach(patientid,imgname,path,doctrid,catgryname);
+            int j = mdl.insattach(patientid, imgname, path, doctrid, catgryname);
             return j;
         }
 

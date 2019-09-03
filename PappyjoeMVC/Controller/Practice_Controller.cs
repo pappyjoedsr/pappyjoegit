@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
-using PappyjoeMVC.View;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
-  public class Practice_Controller
+    public class Practice_Controller
     {
-        Practice_Model Pmdl=new Practice_Model();
+        Practice_Model Pmdl = new Practice_Model();
         Common_model mdl = new Common_model();
         Connection db = new Connection();
         public DataTable GetData()

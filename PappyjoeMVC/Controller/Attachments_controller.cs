@@ -1,10 +1,5 @@
 ﻿using PappyjoeMVC.Model;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Controller
 {
@@ -64,12 +59,12 @@ namespace PappyjoeMVC.Controller
             int j = mdl.inscatgry(catgryname);
             return j;
         }
-        public int update(string catgryname,string catgryid)
+        public int update(string catgryname, string catgryid)
         {
             int i = mdl.update(catgryname, catgryid);
             return i;
         }
-        public DataTable getattachment2(string patntid,string catgryname)
+        public DataTable getattachment2(string patntid, string catgryname)
         {
             DataTable dt = mdl.getattachment2(patntid, catgryname);
             return dt;

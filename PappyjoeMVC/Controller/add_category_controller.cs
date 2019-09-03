@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-  public class Add_Category_controller
+    public class Add_Category_controller
     {
         add_category_interface intr;
         Add_Category_model _model = new Add_Category_model();
@@ -15,7 +10,7 @@ namespace PappyjoeMVC.Controller
         {
             intr = inttr;
             intr.SetController(this);
-        } 
+        }
         public void Load_data()
         {
             DataTable dtb = _model.Load_data();
@@ -28,12 +23,12 @@ namespace PappyjoeMVC.Controller
         }
         public int delete(string id)
         {
-           int i=_model.delete(id);
+            int i = _model.delete(id);
             return i;
         }
-        public DataTable Get_catdetails(string name,string number)
+        public DataTable Get_catdetails(string name, string number)
         {
-            DataTable dtb = _model.Get_catdetails(name,number);
+            DataTable dtb = _model.Get_catdetails(name, number);
             return dtb;
         }
         public void save()

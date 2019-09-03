@@ -1,46 +1,41 @@
 ﻿using PappyjoeMVC.Model;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Controller
 {
     public class Paymode_Wise_Receipt_controller
     {
-       Paymode_Wise_Receipt_interface intr;
-       Common_model cmdl = new Common_model();
-       Daily_Invoice_Report_model mdl=new Daily_Invoice_Report_model();
-       public Paymode_Wise_Receipt_controller(Paymode_Wise_Receipt_interface inttr)
+        Paymode_Wise_Receipt_interface intr;
+        Common_model cmdl = new Common_model();
+        Daily_Invoice_Report_model mdl = new Daily_Invoice_Report_model();
+        public Paymode_Wise_Receipt_controller(Paymode_Wise_Receipt_interface inttr)
         {
             intr = inttr;
             intr.setController(this);
         }
-       public void getdocname()
-       {
-           DataTable dt = mdl.getdocname();
-           intr.getdocname(dt);
-       }
-       public void getinvdata(string invno, string service)
-       {
-           DataTable dt =mdl.getinvdata(invno, service);
-           intr.getinvdata(dt);
-       }
-       public void practicedetails()
-       {
-           DataTable dt = mdl.practicedetails();
-           intr.practicedetails(dt);
-       }
+        public void getdocname()
+        {
+            DataTable dt = mdl.getdocname();
+            intr.getdocname(dt);
+        }
+        public void getinvdata(string invno, string service)
+        {
+            DataTable dt = mdl.getinvdata(invno, service);
+            intr.getinvdata(dt);
+        }
+        public void practicedetails()
+        {
+            DataTable dt = mdl.practicedetails();
+            intr.practicedetails(dt);
+        }
         public DataTable ReceiptReceivedModeofPayment(string d1, string d2)
         {
-            DataTable dt = mdl.ReceiptReceivedModeofPayment(d1,d2);
+            DataTable dt = mdl.ReceiptReceivedModeofPayment(d1, d2);
             return dt;
         }
         public DataTable ReceiptReceivedModeofPayment_Both(string d1, string d2, string dr, string mode)
         {
-            DataTable dt = mdl.ReceiptReceivedModeofPayment_Both(d1, d2,dr,mode);
+            DataTable dt = mdl.ReceiptReceivedModeofPayment_Both(d1, d2, dr, mode);
             return dt;
         }
         public DataTable ReceiptReceivedModeofPayment_Mode(string d1, string d2, string mode)

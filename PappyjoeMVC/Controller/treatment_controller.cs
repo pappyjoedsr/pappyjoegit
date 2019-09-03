@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 
 namespace PappyjoeMVC.Controller
@@ -21,7 +16,7 @@ namespace PappyjoeMVC.Controller
         public string check_privillege(string doctor_id)
         {
             string a = _model.check_privillege(doctor_id);
-            return a; 
+            return a;
         }
         public string check_edit_privillege(string doctor_id)
         {
@@ -33,7 +28,7 @@ namespace PappyjoeMVC.Controller
             string a = _model.delete_privillege(doctor_id);
             return a;
         }
-       
+
         public void get_treatments(string patient_id)
         {
             DataTable dtb = _model.Load_treatments(patient_id);

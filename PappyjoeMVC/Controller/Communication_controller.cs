@@ -1,10 +1,6 @@
 ﻿using PappyjoeMVC.Model;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Controller
 {
@@ -39,9 +35,9 @@ namespace PappyjoeMVC.Controller
             return dt;
         }
         //sms centre 
-        public int insmsstaff(string patntid,string msg)
+        public int insmsstaff(string patntid, string msg)
         {
-            int j = mdl.insmsstaff(patntid,msg);
+            int j = mdl.insmsstaff(patntid, msg);
             return j;
         }
         public int inssmsgrp(string patntid, string msg)
@@ -54,7 +50,7 @@ namespace PappyjoeMVC.Controller
             int s = mdl.insbrthsms(patntid, msg);
             return s;
         }
-       public DataTable selgrp()
+        public DataTable selgrp()
         {
             DataTable dt = mdl.selgrp();
             return dt;
@@ -64,9 +60,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = mdl.selsms();
             return dt;
         }
-        public int inssms(string patntid,string date, string msg)
+        public int inssms(string patntid, string date, string msg)
         {
-            int j = mdl.inssms(patntid,msg);
+            int j = mdl.inssms(patntid, msg);
             return j;
         }
         public int Save(string tmplate)
@@ -78,7 +74,7 @@ namespace PappyjoeMVC.Controller
         {
             DataTable dt = mdl.LoadData();
             return dt;
-        } 
+        }
         public DataTable selecttemp()
         {
             DataTable dt = mdl.selecttemp();
@@ -88,12 +84,12 @@ namespace PappyjoeMVC.Controller
         {
             DataTable dt = mdl.LoadGrp();
             return dt;
-        }     
+        }
         public DataTable LoadStaff()
         {
             DataTable dt = mdl.LoadStaff();
             return dt;
-        } 
+        }
         public DataTable srch(string pname)
         {
             DataTable dt = mdl.srch(pname);
@@ -116,7 +112,7 @@ namespace PappyjoeMVC.Controller
         }
         //end
         //delivery report
-        public DataTable status(string stime,string etime)
+        public DataTable status(string stime, string etime)
         {
             DataTable dt = mdl.status(stime, etime);
             return dt;
@@ -138,7 +134,7 @@ namespace PappyjoeMVC.Controller
             DataTable dt = mdl.upfollowup(stime, etime);
             return dt;
         }
-        public DataTable upbirthday(string smonth,string sday,string emonth,string eday)
+        public DataTable upbirthday(string smonth, string sday, string emonth, string eday)
         {
             DataTable dt = mdl.upbirthday(smonth, sday, emonth, eday);
             return dt;

@@ -1,24 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using System.Collections;
 namespace PappyjoeMVC.Controller
 {
     public class Edit_Practice_Details_controller
     {
-        Edit_Practice_Details_model _selectedvalue=new Edit_Practice_Details_model();
+        Edit_Practice_Details_model _selectedvalue = new Edit_Practice_Details_model();
         Connection db = new Connection();
-        public void  save(string Country)
+        public void save(string Country)
         {
             _selectedvalue.save_country(Country);
         }
         public void Country_update(string Id, string Country)
         {
-            _selectedvalue.upate_country(Id,Country);
+            _selectedvalue.upate_country(Id, Country);
         }
         public string check_country(string country)
         {
@@ -35,7 +29,7 @@ namespace PappyjoeMVC.Controller
             DataTable dt_country = _selectedvalue.Get_States_Of_Country(country);
             return dt_country;
         }
-        public int  Delete_Country(string country)
+        public int Delete_Country(string country)
         {
             int i = _selectedvalue.Delete_Country(country);
             return i;
@@ -47,7 +41,7 @@ namespace PappyjoeMVC.Controller
         }
         public void Save_State(string CountryID, string State)
         {
-            _selectedvalue.Save_state( CountryID,  State); 
+            _selectedvalue.Save_state(CountryID, State);
         }
         public string check_state(string state)
         {
@@ -69,7 +63,7 @@ namespace PappyjoeMVC.Controller
             int i = _selectedvalue.Delete_State(state);
             return i;
         }
-        public void State_update(string Id,string State, string Country_Id)
+        public void State_update(string Id, string State, string Country_Id)
         {
             _selectedvalue.update_state(Id, State, Country_Id);
         }
@@ -95,7 +89,7 @@ namespace PappyjoeMVC.Controller
             string dt_country = _selectedvalue.check_city(country);
             return dt_country;
         }
-        public void Save_City(string City,string State_Id)
+        public void Save_City(string City, string State_Id)
         {
             _selectedvalue.Save_city(City, State_Id);
         }
@@ -134,9 +128,9 @@ namespace PappyjoeMVC.Controller
         {
             _selectedvalue.Save_Specialization(Specialization);
         }
-        public void Specialization_update(string Id,string Specialization)
+        public void Specialization_update(string Id, string Specialization)
         {
-            _selectedvalue.Specialization_update(Id,Specialization);
+            _selectedvalue.Specialization_update(Id, Specialization);
         }
         public int Delete_Specialization(string city)
         {

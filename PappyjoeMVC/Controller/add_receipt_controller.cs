@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-    public  class Add_Receipt_controller
+    public class Add_Receipt_controller
     {
         add_receipt_interface intr;
         Receipt_Model _model = new Receipt_Model();
         Common_model cmodel = new Common_model();
         Connection db = new Connection();
-        public  Add_Receipt_controller(add_receipt_interface inttr)
+        public Add_Receipt_controller(add_receipt_interface inttr)
         {
             intr = inttr;
             intr.SetController(this);
@@ -30,7 +25,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable Patient_invoice(string patient_id, string invoices)
         {
-            DataTable dtb = _model.Patient_invoice(patient_id,invoices);
+            DataTable dtb = _model.Patient_invoice(patient_id, invoices);
             return dtb;
         }
         public DataTable select_invoice(string invoices)
@@ -50,11 +45,11 @@ namespace PappyjoeMVC.Controller
         }
         public void update_advance(decimal adv, string patient_id)
         {
-            _model.update_advance(adv,patient_id);
+            _model.update_advance(adv, patient_id);
         }
         public void save_advance(decimal adv, string patient_id)
         {
-            _model.save_advance(adv,patient_id);
+            _model.save_advance(adv, patient_id);
         }
         public DataTable Get_All_paymenttbl_details(string ReceiptNo)
         {
@@ -68,7 +63,7 @@ namespace PappyjoeMVC.Controller
         }
         public int updatetotal(decimal total, string invoice_no, string patient_id, string services)
         {
-          int i=  _model.updatetotal(total, invoice_no, patient_id, services);
+            int i = _model.updatetotal(total, invoice_no, patient_id, services);
             return i;
         }
         public int save_payment_checkwise(string advance, string receipt_no, decimal amount_paid, string invoice_no, string procedure_name, string mode_of_payment, string pt_id, string payment_date, string dr_id, string payment_due, string total, string cost, string stringpt_name, string BankName, string Number)
@@ -88,8 +83,8 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable SumofTotal(string invoice_no, string patient_id)
         {
-          DataTable dtb = _model.SumofTotal(invoice_no, patient_id);
-          return dtb;
+            DataTable dtb = _model.SumofTotal(invoice_no, patient_id);
+            return dtb;
         }
         public void update_invoice_status0(decimal invoice_main_id)
         {

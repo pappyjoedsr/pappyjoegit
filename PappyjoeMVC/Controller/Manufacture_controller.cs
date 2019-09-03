@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-  public  class Manufacture_controller
+    public class Manufacture_controller
     {
         Manufacture_model _model = new Manufacture_model();
         public DataTable Load_grid()
@@ -17,7 +12,7 @@ namespace PappyjoeMVC.Controller
         }
         public int Save(string _name, string _code, string _shrtname, string _address1, string _address2, string _address3, string _phone, string string_fax, string Cname, string _email, string _web)
         {
-            int i = _model.Save( _name,  _code,  _shrtname,  _address1,  _address2,  _address3,  _phone,  string_fax,  Cname,  _email,  _web);
+            int i = _model.Save(_name, _code, _shrtname, _address1, _address2, _address3, _phone, string_fax, Cname, _email, _web);
             return i;
         }
         public int update(string id, string _name, string _code, string _shrtname, string _address1, string _address2, string _address3, string _phone, string string_fax, string Cname, string _email, string _web)

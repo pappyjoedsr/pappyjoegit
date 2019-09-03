@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
+using System;
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
@@ -14,7 +10,7 @@ namespace PappyjoeMVC.Controller
         Connection db = new Connection();
         Common_model cmodel = new Common_model();
         Add_Appointment_model addmodel = new Add_Appointment_model();
-        Add_New_Patient_model pmodel  = new Add_New_Patient_model();
+        Add_New_Patient_model pmodel = new Add_New_Patient_model();
         public Booking_controller(booking_interface intttr)
         {
             intr = intttr;
@@ -102,8 +98,8 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable automaticid()
         {
-          DataTable dtb= pmodel.automaticid();
-          return dtb; 
+            DataTable dtb = pmodel.automaticid();
+            return dtb;
         }
         public void update_autogenerateid(int n)
         {
@@ -161,9 +157,9 @@ namespace PappyjoeMVC.Controller
             DataTable smsreminder = db.table("select * from tbl_appt_reminder_sms");
             return smsreminder;
         }
-        public void save_Pt_SMS(string patient_id,string ptnaame,string procedure,string StartT,string cmbStartTime,string combodoctor)
+        public void save_Pt_SMS(string patient_id, string ptnaame, string procedure, string StartT, string cmbStartTime, string combodoctor)
         {
-            db.execute("insert into tbl_pt_sms_communication (pt_id,send_datetime,type,message_status,message) values('" + patient_id + "','" + DateTime.Now.ToString("yyyy-MM-dd hh:mm") + "','patient','sent','Dear " + ptnaame + " " + "Your appointment for " + procedure + " has been confirmed at " + StartT+ " " + cmbStartTime + " with " + "Dr " + combodoctor + " Regards ')");
+            db.execute("insert into tbl_pt_sms_communication (pt_id,send_datetime,type,message_status,message) values('" + patient_id + "','" + DateTime.Now.ToString("yyyy-MM-dd hh:mm") + "','patient','sent','Dear " + ptnaame + " " + "Your appointment for " + procedure + " has been confirmed at " + StartT + " " + cmbStartTime + " with " + "Dr " + combodoctor + " Regards ')");
         }
         public DataTable getpatemail(string patient_id)
         {
@@ -175,9 +171,9 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = cmodel.send_email();
             return dtb;
         }
-        public void update_appointment(DateTime StartT,string diff1,string note,string patient_id,string patient_name,string dr_id,string mobile_no, string email,string gpl_app_id)
+        public void update_appointment(DateTime StartT, string diff1, string note, string patient_id, string patient_name, string dr_id, string mobile_no, string email, string gpl_app_id)
         {
-            int j = db.execute("update tbl_appointment set start_datetime='" + Convert.ToDateTime(StartT).ToString("yyyy-MM-dd HH:mm") + "',duration='" + diff1 + "',note='" + note + "',pt_id='" + patient_id + "',pt_name='" + patient_name + "',dr_id='" + dr_id + "',mobile_no='" + mobile_no + "',email_id='" + email + "' where id='" + gpl_app_id + "'"); 
+            int j = db.execute("update tbl_appointment set start_datetime='" + Convert.ToDateTime(StartT).ToString("yyyy-MM-dd HH:mm") + "',duration='" + diff1 + "',note='" + note + "',pt_id='" + patient_id + "',pt_name='" + patient_name + "',dr_id='" + dr_id + "',mobile_no='" + mobile_no + "',email_id='" + email + "' where id='" + gpl_app_id + "'");
         }
     }
 }

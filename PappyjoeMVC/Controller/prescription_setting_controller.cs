@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-  public class Prescription_Setting_controller
+    public class Prescription_Setting_controller
     {
         Prescription_Setting_model _model = new Prescription_Setting_model();
         public DataTable get_drug()
@@ -42,7 +37,7 @@ namespace PappyjoeMVC.Controller
         }
         public void save_unit(string StrUnit)
         {
-            _model.save_unit( StrUnit);
+            _model.save_unit(StrUnit);
         }
         public string check_drugname(string name)
         {
@@ -51,12 +46,12 @@ namespace PappyjoeMVC.Controller
         }
         public int Save_Drug(string _drugname, string _strtype, string _strunit, string _strengthgr, string _intstructuion)
         {
-            int i = _model.Save_Drug(_drugname,_strtype,_strunit,_strengthgr,_intstructuion);
+            int i = _model.Save_Drug(_drugname, _strtype, _strunit, _strengthgr, _intstructuion);
             return i;
         }
         public string check_exists_drug(string id)
         {
-            string dtb=_model.check_exists_drug(id);
+            string dtb = _model.check_exists_drug(id);
             return dtb;
         }
         public int Update_drug(string id, string _drugname, string _strtype, string _strunit, string _strengthgr, string _intstructuion)
