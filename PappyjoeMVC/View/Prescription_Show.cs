@@ -1,29 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using PappyjoeMVC.Model;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data;
-using PappyjoeMVC.Controller;
-using System.IO;
-using PappyjoeMVC.Model;
 using System.Drawing.Printing;
+using System.IO;
 using System.Net.Mail;
+using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Prescription_Show : Form,prescriptionshow_interface
-    { 
+    public partial class Prescription_Show : Form, prescriptionshow_interface
+    {
 
         public Prescription_Show()
         {
             InitializeComponent();
         }
-        public string doctor_id = "", staff_id = "", patient_id="";
+        public string doctor_id = "", staff_id = "", patient_id = "";
         string logo_name = "";
         string path = "";
         string includeheader = "0";
@@ -141,7 +135,7 @@ namespace PappyjoeMVC.View
                 dataGridView1.ColumnHeadersVisible = false;
                 dataGridView1.RowHeadersVisible = false;
                 dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                 this.cntrl.Get_maindtails(patient_id);// db.table("SELECT tbl_prescription_main.id,tbl_prescription_main.date,tbl_doctor.doctor_name  FROM tbl_prescription_main join tbl_doctor on tbl_prescription_main.dr_id=tbl_doctor.id  where tbl_prescription_main.pt_id='" + patient_id + "' ORDER BY tbl_prescription_main.date DESC");
+                this.cntrl.Get_maindtails(patient_id);// db.table("SELECT tbl_prescription_main.id,tbl_prescription_main.date,tbl_doctor.doctor_name  FROM tbl_prescription_main join tbl_doctor on tbl_prescription_main.dr_id=tbl_doctor.id  where tbl_prescription_main.pt_id='" + patient_id + "' ORDER BY tbl_prescription_main.date DESC");
                 //int i = 0;
                 //for (int j = 0; j < dt_pre_main.Rows.Count; j++)
                 //{
@@ -620,7 +614,7 @@ namespace PappyjoeMVC.View
                 }
             }
             catch (Exception ex)
-            {   }
+            { }
         }
 
         private void editToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -679,7 +673,7 @@ namespace PappyjoeMVC.View
                     dlt_privilige();
                 }
             }
-            else 
+            else
             {
                 dlt_privilige();
             }
@@ -798,7 +792,7 @@ namespace PappyjoeMVC.View
                             for (int k = 0; k < td_prescription_Sub.Rows.Count; k++)
                             {
                                 //this.cntrl.save_prescription(presid,);//  db.table("insert into tbl_prescription (pres_id,pt_id,dr_name,dr_id,date,drug_name,strength,strength_gr,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,status,drug_id) values
-                                this.cntrl.save_prescription(presid , td_prescription_Sub.Rows[k]["pt_id"].ToString() ,td_prescription_Sub.Rows[k]["dr_name"].ToString() , td_prescription_Sub.Rows[k]["dr_id"].ToString(), DateTime.Now.ToString("yyyy-MM-dd"), td_prescription_Sub.Rows[k]["drug_name"].ToString() , td_prescription_Sub.Rows[k]["strength"].ToString(), td_prescription_Sub.Rows[k]["strength_gr"].ToString(), td_prescription_Sub.Rows[k]["duration_unit"].ToString(), td_prescription_Sub.Rows[k]["duration_period"].ToString(), td_prescription_Sub.Rows[k]["morning"].ToString() ,td_prescription_Sub.Rows[k]["noon"].ToString() , td_prescription_Sub.Rows[k]["night"].ToString() , td_prescription_Sub.Rows[k]["food"].ToString() ,td_prescription_Sub.Rows[k]["add_instruction"].ToString() ,td_prescription_Sub.Rows[k]["drug_type"].ToString() , td_prescription_Sub.Rows[k]["status"].ToString(), td_prescription_Sub.Rows[k]["drug_id"].ToString());
+                                this.cntrl.save_prescription(presid, td_prescription_Sub.Rows[k]["pt_id"].ToString(), td_prescription_Sub.Rows[k]["dr_name"].ToString(), td_prescription_Sub.Rows[k]["dr_id"].ToString(), DateTime.Now.ToString("yyyy-MM-dd"), td_prescription_Sub.Rows[k]["drug_name"].ToString(), td_prescription_Sub.Rows[k]["strength"].ToString(), td_prescription_Sub.Rows[k]["strength_gr"].ToString(), td_prescription_Sub.Rows[k]["duration_unit"].ToString(), td_prescription_Sub.Rows[k]["duration_period"].ToString(), td_prescription_Sub.Rows[k]["morning"].ToString(), td_prescription_Sub.Rows[k]["noon"].ToString(), td_prescription_Sub.Rows[k]["night"].ToString(), td_prescription_Sub.Rows[k]["food"].ToString(), td_prescription_Sub.Rows[k]["add_instruction"].ToString(), td_prescription_Sub.Rows[k]["drug_type"].ToString(), td_prescription_Sub.Rows[k]["status"].ToString(), td_prescription_Sub.Rows[k]["drug_id"].ToString());
                             }
                         }
                     }
@@ -810,7 +804,7 @@ namespace PappyjoeMVC.View
                     dataGridView1.RowHeadersVisible = false;
                     dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                     this.cntrl.Get_maindtails(patient_id);
-                   // Show Prescription
+                    // Show Prescription
                 }
             }//end
         }
@@ -824,9 +818,9 @@ namespace PappyjoeMVC.View
             try
             {
                 int p = 0;
-               string doct = this.cntrl.Get_DoctorName(doctor_id);// db.table("select doctor_name from tbl_doctor where id='" + doctor_id + "'");
+                string doct = this.cntrl.Get_DoctorName(doctor_id);// db.table("select doctor_name from tbl_doctor where id='" + doctor_id + "'");
                 string doctor_name = "";
-                if (doct!="")
+                if (doct != "")
                 {
                     doctor_name = doct;
                 }
@@ -1137,7 +1131,7 @@ namespace PappyjoeMVC.View
                                 sWrite.WriteLine("<tr>");
                                 sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
                                 sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;&nbsp;" + header2 + "</font></td></tr>");
-                                sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" +header3 + "</font></td></tr>");
+                                sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" + header3 + "</font></td></tr>");
                                 sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
                                 sWrite.WriteLine("</table>");
                             }
@@ -1148,7 +1142,7 @@ namespace PappyjoeMVC.View
                             sWrite.WriteLine("<tr>");
                             sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
                             sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;&nbsp;" + header2 + "</font></td></tr>");
-                            sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" +header3 + "</font></td></tr>");
+                            sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" + header3 + "</font></td></tr>");
                             sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
                             sWrite.WriteLine("</table>");
                         }
@@ -1159,7 +1153,7 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("<tr>");
                         sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
                         sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;&nbsp;" + header2 + "</font></td></tr>");
-                        sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" +header3 + "</font></td></tr>");
+                        sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" + header3 + "</font></td></tr>");
                         sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
                         sWrite.WriteLine("</table>");
                     }
@@ -1841,7 +1835,7 @@ namespace PappyjoeMVC.View
         public void Load_MainGrid(DataTable dt_pre_main)
         {
             int i = 0;
-            if(dt_pre_main.Rows.Count>0)
+            if (dt_pre_main.Rows.Count > 0)
             {
                 for (int j = 0; j < dt_pre_main.Rows.Count; j++)
                 {
@@ -1912,8 +1906,8 @@ namespace PappyjoeMVC.View
             }
             else
             {
-               Label_NORecordFound.Hide();
-               dataGridView1.Show();
+                Label_NORecordFound.Hide();
+                dataGridView1.Show();
             }
         }
 
