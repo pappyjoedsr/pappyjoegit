@@ -555,6 +555,7 @@ namespace PappyjoeMVC.View
         private void labelprofile_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            Profile_Details_controller cntr = new Profile_Details_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
@@ -600,6 +601,7 @@ namespace PappyjoeMVC.View
         private void labelfinished_Click(object sender, EventArgs e)
         {
             var form2 = new Finished_Procedure();
+            Finished_Procedre_controller cnt = new Finished_Procedre_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
@@ -609,6 +611,7 @@ namespace PappyjoeMVC.View
         private void labelprescription_Click(object sender, EventArgs e)
         {
             var form2 = new Prescription_Show();
+            Prescription_Show_controller cnt = new Prescription_Show_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
@@ -630,6 +633,7 @@ namespace PappyjoeMVC.View
         private void labelinvoice_Click(object sender, EventArgs e)
         {
             var form2 = new Invoice();
+            Invoice_controller cn = new Invoice_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();

@@ -2038,7 +2038,6 @@ namespace PappyjoeMVC.View
         private void label44_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Vital_Signs();
-            //Vital_Signs_controller cn = new Vital_Signs_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
@@ -2060,7 +2059,6 @@ namespace PappyjoeMVC.View
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Reports();
-            //Reports_controller cn = new Reports_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
@@ -2071,7 +2069,6 @@ namespace PappyjoeMVC.View
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Expense();
-            //expense_controller cn = new expense_controller(form2);
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
@@ -2095,6 +2092,102 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             Prescription_Show_controller controller = new Prescription_Show_controller(form2);
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void labeltreatment_Click(object sender, EventArgs e)
+        {
+            var form2 = new Treatment_Plans();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            Treatment_controller controller = new Treatment_controller(form2);
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void labelfinished_Click(object sender, EventArgs e)
+        {
+            var form2 = new Finished_Procedure();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            Finished_Procedre_controller controller = new Finished_Procedre_controller(form2);
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void labl_Lab_Click(object sender, EventArgs e)
+        {
+            //var form2 = new ();
+            //form2.doctor_id = doctor_id;
+            //form2.patient_id = patient_id;
+            //Finished_Procedre_controller controller = new Finished_Procedre_controller(form2);
+            //form2.Closed += (sender1, args) => this.Close();
+            //this.Hide();
+            //form2.ShowDialog();
+        }
+
+        private void labelattachment_Click(object sender, EventArgs e)
+        {
+            var form2 = new Attachments();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void labelinvoice_Click(object sender, EventArgs e)
+        {
+            var form2 = new Invoice();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            Invoice_controller controller = new Invoice_controller(form2);
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void labelpayment_Click(object sender, EventArgs e)
+        {
+            var form2 = new Receipt();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            Receipt_controller controller = new Receipt_controller(form2);
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void labelledger_Click(object sender, EventArgs e)
+        {
+            var form2 = new Ledger();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            Ledger_controller controller = new Ledger_controller(form2);
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            var form2 = new Communication();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form2 = new Practice_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

@@ -561,12 +561,13 @@
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.paneltreatments);
             this.panel4.Controls.Add(this.panelpatients);
-            this.panel4.Controls.Add(this.Panel_inventory);
             this.panel4.Controls.Add(this.panl_Expanse);
             this.panel4.Controls.Add(this.panelPayment);
             this.panel4.Controls.Add(this.paneldailysummary);
             this.panel4.Controls.Add(this.lblrelatedrepo);
+            this.panel4.Controls.Add(this.Panel_inventory);
             this.panel4.Controls.Add(this.panelappointments);
             this.panel4.Location = new System.Drawing.Point(1052, 113);
             this.panel4.Name = "panel4";
@@ -575,7 +576,6 @@
             // 
             // panelpatients
             // 
-            this.panelpatients.Controls.Add(this.paneltreatments);
             this.panelpatients.Controls.Add(this.lblgroupwisereport);
             this.panelpatients.Controls.Add(this.lblmonthnewpatient);
             this.panelpatients.Controls.Add(this.lblfirstappoint);
@@ -593,7 +593,7 @@
             this.paneltreatments.Controls.Add(this.lblmonthtreatment);
             this.paneltreatments.Controls.Add(this.lbleachcategory);
             this.paneltreatments.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.paneltreatments.Location = new System.Drawing.Point(3, 66);
+            this.paneltreatments.Location = new System.Drawing.Point(6, 203);
             this.paneltreatments.Name = "paneltreatments";
             this.paneltreatments.Size = new System.Drawing.Size(307, 132);
             this.paneltreatments.TabIndex = 133;
