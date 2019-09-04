@@ -300,52 +300,56 @@ namespace PappyjoeMVC.View
                             sWrite.WriteLine("    <td align='right' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>Amount Due</font></td>");
                         }
                         sWrite.WriteLine("</tr>");
-                        for (int j = 0; j < DGV_Receipt.Rows.Count; j++)
+                        try
                         {
+                            for (int j = 0; j < DGV_Receipt.Rows.Count; j++)
+                            {
+                                sWrite.WriteLine("<tr>");
+                                sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColSLNo"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColPtName"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColInv"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColReceipt"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColDrName"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColProcedure"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["DATE"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColModeofpayment"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColTotao_Cost"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["COlDIS"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColTax"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColTotalIncome"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + Convert.ToInt32(DGV_Receipt.Rows[j].Cells["ColAmountPaid"].Value.ToString()).ToString("#0.00") + "</font></td>");
+                                if (Chk_RemoveAmountDue.Checked)
+                                { }
+                                else
+                                {
+                                    sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Sego UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColTotalDue"].Value.ToString() + "</font></td>");
+                                }
+                                sWrite.WriteLine("</tr>");
+                            }
+                        }
+                        catch { }
                             sWrite.WriteLine("<tr>");
-                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColSLNo"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColPtName"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColInv"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColReceipt"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColDrName"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColProcedure"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["DATE"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColModeofpayment"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColTotao_Cost"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["COlDIS"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColTax"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColTotalIncome"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + Convert.ToInt32(DGV_Receipt.Rows[j].Cells["ColAmountPaid"].Value.ToString()).ToString("#0.00") + "</font></td>");
+                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
+                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
+                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
+                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
+                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
+                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
+                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
+                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
+                            sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>Total</b></font></td>");
+                            sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_Discount.Text + "</b></font></td>");
+                            sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_tax.Text + "</b></font></td>");
+                            sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_Amount.Text + "</b></font></td>");
+                            sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_Paid.Text + "</b></font></td>");
                             if (Chk_RemoveAmountDue.Checked)
                             { }
                             else
                             {
-                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Sego UI' SIZE=2>" + DGV_Receipt.Rows[j].Cells["ColTotalDue"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_Due.Text + "</b></font></td>");
                             }
-                            sWrite.WriteLine("</tr>");
+                            sWrite.WriteLine("</tr>");                                                                                                                          
                         }
-                        sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
-                        sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
-                        sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
-                        sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
-                        sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
-                        sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
-                        sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
-                        sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
-                        sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>Total</b></font></td>");
-                        sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_Discount.Text + "</b></font></td>");
-                        sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_tax.Text + "</b></font></td>");
-                        sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_Amount.Text + "</b></font></td>");
-                        sWrite.WriteLine("<td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_Paid.Text + "</b></font></td>");
-                        if (Chk_RemoveAmountDue.Checked)
-                        { }
-                        else
-                        {
-                            sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_Due.Text + "</b></font></td>");
-                        }
-                        sWrite.WriteLine("</tr>");
-                    }
                     sWrite.WriteLine("</table>");
                     sWrite.WriteLine("</div>");
                     sWrite.WriteLine("<script>window.print();</script>");
@@ -411,9 +415,21 @@ namespace PappyjoeMVC.View
                         ExcelApp.Cells[2, 2].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
                         for (int i = 1; i < DGV_Receipt.Columns.Count + 1; i++)
                         {
-                            if (i == 14)
-                            {
-                                if (Chk_RemoveAmountDue.Checked == false)
+                                if (i == 14)
+                                {
+                                    if (Chk_RemoveAmountDue.Checked == false)
+                                    {
+                                        ExcelApp.Cells[5, i] = DGV_Receipt.Columns[i - 1].HeaderText;
+                                        ExcelApp.Cells[5, i].ColumnWidth = 25;
+                                        ExcelApp.Cells[5, i].EntireRow.Font.Bold = true;
+                                        ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
+                                        ExcelApp.Cells[5, i].Font.Size = 10;
+                                        ExcelApp.Cells[5, i].Font.Name = "Arial";
+                                        ExcelApp.Cells[5, i].Font.Color = Color.FromArgb(255, 255, 255);
+                                        ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
+                                    }
+                                }
+                                else
                                 {
                                     ExcelApp.Cells[5, i] = DGV_Receipt.Columns[i - 1].HeaderText;
                                     ExcelApp.Cells[5, i].ColumnWidth = 25;
@@ -425,21 +441,11 @@ namespace PappyjoeMVC.View
                                     ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
                                 }
                             }
-                            else
-                            {
-                                ExcelApp.Cells[5, i] = DGV_Receipt.Columns[i - 1].HeaderText;
-                                ExcelApp.Cells[5, i].ColumnWidth = 25;
-                                ExcelApp.Cells[5, i].EntireRow.Font.Bold = true;
-                                ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
-                                ExcelApp.Cells[5, i].Font.Size = 10;
-                                ExcelApp.Cells[5, i].Font.Name = "Arial";
-                                ExcelApp.Cells[5, i].Font.Color = Color.FromArgb(255, 255, 255);
-                                ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
-                            }
-                        }
                         int j1 = 5;
                         for (int i = 0; i <= DGV_Receipt.Rows.Count; i++)
                         {
+                            try
+                            {
                                 for (int j = 0; j < DGV_Receipt.Columns.Count; j++)
                                 {
                                     if (j == 13)
@@ -460,7 +466,9 @@ namespace PappyjoeMVC.View
                                         ExcelApp.Cells[i + 6, j + 1].Font.Size = 8;
                                     }
                                 }
-                            j1 = j1 + 1;
+                                j1 = j1 + 1;
+                            }
+                            catch { }
                         }
                         ExcelApp.Cells[j1, 9] = "Total";
                         ExcelApp.Cells[j1, 9].BorderAround(true);
