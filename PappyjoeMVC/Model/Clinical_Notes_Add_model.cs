@@ -1,7 +1,7 @@
 ﻿using System.Data;
 namespace PappyjoeMVC.Model
 {
-    public class ClinicalNotesAdd_model
+    public class Clinical_Notes_Add_model
     {
         Connection db = new Connection();
         public DataTable investigation_cell(string idinv)

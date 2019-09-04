@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
     public class Patient_Edit_controller
     {
         patient_edit_interface intr;
-        patient_edit_model _model = new patient_edit_model();
+        Patient_Edit_model _model = new Patient_Edit_model();
         Connection db = new Connection();
         public Patient_Edit_controller(patient_edit_interface inttr)
         {
@@ -27,9 +22,9 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.Get_medicalname();
             return dtb;
         }
-        public DataTable patient_medical(string idd,string medid)
+        public DataTable patient_medical(string idd, string medid)
         {
-            DataTable dtb = _model.patient_medical(idd,medid);
+            DataTable dtb = _model.patient_medical(idd, medid);
             return dtb;
         }
         public void get_groupid(string idd)
@@ -42,12 +37,12 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.groupname();
             return dtb;
         }
-        public DataTable patient_group(string idd,string grpid)
+        public DataTable patient_group(string idd, string grpid)
         {
             DataTable dtb = _model.patient_group(idd, grpid);
             return dtb;
         }
-      
+
         public int update(string pt_id)
         {
             _model.patname = intr.Ptname;
@@ -60,7 +55,7 @@ namespace PappyjoeMVC.Controller
             _model.family = intr.family;
             _model.Pmob = intr.Pmob;
             _model.Smob = intr.Smob;
-             _model.Landline = intr.Landline;
+            _model.Landline = intr.Landline;
             _model.email = intr.email;
             _model.street = intr.street;
             _model.locality = intr.locality;
@@ -72,7 +67,7 @@ namespace PappyjoeMVC.Controller
             _model.Visited = intr.Visited;
             _model.occupation = intr.occupation;
             _model.doctername = intr.doctername;
-          int i=_model.update(pt_id);
+            int i = _model.update(pt_id);
             return i;
         }
         public int delete_patient(string pt_id)
@@ -99,7 +94,7 @@ namespace PappyjoeMVC.Controller
         }
         public void insert_pt_medhistory(string patient_id, string medical)
         {
-            _model.insert_pt_medhistory(patient_id,medical);
+            _model.insert_pt_medhistory(patient_id, medical);
         }
         public void delete_pt_group(string patient_id)
         {
@@ -107,7 +102,7 @@ namespace PappyjoeMVC.Controller
         }
         public void insert_pt_group(string patient_id, string group)
         {
-            _model.insert_pt_group(patient_id,group);
+            _model.insert_pt_group(patient_id, group);
         }
     }
 }

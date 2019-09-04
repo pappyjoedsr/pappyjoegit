@@ -6,7 +6,7 @@ namespace PappyjoeMVC.Controller
     public class DoctorWise_appointment_report_controller
     {
         Appointment_report_model _model = new Appointment_report_model();
-        common_model model = new common_model();
+        Common_model model = new Common_model();
         public DataTable get_all_doctorname()
         {
             DataTable dt = model.get_all_doctorname();

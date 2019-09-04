@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using PappyjoeMVC.Controller;
+﻿using System.Data;
 
 namespace PappyjoeMVC.Model
 {
@@ -16,12 +10,12 @@ namespace PappyjoeMVC.Model
             DataTable dtb = db.table("select * from tbl_ledger_Group where type='Dr' order by Id");
             return dtb;
         }
-        public  DataTable Submit(string txtAccountName)
+        public DataTable Submit(string txtAccountName)
         {
             DataTable i = db.table("Select * from tbl_expense_type where name ='" + txtAccountName + "' ");
             return i;
         }
-        public int insert(string txtAccountName,string cmbLedger)
+        public int insert(string txtAccountName, string cmbLedger)
         {
             int i = db.execute("insert into tbl_expense_type (name,Group_Name,Expense_type) values('" + txtAccountName + "','" + cmbLedger + "','Dr')");
             return i;

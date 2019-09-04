@@ -3,7 +3,7 @@ using System.Data;
 
 namespace PappyjoeMVC.Model
 {
-    public class common_model
+    public class Common_model
     {
         Connection db = new Connection();
         public string Load_CompanyName()

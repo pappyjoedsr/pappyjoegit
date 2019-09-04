@@ -17,7 +17,7 @@ namespace PappyjoeMVC.View
         public string patient_id = "";
         public string doctor_id = "0"; String val = null;
         int c = 0, o = 0, inves = 0, d = 0, k = 0, p = 0, pa = 0, patientnotes = 0;
-        common_model mdl = new common_model(); casesheet_model model = new casesheet_model();
+        Common_model mdl = new Common_model(); Casesheet_model model = new Casesheet_model();
         string path = "";
         string logo_name = "";
         public CaseSheet()

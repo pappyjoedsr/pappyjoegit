@@ -161,7 +161,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
                 toolStripButton8.ToolTipText = "Settings";
                 toolStripDropDownButton1.ToolTipText = "Add New";
                 DataTable clinicname = this.cntrl.Get_CompanyNAme();

@@ -11,7 +11,7 @@ namespace PappyjoeMVC.View
     public partial class Reports : Form
     {
         Reports_controller cntrl = new Reports_controller();
-        common_model model = new common_model();
+        Common_model model = new Common_model();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";
@@ -47,7 +47,7 @@ namespace PappyjoeMVC.View
             try
             {
                 toolStripButton5.BackColor = Color.SkyBlue;
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
                 if (doctor_id != "1")
                 {
                     int i = 0;

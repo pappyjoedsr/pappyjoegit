@@ -25,7 +25,7 @@ namespace PappyjoeMVC.View
         int k = 0;
         System.Drawing.Image logo = null;
         Invoice_controller cntrl;
-        common_model cmodel = new common_model();
+        Common_model cmodel = new Common_model();
         Inventory_model inv_model = new Inventory_model();
         Connection db = new Connection();
         string combo_topmargin = "";
@@ -90,7 +90,7 @@ namespace PappyjoeMVC.View
                 }
                 System.Data.DataTable clinicname = cmodel.Get_CompanyNAme();
                 toolStripButton4.Visible = true;
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
                 if (clinicname.Rows.Count > 0)
                 {
                     string clinicn = "";

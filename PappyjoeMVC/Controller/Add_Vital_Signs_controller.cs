@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 
 namespace PappyjoeMVC.Controller
@@ -11,7 +6,7 @@ namespace PappyjoeMVC.Controller
     public class Add_Vital_Signs_controller
     {
         Add_Vital_Signs_model _model = new Add_Vital_Signs_model();
-        common_model model = new common_model();
+        Common_model model = new Common_model();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";
@@ -57,8 +52,8 @@ namespace PappyjoeMVC.Controller
         }
         public int submit(string patient_id, string dr_id, string doctor, string temp_type, string bp_type, string pulse, string txttemp, string text_Bp_Syst, string text_Bp_Dias, string text_Weight, string text_Resp, string dtp_date, string Txtheight)
         {
-            int i = _model.submit(patient_id,dr_id,doctor,temp_type,bp_type, pulse, txttemp, text_Bp_Syst, text_Bp_Dias, text_Weight, text_Resp, dtp_date, Txtheight);
-            return i;    
+            int i = _model.submit(patient_id, dr_id, doctor, temp_type, bp_type, pulse, txttemp, text_Bp_Syst, text_Bp_Dias, text_Weight, text_Resp, dtp_date, Txtheight);
+            return i;
         }
     }
 }

@@ -6,7 +6,7 @@ namespace PappyjoeMVC.Controller
     public class Group_Wise_Report_controller
     {
         Patients_Report_model _model = new Patients_Report_model();
-        common_model mdl = new common_model();
+        Common_model mdl = new Common_model();
         public DataTable dt_grp()
         {
             DataTable dt = _model.dt_grp();

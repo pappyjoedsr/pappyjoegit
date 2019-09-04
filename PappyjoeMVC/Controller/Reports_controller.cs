@@ -7,7 +7,7 @@ namespace PappyjoeMVC.Controller
     {
         Connection db = new Connection();
         Reports_model _model = new Reports_model();
-        common_model cmodel = new common_model();
+        Common_model cmodel = new Common_model();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";

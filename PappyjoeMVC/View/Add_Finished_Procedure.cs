@@ -35,7 +35,7 @@ namespace PappyjoeMVC.View
 
         private void AddFinishedprocedure_Load(object sender, EventArgs e)
         {
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+            toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
             DataTable clinicname =  this.cntrl.Get_CompanyNAme();
             if (clinicname.Rows.Count > 0)
             {

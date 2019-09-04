@@ -1,7 +1,7 @@
 ﻿using System.Data;
 namespace PappyjoeMVC.Model
 {
-    public class Additem_model
+    public class Add_Item_model
     {
         Connection db = new Connection();
         public DataTable fill_category()

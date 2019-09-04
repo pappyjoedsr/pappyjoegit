@@ -18,7 +18,7 @@ namespace PappyjoeMVC.View
         public string patient_id = "";
         public string doctor_id = "";
         Patient_Edit_controller cntrl;
-        common_model mdl = new common_model();
+        Common_model mdl = new Common_model();
         Connection db = new Connection();
         public string aa, bb, gg, caaa, uaaa, ubbb, loadedPath = "";
         public string path = "";

@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
+using System;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
     public class Add_Invoice_controller
     {
         Add_invoice_interface intr;
         Connection db = new Connection();
-        Add_invoice_model _model = new Add_invoice_model();
-        addfinsed_treatment_model fmodel = new addfinsed_treatment_model();
-        common_model cmodel = new common_model();
+        Add_Invoice_model _model = new Add_Invoice_model();
+        Add_Finished_Treatment_model fmodel = new Add_Finished_Treatment_model();
+        Common_model cmodel = new Common_model();
         public Add_Invoice_controller(Add_invoice_interface inttr)
         {
             intr = inttr;
@@ -51,7 +47,7 @@ namespace PappyjoeMVC.Controller
         }
         public void Get_invoice_deatils(string ptid, string invoiceid)
         {
-            DataTable dtb = _model.Get_invoice_deatils(ptid,invoiceid);
+            DataTable dtb = _model.Get_invoice_deatils(ptid, invoiceid);
             intr.load_invoice_details(dtb);
         }
         public DataTable load_completed_procedure(string id)
@@ -59,7 +55,7 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.load_completed_procedure(id);
             return dtb;
         }
-        public void search_procedure_completed(string patient_id,string search)
+        public void search_procedure_completed(string patient_id, string search)
         {
             DataTable dt_tp1 = db.table("SELECT id, procedure_name,procedure_id,cost from tbl_completed_procedures where pt_id='" + patient_id + "' and status='1' and procedure_name like'" + search + "%'");
             intr.Load_procedureGrid(dt_tp1);
@@ -76,7 +72,7 @@ namespace PappyjoeMVC.Controller
         }
         public void load_AllProcedures()
         {
-            DataTable dtb= fmodel.load_proceduresgrid();
+            DataTable dtb = fmodel.load_proceduresgrid();
             intr.Load_searchProcedures(dtb);
         }
         public DataTable get_procedure_Name(string id)
@@ -105,39 +101,39 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.select_All_invoicedata(billno);
             return dtb;
         }
-        public void save_invoice_main(string patient_id,string name,string billno)
+        public void save_invoice_main(string patient_id, string name, string billno)
         {
-          db.execute("insert into tbl_invoices_main (date,pt_id,pt_name,invoice,status,type) values('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + patient_id + "','" + name + "','" + billno + "','1','service')");
+            db.execute("insert into tbl_invoices_main (date,pt_id,pt_name,invoice,status,type) values('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + patient_id + "','" + name + "','" + billno + "','1','service')");
         }
         public DataTable get_invoiceMain_maxid()
         {
             DataTable dt1 = db.table("select MAX(id) from tbl_invoices_main");
             return dt1;
         }
-        public void save_completedid(string date,string patient_id)
+        public void save_completedid(string date, string patient_id)
         {
-          db.execute("insert into tbl_completed_id (completed_date,patient_id) values('" + date + "','" + patient_id + "')");
+            db.execute("insert into tbl_completed_id (completed_date,patient_id) values('" + date + "','" + patient_id + "')");
         }
         public DataTable get_completed_procedure_maxid()
         {
             DataTable dt_procedure = db.table("select MAX(id) from tbl_completed_procedures");
             return dt_procedure;
         }
-        public void save_invoice_details(string invoice_no,string pt_name, string patient_id,string service_id,string services,string unit,string cost,string discount,string discount_type,string tax,string total, string notes, string total_discount,string total_tax,string dr_id,string discountin_rs,string tax_inrs,int invoice_main_id, int completed_id)
+        public void save_invoice_details(string invoice_no, string pt_name, string patient_id, string service_id, string services, string unit, string cost, string discount, string discount_type, string tax, string total, string notes, string total_discount, string total_tax, string dr_id, string discountin_rs, string tax_inrs, int invoice_main_id, int completed_id)
         {
             db.execute("insert into tbl_invoices(invoice_no,pt_name,pt_id,service_id,services,unit,cost,discount,discount_type,tax,total,date,notes,total_cost,total_discount,total_tax,grant_total,dr_id,discountin_rs,tax_inrs,total_payment,invoice_main_id,plan_id,completed_id) values('" + invoice_no + "','" + pt_name + "','" + patient_id + "','" + service_id + "','" + services + "','" + unit + "','" + cost + "','" + discount + "','" + discount_type + "','" + tax + "','" + total + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + notes + "','100','" + total_discount + "','" + total_tax + "','100','" + dr_id + "','" + discountin_rs + "','" + tax_inrs + "','100','" + invoice_main_id + "','0','" + completed_id + "')");
         }
-        public void Save_tbl_completed_procedures(int plan_main_id, string patient_id, string procedure_id, string procedure_name, string quantity, string cost, string discount_type, string discount, string total, string discount_inrs, string note, string dr_id,string completed_id, string tooth)
+        public void Save_tbl_completed_procedures(int plan_main_id, string patient_id, string procedure_id, string procedure_name, string quantity, string cost, string discount_type, string discount, string total, string discount_inrs, string note, string dr_id, string completed_id, string tooth)
         {
-           db.execute("insert into tbl_completed_procedures (plan_main_id,pt_id,procedure_id,procedure_name,quantity,cost,discount_type,discount,total,discount_inrs,note,status,date,dr_id,completed_id,tooth) values ('" + plan_main_id + "','" + patient_id + "','" + procedure_id + "','" + procedure_name + "','" + quantity + "','" + cost + "','" + discount_type + "','" + discount + "','" + total + "','" + discount_inrs + "','" + note + "','0','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + dr_id + "','"+ completed_id+"', '" + tooth + "')");
+            db.execute("insert into tbl_completed_procedures (plan_main_id,pt_id,procedure_id,procedure_name,quantity,cost,discount_type,discount,total,discount_inrs,note,status,date,dr_id,completed_id,tooth) values ('" + plan_main_id + "','" + patient_id + "','" + procedure_id + "','" + procedure_name + "','" + quantity + "','" + cost + "','" + discount_type + "','" + discount + "','" + total + "','" + discount_inrs + "','" + note + "','0','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + dr_id + "','" + completed_id + "', '" + tooth + "')");
         }
-        public void save_invoice_items(string invoice_no,string pt_name,string patient_id, string service_id,string services,string unit,string cost,string discount,string discount_type,string tax,string total,string notes, string total_discount,string total_tax,string dr_id,string discountin_rs,string tax_inrs,int  invoice_main_id,string plan_id,int completed_id)
+        public void save_invoice_items(string invoice_no, string pt_name, string patient_id, string service_id, string services, string unit, string cost, string discount, string discount_type, string tax, string total, string notes, string total_discount, string total_tax, string dr_id, string discountin_rs, string tax_inrs, int invoice_main_id, string plan_id, int completed_id)
         {
             db.execute("insert into tbl_invoices(invoice_no,pt_name,pt_id,service_id,services,unit,cost,discount,discount_type,tax,total,date,notes,total_cost,total_discount,total_tax,grant_total,dr_id,discountin_rs,tax_inrs,total_payment,invoice_main_id,plan_id,completed_id) values('" + invoice_no + "','" + pt_name + "','" + patient_id + "','" + service_id + "','" + services + "','" + unit + "','" + cost + "','" + discount + "','" + discount_type + "','" + tax + "','" + total + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + notes + "','100','" + total_discount + "','" + total_tax + "','100','" + dr_id + "','" + discountin_rs + "','" + tax_inrs + "','100','" + invoice_main_id + "','" + plan_id + "','" + completed_id + "')");
         }
         public void Set_completed_status0(string id)
         {
-          db.execute("update  tbl_completed_procedures set status='0' where id= '" +id + "'");
+            db.execute("update  tbl_completed_procedures set status='0' where id= '" + id + "'");
         }
         public void update_invoice_autoid(int a)
         {
@@ -152,14 +148,14 @@ namespace PappyjoeMVC.Controller
         {
             db.execute("delete from tbl_invoices where invoice_no='" + billno + "'");
         }
-        public DataTable  get_taxValue(string name)
+        public DataTable get_taxValue(string name)
         {
             DataTable dtb = _model.get_taxValue(name);
             return dtb;
         }
-        public void save_incove_items(string invoice_no,string pt_name,string pt_id, string services, string unit, string cost, string discount, string discount_type, string tax, string total, string date, string notes, string total_cost, string total_discount, string total_tax, string grant_total, string dr_id, string discountin_rs, string tax_inrs, string total_payment)
+        public void save_incove_items(string invoice_no, string pt_name, string pt_id, string services, string unit, string cost, string discount, string discount_type, string tax, string total, string date, string notes, string total_cost, string total_discount, string total_tax, string grant_total, string dr_id, string discountin_rs, string tax_inrs, string total_payment)
         {
-          db.execute("insert into tbl_invoices(invoice_no,pt_name,pt_id,services,unit,cost,discount,discount_type,tax,total,date,notes,total_cost,total_discount,total_tax,grant_total,dr_id,discountin_rs,tax_inrs,total_payment) values('" + invoice_no + "','" + pt_name + "','" + pt_id + "','" + services + "','" + unit + "','" + cost + "','" + discount + "','" + discount_type + "','" + tax + "','" + total + "','" + date + "','" + notes + "','" + total_cost + "','" + total_discount + "','" + total_tax + "','" + grant_total + "','" + dr_id + "','" + discountin_rs + "','" + tax_inrs + "','" + total_payment + "')");
+            db.execute("insert into tbl_invoices(invoice_no,pt_name,pt_id,services,unit,cost,discount,discount_type,tax,total,date,notes,total_cost,total_discount,total_tax,grant_total,dr_id,discountin_rs,tax_inrs,total_payment) values('" + invoice_no + "','" + pt_name + "','" + pt_id + "','" + services + "','" + unit + "','" + cost + "','" + discount + "','" + discount_type + "','" + tax + "','" + total + "','" + date + "','" + notes + "','" + total_cost + "','" + total_discount + "','" + total_tax + "','" + grant_total + "','" + dr_id + "','" + discountin_rs + "','" + tax_inrs + "','" + total_payment + "')");
         }
         public DataTable select_taxValue(string name)
         {

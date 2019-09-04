@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
+using System;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
     public class Login_controller
     {
         login_interface intr;
-        login_model _model = new login_model();
+        Login_model _model = new Login_model();
         Connection db = new Connection();
         public Login_controller(login_interface inttr)
         {
@@ -52,11 +48,11 @@ namespace PappyjoeMVC.Controller
         }
         public void delete_activation()
         {
-           db.execute("DELETE from tbl_activation");
+            db.execute("DELETE from tbl_activation");
         }
-        public void save_activation(string listgetcode,string listactcode,string lblhexcode)
+        public void save_activation(string listgetcode, string listactcode, string lblhexcode)
         {
-            int medi = db.execute("insert into tbl_activation(getcode,actcode,registrationdate,hexacode ) values('" + listgetcode + "','" + listactcode + "','" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "','" + lblhexcode+ "')");
+            int medi = db.execute("insert into tbl_activation(getcode,actcode,registrationdate,hexacode ) values('" + listgetcode + "','" + listactcode + "','" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "','" + lblhexcode + "')");
         }
         public void Save_activation_Null()
         {

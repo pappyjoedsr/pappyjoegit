@@ -28,9 +28,9 @@ namespace PappyjoeMVC.View
         string stock_id = "0";
         public string[] teeth = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
         Add_Invoice_controller cntrl;
-        common_model cmodel = new common_model();
+        Common_model cmodel = new Common_model();
         public string invoiceid = "";
-        addfinsed_treatment_model fmodel = new addfinsed_treatment_model();
+        Add_Finished_Treatment_model fmodel = new Add_Finished_Treatment_model();
         public string jhjj;
         public Add__invoice()
         {
@@ -39,7 +39,7 @@ namespace PappyjoeMVC.View
 
         private void Add__invoice_Load(object sender, EventArgs e)
         {
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+            toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
             DataTable admin = this.cntrl.get_adminid();//  db.table("select id from tbl_doctor where login_type='admin'");
             if (admin.Rows.Count > 0)
             {

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 namespace PappyjoeMVC.Model
 {
-   public class add_category_model
+    public class Add_Category_model
     {
         Connection db = new Connection();
         private string _number = "";
@@ -39,17 +34,17 @@ namespace PappyjoeMVC.Model
         }
         public int delete(string id)
         {
-           int i = db.execute("delete from tbl_Category where id='" + id + "'");
+            int i = db.execute("delete from tbl_Category where id='" + id + "'");
             return i;
         }
-        public DataTable Get_catdetails(string name,string number)
+        public DataTable Get_catdetails(string name, string number)
         {
-            DataTable dt = db.table("select Name,Cat_Number from tbl_Category where Name='" + name+ "' and Cat_Number='" +number+ "'");
+            DataTable dt = db.table("select Name,Cat_Number from tbl_Category where Name='" + name + "' and Cat_Number='" + number + "'");
             return dt;
         }
         public void save()
         {
-            db.execute("insert into tbl_Category (Name,Cat_Number,Description) values('" + _name + "','" +_number + "','" + _description + "')");
+            db.execute("insert into tbl_Category (Name,Cat_Number,Description) values('" + _name + "','" + _number + "','" + _description + "')");
         }
         public void update(string Id)
         {

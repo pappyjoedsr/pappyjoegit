@@ -6,7 +6,7 @@ namespace PappyjoeMVC.Controller
     public class Daily_NewPatients_controller
     {
         Patients_Report_model _model = new Patients_Report_model();
-        common_model mdl = new common_model();
+        Common_model mdl = new Common_model();
         public DataTable doctor_rs()
         {
             DataTable rs = _model.doctor_rs();

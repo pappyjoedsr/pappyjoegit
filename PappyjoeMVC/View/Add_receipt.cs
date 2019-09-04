@@ -31,7 +31,7 @@ namespace PappyjoeMVC.View
         DataGridViewLinkColumn Deletelink1 = new DataGridViewLinkColumn();
         Add_Receipt_controller cntrl;
         public string[] invoices = new string[100];
-        common_model cmodel = new common_model();
+        Common_model cmodel = new Common_model();
         public Add_Receipt()
         {
             InitializeComponent();
@@ -45,7 +45,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
                 DataTable admin = cmodel.Get_adminId();
                 if (admin.Rows.Count > 0)
                 {

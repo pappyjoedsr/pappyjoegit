@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-    public  class Finished_Procedre_controller
+    public class Finished_Procedre_controller
     {
         Finished_Procedure_interface intr;
-        addfinsed_treatment_model _model = new addfinsed_treatment_model();
+        Add_Finished_Treatment_model _model = new Add_Finished_Treatment_model();
         Connection db = new Connection();
-        common_model cmodel = new common_model();
+        Common_model cmodel = new Common_model();
         public Finished_Procedre_controller(Finished_Procedure_interface inttr)
         {
             intr = inttr;
@@ -21,18 +16,18 @@ namespace PappyjoeMVC.Controller
         }
         public string Add_privilliege(string doctor_id)
         {
-          string  privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRFP' and Permission='A'");
-          return privid;
+            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRFP' and Permission='A'");
+            return privid;
         }
-        public string  edit_privillege(string doctor_id)
+        public string edit_privillege(string doctor_id)
         {
-           string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRFP' and Permission='E'");
+            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRFP' and Permission='E'");
             return privid;
         }
         public string delete_privillage(string doctor_id)
         {
-          string  privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRFP' and Permission='D'");
-          return privid;
+            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRFP' and Permission='D'");
+            return privid;
         }
         public void get_completed_id_date(string patient_id)
         {

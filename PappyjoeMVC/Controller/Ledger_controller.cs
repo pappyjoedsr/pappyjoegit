@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-    public  class Ledger_controller
+    public class Ledger_controller
     {
         Ledger_interface intr;
-        common_model cmodel = new common_model();
+        Common_model cmodel = new Common_model();
         Ledger_model _model = new Ledger_model();
         public Ledger_controller(Ledger_interface inttr)
         {
@@ -19,10 +14,10 @@ namespace PappyjoeMVC.Controller
         }
         public string Get_DoctorName(string doctor_id)
         {
-            string dtb = cmodel.Get_DoctorName(doctor_id); 
+            string dtb = cmodel.Get_DoctorName(doctor_id);
             return dtb;
         }
-        public DataTable Get_CompanyNAme()  
+        public DataTable Get_CompanyNAme()
         {
             DataTable dtb = cmodel.Get_CompanyNAme();
             return dtb;

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 namespace PappyjoeMVC.Model
 {
-    public class prescription_model
+    public class Prescription_model
     {
         Connection db = new Connection();
-        public DataTable getPrescriptionMain(string prescription_id,string ptid)
+        public DataTable getPrescriptionMain(string prescription_id, string ptid)
         {
             DataTable dt_prescription_main = db.table("SELECT tbl_prescription_main.id,tbl_prescription_main.date,tbl_doctor.doctor_name,tbl_prescription_main.notes FROM tbl_prescription_main join tbl_doctor on tbl_prescription_main.dr_id=tbl_doctor.id where tbl_prescription_main.id='" + prescription_id + "' and pt_id='" + ptid + "'");
             return dt_prescription_main;
@@ -41,7 +36,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable search_template(string searchtext2)
         {
-            DataTable dt2 = db.table("select id,templates from tbl_templates_main where templates like'%" + searchtext2+ "%'");
+            DataTable dt2 = db.table("select id,templates from tbl_templates_main where templates like'%" + searchtext2 + "%'");
             return dt2;
         }
         public DataTable ge_drug(string id1)
@@ -59,10 +54,10 @@ namespace PappyjoeMVC.Model
             DataTable dt4 = db.table("select id,inventory_id from tbl_adddrug where id='" + id + "' and inventory_id<>0 ORDER BY id DESC");
             return dt4;
         }
-        public void save_prescriptionmain(string ptid,string d_id,string date,string prescription_bill_status,string note)
+        public void save_prescriptionmain(string ptid, string d_id, string date, string prescription_bill_status, string note)
         {
             db.table("insert into tbl_prescription_main (pt_id,dr_id,date,pay_status,notes) values('" + ptid + "','" + d_id + "','" + date + "','" + prescription_bill_status + "','" + note + "')");
-        } 
+        }
         public DataTable Maxid()
         {
             DataTable dt = db.table("select MAX(id) from tbl_prescription_main");
@@ -72,16 +67,16 @@ namespace PappyjoeMVC.Model
         {
             db.table("insert into tbl_prescription (pres_id,pt_id,dr_name,dr_id,date,drug_name,strength,strength_gr,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,status,drug_id) values('" + pres_id + "','" + pt_id + "','" + dr_name + "','" + dr_id + "','" + date + "','" + drug_name + "','" + strength + "','" + strength_gr + "','" + duration_unit + "','" + duration_period + "','" + morning + "','" + noon + "','" + night + "','" + food + "','" + add_instruction + "','" + drug_type + "'," + status + ",'" + drug_id + "')");
         }
-        public void update_prescription_review(string date,int presid)
+        public void update_prescription_review(string date, int presid)
         {
-           db.execute("UPDATE tbl_prescription_main SET review='YES',Review_date='" + date + "' WHERE id='" + presid + "'");
+            db.execute("UPDATE tbl_prescription_main SET review='YES',Review_date='" + date + "' WHERE id='" + presid + "'");
         }
 
-        public void update_prescription_review_NO(string date,int presid)
+        public void update_prescription_review_NO(string date, int presid)
         {
             db.execute("UPDATE tbl_prescription_main SET review='NO',Review_date='" + date + "'  WHERE id='" + presid + "'");
         }
-        public void update_prescription_main(string note,string Prescription_bill_status, string prescription_id)
+        public void update_prescription_main(string note, string Prescription_bill_status, string prescription_id)
         {
             db.execute("update tbl_prescription_main set notes='" + note + "',pay_status='" + Prescription_bill_status + "' where id='" + prescription_id + "'");
         }
@@ -93,9 +88,9 @@ namespace PappyjoeMVC.Model
         {
             db.execute("insert into tbl_templates_main(templates) values('" + template + "')");
         }
-        public string  get_templateid(string tempnametext)
+        public string get_templateid(string tempnametext)
         {
-            string dt = db.scalar("select id from tbl_templates_main where templates='" + tempnametext+ "'");
+            string dt = db.scalar("select id from tbl_templates_main where templates='" + tempnametext + "'");
             return dt;
         }
         public void save_template(string temp_id, string pt_id, string pt_name, string dr_id, string dr_name, string date, string drug_name, string strength, string strength_gr, string duration, string morning, string noon, string night, string food, string add_instruction, string drug_type, string drug_id, string pres_id, string duration_period, string status)

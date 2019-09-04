@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-   public  class ItemList_Model
+    public class Item_List_Model
     {
         Connection db = new Connection();
-        public DataTable  Fill_manufactureCombo()
+        public DataTable Fill_manufactureCombo()
         {
             DataTable gp_rs = db.table("SELECT id,manufacturer FROM tbl_manufacturer WHERE id IN (SELECT MAX(id) FROM tbl_manufacturer GROUP BY id)");
             return gp_rs;
@@ -37,7 +33,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Search_wit_manufacture(string name, string manufacture)
         {
-            DataTable dtb_items = db.table("Select A.id,A.item_code,A.item_name,(select sum(Qty) from tbl_BatchNumber where item_code= A.item_code) Stock from tbl_ITEMS A  where (A.item_code like '" + name+ "%' or A.item_name like '" +name + "%') and A.manufacturer='" + manufacture + "'  order by A.id");
+            DataTable dtb_items = db.table("Select A.id,A.item_code,A.item_name,(select sum(Qty) from tbl_BatchNumber where item_code= A.item_code) Stock from tbl_ITEMS A  where (A.item_code like '" + name + "%' or A.item_name like '" + name + "%') and A.manufacturer='" + manufacture + "'  order by A.id");
             return dtb_items;
         }
         public DataTable Get_itemDetails(string itemcode)
@@ -52,7 +48,7 @@ namespace PappyjoeMVC.Model
         }
         public int delete(string itemcode)
         {
-           int i = db.execute("delete from tbl_ITEMS where id='" + itemcode + "' ");
+            int i = db.execute("delete from tbl_ITEMS where id='" + itemcode + "' ");
             return i;
         }
     }

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 namespace PappyjoeMVC.Model
 {
-  public class patient_edit_model
+    public class Patient_Edit_model
     {
         Connection db = new Connection();
         private string _patname = "";
@@ -157,7 +152,7 @@ namespace PappyjoeMVC.Model
             DataTable dt35 = db.table("select name from tbl_medhistory order by name");
             return dt35;
         }
-        public DataTable patient_medical(string idd,string medid)
+        public DataTable patient_medical(string idd, string medid)
         {
             DataTable mht = db.table("select med_id from tbl_pt_medhistory where pt_id='" + idd + "' and med_id='" + medid + "'");
             return mht;
@@ -167,12 +162,12 @@ namespace PappyjoeMVC.Model
             DataTable group = db.table("select group_id from tbl_pt_group where pt_id='" + idd + "'");
             return group;
         }
-       public DataTable groupname()
+        public DataTable groupname()
         {
             DataTable dt9 = db.table("Select name from tbl_group");
             return dt9;
         }
-        public DataTable patient_group(string idd,string grpid)
+        public DataTable patient_group(string idd, string grpid)
         {
             DataTable gt = db.table("select group_id from tbl_pt_group where pt_id='" + idd + "' and group_id='" + grpid + "'");
             return gt;
@@ -180,12 +175,12 @@ namespace PappyjoeMVC.Model
 
         public int update(string pt_id)
         {
-           int i = db.execute("update tbl_patient set pt_name='" + _patname + "',pt_id='" + _patId + "',aadhar_id='" + _aadhar + "',gender='" + _gender + "',age='" + _age + "',date_of_birth='" + _dob + "',blood_group='" + _blood + "',family='" + _family + "',primary_mobile_number='" + _Pmob + "',secondary_mobile_number='" + _Smob + "',landline_number='" + _Landline + "',email_address='" + _email + "',street_address='" + _street + "',locality='" + _locality + "',city='" + _city + "',pincode='" + _pin + "',group_id='',refferedby='" + _refferedby + "',Opticket='" + _opticket + "',Visited='" + _visited + "',Occupation='" + _occupation + "',doctorname='" + _doctername + "'  where id='" + pt_id + "'");
+            int i = db.execute("update tbl_patient set pt_name='" + _patname + "',pt_id='" + _patId + "',aadhar_id='" + _aadhar + "',gender='" + _gender + "',age='" + _age + "',date_of_birth='" + _dob + "',blood_group='" + _blood + "',family='" + _family + "',primary_mobile_number='" + _Pmob + "',secondary_mobile_number='" + _Smob + "',landline_number='" + _Landline + "',email_address='" + _email + "',street_address='" + _street + "',locality='" + _locality + "',city='" + _city + "',pincode='" + _pin + "',group_id='',refferedby='" + _refferedby + "',Opticket='" + _opticket + "',Visited='" + _visited + "',Occupation='" + _occupation + "',doctorname='" + _doctername + "'  where id='" + pt_id + "'");
             return i;
         }
         public int delete_patient(string pt_id)
         {
-           int  i = db.execute("update tbl_patient set Profile_Status='Cancelled' where id='" + pt_id + "'");
+            int i = db.execute("update tbl_patient set Profile_Status='Cancelled' where id='" + pt_id + "'");
             return i;
         }
         public void save(string medical)
@@ -198,9 +193,9 @@ namespace PappyjoeMVC.Model
         }
         public void delete_pt_medhistory(string patient_id)
         {
-           db.execute("delete  from tbl_pt_medhistory where pt_id='" + patient_id + "'");
+            db.execute("delete  from tbl_pt_medhistory where pt_id='" + patient_id + "'");
         }
-        public void insert_pt_medhistory(string patient_id,string medical)
+        public void insert_pt_medhistory(string patient_id, string medical)
         {
             db.execute("insert into tbl_pt_medhistory (pt_id,med_id) values('" + patient_id + "','" + medical + "')");
         }
@@ -208,9 +203,9 @@ namespace PappyjoeMVC.Model
         {
             db.execute("delete from tbl_pt_group where pt_id='" + patient_id + "'");
         }
-        public void insert_pt_group(string patient_id,string group)
+        public void insert_pt_group(string patient_id, string group)
         {
-          db.execute("insert into  tbl_pt_group(pt_id,group_id) values('" + patient_id + "','" + group + "')");
+            db.execute("insert into  tbl_pt_group(pt_id,group_id) values('" + patient_id + "','" + group + "')");
         }
     }
 }

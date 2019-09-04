@@ -12,8 +12,8 @@ namespace PappyjoeMVC.View
 {
     public partial class Print_Label : Form
     {
-        printlabel_model mdl = new printlabel_model();
-        patients_model _model = new patients_model();
+        Print_Label_model mdl = new Print_Label_model();
+        Patients_model _model = new Patients_model();
         public Print_Label()
         {
             InitializeComponent();

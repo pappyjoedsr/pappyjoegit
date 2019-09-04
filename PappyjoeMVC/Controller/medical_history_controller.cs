@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.Controller
 {
-  public class Medical_History_controller
+    public class Medical_History_controller
     {
-        medical_history_model _model = new medical_history_model();
+        Medical_history_model _model = new Medical_history_model();
         public DataTable Check_medical(string name)
         {
             DataTable dtb = _model.Check_medical(name);
@@ -55,15 +50,15 @@ namespace PappyjoeMVC.Controller
             int i = _model.save_group(group);
             return i;
         }
-        public int update_group(string id,string group)
+        public int update_group(string id, string group)
         {
-            int i= _model.update_group(id,group);
+            int i = _model.update_group(id, group);
             return i;
         }
         public DataTable exsists_ptgroup(string name)
         {
             DataTable dtb = this._model.exsists_ptgroup(name);
-            return dtb; 
+            return dtb;
         }
         public void delete_group(string name)
         {

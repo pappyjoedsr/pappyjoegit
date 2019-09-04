@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
     public class Prescription_Add_controller
     {
         Prescription_Add_interface intr;
-        common_model cmodel = new common_model();
-        prescription_setting_model pmodel = new prescription_setting_model();
-        prescription_model _model = new prescription_model();
+        Common_model cmodel = new Common_model();
+        Prescription_Setting_model pmodel = new Prescription_Setting_model();
+        Prescription_model _model = new Prescription_model();
         Inventory_model inmodel = new Inventory_model();
         //addfinsed_treatment_model fmodel = new addfinsed_treatment_model();
         public Prescription_Add_controller(Prescription_Add_interface inttr)
@@ -80,7 +75,7 @@ namespace PappyjoeMVC.Controller
             string dtb = pmodel.check_drugname(name);
             return dtb;
         }
-        public void  Save_Drug(string name,string type,string unit,string strength,string instruction)
+        public void Save_Drug(string name, string type, string unit, string strength, string instruction)
         {
             //pmodel.Drugname = name;
             //pmodel.StrType = type;
@@ -126,7 +121,7 @@ namespace PappyjoeMVC.Controller
         }
         public void save_prescriptionmain(string ptid, string d_id, string date, string prescription_bill_status, string note)
         {
-            _model.save_prescriptionmain(ptid,d_id,date,prescription_bill_status,note);
+            _model.save_prescriptionmain(ptid, d_id, date, prescription_bill_status, note);
         }
         public DataTable Maxid()
         {
@@ -139,16 +134,16 @@ namespace PappyjoeMVC.Controller
         }
         public void update_prescription_review(string date, int presid)
         {
-            _model.update_prescription_review(date,presid);
+            _model.update_prescription_review(date, presid);
         }
         public DataTable get_reviewId(string patient_id, string reviewdate)
         {
-            DataTable dtb = cmodel.get_reviewId(patient_id,reviewdate);
+            DataTable dtb = cmodel.get_reviewId(patient_id, reviewdate);
             return dtb;
         }
         public void save_review(string date, string patient_id)
         {
-           cmodel.save_review(date, patient_id);
+            cmodel.save_review(date, patient_id);
         }
         public void save_appointment(string date, string patient_id, string pat_name, string dr_id, string Patient_mobile, string dr_name)
         {
@@ -156,7 +151,7 @@ namespace PappyjoeMVC.Controller
         }
         public void update_prescription_review_NO(string date, int presid)
         {
-            _model.update_prescription_review_NO(date,presid);
+            _model.update_prescription_review_NO(date, presid);
         }
         public void update_prescription_main(string note, string Prescription_bill_status, string prescription_id)
         {

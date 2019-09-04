@@ -1,21 +1,16 @@
 ﻿using PappyjoeMVC.Model;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Controller
 {
     public class Show_Appointment_controller
     {
         Show_Appointment_model mdl = new Show_Appointment_model();
-        common_model cmdl = new common_model();
+        Common_model cmdl = new Common_model();
         Add_Appointment_model am = new Add_Appointment_model();
         public string privilege_A(string doctor_id)
         {
-            string e= mdl.privilege_A(doctor_id);
+            string e = mdl.privilege_A(doctor_id);
             return e;
         }
         public string doctr_privillage_for_addnewPatient(string doctor_id)

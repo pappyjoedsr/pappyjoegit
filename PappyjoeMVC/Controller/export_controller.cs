@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
+using System;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-  public class Export_controller
+    public class Export_controller
     {
-        
-        export_model _model = new export_model();
+
+        Export_model _model = new Export_model();
         public DataTable Get_AllDoctor()
         {
             DataTable dtb = _model.Get_AllDoctor();
@@ -18,7 +14,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable Get_addProcedure()
         {
-            DataTable dtb=_model.Get_addProcedure();
+            DataTable dtb = _model.Get_addProcedure();
             return dtb;
         }
         public DataTable patient_details(DateTime datefrom, DateTime dateto)
@@ -39,7 +35,7 @@ namespace PappyjoeMVC.Controller
         public DataTable doctor_wise_treatment(string doctor, DateTime datefrom, DateTime dateto)
         {
             DataTable dtb = _model.doctor_wise_treatment(doctor, datefrom, dateto);
-            return dtb; 
+            return dtb;
         }
         public DataTable all_tratment(DateTime datefrom, DateTime dateto)
         {
@@ -53,7 +49,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable doctor_wise_prescription(string doctor, DateTime datefrom, DateTime dateto)
         {
-            DataTable dtb = _model.doctor_wise_prescription(doctor,datefrom, dateto);
+            DataTable dtb = _model.doctor_wise_prescription(doctor, datefrom, dateto);
             return dtb;
         }
         public DataTable All_prescription(DateTime datefrom, DateTime dateto)

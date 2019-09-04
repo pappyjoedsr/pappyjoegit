@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
+using System;
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
-   public class Patients_controller
+    public class Patients_controller
     {
         patients_interface intr;
-        patients_model _model = new patients_model();
-        common_model cmodel = new common_model();
+        Patients_model _model = new Patients_model();
+        Common_model cmodel = new Common_model();
         public Patients_controller(patients_interface inttr)
         {
             intr = inttr;
@@ -48,7 +44,7 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.clinic_findings(startDateTime, startDateTime1);
             intr.ClinicFindings(dtb);
         }
-         public DataTable complaints(string pt_id)
+        public DataTable complaints(string pt_id)
         {
             DataTable dtb = _model.complaints(pt_id);
             return dtb;
@@ -73,7 +69,7 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.notes(pt_id);
             return dtb;
         }
-        public void treatmentPlan(DateTime start,DateTime startDateTime1)
+        public void treatmentPlan(DateTime start, DateTime startDateTime1)
         {
             DataTable dtb = _model.treatmentPlan(start, startDateTime1);
             intr.TreatmentPlan(dtb);
@@ -83,7 +79,7 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.treatements_items(id);
             return dtb;
         }
-      public void finishedprocedure(DateTime startDateTime, DateTime startDateTime1)
+        public void finishedprocedure(DateTime startDateTime, DateTime startDateTime1)
         {
             DataTable dtb = _model.finishedprocedure(startDateTime, startDateTime1);
             intr.FinishedProcedure(dtb);
@@ -128,7 +124,7 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.recently_visited(d, todate);
             intr.Create_Datagrid(dtb);
         }
-        public void  Recently_added(DateTime d, DateTime todate)
+        public void Recently_added(DateTime d, DateTime todate)
         {
             DataTable dtb = _model.Recently_added(d, todate);
             intr.Create_Datagrid(dtb);
@@ -165,7 +161,7 @@ namespace PappyjoeMVC.Controller
         }
         public void recently_visited_search(DateTime d, DateTime todate, string name)
         {
-            DataTable dtb = _model.recently_visited_search(d,todate,name);
+            DataTable dtb = _model.recently_visited_search(d, todate, name);
             intr.Create_Datagrid(dtb);
         }
         public void recently_added_search(DateTime d, DateTime todate, string name)
@@ -195,7 +191,7 @@ namespace PappyjoeMVC.Controller
         }
         public void patients_wit_group_search(string id4, string name)
         {
-            DataTable dtb = _model.patients_wit_group_search(id4,name);
+            DataTable dtb = _model.patients_wit_group_search(id4, name);
             intr.Create_Datagrid(dtb);
         }
         public DataTable Patient_search(string patid)

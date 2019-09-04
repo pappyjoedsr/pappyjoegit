@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-  public  class Doctor_Practice_controller
+    public class Doctor_Practice_controller
     {
-        doctorpractice_model _model = new doctorpractice_model();
+        Doctor_Practice_model _model = new Doctor_Practice_model();
         public DataTable load_services()
         {
             DataTable dt_maintest = _model.load_services();
@@ -20,23 +15,23 @@ namespace PappyjoeMVC.Controller
             DataTable checkdatacc = _model.ifexists_services(text);
             return checkdatacc;
         }
-        public void save_service(string text )
+        public void save_service(string text)
         {
-          _model.save_service(text);
+            _model.save_service(text);
         }
         public string max_serviceId()
         {
             string dt = _model.max_serviceId();
             return dt;
         }
-        public void update_service(string text,string serviceid)
+        public void update_service(string text, string serviceid)
         {
             _model.update_service(text, serviceid);
         }
         public int delete_service(string serviceid)
         {
-          int i=  _model.delete_service(serviceid);
-          return i;
+            int i = _model.delete_service(serviceid);
+            return i;
         }
         //degree
         public void save_degree(string text)
@@ -59,32 +54,32 @@ namespace PappyjoeMVC.Controller
         }
         public void delete_degree(string degreeid)
         {
-            _model.delete_degree(degreeid); 
+            _model.delete_degree(degreeid);
         }
         public DataTable load_degree()
         {
             DataTable dt_degree = _model.load_degree();
             return dt_degree;
         }
-      //council
+        //council
         public DataTable load_regcouncil()
         {
-            DataTable dt_council = _model.load_regcouncil(); 
+            DataTable dt_council = _model.load_regcouncil();
             return dt_council;
-        } 
+        }
         public void delete_registration(string councilid)
         {
-            _model.delete_registration(councilid); 
+            _model.delete_registration(councilid);
         }
-        public void update_council(string council,string councilid)
+        public void update_council(string council, string councilid)
         {
-            _model.update_council(council, councilid); 
+            _model.update_council(council, councilid);
         }
         public DataTable ifexists_council(string name)
         {
             DataTable checkdatacc = _model.ifexists_council(name);
             return checkdatacc;
-        } 
+        }
         public void save_council(string name)
         {
             _model.save_council(name);
@@ -94,7 +89,7 @@ namespace PappyjoeMVC.Controller
             string dt = _model.max_councilid();
             return dt;
         }
-      //member
+        //member
         public DataTable load_member()
         {
             DataTable dt_membership = _model.load_member();
@@ -107,22 +102,22 @@ namespace PappyjoeMVC.Controller
         }
         public void save_member(string name)
         {
-            _model.save_member(name); 
+            _model.save_member(name);
         }
         public string max_memberid()
         {
-            string dt = _model.max_memberid(); 
+            string dt = _model.max_memberid();
             return dt;
         }
-        public void update_member(string name,string membershipid)
+        public void update_member(string name, string membershipid)
         {
-            _model.update_member(name,membershipid);
+            _model.update_member(name, membershipid);
         }
         public void delete_member(string membershipid)
         {
             _model.delete_member(membershipid);
         }
-      //college
+        //college
         public void delete_college(string collegeid)
         {
             _model.delete_college(collegeid);
@@ -143,23 +138,23 @@ namespace PappyjoeMVC.Controller
         }
         public string max_collegeid()
         {
-            string dt = _model.max_collegeid(); 
+            string dt = _model.max_collegeid();
             return dt;
         }
         public void update_college(string name, string collegeid)
         {
-            _model.update_college(name, collegeid); 
+            _model.update_college(name, collegeid);
         }
-      //specilization
-       public DataTable ifexists_specilization(string name)
+        //specilization
+        public DataTable ifexists_specilization(string name)
         {
-            DataTable checkdatacc = this._model.ifexists_specilization(name); 
+            DataTable checkdatacc = this._model.ifexists_specilization(name);
             return checkdatacc;
         }
-       public void save_specilization(string name)
-       {
-           this._model.save_specilization(name);
-       }
+        public void save_specilization(string name)
+        {
+            this._model.save_specilization(name);
+        }
         public string max_specilizationid()
         {
             string dt = this._model.max_specilizationid();
@@ -173,7 +168,7 @@ namespace PappyjoeMVC.Controller
         {
             _model.delete_specilization(Specializationid);
         }
-      public DataTable load_specilization()
+        public DataTable load_specilization()
         {
             DataTable dt_maintest = _model.load_specilization();
             return dt_maintest;

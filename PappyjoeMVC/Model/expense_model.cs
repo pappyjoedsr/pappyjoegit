@@ -2,7 +2,7 @@
 using System.Data;
 namespace PappyjoeMVC.Model
 {
-    public class expense_model
+    public class Expense_model
     {
         Connection db = new Connection();
         public DataTable load_accountname()

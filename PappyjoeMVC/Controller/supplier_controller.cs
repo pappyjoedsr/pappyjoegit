@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-   public class Supplier_controller
+    public class Supplier_controller
     {
-        supplier_model _model = new supplier_model();
+        Supplier_model _model = new Supplier_model();
         public string Document_number()
         {
             string dtb = _model.Document_number();
@@ -27,17 +22,17 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable get_suplier_phone(string name)
         {
-            DataTable dtb =_model. get_suplier_phone(name);
+            DataTable dtb = _model.get_suplier_phone(name);
             return dtb;
         }
         public int Save(string _code, string _name, string _Cname, string _phone, string _phone2, string _email, string _fax, string _web, string _address1, string _address2, string _address3, string _balance)
         {
-            int i = _model.save( _code,  _name,  _Cname,  _phone,  _phone2,  _email,  _fax,  _web,  _address1,  _address2,  _address3,  _balance);
+            int i = _model.save(_code, _name, _Cname, _phone, _phone2, _email, _fax, _web, _address1, _address2, _address3, _balance);
             return i;
         }
         public int update(string id, string _code, string _name, string _Cname, string _phone, string _phone2, string _email, string _fax, string _web, string _address1, string _address2, string _address3, string _balance)
         {
-            int i = _model.update(id,_code, _name, _Cname, _phone, _phone2, _email, _fax, _web, _address1, _address2, _address3, _balance);
+            int i = _model.update(id, _code, _name, _Cname, _phone, _phone2, _email, _fax, _web, _address1, _address2, _address3, _balance);
             return i;
         }
         public DataTable Get_suplierDetails(string id)

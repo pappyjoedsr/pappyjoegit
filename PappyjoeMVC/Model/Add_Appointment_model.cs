@@ -1,5 +1,4 @@
 ﻿using System.Data;
-
 namespace PappyjoeMVC.Model
 {
     public class Add_Appointment_model

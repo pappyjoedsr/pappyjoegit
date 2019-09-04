@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-   public  class EMR_controller
+    public class EMR_controller
     {
         EMR_model _selectedvalue = new EMR_model();
         public DataTable Fill_grid()
@@ -31,11 +26,11 @@ namespace PappyjoeMVC.Controller
         }
         public void Delete_complaints(string id)
         {
-           _selectedvalue. Delete_complaints(id);
+            _selectedvalue.Delete_complaints(id);
         }
         public DataTable Search_complaints(string text)
         {
-            DataTable dtb= _selectedvalue.search_complaints(text);
+            DataTable dtb = _selectedvalue.search_complaints(text);
             return dtb;
         }
         public DataTable Fill_observationGrid()
@@ -59,13 +54,13 @@ namespace PappyjoeMVC.Controller
         }
         public int Update_observation(string id, string Observation)
         {
-            int i = _selectedvalue.Update_observation(id,Observation);
+            int i = _selectedvalue.Update_observation(id, Observation);
             return i;
         }
         public DataTable SearchObservation(string name)
         {
-            DataTable dtb=_selectedvalue.search_observation(name);
-            return dtb; 
+            DataTable dtb = _selectedvalue.search_observation(name);
+            return dtb;
         }
         //Diagnosis
         public DataTable fill_diagnosisGrid()
@@ -80,9 +75,9 @@ namespace PappyjoeMVC.Controller
         }
         public void save_diagnosis(string Diagnosis)
         {
-            _selectedvalue.save_diagnosis( Diagnosis);
+            _selectedvalue.save_diagnosis(Diagnosis);
         }
-        public void update_diagnosis(string name,string Diagnosis)
+        public void update_diagnosis(string name, string Diagnosis)
         {
             _selectedvalue.update_diagnosis(name, Diagnosis);
         }
@@ -109,9 +104,9 @@ namespace PappyjoeMVC.Controller
         {
             _selectedvalue.save_investgation(Investgation);
         }
-        public void update_investgation(string id,string Investgation)
+        public void update_investgation(string id, string Investgation)
         {
-            _selectedvalue.update_investgation(id,Investgation);
+            _selectedvalue.update_investgation(id, Investgation);
         }
         public void delete_investigation(string id)
         {
@@ -125,7 +120,7 @@ namespace PappyjoeMVC.Controller
         //note
         public DataTable Fill_notegrid()
         {
-            DataTable dtb = _selectedvalue. Fill_notegrid();
+            DataTable dtb = _selectedvalue.Fill_notegrid();
             return dtb;
         }
         public DataTable check_notes(string note)
@@ -137,7 +132,7 @@ namespace PappyjoeMVC.Controller
         {
             _selectedvalue.save_note(Note);
         }
-        public void update_note(string id,string Note)
+        public void update_note(string id, string Note)
         {
             _selectedvalue.update_note(id, Note);
         }

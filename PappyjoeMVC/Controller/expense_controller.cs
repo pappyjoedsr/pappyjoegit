@@ -4,7 +4,7 @@ namespace PappyjoeMVC.Controller
 {
     public class Expense_controller
     {
-        expense_model _model = new expense_model();
+        Expense_model _model = new Expense_model();
         public DataTable load_accountname()
         {
             DataTable dtb = _model.load_accountname();

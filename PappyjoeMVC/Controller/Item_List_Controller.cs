@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
-   public class Item_List_Controller
+    public class Item_List_Controller
     {
-        ItemList_Model _model = new ItemList_Model();
-        common_model cmdl = new common_model();
+        Item_List_Model _model = new Item_List_Model();
+        Common_model cmdl = new Common_model();
         public DataTable Get_CompanyNAme()
         {
             DataTable dtb = cmdl.Get_CompanyNAme();
@@ -21,7 +16,7 @@ namespace PappyjoeMVC.Controller
             string dtb = cmdl.Get_DoctorId(doctor_id);
             return dtb;
         }
-        public DataTable  Fill_manufactureCombo()
+        public DataTable Fill_manufactureCombo()
         {
             DataTable dtb = _model.Fill_manufactureCombo();
             return dtb;
@@ -31,7 +26,7 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.Fill_Grid();
             return dtb;
         }
-        public DataTable Get_manufacturename( string name)
+        public DataTable Get_manufacturename(string name)
         {
             DataTable dtb = _model.Get_manufacturename(name);
             return dtb;

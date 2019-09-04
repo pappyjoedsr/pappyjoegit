@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Controller;
-using System.Data;
+﻿using System.Data;
 namespace PappyjoeMVC.Model
 {
-  public class calender_model
+    public class Calender_model
     {
         Connection db = new Connection();
         public DataTable get_practicetimingvalues()

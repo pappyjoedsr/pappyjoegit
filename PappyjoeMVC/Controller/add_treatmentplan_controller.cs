@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.Controller
 {
-  public class Add_Treatmentplan_controller
+    public class Add_Treatmentplan_controller
     {
         add_treatmentplan_interface intr;
-        add_treatmentplan_model _Model=new add_treatmentplan_model();
-        common_model cmodel=new common_model();
+        Add_Treatmentplan_model _Model = new Add_Treatmentplan_model();
+        Common_model cmodel = new Common_model();
         Connection db = new Connection();
         public Add_Treatmentplan_controller(add_treatmentplan_interface inttr)
         {
@@ -61,9 +56,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _Model.get_treatmentmaxid();
             return dt;
         }
-        public void Save_treatmentgrid(int j, string procedure_id, string pt_id, string procedure_name, string quantity, string cost, string discount_type, string discount, string total, string discount_inrs, string note,string tooth)
+        public void Save_treatmentgrid(int j, string procedure_id, string pt_id, string procedure_name, string quantity, string cost, string discount_type, string discount, string total, string discount_inrs, string note, string tooth)
         {
-            _Model.Save_treatmentgrid(j, procedure_id , pt_id, procedure_name, quantity, cost, discount_type, discount, total, discount_inrs, note,tooth);
+            _Model.Save_treatmentgrid(j, procedure_id, pt_id, procedure_name, quantity, cost, discount_type, discount, total, discount_inrs, note, tooth);
         }
         public DataTable Get_CompanyNAme()
         {
@@ -100,5 +95,5 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = cmodel.Get_Patient_Details(id);
             return dtb;
         }
-    } 
+    }
 }

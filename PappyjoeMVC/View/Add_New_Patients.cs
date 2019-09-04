@@ -14,7 +14,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Add_New_Patients : Form, AddNew_patient_interface
     {
-        Add_New_patient_controller cntrl; common_model mdl = new common_model();
+        Add_New_patient_controller cntrl; Common_model mdl = new Common_model();
         public string patient_name = "", doctor_id = "", staff_id = "", PatientId = "", path = "";
         string pat_id = "";
         int medhisStatus = 0, selectGrp = 0;
@@ -306,8 +306,8 @@ namespace PappyjoeMVC.View
                     {
                         int i = 0;
                         //Addfunction();
-                        string smsName1 = PappyjoeMVC.Model.GlobalVariables.smsName.ToString();
-                        string smsPass1 = PappyjoeMVC.Model.GlobalVariables.smsPass.ToString();
+                        string smsName1 = PappyjoeMVC.Model.Global_Variables.smsName.ToString();
+                        string smsPass1 = PappyjoeMVC.Model.Global_Variables.smsPass.ToString();
                         i = this.cntrl.Save();
                         DataTable cmd = this.cntrl.automaticid();
                         if (cmd.Rows.Count > 0)
@@ -873,7 +873,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
                 if (SetFlag == false)
                 {
                     txtxAge.Text = ""; txtPic.Text = "";

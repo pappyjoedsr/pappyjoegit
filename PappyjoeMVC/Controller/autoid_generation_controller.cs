@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
-   public  class Autoid_Generation_controller
+    public class Autoid_Generation_controller
     {
-        autoid_generation_model _model=new autoid_generation_model();
+        Autoid_Generation_model _model = new Autoid_Generation_model();
         public DataTable load_patientid()
         {
             DataTable dtb = _model.load_patientid();
@@ -32,10 +27,10 @@ namespace PappyjoeMVC.Controller
         }
         public int save_patientid(string _pt_num, string _pt_prefix, string Check)
         {
-            int i = _model.save_patientid( _pt_num,_pt_prefix, Check);
+            int i = _model.save_patientid(_pt_num, _pt_prefix, Check);
             return i;
         }
-        public int update_patientid(string _pt_num, string _pt_prefix,string Check)
+        public int update_patientid(string _pt_num, string _pt_prefix, string Check)
         {
             int i = _model.update_patientid(_pt_num, _pt_prefix, Check);
             return i;

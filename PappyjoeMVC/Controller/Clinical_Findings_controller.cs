@@ -5,7 +5,7 @@ namespace PappyjoeMVC.Controller
     public class Clinical_Findings_controller
     {
         Clinical_Findings_model _model = new Clinical_Findings_model();
-        common_model model = new common_model();
+        Common_model model = new Common_model();
         public string user_priv_EMRCF_A(string doctor_id)
         {
             string s = _model.user_priv_EMRCF_A(doctor_id);

@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.Controller
 {
     public class Addfinsed_Treatment_controller
     {
         addfinsed_treatment_interface intr;
-        addfinsed_treatment_model _model=new addfinsed_treatment_model();
-        common_model cmodel = new common_model();
+        Add_Finished_Treatment_model _model = new Add_Finished_Treatment_model();
+        Common_model cmodel = new Common_model();
         public Addfinsed_Treatment_controller(addfinsed_treatment_interface inttr)
         {
             intr = inttr;
@@ -26,7 +21,7 @@ namespace PappyjoeMVC.Controller
         public void load_proceduresgrid()
         {
             DataTable dt_pt = _model.load_proceduresgrid();
-            intr.load_proceduresgrid( dt_pt);
+            intr.load_proceduresgrid(dt_pt);
         }
         public void Load_treatmentPlans(string id)
         {
@@ -67,7 +62,7 @@ namespace PappyjoeMVC.Controller
         }
         public void save_completed_id(string date, string patient_id)
         {
-            _model.save_completed_id(date,patient_id);
+            _model.save_completed_id(date, patient_id);
         }
         public DataTable get_completedMaxid()
         {
@@ -89,7 +84,7 @@ namespace PappyjoeMVC.Controller
         public DataTable get_reviewid(string patient_id, string date, string date1)
         {
             DataTable dtb = _model.get_reviewid(patient_id, date, date1);
-            return dtb; 
+            return dtb;
         }
         public void save_review(string date, string patient_id)
         {
@@ -101,7 +96,7 @@ namespace PappyjoeMVC.Controller
         }
         public void update_review_No(string date, int j_Review)
         {
-            _model.update_review_No(date,j_Review);
+            _model.update_review_No(date, j_Review);
         }
         public DataTable Get_CompanyNAme()
         {

@@ -74,7 +74,7 @@ namespace PappyjoeMVC.View
                 }
                 DataTable ptntdtls=this.ctrlr.Get_Patient_Details(patient_id);
                 Get_Patient_Details(ptntdtls);
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
                 DataTable cmpny=this.ctrlr.Get_CompanyNAme();
                 if (cmpny.Rows.Count > 0)
                 {

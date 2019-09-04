@@ -35,7 +35,7 @@ namespace PappyjoeMVC.View
         }
         private void FrmItemList_Load(object sender, EventArgs e)
         {
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+            toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
             DataTable dtb = cntrl.Get_CompanyNAme();
             if(dtb.Rows.Count>0)
             {

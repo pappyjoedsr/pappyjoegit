@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
     public class Receipt_controller
@@ -12,7 +7,7 @@ namespace PappyjoeMVC.Controller
         Receipt_interface intr;
         Connection db = new Connection();
         Receipt_Model Model = new Receipt_Model();
-        common_model cmodel =new common_model();
+        Common_model cmodel = new Common_model();
         public Receipt_controller(Receipt_interface inttr)
         {
             intr = inttr;
@@ -20,8 +15,8 @@ namespace PappyjoeMVC.Controller
         }
         public string check_add_privillege(string doctor_id)
         {
-          string  id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PMT' and Permission='A'");
-          return id;
+            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PMT' and Permission='A'");
+            return id;
         }
         public DataTable Get_CompanyNAme()
         {
@@ -45,18 +40,18 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable get_paymentDate(string patient_id)
         {
-          DataTable Payment = db.table("select  distinct(payment_date) from tbl_payment where pt_id='" + patient_id + "'AND payment_date!='' order by payment_date desc");
-          return Payment;
+            DataTable Payment = db.table("select  distinct(payment_date) from tbl_payment where pt_id='" + patient_id + "'AND payment_date!='' order by payment_date desc");
+            return Payment;
         }
         public DataTable payment_details(string date, string patient_id)
         {
-            DataTable dtb = Model.payment_details(date,patient_id);
+            DataTable dtb = Model.payment_details(date, patient_id);
             return dtb;
         }
         public DataTable get_printSettings()
         {
-           DataTable print = db.table("select * from tbl_receipt_printsettings");
-           return print;
+            DataTable print = db.table("select * from tbl_receipt_printsettings");
+            return print;
         }
         public DataTable get_company_details()
         {

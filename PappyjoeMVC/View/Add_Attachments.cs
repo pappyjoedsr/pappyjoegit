@@ -111,7 +111,7 @@ namespace PappyjoeMVC.View
             try
             {
                 this.WindowState = FormWindowState.Maximized;
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
                 string doctrid=this.ctrlr.selectdoctrid();
                 if (doctrid != "")
                 {

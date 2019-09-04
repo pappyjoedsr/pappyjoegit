@@ -16,7 +16,7 @@ namespace PappyjoeMVC.View
         private string doctor_id;
         public static string drctId;
         string id = "";
-        common_model mdl = new common_model();
+        Common_model mdl = new Common_model();
         DataTable dtbForPatient = new DataTable();
         Connection db = new Connection();
         public Search_Available_Patient()

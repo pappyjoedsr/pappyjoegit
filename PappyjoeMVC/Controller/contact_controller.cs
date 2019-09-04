@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
-using PappyjoeMVC.View;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-   public  class Contact_controller
+    public class Contact_controller
     {
-        contact_model mdl = new contact_model();
+        Contact_model mdl = new Contact_model();
         public int Save(string Contact_Name)
         {
             int i = mdl.Save_data(Contact_Name);

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Win32;
+using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Microsoft.Win32;
-using MySql.Data.MySqlClient;
-using System.Data.SqlClient;
 namespace PappyjoeMVC.Model
 {
     public class Connection
@@ -104,7 +100,7 @@ namespace PappyjoeMVC.Model
                 r = cmd.ExecuteScalar().ToString();
                 this.CloseConnection();
             }
-            catch {r = "0"; }
+            catch { r = "0"; }
             con.Close();
             return r;
         }

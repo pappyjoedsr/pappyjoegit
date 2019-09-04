@@ -10,7 +10,7 @@ namespace PappyjoeMVC.View
     {
         public string doctor_id = "";
         Patients_controller cntrl; public int i;
-        common_model mdl = new common_model();
+        Common_model mdl = new Common_model();
         Connection db = new Connection();
         Contacts ad = new Contacts();
         public static string id4;
@@ -2347,7 +2347,7 @@ namespace PappyjoeMVC.View
         private void patients_Load(object sender, EventArgs e)
         {
             toolStripButton3.BackColor = Color.SkyBlue;
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+            toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
             string docnam = mdl.Get_DoctorName(doctor_id);
             if (docnam != "")
             {

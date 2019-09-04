@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 
 namespace PappyjoeMVC.Model
 {
-   public class prescription_setting_model
+    public class Prescription_Setting_model
     {
         Connection db = new Connection();
         public DataTable get_drug()
@@ -48,9 +43,9 @@ namespace PappyjoeMVC.Model
             string checkdataname = db.scalar("Select name from tbl_adddrug where name ='" + name + "'");
             return checkdataname;
         }
-        public int Save_Drug(string _drugname , string _strtype , string _strunit,string  _strengthgr ,string _intstructuion)
+        public int Save_Drug(string _drugname, string _strtype, string _strunit, string _strengthgr, string _intstructuion)
         {
-            int i = db.execute("insert into tbl_adddrug (name,type,strength,strength_gr,instructions,display_status,inventory_id) values('" + _drugname + "','" + _strtype + "','" + _strunit + "','" + _strengthgr+ "','" + _intstructuion + "','Yes','0')");
+            int i = db.execute("insert into tbl_adddrug (name,type,strength,strength_gr,instructions,display_status,inventory_id) values('" + _drugname + "','" + _strtype + "','" + _strunit + "','" + _strengthgr + "','" + _intstructuion + "','Yes','0')");
             return i;
         }
         public string check_exists_drug(string id)

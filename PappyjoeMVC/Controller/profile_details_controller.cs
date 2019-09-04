@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PappyjoeMVC.Model;
 using System.Data;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.Controller
 {
-  public  class Profile_Details_controller
+    public class Profile_Details_controller
     {
         profile_details_interface intr;
-        profile_details_model _model =new profile_details_model();
-        common_model mdl = new common_model();
+        profile_Details_model _model = new profile_Details_model();
+        Common_model mdl = new Common_model();
         Connection db = new Connection();
         public Profile_Details_controller(profile_details_interface inttr)
         {
@@ -27,10 +22,10 @@ namespace PappyjoeMVC.Controller
         {
             DataTable dtb = mdl.Get_Advance(pt_id);
             return dtb;
-        } 
+        }
         public string Load_CompanyName()
         {
-            string dtb = mdl.Load_CompanyName(); 
+            string dtb = mdl.Load_CompanyName();
             return dtb;
         }
         public string Get_DoctorName(string doctor_id)
@@ -63,7 +58,7 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = mdl.Patient_search(patid);
             return dtb;
         }
-        public string doctr_privillage_for_addnewPatient (string doctor_id)
+        public string doctr_privillage_for_addnewPatient(string doctor_id)
         {
             string dtb = mdl.doctr_privillage_for_addnewPatient(doctor_id);
             return dtb;
