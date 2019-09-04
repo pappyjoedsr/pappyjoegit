@@ -348,7 +348,7 @@ namespace PappyjoeMVC.View
                             {
                                 sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + Lab_Due.Text + "</b></font></td>");
                             }
-                            sWrite.WriteLine("</tr>");
+                            sWrite.WriteLine("</tr>");                                                                                                                          
                         }
                     sWrite.WriteLine("</table>");
                     sWrite.WriteLine("</div>");
