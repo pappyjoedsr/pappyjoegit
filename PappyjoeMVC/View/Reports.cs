@@ -1713,26 +1713,23 @@ namespace PappyjoeMVC.View
 
         private void lbleachcategory_Click(object sender, EventArgs e)
         {
-            //Treatment_for_each_category t = new Treatment_for_each_category();
-            //t.doctor_id = doctor_id;
-            //Treatment_for_each_category_controller c = new Treatment_for_each_category_controller(t);
-            //t.ShowDialog();
+            Treatment_For_Each_Category t = new Treatment_For_Each_Category();
+            t.doctor_id = doctor_id;
+            t.ShowDialog();
         }
 
         private void lbltreatmenteachdoctor_Click(object sender, EventArgs e)
         {
-            //Treatment_for_each_doctor t = new Treatment_for_each_doctor();
-            //t.doctor_id = doctor_id;
-            //Treatment_for_each_doctor_controller c = new Treatment_for_each_doctor_controller(t);
-            //t.ShowDialog();
+            Treatment_For_Each_Doctor t = new Treatment_For_Each_Doctor();
+            t.doctor_id = doctor_id;
+            t.ShowDialog();
         }
 
         private void lblmonthtreatment_Click(object sender, EventArgs e)
         {
-            //Monthly_treatment_count m = new Monthly_treatment_count();
-            //m.doctor_id = doctor_id;
-            //Monthly_treatment_count_controller c = new Monthly_treatment_count_controller(m);
-            //m.ShowDialog();
+            Monthly_Treatment_Count m = new Monthly_Treatment_Count();
+            m.doctor_id = doctor_id;
+            m.ShowDialog();
         }
         private void lbldaily_Click(object sender, EventArgs e)
         {

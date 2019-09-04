@@ -1,19 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 namespace PappyjoeMVC.Controller
 {
-public    class Monthly_treatment_count_controller
+    public class Monthly_Treatment_Count_controller
     {
-        Treatment_report_model model = new Treatment_report_model();
-        public Monthly_treatment_count_controller(Monthly_treatment_count_interface intr)
-        {
-            intr.setcontroller(this);
-        }
+        Treatment_Report_model model = new Treatment_Report_model();
         public DataTable doctor_rs()
         {
             DataTable d = model.doctor_rs();
@@ -21,22 +12,22 @@ public    class Monthly_treatment_count_controller
         }
         public DataTable gridTable(string date1, string date2)
         {
-            DataTable d = model.gridTable(date1,date2);
+            DataTable d = model.gridTable(date1, date2);
             return d;
         }
         public DataTable MonthtreatmentcountLoad(string d9, string k9)
         {
-            DataTable d = model.MonthtreatmentcountLoad(d9,k9);
+            DataTable d = model.MonthtreatmentcountLoad(d9, k9);
             return d;
         }
         public DataTable GridDLYTTMNTtb(string date1, string date2)
         {
-            DataTable d = model.GridDLYTTMNTtb(date1,date2);
+            DataTable d = model.GridDLYTTMNTtb(date1, date2);
             return d;
         }
         public DataTable Monthtreatmentcount(string d9, string k9, string dr_id)
         {
-            DataTable d = model.Monthtreatmentcount(d9,k9,dr_id);
+            DataTable d = model.Monthtreatmentcount(d9, k9, dr_id);
             return d;
         }
         public DataTable practceDetls()
@@ -46,7 +37,7 @@ public    class Monthly_treatment_count_controller
         }
         public DataTable DailyTablE(string d1, string d2, string dr)
         {
-            DataTable d = model.DailyTablE(d1,d2,dr);
+            DataTable d = model.DailyTablE(d1, d2, dr);
             return d;
         }
         public DataTable DocId_frm_DocTbl(string drctid)
@@ -56,7 +47,7 @@ public    class Monthly_treatment_count_controller
         }
         public DataTable ProPat(string date1, string date2)
         {
-            DataTable d = model.ProPat(date1,date2);
+            DataTable d = model.ProPat(date1, date2);
             return d;
         }
     }
