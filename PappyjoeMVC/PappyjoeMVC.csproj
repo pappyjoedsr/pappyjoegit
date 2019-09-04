@@ -127,7 +127,6 @@
     <Compile Include="Controller\Monthly_Invoice_Report_controller.cs" />
     <Compile Include="Controller\Monthly_New_Patients_controller.cs" />
     <Compile Include="Controller\Month_Wise_Receipt_controller.cs" />
-    <Compile Include="Controller\Month_Wise_Receipt_interface.cs" />
     <Compile Include="Controller\New_Credit_Account_controller.cs" />
     <Compile Include="Controller\New_Debit_Account_controller.cs" />
     <Compile Include="Controller\Patients_controller.cs" />

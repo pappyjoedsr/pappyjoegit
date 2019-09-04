@@ -266,6 +266,7 @@
             this.Lab_Receipt_Month.Size = new System.Drawing.Size(147, 17);
             this.Lab_Receipt_Month.TabIndex = 114;
             this.Lab_Receipt_Month.Text = "MONTH WISE RECEIPT";
+            this.Lab_Receipt_Month.Click += new System.EventHandler(this.Lab_Receipt_Month_Click);
             // 
             // lab_receipt_ModeOfPayment
             // 
@@ -311,7 +312,7 @@
             this.panelPayment.Controls.Add(this.lab_receipt_ModeOfPayment);
             this.panelPayment.Controls.Add(this.Lab_Receipt_PerDoctor);
             this.panelPayment.Controls.Add(this.label2);
-            this.panelPayment.Location = new System.Drawing.Point(15, 23);
+            this.panelPayment.Location = new System.Drawing.Point(20, 11);
             this.panelPayment.Name = "panelPayment";
             this.panelPayment.Size = new System.Drawing.Size(307, 137);
             this.panelPayment.TabIndex = 269;
@@ -567,7 +568,7 @@
             this.panel4.Controls.Add(this.paneldailysummary);
             this.panel4.Controls.Add(this.lblrelatedrepo);
             this.panel4.Controls.Add(this.panelappointments);
-            this.panel4.Location = new System.Drawing.Point(1048, 110);
+            this.panel4.Location = new System.Drawing.Point(1052, 113);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(315, 643);
             this.panel4.TabIndex = 277;
@@ -707,7 +708,7 @@
             this.paneldailysummary.Controls.Add(this.label14);
             this.paneldailysummary.Controls.Add(this.lblMonthlySummary);
             this.paneldailysummary.Controls.Add(this.lbldaily);
-            this.paneldailysummary.Location = new System.Drawing.Point(8, 29);
+            this.paneldailysummary.Location = new System.Drawing.Point(23, 23);
             this.paneldailysummary.Name = "paneldailysummary";
             this.paneldailysummary.Size = new System.Drawing.Size(307, 115);
             this.paneldailysummary.TabIndex = 137;
