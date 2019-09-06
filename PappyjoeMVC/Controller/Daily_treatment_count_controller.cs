@@ -5,7 +5,7 @@ namespace PappyjoeMVC.Controller
 {
     public class Daily_Treatment_Count_controller
     {
-        Treatment_report_model _model = new Treatment_report_model();
+        Treatment_Report_model _model = new Treatment_Report_model();
         Common_model cmn = new Common_model();
         public DataTable doctor_rs()
         {

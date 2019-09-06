@@ -126,8 +126,7 @@
     <Compile Include="Controller\Monthly_Appointment_count_controller.cs" />
     <Compile Include="Controller\Monthly_Invoice_Report_controller.cs" />
     <Compile Include="Controller\Monthly_New_Patients_controller.cs" />
-    <Compile Include="Controller\Monthly_treatment_count_controller.cs" />
-    <Compile Include="Controller\Monthly_treatment_count_interface.cs" />
+    <Compile Include="Controller\Monthly_Treatment_Count_controller.cs" />
     <Compile Include="Controller\Month_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\New_Credit_Account_controller.cs" />
     <Compile Include="Controller\New_Debit_Account_controller.cs" />
@@ -158,10 +157,8 @@
     <Compile Include="Controller\Supplier_controller.cs" />
     <Compile Include="Controller\supplier_interface.cs" />
     <Compile Include="Controller\Treatment_controller.cs" />
-    <Compile Include="Controller\Treatment_for_each_category_controller.cs" />
-    <Compile Include="Controller\Treatment_for_each_category_interface.cs" />
-    <Compile Include="Controller\Treatment_for_each_doctor_controller.cs" />
-    <Compile Include="Controller\Treatment_for_each_doctor_interface.cs" />
+    <Compile Include="Controller\Treatment_For_Each_Category_controller.cs" />
+    <Compile Include="Controller\Treatment_For_Each_Doctor_controller.cs" />
     <Compile Include="Controller\treatment_interface.cs" />
     <Compile Include="Controller\Visiting_History_controller.cs" />
     <Compile Include="Controller\Vital_Signs_controller.cs" />
@@ -224,7 +221,7 @@
     <Compile Include="Model\Staff_model.cs" />
     <Compile Include="Model\Supplier_model.cs" />
     <Compile Include="Model\Treatment_model.cs" />
-    <Compile Include="Model\Treatment_report_model.cs" />
+    <Compile Include="Model\Treatment_Report_model.cs" />
     <Compile Include="Model\Vital_Signs_model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -498,11 +495,11 @@
     <Compile Include="View\Manufacture.Designer.cs">
       <DependentUpon>Manufacture.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Monthly_treatment_count.cs">
+    <Compile Include="View\Monthly_Treatment_Count.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Monthly_treatment_count.designer.cs">
-      <DependentUpon>Monthly_treatment_count.cs</DependentUpon>
+    <Compile Include="View\Monthly_Treatment_Count.designer.cs">
+      <DependentUpon>Monthly_Treatment_Count.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Supplier.cs">
       <SubType>Form</SubType>
@@ -708,17 +705,17 @@
     <Compile Include="View\Show_Appointment.designer.cs">
       <DependentUpon>Show_Appointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Treatment_for_each_category.cs">
+    <Compile Include="View\Treatment_For_Each_Category.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Treatment_for_each_category.designer.cs">
-      <DependentUpon>Treatment_for_each_category.cs</DependentUpon>
+    <Compile Include="View\Treatment_For_Each_Category.designer.cs">
+      <DependentUpon>Treatment_For_Each_Category.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Treatment_for_each_doctor.cs">
+    <Compile Include="View\Treatment_For_Each_Doctor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Treatment_for_each_doctor.designer.cs">
-      <DependentUpon>Treatment_for_each_doctor.cs</DependentUpon>
+    <Compile Include="View\Treatment_For_Each_Doctor.designer.cs">
+      <DependentUpon>Treatment_For_Each_Doctor.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Treatment_Plans.cs">
       <SubType>Form</SubType>
@@ -880,8 +877,8 @@
     <EmbeddedResource Include="View\Manufacture.resx">
       <DependentUpon>Manufacture.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Monthly_treatment_count.resx">
-      <DependentUpon>Monthly_treatment_count.cs</DependentUpon>
+    <EmbeddedResource Include="View\Monthly_Treatment_Count.resx">
+      <DependentUpon>Monthly_Treatment_Count.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>
@@ -985,11 +982,11 @@
     <EmbeddedResource Include="View\Show_Appointment.resx">
       <DependentUpon>Show_Appointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Treatment_for_each_category.resx">
-      <DependentUpon>Treatment_for_each_category.cs</DependentUpon>
+    <EmbeddedResource Include="View\Treatment_For_Each_Category.resx">
+      <DependentUpon>Treatment_For_Each_Category.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Treatment_for_each_doctor.resx">
-      <DependentUpon>Treatment_for_each_doctor.cs</DependentUpon>
+    <EmbeddedResource Include="View\Treatment_For_Each_Doctor.resx">
+      <DependentUpon>Treatment_For_Each_Doctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Treatment_Plans.resx">
       <DependentUpon>Treatment_Plans.cs</DependentUpon>

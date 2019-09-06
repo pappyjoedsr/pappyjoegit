@@ -7,20 +7,16 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 namespace PappyjoeMVC.View
 {
-    public partial class Monthly_treatment_count : Form, Monthly_treatment_count_interface
+    public partial class Monthly_Treatment_Count : Form
     {
-        Monthly_treatment_count_controller cntrl;
+        Monthly_Treatment_Count_controller cntrl=new Monthly_Treatment_Count_controller();
         public string doctor_id = "";
         public int total = 0;
         public string select_dr_id = "0";
         string drctid = "";
-        public Monthly_treatment_count()
+        public Monthly_Treatment_Count()
         {
             InitializeComponent();
-        }
-        public void setcontroller(Monthly_treatment_count_controller controller)
-        {
-            cntrl = controller;
         }
 
         private void Monthly_treatment_count_Load(object sender, EventArgs e)

@@ -9,20 +9,16 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Treatment_for_each_category : Form, Treatment_for_each_category_interface
+    public partial class Treatment_For_Each_Category : Form
     {
-        Treatment_for_each_category_controller cntrl;
+        Treatment_For_Each_Category_controller cntrl=new Treatment_For_Each_Category_controller();
         public string doctor_id = "";
         string select_dr_id = "";
         public string drctid = "";
         public string Selected_drid = "";
-        public Treatment_for_each_category()
+        public Treatment_For_Each_Category()
         {
             InitializeComponent();
-        }
-        public void setcontroller(Treatment_for_each_category_controller controller)
-        {
-            cntrl = controller;
         }
 
         private void Treatment_for_each_category_Load(object sender, EventArgs e)

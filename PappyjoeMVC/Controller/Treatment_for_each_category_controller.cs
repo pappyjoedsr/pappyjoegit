@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Model;
 using System.Data;
 
 namespace PappyjoeMVC.Controller
 {
-    public class Treatment_for_each_category_controller
+    public class Treatment_For_Each_Category_controller
     {
-        Treatment_report_model model = new Treatment_report_model();
-        public Treatment_for_each_category_controller(Treatment_for_each_category_interface intr)
-        {
-            intr.setcontroller(this);
-        }
+        Treatment_Report_model model = new Treatment_Report_model();
         public DataTable addproset()
         {
             DataTable d = model.addproset();
@@ -22,7 +13,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable TreatmenteachcatLoad(string d7, string k7)
         {
-            DataTable d = model.TreatmenteachcatLoad(d7,k7);
+            DataTable d = model.TreatmenteachcatLoad(d7, k7);
             return d;
         }
         public DataTable prosetDocId(string drid)
@@ -32,12 +23,12 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable drgDailytreatmentTB(int select_dr_id, string date1, string date2)
         {
-            DataTable d = model.drgDailytreatmentTB(select_dr_id,date1,date2);
+            DataTable d = model.drgDailytreatmentTB(select_dr_id, date1, date2);
             return d;
         }
         public DataTable Treatmenteachcat(string d7, string k7, string dr_id)
         {
-            DataTable d = model.Treatmenteachcat(d7,k7, dr_id);
+            DataTable d = model.Treatmenteachcat(d7, k7, dr_id);
             return d;
         }
         public DataTable GridDLYTTMNTtb(string date1, string date2)
@@ -57,7 +48,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable ProPat(string date1, string date2)
         {
-            DataTable d = model.ProPat(date1,date2);
+            DataTable d = model.ProPat(date1, date2);
             return d;
         }
         public DataTable Propat2(int Selected_drid, string date1, string date2)
