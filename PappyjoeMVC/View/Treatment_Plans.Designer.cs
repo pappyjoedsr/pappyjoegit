@@ -383,9 +383,10 @@
             // linkLabel_id
             // 
             this.linkLabel_id.AutoSize = true;
+            this.linkLabel_id.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel_id.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel_id.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.linkLabel_id.Location = new System.Drawing.Point(128, 25);
+            this.linkLabel_id.Location = new System.Drawing.Point(129, 25);
             this.linkLabel_id.Name = "linkLabel_id";
             this.linkLabel_id.Size = new System.Drawing.Size(0, 13);
             this.linkLabel_id.TabIndex = 73;
@@ -403,6 +404,7 @@
             // linkLabel_Name
             // 
             this.linkLabel_Name.AutoSize = true;
+            this.linkLabel_Name.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel_Name.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel_Name.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.linkLabel_Name.Location = new System.Drawing.Point(129, 6);
@@ -426,11 +428,11 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label12.Location = new System.Drawing.Point(68, 25);
+            this.label12.Location = new System.Drawing.Point(66, 25);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(60, 13);
+            this.label12.Size = new System.Drawing.Size(63, 13);
             this.label12.TabIndex = 68;
-            this.label12.Text = "Patient ID:";
+            this.label12.Text = "Patient ID :";
             // 
             // panel9
             // 
