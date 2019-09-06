@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Month_Wise_Receipt : Form,Month_Wise_Receipt_interface
+    public partial class Month_Wise_Receipt : Form
     {
         public Month_Wise_Receipt()
         {
@@ -22,53 +22,39 @@ namespace PappyjoeMVC.View
         DataTable dtp = new DataTable();
         decimal tax = 0, discount = 0, amount = 0, paid = 0, due = 0,Totaltax = 0, Totaldiscount = 0, Totalamount = 0, Totalpaid = 0, Totaldue = 0;
         public string doctor_id = "", doc_id, ID, date1, date2, checkStr = "0", PathName = "", service, strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "";
-        Month_Wise_Receipt_controller ctrlr;
-        public void setController(Month_Wise_Receipt_controller controller)
-        {
-            ctrlr = controller;
-        }
-        public void getdocname(DataTable doctor_rs)
-        {
-            if (doctor_rs.Rows.Count > 0)
-            {
-                for (int i = 0; i < doctor_rs.Rows.Count; i++)
-                {
-                    combo_doctors.Items.Add(doctor_rs.Rows[i]["doctor_name"].ToString());
-                    combo_doctors.ValueMember = doctor_rs.Rows[i]["id"].ToString();
-                    combo_doctors.DisplayMember = doctor_rs.Rows[i]["doctor_name"].ToString();
-                }
-            }
-        }
-        public void Get_DoctorId(string dt)
-        {
-            if (dt!="")
-            {
-               ID = dt.ToString();
-            }
-        }
+        Month_Wise_Receipt_controller ctrlr=new Month_Wise_Receipt_controller();
         public void receiptReceivedLoad()
         {
-            DgvReceiptReceivedPerMonth.Rows.Clear();
-            DgvReceiptReceivedPerMonth.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
-            DgvReceiptReceivedPerMonth.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            DgvReceiptReceivedPerMonth.EnableHeadersVisualStyles = false;
-            string doctor = combo_doctors.Text;
-            if (doctor != "All Doctor")
+            try
             {
-                this.ctrlr.Get_DoctorId(doctor);
-                doc_id = ID;
+                DgvReceiptReceivedPerMonth.Rows.Clear();
+                DgvReceiptReceivedPerMonth.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
+                DgvReceiptReceivedPerMonth.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                DgvReceiptReceivedPerMonth.EnableHeadersVisualStyles = false;
+                string doctor = combo_doctors.Text;
+                if (doctor != "All Doctor")
+                {
+                    ID = this.ctrlr.Get_DoctorId(doctor);
+                    doc_id = ID;
+                }
+                else
+                { doc_id = "0"; }
+
+                date1 = dtp1ReceptReceivedPerMonth1.Value.ToString("yyyy-MM-dd");
+                date2 = dtp1ReceptReceivedPerMonth2.Value.ToString("yyyy-MM-dd");
+                if (doc_id == "0")
+                {
+                    DataTable rcpt = this.ctrlr.mnthrcpt(date1, date2);
+                    mnthrcpt(rcpt);
+                }
+                else
+                {
+                    DataTable rcpt2 = this.ctrlr.mnthrcpt2(date1, date2, doc_id);
+                    mnthrcpt(rcpt2);
+                }
             }
-            else
-            { doc_id = "0"; }
-            
-            date1 = dtp1ReceptReceivedPerMonth1.Value.ToString("yyyy-MM-dd");
-            date2 = dtp1ReceptReceivedPerMonth2.Value.ToString("yyyy-MM-dd");
-            if (doc_id == "0")
-            {
-                this.ctrlr.mnthrcpt(date1,date2);
-            }
-            else
-            { this.ctrlr.mnthrcpt2(date1, date2, doc_id); }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public void mnthrcpt(DataTable dtp)
         {
@@ -89,46 +75,32 @@ namespace PappyjoeMVC.View
                 fillDGV_Receipt(dtp, date1, date2);
             }
         }
-        public void mnthrcpt2(DataTable dtp)
-        {
-            if (dtp.Rows.Count == 0)
-            {
-                label_empty.Show();
-                label4.Text = "0";
-                Lab_Discount.Text = "0.00";
-                Lab_tax.Text = "0.00";
-                Lab_Amount.Text = "0.00";
-                Lab_Paid.Text = "0.00";
-                Lab_Due.Text = "0.00";
-            }
-            else
-            {
-                label_empty.Hide();
-                label4.Text = dtp.Rows.Count.ToString();
-                fillDGV_Receipt(dtp, date1, date2);
-            }
-        }
         public void getinvdata(DataTable dt_inv)
         {
-            for (int i = 0; i < dt_inv.Rows.Count;i++ )
+            try
             {
-                DgvReceiptReceivedPerMonth.Rows[i].Cells["procedure_name"].Value = service + " (Qty:" + dt_inv.Rows[0]["unit"].ToString() + ")";
-                DgvReceiptReceivedPerMonth.Rows[i].Cells["cost"].Value = dt_inv.Rows[0]["Total Cost"].ToString();
-                if (dt_inv.Rows[0]["discountin_rs"].ToString() != "0")
+                for (int i = 0; i < dt_inv.Rows.Count; i++)
                 {
-                    DgvReceiptReceivedPerMonth.Rows[i].Cells["Discount_insr"].Value = dt_inv.Rows[0]["discountin_rs"].ToString();
-                    discount = decimal.Parse(dt_inv.Rows[0]["discountin_rs"].ToString());
+                    DgvReceiptReceivedPerMonth.Rows[i].Cells["procedure_name"].Value = service + " (Qty:" + dt_inv.Rows[0]["unit"].ToString() + ")";
+                    DgvReceiptReceivedPerMonth.Rows[i].Cells["cost"].Value = dt_inv.Rows[0]["Total Cost"].ToString();
+                    if (dt_inv.Rows[0]["discountin_rs"].ToString() != "0")
+                    {
+                        DgvReceiptReceivedPerMonth.Rows[i].Cells["Discount_insr"].Value = dt_inv.Rows[0]["discountin_rs"].ToString();
+                        discount = decimal.Parse(dt_inv.Rows[0]["discountin_rs"].ToString());
+                    }
+                    else
+                    {
+                        DgvReceiptReceivedPerMonth.Rows[i].Cells["Discount_insr"].Value = "";
+                        discount = 0;
+                    }
+                    DgvReceiptReceivedPerMonth.Rows[i].Cells["tax_inrs"].Value = dt_inv.Rows[0]["tax_inrs"].ToString();
+                    DgvReceiptReceivedPerMonth.Rows[i].Cells["income"].Value = dt_inv.Rows[0]["Total Income"].ToString();
+                    tax = decimal.Parse(dt_inv.Rows[0]["tax_inrs"].ToString());
+                    amount = decimal.Parse(dt_inv.Rows[0]["Total Income"].ToString());
                 }
-                else
-                {
-                    DgvReceiptReceivedPerMonth.Rows[i].Cells["Discount_insr"].Value = "";
-                    discount = 0;
-                }
-                DgvReceiptReceivedPerMonth.Rows[i].Cells["tax_inrs"].Value = dt_inv.Rows[0]["tax_inrs"].ToString();
-                DgvReceiptReceivedPerMonth.Rows[i].Cells["income"].Value = dt_inv.Rows[0]["Total Income"].ToString();
-                tax = decimal.Parse(dt_inv.Rows[0]["tax_inrs"].ToString());
-                amount = decimal.Parse(dt_inv.Rows[0]["Total Income"].ToString());
             }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public void fillDGV_Receipt(DataTable dtb_Receipt, string d1, string d2)
         {
@@ -151,7 +123,8 @@ namespace PappyjoeMVC.View
                         DgvReceiptReceivedPerMonth.Rows[i].Cells["Payment_date"].Value = Convert.ToDateTime(dtb_Receipt.Rows[i]["payment_date"].ToString()).ToString("yyyy-MM-dd");
                         DgvReceiptReceivedPerMonth.Rows[i].Cells["doctor_name"].Value = dtb_Receipt.Rows[i]["doctor_name"].ToString();
                         service = dtb_Receipt.Rows[i]["procedure_name"].ToString();
-                        this.ctrlr.getinvdata(dtb_Receipt.Rows[i]["invoice_no"].ToString(), service);
+                        DataTable inv=this.ctrlr.getinvdata(dtb_Receipt.Rows[i]["invoice_no"].ToString(), service);
+                        getinvdata(inv);
                         due = decimal.Parse(dtb_Receipt.Rows[i]["DUE AFTER PAYMENT"].ToString());
                         paid = decimal.Parse(dtb_Receipt.Rows[i]["amount_paid"].ToString());
                         Totaltax = Totaltax + tax;
@@ -175,46 +148,60 @@ namespace PappyjoeMVC.View
                     Lab_Due.Text = "0.00";
                 }
             }
-            catch(Exception ex)
-            { MessageBox.Show("Data Loading Error", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void Month_Wise_Receipt_Load(object sender, EventArgs e)
         {
-            combo_doctors.Items.Add("All Doctor");
-            combo_doctors.ValueMember = "0";
-            combo_doctors.DisplayMember = "All Doctor";
-            this.ctrlr.getdocname();
-            combo_doctors.SelectedIndex = 0;
-            label_empty.Hide();
-            dtp1ReceptReceivedPerMonth2.MaxDate = DateTime.Now;
-            DateTime now = DateTime.Now;
-            DateTime date = new DateTime(now.Year, now.Month, 1);
-            dtp1ReceptReceivedPerMonth1.Value = date;
-            string d1 = dtp1ReceptReceivedPerMonth1.Value.ToString("yyyy-MM-dd");
-            string d2 = dtp1ReceptReceivedPerMonth2.Value.ToString("yyyy-MM-dd");
-            receiptReceivedLoad();
-            DgvReceiptReceivedPerMonth.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[12].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[13].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[13].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerMonth.Columns[12].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            foreach (DataGridViewColumn cl in DgvReceiptReceivedPerMonth.Columns)
+            try
             {
-                cl.SortMode = DataGridViewColumnSortMode.NotSortable;
-                cl.Width = 100;
+                combo_doctors.Items.Add("All Doctor");
+                combo_doctors.ValueMember = "0";
+                combo_doctors.DisplayMember = "All Doctor";
+                DataTable doctor_rs = this.ctrlr.getdocname();
+                if (doctor_rs.Rows.Count > 0)
+                {
+                    for (int i = 0; i < doctor_rs.Rows.Count; i++)
+                    {
+                        combo_doctors.Items.Add(doctor_rs.Rows[i]["doctor_name"].ToString());
+                        combo_doctors.ValueMember = doctor_rs.Rows[i]["id"].ToString();
+                        combo_doctors.DisplayMember = doctor_rs.Rows[i]["doctor_name"].ToString();
+                    }
+                }
+                combo_doctors.SelectedIndex = 0;
+                label_empty.Hide();
+                dtp1ReceptReceivedPerMonth2.MaxDate = DateTime.Now;
+                DateTime now = DateTime.Now;
+                DateTime date = new DateTime(now.Year, now.Month, 1);
+                dtp1ReceptReceivedPerMonth1.Value = date;
+                string d1 = dtp1ReceptReceivedPerMonth1.Value.ToString("yyyy-MM-dd");
+                string d2 = dtp1ReceptReceivedPerMonth2.Value.ToString("yyyy-MM-dd");
+                receiptReceivedLoad();
+                DgvReceiptReceivedPerMonth.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[12].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[13].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[13].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[12].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                foreach (DataGridViewColumn cl in DgvReceiptReceivedPerMonth.Columns)
+                {
+                    cl.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    cl.Width = 100;
+                }
             }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void Btn_Export_Click(object sender, EventArgs e)
         {
@@ -263,9 +250,12 @@ namespace PappyjoeMVC.View
                             ExcelApp.Cells[5, i].Font.Color = Color.FromArgb(255, 255, 255);
                             ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
                         }
-                        int j1 = 6;
-                        for (int i = 0; i <= DgvReceiptReceivedPerMonth.Rows.Count; i++)
-                        {
+                        int j1 = 7;
+                       
+                            for (int i = 0; i <= DgvReceiptReceivedPerMonth.Rows.Count; i++)
+                            {
+                            try
+                            {
                                 for (int j = 0; j < DgvReceiptReceivedPerMonth.Columns.Count; j++)
                                 {
                                     ExcelApp.Cells[i + 6, j + 1] = DgvReceiptReceivedPerMonth.Rows[i].Cells[j].Value.ToString();
@@ -274,6 +264,8 @@ namespace PappyjoeMVC.View
                                     ExcelApp.Cells[i + 6, j + 1].Font.Size = 8;
                                 }
                                 j1 = j1 + 1;
+                            }
+                            catch { }
                         }
                         ExcelApp.Cells[j1, 9] = "Total";
                         ExcelApp.Cells[j1, 9].BorderAround(true);
@@ -328,21 +320,10 @@ namespace PappyjoeMVC.View
         {
             receiptReceivedLoad();
         }
-        public void practicedetails(DataTable dt)
-        {
-            if (dt.Rows.Count > 0)
-            {
-                clinicn = dt.Rows[0]["name"].ToString();
-                strclinicname = clinicn.Replace("¤", "'");
-                strphone = dt.Rows[0]["contact_no"].ToString();
-                strStreet = dt.Rows[0]["street_address"].ToString();
-                stremail = dt.Rows[0]["email"].ToString();
-                strwebsite = dt.Rows[0]["website"].ToString();
-            }
-        }
         private void btn_print_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 if (DgvReceiptReceivedPerMonth.Rows.Count > 0)
                 {
                     string today = DateTime.Now.ToString("dd/MM/yyyy");
@@ -351,15 +332,23 @@ namespace PappyjoeMVC.View
                     MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                     DialogResult result;
                     result = MessageBox.Show(message, caption, buttons);
-
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        this.ctrlr.practicedetails();
+                        DataTable dt=this.ctrlr.practicedetails();
+                        if (dt.Rows.Count > 0)
+                        {
+                            clinicn = dt.Rows[0]["name"].ToString();
+                            strclinicname = clinicn.Replace("¤", "'");
+                            strphone = dt.Rows[0]["contact_no"].ToString();
+                            strStreet = dt.Rows[0]["street_address"].ToString();
+                            stremail = dt.Rows[0]["email"].ToString();
+                            strwebsite = dt.Rows[0]["website"].ToString();
+                        }
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
                     StreamWriter sWrite = new StreamWriter(Apppath + "\\ReceiptReceivedPerMonths.html");
                     sWrite.WriteLine("<html>");
-                    sWrite.WriteLine("<head>");
+                    sWrite.WriteLine("<head>");                                                                                       
                     sWrite.WriteLine("<style>");
                     sWrite.WriteLine("table { border-collapse: collapse;}");
                     sWrite.WriteLine("p.big {line-height: 400%;}");
@@ -408,27 +397,31 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Amount Paid</font></td>");
                         sWrite.WriteLine("    <td align='right' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>Amount Due</font></td>");
                         sWrite.WriteLine("</tr>");
-                        int k = 1;
-                        for (int j = 0; j < DgvReceiptReceivedPerMonth.Rows.Count; j++)
+                        try
                         {
-                            sWrite.WriteLine("<tr>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + k + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["Patient_name"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["invoice_no"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["recept_No"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["doctor_name"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["procedure_name"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + Convert.ToDateTime(DgvReceiptReceivedPerMonth.Rows[j].Cells["Payment_date"].Value.ToString()).ToString("dd/MM/yyy") + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["mode_of_payment"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["cost"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["tax_inrs"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["Discount_insr"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE=Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["income"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["amount_paid"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["amount_due"].Value.ToString() + "</font></th>");
-                            k = k + 1;
-                            sWrite.WriteLine("</tr>");
+                            int k = 1;
+                            for (int j = 0; j < DgvReceiptReceivedPerMonth.Rows.Count; j++)
+                            {
+                                sWrite.WriteLine("<tr>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + k + "</font></th>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["Patient_name"].Value.ToString() + "</font></th>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["invoice_no"].Value.ToString() + "</font></th>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["recept_No"].Value.ToString() + "</font></th>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["doctor_name"].Value.ToString() + "</font></th>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["procedure_name"].Value.ToString() + "</font></th>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + Convert.ToDateTime(DgvReceiptReceivedPerMonth.Rows[j].Cells["Payment_date"].Value.ToString()).ToString("yyyy-MM-dd") + "</font></th>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["mode_of_payment"].Value.ToString() + "</font></th>");
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["cost"].Value.ToString() + "</font></th>");
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["tax_inrs"].Value.ToString() + "</font></th>");
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["Discount_insr"].Value.ToString() + "</font></th>");
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE=Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["income"].Value.ToString() + "</font></th>");
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["amount_paid"].Value.ToString() + "</font></th>");
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerMonth.Rows[j].Cells["amount_due"].Value.ToString() + "</font></th>");
+                                k = k + 1;
+                                sWrite.WriteLine("</tr>");
+                            }
                         }
+                        catch { }
                         sWrite.WriteLine("<tr>");
                         sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
                         sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
@@ -461,7 +454,7 @@ namespace PappyjoeMVC.View
                 { MessageBox.Show("No Record found,please change the date and try again!... ", "No data found", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             }
             catch (Exception ex)
-            { MessageBox.Show("Printing Error", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
     }
 }
