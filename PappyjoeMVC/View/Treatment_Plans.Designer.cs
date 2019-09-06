@@ -964,7 +964,7 @@
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
             // 
-            // TreatmentPlans
+            // Treatment_Plans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -984,8 +984,9 @@
             this.Controls.Add(this.labelallpatient);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "TreatmentPlans";
+            this.Name = "Treatment_Plans";
             this.Text = "Treatment Plans";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TreatmentPlans_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

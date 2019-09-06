@@ -478,7 +478,7 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        var form2 = new Clinical_Notes_Add();
+                        var form2 = new Add_Clinical_Notes();
                         //ClinicalNotesAdd_controller cnt = new ClinicalNotesAdd_controller(form2);
                         form2.doctor_id = doctor_id;
                         form2.patient_id = patient_id;
@@ -489,7 +489,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    var form2 = new Clinical_Notes_Add();
+                    var form2 = new Add_Clinical_Notes();
                     //ClinicalNotesAdd_controller cnt = new ClinicalNotesAdd_controller(form2);
                     form2.doctor_id = doctor_id;
                     form2.patient_id = patient_id;
@@ -1506,7 +1506,7 @@ namespace PappyjoeMVC.View
                     {
                         if (clinic_id != "0")
                         {
-                            var form2 = new PappyjoeMVC.View.Clinical_Notes_Add();
+                            var form2 = new PappyjoeMVC.View.Add_Clinical_Notes();
                             //ClinicalNotesAdd_controller cnt = new ClinicalNotesAdd_controller(form2);
                             form2.clinic_id = clinic_id;
                             form2.patient_id = patient_id;
@@ -1521,7 +1521,7 @@ namespace PappyjoeMVC.View
                 {
                     if (clinic_id != "0")
                     {
-                        var form2 = new PappyjoeMVC.View.Clinical_Notes_Add();
+                        var form2 = new PappyjoeMVC.View.Add_Clinical_Notes();
                         //ClinicalNotesAdd_controller cnt = new ClinicalNotesAdd_controller(form2);
                         form2.clinic_id = clinic_id;
                         form2.patient_id = patient_id;

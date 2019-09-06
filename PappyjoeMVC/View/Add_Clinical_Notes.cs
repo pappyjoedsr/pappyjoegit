@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Clinical_Notes_Add : Form
+    public partial class Add_Clinical_Notes : Form
     {
         Clinical_Notes_Add_controller cntrl=new Clinical_Notes_Add_controller();
         public string doctor_id = "";
@@ -15,7 +15,7 @@ namespace PappyjoeMVC.View
         string idcomp, iddiag, idobs, idinv, idnote = "";
         public string patient_id = "";
         static int rowvalue;
-        public Clinical_Notes_Add()
+        public Add_Clinical_Notes()
         {
             InitializeComponent();
         }
@@ -963,7 +963,11 @@ namespace PappyjoeMVC.View
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-
+            var form2 = new PappyjoeMVC.View.Communication();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
