@@ -36,5 +36,5 @@ namespace PappyjoeMVC.Model
             int j = db.execute("delete from tbl_appointment where id='" + apntid + "'");
             return j;
         }
-    }
+    }//fgadsxghSAFc
 }
