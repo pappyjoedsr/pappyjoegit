@@ -2,7 +2,7 @@
 
 namespace PappyjoeMVC.Model
 {
-    public class Treatment_report_model
+    public class Treatment_Report_model
     {
         Connection db = new Connection();
         public DataTable doctor_rs()
