@@ -435,12 +435,12 @@
             this.lblhead.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblhead.Location = new System.Drawing.Point(195, 48);
             this.lblhead.Name = "lblhead";
-            this.lblhead.Size = new System.Drawing.Size(338, 32);
+            this.lblhead.Size = new System.Drawing.Size(335, 32);
             this.lblhead.TabIndex = 0;
             this.lblhead.Text = "TO WHOM IT MAY CONCERN";
             this.lblhead.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // consent
+            // Consent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -448,8 +448,8 @@
             this.ClientSize = new System.Drawing.Size(765, 643);
             this.Controls.Add(this.lbltoper);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "consent";
-            this.Text = "consent";
+            this.Name = "Consent";
+            this.Text = "Consent";
             this.Load += new System.EventHandler(this.consent_Load);
             this.lbltoper.ResumeLayout(false);
             this.lbltoper.PerformLayout();

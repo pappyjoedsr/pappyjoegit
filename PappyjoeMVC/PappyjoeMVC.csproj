@@ -507,11 +507,11 @@
     <Compile Include="View\Supplier.Designer.cs">
       <DependentUpon>Supplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Group_wise_report.cs">
+    <Compile Include="View\Group_Wise_Report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Group_wise_report.designer.cs">
-      <DependentUpon>Group_wise_report.cs</DependentUpon>
+    <Compile Include="View\Group_Wise_Report.designer.cs">
+      <DependentUpon>Group_Wise_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Invoice.cs">
       <SubType>Form</SubType>
@@ -883,8 +883,8 @@
     <EmbeddedResource Include="View\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Group_wise_report.resx">
-      <DependentUpon>Group_wise_report.cs</DependentUpon>
+    <EmbeddedResource Include="View\Group_Wise_Report.resx">
+      <DependentUpon>Group_Wise_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Invoice.resx">
       <DependentUpon>Invoice.cs</DependentUpon>
