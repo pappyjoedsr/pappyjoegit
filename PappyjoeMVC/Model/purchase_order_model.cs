@@ -5,25 +5,25 @@ namespace PappyjoeMVC.Model
     public class purchase_order_model
     {
         Connection db = new Connection();
-        Form_Control_Model fmodel = new Form_Control_Model();
-        private string orderno = "";
-        public string OrerNo
-        {
-            get { return orderno; }
-            set { orderno = value; }
-        }
-        private string orderdate = "";
-        public string OrderDate
-        {
-            get { return orderdate; }
-            set { orderdate = value; }
-        }
-        private string supplierid = "";
-        public string Supplierid
-        {
-            get { return supplierid; }
-            set { supplierid = value; }
-        }
+        //Form_Control_Model fmodel = new Form_Control_Model();
+        //private string orderno = "";
+        //public string OrerNo
+        //{
+        //    get { return orderno; }
+        //    set { orderno = value; }
+        //}
+        //private string orderdate = "";
+        //public string OrderDate
+        //{
+        //    get { return orderdate; }
+        //    set { orderdate = value; }
+        //}
+        //private string supplierid = "";
+        //public string Supplierid
+        //{
+        //    get { return supplierid; }
+        //    set { supplierid = value; }
+        //}
         public DataTable master_details(int purch_id1)
         {
             DataTable pur_master = db.table("Select m.Pur_order_no,m.Purch_order_date,m.Suppleir_id,s.Supplier_Name from tbl_Purchase_order_master m inner join tbl_Supplier s on s.Supplier_Code=m.Suppleir_id where Pur_order_no='" + purch_id1 + "'");
@@ -71,11 +71,11 @@ namespace PappyjoeMVC.Model
         }
         public void save_master(string OrerNo, string OrderDate, string Supplierid)
         {
-            db.execute("insert into tbl_Purchase_order_master (Pur_order_no,Purch_order_date,Suppleir_id,status) values('" + orderno + "','" + orderdate + "','" + supplierid + "','O')");
+            db.execute("insert into tbl_Purchase_order_master (Pur_order_no,Purch_order_date,Suppleir_id,status) values('" + OrerNo + "','" + OrderDate + "','" + Supplierid + "','O')");
         }
         public void save_items(string OrerNo, string Item_Id, string description, string col_qty, string Unit_Cost, string Amount)
         {
-            db.execute("insert into tbl_PurchaseOrder (Pur_order_no,Item_code,Description,Qty,UnitCost,Amount) values('" + orderno + "','" + Item_Id + "','" + description + "','" + col_qty + "','" + Unit_Cost + "','" + Amount + "')");
+            db.execute("insert into tbl_PurchaseOrder (Pur_order_no,Item_code,Description,Qty,UnitCost,Amount) values('" + OrerNo + "','" + Item_Id + "','" + description + "','" + col_qty + "','" + Unit_Cost + "','" + Amount + "')");
         }
         
         public void delete_order(string orderno)

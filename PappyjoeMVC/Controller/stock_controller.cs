@@ -9,7 +9,7 @@ namespace PappyjoeMVC.Controller
 {
    public class stock_controller
     {
-        common_model cmodel = new common_model();
+        Common_model cmodel = new Common_model();
         Connection db = new Connection();
         StockItem_model model = new StockItem_model();
         public string Load_CompanyName()
