@@ -116,7 +116,7 @@ namespace PappyjoeMVC.Model
                     da.Fill(dt);
                     this.CloseConnection();
                 }
-            }
+             }
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message, "Server Not Found", MessageBoxButtons.OK, MessageBoxIcon.Stop);

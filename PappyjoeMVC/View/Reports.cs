@@ -1699,7 +1699,7 @@ namespace PappyjoeMVC.View
 
         private void lblgroupwisereport_Click(object sender, EventArgs e)
         {
-            Group_wise_report g = new Group_wise_report();
+            Group_Wise_Report g = new Group_Wise_Report();
             g.patient_id = patient_id;
             g.ShowDialog();
         }
@@ -1766,6 +1766,22 @@ namespace PappyjoeMVC.View
         private void Lab_Receipt_Month_Click(object sender, EventArgs e)
         {
             var form2 = new Month_Wise_Receipt();
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            //this.Hide();
+            form2.ShowDialog();
+        }
+        private void Lab_Receipt_PerDoctor_Click(object sender, EventArgs e)
+        {
+            var form2 = new Doctor_Wise_Receipt();
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            //this.Hide();
+            form2.ShowDialog();
+        }
+        private void lab_receipt_ModeOfPayment_Click(object sender, EventArgs e)
+        {
+            var form2 = new Paymode_Wise_Receipt();
             form2.doctor_id = doctor_id;
             form2.FormClosed += (sender1, args) => this.Close();
             //this.Hide();

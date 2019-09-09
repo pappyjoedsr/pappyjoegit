@@ -5,28 +5,22 @@ namespace PappyjoeMVC.Controller
 {
     public class Paymode_Wise_Receipt_controller
     {
-        Paymode_Wise_Receipt_interface intr;
         Common_model cmdl = new Common_model();
         Daily_Invoice_Report_model mdl = new Daily_Invoice_Report_model();
-        public Paymode_Wise_Receipt_controller(Paymode_Wise_Receipt_interface inttr)
-        {
-            intr = inttr;
-            intr.setController(this);
-        }
-        public void getdocname()
+        public DataTable getdocname()
         {
             DataTable dt = mdl.getdocname();
-            intr.getdocname(dt);
+            return dt;
         }
-        public void getinvdata(string invno, string service)
+        public DataTable getinvdata(string invno, string service)
         {
             DataTable dt = mdl.getinvdata(invno, service);
-            intr.getinvdata(dt);
+            return dt;
         }
-        public void practicedetails()
+        public DataTable practicedetails()
         {
             DataTable dt = mdl.practicedetails();
-            intr.practicedetails(dt);
+            return dt;
         }
         public DataTable ReceiptReceivedModeofPayment(string d1, string d2)
         {
