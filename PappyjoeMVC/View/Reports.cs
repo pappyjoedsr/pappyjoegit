@@ -1699,7 +1699,7 @@ namespace PappyjoeMVC.View
 
         private void lblgroupwisereport_Click(object sender, EventArgs e)
         {
-            Group_wise_report g = new Group_wise_report();
+            Group_Wise_Report g = new Group_Wise_Report();
             g.patient_id = patient_id;
             g.ShowDialog();
         }
