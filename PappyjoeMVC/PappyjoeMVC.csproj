@@ -587,7 +587,9 @@
     <Compile Include="View\Purchase_Report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Purchase_Report.Designer.cs" />
+    <Compile Include="View\Purchase_Report.designer.cs">
+      <DependentUpon>Purchase_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Purchase_Return.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1069,7 +1071,9 @@
     <EmbeddedResource Include="View\Purchase_order_list.resx">
       <DependentUpon>Purchase_order_list.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Purchase_Report.resx" />
+    <EmbeddedResource Include="View\Purchase_Report.resx">
+      <DependentUpon>Purchase_Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Purchase_Return.resx">
       <DependentUpon>Purchase_Return.cs</DependentUpon>
     </EmbeddedResource>
