@@ -16,6 +16,12 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table("select tbl_purchase.PurchNumber,tbl_purchase.PurchDate,tbl_Supplier.Supplier_Name,tbl_purchase.TotalAmount,tbl_purchase.DiscAmount,tbl_purchase.GrandTotal from tbl_purchase inner join tbl_Supplier on tbl_Supplier.Supplier_Code=tbl_purchase.Sup_Code where tbl_purchase.PurchDate between '" +  frmdte + "' and '" + todte + "'");
             return dt;
         }
+        //purchase item report
+        public DataTable purchitem(string purchno)
+        {
+            DataTable dt = db.table("select PurchDate, Item_Code, Desccription, Packing, Unit, Qty, FreeQty, Rate, GST, IGST, Amount from tbl_PURCHIT where PurchNumber = '" + purchno + "'");
+            return dt;
+        }
         //purchase order report
         public DataTable purchorder(string frmdte, string todte)
         {
