@@ -10,7 +10,7 @@ namespace PappyjoeMVC.Controller
    public class sales_controller
     {
         sales_model _model = new sales_model();
-        common_model cmodel = new common_model();
+        Common_model cmodel = new Common_model();
         Inventory_model inv_model = new Inventory_model();
         public DataTable get_itemdetails(string name)
         {

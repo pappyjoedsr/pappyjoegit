@@ -67,7 +67,7 @@ namespace PappyjoeMVC.View
             if (txt_ItemCode.Text != "")
             {
                 var form2 = new ItemListForSales(FormName, txt_ItemCode.Text);
-                ItemListForSales_controller controller = new ItemListForSales_controller(form2);
+                //ItemListForSales_controller controller = new ItemListForSales_controller(form2);
                 form2.ShowDialog();
                 if (ItemCode_From_List != "")
                 {
@@ -91,7 +91,7 @@ namespace PappyjoeMVC.View
             else
             {
                 var form2 = new ItemListForSales(FormName);
-                ItemListForSales_controller controller = new ItemListForSales_controller(form2);
+                //ItemListForSales_controller controller = new ItemListForSales_controller(form2);
                 form2.ShowDialog();
                 if (ItemCode_From_List != "")
                 {
@@ -333,7 +333,7 @@ namespace PappyjoeMVC.View
                 {
                     FormName = "Sales";
                     var form2 = new ItemListForSales(FormName, txt_ItemCode.Text);
-                    ItemListForSales_controller controller = new ItemListForSales_controller(form2);
+                    //ItemListForSales_controller controller = new ItemListForSales_controller(form2);
                     form2.ShowDialog();
                     if (ItemCode_From_List != "")
                     {

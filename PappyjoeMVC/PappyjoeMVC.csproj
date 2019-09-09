@@ -80,6 +80,7 @@
     <Compile Include="Controller\Appointment_for_each_patient_group_controller.cs" />
     <Compile Include="Controller\Attachments_controller.cs" />
     <Compile Include="Controller\Autoid_Generation_controller.cs" />
+    <Compile Include="Controller\batchsale_controller.cs" />
     <Compile Include="Controller\Billing_controller.cs" />
     <Compile Include="Controller\Booking_controller.cs" />
     <Compile Include="Controller\Booking_interface.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Controller\Group_Wise_Report_controller.cs" />
     <Compile Include="Controller\Invoice_controller.cs" />
     <Compile Include="Controller\invoice_interface.cs" />
+    <Compile Include="Controller\ItemListForSales_controller.cs" />
     <Compile Include="Controller\Item_List_Controller.cs" />
     <Compile Include="Controller\LabDental_controller.cs" />
     <Compile Include="Controller\LabMedical_controller.cs" />
@@ -146,12 +148,31 @@
     <Compile Include="Controller\Procedure_Catalog_controller.cs" />
     <Compile Include="Controller\Profile_Details_controller.cs" />
     <Compile Include="Controller\profile_details_interface.cs" />
+    <Compile Include="Controller\purchasebatch_controller.cs" />
+    <Compile Include="Controller\purchaseItem_controller.cs" />
+    <Compile Include="Controller\PurchaseList_controller.cs" />
+    <Compile Include="Controller\purchase_controller.cs" />
+    <Compile Include="Controller\Purchase_order_controller.cs" />
+    <Compile Include="Controller\Purchase_order_list_controller.cs" />
+    <Compile Include="Controller\purchase_return_batch_controller.cs" />
+    <Compile Include="Controller\purchase_return_controller.cs" />
+    <Compile Include="Controller\Purchase_Return_ItemList_controller.cs" />
+    <Compile Include="Controller\Purchase_return_list_controller.cs" />
     <Compile Include="Controller\Receipt_controller.cs" />
     <Compile Include="Controller\Receipt_interface.cs" />
     <Compile Include="Controller\Reports_controller.cs" />
+    <Compile Include="Controller\sales_controller.cs" />
+    <Compile Include="Controller\Sales_List_controller.cs" />
+    <Compile Include="Controller\sales_order_controller.cs" />
+    <Compile Include="Controller\Sales_order_list_controller.cs" />
+    <Compile Include="Controller\Sales_Retuen_Itemlist_Controller.cs" />
+    <Compile Include="Controller\Sales_Return_Batch_Controller.cs" />
+    <Compile Include="Controller\Sales_Return_Controller.cs" />
+    <Compile Include="Controller\Sales_Return_List_Controller.cs" />
     <Compile Include="Controller\Search_Patient_controller.cs" />
     <Compile Include="Controller\Show_Appointment_controller.cs" />
     <Compile Include="Controller\Staff_controller.cs" />
+    <Compile Include="Controller\stock_controller.cs" />
     <Compile Include="Controller\Supplier_controller.cs" />
     <Compile Include="Controller\supplier_interface.cs" />
     <Compile Include="Controller\Treatment_controller.cs" />
@@ -191,6 +212,7 @@
     <Compile Include="Model\EMR_model.cs" />
     <Compile Include="Model\Expense_model.cs" />
     <Compile Include="Model\Export_model.cs" />
+    <Compile Include="Model\GeneralFunctions.cs" />
     <Compile Include="Model\Global_Variables.cs" />
     <Compile Include="Model\Inventory_model.cs" />
     <Compile Include="Model\Item_List_Model.cs" />
@@ -212,11 +234,18 @@
     <Compile Include="Model\Printout_model.cs" />
     <Compile Include="Model\Procedure_Catalog_model.cs" />
     <Compile Include="Model\profile_Details_model.cs" />
+    <Compile Include="Model\purchase-return_model.cs" />
+    <Compile Include="Model\Purchase_model.cs" />
+    <Compile Include="Model\purchase_order_model.cs" />
     <Compile Include="Model\Receipt_Model.cs" />
     <Compile Include="Model\Reports_model.cs" />
+    <Compile Include="Model\sales_model.cs" />
+    <Compile Include="Model\sales_order_model.cs" />
+    <Compile Include="Model\Sales_Return_Model.cs" />
     <Compile Include="Model\Show_Appointment_model.cs" />
     <Compile Include="Model\SMS_model.cs" />
     <Compile Include="Model\Staff_model.cs" />
+    <Compile Include="Model\StockItem_model.cs" />
     <Compile Include="Model\Supplier_model.cs" />
     <Compile Include="Model\Treatment_model.cs" />
     <Compile Include="Model\Treatment_Report_model.cs" />
@@ -300,6 +329,12 @@
     </Compile>
     <Compile Include="View\AutomaticId_generation.Designer.cs">
       <DependentUpon>AutomaticId_generation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Batch_Sale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Batch_Sale.designer.cs">
+      <DependentUpon>Batch_Sale.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Billing.cs">
       <SubType>Form</SubType>
@@ -475,6 +510,18 @@
     <Compile Include="View\Image_Zoom.designer.cs">
       <DependentUpon>Image_Zoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ItemBatchDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ItemBatchDetails.designer.cs">
+      <DependentUpon>ItemBatchDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ItemListForSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ItemListForSales.designer.cs">
+      <DependentUpon>ItemListForSales.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Item_List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -508,8 +555,14 @@
     <Compile Include="View\PurchaseItemLIst.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\PurchaseItemLIst.designer.cs">
+      <DependentUpon>PurchaseItemLIst.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PurchaseList.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PurchaseList.designer.cs">
+      <DependentUpon>PurchaseList.cs</DependentUpon>
     </Compile>
     <Compile Include="View\PurchaseOrder.cs">
       <SubType>Form</SubType>
@@ -520,11 +573,20 @@
     <Compile Include="View\Purchase_Batch.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\Purchase_Batch.designer.cs">
+      <DependentUpon>Purchase_Batch.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Purchase_order_list.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\Purchase_order_list.designer.cs">
+      <DependentUpon>Purchase_order_list.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Purchase_Return.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Purchase_Return.designer.cs">
+      <DependentUpon>Purchase_Return.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Purchase_return_Batch.cs">
       <SubType>Form</SubType>
@@ -535,8 +597,68 @@
     <Compile Include="View\Purchase_Return_ItemList.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\Purchase_Return_ItemList.designer.cs">
+      <DependentUpon>Purchase_Return_ItemList.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Purchase_Return_List.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Purchase_Return_List.designer.cs">
+      <DependentUpon>Purchase_Return_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Sales.designer.cs">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SalesOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SalesOrder.designer.cs">
+      <DependentUpon>SalesOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sales_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Sales_List.designer.cs">
+      <DependentUpon>Sales_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sales_order_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Sales_order_list.designer.cs">
+      <DependentUpon>Sales_order_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sales_Return.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Sales_Return.designer.cs">
+      <DependentUpon>Sales_Return.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sales_ReturnList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Sales_ReturnList.designer.cs">
+      <DependentUpon>Sales_ReturnList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sales_Return_Batch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Sales_Return_Batch.designer.cs">
+      <DependentUpon>Sales_Return_Batch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sales_Return_Itemlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Sales_Return_Itemlist.designer.cs">
+      <DependentUpon>Sales_Return_Itemlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\StockReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StockReport.designer.cs">
+      <DependentUpon>StockReport.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Supplier.cs">
       <SubType>Form</SubType>
@@ -821,6 +943,9 @@
     <EmbeddedResource Include="View\AutomaticId_generation.resx">
       <DependentUpon>AutomaticId_generation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Batch_Sale.resx">
+      <DependentUpon>Batch_Sale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Billing.resx">
       <DependentUpon>Billing.cs</DependentUpon>
     </EmbeddedResource>
@@ -908,6 +1033,12 @@
     <EmbeddedResource Include="View\Image_Zoom.resx">
       <DependentUpon>Image_Zoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ItemBatchDetails.resx">
+      <DependentUpon>ItemBatchDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ItemListForSales.resx">
+      <DependentUpon>ItemListForSales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Item_List.resx">
       <DependentUpon>Item_List.cs</DependentUpon>
     </EmbeddedResource>
@@ -920,8 +1051,56 @@
     <EmbeddedResource Include="View\Purchase.resx">
       <DependentUpon>Purchase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\PurchaseItemLIst.resx">
+      <DependentUpon>PurchaseItemLIst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PurchaseList.resx">
+      <DependentUpon>PurchaseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Purchase_Batch.resx">
+      <DependentUpon>Purchase_Batch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Purchase_order_list.resx">
+      <DependentUpon>Purchase_order_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Purchase_Return.resx">
+      <DependentUpon>Purchase_Return.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Purchase_return_Batch.resx">
       <DependentUpon>Purchase_return_Batch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Purchase_Return_ItemList.resx">
+      <DependentUpon>Purchase_Return_ItemList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Purchase_Return_List.resx">
+      <DependentUpon>Purchase_Return_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Sales.resx">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SalesOrder.resx">
+      <DependentUpon>SalesOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Sales_List.resx">
+      <DependentUpon>Sales_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Sales_order_list.resx">
+      <DependentUpon>Sales_order_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Sales_Return.resx">
+      <DependentUpon>Sales_Return.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Sales_ReturnList.resx">
+      <DependentUpon>Sales_ReturnList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Sales_Return_Batch.resx">
+      <DependentUpon>Sales_Return_Batch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Sales_Return_Itemlist.resx">
+      <DependentUpon>Sales_Return_Itemlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StockReport.resx">
+      <DependentUpon>StockReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>

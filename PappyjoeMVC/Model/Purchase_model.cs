@@ -32,7 +32,7 @@ namespace PappyjoeMVC.Model
         }
         public int save_purchase(string PurchNumber, string InvNumber, string PurchDate, string Sup_Code, string TotalAmount, string GrandTotal, string DiscPercentage, string DiscAmount, string TotalCost)
         {
-            int i = db.transexecute("insert into tbl_PURCHASE (PurchNumber,InvNumber,PurchDate,Sup_Code,TotalAmount,DiscPercent,DiscAmount,GrandTotal,PurchType,TotalCost) values('" + PurchNumber + "','" + InvNumber + "','" + PurchDate + "','" + Sup_Code + "','" + TotalAmount + "','" + DiscPercentage + "','" + DiscAmount + "','" + GrandTotal + "','cash','" + TotalCost + "')");
+            int i = db.execute("insert into tbl_PURCHASE (PurchNumber,InvNumber,PurchDate,Sup_Code,TotalAmount,DiscPercent,DiscAmount,GrandTotal,PurchType,TotalCost) values('" + PurchNumber + "','" + InvNumber + "','" + PurchDate + "','" + Sup_Code + "','" + TotalAmount + "','" + DiscPercentage + "','" + DiscAmount + "','" + GrandTotal + "','cash','" + TotalCost + "')");
             return i;
         }
         public int save_batchNumber(string Item_Code, string BatchNumber, int Qty, string Unit2, string UnitMF, string PurchNumber, string PrdDate, string ExpDate, string Period, string Sup_Code, string PurchDate, string IsExpDate)
