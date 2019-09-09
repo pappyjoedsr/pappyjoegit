@@ -154,6 +154,7 @@
     <Compile Include="Controller\purchase_controller.cs" />
     <Compile Include="Controller\Purchase_order_controller.cs" />
     <Compile Include="Controller\Purchase_order_list_controller.cs" />
+    <Compile Include="Controller\Purchase_Report_controller.cs" />
     <Compile Include="Controller\purchase_return_batch_controller.cs" />
     <Compile Include="Controller\purchase_return_controller.cs" />
     <Compile Include="Controller\Purchase_Return_ItemList_controller.cs" />
@@ -237,6 +238,7 @@
     <Compile Include="Model\purchase-return_model.cs" />
     <Compile Include="Model\Purchase_model.cs" />
     <Compile Include="Model\purchase_order_model.cs" />
+    <Compile Include="Model\Purchase_Report_model.cs" />
     <Compile Include="Model\Receipt_Model.cs" />
     <Compile Include="Model\Reports_model.cs" />
     <Compile Include="Model\sales_model.cs" />
@@ -582,6 +584,10 @@
     <Compile Include="View\Purchase_order_list.designer.cs">
       <DependentUpon>Purchase_order_list.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Purchase_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Purchase_Report.Designer.cs" />
     <Compile Include="View\Purchase_Return.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1063,6 +1069,7 @@
     <EmbeddedResource Include="View\Purchase_order_list.resx">
       <DependentUpon>Purchase_order_list.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Purchase_Report.resx" />
     <EmbeddedResource Include="View\Purchase_Return.resx">
       <DependentUpon>Purchase_Return.cs</DependentUpon>
     </EmbeddedResource>
