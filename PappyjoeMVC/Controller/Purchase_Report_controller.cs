@@ -10,23 +10,17 @@ namespace PappyjoeMVC.Controller
 {
     public class Purchase_Report_controller
     {
-        Purchase_Report_interface intr;
         Purchase_Report_model mdl = new Purchase_Report_model();
         Daily_Invoice_Report_model dm = new Daily_Invoice_Report_model();
-        public Purchase_Report_controller(Purchase_Report_interface inttr)
-        {
-            intr = inttr;
-            intr.setController(this);
-        }
-        public void purchdtls(string frmdte,string todte)
+        public DataTable purchdtls(string frmdte,string todte)
         {
             DataTable dt = mdl.purchdtls(frmdte, todte);
-            intr.purchdtls(dt);
+            return dt;
         }
-        public void practicedetails()
+        public DataTable practicedetails()
         {
             DataTable dt =dm.practicedetails();
-            intr.practicedetails(dt);
+            return dt;
         }
     }
 }

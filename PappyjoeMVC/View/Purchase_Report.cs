@@ -12,13 +12,14 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Purchase_Report : Form,Purchase_Report_interface
+    public partial class Purchase_Report : Form
     {
-        Purchase_Report_controller ctrlr;
+        
         public static int pur_id = 0;
         public static DateTime from, to;
         int total_pur = 0, slno = 0, c = 0;
         decimal cost = 0, cost1 = 0, grandtotal = 0, grandtotal1 = 0;
+        Purchase_Report_controller ctrlr=new Purchase_Report_controller();
         public string fdate="", tdate="",strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "", checkStr = "0", PathName = "";
         private void dgvPurchase_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -100,7 +101,7 @@ namespace PappyjoeMVC.View
                                     ExcelApp.Cells[i + 6, j + 1].Font.Size = 8;
                                 }
                             }
-                            catch(Exception ex){}
+                            catch{}
                         }
                         ExcelApp.ActiveWorkbook.SaveAs(PathName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
                         ExcelApp.ActiveWorkbook.Saved = true;
@@ -126,7 +127,16 @@ namespace PappyjoeMVC.View
                     result = MessageBox.Show(message, caption, buttons);
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        this.ctrlr.practicedetails();
+                        DataTable dtp=this.ctrlr.practicedetails();
+                            if (dtp.Rows.Count > 0)
+                            {
+                                clinicn = dtp.Rows[0]["name"].ToString();
+                                strclinicname = clinicn.Replace("¤", "'");
+                                strphone = dtp.Rows[0]["contact_no"].ToString();
+                                strStreet = dtp.Rows[0]["street_address"].ToString();
+                                stremail = dtp.Rows[0]["email"].ToString();
+                                strwebsite = dtp.Rows[0]["website"].ToString();
+                            }
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
                     StreamWriter sWrite = new StreamWriter(Apppath + "\\PurchaseReport.html");
@@ -242,8 +252,7 @@ namespace PappyjoeMVC.View
         }
         private void BTNClose_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.Purchase_Report();
-            Purchase_Report_controller controller = new Purchase_Report_controller(form2);
+            var form2 = new Purchase_Report();
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
         }
@@ -251,18 +260,15 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        public void setController(Purchase_Report_controller controller)
-        {
-            ctrlr = controller;
-        }
         public void load()
         {
             fdate = dptMonthly_From.Value.ToString("yyyy-MM-dd");
             tdate = dptMonthly_To.Value.ToString("yyyy-MM-dd");
-            total_pur = 0; cost1 = 0; grandtotal1 = 0;
+            total_pur = 0; cost1 = 0; grandtotal1 = 0;                                                                    
             Lab_Msg.Visible = false;
             dgvPurchase.Rows.Clear();
-            this.ctrlr.purchdtls(fdate,tdate);
+            DataTable dt=this.ctrlr.purchdtls(fdate,tdate);
+            purchdtls(dt);
         }
         public void purchdtls(DataTable dt)
         {
@@ -301,16 +307,6 @@ namespace PappyjoeMVC.View
             catch(Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-        public void practicedetails(DataTable dtp)
-        {
-            if (dtp.Rows.Count > 0) {
-                clinicn = dtp.Rows[0]["name"].ToString();
-                strclinicname = clinicn.Replace("¤", "'");
-                strphone = dtp.Rows[0]["contact_no"].ToString();
-                strStreet = dtp.Rows[0]["street_address"].ToString();
-                stremail = dtp.Rows[0]["email"].ToString();
-                strwebsite = dtp.Rows[0]["website"].ToString();
-            }
-        }
+        
     }
 }
