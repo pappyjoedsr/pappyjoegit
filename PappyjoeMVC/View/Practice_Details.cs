@@ -723,6 +723,15 @@ namespace PappyjoeMVC.View
             //this.Refresh();
         }
 
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            var form2 = new StockReport();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
             var form2 = new Expense();

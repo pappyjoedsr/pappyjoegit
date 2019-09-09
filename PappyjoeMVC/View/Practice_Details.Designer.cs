@@ -839,6 +839,7 @@
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(72, 37);
             this.toolStripButton5.Text = "Inventory";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton6
             // 
@@ -1074,7 +1075,7 @@
             this.btnLab_dental.UseVisualStyleBackColor = false;
             this.btnLab_dental.Click += new System.EventHandler(this.btnLab_dental_Click);
             // 
-            // PracticeDetails
+            // Practice_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1144,7 +1145,7 @@
             this.Controls.Add(this.button_contacts);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "PracticeDetails";
+            this.Name = "Practice_Details";
             this.Text = "PracticeDetails";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PracticeDetails_Load);
