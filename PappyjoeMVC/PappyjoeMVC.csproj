@@ -567,7 +567,7 @@
     <Compile Include="View\PurchaseOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\PurchaseOrder.Designer.cs">
+    <Compile Include="View\PurchaseOrder.designer.cs">
       <DependentUpon>PurchaseOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Purchase_Batch.cs">
@@ -1056,6 +1056,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\PurchaseList.resx">
       <DependentUpon>PurchaseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PurchaseOrder.resx">
+      <DependentUpon>PurchaseOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Purchase_Batch.resx">
       <DependentUpon>Purchase_Batch.cs</DependentUpon>
