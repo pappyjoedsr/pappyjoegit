@@ -21,8 +21,8 @@ namespace PappyjoeMVC.View
         }
         public bool cmb_flag = false;
         DataTable dtb_Receipt = new DataTable();
-        decimal tax = 0, discount = 0, amount = 0, paid = 0, due = 0,Totaltax = 0, Totaldiscount = 0, Totalamount = 0, Totalpaid = 0, Totaldue = 0;
-        public string doctor_id = "", qty = "", DrctName = "", checkStr = "0", PathName = "", strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "";
+        decimal tax = 0,cost=0, discount = 0, amount = 0, paid = 0, due = 0,Totaltax = 0, Totaldiscount = 0, Totalamount = 0, Totalpaid = 0, Totaldue = 0;
+        public string doctor_id = "",service="", qty = "", DrctName = "", checkStr = "0", PathName = "", strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "";
         Day_Wise_Receipt_controller ctrlr=new Day_Wise_Receipt_controller();
         private void Day_Wise_Receipt_Load(object sender, EventArgs e)
         {
@@ -80,7 +80,9 @@ namespace PappyjoeMVC.View
             {
                 for (int i = 0; i < dt_inv.Rows.Count; i++)
                 {
+
                     DGV_Receipt.Rows[i].Cells["ColTotao_Cost"].Value = dt_inv.Rows[0]["Total Cost"].ToString();
+                    cost = Convert.ToDecimal(dt_inv.Rows[0]["Total Cost"].ToString());
                     if (dt_inv.Rows[0]["discountin_rs"].ToString() != "0")
                     {
                         DGV_Receipt.Rows[i].Cells["COlDIS"].Value = dt_inv.Rows[0]["discountin_rs"].ToString();
@@ -124,22 +126,31 @@ namespace PappyjoeMVC.View
                         DGV_Receipt.Rows[i].Cells["ColDrName"].Value = dtb_Receipt.Rows[i]["doctor_name"].ToString();
                         DataTable inv=this.ctrlr.getinvdata(dtb_Receipt.Rows[i]["invoice_no"].ToString(), dtb_Receipt.Rows[i]["procedure_name"].ToString());
                         getinvdata(inv);
-                        DGV_Receipt.Rows[i].Cells["ColProcedure"].Value = dtb_Receipt.Rows[i]["procedure_name"].ToString() + " (Qty:" + qty + ")";
+                        service = dtb_Receipt.Rows[i]["procedure_name"].ToString();
+                        DGV_Receipt.Rows[i].Cells["ColProcedure"].Value = service + " (Qty:" + qty + ")";
+                        DGV_Receipt.Rows[i].Cells["ColTax"].Value = tax;
+                        DGV_Receipt.Rows[i].Cells["ColTotalIncome"].Value = amount;
+                        DGV_Receipt.Rows[i].Cells["COlDIS"].Value = discount;
+                        DGV_Receipt.Rows[i].Cells["ColTotao_Cost"].Value = cost;
                         due = decimal.Parse(dtb_Receipt.Rows[i]["Total Amount Due"].ToString());
                         paid = decimal.Parse(dtb_Receipt.Rows[i]["amount_paid"].ToString());
-                        Totaltax = Totaltax + tax;
-                        Totaldiscount = Totaldiscount + discount;
-                        Totalamount = Totalamount + amount;
-                        Totalpaid = Totalpaid + paid;
-                        Totaldue = Totaldue + due;
+                        
+                    }
+                    int count = DGV_Receipt.Rows.Count;
+                    Lab_Total.Text = count.ToString();
+                    for (int j = 0; j < count; j++)
+                    {
+                        Totaltax = Totaltax +Convert.ToDecimal(DGV_Receipt.Rows[j].Cells["ColTax"].Value);
+                        Totaldiscount = Totaldiscount +Convert.ToDecimal(DGV_Receipt.Rows[j].Cells["COlDIS"].Value);
+                        Totalamount = Totalamount +Convert.ToDecimal(DGV_Receipt.Rows[j].Cells["ColTotalIncome"].Value);
+                        Totalpaid = Totalpaid +Convert.ToDecimal(DGV_Receipt.Rows[j].Cells["ColAmountPaid"].Value);
+                        Totaldue = Totaldue +Convert.ToDecimal(DGV_Receipt.Rows[j].Cells["ColTotalDue"].Value);
                     }
                     Lab_Discount.Text = Convert.ToDecimal(Totaldiscount).ToString("#0.00");
                     Lab_tax.Text = Convert.ToDecimal(Totaltax).ToString("#0.00");
                     Lab_Amount.Text = Convert.ToDecimal(Totalamount).ToString("#0.00");
                     Lab_Paid.Text = Convert.ToDecimal(Totalpaid).ToString("#0.00");
                     Lab_Due.Text = Convert.ToDecimal(Totaldue).ToString("#0.00");
-                    int count = DGV_Receipt.Rows.Count;
-                    Lab_Total.Text = count.ToString();
                     DGV_Receipt.Columns["ColTotalDue"].Visible = true;
                     Lab_Msg.Hide();
                 }
@@ -470,30 +481,6 @@ namespace PappyjoeMVC.View
                             }
                             catch { }
                         }
-                        ExcelApp.Cells[j1, 9] = "Total";
-                        ExcelApp.Cells[j1, 9].BorderAround(true);
-                        ExcelApp.Cells[j1, 9].Borders.Color = Color.FromArgb(0, 102, 204);
-                        ExcelApp.Cells[j1, 9].Font.Size = 10;
-                        ExcelApp.Cells[j1, 10] = Lab_tax.Text;
-                        ExcelApp.Cells[j1, 10].BorderAround(true);
-                        ExcelApp.Cells[j1, 10].Borders.Color = Color.FromArgb(0, 102, 204);
-                        ExcelApp.Cells[j1, 10].Font.Size = 10;
-                        ExcelApp.Cells[j1, 11] = Lab_Discount.Text;
-                        ExcelApp.Cells[j1, 11].BorderAround(true);
-                        ExcelApp.Cells[j1, 11].Borders.Color = Color.FromArgb(0, 102, 204);
-                        ExcelApp.Cells[j1, 11].Font.Size = 10;
-                        ExcelApp.Cells[j1, 12] = Lab_Amount.Text;
-                        ExcelApp.Cells[j1, 12].BorderAround(true);
-                        ExcelApp.Cells[j1, 12].Borders.Color = Color.FromArgb(0, 102, 204);
-                        ExcelApp.Cells[j1, 12].Font.Size = 10;
-                        ExcelApp.Cells[j1, 13] = Lab_Paid.Text;
-                        ExcelApp.Cells[j1, 13].BorderAround(true);
-                        ExcelApp.Cells[j1, 13].Borders.Color = Color.FromArgb(0, 102, 204);
-                        ExcelApp.Cells[j1, 13].Font.Size = 10;
-                        ExcelApp.Cells[j1, 14] = Lab_Due.Text;
-                        ExcelApp.Cells[j1, 14].BorderAround(true);
-                        ExcelApp.Cells[j1, 14].Borders.Color = Color.FromArgb(0, 102, 204);
-                        ExcelApp.Cells[j1, 14].Font.Size = 10;
                         ExcelApp.ActiveWorkbook.SaveAs(PathName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
                         ExcelApp.ActiveWorkbook.Saved = true;
                         ExcelApp.Quit();

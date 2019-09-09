@@ -165,7 +165,7 @@ namespace PappyjoeMVC.View
                     totalpayment = totalpayment + total;
                     balance1 = Convert.ToDecimal(payMain.Rows[u]["total"].ToString());
                     balance = totalinvoice - totalpayment;
-                    Grvsummary.Rows.Add(slno, Patient, invoiceno, recpno, details, doctor, "0.00", Convert.ToDecimal(total).ToString("#0.00"), Convert.ToDecimal(balance).ToString("#0.00"));
+                    Grvsummary.Rows.Add(slno, Patient, invoiceno, recpno, details, doctor, "0.00", Convert.ToDecimal(total).ToString("#0.00"), Convert.ToDecimal(balance1).ToString("#0.00"));
                     Grvsummary.Rows[invcount + u].Cells[8].Style.ForeColor = Color.Red;
                     Grvsummary.Rows[invcount + u].Cells[7].Style.ForeColor = Color.ForestGreen;
                     Grvsummary.Rows[invcount + u].Cells[8].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
@@ -256,7 +256,7 @@ namespace PappyjoeMVC.View
                     label_empty.Hide();
                     lbltotal1.Text = Convert.ToDecimal(totalinvoice).ToString("#0.00");
                     lbltotal2.Text = Convert.ToDecimal(totalpayment).ToString("#0.00");
-                    lbltotal3.Text = Convert.ToDecimal(balance).ToString("#0.00");
+                    lbltotal3.Text = Convert.ToDecimal(balance1).ToString("#0.00");
                 }
             }
             catch (Exception ex)

@@ -20,8 +20,8 @@ namespace PappyjoeMVC.View
         }
         int c = 0;
         DataTable dtp = new DataTable();
-        decimal tax = 0, discount = 0, amount = 0, paid = 0, due = 0,Totaltax = 0, Totaldiscount = 0, Totalamount = 0, Totalpaid = 0, Totaldue = 0;
-        public string doctor_id = "", doc_id, ID, date1, date2, checkStr = "0", PathName = "", service, strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "";
+        decimal tax = 0, discount = 0,totlcost=0, amount = 0, paid = 0, due = 0,Totaltax = 0, Totaldiscount = 0, Totalamount = 0, Totalpaid = 0, Totaldue = 0;
+        public string doctor_id = "",qty="", doc_id, ID, date1, date2, checkStr = "0", PathName = "", service, strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "";
         Month_Wise_Receipt_controller ctrlr=new Month_Wise_Receipt_controller();
         public void receiptReceivedLoad()
         {
@@ -81,7 +81,8 @@ namespace PappyjoeMVC.View
             {
                 for (int i = 0; i < dt_inv.Rows.Count; i++)
                 {
-                    DgvReceiptReceivedPerMonth.Rows[i].Cells["procedure_name"].Value = service + " (Qty:" + dt_inv.Rows[0]["unit"].ToString() + ")";
+                    qty = dt_inv.Rows[0]["unit"].ToString();
+                    totlcost= Convert.ToDecimal(dt_inv.Rows[0]["Total Cost"].ToString());
                     DgvReceiptReceivedPerMonth.Rows[i].Cells["cost"].Value = dt_inv.Rows[0]["Total Cost"].ToString();
                     if (dt_inv.Rows[0]["discountin_rs"].ToString() != "0")
                     {
@@ -125,13 +126,21 @@ namespace PappyjoeMVC.View
                         service = dtb_Receipt.Rows[i]["procedure_name"].ToString();
                         DataTable inv=this.ctrlr.getinvdata(dtb_Receipt.Rows[i]["invoice_no"].ToString(), service);
                         getinvdata(inv);
+                        DgvReceiptReceivedPerMonth.Rows[i].Cells["procedure_name"].Value = service + " (Qty:" + qty + ")";
+                        DgvReceiptReceivedPerMonth.Rows[i].Cells["tax_inrs"].Value = tax;
+                        DgvReceiptReceivedPerMonth.Rows[i].Cells["income"].Value = amount;
+                        DgvReceiptReceivedPerMonth.Rows[i].Cells["Discount_insr"].Value = discount;
+                        DgvReceiptReceivedPerMonth.Rows[i].Cells["cost"].Value =totlcost ;
                         due = decimal.Parse(dtb_Receipt.Rows[i]["DUE AFTER PAYMENT"].ToString());
                         paid = decimal.Parse(dtb_Receipt.Rows[i]["amount_paid"].ToString());
-                        Totaltax = Totaltax + tax;
-                        Totaldiscount = Totaldiscount + discount;
-                        Totalamount = Totalamount + amount;
-                        Totalpaid = Totalpaid + paid;
-                        Totaldue = Totaldue + due;
+                    }
+                    for(int j=0;j<DgvReceiptReceivedPerMonth.Rows.Count;j++)
+                    {
+                        Totaltax = Totaltax +Convert.ToDecimal(DgvReceiptReceivedPerMonth.Rows[j].Cells["tax_inrs"].Value);
+                        Totaldiscount = Totaldiscount + Convert.ToDecimal(DgvReceiptReceivedPerMonth.Rows[j].Cells["Discount_insr"].Value);
+                        Totalamount = Totalamount + Convert.ToDecimal(DgvReceiptReceivedPerMonth.Rows[j].Cells["income"].Value);
+                        Totalpaid = Totalpaid + Convert.ToDecimal(DgvReceiptReceivedPerMonth.Rows[j].Cells["amount_paid"].Value);
+                        Totaldue = Totaldue + Convert.ToDecimal(DgvReceiptReceivedPerMonth.Rows[j].Cells["amount_due"].Value);
                     }
                     Lab_Discount.Text = Convert.ToDecimal(Totaldiscount).ToString("#0.00");
                     Lab_tax.Text = Convert.ToDecimal(Totaltax).ToString("#0.00");
@@ -267,30 +276,6 @@ namespace PappyjoeMVC.View
                             }
                             catch { }
                         }
-                        ExcelApp.Cells[j1, 9] = "Total";
-                        ExcelApp.Cells[j1, 9].BorderAround(true);
-                        ExcelApp.Cells[j1, 9].Borders.Color = Color.FromArgb(0, 102, 204);
-                        ExcelApp.Cells[j1, 9].Font.Size = 10;
-                        ExcelApp.Cells[j1, 10] = Lab_tax.Text;
-                        ExcelApp.Cells[j1, 10].BorderAround(true);
-                        ExcelApp.Cells[j1, 10].Borders.Color = Color.FromArgb(0, 102, 204);
-                        ExcelApp.Cells[j1, 10].Font.Size = 10;
-                        ExcelApp.Cells[j1, 11] = Lab_Discount.Text;
-                        ExcelApp.Cells[j1, 11].BorderAround(true);
-                        ExcelApp.Cells[j1, 11].Borders.Color = Color.FromArgb(0, 102, 204);
-                        ExcelApp.Cells[j1, 11].Font.Size = 10;
-                        ExcelApp.Cells[j1, 12] = Lab_Amount.Text;
-                        ExcelApp.Cells[j1, 12].BorderAround(true);
-                        ExcelApp.Cells[j1, 12].Borders.Color = Color.FromArgb(0, 102, 204);
-                        ExcelApp.Cells[j1, 12].Font.Size = 10;
-                        ExcelApp.Cells[j1, 13] = Lab_Paid.Text;
-                        ExcelApp.Cells[j1, 13].BorderAround(true);
-                        ExcelApp.Cells[j1, 13].Borders.Color = Color.FromArgb(0, 102, 204);
-                        ExcelApp.Cells[j1, 13].Font.Size = 10;
-                        ExcelApp.Cells[j1, 14] = Lab_Due.Text;
-                        ExcelApp.Cells[j1, 14].BorderAround(true);
-                        ExcelApp.Cells[j1, 14].Borders.Color = Color.FromArgb(0, 102, 204);
-                        ExcelApp.Cells[j1, 14].Font.Size = 10;
                         ExcelApp.ActiveWorkbook.SaveAs(PathName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
                         ExcelApp.ActiveWorkbook.Saved = true;
                         ExcelApp.Quit();
@@ -302,7 +287,7 @@ namespace PappyjoeMVC.View
                     MessageBox.Show("No records found,please change the date and try again!..", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
-            { MessageBox.Show("Data Loading Error", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void btn_Close_Click(object sender, EventArgs e)
         {

@@ -100,7 +100,6 @@
     <Compile Include="Controller\Doctor_Controller.cs" />
     <Compile Include="Controller\Doctor_Wise_Invoice_controller.cs" />
     <Compile Include="Controller\Doctor_Wise_Receipt_controller.cs" />
-    <Compile Include="Controller\Doctor_Wise_Receipt_interface.cs" />
     <Compile Include="Controller\Edit_Practice_Details_controller.cs" />
     <Compile Include="Controller\EMR_controller.cs" />
     <Compile Include="Controller\EMR_Interface.cs" />
@@ -136,7 +135,6 @@
     <Compile Include="Controller\Patient_Edit_controller.cs" />
     <Compile Include="Controller\patient_edit_interface.cs" />
     <Compile Include="Controller\Paymode_Wise_Receipt_controller.cs" />
-    <Compile Include="Controller\Paymode_Wise_Receipt_interface.cs" />
     <Compile Include="Controller\Practice_Controller.cs" />
     <Compile Include="Controller\Practice_interface.cs" />
     <Compile Include="Controller\Prescription_Add_controller.cs" />

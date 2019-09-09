@@ -5,43 +5,37 @@ namespace PappyjoeMVC.Controller
 {
     public class Doctor_Wise_Receipt_controller
     {
-        Doctor_Wise_Receipt_interface intr;
         Common_model cmdl = new Common_model();
         Daily_Invoice_Report_model mdl = new Daily_Invoice_Report_model();
-        public Doctor_Wise_Receipt_controller(Doctor_Wise_Receipt_interface inttr)
-        {
-            intr = inttr;
-            intr.setController(this);
-        }
-        public void getdocname()
+        public DataTable getdocname()
         {
             DataTable dt = mdl.getdocname();
-            intr.getdocname(dt);
+            return dt;
         }
-        public void getdocid(string drname)
+        public string getdocid(string drname)
         {
             string e = mdl.getdocid(drname);
-            intr.getdocid(e);
-        }
-        public void getinvdata(string invno, string service)
+            return e;
+        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+        public DataTable getinvdata(string invno, string service)
         {
             DataTable dt = mdl.getinvdata(invno, service);
-            intr.getinvdata(dt);
-        }
-        public void mnthrcpt(string rcdte, string rcdte2)
+            return dt;
+        }                                                                     
+        public DataTable mnthrcpt(string rcdte, string rcdte2)
         {
             DataTable dt = mdl.mnthrcpt(rcdte, rcdte2);
-            intr.mnthrcpt(dt);
+            return dt;
         }
-        public void mnthrcpt2(string rcdte, string rcdte2, string dr_id)
+        public DataTable mnthrcpt2(string rcdte, string rcdte2, string dr_id)
         {
             DataTable dt = mdl.mnthrcpt2(rcdte, rcdte2, dr_id);
-            intr.mnthrcpt2(dt);
+            return dt;
         }
-        public void practicedetails()
+        public DataTable practicedetails()
         {
             DataTable dt = mdl.practicedetails();
-            intr.practicedetails(dt);
+            return dt;
         }
     }
 }

@@ -94,22 +94,22 @@ namespace PappyjoeMVC.Model
         //paymode wise receipt report
         public DataTable ReceiptReceivedModeofPayment_Both(string d1, string d2, string dr, string mode)
         {
-            DataTable dtb = db.table("select distinct A.pt_name,receipt_no ,procedure_name,A.invoice_no ,A.total ,A.amount_paid,A.BankName,A.Number,A.CardNo,A.4DigitNo,A.DDNumber ,CAST((A.total-amount_paid) AS DECIMAL(17,2))  as 'Total Amount Due',d.doctor_name,A.mode_of_payment,A.dr_id,payment_date from  tbl_payment A left join tbl_doctor d on A.dr_id=d.id inner join tbl_patient P on p.id=A.pt_id  where payment_date between '" + d1 + "' and '" + d2 + "' and doctor_name='" + dr + "' and  A.mode_of_payment='" + mode + "' and P.Profile_Status !='Cancelled' ");
+            DataTable dtb = db.table("select distinct A.pt_name,receipt_no ,procedure_name,A.invoice_no ,A.total ,A.amount_paid,A.BankName,A.Number,A.CardNo,A.fourDigitNo,A.DDNumber ,CAST((A.total-amount_paid) AS DECIMAL(17,2))  as 'Total Amount Due',d.doctor_name,A.mode_of_payment,A.dr_id,payment_date from  tbl_payment A left join tbl_doctor d on A.dr_id=d.id inner join tbl_patient P on p.id=A.pt_id  where payment_date between '" + d1 + "' and '" + d2 + "' and doctor_name='" + dr + "' and  A.mode_of_payment='" + mode + "' and P.Profile_Status !='Cancelled' ");
             return dtb;
         }
         public DataTable ReceiptReceivedModeofPayment(string d1, string d2)
         {
-            DataTable dfd = db.table("select distinct A.pt_name,receipt_no ,procedure_name,A.invoice_no ,A.total ,A.amount_paid,A.BankName,A.Number,A.CardNo,A.4DigitNo,A.DDNumber ,CAST((A.total-amount_paid) AS DECIMAL(17,2))  as 'Total Amount Due',d.doctor_name,A.mode_of_payment,A.dr_id,payment_date from  tbl_payment A left join tbl_doctor d on A.dr_id=d.id inner join tbl_patient P on p.id=A.pt_id  where payment_date between '" + d1 + "' and '" + d2 + "'and P.Profile_Status !='Cancelled' ");
+            DataTable dfd = db.table("select distinct A.pt_name,receipt_no ,procedure_name,A.invoice_no ,A.total ,A.amount_paid,A.BankName,A.Number,A.CardNo,A.fourDigitNo,A.DDNumber ,CAST((A.total-amount_paid) AS DECIMAL(17,2))  as 'Total Amount Due',d.doctor_name,A.mode_of_payment,A.dr_id,payment_date from  tbl_payment A left join tbl_doctor d on A.dr_id=d.id inner join tbl_patient P on p.id=A.pt_id  where payment_date between '" + d1 + "' and '" + d2 + "'and P.Profile_Status !='Cancelled' ");
             return dfd;
         }
         public DataTable ReceiptReceivedModeofPayment_Mode(string d1, string d2, string mode)
         {
-            DataTable dfd = db.table("select distinct A.pt_name,receipt_no ,procedure_name,A.invoice_no ,A.total ,A.amount_paid,A.BankName,A.Number,A.CardNo,A.4DigitNo,A.DDNumber ,CAST((A.total-amount_paid) AS DECIMAL(17,2))  as 'Total Amount Due',d.doctor_name,A.mode_of_payment,A.dr_id,payment_date from  tbl_payment A left join tbl_doctor d on A.dr_id=d.id  inner join tbl_patient P on p.id=A.pt_id  where payment_date between '" + d1 + "' and '" + d2 + "'  and  A.mode_of_payment='" + mode + "'  and P.Profile_Status !='Cancelled' ");
+            DataTable dfd = db.table("select distinct A.pt_name,receipt_no ,procedure_name,A.invoice_no ,A.total ,A.amount_paid,A.BankName,A.Number,A.CardNo,A.fourDigitNo,A.DDNumber ,CAST((A.total-amount_paid) AS DECIMAL(17,2))  as 'Total Amount Due',d.doctor_name,A.mode_of_payment,A.dr_id,payment_date from  tbl_payment A left join tbl_doctor d on A.dr_id=d.id  inner join tbl_patient P on p.id=A.pt_id  where payment_date between '" + d1 + "' and '" + d2 + "'  and  A.mode_of_payment='" + mode + "'  and P.Profile_Status !='Cancelled' ");
             return dfd;
         }
         public DataTable ReceiptReceivedModeofPayment_Doctor(string d1, string d2, string dr)
         {
-            DataTable dfd = db.table("select distinct A.pt_name,receipt_no ,procedure_name,A.invoice_no ,A.total ,A.amount_paid,A.BankName,A.Number,A.CardNo,A.4DigitNo,A.DDNumber ,CAST((A.total-amount_paid) AS DECIMAL(17,2))  as 'Total Amount Due',d.doctor_name,A.mode_of_payment,A.dr_id,payment_date from  tbl_payment A left join tbl_doctor d on A.dr_id=d.id inner join tbl_patient P on p.id=A.pt_id  where payment_date between '" + d1 + "' and '" + d2 + "' and doctor_name='" + dr + "'  and P.Profile_Status !='Cancelled'");
+            DataTable dfd = db.table("select distinct A.pt_name,receipt_no ,procedure_name,A.invoice_no ,A.total ,A.amount_paid,A.BankName,A.Number,A.CardNo,A.fourDigitNo,A.DDNumber ,CAST((A.total-amount_paid) AS DECIMAL(17,2))  as 'Total Amount Due',d.doctor_name,A.mode_of_payment,A.dr_id,payment_date from  tbl_payment A left join tbl_doctor d on A.dr_id=d.id inner join tbl_patient P on p.id=A.pt_id  where payment_date between '" + d1 + "' and '" + d2 + "' and doctor_name='" + dr + "'  and P.Profile_Status !='Cancelled'");
             return dfd;
         }
     }

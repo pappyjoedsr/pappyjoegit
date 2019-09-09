@@ -13,40 +13,32 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Paymode_Wise_Receipt : Form,Paymode_Wise_Receipt_interface
+    public partial class Paymode_Wise_Receipt : Form
     {
         public Paymode_Wise_Receipt()
         {
             InitializeComponent();
         }
         public bool cmb_flag = false;
-        Paymode_Wise_Receipt_controller ctrlr;
-        //PappyjoeMVC.Model.select s = new PappyjoeMVC.Model.select();
-        decimal amount = 0, paid = 0, due = 0,Totalamount = 0, Totalpaid = 0, Totaldue = 0;
-        public string doctor_id = "", service, doctr, mode, checkStr = "0", PathName = "", strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "";
-        public void setController(Paymode_Wise_Receipt_controller controller)
-        {
-            ctrlr = controller;
-        }
-        public void getdocname(DataTable doctor_rs)
-        {
-            if (doctor_rs.Rows.Count > 0)
-            {
-                for (int i = 0; i < doctor_rs.Rows.Count; i++)
-                {
-                    cmb_doctor.Items.Add(doctor_rs.Rows[i]["doctor_name"].ToString());
-                    cmb_doctor.ValueMember = doctor_rs.Rows[i]["id"].ToString();
-                    cmb_doctor.DisplayMember = doctor_rs.Rows[i]["doctor_name"].ToString();
-                }
-            }
-        }
+        Paymode_Wise_Receipt_controller ctrlr=new Paymode_Wise_Receipt_controller();
+        public decimal amount = 0, paid = 0, due = 0,Totalamount = 0, Totalpaid = 0, Totaldue = 0;
+        public string doctor_id = "",totlcost="",totlincome="", service="",qty="", doctr, mode, checkStr = "0", PathName = "", strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "";
         private void Paymode_Wise_Receipt_Load(object sender, EventArgs e)
         {
             cmb_flag = true;
             cmb_doctor.Items.Add("All Doctor");
             cmb_doctor.ValueMember = "0";
             cmb_doctor.DisplayMember = "All Doctor";
-            this.ctrlr.getdocname();
+            DataTable doctor_rs=this.ctrlr.getdocname();
+                if (doctor_rs.Rows.Count > 0)
+                {
+                    for (int i = 0; i < doctor_rs.Rows.Count; i++)
+                    {
+                        cmb_doctor.Items.Add(doctor_rs.Rows[i]["doctor_name"].ToString());
+                        cmb_doctor.ValueMember = doctor_rs.Rows[i]["id"].ToString();
+                        cmb_doctor.DisplayMember = doctor_rs.Rows[i]["doctor_name"].ToString();
+                    }
+                }
             cmb_doctor.SelectedIndex = 0;
             Cmb_Modeofpayment.SelectedIndex = 0;
             DateTime now = DateTime.Now;
@@ -80,9 +72,9 @@ namespace PappyjoeMVC.View
         {
             for (int i = 0; i < dt_inv.Rows.Count;i++)
             {
-                Dgv_Receipt.Rows[i].Cells["ColProcedure"].Value = service + " (Qty:" + dt_inv.Rows[0]["unit"].ToString() + ")";
-                Dgv_Receipt.Rows[i].Cells["ColTotalCost"].Value = dt_inv.Rows[0]["Total Cost"].ToString();
-                Dgv_Receipt.Rows[i].Cells["ColTAmount"].Value = dt_inv.Rows[0]["Total Income"].ToString();
+                qty = dt_inv.Rows[0]["unit"].ToString();
+                totlcost= dt_inv.Rows[0]["Total Cost"].ToString();
+                totlincome= dt_inv.Rows[0]["Total Income"].ToString();
                 amount = decimal.Parse(dt_inv.Rows[0]["Total Income"].ToString());
             }
         }
@@ -113,19 +105,26 @@ namespace PappyjoeMVC.View
                     Dgv_Receipt.Rows[i].Cells["COl4Digit"].Value = dtb_Receipt.Rows[i]["fourDigitNo"].ToString();
                     Dgv_Receipt.Rows[i].Cells["ColDD"].Value = dtb_Receipt.Rows[i]["DDNumber"].ToString();
                     service=dtb_Receipt.Rows[i]["procedure_name"].ToString();
-                    this.ctrlr.getinvdata(dtb_Receipt.Rows[i]["invoice_no"].ToString(), dtb_Receipt.Rows[i]["procedure_name"].ToString());
+                    DataTable dt=this.ctrlr.getinvdata(dtb_Receipt.Rows[i]["invoice_no"].ToString(), dtb_Receipt.Rows[i]["procedure_name"].ToString());
+                    getinvdata(dt);
+                    Dgv_Receipt.Rows[i].Cells["ColProcedure"].Value = service + " (Qty:" + qty + ")";
+                    Dgv_Receipt.Rows[i].Cells["ColTotalCost"].Value = totlcost;
+                    Dgv_Receipt.Rows[i].Cells["ColTAmount"].Value = totlincome;
                     due = decimal.Parse(dtb_Receipt.Rows[i]["Total Amount Due"].ToString());
                     paid = decimal.Parse(dtb_Receipt.Rows[i]["amount_paid"].ToString());
-                    Totalamount = Totalamount + amount;
-                    Totalpaid = Totalpaid + paid;
-                    Totaldue = Totaldue + due;
                 }
                 int count = Dgv_Receipt.Rows.Count;
                 Lab_Total.Text = count.ToString();
-                Lab_Amount.Text = Convert.ToDecimal(Totalamount).ToString("#0.00");
-                Lab_Paid.Text = Convert.ToDecimal(Totalpaid).ToString("#0.00");
-                Lab_Due.Text = Convert.ToDecimal(Totaldue).ToString("#0.00");
-            }
+                    for (int j = 0; j <count; j++)
+                    {
+                        Totalamount = Totalamount+Convert.ToDecimal(Dgv_Receipt.Rows[j].Cells["ColTAmount"].Value);
+                        Totalpaid = Totalpaid+Convert.ToDecimal(Dgv_Receipt.Rows[j].Cells["ColamountPaid"].Value);
+                        Totaldue = Totaldue+Convert.ToDecimal(Dgv_Receipt.Rows[j].Cells["colTAmountDue"].Value);
+                    }
+                    Lab_Amount.Text = Convert.ToDecimal(Totalamount).ToString("#0.00");
+                    Lab_Paid.Text = Convert.ToDecimal(Totalpaid).ToString("#0.00");
+                    Lab_Due.Text = Convert.ToDecimal(Totaldue).ToString("#0.00");
+                }
             else
             {
                 Lab_Msg.Show();
@@ -135,8 +134,8 @@ namespace PappyjoeMVC.View
                 Lab_Due.Text = "0.00";
             }
             }
-            catch(Exception ex)
-            { MessageBox.Show("Data Loading Error", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void btn_Show_Click(object sender, EventArgs e)
         {
@@ -381,23 +380,39 @@ namespace PappyjoeMVC.View
                         ExcelApp.Cells[3, 2].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
                         ExcelApp.Cells[2, 2].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
                         int i1 = 1; bool cash = false; bool Cheque = false; bool card = false; bool dd = false;
-                        for (int i = 1; i < Dgv_Receipt.Columns.Count + 1; i++)
+                        try
                         {
-                            if (Cmb_Modeofpayment.SelectedIndex > 0){
-                                i1 = i;
-                                if (Cmb_Modeofpayment.Text == "Cash")
+                            for (int i = 1; i <Dgv_Receipt.Columns.Count + 1; i++)
+                            {
+                                if (Cmb_Modeofpayment.SelectedIndex > 0)
                                 {
-                                    if (i == 9 || i == 10 || i == 11 || i == 12 || i == 13)
+                                    i1 = i;
+                                    if (Cmb_Modeofpayment.Text == "Cash")
                                     {
-                                        cash = true;
-                                    }
-                                    else {
-                                        if (cash == true)
+                                        if (i == 9 || i == 10 || i == 11 || i == 12 || i == 13)
                                         {
-                                            i1 = i1 - 5;
-                                            if (i == 17)
+                                            cash = true;
+                                        }
+                                        else
+                                        {
+                                            if (cash == true)
                                             {
-                                                if (Chk_RemoveAmountDue.Checked == false)
+                                                i1 = i1 - 5;
+                                                if (i == 17)
+                                                {
+                                                    if (Chk_RemoveAmountDue.Checked == false)
+                                                    {
+                                                        ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
+                                                        ExcelApp.Cells[5, i1].ColumnWidth = 25;
+                                                        ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
+                                                        ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                                        ExcelApp.Cells[5, i1].Font.Size = 10;
+                                                        ExcelApp.Cells[5, i1].Font.Name = "Arial";
+                                                        ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
+                                                        ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                                    }
+                                                }
+                                                else
                                                 {
                                                     ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
                                                     ExcelApp.Cells[5, i1].ColumnWidth = 25;
@@ -409,102 +424,8 @@ namespace PappyjoeMVC.View
                                                     ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
                                                 }
                                             }
-                                            else {
-                                                ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
-                                                ExcelApp.Cells[5, i1].ColumnWidth = 25;
-                                                ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
-                                                ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
-                                                ExcelApp.Cells[5, i1].Font.Size = 10;
-                                                ExcelApp.Cells[5, i1].Font.Name = "Arial";
-                                                ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
-                                                ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
-                                            }
-                                        }
-                                        else {
-                                            ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
-                                            ExcelApp.Cells[5, i1].ColumnWidth = 25;
-                                            ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
-                                            ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
-                                            ExcelApp.Cells[5, i1].Font.Size = 10;
-                                            ExcelApp.Cells[5, i1].Font.Name = "Arial";
-                                            ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
-                                            ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
-                                        }
-                                    }
-                                }
-                                else if (Cmb_Modeofpayment.Text == "Cheque"){
-                                    if (i == 11 || i == 12 || i == 13)
-                                    {
-                                        Cheque = true;
-                                    }
-                                    else{
-                                        if (Cheque == true)
-                                        {
-                                            i1 = i1 - 3;
-                                            if (i == 17)
-                                            {
-                                                if (Chk_RemoveAmountDue.Checked == false)
-                                                {
-                                                    ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
-                                                    ExcelApp.Cells[5, i1].ColumnWidth = 25;
-                                                    ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
-                                                    ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
-                                                    ExcelApp.Cells[5, i1].Font.Size = 10;
-                                                    ExcelApp.Cells[5, i1].Font.Name = "Arial";
-                                                    ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
-                                                    ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
-                                                }
-                                            }
-                                            else{
-                                                ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
-                                                ExcelApp.Cells[5, i1].ColumnWidth = 25;
-                                                ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
-                                                ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
-                                                ExcelApp.Cells[5, i1].Font.Size = 10;
-                                                ExcelApp.Cells[5, i1].Font.Name = "Arial";
-                                                ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
-                                                ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
-                                            }
-                                        }
-                                        else {
-                                            ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
-                                            ExcelApp.Cells[5, i1].ColumnWidth = 25;
-                                            ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
-                                            ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
-                                            ExcelApp.Cells[5, i1].Font.Size = 10;
-                                            ExcelApp.Cells[5, i1].Font.Name = "Arial";
-                                            ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
-                                            ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
-                                        }
-                                    }
-                                }
-                                else if (Cmb_Modeofpayment.Text == "Card") {
-                                    if (i == 9 || i == 10 || i == 13)
-                                    {
-                                        card = true;
-                                    }
-                                    else {
-                                        if (card == true)
-                                        {
-                                            if (i1 == 14 || i1 == 15 || i1 == 16 || i1 == 17)
-                                                i1 = i1 - 3;
                                             else
-                                                i1 = i1 - 2;
-                                            if (i == 17)
                                             {
-                                                if (Chk_RemoveAmountDue.Checked == false)
-                                                {
-                                                    ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
-                                                    ExcelApp.Cells[5, i1].ColumnWidth = 25;
-                                                    ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
-                                                    ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
-                                                    ExcelApp.Cells[5, i1].Font.Size = 10;
-                                                    ExcelApp.Cells[5, i1].Font.Name = "Arial";
-                                                    ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
-                                                    ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
-                                                }
-                                            }
-                                            else{
                                                 ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
                                                 ExcelApp.Cells[5, i1].ColumnWidth = 25;
                                                 ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
@@ -515,30 +436,33 @@ namespace PappyjoeMVC.View
                                                 ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
                                             }
                                         }
-                                        else {
-                                            ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
-                                            ExcelApp.Cells[5, i1].ColumnWidth = 25;
-                                            ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
-                                            ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
-                                            ExcelApp.Cells[5, i1].Font.Size = 10;
-                                            ExcelApp.Cells[5, i1].Font.Name = "Arial";
-                                            ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
-                                            ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
-                                        }
                                     }
-                                }
-                                else if (Cmb_Modeofpayment.Text == "Demand Draft"){
-                                    if (i == 10 || i == 11 || i == 12)
+                                    else if (Cmb_Modeofpayment.Text == "Cheque")
                                     {
-                                        dd = true;
-                                    }
-                                    else{
-                                        if (dd == true)
+                                        if (i == 11 || i == 12 || i == 13)
                                         {
-                                            i1 = i1 - 3;
-                                            if (i == 17)
+                                            Cheque = true;
+                                        }
+                                        else
+                                        {
+                                            if (Cheque == true)
                                             {
-                                                if (Chk_RemoveAmountDue.Checked == false)
+                                                i1 = i1 - 3;
+                                                if (i == 17)
+                                                {
+                                                    if (Chk_RemoveAmountDue.Checked == false)
+                                                    {
+                                                        ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
+                                                        ExcelApp.Cells[5, i1].ColumnWidth = 25;
+                                                        ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
+                                                        ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                                        ExcelApp.Cells[5, i1].Font.Size = 10;
+                                                        ExcelApp.Cells[5, i1].Font.Name = "Arial";
+                                                        ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
+                                                        ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                                    }
+                                                }
+                                                else
                                                 {
                                                     ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
                                                     ExcelApp.Cells[5, i1].ColumnWidth = 25;
@@ -550,7 +474,8 @@ namespace PappyjoeMVC.View
                                                     ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
                                                 }
                                             }
-                                            else {
+                                            else
+                                            {
                                                 ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
                                                 ExcelApp.Cells[5, i1].ColumnWidth = 25;
                                                 ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
@@ -561,23 +486,128 @@ namespace PappyjoeMVC.View
                                                 ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
                                             }
                                         }
-                                        else{
-                                            ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
-                                            ExcelApp.Cells[5, i1].ColumnWidth = 25;
-                                            ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
-                                            ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
-                                            ExcelApp.Cells[5, i1].Font.Size = 10;
-                                            ExcelApp.Cells[5, i1].Font.Name = "Arial";
-                                            ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
-                                            ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                    }
+                                    else if (Cmb_Modeofpayment.Text == "Card")
+                                    {
+                                        if (i == 9 || i == 10 || i == 13)
+                                        {
+                                            card = true;
+                                        }
+                                        else
+                                        {
+                                            if (card == true)
+                                            {
+                                                if (i1 == 14 || i1 == 15 || i1 == 16 || i1 == 17)
+                                                    i1 = i1 - 3;
+                                                else
+                                                    i1 = i1 - 2;
+                                                if (i == 17)
+                                                {
+                                                    if (Chk_RemoveAmountDue.Checked == false)
+                                                    {
+                                                        ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
+                                                        ExcelApp.Cells[5, i1].ColumnWidth = 25;
+                                                        ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
+                                                        ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                                        ExcelApp.Cells[5, i1].Font.Size = 10;
+                                                        ExcelApp.Cells[5, i1].Font.Name = "Arial";
+                                                        ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
+                                                        ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
+                                                    ExcelApp.Cells[5, i1].ColumnWidth = 25;
+                                                    ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
+                                                    ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                                    ExcelApp.Cells[5, i1].Font.Size = 10;
+                                                    ExcelApp.Cells[5, i1].Font.Name = "Arial";
+                                                    ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
+                                                    ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                                }
+                                            }
+                                            else
+                                            {
+                                                ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
+                                                ExcelApp.Cells[5, i1].ColumnWidth = 25;
+                                                ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
+                                                ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                                ExcelApp.Cells[5, i1].Font.Size = 10;
+                                                ExcelApp.Cells[5, i1].Font.Name = "Arial";
+                                                ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
+                                                ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                            }
+                                        }
+                                    }
+                                    else if (Cmb_Modeofpayment.Text == "Demand Draft")
+                                    {
+                                        if (i == 10 || i == 11 || i == 12)
+                                        {
+                                            dd = true;
+                                        }
+                                        else
+                                        {
+                                            if (dd == true)
+                                            {
+                                                i1 = i1 - 3;
+                                                if (i == 17)
+                                                {
+                                                    if (Chk_RemoveAmountDue.Checked == false)
+                                                    {
+                                                        ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
+                                                        ExcelApp.Cells[5, i1].ColumnWidth = 25;
+                                                        ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
+                                                        ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                                        ExcelApp.Cells[5, i1].Font.Size = 10;
+                                                        ExcelApp.Cells[5, i1].Font.Name = "Arial";
+                                                        ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
+                                                        ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
+                                                    ExcelApp.Cells[5, i1].ColumnWidth = 25;
+                                                    ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
+                                                    ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                                    ExcelApp.Cells[5, i1].Font.Size = 10;
+                                                    ExcelApp.Cells[5, i1].Font.Name = "Arial";
+                                                    ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
+                                                    ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                                }
+                                            }
+                                            else
+                                            {
+                                                ExcelApp.Cells[5, i1] = Dgv_Receipt.Columns[i - 1].HeaderText;
+                                                ExcelApp.Cells[5, i1].ColumnWidth = 25;
+                                                ExcelApp.Cells[5, i1].EntireRow.Font.Bold = true;
+                                                ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                                ExcelApp.Cells[5, i1].Font.Size = 10;
+                                                ExcelApp.Cells[5, i1].Font.Name = "Arial";
+                                                ExcelApp.Cells[5, i1].Font.Color = Color.FromArgb(255, 255, 255);
+                                                ExcelApp.Cells[5, i1].Interior.Color = Color.FromArgb(0, 102, 204);
+                                            }
                                         }
                                     }
                                 }
-                            }
-                            else {
-                                if (i == 17)
+                                else
                                 {
-                                    if (Chk_RemoveAmountDue.Checked == false)
+                                    if (i == 17)
+                                    {
+                                        if (Chk_RemoveAmountDue.Checked == false)
+                                        {
+                                            ExcelApp.Cells[5, i] = Dgv_Receipt.Columns[i - 1].HeaderText;
+                                            ExcelApp.Cells[5, i].ColumnWidth = 25;
+                                            ExcelApp.Cells[5, i].EntireRow.Font.Bold = true;
+                                            ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
+                                            ExcelApp.Cells[5, i].Font.Size = 10;
+                                            ExcelApp.Cells[5, i].Font.Name = "Arial";
+                                            ExcelApp.Cells[5, i].Font.Color = Color.FromArgb(255, 255, 255);
+                                            ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
+                                        }
+                                    }
+                                    else
                                     {
                                         ExcelApp.Cells[5, i] = Dgv_Receipt.Columns[i - 1].HeaderText;
                                         ExcelApp.Cells[5, i].ColumnWidth = 25;
@@ -589,21 +619,12 @@ namespace PappyjoeMVC.View
                                         ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
                                     }
                                 }
-                                else{
-                                    ExcelApp.Cells[5, i] = Dgv_Receipt.Columns[i - 1].HeaderText;
-                                    ExcelApp.Cells[5, i].ColumnWidth = 25;
-                                    ExcelApp.Cells[5, i].EntireRow.Font.Bold = true;
-                                    ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
-                                    ExcelApp.Cells[5, i].Font.Size = 10;
-                                    ExcelApp.Cells[5, i].Font.Name = "Arial";
-                                    ExcelApp.Cells[5, i].Font.Color = Color.FromArgb(255, 255, 255);
-                                    ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
-                                }
                             }
                         }
+                        catch { }
                         bool cash1 = false; bool Cheque1 = false; bool card1 = false; bool dd1 = false;/////Rows Adding
                         int j1 = 1;
-                        for (int i = 0; i <= Dgv_Receipt.Rows.Count; i++)
+                        for (int i = 0; i <=Dgv_Receipt.Rows.Count; i++)
                         {
                             try{
                                 for (int j = 0; j < Dgv_Receipt.Columns.Count; j++)
@@ -761,7 +782,7 @@ namespace PappyjoeMVC.View
                                             if (Chk_RemoveAmountDue.Checked == false)
                                             {
                                                 ExcelApp.Cells[i + 6, j + 1] = Dgv_Receipt.Rows[i].Cells[j].Value.ToString();
-                                                ExcelApp.Cells[i + 6, j + 1].BorderAround(true);
+                                                ExcelApp.Cells[i + 6, j+ 1].BorderAround(true);
                                                 ExcelApp.Cells[i + 6, j + 1].Borders.Color = Color.FromArgb(0, 102, 204);
                                                 ExcelApp.Cells[i + 6, j + 1].Font.Size = 8;
                                             }
@@ -779,7 +800,7 @@ namespace PappyjoeMVC.View
                                 card1 = false;
                                 dd1 = false;
                             }
-                            catch (Exception ex){}
+                            catch{}
                         }
                         ExcelApp.ActiveWorkbook.SaveAs(PathName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
                         ExcelApp.ActiveWorkbook.Saved = true;
@@ -792,20 +813,9 @@ namespace PappyjoeMVC.View
                     MessageBox.Show("No records found,please change the date and try again!..", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
-            { MessageBox.Show("Data Loading Error", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-        public void practicedetails(DataTable dtp)
-        {
-            if (dtp.Rows.Count > 0)
-            {
-                clinicn = dtp.Rows[0]["name"].ToString();
-                strclinicname = clinicn.Replace("¤", "'");
-                strphone = dtp.Rows[0]["contact_no"].ToString();
-                strStreet = dtp.Rows[0]["street_address"].ToString();
-                stremail = dtp.Rows[0]["email"].ToString();
-                strwebsite = dtp.Rows[0]["website"].ToString();
-            }
-        }
+       
         private void btnprint_Click(object sender, EventArgs e)
         {
             try{
@@ -826,7 +836,16 @@ namespace PappyjoeMVC.View
                     result = MessageBox.Show(message, caption, buttons);
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        this.ctrlr.practicedetails();
+                        DataTable dtp=this.ctrlr.practicedetails();
+                            if (dtp.Rows.Count > 0)
+                            {
+                                clinicn = dtp.Rows[0]["name"].ToString();
+                                strclinicname = clinicn.Replace("¤", "'");
+                                strphone = dtp.Rows[0]["contact_no"].ToString();
+                                strStreet = dtp.Rows[0]["street_address"].ToString();
+                                stremail = dtp.Rows[0]["email"].ToString();
+                                strwebsite = dtp.Rows[0]["website"].ToString();
+                            }
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
                     StreamWriter sWrite = new StreamWriter(Apppath + "\\ReceiptReceivedModeofPaymentWise.html");
@@ -1002,8 +1021,8 @@ namespace PappyjoeMVC.View
                 else
                 { MessageBox.Show("No Record found,please change the date and try again!... ", "No data found", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             }
-            catch(Exception ex)
-            { MessageBox.Show("Printing Error","Failed",MessageBoxButtons.OK,MessageBoxIcon.Information); }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void btn_Close_Click(object sender, EventArgs e)
         {
