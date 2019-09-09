@@ -501,6 +501,45 @@
     <Compile Include="View\Monthly_Treatment_Count.designer.cs">
       <DependentUpon>Monthly_Treatment_Count.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Purchase.designer.cs">
+      <DependentUpon>Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PurchaseItemLIst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PurchaseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PurchaseOrder.Designer.cs">
+      <DependentUpon>PurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Purchase_Batch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Purchase_order_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Purchase_Return.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Purchase_return_Batch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Purchase_return_Batch.designer.cs">
+      <DependentUpon>Purchase_return_Batch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Purchase_Return_ItemList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Purchase_Return_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -879,6 +918,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Monthly_Treatment_Count.resx">
       <DependentUpon>Monthly_Treatment_Count.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Purchase.resx">
+      <DependentUpon>Purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Purchase_return_Batch.resx">
+      <DependentUpon>Purchase_return_Batch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>
