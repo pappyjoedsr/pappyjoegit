@@ -40,5 +40,16 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table("select P.PurchNumber,P.RetNumber,P.PurchDate,P.ReturnDate,P.Sup_Code,S.Supplier_Name,P.TotalAmount from tbl_preturn P inner join tbl_Supplier S on S.Supplier_Code=P.Sup_Code where ReturnDate  between '" + frmdte + "' and '" + todte + "'");
             return dt;
         }
+        //purchase item return 
+        public DataTable purchitemreturn(string purchretrnno)
+        {
+            DataTable dt = db.table("select P.ReturnDate,I.item_code,I.Gst,I.Igst,I.Qty,I.Rate,I.UNIT2,I.FreeQty from tbl_PRETIT I inner join tbl_PRETURN P on P.RetNumber=I.RetNumber where I.RetNumber='" + purchretrnno + "'");
+            return dt;
+        }
+        public DataTable slctitems(string itmcode)
+        {
+            DataTable dt = db.table("select Unit1,Unit2 from tbl_ITEMS where item_code='" + itmcode + "' ");
+            return dt;
+        }
     }
 }

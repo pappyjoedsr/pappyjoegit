@@ -8,13 +8,18 @@ using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Controller
 {
-    public class Purchase_Return_Report_controller
+    public class PurchaseItemReturnReport_controller
     {
         Purchase_Report_model mdl = new Purchase_Report_model();
         Daily_Invoice_Report_model dm = new Daily_Invoice_Report_model();
-        public DataTable purchreturn(string frmdte,string todte)
+        public DataTable purchitemreturn(string purchretrnno)
         {
-            DataTable dt = mdl.purchreturn(frmdte,todte);
+            DataTable dt = mdl.purchitemreturn(purchretrnno);
+            return dt;
+        }
+        public DataTable slctitems(string itmcode)
+        {
+            DataTable dt = mdl.slctitems(itmcode);
             return dt;
         }
         public DataTable practicedetails()

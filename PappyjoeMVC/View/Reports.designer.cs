@@ -445,6 +445,7 @@
             this.lab_purch_return.Size = new System.Drawing.Size(181, 17);
             this.lab_purch_return.TabIndex = 6;
             this.lab_purch_return.Text = "PURCHASE RETURN REPORT";
+            this.lab_purch_return.Click += new System.EventHandler(this.lab_purch_return_Click);
             // 
             // lab_Purch_Order
             // 

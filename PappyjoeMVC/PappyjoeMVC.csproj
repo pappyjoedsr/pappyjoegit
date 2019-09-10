@@ -149,6 +149,7 @@
     <Compile Include="Controller\Profile_Details_controller.cs" />
     <Compile Include="Controller\profile_details_interface.cs" />
     <Compile Include="Controller\purchasebatch_controller.cs" />
+    <Compile Include="Controller\PurchaseItemReturnReport_controller.cs" />
     <Compile Include="Controller\purchaseItem_controller.cs" />
     <Compile Include="Controller\PurchaseList_controller.cs" />
     <Compile Include="Controller\PurchaseOrderItemReport_controller.cs" />
@@ -563,6 +564,12 @@
     </Compile>
     <Compile Include="View\PurchaseItemLIst.designer.cs">
       <DependentUpon>PurchaseItemLIst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PurchaseItemReturnReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PurchaseItemReturnReport.Designer.cs">
+      <DependentUpon>PurchaseItemReturnReport.cs</DependentUpon>
     </Compile>
     <Compile Include="View\PurchaseList.cs">
       <SubType>Form</SubType>
@@ -1089,6 +1096,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\PurchaseItemLIst.resx">
       <DependentUpon>PurchaseItemLIst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PurchaseItemReturnReport.resx">
+      <DependentUpon>PurchaseItemReturnReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PurchaseList.resx">
       <DependentUpon>PurchaseList.cs</DependentUpon>
