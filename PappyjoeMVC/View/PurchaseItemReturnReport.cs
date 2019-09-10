@@ -19,6 +19,10 @@ namespace PappyjoeMVC.View
         decimal total = 0, total1 = 0, amount =0, gst, igst, qty, unitcost = 0;
         public string unit = "", strclinicname = "", checkStr = "0",PathName = "",clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "";
         PurchaseItemReturnReport_controller ctrlr = new PurchaseItemReturnReport_controller();
+        private void BTNClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void btnprint_Click(object sender, EventArgs e)
         {
             try
@@ -150,6 +154,8 @@ namespace PappyjoeMVC.View
                 if (dgvPurchase.Rows.Count != 0)
                 {
                     SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                    saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
+                    saveFileDialog1.FileName = "PurchaseItemReturnReport(" + DateTime.Now.ToString("dd-MM-yy h.mm.ss tt") + ").xls";
                     if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                     {
                         PathName = saveFileDialog1.FileName;

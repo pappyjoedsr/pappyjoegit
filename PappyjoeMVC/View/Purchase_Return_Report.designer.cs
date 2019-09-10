@@ -391,7 +391,7 @@
             this.panel3.Size = new System.Drawing.Size(1372, 49);
             this.panel3.TabIndex = 193;
             // 
-            // Purchase_Return
+            // Purchase_Return_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -401,7 +401,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Name = "Purchase_Return";
+            this.Name = "Purchase_Return_Report";
             this.Text = "Purchase_Return";
             this.Load += new System.EventHandler(this.Purchase_Return_Load);
             this.panel1.ResumeLayout(false);
