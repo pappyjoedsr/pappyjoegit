@@ -136,7 +136,6 @@
             // 
             this.dptMonthly_From.CalendarFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dptMonthly_From.CalendarMonthBackground = System.Drawing.Color.Gainsboro;
-            this.dptMonthly_From.Enabled = false;
             this.dptMonthly_From.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dptMonthly_From.Location = new System.Drawing.Point(58, 6);
             this.dptMonthly_From.Name = "dptMonthly_From";
@@ -159,7 +158,6 @@
             // 
             this.dptMonthly_To.CalendarFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dptMonthly_To.CalendarMonthBackground = System.Drawing.Color.Gainsboro;
-            this.dptMonthly_To.Enabled = false;
             this.dptMonthly_To.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dptMonthly_To.Location = new System.Drawing.Point(57, 38);
             this.dptMonthly_To.Name = "dptMonthly_To";
@@ -246,6 +244,7 @@
             this.btn_Export.TabIndex = 302;
             this.btn_Export.Text = "EXPORT TO EXCEL";
             this.btn_Export.UseVisualStyleBackColor = false;
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
             // 
             // label8
             // 
@@ -275,6 +274,7 @@
             this.btnprint.Text = "PRINT";
             this.btnprint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnprint.UseVisualStyleBackColor = false;
+            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
             // BTNClose
             // 
@@ -289,6 +289,7 @@
             this.BTNClose.TabIndex = 177;
             this.BTNClose.Text = "CLOSE";
             this.BTNClose.UseVisualStyleBackColor = false;
+            this.BTNClose.Click += new System.EventHandler(this.BTNClose_Click);
             // 
             // dgvPurchase
             // 
