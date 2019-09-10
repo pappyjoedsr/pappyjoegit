@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Purchase_Order_Report : Form,Purchase_Order_Report_interface
+    public partial class Purchase_Order_Report : Form
     {
         public Purchase_Order_Report()
         {
@@ -21,7 +21,7 @@ namespace PappyjoeMVC.View
         int c = 0;
         public static int pur_id = 0;
         public static DateTime from, to;
-        Purchase_Order_Report_controller ctrlr;
+        Purchase_Order_Report_controller ctrlr=new Purchase_Order_Report_controller();
         public string strclinicname = "", strStreet = "", stremail = "", strwebsite = "", strphone = "", clinicn = "", fdate="", tdate="",checkStr = "0",PathName = "";
         private void Purchase_Order_Report_Load(object sender, EventArgs e)
         {
@@ -51,10 +51,6 @@ namespace PappyjoeMVC.View
                 //var form = new PappyjoeMVC.View.PurchaseOrderItemReport(pur_id, from, to);
                 //form.ShowDialog();
             }
-        }
-        public void setController(Purchase_Order_Report_controller controller)
-        {
-            ctrlr = controller;
         }
         private void BtnExport_Click(object sender, EventArgs e)
         {
@@ -136,7 +132,6 @@ namespace PappyjoeMVC.View
         private void BTNClose_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Purchase_Order_Report();
-            Purchase_Order_Report_controller controller = new Purchase_Order_Report_controller(form2);
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
         }
@@ -152,7 +147,16 @@ namespace PappyjoeMVC.View
                     result = MessageBox.Show(message, caption, buttons);
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        this.ctrlr.practicedetails();
+                        DataTable dtp=this.ctrlr.practicedetails();
+                            if (dtp.Rows.Count > 0)
+                            {
+                                clinicn = dtp.Rows[0]["name"].ToString();
+                                strclinicname = clinicn.Replace("¤", "'");
+                                strphone = dtp.Rows[0]["contact_no"].ToString();
+                                strStreet = dtp.Rows[0]["street_address"].ToString();
+                                stremail = dtp.Rows[0]["email"].ToString();
+                                strwebsite = dtp.Rows[0]["website"].ToString();
+                            }
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
                     StreamWriter sWrite = new StreamWriter(Apppath + "\\PurchaseOrderReport.html");
@@ -228,17 +232,6 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-        public void practicedetails(DataTable dtp)
-        {
-            if (dtp.Rows.Count > 0) {
-                clinicn = dtp.Rows[0]["name"].ToString();
-                strclinicname = clinicn.Replace("¤", "'");
-                strphone = dtp.Rows[0]["contact_no"].ToString();
-                strStreet = dtp.Rows[0]["street_address"].ToString();
-                stremail = dtp.Rows[0]["email"].ToString();
-                strwebsite = dtp.Rows[0]["website"].ToString();
-            }
-        }
         public void purchorder(DataTable dt)
         {
             if (dt.Rows.Count > 0) {
@@ -265,7 +258,8 @@ namespace PappyjoeMVC.View
             tdate = dptMonthly_To.Value.ToString("yyyy-MM-dd");
             Lab_Msg.Visible = false;
             dgvPurchase.Rows.Clear();
-            this.ctrlr.purchorder(fdate,tdate);
+            DataTable dt=this.ctrlr.purchorder(fdate,tdate);
+            purchorder(dt);
         }
     }
 }

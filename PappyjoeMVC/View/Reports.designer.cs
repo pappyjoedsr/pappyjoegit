@@ -457,6 +457,7 @@
             this.lab_Purch_Order.Size = new System.Drawing.Size(174, 17);
             this.lab_Purch_Order.TabIndex = 5;
             this.lab_Purch_Order.Text = "PURCHASE ORDER REPORT";
+            this.lab_Purch_Order.Click += new System.EventHandler(this.lab_Purch_Order_Click);
             // 
             // label6
             // 
