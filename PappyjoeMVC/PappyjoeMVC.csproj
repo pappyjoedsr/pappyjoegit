@@ -162,6 +162,7 @@
     <Compile Include="Controller\purchase_return_controller.cs" />
     <Compile Include="Controller\Purchase_Return_ItemList_controller.cs" />
     <Compile Include="Controller\Purchase_return_list_controller.cs" />
+    <Compile Include="Controller\Purchase_Return_Report_controller.cs" />
     <Compile Include="Controller\Receipt_controller.cs" />
     <Compile Include="Controller\Receipt_interface.cs" />
     <Compile Include="Controller\Reports_controller.cs" />
@@ -634,6 +635,12 @@
     </Compile>
     <Compile Include="View\Purchase_Return_List.designer.cs">
       <DependentUpon>Purchase_Return_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Purchase_Return_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Purchase_Return_Report.designer.cs">
+      <DependentUpon>Purchase_Return_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Sales.cs">
       <SubType>Form</SubType>
@@ -1118,6 +1125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Purchase_Return_List.resx">
       <DependentUpon>Purchase_Return_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Purchase_Return_Report.resx">
+      <DependentUpon>Purchase_Return_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Sales.resx">
       <DependentUpon>Sales.cs</DependentUpon>
