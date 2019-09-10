@@ -171,6 +171,7 @@
     <Compile Include="Controller\Sales_List_controller.cs" />
     <Compile Include="Controller\sales_order_controller.cs" />
     <Compile Include="Controller\Sales_order_list_controller.cs" />
+    <Compile Include="Controller\Sales_Report_controller.cs" />
     <Compile Include="Controller\Sales_Retuen_Itemlist_Controller.cs" />
     <Compile Include="Controller\Sales_Return_Batch_Controller.cs" />
     <Compile Include="Controller\Sales_Return_Controller.cs" />
@@ -248,6 +249,7 @@
     <Compile Include="Model\Reports_model.cs" />
     <Compile Include="Model\sales_model.cs" />
     <Compile Include="Model\sales_order_model.cs" />
+    <Compile Include="Model\Sales_Report_model.cs" />
     <Compile Include="Model\Sales_Return_Model.cs" />
     <Compile Include="Model\Show_Appointment_model.cs" />
     <Compile Include="Model\SMS_model.cs" />
@@ -672,6 +674,12 @@
     </Compile>
     <Compile Include="View\Sales_order_list.designer.cs">
       <DependentUpon>Sales_order_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sales_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Sales_Report.designer.cs">
+      <DependentUpon>Sales_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Sales_Return.cs">
       <SubType>Form</SubType>
@@ -1150,6 +1158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Sales_order_list.resx">
       <DependentUpon>Sales_order_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Sales_Report.resx">
+      <DependentUpon>Sales_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Sales_Return.resx">
       <DependentUpon>Sales_Return.cs</DependentUpon>
