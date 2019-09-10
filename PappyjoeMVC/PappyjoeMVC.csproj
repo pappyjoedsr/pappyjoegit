@@ -167,6 +167,7 @@
     <Compile Include="Controller\Receipt_controller.cs" />
     <Compile Include="Controller\Receipt_interface.cs" />
     <Compile Include="Controller\Reports_controller.cs" />
+    <Compile Include="Controller\SalesReport_Items_controller.cs" />
     <Compile Include="Controller\sales_controller.cs" />
     <Compile Include="Controller\Sales_List_controller.cs" />
     <Compile Include="Controller\sales_order_controller.cs" />
@@ -663,6 +664,12 @@
     <Compile Include="View\SalesOrder.designer.cs">
       <DependentUpon>SalesOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SalesReport_Items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SalesReport_Items.Designer.cs">
+      <DependentUpon>SalesReport_Items.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Sales_List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1152,6 +1159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SalesOrder.resx">
       <DependentUpon>SalesOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SalesReport_Items.resx">
+      <DependentUpon>SalesReport_Items.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Sales_List.resx">
       <DependentUpon>Sales_List.cs</DependentUpon>

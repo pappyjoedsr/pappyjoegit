@@ -12,29 +12,28 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Sales_Report : Form,Sales_Report_interface
+    public partial class Sales_Report : Form
     {
         public Sales_Report()
         {
             InitializeComponent();
         }
         int num = 1;
-        Sales_Report_controller ctrlr;
         decimal total_disc,Total_Amount;
+        Sales_Report_controller ctrlr=new Sales_Report_controller();
         public string dateFrom = "", dateTo = "", strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "",checkStr = "0",PathName = "";
         private void DGV_SALES_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 int inv_num = Convert.ToInt32(DGV_SALES.CurrentRow.Cells["InvNumber"].Value.ToString());
-                //var form2 = new PappyjoeMVC.View.SalesReport_items(inv_num, dptMonthly_From.Value.ToString("MM/dd/yyyy"), dptMonthly_To.Value.ToString("MM/dd/yyyy"));
-                //form2.ShowDialog();
+                var form2 = new PappyjoeMVC.View.SalesReport_Items(inv_num, dptMonthly_From.Value.ToString("MM/dd/yyyy"), dptMonthly_To.Value.ToString("MM/dd/yyyy"));
+                form2.ShowDialog();
             }
         }
         private void BTNClose_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.Sales_Report();
-            Sales_Report_controller controller = new Sales_Report_controller(form2);
+            var form2 = new Sales_Report();
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
         }
@@ -111,10 +110,6 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-        public void setController(Sales_Report_controller controller)
-        {
-            ctrlr = controller;
-        }
         public void salesinv(DataTable dtb_inv)
         {
             if (dtb_inv.Rows.Count > 0){
@@ -131,41 +126,35 @@ namespace PappyjoeMVC.View
         }
         private void Sales_Report_Load(object sender, EventArgs e)
         {
-            this.ctrlr.salesinv(dateFrom,dateTo);
-            DGV_SALES.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
-            DGV_SALES.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            DGV_SALES.EnableHeadersVisualStyles = false;
-            DGV_SALES.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_SALES.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_SALES.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_SALES.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_SALES.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_SALES.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
-            DGV_SALES.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_SALES.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_SALES.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_SALES.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_SALES.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            DGV_SALES.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DGV_SALES.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            foreach (DataGridViewColumn cl in DGV_SALES.Columns)
+            try
             {
-                cl.SortMode = DataGridViewColumnSortMode.NotSortable;
-                cl.Width = 110;
+                DataTable dt = this.ctrlr.salesinv(dateFrom, dateTo);
+                salesinv(dt);
+                DGV_SALES.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
+                DGV_SALES.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                DGV_SALES.EnableHeadersVisualStyles = false;
+                DGV_SALES.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_SALES.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_SALES.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_SALES.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_SALES.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_SALES.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
+                DGV_SALES.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                DGV_SALES.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_SALES.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_SALES.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_SALES.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                DGV_SALES.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_SALES.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                foreach (DataGridViewColumn cl in DGV_SALES.Columns)
+                {
+                    cl.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    cl.Width = 110;
+                }
+                dptMonthly_From.Focus();
             }
-            dptMonthly_From.Focus();
-        }
-        public void practicedetails(DataTable dtp)
-        {
-            if (dtp.Rows.Count > 0)
-            {
-                clinicn = dtp.Rows[0]["name"].ToString();
-                strclinicname = clinicn.Replace("¤", "'");
-                strphone = dtp.Rows[0]["contact_no"].ToString();
-                strStreet = dtp.Rows[0]["street_address"].ToString();
-                stremail = dtp.Rows[0]["email"].ToString();
-                strwebsite = dtp.Rows[0]["website"].ToString();
-            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void btnprint_Click(object sender, EventArgs e)
         {
@@ -185,7 +174,16 @@ namespace PappyjoeMVC.View
                     result = MessageBox.Show(message, caption, buttons);
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        this.ctrlr.practicedetails();
+                            DataTable dtp=this.ctrlr.practicedetails();
+                            if (dtp.Rows.Count > 0)
+                            {
+                                clinicn = dtp.Rows[0]["name"].ToString();
+                                strclinicname = clinicn.Replace("¤", "'");
+                                strphone = dtp.Rows[0]["contact_no"].ToString();
+                                strStreet = dtp.Rows[0]["street_address"].ToString();
+                                stremail = dtp.Rows[0]["email"].ToString();
+                                strwebsite = dtp.Rows[0]["website"].ToString();
+                            }
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
                     System.IO.StreamWriter sWrite = new System.IO.StreamWriter(Apppath + "\\SalesReport.html");
@@ -240,7 +238,6 @@ namespace PappyjoeMVC.View
                             sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_SALES.Rows[c].Cells["cust_name"].Value.ToString() + "</font></th>");
                             {
                                 sWrite.WriteLine("    <td align='Right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_SALES.Rows[c].Cells["clDiscount"].Value.ToString() + "</font></th>");
-
                             }
                             sWrite.WriteLine("    <td align='Right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_SALES.Rows[c].Cells["TotalAmount"].Value.ToString() + "</font></th>");
                         }
@@ -313,7 +310,8 @@ namespace PappyjoeMVC.View
                 MessageBox.Show("From date should be less than To date", "From Date is grater ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dptMonthly_From.Value = DateTime.Today;
             }
-            this.ctrlr.salesinv(dateFrom, dateTo);
+            DataTable dt=this.ctrlr.salesinv(dateFrom, dateTo);
+            salesinv(dt);
         }
     }
 }

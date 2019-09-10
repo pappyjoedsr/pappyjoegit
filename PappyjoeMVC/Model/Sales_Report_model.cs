@@ -16,6 +16,22 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table("select S.InvNumber, cast(S.InvDate as date) InvDate, S.cust_number, S.cust_name, Discount, cast(TotalAmount as decimal(18, 2)) TotalAmount from tbl_SALES S where S.InvDate between '" + dateFrom + "' and '" + dateTo + "'");
             return dt;
         }
+        //Sales Report Items
+        public DataTable salesrprtitms(string invno)
+        {
+            DataTable dt = db.table("select S.InvNumber,S.Item_Code,S.Description,Packing,UNIT2,UnitMF,Unit,GST,IGST,Qty,FreeQty,Rate,TotalAmount  from tbl_SALEIT S where S.InvNumber='" + invno + "'");
+            return dt;
+        }
+        public DataTable slctbatchno(string invno,string itmcode)
+        {
+            DataTable dt = db.table("select BatchNumber from tbl_BatchSale where InvNumber='" + invno + "' and Item_Code='" + itmcode + "'");
+            return dt;
+        }
+        public DataTable invdtls(string invno)
+        {
+            DataTable dt = db.table("select InvNumber,InvDate,cust_name,cust_number from tbl_SALES  where InvNumber='" + invno + "'");
+            return dt;
+        }
         //Sales Order Report
         public DataTable salesorder(string dateFrom, string dateTo)
         {
