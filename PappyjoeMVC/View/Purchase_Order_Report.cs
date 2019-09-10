@@ -48,8 +48,8 @@ namespace PappyjoeMVC.View
                 from = dptMonthly_From.Value;
                 to = dptMonthly_To.Value;
                 pur_id = Convert.ToInt32(dgvPurchase.Rows[rowindex].Cells["PUCHASEORDERNO"].Value.ToString());
-                //var form = new PappyjoeMVC.View.PurchaseOrderItemReport(pur_id, from, to);
-                //form.ShowDialog();
+                var form = new PappyjoeMVC.View.PurchaseOrderItemReport(pur_id, from, to);
+                form.ShowDialog();
             }
         }
         private void BtnExport_Click(object sender, EventArgs e)

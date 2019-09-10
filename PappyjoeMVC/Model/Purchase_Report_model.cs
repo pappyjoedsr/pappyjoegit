@@ -28,6 +28,12 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table("select M.Pur_order_no, M.Purch_order_date,S.Supplier_Name from tbl_Purchase_order_master M inner join tbl_Supplier S on  S.Supplier_Code= M.Supplier_id where Purch_order_date between '" + frmdte + "' and '" + todte+ "'");
             return dt;
         }
+        //purchase order item report
+        public DataTable purchorderitem(string purchordrno)
+        {
+            DataTable dt = db.table("select Item_code,Description,Qty,UnitCost,Amount from tbl_PurchaseOrder where Pur_order_no='" + purchordrno + "'");
+            return dt;
+        }
         //purchase return report
         public DataTable purchreturn(string frmdte,string todte)
         {

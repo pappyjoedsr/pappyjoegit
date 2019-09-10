@@ -151,6 +151,7 @@
     <Compile Include="Controller\purchasebatch_controller.cs" />
     <Compile Include="Controller\purchaseItem_controller.cs" />
     <Compile Include="Controller\PurchaseList_controller.cs" />
+    <Compile Include="Controller\PurchaseOrderItemReport_controller.cs" />
     <Compile Include="Controller\purchase_controller.cs" />
     <Compile Include="Controller\Purchase_Item_Report_controller.cs" />
     <Compile Include="Controller\Purchase_order_controller.cs" />
@@ -573,6 +574,12 @@
     </Compile>
     <Compile Include="View\PurchaseOrder.designer.cs">
       <DependentUpon>PurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PurchaseOrderItemReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PurchaseOrderItemReport.Designer.cs">
+      <DependentUpon>PurchaseOrderItemReport.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Purchase_Batch.cs">
       <SubType>Form</SubType>
@@ -1081,6 +1088,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\PurchaseOrder.resx">
       <DependentUpon>PurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PurchaseOrderItemReport.resx">
+      <DependentUpon>PurchaseOrderItemReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Purchase_Batch.resx">
       <DependentUpon>Purchase_Batch.cs</DependentUpon>
