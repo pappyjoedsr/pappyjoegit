@@ -42,8 +42,8 @@ namespace PappyjoeMVC.View
             if (e.RowIndex >= 0)
             {
                 int Doc_num = Convert.ToInt32(Dgv_Order.CurrentRow.Cells["DocNumber"].Value.ToString());
-                //var form2 = new SalesOrderItemReport(Doc_num, dptMonthly_From.Value.ToString("yyyy-MM-dd"), dptMonthly_To.Value.ToString("yyyy-MM-dd"));
-                //form2.ShowDialog();
+                var form2 = new SalesOrderItemReport(Doc_num, dptMonthly_From.Value.ToString("yyyy-MM-dd"), dptMonthly_To.Value.ToString("yyyy-MM-dd"));
+                form2.ShowDialog();
             }
         }
         private void Sales_Order_Report_Load(object sender, EventArgs e)

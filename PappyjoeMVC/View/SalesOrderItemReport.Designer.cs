@@ -178,9 +178,9 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dgv_orderItems);
-            this.panel2.Location = new System.Drawing.Point(1, 136);
+            this.panel2.Location = new System.Drawing.Point(1, 133);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(948, 375);
+            this.panel2.Size = new System.Drawing.Size(948, 378);
             this.panel2.TabIndex = 188;
             // 
             // dgv_orderItems
@@ -189,6 +189,7 @@
             this.dgv_orderItems.AllowUserToDeleteRows = false;
             this.dgv_orderItems.AllowUserToResizeColumns = false;
             this.dgv_orderItems.AllowUserToResizeRows = false;
+            this.dgv_orderItems.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgv_orderItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_orderItems.BackgroundColor = System.Drawing.Color.White;
             this.dgv_orderItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -213,7 +214,6 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_orderItems.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_orderItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_orderItems.GridColor = System.Drawing.Color.DimGray;
             this.dgv_orderItems.Location = new System.Drawing.Point(0, 0);
             this.dgv_orderItems.Name = "dgv_orderItems";
@@ -321,7 +321,7 @@
             this.panel3.Controls.Add(this.BTNClose);
             this.panel3.Location = new System.Drawing.Point(1, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(948, 51);
+            this.panel3.Size = new System.Drawing.Size(948, 59);
             this.panel3.TabIndex = 187;
             // 
             // SalesOrderItemReport
