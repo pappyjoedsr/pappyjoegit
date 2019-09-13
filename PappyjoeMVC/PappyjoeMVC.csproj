@@ -105,6 +105,7 @@
     <Compile Include="Controller\EMR_controller.cs" />
     <Compile Include="Controller\EMR_Interface.cs" />
     <Compile Include="Controller\Expense_controller.cs" />
+    <Compile Include="Controller\Expiry_Report_controller.cs" />
     <Compile Include="Controller\Export_controller.cs" />
     <Compile Include="Controller\Finished_Procedre_controller.cs" />
     <Compile Include="Controller\Finished_Procedure_interface.cs" />
@@ -169,6 +170,7 @@
     <Compile Include="Controller\Reports_controller.cs" />
     <Compile Include="Controller\SalesOrderItemReport_controller.cs" />
     <Compile Include="Controller\SalesReport_Items_controller.cs" />
+    <Compile Include="Controller\SalesReturnItemsReport_controller.cs" />
     <Compile Include="Controller\sales_controller.cs" />
     <Compile Include="Controller\Sales_List_controller.cs" />
     <Compile Include="Controller\sales_order_controller.cs" />
@@ -481,6 +483,12 @@
     <Compile Include="View\Expense.Designer.cs">
       <DependentUpon>Expense.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Expiry_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Expiry_Report.designer.cs">
+      <DependentUpon>Expiry_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Export_Data.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -678,6 +686,12 @@
     </Compile>
     <Compile Include="View\SalesReport_Items.Designer.cs">
       <DependentUpon>SalesReport_Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SalesReturnItemsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SalesReturnItemsReport.Designer.cs">
+      <DependentUpon>SalesReturnItemsReport.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Sales_List.cs">
       <SubType>Form</SubType>
@@ -1091,6 +1105,9 @@
     <EmbeddedResource Include="View\Expense.resx">
       <DependentUpon>Expense.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Expiry_Report.resx">
+      <DependentUpon>Expiry_Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Export_Data.resx">
       <DependentUpon>Export_Data.cs</DependentUpon>
     </EmbeddedResource>
@@ -1186,6 +1203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SalesReport_Items.resx">
       <DependentUpon>SalesReport_Items.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SalesReturnItemsReport.resx">
+      <DependentUpon>SalesReturnItemsReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Sales_List.resx">
       <DependentUpon>Sales_List.cs</DependentUpon>

@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Sales_Return_Report : Form,Sales_Return_Report_interface
+    public partial class Sales_Return_Report : Form
     {
         public Sales_Return_Report()
         {
             InitializeComponent();
         }
-        Sales_Return_Report_controller ctrlr;
+        Sales_Return_Report_controller ctrlr=new Sales_Return_Report_controller();
         public string dateFrom="", dateTo="",checkStr = "0",PathName = "",strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "";
         private void dgv_Return_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -25,24 +25,20 @@ namespace PappyjoeMVC.View
             {
                 int Inv_num = Convert.ToInt32(dgv_Return.CurrentRow.Cells["InvNumber"].Value.ToString());
                 int Doc_num = Convert.ToInt32(dgv_Return.CurrentRow.Cells["RetNumber"].Value.ToString());
-                //var form2 = new PappyjoeMVC.FrmSalesReturn_itemsReport(Doc_num, Inv_num, dptMonthly_From.Value.ToString("yyyy-MM-dd"), dptMonthly_To.Value.ToString("yyyy-MM-dd"));
-                //form2.ShowDialog();
+                var form2 = new SalesReturnItemsReport(Doc_num, Inv_num, dptMonthly_From.Value.ToString("yyyy-MM-dd"), dptMonthly_To.Value.ToString("yyyy-MM-dd"));
+                form2.ShowDialog();
             }
         }
         private void BTNClose_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Sales_Return_Report();
-            Sales_Return_Report_controller controller = new Sales_Return_Report_controller(form2);
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
         }
-        public void setController(Sales_Return_Report_controller controller)
-        {
-            ctrlr = controller;
-        }
         private void Sales_Return_Report_Load(object sender, EventArgs e)
         {
-            this.ctrlr.salesreturn(dateFrom,dateTo);
+            DataTable dt=this.ctrlr.salesreturn(dateFrom,dateTo);
+            salesreturn(dt);
             dgv_Return.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             dgv_Return.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv_Return.EnableHeadersVisualStyles = false;
@@ -133,19 +129,8 @@ namespace PappyjoeMVC.View
                 dptMonthly_From.Value = DateTime.Today;
                 return;
             }
-            this.ctrlr.salesreturn(dateFrom, dateTo);
-        }
-        public void practicedetails(DataTable dtp)
-        {
-            if (dtp.Rows.Count > 0)
-            {
-                clinicn = dtp.Rows[0]["name"].ToString();
-                strclinicname = clinicn.Replace("¤", "'");
-                strphone = dtp.Rows[0]["contact_no"].ToString();
-                strStreet = dtp.Rows[0]["street_address"].ToString();
-                stremail = dtp.Rows[0]["email"].ToString();
-                strwebsite = dtp.Rows[0]["website"].ToString();
-            }
+            DataTable dt=this.ctrlr.salesreturn(dateFrom, dateTo);
+            salesreturn(dt);
         }
         private void btnprint_Click(object sender, EventArgs e)
         {
@@ -161,7 +146,16 @@ namespace PappyjoeMVC.View
                     result = MessageBox.Show(message, caption, buttons);
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        this.ctrlr.practicedetails();
+                        DataTable dtp=this.ctrlr.practicedetails();
+                            if (dtp.Rows.Count > 0)
+                            {
+                                clinicn = dtp.Rows[0]["name"].ToString();
+                                strclinicname = clinicn.Replace("¤", "'");
+                                strphone = dtp.Rows[0]["contact_no"].ToString();
+                                strStreet = dtp.Rows[0]["street_address"].ToString();
+                                stremail = dtp.Rows[0]["email"].ToString();
+                                strwebsite = dtp.Rows[0]["website"].ToString();
+                            }
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
                     System.IO.StreamWriter sWrite = new System.IO.StreamWriter(Apppath + "\\SalesReturnReport.html");

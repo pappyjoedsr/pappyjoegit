@@ -55,5 +55,26 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table("select RetNumber,ReturnDate,InvNumber,InvDate,cust_number,cust_name,GST,IGST,Paid,TotalAmount from tbl_return where ReturnDate between '" + dateFrom + "' and '" + dateTo + "'");
             return dt;
         }
+        //Sales Return Items Report
+        public DataTable salesrtrnitms(string retno)
+        {
+            DataTable dt= db.table(" select RetNumber,Item_Code,Qty,Rate,UNIT2,Taxable,FreeQty,(Qty*Rate) as TotalAmopunt from tbl_RETIT where RetNumber='" + retno + "'");
+            return dt;
+        }
+        public DataTable slctgst(string invno,string itmcode)
+        {
+            DataTable dt = db.table("select Item_Code,GST,IGST from tbl_SALEIT where InvNumber='" + invno + "' and  Item_Code='" + itmcode + "'");
+            return dt;
+        }
+        public DataTable slctunits(string itmcode)
+        {
+            DataTable dt = db.table("select Unit1,Unit2,item_code from tbl_ITEMS where item_code='" + itmcode + "'");
+            return dt;
+        }
+        public DataTable retrndtls(string retno)
+        {
+            DataTable dt = db.table("select RetNumber,ReturnDate,InvDate,InvNumber,cust_number,cust_name from tbl_RETURN where RetNumber='" + retno + "'");
+            return dt;
+        }
     }
 }

@@ -219,7 +219,7 @@
             this.panel1.Controls.Add(this.lblinvoices);
             this.panel1.Location = new System.Drawing.Point(1, 45);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1369, 80);
+            this.panel1.Size = new System.Drawing.Size(1369, 87);
             this.panel1.TabIndex = 189;
             // 
             // BtnExport
@@ -313,9 +313,9 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.Controls.Add(this.Lab_Msg);
             this.panel2.Controls.Add(this.dgv_Return);
-            this.panel2.Location = new System.Drawing.Point(1, 126);
+            this.panel2.Location = new System.Drawing.Point(0, 128);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1370, 426);
+            this.panel2.Size = new System.Drawing.Size(1370, 437);
             this.panel2.TabIndex = 192;
             // 
             // Lab_Msg
