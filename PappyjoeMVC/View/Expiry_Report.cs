@@ -12,19 +12,15 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Expiry_Report : Form,Expiry_Report_interface
+    public partial class Expiry_Report : Form
     {
         public Expiry_Report()
         {
             InitializeComponent();
         }
         int c = 0;
-        Expiry_Report_controller ctrlr;
+        Expiry_Report_controller ctrlr=new Expiry_Report_controller();
         public string dateFrom = "", dateTo = "",checkStr = "0",PathName = "",strclinicname = "", strStreet = "", stremail = "", strwebsite = "", strphone = "", clinicn = "";
-        public void setController(Expiry_Report_controller controller)
-        {
-            ctrlr = controller;
-        }
         public void datewiseexpiry(DataTable dt)
         {
             try
@@ -55,32 +51,26 @@ namespace PappyjoeMVC.View
                     dgvExpiry.Rows.Clear();
                 }
             }
-            catch(Exception ex)
-            { MessageBox.Show(ex.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void btnselect_Click(object sender, EventArgs e)
         {
-            dateFrom = dptFrom.Value.ToString("yyyy-MM-dd");
-            dateTo = dptTo.Value.ToString("yyyy-MM-dd");
-            if (Convert.ToDateTime(dateFrom).Date > Convert.ToDateTime(dateTo).Date)
+            try
             {
-                MessageBox.Show("From date should be less than To date", "From Date is grater ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                dptFrom.Value = DateTime.Today;
-                return;
+                dateFrom = dptFrom.Value.ToString("yyyy-MM-dd");
+                dateTo = dptTo.Value.ToString("yyyy-MM-dd");
+                if (Convert.ToDateTime(dateFrom).Date > Convert.ToDateTime(dateTo).Date)
+                {
+                    MessageBox.Show("From date should be less than To date", "From Date is grater ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dptFrom.Value = DateTime.Today;
+                    return;
+                }
+                DataTable dt = this.ctrlr.datewiseexpiry(dateFrom, dateTo);
+                datewiseexpiry(dt);
             }
-            this.ctrlr.datewiseexpiry(dateFrom, dateTo);
-        }
-        public void practicedetails(DataTable dtp)
-        {
-            if (dtp.Rows.Count > 0)
-            {
-                clinicn = dtp.Rows[0]["name"].ToString();
-                strclinicname = clinicn.Replace("¤", "'");
-                strphone = dtp.Rows[0]["contact_no"].ToString();
-                strStreet = dtp.Rows[0]["street_address"].ToString();
-                stremail = dtp.Rows[0]["email"].ToString();
-                strwebsite = dtp.Rows[0]["website"].ToString();
-            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void btnprint_Click(object sender, EventArgs e)
         {
@@ -97,7 +87,16 @@ namespace PappyjoeMVC.View
 
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        this.ctrlr.practicedetails();
+                        DataTable dtp=this.ctrlr.practicedetails();
+                            if (dtp.Rows.Count > 0)
+                            {
+                                clinicn = dtp.Rows[0]["name"].ToString();
+                                strclinicname = clinicn.Replace("¤", "'");
+                                strphone = dtp.Rows[0]["contact_no"].ToString();
+                                strStreet = dtp.Rows[0]["street_address"].ToString();
+                                stremail = dtp.Rows[0]["email"].ToString();
+                                strwebsite = dtp.Rows[0]["website"].ToString();
+                            }
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
                     StreamWriter sWrite = new StreamWriter(Apppath + "\\ExpiryDatewiseReport.html");
@@ -173,8 +172,8 @@ namespace PappyjoeMVC.View
                     MessageBox.Show("Record Not Found,please change the date and try again !..", "Data not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch(Exception ex)
-            { MessageBox.Show(ex.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void BtnExport_Click(object sender, EventArgs e)
         {
@@ -248,22 +247,43 @@ namespace PappyjoeMVC.View
                     MessageBox.Show("No records found,please change the date and try again!..", "Failed ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
-            { MessageBox.Show(ex.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.Expiry_Report();
-            Expiry_Report_controller controller = new Expiry_Report_controller(form2);
+            var form2 = new Expiry_Report();
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
         }
         private void Expiry_Report_Load(object sender, EventArgs e)
         {
-            this.ctrlr.datewiseexpiry(dateFrom,dateTo);
-            dgvExpiry.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
-            dgvExpiry.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvExpiry.EnableHeadersVisualStyles = false;
-            dgvExpiry.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
+            try
+            {
+                DataTable dt = this.ctrlr.datewiseexpiry(dateFrom, dateTo);
+                datewiseexpiry(dt);
+                dgvExpiry.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
+                dgvExpiry.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgvExpiry.EnableHeadersVisualStyles = false;
+                dgvExpiry.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
+                dgvExpiry.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvExpiry.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvExpiry.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvExpiry.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvExpiry.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dgvExpiry.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvExpiry.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dgvExpiry.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvExpiry.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvExpiry.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvExpiry.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvExpiry.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvExpiry.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvExpiry.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvExpiry.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvExpiry.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
     }
 }

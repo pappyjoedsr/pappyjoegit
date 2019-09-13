@@ -401,6 +401,7 @@
             this.label7.Size = new System.Drawing.Size(105, 17);
             this.label7.TabIndex = 59;
             this.label7.Text = "EXPIRY REPORT";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label5
             // 
