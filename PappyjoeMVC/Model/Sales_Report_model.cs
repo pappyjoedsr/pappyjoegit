@@ -38,6 +38,17 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table("select distinct S.DocNumber,S.DocDate,CustomerName,Cus_Id,Phone,(select count(ItemCode) from tbl_SalesOrder where DocNumber=S.DocNumber ) as 'Total Items' from tbl_SalesOrder_Master S inner join tbl_SalesOrder O on S.DocNumber=O.DocNumber where S.DocDate between '" + dateFrom + "' and '" + dateTo + "'and S.Status='O'");
             return dt;
         }
+        //Sales Order Item Report
+        public DataTable salesordritm(string docno)
+        {
+            DataTable dt= db.table(" select DocNumber,DocDate,ItemCode,Discription,Qty,Cost,TotalAmount from tbl_SalesOrder where DocNumber='" + docno + "'");
+            return dt;
+        }
+        public DataTable slctdocno(string docno)
+        {
+            DataTable dt= db.table("select DocNumber,DocDate,CustomerName,Cus_Id,Phone from tbl_SalesOrder_Master  where DocNumber='" + docno + "'");
+            return dt;
+        }
         //Sales Return Report
         public DataTable salesreturn(string dateFrom,string dateTo)
         {

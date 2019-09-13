@@ -11,18 +11,17 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Sales_Order_Report : Form,Sales_Order_Report_interface
+    public partial class Sales_Order_Report : Form
     {
         public Sales_Order_Report()
         {
             InitializeComponent();
         }
-        Sales_Order_Report_controller ctrlr;
+        Sales_Order_Report_controller ctrlr=new Sales_Order_Report_controller();
         public string dateFrom = "", dateTo = "",checkStr = "",PathName = "",strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "";
         private void BTNClose_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.Sales_Order_Report();
-            Sales_Order_Report_controller controller = new Sales_Order_Report_controller(form2);                                                                                                          
+            var form2 = new Sales_Order_Report();
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
         }
@@ -33,8 +32,8 @@ namespace PappyjoeMVC.View
                 if (Dgv_Order.CurrentCell.OwningColumn.Name == "DocNumber")
                 {
                     int inv_num = Convert.ToInt32(Dgv_Order.CurrentRow.Cells["DocNumber"].Value.ToString());
-                    //var form2 = new PappyjoeMVC.FrmSalesOrder(inv_num);
-                    //form2.ShowDialog();
+                    var form2 = new SalesOrder(inv_num);
+                    form2.ShowDialog();
                 }
             }
         }
@@ -43,17 +42,14 @@ namespace PappyjoeMVC.View
             if (e.RowIndex >= 0)
             {
                 int Doc_num = Convert.ToInt32(Dgv_Order.CurrentRow.Cells["DocNumber"].Value.ToString());
-                //var form2 = new PappyjoeMVC.frmSalesOrderItemReport(Doc_num, dptMonthly_From.Value.ToString("yyyy-MM-dd"), dptMonthly_To.Value.ToString("yyyy-MM-dd"));
+                //var form2 = new SalesOrderItemReport(Doc_num, dptMonthly_From.Value.ToString("yyyy-MM-dd"), dptMonthly_To.Value.ToString("yyyy-MM-dd"));
                 //form2.ShowDialog();
             }
         }
-        public void setController(Sales_Order_Report_controller controller)
-        {
-            ctrlr = controller;
-        }
         private void Sales_Order_Report_Load(object sender, EventArgs e)
         {
-            this.ctrlr.salesorder(dateFrom, dateTo);
+            DataTable dt=this.ctrlr.salesorder(dateFrom, dateTo);
+            salesorder(dt);
             Dgv_Order.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             Dgv_Order.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             Dgv_Order.EnableHeadersVisualStyles = false;
@@ -77,18 +73,6 @@ namespace PappyjoeMVC.View
                 cl.Width = 120;
             }
         }
-        public void practicedetails(DataTable dtp)
-        {
-            if (dtp.Rows.Count > 0)
-            {
-                clinicn = dtp.Rows[0]["name"].ToString();
-                strclinicname = clinicn.Replace("¤", "'");
-                strphone = dtp.Rows[0]["contact_no"].ToString();
-                strStreet = dtp.Rows[0]["street_address"].ToString();
-                stremail = dtp.Rows[0]["email"].ToString();
-                strwebsite = dtp.Rows[0]["website"].ToString();
-            }
-        }
         private void btnprint_Click(object sender, EventArgs e)
         {
             try
@@ -103,7 +87,16 @@ namespace PappyjoeMVC.View
                     result = MessageBox.Show(message, caption, buttons);
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        this.ctrlr.practicedetails();
+                        DataTable dtp=this.ctrlr.practicedetails();
+                            if (dtp.Rows.Count > 0)
+                            {
+                                clinicn = dtp.Rows[0]["name"].ToString();
+                                strclinicname = clinicn.Replace("¤", "'");
+                                strphone = dtp.Rows[0]["contact_no"].ToString();
+                                strStreet = dtp.Rows[0]["street_address"].ToString();
+                                stremail = dtp.Rows[0]["email"].ToString();
+                                strwebsite = dtp.Rows[0]["website"].ToString();
+                            }
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
                     System.IO.StreamWriter sWrite = new System.IO.StreamWriter(Apppath + "\\SalesOrderReport.html");
@@ -297,7 +290,8 @@ namespace PappyjoeMVC.View
                 dptMonthly_From.Value = DateTime.Today;
                 return;
             }
-            this.ctrlr.salesorder(dateFrom, dateTo);
+            DataTable dt=this.ctrlr.salesorder(dateFrom, dateTo);
+            salesorder(dt);
         }
     }
 }

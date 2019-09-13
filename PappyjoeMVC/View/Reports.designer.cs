@@ -485,6 +485,7 @@
             this.Lab_SalesOrde.Size = new System.Drawing.Size(145, 17);
             this.Lab_SalesOrde.TabIndex = 3;
             this.Lab_SalesOrde.Text = "SALES ORDER REPORT";
+            this.Lab_SalesOrde.Click += new System.EventHandler(this.Lab_SalesOrde_Click);
             // 
             // Lab_Salesreport
             // 

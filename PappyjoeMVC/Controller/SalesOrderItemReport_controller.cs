@@ -8,13 +8,18 @@ using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Controller
 {
-    public class Sales_Order_Report_controller
+    public class SalesOrderItemReport_controller
     {
         Sales_Report_model mdl = new Sales_Report_model();
         Daily_Invoice_Report_model dm = new Daily_Invoice_Report_model();
-        public DataTable salesorder(string dateFrom, string dateTo)
+        public DataTable salesordritm(string docno)
         {
-            DataTable dt = mdl.salesorder(dateFrom, dateTo);
+            DataTable dt = mdl.salesordritm(docno);
+            return dt;
+        }
+        public DataTable slctdocno(string docno)
+        {
+            DataTable dt = mdl.slctdocno(docno);
             return dt;
         }
         public DataTable practicedetails()
