@@ -227,6 +227,7 @@
     <Compile Include="Model\Expense_model.cs" />
     <Compile Include="Model\Export_model.cs" />
     <Compile Include="Model\GeneralFunctions.cs" />
+    <Compile Include="Model\GlobalVariables.cs" />
     <Compile Include="Model\Global_Variables.cs" />
     <Compile Include="Model\Inventory_model.cs" />
     <Compile Include="Model\Item_List_Model.cs" />

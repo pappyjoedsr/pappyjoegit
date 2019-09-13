@@ -10,99 +10,93 @@ namespace PappyjoeMVC.Controller
 {
     public class LabtrackingReport_controller
     {
-        LabtrackingReport_interface intr;
-        common_model cm = new common_model();
-        dentalwork_model dm = new dentalwork_model();
+        Common_model cm = new Common_model();
         LabtrackingReport_model mdl = new LabtrackingReport_model();
-        public LabtrackingReport_controller(LabtrackingReport_interface inttr)
-        {
-            intr = inttr;
-            intr.setController(this);
-        }
-        public void selectall()
+        //dental_work_model dm = new dental_work_model();
+        public DataTable selectall()
         {
             DataTable dt = mdl.selectall();
-            intr.selectall(dt);
+            return dt;
         }
-        public void txtkeypress()
+        public DataTable txtkeypress()
         {
             DataTable dt = mdl.txtkeypress();
-            intr.txtkeypress(dt);
+            return dt;
         }
-        public void txtkeypress2(string pt_name)
+        public DataTable txtkeypress2(string pt_name)
         {
             DataTable dt = mdl.txtkeypress2(pt_name);
-            intr.txtkeypress2(dt);
+            return dt;
         }
-        public void txtkeyup()
+        public DataTable txtkeyup()
         {
             DataTable dt = mdl.txtkeyup();
-            intr.txtkeyup(dt);
+            return dt;
         }
-        public void txtkeyup2(string pt_name)
+        public DataTable txtkeyup2(string pt_name)
         {
             DataTable dt = mdl.txtkeyup2(pt_name);
-            intr.txtkeyup2(dt);
+            return dt;
         }
-        public void stactive()
+        public DataTable stactive()
         {
             DataTable dt = mdl.stactive();
-            intr.stactive(dt);
+            return dt;
         }
-        public void statsent()
+        public DataTable statsent()
         {
             DataTable dt = mdl.statsent();
-            intr.statsent(dt);
+            return dt;
         }
-        public void statinproductn()
+        public DataTable statinproductn()
         {
             DataTable dt = mdl.statinproductn();
-            intr.statinproductn(dt);
+            return dt;
         }
-        public void statintransit()
+        public DataTable statintransit()
         {
             DataTable dt = mdl.statintransit();
-            intr.statintransit(dt);
+            return dt;
         }
-        public void statreceived()
+        public DataTable statreceived()
         {
             DataTable dt = mdl.statreceived();
-            intr.statreceived(dt);
+            return dt;
         }
-        public void statoverdue()
+        public DataTable statoverdue()
         {
             DataTable dt = mdl.statoverdue();
-            intr.statoverdue(dt);
+            return dt;
         }
-        public void notnullstatus()
+        public DataTable notnullstatus()
         {
             DataTable dt = mdl.notnullstatus();
-            intr.notnullstatus(dt);
+            return dt;
         }
-        public void duedtetoday(string today)
+        public DataTable duedtetoday(string today)
         {
             DataTable dt = mdl.duedtetoday(today);
-            intr.duedtetoday(dt);
+            return dt;
         }
-        public void duedtetommarrow(string tommarrow)
+        public DataTable duedtetommarrow(string tommarrow)
         {
             DataTable dt = mdl.duedtetommarrow(tommarrow);
-            intr.duedtetommarrow(dt);
+            return dt;
         }
-        public void Patient_search(string txtbox)
+        public DataTable Patient_search(string txtbox)
         {
             DataTable dt = cm.Patient_search(txtbox);
-            intr.Patient_search(dt);
+            return dt;
         }
-        public void userprivilege(string doctrid)
+        public string userprivilege(string doctrid)
         {
             string e = mdl.userprivilege(doctrid);
-            intr.userprivilege(e);
+            return e;
         }
-        public void practicedetails()
+        public DataTable practicedetails()
         {
-            DataTable dt = dm.practicedetails();
-            intr.practicedetails(dt);
+            //DataTable dt = dm.practicedetails();
+            //return dt;
         }
     }
 }
