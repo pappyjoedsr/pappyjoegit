@@ -42,28 +42,29 @@ namespace PappyjoeMVC.View
                 DGV_ITEMS.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
                 DGV_ITEMS.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_ITEMS.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_ITEMS.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                DGV_ITEMS.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                DGV_ITEMS.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                DGV_ITEMS.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                DGV_ITEMS.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                DGV_ITEMS.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                DGV_ITEMS.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_ITEMS.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_ITEMS.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_ITEMS.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_ITEMS.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_ITEMS.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_ITEMS.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_ITEMS.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_ITEMS.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                DGV_ITEMS.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                DGV_ITEMS.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                DGV_ITEMS.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_ITEMS.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_ITEMS.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_ITEMS.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_ITEMS.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                DGV_ITEMS.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                DGV_ITEMS.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                DGV_ITEMS.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                DGV_ITEMS.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                DGV_ITEMS.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                DGV_ITEMS.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_ITEMS.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_ITEMS.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_ITEMS.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_ITEMS.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_ITEMS.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_ITEMS.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_ITEMS.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 foreach (DataGridViewColumn cl in DGV_ITEMS.Columns)
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    cl.Width = 100;
                 }
             }
             catch (Exception ex)
@@ -106,6 +107,10 @@ namespace PappyjoeMVC.View
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+        private void BTNClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         private void btnprint_Click(object sender, EventArgs e)
         {

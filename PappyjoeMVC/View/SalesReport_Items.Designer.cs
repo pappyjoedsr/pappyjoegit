@@ -74,7 +74,7 @@
             this.Txtgrandtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Txtgrandtotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txtgrandtotal.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txtgrandtotal.Location = new System.Drawing.Point(1081, 54);
+            this.Txtgrandtotal.Location = new System.Drawing.Point(1102, 54);
             this.Txtgrandtotal.Name = "Txtgrandtotal";
             this.Txtgrandtotal.ReadOnly = true;
             this.Txtgrandtotal.Size = new System.Drawing.Size(96, 25);
@@ -87,7 +87,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(821, 61);
+            this.label3.Location = new System.Drawing.Point(842, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 17);
             this.label3.TabIndex = 12;
@@ -99,7 +99,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(986, 60);
+            this.label2.Location = new System.Drawing.Point(1007, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 17);
             this.label2.TabIndex = 10;
@@ -110,7 +110,7 @@
             this.txt_CGST.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_CGST.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CGST.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_CGST.Location = new System.Drawing.Point(867, 54);
+            this.txt_CGST.Location = new System.Drawing.Point(888, 54);
             this.txt_CGST.Name = "txt_CGST";
             this.txt_CGST.ReadOnly = true;
             this.txt_CGST.Size = new System.Drawing.Size(96, 25);
@@ -122,7 +122,7 @@
             this.TxttotalCost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TxttotalCost.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxttotalCost.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.TxttotalCost.Location = new System.Drawing.Point(1081, 33);
+            this.TxttotalCost.Location = new System.Drawing.Point(1102, 33);
             this.TxttotalCost.Name = "TxttotalCost";
             this.TxttotalCost.ReadOnly = true;
             this.TxttotalCost.Size = new System.Drawing.Size(96, 22);
@@ -135,7 +135,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(1007, 37);
+            this.label1.Location = new System.Drawing.Point(1028, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 8;
@@ -146,7 +146,7 @@
             this.txt_SGST.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_SGST.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SGST.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_SGST.Location = new System.Drawing.Point(867, 33);
+            this.txt_SGST.Location = new System.Drawing.Point(888, 33);
             this.txt_SGST.Name = "txt_SGST";
             this.txt_SGST.ReadOnly = true;
             this.txt_SGST.Size = new System.Drawing.Size(96, 22);
@@ -158,7 +158,7 @@
             this.Txt_totalItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_totalItems.Font = new System.Drawing.Font("Segoe UI Light", 8.25F);
             this.Txt_totalItems.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txt_totalItems.Location = new System.Drawing.Point(1080, 10);
+            this.Txt_totalItems.Location = new System.Drawing.Point(1101, 10);
             this.Txt_totalItems.Name = "Txt_totalItems";
             this.Txt_totalItems.ReadOnly = true;
             this.Txt_totalItems.Size = new System.Drawing.Size(96, 22);
@@ -171,7 +171,7 @@
             this.lblinvoices.AutoSize = true;
             this.lblinvoices.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblinvoices.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblinvoices.Location = new System.Drawing.Point(1003, 15);
+            this.lblinvoices.Location = new System.Drawing.Point(1024, 15);
             this.lblinvoices.Name = "lblinvoices";
             this.lblinvoices.Size = new System.Drawing.Size(75, 17);
             this.lblinvoices.TabIndex = 0;
@@ -182,7 +182,7 @@
             this.txt_IGST.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_IGST.Font = new System.Drawing.Font("Segoe UI Light", 8.25F);
             this.txt_IGST.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_IGST.Location = new System.Drawing.Point(866, 10);
+            this.txt_IGST.Location = new System.Drawing.Point(887, 10);
             this.txt_IGST.Name = "txt_IGST";
             this.txt_IGST.ReadOnly = true;
             this.txt_IGST.Size = new System.Drawing.Size(96, 22);
@@ -195,7 +195,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(822, 37);
+            this.label4.Location = new System.Drawing.Point(843, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 17);
             this.label4.TabIndex = 8;
@@ -219,9 +219,9 @@
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label5);
             this.panel4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.panel4.Location = new System.Drawing.Point(1, 40);
+            this.panel4.Location = new System.Drawing.Point(1, 44);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1185, 89);
+            this.panel4.Size = new System.Drawing.Size(1206, 85);
             this.panel4.TabIndex = 179;
             // 
             // label5
@@ -230,7 +230,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(797, 13);
+            this.label5.Location = new System.Drawing.Point(818, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 17);
             this.label5.TabIndex = 0;
@@ -277,7 +277,7 @@
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1185, 38);
+            this.panel1.Size = new System.Drawing.Size(1206, 48);
             this.panel1.TabIndex = 176;
             // 
             // btn_Export
@@ -287,7 +287,7 @@
             this.btn_Export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Export.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Export.ForeColor = System.Drawing.Color.White;
-            this.btn_Export.Location = new System.Drawing.Point(883, 4);
+            this.btn_Export.Location = new System.Drawing.Point(904, 4);
             this.btn_Export.Name = "btn_Export";
             this.btn_Export.Size = new System.Drawing.Size(111, 31);
             this.btn_Export.TabIndex = 301;
@@ -316,7 +316,7 @@
             this.btnprint.ForeColor = System.Drawing.Color.White;
             this.btnprint.Image = ((System.Drawing.Image)(resources.GetObject("btnprint.Image")));
             this.btnprint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnprint.Location = new System.Drawing.Point(995, 4);
+            this.btnprint.Location = new System.Drawing.Point(1016, 4);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(91, 31);
             this.btnprint.TabIndex = 178;
@@ -332,19 +332,20 @@
             this.BTNClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNClose.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNClose.ForeColor = System.Drawing.Color.White;
-            this.BTNClose.Location = new System.Drawing.Point(1087, 4);
+            this.BTNClose.Location = new System.Drawing.Point(1108, 4);
             this.BTNClose.Name = "BTNClose";
             this.BTNClose.Size = new System.Drawing.Size(91, 31);
             this.BTNClose.TabIndex = 179;
             this.BTNClose.Text = "CLOSE";
             this.BTNClose.UseVisualStyleBackColor = false;
+            this.BTNClose.Click += new System.EventHandler(this.BTNClose_Click);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.DGV_ITEMS);
-            this.panel2.Location = new System.Drawing.Point(3, 135);
+            this.panel2.Location = new System.Drawing.Point(1, 126);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1183, 443);
+            this.panel2.Size = new System.Drawing.Size(1206, 443);
             this.panel2.TabIndex = 177;
             // 
             // DGV_ITEMS
@@ -353,6 +354,7 @@
             this.DGV_ITEMS.AllowUserToDeleteRows = false;
             this.DGV_ITEMS.AllowUserToResizeColumns = false;
             this.DGV_ITEMS.AllowUserToResizeRows = false;
+            this.DGV_ITEMS.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DGV_ITEMS.BackgroundColor = System.Drawing.Color.White;
             this.DGV_ITEMS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV_ITEMS.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -380,9 +382,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV_ITEMS.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DGV_ITEMS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGV_ITEMS.GridColor = System.Drawing.Color.DimGray;
-            this.DGV_ITEMS.Location = new System.Drawing.Point(0, 0);
+            this.DGV_ITEMS.Location = new System.Drawing.Point(0, 3);
             this.DGV_ITEMS.Name = "DGV_ITEMS";
             this.DGV_ITEMS.ReadOnly = true;
             this.DGV_ITEMS.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -390,7 +391,7 @@
             this.DGV_ITEMS.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DGV_ITEMS.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_ITEMS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_ITEMS.Size = new System.Drawing.Size(1183, 443);
+            this.DGV_ITEMS.Size = new System.Drawing.Size(1203, 443);
             this.DGV_ITEMS.TabIndex = 0;
             // 
             // SLNO
@@ -459,7 +460,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1185, 581);
+            this.ClientSize = new System.Drawing.Size(1206, 581);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
