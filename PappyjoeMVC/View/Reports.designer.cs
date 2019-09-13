@@ -388,6 +388,7 @@
             this.sales_return.Size = new System.Drawing.Size(152, 17);
             this.sales_return.TabIndex = 2;
             this.sales_return.Text = "SALES RETURN REPORT";
+            this.sales_return.Click += new System.EventHandler(this.sales_return_Click);
             // 
             // label7
             // 

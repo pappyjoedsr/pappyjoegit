@@ -81,17 +81,17 @@ namespace PappyjoeMVC.View
                     for (int i = 0; i < dtb.Rows.Count; i++)
                     {
                         string strBatch = "", removecomma = "";
-                        DataTable dtb_batch = this.ctrlr.slctbatchno(invNumber.ToString(), dtb.Rows[i]["Item_Code"].ToString());
+                        string dtb_batch = this.ctrlr.slctbatchno(invNumber.ToString(), dtb.Rows[i]["Item_Code"].ToString());
                         DGV_ITEMS.Rows.Add();
                         DGV_ITEMS.Rows[i].Cells["SLNO"].Value = num;
                         DGV_ITEMS.Rows[i].Cells["Item_Code"].Value = dtb.Rows[i]["Item_Code"].ToString();
                         DGV_ITEMS.Rows[i].Cells["Description"].Value = dtb.Rows[i]["Description"].ToString();
-                        for (int j = 0; j < dtb_batch.Rows.Count; j++)
+                        if(dtb_batch!="")
                         {
-                            strBatch = strBatch + dtb_batch.Rows[j]["BatchNumber"].ToString() + ",";
+                            strBatch = strBatch + dtb_batch.ToString() + ",";
                         }
                         if (strBatch != "")
-                            removecomma = strBatch.Remove(strBatch.Length - 1);
+                        removecomma = strBatch.Remove(strBatch.Length - 1);
                         DGV_ITEMS.Rows[i].Cells["colBatch"].Value = removecomma;
                         DGV_ITEMS.Rows[i].Cells["Packing"].Value = dtb.Rows[i]["Packing"].ToString();
                         DGV_ITEMS.Rows[i].Cells["Unit"].Value = dtb.Rows[i]["Unit"].ToString();

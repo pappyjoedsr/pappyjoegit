@@ -22,9 +22,9 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table("select S.InvNumber,S.Item_Code,S.Description,Packing,UNIT2,UnitMF,Unit,GST,IGST,Qty,FreeQty,Rate,TotalAmount  from tbl_SALEIT S where S.InvNumber='" + invno + "'");
             return dt;
         }
-        public DataTable slctbatchno(string invno,string itmcode)
+        public string slctbatchno(string invno,string itmcode)
         {
-            DataTable dt = db.table("select BatchNumber from tbl_BatchSale where InvNumber='" + invno + "' and Item_Code='" + itmcode + "'");
+           string dt = db.scalar("select BatchNumber from tbl_BatchSale where InvNumber='" + invno + "' and Item_Code='" + itmcode + "'");
             return dt;
         }
         public DataTable invdtls(string invno)

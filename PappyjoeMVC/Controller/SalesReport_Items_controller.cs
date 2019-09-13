@@ -17,9 +17,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = mdl.salesrprtitms(invno);
             return dt;
         }
-        public DataTable slctbatchno(string invno,string itmcode)
+        public string slctbatchno(string invno,string itmcode)
         {
-            DataTable dt = mdl.slctbatchno(invno,itmcode);
+            string dt = mdl.slctbatchno(invno,itmcode);
             return dt;
         }
         public DataTable invdtls(string invno)

@@ -179,6 +179,7 @@
     <Compile Include="Controller\Sales_Return_Batch_Controller.cs" />
     <Compile Include="Controller\Sales_Return_Controller.cs" />
     <Compile Include="Controller\Sales_Return_List_Controller.cs" />
+    <Compile Include="Controller\Sales_Return_Report_controller.cs" />
     <Compile Include="Controller\Search_Patient_controller.cs" />
     <Compile Include="Controller\Show_Appointment_controller.cs" />
     <Compile Include="Controller\Staff_controller.cs" />
@@ -726,6 +727,12 @@
     <Compile Include="View\Sales_Return_Itemlist.designer.cs">
       <DependentUpon>Sales_Return_Itemlist.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Sales_Return_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Sales_Return_Report.designer.cs">
+      <DependentUpon>Sales_Return_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\StockReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1203,6 +1210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Sales_Return_Itemlist.resx">
       <DependentUpon>Sales_Return_Itemlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Sales_Return_Report.resx">
+      <DependentUpon>Sales_Return_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\StockReport.resx">
       <DependentUpon>StockReport.cs</DependentUpon>
