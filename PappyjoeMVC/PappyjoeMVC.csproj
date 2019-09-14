@@ -120,6 +120,7 @@
     <Compile Include="Controller\Ledger_interface.cs" />
     <Compile Include="Controller\Login_controller.cs" />
     <Compile Include="Controller\login_interface.cs" />
+    <Compile Include="Controller\MainCalendar_Controller.cs" />
     <Compile Include="Controller\Manufacture_controller.cs" />
     <Compile Include="Controller\manufacture_interface.cs" />
     <Compile Include="Controller\Medical_History_controller.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="Model\LabMedical_model.cs" />
     <Compile Include="Model\Ledger_model.cs" />
     <Compile Include="Model\Login_model.cs" />
+    <Compile Include="Model\MainCalendar_Model.cs" />
     <Compile Include="Model\Manufacture_model.cs" />
     <Compile Include="Model\Medical_history_model.cs" />
     <Compile Include="Model\NewAccount_model.cs" />
@@ -416,6 +418,9 @@
     <Compile Include="View\Daily_Treatment_Count.designer.cs">
       <DependentUpon>Daily_Treatment_Count.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\DatePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\Day_Wise_Receipt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -536,6 +541,9 @@
     <Compile Include="View\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Main_Calendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\Manufacture.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -547,6 +555,9 @@
     </Compile>
     <Compile Include="View\Monthly_Treatment_Count.designer.cs">
       <DependentUpon>Monthly_Treatment_Count.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OpenRecurringItem.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Purchase.cs">
       <SubType>Form</SubType>
