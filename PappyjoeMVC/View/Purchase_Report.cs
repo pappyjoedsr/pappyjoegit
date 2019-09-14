@@ -29,8 +29,8 @@ namespace PappyjoeMVC.View
                 from = dptMonthly_From.Value;
                 to = dptMonthly_To.Value;
                 pur_id = Convert.ToInt32(dgvPurchase.Rows[rowindex].Cells["PurchNumber"].Value.ToString());
-                //var form = new PappyjoeMVC.View.Purchase_Item_Report(pur_id, from, to);
-                //form.ShowDialog();
+                var form = new PappyjoeMVC.View.Purchase_Item_Report(pur_id, from, to);
+                form.ShowDialog();
             }
         }
         private void button1_Click(object sender, EventArgs e)

@@ -1787,6 +1787,55 @@ namespace PappyjoeMVC.View
             //this.Hide();
             form2.ShowDialog();
         }
+        private void label6_Click(object sender, EventArgs e)
+        {
+            var form2 = new Purchase_Report();
+            form2.FormClosed += (sender1, args) => this.Close();
+            //this.Hide();
+            form2.ShowDialog();
+        }
+        private void lab_Purch_Order_Click(object sender, EventArgs e)
+        {
+            var form2 = new Purchase_Order_Report();
+            form2.FormClosed += (sender1, args) => this.Close();
+            //this.Hide();
+            form2.ShowDialog();         
+        }
+        private void lab_purch_return_Click(object sender, EventArgs e)
+        {
+            var form2 = new Purchase_Return_Report();
+            form2.FormClosed += (sender1, args) => this.Close();
+            //this.Hide();
+            form2.ShowDialog();
+        }
+        private void Lab_Salesreport_Click(object sender, EventArgs e)
+        {
+            var form2 = new Sales_Report();
+            form2.FormClosed += (sender1, args) => this.Close();
+            //this.Hide();
+            form2.ShowDialog();
+        }
+        private void Lab_SalesOrde_Click(object sender, EventArgs e)
+        {
+            var form2 = new Sales_Order_Report();
+            form2.FormClosed += (sender1, args) => this.Close();
+            //this.Hide();
+            form2.ShowDialog();
+        }
+        private void sales_return_Click(object sender, EventArgs e)
+        {
+            var form2 = new Sales_Return_Report();
+            form2.FormClosed += (sender1, args) => this.Close();
+            //this.Hide();
+            form2.ShowDialog();
+        }
+        private void label7_Click(object sender, EventArgs e)
+        {
+            var form2 = new Expiry_Report();
+            form2.FormClosed += (sender1, args) => this.Close();
+            //this.Hide();
+            form2.ShowDialog();
+        }
         private void Chk_Type_CheckedChanged(object sender, EventArgs e)
         {
             if (Chk_Type.Checked)

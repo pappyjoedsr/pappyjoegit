@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reports));
             this.rad_income = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -388,6 +388,7 @@
             this.sales_return.Size = new System.Drawing.Size(152, 17);
             this.sales_return.TabIndex = 2;
             this.sales_return.Text = "SALES RETURN REPORT";
+            this.sales_return.Click += new System.EventHandler(this.sales_return_Click);
             // 
             // label7
             // 
@@ -400,6 +401,7 @@
             this.label7.Size = new System.Drawing.Size(105, 17);
             this.label7.TabIndex = 59;
             this.label7.Text = "EXPIRY REPORT";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label5
             // 
@@ -445,6 +447,7 @@
             this.lab_purch_return.Size = new System.Drawing.Size(181, 17);
             this.lab_purch_return.TabIndex = 6;
             this.lab_purch_return.Text = "PURCHASE RETURN REPORT";
+            this.lab_purch_return.Click += new System.EventHandler(this.lab_purch_return_Click);
             // 
             // lab_Purch_Order
             // 
@@ -457,6 +460,7 @@
             this.lab_Purch_Order.Size = new System.Drawing.Size(174, 17);
             this.lab_Purch_Order.TabIndex = 5;
             this.lab_Purch_Order.Text = "PURCHASE ORDER REPORT";
+            this.lab_Purch_Order.Click += new System.EventHandler(this.lab_Purch_Order_Click);
             // 
             // label6
             // 
@@ -470,6 +474,7 @@
             this.label6.Size = new System.Drawing.Size(127, 17);
             this.label6.TabIndex = 4;
             this.label6.Text = "PURCHASE REPORT";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // Lab_SalesOrde
             // 
@@ -482,6 +487,7 @@
             this.Lab_SalesOrde.Size = new System.Drawing.Size(145, 17);
             this.Lab_SalesOrde.TabIndex = 3;
             this.Lab_SalesOrde.Text = "SALES ORDER REPORT";
+            this.Lab_SalesOrde.Click += new System.EventHandler(this.Lab_SalesOrde_Click);
             // 
             // Lab_Salesreport
             // 
@@ -494,6 +500,7 @@
             this.Lab_Salesreport.Size = new System.Drawing.Size(98, 17);
             this.Lab_Salesreport.TabIndex = 1;
             this.Lab_Salesreport.Text = "SALES REPORT";
+            this.Lab_Salesreport.Click += new System.EventHandler(this.Lab_Salesreport_Click);
             // 
             // Panel_inventory
             // 
@@ -1096,8 +1103,8 @@
             this.Grvreports.AllowUserToOrderColumns = true;
             this.Grvreports.AllowUserToResizeColumns = false;
             this.Grvreports.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.Grvreports.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.Grvreports.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Grvreports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1105,14 +1112,14 @@
             this.Grvreports.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grvreports.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Grvreports.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Ivory;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grvreports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Ivory;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grvreports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Grvreports.ColumnHeadersHeight = 28;
             this.Grvreports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Grvreports.Location = new System.Drawing.Point(4, 46);
