@@ -5,17 +5,17 @@ namespace PappyjoeMVC.Controller
 {
     public class Booking_controller
     {
-        booking_interface intr;
+        //booking_interface intr;
         Booking_model _model = new Booking_model();
         Connection db = new Connection();
         Common_model cmodel = new Common_model();
         Add_Appointment_model addmodel = new Add_Appointment_model();
         Add_New_Patient_model pmodel = new Add_New_Patient_model();
-        public Booking_controller(booking_interface intttr)
-        {
-            intr = intttr;
-            intr.SetController(this);
-        }
+        //public Booking_controller(booking_interface intttr)
+        //{
+        //    intr = intttr;
+        //    intr.SetController(this);
+        //}
         public string Add_privillege(string doctor_id)
         {
             string ss = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='APT' and Permission='AP'");
@@ -46,20 +46,20 @@ namespace PappyjoeMVC.Controller
             DataTable dt = db.table("select CONCAT (pt_name,' ', primary_mobile_number)  pt_name,id from tbl_patient where (pt_name like '%" + search + "%'  or pt_id like '%" + search + "%' or primary_mobile_number like '%" + search + "%' or email_address like '%" + search + "%' or street_address  like '%" + search + "%' or locality like '%" + search + "%' or city like '%" + search + "%') and Profile_Status='Active'  order by pt_name");
             return dt;
         }
-        public void Getpat_MobNamme(string patient_id)
+        public DataTable Getpat_MobNamme(string patient_id)
         {
             DataTable dt_p = db.table("select pt_name,pt_id,primary_mobile_number,email_address from tbl_patient where  id=" + patient_id + " ORDER BY id");
-            intr.Fill_search_patient(dt_p);
+            return dt_p;// intr.Fill_search_patient(dt_p);
         }
         public DataTable search_ptid(string search)
         {
             DataTable dt = db.table("select CONCAT (pt_name,' ', primary_mobile_number)  pt_name,id from tbl_patient where (pt_name like '%" + search + "%'  or pt_id like '%" + search + "%' or primary_mobile_number like '%" + search + "%' or email_address like '%" + search + "%')and Profile_Status='Active' order by pt_name");
             return dt;
         }
-        public void patient_details(string txt_p_name)
+        public DataTable patient_details(string txt_p_name)
         {
             DataTable dtb = _model.patient_details(txt_p_name);
-            intr.Appointment_for_newPAtient(dtb);
+            return dtb;// intr.Appointment_for_newPAtient(dtb);
         }
         public DataTable get_patientPrefix()
         {
@@ -121,7 +121,7 @@ namespace PappyjoeMVC.Controller
             return dtb;
             //intr.Appointment_for_newPAtient(dtb);
         }
-        public int insappointment(DateTime book_datetime, DateTime start_datetime, string duration, string note, string pt_id, string pt_name, string dr_id, string mobile_no, string email_id, string plan_new_procedure, string booked_by)
+        public int insappointment(string book_datetime, string start_datetime, string duration, string note, string pt_id, string pt_name, string dr_id, string mobile_no, string email_id, string plan_new_procedure, string booked_by)
         {
             //addmodel.book_datetime = book_datetime;
             //addmodel.start_date = start_datetime;

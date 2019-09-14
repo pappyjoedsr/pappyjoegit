@@ -329,11 +329,11 @@
     <Compile Include="View\Add_Vital_Signs.designer.cs">
       <DependentUpon>Add_Vital_Signs.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Appointment_Booking.cs">
+    <Compile Include="View\AppointmentBooking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Appointment_Booking.designer.cs">
-      <DependentUpon>Appointment_Booking.cs</DependentUpon>
+    <Compile Include="View\AppointmentBooking.designer.cs">
+      <DependentUpon>AppointmentBooking.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Appointment_for_each_patient_group.cs">
       <SubType>Form</SubType>
@@ -1047,8 +1047,8 @@
     <EmbeddedResource Include="View\Add_Vital_Signs.resx">
       <DependentUpon>Add_Vital_Signs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Appointment_Booking.resx">
-      <DependentUpon>Appointment_Booking.cs</DependentUpon>
+    <EmbeddedResource Include="View\AppointmentBooking.resx">
+      <DependentUpon>AppointmentBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Appointment_for_each_patient_group.resx">
       <DependentUpon>Appointment_for_each_patient_group.cs</DependentUpon>
@@ -1467,6 +1467,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\upload2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appfilled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appnotfilled.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

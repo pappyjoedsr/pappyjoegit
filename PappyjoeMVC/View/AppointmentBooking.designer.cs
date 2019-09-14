@@ -1,6 +1,6 @@
 ﻿namespace PappyjoeMVC.View
 {
-    partial class Appointment_Booking
+    partial class AppointmentBooking
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Appointment_Booking));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppointmentBooking));
             this.compoprocedure = new System.Windows.Forms.ComboBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -74,6 +74,15 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.cmdCancel = new System.Windows.Forms.Button();
             this.cmdOK = new System.Windows.Forms.Button();
+            this.cmbLabel = new System.Windows.Forms.ComboBox();
+            this.cmbShowTimeAs = new System.Windows.Forms.ComboBox();
+            this.dpEndTimeDate = new System.Windows.Forms.DateTimePicker();
+            this.txtSubject = new System.Windows.Forms.TextBox();
+            this.txtLocation = new System.Windows.Forms.TextBox();
+            this.chkAllDayEvent = new System.Windows.Forms.CheckBox();
+            this.chkPrivate = new System.Windows.Forms.CheckBox();
+            this.chkReminder = new System.Windows.Forms.CheckBox();
+            this.chkMeeting = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -414,7 +423,7 @@
             this.panel2.Controls.Add(this.cmbStartTime);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.dpStartTimeDate);
-            this.panel2.Location = new System.Drawing.Point(153, 14);
+            this.panel2.Location = new System.Drawing.Point(153, 15);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(318, 37);
             this.panel2.TabIndex = 84;
@@ -591,12 +600,114 @@
             this.cmdOK.UseVisualStyleBackColor = false;
             this.cmdOK.Click += new System.EventHandler(this.cmdOK_Click);
             // 
+            // cmbLabel
+            // 
+            this.cmbLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLabel.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbLabel.Location = new System.Drawing.Point(12, 484);
+            this.cmbLabel.Name = "cmbLabel";
+            this.cmbLabel.Size = new System.Drawing.Size(70, 21);
+            this.cmbLabel.TabIndex = 100;
+            this.cmbLabel.Visible = false;
+            // 
+            // cmbShowTimeAs
+            // 
+            this.cmbShowTimeAs.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbShowTimeAs.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbShowTimeAs.Location = new System.Drawing.Point(78, 484);
+            this.cmbShowTimeAs.Name = "cmbShowTimeAs";
+            this.cmbShowTimeAs.Size = new System.Drawing.Size(70, 21);
+            this.cmbShowTimeAs.TabIndex = 101;
+            this.cmbShowTimeAs.Visible = false;
+            // 
+            // dpEndTimeDate
+            // 
+            this.dpEndTimeDate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpEndTimeDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpEndTimeDate.Location = new System.Drawing.Point(0, 511);
+            this.dpEndTimeDate.Name = "dpEndTimeDate";
+            this.dpEndTimeDate.Size = new System.Drawing.Size(116, 22);
+            this.dpEndTimeDate.TabIndex = 102;
+            this.dpEndTimeDate.Visible = false;
+            // 
+            // txtSubject
+            // 
+            this.txtSubject.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubject.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtSubject.Location = new System.Drawing.Point(438, 497);
+            this.txtSubject.Name = "txtSubject";
+            this.txtSubject.Size = new System.Drawing.Size(77, 22);
+            this.txtSubject.TabIndex = 103;
+            this.txtSubject.Visible = false;
+            // 
+            // txtLocation
+            // 
+            this.txtLocation.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocation.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtLocation.Location = new System.Drawing.Point(121, 442);
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Size = new System.Drawing.Size(315, 22);
+            this.txtLocation.TabIndex = 103;
+            // 
+            // chkAllDayEvent
+            // 
+            this.chkAllDayEvent.AutoSize = true;
+            this.chkAllDayEvent.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAllDayEvent.Location = new System.Drawing.Point(658, 257);
+            this.chkAllDayEvent.Name = "chkAllDayEvent";
+            this.chkAllDayEvent.Size = new System.Drawing.Size(102, 21);
+            this.chkAllDayEvent.TabIndex = 104;
+            this.chkAllDayEvent.Text = "All Day Event";
+            this.chkAllDayEvent.UseVisualStyleBackColor = true;
+            // 
+            // chkPrivate
+            // 
+            this.chkPrivate.AutoSize = true;
+            this.chkPrivate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPrivate.Location = new System.Drawing.Point(712, 230);
+            this.chkPrivate.Name = "chkPrivate";
+            this.chkPrivate.Size = new System.Drawing.Size(66, 21);
+            this.chkPrivate.TabIndex = 105;
+            this.chkPrivate.Text = "Private";
+            this.chkPrivate.UseVisualStyleBackColor = true;
+            // 
+            // chkReminder
+            // 
+            this.chkReminder.AutoSize = true;
+            this.chkReminder.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkReminder.Location = new System.Drawing.Point(712, 132);
+            this.chkReminder.Name = "chkReminder";
+            this.chkReminder.Size = new System.Drawing.Size(83, 21);
+            this.chkReminder.TabIndex = 106;
+            this.chkReminder.Text = "Reminder";
+            this.chkReminder.UseVisualStyleBackColor = true;
+            // 
+            // chkMeeting
+            // 
+            this.chkMeeting.AutoSize = true;
+            this.chkMeeting.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMeeting.Location = new System.Drawing.Point(699, 189);
+            this.chkMeeting.Name = "chkMeeting";
+            this.chkMeeting.Size = new System.Drawing.Size(75, 21);
+            this.chkMeeting.TabIndex = 107;
+            this.chkMeeting.Text = "Meeting";
+            this.chkMeeting.UseVisualStyleBackColor = true;
+            // 
             // AppointmentBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(530, 535);
+            this.ClientSize = new System.Drawing.Size(525, 535);
+            this.Controls.Add(this.chkMeeting);
+            this.Controls.Add(this.chkReminder);
+            this.Controls.Add(this.chkPrivate);
+            this.Controls.Add(this.chkAllDayEvent);
+            this.Controls.Add(this.txtLocation);
+            this.Controls.Add(this.txtSubject);
+            this.Controls.Add(this.dpEndTimeDate);
+            this.Controls.Add(this.cmbShowTimeAs);
+            this.Controls.Add(this.cmbLabel);
             this.Controls.Add(this.compoprocedure);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.panel1);
@@ -688,5 +799,14 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button cmdCancel;
         private System.Windows.Forms.Button cmdOK;
+        private System.Windows.Forms.ComboBox cmbLabel;
+        private System.Windows.Forms.ComboBox cmbShowTimeAs;
+        private System.Windows.Forms.DateTimePicker dpEndTimeDate;
+        private System.Windows.Forms.TextBox txtSubject;
+        private System.Windows.Forms.TextBox txtLocation;
+        private System.Windows.Forms.CheckBox chkAllDayEvent;
+        private System.Windows.Forms.CheckBox chkPrivate;
+        private System.Windows.Forms.CheckBox chkReminder;
+        private System.Windows.Forms.CheckBox chkMeeting;
     }
 }
