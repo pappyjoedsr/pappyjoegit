@@ -189,5 +189,10 @@ namespace PappyjoeMVC.Model
             DataTable dtb = db.table(" SELECT p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age ,p.primary_mobile_number as Mobile,p.street_address as Street Address,p.locality as Locality,p.Opticket as 'File No' FROM tbl_patient P inner join tbl_pt_group G on P.id = G.pt_id where G.group_id='" + id4 + "' and Profile_Status='Active' and (P.pt_id like '%" + name + "%' or P.pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') ORDER BY P.id DESC");
             return dtb;
         }
+        public string inventry_prevlage(string doctor_id)
+        {
+            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='INVENTORY' and Permission='A'");
+            return id;
+        }
     }
 }

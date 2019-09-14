@@ -2070,6 +2070,35 @@ namespace PappyjoeMVC.View
             }
         }
 
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            if (doctor_id != "1")
+            {
+                string id=this.cntrl.inventry_prevlage(doctor_id);
+                //id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='INVENTORY' and Permission='A'");
+                if (int.Parse(id) > 0)
+                {
+                    MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var form2 = new PappyjoeMVC.View.StockReport();
+                    form2.doctor_id = doctor_id;
+                     form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.ShowDialog();
+                }
+            }
+            else
+            {
+                var form2 = new PappyjoeMVC.View.StockReport();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
+        }
+
         public void SetPatient_SearchControlls()
         {
             txt_Search.Visible = true;

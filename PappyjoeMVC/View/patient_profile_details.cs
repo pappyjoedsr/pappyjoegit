@@ -804,6 +804,16 @@ namespace PappyjoeMVC.View
         {
 
         }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.StockReport();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         private void labelprescription_Click(object sender, EventArgs e)
         {
             var form2 = new Prescription_Show();
