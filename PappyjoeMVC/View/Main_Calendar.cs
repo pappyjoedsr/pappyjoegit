@@ -7,6 +7,7 @@ using System.Data;
 using XtremeCalendarControl;
 using System.Diagnostics;
 using PappyjoeMVC.Controller;
+using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
     public enum CalendarView
@@ -3145,7 +3146,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    AppointmentBooking = new PappyjoeMVC.View. AppointmentBooking();
+                    AppointmentBooking = new PappyjoeMVC.View.AppointmentBooking();
                     AppointmentBooking.doctor_id = doctor_id;
                     AppointmentBooking.CreateNewEvent();
                     AppointmentBooking.ShowDialog(this);
@@ -3163,7 +3164,7 @@ namespace PappyjoeMVC.View
         private void mnuContextEditEvent_Click(object sender, System.EventArgs e)
         {
             // AppointmentBooking = new PappyjoeMVC.View.AppointmentBooking();
-            View. AppointmentBooking bk = new View. AppointmentBooking();
+            AppointmentBooking bk = new AppointmentBooking();
             if (pat_idForEdit != "0")
             {
                 if (ContextEvent.RecurrenceState != CalendarEventRecurrenceState.xtpCalendarRecurrenceNotRecurring)
@@ -3295,7 +3296,7 @@ namespace PappyjoeMVC.View
                         DataTable tl_appoitment = this.cntrl.get_patient_details(ContextEvent.Body);// db.table("select pt_id,mobile_no,plan_new_procedure,pt_name from tbl_appointment where id='" + ContextEvent.Body + "'");
                         if (tl_appoitment.Rows.Count > 0)
                         {
-                            SMSCAPI a = new SMSCAPI();
+                            SMS_model a = new SMS_model();
                             DataTable pat = this.cntrl.Get_Patient_Details(tl_appoitment.Rows[0]["pt_id"].ToString());// db.table("select * from tbl_patient where id='" + tl_appoitment.Rows[0]["pt_id"].ToString() + "'");
                             if (pat.Rows.Count > 0)
                             {
@@ -3589,7 +3590,7 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show("Please wait..... Connecting Patient Records...!", " Please Wait...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 string id1 = pati_id;
-                var form2 = new PappyjoeMVC.View.patient_profile_details();
+                var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
                 form2.doctor_id = doctor_id;
                 form2.patient_id = id1.ToString();
                 form2.Show();
@@ -3604,7 +3605,7 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show("Please wait..... Connecting Patient Records...!", "Please Wait...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 string id1 = pati_id;
-                var form2 = new PappyjoeMVC.View.patient_profile_details();
+                var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
                 form2.doctor_id = doctor_id;
                 form2.patient_id = id1.ToString();
                 form2.Show();

@@ -130,6 +130,9 @@
   <data name="blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blank1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="upload1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\upload2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1429953040_Log Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1429953040_Log Out1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,6 +141,9 @@
   </data>
   <data name="excel_doc_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\excel_doc_icon1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bill.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1435669277_gear_basic_blue small " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1435669277_gear_basic_blue small 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,20 +175,17 @@
   <data name="AdultTooth" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AdultTooth.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bill" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bill.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="editicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editicon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="no-image-icon-61" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\no-image-icon-6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bordertick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bordertick.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="deleteicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\deleteicon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TickRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TickRed.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Bordertick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bordertick.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="nophoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nophoto1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,10 +193,13 @@
   <data name="Borderblank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Borderblank.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editicon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TickRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TickRed.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upload1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\upload2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="appfilled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appfilled.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="appnotfilled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appnotfilled.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
