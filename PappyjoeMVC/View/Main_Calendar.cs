@@ -123,7 +123,7 @@ namespace PappyjoeMVC.View
         private System.ComponentModel.IContainer components;
         private System.Windows.Forms.MenuItem mnuContextNewEvent;
         static public PappyjoeMVC.View.Main_Calendar Instance;
-        PappyjoeMVC.View.AppointmentBooking AppointmentBooking = null;
+        PappyjoeMVC.View.Appointment_Booking AppointmentBooking = null;
         OpenRecurringItem frmOpenRecurringItem = null;
         //frmTimeZone frmTimeZone = null;
         public CalendarEvent ContextEvent;
@@ -3145,7 +3145,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    AppointmentBooking = new PappyjoeMVC.View. AppointmentBooking();
+                    AppointmentBooking = new PappyjoeMVC.View. Appointment_Booking();
                     AppointmentBooking.doctor_id = doctor_id;
                     AppointmentBooking.CreateNewEvent();
                     AppointmentBooking.ShowDialog(this);
@@ -3153,7 +3153,7 @@ namespace PappyjoeMVC.View
             }
             else
             {
-                AppointmentBooking = new PappyjoeMVC.View.AppointmentBooking();
+                AppointmentBooking = new PappyjoeMVC.View.Appointment_Booking();
                 AppointmentBooking.doctor_id = doctor_id;
                 AppointmentBooking.CreateNewEvent();
                 AppointmentBooking.ShowDialog(this);
