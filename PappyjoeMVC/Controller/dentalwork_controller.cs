@@ -12,6 +12,7 @@ namespace PappyjoeMVC.Controller
     {
         Common_model cm = new Common_model();
         LabWorks_model lm = new LabWorks_model();
+        SMS_model s = new SMS_model();
         Dentalwork_model mdl = new Dentalwork_model();
         public DataTable labdata()
         {
@@ -23,30 +24,35 @@ namespace PappyjoeMVC.Controller
             DataTable dt = mdl.practicedetails();
             return dt;
         }
-        public void smsinfo()
+        public DataTable smsinfo()
         {
             DataTable dt = lm.smsinfo();
-            intr.smsinfo(dt);
+            return dt;
         }
-        public void Get_Patient_Details(string patid)
+        public DataTable Get_Patient_Details(string patid)
         {
             DataTable dt = cm.Get_Patient_Details(patid);
-            intr.Get_Patient_Details(dt);
+            return dt;
         }
-        public void dentalwrk(string patid,string wrkid)
+        public DataTable dentalwrk(string patid,string wrkid)
         {
             DataTable dt = mdl.dentalwrk(patid,wrkid);
-            intr.dentalwrk(dt);
+            return dt;
         }
-        public void dentalproperty(string patid, string rsltmain)
+        public DataTable dentalproperty(string patid, string rsltmain)
         {
             DataTable dt = mdl.dentalproperty(patid, rsltmain);
-            intr.dentalproperty(dt);
+            return dt;
         }
         public int labupdate(string labname, string assign_date, string duedate, string patid,string id)
         {
             int j = mdl.labupdate(labname,assign_date,duedate,patid,id);
             return j;
+        }
+        public string SendSMS(string User, string password, string Mobile_Number, string Message)
+        {
+            string val = s.SendSMS(User, password, Mobile_Number, Message);
+            return val;
         }
     }
 }
