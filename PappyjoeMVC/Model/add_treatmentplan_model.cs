@@ -4,54 +4,7 @@ namespace PappyjoeMVC.Model
     public class Add_Treatmentplan_model
     {
         Connection db = new Connection();
-        private string _addProcedurename = "";
-        public string AddProcedureName
-        {
-            get { return _addProcedurename; }
-            set { _addProcedurename = value; }
-        }
-        private string _procedurecost = "";
-        public string ProcedureCost
-        {
-            get { return _procedurecost; }
-            set { _procedurecost = value; }
-        }
-        private string _date = "";
-        public string Date
-        {
-            get { return _date; }
-            set { _date = value; }
-        }
-        private string _doctor = "";
-        public string Doctor
-        {
-            get { return _doctor; }
-            set { _doctor = value; }
-        }
-        private string _patientname = "";
-        public string PatientName
-        {
-            get { return _patientname; }
-            set { _patientname = value; }
-        }
-        private string _totalcost = "";
-        public string TotalCost
-        {
-            get { return _totalcost; }
-            set { _totalcost = value; }
-        }
-        private string _totaldiscount = "";
-        public string TotalDiscount
-        {
-            get { return _totaldiscount; }
-            set { _totaldiscount = value; }
-        }
-        private string _grandtotal = "";
-        public string GrandTotal
-        {
-            get { return _grandtotal; }
-            set { _grandtotal = value; }
-        }
+       
         public DataTable get_ProcedureTreatment(string id)
         {
             DataTable dtb = db.table("select name,cost from tbl_addproceduresettings where id ='" + id + "'");

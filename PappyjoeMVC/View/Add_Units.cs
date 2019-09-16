@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
-    public partial class Add_Units : Form,add_unit_interface
+    public partial class Add_Units : Form
     {
-        Add_Unit_controller cntrl;
+        Add_Unit_controller cntrl=new Add_Unit_controller();
         public string unitName = "";
         public string unit_id = "";
         public Add_Units()

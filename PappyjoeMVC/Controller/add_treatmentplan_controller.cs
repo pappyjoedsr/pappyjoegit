@@ -5,15 +5,10 @@ namespace PappyjoeMVC.Controller
 {
     public class Add_Treatmentplan_controller
     {
-        add_treatmentplan_interface intr;
+        
         Add_Treatmentplan_model _Model = new Add_Treatmentplan_model();
         Common_model cmodel = new Common_model();
         Connection db = new Connection();
-        public Add_Treatmentplan_controller(add_treatmentplan_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
         public DataTable get_ProcedureTreatment(string id)
         {
             DataTable dtb = _Model.get_ProcedureTreatment(id);
@@ -21,14 +16,11 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable check_procedurename(string AddProcedureName)
         {
-            //_Model.AddProcedureName = intr.AddProcedureName;
             DataTable dtb = _Model.check_procedurename(AddProcedureName);
-            return dtb;// intr.insertTreatment(dtb);
+            return dtb;
         }
         public void save_Procedure(string _addProcedurename, string _procedurecost)
         {
-            //_Model.AddProcedureName = intr.AddProcedureName;
-            //_Model.ProcedureCost = intr.ProcedureCost;
             _Model.save_Procedure( _addProcedurename,  _procedurecost);
         }
         public string Procedure_maxid()
@@ -43,12 +35,6 @@ namespace PappyjoeMVC.Controller
         }
         public void Save_treatment(string dr_id, string patient_id, string _date, string _doctor, string _patientname, string _totalcost, string _totaldiscount, string _grandtotal)
         {
-            //_Model.Date = intr.Date;
-            //_Model.Doctor = intr.Doctor;
-            //_Model.PatientName = intr.PatientName;
-            //_Model.TotalCost = intr.TotalCost;
-            //_Model.TotalDiscount = intr.TotalDiscount;
-            //_Model.GrandTotal = intr.GrandTotal;
             _Model.Save_treatment( dr_id,  patient_id,  _date,  _doctor,  _patientname,  _totalcost,  _totaldiscount,  _grandtotal);
         }
         public string get_treatmentmaxid()

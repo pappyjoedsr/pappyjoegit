@@ -14,7 +14,7 @@ using PappyjoeMVC.Controller;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
-    public partial class Ledger : Form,Ledger_interface
+    public partial class Ledger : Form
     {
         public Ledger()
         {
@@ -29,7 +29,7 @@ namespace PappyjoeMVC.View
         public decimal b;
         public decimal credit;
         string totalamt;
-        Ledger_controller cntrl ;
+        Ledger_controller cntrl=new  Ledger_controller() ;
         Connection db = new Connection();
         private void Ledger_Load(object sender, EventArgs e)
         {
@@ -135,7 +135,7 @@ namespace PappyjoeMVC.View
                     DGV_Transaction.Rows[z].Cells[0].Style.ForeColor = Color.Green;
                 }
             }
-            DataTable dtb = this.cntrl.LedgerPay(patient_id);// s.LedgerPay();
+            DataTable dtb = this.cntrl.LedgerPay(patient_id);
             if (dtb.Rows.Count > 0)
             {
                 for (int u = 0; u < dtb.Rows.Count; u++)
@@ -680,7 +680,6 @@ namespace PappyjoeMVC.View
             var form2 = new Invoice();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Invoice_controller controller = new Invoice_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -702,7 +701,6 @@ namespace PappyjoeMVC.View
             var form2 = new Ledger();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Ledger_controller controller = new Ledger_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

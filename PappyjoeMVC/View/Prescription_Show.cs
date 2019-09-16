@@ -1688,7 +1688,6 @@ namespace PappyjoeMVC.View
             var form2 = new Invoice();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Invoice_controller controller = new Invoice_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1710,7 +1709,6 @@ namespace PappyjoeMVC.View
             var form2 = new Ledger();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Ledger_controller controller = new Ledger_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

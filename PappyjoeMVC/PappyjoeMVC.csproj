@@ -80,7 +80,6 @@
     <Compile Include="Controller\batchsale_controller.cs" />
     <Compile Include="Controller\Billing_controller.cs" />
     <Compile Include="Controller\Booking_controller.cs" />
-    <Compile Include="Controller\Booking_interface.cs" />
     <Compile Include="Controller\Calender_controller.cs" />
     <Compile Include="Controller\ChangeStatus_controller.cs" />
     <Compile Include="Controller\Clinical_Notes_Add_controller.cs" />
@@ -110,7 +109,6 @@
     <Compile Include="Controller\Image_Zoom_controller.cs" />
     <Compile Include="Controller\Group_Wise_Report_controller.cs" />
     <Compile Include="Controller\Invoice_controller.cs" />
-    <Compile Include="Controller\invoice_interface.cs" />
     <Compile Include="Controller\ItemListForSales_controller.cs" />
     <Compile Include="Controller\Item_List_Controller.cs" />
     <Compile Include="Controller\LabDental_controller.cs" />
@@ -119,7 +117,6 @@
     <Compile Include="Controller\LabtrackingReport_controller.cs" />
     <Compile Include="Controller\LabWorks_controller.cs" />
     <Compile Include="Controller\Ledger_controller.cs" />
-    <Compile Include="Controller\Ledger_interface.cs" />
     <Compile Include="Controller\Login_controller.cs" />
     <Compile Include="Controller\login_interface.cs" />
     <Compile Include="Controller\MainCalendar_Controller.cs" />

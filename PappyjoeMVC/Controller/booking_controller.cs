@@ -62,30 +62,8 @@ namespace PappyjoeMVC.Controller
         }
         public void Save_patient(string PatientName, string Patient_Id, string aadhar_id, string gender, string date_of_birth, string age, string blood_group, string family,  string primary_mobile_number, string secondary_mobile_number, string landline_number, string email_address, string street_address, string locality, string city, string pincode,  string refferedby, string Opticket, string Visited, string doctorname, string Occupation)
         {
-            //pmodel.PatientName = PatientName;
-            //pmodel.PatientId = Patient_Id;
-            //pmodel.Aadhaar = aadhar_id;
-            //pmodel.Blood = blood_group;
-            //pmodel.Accompainedby = family;
-            //pmodel.Age = age;
-            //pmodel.DOB = date_of_birth;
-            //pmodel.Doctor = doctorname;
-            //pmodel.FileNo = Opticket;
-            //pmodel.Landline = landline_number;
-            //pmodel.Occupation = Occupation;
-            //pmodel.ReferredBy = refferedby;
-            //pmodel.PrimaryMob = primary_mobile_number;
-            //pmodel.SecondaryMob = secondary_mobile_number;
-            //pmodel.Street = street_address;
-            //pmodel.DateofAdmit = Visited;
-            //pmodel.Gender = gender;
-            //pmodel.Pincode = pincode;
-            //pmodel.City = city;
-            //pmodel.Email = email_address;
-            //pmodel.Locality = locality;
             pmodel.Save( PatientName,  Patient_Id,  aadhar_id,  gender,  date_of_birth,  age,  blood_group,  family,    primary_mobile_number,  secondary_mobile_number,  landline_number,  email_address,  street_address,  locality,  city,  pincode,    refferedby,  Opticket,  Visited,  doctorname,  Occupation);
-        }//string _name ,string _id , string _aadhar , string _gender, string _dob , string _age , string _blood , string _accompained , string _pmobile , string _smobile , string _landline , string _email , string _street , string
-        //_locality , string _city, string _pincode, string _referred, string _file, string _admit, string _doctor, string _occupation
+        }
         public DataTable get_max_patid()
         {
             DataTable rs_patient = _model.get_max_patid();

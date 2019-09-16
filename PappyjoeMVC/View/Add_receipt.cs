@@ -12,7 +12,7 @@ using PappyjoeMVC.Controller;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
-    public partial class Add_Receipt : Form,add_receipt_interface
+    public partial class Add_Receipt : Form
     {
         public string doctor_id = "";
         public string patient_id = "0";
