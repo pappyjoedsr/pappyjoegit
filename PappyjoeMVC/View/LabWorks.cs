@@ -246,7 +246,7 @@ namespace PappyjoeMVC.View
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        DataTable tbshade = this.m.tbshade(patient_id, dt.Rows[i][0].ToString(), workiddental);
+                        DataTable tbshade = this.ctrlr.tbshade(patient_id, dt.Rows[i][0].ToString(), workiddental);
                         text = text + " [" + dt.Rows[i][1].ToString() + "]  TEST --  RESULT/ UNITS --  NV --";
                         for (int j = 0; j < tbshade.Rows.Count; j++)
                         {

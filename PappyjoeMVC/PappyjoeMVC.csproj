@@ -295,6 +295,12 @@
     <Compile Include="View\Add_Finished_Procedure.Designer.cs">
       <DependentUpon>Add_Finished_Procedure.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Add_Labwork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Add_Labwork.designer.cs">
+      <DependentUpon>Add_Labwork.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Add_New_Patients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1063,6 +1069,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Add_Finished_Procedure.resx">
       <DependentUpon>Add_Finished_Procedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Add_Labwork.resx">
+      <DependentUpon>Add_Labwork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Add_New_Patients.resx">
       <DependentUpon>Add_New_Patients.cs</DependentUpon>
