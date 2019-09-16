@@ -113,6 +113,26 @@ namespace PappyjoeMVC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap appfilled {
+            get {
+                object obj = ResourceManager.GetObject("appfilled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap appnotfilled {
+            get {
+                object obj = ResourceManager.GetObject("appnotfilled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bill {
             get {
                 object obj = ResourceManager.GetObject("Bill", resourceCulture);

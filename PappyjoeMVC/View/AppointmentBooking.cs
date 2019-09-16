@@ -14,36 +14,86 @@ using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Appointment_Booking : Form,booking_interface
+    public partial class AppointmentBooking : Form
     {
+        Connection db = new Connection();
         public string doctor_id = "0";
         public string gpl_app_id = "0";
         string app_Doctor_id = "0";
         public string patient_id = "0";
         public string patient_name;
         public int status1 = 0;
-        Booking_controller cntrl;
+        Booking_controller cntrl =new Booking_controller();
+        //private System.Windows.Forms.TextBox txtSubject;
+        //private System.Windows.Forms.TextBox txtLocation;
+        //private System.Windows.Forms.ComboBox cmbLabel;
+        private System.Windows.Forms.Label lblShowTimeAs;
+        //private System.Windows.Forms.ComboBox cmbShowTimeAs;
+        private System.Windows.Forms.Button cmdRecurrence;
+        //private System.Windows.Forms.Button cmdOK;
+        //private System.Windows.Forms.Button cmdCancel;
+        //private System.Windows.Forms.TextBox txtDescription;
         public CalendarEvent EditingEvent;
         public Boolean IsNewEvent = true;
-        private System.Windows.Forms.CheckBox chkMeeting;
-        private System.Windows.Forms.CheckBox chkPrivate;
-        private System.Windows.Forms.CheckBox chkAllDayEvent;
-        internal System.Windows.Forms.CheckBox chkReminder;
-        private System.Windows.Forms.ComboBox cmbShowTimeAs;
+        //private System.Windows.Forms.CheckBox chkMeeting;
+        //private System.Windows.Forms.CheckBox chkPrivate;
+        //private System.Windows.Forms.CheckBox chkAllDayEvent;
+        //internal System.Windows.Forms.CheckBox chkReminder;
+        //private System.Windows.Forms.ComboBox cmbShowTimeAs;
         internal System.Windows.Forms.ComboBox cmbReminder;
+        //private System.Windows.Forms.DateTimePicker dpEndTimeDate;
 
+        static public AppointmentBooking Instance;
         public string send_on_day { get; set; }
         public string send_before_day { get; set; }
         public string day_time { get; set; }
         public string before_time { get; set; }
-        public Appointment_Booking()
+        public AppointmentBooking()
         {
+            Instance = this;
             InitializeComponent();
+            InitializeControls();
         }
-        public void SetController(Booking_controller controller)
+        private void InitializeControls()
         {
-            cntrl = controller;
+            cmbLabel.Items.Insert(0, "None");
+            cmbLabel.Items.Insert(1, "Important");
+            cmbLabel.Items.Insert(2, "Business");
+            cmbLabel.Items.Insert(3, "Personal");
+            cmbLabel.Items.Insert(4, "Vacation");
+            cmbLabel.Items.Insert(5, "Must Attend");
+            cmbLabel.Items.Insert(6, "Travel Required");
+            cmbLabel.Items.Insert(7, "Needs Preparation");
+            cmbLabel.Items.Insert(8, "Birthday");
+            cmbLabel.Items.Insert(9, "Anniverserary");
+            cmbLabel.Items.Insert(10, "Phone Call");
+            cmbLabel.SelectedIndex = 0;
+
+            cmbShowTimeAs.Items.Insert(0, "Free");
+            cmbShowTimeAs.Items.Insert(1, "Tentative");
+            cmbShowTimeAs.Items.Insert(2, "Busy");
+            cmbShowTimeAs.Items.Insert(3, "Out of Office");
+            cmbShowTimeAs.SelectedIndex = 0;
+
+            DateTime dtHours = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+
+            for (int cnt = 0; cnt < 288; cnt++)
+            {
+                //cmbStartTime.Items.Insert(cnt, dtHours.ToShortTimeString());
+                //cmbEndTime.Items.Insert(cnt, dtHours.ToShortTimeString());
+                cmbStartTime.Items.Insert(cnt, dtHours.ToString("h:mm tt"));
+                cmbEndTime.Items.Insert(cnt, dtHours.ToString("h:mm tt"));
+                dtHours = dtHours.AddMinutes(5);
+            }
+
+            cmbStartTime.SelectedIndex = 10;
+            cmbEndTime.SelectedIndex = 11;
+
         }
+        //public void SetController(Booking_controller controller)
+        //{
+        //    cntrl = controller;
+        //}
         private class CalReminderMinutes
         {
             public Int32 m_nMinutes;
@@ -93,7 +143,7 @@ namespace PappyjoeMVC.View
                 {
                     if (gpl_app_id != "0")
                     {
-                        string doctor = this.cntrl.getdocid(app_Doctor_id);
+                        String doctor = this.cntrl.getdocid(app_Doctor_id);
                         if (doctor!="")
                         {
                             int index = combodoctor.FindString(Convert.ToString(doctor));
@@ -109,7 +159,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
 
             }
@@ -147,7 +197,8 @@ namespace PappyjoeMVC.View
             else if (e.KeyCode == Keys.Enter && list_p_details.Items.Count > 0)
             {
                 patient_id = list_p_details.GetItemText(list_p_details.SelectedValue);
-                this.cntrl.Getpat_MobNamme(patient_id);
+                DataTable dt_p = this.cntrl.Getpat_MobNamme(patient_id);
+                Fill_search_patient(dt_p);
                 list_p_details.Hide();
             }
             if (dt.Rows.Count <= 0)
@@ -173,7 +224,8 @@ namespace PappyjoeMVC.View
             else if (e.KeyCode == Keys.Enter && list_p_details.Items.Count > 0)
             {
                 patient_id = list_p_details.GetItemText(list_p_details.SelectedValue);
-                this.cntrl.Getpat_MobNamme(patient_id);
+               DataTable dt_p = this.cntrl.Getpat_MobNamme(patient_id);
+                Fill_search_patient(dt_p);
                 list_p_details.Hide();
                 if (dt.Rows.Count <= 0)
                 {
@@ -229,7 +281,8 @@ namespace PappyjoeMVC.View
             else if (e.KeyCode == Keys.Enter && list_p_details.Items.Count > 0)
             {
                 patient_id = list_p_details.GetItemText(list_p_details.SelectedValue);
-                this.cntrl.Getpat_MobNamme(patient_id);
+               DataTable dt_p = this.cntrl.Getpat_MobNamme(patient_id);
+                Fill_search_patient(dt_p);
                 list_p_details.Hide();
             }
             if (dt.Rows.Count <= 0)
@@ -248,7 +301,8 @@ namespace PappyjoeMVC.View
             if (e.KeyCode == Keys.Enter && list_p_details.Items.Count > 0)
             {
                 patient_id = list_p_details.GetItemText(list_p_details.SelectedValue);
-                this.cntrl.Getpat_MobNamme(patient_id);
+               DataTable dt_p =  this.cntrl.Getpat_MobNamme(patient_id);
+                Fill_search_patient(dt_p);
                 list_p_details.Hide(); 
             }
         }
@@ -259,7 +313,8 @@ namespace PappyjoeMVC.View
             if (list_p_details.Items.Count > 0)
             {
                 patient_id = list_p_details.GetItemText(list_p_details.SelectedValue);
-                this.cntrl.Getpat_MobNamme(patient_id);
+                DataTable dt_p = this.cntrl.Getpat_MobNamme(patient_id);
+                Fill_search_patient(dt_p);
                 list_p_details.Hide();
             }
         }
@@ -267,7 +322,8 @@ namespace PappyjoeMVC.View
         private void cmdOK_Click(object sender, EventArgs e)
         {
             string neworold = "0"; DataTable dtpSearch = new DataTable();
-            this.cntrl.patient_details(txt_p_name.Text);
+           DataTable dtb=  this.cntrl.patient_details(txt_p_name.Text);
+            Appointment_for_newPAtient(dtb);
             if (cmbStartTime.SelectedIndex <= cmbEndTime.SelectedIndex)
             {
                 if (patient_id != "0")
@@ -350,11 +406,11 @@ namespace PappyjoeMVC.View
                         if (dtpSearch.Rows.Count <= 0)
                         {
                             //int j = db.execute("insert into tbl_appointment (book_datetime,start_datetime,duration,note,pt_id,pt_name,dr_id,mobile_no,email_id,notify_patient,notify_doctor,plan_new_procedure,status,booked_by ) values('" + Convert.ToDateTime(Dateonly).ToString("yyyy-MM-dd") + "','" + Convert.ToDateTime(StartT).ToString("yyyy-MM-dd HH:mm") + "','" + diff1 + "','" + txtDescription.Text + "','" + patient_id + "','" + txt_p_name.Text + "','" + dr_id + "','" + txt_p_mobile.Text + "','" + txt_p_email.Text + "','yes','yes','" + compoprocedure.Text + "','scheduled','" + Name + "')");
-                            this.cntrl.insappointment(Dateonly, Convert.ToDateTime(StartT) ,diff1 ,txtDescription.Text, patient_id , txt_p_name.Text , dr_id ,txt_p_mobile.Text , txt_p_email.Text , compoprocedure.Text, Name);
+                            this.cntrl.insappointment(Convert.ToDateTime(Dateonly).ToString("yyyy-MM-dd"), Convert.ToDateTime(StartT).ToString("yyyy-MM-dd HH:mm"), diff1, txtDescription.Text, patient_id, txt_p_name.Text, dr_id, txt_p_mobile.Text, txt_p_email.Text, compoprocedure.Text, Name);
                         }
                         else
                         {
-                            this.cntrl.insappointment(Dateonly, Convert.ToDateTime(StartT), diff1, txtDescription.Text, patient_id, patient_name, dr_id, lab_p_ph.Text, lab_p_email.Text, compoprocedure.Text, Name);
+                            this.cntrl.insappointment(Convert.ToDateTime(Dateonly).ToString("yyyy-MM-dd"), Convert.ToDateTime(StartT).ToString("yyyy-MM-dd HH:mm"), diff1, txtDescription.Text, patient_id, patient_name, dr_id, lab_p_ph.Text, lab_p_email.Text, compoprocedure.Text, Name);
                             /*int j = db.execute("insert into tbl_appointment (book_datetime,start_datetime,duration,note,pt_id,pt_name,dr_id,mobile_no,email_id,notify_patient,notify_doctor,plan_new_procedure,status,booked_by ) values('" + Convert.ToDateTime(Dateonly).ToString("yyyy-MM-dd") + "','" + Convert.ToDateTime(StartT).ToString("yyyy-MM-dd HH:mm") + "','" + diff1 + "','" + txtDescription.Text + "','" + patient_id + "','" + patient_name + "','" + dr_id + "','" + lab_p_ph.Text + "','" + lab_p_email.Text + "','yes*///','yes','" + compoprocedure.Text + "','scheduled','" + Name + "')");
                         }
 
@@ -368,13 +424,10 @@ namespace PappyjoeMVC.View
                         EditingEvent.Location = Convert.ToString(cmbStartTime.GetItemText(cmbStartTime.SelectedItem)) + "-" + Convert.ToString(cmbEndTime.GetItemText(cmbEndTime.SelectedItem));
                         EditingEvent.Body = Convert.ToString(app_id);
                         EditingEvent.Label = Convert.ToInt32(dr_color);
-
                         EditingEvent.AllDayEvent = (chkAllDayEvent.Checked ? true : false);
                         EditingEvent.BusyStatus = (CalendarEventBusyStatus)cmbShowTimeAs.SelectedIndex;
-
                         EditingEvent.PrivateFlag = (chkPrivate.Checked ? true : false);
                         EditingEvent.MeetingFlag = (chkMeeting.Checked ? true : false);
-
                         EditingEvent.Reminder = chkReminder.Checked;
                         if (EditingEvent.Reminder)
                         {
@@ -385,30 +438,27 @@ namespace PappyjoeMVC.View
                             }
                         }
                         //frmMain.Instance.wndCalendarControl.DataProvider.AddEvent(EditingEvent);
-
                         string clinic = "", locality = "", contact_no = "";
 
                         System.Data.DataTable clinicname = this.cntrl.clinicdetails();// db.table("select name,locality,contact_no from tbl_practice_details");
-                        if (clinicname.Rows.Count > 0)
-                        {
-                            string clinicn = "";
-                            clinicn = clinicname.Rows[0][0].ToString();
-                            clinic = clinicn.Replace("¤", "'");
-                            locality = clinicname.Rows[0][1].ToString();
-                            contact_no = clinicname.Rows[0][2].ToString();
-                        }
-
-
+                        //if (clinicname.Rows.Count > 0)
+                        //{
+                        //    string clinicn = "";
+                        //    clinicn = clinicname.Rows[0][0].ToString();
+                        //    clinic = clinicn.Replace("¤", "'");
+                        //    locality = clinicname.Rows[0][1].ToString();
+                        //    contact_no = clinicname.Rows[0][2].ToString();
+                        //}
                         if (checkBox1.Checked)
                         {
                             string text = "";
                             string smsName = "", smsPass = "";
                             DataTable sms = this.cntrl.clinicdetails();// db.table("select smsName,smsPass from tbl_SmsEmailConfig");
-                            if (sms.Rows.Count > 0)
-                            {
-                                smsName = sms.Rows[0]["smsName"].ToString();
-                                smsPass = sms.Rows[0]["smsPass"].ToString();
-                            }
+                            //if (sms.Rows.Count > 0)
+                            //{
+                            //    smsName = sms.Rows[0]["smsName"].ToString();
+                            //    smsPass = sms.Rows[0]["smsPass"].ToString();
+                            //}
                             //DataTable clinicname = db.table("select name from tbl_practice_details");
                             //if (clinicname.Rows.Count > 0)
                             //{
@@ -435,7 +485,6 @@ namespace PappyjoeMVC.View
 
                                 text = "Dear " + pat.Rows[0]["pt_name"].ToString() + " " + "Your appointment for " + compoprocedure.Text + " has been confirmed at " + StartT.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " with " + "Dr " + combodoctor.Text + " Regards " + clinic + "," + contact_no;
                                 a.SendSMS(smsName, smsPass, number, text);
-
                                 this.cntrl.save_Pt_SMS(patient_id, pat.Rows[0]["pt_name"].ToString(), compoprocedure.Text, StartT.ToString("dd/MM/yyyy"), cmbStartTime.Text, combodoctor.Text);
                                 //db.execute("insert into tbl_pt_sms_communication (pt_id,send_datetime,type,message_status,message) values('" + patient_id + "','" + DateTime.Now.ToString("yyyy-MM-dd hh:mm") + "','patient','sent','Dear " + pat.Rows[0]["pt_name"].ToString() + " " + "Your appointment for " + compoprocedure.Text + " has been confirmed at " + StartT.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " with " + "Dr " + combodoctor.Text + " Regards ')");
                                 //For Remainder SMS
@@ -466,16 +515,11 @@ namespace PappyjoeMVC.View
                             {
                                 string text = "";
                                 string smsName = "", smsPass = "";
-                                DataTable sms = this.cntrl.clinicdetails();// db.table("select smsName,smsPass from tbl_SmsEmailConfig");
-                                if (sms.Rows.Count > 0)
-                                {
-                                    smsName = sms.Rows[0]["smsName"].ToString();
-                                    smsPass = sms.Rows[0]["smsPass"].ToString();
-                                }
-                                //DataTable clinicname = db.table("select name from tbl_practice_details");
-                                //if (clinicname.Rows.Count > 0)
+                                //DataTable sms = this.cntrl.clinicdetails();// db.table("select smsName,smsPass from tbl_SmsEmailConfig");
+                                //if (sms.Rows.Count > 0)
                                 //{
-                                //    clinic = clinicname.Rows[0][0].ToString();
+                                //    smsName = sms.Rows[0]["smsName"].ToString();
+                                //    smsPass = sms.Rows[0]["smsPass"].ToString();
                                 //}
                                 SMS_model a = new SMS_model();
                                 //DataTable pat = db.table("select * from tbl_patient where id='" + patient_id + "'");
@@ -484,7 +528,6 @@ namespace PappyjoeMVC.View
                                 string number = "91" + dr_mobile;
                                 text = "You have an appointment on " + dpStartTimeDate.Value.ToShortDateString() + " " + cmbStartTime.Text + " With " + txt_p_name.Text + " for " + compoprocedure.Text + " at " + clinic + "," + contact_no;
                                 a.SendSMS(smsName, smsPass, number, text);
-
                                 //For Remainder SMS
                                 if (day_time != null)
                                 {
@@ -634,6 +677,91 @@ namespace PappyjoeMVC.View
                 status1 = 1;
             }
         }
+        public void ModifyEvent(CalendarEvent ModEvent)
+        {
+            gpl_app_id = "0";
+            gpl_app_id = ModEvent.Body;
+            IsNewEvent = false;
+
+            txtSubject.Text = ModEvent.Subject;
+            //txtDescription.Text = ModEvent.Body;
+            txtLocation.Text = ModEvent.Location;
+
+            chkAllDayEvent.Checked = (ModEvent.AllDayEvent ? true : false);
+            cmbLabel.SelectedIndex = ModEvent.Label;
+            cmbShowTimeAs.SelectedIndex = (int)ModEvent.BusyStatus;
+
+            chkPrivate.Checked = (ModEvent.PrivateFlag ? true : false);
+            chkMeeting.Checked = (ModEvent.MeetingFlag ? true : false);
+
+            if (ModEvent.RecurrenceState == CalendarEventRecurrenceState.xtpCalendarRecurrenceNotRecurring ||
+                ModEvent.RecurrenceState == CalendarEventRecurrenceState.xtpCalendarRecurrenceException)
+            {
+                SetStartEnd(ModEvent.StartTime, ModEvent.EndTime, ModEvent.AllDayEvent);
+            }
+
+            EditingEvent = ModEvent;
+
+            if (ModEvent.Subject != "")
+            {
+                //this.Text = ModEvent.Subject + " - Event";
+            }
+
+            panel1.Hide();
+
+            DataTable dt_a = db.table("select pt_id,dr_id,note,plan_new_procedure from tbl_appointment where  id=" + ModEvent.Body + " ORDER BY id");
+            if (dt_a.Rows.Count > 0)
+            {
+                patient_id = dt_a.Rows[0][0].ToString();
+                app_Doctor_id = dt_a.Rows[0]["dr_id"].ToString();
+                txtDescription.Text = dt_a.Rows[0]["note"].ToString();
+                compoprocedure.Text = dt_a.Rows[0]["plan_new_procedure"].ToString();
+            }
+            else
+            {
+                patient_id = "0";
+            }
+
+            txt_p_name.Text = ModEvent.Subject;
+            //patient_id = ModEvent.Body;
+            patient_name = ModEvent.Subject;
+            DataTable dt_p = db.table("select pt_name,pt_id,primary_mobile_number,email_address from tbl_patient where  id=" + patient_id + " ORDER BY id");
+            if (dt_p.Rows.Count > 0)
+            {
+                lab_p_name.Text = dt_p.Rows[0][0].ToString() + "(" + dt_p.Rows[0][1].ToString() + ")";
+                lab_p_ph.Text = dt_p.Rows[0][2].ToString();
+                lab_p_email.Text = dt_p.Rows[0][3].ToString();
+            }
+        }
+        public void SetStartEnd(DateTime BeginSelection, DateTime EndSelection, Boolean AllDay)
+        {
+            DateTime StartDate, StartTime, EndDate, EndTime;
+
+            StartDate = BeginSelection.Date;
+            StartTime = BeginSelection;
+
+            EndDate = EndSelection.Date;
+            EndTime = EndSelection;
+
+            if (AllDay)
+            {
+                cmbStartTime.Visible = false;
+                cmbEndTime.Visible = false;
+            }
+
+            dpStartTimeDate.Value = StartDate;
+
+            int mis = 0;
+            mis = StartTime.Minute / 5;
+            cmbStartTime.SelectedIndex = (int)(StartTime.Hour * 12 + mis);
+            //UpdateEndTimeCombo();
+            dpEndTimeDate.Value = EndDate;
+            mis = EndTime.Minute / 5;
+            cmbEndTime.SelectedIndex = (int)(EndTime.Hour * 12 + mis);
+            var diff = EndTime.Subtract(StartTime);
+            lbl_scheduledtime.Text = dpStartTimeDate.Value.ToString("dd MMM yyyy") + " at " + cmbStartTime.Text + " for " + Convert.ToString(diff.Minutes) + " mins";
+
+        }
         public void Appointment_for_newPAtient(DataTable dtpSearch)
         {
             list_p_details.DataSource = dtpSearch;
@@ -694,7 +822,36 @@ namespace PappyjoeMVC.View
                 }
             }
         }
+        public void CreateNewEvent()
+        {
+            try
+            {
+                EditingEvent = PappyjoeMVC.View.Main_Calendar.Instance.wndCalendarControl.DataProvider.CreateEvent();
+                IsNewEvent = true;
+                DateTime BeginSelection, EndSelection;
+                Boolean AllDay;
+                BeginSelection = EndSelection = DateTime.Now;
+                AllDay = false;
+                PappyjoeMVC.View.Main_Calendar.Instance.wndCalendarControl.ActiveView.GetSelection(ref BeginSelection, ref EndSelection, ref AllDay);
+                AllDay = false;
+                SetStartEnd(BeginSelection, EndSelection, AllDay);
+                if (AllDay)
+                {
+                    PappyjoeMVC.View.Main_Calendar.Instance.ContextEvent = null;
+                    this.Close();
+                }
+                //Bijeesh chkAllDayEvent.Checked = (AllDay ? true : false);
+                txtSubject.Text = "New Event";
+                cmbShowTimeAs.SelectedIndex = (AllDay ? 0 : 2);
+                cmbLabel.SelectedIndex = 0;
 
+                PappyjoeMVC.View.Main_Calendar.Instance.ContextEvent = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void AppointmentBooking_Click(object sender, EventArgs e)
         {
             list_p_details.Hide();

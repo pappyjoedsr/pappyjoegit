@@ -209,6 +209,10 @@ namespace PappyjoeMVC.Controller
             string dtb = cmodel.permission_for_settings(doctor_id);
             return dtb;
         }
-
+        public string inventry_prevlage(string doctor_id)
+        {
+            string id = _model.inventry_prevlage(doctor_id);
+            return id;
+        }
     }
 }

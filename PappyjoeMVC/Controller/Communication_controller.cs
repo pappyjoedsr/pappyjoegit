@@ -154,5 +154,10 @@ namespace PappyjoeMVC.Controller
             string dtb = cmdl.permission_for_settings(doctor_id);
             return dtb;
         }
+        public string frmInventory(string doctor_id)
+        {
+            string s = mdl.frmInventory(doctor_id);
+            return s;
+        }
     }
 }

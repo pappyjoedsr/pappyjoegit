@@ -116,6 +116,11 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table("select id,template from tbl_templates");
             return dt;
         }
+        public string frmInventory(string doctor_id)
+        {
+            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='INVENTORY' and Permission='A'");
+            return id;
+        }
     }
 }
 

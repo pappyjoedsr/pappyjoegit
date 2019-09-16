@@ -34,9 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxInterop.XtremeCalendarControl">
+      <HintPath>C:\AxInterop.XtremeCalendarControl.dll</HintPath>
+    </Reference>
     <Reference Include="Interop.XtremeCalendarControl">
       <HintPath>C:\Interop.XtremeCalendarControl.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel">
       <HintPath>C:\Users\user\Downloads\Microsoft.Office.Interop.Excel.dll</HintPath>
@@ -123,6 +126,7 @@
     <Compile Include="Controller\Ledger_interface.cs" />
     <Compile Include="Controller\Login_controller.cs" />
     <Compile Include="Controller\login_interface.cs" />
+    <Compile Include="Controller\MainCalendar_Controller.cs" />
     <Compile Include="Controller\Manufacture_controller.cs" />
     <Compile Include="Controller\manufacture_interface.cs" />
     <Compile Include="Controller\Medical_History_controller.cs" />
@@ -238,6 +242,7 @@
     <Compile Include="Model\LabtrackingReport_model.cs" />
     <Compile Include="Model\Ledger_model.cs" />
     <Compile Include="Model\Login_model.cs" />
+    <Compile Include="Model\MainCalendar_Model.cs" />
     <Compile Include="Model\Manufacture_model.cs" />
     <Compile Include="Model\Medical_history_model.cs" />
     <Compile Include="Model\NewAccount_model.cs" />
@@ -326,11 +331,11 @@
     <Compile Include="View\Add_Vital_Signs.designer.cs">
       <DependentUpon>Add_Vital_Signs.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Appointment_Booking.cs">
+    <Compile Include="View\AppointmentBooking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Appointment_Booking.designer.cs">
-      <DependentUpon>Appointment_Booking.cs</DependentUpon>
+    <Compile Include="View\AppointmentBooking.designer.cs">
+      <DependentUpon>AppointmentBooking.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Appointment_for_each_patient_group.cs">
       <SubType>Form</SubType>
@@ -433,6 +438,9 @@
     </Compile>
     <Compile Include="View\Daily_Treatment_Count.designer.cs">
       <DependentUpon>Daily_Treatment_Count.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DatePicker.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Day_Wise_Receipt.cs">
       <SubType>Form</SubType>
@@ -572,6 +580,9 @@
     <Compile Include="View\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Main_Calendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\Manufacture.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -583,6 +594,9 @@
     </Compile>
     <Compile Include="View\Monthly_Treatment_Count.designer.cs">
       <DependentUpon>Monthly_Treatment_Count.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OpenRecurringItem.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Purchase.cs">
       <SubType>Form</SubType>
@@ -1041,8 +1055,8 @@
     <EmbeddedResource Include="View\Add_Vital_Signs.resx">
       <DependentUpon>Add_Vital_Signs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Appointment_Booking.resx">
-      <DependentUpon>Appointment_Booking.cs</DependentUpon>
+    <EmbeddedResource Include="View\AppointmentBooking.resx">
+      <DependentUpon>AppointmentBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Appointment_for_each_patient_group.resx">
       <DependentUpon>Appointment_for_each_patient_group.cs</DependentUpon>
@@ -1464,6 +1478,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\upload2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appfilled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appnotfilled.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

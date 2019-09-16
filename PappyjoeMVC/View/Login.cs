@@ -42,6 +42,7 @@ namespace PappyjoeMVC.View
         {
             cntrl = controller;
         }
+        [System.Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint = "DeleteObject")]
         private static extern bool DeleteObject(System.IntPtr hObject);
         private void Login_Paint(object sender, PaintEventArgs e)
         {
@@ -49,6 +50,7 @@ namespace PappyjoeMVC.View
             this.Region = System.Drawing.Region.FromHrgn(ptr);
             DeleteObject(ptr);
         }
+        [System.Runtime.InteropServices.DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern System.IntPtr CreateRoundRectRgn
        (
        int nLeftRect, // x-coordinate of upper-left corner

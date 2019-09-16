@@ -643,8 +643,8 @@ namespace PappyjoeMVC.View
         public string patient_id = "1";
         private void button2_Click(object sender, EventArgs e)
         {
-            var form2 = new Appointment_Booking();
-            Booking_controller controller = new Booking_controller(form2);
+            var form2 = new AppointmentBooking();
+            //Booking_controller controller = new Booking_controller();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
