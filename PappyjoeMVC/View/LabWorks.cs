@@ -256,7 +256,7 @@ namespace PappyjoeMVC.View
 
                                 text = text + " (" + (j + 1) + ")" + tbshade.Rows[j][1].ToString() + " :" + tbshade.Rows[j][2].ToString() + " " + tbshade.Rows[j][5].ToString();
                             }
-                            this.ctrlr.practicedetails();
+                            //this.ctrlr.practicedetails();
                             string res = this.ctrlr.SendSMS(smsName, smsPass, mob_number, "Dear " + strPatientName + ",  Your Lab Test Result : " + text + "--- Regards " + toolStripButton1.Text + "," + strphone);
                             if (res == "SMS message(s) sent")
                             { MessageBox.Show("Laboratory Result  send successfully", "success", MessageBoxButtons.OK, MessageBoxIcon.None); }
@@ -278,7 +278,8 @@ namespace PappyjoeMVC.View
                 }
                 if (smsName != "" && smsPass != "")
                 {
-                    this.ctrlr.tbmain(patient_id, workiddental);
+                    DataTable dt=this.ctrlr.tbmain(patient_id, workiddental);
+                    tbmain(dt);
                 }
             }
             catch (Exception ex)
@@ -403,7 +404,7 @@ namespace PappyjoeMVC.View
                 {
                     k = e.RowIndex;
                     label1.Text = dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[4].Value.ToString();
-                    this.ctrlr.seltype(patient_id, dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    string type=this.ctrlr.seltype(patient_id, dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[2].Value.ToString());
                 }
             }
             catch (Exception ex)
@@ -441,7 +442,6 @@ namespace PappyjoeMVC.View
             //this.Hide();
             form2.ShowDialog();
         }
-       
         public void printdetails(DataTable tbmain)
         {
             try
@@ -595,15 +595,25 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-        public void setController(LabWorks_controller controller)
-        {
-            ctrlr = controller;
-        }
         private void LabWorks_Load(object sender, EventArgs e)
         {
-            this.ctrlr.Get_Patient_Details(patient_id);
-            this.ctrlr.Get_Practice_details();
-            this.ctrlr.Getdata(patient_id);
+            DataTable rs_patients=this.ctrlr.Get_Patient_Details(patient_id);
+            Get_Patient_Details(rs_patients);
+            DataTable clinicname=this.ctrlr.Get_Practice_details();
+            toolStripButton4.Visible = true;
+            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+            if (clinicname.Rows.Count > 0)
+            {
+                string clinicn = "";
+                clinicn = clinicname.Rows[0][0].ToString();
+                toolStripButton1.Text = clinicn.Replace("¤", "'");
+                path = clinicname.Rows[0]["path"].ToString();
+                contact_no = clinicname.Rows[0][2].ToString();
+                string dr=this.ctrlr.Get_DoctorName(doctor_id);
+                Get_DoctorName(dr);
+            }
+            DataTable dt=this.ctrlr.Getdata(patient_id);
+            Getdata(dt);
         }
         public void Get_Patient_Details(DataTable rs_patients)
         {
@@ -626,20 +636,6 @@ namespace PappyjoeMVC.View
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-        }
-        public void Get_Practice_details(DataTable clinicname)
-        {
-            toolStripButton4.Visible = true;
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-            if (clinicname.Rows.Count > 0)
-            {
-                string clinicn = "";
-                clinicn = clinicname.Rows[0][0].ToString();
-                toolStripButton1.Text = clinicn.Replace("¤", "'");
-                path = clinicname.Rows[0]["path"].ToString();
-                contact_no = clinicname.Rows[0][2].ToString();
-                this.ctrlr.Get_DoctorName(doctor_id);
-            }
         }
         public void Get_DoctorName(string docnam)
         {
