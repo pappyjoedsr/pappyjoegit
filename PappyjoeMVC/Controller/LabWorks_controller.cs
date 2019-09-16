@@ -10,74 +10,79 @@ namespace PappyjoeMVC.Controller
 {
     public class LabWorks_controller
     {
-        LabWorks_interface intr;
+        SMS_model s = new SMS_model();
+        Common_model cmdl = new Common_model();
         LabWorks_model mdl = new LabWorks_model();
-        common_model cmdl = new common_model();
         Daily_Invoice_Report_model dm = new Daily_Invoice_Report_model();
-        public LabWorks_controller(LabWorks_interface inttr)
-        {
-            intr = inttr;
-            intr.setController(this);
-        }
-        public void Get_Patient_Details(string patid)
+        public DataTable Get_Patient_Details(string patid)
         {
             DataTable dt = cmdl.Get_Patient_Details(patid);
-            intr.Get_Patient_Details(dt);
+            return dt;
         }
-        public void tbmain(string patid,string workid)
+        public DataTable tbmain(string patid,string workid)
         {
             DataTable dt = mdl.tbmain(patid,workid);
-            intr.tbmain(dt);
+            return dt;
         }
-        public void Get_Practice_details()
+        public string SendSMS(string User, string password, string Mobile_Number, string Message)
+        {
+            string val = s.SendSMS(User, password, Mobile_Number, Message);
+            return val;
+        }
+        public DataTable Get_Practice_details()
         {
             DataTable dt = cmdl.Get_Practice_details();
-            intr.Get_Practice_details(dt);
+            return dt;
         }
-        public void Get_DoctorName(string doctrid)
+        public DataTable tbshade(string patid, string wrkname, string workid)
+        {
+            DataTable dt = mdl.tbshade(patid,wrkname,workid);
+            return dt;
+        }
+        public string Get_DoctorName(string doctrid)
         {
             string dt = cmdl.Get_DoctorName(doctrid);
-            intr.Get_DoctorName(dt);
+            return dt;
         }
-        public void Getdata(string patid)
+        public DataTable Getdata(string patid)
         {
             DataTable dt = mdl.Getdata(patid);
-            intr.Getdata(dt);
+            return dt;
         }
-        public void practicedetails()
+        public DataTable practicedetails()
         {
             DataTable dt =dm.practicedetails();
-            intr.practicedetails(dt);
+            return dt;
         }
-        public void printdetails(string patid,string workname,string wrkiddental)
+        public DataTable printdetails(string patid,string workname,string wrkiddental)
         {
             DataTable dt = mdl.printdetails(patid,workname,wrkiddental);
-            intr.printdetails(dt);
+            return dt;
         }
-        public void seltype(string patid,string id)
+        public string seltype(string patid,string id)
         {
-            DataTable dt = mdl.seltype(patid,id);
-            intr.seltype(dt);
+            string dt = mdl.seltype(patid,id);
+            return dt;
         }
-        public void getprev(string doctrid)
+        public string getprev(string doctrid)
         {
             string e = mdl.getprev(doctrid);
-            intr.getprev(e);
+            return e;
         }
-        public void smsinfo()
+        public DataTable smsinfo()
         {
             DataTable dt = mdl.smsinfo();
-            intr.smsinfo(dt);
+            return dt;
         }
-        public void Patient_search(string txtbox)
+        public DataTable Patient_search(string txtbox)
         {
             DataTable dt= cmdl.Patient_search(txtbox);
-            intr.Patient_search(dt);
+            return dt;
         }
-        public void doctr_privillage_for_addnewPatient(string doctrid)
+        public string doctr_privillage_for_addnewPatient(string doctrid)
         {
             string t = cmdl.doctr_privillage_for_addnewPatient(doctrid);
-            intr.doctr_privillage_for_addnewPatient(t);
+            return t;
         }
     }
 }

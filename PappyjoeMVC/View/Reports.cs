@@ -1843,6 +1843,9 @@ namespace PappyjoeMVC.View
             //this.Hide();
             form2.ShowDialog();
         }
+        private void toolStripButton9_Click(object sender, EventArgs e)
+        {
+        }
         private void Chk_Type_CheckedChanged(object sender, EventArgs e)
         {
             if (Chk_Type.Checked)

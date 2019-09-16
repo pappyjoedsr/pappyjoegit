@@ -122,6 +122,7 @@
     <Compile Include="Controller\Item_List_Controller.cs" />
     <Compile Include="Controller\LabDental_controller.cs" />
     <Compile Include="Controller\LabMedical_controller.cs" />
+    <Compile Include="Controller\LabResultEntry_controller.cs" />
     <Compile Include="Controller\LabtrackingReport_controller.cs" />
     <Compile Include="Controller\LabWorks_controller.cs" />
     <Compile Include="Controller\Ledger_controller.cs" />
@@ -242,6 +243,7 @@
     <Compile Include="Model\Item_List_Model.cs" />
     <Compile Include="Model\LabDental_model.cs" />
     <Compile Include="Model\LabMedical_model.cs" />
+    <Compile Include="Model\LabResultEntry_model.cs" />
     <Compile Include="Model\LabtrackingReport_model.cs" />
     <Compile Include="Model\LabWorks_model.cs" />
     <Compile Include="Model\Ledger_model.cs" />
@@ -577,6 +579,12 @@
     </Compile>
     <Compile Include="View\Item_List.Designer.cs">
       <DependentUpon>Item_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LabResultEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LabResultEntry.designer.cs">
+      <DependentUpon>LabResultEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LabtrackingReport.cs">
       <SubType>Form</SubType>
@@ -1196,6 +1204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Item_List.resx">
       <DependentUpon>Item_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LabResultEntry.resx">
+      <DependentUpon>LabResultEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LabtrackingReport.resx">
       <DependentUpon>LabtrackingReport.cs</DependentUpon>

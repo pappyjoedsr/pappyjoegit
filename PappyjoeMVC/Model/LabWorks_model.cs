@@ -20,9 +20,9 @@ namespace PappyjoeMVC.Model
             DataTable tbmain = db.table(" SELECT distinct B.work_name,D.Main_test,C.NormalValueM,C.Name,C.NormalValueF,B.id,A.results,A.Units FROM lab_medi_labresult A INNER JOIN tbl_lab_main B ON A.Resultmain_id=B.id INNER JOIN lab_medi_test C ON A.test_id=C.id inner join tbl_lab_medi_maintest D on D.id=A.maintest_id WHERE B.pt_id='" + patid + "' and B.id='" + wrkiddental + "'");
             return tbmain;
         }
-        public DataTable seltype(string patid, string id)
+        public string seltype(string patid, string id)
         {
-            DataTable type = db.table("SELECT distinct A.type from tbl_lab_main A inner join tbl_patient B on A.pt_id=B.id inner join tbl_doctor C on A.dr_id=C.id WHERE A.pt_id='" + patid + "'and A.id='" + id + "'");
+            string type = db.scalar("SELECT distinct A.type from tbl_lab_main A inner join tbl_patient B on A.pt_id=B.id inner join tbl_doctor C on A.dr_id=C.id WHERE A.pt_id='" + patid + "'and A.id='" + id + "'");
             return type;
         }
         public string getprev(string doctrid)

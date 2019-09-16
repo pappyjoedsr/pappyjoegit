@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class LabWorks : Form, LabWorks_interface
+    public partial class LabWorks : Form
     {
         public LabWorks()
         {
@@ -21,124 +21,109 @@ namespace PappyjoeMVC.View
         }
         StreamWriter sWrite;
         public int k, Dexist =0;
-        LabWorks_controller ctrlr;
-        sms_model send_sms_class = new sms_model();
         Connection db = new Connection();
-        LabWorks_model m = new LabWorks_model();
-        Daily_Invoice_Report_model dm = new Daily_Invoice_Report_model();
+        LabWorks_controller ctrlr = new LabWorks_controller();
         public string name = "", result = "", units = "", text = "", smsName = "", smsPass = "";
         public string addr = "", loc = "", gen = "", patient_id = "", age = "", address = "", sexage = "", Apppath = "", doctor_id = "", typ = "", n = "", workiddental = "", workname = "", strPatientName = "", mob_number = "", path = "", contact_no = "", logo_name = "", clinicn = "", strclinicname = "", strStreet = "", stremail = "", strwebsite = "", strphone = "";
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
-            //var form2 = new PappyjoeMVC.View.DOCTOR_PROFILE();
-            //form2.doctor_id = doctor_id;
-            //form2.Show();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            var form2 = new Doctor_Profile();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            form2.ShowDialog();
         }
         private void label44_Click(object sender, EventArgs e)
         {
-            //var form2 = new PappyjoeMVC.View.vital_signs();
-            //form2.doctor_id = doctor_id;
-            //form2.patient_id = patient_id;
-            //form2.Show();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            var form2 = new Vital_Signs();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            form2.ShowDialog();
         }
         private void labeltreatment_Click(object sender, EventArgs e)
         {
-            //var form2 = new PappyjoeMVC.View.treatment_plan(); 
-            //form2.doctor_id = doctor_id;
-            //form2.patient_id = patient_id;
-            //form2.Show();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            var form2 = new Treatment_Plans();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            form2.ShowDialog();
         }
         private void labelfinished_Click(object sender, EventArgs e)
         {
-            //var form2 = new PappyjoeMVC.View.Completed_Procedure();
-            //form2.doctor_id = doctor_id;
-            //form2.patient_id = patient_id;
-            //form2.Show();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            var form2 = new Finished_Procedure();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            form2.ShowDialog();
         }
         private void labelprescription_Click(object sender, EventArgs e)
         {
-            //var form2 = new PappyjoeMVC.View.Prescriptions();
-            //form2.doctor_id = doctor_id;
-            //form2.patient_id = patient_id;
-            //form2.Show();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            var form2 = new Prescription_Show();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            form2.ShowDialog();
         }
         private void labelattachment_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.Attachments();
+            var form2 = new Attachments();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            form2.Show();
             form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
+            form2.ShowDialog();
         }
         private void labelpayment_Click(object sender, EventArgs e)
         {
-            //var form2 = new PappyjoeMVC.View.payments();
-            //form2.doctor_id = doctor_id;
-            //form2.patient_id = patient_id;
-            //form2.Show();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            var form2 = new Receipt();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            form2.ShowDialog();
         }
         private void labelledger_Click(object sender, EventArgs e)
         {
-            //var form2 = new PappyjoeMVC.View.Ledger();
-            //form2.patient_id = patient_id;
-            //form2.doctor_id = doctor_id;
-            //form2.Show();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            var form2 = new Ledger();
+            form2.patient_id = patient_id;
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            form2.ShowDialog();
         }
         private void labelprofile_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.patient_profile_details();
+            var form2 = new Patient_Profile_Details();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            form2.Show();
             form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
+            form2.ShowDialog();
         }
         private void labelappointment_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.Show_Appointment();
+            var form2 = new Show_Appointment();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            form2.Show();
             form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
+            form2.ShowDialog();
         }
         private void toolStripButton12_Click(object sender, EventArgs e)
         {
-            //var frmAddlabwork = new PappyjoeMVC.View.LabtrackingReport();
-            //frmAddlabwork.doctor_id = doctor_id;
-            //frmAddlabwork.Show();
-            //frmAddlabwork.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            var frmAddlabwork = new LabtrackingReport();
+            frmAddlabwork.doctor_id = doctor_id;
+            frmAddlabwork.patient_id = patient_id;
+            frmAddlabwork.Closed += (sender1, args) => this.Close();
+            frmAddlabwork.ShowDialog();
         }
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.PracticeDetails();
+            var form2 = new PappyjoeMVC.View.Practice_Details();
             form2.doctor_id = doctor_id;
-            form2.Show();
             form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
+            form2.ShowDialog();
         }
         private void logOuntToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //var form2 = new PappyjoeMVC.View.Login();
-            //form2.Show();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            var form2 = new PappyjoeMVC.View.Login();
+            form2.Closed += (sender1, args) => this.Close();
+            form2.ShowDialog();
         }
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
@@ -146,10 +131,7 @@ namespace PappyjoeMVC.View
         }
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
-            this.ctrlr.Patient_search(toolStripTextBox1.Text);
-        }
-        public void Patient_search(DataTable dtdr)
-        {
+            DataTable dtdr=this.ctrlr.Patient_search(toolStripTextBox1.Text);
             if (toolStripTextBox1.Text != "")
             {
                 listpatientsearch.DataSource = dtdr;
@@ -170,20 +152,40 @@ namespace PappyjoeMVC.View
                 listpatientsearch.Visible = false;
             }
         }
+        private void toolStripButton9_Click(object sender, EventArgs e)
+        {
+        }
+        private void labl_Lab_Click(object sender, EventArgs e)
+        {
+            var form2 = new LabWorks();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            form2.ShowDialog();
+        }
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            this.ctrlr.practicedetails();
-            workname = label1.Text;
-            this.ctrlr.printdetails(patient_id, workname, workiddental);
+                DataTable dtp=this.ctrlr.practicedetails();
+                if (dtp.Rows.Count > 0)
+                {
+                    clinicn = dtp.Rows[0]["name"].ToString();
+                    strclinicname = clinicn.Replace("¤", "'");
+                    strphone = dtp.Rows[0]["contact_no"].ToString();
+                    strStreet = dtp.Rows[0]["street_address"].ToString();
+                    stremail = dtp.Rows[0]["email"].ToString();
+                    strwebsite = dtp.Rows[0]["website"].ToString();
+                }
+                workname = label1.Text;
+                DataTable dt=this.ctrlr.printdetails(patient_id, workname, workiddental);
+                printdetails(dt);
         }
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            var form = new PappyjoeMVC.View.dentalwork();
+            var form = new PappyjoeMVC.View.Dentalwork();
             form.patient_id = patient_id;
             form.doctor_id = doctor_id;
             form.workid = workiddental;
-            dentalwork_controller controller = new dentalwork_controller(form);
-            form.Show();
+            form.ShowDialog();
         }
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
@@ -195,22 +197,46 @@ namespace PappyjoeMVC.View
             form.patient_id = patient_id;
             form.doctor_id = doctor_id;
             form.workid = workiddental;
-            LabResultEntry_controller controller = new LabResultEntry_controller(form);
-            form.Show();
+            form.ShowDialog();
         }
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.patient_profile_details();
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
-            form2.Show();
             form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
+            form2.ShowDialog();
         }
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
-            this.ctrlr.doctr_privillage_for_addnewPatient(doctor_id);
+            try
+            {
+                string doctrid = this.ctrlr.doctr_privillage_for_addnewPatient(doctor_id);
+                if (doctor_id != "1")
+                {
+                    if (int.Parse(doctrid) > 0)
+                    {
+                        MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                    else
+                    {
+                        var form2 = new PappyjoeMVC.View.Add_New_Patients();
+                        form2.doctor_id = doctor_id;
+                        form2.Closed += (sender1, args) => this.Close();
+                        form2.ShowDialog();
+                    }
+                }
+                else
+                {
+                    var form2 = new PappyjoeMVC.View.Add_New_Patients();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    form2.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public void tbmain(DataTable dt)
         {
@@ -231,7 +257,7 @@ namespace PappyjoeMVC.View
                                 text = text + " (" + (j + 1) + ")" + tbshade.Rows[j][1].ToString() + " :" + tbshade.Rows[j][2].ToString() + " " + tbshade.Rows[j][5].ToString();
                             }
                             this.ctrlr.practicedetails();
-                            string res = send_sms_class.SendSMS(smsName, smsPass, mob_number, "Dear " + strPatientName + ",  Your Lab Test Result : " + text + "--- Regards " + toolStripButton1.Text + "," + strphone);
+                            string res = this.ctrlr.SendSMS(smsName, smsPass, mob_number, "Dear " + strPatientName + ",  Your Lab Test Result : " + text + "--- Regards " + toolStripButton1.Text + "," + strphone);
                             if (res == "SMS message(s) sent")
                             { MessageBox.Show("Laboratory Result  send successfully", "success", MessageBoxButtons.OK, MessageBoxIcon.None); }
                         }
@@ -258,104 +284,58 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-        public void doctr_privillage_for_addnewPatient(string doctrid)
-        {
-            try
-            {
-                if (doctor_id != "1")
-                {
-                    string docid = doctrid;
-                    if (int.Parse(docid) > 0)
-                    {
-                        MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    }
-                    else
-                    {
-                        var form2 = new PappyjoeMVC.View.AddNewPatients();
-                        form2.doctor_id = doctor_id;
-                        form2.Show();
-                        form2.Closed += (sender1, args) => this.Close();
-                        this.Hide();
-                    }
-                }
-                else
-                {
-                    var form2 = new PappyjoeMVC.View.AddNewPatients();
-                    form2.doctor_id = doctor_id;
-                    form2.Show();
-                    form2.Closed += (sender1, args) => this.Close();
-                    this.Hide();
-                }
-            }
-            catch (Exception ex)
-            { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-        }
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.Expense();
+            var form2 = new Expense();
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
         }
-        private void toolStripButton11_Click(object sender, EventArgs e)
-        {
-            var form2 = new PappyjoeMVC.View.consent();
-            form2.doctor_id = doctor_id;
-            form2.Show();
-        }
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
-            //var form2 = new PappyjoeMVC.View.Reports();
-            //form2.doctor_id = doctor_id;
-            //form2.Show();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            var form2 = new Reports();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            form2.ShowDialog();
         }
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            this.ctrlr.getprev(doctor_id);
-        }
-        public void getprev(string id)
-        {
+            string id=this.ctrlr.getprev(doctor_id);
             if (doctor_id != "1")
             {
-                string id1 = id;
-                if (int.Parse(id1) > 0)
+                if (int.Parse(id) > 0)
                 {
                     MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
                 else
                 {
-                    //var form2 = new PappyjoeMVC.View.FrmStockReport();
-                    //form2.doctor_id = doctor_id;
-                    //form2.Show();
-                    //form2.Closed += (sender1, args) => this.Close();
-                    //this.Hide();
+                    var form2 = new StockReport();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    form2.ShowDialog();
                 }
             }
             else
             {
-                //var form2 = new PappyjoeMVC.View.FrmStockReport();
-                //form2.doctor_id = doctor_id;
-                //form2.Show();
-                //form2.Closed += (sender1, args) => this.Close();
-                //this.Hide();
+                var form2 = new StockReport();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                form2.ShowDialog();
             }
         }
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.Communication();
+            var form2 = new Communication();
             form2.doctor_id = doctor_id;
-            form2.Show();
+            form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
+            form2.ShowDialog();
         }
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.patients();
+            var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            form2.Show();
             form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
+            form2.ShowDialog();
         }
         public void seltype(DataTable type)
         {
@@ -398,7 +378,6 @@ namespace PappyjoeMVC.View
                         string workid = dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[2].Value.ToString();
                         form2.workid = workid;
                         form2.flag = "1";
-                        LabResultEntry_controller controller = new LabResultEntry_controller(form2);
                         form2.ShowDialog();
                     }
                     else if (dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[5].Value.ToString() == "Dental")
@@ -406,13 +385,12 @@ namespace PappyjoeMVC.View
                         workiddental = dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[2].Value.ToString();
                         if (workiddental != "")
                         {
-                            var form2 = new PappyjoeMVC.View.dentalwork();
+                            var form2 = new PappyjoeMVC.View.Dentalwork();
                             form2.patient_id = patient_id;
                             form2.doctor_id = doctor_id;
                             string workid = dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[2].Value.ToString();
                             form2.workid = workid;
                             form2.flag = "1";
-                            dentalwork_controller controller = new dentalwork_controller(form2);
                             form2.ShowDialog();
                         }
                         else
@@ -433,52 +411,37 @@ namespace PappyjoeMVC.View
         }
         private void labelinvoice_Click(object sender, EventArgs e)
         {
-            //var form2 = new PappyjoeMVC.View.invoice();
-            //form2.doctor_id = doctor_id;
-            //form2.patient_id = patient_id;
-            //form2.Show();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            var form2 = new Invoice();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            form2.ShowDialog();
         }
         private void labelclinical_Click(object sender, EventArgs e)
         {
-            //var form2 = new PappyjoeMVC.View.Clinical_findings();
-            //form2.doctor_id = doctor_id;
-            //form2.patient_id = patient_id;
-            //form2.Show();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            var form2 = new Clinical_Findings();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            form2.ShowDialog();
         }
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            //var form2 = new CalendarControl.frmMain();
-            //form2.doctor_id = doctor_id;
-            //form2.Show();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            form2.ShowDialog();
         }
         private void button1_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Add_Labwork();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Add_Labwork_controller controller = new Add_Labwork_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             //this.Hide();
             form2.ShowDialog();
         }
-        public void practicedetails(DataTable dtp)
-        {
-            if (dtp.Rows.Count > 0)
-            {
-                clinicn = dtp.Rows[0]["name"].ToString();
-                strclinicname = clinicn.Replace("¤", "'");
-                strphone = dtp.Rows[0]["contact_no"].ToString();
-                strStreet = dtp.Rows[0]["street_address"].ToString();
-                stremail = dtp.Rows[0]["email"].ToString();
-                strwebsite = dtp.Rows[0]["website"].ToString();
-            }
-        }
+       
         public void printdetails(DataTable tbmain)
         {
             try
