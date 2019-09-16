@@ -11,7 +11,7 @@ using PappyjoeMVC.Controller;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
-    public partial class Add__invoice : Form,Add_invoice_interface
+    public partial class Add__invoice : Form
     {
         public string doctor_id = "0"; public string staff_id = "";
         public string patient_id = "";
@@ -27,10 +27,9 @@ namespace PappyjoeMVC.View
         Decimal P_tax = 0;
         string stock_id = "0";
         public string[] teeth = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
-        Add_Invoice_controller cntrl;
+        Add_Invoice_controller cntrl=new Add_Invoice_controller();
         Common_model cmodel = new Common_model();
         public string invoiceid = "";
-        Add_Finished_Treatment_model fmodel = new Add_Finished_Treatment_model();
         public string jhjj;
         public Add__invoice()
         {
@@ -40,22 +39,16 @@ namespace PappyjoeMVC.View
         private void Add__invoice_Load(object sender, EventArgs e)
         {
             toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
-            DataTable admin = this.cntrl.get_adminid();//  db.table("select id from tbl_doctor where login_type='admin'");
-            if (admin.Rows.Count > 0)
+            string admin = this.cntrl.get_adminid();
+            if (admin!="")
             {
-                if (admin.Rows[0]["id"].ToString() != doctor_id)
+                if (admin != doctor_id)
                 {
-                    admin_id = admin.Rows[0]["id"].ToString();
+                    admin_id = admin;
                 }
             }
-            //DataTable clinicname = cmodel.Get_CompanyNAme();// db.table("select name from tbl_practice_details");
-            //if (clinicname.Rows.Count > 0)
-            //{
-            //    string clinicn = "";
-            //    clinicn = clinicname.Rows[0]["name"].ToString();
-                toolStripButton1.Text = this.cntrl.Load_CompanyName();// clinicn.Replace("¤", "'");
-            //}
-            string docnam = cmodel.Get_DoctorName(doctor_id);// db.table("select doctor_name from tbl_doctor Where id='" + doctor_id + "'");
+                toolStripButton1.Text = this.cntrl.Load_CompanyName();
+            string docnam = cmodel.Get_DoctorName(doctor_id);
             if (docnam != "")
             {
                 toolStripTextDoctor.Text = "Logged As:Dr." + docnam;
@@ -63,9 +56,7 @@ namespace PappyjoeMVC.View
             panel3.Hide();
             panel6.Hide();
             DGV_Invoice.Hide();
-            //patient_id = ptid;
             label14.Hide();
-            //listpatientsearch.Hide();
             Cmb_batch.Hide();
             foreach (DataGridViewColumn column in DGV_Invoice.Columns) 
             {
@@ -75,7 +66,7 @@ namespace PappyjoeMVC.View
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            DataTable dt = cmodel.get_all_doctorname();// db.table("select DISTINCT id,doctor_name from tbl_doctor  where login_type='doctor' or login_type='admin' and activate_login='yes'  order by doctor_name");
+            DataTable dt = cmodel.get_all_doctorname();
             if (dt.Rows.Count > 0)
             {
                 Cmb_Doctor.DataSource = dt;
@@ -98,20 +89,19 @@ namespace PappyjoeMVC.View
                     Cmb_Doctor.SelectedIndex = dr_index;
                 }
             }
-            DataTable patient = cmodel.Get_Patient_id_NAme(patient_id);// db.table("select pt_name,pt_id from tbl_patient where id='" + ptid + "'");
+            DataTable patient = cmodel.Get_Patient_id_NAme(patient_id);
             if (patient.Rows.Count > 0)
             {
                 linkL_Name.Text = patient.Rows[0]["pt_name"].ToString();
-                //patientid = patient.Rows[0]["pt_id"].ToString();
                 linkLabel_id.Text = patient.Rows[0]["pt_id"].ToString();
             }
-            System.Data.DataTable pay = cmodel.get_total_payment(patient_id);// db.table("select total_payment from tbl_invoices where pt_id='" + ptid + "'");
+            System.Data.DataTable pay = cmodel.get_total_payment(patient_id);
             if (pay.Rows.Count > 0)
             {
                 lab_due.Text = pay.Rows[0]["total_payment"].ToString() + "due";
             }
             DataTable invno = null;
-            invno = this.cntrl.Get_invoice_prefix();// db.table("select invoice_prefix,invoice_number from tbl_invoice_automaticid where invoive_automation='Yes'");
+            invno = this.cntrl.Get_invoice_prefix();
             if (invno.Rows.Count == 0)
             {
                 text_billno.ReadOnly = false;
@@ -124,7 +114,7 @@ namespace PappyjoeMVC.View
             txt_Discount.Hide();
             CMB_Discount.Hide();
             txt_SearchProcedure.Visible = true;
-            DataTable dt5 = this.cntrl.load_tax();// db.table("select id,tax_name from tbl_tax");
+            DataTable dt5 = this.cntrl.load_tax();
             if (dt5.Rows.Count > 0)
             {
                 Cmb_tax.DataSource = dt5;
@@ -132,16 +122,18 @@ namespace PappyjoeMVC.View
                 Cmb_tax.ValueMember = "id";
                 Cmb_tax.Text = "";
             }
-            this.cntrl.get_completed_procedure_details(patient_id);// DataTable dt_tp1 = db.table("SELECT id, procedure_name,procedure_id,cost from tbl_completed_procedures where pt_id='" + patient_id + "' and status='1'");
-            this.cntrl.get_planed_procedure(patient_id);
-            this.cntrl.load_AllProcedures();
-            //fmodel.load_proceduresgrid();
-            //DataTable dt_tp = db.table("SELECT id, plan_main_id,procedure_name,procedure_id,cost from tbl_treatment_plan where pt_id='" + patient_id + "' and status='1'");
+            DataTable dtb= this.cntrl.get_completed_procedure_details(patient_id);
+            Load_procedureGrid(dtb);
+            DataTable dtb1= this.cntrl.get_planed_procedure(patient_id);
+            Load_planed_procedure(dtb1);
+           DataTable dt_load= this.cntrl.load_AllProcedures();
+            Load_searchProcedures(dtb);
             if (invoiceid != "")
             {
                 btn_SaveInvoice.Text = "Update";
                 text_billno.Text = invoiceid;
-               this.cntrl.Get_invoice_deatils(patient_id, invoiceid);// db.table("select * from tbl_invoices where pt_id='" + ptid + "' and invoice_no='" + invoiceid + "'");
+               DataTable dtb_1= this.cntrl.Get_invoice_deatils(patient_id, invoiceid);
+                load_invoice_details(dtb);
             }
             if (complete_proce_id != "")
             {
@@ -154,11 +146,7 @@ namespace PappyjoeMVC.View
                 string[] parts = value.Split(new string[] { "," }, StringSplitOptions.None);
                 for (int i = 0; i < parts.Length; i++)
                 {
-                    System.Data.DataTable rs_plan = this.cntrl.load_completed_procedure(parts[i]);//  db.table("select A.procedure_id," +
-                    //"A.procedure_name,A.quantity,A.cost," +
-                    //"A.discount_type,A.discount,A.total," +
-                    //"A.discount_inrs,A.note,A.date," +
-                    //"A.dr_id,A.tooth,B.doctor_name,A.completed_id from tbl_completed_procedures as A join tbl_doctor as B on B.id=A.dr_id where A.id='" + parts[i] + "'");
+                    System.Data.DataTable rs_plan = this.cntrl.load_completed_procedure(parts[i]);
                     if (rs_plan.Rows.Count > 0)
                     {
                         DGV_Invoice.Rows.Add(rs_plan.Rows[0]["procedure_id"].ToString(), rs_plan.Rows[0]["procedure_name"].ToString(), rs_plan.Rows[0]["cost"].ToString(), rs_plan.Rows[0]["quantity"].ToString(), rs_plan.Rows[0]["discount"].ToString(), rs_plan.Rows[0]["discount_type"].ToString(), "NA", rs_plan.Rows[0]["total"].ToString(), rs_plan.Rows[0]["discount_inrs"].ToString(), "0", rs_plan.Rows[0]["dr_id"].ToString(), rs_plan.Rows[0]["doctor_name"].ToString(), rs_plan.Rows[0]["note"].ToString(), rs_plan.Rows[0]["tooth"].ToString(), "0", parts[i], rs_plan.Rows[0]["date"].ToString(), "");
@@ -178,7 +166,6 @@ namespace PappyjoeMVC.View
                 panel3.Show();
                 panel6.Show();
             }
-
         }
         public void SetController(Add_Invoice_controller controller)
         {
@@ -235,7 +222,7 @@ namespace PappyjoeMVC.View
                     string drid = dt2.Rows[i]["dr_id"].ToString();
                     try
                     {
-                        string  dr_Name = cmodel.Get_DoctorName(drid);//  db.scalar("select doctor_name from tbl_doctor where id='" + drid + "'");
+                        string  dr_Name = cmodel.Get_DoctorName(drid);
                         DGV_Invoice.Rows.Add(dt2.Rows[i][4].ToString(), dt2.Rows[i][5].ToString(), dt2.Rows[i][6].ToString(), dt2.Rows[i][7].ToString(), dt2.Rows[i][8].ToString(), dt2.Rows[i][9].ToString(), dt2.Rows[i][10].ToString(), dt2.Rows[i][18].ToString(), dt2.Rows[i][19].ToString(), dt2.Rows[i][17].ToString(), dr_Name, "0");
                         i++;
                         DGV_Invoice.Rows[DGV_Invoice.Rows.Count - 1].Cells[17].Value = PappyjoeMVC.Properties.Resources.deleteicon;
@@ -259,9 +246,12 @@ namespace PappyjoeMVC.View
         private void txt_SearchProcedure_KeyUp(object sender, KeyEventArgs e)
         {
             DGV_Procedure.RowCount = 0;
-            this.cntrl.search_procedure_completed(patient_id, txt_SearchProcedure.Text);
-            this.cntrl.Search_procedure_planed(patient_id, txt_SearchProcedure.Text);
-            this.cntrl.search_procedures(txt_SearchProcedure.Text);
+            DataTable dt_tp1 = this.cntrl.search_procedure_completed(patient_id, txt_SearchProcedure.Text);
+            Load_procedureGrid(dt_tp1);
+            DataTable dt_planed=  this.cntrl.Search_procedure_planed(patient_id, txt_SearchProcedure.Text);
+            Load_planed_procedure(dt_planed);
+            DataTable dtb_procedure= this.cntrl.search_procedures(txt_SearchProcedure.Text);
+            Load_searchProcedures(dtb_procedure);
         }
 
         private void txt_SearchProcedure_Click(object sender, EventArgs e)
@@ -274,7 +264,6 @@ namespace PappyjoeMVC.View
             panel3.Show();
             panel6.Show();
             DGV_Invoice.Show();
-            //label18.Hide();
             panel1.Hide();
             txt_Discount.Hide();
             CMB_Discount.Hide();
@@ -287,10 +276,9 @@ namespace PappyjoeMVC.View
                 id = DGV_Procedure.Rows[r].Cells[0].Value.ToString();
                 P_Plan_id = DGV_Procedure.Rows[r].Cells[4].Value.ToString();
                 P_Completed_id = DGV_Procedure.Rows[r].Cells[5].Value.ToString();
-                //P_tax = 0;
                 string idd = id;
                 panel2.Show();
-                DataTable dt = this.cntrl.get_procedure_Name(id);// db.table("select name,cost from tbl_addproceduresettings where id ='" + id + "'");
+                DataTable dt = this.cntrl.get_procedure_Name(id);
                 if (dt.Rows.Count > 0)
                 {
                     procedure_item.Text = dt.Rows[0]["name"].ToString();
@@ -307,49 +295,13 @@ namespace PappyjoeMVC.View
                 Lab_teeth.Text = "Teeth";
                 if (P_Plan_id != "0")
                 {
-                    this.cntrl.Get_treatment_details(P_Plan_id);
-                    //DataTable dt_treatment = db.table("select procedure_name,quantity,cost,discount_type,discount,discount_inrs,note,tooth,total from tbl_treatment_plan where id ='" + P_Plan_id + "'");
-                    //if (dt_treatment.Rows.Count > 0)
-                    //{
-                    //    procedure_item.Text = dt_treatment.Rows[0]["procedure_name"].ToString();
-                    //    NMUP_Unit.Text = dt_treatment.Rows[0]["quantity"].ToString();
-                    //    txt_Discount.Text = dt_treatment.Rows[0]["discount"].ToString();
-                    //    CMB_Discount.Text = dt_treatment.Rows[0]["discount_type"].ToString();
-                    //    RTB_Notes.Text = dt_treatment.Rows[0]["note"].ToString();
-                    //    RTB_Notes.Width = 500;
-                    //    Lab_Cost.Text = dt_treatment.Rows[0]["cost"].ToString();
-                    //    lab_Total.Text = Convert.ToString(decimal.Round(Convert.ToDecimal(dt_treatment.Rows[0]["total"].ToString()), 2, MidpointRounding.AwayFromZero));
-                    //    label33.Text = dt_treatment.Rows[0]["tooth"].ToString();
-                    //    if (txt_Discount.Text != "" && txt_Discount.Text != "0")
-                    //    {
-                    //        lab_AddDiscount.Hide();
-                    //        txt_Discount.Show();
-                    //        CMB_Discount.Show();
-                    //    }
-                    //}
+                    DataTable dt_tratmnt= this.cntrl.Get_treatment_details(P_Plan_id);
+                    Fill_Alltreatment_deatils(dt_tratmnt);
                 }
                 if (P_Completed_id != "0")
                 {
-                    this.cntrl.Get_completed_table_details(P_Completed_id);
-                    //DataTable dt_treatment = db.table("select procedure_name,quantity,cost,discount_type,discount,discount_inrs,note,tooth,total from tbl_completed_procedures where id ='" + P_Completed_id + "'");
-                    //if (dt_treatment.Rows.Count > 0)
-                    //{
-                    //    procedure_item.Text = dt_treatment.Rows[0]["procedure_name"].ToString();
-                    //    NMUP_Unit.Text = dt_treatment.Rows[0]["quantity"].ToString();
-                    //    txt_Discount.Text = dt_treatment.Rows[0]["discount"].ToString();
-                    //    CMB_Discount.Text = dt_treatment.Rows[0]["discount_type"].ToString();
-                    //    RTB_Notes.Text = dt_treatment.Rows[0]["note"].ToString();
-                    //    RTB_Notes.Width = 500;
-                    //    Lab_Cost.Text = dt_treatment.Rows[0]["cost"].ToString();
-                    //    lab_Total.Text = Convert.ToString(decimal.Round(Convert.ToDecimal(dt_treatment.Rows[0]["total"].ToString()), 2, MidpointRounding.AwayFromZero));
-                    //    label33.Text = dt_treatment.Rows[0]["tooth"].ToString();
-                    //    if (txt_Discount.Text != "" && txt_Discount.Text != "0")
-                    //    {
-                    //        lab_AddDiscount.Hide();
-                    //        txt_Discount.Show();
-                    //        CMB_Discount.Show();
-                    //    }
-                    //}
+                    DataTable dtb= this.cntrl.Get_completed_table_details(P_Completed_id);
+                    Fill_Alltreatment_deatils(dtb);
                 }
                 Chk_MultiplyCost.Checked = false;
                 CHk_FullMouth.Checked = false;
@@ -458,7 +410,7 @@ namespace PappyjoeMVC.View
                         if (!String.IsNullOrWhiteSpace(NMUP_Unit.Text))
                         {
                             int qty = 0;
-                            DataTable testQty = this.cntrl.Get_quantiry_fromStock(stock_id);// db.table("select quantity from tbl_add_stock where id='" + stock_id + "'");
+                            DataTable testQty = this.cntrl.Get_quantiry_fromStock(stock_id);
                             if (testQty.Rows.Count > 0)
                             {
                                 qty = int.Parse(testQty.Rows[0][0].ToString());
@@ -482,7 +434,7 @@ namespace PappyjoeMVC.View
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -518,8 +470,6 @@ namespace PappyjoeMVC.View
                 lab_Total.Text = Convert.ToString(Convert.ToDecimal(lab_Total.Text) + ((qty1 * cost) * P_tax / 100));
                 taxrstotal = (qty1 * cost) * P_tax / 100;
             }
-            ///
-
         }
 
         private void lab_AddDiscount_Click(object sender, EventArgs e)
@@ -582,7 +532,6 @@ namespace PappyjoeMVC.View
         private void lab_AddTax_Click(object sender, EventArgs e)
         {
             Cmb_tax.Show();
-            //temptotal = lab_Total.Text.ToString();
             lab_AddTax.Hide();
         }
 
@@ -2033,50 +1982,10 @@ namespace PappyjoeMVC.View
                         if (CMB_Discount.SelectedIndex == 0)
                         {
                             delete_gridrow_calculation();
-                            //decimal totcost = 0, total2 = 0;
-                            //float discount1, dicount2 = 0, tax1 = 0;
-                            //for (int i = 0; i < DGV_Invoice.Rows.Count; i++)
-                            //{
-                            //    decimal unitcost = decimal.Parse(DGV_Invoice.Rows[i].Cells[2].Value.ToString());
-                            //    decimal quantity = decimal.Parse(DGV_Invoice.Rows[i].Cells[3].Value.ToString());
-                            //    decimal totalcost = unitcost * quantity;
-                            //    totcost = totcost + totalcost;
-                            //    txt_TotalCost.Text = totcost.ToString();
-                            //    decimal total1 = Convert.ToDecimal(DGV_Invoice.Rows[i].Cells[7].Value.ToString());
-                            //    total2 = total2 + total1;
-                            //    txt_GrantTotal.Text = total2.ToString();
-                            //    float dicount = float.Parse(DGV_Invoice.Rows[i].Cells[8].Value.ToString());
-                            //    discount1 = float.Parse(totalcost.ToString()) * (dicount / 100);
-                            //    dicount2 = dicount2 + dicount;
-                            //    txt_TotalDiscount.Text = dicount2.ToString();
-                            //    float tax = float.Parse(DGV_Invoice.Rows[i].Cells[9].Value.ToString());
-                            //    tax1 = tax1 + tax;
-                            //    txt_TotalTax.Text = tax1.ToString();
-                            //}
                         }
                         else if (CMB_Discount.SelectedIndex == 1)
                         {
                             delete_gridrow_calculation();
-                            //decimal totcost = 0, total2 = 0;
-                            //float discount1, dicount2 = 0, tax1 = 0;
-                            //for (int i = 0; i < DGV_Invoice.Rows.Count; i++)
-                            //{
-                            //    decimal unitcost = decimal.Parse(DGV_Invoice.Rows[i].Cells[2].Value.ToString());
-                            //    decimal quantity = decimal.Parse(DGV_Invoice.Rows[i].Cells[3].Value.ToString());
-                            //    decimal totalcost = unitcost * quantity;
-                            //    totcost = totcost + totalcost;
-                            //    txt_TotalCost.Text = totcost.ToString();
-                            //    decimal total1 = Convert.ToDecimal(DGV_Invoice.Rows[i].Cells[7].Value.ToString());
-                            //    total2 = total2 + total1;
-                            //    txt_GrantTotal.Text = total2.ToString();
-                            //    float dicount = float.Parse(DGV_Invoice.Rows[i].Cells[8].Value.ToString());
-                            //    discount1 = float.Parse(totalcost.ToString()) * (dicount / 100);
-                            //    dicount2 = dicount2 + dicount;
-                            //    txt_TotalDiscount.Text = dicount2.ToString();
-                            //    float tax = float.Parse(DGV_Invoice.Rows[i].Cells[9].Value.ToString());
-                            //    tax1 = tax1 + tax;
-                            //    txt_TotalTax.Text = tax1.ToString();
-                            //}
                         }
                         txt_Discount.Hide();
                         CMB_Discount.Hide();
@@ -2119,7 +2028,7 @@ namespace PappyjoeMVC.View
             {
                 if (btn_SaveInvoice.Text == "SAVE INVOICE")
                 {
-                    DataTable receipt = this.cntrl.select_All_invoicedata(text_billno.Text);// db.table("select * from tbl_invoices_main where invoice='" + text_billno.Text + "'");
+                    DataTable receipt = this.cntrl.select_All_invoicedata(text_billno.Text);
                     if (receipt.Rows.Count <= 0)
                     {
                         if (doctor_id == "0")
@@ -2129,19 +2038,19 @@ namespace PappyjoeMVC.View
                         if (DGV_Invoice.RowCount > 0)
                         {
                             int j = 1;
-                            this.cntrl.save_invoice_main(patient_id,linkL_Name.Text.ToString(), text_billno.Text.ToString());// int ii = db.execute("insert into tbl_invoices_main (date,pt_id,pt_name,invoice,status,type) values('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + patient_id + "','" + linkL_Name.Text.ToString() + "','" + text_billno.Text.ToString() + "','1','service')");
-                            DataTable dt1 = this.cntrl.get_invoiceMain_maxid();// db.table("select MAX(id) from tbl_invoices_main");
+                            this.cntrl.save_invoice_main(patient_id,linkL_Name.Text.ToString(), text_billno.Text.ToString());
+                            string dt1 = this.cntrl.get_invoiceMain_maxid();
                             int invoice_main_id = 0;
                             try
                             {
-                                if (Int32.Parse(dt1.Rows[0][0].ToString()) == 0)
+                                if (Int32.Parse(dt1) == 0)
                                 {
                                     j = 1;
                                     invoice_main_id = 0;
                                 }
                                 else
                                 {
-                                    invoice_main_id = Int32.Parse(dt1.Rows[0][0].ToString());
+                                    invoice_main_id = Int32.Parse(dt1);
                                 }
                             }
                             catch
@@ -2157,22 +2066,22 @@ namespace PappyjoeMVC.View
                                 {
                                     if (jj == 0)
                                     {
-                                        DataTable dt_pt = fmodel.get_completed_id(patient_id, DTP_Date.Value.ToString("yyyy-MM-dd"));// db.table("SELECT id FROM tbl_completed_id where patient_id='" + patient_id + "' and completed_date='" + DTP_Date.Value.ToString("yyyy-MM-dd") + "' ORDER BY id");
-                                        if (dt_pt.Rows.Count == 0)
+                                        DataTable  dt_pt =this.cntrl.get_completed_id(patient_id, DTP_Date.Value.ToString("yyyy-MM-dd"));
+                                        if ( dt_pt.Rows.Count == 0)
                                         {
-                                            this.cntrl.save_completedid(DTP_Date.Value.ToString("yyyy-MM-dd"), patient_id);// db.execute("insert into tbl_completed_id (completed_date,patient_id) values('" + DTP_Date.Value.ToString("yyyy-MM-dd") + "','" + patient_id + "')");
-                                            DataTable dt = fmodel.get_completedMaxid();// db.table("select MAX(id) from tbl_completed_id");
+                                            this.cntrl.save_completedid(DTP_Date.Value.ToString("yyyy-MM-dd"), patient_id);
+                                            string dt = this.cntrl.get_completedMaxid();
                                             int completed_id;
                                             try
                                             {
-                                                if (Int32.Parse(dt.Rows[0][0].ToString()) == 0)
+                                                if (Int32.Parse(dt) == 0)
                                                 {
                                                     jj = 1;
                                                     completed_id = 0;
                                                 }
                                                 else
                                                 {
-                                                    completed_id = Int32.Parse(dt.Rows[0][0].ToString());
+                                                    completed_id = Int32.Parse(dt);
                                                 }
                                             }
                                             catch
@@ -2189,39 +2098,38 @@ namespace PappyjoeMVC.View
                                         }
                                     }
                                     this.cntrl.Save_tbl_completed_procedures(jj, patient_id, DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[1, i].Value.ToString(), DGV_Invoice[3, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString(), DGV_Invoice[5, i].Value.ToString(), DGV_Invoice[4, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[12, i].Value.ToString(), DGV_Invoice[10, i].Value.ToString(),"0", DGV_Invoice[13, i].Value.ToString());
-                                    // int t_p = db.execute("insert into tbl_completed_procedures (plan_main_id,pt_id,procedure_id,procedure_name,quantity,cost,discount_type,discount,total,discount_inrs,note,status,date,dr_id,completed_id,tooth) values ('" + jj + "','" + patient_id + "','" + DGV_Invoice[0, i].Value.ToString() + "','" + DGV_Invoice[1, i].Value.ToString() + "','" + DGV_Invoice[3, i].Value.ToString() + "','" + DGV_Invoice[2, i].Value.ToString() + "','" + DGV_Invoice[5, i].Value.ToString() + "','" + DGV_Invoice[4, i].Value.ToString() + "','" + DGV_Invoice[7, i].Value.ToString() + "','" + DGV_Invoice[8, i].Value.ToString() + "','" + DGV_Invoice[12, i].Value.ToString() + "','0','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + DGV_Invoice[10, i].Value.ToString() + "','0','" + DGV_Invoice[13, i].Value.ToString() + "')");
-                                    DataTable dt_procedure = this.cntrl.get_completed_procedure_maxid();// db.table("select MAX(id) from tbl_completed_procedures");
+                                    string dt_procedure = this.cntrl.get_completed_procedure_maxid();
                                     int completed_max_id;
-                                    if (Int32.Parse(dt_procedure.Rows[0][0].ToString()) == 0)
+                                    if (Int32.Parse(dt_procedure) == 0)
                                     {
                                         completed_max_id = 0;
                                     }
                                     else
                                     {
-                                        completed_max_id = Int32.Parse(dt_procedure.Rows[0][0].ToString());
+                                        completed_max_id = Int32.Parse(dt_procedure);
                                     }
-                                    this.cntrl.save_invoice_details(text_billno.Text.ToString(),linkL_Name.Text.ToString() ,patient_id,DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[1, i].Value.ToString(), DGV_Invoice[3, i].Value.ToString() , DGV_Invoice[2, i].Value.ToString() , DGV_Invoice[4, i].Value.ToString(),DGV_Invoice[5, i].Value.ToString() , DGV_Invoice[6, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString() , DGV_Invoice[12, i].Value.ToString() , DGV_Invoice[8, i].Value.ToString() , DGV_Invoice[9, i].Value.ToString() ,DGV_Invoice[10, i].Value.ToString() , DGV_Invoice[8, i].Value.ToString() ,DGV_Invoice[9, i].Value.ToString(), j ,completed_max_id );//db.execute("insert into tbl_invoices(invoice_no,pt_name,pt_id,service_id,services,unit,cost,discount,discount_type,tax,total,date,notes,total_cost,total_discount,total_tax,grant_total,dr_id,discountin_rs,tax_inrs,total_payment,invoice_main_id,plan_id,completed_id) values('" + text_billno.Text.ToString() + "','" + linkL_Name.Text.ToString() + "','" + patient_id + "','" + DGV_Invoice[0, i].Value.ToString() + "','" + DGV_Invoice[1, i].Value.ToString() + "','" + DGV_Invoice[3, i].Value.ToString() + "','" + DGV_Invoice[2, i].Value.ToString() + "','" + DGV_Invoice[4, i].Value.ToString() + "','" + DGV_Invoice[5, i].Value.ToString() + "','" + DGV_Invoice[6, i].Value.ToString() + "','" + DGV_Invoice[7, i].Value.ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + DGV_Invoice[12, i].Value.ToString() + "','100','" + DGV_Invoice[8, i].Value.ToString() + "','" + DGV_Invoice[9, i].Value.ToString() + "','100','" + DGV_Invoice[10, i].Value.ToString() + "','" + DGV_Invoice[8, i].Value.ToString() + "','" + DGV_Invoice[9, i].Value.ToString() + "','100','" + j + "','0','" + completed_max_id + "')");
-                                }                               //(string invoice_no,string pt_name, string patient_id,string service_id,string services,string unit,string cost,string discount,string discount_type,string tax,string total, string notes, string total_discount,string total_tax,string dr_id,string discountin_rs,string tax_inrs,string invoice_main_id, string completed_id)
+                                    this.cntrl.save_invoice_details(text_billno.Text.ToString(),linkL_Name.Text.ToString() ,patient_id,DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[1, i].Value.ToString(), DGV_Invoice[3, i].Value.ToString() , DGV_Invoice[2, i].Value.ToString() , DGV_Invoice[4, i].Value.ToString(),DGV_Invoice[5, i].Value.ToString() , DGV_Invoice[6, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString() , DGV_Invoice[12, i].Value.ToString() , DGV_Invoice[8, i].Value.ToString() , DGV_Invoice[9, i].Value.ToString() ,DGV_Invoice[10, i].Value.ToString() , DGV_Invoice[8, i].Value.ToString() ,DGV_Invoice[9, i].Value.ToString(), j ,completed_max_id );
+                                }                             
                                 if (DGV_Invoice[14, i].Value.ToString() != "0")
                                 {
                                     if (jj == 0)
                                     {
-                                        DataTable dt_pt = fmodel.get_completed_id(patient_id, DTP_Date.Value.ToString("yyyy-MM-dd"));// db.table("SELECT id FROM tbl_completed_id where patient_id='" + patient_id + "' and completed_date='" + DTP_Date.Value.ToString("yyyy-MM-dd") + "' ORDER BY id");
+                                        DataTable dt_pt = this.cntrl.get_completed_id(patient_id, DTP_Date.Value.ToString("yyyy-MM-dd"));
                                         if (dt_pt.Rows.Count == 0)
                                         {
-                                            this.cntrl.save_completedid(DTP_Date.Value.ToString("yyyy-MM-dd"), patient_id);// int iii = db.execute("insert into tbl_completed_id (completed_date,patient_id) values('" + DTP_Date.Value.ToString("yyyy-MM-dd") + "','" + patient_id + "')");
-                                            DataTable dt = fmodel.get_completedMaxid();// db.table("select MAX(id) from tbl_completed_id");
+                                            this.cntrl.save_completedid(DTP_Date.Value.ToString("yyyy-MM-dd"), patient_id);
+                                            string dt = this.cntrl.get_completedMaxid();
                                             int completed_id;
                                             try
                                             {
-                                                if (Int32.Parse(dt.Rows[0][0].ToString()) == 0)
+                                                if (Int32.Parse(dt) == 0)
                                                 {
                                                     jj = 1;
                                                     completed_id = 0;
                                                 }
                                                 else
                                                 {
-                                                    completed_id = Int32.Parse(dt.Rows[0][0].ToString());
+                                                    completed_id = Int32.Parse(dt);
                                                 }
                                             }
                                             catch
@@ -2238,33 +2146,29 @@ namespace PappyjoeMVC.View
                                         }
                                     }
                                     this.cntrl.Save_tbl_completed_procedures(jj, patient_id, DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[1, i].Value.ToString(), DGV_Invoice[3, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString(), DGV_Invoice[5, i].Value.ToString(), DGV_Invoice[4, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[12, i].Value.ToString(), DGV_Invoice[10, i].Value.ToString(), DGV_Invoice[14, i].Value.ToString(), DGV_Invoice[13, i].Value.ToString());
-
-                                    //int t_p = db.execute("insert into tbl_completed_procedures (plan_main_id,pt_id,procedure_id,procedure_name,quantity,cost,discount_type,discount,total,discount_inrs,note,status,date,dr_id,completed_id,tooth) values ('" + jj + "','" + patient_id + "','" + DGV_Invoice[0, i].Value.ToString() + "','" + DGV_Invoice[1, i].Value.ToString() + "','" + DGV_Invoice[3, i].Value.ToString() + "','" + DGV_Invoice[2, i].Value.ToString() + "','" + DGV_Invoice[5, i].Value.ToString() + "','" + DGV_Invoice[4, i].Value.ToString() + "','" + DGV_Invoice[7, i].Value.ToString() + "','" + DGV_Invoice[8, i].Value.ToString() + "','" + DGV_Invoice[12, i].Value.ToString() + "','0','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + DGV_Invoice[10, i].Value.ToString() + "','" + DGV_Invoice[14, i].Value.ToString() + "','" + DGV_Invoice[13, i].Value.ToString() + "')");
-                                    DataTable dt_procedure = this.cntrl.get_completed_procedure_maxid();// db.table("select MAX(id) from tbl_completed_procedures");
+                                    string dt_procedure = this.cntrl.get_completed_procedure_maxid();
                                     int completed_max_id;
-                                    if (Int32.Parse(dt_procedure.Rows[0][0].ToString()) == 0)
+                                    if (Int32.Parse(dt_procedure) == 0)
                                     {
                                         completed_max_id = 0;
                                     }
                                     else
                                     {
-                                        completed_max_id = Int32.Parse(dt_procedure.Rows[0][0].ToString());
+                                        completed_max_id = Int32.Parse(dt_procedure);
                                     }
-                                    fmodel.update_treatment_status(DGV_Invoice[14, i].Value.ToString());// db.execute("update  tbl_treatment_plan set status='0' where id= '" + DGV_Invoice[14, i].Value.ToString() + "'");
-                                    this.cntrl.save_invoice_items(text_billno.Text.ToString(), linkL_Name.Text.ToString(),patient_id ,DGV_Invoice[0, i].Value.ToString() , DGV_Invoice[1, i].Value.ToString() ,DGV_Invoice[3, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString() , DGV_Invoice[4, i].Value.ToString(),DGV_Invoice[5, i].Value.ToString(),DGV_Invoice[6, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString(),DGV_Invoice[12, i].Value.ToString() , DGV_Invoice[8, i].Value.ToString() , DGV_Invoice[9, i].Value.ToString(), DGV_Invoice[10, i].Value.ToString() ,DGV_Invoice[8, i].Value.ToString(),DGV_Invoice[9, i].Value.ToString(), j , DGV_Invoice[14, i].Value.ToString(),completed_max_id );//  db.execute("insert into tbl_invoices(invoice_no,pt_name,pt_id,service_id,services,unit,cost,discount,discount_type,tax,total,date,notes,total_cost,total_discount,total_tax,grant_total,dr_id,discountin_rs,tax_inrs,total_payment,invoice_main_id,plan_id,completed_id) values('" + text_billno.Text.ToString() + "','" + linkL_Name.Text.ToString() + "','" + patient_id + "','" + DGV_Invoice[0, i].Value.ToString() + "','" + DGV_Invoice[1, i].Value.ToString() + "','" + DGV_Invoice[3, i].Value.ToString() + "','" + DGV_Invoice[2, i].Value.ToString() + "','" + DGV_Invoice[4, i].Value.ToString() + "','" + DGV_Invoice[5, i].Value.ToString() + "','" + DGV_Invoice[6, i].Value.ToString() + "','" + DGV_Invoice[7, i].Value.ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + DGV_Invoice[12, i].Value.ToString() + "','100','" + DGV_Invoice[8, i].Value.ToString() + "','" + DGV_Invoice[9, i].Value.ToString() + "','100','" + DGV_Invoice[10, i].Value.ToString() + "','" + DGV_Invoice[8, i].Value.ToString() + "','" + DGV_Invoice[9, i].Value.ToString() + "','100','" + j + "','" + DGV_Invoice[14, i].Value.ToString() + "','" + completed_max_id + "')");
+                                    this.cntrl.update_treatment_status(DGV_Invoice[14, i].Value.ToString());
+                                    this.cntrl.save_invoice_items(text_billno.Text.ToString(), linkL_Name.Text.ToString(),patient_id ,DGV_Invoice[0, i].Value.ToString() , DGV_Invoice[1, i].Value.ToString() ,DGV_Invoice[3, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString() , DGV_Invoice[4, i].Value.ToString(),DGV_Invoice[5, i].Value.ToString(),DGV_Invoice[6, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString(),DGV_Invoice[12, i].Value.ToString() , DGV_Invoice[8, i].Value.ToString() , DGV_Invoice[9, i].Value.ToString(), DGV_Invoice[10, i].Value.ToString() ,DGV_Invoice[8, i].Value.ToString(),DGV_Invoice[9, i].Value.ToString(), j , DGV_Invoice[14, i].Value.ToString(),completed_max_id );
                                 }
                                 if (DGV_Invoice[15, i].Value.ToString() != "0")
                                 {
-                                    this.cntrl.save_invoice_items(text_billno.Text.ToString(), linkL_Name.Text.ToString(), patient_id, DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[1, i].Value.ToString(), DGV_Invoice[3, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString(), DGV_Invoice[4, i].Value.ToString(), DGV_Invoice[5, i].Value.ToString(), DGV_Invoice[6, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString(), DGV_Invoice[12, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[9, i].Value.ToString(), DGV_Invoice[10, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[9, i].Value.ToString(), j, DGV_Invoice[14, i].Value.ToString(),Convert.ToInt32( DGV_Invoice[15, i].Value.ToString()));//  db.execute("insert into tbl_invoices(invoice_no,pt_name,pt_id,service_id,services,unit,cost,discount,discount_type,tax,total,date,notes,total_cost,total_discount,total_tax,grant_total,dr_id,discountin_rs,tax_inrs,total_payment,invoice_main_id,plan_id,completed_id) values('" + text_billno.Text.ToString() + "','" + linkL_Name.Text.ToString() + "','" + patient_id + "','" + DGV_Invoice[0, i].Value.ToString() + "','" + DGV_Invoice[1, i].Value.ToString() + "','" + DGV_Invoice[3, i].Value.ToString() + "','" + DGV_Invoice[2, i].Value.ToString() + "','" + DGV_Invoice[4, i].Value.ToString() + "','" + DGV_Invoice[5, i].Value.ToString() + "','" + DGV_Invoice[6, i].Value.ToString() + "','" + DGV_Invoice[7, i].Value.ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + DGV_Invoice[12, i].Value.ToString() + "','100','" + DGV_Invoice[8, i].Value.ToString() + "','" + DGV_Invoice[9, i].Value.ToString() + "','100','" + DGV_Invoice[10, i].Value.ToString() + "','" + DGV_Invoice[8, i].Value.ToString() + "','" + DGV_Invoice[9, i].Value.ToString() + "','100','" + j + "','" + DGV_Invoice[14, i].Value.ToString() + "','" + completed_max_id + "')");
-
-                                    //db.execute("insert into tbl_invoices(invoice_no,pt_name,pt_id,service_id,services,unit,cost,discount,discount_type,tax,total,date,notes,total_cost,total_discount,total_tax,grant_total,dr_id,discountin_rs,tax_inrs,total_payment,invoice_main_id,plan_id,completed_id) values('" + text_billno.Text.ToString() + "','" + linkL_Name.Text.ToString() + "','" + patient_id + "','" + DGV_Invoice[0, i].Value.ToString() + "','" + DGV_Invoice[1, i].Value.ToString() + "','" + DGV_Invoice[3, i].Value.ToString() + "','" + DGV_Invoice[2, i].Value.ToString() + "','" + DGV_Invoice[4, i].Value.ToString() + "','" + DGV_Invoice[5, i].Value.ToString() + "','" + DGV_Invoice[6, i].Value.ToString() + "','" + DGV_Invoice[7, i].Value.ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + DGV_Invoice[12, i].Value.ToString() + "','100','" + DGV_Invoice[8, i].Value.ToString() + "','" + DGV_Invoice[9, i].Value.ToString() + "','100','" + DGV_Invoice[10, i].Value.ToString() + "','" + DGV_Invoice[8, i].Value.ToString() + "','" + DGV_Invoice[9, i].Value.ToString() + "','100','" + j + "','" + DGV_Invoice[14, i].Value.ToString() + "','" + DGV_Invoice[15, i].Value.ToString() + "')");
-                                    this.cntrl.Set_completed_status0(DGV_Invoice[15, i].Value.ToString());//  int completed_p = db.execute("update  tbl_completed_procedures set status='0' where id= '" + DGV_Invoice[15, i].Value.ToString() + "'");
+                                    this.cntrl.save_invoice_items(text_billno.Text.ToString(), linkL_Name.Text.ToString(), patient_id, DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[1, i].Value.ToString(), DGV_Invoice[3, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString(), DGV_Invoice[4, i].Value.ToString(), DGV_Invoice[5, i].Value.ToString(), DGV_Invoice[6, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString(), DGV_Invoice[12, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[9, i].Value.ToString(), DGV_Invoice[10, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[9, i].Value.ToString(), j, DGV_Invoice[14, i].Value.ToString(),Convert.ToInt32( DGV_Invoice[15, i].Value.ToString()));
+                                    this.cntrl.Set_completed_status0(DGV_Invoice[15, i].Value.ToString());
                                 }
                             }
-                            DataTable invo = this.cntrl.Get_invoice_prefix();// db.table("select * from tbl_invoice_automaticid");
+                            DataTable invo = this.cntrl.Get_invoice_prefix();
                             int a = int.Parse(invo.Rows[0]["invoice_number"].ToString());
                             a = a + 1;
-                            this.cntrl.update_invoice_autoid(a);// db.execute("update tbl_invoice_automaticid set invoice_number='" + a + "'");
+                            this.cntrl.update_invoice_autoid(a);
                             if (doctor_id == admin_id)
                             {
                                 doctor_id = "0";
@@ -2294,21 +2198,21 @@ namespace PappyjoeMVC.View
                 else
                 {
                     DateTime? date = null;
-                    DataTable dt0 = this.cntrl.Get_invoiceDate(text_billno.Text.ToString());// db.table("Select date from tbl_invoices where invoice_no='" + text_billno.Text.ToString() + "'");
-                    if (dt0.Rows.Count > 0)
+                    string dt0 = this.cntrl.Get_invoiceDate(text_billno.Text.ToString());
+                    if (dt0!="")
                     {
-                        date = Convert.ToDateTime(dt0.Rows[0][0].ToString());
+                        date = Convert.ToDateTime(dt0);
                     }
-                    this.cntrl.delete_invoice(text_billno.Text.ToString());// db.execute("delete from tbl_invoices where invoice_no='" + text_billno.Text.ToString() + "'");
+                    this.cntrl.delete_invoice(text_billno.Text.ToString());
                     for (int i = 0; i < DGV_Invoice.Rows.Count; i++)
                     {
-                        this.cntrl.get_taxValue(DGV_Invoice[5, i].Value.ToString());// DataTable dt = db.table("select tax_value from tbl_tax where tax_name ='" + DGV_Invoice[5, i].Value.ToString() + "'");
+                        this.cntrl.get_taxValue(DGV_Invoice[5, i].Value.ToString());
                         string tax = DGV_Invoice[5, i].Value.ToString();
                         string discount = DGV_Invoice[3, i].Value.ToString();
-                        this.cntrl.save_incove_items(text_billno.Text.ToString(),linkL_Name.Text.ToString(),patient_id,DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString() , DGV_Invoice[1, i].Value.ToString() ,discount,DGV_Invoice[4, i].Value.ToString() , tax ,  DGV_Invoice[6, i].Value.ToString() , date.ToString() , RTB_Notes.Text.ToString() , txt_TotalCost.Text.ToString(), txt_TotalDiscount.Text.ToString() , txt_TotalTax.Text.ToString(), txt_GrantTotal.Text.ToString(), DGV_Invoice[9, i].Value.ToString() , DGV_Invoice[7, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(),  DGV_Invoice[6, i].Value.ToString() );// db.execute("insert into tbl_invoices(invoice_no,pt_name,pt_id,services,unit,cost,discount,discount_type,tax,total,date,notes,total_cost,total_discount,total_tax,grant_total,dr_id,discountin_rs,tax_inrs,total_payment) values('" + text_billno.Text.ToString() + "','" + linkL_Name.Text.ToString() + "','" + ptid + "','" + DGV_Invoice[0, i].Value.ToString() + "','" + DGV_Invoice[2, i].Value.ToString() + "','" + DGV_Invoice[1, i].Value.ToString() + "','" + discount + "','" + DGV_Invoice[4, i].Value.ToString() + "','" + tax + "','" + DGV_Invoice[6, i].Value.ToString() + "','" + date + "','" + RTB_Notes.Text.ToString() + "','" + txt_TotalCost.Text.ToString() + "','" + txt_TotalDiscount.Text.ToString() + "','" + txt_TotalTax.Text.ToString() + "','" + txt_GrantTotal.Text.ToString() + "','" + DGV_Invoice[9, i].Value.ToString() + "','" + DGV_Invoice[7, i].Value.ToString() + "','" + DGV_Invoice[8, i].Value.ToString() + "','" + DGV_Invoice[6, i].Value.ToString() + "')");
+                        this.cntrl.save_incove_items(text_billno.Text.ToString(),linkL_Name.Text.ToString(),patient_id,DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString() , DGV_Invoice[1, i].Value.ToString() ,discount,DGV_Invoice[4, i].Value.ToString() , tax ,  DGV_Invoice[6, i].Value.ToString() , date.ToString() , RTB_Notes.Text.ToString() , txt_TotalCost.Text.ToString(), txt_TotalDiscount.Text.ToString() , txt_TotalTax.Text.ToString(), txt_GrantTotal.Text.ToString(), DGV_Invoice[9, i].Value.ToString() , DGV_Invoice[7, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(),  DGV_Invoice[6, i].Value.ToString() );
                         if (DGV_Invoice[11, i].Value.ToString() != "0")
                         {
-                            this.cntrl.Set_completed_status0(DGV_Invoice[11, i].Value.ToString());// int plan_p = db.execute("update  tbl_completed_procedures set status='0' where id= '" + DGV_Invoice[11, i].Value.ToString() + "'");
+                            this.cntrl.Set_completed_status0(DGV_Invoice[11, i].Value.ToString());
                         }
                         
                     }
@@ -2324,7 +2228,7 @@ namespace PappyjoeMVC.View
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -2337,10 +2241,10 @@ namespace PappyjoeMVC.View
             }
             else
             {
-                DataTable dt = this.cntrl.select_taxValue(Cmb_tax.SelectedValue.ToString());// db.table("select tax_value from tbl_tax where id ='" + Cmb_tax.SelectedValue.ToString() + "'");
-                if (dt.Rows.Count > 0)
+                string dt = this.cntrl.select_taxValue(Cmb_tax.SelectedValue.ToString());
+                if (Convert.ToDecimal(dt) > 0)
                 {
-                    P_tax = Convert.ToDecimal(dt.Rows[0][0].ToString());
+                    P_tax = Convert.ToDecimal(dt);
                 }
                 else
                 {
@@ -2372,7 +2276,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -2382,7 +2285,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            //expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
 
@@ -2392,7 +2294,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                //doctor_controller controlr = new doctor_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -2483,7 +2384,6 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -2493,16 +2393,10 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
             }
-        }
-
-        private void linkL_Name_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
         }
 
         private void btn_MainCancel_Click(object sender, EventArgs e)

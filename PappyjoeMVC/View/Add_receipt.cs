@@ -46,12 +46,12 @@ namespace PappyjoeMVC.View
             try
             {
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
-                DataTable admin = cmodel.Get_adminId();
-                if (admin.Rows.Count > 0)
+                string admin = cmodel.Get_adminId();
+                if (admin!="")
                 {
-                    if (admin.Rows[0]["id"].ToString() != doctor_id.ToString())
+                    if (admin != doctor_id.ToString())
                     {
-                        admin_id = admin.Rows[0]["id"].ToString();
+                        admin_id = admin;
                     }
                 }
                 toolStripButton8.ToolTipText = "Settings";
@@ -1351,7 +1351,7 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    Add_New_patient_controller controller = new Add_New_patient_controller(form2);
+                    //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -1361,7 +1361,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                Add_New_patient_controller controller = new Add_New_patient_controller(form2);
+                //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();

@@ -5,34 +5,30 @@ namespace PappyjoeMVC.Controller
 {
     public class Finished_Procedre_controller
     {
-        Finished_Procedure_interface intr;
+        
         Add_Finished_Treatment_model _model = new Add_Finished_Treatment_model();
         Connection db = new Connection();
         Common_model cmodel = new Common_model();
-        public Finished_Procedre_controller(Finished_Procedure_interface inttr)
-        {
-            intr = inttr;
-            intr.Setcontroller(this);
-        }
+       
         public string Add_privilliege(string doctor_id)
         {
-            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRFP' and Permission='A'");
+            string privid = _model.Add_privilliege(doctor_id);
             return privid;
         }
         public string edit_privillege(string doctor_id)
         {
-            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRFP' and Permission='E'");
+            string privid = _model.edit_privillege(doctor_id);
             return privid;
         }
         public string delete_privillage(string doctor_id)
         {
-            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRFP' and Permission='D'");
+            string privid = _model.delete_privillage(doctor_id);
             return privid;
         }
-        public void get_completed_id_date(string patient_id)
+        public DataTable get_completed_id_date(string patient_id)
         {
             DataTable dtb = _model.get_completed_id_date(patient_id);
-            intr.Load_Data(dtb);
+            return dtb;
         }
         public DataTable get_completed_details(string mainid)
         {
@@ -46,7 +42,7 @@ namespace PappyjoeMVC.Controller
         }
         public void delete(string treatment_complete_id)
         {
-            db.execute("delete from tbl_completed_procedures where id='" + treatment_complete_id + "'");
+            _model.delete(treatment_complete_id);
         }
         public void update_status1(string plan_main_id)
         {
@@ -54,16 +50,16 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable chek_planmain_id(string completed_main_id)
         {
-            DataTable dt_pt_complete2 = db.table("SELECT plan_main_id FROM tbl_completed_procedures  where plan_main_id='" + completed_main_id + "'");
+            DataTable dt_pt_complete2 = _model.chek_planmain_id(completed_main_id);
             return dt_pt_complete2;
         }
         public void delete_completedid(string completed_main_id)
         {
-            db.execute("delete from tbl_completed_id where id='" + completed_main_id + "'");
+            _model.delete_completedid(completed_main_id);
         }
-        public DataTable Get_CompanyNAme()
+        public string Load_CompanyName()
         {
-            DataTable dtb = cmodel.Get_CompanyNAme();
+            string dtb = cmodel.Load_CompanyName();
             return dtb;
         }
         public DataTable Patient_search(string patid)

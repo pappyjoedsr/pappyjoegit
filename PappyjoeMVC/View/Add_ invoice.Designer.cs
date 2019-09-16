@@ -501,7 +501,7 @@
             this.linkL_Name.TabIndex = 74;
             this.linkL_Name.TabStop = true;
             this.linkL_Name.Text = "linkLabel1";
-            this.linkL_Name.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkL_Name_LinkClicked);
+            //this.linkL_Name.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkL_Name_LinkClicked);
             // 
             // linkLabel_id
             // 

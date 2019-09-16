@@ -22,11 +22,6 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        //public void setcontroller(Clinical_Findings_controller controller)
-        //{
-        //    cntrl = controller;
-        //}
-
         private void Clinical_Findings_Load(object sender, EventArgs e)
         {
             try
@@ -2113,7 +2108,6 @@ namespace PappyjoeMVC.View
             var form2 = new Finished_Procedure();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Finished_Procedre_controller controller = new Finished_Procedre_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

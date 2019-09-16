@@ -12,187 +12,14 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Add_New_Patients : Form, AddNew_patient_interface
+    public partial class Add_New_Patients : Form
     {
-        Add_New_patient_controller cntrl; Common_model mdl = new Common_model();
+        Add_New_patient_controller cntrl=new Add_New_patient_controller();
         public string patient_name = "", doctor_id = "", staff_id = "", PatientId = "", path = "";
         string pat_id = "";
         int medhisStatus = 0, selectGrp = 0;
         public int statusForNewPatient = 0; string clinicn = "";
         public static bool SetFlag = false;
-        private bool setFlag;
-
-        public string PatientName
-        {
-            get { return this.txtPatName.Text; }
-            set { txtPatName.Text = value; }
-        }
-        public string Patient_Id
-        {
-            get { return this.txtPatientId.Text; }
-            set { txtPatientId.Text = value; }
-        }
-        public string Aadhaar
-        {
-            get { return this.txtAadhar.Text; }
-            set { txtAadhar.Text = value; }
-        }
-        public string Gender
-        {
-            get
-            {
-                if (radMale.Checked == true)
-                    return "Male";
-                else
-                    return "Female";
-            }
-            set
-            {
-                if (value == "Male")
-                    radMale.Checked = true;
-                else
-                    radFemale.Checked = true;
-            }
-
-        }
-        public string DOB//change
-        {
-           
-            get
-            {
-                if (DateTime.Now.Date.ToString("MM/dd/yyyy") == DTP_Dob.Value.ToString("MM/dd/yyyy"))
-                {
-                  return  null;
-                }
-                else
-                {
-                   return DTP_Dob.Value.ToString("yyyy-MM-dd");
-                }
-            }
-            set {
-                if(value==null)
-                {
-
-                }
-                else
-                {
-                    DTP_Dob.Text = value;
-                }
-            }
-        }
-        public string ReferredBy
-        {
-            get { return this.txtReferedby.Text; }
-            set { txtReferedby.Text = value; }
-        }
-        public string Blood
-        {
-            get { return this.cmdBloodbroup.Text; }
-            set { cmdBloodbroup.Text = value; }
-        }
-        public string Accompainedby
-        {
-            get { return this.txtAccompained.Text; }
-            set { txtAccompained.Text = value; }
-        }
-        public string FileNo
-        {
-            get { return this.txtFileNo.Text; }
-            set { txtFileNo.Text = value; }
-        }
-        public string Age
-        {
-            get
-            {
-                if (this.txtxAge.Text != "")
-                { }
-                else
-                    this.txtxAge.Text = "0";
-                return this.txtxAge.Text;
-            }
-            set { txtxAge.Text = value.ToString(); }
-        }
-        //if (DateTime.Now.Date.ToString("MM/dd/yyyy") == dateTimePickervisited.Value.ToString("MM/dd/yyyy"))
-        //{
-        //    datevisited = DateTime.Now.Date.ToString("yyyy-MM-dd");
-        //}
-        //else
-        //{
-        //    datevisited = dateTimePickervisited.Value.ToString("yyyy-MM-dd");
-        //}
-        public string DateofAdmit //chabge
-        {
-            get {
-                if (DateTime.Now.Date.ToString("MM/dd/yyyy") == dateTimePickervisited.Value.ToString("MM/dd/yyyy"))
-                {
-                    return  DateTime.Now.Date.ToString("yyyy-MM-dd");
-                }
-                else
-                {
-                    return dateTimePickervisited.Value.ToString("yyyy-MM-dd");
-                }
-                //return DateofAdmit;
-            }
-            set { dateTimePickervisited.Text = value; }
-        }
-        public string Occupation
-        {
-            get { return this.txtOccupation.Text; }
-            set { txtOccupation.Text = value; }
-        }
-        public string Doctor
-        {
-            get { return this.ddldoctor.Text; }
-            set { ddldoctor.Text = value; }
-        }
-        public string PrimaryMob
-        {
-            get { return this.txtPMobNumber.Text; }
-            set { txtPMobNumber.Text = value; }
-        }
-        public string SecondaryMob
-        {
-            get { return this.txtSMobileNumber.Text; }
-            set { txtSMobileNumber.Text = value; }
-        }
-        public string Landline
-        {
-            get { return this.txtLandline.Text; }
-            set { txtLandline.Text = value; }
-
-        }
-        public string Email
-        {
-            get { return this.txtEmail.Text; }
-            set { txtEmail.Text = value; }
-
-        }
-        public string Street
-        {
-            get { return this.txtxStreet.Text; }
-            set { txtxStreet.Text = value; }
-
-        }
-        public string Locality
-        {
-            get { return this.txtLocality.Text; }
-            set { txtLocality.Text = value; }
-        }
-        public string City
-        {
-            get { return this.txtCity.Text; }
-            set { txtCity.Text = value; }
-        }
-        public string Pincode
-        {
-            get { return this.txtPincode.Text; }
-            set { txtPincode.Text = value; }
-        }
-        public string Medical
-        {
-            get { return this.txtMedHistory.Text; }
-            set { txtMedHistory.Text = value; }
-        }
 
         private void txtPMobNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -212,16 +39,19 @@ namespace PappyjoeMVC.View
             if (txtPMobNumber.TextLength != 10)
             {
                 Lab_InvalidNumber.Visible = true;
-                validatenumber();
                 return;
             }
             else
+            {
                 Lab_InvalidNumber.Visible = false;
+                validatenumber();
+            }
+
         }
         public void validatenumber()
         {
-            DataTable patSearchnumber = this.cntrl.Get_pnonenumber(txtPMobNumber.Text);
-            if (patSearchnumber.Rows.Count > 0)
+            string patSearchnumber = this.cntrl.Get_pnonenumber(txtPMobNumber.Text);
+            if (patSearchnumber != "")
             {
                 MessageBox.Show("User with same Number already exists", "Number exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtPMobNumber.Focus();
@@ -257,7 +87,7 @@ namespace PappyjoeMVC.View
             }
         }
 
-        private void DTP_Dob_ValueChanged(object sender, EventArgs e)//tyytr
+        private void DTP_Dob_ValueChanged(object sender, EventArgs e)
         {
             int age = DateTime.Now.Year - DTP_Dob.Value.Year - (DateTime.Now.DayOfYear < DTP_Dob.Value.DayOfYear ? 1 : 0);
             txtxAge.Text = age.ToString();
@@ -288,6 +118,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    string gender = "",dob="",visited="";
                     Lab_UsernameAvailable.Show();
                     DataTable patSearch = this.cntrl.Get_patient_details(txtPatName.Text);
                     if (patSearch.Rows.Count > 0)
@@ -305,10 +136,30 @@ namespace PappyjoeMVC.View
                     if (txtPMobNumber.Text != "")
                     {
                         int i = 0;
+                        if (radMale.Checked == true)
+                            gender= "Male";
+                        else
+                            gender= "Female";
+                        if (DateTime.Now.Date.ToString("MM/dd/yyyy") == DTP_Dob.Value.ToString("MM/dd/yyyy"))
+                        {
+                            dob= null;
+                        }
+                        else
+                        {
+                            dob= DTP_Dob.Value.ToString("yyyy-MM-dd");
+                        }
+                        if (DateTime.Now.Date.ToString("MM/dd/yyyy") == dateTimePickervisited.Value.ToString("MM/dd/yyyy"))
+                        {
+                            visited= DateTime.Now.Date.ToString("yyyy-MM-dd");
+                        }
+                        else
+                        {
+                            visited= dateTimePickervisited.Value.ToString("yyyy-MM-dd");
+                        }
                         //Addfunction();
                         string smsName1 = PappyjoeMVC.Model.Global_Variables.smsName.ToString();
                         string smsPass1 = PappyjoeMVC.Model.Global_Variables.smsPass.ToString();
-                        i = this.cntrl.Save();
+                        i = this.cntrl.Save(txtPatName.Text, txtPatientId.Text, txtAadhar.Text, gender,dob, txtxAge.Text, cmdBloodbroup.Text, txtAccompained.Text, txtPMobNumber.Text, txtSMobileNumber.Text, txtLandline.Text, txtEmail.Text, txtxStreet.Text, txtLocality.Text, txtCity.Text, txtPincode.Text, txtReferedby.Text, txtFileNo.Text, visited, ddldoctor.Text, txtOccupation.Text);
                         DataTable cmd = this.cntrl.automaticid();
                         if (cmd.Rows.Count > 0)
                         {
@@ -319,7 +170,8 @@ namespace PappyjoeMVC.View
                                 this.cntrl.update_autogenerateid(n);
                             }
                         }
-                        //a.SendSMS(smsName1, smsPass1, txtPMobNumber.Text, "Dear " + txtPatName.Text + " welcome to " + toolStripButton1.Text);
+                        SMS_model a = new SMS_model();
+                        a.SendSMS(smsName1, smsPass1, txtPMobNumber.Text, "Dear " + txtPatName.Text + " welcome to " + toolStripButton1.Text);
                         Clear_data();
                         if (i > 0)
                         {
@@ -332,7 +184,7 @@ namespace PappyjoeMVC.View
                                 {
                                     if (Convert.ToBoolean(grmedical.Rows[count].Cells[1].Value) == true)
                                     {
-                                        this.cntrl.save_medical(pat_id, grmedical.Rows[count].Cells[0].Value.ToString()); //db.execute("insert into tbl_pt_medhistory (pt_id,med_id) values('" + pat_id + "','" + grmedical.Rows[count].Cells[0].Value.ToString() + "')");
+                                        this.cntrl.save_medical(pat_id, grmedical.Rows[count].Cells[0].Value.ToString());
                                     }
                                 }
                             }
@@ -367,55 +219,24 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                             }
-                           
-                            RegistryKey regKeyAppRoot = Registry.CurrentUser.CreateSubKey("Pappyjoe");
-                            string strWindowsState = (string)regKeyAppRoot.GetValue("Server");
+                            string server = this.cntrl.server();
                             if (path != "")
                             {
 
                                 try
                                 {
-                                    if (File.Exists(@"\\" + strWindowsState + "\\Pappyjoe_utilities\\patient_image\\" + pat_id))
+                                    if (File.Exists(@"\\" + server + "\\Pappyjoe_utilities\\patient_image\\" + pat_id))
                                     {
                                     }
                                     else
                                     {
-                                        System.IO.File.Copy(path, @"\\" + strWindowsState + "\\Pappyjoe_utilities\\patient_image\\" + pat_id);
+                                        System.IO.File.Copy(path, @"\\" + server + "\\Pappyjoe_utilities\\patient_image\\" + pat_id);
                                     }
                                 }
                                 catch
                                 {
                                 }
                             }
-                            //RegistryKey regKeyAppRoot = Registry.CurrentUser.CreateSubKey("Pappyjoe");
-                            //string strWindowsState = (string)regKeyAppRoot.GetValue("Server");
-                            //pathlength();
-                            //if (path != "")
-                            //{
-                            //    try
-                            //    {
-                            //        if (File.Exists(@"\\" + strWindowsState + "\\Pappyjoe_utilities\\patient_image\\" + pat_id))
-                            //        {
-                            //        }
-                            //        else
-                            //        {
-                            //            System.IO.File.Copy(open.FileName, @"\\" + strWindowsState + "\\Pappyjoe_utilities\\patient_image\\" + pat_id);
-                            //        }
-
-                            //        //if (File.Exists(@"\\" + strWindowsState + "\\Pappyjoe_utilities\\Attachments\\" + realfile))
-                            //        //{
-                            //        //}
-                            //        //else
-                            //        //{
-                            //        //    System.IO.File.Copy(open2.FileName, @"\\" + strWindowsState + "\\Pappyjoe_utilities\\Attachments\\" + realfile);
-                            //        //}
-                            //    }
-                            //    catch (Exception ex)
-                            //    {
-                            //        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            //    }
-                            //}
                             if (statusForNewPatient == 1)
                             {
                                 ActiveForm.Close();
@@ -501,7 +322,8 @@ namespace PappyjoeMVC.View
         private void btnMED_Add_Click(object sender, EventArgs e)
         {
             medhisStatus = 1;
-            this.cntrl.check_medical(txtMedHistory.Text);
+            DataTable dtb = this.cntrl.check_medical(txtMedHistory.Text);
+            insertMED(dtb);
             DataTable dt = this.cntrl.load_medical();
             grmedical.DataSource = dt;
         }
@@ -517,7 +339,7 @@ namespace PappyjoeMVC.View
                 {
                     if (txtMedHistory.Text != "")
                     {
-                        this.cntrl.insert_medical();
+                        this.cntrl.insert_medical(txtMedHistory.Text);
                         txtMedHistory.Text = "";
                         btnAddNew.Visible = true;
                         grmedical.Visible = true;
@@ -564,7 +386,8 @@ namespace PappyjoeMVC.View
         private void btnGrp_Add_Click(object sender, EventArgs e)
         {
             selectGrp = 1;
-            this.cntrl.check_group(grouptext.Text);
+            DataTable dtb = this.cntrl.check_group(grouptext.Text);
+            insertgroup(dtb);
             DataTable dt1 = this.cntrl.load_group();
             grouptext.Text = "";
             gridgroups.DataSource = dt1;
@@ -581,7 +404,7 @@ namespace PappyjoeMVC.View
                 {
                     if (grouptext.Text != "")
                     {
-                        this.cntrl.insert_group();
+                        this.cntrl.insert_group(grouptext.Text);
                         grouptext.Text = "";
                         btn_addgrps.Visible = true;
                         gridgroups.Visible = true;
@@ -817,7 +640,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Communication();
             form2.doctor_id = doctor_id;
-            form2.patient_id=Patient_Id;
+            form2.patient_id = pat_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -827,7 +650,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -837,7 +659,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            //expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
 
@@ -847,7 +668,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                //doctor_controller controlr = new doctor_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -879,8 +699,8 @@ namespace PappyjoeMVC.View
                     txtxAge.Text = ""; txtPic.Text = "";
                     doctornamebind();
                     btnAddNew.Visible = true;
-                    string docnam = mdl.Get_DoctorName(doctor_id);//change 
-                    if (docnam!="")
+                    string docnam = this.cntrl.Get_DoctorName(doctor_id); 
+                    if (docnam != "")
                     {
                         toolStripldoc.Text = "Logged As:Dr." + docnam;
                     }
@@ -894,12 +714,7 @@ namespace PappyjoeMVC.View
                         }
                     }
                     this.Size = new System.Drawing.Size(500, 500);
-                    //DataTable clinicname = this.cntrl.Get_CompanyNAme();
-                    //if (clinicname.Rows.Count > 0)
-                    //{
-                        //clinicn = clinicname.Rows[0][0].ToString();
-                        toolStripButton1.Text = this.cntrl.Load_CompanyName();// clinicn.Replace("¤", "'");
-                    //}
+                    toolStripButton1.Text = this.cntrl.Load_CompanyName();
                     if (statusForNewPatient == 1)
                     {
                         txtPatName.Text = patient_name;

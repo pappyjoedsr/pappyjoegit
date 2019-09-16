@@ -1,25 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Finished_Procedure : Form,Finished_Procedure_interface
+    public partial class Finished_Procedure : Form
     {
         public string patient_id = "0";
         public string doctor_id = "";
         int btnEnabled = 0;
         string treatment_complete_id = "0";
-        Finished_Procedre_controller cntrl;
-        //common_model cmodel = new common_model();
+        Finished_Procedre_controller cntrl=new Finished_Procedre_controller();
         public Finished_Procedure()
         {
             InitializeComponent();
@@ -30,78 +23,74 @@ namespace PappyjoeMVC.View
             var form2 = new Add_Finished_Procedure();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Addfinsed_Treatment_controller controller = new Addfinsed_Treatment_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
         }
-        public void Setcontroller(Finished_Procedre_controller controller)
-        {
-            cntrl = controller;
-        }
-
         private void FinishedProcedure_Load(object sender, EventArgs e)
         {
-            if (doctor_id != "1")
+            try
             {
-                string privid;
-                privid = this.cntrl.Add_privilliege(doctor_id);
-                if (int.Parse(privid) > 0)
+                if (doctor_id != "1")
                 {
-                    btn_Add.Enabled = true;
+                    string privid;
+                    privid = this.cntrl.Add_privilliege(doctor_id);
+                    if (int.Parse(privid) > 0)
+                    {
+                        btn_Add.Enabled = true;
+                    }
+                    else
+                    {
+                        btn_Add.Enabled = false;
+                    }
+                    privid = this.cntrl.edit_privillege(doctor_id);
+                    if (int.Parse(privid) > 0)
+                    {
+                        editToolStripMenuItem1.Enabled = true;
+                    }
+                    else
+                    {
+                        editToolStripMenuItem1.Enabled = false;
+                    }
+                    privid = this.cntrl.delete_privillage(doctor_id);
+                    if (int.Parse(privid) > 0)
+                    {
+                        deleteToolStripMenuItem1.Enabled = true;
+                    }
+                    else
+                    {
+                        deleteToolStripMenuItem1.Enabled = false;
+                    }
                 }
-                else
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
+                toolStripButton1.Text = this.cntrl.Load_CompanyName();
+                string docnam = this.cntrl.Get_DoctorName(doctor_id);
+                if (docnam != "")
                 {
-                    btn_Add.Enabled = false;
+                    toolStripTextDoctor.Text = "Logged In As : " + docnam;
                 }
-                privid = this.cntrl.edit_privillege(doctor_id);
-                if (int.Parse(privid) > 0)
+                System.Data.DataTable rs_patients = this.cntrl.Get_Patient_id_NAme(patient_id);
+                if (rs_patients.Rows[0]["pt_name"].ToString() != "")
                 {
-                    editToolStripMenuItem1.Enabled = true;
+                    linkLabel_Name.Text = rs_patients.Rows[0]["pt_name"].ToString();
                 }
-                else
+                if (rs_patients.Rows[0]["pt_id"].ToString() != "")
                 {
-                    editToolStripMenuItem1.Enabled = false;
+                    linkLabel_id.Text = rs_patients.Rows[0]["pt_id"].ToString();
                 }
-                privid = this.cntrl.delete_privillage(doctor_id);
-                if (int.Parse(privid) > 0)
-                {
-                    deleteToolStripMenuItem1.Enabled = true;
-                }
-                else
-                {
-                    deleteToolStripMenuItem1.Enabled = false;
-                }
+                dgv_treatment_paln.DefaultCellStyle.SelectionBackColor = Color.White;
+                dgv_treatment_paln.ColumnHeadersVisible = false;
+                dgv_treatment_paln.RowHeadersVisible = false;
+                dgv_treatment_paln.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgv_treatment_paln.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgv_treatment_paln.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DataTable dtb = this.cntrl.get_completed_id_date(patient_id);
+                Load_Data(dtb);
             }
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
-            DataTable clinicname = this.cntrl.Get_CompanyNAme();
-            if (clinicname.Rows.Count > 0)
+            catch (Exception ex)
             {
-                string clinicn = "";
-                clinicn = clinicname.Rows[0]["name"].ToString();
-                toolStripButton1.Text = clinicn.Replace("¤", "'");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            string docnam = this.cntrl.Get_DoctorName(doctor_id);
-            if (docnam != "")
-            {
-                toolStripTextDoctor.Text = "Logged In As : " + docnam;
-            }
-            System.Data.DataTable rs_patients = this.cntrl.Get_Patient_id_NAme(patient_id);
-            if (rs_patients.Rows[0]["pt_name"].ToString() != "")
-            {
-                linkLabel_Name.Text = rs_patients.Rows[0]["pt_name"].ToString();
-            }
-            if (rs_patients.Rows[0]["pt_id"].ToString() != "")
-            {
-                linkLabel_id.Text = rs_patients.Rows[0]["pt_id"].ToString();
-            }
-            dgv_treatment_paln.DefaultCellStyle.SelectionBackColor = Color.White;
-            dgv_treatment_paln.ColumnHeadersVisible = false;
-            dgv_treatment_paln.RowHeadersVisible = false;
-            dgv_treatment_paln.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgv_treatment_paln.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgv_treatment_paln.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.cntrl.get_completed_id_date(patient_id);
         }
 
         public void Load_Data(DataTable dt_pt_main)
@@ -109,7 +98,7 @@ namespace PappyjoeMVC.View
             try
             {
                 int i = 0;
-                if(dt_pt_main.Rows.Count>0)
+                if (dt_pt_main.Rows.Count > 0)
                 {
                     for (int j = 0; j < dt_pt_main.Rows.Count; j++)
                     {
@@ -195,7 +184,7 @@ namespace PappyjoeMVC.View
                     lab_Msg.Location = new System.Drawing.Point(165, 165);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -293,7 +282,7 @@ namespace PappyjoeMVC.View
                     dlt_privilage();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -304,7 +293,7 @@ namespace PappyjoeMVC.View
             if (treatment_complete_id != "0")
             {
                 DialogResult res = MessageBox.Show("Are you sure you want to delete..?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (res == DialogResult.Yes) 
+                if (res == DialogResult.Yes)
                 {
                     System.Data.DataTable dt_pt_complete = this.cntrl.get_plamManin_id(treatment_complete_id);
                     string completed_main_id = "0";
@@ -353,7 +342,6 @@ namespace PappyjoeMVC.View
                     form2.patient_id = patient_id;
                     form2.doctor_id = doctor_id;
                     form2.complete_proce_id = a_plan_id;
-                    Add_Invoice_controller controller = new Add_Invoice_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -363,7 +351,7 @@ namespace PappyjoeMVC.View
                     MessageBox.Show("Please select the Treatment..", "No Data To add !", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -412,7 +400,6 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -422,7 +409,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -434,7 +420,7 @@ namespace PappyjoeMVC.View
             if (doctor_id != "1")
             {
                 string id;
-                id = this .cntrl.permission_for_settings(doctor_id);
+                id = this.cntrl.permission_for_settings(doctor_id);
                 if (int.Parse(id) > 0)
                 {
                     var form2 = new Practice_Details();
@@ -493,7 +479,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -503,7 +488,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            //expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
 
@@ -513,7 +497,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                //doctor_controller controlr = new doctor_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -545,7 +528,6 @@ namespace PappyjoeMVC.View
             var form2 = new Vital_Signs();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            //Vital_Signs_controller controller = new Vital_Signs_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -567,7 +549,6 @@ namespace PappyjoeMVC.View
             var form2 = new Finished_Procedure();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Finished_Procedre_controller controller = new Finished_Procedre_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -633,7 +614,6 @@ namespace PappyjoeMVC.View
             var form2 = new Clinical_Findings();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            //Clinical_Findings_controller controller = new Clinical_Findings_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

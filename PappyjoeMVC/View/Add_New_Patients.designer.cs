@@ -1484,7 +1484,7 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // AddNewPatients
+            // Add_New_Patients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1498,7 +1498,7 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "AddNewPatients";
+            this.Name = "Add_New_Patients";
             this.Text = "Add New Patients";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AddNewPatients_Load);

@@ -709,7 +709,7 @@ namespace PappyjoeMVC.View
 
             panel1.Hide();
 
-            DataTable dt_a = db.table("select pt_id,dr_id,note,plan_new_procedure from tbl_appointment where  id=" + ModEvent.Body + " ORDER BY id");
+            DataTable dt_a = this.cntrl.get_appointment_procedure(ModEvent.Body);// db.table("select pt_id,dr_id,note,plan_new_procedure from tbl_appointment where  id=" + ModEvent.Body + " ORDER BY id");
             if (dt_a.Rows.Count > 0)
             {
                 patient_id = dt_a.Rows[0][0].ToString();
@@ -725,7 +725,7 @@ namespace PappyjoeMVC.View
             txt_p_name.Text = ModEvent.Subject;
             //patient_id = ModEvent.Body;
             patient_name = ModEvent.Subject;
-            DataTable dt_p = db.table("select pt_name,pt_id,primary_mobile_number,email_address from tbl_patient where  id=" + patient_id + " ORDER BY id");
+            DataTable dt_p = this.cntrl.Getpat_MobNamme(patient_id);// db.table("select pt_name,pt_id,primary_mobile_number,email_address from tbl_patient where  id=" + patient_id + " ORDER BY id");
             if (dt_p.Rows.Count > 0)
             {
                 lab_p_name.Text = dt_p.Rows[0][0].ToString() + "(" + dt_p.Rows[0][1].ToString() + ")";
@@ -748,7 +748,7 @@ namespace PappyjoeMVC.View
                 cmbStartTime.Visible = false;
                 cmbEndTime.Visible = false;
             }
-
+              
             dpStartTimeDate.Value = StartDate;
 
             int mis = 0;
@@ -756,7 +756,7 @@ namespace PappyjoeMVC.View
             cmbStartTime.SelectedIndex = (int)(StartTime.Hour * 12 + mis);
             //UpdateEndTimeCombo();
             dpEndTimeDate.Value = EndDate;
-            mis = EndTime.Minute / 5;
+            mis = EndTime.Minute / 5;    
             cmbEndTime.SelectedIndex = (int)(EndTime.Hour * 12 + mis);
             var diff = EndTime.Subtract(StartTime);
             lbl_scheduledtime.Text = dpStartTimeDate.Value.ToString("dd MMM yyyy") + " at " + cmbStartTime.Text + " for " + Convert.ToString(diff.Minutes) + " mins";
@@ -765,7 +765,7 @@ namespace PappyjoeMVC.View
         public void Appointment_for_newPAtient(DataTable dtpSearch)
         {
             list_p_details.DataSource = dtpSearch;
-            string neworold = "0"; 
+            string neworold = "0";
             if (dtpSearch.Rows.Count <= 0)
             {
                 if (!String.IsNullOrWhiteSpace(txt_p_name.Text))
@@ -792,7 +792,7 @@ namespace PappyjoeMVC.View
                         {
                             //int i = db.execute("insert into tbl_patient (pt_name,pt_id,aadhar_id,gender,date_of_birth,age,blood_group,family,relation,primary_mobile_number,secondary_mobile_number,landline_number,email_address,street_address,locality,city,pincode,date,group_id,refferedby,Opticket,Visited,doctorname,Occupation,Profile_Status) values('" + txt_p_name.Text + "','" + patid_ + "','','','" + DateTime.Now.ToString("yyyy-MM-dd") + "','','','','','" + txt_p_mobile.Text + "','','','" + txt_p_email.Text + "','','','','','" + DateTime.Now.ToString("yyyy-MM-dd") + "','','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + combodoctor.Text + "','Active')");
                             //insert into tbl_patient (pt_name,pt_id,aadhar_id,gender,date_of_birth,age,blood_group,family,relation,primary_mobile_number,secondary_mobile_number,landline_number,email_address,street_address,locality,city,pincode,date,group_id,refferedby,Opticket,Visited,doctorname,Occupation,Profile_Status)
-                            this.cntrl.Save_patient( txt_p_name.Text , patid_ ,"", "", DateTime.Now.ToString("yyyy-MM-dd") ,"", "", "", "",  txt_p_mobile.Text , "", "",  txt_p_email.Text,"", "", "", "",  DateTime.Now.ToString("yyyy-MM-dd"), "","","",DateTime.Now.ToString("yyyy-MM-dd") , combodoctor.Text ,"");
+                            this.cntrl.Save_patient( txt_p_name.Text , patid_ ,"", "", "" ,"", "", "",  txt_p_mobile.Text , "", "",  "","", "", "", "",   "","",DateTime.Now.ToString("yyyy-MM-dd") , combodoctor.Text ,"");
                             DataTable rs_patient = this.cntrl.get_max_patid();// db.table("SELECT MAX(id) FROM tbl_patient");
                             patient_name = txt_p_name.Text;
                             patient_id = rs_patient.Rows[0][0].ToString();

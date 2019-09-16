@@ -10,36 +10,14 @@ using System.Windows.Forms;
 using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
-    public partial class Add_Categeory : Form,add_category_interface
+    public partial class Add_Categeory : Form
     {
-        Add_Category_controller cntrl; string Id;
-        public Add_Categeory()
-        {
-            InitializeComponent();
-        }
-        public string Number
-        {
-            get { return this.txtCategoryNumber.Text; }
-            set { this.txtCategoryNumber.Text = value; }
-        }
-        public string Name
-        {
-            get { return this.txt_Cat_Name.Text; }
-            set { this.txt_Cat_Name.Text = value; }
-        }
-        public string Decsription
-        {
-            get { return this.txtDescription.Text; }
-            set { this.txtDescription.Text = value; }
-        }
-        public void SetController(Add_Category_controller controller)
-        {
-            cntrl = controller;
-        }
+        Add_Category_controller cntrl=new Add_Category_controller(); string Id;
         private void frmAddCategeory_Load(object sender, EventArgs e)
         {
             clear();
-            this.cntrl.Load_data();
+            DataTable dtb= this.cntrl.Load_data();
+            Load_Data(dtb);
             dgvCategory.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             dgvCategory.EnableHeadersVisualStyles = false;
             dgvCategory.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -94,7 +72,8 @@ namespace PappyjoeMVC.View
                             int i = this.cntrl.delete(Id);
                             if (i > 0)
                             {
-                                this.cntrl.Load_data();
+                             DataTable dtb= this.cntrl.Load_data();
+                             Load_Data(dtb);
                             }
                         }
                     }
@@ -115,13 +94,14 @@ namespace PappyjoeMVC.View
                 {
                     if (txt_Cat_Name.Text != "")
                     {
-                        DataTable dt = this.cntrl.Get_catdetails(txt_Cat_Name.Text, txtCategoryNumber.Text);  //db.table("select Name,Cat_Number from tbl_Category where Name='" + txt_Cat_Name.Text + "' and Cat_Number='" + txtCategoryNumber.Text + "'");
+                        DataTable dt = this.cntrl.Get_catdetails(txt_Cat_Name.Text, txtCategoryNumber.Text); 
                         if (dt.Rows.Count == 0)
                         {
-                            this.cntrl.save();
+                            this.cntrl.save(txt_Cat_Name.Text, txtCategoryNumber.Text, txtDescription.Text);
                             MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             clear();
-                            this.cntrl.Load_data();
+                            DataTable dtb= this.cntrl.Load_data();
+                            Load_Data(dtb);
                         }
                         else
                         {
@@ -138,10 +118,11 @@ namespace PappyjoeMVC.View
                     if (txt_Cat_Name.Text != "")
                     {
                         DataTable dt = new DataTable();
-                        this.cntrl.update(Id);
+                        this.cntrl.update(txt_Cat_Name.Text, txtCategoryNumber.Text, txtDescription.Text,Id);
                         MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         clear();
-                        this.cntrl.Load_data();
+                        DataTable dtb= this.cntrl.Load_data();
+                        Load_Data(dtb);
                         btnOK.Text = "SAVE";
                         btnCancel.Text = "CLOSE";
                     }

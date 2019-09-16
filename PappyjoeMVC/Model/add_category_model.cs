@@ -4,24 +4,6 @@ namespace PappyjoeMVC.Model
     public class Add_Category_model
     {
         Connection db = new Connection();
-        private string _number = "";
-        public string Number
-        {
-            get { return _number; }
-            set { _number = value; }
-        }
-        private string _name = "";
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
-        private string _description = "";
-        public string Description
-        {
-            get { return _description; }
-            set { _description = value; }
-        }
         public DataTable Load_data()
         {
             DataTable dt = db.table("select * from tbl_Category");
@@ -42,13 +24,13 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table("select Name,Cat_Number from tbl_Category where Name='" + name + "' and Cat_Number='" + number + "'");
             return dt;
         }
-        public void save()
+        public void save(string Name, string Cat_Number, string Description)
         {
-            db.execute("insert into tbl_Category (Name,Cat_Number,Description) values('" + _name + "','" + _number + "','" + _description + "')");
+            db.execute("insert into tbl_Category (Name,Cat_Number,Description) values('" + Name + "','" + Cat_Number + "','" + Description + "')");
         }
-        public void update(string Id)
+        public void update(string Name, string Cat_Number, string Description,string Id)
         {
-            db.execute("update tbl_Category set Name='" + _name + "',Cat_Number='" + _number + "',Description='" + _description + "' where id='" + Id + "'");
+            db.execute("update tbl_Category set Name='" + Name + "',Cat_Number='" + Cat_Number + "',Description='" + Description + "' where id='" + Id + "'");
         }
     }
 }

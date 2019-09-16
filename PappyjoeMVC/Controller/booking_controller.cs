@@ -5,25 +5,19 @@ namespace PappyjoeMVC.Controller
 {
     public class Booking_controller
     {
-        //booking_interface intr;
         Booking_model _model = new Booking_model();
         Connection db = new Connection();
         Common_model cmodel = new Common_model();
         Add_Appointment_model addmodel = new Add_Appointment_model();
         Add_New_Patient_model pmodel = new Add_New_Patient_model();
-        //public Booking_controller(booking_interface intttr)
-        //{
-        //    intr = intttr;
-        //    intr.SetController(this);
-        //}
         public string Add_privillege(string doctor_id)
         {
-            string ss = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='APT' and Permission='AP'");
+            string ss = _model.Add_privillege(doctor_id);
             return ss;
         }
         public DataTable doctor_name(string doctor_id)
         {
-            DataTable dt = db.table("select DISTINCT id,doctor_name from tbl_doctor where (login_type='doctor' or login_type='admin')  and activate_login='yes' and id='" + doctor_id + "'");
+            DataTable dt = _model.doctor_name(doctor_id);
             return dt;
         }
         public DataTable get_all_doctorname()
@@ -43,57 +37,58 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable search_patient(string search)
         {
-            DataTable dt = db.table("select CONCAT (pt_name,' ', primary_mobile_number)  pt_name,id from tbl_patient where (pt_name like '%" + search + "%'  or pt_id like '%" + search + "%' or primary_mobile_number like '%" + search + "%' or email_address like '%" + search + "%' or street_address  like '%" + search + "%' or locality like '%" + search + "%' or city like '%" + search + "%') and Profile_Status='Active'  order by pt_name");
+            DataTable dt = _model.search_patient(search);
             return dt;
         }
         public DataTable Getpat_MobNamme(string patient_id)
         {
-            DataTable dt_p = db.table("select pt_name,pt_id,primary_mobile_number,email_address from tbl_patient where  id=" + patient_id + " ORDER BY id");
-            return dt_p;// intr.Fill_search_patient(dt_p);
+            DataTable dt_p = _model.Getpat_MobNamme(patient_id);
+            return dt_p;
         }
         public DataTable search_ptid(string search)
         {
-            DataTable dt = db.table("select CONCAT (pt_name,' ', primary_mobile_number)  pt_name,id from tbl_patient where (pt_name like '%" + search + "%'  or pt_id like '%" + search + "%' or primary_mobile_number like '%" + search + "%' or email_address like '%" + search + "%')and Profile_Status='Active' order by pt_name");
+            DataTable dt = _model.search_ptid(search);
             return dt;
         }
         public DataTable patient_details(string txt_p_name)
         {
             DataTable dtb = _model.patient_details(txt_p_name);
-            return dtb;// intr.Appointment_for_newPAtient(dtb);
+            return dtb;
         }
         public DataTable get_patientPrefix()
         {
-            DataTable patidGeneration = db.table("select patient_prefix,patient_number from tbl_patient_automaticid where patient_automation='Yes'");
+            DataTable patidGeneration = _model.get_patientPrefix();
             return patidGeneration;
         }
-        public void Save_patient(string PatientName, string Patient_Id, string aadhar_id, string gender, string date_of_birth, string age, string blood_group, string family, string relation, string primary_mobile_number, string secondary_mobile_number, string landline_number, string email_address, string street_address, string locality, string city, string pincode, string date, string group_id, string refferedby, string Opticket, string Visited, string doctorname, string Occupation)
+        public void Save_patient(string PatientName, string Patient_Id, string aadhar_id, string gender, string date_of_birth, string age, string blood_group, string family,  string primary_mobile_number, string secondary_mobile_number, string landline_number, string email_address, string street_address, string locality, string city, string pincode,  string refferedby, string Opticket, string Visited, string doctorname, string Occupation)
         {
-            pmodel.PatientName = PatientName;
-            pmodel.PatientId = Patient_Id;
-            pmodel.Aadhaar = aadhar_id;
-            pmodel.Blood = blood_group;
-            pmodel.Accompainedby = family;
-            pmodel.Age = age;
-            pmodel.DOB = date_of_birth;
-            pmodel.Doctor = doctorname;
-            pmodel.FileNo = Opticket;
-            pmodel.Landline = landline_number;
-            pmodel.Occupation = Occupation;
-            pmodel.ReferredBy = refferedby;
-            pmodel.PrimaryMob = primary_mobile_number;
-            pmodel.SecondaryMob = secondary_mobile_number;
-            pmodel.Street = street_address;
-            pmodel.DateofAdmit = Visited;
-            pmodel.Gender = gender;
-            pmodel.Pincode = pincode;
-            pmodel.City = city;
-            pmodel.Email = email_address;
-            pmodel.Locality = locality;
-            pmodel.Save();
-        }
+            //pmodel.PatientName = PatientName;
+            //pmodel.PatientId = Patient_Id;
+            //pmodel.Aadhaar = aadhar_id;
+            //pmodel.Blood = blood_group;
+            //pmodel.Accompainedby = family;
+            //pmodel.Age = age;
+            //pmodel.DOB = date_of_birth;
+            //pmodel.Doctor = doctorname;
+            //pmodel.FileNo = Opticket;
+            //pmodel.Landline = landline_number;
+            //pmodel.Occupation = Occupation;
+            //pmodel.ReferredBy = refferedby;
+            //pmodel.PrimaryMob = primary_mobile_number;
+            //pmodel.SecondaryMob = secondary_mobile_number;
+            //pmodel.Street = street_address;
+            //pmodel.DateofAdmit = Visited;
+            //pmodel.Gender = gender;
+            //pmodel.Pincode = pincode;
+            //pmodel.City = city;
+            //pmodel.Email = email_address;
+            //pmodel.Locality = locality;
+            pmodel.Save( PatientName,  Patient_Id,  aadhar_id,  gender,  date_of_birth,  age,  blood_group,  family,    primary_mobile_number,  secondary_mobile_number,  landline_number,  email_address,  street_address,  locality,  city,  pincode,    refferedby,  Opticket,  Visited,  doctorname,  Occupation);
+        }//string _name ,string _id , string _aadhar , string _gender, string _dob , string _age , string _blood , string _accompained , string _pmobile , string _smobile , string _landline , string _email , string _street , string
+        //_locality , string _city, string _pincode, string _referred, string _file, string _admit, string _doctor, string _occupation
         public DataTable get_max_patid()
         {
-            DataTable rs_patient = db.table("SELECT MAX(id) FROM tbl_patient");
+            DataTable rs_patient = _model.get_max_patid();
             return rs_patient;
         }
         public DataTable automaticid()
@@ -107,39 +102,27 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable Get_calenderColor(string dr_id)
         {
-            DataTable dt_d = db.table("select calendar_color,mobile_number,email_id from tbl_doctor where  id=" + dr_id + " ORDER BY ");
+            DataTable dt_d = _model.Get_calenderColor(dr_id);
             return dt_d;
         }
         public DataTable get_doctor_login(string id)
         {
-            DataTable doctor = db.table("select doctor_name,mobile_number,login_type from tbl_doctor where id='" + id + "'");
+            DataTable doctor = _model.get_doctor_login(id);
             return doctor;
         }
         public DataTable patient_details_byname(string txt_p_name)
         {
             DataTable dtb = _model.patient_details(txt_p_name);
             return dtb;
-            //intr.Appointment_for_newPAtient(dtb);
         }
         public int insappointment(string book_datetime, string start_datetime, string duration, string note, string pt_id, string pt_name, string dr_id, string mobile_no, string email_id, string plan_new_procedure, string booked_by)
         {
-            //addmodel.book_datetime = book_datetime;
-            //addmodel.start_date = start_datetime;
-            //addmodel.duration = duration;
-            //addmodel.note = note;
-            //addmodel.patient_id = pt_id;
-            //addmodel.pt_name = pt_name;
-            //addmodel.dr_id = dr_id;
-            //addmodel.pt_mobile = mobile_no;
-            //addmodel.pt_email = email_id;
-            //addmodel.plan_new_procedure = plan_new_procedure;
-            //addmodel.booked_by = booked_by;
             int i = addmodel.insappointment(book_datetime.ToString(), start_datetime.ToString(), duration, note, pt_id, pt_name, dr_id, mobile_no, email_id, plan_new_procedure, booked_by);
             return i;
         }
         public DataTable appointmentId()
         {
-            DataTable dt_a = db.table("select id from tbl_appointment ORDER BY id");
+            DataTable dt_a = appointmentId();
             return dt_a;
         }
         public DataTable clinicdetails()
@@ -154,12 +137,12 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable Get_reminderSmS()
         {
-            DataTable smsreminder = db.table("select * from tbl_appt_reminder_sms");
+            DataTable smsreminder = _model.Get_reminderSmS();
             return smsreminder;
         }
         public void save_Pt_SMS(string patient_id, string ptnaame, string procedure, string StartT, string cmbStartTime, string combodoctor)
         {
-            db.execute("insert into tbl_pt_sms_communication (pt_id,send_datetime,type,message_status,message) values('" + patient_id + "','" + DateTime.Now.ToString("yyyy-MM-dd hh:mm") + "','patient','sent','Dear " + ptnaame + " " + "Your appointment for " + procedure + " has been confirmed at " + StartT + " " + cmbStartTime + " with " + "Dr " + combodoctor + " Regards ')");
+            _model.save_Pt_SMS( patient_id,  ptnaame,  procedure,  StartT,  cmbStartTime,  combodoctor);
         }
         public DataTable getpatemail(string patient_id)
         {
@@ -173,7 +156,13 @@ namespace PappyjoeMVC.Controller
         }
         public void update_appointment(DateTime StartT, string diff1, string note, string patient_id, string patient_name, string dr_id, string mobile_no, string email, string gpl_app_id)
         {
-            int j = db.execute("update tbl_appointment set start_datetime='" + Convert.ToDateTime(StartT).ToString("yyyy-MM-dd HH:mm") + "',duration='" + diff1 + "',note='" + note + "',pt_id='" + patient_id + "',pt_name='" + patient_name + "',dr_id='" + dr_id + "',mobile_no='" + mobile_no + "',email_id='" + email + "' where id='" + gpl_app_id + "'");
+            _model.update_appointment( StartT,  diff1,  note,  patient_id,  patient_name,  dr_id,  mobile_no,  email,  gpl_app_id);
+        }
+
+        public DataTable get_appointment_procedure(string id)
+        {
+            DataTable dtb = _model.get_appointment_procedure(id);
+            return dtb;
         }
     }
 }

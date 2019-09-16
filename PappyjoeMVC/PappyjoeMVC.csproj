@@ -63,16 +63,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Addfinsed_Treatment_controller.cs" />
-    <Compile Include="Controller\addfinsed_treatment_interface.cs" />
     <Compile Include="Controller\Add_Item_controller.cs" />
     <Compile Include="Controller\Add_New_patient_controller.cs" />
-    <Compile Include="Controller\AddNew_patient_interface.cs" />
     <Compile Include="Controller\Add_Appointment_controller.cs" />
     <Compile Include="Controller\Add_Attachments_controller.cs" />
     <Compile Include="Controller\Add_Category_controller.cs" />
-    <Compile Include="Controller\add_category_interface.cs" />
     <Compile Include="Controller\Add_Invoice_controller.cs" />
-    <Compile Include="Controller\Add_invoice_interface.cs" />
     <Compile Include="Controller\Add_Receipt_controller.cs" />
     <Compile Include="Controller\add_receipt_interface.cs" />
     <Compile Include="Controller\Add_Treatmentplan_controller.cs" />
@@ -106,7 +102,6 @@
     <Compile Include="Controller\Doctor_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Edit_Practice_Details_controller.cs" />
     <Compile Include="Controller\EMR_controller.cs" />
-    <Compile Include="Controller\EMR_Interface.cs" />
     <Compile Include="Controller\Expense_controller.cs" />
     <Compile Include="Controller\Expiry_Report_controller.cs" />
     <Compile Include="Controller\Export_controller.cs" />

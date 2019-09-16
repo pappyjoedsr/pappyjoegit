@@ -4,24 +4,7 @@ namespace PappyjoeMVC.Model
     public class Add_Finished_Treatment_model
     {
         Connection db = new Connection();
-        private string _proceduretxt = "";
-        public string Procedure
-        {
-            get { return _proceduretxt; }
-            set { _proceduretxt = value; }
-        }
-        private decimal _Procedure_cost = 0;
-        public decimal Procedure_cost
-        {
-            get { return _Procedure_cost; }
-            set { _Procedure_cost = value; }
-        }
-        private string _search = "";
-        public string Search
-        {
-            get { return _search; }
-            set { _search = value; }
-        }
+       
         public DataTable Load_finishedtreatments(string patient_id)
         {
             DataTable dt_tp = db.table("SELECT id, plan_main_id,procedure_name,procedure_id,cost from tbl_treatment_plan where pt_id='" + patient_id + "' and status='1'");
@@ -41,16 +24,16 @@ namespace PappyjoeMVC.Model
                    "tbl_treatment_plan_main.dr_id,tbl_treatment_plan.id,tbl_treatment_plan.tooth from tbl_treatment_plan join tbl_treatment_plan_main on tbl_treatment_plan_main.id=tbl_treatment_plan.plan_main_id where tbl_treatment_plan.id='" + id + "'");
             return rs_plan;
         }
-        public void save_procedure_plans()
+        public void save_procedure_plans(string name, string cost)
         {
-            db.execute("insert into tbl_addproceduresettings(name,cost) values('" + _proceduretxt + "','" + _Procedure_cost + "')");
+            db.execute("insert into tbl_addproceduresettings(name,cost) values('" + name + "','" + cost + "')");
         }
         public string Get_max_procedureid()
         {
             string p = db.scalar("select MAX(id) from tbl_addproceduresettings");
             return p;
         }
-        public DataTable Search_procedure()
+        public DataTable Search_procedure(string _search)
         {
             DataTable dtb = db.table("SELECT id,name,cost from tbl_addproceduresettings where name like'" + _search + "%' ORDER BY id DESC");
             return dtb;
@@ -74,9 +57,9 @@ namespace PappyjoeMVC.Model
         {
             db.execute("insert into tbl_completed_id (completed_date,patient_id,review) values('" + date + "','" + patient_id + "','NO')");
         }
-        public DataTable get_completedMaxid()
+        public string get_completedMaxid()
         {
-            DataTable dt = db.table("select MAX(id) from tbl_completed_id");
+            string dt = db.scalar("select MAX(id) from tbl_completed_id");
             return dt;
         }
         public void save_completed_items(int plan_main_id, string patient_id, string procedure_id, string procedure_name, string quantity, string cost, string discount_type, string discount, string total, string discount_inrs, string note, string date, string dr_id, string completed_id, string tooth)
@@ -119,10 +102,34 @@ namespace PappyjoeMVC.Model
         {
             db.execute("update  tbl_treatment_plan set status='1' where id= '" + plan_main_id + "'");
         }
-        //public DataTable chek_planmain_id(string completed_main_id)
-        //{
-        //   DataTable dt_pt_complete2 = db.table("SELECT plan_main_id FROM tbl_completed_procedures  wher e plan_main_id='" + completed_main_id + "'");
-        //    return dt_pt_complete2;
-        //}SELECT id, procedure_name,procedure_id,cost from tbl_completed_procedures where pt_id='" + patient_id + "' and status='1'
+        //finished procedure
+        public string Add_privilliege(string doctor_id)
+        {
+            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRFP' and Permission='A'");
+            return privid;
+        }
+        public string edit_privillege(string doctor_id)
+        {
+            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRFP' and Permission='E'");
+            return privid;
+        }
+        public string delete_privillage(string doctor_id)
+        {
+            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRFP' and Permission='D'");
+            return privid;
+        }
+        public void delete(string treatment_complete_id)
+        {
+            db.execute("delete from tbl_completed_procedures where id='" + treatment_complete_id + "'");
+        }
+        public DataTable chek_planmain_id(string completed_main_id)
+        {
+            DataTable dt_pt_complete2 = db.table("SELECT plan_main_id FROM tbl_completed_procedures  where plan_main_id='" + completed_main_id + "'");
+            return dt_pt_complete2;
+        }
+        public void delete_completedid(string completed_main_id)
+        {
+            db.execute("delete from tbl_completed_id where id='" + completed_main_id + "'");
+        }
     }
 }

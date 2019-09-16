@@ -5,45 +5,36 @@ namespace PappyjoeMVC.Controller
 {
     public class Addfinsed_Treatment_controller
     {
-        addfinsed_treatment_interface intr;
         Add_Finished_Treatment_model _model = new Add_Finished_Treatment_model();
         Common_model cmodel = new Common_model();
-        public Addfinsed_Treatment_controller(addfinsed_treatment_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
-        public void Load_finishedtreatments(string patient_id)
+        public DataTable Load_finishedtreatments(string patient_id)
         {
             DataTable dtb = _model.Load_finishedtreatments(patient_id);
-            intr.Load_finishedtreatments(dtb);
+            return dtb;
         }
-        public void load_proceduresgrid()
+        public DataTable load_proceduresgrid()
         {
             DataTable dt_pt = _model.load_proceduresgrid();
-            intr.load_proceduresgrid(dt_pt);
+            return dt_pt;
         }
-        public void Load_treatmentPlans(string id)
+        public DataTable Load_treatmentPlans(string id)
         {
             DataTable dtb = _model.Load_treatmentPlans(id);
-            intr.Load_TreatmentPlans(dtb);
+            return dtb;
         }
-        public void save_procedure_plans()
+        public void save_procedure_plans(string name, string cost)
         {
-            _model.Procedure = intr.Procedure;
-            _model.Procedure_cost = intr.Procedure_cost;
-            _model.save_procedure_plans();
+            _model.save_procedure_plans(name, cost);
         }
         public string Get_max_procedureid()
         {
             string p = _model.Get_max_procedureid();
             return p;
         }
-        public void Search_procedure()
+        public DataTable Search_procedure(string _search)
         {
-            _model.Search = intr.Search;
-            DataTable dtb = _model.Search_procedure();
-            intr.load_proceduresgrid(dtb);
+            DataTable dtb = _model.Search_procedure(_search);
+            return dtb;
         }
         public DataTable get_procedure_Name(string id)
         {
@@ -64,9 +55,9 @@ namespace PappyjoeMVC.Controller
         {
             _model.save_completed_id(date, patient_id);
         }
-        public DataTable get_completedMaxid()
+        public string get_completedMaxid()
         {
-            DataTable dtb = _model.get_completedMaxid();
+            string dtb = _model.get_completedMaxid();
             return dtb;
         }
         public void save_completed_items(int plan_main_id, string patient_id, string procedure_id, string procedure_name, string quantity, string cost, string discount_type, string discount, string total, string discount_inrs, string note, string date, string dr_id, string completed_id, string tooth)
@@ -98,9 +89,9 @@ namespace PappyjoeMVC.Controller
         {
             _model.update_review_No(date, j_Review);
         }
-        public DataTable Get_CompanyNAme()
+        public string Load_CompanyName()
         {
-            DataTable dtb = cmodel.Get_CompanyNAme();
+            string dtb = cmodel.Load_CompanyName();
             return dtb;
         }
         public DataTable Patient_search(string patid)
