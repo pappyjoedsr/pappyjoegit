@@ -272,6 +272,7 @@ namespace PappyjoeMVC.View
             {
                 DataTable clinicname = this.ctrlr.practicedetails();
                 toolStripButton4.Visible = true;
+                listpatientsearch.Visible = false;
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
                 if (clinicname.Rows.Count > 0)
                 {
