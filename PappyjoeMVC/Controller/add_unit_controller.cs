@@ -4,33 +4,26 @@ namespace PappyjoeMVC.Controller
 {
     public class Add_Unit_controller
     {
-        add_unit_interface intr;
         Add_Unit_model _model = new Add_Unit_model();
-        public Add_Unit_controller(add_unit_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
-        public void Load_Data()
+        public DataTable Load_Data()
         {
             DataTable dtb = _model.Load_Data();
-            intr.LoadData(dtb);
+            return dtb;
         }
         public DataTable get_units()
         {
             DataTable dtb = _model.Load_Data();
             return dtb;
         }
-        public int save()
+        public int save(string Units)
         {
-            _model.UNit = intr.Units;
-            int i = _model.save();
+            int i = _model.save(Units);
             return i;
         }
-        public int update(string unitid)
+        public int update(string unitid, string _unit)
         {
-            _model.UNit = intr.Units;
-            int j = _model.update(unitid);
+
+            int j = _model.update(unitid, _unit);
             return j;
         }
         public int delete(string id)
@@ -38,7 +31,5 @@ namespace PappyjoeMVC.Controller
             int j = _model.delete(id);
             return j;
         }
-
-
     }
 }

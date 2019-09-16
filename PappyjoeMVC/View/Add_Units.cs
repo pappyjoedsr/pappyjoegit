@@ -30,7 +30,8 @@ namespace PappyjoeMVC.View
         }
         private void frmAddUnits_Load(object sender, EventArgs e)
         {
-            this.cntrl.Load_Data();
+            DataTable dtb= this.cntrl.Load_Data();
+            LoadData(dtb);
             dgv_Units.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             dgv_Units.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv_Units.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
@@ -70,7 +71,7 @@ namespace PappyjoeMVC.View
                     int i = 0;
                     if (itemcheck(txt_Unitname.Text) == 0)
                     {
-                        i = this.cntrl.save();
+                        i = this.cntrl.save(txt_Unitname.Text);
                         if (i == 0)
                         {
                             MessageBox.Show("Inseration Failed !..", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -88,7 +89,7 @@ namespace PappyjoeMVC.View
                 else
                 {
                     int j = 0;
-                    j = this.cntrl.update(unit_id); 
+                    j = this.cntrl.update(unit_id, txt_Unitname.Text); 
                     if (j == 0)
                     {
                         MessageBox.Show("Updation Failed !..", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);

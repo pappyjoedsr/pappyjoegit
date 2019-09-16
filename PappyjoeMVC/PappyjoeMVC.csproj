@@ -70,11 +70,8 @@
     <Compile Include="Controller\Add_Category_controller.cs" />
     <Compile Include="Controller\Add_Invoice_controller.cs" />
     <Compile Include="Controller\Add_Receipt_controller.cs" />
-    <Compile Include="Controller\add_receipt_interface.cs" />
     <Compile Include="Controller\Add_Treatmentplan_controller.cs" />
-    <Compile Include="Controller\add_treatmentplan_interface.cs" />
     <Compile Include="Controller\Add_Unit_controller.cs" />
-    <Compile Include="Controller\add_unit_interface.cs" />
     <Compile Include="Controller\Add_Vital_Signs_controller.cs" />
     <Compile Include="Controller\Appointment_for_each_patient_group_controller.cs" />
     <Compile Include="Controller\Attachments_controller.cs" />

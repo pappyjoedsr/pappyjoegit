@@ -4,24 +4,19 @@ namespace PappyjoeMVC.Controller
 {
     public class Add_Receipt_controller
     {
-        add_receipt_interface intr;
+       
         Receipt_Model _model = new Receipt_Model();
         Common_model cmodel = new Common_model();
         Connection db = new Connection();
-        public Add_Receipt_controller(add_receipt_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
         public DataTable receipt_number()
         {
             DataTable dtb = _model.receipt_number();
             return dtb;
         }
-        public void Get_invoice_details(string patient_id)
+        public DataTable Get_invoice_details(string patient_id)
         {
             DataTable dtb = _model.Get_invoice_details(patient_id);
-            intr.LoadGrid_status0(dtb);
+            return dtb;
         }
         public DataTable Patient_invoice(string patient_id, string invoices)
         {

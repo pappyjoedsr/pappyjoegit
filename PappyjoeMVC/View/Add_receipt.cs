@@ -17,7 +17,7 @@ namespace PappyjoeMVC.View
         public string doctor_id = "";
         public string patient_id = "0";
         string admin_id = "0";
-        string advanceamt = "0";
+        string advanceamt = "0"; 
         decimal advance;
         decimal total = 0, ab;
         public int status = 0;
@@ -35,10 +35,6 @@ namespace PappyjoeMVC.View
         public Add_Receipt()
         {
             InitializeComponent();
-        }
-        public void SetController(Add_Receipt_controller controller)
-        {
-            cntrl = controller;
         }
        
         private void Add_receipt_Load(object sender, EventArgs e)
@@ -62,13 +58,7 @@ namespace PappyjoeMVC.View
                 {
                     toolStripButton7.Visible = false;
                 }
-                //DataTable clinicname = cmodel.Get_CompanyNAme();
-                //if (clinicname.Rows.Count > 0)
-                //{
-                //    string clinicn = "";
-                //    clinicn = clinicname.Rows[0]["name"].ToString();
-                    toolStripButton1.Text = this.cntrl.Load_CompanyName();
-                //}
+                toolStripButton1.Text = this.cntrl.Load_CompanyName();  
                 listpatientsearch.Hide();
                 string docnam = cmodel.Get_DoctorName(doctor_id);
                 if (docnam != "")
@@ -125,7 +115,8 @@ namespace PappyjoeMVC.View
                 {
                     btn_PayPreService.Text = "SAVE ADVANCE";
                     Btn_payonetime.Visible = false;
-                   this.cntrl.Get_invoice_details(patient_id );
+                    DataTable dtb= this.cntrl.Get_invoice_details(patient_id );
+                    LoadGrid_status0(dtb);
                     foreach (DataGridViewColumn cl in DGV_Invoice.Columns)
                     {
                         cl.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -267,7 +258,7 @@ namespace PappyjoeMVC.View
                     DGV_MainGrid.Visible = true;
                     if (DGV_MainGrid.Visible == true)
                     {
-                        decimal tot1 = 0, advB = 0, payNow = 0, Advan = 0; ;
+                        decimal tot1 = 0, advB = 0, payNow = 0;//, Advan = 0; ;
                         for (int m = 0; m < DGV_MainGrid.Rows.Count; m++)
                         {
                             tot1 = tot1 + decimal.Parse(DGV_MainGrid[2, m].Value.ToString());
@@ -428,7 +419,7 @@ namespace PappyjoeMVC.View
                 {
                     if (txt_PayNow.Text != "")
                     {
-                        DataTable cmd22 = this.cntrl.Get_Advance(patient_id);// db.table("select advance from tbl_payment where pt_id='" + patient_id + "'");
+                        DataTable cmd22 = this.cntrl.Get_Advance(patient_id);
                         decimal abcde1 = Convert.ToInt32(txt_PayNow.Text);
                         if (cmd22.Rows.Count > 0)
                         {
@@ -449,13 +440,13 @@ namespace PappyjoeMVC.View
                                 advance = decimal.Parse(cmd22.Rows[0]["advance"].ToString());
                             }
                             adv = advance + abcde1;
-                            this.cntrl.update_advance(adv, patient_id);// db.execute("update tbl_payment set advance='" + adv + "' where pt_id='" + patient_id + "'");
+                            this.cntrl.update_advance(adv, patient_id);
                             txt_PayNow.Clear();
                         }
                         else
                         {
                             adv = abcde1;
-                            this.cntrl.save_advance(adv, patient_id);// db.execute("insert into tbl_payment(advance,pt_id) values('" + adv + "','" + patient_id + "')");
+                            this.cntrl.save_advance(adv, patient_id);
                             txt_PayNow.Clear();
                         }
                         if (adv > 0)
@@ -463,8 +454,6 @@ namespace PappyjoeMVC.View
                             label_availeble_advance.Text = string.Format("{0:C}", decimal.Parse(adv.ToString()));
                             Lab_advance_Available.Text = string.Format("{0:C}", decimal.Parse(adv.ToString()));
                         }
-                        //MessageBox.Show("Payment Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                         DialogResult rslt = MessageBox.Show("Advance Payment Saved...! Do you want print receipt...? ", "Print As...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (rslt == DialogResult.Yes)
                         {
@@ -507,7 +496,7 @@ namespace PappyjoeMVC.View
                         {
                         }
                     }
-                    DataTable receipt = this.cntrl.Get_All_paymenttbl_details(txt_ReceiptNo.Text);// db.table("select * from tbl_payment where receipt_no='" + txt_ReceiptNo.Text + "'");
+                    DataTable receipt = this.cntrl.Get_All_paymenttbl_details(txt_ReceiptNo.Text);
                     if (receipt.Rows.Count <= 0)
                     {
                         if (doctor_id == "0")
@@ -582,11 +571,11 @@ namespace PappyjoeMVC.View
                                         totalPaid = 0;
                                     }
                                     decimal total = decimal.Parse(DGV_MainGrid[9, i].Value.ToString()) - decimal.Parse(DGV_MainGrid[3, i].Value.ToString()) - decimal.Parse(DGV_MainGrid[4, i].Value.ToString());
-                                    DataTable totalinv = this.cntrl.Procedurewisw_receipt_report(DGV_MainGrid[7, i].Value.ToString(), patient_id, DGV_MainGrid[8, i].Value.ToString());// db.table("select total_payment,invoice_main_id,total,dr_id,CAST(cost AS DECIMAL(17,1))  * CAST(unit AS DECIMAL(17,1)) AS cost,pt_name from tbl_invoices where invoice_no='" + DGV_MainGrid[7, i].Value.ToString() + "' and pt_id='" + patient_id + "' and services='" + DGV_MainGrid[8, i].Value.ToString() + "'");
+                                    DataTable totalinv = this.cntrl.Procedurewisw_receipt_report(DGV_MainGrid[7, i].Value.ToString(), patient_id, DGV_MainGrid[8, i].Value.ToString());
                                     Doctor_Name = totalinv.Rows[0]["dr_id"].ToString();
                                     if (Cmb_Flag)
                                     {
-                                        int updateinvoice = this.cntrl.updatetotal(total, DGV_MainGrid[7, i].Value.ToString(), patient_id, DGV_MainGrid[8, i].Value.ToString());// db.execute("update tbl_invoices set total='" + total + "' where invoice_no='" + DGV_MainGrid[7, i].Value.ToString() + "' and pt_id='" + patient_id + "' and services='" + DGV_MainGrid[8, i].Value.ToString() + "'");
+                                        int updateinvoice = this.cntrl.updatetotal(total, DGV_MainGrid[7, i].Value.ToString(), patient_id, DGV_MainGrid[8, i].Value.ToString());
                                         if (updateinvoice > 0)
                                         {
                                             int inv = 0;
@@ -596,11 +585,11 @@ namespace PappyjoeMVC.View
                                             }
                                             else if (Cmb_ModeOfPaymnt.SelectedIndex == 2)
                                             {
-                                                inv = this.cntrl.save_payment_cardWise(DGV_MainGrid[3, i].Value.ToString(), txt_ReceiptNo.Text.ToString(), totalPaid, DGV_MainGrid[7, i].Value.ToString(), DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text, patient_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), Doctor_Name, totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString(), totalinv.Rows[0]["cost"].ToString(), totalinv.Rows[0]["pt_name"].ToString(), txt_BankNAme.Text, txt_4Digit.Text);// db.execute("insert into tbl_payment(advance,receipt_no,amount_paid,invoice_no,procedure_name,mode_of_payment,pt_id,payment_date,dr_id,payment_due,total,cost,pt_name,CardNo,4DigitNo)values('" + DGV_MainGrid[3, i].Value.ToString() + "','" + txt_ReceiptNo.Text.ToString() + "','" + totalPaid + "','" + DGV_MainGrid[7, i].Value.ToString() + "','" + DGV_MainGrid[8, i].Value.ToString() + "','" + Cmb_ModeOfPaymnt.Text + "','" + patient_id + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + Doctor_Name + "','" + totalinv.Rows[0]["invoice_main_id"].ToString() + "','" + totalinv.Rows[0]["total"].ToString() + "','" + totalinv.Rows[0]["cost"].ToString() + "','" + totalinv.Rows[0]["pt_name"].ToString() + "','" + txt_BankNAme.Text + "','" + txt_4Digit.Text + "')");
+                                                inv = this.cntrl.save_payment_cardWise(DGV_MainGrid[3, i].Value.ToString(), txt_ReceiptNo.Text.ToString(), totalPaid, DGV_MainGrid[7, i].Value.ToString(), DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text, patient_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), Doctor_Name, totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString(), totalinv.Rows[0]["cost"].ToString(), totalinv.Rows[0]["pt_name"].ToString(), txt_BankNAme.Text, txt_4Digit.Text);
                                             }
                                             else if (Cmb_ModeOfPaymnt.SelectedIndex == 3)
                                             {
-                                                inv = this.cntrl.Save_payment_DD(DGV_MainGrid[3, i].Value.ToString(), txt_ReceiptNo.Text.ToString(), totalPaid, DGV_MainGrid[7, i].Value.ToString(), DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text, patient_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), Doctor_Name, totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString(), totalinv.Rows[0]["cost"].ToString(), totalinv.Rows[0]["pt_name"].ToString(), txt_BankNAme.Text, txt_Number.Text);// db.execute("insert into tbl_payment(advance,receipt_no,amount_paid,invoice_no,procedure_name,mode_of_payment,pt_id,payment_date,dr_id,payment_due,total,cost,pt_name,BankName,DDNumber)values('" + DGV_MainGrid[3, i].Value.ToString() + "','" + txt_ReceiptNo.Text.ToString() + "','" + totalPaid + "','" + DGV_MainGrid[7, i].Value.ToString() + "','" + DGV_MainGrid[8, i].Value.ToString() + "','" + Cmb_ModeOfPaymnt.Text + "','" + patient_id + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + Doctor_Name + "','" + totalinv.Rows[0]["invoice_main_id"].ToString() + "','" + totalinv.Rows[0]["total"].ToString() + "','" + totalinv.Rows[0]["cost"].ToString() + "','" + totalinv.Rows[0]["pt_name"].ToString() + "','" + txt_BankNAme.Text + "','" + txt_Number.Text + "')");
+                                                inv = this.cntrl.Save_payment_DD(DGV_MainGrid[3, i].Value.ToString(), txt_ReceiptNo.Text.ToString(), totalPaid, DGV_MainGrid[7, i].Value.ToString(), DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text, patient_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), Doctor_Name, totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString(), totalinv.Rows[0]["cost"].ToString(), totalinv.Rows[0]["pt_name"].ToString(), txt_BankNAme.Text, txt_Number.Text);
                                             }
                                             if (inv > 0)
                                             {
@@ -608,7 +597,7 @@ namespace PappyjoeMVC.View
                                                 decimal invoicepaymenttotal = 1;
                                                 decimal invoice_main_id = 0;
                                                 invoice_main_id = decimal.Parse(totalinv.Rows[0]["invoice_main_id"].ToString());
-                                                DataTable invocetotal = this.cntrl.SumofTotal(DGV_MainGrid[7, i].Value.ToString(), patient_id);// db.table("select sum(total) as I_total from tbl_invoices where invoice_no='" + DGV_MainGrid[7, i].Value.ToString() + "' and pt_id='" + patient_id + "'");
+                                                DataTable invocetotal = this.cntrl.SumofTotal(DGV_MainGrid[7, i].Value.ToString(), patient_id);
                                                 if (invocetotal.Rows.Count > 0)
                                                 {
                                                     invoicepaymenttotal = 0;
@@ -620,7 +609,7 @@ namespace PappyjoeMVC.View
                                                 }
                                                 if (invoicepaymenttotal == 0)
                                                 {
-                                                    this.cntrl.update_invoice_status0(invoice_main_id);//  db.execute("update tbl_invoices_main set status='0' where id='" + invoice_main_id + "'");
+                                                    this.cntrl.update_invoice_status0(invoice_main_id);
                                                 }
                                                 advance = advance + decimal.Parse(DGV_MainGrid[3, i].Value.ToString());
                                             }
@@ -632,17 +621,17 @@ namespace PappyjoeMVC.View
                                     }
                                     else
                                     {
-                                        int updateinvoice = this.cntrl.updatetotal(total, DGV_MainGrid[7, i].Value.ToString(), patient_id, DGV_MainGrid[8, i].Value.ToString());// db.execute("update tbl_invoices set total='" + total + "' where invoice_no='" + DGV_MainGrid[7, i].Value.ToString() + "' and pt_id='" + patient_id + "' and services='" + DGV_MainGrid[8, i].Value.ToString() + "'");
+                                        int updateinvoice = this.cntrl.updatetotal(total, DGV_MainGrid[7, i].Value.ToString(), patient_id, DGV_MainGrid[8, i].Value.ToString());
                                         if (updateinvoice > 0)
                                         {
-                                            int inv1 = this.cntrl.save_payment(DGV_MainGrid[3, i].Value.ToString(), txt_ReceiptNo.Text.ToString(), totalPaid, DGV_MainGrid[7, i].Value.ToString(), DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text, patient_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), Doctor_Name, totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString(), totalinv.Rows[0]["cost"].ToString(), totalinv.Rows[0]["pt_name"].ToString());// db.execute("insert into tbl_payment(advance,receipt_no,amount_paid,invoice_no,procedure_name,mode_of_payment,pt_id,payment_date,dr_id,payment_due,total,cost,pt_name)values('" + DGV_MainGrid[3, i].Value.ToString() + "','" + txt_ReceiptNo.Text.ToString() + "','" + totalPaid + "','" + DGV_MainGrid[7, i].Value.ToString() + "','" + DGV_MainGrid[8, i].Value.ToString() + "','" + Cmb_ModeOfPaymnt.Text + "','" + patient_id + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + Doctor_Name + "','" + totalinv.Rows[0]["invoice_main_id"].ToString() + "','" + totalinv.Rows[0]["total"].ToString() + "','" + totalinv.Rows[0]["cost"].ToString() + "','" + totalinv.Rows[0]["pt_name"].ToString() + "')");
+                                            int inv1 = this.cntrl.save_payment(DGV_MainGrid[3, i].Value.ToString(), txt_ReceiptNo.Text.ToString(), totalPaid, DGV_MainGrid[7, i].Value.ToString(), DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text, patient_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), Doctor_Name, totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString(), totalinv.Rows[0]["cost"].ToString(), totalinv.Rows[0]["pt_name"].ToString());
                                             if (inv1 > 0)
                                             {
                                                 int ii = 0;
                                                 decimal invoicepaymenttotal = 1;
                                                 decimal invoice_main_id = 0;
                                                 invoice_main_id = decimal.Parse(totalinv.Rows[0]["invoice_main_id"].ToString());
-                                                DataTable invocetotal = this.cntrl.SumofTotal(DGV_MainGrid[7, i].Value.ToString(), patient_id);/// db.table("select sum(total) as I_total from tbl_invoices where invoice_no='" + DGV_MainGrid[7, i].Value.ToString() + "' and pt_id='" + patient_id + "'");
+                                                DataTable invocetotal = this.cntrl.SumofTotal(DGV_MainGrid[7, i].Value.ToString(), patient_id);
                                                 if (invocetotal.Rows.Count > 0)
                                                 {
                                                     invoicepaymenttotal = 0;
@@ -654,7 +643,7 @@ namespace PappyjoeMVC.View
                                                 }
                                                 if (invoicepaymenttotal == 0)
                                                 {
-                                                    this.cntrl.update_invoice_status0(invoice_main_id);//  db.execute("update tbl_invoices_main set status='0' where id='" + invoice_main_id + "'");
+                                                    this.cntrl.update_invoice_status0(invoice_main_id);
                                                 }
                                                 advance = advance + decimal.Parse(DGV_MainGrid[3, i].Value.ToString());
                                             }
@@ -672,13 +661,13 @@ namespace PappyjoeMVC.View
                         {
                             decimal a = 0;
                             a = decimal.Parse(advanceamt) - advance;
-                            this.cntrl.update_advance(a, patient_id); //db.execute("UPDATE tbl_payment SET advance= '" + a + "' WHERE pt_id= '" + patient_id + "' ");
-                            DataTable rec = this.cntrl.receipt_autoid();// db.table("select receipt_number from tbl_receipt_automationid");
+                            this.cntrl.update_advance(a, patient_id); 
+                            DataTable rec = this.cntrl.receipt_autoid();
                             int receip = int.Parse(rec.Rows[0][0].ToString()) + 1;
-                            this.cntrl.update_receiptAutoid(receip);// db.execute("update tbl_receipt_automationid set receipt_number='" + receip + "'");
+                            this.cntrl.update_receiptAutoid(receip);
                             if (doctor_id == admin_id)
                             {
-                                doctor_id = "0";//update tbl_payment set advance='" + adv + "' where pt_id='" + patient_id + "'");
+                                doctor_id = "0";
                             }
                             var form2 = new Receipt();
                             if (doctor_id == "0")
@@ -1045,7 +1034,7 @@ namespace PappyjoeMVC.View
                             }
                             decimal total = decimal.Parse(DGV_MainGrid[9, i].Value.ToString()) - Convert.ToDecimal(Add_est + Add_advanceamt);
                             DataTable totalinv = this.cntrl.Procedurewisw_receipt_report(DGV_MainGrid[7, i].Value.ToString(), patient_id, DGV_MainGrid[8, i].Value.ToString());//
-                            int updateinvoice = this.cntrl.updatetotal(total, DGV_MainGrid[7, i].Value.ToString(), patient_id, DGV_MainGrid[8, i].Value.ToString());// db.execute("update tbl_invoices set total='" + total + "' where invoice_no='" + DGV_MainGrid[7, i].Value.ToString() + "' and pt_id='" + patient_id + "' and services='" + DGV_MainGrid[8, i].Value.ToString() + "'");
+                            int updateinvoice = this.cntrl.updatetotal(total, DGV_MainGrid[7, i].Value.ToString(), patient_id, DGV_MainGrid[8, i].Value.ToString());
                             if (updateinvoice > 0)
                             {
                                 int inv = 0;
@@ -1056,19 +1045,19 @@ namespace PappyjoeMVC.View
                                 }
                                 else if (Cmb_ModeOfPaymnt.SelectedIndex == 2)
                                 {
-                                    inv = this.cntrl.save_payment_cardWise(Add_advanceamt.ToString(), txt_ReceiptNo.Text.ToString() , Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()) , DGV_MainGrid[7, i].Value.ToString() , DGV_MainGrid[8, i].Value.ToString() , Cmb_ModeOfPaymnt.Text , patient_id , dateTimePicker1.Value.ToString("yyyy-MM-dd") , Doctor_Name , totalinv.Rows[0]["invoice_main_id"].ToString() , totalinv.Rows[0]["total"].ToString() , totalinv.Rows[0]["cost"].ToString() , totalinv.Rows[0]["pt_name"].ToString() , txt_BankNAme.Text, txt_4Digit.Text);// db.execute("insert into tbl_payment(advance,receipt_no,amount_paid,invoice_no,procedure_name,mode_of_payment,pt_id,payment_date,dr_id,payment_due,total,cost,pt_name,CardNo,4DigitNo)values('" + Add_advanceamt + "','" + txt_ReceiptNo.Text.ToString() + "','" + DGV_MainGrid[9, i].Value.ToString() + "','" + DGV_MainGrid[7, i].Value.ToString() + "','" + DGV_MainGrid[8, i].Value.ToString() + "','" + Cmb_ModeOfPaymnt.Text + "','" + patient_id + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + Doctor_Name + "','" + totalinv.Rows[0]["invoice_main_id"].ToString() + "','" + totalinv.Rows[0]["total"].ToString() + "','" + totalinv.Rows[0]["cost"].ToString() + "','" + totalinv.Rows[0]["pt_name"].ToString() + "','" + txt_BankNAme.Text + "','" + txt_4Digit.Text + "')");
+                                    inv = this.cntrl.save_payment_cardWise(Add_advanceamt.ToString(), txt_ReceiptNo.Text.ToString() , Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()) , DGV_MainGrid[7, i].Value.ToString() , DGV_MainGrid[8, i].Value.ToString() , Cmb_ModeOfPaymnt.Text , patient_id , dateTimePicker1.Value.ToString("yyyy-MM-dd") , Doctor_Name , totalinv.Rows[0]["invoice_main_id"].ToString() , totalinv.Rows[0]["total"].ToString() , totalinv.Rows[0]["cost"].ToString() , totalinv.Rows[0]["pt_name"].ToString() , txt_BankNAme.Text, txt_4Digit.Text);
                                 }
                                 else if (Cmb_ModeOfPaymnt.SelectedIndex == 3)
                                 {
-                                    inv = this.cntrl.Save_payment_DD(Add_advanceamt.ToString(), txt_ReceiptNo.Text.ToString() , Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()) , DGV_MainGrid[7, i].Value.ToString() , DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text , patient_id , dateTimePicker1.Value.ToString("yyyy-MM-dd") , Doctor_Name , totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString() , totalinv.Rows[0]["cost"].ToString() , totalinv.Rows[0]["pt_name"].ToString() , txt_BankNAme.Text , txt_Number.Text);// db.execute("insert into tbl_payment(advance,receipt_no,amount_paid,invoice_no,procedure_name,mode_of_payment,pt_id,payment_date,dr_id,payment_due,total,cost,pt_name,BankName,DDNumber)values('" + Add_advanceamt + "','" + txt_ReceiptNo.Text.ToString() + "','" + DGV_MainGrid[9, i].Value.ToString() + "','" + DGV_MainGrid[7, i].Value.ToString() + "','" + DGV_MainGrid[8, i].Value.ToString() + "','" + Cmb_ModeOfPaymnt.Text + "','" + patient_id + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + Doctor_Name + "','" + totalinv.Rows[0]["invoice_main_id"].ToString() + "','" + totalinv.Rows[0]["total"].ToString() + "','" + totalinv.Rows[0]["cost"].ToString() + "','" + totalinv.Rows[0]["pt_name"].ToString() + "','" + txt_BankNAme.Text + "','" + txt_Number.Text + "')");
+                                    inv = this.cntrl.Save_payment_DD(Add_advanceamt.ToString(), txt_ReceiptNo.Text.ToString() , Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()) , DGV_MainGrid[7, i].Value.ToString() , DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text , patient_id , dateTimePicker1.Value.ToString("yyyy-MM-dd") , Doctor_Name , totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString() , totalinv.Rows[0]["cost"].ToString() , totalinv.Rows[0]["pt_name"].ToString() , txt_BankNAme.Text , txt_Number.Text);
                                 }
                                 else if (Cmb_ModeOfPaymnt.SelectedIndex == 0)
                                 {
-                                    inv = this.cntrl.save_payment(Add_advanceamt.ToString() , txt_ReceiptNo.Text.ToString() , Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()) ,DGV_MainGrid[7, i].Value.ToString() , DGV_MainGrid[8, i].Value.ToString() , Cmb_ModeOfPaymnt.Text , patient_id , dateTimePicker1.Value.ToString("yyyy-MM-dd") , Doctor_Name , totalinv.Rows[0]["invoice_main_id"].ToString() , totalinv.Rows[0]["total"].ToString() , totalinv.Rows[0]["cost"].ToString() , totalinv.Rows[0]["pt_name"].ToString());// db.execute("insert into tbl_payment(advance,receipt_no,amount_paid,invoice_no,procedure_name,mode_of_payment,pt_id,payment_date,dr_id,payment_due,total,cost,pt_name)values('" + Add_advanceamt + "','" + txt_ReceiptNo.Text.ToString() + "','" + DGV_MainGrid[9, i].Value.ToString() + "','" + DGV_MainGrid[7, i].Value.ToString() + "','" + DGV_MainGrid[8, i].Value.ToString() + "','" + Cmb_ModeOfPaymnt.Text + "','" + patient_id + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + Doctor_Name + "','" + totalinv.Rows[0]["invoice_main_id"].ToString() + "','" + totalinv.Rows[0]["total"].ToString() + "','" + totalinv.Rows[0]["cost"].ToString() + "','" + totalinv.Rows[0]["pt_name"].ToString() + "')");
+                                    inv = this.cntrl.save_payment(Add_advanceamt.ToString() , txt_ReceiptNo.Text.ToString() , Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()) ,DGV_MainGrid[7, i].Value.ToString() , DGV_MainGrid[8, i].Value.ToString() , Cmb_ModeOfPaymnt.Text , patient_id , dateTimePicker1.Value.ToString("yyyy-MM-dd") , Doctor_Name , totalinv.Rows[0]["invoice_main_id"].ToString() , totalinv.Rows[0]["total"].ToString() , totalinv.Rows[0]["cost"].ToString() , totalinv.Rows[0]["pt_name"].ToString());
                                 }
                                 else if (Cmb_ModeOfPaymnt.SelectedIndex > 3) // other payment method..
                                 {
-                                    inv = this.cntrl.save_payment(Add_advanceamt.ToString(), txt_ReceiptNo.Text.ToString() , Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()) , DGV_MainGrid[7, i].Value.ToString() , DGV_MainGrid[8, i].Value.ToString() , Cmb_ModeOfPaymnt.Text, patient_id , dateTimePicker1.Value.ToString("yyyy-MM-dd") , Doctor_Name , totalinv.Rows[0]["invoice_main_id"].ToString() , totalinv.Rows[0]["total"].ToString() , totalinv.Rows[0]["cost"].ToString() , totalinv.Rows[0]["pt_name"].ToString());// db.execute("insert into tbl_payment(advance,receipt_no,amount_paid,invoice_no,procedure_name,mode_of_payment,pt_id,payment_date,dr_id,payment_due,total,cost,pt_name)values('" + Add_advanceamt + "','" + txt_ReceiptNo.Text.ToString() + "','" + DGV_MainGrid[9, i].Value.ToString() + "','" + DGV_MainGrid[7, i].Value.ToString() + "','" + DGV_MainGrid[8, i].Value.ToString() + "','" + Cmb_ModeOfPaymnt.Text + "','" + patient_id + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + Doctor_Name + "','" + totalinv.Rows[0]["invoice_main_id"].ToString() + "','" + totalinv.Rows[0]["total"].ToString() + "','" + totalinv.Rows[0]["cost"].ToString() + "','" + totalinv.Rows[0]["pt_name"].ToString() + "')");
+                                    inv = this.cntrl.save_payment(Add_advanceamt.ToString(), txt_ReceiptNo.Text.ToString() , Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()) , DGV_MainGrid[7, i].Value.ToString() , DGV_MainGrid[8, i].Value.ToString() , Cmb_ModeOfPaymnt.Text, patient_id , dateTimePicker1.Value.ToString("yyyy-MM-dd") , Doctor_Name , totalinv.Rows[0]["invoice_main_id"].ToString() , totalinv.Rows[0]["total"].ToString() , totalinv.Rows[0]["cost"].ToString() , totalinv.Rows[0]["pt_name"].ToString());
                                 }
                                 if (inv > 0)
                                 {
@@ -1247,7 +1236,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1257,7 +1245,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            //expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
 
@@ -1267,7 +1254,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                //doctor_controller controlr = new doctor_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -1351,7 +1337,6 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -1361,7 +1346,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
