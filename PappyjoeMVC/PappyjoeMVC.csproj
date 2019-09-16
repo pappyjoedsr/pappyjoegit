@@ -96,6 +96,7 @@
     <Compile Include="Controller\Daily_NewPatients_controller.cs" />
     <Compile Include="Controller\Daily_Treatment_Count_controller.cs" />
     <Compile Include="Controller\Day_Wise_Receipt_controller.cs" />
+    <Compile Include="Controller\dentalwork_controller.cs" />
     <Compile Include="Controller\Doctor_Practice_controller.cs" />
     <Compile Include="Controller\DoctorWise_appointment_report_controller.cs" />
     <Compile Include="Controller\Doctor_Controller.cs" />
@@ -220,6 +221,7 @@
     <Compile Include="Model\Connection.cs" />
     <Compile Include="Model\Contact_model.cs" />
     <Compile Include="Model\Daily_Invoice_Report_model.cs" />
+    <Compile Include="Model\dentalwork_model.cs" />
     <Compile Include="Model\Doctor_Practice_model.cs" />
     <Compile Include="Model\Doctor_model.cs" />
     <Compile Include="Model\Edit_Practice_Details_model.cs" />
@@ -437,6 +439,12 @@
     </Compile>
     <Compile Include="View\Day_Wise_Receipt.designer.cs">
       <DependentUpon>Day_Wise_Receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dentalwork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dentalwork.designer.cs">
+      <DependentUpon>Dentalwork.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Discharge_Summery.cs">
       <SubType>Form</SubType>
@@ -1089,6 +1097,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Day_Wise_Receipt.resx">
       <DependentUpon>Day_Wise_Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dentalwork.resx">
+      <DependentUpon>Dentalwork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Discharge_Summery.resx">
       <DependentUpon>Discharge_Summery.cs</DependentUpon>

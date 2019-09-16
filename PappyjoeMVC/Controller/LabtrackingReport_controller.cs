@@ -93,10 +93,10 @@ namespace PappyjoeMVC.Controller
             string e = mdl.userprivilege(doctrid);
             return e;
         }
-        public DataTable practicedetails()
-        {
+        //public DataTable practicedetails()
+        //{
             //DataTable dt = dm.practicedetails();
             //return dt;
-        }
+        //}
     }
 }
