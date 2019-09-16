@@ -1,6 +1,6 @@
 ﻿namespace PappyjoeMVC.View
 {
-    partial class dentalwork
+    partial class Dentalwork
     {
         /// <summary>
         /// Required designer variable.

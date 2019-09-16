@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class dentalwork : Form
+    public partial class Dentalwork : Form
     {
-        public dentalwork()
+        public Dentalwork()
         {
             InitializeComponent();
         }

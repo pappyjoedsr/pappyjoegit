@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class ChangeStatus : Form,ChangeStatus_interface
+    public partial class ChangeStatus : Form
     {
-        ChangeStatus_controller ctrlr;
         public string patient_id = "", doctor_id = "";
+        ChangeStatus_controller ctrlr=new ChangeStatus_controller();
         public ChangeStatus(string jobno, string patient, string doctor, string lab, string workname, string due, string status)
         {
             try
@@ -36,17 +36,13 @@ namespace PappyjoeMVC.View
                 comboBox1.Items.Add("Sent");
                 comboBox1.Items.Add("In Production");
                 comboBox1.Items.Add("In Transit");
-                comboBox1.Items.Add("Recieved");
+                comboBox1.Items.Add("Received");
                 comboBox1.Items.Add("Over Due");
                 comboBox1.SelectedItem = status;
                 label7.Text = jobno;
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-        }
-        public void setController(ChangeStatus_controller controller)
-        {
-            ctrlr = controller;
         }
         private void btnupdate_Click(object sender, EventArgs e)
         {

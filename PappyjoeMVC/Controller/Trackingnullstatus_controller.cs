@@ -10,17 +10,11 @@ namespace PappyjoeMVC.Controller
 {
     public class Trackingnullstatus_controller
     {
-        Trackingnullstatus_interface intr;
         LabtrackingReport_model mdl = new LabtrackingReport_model();
-        public Trackingnullstatus_controller(Trackingnullstatus_interface inttr)
-        {
-            intr = inttr;
-            intr.setController(this);
-        }
-        public void trackngnullstatus()
+        public DataTable trackngnullstatus()
         {
             DataTable dt = mdl.trackngnullstatus();
-            intr.trackngnullstatus(dt);
+            return dt;
         }
     }
 }
