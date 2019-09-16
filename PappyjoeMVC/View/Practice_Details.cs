@@ -731,7 +731,14 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.ShowDialog();
         }
-
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            var form2 = new LabtrackingReport();
+            form2.patient_id = patient_id;
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            form2.ShowDialog();
+        }
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
             var form2 = new Expense();
