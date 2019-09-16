@@ -99,7 +99,7 @@
     <Compile Include="Controller\Daily_NewPatients_controller.cs" />
     <Compile Include="Controller\Daily_Treatment_Count_controller.cs" />
     <Compile Include="Controller\Day_Wise_Receipt_controller.cs" />
-    <Compile Include="Controller\dentalwork_controller.cs" />
+    <Compile Include="Controller\Dentalwork_controller.cs" />
     <Compile Include="Controller\Doctor_Practice_controller.cs" />
     <Compile Include="Controller\DoctorWise_appointment_report_controller.cs" />
     <Compile Include="Controller\Doctor_Controller.cs" />
@@ -225,7 +225,7 @@
     <Compile Include="Model\Connection.cs" />
     <Compile Include="Model\Contact_model.cs" />
     <Compile Include="Model\Daily_Invoice_Report_model.cs" />
-    <Compile Include="Model\dentalwork_model.cs" />
+    <Compile Include="Model\Dentalwork_model.cs" />
     <Compile Include="Model\Doctor_Practice_model.cs" />
     <Compile Include="Model\Doctor_model.cs" />
     <Compile Include="Model\Edit_Practice_Details_model.cs" />
@@ -240,6 +240,7 @@
     <Compile Include="Model\LabDental_model.cs" />
     <Compile Include="Model\LabMedical_model.cs" />
     <Compile Include="Model\LabtrackingReport_model.cs" />
+    <Compile Include="Model\LabWorks_model.cs" />
     <Compile Include="Model\Ledger_model.cs" />
     <Compile Include="Model\Login_model.cs" />
     <Compile Include="Model\MainCalendar_Model.cs" />

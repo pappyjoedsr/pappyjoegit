@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Model
 {
-    public class dentalwork_model
+    public class Dentalwork_model
     {
         Connection db = new Connection();
         public DataTable labdata()

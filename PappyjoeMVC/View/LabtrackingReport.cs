@@ -294,15 +294,15 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                //DataTable clinicname = this.ctrlr.practicedetails();
-                //toolStripButton4.Visible = true;
-                //toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-                //if (clinicname.Rows.Count > 0)
-                //{
-                //    string clinicn = "";
-                //    clinicn = clinicname.Rows[0][0].ToString();
-                //    toolStripButton1.Text = clinicn.Replace("¤", "'");
-                //}
+                DataTable clinicname = this.ctrlr.practicedetails();
+                toolStripButton4.Visible = true;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                if (clinicname.Rows.Count > 0)
+                {
+                    string clinicn = "";
+                    clinicn = clinicname.Rows[0][0].ToString();
+                    toolStripButton1.Text = clinicn.Replace("¤", "'");
+                }
                 DataTable dt_pt = this.ctrlr.notnullstatus();
                 dataGridView1.DataSource = dt_pt;
                 dataGridView1.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);

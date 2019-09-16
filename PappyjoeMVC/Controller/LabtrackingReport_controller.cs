@@ -12,7 +12,7 @@ namespace PappyjoeMVC.Controller
     {
         Common_model cm = new Common_model();
         LabtrackingReport_model mdl = new LabtrackingReport_model();
-        //dental_work_model dm = new dental_work_model();
+        Dentalwork_model dm = new Dentalwork_model();
         public DataTable selectall()
         {
             DataTable dt = mdl.selectall();
@@ -93,10 +93,10 @@ namespace PappyjoeMVC.Controller
             string e = mdl.userprivilege(doctrid);
             return e;
         }
-        //public DataTable practicedetails()
-        //{
-            //DataTable dt = dm.practicedetails();
-            //return dt;
-        //}
+        public DataTable practicedetails()
+        {
+            DataTable dt = dm.practicedetails();
+            return dt;
+        }
     }
 }

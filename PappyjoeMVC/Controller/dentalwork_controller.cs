@@ -8,26 +8,20 @@ using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Controller
 {
-    public class dentalwork_controller
+    public class Dentalwork_controller
     {
-        dentalwork_interface intr;
-        common_model cm = new common_model();
+        Common_model cm = new Common_model();
         LabWorks_model lm = new LabWorks_model();
-        dentalwork_model mdl = new dentalwork_model();
-        public dentalwork_controller(dentalwork_interface inttr)
-        {
-            intr = inttr;
-            intr.setController(this);
-        }
-        public void labdata()
+        Dentalwork_model mdl = new Dentalwork_model();
+        public DataTable labdata()
         {
             DataTable dt= mdl.labdata();
-            intr.labdata(dt);
+            return dt;
         }
-        public void practicedetails()
+        public DataTable practicedetails()
         {
             DataTable dt = mdl.practicedetails();
-            intr.practicedetails(dt);
+            return dt;
         }
         public void smsinfo()
         {

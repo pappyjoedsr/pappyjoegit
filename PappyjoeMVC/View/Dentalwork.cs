@@ -18,7 +18,7 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        dentalwork_controller ctrlr;
+        Dentalwork_controller ctrlr;
         public string patient_id = "", doctor_id = "", workid = "", flag = "", strclinic = "", contact_no = "", clinicn = "", mob_number = "", strPatientName = "",smsName = "", smsPass = "";
         private void dentalwork_Load(object sender, EventArgs e)
         {
@@ -26,7 +26,7 @@ namespace PappyjoeMVC.View
             this.ctrlr.dentalwrk(patient_id, workid);
             this.ctrlr.dentalproperty(patient_id, txtjobno.Text);
         }
-        public void setController(dentalwork_controller controller)
+        public void setController(Dentalwork_controller controller)
         {
             ctrlr = controller;
         }
