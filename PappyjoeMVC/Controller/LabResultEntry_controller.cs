@@ -11,18 +11,12 @@ namespace PappyjoeMVC.Controller
 {
     public class LabResultEntry_controller
     {
-        LabResultEntry_interface intr;
-        common_model cmdl = new common_model();
+        Common_model cmdl = new Common_model();
         LabResultEntry_model mdl = new LabResultEntry_model();
-        public LabResultEntry_controller(LabResultEntry_interface inttr)
-        {
-            intr = inttr;
-            intr.setController(this);
-        }
-        public void LoadResult(string patid,string wrkid)
+        public DataTable LoadResult(string patid,string wrkid)
         {
             DataTable dt = mdl.LoadResult(patid,wrkid);
-            intr.LoadResult(dt);
+            return dt;
         }
         public int rsltupdate(string rslts,string testid,string id,string rsltmainid)
         {

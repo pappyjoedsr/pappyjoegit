@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class LabResultEntry : Form,LabResultEntry_interface
+    public partial class LabResultEntry : Form
     {
         public LabResultEntry()
         {
             InitializeComponent();
         }
         int j;
-        LabResultEntry_controller ctrlr;
+        LabResultEntry_controller ctrlr=new LabResultEntry_controller();
         public string patient_id = "", doctor_id = "", workid = "",flag="";
         private void btnsave_Click(object sender, EventArgs e)
         {
@@ -39,16 +39,9 @@ namespace PappyjoeMVC.View
         }
         private void LabResultEntry_Load(object sender, EventArgs e)
         {
-            this.ctrlr.LoadResult(patient_id,workid);
-        }
-        public void setController(LabResultEntry_controller controller)
-        {
-            ctrlr = controller;
-        }
-        public void LoadResult(DataTable dt)
-        {
             try
             {
+                DataTable dt = this.ctrlr.LoadResult(patient_id, workid);
                 dataGridView1.DataSource = dt;
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {

@@ -65,6 +65,7 @@
     <Compile Include="Controller\Addfinsed_Treatment_controller.cs" />
     <Compile Include="Controller\addfinsed_treatment_interface.cs" />
     <Compile Include="Controller\Add_Item_controller.cs" />
+    <Compile Include="Controller\Add_Labwork_controller.cs" />
     <Compile Include="Controller\Add_New_patient_controller.cs" />
     <Compile Include="Controller\AddNew_patient_interface.cs" />
     <Compile Include="Controller\Add_Appointment_controller.cs" />
@@ -206,6 +207,7 @@
     <Compile Include="Controller\Vital_Signs_controller.cs" />
     <Compile Include="Model\Add_Finished_Treatment_model.cs" />
     <Compile Include="Model\Add_Item_model.cs" />
+    <Compile Include="Model\Add_Labwork_model.cs" />
     <Compile Include="Model\Add_New_Patient_model.cs" />
     <Compile Include="Model\Add_Appointment_model.cs" />
     <Compile Include="Model\Add_Attachments_model.cs" />
