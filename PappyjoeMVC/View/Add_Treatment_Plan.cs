@@ -1408,7 +1408,6 @@ namespace PappyjoeMVC.View
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
             a.patient_id = linkLabel_id.Text.ToString();
-            Patient_Edit_controller controller = new Patient_Edit_controller(a);
             a.ShowDialog();
         }
 
@@ -1531,7 +1530,6 @@ namespace PappyjoeMVC.View
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
             a.patient_id = linkLabel_id.Text.ToString();
-            Patient_Edit_controller controller = new Patient_Edit_controller(a);
             a.ShowDialog();
         }
 

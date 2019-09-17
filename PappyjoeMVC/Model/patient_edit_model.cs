@@ -4,178 +4,39 @@ namespace PappyjoeMVC.Model
     public class Patient_Edit_model
     {
         Connection db = new Connection();
-        private string _patname = "";
-        public string patname
+        public string get_medicalId(string idd)
         {
-            get { return _patname; }
-            set { _patname = value; }
-        }
-        private string _patId = "";
-        public string patId
-        {
-            get { return _patId; }
-            set { _patId = value; }
-        }
-        private string _aadhar = "";
-        public string aadhar
-        {
-            get { return _aadhar; }
-            set { _aadhar = value; }
-        }
-        private string _age = "";
-        public string age
-        {
-            get { return _age; }
-            set { _age = value; }
-        }
-        private string _blood = "";
-        public string blood
-        {
-            get { return _blood; }
-            set { _blood = value; }
-        }
-        private string _family = "";
-        public string family
-        {
-            get { return _family; }
-            set { _family = value; }
-        }
-        private string _Pmob = "";
-        public string Pmob
-        {
-            get { return _Pmob; }
-            set { _Pmob = value; }
-        }
-        private string _Smob = "";
-        public string Smob
-        {
-            get { return _Smob; }
-            set { _Smob = value; }
-        }
-        private string _Landline = "";
-        public string Landline
-        {
-            get { return _Landline; }
-            set { _Landline = value; }
-        }
-        private string _street = "";
-        public string street
-        {
-            get { return _street; }
-            set { _street = value; }
-        }
-        private string _email = "";
-        public string email
-        {
-            get { return _email; }
-            set { _email = value; }
-        }
-        private string _locality = "";
-        public string locality
-        {
-            get { return _locality; }
-            set { _locality = value; }
-        }
-        private string _city = "";
-        public string city
-        {
-            get { return _city; }
-            set { _city = value; }
-        }
-        private string _pin = "";
-        public string pin
-        {
-            get { return _pin; }
-            set { _pin = value; }
-        }
-        //private string _groupid = "";
-        //public string groupid
-        //{
-        //    get { return _groupid; }
-        //    set { _groupid = value; }
-        //}
-        private string _refferedby = "";
-        public string refferedby
-        {
-            get { return _refferedby; }
-            set { _refferedby = value; }
-        }
-        private string _opticket = "";
-        public string opticket
-        {
-            get { return _opticket; }
-            set { _opticket = value; }
-        }
-        private string _doctername = "";
-        public string doctername
-        {
-            get { return _doctername; }
-            set { _doctername = value; }
-        }
-        private string _occupation = "";
-        public string occupation
-        {
-            get { return _occupation; }
-            set { _occupation = value; }
-        }
-        private string _admintdate = "";
-        public string AdmitDate
-        {
-            get { return _admintdate; }
-            set { _admintdate = value; }
-        }
-        private string _visited = "";
-        public string Visited
-        {
-            get { return _visited; }
-            set { _visited = value; }
-        }
-        private string _dob = "";
-        public string Dob
-        {
-            get { return _dob; }
-            set { _dob = value; }
-        }
-        private string _gender = "";
-        public string Gender
-        {
-            get { return _gender; }
-            set { _gender = value; }
-        }
-        public DataTable get_medicalId(string idd)
-        {
-            DataTable dt8 = db.table("select med_id from tbl_pt_medhistory where pt_id='" + idd + "'");
+            string dt8 = db.scalar("select med_id from tbl_pt_medhistory where pt_id='" + idd + "'");
             return dt8;
         }
-        public DataTable Get_medicalname()
+        public string Get_medicalname()
         {
-            DataTable dt35 = db.table("select name from tbl_medhistory order by name");
+            string dt35 = db.scalar("select name from tbl_medhistory order by name");
             return dt35;
         }
-        public DataTable patient_medical(string idd, string medid)
+        public string patient_medical(string idd, string medid)
         {
-            DataTable mht = db.table("select med_id from tbl_pt_medhistory where pt_id='" + idd + "' and med_id='" + medid + "'");
+            string mht = db.scalar("select med_id from tbl_pt_medhistory where pt_id='" + idd + "' and med_id='" + medid + "'");
             return mht;
         }
-        public DataTable get_groupid(string idd)
+        public string get_groupid(string idd)
         {
-            DataTable group = db.table("select group_id from tbl_pt_group where pt_id='" + idd + "'");
+            string group = db.scalar("select group_id from tbl_pt_group where pt_id='" + idd + "'");
             return group;
         }
-        public DataTable groupname()
+        public string groupname()
         {
-            DataTable dt9 = db.table("Select name from tbl_group");
+            string dt9 = db.scalar("Select name from tbl_group");
             return dt9;
         }
-        public DataTable patient_group(string idd, string grpid)
+        public string patient_group(string idd, string grpid)
         {
-            DataTable gt = db.table("select group_id from tbl_pt_group where pt_id='" + idd + "' and group_id='" + grpid + "'");
+            string gt = db.scalar("select group_id from tbl_pt_group where pt_id='" + idd + "' and group_id='" + grpid + "'");
             return gt;
         }
-
-        public int update(string pt_id)
+        public int update(string patname, string patId, string aadhar, string Gender, string age, string Dob, string blood, string family, string Pmob, string Smob, string Landline, string email, string street, string locality, string city, string pin, string refferedby, string opticket, string Visited, string occupation, string doctername,string pt_id)
         {
-            int i = db.execute("update tbl_patient set pt_name='" + _patname + "',pt_id='" + _patId + "',aadhar_id='" + _aadhar + "',gender='" + _gender + "',age='" + _age + "',date_of_birth='" + _dob + "',blood_group='" + _blood + "',family='" + _family + "',primary_mobile_number='" + _Pmob + "',secondary_mobile_number='" + _Smob + "',landline_number='" + _Landline + "',email_address='" + _email + "',street_address='" + _street + "',locality='" + _locality + "',city='" + _city + "',pincode='" + _pin + "',group_id='',refferedby='" + _refferedby + "',Opticket='" + _opticket + "',Visited='" + _visited + "',Occupation='" + _occupation + "',doctorname='" + _doctername + "'  where id='" + pt_id + "'");
+            int i = db.execute("update tbl_patient set pt_name='" + patname + "',pt_id='" + patId + "',aadhar_id='" + aadhar + "',gender='" + Gender + "',age='" + age + "',date_of_birth='" + Dob + "',blood_group='" + blood + "',family='" + family + "',primary_mobile_number='" + Pmob + "',secondary_mobile_number='" + Smob + "',landline_number='" + Landline + "',email_address='" + email + "',street_address='" + street + "',locality='" + locality + "',city='" + city + "',pincode='" + pin + "',group_id='',refferedby='" + refferedby + "',Opticket='" + opticket + "',Visited='" + Visited + "',Occupation='" + occupation + "',doctorname='" + doctername + "'  where id='" + pt_id + "'");
             return i;
         }
         public int delete_patient(string pt_id)
@@ -183,29 +44,35 @@ namespace PappyjoeMVC.Model
             int i = db.execute("update tbl_patient set Profile_Status='Cancelled' where id='" + pt_id + "'");
             return i;
         }
-        public void save(string medical)
+        public int save(string medical)
         {
             int i = db.execute("insert into tbl_medhistory (name) values('" + medical + "')");
+            return i;
         }
-        public void save_group(string group)
+        public int save_group(string group)
         {
             int i = db.execute("insert into tbl_group (name) values('" + group + "')");
+            return i;
         }
-        public void delete_pt_medhistory(string patient_id)
+        public int delete_pt_medhistory(string patient_id)
         {
-            db.execute("delete  from tbl_pt_medhistory where pt_id='" + patient_id + "'");
+            int j=db.execute("delete  from tbl_pt_medhistory where pt_id='" + patient_id + "'");
+            return j;
         }
-        public void insert_pt_medhistory(string patient_id, string medical)
+        public int insert_pt_medhistory(string patient_id, string medical)
         {
-            db.execute("insert into tbl_pt_medhistory (pt_id,med_id) values('" + patient_id + "','" + medical + "')");
+            int k=db.execute("insert into tbl_pt_medhistory (pt_id,med_id) values('" + patient_id + "','" + medical + "')");
+            return k;
         }
-        public void delete_pt_group(string patient_id)
+        public int  delete_pt_group(string patient_id)
         {
-            db.execute("delete from tbl_pt_group where pt_id='" + patient_id + "'");
+            int e=db.execute("delete from tbl_pt_group where pt_id='" + patient_id + "'");
+            return e;
         }
-        public void insert_pt_group(string patient_id, string group)
+        public int  insert_pt_group(string patient_id, string group)
         {
-            db.execute("insert into  tbl_pt_group(pt_id,group_id) values('" + patient_id + "','" + group + "')");
+            int k=db.execute("insert into  tbl_pt_group(pt_id,group_id) values('" + patient_id + "','" + group + "')");
+            return k;
         }
     }
 }

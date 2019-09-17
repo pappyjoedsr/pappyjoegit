@@ -520,7 +520,6 @@ namespace PappyjoeMVC.View
             var form2 = new Patient_Profile_Edit();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Patient_Edit_controller controller = new Patient_Edit_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

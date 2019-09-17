@@ -606,7 +606,6 @@ namespace PappyjoeMVC.View
         private void linkLabel_Name_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
-            Patient_Edit_controller cnt = new Patient_Edit_controller(a);
             a.patient_id = linkLabel_id.Text.ToString();
             a.Show();
         }
@@ -614,7 +613,6 @@ namespace PappyjoeMVC.View
         private void linkLabel_id_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
-            Patient_Edit_controller cnt = new Patient_Edit_controller(a);
             a.patient_id = linkLabel_id.Text.ToString();
             a.Show();
         }

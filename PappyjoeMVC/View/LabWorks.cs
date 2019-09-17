@@ -23,8 +23,9 @@ namespace PappyjoeMVC.View
         public int k, Dexist =0;
         Connection db = new Connection();
         LabWorks_controller ctrlr = new LabWorks_controller();
+        public static string strphone = "";
         public string name = "", result = "", units = "", text = "", smsName = "", smsPass = "";
-        public string addr = "", loc = "", gen = "", patient_id = "", age = "", address = "", sexage = "", Apppath = "", doctor_id = "", typ = "", n = "", workiddental = "", workname = "", strPatientName = "", mob_number = "", path = "", contact_no = "", logo_name = "", clinicn = "", strclinicname = "", strStreet = "", stremail = "", strwebsite = "", strphone = "";
+        public string addr = "", loc = "", gen = "", patient_id = "", age = "", address = "", sexage = "", Apppath = "", doctor_id = "", typ = "", n = "", workiddental = "", workname = "", strPatientName = "", mob_number = "", path = "", contact_no = "", logo_name = "", clinicn = "", strclinicname = "", strStreet = "", stremail = "", strwebsite = "";
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
             var form2 = new Doctor_Profile();
@@ -131,26 +132,31 @@ namespace PappyjoeMVC.View
         }
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
-            DataTable dtdr=this.ctrlr.Patient_search(toolStripTextBox1.Text);
-            if (toolStripTextBox1.Text != "")
+            try
             {
-                listpatientsearch.DataSource = dtdr;
-                listpatientsearch.DisplayMember = "patient";
-                listpatientsearch.ValueMember = "id";
-                if (listpatientsearch.Items.Count == 0)
+                DataTable dtdr = this.ctrlr.Patient_search(toolStripTextBox1.Text);
+                if (toolStripTextBox1.Text != "")
                 {
-                    listpatientsearch.Visible = false;
+                    listpatientsearch.DataSource = dtdr;
+                    listpatientsearch.DisplayMember = "patient";
+                    listpatientsearch.ValueMember = "id";
+                    if (listpatientsearch.Items.Count == 0)
+                    {
+                        listpatientsearch.Visible = false;
+                    }
+                    else
+                    {
+                        listpatientsearch.Visible = true;
+                    }
+                    listpatientsearch.Location = new Point(toolStrip1.Width - 350, 32);
                 }
                 else
                 {
-                    listpatientsearch.Visible = true;
+                    listpatientsearch.Visible = false;
                 }
-                listpatientsearch.Location = new Point(toolStrip1.Width - 350, 32);
             }
-            else
-            {
-                listpatientsearch.Visible = false;
-            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void toolStripButton9_Click(object sender, EventArgs e)
         {
@@ -163,18 +169,22 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             form2.ShowDialog();
         }
+        public void practicedetails(DataTable dtp)
+        {
+            if (dtp.Rows.Count > 0)
+            {
+                clinicn = dtp.Rows[0]["name"].ToString();
+                strclinicname = clinicn.Replace("¤", "'");
+                strphone = dtp.Rows[0]["contact_no"].ToString();
+                strStreet = dtp.Rows[0]["street_address"].ToString();
+                stremail = dtp.Rows[0]["email"].ToString();
+                strwebsite = dtp.Rows[0]["website"].ToString();
+            }
+        }
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-                DataTable dtp=this.ctrlr.practicedetails();
-                if (dtp.Rows.Count > 0)
-                {
-                    clinicn = dtp.Rows[0]["name"].ToString();
-                    strclinicname = clinicn.Replace("¤", "'");
-                    strphone = dtp.Rows[0]["contact_no"].ToString();
-                    strStreet = dtp.Rows[0]["street_address"].ToString();
-                    stremail = dtp.Rows[0]["email"].ToString();
-                    strwebsite = dtp.Rows[0]["website"].ToString();
-                }
+                DataTable dtp = this.ctrlr.practicedetails();
+                practicedetails(dtp);
                 workname = label1.Text;
                 DataTable dt=this.ctrlr.printdetails(patient_id, workname, workiddental);
                 printdetails(dt);
@@ -189,7 +199,8 @@ namespace PappyjoeMVC.View
         }
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            this.ctrlr.smsinfo();
+            DataTable sm=this.ctrlr.smsinfo();
+            smsinfo(sm);
         }
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
@@ -256,7 +267,8 @@ namespace PappyjoeMVC.View
 
                                 text = text + " (" + (j + 1) + ")" + tbshade.Rows[j][1].ToString() + " :" + tbshade.Rows[j][2].ToString() + " " + tbshade.Rows[j][5].ToString();
                             }
-                            //this.ctrlr.practicedetails();
+                            DataTable dtp=this.ctrlr.practicedetails();
+                            practicedetails(dtp);
                             string res = this.ctrlr.SendSMS(smsName, smsPass, mob_number, "Dear " + strPatientName + ",  Your Lab Test Result : " + text + "--- Regards " + toolStripButton1.Text + "," + strphone);
                             if (res == "SMS message(s) sent")
                             { MessageBox.Show("Laboratory Result  send successfully", "success", MessageBoxButtons.OK, MessageBoxIcon.None); }
@@ -300,12 +312,22 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            string id=this.ctrlr.getprev(doctor_id);
-            if (doctor_id != "1")
+            try
             {
-                if (int.Parse(id) > 0)
+                string id = this.ctrlr.getprev(doctor_id);
+                if (doctor_id != "1")
                 {
-                    MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    if (int.Parse(id) > 0)
+                    {
+                        MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                    else
+                    {
+                        var form2 = new StockReport();
+                        form2.doctor_id = doctor_id;
+                        form2.Closed += (sender1, args) => this.Close();
+                        form2.ShowDialog();
+                    }
                 }
                 else
                 {
@@ -315,13 +337,8 @@ namespace PappyjoeMVC.View
                     form2.ShowDialog();
                 }
             }
-            else
-            {
-                var form2 = new StockReport();
-                form2.doctor_id = doctor_id;
-                form2.Closed += (sender1, args) => this.Close();
-                form2.ShowDialog();
-            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
@@ -338,13 +355,12 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             form2.ShowDialog();
         }
-        public void seltype(DataTable type)
+        public void seltype(string type)
         {
             try
             {
-                typ = type.Rows[0][0].ToString();
                 contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
-                if (typ == "Dental")
+                if (type == "Dental")
                 {
                     printtoolStripMenuItem2.Visible = false;
                     toolStripMenuItem1.Visible = false;
@@ -405,6 +421,7 @@ namespace PappyjoeMVC.View
                     k = e.RowIndex;
                     label1.Text = dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[4].Value.ToString();
                     string type=this.ctrlr.seltype(patient_id, dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    seltype(type);
                 }
             }
             catch (Exception ex)
@@ -597,23 +614,45 @@ namespace PappyjoeMVC.View
         }
         private void LabWorks_Load(object sender, EventArgs e)
         {
-            DataTable rs_patients=this.ctrlr.Get_Patient_Details(patient_id);
-            Get_Patient_Details(rs_patients);
-            DataTable clinicname=this.ctrlr.Get_Practice_details();
-            toolStripButton4.Visible = true;
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-            if (clinicname.Rows.Count > 0)
+            try
             {
-                string clinicn = "";
-                clinicn = clinicname.Rows[0][0].ToString();
-                toolStripButton1.Text = clinicn.Replace("¤", "'");
-                path = clinicname.Rows[0]["path"].ToString();
-                contact_no = clinicname.Rows[0][2].ToString();
-                string dr=this.ctrlr.Get_DoctorName(doctor_id);
-                Get_DoctorName(dr);
+                DataTable rs_patients = this.ctrlr.Get_Patient_Details(patient_id);
+                Get_Patient_Details(rs_patients);
+                DataTable clinicname = this.ctrlr.Get_Practice_details();
+                toolStripButton4.Visible = true;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                if (clinicname.Rows.Count > 0)
+                {
+                    string clinicn = "";
+                    clinicn = clinicname.Rows[0][0].ToString();
+                    toolStripButton1.Text = clinicn.Replace("¤", "'");
+                    path = clinicname.Rows[0]["path"].ToString();
+                    contact_no = clinicname.Rows[0][2].ToString();
+                    string dr = this.ctrlr.Get_DoctorName(doctor_id);
+                    Get_DoctorName(dr);
+                }
+                DataTable dt = this.ctrlr.Getdata(patient_id);
+                Getdata(dt);
+                dataGridView1_treatment_paln.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView1_treatment_paln.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView1_treatment_paln.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView1_treatment_paln.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView1_treatment_paln.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView1_treatment_paln.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView1_treatment_paln.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dataGridView1_treatment_paln.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView1_treatment_paln.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView1_treatment_paln.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView1_treatment_paln.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView1_treatment_paln.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                foreach (DataGridViewColumn cl in dataGridView1_treatment_paln.Columns)
+                {
+                    cl.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    cl.Width = 120;
+                }
             }
-            DataTable dt=this.ctrlr.Getdata(patient_id);
-            Getdata(dt);
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public void Get_Patient_Details(DataTable rs_patients)
         {

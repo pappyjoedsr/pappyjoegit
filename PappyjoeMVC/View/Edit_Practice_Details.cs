@@ -26,7 +26,7 @@ namespace PappyjoeMVC.View
             combobox = cmb;
         }
 
-        Edit_Practice_Details_controller contrl;
+        Edit_Practice_Details_controller contrl=new Edit_Practice_Details_controller();
         public string frameid = "0";
         public string Country_id = "", State_id = "", City_id = "", Speci_id = "";
         public int state_index = 0, country_index = 0, city_index = 0, sepci_index = 0;
