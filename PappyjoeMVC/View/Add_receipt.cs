@@ -29,7 +29,7 @@ namespace PappyjoeMVC.View
         string id15; public string staff_id = "";
         public string inv, inv_number, services;
         DataGridViewLinkColumn Deletelink1 = new DataGridViewLinkColumn();
-        Add_Receipt_controller cntrl;
+        Add_Receipt_controller cntrl =new Add_Receipt_controller();
         public string[] invoices = new string[100];
         Common_model cmodel = new Common_model();
         public Add_Receipt()
@@ -459,7 +459,6 @@ namespace PappyjoeMVC.View
                         {
                             Advance_paymentPrint(abcde1);
                         }
-
                         var form2 = new Receipt();
                         if (doctor_id == "0")
                         {
@@ -470,7 +469,6 @@ namespace PappyjoeMVC.View
                             form2.doctor_id = doctor_id;
                         }
                         form2.patient_id = patient_id;
-                        Receipt_controller controller = new Receipt_controller(form2);
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
                         form2.ShowDialog();
@@ -679,7 +677,6 @@ namespace PappyjoeMVC.View
                                 form2.doctor_id = doctor_id;
                             }
                             form2.patient_id = patient_id;
-                            Receipt_controller controller = new Receipt_controller(form2);
                             form2.Closed += (sender1, args) => this.Close();
                             this.Hide();
                             form2.ShowDialog();
@@ -1115,7 +1112,6 @@ namespace PappyjoeMVC.View
                             form2.doctor_id = doctor_id;
                         }
                         form2.patient_id = patient_id;
-                        Receipt_controller controller = new Receipt_controller(form2);
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
                         form2.ShowDialog();
@@ -1144,7 +1140,6 @@ namespace PappyjoeMVC.View
             {
                 form2.doctor_id = doctor_id;
             }
-            Receipt_controller controller = new Receipt_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1216,7 +1211,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

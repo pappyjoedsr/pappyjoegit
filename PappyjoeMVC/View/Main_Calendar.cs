@@ -3146,7 +3146,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    AppointmentBooking = new PappyjoeMVC.View.AppointmentBooking();
+                    AppointmentBooking = new PappyjoeMVC.View. AppointmentBooking();
                     AppointmentBooking.doctor_id = doctor_id;
                     AppointmentBooking.CreateNewEvent();
                     AppointmentBooking.ShowDialog(this);
@@ -3164,7 +3164,7 @@ namespace PappyjoeMVC.View
         private void mnuContextEditEvent_Click(object sender, System.EventArgs e)
         {
             // AppointmentBooking = new PappyjoeMVC.View.AppointmentBooking();
-            AppointmentBooking bk = new AppointmentBooking();
+            View. AppointmentBooking bk = new View. AppointmentBooking();
             if (pat_idForEdit != "0")
             {
                 if (ContextEvent.RecurrenceState != CalendarEventRecurrenceState.xtpCalendarRecurrenceNotRecurring)
@@ -4066,13 +4066,13 @@ namespace PappyjoeMVC.View
 
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
-            //var form2 = new Pappyjoe.patient_profile_details();
-            //form2.doctor_id = doctor_id;
-            //form2.patient_id = listpatientsearch.SelectedValue.ToString();
-            //listpatientsearch.Visible = false;
-            //form2.Show();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            var form2 = new Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = listpatientsearch.SelectedValue.ToString();
+            listpatientsearch.Visible = false;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)

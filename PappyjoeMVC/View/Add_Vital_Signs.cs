@@ -80,7 +80,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new PappyjoeMVC.View.Patients();
             form2.doctor_id = doctor_id;
-            Patients_controller cn = new Patients_controller(form2);
             form2.ShowDialog();
             //form2.Closed += (sender1, args) => this.Close();
             //this.Hide();
@@ -208,7 +207,6 @@ namespace PappyjoeMVC.View
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
-            Profile_Details_controller cntr = new Profile_Details_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
@@ -220,7 +218,6 @@ namespace PappyjoeMVC.View
         private void labelallpatient_Click_1(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Patients();
-            Patients_controller ctr = new Patients_controller(form2);
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
             //form2.Closed += (sender1, args) => this.Close();
@@ -558,7 +555,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

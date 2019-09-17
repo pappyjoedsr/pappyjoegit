@@ -244,7 +244,6 @@ namespace PappyjoeMVC.View
                             else
                             {
                                 var form2 = new Patient_Profile_Details();
-                                Profile_Details_controller cntrl = new Profile_Details_controller(form2);
                                 form2.patient_id = pat_id;
                                 form2.doctor_id = doctor_id;
                                 form2.Closed += (sender1, args) => this.Close();
@@ -630,7 +629,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

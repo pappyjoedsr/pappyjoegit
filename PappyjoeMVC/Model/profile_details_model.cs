@@ -25,5 +25,10 @@ namespace PappyjoeMVC.Model
             DataTable dt9 = db.table("Select group_id from tbl_pt_group where pt_id='" + patient_id + "'");
             return dt9;
         }
+        public DataTable main_settings()
+        {
+            DataTable cunsultaionview = db.table("select name,status from Tbl_main_Settings where status='1' and name='Con'");
+            return cunsultaionview;
+        }
     }
 }

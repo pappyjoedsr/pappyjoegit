@@ -118,10 +118,8 @@
     <Compile Include="Controller\LabWorks_controller.cs" />
     <Compile Include="Controller\Ledger_controller.cs" />
     <Compile Include="Controller\Login_controller.cs" />
-    <Compile Include="Controller\login_interface.cs" />
     <Compile Include="Controller\MainCalendar_Controller.cs" />
     <Compile Include="Controller\Manufacture_controller.cs" />
-    <Compile Include="Controller\manufacture_interface.cs" />
     <Compile Include="Controller\Medical_History_controller.cs" />
     <Compile Include="Controller\Missing_Checkout_Report_controller.cs" />
     <Compile Include="Controller\Monthly_Appointment_count_controller.cs" />
@@ -133,7 +131,6 @@
     <Compile Include="Controller\New_Debit_Account_controller.cs" />
     <Compile Include="Controller\Patients_controller.cs" />
     <Compile Include="Controller\Patients_First_Appointment_controller.cs" />
-    <Compile Include="Controller\patients_interface.cs" />
     <Compile Include="Controller\Patient_Edit_controller.cs" />
     <Compile Include="Controller\patient_edit_interface.cs" />
     <Compile Include="Controller\Paymode_Wise_Receipt_controller.cs" />
@@ -147,7 +144,6 @@
     <Compile Include="Controller\Printout_controller.cs" />
     <Compile Include="Controller\Procedure_Catalog_controller.cs" />
     <Compile Include="Controller\Profile_Details_controller.cs" />
-    <Compile Include="Controller\profile_details_interface.cs" />
     <Compile Include="Controller\purchasebatch_controller.cs" />
     <Compile Include="Controller\PurchaseItemReturnReport_controller.cs" />
     <Compile Include="Controller\purchaseItem_controller.cs" />
@@ -165,7 +161,6 @@
     <Compile Include="Controller\Purchase_return_list_controller.cs" />
     <Compile Include="Controller\Purchase_Return_Report_controller.cs" />
     <Compile Include="Controller\Receipt_controller.cs" />
-    <Compile Include="Controller\Receipt_interface.cs" />
     <Compile Include="Controller\Reports_controller.cs" />
     <Compile Include="Controller\SalesOrderItemReport_controller.cs" />
     <Compile Include="Controller\SalesReport_Items_controller.cs" />
@@ -186,12 +181,10 @@
     <Compile Include="Controller\Staff_controller.cs" />
     <Compile Include="Controller\stock_controller.cs" />
     <Compile Include="Controller\Supplier_controller.cs" />
-    <Compile Include="Controller\supplier_interface.cs" />
     <Compile Include="Controller\Trackingnullstatus_controller.cs" />
     <Compile Include="Controller\Treatment_controller.cs" />
     <Compile Include="Controller\Treatment_For_Each_Category_controller.cs" />
     <Compile Include="Controller\Treatment_For_Each_Doctor_controller.cs" />
-    <Compile Include="Controller\treatment_interface.cs" />
     <Compile Include="Controller\Visiting_History_controller.cs" />
     <Compile Include="Controller\Vital_Signs_controller.cs" />
     <Compile Include="Model\Add_Finished_Treatment_model.cs" />
@@ -1213,6 +1206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\LabWorks.resx">
       <DependentUpon>LabWorks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Main_Calendar.resx">
+      <DependentUpon>Main_Calendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Manufacture.resx">
       <DependentUpon>Manufacture.cs</DependentUpon>

@@ -4,18 +4,12 @@ namespace PappyjoeMVC.Controller
 {
     public class Receipt_controller
     {
-        Receipt_interface intr;
         Connection db = new Connection();
         Receipt_Model Model = new Receipt_Model();
         Common_model cmodel = new Common_model();
-        public Receipt_controller(Receipt_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
         public string check_add_privillege(string doctor_id)
         {
-            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PMT' and Permission='A'");
+            string id = Model.check_add_privillege(doctor_id);
             return id;
         }
         public DataTable Get_CompanyNAme()
@@ -40,7 +34,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable get_paymentDate(string patient_id)
         {
-            DataTable Payment = db.table("select  distinct(payment_date) from tbl_payment where pt_id='" + patient_id + "'AND payment_date!='' order by payment_date desc");
+            DataTable Payment = Model.get_paymentDate(patient_id);
             return Payment;
         }
         public DataTable payment_details(string date, string patient_id)
@@ -50,7 +44,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable get_printSettings()
         {
-            DataTable print = db.table("select * from tbl_receipt_printsettings");
+            DataTable print = get_printSettings();
             return print;
         }
         public DataTable get_company_details()
@@ -65,7 +59,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable receipt_printSettings()
         {
-            DataTable print = db.table("select header,left_text,right_text,fullwidth_context,left_sign,right_sign from  tbl_receipt_printsettings");
+            DataTable print = Model.receipt_printSettings();
             return print;
         }
         public DataTable Patient_search(string patid)

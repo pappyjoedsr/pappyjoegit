@@ -334,10 +334,7 @@ namespace PappyjoeMVC.View
                             DOCTORID = doctor.Rows[0][0].ToString();
                             PappyjoeMVC.Model.Connection.MyGlobals.loginType = type;
                             PappyjoeMVC.Model.Connection.MyGlobals.Doctor_id = DOCTORID;
-                            var form2 = new Main();
-                            form2.Show();
-                            form2.Closed += (sender1, args) => this.Close();
-                            this.Hide();
+                            
                             DataTable sms = this.cntrl.Get_smsconfig();
                             if (sms.Rows.Count > 0)
                             {
@@ -361,6 +358,11 @@ namespace PappyjoeMVC.View
                             {
                                 MessageBox.Show("SMS and Email Services are not Activated!!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
+                            var form2 = new PappyjoeMVC.View.Main_Calendar();
+                            form2.doctor_id = DOCTORID;
+                            form2.Closed += (sender1, args) => this.Close();
+                            this.Hide();
+                            form2.ShowDialog();
                         }
                         else
                         {
@@ -380,5 +382,9 @@ namespace PappyjoeMVC.View
             }
         }
 
+        private void Btn_Login_Click(object sender, EventArgs e)
+        {
+            loginfunction();
+        }
     }
 }

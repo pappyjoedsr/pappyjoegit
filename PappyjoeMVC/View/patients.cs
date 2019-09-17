@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Windows.Forms;
 namespace PappyjoeMVC.View
 {
-    public partial class Patients : Form, patients_interface
+    public partial class Patients : Form
     {
         public string doctor_id = "";
         Patients_controller cntrl; public int i;
@@ -17,8 +17,8 @@ namespace PappyjoeMVC.View
         string id1;
         public string id2 = "", id7;//doctor_id = "0";
         public Image image; bool Inactive_Flag = false, Group_flag = false;
-        string clinical_finding_id = "", docname_id = "0", gender;
-        int left_button_click = 0, clinical_finding_Rowid = 0;
+        string gender;// clinical_finding_id = "", docname_id = "0", gender;
+        int left_button_click = 0;//, clinical_finding_Rowid = 0;
         public string patient_id { get; set; }
         double weight, height, BMI;
         bool AllPatient_Flag = false, Recently_Visited_Flag = false, RecentalyAdded_flag = false, upcommingAppoinments_Flag = false, Upcomingbirthday_flag = false, CancelledAppoinmnt_Flag = false;
@@ -76,7 +76,8 @@ namespace PappyjoeMVC.View
                 DateTime startDateTime = Convert.ToDateTime(dateTimePickefrom.Value.ToString("yyyy-MM-dd") + " 00:01");
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd") + " 23:59");
                 DataTable dt_pt5 = new DataTable();
-                this.cntrl.Get_appointment_data(startDateTime, startDateTime1);
+                DataTable dtb= this.cntrl.Get_appointment_data(startDateTime, startDateTime1);
+                Appointment_Data(dtb);
             }
             catch (Exception ex)
             {
@@ -221,7 +222,8 @@ namespace PappyjoeMVC.View
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd"));
                 DGV_Patients.ScrollBars = ScrollBars.Vertical;
                 System.Data.DataTable dt_cf_main = new DataTable();
-                this.cntrl.Get_vitalSigns(startDateTime, startDateTime1);
+               DataTable dtb=  this.cntrl.Get_vitalSigns(startDateTime, startDateTime1);
+                VitalSigns(dtb);
             }
             catch (Exception ex)
             {
@@ -458,7 +460,8 @@ namespace PappyjoeMVC.View
                 DateTime startDateTime = Convert.ToDateTime(dateTimePickefrom.Value.ToString("yyyy-MM-dd"));
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd"));
                 DGV_Patients.ScrollBars = ScrollBars.Vertical;
-                this.cntrl.clinic_findings(startDateTime, startDateTime1);
+               DataTable dtb= this.cntrl.clinic_findings(startDateTime, startDateTime1);
+                ClinicFindings(dtb);
             }
             catch (Exception ex)
             {
@@ -706,7 +709,8 @@ namespace PappyjoeMVC.View
                 DGV_Patients.ScrollBars = ScrollBars.Vertical;
                 DateTime startDateTime = Convert.ToDateTime(dateTimePickefrom.Value.ToString("yyyy-MM-dd"));
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd"));
-                this.cntrl.treatmentPlan(startDateTime, startDateTime1);
+                DataTable dtb= this.cntrl.treatmentPlan(startDateTime, startDateTime1);
+                TreatmentPlan(dtb);
             }
             catch (Exception ex)
             {
@@ -857,7 +861,8 @@ namespace PappyjoeMVC.View
                 DateTime startDateTime = Convert.ToDateTime(dateTimePickefrom.Value.ToString("yyyy-MM-dd"));
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd"));
                 DGV_Patients.ScrollBars = ScrollBars.Vertical;
-                this.cntrl.finishedprocedure(startDateTime, startDateTime1);
+               DataTable dtb= this.cntrl.finishedprocedure(startDateTime, startDateTime1);
+                FinishedProcedure(dtb);
             }
             catch (Exception ex)
             {
@@ -994,7 +999,8 @@ namespace PappyjoeMVC.View
                 DateTime startDateTime = Convert.ToDateTime(dateTimePickefrom.Value.ToString("yyyy-MM-dd"));
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd"));
                 System.Data.DataTable dt_pre_main = new DataTable();
-                this.cntrl.Prescription(startDateTime, startDateTime1);
+               DataTable dtb= this.cntrl.Prescription(startDateTime, startDateTime1);
+                Prescription(dtb);
             }
             catch (Exception ex)
             {
@@ -1039,7 +1045,8 @@ namespace PappyjoeMVC.View
                 DGV_Patients.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 DateTime startDateTime = Convert.ToDateTime(dateTimePickefrom.Value.ToString("yyyy-MM-dd"));
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd"));
-                this.cntrl.invoice(startDateTime, startDateTime1);
+                DataTable dtb= this.cntrl.invoice(startDateTime, startDateTime1);
+                Invoice(dtb);
             }
             catch (Exception ex)
             {
@@ -1308,7 +1315,8 @@ namespace PappyjoeMVC.View
                 DGV_Patients.Columns[3].Width = 295;
                 DateTime startDateTime = Convert.ToDateTime(dateTimePickefrom.Value.ToString("yyyy-MM-dd"));
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd"));
-                this.cntrl.Payment(startDateTime, startDateTime1);
+               DataTable dtb= this.cntrl.Payment(startDateTime, startDateTime1);
+                Payments(dtb);
             }
             catch (Exception ex)
             {
@@ -1412,7 +1420,8 @@ namespace PappyjoeMVC.View
                     left_button_click = 8;
                     txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
                     SetPatient_SearchControlls();
-                    this.cntrl.Get_all_Patients();
+                   DataTable drtb=  this.cntrl.Get_all_Patients();
+                    Create_Datagrid(drtb);
                     Design_Datagrid();
                     //if (dt_pt.Rows.Count > 0)
                     //{
@@ -1435,7 +1444,8 @@ namespace PappyjoeMVC.View
                     ClearAll_grid2_Properties();
                     txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
                     SetPatient_SearchControlls();
-                    this.cntrl.Get_all_Patients();
+                    DataTable dtb= this.cntrl.Get_all_Patients();
+                    Create_Datagrid(dtb);
                     Design_Datagrid();
                     //string sqlstr = "";
                     //sqlstr = "SELECT id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,Opticket as 'File No' FROM tbl_patient where Profile_Status='Active' ORDER BY id DESC";
@@ -1500,7 +1510,8 @@ namespace PappyjoeMVC.View
                 d = d.AddMonths(-1);
                 DateTime todate = DateTime.Now;
                 ClearAll_grid2_Properties();
-                this.cntrl.recently_visited(d, todate);
+                DataTable dtb= this.cntrl.recently_visited(d, todate);
+                Create_Datagrid(dtb);
                 Design_Datagrid();
                 //sqlstr = "SELECT  DISTINCT A.pt_id AS Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d.ToString("yyyy-MM-dd HH:mm") + "' and '" + todate.ToString("yyyy-MM-dd HH:mm") + "' and A.status<>'CANCELLED' and A.status <>'scheduled' ";// ORDER BY P. id DESC";//   p.Profile_Status='Active'  ";
                 //DataTable dt_pt = db.table(sqlstr);
@@ -1548,7 +1559,8 @@ namespace PappyjoeMVC.View
                 DateTime d = DateTime.Now;
                 d = d.AddMonths(-1);
                 DateTime todate = DateTime.Now;
-                this.cntrl.Recently_added(d, todate);
+                DataTable dtb= this.cntrl.Recently_added(d, todate);
+                Create_Datagrid(dtb);
                 Design_Datagrid();
                 //sqlstr = "SELECT  id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,Opticket as 'File No' FROM  tbl_patient  where Visited between '" + d.ToString("yyyy-MM-dd HH:mm") + "' and '" + todate.ToString("yyyy-MM-dd HH:mm") + "' and tbl_patient.Profile_Status='Active' order by tbl_patient.Date DESC limit 20";
                 //DataTable dt_pt = db.table(sqlstr);
@@ -1594,7 +1606,8 @@ namespace PappyjoeMVC.View
                 ClearAll_grid2_Properties();
                 left_button_click = 8;
                 DateTime startDateTime = Convert.ToDateTime(DateTime.Today.ToString("d") + " " + DateTime.Now.ToString("hh:mm:ss tt"));
-                this.cntrl.upcomming_appointments(startDateTime);
+               DataTable dtb= this.cntrl.upcomming_appointments(startDateTime);
+                Create_Datagrid(dtb);
                 Design_Datagrid();
                 //sqlstr = "SELECT  DISTINCT A.pt_id AS Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on A.pt_id=P.ID WHERE  start_datetime >=  '" + startDateTime.ToString("yyyy-MM-dd") + "' and p.Profile_Status='Active'";//  order by id desc";
                 //DataTable dt_pt = db.table(sqlstr);
@@ -1639,7 +1652,8 @@ namespace PappyjoeMVC.View
                 txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
                 ClearAll_grid2_Properties();
                 left_button_click = 8;
-                this.cntrl.birthday();
+                DataTable dtb= this.cntrl.birthday();
+                Create_Datagrid(dtb);
                 Design_Datagrid();
                 //sqlstr = "select id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,Opticket as 'File No' from tbl_patient where MONTH(date_of_birth) ='" + DateTime.Now.Month + "' and DAY(date_of_birth)> '" + DateTime.Now.Day + "'  and date_of_birth !='" + "" + "' and tbl_patient.Profile_Status='Active' order by date_of_birth ASC";
                 //DataTable dt_pt = db.table(sqlstr);
@@ -1728,7 +1742,8 @@ namespace PappyjoeMVC.View
                 SetPatient_SearchControlls();
                 txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
                 //string sqlstr = "";
-                this.cntrl.innactive_patients();
+                DataTable dtb=  this.cntrl.innactive_patients();
+                Create_Datagrid(dtb);
                 Design_Datagrid();
                 //sqlstr = " SELECT P.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM tbl_patient P where  Profile_Status ='Cancelled' ORDER BY P.id DESC";            //}
                 //DataTable dt_pt = db.table(sqlstr);
@@ -1778,7 +1793,8 @@ namespace PappyjoeMVC.View
                     int g = e.RowIndex;
                     //string sqlstr = "";
                     id4 = grgroup.Rows[g].Cells[1].Value.ToString();
-                    this.cntrl.patients_wit_group(id4);
+                    DataTable dtb= this.cntrl.patients_wit_group(id4);
+                    Create_Datagrid(dtb);
                     Design_Datagrid();
                     //sqlstr = " SELECT P.id AS Pid,P.pt_id AS 'Patient Id',pt_name AS 'Patient Name', gender AS Gender,age AS Age, primary_mobile_number AS  Mobile,street_address AS 'Street Address',locality AS Locality,Opticket as 'File No' FROM tbl_patient P inner join tbl_pt_group G on P.id = G.pt_id where G.group_id='" + id4 + "' and Profile_Status='Active' ORDER BY P.id DESC";
                     //DataTable dt_pt = db.table(sqlstr);
@@ -1819,7 +1835,8 @@ namespace PappyjoeMVC.View
                     panl_DisplayingPatient.Visible = true;
                     ClearAll_grid2_Properties();
                     lab_LongMsg.Hide();
-                    this.cntrl.Get_all_Patients();
+                   DataTable dtb=  this.cntrl.Get_all_Patients();
+                    Create_Datagrid(dtb);
                     //string sqlstr = "";
                     //sqlstr = "SELECT id AS Pid,pt_id AS 'Patient Id' ,pt_name AS 'Patient Name', gender AS 'Gender',age AS 'Age', primary_mobile_number AS 'Mobile',street_address AS 'Street Address', locality AS Locality, Opticket as 'File No' FROM tbl_patient where Profile_Status='Active' ORDER BY id DESC";
                     //DataTable dt_pt = db.table(sqlstr);
@@ -1836,7 +1853,8 @@ namespace PappyjoeMVC.View
                     SetPatient_SearchControlls();
                     ClearAll_grid2_Properties();
                     panl_DisplayingPatient.Visible = true;
-                    this.cntrl.Get_all_Patients();
+                  DataTable dtb=  this.cntrl.Get_all_Patients();
+                    Create_Datagrid(dtb);
                     //string sqlstr = "";
                     //sqlstr = "SELECT id AS Pid,pt_id 'Patient Id',pt_name 'Patient Name', gender Gender ,age Age, primary_mobile_number Mobile,street_address 'Street Address', locality Locality,Opticket as 'File No' FROM tbl_patient where Profile_Status='Active' ORDER BY id DESC";
                     //DataTable dt_pt = db.table(sqlstr);
@@ -1909,7 +1927,6 @@ namespace PappyjoeMVC.View
                         var form2 = new Patient_Profile_Details();
                         form2.doctor_id = doctor_id;
                         form2.patient_id = id1.ToString();
-                        Profile_Details_controller cntroller = new Profile_Details_controller(form2);
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
                         form2.ShowDialog();
@@ -1922,7 +1939,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -2004,7 +2020,6 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
-            Profile_Details_controller controller = new Profile_Details_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -2236,23 +2251,27 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                    this.cntrl.Get_all_Patients();
+                  DataTable dtb=  this.cntrl.Get_all_Patients();
+                    Create_Datagrid(dtb);
                 }
                 else
                 {
-                    this.cntrl.allpatient_search(txt_Search.Text);//
+                  DataTable dtb= this.cntrl.allpatient_search(txt_Search.Text);//
+                    Create_Datagrid(dtb);
                 }
             }
             else if (RecentalyAdded_flag == true)
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                    this.cntrl.Recently_added(d, todate);
+                    DataTable dtb= this.cntrl.Recently_added(d, todate);
+                    Create_Datagrid(dtb);
                     //sqlstr = "SELECT  id Pid, pt_id 'Patient Id',pt_name 'Patient Name', gender Gender,age Age, primary_mobile_number Mobile,street_address 'Street Address',locality Locality, Opticket as 'File No'  FROM  tbl_patient where Visited between '" + d + "' and '" + todate + "' and tbl_patient.Profile_Status='Active' ORDER BY id DESC limit 30";
                 }
                 else
                 {
-                    this.cntrl.recently_added_search(d, todate, txt_Search.Text);
+                   DataTable dtb= this.cntrl.recently_added_search(d, todate, txt_Search.Text);
+                    Create_Datagrid(dtb);
                     //sqlstr = /*"SELECT  id Pid, pt_id 'Patient Id',pt_name 'Patient Name', gender Gender,age Age, primary_mobile_number Mobile,street_address 'Street Address',locality Locality, Opticket as 'File No' FROM  tbl_patient where Visited between '" + d + "' and '" + todate + "' and tbl_patient.Profile_Status='Active' and (pt_id like '%" + txt_Search.Text + "%' or pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%') ORDER BY id DESC limit 30"*/;
                 }
             }
@@ -2261,12 +2280,13 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                    this.cntrl.recently_visited(d, todate);
+                  DataTable dtb= this.cntrl.recently_visited(d, todate); Create_Datagrid(dtb);
                     //sqlstr = "SELECT  DISTINCT A.id AS Pid,P.pt_id 'Patient Id',P.pt_name 'Patient Name', P.gender Gender,P.age Age,P. primary_mobile_number Mobile ,P.street_address 'Street Address',P.locality Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d + "' and '" + todate + "' and A.status<>'CANCELLED' and A.status <>'scheduled' ";
                 }
                 else
                 {
-                    this.cntrl.recently_visited_search(d, todate, txt_Search.Text);
+                   DataTable dtb= this.cntrl.recently_visited_search(d, todate, txt_Search.Text);
+                    Create_Datagrid(dtb);
                     //sqlstr = "SELECT  DISTINCT A.id AS Pid,P.pt_id 'Patient Id',P.pt_name 'Patient Name', P.gender Gender,P.age Age,P. primary_mobile_number Mobile ,P.street_address 'Street Address',P.locality Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d + "' and '" + todate + "' and A.status<>'CANCELLED' and A.status <>'scheduled' and (P.pt_id like '%" + txt_Search.Text + "%' or P.pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%') ";
                 }
             }
@@ -2274,12 +2294,14 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                    this.cntrl.upcomming_appointments(startDateTime);
+                    DataTable dtb= this.cntrl.upcomming_appointments(startDateTime);
+                    Create_Datagrid(dtb);
                     //sqlstr = "SELECT  DISTINCT P.id AS Pid,P.pt_id AS 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age, P.primary_mobile_number as Mobile, P.street_address as 'Street Address', P.locality as Locality, P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on A.pt_id=P.ID WHERE  start_datetime >=  '" + startDateTime.ToString("yyyy-MM-dd") + "' and p.Profile_Status='Active'";
                 }
                 else
                 {
-                    this.cntrl.upcomming_appointments_search(startDateTime, txt_Search.Text);
+                   DataTable dtb= this.cntrl.upcomming_appointments_search(startDateTime, txt_Search.Text);
+                    Create_Datagrid(dtb);
                     //sqlstr = "SELECT  DISTINCT P.id AS Pid,P.pt_id AS 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age, P.primary_mobile_number as Mobile, P.street_address as 'Street Address', P.locality as Locality, P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on A.pt_id=P.ID WHERE  ( A.pt_id like '%" + txt_Search.Text + "%' or P.pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%') and start_datetime >=  '" + startDateTime.ToString("yyyy-MM-dd") + "' and p.Profile_Status='Active'   ";
                 }
             }
@@ -2287,12 +2309,14 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                    this.cntrl.birthday();
+                   DataTable dtb=  this.cntrl.birthday();
+                    Create_Datagrid(dtb);
                     //sqlstr = "select id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as Gender,age as Age, primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as 'Locality',Opticket as 'File No' from tbl_patient where MONTH(date_of_birth) ='" + DateTime.Now.Month + "' and DAY(date_of_birth)> '" + DateTime.Now.Day + "'  and date_of_birth !='" + "" + "' and tbl_patient.Profile_Status='Active' order by date_of_birth ASC";
                 }
                 else
                 {
-                    this.cntrl.birthday_search(txt_Search.Text);
+                   DataTable dtb= this.cntrl.birthday_search(txt_Search.Text);
+                    Create_Datagrid(dtb);
                     //sqlstr = "select id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as Gender,age as Age, primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as 'Locality',Opticket as 'File No' from tbl_patient where  tbl_patient.Profile_Status='Active' and (pt_id like '%" + txt_Search.Text + "%' or pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%') and MONTH(date_of_birth) ='" + DateTime.Now.Month + "' and DAY(date_of_birth)> '" + DateTime.Now.Day + "'  and date_of_birth !='" + "" + "'  order by date_of_birth ASC";
                 }
             }
@@ -2300,12 +2324,14 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                    this.cntrl.cancelled_appointment();
+                   DataTable dtb=  this.cntrl.cancelled_appointment();
+                    Create_Datagrid(dtb);
                     //sqlstr = "select p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age,p.primary_mobile_number as Mobile,p.street_address as 'Street Address',p.locality as Locality,p.Opticket as 'File No' from tbl_appointment A left join tbl_patient P on A.pt_id=P.id  where status='Cancelled' order by p.id DESC";
                 }
                 else
                 {
-                    this.cntrl.cancelled_appointmnt_search(txt_Search.Text);
+                   DataTable dtb= this.cntrl.cancelled_appointmnt_search(txt_Search.Text);
+                    Create_Datagrid(dtb);
                     //sqlstr = "select p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age,p.primary_mobile_number as Mobile,p.street_address as 'Street Address',p.locality as Locality,p.Opticket as 'File No' from tbl_appointment A left join tbl_patient P on A.pt_id=P.id  where status='Cancelled' and (A.pt_id like '%" + txt_Search.Text + "%' or A.pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%') order by p.id DESC";
                 }
             }
@@ -2313,12 +2339,14 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                    this.cntrl.innactive_patients();
+                    DataTable dtb= this.cntrl.innactive_patients();
+                    Create_Datagrid(dtb);
                     //sqlstr = "select p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age ,p.primary_mobile_number as Mobile,p.street_address as Street Address,p.locality as Locality,p.Opticket as 'File No' from  tbl_patient P  where P.Profile_Status='Cancelled' order by p.id DESC";
                 }
                 else
                 {
-                    this.cntrl.innactive_patients_search(txt_Search.Text);
+                   DataTable dtb= this.cntrl.innactive_patients_search(txt_Search.Text);
+                    Create_Datagrid(dtb);
                     //sqlstr = "select id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as Gender,age as Age, primary_mobile_number as Mobile,street_address   as 'Street Address',locality as Locality,Opticket as 'File No' from tbl_patient where  tbl_patient.Profile_Status='Cancelled' and (pt_id like '%" + txt_Search.Text + "%' or pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%')order by id DESC";
                 }
             }
@@ -2326,12 +2354,14 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                    this.cntrl.patients_wit_group(id4);
+                  DataTable dtb=  this.cntrl.patients_wit_group(id4);
+                    Create_Datagrid(dtb);
                     //sqlstr = " SELECT p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age ,p.primary_mobile_number as Mobile,p.street_address as Street Address,p.locality as Locality,p.Opticket as 'File No' FROM tbl_patient P inner join tbl_pt_group G on P.id = G.pt_id where G.group_id='" + id4 + "' and Profile_Status='Active' ORDER BY P.id DESC";
                 }
                 else
                 {
-                    this.cntrl.patients_wit_group_search(id4, txt_Search.Text);
+                   DataTable dtb=  this.cntrl.patients_wit_group_search(id4, txt_Search.Text);
+                    Create_Datagrid(dtb);
                     //sqlstr = " SELECT p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age ,p.primary_mobile_number as Mobile,p.street_address as Street Address,p.locality as Locality,p.Opticket as 'File No' FROM tbl_patient P inner join tbl_pt_group G on P.id = G.pt_id where G.group_id='" + id4 + "' and Profile_Status='Active' and (P.pt_id like '%" + txt_Search.Text + "%' or P.pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%') ORDER BY P.id DESC";
                 }
             }
@@ -2399,7 +2429,8 @@ namespace PappyjoeMVC.View
                 //string sqlstr = "";
                 DGV_Patients.RowTemplate.Height = 25;
                 DGV_Patients.Visible = true;
-                this.cntrl.Get_all_Patients();
+                DataTable dtb= this.cntrl.Get_all_Patients();
+                Create_Datagrid(dtb);
                 Design_Datagrid();
                 //DGV_Patients.Columns[0].Visible = false;
                 //-----Group Add------
@@ -2412,7 +2443,8 @@ namespace PappyjoeMVC.View
                 grgroup.Columns[1].Width = 250;
                 grgroup.Columns[0].Visible = false;
                 grgroup.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-                this.cntrl.group();
+               DataTable dt_grp=  this.cntrl.group();
+                Load_Group(dtb);
             }
             else
             {
@@ -2423,7 +2455,8 @@ namespace PappyjoeMVC.View
                 DGV_Patients.RowTemplate.Height = 25;
                 DGV_Patients.Visible = true;
                 ClearAll_grid2_Properties();
-                this.cntrl.Get_all_Patients();
+                DataTable dtb= this.cntrl.Get_all_Patients();
+                Create_Datagrid(dtb);
                 Design_Datagrid();
                 //DGV_Patients.Columns[0].Visible = false;
                 //-----Group Add------
@@ -2436,7 +2469,8 @@ namespace PappyjoeMVC.View
                 grgroup.Columns[1].Width = 250;
                 grgroup.Columns[0].Visible = false;
                 grgroup.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-                this.cntrl.group();
+                DataTable dt_grp = this.cntrl.group();
+                Load_Group(dtb);
             }
         }
 
