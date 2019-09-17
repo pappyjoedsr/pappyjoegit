@@ -132,7 +132,6 @@
     <Compile Include="Controller\login_interface.cs" />
     <Compile Include="Controller\MainCalendar_Controller.cs" />
     <Compile Include="Controller\Manufacture_controller.cs" />
-    <Compile Include="Controller\manufacture_interface.cs" />
     <Compile Include="Controller\Medical_History_controller.cs" />
     <Compile Include="Controller\Missing_Checkout_Report_controller.cs" />
     <Compile Include="Controller\Monthly_Appointment_count_controller.cs" />
@@ -146,7 +145,6 @@
     <Compile Include="Controller\Patients_First_Appointment_controller.cs" />
     <Compile Include="Controller\patients_interface.cs" />
     <Compile Include="Controller\Patient_Edit_controller.cs" />
-    <Compile Include="Controller\patient_edit_interface.cs" />
     <Compile Include="Controller\Paymode_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Practice_Controller.cs" />
     <Compile Include="Controller\Practice_interface.cs" />
@@ -197,7 +195,6 @@
     <Compile Include="Controller\Staff_controller.cs" />
     <Compile Include="Controller\stock_controller.cs" />
     <Compile Include="Controller\Supplier_controller.cs" />
-    <Compile Include="Controller\supplier_interface.cs" />
     <Compile Include="Controller\Trackingnullstatus_controller.cs" />
     <Compile Include="Controller\Treatment_controller.cs" />
     <Compile Include="Controller\Treatment_For_Each_Category_controller.cs" />
