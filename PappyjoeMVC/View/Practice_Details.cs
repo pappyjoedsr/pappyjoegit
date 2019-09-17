@@ -205,20 +205,6 @@ namespace PappyjoeMVC.View
                                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
-                        //try
-                        //{
-                        //    if (File.Exists(@"\\" + server + "\\Pappyjoe_utilities\\Logo\\" + realfile))
-                        //    {
-                        //    }
-                        //    else
-                        //    {
-                        //        System.IO.File.Copy(open.FileName, @"\\" + server + "\\Pappyjoe_utilities\\Logo\\" + realfile);
-                        //    }
-                        //}
-                        //catch (Exception ex)
-                        //{
-                        //    MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //}
                         if (i > 0)
                             MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

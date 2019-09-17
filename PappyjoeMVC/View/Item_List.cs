@@ -15,7 +15,7 @@ namespace PappyjoeMVC.View
     public partial class Item_List : Form
     {
         public static bool Item_flag = false;
-        Item_List_Controller cntrl;
+        Item_List_Controller cntrl=new Item_List_Controller();
         Supplier suplier = new Supplier();
         Manufacture manufacture = new Manufacture();
         public string doctor_id = "";

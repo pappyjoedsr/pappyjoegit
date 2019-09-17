@@ -624,7 +624,8 @@ namespace PappyjoeMVC.View
                 {
                     if (btnsavespecialization.Text == "Save")
                     {
-                        this.contrl.check_specialization(txt_speciliztn.Text);
+                       string spec=  this.contrl.check_specialization(txt_speciliztn.Text);
+                       checkValueSpecialization(spec);
                     }
                     else
                     {
@@ -632,11 +633,13 @@ namespace PappyjoeMVC.View
                         btnsavespecialization.Text = "Save";
                         btn_Cancel.Text = "Close";
                     }
+                    DataTable dtb = this.contrl.Fill_Specilization_Grid();
+                    AddSpecilizationtoGrid(dtb);
                     this.txt_speciliztn.Text = "";
                 }
                 else
                 {
-                    MessageBox.Show("Enter the city..", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Enter the specialization..", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -645,18 +648,18 @@ namespace PappyjoeMVC.View
             }
         }
 
-       public void checkValueSpecialization(DataTable dtb)
+        public void checkValueSpecialization(string dtb)
         {
             try
             {
-                if (dtb.Rows.Count > 0)
+                if (Convert.ToInt32(dtb)==0)
                 {
-                    MessageBox.Show("This Specialization " + txt_speciliztn.Text + "  already exists", "Duplication encountered ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    this.contrl.Save_Specialization(txt_speciliztn.Text);
                 }
                 else
                 {
-                    this.contrl.Save_Specialization(txt_speciliztn.Text);
+                    MessageBox.Show("This Specialization " + txt_speciliztn.Text + "  already exists", "Duplication encountered ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
             }
             catch (Exception ex)

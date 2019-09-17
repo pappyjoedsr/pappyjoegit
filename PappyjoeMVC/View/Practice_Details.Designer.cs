@@ -94,6 +94,7 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripDropDownButton();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,10 +109,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnLab = new System.Windows.Forms.Button();
             this.btnLab_dental = new System.Windows.Forms.Button();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -732,7 +731,7 @@
             // 
             this.panel_main.AutoSize = true;
             this.panel_main.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel_main.Location = new System.Drawing.Point(199, 49);
+            this.panel_main.Location = new System.Drawing.Point(199, 43);
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(864, 623);
             this.panel_main.TabIndex = 143;
@@ -877,6 +876,19 @@
             this.toolStripButton7.Text = "Profiles";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.BackColor = System.Drawing.Color.DodgerBlue;
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton12.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
+            this.toolStripButton12.Text = "Lab Tracking";
+            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
+            // 
             // toolStripButton8
             // 
             this.toolStripButton8.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -953,7 +965,7 @@
             this.toolStripldoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripldoc.Name = "toolStripldoc";
             this.toolStripldoc.ReadOnly = true;
-            this.toolStripldoc.Size = new System.Drawing.Size(250, 23);
+            this.toolStripldoc.Size = new System.Drawing.Size(250, 40);
             this.toolStripldoc.Text = "doctorrname";
             // 
             // txttaxno
@@ -1021,20 +1033,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.LimeGreen;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(802, 57);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 30);
-            this.button2.TabIndex = 150;
-            this.button2.Text = "SAVE";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // btnLab
             // 
             this.btnLab.BackColor = System.Drawing.Color.DodgerBlue;
@@ -1063,19 +1061,6 @@
             this.btnLab_dental.UseVisualStyleBackColor = false;
             this.btnLab_dental.Click += new System.EventHandler(this.btnLab_dental_Click);
             // 
-            // toolStripButton12
-            // 
-            this.toolStripButton12.BackColor = System.Drawing.Color.DodgerBlue;
-            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton12.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
-            this.toolStripButton12.Text = "Lab Tracking";
-            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
-            // 
             // Practice_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1085,7 +1070,6 @@
             this.ClientSize = new System.Drawing.Size(1370, 741);
             this.Controls.Add(this.btnLab_dental);
             this.Controls.Add(this.btnLab);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel_main);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txttaxno);
@@ -1239,7 +1223,6 @@
         private System.Windows.Forms.TextBox txtdruglicenseno;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnLab_dental;
         private System.Windows.Forms.Button btnLab;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
