@@ -61,7 +61,7 @@ namespace PappyjoeMVC.Model
         }
         public void save_confirm_email(string idd)
         {
-            int j = db.execute("insert into tbl_doctors_notification (dr_id, confirm_sms, schedule_sms, confirm_email, schedule_email) values('" + idd + "','0','1','0','0')");
+            int j = db.execute("insert into tbl_doctors_notification (dr_id, confirm_sms, schedule_sms, confirm_email, schedule_email) values('" + idd + "','0','0','1','0')");
         }
         public void update_confirmemail0(DataTable dtb, string idd)
         {
@@ -73,7 +73,7 @@ namespace PappyjoeMVC.Model
         }
         public void save_shedule_email(string idd)
         {
-            int j = db.execute("insert into tbl_doctors_notification (dr_id, confirm_sms, schedule_sms, confirm_email, schedule_email) values('" + idd + "','0','1','0','0')");
+            int j = db.execute("insert into tbl_doctors_notification (dr_id, confirm_sms, schedule_sms, confirm_email, schedule_email) values('" + idd + "','0','0','0','1')");
         }
         public void update_shedule_email0(DataTable dtb, string idd)
         {

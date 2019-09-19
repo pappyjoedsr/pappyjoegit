@@ -4,17 +4,12 @@ namespace PappyjoeMVC.Controller
 {
     public class Add_Category_controller
     {
-        add_category_interface intr;
+       
         Add_Category_model _model = new Add_Category_model();
-        public Add_Category_controller(add_category_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
-        public void Load_data()
+        public DataTable Load_data()
         {
             DataTable dtb = _model.Load_data();
-            intr.Load_Data(dtb);
+            return dtb;
         }
         public DataTable get_details(string id)
         {
@@ -31,19 +26,13 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.Get_catdetails(name, number);
             return dtb;
         }
-        public void save()
+        public void save(string Name, string Cat_Number, string Description)
         {
-            _model.Name = intr.Name;
-            _model.Number = intr.Number;
-            _model.Description = intr.Decsription;
-            _model.save();
+            _model.save( Name,  Cat_Number,  Description);
         }
-        public void update(string id)
+        public void update(string Name, string Cat_Number, string Description,string id)
         {
-            _model.Name = intr.Name;
-            _model.Number = intr.Number;
-            _model.Description = intr.Decsription;
-            _model.update(id);
+            _model.update( Name,  Cat_Number, Description,id);
         }
     }
 }

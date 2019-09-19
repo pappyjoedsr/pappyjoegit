@@ -67,5 +67,10 @@ namespace PappyjoeMVC.Controller
             string dtb = mdl.Load_CompanyName();
             return dtb;
         }
+        public string Get_DoctorName(string doctr_id)
+        {
+            string dt = mdl.Get_DoctorName(doctr_id);
+            return dt;
+        }
     }
 }

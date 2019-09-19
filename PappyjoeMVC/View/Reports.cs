@@ -47,7 +47,7 @@ namespace PappyjoeMVC.View
             try
             {
                 toolStripButton5.BackColor = Color.SkyBlue;
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
                 if (doctor_id != "1")
                 {
                     int i = 0;
@@ -158,7 +158,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Add_New_Patients();
             form2.doctor_id = doctor_id;
-            Add_New_patient_controller cnt = new Add_New_patient_controller(form2);
+            //Add_New_patient_controller cnt = new Add_New_patient_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1839,7 +1839,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.doctor_id = doctor_id;
             form2.FormClosed += (sender1, args) => this.Close();
-            //this.Hide();
+            this.Hide();
             form2.ShowDialog();
         }
         private void toolStripButton9_Click(object sender, EventArgs e)

@@ -476,7 +476,7 @@ namespace PappyjoeMVC.View
             fill_all_combo();
             cmbDrProfile.Text = "Select values";
             toolStripButton7.BackColor = Color.SkyBlue;
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
+            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
 
             if (PappyjoeMVC.Model.Connection.MyGlobals.loginType != "staff")
             {
@@ -1295,7 +1295,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1369,13 +1368,31 @@ namespace PappyjoeMVC.View
             }
         }
 
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            var form2 = new LabtrackingReport();
+            form2.patient_id = patient_id;
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
             var form2 = new Patient_Profile_Details();
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
-            Profile_Details_controller controller = new Profile_Details_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

@@ -4,19 +4,19 @@ namespace PappyjoeMVC.Controller
 {
     public class Add_New_patient_controller
     {
-        AddNew_patient_interface intr;
+       
         Connection db = new Connection();
         Common_model mdl = new Common_model();
         Add_New_Patient_model _model = new Add_New_Patient_model();
-        public Add_New_patient_controller(AddNew_patient_interface inttr)
+        public string Get_pnonenumber(string number)
         {
-            intr = inttr;
-            intr.SetController(this);
-        }
-        public DataTable Get_pnonenumber(string number)
-        {
-            DataTable patSearchnumber = db.table("select primary_mobile_number from tbl_patient where primary_mobile_number ='" + number + "'  and Profile_Status !='Cancelled'");
+            string patSearchnumber = _model.Get_pnonenumber(number);
             return patSearchnumber;
+        }
+        public string server()
+        {
+            string server = db.server();
+            return server;
         }
         public DataTable Get_patient_details(string name)
         {
@@ -28,35 +28,11 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.get_patientid(id);
             return dtb;
         }
-        public int Save()
+        public int Save(string _name, string _id, string _aadhar, string _gender, string _dob, string _age, string _blood, string _accompained, string _pmobile, string _smobile, string _landline, string _email, string _street, string
+       _locality, string _city, string _pincode, string _referred, string _file, string _admit, string _doctor, string _occupation)
         {
-            get_modelData();
-            int i = _model.Save();
+            int i = _model.Save( _name,  _id,  _aadhar,  _gender,  _dob,  _age,  _blood,  _accompained,  _pmobile,  _smobile,  _landline,  _email,  _street, _locality,  _city,  _pincode,  _referred,  _file,  _admit,  _doctor,  _occupation);
             return i;
-        }
-        public void get_modelData()
-        {
-            _model.PatientName = intr.PatientName;
-            _model.PatientId = intr.Patient_Id;
-            _model.Aadhaar = intr.Aadhaar;
-            _model.Blood = intr.Blood;
-            _model.Accompainedby = intr.Accompainedby;
-            _model.Age = intr.Age;
-            _model.DOB = intr.DOB;
-            _model.Doctor = intr.Doctor;
-            _model.FileNo = intr.FileNo;
-            _model.Landline = intr.Landline;
-            _model.Occupation = intr.Occupation;
-            _model.ReferredBy = intr.ReferredBy;
-            _model.PrimaryMob = intr.PrimaryMob;
-            _model.SecondaryMob = intr.SecondaryMob;
-            _model.Street = intr.Street;
-            _model.DateofAdmit = intr.DateofAdmit;
-            _model.Gender = intr.Gender;
-            _model.Pincode = intr.Pincode;
-            _model.City = intr.City;
-            _model.Email = intr.Email;
-            _model.Locality = intr.Locality;
         }
         public string get_maxId()
         {
@@ -85,11 +61,6 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.data_from_automaticid();
             return dtb;
         }
-        //public DataTable get_doctorname(string id)
-        //{
-        //    DataTable dtb = mdl.Get_DoctorName(id);
-        //    return dtb;
-        //}
         public DataTable get_all_doctorname()
         {
             DataTable dtb = mdl.get_all_doctorname();
@@ -102,38 +73,41 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable load_medical()
         {
-            DataTable dtb = db.table("SELECT name FROM tbl_medhistory");
+            DataTable dtb = _model.load_medical();
             return dtb;
         }
         public DataTable load_group()
         {
-            DataTable dtb = db.table("select name from tbl_group");
+            DataTable dtb = _model.load_group();
             return dtb;
         }
-        public void check_medical(string name)
+        public DataTable check_medical(string name)
         {
             DataTable dtb = _model.check_medical(name);
-            intr.insertMED(dtb);
+            return dtb;
         }
-        public void insert_medical()
+        public void insert_medical(string Medical)
         {
-            _model.Medical = intr.Medical;
-            _model.insert_medical();
+            _model.insert_medical(Medical);
         }
-        public void check_group(string name)
+        public DataTable check_group(string name)
         {
-            DataTable checkdatacc = db.table("Select * from tbl_group where name ='" + name + "'");
-            intr.insertgroup(checkdatacc);
+            DataTable checkdatacc = _model.check_group(name);
+            return checkdatacc;
         }
-        public void insert_group()
+        public void insert_group(string Group)
         {
-            _model.Group = intr.Group;
-            _model.insert_group();
+            _model.insert_group(Group);
         }
         public string getserver()
         {
             string ret = db.server();
             return ret;
+        }
+        public string Get_DoctorName(string doctor_id)
+        {
+            string dctr= mdl.Get_DoctorName(doctor_id);
+            return dctr;
         }
     }
 }

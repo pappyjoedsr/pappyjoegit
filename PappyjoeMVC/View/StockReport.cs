@@ -116,7 +116,7 @@ namespace PappyjoeMVC.View
         {
             panel_main.Hide(); Lab_Msg.Visible = false;
             btn_Stock.BackColor = Color.SteelBlue;
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
+            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
             toolStripButton1.Text = this.cntrl.Load_CompanyName();
             string docnam = this.cntrl.Get_DoctorName(doctor_id);
             if (docnam != "")
@@ -646,7 +646,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            Patients_controller controller = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -664,7 +663,11 @@ namespace PappyjoeMVC.View
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
@@ -735,7 +738,6 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
-            Profile_Details_controller controller = new Profile_Details_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -755,7 +757,7 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    Add_New_patient_controller controller = new Add_New_patient_controller(form2);
+                    //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -765,7 +767,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                Add_New_patient_controller controller = new Add_New_patient_controller(form2);
+                //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -882,6 +884,16 @@ namespace PappyjoeMVC.View
             panel_main.Controls.Add(Pu_returnList);
             Pu_returnList.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Pu_returnList.Show();
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            var form2 = new LabtrackingReport();
+            //form2.patient_id = patient_id;
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
 
         private void btn_purOrder_Click(object sender, EventArgs e)

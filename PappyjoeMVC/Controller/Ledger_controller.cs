@@ -4,14 +4,9 @@ namespace PappyjoeMVC.Controller
 {
     public class Ledger_controller
     {
-        Ledger_interface intr;
+
         Common_model cmodel = new Common_model();
         Ledger_model _model = new Ledger_model();
-        public Ledger_controller(Ledger_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
         public string Get_DoctorName(string doctor_id)
         {
             string dtb = cmodel.Get_DoctorName(doctor_id);

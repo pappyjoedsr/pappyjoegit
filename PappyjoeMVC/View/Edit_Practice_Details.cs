@@ -25,18 +25,12 @@ namespace PappyjoeMVC.View
             selectedValue1 = selectedValue;
             combobox = cmb;
         }
-
-        Edit_Practice_Details_controller contrl=new Edit_Practice_Details_controller();
-        public string frameid = "0";
-        public string Country_id = "", State_id = "", City_id = "", Speci_id = "";
-        public int state_index = 0, country_index = 0, city_index = 0, sepci_index = 0;
-        public static int selectedValue1;
         public static string combobox;
-        public string Country
-        {
-            get { return this.Txt_Country.Text; }
-            set { this.Txt_Country.Text = value; }
-        }
+        public static int selectedValue1;
+        Edit_Practice_Details_controller contrl=new Edit_Practice_Details_controller();
+        public int state_index = 0, country_index = 0, city_index = 0, sepci_index = 0;
+        public string frameid = "0", Country_id = "", State_id = "", City_id = "", Speci_id = "";
+        //Country
         private void btn_CountrySave_Click(object sender, EventArgs e)
         {
             try
@@ -45,7 +39,8 @@ namespace PappyjoeMVC.View
                 {
                     if (btn_CountrySave.Text == "Save")
                     {
-                        this.contrl.check_country(Country);
+                        string ctry=this.contrl.check_country(Txt_Country.Text);
+                        checkValue(ctry);
                     }
                     else
                     {
@@ -54,6 +49,8 @@ namespace PappyjoeMVC.View
                         btn_Cancel.Text = "Close";
                     }
                     this.Txt_Country.Text = "";
+                    DataTable cntry = this.contrl.Load_Country();
+                    AddUsertoGrid(cntry);
                 }
                 else
                 {
@@ -65,20 +62,16 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public void SetController(Edit_Practice_Details_controller controller)
+        public void checkValue(string dt)
         {
-            contrl = controller;
-        }
-        public void checkValue(DataTable dt)
-        {
-            if (dt.Rows.Count > 0)
+            if (dt!=Txt_Country.Text)
             {
-                MessageBox.Show("This Country " + Txt_Country.Text + "  already exists", "Duplication encountered ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                this.contrl.save(Txt_Country.Text);
             }
             else
             {
-                this.contrl.save(Txt_Country.Text);
+                MessageBox.Show("This Country " + Txt_Country.Text + "  already exists", "Duplication encountered ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
         }
        
@@ -118,7 +111,8 @@ namespace PappyjoeMVC.View
                 DGV_Country.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_Country.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_Country.EnableHeadersVisualStyles = false;
-                this.contrl.Load_Country();
+                DataTable ctry=this.contrl.Load_Country();
+                AddUsertoGrid(ctry);
             }
             else if (frameid == "3")
             {
@@ -127,8 +121,10 @@ namespace PappyjoeMVC.View
                 panl_country.Visible = false;
                 panel_city.Visible = false;
                 panl_specilization.Visible = false;
-                this.contrl.FillCountryCombo();
-                this.contrl.LoadState_wit_Country(selectedValue1.ToString());
+                DataTable dt_country= this.contrl.FillCountryCombo();
+                Country_ComboFill(dt_country);
+                DataTable dtb= this.contrl.LoadState_wit_Country(selectedValue1.ToString());
+                AddStatetoGrid(dtb);
                 Dgv_State.RowHeadersVisible = false;
                 Dgv_State.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
                 Dgv_State.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -144,8 +140,10 @@ namespace PappyjoeMVC.View
                 Panel_state.Visible = false;
                 panl_country.Visible = false;
                 panl_specilization.Visible = false;
-                this.contrl.FillStateCombo();
-                this.contrl.Fill_City_Grid(selectedValue1.ToString());
+                DataTable dt=this.contrl.FillStateCombo();
+                State_ComboFill(dt);
+                DataTable dtb=this.contrl.Fill_City_Grid(selectedValue1.ToString());
+                AddCitytoGrid(dtb);
                 DGV_city.RowHeadersVisible = false;
                 DGV_city.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
                 DGV_city.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -161,7 +159,8 @@ namespace PappyjoeMVC.View
                 panel_city.Visible = false;
                 Panel_state.Visible = false;
                 panl_country.Visible = false;
-                this.contrl.Fill_Specilization_Grid();
+                DataTable dtb=this.contrl.Fill_Specilization_Grid();
+                AddSpecilizationtoGrid(dtb);
                 dataGridView_Specialization.RowHeadersVisible = false;
                 dataGridView_Specialization.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
                 dataGridView_Specialization.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -211,7 +210,12 @@ namespace PappyjoeMVC.View
                         if (res == DialogResult.Yes)
                         {
                             country_index = DGV_Country.CurrentRow.Index;
-                            this.contrl.Use_country(Country_id);
+                            int i=this.contrl.Delete_Country(Country_id);
+                            if(i>0)
+                            {
+                                DGV_Country.Rows.RemoveAt(country_index);
+                                this.contrl.FillCountryCombo();
+                            }
                         }
                     }
                 }
@@ -282,16 +286,6 @@ namespace PappyjoeMVC.View
 
         //State
 
-        public string State
-        {
-            get { return this.txt_State.Text; }
-            set { this.txt_State.Text = value; }
-        }
-        public string Country_Id
-        {
-            get { return this.Cmb_Country.SelectedValue.ToString(); }
-            set { this.Cmb_Country.Text = value; }
-        }
         ////public void Save_State()
         ////{
         ////    this.contrl.Save_State();
@@ -315,7 +309,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void btn_StateSave_Click(object sender, EventArgs e)
         {
             try
@@ -324,7 +317,8 @@ namespace PappyjoeMVC.View
                 {
                     if (btn_StateSave.Text == "Save")
                     {
-                        this.contrl.check_state(State);
+                       string check_state=  this.contrl.check_state(txt_State.Text);
+                        check_StateValue(check_state);
                     }
                     else
                     {
@@ -333,6 +327,8 @@ namespace PappyjoeMVC.View
                         btn_Cancel.Text = "Close";
                     }
                     this.txt_State.Text = "";
+                    DataTable dtb = this.contrl.LoadState_wit_Country(Cmb_Country.SelectedValue.ToString());
+                    AddStatetoGrid(dtb);
                 }
                 else
                 {
@@ -345,11 +341,11 @@ namespace PappyjoeMVC.View
             }
 
         }
-        public void check_StateValue(DataTable dt)
+        public void check_StateValue(string dt)
         {
             try
             {
-                if (dt.Rows.Count > 0)
+                if (dt== txt_State.Text)
                 {
                     MessageBox.Show("This State " + txt_State.Text + "  already exists", "Duplication encountered ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
@@ -394,7 +390,12 @@ namespace PappyjoeMVC.View
                         if (res == DialogResult.Yes)
                         {
                             state_index = Dgv_State.CurrentRow.Index;
-                            this.contrl.Delete_State(State_id);
+                            int i = this.contrl.Delete_State(State_id);
+                            if (i > 0)
+                            {
+                                Dgv_State.Rows.RemoveAt(state_index);
+                                this.contrl.FillStateCombo();
+                            }
                         }
                     }
                 }
@@ -430,16 +431,6 @@ namespace PappyjoeMVC.View
         }
 
         //City
-        public string City
-        { 
-            get { return this.txt_city.Text; }
-            set { this.txt_city.Text = value; }
-        }
-        public string State_Id
-        {
-            get { return this.cmbstate.SelectedValue.ToString(); }
-            set { this.cmbstate.Text = value; }
-        }
         public void AddCitytoGrid(DataTable dtb)
         {
             DGV_city.Rows.Clear();
@@ -458,7 +449,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void DGV_city_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex>=0)
@@ -480,7 +470,12 @@ namespace PappyjoeMVC.View
                         if (res == DialogResult.Yes)
                         {
                             city_index = DGV_city.CurrentRow.Index;
-                            this.contrl.Use_City(City_id);
+                            int i=this.contrl.Delete_City(City_id);
+                            if(i>0)
+                            {
+                                DGV_city.Rows.RemoveAt(city_index);
+                                this.contrl.Fill_City_Grid(cmbstate.SelectedValue.ToString());
+                            }
                         }
                     }
                 }
@@ -490,7 +485,6 @@ namespace PappyjoeMVC.View
                 }
             }
         } 
-
         private void btn_city_Click(object sender, EventArgs e)
         {
             try
@@ -499,7 +493,8 @@ namespace PappyjoeMVC.View
                 {
                     if (btn_city.Text == "Save")
                     {
-                        this.contrl.check_city(City);
+                        string city=this.contrl.check_city(txt_city.Text);
+                        checkValueCity(city);
                     }
                     else
                     {
@@ -509,6 +504,8 @@ namespace PappyjoeMVC.View
                         btn_Cancel.Text = "Close";
                     }
                     this.txt_city.Text = "";
+                    DataTable dtb = this.contrl.Fill_City_Grid(cmbstate.SelectedValue.ToString());
+                    AddCitytoGrid(dtb);
                 }
                 else
                 {
@@ -520,19 +517,18 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public void checkValueCity(DataTable dtb)
+        public void checkValueCity(string dtb)
         {
             try
             {
-                if (dtb.Rows.Count > 0)
+                if (dtb!=txt_city.Text)
                 {
-                    MessageBox.Show("This City " + txt_city.Text + "  already exists", "Duplication encountered ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    this.contrl.Save_City(txt_city.Text, cmbstate.SelectedValue.ToString());
                 }
                 else
                 {
-                    this.contrl.Save_City(txt_city.Text, State_Id);
-                    this.contrl.Fill_City_Grid(cmbstate.SelectedValue.ToString());
+                    MessageBox.Show("This City " + txt_city.Text + "  already exists", "Duplication encountered ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
             }
             catch (Exception ex)
@@ -554,7 +550,8 @@ namespace PappyjoeMVC.View
                 Dgv_State.Rows.Clear();
                 int selectedValue;
                 bool parseOK = Int32.TryParse(Cmb_Country.SelectedValue.ToString(), out selectedValue);
-                 this.contrl.LoadState_wit_Country(selectedValue.ToString());
+                DataTable dtb= this.contrl.LoadState_wit_Country(selectedValue.ToString());
+                AddStatetoGrid(dtb);
             }
         }
 
@@ -564,7 +561,8 @@ namespace PappyjoeMVC.View
             {
                 int selectedValue;
                 bool parseOK = Int32.TryParse(cmbstate.SelectedValue.ToString(), out selectedValue);
-                this.contrl.Fill_City_Grid(selectedValue.ToString());
+                DataTable dtb = this.contrl.Fill_City_Grid(selectedValue.ToString());
+                AddCitytoGrid(dtb);
             }
         }
 
@@ -592,13 +590,7 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error!....", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         //specilization
-        public string Specialization
-        {
-            get { return this.txt_speciliztn.Text; }
-            set { this.txt_speciliztn.Text = value; }
-        }
         public void AddSpecilizationtoGrid(DataTable dtb)
         {
             dataGridView_Specialization.Rows.Clear();
@@ -624,8 +616,8 @@ namespace PappyjoeMVC.View
                 {
                     if (btnsavespecialization.Text == "Save")
                     {
-                       string spec=  this.contrl.check_specialization(txt_speciliztn.Text);
-                       checkValueSpecialization(spec);
+                        string spec=this.contrl.check_specialization(txt_speciliztn.Text);
+                        checkValueSpecialization(spec);
                     }
                     else
                     {
@@ -633,9 +625,9 @@ namespace PappyjoeMVC.View
                         btnsavespecialization.Text = "Save";
                         btn_Cancel.Text = "Close";
                     }
+                    this.txt_speciliztn.Text = "";
                     DataTable dtb = this.contrl.Fill_Specilization_Grid();
                     AddSpecilizationtoGrid(dtb);
-                    this.txt_speciliztn.Text = "";
                 }
                 else
                 {
@@ -648,11 +640,11 @@ namespace PappyjoeMVC.View
             }
         }
 
-        public void checkValueSpecialization(string dtb)
+       public void checkValueSpecialization(string dtb)
         {
             try
             {
-                if (Convert.ToInt32(dtb)==0)
+                if (dtb!=txt_speciliztn.Text)
                 {
                     this.contrl.Save_Specialization(txt_speciliztn.Text);
                 }

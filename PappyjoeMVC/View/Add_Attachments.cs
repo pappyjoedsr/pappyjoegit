@@ -111,7 +111,7 @@ namespace PappyjoeMVC.View
             try
             {
                 this.WindowState = FormWindowState.Maximized;
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
                 string doctrid=this.ctrlr.selectdoctrid();
                 if (doctrid != "")
                 {
@@ -635,11 +635,12 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton12_Click(object sender, EventArgs e)
         {
-            //var form2 = new LabtrackingReport();
-            //form2.doctor_id = doctor_id;
-            //form2.patient_id = patient_id;
-            //this.Hide();
-            //form2.ShowDialog();
+            var form2 = new LabtrackingReport();
+            form2.patient_id = patient_id;
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
@@ -753,6 +754,11 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
         private void toolStripButton3_Click(object sender, EventArgs e)
         {

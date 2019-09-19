@@ -74,7 +74,7 @@ namespace PappyjoeMVC.View
                 }
                 DataTable ptntdtls=this.ctrlr.Get_Patient_Details(patient_id);
                 Get_Patient_Details(ptntdtls);
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
                 DataTable cmpny=this.ctrlr.Get_CompanyNAme();
                 if (cmpny.Rows.Count > 0)
                 {
@@ -196,11 +196,15 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             var form2 = new Patients();
-            Patients_controller cnt = new Patients_controller(form2);
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
@@ -248,11 +252,12 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton12_Click(object sender, EventArgs e)
         {
-            //var form2 = new LabtrackingReport();
-            //form2.doctor_id = doctor_id;
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
-            //form2.ShowDialog();
+            var form2 = new LabtrackingReport();
+            form2.patient_id = patient_id;
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
@@ -267,7 +272,6 @@ namespace PappyjoeMVC.View
         private void labelallpatient_Click(object sender, EventArgs e)
         {
             var form2 = new Patients();
-            Patients_controller cnt = new Patients_controller(form2);
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
@@ -344,7 +348,6 @@ namespace PappyjoeMVC.View
         private void labelprofile_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
-            Profile_Details_controller cnt = new Profile_Details_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
@@ -381,7 +384,6 @@ namespace PappyjoeMVC.View
         private void labeltreatment_Click(object sender, EventArgs e)
         {
             var form2 = new Treatment_Plans();
-            Treatment_controller cnt = new Treatment_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
