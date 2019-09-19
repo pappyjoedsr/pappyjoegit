@@ -34,7 +34,7 @@ namespace PappyjoeMVC.View
             {
 
 
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
                 toolStripButton1.Text = this.cntrl.Load_CompanyName();
                 string docnam = this.cntrl.Get_DoctorName(doctor_id);
                 if (docnam != "")
@@ -1600,6 +1600,25 @@ namespace PappyjoeMVC.View
                 chk82.Checked = false; chk83.Checked = false;
                 chk84.Checked = false; chk85.Checked = false;
             }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            var form2 = new LabtrackingReport();
+            form2.patient_id = patient_id;
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
     }
 }

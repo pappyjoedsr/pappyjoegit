@@ -17,17 +17,17 @@ namespace PappyjoeMVC.Controller
         }
         public string add_privillege(string doctor_id)
         {
-            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRP' and Permission='A'");
+            string privid = _model.add_privillege(doctor_id);
             return privid;
         }
         public string edit_privillege(string doctor_id)
         {
-            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRP' and Permission='E'");
+            string privid = _model.edit_privillege(doctor_id);
             return privid;
         }
         public string delete_privillege(string doctor_id)
         {
-            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRP' and Permission='D'");
+            string privid = _model.delete_privillege(doctor_id);
             return privid;
         }
         public DataTable Get_CompanyNAme()
@@ -45,11 +45,11 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = cmodel.Get_pat_iDName(patient_id);
             return dtb;
         }
-        public void Get_maindtails(string patient_id)
+        public DataTable Get_maindtails(string patient_id)
         {
-            System.Data.DataTable dt_pre_main = db.table("SELECT tbl_prescription_main.id,tbl_prescription_main.date,tbl_doctor.doctor_name  FROM tbl_prescription_main join tbl_doctor on tbl_prescription_main.dr_id=tbl_doctor.id  where tbl_prescription_main.pt_id='" + patient_id + "' ORDER BY tbl_prescription_main.date DESC");
-            intr.Load_MainGrid(dt_pre_main);
-            //return dt_pre_main;
+            System.Data.DataTable dt_pre_main = _model.Get_maindtails(patient_id);// db.table("SELECT tbl_prescription_main.id,tbl_prescription_main.date,tbl_doctor.doctor_name  FROM tbl_prescription_main join tbl_doctor on tbl_prescription_main.dr_id=tbl_doctor.id  where tbl_prescription_main.pt_id='" + patient_id + "' ORDER BY tbl_prescription_main.date DESC");
+            //intr.Load_MainGrid(dt_pre_main);
+            return dt_pre_main;
         }
         public DataTable Get_maindta(string patient_id)
         {

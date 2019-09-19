@@ -297,7 +297,7 @@ namespace PappyjoeMVC.View
             try
             {
                 toolStripButton4.BackColor = Color.SkyBlue;
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
                 listpatientsearch.Hide();
                 DataTable dt = this.ctrlr.Get_CompanyNAme();
                 if (dt.Rows.Count > 0)
@@ -1176,6 +1176,11 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
@@ -1207,11 +1212,12 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton12_Click(object sender, EventArgs e)
         {
-            //var form2 = new LabtrackingReport();
-            //form2.doctor_id = doctor_id;
-            //form2.patient_id = patient_id;
-            //this.Hide();
-            //form2.ShowDialog();
+            var form2 = new LabtrackingReport();
+            form2.patient_id = patient_id;
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {

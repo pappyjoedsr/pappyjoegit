@@ -326,9 +326,10 @@ namespace PappyjoeMVC.View
                     DataTable dt_dctrId = this.cntrl.Doctr_id();
                     string idd = dt_dctrId.Rows[i][0].ToString();
                     string name = dt_dctrId.Rows[i][1].ToString();
-                    DataTable dt_doc = this.cntrl.Get_Doctor_notification(idd);
+                   
                     if (Convert.ToBoolean(dataGridView_notification.Rows[i].Cells[0].Value) == true)
                     {
+                        DataTable dt_doc = this.cntrl.Get_Doctor_notification(idd);
                         if (dt_doc.Rows.Count > 0)
                         {
                             DataTable dt_notification = this.cntrl.ifexsists_dctrnotification(idd);
@@ -341,6 +342,7 @@ namespace PappyjoeMVC.View
                     }
                     else// if checkbox1 confirm sms not checked
                     {
+                        DataTable dt_doc = this.cntrl.Get_Doctor_notification(idd);
                         if (dt_doc.Rows.Count > 0)
                         {
                             DataTable dt_notification = this.cntrl.ifexsists_dctrnotification(idd);
@@ -349,6 +351,7 @@ namespace PappyjoeMVC.View
                     }
                     if (Convert.ToBoolean(dataGridView_notification.Rows[i].Cells[1].Value) == true) // for second checkbox schedule sms
                     {
+                        DataTable dt_doc = this.cntrl.Get_Doctor_notification(idd);
                         if (dt_doc.Rows.Count > 0)
                         {
                             DataTable dt_notification = this.cntrl.ifexsists_dctrnotification(idd);
@@ -361,6 +364,7 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
+                        DataTable dt_doc = this.cntrl.Get_Doctor_notification(idd);
                         if (dt_doc.Rows.Count > 0)
                         {
                             DataTable dt_notification = this.cntrl.ifexsists_dctrnotification(idd);
@@ -369,6 +373,7 @@ namespace PappyjoeMVC.View
                     }
                     if (Convert.ToBoolean(dataGridView_notification.Rows[i].Cells[2].Value) == true)// for checkbox 3 confirm email
                     {
+                        DataTable dt_doc = this.cntrl.Get_Doctor_notification(idd);
                         if (dt_doc.Rows.Count > 0)
                         {
                             DataTable dt_notification = this.cntrl.ifexsists_dctrnotification(idd);
@@ -381,6 +386,7 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
+                        DataTable dt_doc = this.cntrl.Get_Doctor_notification(idd);
                         if (dt_doc.Rows.Count > 0)
                         {
                             DataTable dt_notification = this.cntrl.ifexsists_dctrnotification(idd);
@@ -389,6 +395,7 @@ namespace PappyjoeMVC.View
                     }
                     if (Convert.ToBoolean(dataGridView_notification.Rows[i].Cells[3].Value) == true)// checkbox 4 schedule email
                     {
+                        DataTable dt_doc = this.cntrl.Get_Doctor_notification(idd);
                         if (dt_doc.Rows.Count > 0)
                         {
                             DataTable dt_notification = this.cntrl.ifexsists_dctrnotification(idd);
@@ -401,6 +408,7 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
+                        DataTable dt_doc = this.cntrl.Get_Doctor_notification(idd);
                         if (dt_doc.Rows.Count > 0)
                         {
                             DataTable dt_notification = this.cntrl.ifexsists_dctrnotification(idd);

@@ -102,6 +102,7 @@
             this.dotMatricToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sentSMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -126,6 +127,7 @@
             this.toolStripButton15,
             this.toolStripButton16,
             this.toolStripButton17,
+            this.toolStripButton1,
             this.toolStripDropDownButton2,
             this.toolStripSeparator4,
             this.toolStripButton18,
@@ -177,6 +179,7 @@
             this.toolStripButton11.Name = "toolStripButton11";
             this.toolStripButton11.Size = new System.Drawing.Size(65, 37);
             this.toolStripButton11.Text = "Calendar";
+            this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
             // 
             // toolStripButton12
             // 
@@ -919,6 +922,18 @@
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton1.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(87, 37);
+            this.toolStripButton1.Text = "Lab Tracking";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // Prescription_Show
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1027,5 +1042,6 @@
         private System.Windows.Forms.ToolStripMenuItem dotMatricToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sentSMSToolStripMenuItem;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

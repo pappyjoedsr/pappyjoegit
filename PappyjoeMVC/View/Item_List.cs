@@ -15,7 +15,7 @@ namespace PappyjoeMVC.View
     public partial class Item_List : Form
     {
         public static bool Item_flag = false;
-        Item_List_Controller cntrl;
+        Item_List_Controller cntrl=new Item_List_Controller();
         Supplier suplier = new Supplier();
         Manufacture manufacture = new Manufacture();
         public string doctor_id = "";
@@ -35,7 +35,7 @@ namespace PappyjoeMVC.View
         }
         private void FrmItemList_Load(object sender, EventArgs e)
         {
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
+            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
             DataTable dtb = cntrl.Get_CompanyNAme();
             if(dtb.Rows.Count>0)
             {

@@ -80,6 +80,12 @@ namespace PappyjoeMVC.View
             //focus = true;
             label16.Hide();
             panel_main.Visible = false;
+            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+            string docnam = this.cntrl.Get_DoctorName(doctor_id);
+            if (docnam!="")
+            {
+                toolStripldoc.Text = "Logged In As : " + docnam;
+            }
             DataTable dt_country = this.cntrl.Fill_CountryCombo();
             FillCountryCombo(dt_country);
             if(cmb_country.SelectedIndex>=0)
@@ -403,7 +409,6 @@ namespace PappyjoeMVC.View
             bill.TopLevel = false;
             panel_main.Controls.Add(bill);
             bill.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //Billing_controller controller = new Billing_controller(bill);
             bill.Show();
         }
         public void backColor_change()
@@ -459,7 +464,6 @@ namespace PappyjoeMVC.View
             contct.TopLevel = false;
             panel_main.Controls.Add(contct);
             contct.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //contact_controller controller = new contact_controller(contct);
             contct.Show();
         }
 
@@ -472,7 +476,6 @@ namespace PappyjoeMVC.View
             staff.TopLevel = false;
             panel_main.Controls.Add(staff);
             staff.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //Staff_controller controller = new Staff_controller(staff);
             staff.Show();
         }
 
@@ -485,7 +488,6 @@ namespace PappyjoeMVC.View
             emr.TopLevel = false;
             panel_main.Controls.Add(emr);
             emr.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //EMR_controller controller = new EMR_controller(emr);
             emr.Show();
         }
 
@@ -737,6 +739,16 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             form2.ShowDialog();
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
             var form2 = new Expense();

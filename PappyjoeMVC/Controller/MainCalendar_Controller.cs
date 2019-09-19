@@ -154,6 +154,11 @@ namespace PappyjoeMVC.Controller
             string id = cmodel.doctr_privillage_for_addnewPatient(doctor_id);
             return id;
         }
+        public string permission_for_settings(string doctor_id)
+        {
+            string dtb = cmodel.permission_for_settings(doctor_id);
+            return dtb;
+        }
     }
 }
  

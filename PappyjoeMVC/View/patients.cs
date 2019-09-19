@@ -9,7 +9,7 @@ namespace PappyjoeMVC.View
     public partial class Patients : Form
     {
         public string doctor_id = "";
-        Patients_controller cntrl; public int i;
+        Patients_controller cntrl=new Patients_controller(); public int i;
         Common_model mdl = new Common_model();
         Connection db = new Connection();
         Contacts ad = new Contacts();
@@ -1958,7 +1958,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1968,7 +1967,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            //expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
 
@@ -1978,7 +1976,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                //doctor_controller controlr = new doctor_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -2384,6 +2381,25 @@ namespace PappyjoeMVC.View
             }
         }
 
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void toolStripButton11_Click(object sender, EventArgs e)
+        {
+            var form2 = new LabtrackingReport();
+            form2.patient_id = patient_id;
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         private void txt_Search_Click(object sender, EventArgs e)
         {
             txt_Search.Text = "";
@@ -2406,7 +2422,7 @@ namespace PappyjoeMVC.View
         private void patients_Load(object sender, EventArgs e)
         {
             toolStripButton3.BackColor = Color.SkyBlue;
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
+            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
             string docnam = mdl.Get_DoctorName(doctor_id);
             if (docnam != "")
             {
@@ -2444,7 +2460,7 @@ namespace PappyjoeMVC.View
                 grgroup.Columns[0].Visible = false;
                 grgroup.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
                DataTable dt_grp=  this.cntrl.group();
-                Load_Group(dtb);
+                Load_Group(dt_grp);
             }
             else
             {
@@ -2470,7 +2486,7 @@ namespace PappyjoeMVC.View
                 grgroup.Columns[0].Visible = false;
                 grgroup.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
                 DataTable dt_grp = this.cntrl.group();
-                Load_Group(dtb);
+                Load_Group(dt_grp);
             }
         }
 

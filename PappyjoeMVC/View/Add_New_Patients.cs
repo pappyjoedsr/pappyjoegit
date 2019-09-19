@@ -157,8 +157,8 @@ namespace PappyjoeMVC.View
                             visited= dateTimePickervisited.Value.ToString("yyyy-MM-dd");
                         }
                         //Addfunction();
-                        string smsName1 = PappyjoeMVC.Model.Global_Variables.smsName.ToString();
-                        string smsPass1 = PappyjoeMVC.Model.Global_Variables.smsPass.ToString();
+                        string smsName1 = PappyjoeMVC.Model.GlobalVariables.smsName.ToString();
+                        string smsPass1 = PappyjoeMVC.Model.GlobalVariables.smsPass.ToString();
                         i = this.cntrl.Save(txtPatName.Text, txtPatientId.Text, txtAadhar.Text, gender,dob, txtxAge.Text, cmdBloodbroup.Text, txtAccompained.Text, txtPMobNumber.Text, txtSMobileNumber.Text, txtLandline.Text, txtEmail.Text, txtxStreet.Text, txtLocality.Text, txtCity.Text, txtPincode.Text, txtReferedby.Text, txtFileNo.Text, visited, ddldoctor.Text, txtOccupation.Text);
                         DataTable cmd = this.cntrl.automaticid();
                         if (cmd.Rows.Count > 0)
@@ -672,6 +672,24 @@ namespace PappyjoeMVC.View
             }
         }
 
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            var form2 = new LabtrackingReport();
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         public Add_New_Patients()
         {
             InitializeComponent();
@@ -691,7 +709,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
                 if (SetFlag == false)
                 {
                     txtxAge.Text = ""; txtPic.Text = "";

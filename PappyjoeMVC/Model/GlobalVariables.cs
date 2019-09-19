@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PappyjoeMVC.Model
+﻿namespace PappyjoeMVC.Model
 {
-   public class GlobalVariables
+    public class GlobalVariables
     {
         public static string smsName = "";
         public static string smsPass = "";

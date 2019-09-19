@@ -97,7 +97,42 @@ namespace PappyjoeMVC.Model
         {
             db.execute("insert into tbl_template (temp_id,pt_id,pt_name,dr_id,dr_name,date,drug_name,strength,strength_gr,duration,morning,noon,night,food,add_instruction,drug_type,drug_id,pres_id,duration_period,status) values('" + temp_id + "','" + pt_id + "','" + pt_name + "','" + dr_id + "','" + dr_name + "','" + date + "','" + drug_name + "','" + strength + "','" + strength_gr + "','" + duration + "','" + morning + "','" + noon + "','" + night + "','" + food + "','" + add_instruction + "','" + drug_type + "','" + drug_id + "','" + pres_id + "','" + duration_period + "','" + status + "')");
         }
+        //prescription show
+        public string add_privillege(string doctor_id)
+        {
+            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRP' and Permission='A'");
+            return privid;
+        }
+        public string edit_privillege(string doctor_id)
+        {
+            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRP' and Permission='E'");
+            return privid;
+        }
+        public string delete_privillege(string doctor_id)
+        {
+            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRP' and Permission='D'");
+            return privid;
+        }
+        public DataTable Get_maindtails(string patient_id)
+        {
+            System.Data.DataTable dt_pre_main = db.table("SELECT tbl_prescription_main.id,tbl_prescription_main.date,tbl_doctor.doctor_name  FROM tbl_prescription_main join tbl_doctor on tbl_prescription_main.dr_id=tbl_doctor.id  where tbl_prescription_main.pt_id='" + patient_id + "' ORDER BY tbl_prescription_main.date DESC");
+            return dt_pre_main;
+        }
+        public DataTable Get_maindta(string patient_id)
+        {
+            System.Data.DataTable dt_pre_main = db.table("SELECT tbl_prescription_main.id,tbl_prescription_main.date,tbl_doctor.doctor_name  FROM tbl_prescription_main join tbl_doctor on tbl_prescription_main.dr_id=tbl_doctor.id  where tbl_prescription_main.pt_id='" + patient_id + "' ORDER BY tbl_prescription_main.date DESC");
+            return dt_pre_main;
+        }
 
-
+        public DataTable prescription_details(string id)
+        {
+            System.Data.DataTable dt_prescription = db.table("SELECT drug_name,strength,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,strength_gr,status FROM tbl_prescription WHERE pres_id='" + id + "' ORDER BY id");
+            return dt_prescription;
+        }
+        public DataTable printsettings()
+        {
+            DataTable print = db.table("select header,left_text,right_text,fullwidth_context,left_sign,right_sign from tbl_presciption_printsettings");
+            return print;
+        }
     }
 }
