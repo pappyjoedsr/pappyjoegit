@@ -438,7 +438,7 @@ namespace PappyjoeMVC.View
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Calendar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.sbStatusBar = new System.Windows.Forms.StatusBar();
             this.contextMenu = new System.Windows.Forms.ContextMenu();
             this.mnuContextNewEvent = new System.Windows.Forms.MenuItem();
@@ -1468,7 +1468,7 @@ namespace PappyjoeMVC.View
             this.toolStripldoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripldoc.Name = "toolStripldoc";
             this.toolStripldoc.ReadOnly = true;
-            this.toolStripldoc.Size = new System.Drawing.Size(250, 40);
+            this.toolStripldoc.Size = new System.Drawing.Size(250, 23);
             this.toolStripldoc.Text = "Search";
             // 
             // gbxMonthView
@@ -1869,8 +1869,8 @@ namespace PappyjoeMVC.View
             this.dataGridViewdoctor.Location = new System.Drawing.Point(5, 50);
             this.dataGridViewdoctor.Name = "dataGridViewdoctor";
             this.dataGridViewdoctor.ReadOnly = true;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.dataGridViewdoctor.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.dataGridViewdoctor.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewdoctor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridViewdoctor.Size = new System.Drawing.Size(183, 309);
             this.dataGridViewdoctor.TabIndex = 1;
@@ -3165,7 +3165,7 @@ namespace PappyjoeMVC.View
         private void mnuContextEditEvent_Click(object sender, System.EventArgs e)
         {
             // AppointmentBooking = new PappyjoeMVC.View.AppointmentBooking();
-            View. AppointmentBooking bk = new View. AppointmentBooking();
+           AppointmentBooking bk = new  AppointmentBooking();
             if (pat_idForEdit != "0")
             {
                 if (ContextEvent.RecurrenceState != CalendarEventRecurrenceState.xtpCalendarRecurrenceNotRecurring)
@@ -4033,9 +4033,9 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new PappyjoeMVC.View.Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                form2.Show();
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
+                form2.ShowDialog();
             }
         }
 

@@ -1272,7 +1272,15 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                this.cntrl.update_clinicdetails(text_clinic_name.Text, text_tagline.Text, text_clinic_mobile.Text, text_clinic_email.Text, text_website.Text, rich_clinic_about.Text);
+                DataTable dtb = this.cntrl.get_company_details();
+                if(dtb.Rows.Count>0)
+                {
+                    this.cntrl.update_clinicdetails(text_clinic_name.Text, text_tagline.Text, text_clinic_mobile.Text, text_clinic_email.Text, text_website.Text, rich_clinic_about.Text);
+                }
+                else
+                {
+                    this.cntrl.save_details(text_clinic_name.Text, text_tagline.Text, text_clinic_mobile.Text, text_clinic_email.Text, text_website.Text, rich_clinic_about.Text);
+                }
                 MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch(Exception ex)
