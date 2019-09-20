@@ -134,7 +134,6 @@
     <Compile Include="Controller\Patient_Edit_controller.cs" />
     <Compile Include="Controller\Paymode_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Practice_Controller.cs" />
-    <Compile Include="Controller\Practice_interface.cs" />
     <Compile Include="Controller\Prescription_Add_controller.cs" />
     <Compile Include="Controller\Prescription_Add_interface.cs" />
     <Compile Include="Controller\Prescription_Show_controller.cs" />

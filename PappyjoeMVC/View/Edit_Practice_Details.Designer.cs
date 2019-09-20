@@ -101,7 +101,7 @@
             this.btn_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancel.ForeColor = System.Drawing.Color.White;
-            this.btn_Cancel.Location = new System.Drawing.Point(547, 10);
+            this.btn_Cancel.Location = new System.Drawing.Point(542, 12);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 27);
             this.btn_Cancel.TabIndex = 283;
@@ -686,7 +686,7 @@
             this.btnsavespecialization.UseVisualStyleBackColor = false;
             this.btnsavespecialization.Click += new System.EventHandler(this.btnsavespecialization_Click);
             // 
-            // frmeditpracticedetails
+            // Edit_Practice_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -698,7 +698,7 @@
             this.Controls.Add(this.panl_country);
             this.Controls.Add(this.btn_Cancel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmeditpracticedetails";
+            this.Name = "Edit_Practice_Details";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmeditpracticedetails_Load);
             this.panl_country.ResumeLayout(false);

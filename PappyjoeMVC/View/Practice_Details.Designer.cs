@@ -731,7 +731,7 @@
             // 
             this.panel_main.AutoSize = true;
             this.panel_main.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel_main.Location = new System.Drawing.Point(199, 49);
+            this.panel_main.Location = new System.Drawing.Point(199, 43);
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(864, 623);
             this.panel_main.TabIndex = 143;
