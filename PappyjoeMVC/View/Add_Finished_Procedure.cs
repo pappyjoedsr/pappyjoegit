@@ -1624,5 +1624,13 @@ namespace PappyjoeMVC.View
                 chk84.Checked = false; chk85.Checked = false;
             }
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Login();
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
     }
 }
