@@ -12,6 +12,11 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.investigation_cell(idinv);
             return dt;
         }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string s = model.privilge_for_inventory(doctor_id);
+            return s;
+        }
         public DataTable diagnose_cell(string iddiag)
         {
             DataTable dt = _model.diagnose_cell(iddiag);
