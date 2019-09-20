@@ -959,7 +959,7 @@
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(122, 2);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(19, 15);
+            this.label25.Size = new System.Drawing.Size(20, 15);
             this.label25.TabIndex = 4;
             this.label25.Text = "To";
             // 
