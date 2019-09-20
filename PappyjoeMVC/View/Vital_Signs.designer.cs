@@ -179,6 +179,7 @@
             this.labl_Lab.TabIndex = 60;
             this.labl_Lab.Text = "Lab";
             this.labl_Lab.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labl_Lab.Click += new System.EventHandler(this.labl_Lab_Click);
             // 
             // labelledger
             // 
@@ -609,6 +610,7 @@
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(72, 37);
             this.toolStripButton5.Text = "Inventory";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton6
             // 

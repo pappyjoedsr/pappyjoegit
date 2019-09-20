@@ -11,6 +11,11 @@ namespace PappyjoeMVC.Controller
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string s = cmodel.privilge_for_inventory(doctor_id);
+            return s;
+        }
         public string invoice_to_combo(string doctor_id)
         {
             string s = _model.invoice_to_combo(doctor_id);
