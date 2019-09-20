@@ -2,9 +2,9 @@
 <Calendar CompactMode="1" Version="1">
 	<Options WorkWeekMask="0" WorkDayStartTime="08:00:00" WorkDayEndTime="17:00:00" ScaleMinTime="07:00:00" dtScaleMaxTime="18:00:00" DayView_ScaleInterval="15" DayView_Scale2TimeZone="GLOPPPPPJEAAOGAAEGAAJGAABGAAACAADFAAEHAABGAAOGAAEGAABGAACHAAEGAAACAAEFAAJGAANGAAFGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJEAAOGAAEGAAJGAABGAAACAAEEAABGAAJHAAMGAAJGAAHGAAIGAAEHAAACAAEFAAJGAANGAAFGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEMPPPPPP" AdditionalOptions="495"/>
 	<Events>
-		<Event EventID="-4" StartTime="2019-25-07T07:30:00" EndTime="2019-25-07T07:35:00" Subject="Athul" Location="7:30 AM-7:35 AM" Body="8" LabelID="1" BusyStatus="2" CreationTime="2019-20-09T11:19:21" LastModificationTime="2019-20-09T11:19:21"/>
-		<Event EventID="-3" StartTime="2019-11-07T07:30:00" EndTime="2019-11-07T07:35:00" Subject="Amitha" Location="7:30 AM-7:35 AM" Body="7" LabelID="1" BusyStatus="2" CreationTime="2019-20-09T11:19:21" LastModificationTime="2019-20-09T11:19:21"/>
-		<Event EventID="-2" StartTime="2019-18-07T07:30:00" EndTime="2019-18-07T07:35:00" Subject="Amitha" Location="7:30 AM-7:35 AM" Body="6" LabelID="1" BusyStatus="2" CreationTime="2019-20-09T11:19:21" LastModificationTime="2019-20-09T11:19:21"/>
-		<Event EventID="-1" StartTime="2019-31-10T12:25:00" EndTime="2019-31-10T12:45:00" Subject="zac" Location="12:25 PM-12:45 PM" Body="1" LabelID="1" BusyStatus="2" CreationTime="2019-20-09T11:19:21" LastModificationTime="2019-20-09T11:19:21"/>
+		<Event EventID="-4" StartTime="2019-20-09T11:00:00" EndTime="2019-20-09T11:15:00" Subject="Rajan" Location="11:00 AM-11:15 AM" Body="4" LabelID="9" BusyStatus="2" CreationTime="2019-20-09T11:16:28" LastModificationTime="2019-20-09T11:16:28"/>
+		<Event EventID="-3" StartTime="2019-20-09T12:15:00" EndTime="2019-20-09T12:30:00" Subject="Arunima (CANCELLED)" Location="12:15 PM-12:30 PM" Body="3" LabelID="10" BusyStatus="3" CreationTime="2019-20-09T11:16:28" LastModificationTime="2019-20-09T11:16:28"/>
+		<Event EventID="-2" StartTime="2019-19-09T20:00:00" EndTime="2019-19-09T20:15:00" Subject="anusree" Location="8:00 PM-8:15 PM" Body="2" LabelID="1" BusyStatus="2" CreationTime="2019-20-09T11:16:28" LastModificationTime="2019-20-09T11:16:28"/>
+		<Event EventID="-1" StartTime="2019-19-09T19:00:00" EndTime="2019-19-09T19:15:00" Subject="Arunima" Location="7:00 PM-7:15 PM" Body="1" LabelID="1" BusyStatus="2" CreationTime="2019-20-09T11:16:28" LastModificationTime="2019-20-09T11:16:28"/>
 	</Events>
 </Calendar>
