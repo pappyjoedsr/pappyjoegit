@@ -84,6 +84,11 @@ namespace PappyjoeMVC.Model
         {
             db.execute("delete from tbl_dr_experience where dr_id='" + expid + "' and company='" + expcompany + "'");
         }
+        public DataTable load_city()
+        {
+            DataTable dt11 = db.table("select * from tbl_city order by id");
+            return dt11;
+        }
         //awards
         public void save_awards(string doctor_id, string award, string year)
         {

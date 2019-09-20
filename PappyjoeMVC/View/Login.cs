@@ -372,7 +372,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    Lab_InvalidLogin.Show();
+                    Lab_InvalidLogin.Visible=true;
                     txt_password.Text = "";
                 }
             }

@@ -47,6 +47,7 @@
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripDropDownButton();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -143,7 +144,6 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -311,6 +311,18 @@
             this.toolStripButton7.Text = "Profiles";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton12.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
+            this.toolStripButton12.Text = "Lab Tracking";
+            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
+            // 
             // toolStripButton8
             // 
             this.toolStripButton8.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -383,7 +395,7 @@
             this.toolStripldoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripldoc.Name = "toolStripldoc";
             this.toolStripldoc.ReadOnly = true;
-            this.toolStripldoc.Size = new System.Drawing.Size(250, 23);
+            this.toolStripldoc.Size = new System.Drawing.Size(250, 40);
             this.toolStripldoc.Text = "doctorrname";
             // 
             // panel6
@@ -1486,18 +1498,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // toolStripButton12
-            // 
-            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton12.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
-            this.toolStripButton12.Text = "Lab Tracking";
-            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
             // 
             // Add_New_Patients
             // 

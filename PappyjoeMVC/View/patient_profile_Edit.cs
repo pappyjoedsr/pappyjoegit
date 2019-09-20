@@ -92,7 +92,7 @@ namespace PappyjoeMVC.View
                 {
                     if (txtPrimaryMobNbr.Text != "")
                     {
-                        i = this.cntrl.update(txtPatientName.Text, txtPatientId.Text, txtAdhaarId.Text,gender, txtAge.Text, DateTimePickerDob.Value.ToString("yyyy-MM-dd"), cmbBloodGroup.Text, txtAccompaniedBy.Text, txtPrimaryMobNbr.Text, txtSecondaryMobNbr.Text, txtLandLineNbr.Text, txtEmail.Text,txtStreetAddress.Text,txtLocality.Text,txtCity.Text,txtPin.Text,txtReferredBy.Text, txtFileNo.Text, DateTimePickerAdmitDate.Value.ToString("yyyy-MM-dd"),txtOccupation.Text, cmbDoctorName.Text,patient_id);
+                        i = this.cntrl.update(txtPatientName.Text, txtPatientId.Text, txtAdhaarId.Text,gender, txtAge.Text, DateTimePickerDob.Value.ToString("yyyy-MM-dd"), cmbBloodGroup.Text, txtAccompaniedBy.Text, txtPrimaryMobNbr.Text, txtSecondaryMobNbr.Text, txtLandLineNbr.Text, txtEmail.Text,txtStreetAddress.Text,txtLocality.Text,txtCity.Text,txtPin.Text,txtReferredBy.Text, txtFileNo.Text, DateTimePickerAdmitDate.Value.ToString("yyyy/MM/dd"),txtOccupation.Text, cmbDoctorName.Text,patient_id);
                         if (i > 0)
                         {
                             if (pictureBox_PatientPhoto.Image == null)

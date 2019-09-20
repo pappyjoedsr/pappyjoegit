@@ -22,15 +22,15 @@ namespace PappyjoeMVC
             //login_controller controller = new login_controller(details);
             //details.ShowDialog();
 
-            Login details = new Login();
-            details.Visible = false;
-            //Practice_Model Pmdl;
-            //Practice_Controller controller = new Practice_Controller(details);
-            details.ShowDialog();
+            //Login details = new Login();
+            ////details.Visible = false;
+            ////Practice_Model Pmdl;
+            ////Practice_Controller controller = new Practice_Controller(details);
+            //details.ShowDialog();
 
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run( new frmeditpracticedetails());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Login());
 
             //dgvBilling details = new dgvBilling();
             //details.Visible = false;
