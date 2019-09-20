@@ -1455,10 +1455,10 @@ namespace PappyjoeMVC.View
             form2.ShowDialog();
         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        //private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
