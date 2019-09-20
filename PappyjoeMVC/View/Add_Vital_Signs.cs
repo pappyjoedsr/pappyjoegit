@@ -89,7 +89,6 @@ namespace PappyjoeMVC.View
         {
             var dlg = new Expense();
             dlg.doctor_id = doctor_id;
-            //expense_controller ctrl = new expense_controller(dlg);
             dlg.ShowDialog();
         }
 
@@ -104,11 +103,8 @@ namespace PappyjoeMVC.View
                     if (int.Parse(id) > 0)
                     {
                         var form2 = new PappyjoeMVC.View.Add_New_Patients();
-                        //Add_New_patient_controller cnt = new Add_New_patient_controller(form2);
                         form2.doctor_id = doctor_id;
                         form2.ShowDialog();
-                        //form2.Closed += (sender1, args) => this.Close();
-                        //this.Hide();
                     }
                     else
                     {
@@ -118,11 +114,8 @@ namespace PappyjoeMVC.View
                 else
                 {
                     var form2 = new PappyjoeMVC.View.Add_New_Patients();
-                    //Add_New_patient_controller cnt = new Add_New_patient_controller(form2);
                     form2.doctor_id = doctor_id;
                     form2.ShowDialog();
-                    //form2.Closed += (sender1, args) => this.Close();
-                    //this.Hide();
                 }
             }
             catch (Exception ex)
@@ -145,8 +138,6 @@ namespace PappyjoeMVC.View
                         var form2 = new PappyjoeMVC.View.Practice_Details();
                         form2.doctor_id = doctor_id;
                         form2.ShowDialog();
-                        //form2.Closed += (sender1, args) => this.Close();
-                        //this.Hide();
                     }
                     else
                     {
@@ -158,8 +149,6 @@ namespace PappyjoeMVC.View
                     var form2 = new PappyjoeMVC.View.Practice_Details();
                     form2.doctor_id = doctor_id;
                     form2.ShowDialog();
-                    //form2.Closed += (sender1, args) => this.Close();
-                    //this.Hide();
                 }
             }
             catch (Exception ex)
@@ -574,7 +563,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -586,7 +574,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                //doctor_controller controlr = new doctor_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -618,6 +605,34 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            if (doctor_id != "1")
+            {
+                string id=this.cntrl.privilge_for_inventory(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var form2 = new PappyjoeMVC.View.StockReport();
+                    form2.doctor_id = doctor_id;
+                    form2.Show();
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                var form2 = new PappyjoeMVC.View.StockReport();
+                form2.doctor_id = doctor_id;
+                form2.Show();
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+            }
         }
     }
 }

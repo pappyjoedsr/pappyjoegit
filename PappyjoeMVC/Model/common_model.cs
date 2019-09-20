@@ -73,6 +73,11 @@ namespace PappyjoeMVC.Model
             string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PAT' and Permission='D'");
             return id;
         }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='INVENTORY' and Permission='A'");
+            return id;
+        }
         public DataTable get_patient_date(string patient_id)
         {
             DataTable dtb = db.table("select date from tbl_patient where id='" + patient_id + "'");

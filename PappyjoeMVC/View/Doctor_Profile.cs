@@ -1424,6 +1424,11 @@ namespace PappyjoeMVC.View
             }
         }
 
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
             var form2 = new Patient_Profile_Details();
