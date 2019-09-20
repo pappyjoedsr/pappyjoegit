@@ -188,6 +188,11 @@ namespace PappyjoeMVC.Controller
             DataTable d = _model.getdatafrom_clinicalFindings(id, ptid);
             return d;
         }
+        public string get_clinicId(string ptid)
+        {
+            string cliniid = _model.get_clinicId(ptid);
+            return cliniid;
+        }
         public DataTable getComplaints(string id)
         {
             DataTable d = _model.getComplaints(id);

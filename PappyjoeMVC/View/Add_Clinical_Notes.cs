@@ -15,6 +15,7 @@ namespace PappyjoeMVC.View
         string idcomp, iddiag, idobs, idinv, idnote = "";
         public string patient_id = "";
         static int rowvalue;
+       public  bool caledr_edit_flag = false;
         public Add_Clinical_Notes()
         {
             InitializeComponent();
@@ -1030,6 +1031,14 @@ namespace PappyjoeMVC.View
                 if (dt.Rows[0]["pt_id"].ToString() != "")
                 {
                     linkLabel_id.Text = dt.Rows[0]["pt_id"].ToString();
+                }
+                if(caledr_edit_flag==true)
+                {
+                    string clin_id = this.cntrl.get_clinicId(patient_id);
+                    if(clin_id!="")
+                    {
+                        clinic_id = clin_id;
+                    }
                 }
 
                 if (clinic_id != "")

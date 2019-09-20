@@ -1468,7 +1468,7 @@ namespace PappyjoeMVC.View
             this.toolStripldoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripldoc.Name = "toolStripldoc";
             this.toolStripldoc.ReadOnly = true;
-            this.toolStripldoc.Size = new System.Drawing.Size(250, 23);
+            this.toolStripldoc.Size = new System.Drawing.Size(250, 40);
             this.toolStripldoc.Text = "Search";
             // 
             // gbxMonthView
@@ -4082,14 +4082,26 @@ namespace PappyjoeMVC.View
 
         private void button4_Click(object sender, EventArgs e)
         {
+           
             if (pat_idForEdit != "0")
             {
-                //var form2 = new dental.ClinicalNotes_Add();
+                var form2 = new Add_Clinical_Notes();
+                //ClinicalNotesAdd_controller cnt = new ClinicalNotesAdd_controller(form2);
+                form2.doctor_id = doctor_id;
+                form2.patient_id = pat_idForEdit;
+                //form2.ptid = pat_idForEdit;
+                //clinic_flag = true;
+                form2.caledr_edit_flag = true;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+
+                //var form2 = new ClinicalNotes_Add();
                 //form2.doctor_id = doctor_id;
                 //form2.ptid = pat_idForEdit;
-                //form2.Show();
                 //form2.Closed += (sender1, args) => this.Close();
                 //this.Hide();
+                //form2.show();
             }
         }
 
