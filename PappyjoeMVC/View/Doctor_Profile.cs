@@ -476,7 +476,7 @@ namespace PappyjoeMVC.View
             fill_all_combo();
             cmbDrProfile.Text = "Select values";
             toolStripButton7.BackColor = Color.SkyBlue;
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+            toolStripDropDownButton1.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
 
             if (PappyjoeMVC.Model.Connection.MyGlobals.loginType != "staff")
             {
@@ -492,13 +492,8 @@ namespace PappyjoeMVC.View
                 {
                     tempId = doctor_id;
                 }
-                DataTable clinicname = this.cntrl.get_companyName();
-                if (clinicname.Rows.Count > 0)
-                {
-                    string clinicn = ""; 
-                    clinicn = clinicname.Rows[0]["name"].ToString();
-                    toolStripButton1.Text = clinicn.Replace("¤", "'");
-                }
+               
+                    toolStripButton1.Text = this.cntrl.Load_CompanyName();
                 string docnam = this.cntrl.Get_DoctorName(doctor_id);
                 if (docnam != "")
                 {
@@ -1422,6 +1417,42 @@ namespace PappyjoeMVC.View
                 this.Hide();
                 form2.ShowDialog();
             }
+        }
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (doctor_id != "1")
+            {
+                string id;
+                id = this.cntrl.permission_for_settings(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    var form2 = new Practice_Details();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("There is No Privilege to Clinic Settings", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+            }
+            else
+            {
+                var form2 = new Practice_Details();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form2 = new Login();
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
 
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)

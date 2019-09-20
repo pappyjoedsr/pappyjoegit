@@ -306,8 +306,8 @@
             this.toolStripButton12,
             this.toolStripButton8,
             this.toolStripSeparator2,
-            this.toolStripButton9,
             this.toolStripDropDownButton1,
+            this.toolStripButton9,
             this.toolStripTextBox1,
             this.toolStripTextDoctor});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -463,6 +463,7 @@
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
@@ -470,6 +471,7 @@
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -959,7 +961,7 @@
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(122, 2);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(20, 15);
+            this.label25.Size = new System.Drawing.Size(19, 15);
             this.label25.TabIndex = 4;
             this.label25.Text = "To";
             // 

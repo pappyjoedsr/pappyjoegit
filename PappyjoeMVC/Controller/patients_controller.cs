@@ -8,12 +8,22 @@ namespace PappyjoeMVC.Controller
         //patients_interface intr;
         Patients_model _model = new Patients_model();
         Common_model cmodel = new Common_model();
+        Show_Appointment_model appmodel = new Show_Appointment_model();
         //public Patients_controller(patients_interface inttr)
         //{
         //    intr = inttr;
         //    intr.Setcontroller(this);
         //}
-
+        public string privilege_D(string doctor_id)
+        {
+            string id = appmodel.privilege_D(doctor_id);// db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='APT' and Permission='D'");
+            return id;
+        }
+        public int delete(string apntid)
+        {
+            int j = appmodel.delete(apntid);// db.execute("delete from tbl_appointment where id='" + apntid + "'");
+            return j;
+        }
         public DataTable Get_all_Patients()
         {
             DataTable dtb = _model.Get_all_Patients();
@@ -124,7 +134,7 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.recently_visited(d, todate);
             return dtb;// intr.Create_Datagrid(dtb);
         }
-        public DataTable Recently_added(DateTime d, DateTime todate)
+        public DataTable Recently_added(string d, string todate)
         {
             DataTable dtb = _model.Recently_added(d, todate);
             return dtb;// intr.Create_Datagrid(dtb);
@@ -151,7 +161,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable patients_wit_group(string id4)
         {
-            DataTable dtb = _model.innactive_patients();
+            DataTable dtb = _model.patients_wit_group(id4);
             return dtb;//  intr.Create_Datagrid(dtb);
         }
         public DataTable allpatient_search(string name)
@@ -164,7 +174,7 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.recently_visited_search(d, todate, name);
             return dtb;// intr.Create_Datagrid(dtb);
         }
-        public DataTable  recently_added_search(DateTime d, DateTime todate, string name)
+        public DataTable  recently_added_search(string d, string todate, string name)
         {
             DataTable dtb = _model.recently_added_search(d, todate, name);
             return dtb;// intr.Create_Datagrid(dtb);

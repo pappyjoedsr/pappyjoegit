@@ -51,7 +51,7 @@ namespace PappyjoeMVC.View
         public void validatenumber()
         {
             string patSearchnumber = this.cntrl.Get_pnonenumber(txtPMobNumber.Text);
-            if (patSearchnumber != "")
+            if (Convert.ToDecimal(patSearchnumber) != 0)
             {
                 MessageBox.Show("User with same Number already exists", "Number exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtPMobNumber.Focus();
@@ -150,11 +150,11 @@ namespace PappyjoeMVC.View
                         }
                         if (DateTime.Now.Date.ToString("MM/dd/yyyy") == dateTimePickervisited.Value.ToString("MM/dd/yyyy"))
                         {
-                            visited= DateTime.Now.Date.ToString("yyyy-MM-dd");
+                            visited= DateTime.Now.Date.ToString("yyyy/MM/dd");
                         }
                         else
                         {
-                            visited= dateTimePickervisited.Value.ToString("yyyy-MM-dd");
+                            visited= dateTimePickervisited.Value.ToString("yyyy/MM/dd");
                         }
                         //Addfunction();
                         string smsName1 = PappyjoeMVC.Model.GlobalVariables.smsName.ToString();

@@ -159,10 +159,6 @@ namespace PappyjoeMVC.View
         }
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.Login();
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.ShowDialog();
         }
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
