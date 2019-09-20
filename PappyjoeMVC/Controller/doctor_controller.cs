@@ -274,5 +274,14 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = cmdl.Patient_search(_Patientid);
             return dtb;
         }
+        public DataTable get_company_details()
+        {
+            DataTable dtb = cmdl.get_company_details();
+            return dtb;
+        }
+        public void save_details(string _PName, string _ptag, string _phone, string _email, string _website, string _clinicAbout)
+        {
+            _model.save_details( _PName,  _ptag,  _phone,  _email,  _website,  _clinicAbout);
+        }
     }
 }

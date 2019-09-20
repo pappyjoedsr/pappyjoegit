@@ -9,6 +9,7 @@ namespace PappyjoeMVC.Model
     public class Inventory_model
     {
         Connection db = new Connection();
+        
         public DataTable Get_Stock(string id)
         {
           DataTable dt3 = db.table("Select stock from tbl_inventory_item where id='" + id + "'");

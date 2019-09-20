@@ -584,6 +584,7 @@
             this.cmdCancel.TabIndex = 72;
             this.cmdCancel.Text = "Cancel";
             this.cmdCancel.UseVisualStyleBackColor = false;
+            this.cmdCancel.Click += new System.EventHandler(this.cmdCancel_Click);
             // 
             // cmdOK
             // 
@@ -604,7 +605,7 @@
             // 
             this.cmbLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLabel.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.cmbLabel.Location = new System.Drawing.Point(12, 484);
+            this.cmbLabel.Location = new System.Drawing.Point(725, 363);
             this.cmbLabel.Name = "cmbLabel";
             this.cmbLabel.Size = new System.Drawing.Size(70, 21);
             this.cmbLabel.TabIndex = 100;
@@ -614,7 +615,7 @@
             // 
             this.cmbShowTimeAs.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbShowTimeAs.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.cmbShowTimeAs.Location = new System.Drawing.Point(78, 484);
+            this.cmbShowTimeAs.Location = new System.Drawing.Point(708, 328);
             this.cmbShowTimeAs.Name = "cmbShowTimeAs";
             this.cmbShowTimeAs.Size = new System.Drawing.Size(70, 21);
             this.cmbShowTimeAs.TabIndex = 101;
@@ -624,7 +625,7 @@
             // 
             this.dpEndTimeDate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dpEndTimeDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpEndTimeDate.Location = new System.Drawing.Point(0, 511);
+            this.dpEndTimeDate.Location = new System.Drawing.Point(662, 30);
             this.dpEndTimeDate.Name = "dpEndTimeDate";
             this.dpEndTimeDate.Size = new System.Drawing.Size(116, 22);
             this.dpEndTimeDate.TabIndex = 102;
@@ -634,7 +635,7 @@
             // 
             this.txtSubject.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubject.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtSubject.Location = new System.Drawing.Point(438, 497);
+            this.txtSubject.Location = new System.Drawing.Point(683, 284);
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(77, 22);
             this.txtSubject.TabIndex = 103;
@@ -644,9 +645,9 @@
             // 
             this.txtLocation.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLocation.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtLocation.Location = new System.Drawing.Point(121, 442);
+            this.txtLocation.Location = new System.Drawing.Point(741, 442);
             this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(315, 22);
+            this.txtLocation.Size = new System.Drawing.Size(62, 22);
             this.txtLocation.TabIndex = 103;
             // 
             // chkAllDayEvent
@@ -698,7 +699,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(525, 535);
+            this.ClientSize = new System.Drawing.Size(546, 535);
             this.Controls.Add(this.chkMeeting);
             this.Controls.Add(this.chkReminder);
             this.Controls.Add(this.chkPrivate);
@@ -739,6 +740,7 @@
             this.Controls.Add(this.cmdOK);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AppointmentBooking";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Appointment";
             this.Load += new System.EventHandler(this.AppointmentBooking_Load);
             this.Click += new System.EventHandler(this.AppointmentBooking_Click);

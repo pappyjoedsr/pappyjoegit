@@ -20,7 +20,7 @@ namespace PappyjoeMVC.View
         public static string id;
         private void FrmManufacture_Load(object sender, EventArgs e)
         {
-           DataTable dtb= this.cntrl.Load_grid();
+            DataTable dtb= this.cntrl.Load_grid();
             Fill_grid(dtb);
             txt_name.Text = "";
             Dgv_Manufacture.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
@@ -52,7 +52,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void btn_Save_Click(object sender, EventArgs e)
         {
             int i = 0;
@@ -180,7 +179,6 @@ namespace PappyjoeMVC.View
             btn_Save.Text = "SAVE";
             cancel.Visible = false;
         }
-
         private void txt_Email_Validating(object sender, CancelEventArgs e)
         {
             if (!PappyjoeMVC.Model.Connection.checkforemail(txt_Email.Text.ToString()) && txt_Email.Text != "")
@@ -189,18 +187,12 @@ namespace PappyjoeMVC.View
                 txt_Email.Focus();
             }
         }
-
         private void txt_phone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
-        }
-
-        private void txt_phone_Leave(object sender, EventArgs e)
-        {
-          
         }
     }
 }

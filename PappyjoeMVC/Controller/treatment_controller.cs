@@ -5,14 +5,9 @@ namespace PappyjoeMVC.Controller
 {
     public class Treatment_controller
     {
-        treatment_interface intr;
         Treatment_model _model = new Treatment_model();
         Common_model cmodel = new Common_model();
-        public Treatment_controller(treatment_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
+        Connection db = new Connection();
         public string check_privillege(string doctor_id)
         {
             string a = _model.check_privillege(doctor_id);
@@ -28,11 +23,30 @@ namespace PappyjoeMVC.Controller
             string a = _model.delete_privillege(doctor_id);
             return a;
         }
-
-        public void get_treatments(string patient_id)
+        public DataTable Get_CompanyNAme()
+        {
+            DataTable clinicname = cmodel.Get_CompanyNAme();
+            return clinicname;
+        }
+        public string Get_DoctorName(string doctor_id)
+        {
+            string docnam = cmodel.Get_DoctorName(doctor_id);
+            return docnam;
+        }
+        public string server()
+        {
+            string server = db.server();
+            return server;
+        }
+        public DataTable Get_Patient_Details(string patient_id)
+        {
+            DataTable rs_patients = cmodel.Get_Patient_Details(patient_id);
+            return rs_patients;
+        }
+        public DataTable get_treatments(string patient_id)
         {
             DataTable dtb = _model.Load_treatments(patient_id);
-            intr.load_treatment(dtb);
+            return dtb;// intr.load_treatment(dtb);
         }
         public DataTable treatment_sub_details(string id)
         {
@@ -67,6 +81,21 @@ namespace PappyjoeMVC.Controller
         {
             string dtb = cmodel.permission_for_settings(doctor_id);
             return dtb;
+        }
+        public DataTable getpatemail(string patient_id)
+        {
+            DataTable sr = cmodel.getpatemail(patient_id);
+            return sr;
+        }
+        public DataTable send_email()
+        {
+            DataTable sms = cmodel.send_email();
+            return sms;
+        }
+        public DataTable get_company_details()
+        {
+            DataTable dtp = cmodel.get_company_details();
+            return dtp;
         }
     }
 }

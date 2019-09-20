@@ -4,70 +4,63 @@ namespace PappyjoeMVC.Controller
 {
     public class Patient_Edit_controller
     {
-        patient_edit_interface intr;
-        Patient_Edit_model _model = new Patient_Edit_model();
         Connection db = new Connection();
-        public Patient_Edit_controller(patient_edit_interface inttr)
+        Common_model mdl = new Common_model();
+        Patient_Edit_model _model = new Patient_Edit_model();
+        public string get_medicalId(string pt_id)
         {
-            intr = inttr;
-            intr.Setcontroller(this);
-        }
-        public void get_medicalId(string pt_id)
-        {
-            DataTable dtb = _model.get_medicalId(pt_id);
-            intr.Fill_modeical(dtb);
-        }
-        public DataTable Get_medicalname()
-        {
-            DataTable dtb = _model.Get_medicalname();
+            string dtb = _model.get_medicalId(pt_id);
             return dtb;
         }
-        public DataTable patient_medical(string idd, string medid)
+        public DataTable get_all_doctorname()
         {
-            DataTable dtb = _model.patient_medical(idd, medid);
+            DataTable dt = mdl.get_all_doctorname();
+            return dt;
+        }
+        public DataTable Get_Patient_Details(string id)
+        {
+            DataTable dt = mdl.Get_Patient_Details(id);
+            return dt;
+        }
+        public string privillage_E(string doctor_id)
+        {
+            string e = mdl.privillage_E(doctor_id);
+            return e;
+        }
+        public string privillage_D(string doctor_id)
+        {
+            string e = mdl.privillage_D(doctor_id);
+            return e;
+        }
+        public string Get_medicalname()
+        {
+            string dtb = _model.Get_medicalname();
             return dtb;
         }
-        public void get_groupid(string idd)
+        public string patient_medical(string idd, string medid)
         {
-            DataTable dtb = _model.get_groupid(idd);
-            intr.Fill_Group(dtb);
-        }
-        public DataTable groupname()
-        {
-            DataTable dtb = _model.groupname();
+            string dtb = _model.patient_medical(idd, medid);
             return dtb;
         }
-        public DataTable patient_group(string idd, string grpid)
+        public string get_groupid(string idd)
         {
-            DataTable dtb = _model.patient_group(idd, grpid);
+            string dtb = _model.get_groupid(idd);
+            return dtb;
+        }
+        public string groupname()
+        {
+            string dtb = _model.groupname();
+            return dtb;
+        }
+        public string patient_group(string idd, string grpid)
+        {
+            string dtb = _model.patient_group(idd, grpid);
             return dtb;
         }
 
-        public int update(string pt_id)
+        public int update(string patname,string patId,string aadhar,string Gender,string age,string Dob,string blood,string family,string Pmob,string Smob,string Landline,string email,string street,string locality,string city,string pin,string refferedby,string opticket,string Visited,string occupation,string doctername,string pt_id)
         {
-            _model.patname = intr.Ptname;
-            _model.patId = intr.patId;
-            _model.aadhar = intr.aadhar;
-            _model.Gender = intr.Gender;
-            _model.age = intr.age;
-            _model.Dob = intr.Dob;
-            _model.blood = intr.blood;
-            _model.family = intr.family;
-            _model.Pmob = intr.Pmob;
-            _model.Smob = intr.Smob;
-            _model.Landline = intr.Landline;
-            _model.email = intr.email;
-            _model.street = intr.street;
-            _model.locality = intr.locality;
-            _model.city = intr.city;
-            _model.pin = intr.pin;
-            //_model.groupid = intr.groupid;
-            _model.refferedby = intr.refferedby;
-            _model.opticket = intr.opticket;
-            _model.Visited = intr.Visited;
-            _model.occupation = intr.occupation;
-            _model.doctername = intr.doctername;
-            int i = _model.update(pt_id);
+            int i = _model.update( patname,  patId,  aadhar,  Gender,  age,  Dob,  blood,  family,  Pmob,  Smob,  Landline,  email,  street,  locality,  city,  pin,  refferedby,  opticket,  Visited,  occupation,  doctername,  pt_id);
             return i;
         }
         public int delete_patient(string pt_id)
@@ -75,34 +68,40 @@ namespace PappyjoeMVC.Controller
             int i = _model.delete_patient(pt_id);
             return i;
         }
-        public void save(string medical)
+        public int save(string medical)
         {
-            _model.save(medical);
+            int j=_model.save(medical);
+            return j;
         }
-        public void save_group(string group)
+        public int save_group(string group)
         {
-            _model.save_group(group);
+            int i=_model.save_group(group);
+            return i;
         }
-        public void delete_pt_medhistory(string patient_id)
+        public int delete_pt_medhistory(string patient_id)
         {
-            _model.delete_pt_medhistory(patient_id);
+            int d=_model.delete_pt_medhistory(patient_id);
+            return d;
         }
         public string getserver()//connection
         {
             string ret = db.server();
             return ret;
         }
-        public void insert_pt_medhistory(string patient_id, string medical)
+        public int insert_pt_medhistory(string patient_id, string medical)
         {
-            _model.insert_pt_medhistory(patient_id, medical);
+            int i=_model.insert_pt_medhistory(patient_id, medical);
+            return i;
         }
-        public void delete_pt_group(string patient_id)
+        public int delete_pt_group(string patient_id)
         {
-            _model.delete_pt_group(patient_id);
+           int p= _model.delete_pt_group(patient_id);
+           return p;
         }
-        public void insert_pt_group(string patient_id, string group)
+        public int insert_pt_group(string patient_id, string group)
         {
-            _model.insert_pt_group(patient_id, group);
+            int n=_model.insert_pt_group(patient_id, group);
+            return n;
         }
     }
 }

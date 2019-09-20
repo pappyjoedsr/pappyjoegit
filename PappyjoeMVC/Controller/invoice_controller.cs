@@ -4,51 +4,45 @@ namespace PappyjoeMVC.Controller
 {
     public class Invoice_controller
     {
-        invoice_interface intr;
         Connection db = new Connection();
         Add_Invoice_model Add_inv_model = new Add_Invoice_model();
         Inventory_model inv_model = new Inventory_model();
         Common_model cmodel = new Common_model();
-        public Invoice_controller(invoice_interface inttr)
-        {
-            intr = inttr;
-            intr.Setcontroller(this);
-        }
         public string check_addprivillege(string doctor_id)
         {
-            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRI' and Permission='A'");
+            string privid = Add_inv_model.check_addprivillege(doctor_id);
             return privid;
         }
         public string check_delete_privillege(string doctor_id)
         {
-            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRI' and Permission='D'");
+            string privid = Add_inv_model.check_delete_privillege(doctor_id);
             return privid;
         }
         public string addpayment_privillege(string doctor_id)
         {
-            string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PMT' and Permission='A'");
+            string privid = Add_inv_model.addpayment_privillege(doctor_id);
             return privid;
         }
-        public void Get_invoice_mainDetails(string patient_id)
+        public DataTable Get_invoice_mainDetails(string patient_id)
         {
-            DataTable dt_invoice_main = Add_inv_model.Load_invoice_mainDetails(patient_id);// db.table("SELECT id,date,invoice,status FROM tbl_invoices_main where pt_id='" + patient_id + "' ORDER BY date DESC");
-            intr.Load_MainTable(dt_invoice_main);
+            DataTable dt_invoice_main = Add_inv_model.Load_invoice_mainDetails(patient_id);
+            return dt_invoice_main;
         }
         public DataTable get_invoiceDetails(string mainid)
         {
-            DataTable dt_pt_sub = db.table("SELECT id,services,unit,cost,discount,discount_type,tax,total,notes,total_cost,total_discount,total_tax,discountin_rs,tax_inrs,dr_id,invoice_no FROM tbl_invoices where invoice_main_id='" + mainid + "' ORDER BY id");
+            DataTable dt_pt_sub = Add_inv_model.get_invoiceDetails(mainid);
             return dt_pt_sub;
         }
-        public DataTable Get_type(string invoice_plan_id)
+        public string Get_type(string invoice_plan_id)
         {
-            DataTable invoice_type = db.table("SELECT type FROM tbl_invoices_main where id='" + invoice_plan_id + "' ");
+            string invoice_type = Add_inv_model.Get_type(invoice_plan_id);
             return invoice_type;
         }
         public DataTable InvoiceDetails(string invoice_plan_id)
         {
-            DataTable dt_in_main = db.table("SELECT * FROM tbl_invoices where invoice_main_id='" + invoice_plan_id + "' ");
+            DataTable dt_in_main = Add_inv_model.InvoiceDetails(invoice_plan_id);
             return dt_in_main;
-        }//SELECT invoice_no,services,cost,discountin_rs,total_tax,total,unit,notes FROM tbl_invoices WHERE invoice_main_id 
+        }
         public DataTable geGet_quantiry_fromStockt(string stockid)
         {
             DataTable dtb = Add_inv_model.Get_quantiry_fromStock(stockid);
@@ -64,31 +58,30 @@ namespace PappyjoeMVC.Controller
         }
         public void set_completeProcedure_status1(string completed_id)
         {
-            db.execute("update tbl_completed_procedures set status='1' where id= '" + completed_id + "'");
+            Add_inv_model.set_completeProcedure_status1(completed_id);
         }
-        public void delete_invoice(string invoice_plan_id)
+        public void delete_from_invoice(string invoice_plan_id)
         {
-            db.execute("delete from tbl_invoices_main where id='" + invoice_plan_id + "'");
-            db.execute("delete from tbl_invoices where invoice_main_id='" + invoice_plan_id + "'");
+            Add_inv_model.delete_from_invoice(invoice_plan_id);
         }
-        public void get_total_payment(string ptid)
+        public DataTable get_total_payment(string ptid)
         {
             DataTable dtb = cmodel.get_total_payment(ptid);
-            intr.set_totalPayment(dtb);
+            return dtb;
         }
         public DataTable Load_invoice_mainDetails(string patient_id)
         {
             DataTable dtb = Add_inv_model.Load_invoice_mainDetails(patient_id);
             return dtb;
         }
-        public DataTable Get_paymentid(string invno)
+        public string Get_paymentid(string invno)
         {
-            DataTable dt_pay = db.table("SELECT id FROM tbl_payment where invoice_no='" + invno + "' ");
+            string dt_pay = Add_inv_model.Get_paymentid(invno);
             return dt_pay;
         }
         public DataTable Get_invoicePrintsettings()
         {
-            DataTable print = db.table("select * from  tbl_invoice_printsettings");
+            DataTable print = Add_inv_model.Get_invoicePrintsettings();
             return print;
         }
         public DataTable get_invoice_doctorname(string patient_id)
@@ -98,12 +91,12 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable Get_date(string invoice_plan_id)
         {
-            DataTable dt_invo = db.table("SELECT invoice,date FROM tbl_invoices_main WHERE id = '" + invoice_plan_id + "'");
+            DataTable dt_invo = Add_inv_model.Get_date(invoice_plan_id);
             return dt_invo;
         }
         public string Get_TotalSum(string invoice_plan_id)
         {
-            string num = db.scalar("SELECT sum(total) FROM tbl_invoices WHERE invoice_main_id ='" + invoice_plan_id + "'");
+            string num = Add_inv_model.Get_TotalSum(invoice_plan_id);
             return num;
         }
         public DataTable Patient_search(string patid)

@@ -11,7 +11,7 @@ using PappyjoeMVC.Controller;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
-    public partial class Add_Treatment_Plan : Form,add_treatmentplan_interface
+    public partial class Add_Treatment_Plan : Form
     {
         Add_Treatmentplan_controller cntrl;
         public string doctor_id = ""; public string patient_id = "";
@@ -30,14 +30,8 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
-                DataTable clinicname = this.cntrl.Get_CompanyNAme();
-                if (clinicname.Rows.Count > 0)
-                {
-                    string clinicn = "";
-                    clinicn = clinicname.Rows[0][0].ToString();
-                    toolStripButton1.Text = clinicn.Replace("¤", "'");
-                }
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                toolStripButton1.Text = this.cntrl.Load_CompanyName();
                 string docnam = this.cntrl.Get_DoctorName(doctor_id);
                 if (docnam != "")
                 {
@@ -112,7 +106,8 @@ namespace PappyjoeMVC.View
 
         private void btn_SaveProcedure_Click(object sender, EventArgs e)
         {
-            this.cntrl.check_procedurename();
+          DataTable dtb=  this.cntrl.check_procedurename(txt_procedure.Text);
+            insertTreatment(dtb);
         }
         public void insertTreatment(DataTable checkdatacc)
         {
@@ -126,7 +121,7 @@ namespace PappyjoeMVC.View
                 {
                     if (txt_Cost.Text != "" && txt_procedure.Text != "")
                     {
-                        this.cntrl.save_Procedure();
+                        this.cntrl.save_Procedure(txt_procedure.Text, txt_Cost.Text);
                         string p = this.cntrl.Procedure_maxid();
                         int pid = int.Parse(p);
                         DataTable treatment = this.cntrl.Get_all_procedures();
@@ -145,16 +140,7 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error !.....", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public string AddProcedureName
-        {
-            get{ return txt_procedure.Text;}
-            set { txt_procedure.Text = value; }
-        }
-        public string ProcedureCost
-        {
-            get { return txt_Cost.Text; }
-            set { txt_Cost.Text = value; }
-        }
+       
 
         private void addbut_Click(object sender, EventArgs e)
         {
@@ -1364,22 +1350,22 @@ namespace PappyjoeMVC.View
                 {
                     int j;
                     string dr_id = Cmb_Doctor.SelectedValue.ToString();
-                    this.cntrl.Save_treatment(dr_id, patient_id);
-                    DataTable dt = this.cntrl.get_treatmentmaxid();
+                    this.cntrl.Save_treatment(dr_id, patient_id, DTP_Date.Value.ToString("yyyy-MM-dd"), Cmb_Doctor.Text, linkLabel_Name.Text, cqgrant.Text, text_discounttotal.Text, totgrant.Text);
+                    string dt = this.cntrl.get_treatmentmaxid();
                     int planid;
                     try
                     {
-                        if (Int32.Parse(dt.Rows[0][0].ToString()) == 0)
+                        if (Int32.Parse(dt) == 0)
                         {
                             j = 1;
                             planid = 1;
                         }
                         else
                         {
-                            planid = Int32.Parse(dt.Rows[0][0].ToString());
+                            planid = Int32.Parse(dt);
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
                         j = 1;
                         planid = 1;
@@ -1387,12 +1373,11 @@ namespace PappyjoeMVC.View
                     j = planid;
                     for (int ii = 0; ii < DGV_Procedure.Rows.Count; ii++)
                     {
-                        this.cntrl.Save_treatmentgrid(j, DGV_Procedure[0, ii].Value.ToString(), patient_id, DGV_Procedure[1, ii].Value.ToString(), DGV_Procedure[2, ii].Value.ToString(), DGV_Procedure[3, ii].Value.ToString(), DGV_Procedure[5, ii].Value.ToString(), DGV_Procedure[4, ii].Value.ToString(), DGV_Procedure[6, ii].Value.ToString(), DGV_Procedure[7, ii].Value.ToString(), DGV_Procedure[11, ii].Value.ToString(), DGV_Procedure[13, ii].Value.ToString());//('" + j + "','" + DGV_Procedure[0, ii].Value.ToString() + "','" + patient_id + "','" + DGV_Procedure[1, ii].Value.ToString() + "','" + DGV_Procedure[2, ii].Value.ToString() + "','" + DGV_Procedure[3, ii].Value.ToString() + "','" + DGV_Procedure[5, ii].Value.ToString() + "','" + DGV_Procedure[4, ii].Value.ToString() + "','" + DGV_Procedure[6, ii].Value.ToString() + "','" + DGV_Procedure[7, ii].Value.ToString() + "','" + DGV_Procedure[11, ii].Value.ToString() + "','1','" + DGV_Procedure[13, ii].Value.ToString() + "')");
+                        this.cntrl.Save_treatmentgrid(j, DGV_Procedure[0, ii].Value.ToString(), patient_id, DGV_Procedure[1, ii].Value.ToString(), DGV_Procedure[2, ii].Value.ToString(), DGV_Procedure[3, ii].Value.ToString(), DGV_Procedure[5, ii].Value.ToString(), DGV_Procedure[4, ii].Value.ToString(), DGV_Procedure[6, ii].Value.ToString(), DGV_Procedure[7, ii].Value.ToString(), DGV_Procedure[11, ii].Value.ToString(), DGV_Procedure[13, ii].Value.ToString());
                     }
                     var form2 = new Treatment_Plans();
                     form2.doctor_id = doctor_id;
                     form2.patient_id = patient_id;
-                    Treatment_controller controller = new Treatment_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -1410,41 +1395,7 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error !.....", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public string Date
-        {
-            get { return DTP_Date.Value.ToString("yyyy-MM-dd"); }
-            set { DTP_Date.Value = Convert.ToDateTime(value); }
-        }
-        public string Doctor
-        {
-            get { return Cmb_Doctor.Text; }
-            set { Cmb_Doctor.Text = value; }
-        }
-        public string PatientName
-        {
-            get {return linkLabel_Name.Text; }
-            set { linkLabel_Name.Text = value; }
-        }
-        public string TotalCost
-        {
-            get { return cqgrant.Text; }
-            set { cqgrant.Text =  value.ToString(); }
-        }
-        public string TotalDiscount
-        {
-            get {return text_discounttotal.Text; }
-            set { text_discounttotal.Text = value.ToString(); }
-        }
-        public string GrandTotal
-        {
-            get { return totgrant.Text; }
-            set { totgrant.Text = value.ToString(); }
-        }
-        public string search_patientname
-        {
-            get { return toolStripTextBox1.Text; }
-            set { toolStripTextBox1.Text = value.ToString(); }
-        }
+
         private void linkLabel_Name_Click(object sender, EventArgs e)
         {
             //patient_profile_Edit a = new patient_profile_Edit();
@@ -1457,7 +1408,6 @@ namespace PappyjoeMVC.View
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
             a.patient_id = linkLabel_id.Text.ToString();
-            Patient_Edit_controller controller = new Patient_Edit_controller(a);
             a.ShowDialog();
         }
 
@@ -1482,7 +1432,7 @@ namespace PappyjoeMVC.View
                 {
                     listpatientsearch.Visible = true;
                 }
-                listpatientsearch.Location = new Point(toolStrip1.Width - 352, 40);  //listpatientsearch.Location = new Point(1012, 41);
+                listpatientsearch.Location = new Point(toolStrip1.Width - 352, 40); 
             }
             else
             {
@@ -1496,7 +1446,6 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
-            Profile_Details_controller controller = new Profile_Details_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1516,7 +1465,6 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -1526,7 +1474,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -1574,7 +1521,6 @@ namespace PappyjoeMVC.View
             var form2 = new Treatment_Plans();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Treatment_controller controller = new Treatment_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1584,7 +1530,6 @@ namespace PappyjoeMVC.View
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
             a.patient_id = linkLabel_id.Text.ToString();
-            Patient_Edit_controller controller = new Patient_Edit_controller(a);
             a.ShowDialog();
         }
 
@@ -1592,7 +1537,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1612,7 +1556,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1622,7 +1565,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            //expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
 
@@ -1632,17 +1574,27 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                //doctor_controller controlr = new doctor_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
             }
         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.Login();
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            var form2 = new LabtrackingReport();
+            form2.patient_id = patient_id;
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
         }

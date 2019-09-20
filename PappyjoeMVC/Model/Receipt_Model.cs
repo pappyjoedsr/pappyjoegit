@@ -4,6 +4,11 @@ namespace PappyjoeMVC.Model
     public class Receipt_Model
     {
         Connection db = new Connection();
+        public string check_add_privillege(string doctor_id)
+        {
+            string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PMT' and Permission='A'");
+            return id;
+        }
         public DataTable receipt_number()
         {
             DataTable receipt = db.table("select receipt_number,receipt_prefix from tbl_receipt_automationid where receipt_automation='Yes'");
@@ -94,6 +99,21 @@ namespace PappyjoeMVC.Model
         {
             DataTable Payments = db.table("select receipt_no,amount_paid,invoice_no,procedure_name from tbl_payment where payment_date='" + date + "' and pt_id='" + patient_id + "'");
             return Payments;
+        }
+        public DataTable receipt_printSettings()
+        {
+            DataTable print = db.table("select header,left_text,right_text,fullwidth_context,left_sign,right_sign from  tbl_receipt_printsettings");
+            return print;
+        }
+        public DataTable get_printSettings()
+        {
+            DataTable print = db.table("select * from tbl_receipt_printsettings");
+            return print;
+        }
+        public DataTable get_paymentDate(string patient_id)
+        {
+            DataTable Payment = db.table("select  distinct(payment_date) from tbl_payment where pt_id='" + patient_id + "'AND payment_date!='' order by payment_date desc");
+            return Payment;
         }
     }
 }

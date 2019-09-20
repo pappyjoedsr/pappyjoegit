@@ -12,7 +12,7 @@ using PappyjoeMVC.Model;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Add_Finished_Procedure : Form,addfinsed_treatment_interface
+    public partial class Add_Finished_Procedure : Form
     {
         public string doctor_id = "";
         public string patient_id = "";
@@ -22,12 +22,7 @@ namespace PappyjoeMVC.View
         public string[] tooth = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
         public string id;
         public string plan_p_id = "0";
-        Addfinsed_Treatment_controller cntrl;
-        //common_model cmodel = new common_model();
-        public void SetController(Addfinsed_Treatment_controller controller)
-        {
-            cntrl = controller;
-        }
+        Addfinsed_Treatment_controller cntrl=new Addfinsed_Treatment_controller();
         public Add_Finished_Procedure()
         {
             InitializeComponent();
@@ -35,92 +30,98 @@ namespace PappyjoeMVC.View
 
         private void AddFinishedprocedure_Load(object sender, EventArgs e)
         {
-            toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
-            DataTable clinicname =  this.cntrl.Get_CompanyNAme();
-            if (clinicname.Rows.Count > 0)
+            try
             {
-                string clinicn = "";
-                clinicn = clinicname.Rows[0]["name"].ToString();
-                toolStripButton1.Text = clinicn.Replace("¤", "'");
-            }
-            string docnam = this.cntrl.Get_DoctorName(doctor_id);
-            if (docnam!="")
-            {
-                toolStripTextDoctor.Text = "Logged In As : " + docnam;
-            }
-            DataTable dt = this.cntrl.get_all_doctorname();
-            Cmb_Doctor.DataSource = dt;
-             Cmb_Doctor.DisplayMember = "doctor_name";
-            Cmb_Doctor.ValueMember = "id";
-            if (doctor_id != "0")
-            {
-                int dr_index = 0;
-                if (dt.Rows.Count > 0)
+
+
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                toolStripButton1.Text = this.cntrl.Load_CompanyName();
+                string docnam = this.cntrl.Get_DoctorName(doctor_id);
+                if (docnam != "")
                 {
-                    for (int j = 0; j < dt.Rows.Count; j++)
+                    toolStripTextDoctor.Text = "Logged In As : " + docnam;
+                }
+                DataTable dt = this.cntrl.get_all_doctorname();
+                Cmb_Doctor.DataSource = dt;
+                Cmb_Doctor.DisplayMember = "doctor_name";
+                Cmb_Doctor.ValueMember = "id";
+                if (doctor_id != "0")
+                {
+                    int dr_index = 0;
+                    if (dt.Rows.Count > 0)
                     {
-                        if (dt.Rows[j]["id"].ToString() == doctor_id)
+                        for (int j = 0; j < dt.Rows.Count; j++)
                         {
-                            dr_index = j;
+                            if (dt.Rows[j]["id"].ToString() == doctor_id)
+                            {
+                                dr_index = j;
+                            }
                         }
+                        Cmb_Doctor.SelectedIndex = dr_index;
                     }
-                    Cmb_Doctor.SelectedIndex = dr_index;
+                }
+                lab_teethValues.Text = "";
+                txt_Discount.Visible = false;
+                Cmb_Discount.Hide();
+                proceduretreatgrid1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                proceduretreatgrid1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                proceduretreatgrid1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                proceduretreatgrid1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                proceduretreatgrid.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DataTable dtb = this.cntrl.Load_finishedtreatments(patient_id);
+                Load_finishedtreatments(dtb);
+                DataTable dt_pt = this.cntrl.load_proceduresgrid();
+                load_proceduresgrid(dt_pt);
+                if (treatment_plan != "")
+                {
+                    string value = treatment_plan;
+                    string[] parts = value.Split(new string[] { "," }, StringSplitOptions.None);
+                    for (int i = 0; i < parts.Length; i++)
+                    {
+                        DataTable dtb_treatmnt = this.cntrl.Load_treatmentPlans(parts[i]);
+                        Load_TreatmentPlans(dtb_treatmnt);
+                    }
+                    Decimal totalcost = 0;
+                    Decimal totaldiscount = 0;
+                    Decimal totalgrand = 0;
+                    for (int i = 0; i < proceduretreatgrid1.Rows.Count; i++)
+                    {
+                        totalcost = totalcost + (Convert.ToDecimal(proceduretreatgrid1.Rows[i].Cells[3].Value.ToString()) * Convert.ToDecimal(proceduretreatgrid1.Rows[i].Cells[2].Value.ToString()));
+                        totaldiscount = totaldiscount + Convert.ToDecimal(proceduretreatgrid1.Rows[i].Cells[7].Value.ToString());
+                        totalgrand = totalgrand + Convert.ToDecimal(proceduretreatgrid1.Rows[i].Cells[6].Value.ToString());
+                    }
+                    lab_TCostINR.Text = String.Format("{0:C0}", totalcost);
+                    Lab_DiscountTotalINR.Text = String.Format("{0:C0}", totaldiscount);
+                    lab_GTotalINR.Text = String.Format("{0:C0}", totalgrand);
+                }
+                System.Data.DataTable rs_patients = this.cntrl.Get_Patient_Details(patient_id);
+                if (rs_patients.Rows.Count > 0)
+                {
+                    if (rs_patients.Rows[0]["pt_name"].ToString() != "")
+                    {
+                        linkLabel_Name.Text = rs_patients.Rows[0]["pt_name"].ToString();
+                    }
+                    if (rs_patients.Rows[0]["pt_id"].ToString() != "")
+                    {
+                        linkLabel_id.Text = rs_patients.Rows[0]["pt_id"].ToString();
+                    }
+                    if (rs_patients.Rows[0]["primary_mobile_number"].ToString() != "")
+                    {
+                        Patient_mobile = rs_patients.Rows[0]["pt_id"].ToString();
+                    }
+                }
+                foreach (DataGridViewColumn column in proceduretreatgrid1.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
+                foreach (DataGridViewColumn column in proceduretreatgrid.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
-            lab_teethValues.Text = "";
-            txt_Discount.Visible = false;
-            Cmb_Discount.Hide();
-            proceduretreatgrid1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            proceduretreatgrid1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            proceduretreatgrid1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            proceduretreatgrid1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            proceduretreatgrid.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            this.cntrl.Load_finishedtreatments(patient_id);
-            this.cntrl.load_proceduresgrid();
-            if (treatment_plan != "")
+            catch (Exception ex)
             {
-                string value = treatment_plan;
-                string[] parts = value.Split(new string[] { "," }, StringSplitOptions.None);
-                for (int i = 0; i < parts.Length; i++)
-                {
-                    this.cntrl.Load_treatmentPlans(parts[i]);
-                }
-                Decimal totalcost = 0;
-                Decimal totaldiscount = 0;
-                Decimal totalgrand = 0;
-                for (int i = 0; i < proceduretreatgrid1.Rows.Count; i++)
-                {
-                    totalcost = totalcost + (Convert.ToDecimal(proceduretreatgrid1.Rows[i].Cells[3].Value.ToString()) * Convert.ToDecimal(proceduretreatgrid1.Rows[i].Cells[2].Value.ToString()));
-                    totaldiscount = totaldiscount + Convert.ToDecimal(proceduretreatgrid1.Rows[i].Cells[7].Value.ToString());
-                    totalgrand = totalgrand + Convert.ToDecimal(proceduretreatgrid1.Rows[i].Cells[6].Value.ToString());
-                }
-                lab_TCostINR.Text = String.Format("{0:C0}", totalcost);
-                Lab_DiscountTotalINR.Text = String.Format("{0:C0}", totaldiscount);
-                lab_GTotalINR.Text = String.Format("{0:C0}", totalgrand);
-            }
-            System.Data.DataTable rs_patients = this.cntrl.Get_Patient_Details(patient_id);
-            if (rs_patients.Rows.Count > 0)
-            {
-                if (rs_patients.Rows[0]["pt_name"].ToString() != "")
-                {
-                    linkLabel_Name.Text = rs_patients.Rows[0]["pt_name"].ToString();
-                }
-                if (rs_patients.Rows[0]["pt_id"].ToString() != "")
-                {
-                    linkLabel_id.Text = rs_patients.Rows[0]["pt_id"].ToString();
-                }
-                if (rs_patients.Rows[0]["primary_mobile_number"].ToString() != "")
-                {
-                    Patient_mobile = rs_patients.Rows[0]["pt_id"].ToString();
-                }
-            }
-            foreach (DataGridViewColumn column in proceduretreatgrid1.Columns)
-            {
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-            }
-            foreach (DataGridViewColumn column in proceduretreatgrid.Columns)
-            {
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -179,7 +180,7 @@ namespace PappyjoeMVC.View
                 if (txtProcedure.Text != "" && txtcost.Text != "")
                 {
                     proceduretreatgrid.RowCount = 0;
-                    this.cntrl.save_procedure_plans();
+                    this.cntrl.save_procedure_plans(txtProcedure.Text ,txtcost.Text);
                     string p = this.cntrl.Get_max_procedureid();
                     int pid = int.Parse(p);
                     txtProcedure.Text = "";
@@ -196,16 +197,6 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        public string Procedure
-        {
-            get { return txtProcedure.Text; }
-            set { txtProcedure.Text = value; }
-        }
-        public decimal Procedure_cost
-        {
-            get { return Convert.ToDecimal(txtcost.Text); }
-            set { txtcost.Text = value.ToString(); }
         }
 
         private void btn_ProcedureClose_Click(object sender, EventArgs e)
@@ -230,18 +221,14 @@ namespace PappyjoeMVC.View
             {    
                 proceduretreatgrid.Rows.Clear();
                 DataTable dtb = new DataTable();
-                this.cntrl.Search_procedure();
+                DataTable dt_search= this.cntrl.Search_procedure(txt_Search.Text);
+                load_proceduresgrid(dtb);
                 this.cntrl.Load_finishedtreatments(patient_id);
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        public string Search
-        {
-            get { return txt_Search.Text; }
-            set { txt_Search.Text = value; }
         }
 
         private void proceduretreatgrid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -275,7 +262,7 @@ namespace PappyjoeMVC.View
                     if (dt_treatment.Rows.Count > 0)
                     {
                         servicetext.Text = dt_treatment.Rows[0]["procedure_name"].ToString();
-                        txt_qty.Text = dt_treatment.Rows[0]["quantity"].ToString();
+                         txt_qty.Text = dt_treatment.Rows[0]["quantity"].ToString();
                         txt_Discount.Text = dt_treatment.Rows[0]["discount"].ToString();
                         Cmb_Discount.Text = dt_treatment.Rows[0]["discount_type"].ToString();
                         RTB_Addnotes.Text = dt_treatment.Rows[0]["note"].ToString();
@@ -1351,18 +1338,18 @@ namespace PappyjoeMVC.View
                         if (dt_pt.Rows.Count == 0)
                         {
                             this.cntrl.save_completed_id(Convert.ToDateTime(proceduretreatgrid1[15, ii].Value.ToString()).ToString("yyyy-MM-dd"), patient_id);
-                            DataTable dt = this.cntrl.get_completedMaxid();
+                            string dt = this.cntrl.get_completedMaxid();
                             int completed_id;
                             try
                             {
-                                if (Int32.Parse(dt.Rows[0][0].ToString()) == 0)
+                                if (Int32.Parse(dt) == 0)
                                 {
                                     j = 1;
                                     completed_id = 0;
                                 }
                                 else
                                 {
-                                    completed_id = Int32.Parse(dt.Rows[0][0].ToString());
+                                    completed_id = Int32.Parse(dt);
                                 }
                             }
                             catch
@@ -1399,7 +1386,7 @@ namespace PappyjoeMVC.View
                     var form2 = new Finished_Procedure();
                     form2.doctor_id = doctor_id;
                     form2.patient_id = patient_id;
-                    Finished_Procedre_controller controller = new Finished_Procedre_controller(form2);
+
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -1420,7 +1407,6 @@ namespace PappyjoeMVC.View
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
             a.patient_id = linkLabel_id.Text.ToString();
-            Patient_Edit_controller controller = new Patient_Edit_controller(a);
             a.ShowDialog();
         }
 
@@ -1428,7 +1414,6 @@ namespace PappyjoeMVC.View
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
             a.patient_id = linkLabel_id.Text.ToString();
-            Patient_Edit_controller controller = new Patient_Edit_controller(a);
             a.ShowDialog();
         }
 
@@ -1437,7 +1422,6 @@ namespace PappyjoeMVC.View
             var form2 = new Finished_Procedure();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Finished_Procedre_controller controller = new Finished_Procedre_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1486,7 +1470,6 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -1496,7 +1479,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -1536,7 +1518,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1562,7 +1543,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            //expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
 
@@ -1572,7 +1552,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                //doctor_controller controlr = new doctor_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -1585,13 +1564,11 @@ namespace PappyjoeMVC.View
             {
                 panel4.Show();
                 label19.Text = "Hide ChildTeeth";
-                //childteethview();
             }
             else
             {
                 panel4.Hide();
                 label19.Text = "Show ChildTeeth";
-                // childteethHide();
             }
         }
 
@@ -1625,10 +1602,21 @@ namespace PappyjoeMVC.View
             }
         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.Login();
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            var form2 = new LabtrackingReport();
+            form2.patient_id = patient_id;
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
         }

@@ -5,44 +5,44 @@ namespace PappyjoeMVC.Controller
 {
     public class Patients_controller
     {
-        patients_interface intr;
+        //patients_interface intr;
         Patients_model _model = new Patients_model();
         Common_model cmodel = new Common_model();
-        public Patients_controller(patients_interface inttr)
-        {
-            intr = inttr;
-            intr.Setcontroller(this);
-        }
+        //public Patients_controller(patients_interface inttr)
+        //{
+        //    intr = inttr;
+        //    intr.Setcontroller(this);
+        //}
 
-        public void Get_all_Patients()
+        public DataTable Get_all_Patients()
         {
             DataTable dtb = _model.Get_all_Patients();
-            intr.Create_Datagrid(dtb);
+            return dtb;// intr.Create_Datagrid(dtb);
         }
-        public void group()
+        public DataTable group()
         {
             DataTable dtb = _model.group();
-            intr.Load_Group(dtb);
+            return dtb;// intr.Load_Group(dtb);
         }
-        public void Get_appointment_data(DateTime startDateTime, DateTime startDateTime1)
+        public DataTable Get_appointment_data(DateTime startDateTime, DateTime startDateTime1)
         {
             DataTable dtb = _model.Get_appointment_data(startDateTime, startDateTime1);
-            intr.Appointment_Data(dtb);
+            return dtb;// intr.Appointment_Data(dtb);
         }
-        public void Get_vitalSigns(DateTime startDateTime, DateTime startDateTime1)
+        public DataTable Get_vitalSigns(DateTime startDateTime, DateTime startDateTime1)
         {
             DataTable dtb = _model.Get_vitalSigns(startDateTime, startDateTime1);
-            intr.VitalSigns(dtb);
+            return dtb;// intr.VitalSigns(dtb);
         }
         public DataTable Patient_details(string ptid)
         {
             DataTable rs_patients = _model.Patient_details(ptid);
             return rs_patients;
         }
-        public void clinic_findings(DateTime startDateTime, DateTime startDateTime1)
+        public DataTable clinic_findings(DateTime startDateTime, DateTime startDateTime1)
         {
             DataTable dtb = _model.clinic_findings(startDateTime, startDateTime1);
-            intr.ClinicFindings(dtb);
+            return dtb;// intr.ClinicFindings(dtb);
         }
         public DataTable complaints(string pt_id)
         {
@@ -69,130 +69,130 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.notes(pt_id);
             return dtb;
         }
-        public void treatmentPlan(DateTime start, DateTime startDateTime1)
+        public DataTable treatmentPlan(DateTime start, DateTime startDateTime1)
         {
             DataTable dtb = _model.treatmentPlan(start, startDateTime1);
-            intr.TreatmentPlan(dtb);
+            return dtb;// intr.TreatmentPlan(dtb);
         }
         public DataTable treatements_items(string id)
         {
             DataTable dtb = _model.treatements_items(id);
             return dtb;
         }
-        public void finishedprocedure(DateTime startDateTime, DateTime startDateTime1)
+        public DataTable finishedprocedure(DateTime startDateTime, DateTime startDateTime1)
         {
             DataTable dtb = _model.finishedprocedure(startDateTime, startDateTime1);
-            intr.FinishedProcedure(dtb);
+            return dtb;// intr.FinishedProcedure(dtb);
         }
         public DataTable finished_sub(string id)
         {
             DataTable dtb = _model.finished_sub(id);
             return dtb;
         }
-        public void Prescription(DateTime startDateTime, DateTime startDateTime1)
+        public DataTable Prescription(DateTime startDateTime, DateTime startDateTime1)
         {
             DataTable dtb = _model.Prescription(startDateTime, startDateTime1);
-            intr.Prescription(dtb);
+            return dtb;// intr.Prescription(dtb);
         }
         public DataTable prescription_details(string id)
         {
             DataTable dtb = _model.prescription_details(id);
             return dtb;
         }
-        public void invoice(DateTime startDateTime, DateTime startDateTime1)
+        public DataTable invoice(DateTime startDateTime, DateTime startDateTime1)
         {
             DataTable dtb = _model.invoice(startDateTime, startDateTime1);
-            intr.Invoice(dtb);
+            return dtb;// intr.Invoice(dtb);
         }
         public DataTable invoice_sub(string id)
         {
             DataTable dtb = _model.invoice_sub(id);
             return dtb;
         }
-        public void Payment(DateTime startDateTime, DateTime startDateTime1)
+        public DataTable Payment(DateTime startDateTime, DateTime startDateTime1)
         {
             DataTable dtb = _model.Payment(startDateTime, startDateTime1);
-            intr.Payments(dtb);
+            return dtb;// intr.Payments(dtb);
         }
         public DataTable payment_sub(string date)
         {
             DataTable dtb = _model.payment_sub(date);
             return dtb;
         }
-        public void recently_visited(DateTime d, DateTime todate)
+        public DataTable recently_visited(DateTime d, DateTime todate)
         {
             DataTable dtb = _model.recently_visited(d, todate);
-            intr.Create_Datagrid(dtb);
+            return dtb;// intr.Create_Datagrid(dtb);
         }
-        public void Recently_added(DateTime d, DateTime todate)
+        public DataTable Recently_added(DateTime d, DateTime todate)
         {
             DataTable dtb = _model.Recently_added(d, todate);
-            intr.Create_Datagrid(dtb);
+            return dtb;// intr.Create_Datagrid(dtb);
         }
-        public void upcomming_appointments(DateTime startDateTime)
+        public DataTable upcomming_appointments(DateTime startDateTime)
         {
             DataTable dtb = _model.upcomming_appointments(startDateTime);
-            intr.Create_Datagrid(dtb);
+            return dtb;// intr.Create_Datagrid(dtb);
         }
-        public void birthday()
+        public DataTable birthday()
         {
             DataTable dtb = _model.birthday();
-            intr.Create_Datagrid(dtb);
+            return dtb;// intr.Create_Datagrid(dtb);
         }
-        public void cancelled_appointment()
+        public DataTable cancelled_appointment()
         {
             DataTable dtb = _model.cancelled_appointment();
-            intr.Create_Datagrid(dtb);
+            return dtb;// intr.Create_Datagrid(dtb);
         }
-        public void innactive_patients()
+        public DataTable innactive_patients()
         {
             DataTable dtb = _model.innactive_patients();
-            intr.Create_Datagrid(dtb);
+            return dtb;//  intr.Create_Datagrid(dtb);
         }
-        public void patients_wit_group(string id4)
+        public DataTable patients_wit_group(string id4)
         {
             DataTable dtb = _model.innactive_patients();
-            intr.Create_Datagrid(dtb);
+            return dtb;//  intr.Create_Datagrid(dtb);
         }
-        public void allpatient_search(string name)
+        public DataTable allpatient_search(string name)
         {
             DataTable dtb = _model.allpatient_search(name);
-            intr.Create_Datagrid(dtb);
+            return dtb;// intr.Create_Datagrid(dtb);
         }
-        public void recently_visited_search(DateTime d, DateTime todate, string name)
+        public DataTable recently_visited_search(DateTime d, DateTime todate, string name)
         {
             DataTable dtb = _model.recently_visited_search(d, todate, name);
-            intr.Create_Datagrid(dtb);
+            return dtb;// intr.Create_Datagrid(dtb);
         }
-        public void recently_added_search(DateTime d, DateTime todate, string name)
+        public DataTable  recently_added_search(DateTime d, DateTime todate, string name)
         {
             DataTable dtb = _model.recently_added_search(d, todate, name);
-            intr.Create_Datagrid(dtb);
+            return dtb;// intr.Create_Datagrid(dtb);
         }
-        public void upcomming_appointments_search(DateTime startDateTime, string name)
+        public DataTable  upcomming_appointments_search(DateTime startDateTime, string name)
         {
             DataTable dtb = _model.upcomming_appointments_search(startDateTime, name);
-            intr.Create_Datagrid(dtb);
+            return dtb;// intr.Create_Datagrid(dtb);
         }
-        public void birthday_search(string name)
+        public DataTable birthday_search(string name)
         {
             DataTable dtb = _model.birthday_search(name);
-            intr.Create_Datagrid(dtb);
+            return dtb;// intr.Create_Datagrid(dtb);
         }
-        public void cancelled_appointmnt_search(string name)
+        public DataTable  cancelled_appointmnt_search(string name)
         {
             DataTable dtb = _model.cancelled_appointmnt_search(name);
-            intr.Create_Datagrid(dtb);
+            return dtb;// intr.Create_Datagrid(dtb);
         }
-        public void innactive_patients_search(string name)
+        public DataTable innactive_patients_search(string name)
         {
             DataTable dtb = _model.innactive_patients_search(name);
-            intr.Create_Datagrid(dtb);
+            return dtb;//  intr.Create_Datagrid(dtb);
         }
-        public void patients_wit_group_search(string id4, string name)
+        public DataTable patients_wit_group_search(string id4, string name)
         {
             DataTable dtb = _model.patients_wit_group_search(id4, name);
-            intr.Create_Datagrid(dtb);
+            return dtb;// intr.Create_Datagrid(dtb);
         }
         public DataTable Patient_search(string patid)
         {

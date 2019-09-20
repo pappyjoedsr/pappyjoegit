@@ -352,6 +352,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
             this.toolStripButton2.Text = "Calendar";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -439,6 +440,7 @@
             this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
             this.toolStripButton12.Text = "Lab Tracking";
             this.toolStripButton12.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
             // 
             // toolStripButton8
             // 
@@ -957,7 +959,7 @@
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(122, 2);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(20, 15);
+            this.label25.Size = new System.Drawing.Size(19, 15);
             this.label25.TabIndex = 4;
             this.label25.Text = "To";
             // 
@@ -2341,7 +2343,7 @@
             this.panel_clinicaldetails.Controls.Add(this.text_clinic_special);
             this.panel_clinicaldetails.Controls.Add(this.dataGridView_clinic_special);
             this.panel_clinicaldetails.Controls.Add(this.button_clinic_specialdelete);
-            this.panel_clinicaldetails.Location = new System.Drawing.Point(3, 218);
+            this.panel_clinicaldetails.Location = new System.Drawing.Point(3, 135);
             this.panel_clinicaldetails.Name = "panel_clinicaldetails";
             this.panel_clinicaldetails.Size = new System.Drawing.Size(1363, 708);
             this.panel_clinicaldetails.TabIndex = 32;

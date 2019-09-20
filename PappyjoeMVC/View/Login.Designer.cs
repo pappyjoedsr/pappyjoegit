@@ -152,6 +152,7 @@
             this.Btn_Login.TabIndex = 5;
             this.Btn_Login.Text = "LOGIN";
             this.Btn_Login.UseVisualStyleBackColor = false;
+            this.Btn_Login.Click += new System.EventHandler(this.Btn_Login_Click);
             // 
             // PB_Username
             // 

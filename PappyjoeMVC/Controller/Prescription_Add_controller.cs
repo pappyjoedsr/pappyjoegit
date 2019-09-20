@@ -4,17 +4,17 @@ namespace PappyjoeMVC.Controller
 {
     public class Prescription_Add_controller
     {
-        Prescription_Add_interface intr;
+        //Prescription_Add_interface intr;
         Common_model cmodel = new Common_model();
         Prescription_Setting_model pmodel = new Prescription_Setting_model();
         Prescription_model _model = new Prescription_model();
         Inventory_model inmodel = new Inventory_model();
         //addfinsed_treatment_model fmodel = new addfinsed_treatment_model();
-        public Prescription_Add_controller(Prescription_Add_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
+        //public Prescription_Add_controller(Prescription_Add_interface inttr)
+        //{
+        //    intr = inttr;
+        //    intr.SetController(this);
+        //}
         public DataTable Get_CompanyNAme()
         {
             DataTable dtb = cmodel.Get_CompanyNAme();
@@ -77,11 +77,6 @@ namespace PappyjoeMVC.Controller
         }
         public void Save_Drug(string name, string type, string unit, string strength, string instruction)
         {
-            //pmodel.Drugname = name;
-            //pmodel.StrType = type;
-            //pmodel.StrUnit = unit;
-            //pmodel.Strength_gr = strength;
-            //pmodel.Instruction = instruction;
             pmodel.Save_Drug(name, type, unit, strength, instruction);
         }
         public DataTable Get_Stock(string id)

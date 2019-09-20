@@ -606,7 +606,6 @@ namespace PappyjoeMVC.View
         private void linkLabel_Name_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
-            Patient_Edit_controller cnt = new Patient_Edit_controller(a);
             a.patient_id = linkLabel_id.Text.ToString();
             a.Show();
         }
@@ -614,7 +613,6 @@ namespace PappyjoeMVC.View
         private void linkLabel_id_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
-            Patient_Edit_controller cnt = new Patient_Edit_controller(a);
             a.patient_id = linkLabel_id.Text.ToString();
             a.Show();
         }
@@ -658,7 +656,6 @@ namespace PappyjoeMVC.View
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
-            Profile_Details_controller cnt = new Profile_Details_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
@@ -870,7 +867,7 @@ namespace PappyjoeMVC.View
                     else
                     {
                         var form2 = new Add_New_Patients();
-                        Add_New_patient_controller cn = new Add_New_patient_controller(form2);
+                        //Add_New_patient_controller cn = new Add_New_patient_controller(form2);
                         form2.doctor_id = doctor_id;
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
@@ -880,7 +877,7 @@ namespace PappyjoeMVC.View
                 else
                 {
                     var form2 = new Add_New_Patients();
-                    Add_New_patient_controller cn = new Add_New_patient_controller(form2);
+                    //Add_New_patient_controller cn = new Add_New_patient_controller(form2);
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
@@ -1000,7 +997,7 @@ namespace PappyjoeMVC.View
                         btnSave.Enabled = true;
                     }
                 }
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
                 DataTable clinicname = this.cntrl.Get_CompanyNAme();
                 if (clinicname.Rows.Count > 0)
                 {

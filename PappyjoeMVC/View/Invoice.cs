@@ -13,7 +13,7 @@ using PappyjoeMVC.Controller;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
-    public partial class Invoice : Form,invoice_interface
+    public partial class Invoice : Form
     {
         public string doctor_id = "0";
         public string staff_id = "";
@@ -24,7 +24,7 @@ namespace PappyjoeMVC.View
         int button_value = 0;
         int k = 0;
         System.Drawing.Image logo = null;
-        Invoice_controller cntrl;
+        Invoice_controller cntrl=new Invoice_controller();
         Common_model cmodel = new Common_model();
         Inventory_model inv_model = new Inventory_model();
         Connection db = new Connection();
@@ -90,7 +90,7 @@ namespace PappyjoeMVC.View
                 }
                 System.Data.DataTable clinicname = cmodel.Get_CompanyNAme();
                 toolStripButton4.Visible = true;
-                toolStripButton9.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
+                toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
                 if (clinicname.Rows.Count > 0)
                 {
                     string clinicn = "";
@@ -126,8 +126,10 @@ namespace PappyjoeMVC.View
                     linkLabel_id.Text = pat.Rows[0]["pt_id"].ToString();
                     linkLabel_Name.Text = pat.Rows[0]["pt_name"].ToString();
                 }
-                this.cntrl.get_total_payment(patient_id);
-                this.cntrl.Get_invoice_mainDetails(patient_id);
+                DataTable dtb= this.cntrl.get_total_payment(patient_id);
+                set_totalPayment(dtb);
+                DataTable dt_invoice_main = this.cntrl.Get_invoice_mainDetails(patient_id);
+                Load_MainTable(dt_invoice_main);
             }
             catch (Exception ex)
             {
@@ -391,10 +393,10 @@ namespace PappyjoeMVC.View
                     DialogResult res  = MessageBox.Show("Are you sure you want to delete..?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (res == DialogResult.Yes)
                     {
-                        System.Data.DataTable invoice_type = this.cntrl.Get_type(invoice_plan_id);
-                        if (invoice_type.Rows.Count > 0)
+                        string invoice_type = this.cntrl.Get_type(invoice_plan_id);
+                        if (invoice_type!="")
                         {
-                            if (invoice_type.Rows[0]["type"].ToString() == "drug")
+                            if (invoice_type == "drug")
                             {
                                 System.Data.DataTable dt_in_main = this.cntrl.InvoiceDetails(invoice_plan_id);
                                 if (dt_in_main.Rows.Count > 0)
@@ -419,7 +421,7 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                             }
-                            else if (Convert.ToString(invoice_type.Rows[0]["type"].ToString()) == "service")
+                            else if (Convert.ToString(invoice_type) == "service")
                             {
                                 System.Data.DataTable dt_in_main = this.cntrl.InvoiceDetails(invoice_plan_id);
                                 if (dt_in_main.Rows.Count > 0)
@@ -430,10 +432,11 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                             }
-                            this.cntrl.delete_invoice(invoice_plan_id);
+                            this.cntrl.delete_from_invoice(invoice_plan_id);
                         }
                         this.cntrl.get_total_payment(patient_id);
-                        this.cntrl.Get_invoice_mainDetails(patient_id);
+                        DataTable dt_invoice_main = this.cntrl.Get_invoice_mainDetails(patient_id);
+                        Load_MainTable(dt_invoice_main);
                     }
                 }
             }
@@ -694,8 +697,8 @@ namespace PappyjoeMVC.View
                         else if (dgv_invoice.Rows[currentMouseOverRow].Cells[0].Value.ToString() != "0" && dgv_invoice.Rows[currentMouseOverRow].Cells[2].Value.ToString() == "INVOICE NUMBER")
                         {
                             invoice_plan_id = dgv_invoice.Rows[currentMouseOverRow].Cells[0].Value.ToString();
-                            System.Data.DataTable dt_pay = this.cntrl.Get_paymentid(dgv_invoice.Rows[currentMouseOverRow + 1].Cells[2].Value.ToString());
-                            if (dt_pay.Rows.Count > 0)
+                            string dt_pay = this.cntrl.Get_paymentid(dgv_invoice.Rows[currentMouseOverRow + 1].Cells[2].Value.ToString());
+                            if  (Convert.ToInt32( dt_pay) > 0)
                             {
                                 deleteToolStripMenuItem1.Enabled = false;
                             }
@@ -1112,7 +1115,6 @@ namespace PappyjoeMVC.View
             var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Profile_Details_controller ctr = new Profile_Details_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1124,7 +1126,6 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.status = 1;
-            Add_Receipt_controller controller = new Add_Receipt_controller(form2);
             int i = 0; int j = 0;
             while (i < dgv_invoice.Rows.Count)
             {
@@ -1158,7 +1159,6 @@ namespace PappyjoeMVC.View
             var form2 = new Add__invoice();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Add_Invoice_controller controller = new Add_Invoice_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1168,7 +1168,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1178,7 +1177,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1249,7 +1247,6 @@ namespace PappyjoeMVC.View
             var form2 = new Treatment_Plans();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Treatment_controller controller = new Treatment_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1260,7 +1257,6 @@ namespace PappyjoeMVC.View
             var form2 = new Finished_Procedure();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Finished_Procedre_controller controller = new Finished_Procedre_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1281,7 +1277,6 @@ namespace PappyjoeMVC.View
             var form2 = new Invoice();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Invoice_controller controller = new Invoice_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1292,7 +1287,6 @@ namespace PappyjoeMVC.View
             var form2 = new Receipt();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Receipt_controller controller = new Receipt_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1333,7 +1327,6 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
-            Profile_Details_controller controller = new Profile_Details_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1353,7 +1346,7 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    Add_New_patient_controller controller = new Add_New_patient_controller(form2);
+                    //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -1363,7 +1356,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                Add_New_patient_controller controller = new Add_New_patient_controller(form2);
+                //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -1404,7 +1397,6 @@ namespace PappyjoeMVC.View
             var form2 = new Ledger();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Ledger_controller controller = new Ledger_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1428,6 +1420,25 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             Prescription_Show_controller controller = new Prescription_Show_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            var form2 = new LabtrackingReport();
+            form2.patient_id = patient_id;
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
         }

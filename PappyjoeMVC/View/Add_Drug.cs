@@ -316,7 +316,6 @@ namespace PappyjoeMVC.View
         private void btn_Addunit_Click(object sender, EventArgs e)
         {
             Add_Units frm = new Add_Units();
-            Add_Unit_controller cntrl = new Add_Unit_controller(frm);
             frm.ShowDialog();
             DataTable dtb = this.cntrl.fill_unit();
             if (dtb.Rows.Count > 0)
@@ -328,7 +327,6 @@ namespace PappyjoeMVC.View
         private void btn_Addunit1_Click(object sender, EventArgs e)
         {
             Add_Units frm = new Add_Units();
-            Add_Unit_controller cntrl = new Add_Unit_controller(frm);
             frm.ShowDialog();
             DataTable dtb = this.cntrl.fill_unit();
             if (dtb.Rows.Count > 0)
@@ -341,7 +339,6 @@ namespace PappyjoeMVC.View
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Add_Categeory fr = new Add_Categeory();
-            Add_Category_controller cntrl = new Add_Category_controller(fr);
             fr.ShowDialog();
             DataTable dt_Category = this.cntrl.fill_category();
             if (dt_Category.Rows.Count > 0)

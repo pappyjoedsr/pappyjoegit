@@ -87,7 +87,7 @@ namespace PappyjoeMVC.View
                     }
                 }
                 //Privilege set ends
-                toolStripButton18.ToolTipText = PappyjoeMVC.Model.Global_Variables.Version;
+                toolStripButton18.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
                 dataGridView1.Size = new System.Drawing.Size(this.Width - 312, 617);
                 System.Data.DataTable clinicname = this.cntrl.Get_CompanyNAme();// db.table("select name,path from tbl_practice_details");
                 if (clinicname.Rows.Count > 0)
@@ -135,77 +135,8 @@ namespace PappyjoeMVC.View
                 dataGridView1.ColumnHeadersVisible = false;
                 dataGridView1.RowHeadersVisible = false;
                 dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                this.cntrl.Get_maindtails(patient_id);// db.table("SELECT tbl_prescription_main.id,tbl_prescription_main.date,tbl_doctor.doctor_name  FROM tbl_prescription_main join tbl_doctor on tbl_prescription_main.dr_id=tbl_doctor.id  where tbl_prescription_main.pt_id='" + patient_id + "' ORDER BY tbl_prescription_main.date DESC");
-                //int i = 0;
-                //for (int j = 0; j < dt_pre_main.Rows.Count; j++)
-                //{
-                //    dataGridView1.Rows.Add("0", String.Format("{0:dddd, MMMM d, yyyy}", Convert.ToDateTime(dt_pre_main.Rows[j]["date"].ToString())), "", "", "");
-                //    dataGridView1.Rows[i].Cells[5].Value = PappyjoeMVC.Properties.Resources.blank;
-                //    dataGridView1.Rows[i].Cells[1].Style.Font = new System.Drawing.Font("Segoe UI", 7, FontStyle.Bold);
-                //    dataGridView1.Rows[i].Cells[1].Style.ForeColor = Color.DarkGreen;
-                //    i = i + 1;
-                //    dataGridView1.Rows.Add(dt_pre_main.Rows[j]["id"].ToString(), "Drug", "Frequency", "Duration", "Instruction", "");
-                //    dataGridView1.Rows[i].Cells[1].Style.BackColor = Color.LightGray;
-                //    dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.LightGray;
-                //    dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.LightGray;
-                //    dataGridView1.Rows[i].Cells[4].Style.BackColor = Color.LightGray;
-                //    dataGridView1.Rows[i].Cells[5].Style.BackColor = Color.LightGray;
-                //    dataGridView1.Rows[i].Cells[1].Style.ForeColor = Color.Black;
-                //    dataGridView1.Rows[i].Cells[2].Style.ForeColor = Color.Black;
-                //    dataGridView1.Rows[i].Cells[3].Style.ForeColor = Color.Black;
-                //    dataGridView1.Rows[i].Cells[4].Style.ForeColor = Color.Black;
-                //    dataGridView1.Rows[i].Cells[5].Value = PappyjoeMVC.Properties.Resources.Bill;
-                //    System.Data.DataTable dt_prescription = this.cntrl.prescription_details(dt_pre_main.Rows[j]["id"].ToString());// db.table("SELECT drug_name,strength,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,strength_gr FROM tbl_prescription WHERE pres_id='" + dt_pre_main.Rows[j]["id"].ToString() + "' ORDER BY id");
-                //    if (dt_prescription.Rows.Count > 0)
-                //    {
-                //        for (int k = 0; k < dt_prescription.Rows.Count; k++)
-                //        {
-                //            i = i + 1;
-                //            string morning = "";
-                //            string noon = "";
-                //            string night = "";
-                //            string a1 = dt_prescription.Rows[k]["morning"].ToString();
-                //            string[] b1 = a1.Split('.');
-                //            int right1 = int.Parse(b1[1]);
-                //            morning = Convert.ToString(int.Parse(b1[0]));
-                //            if (right1 != 0) { morning = morning + "." + Convert.ToString(int.Parse(b1[1])); }
-                //            string a2 = dt_prescription.Rows[k]["noon"].ToString();
-                //            string[] b2 = a2.Split('.');
-                //            int right2 = int.Parse(b2[1]);
-                //            noon = Convert.ToString(int.Parse(b2[0]));
-                //            if (right2 != 0) { noon = noon + "." + Convert.ToString(int.Parse(b2[1])); }
-                //            string a3 = dt_prescription.Rows[k]["night"].ToString();
-                //            string[] b3 = a3.Split('.');
-                //            int right3 = int.Parse(b3[1]);
-                //            night = Convert.ToString(int.Parse(b3[0]));
-                //            if (right3 != 0) { night = night + "." + Convert.ToString(int.Parse(b3[1])); }
-                //            dataGridView1.Rows.Add("0", dt_prescription.Rows[k]["drug_type"].ToString() + " " + dt_prescription.Rows[k]["drug_name"].ToString() + " " + dt_prescription.Rows[k]["strength"].ToString() + " " + dt_prescription.Rows[k]["strength_gr"].ToString(), morning + " - " + noon + " - " + night, dt_prescription.Rows[k]["duration_unit"].ToString() + " " + dt_prescription.Rows[k]["duration_period"].ToString(), dt_prescription.Rows[k]["add_instruction"].ToString(), "");
-                //            dataGridView1.Rows[i].Cells[5].Value = PappyjoeMVC.Properties.Resources.blank;
-                //            dataGridView1.Rows[i].Height = 30;
-                //        }
-                //    }
-                //    i = i + 1;
-                //    dataGridView1.Rows.Add("0", "Prescribed by Dr." + dt_pre_main.Rows[j]["doctor_name"].ToString(), "", "", "");
-                //    dataGridView1.Rows[i].Cells[1].Style.ForeColor = Color.Red;
-                //    dataGridView1.Rows[i].Cells[1].Style.Font = new System.Drawing.Font("Segoe UI", 7, FontStyle.Bold);
-                //    dataGridView1.Rows[i].Cells[5].Value = PappyjoeMVC.Properties.Resources.blank;
-                //    i = i + 1;
-                //    dataGridView1.Rows.Add("0", "", "", "", "");
-                //    dataGridView1.Rows[i].Cells[5].Value = PappyjoeMVC.Properties.Resources.blank;
-                //    i = i + 1;
-                //}
-                //if (dataGridView1.Rows.Count <= 0)
-                //{
-                //    Label_NORecordFound.Show();
-                //    dataGridView1.Hide();
-                //    //Label_NORecordFound.Location = new System.Drawing.Point(350, 350);
-                //}
-                //else
-                //{
-                //    Label_NORecordFound.Hide();
-                //    dataGridView1.Show();
-                //    // Label_NORecordFound.Location = new System.Drawing.Point(350, 350);
-                //}
+                DataTable dt_pre_main = this.cntrl.Get_maindtails(patient_id);
+                Load_MainGrid(dt_pre_main);
             }
             catch (Exception ex)
             {
@@ -589,7 +520,6 @@ namespace PappyjoeMVC.View
             var form2 = new Prescription_Add();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Prescription_Add_controller controller = new Prescription_Add_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -635,7 +565,6 @@ namespace PappyjoeMVC.View
                         form2.doctor_id = doctor_id;
                         form2.prescription_id = prescription_id;
                         form2.patient_id = patient_id;
-                        Prescription_Add_controller controller = new Prescription_Add_controller(form2);
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
                         form2.ShowDialog();
@@ -650,7 +579,6 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.prescription_id = prescription_id;
                     form2.patient_id = patient_id;
-                    Prescription_Add_controller controller = new Prescription_Add_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -1566,7 +1494,6 @@ namespace PappyjoeMVC.View
             var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Profile_Details_controller ctr = new Profile_Details_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1576,7 +1503,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1586,7 +1512,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
-            Patients_controller controllr = new Patients_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1657,7 +1582,6 @@ namespace PappyjoeMVC.View
             var form2 = new Treatment_Plans();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Treatment_controller controller = new Treatment_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1668,7 +1592,6 @@ namespace PappyjoeMVC.View
             var form2 = new Finished_Procedure();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Finished_Procedre_controller controller = new Finished_Procedre_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1689,7 +1612,6 @@ namespace PappyjoeMVC.View
             var form2 = new Invoice();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Invoice_controller controller = new Invoice_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1700,7 +1622,6 @@ namespace PappyjoeMVC.View
             var form2 = new Receipt();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Receipt_controller controller = new Receipt_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1711,7 +1632,6 @@ namespace PappyjoeMVC.View
             var form2 = new Ledger();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Ledger_controller controller = new Ledger_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1753,7 +1673,7 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    Add_New_patient_controller controller = new Add_New_patient_controller(form2);
+                    //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -1763,7 +1683,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                Add_New_patient_controller controller = new Add_New_patient_controller(form2);
+                //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -1826,6 +1746,25 @@ namespace PappyjoeMVC.View
             {
                 listpatientsearch.Visible = false;
             }
+        }
+
+        private void toolStripButton11_Click(object sender, EventArgs e)
+        {
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            var form2 = new LabtrackingReport();
+            form2.patient_id = patient_id;
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
 
         public void SetController(Prescription_Show_controller controller)

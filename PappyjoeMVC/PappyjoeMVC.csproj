@@ -63,22 +63,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Addfinsed_Treatment_controller.cs" />
-    <Compile Include="Controller\addfinsed_treatment_interface.cs" />
     <Compile Include="Controller\Add_Item_controller.cs" />
+    <Compile Include="Controller\Add_Labwork_controller.cs" />
     <Compile Include="Controller\Add_New_patient_controller.cs" />
-    <Compile Include="Controller\AddNew_patient_interface.cs" />
     <Compile Include="Controller\Add_Appointment_controller.cs" />
     <Compile Include="Controller\Add_Attachments_controller.cs" />
     <Compile Include="Controller\Add_Category_controller.cs" />
-    <Compile Include="Controller\add_category_interface.cs" />
     <Compile Include="Controller\Add_Invoice_controller.cs" />
-    <Compile Include="Controller\Add_invoice_interface.cs" />
     <Compile Include="Controller\Add_Receipt_controller.cs" />
-    <Compile Include="Controller\add_receipt_interface.cs" />
     <Compile Include="Controller\Add_Treatmentplan_controller.cs" />
-    <Compile Include="Controller\add_treatmentplan_interface.cs" />
     <Compile Include="Controller\Add_Unit_controller.cs" />
-    <Compile Include="Controller\add_unit_interface.cs" />
     <Compile Include="Controller\Add_Vital_Signs_controller.cs" />
     <Compile Include="Controller\Appointment_for_each_patient_group_controller.cs" />
     <Compile Include="Controller\Attachments_controller.cs" />
@@ -86,8 +80,8 @@
     <Compile Include="Controller\batchsale_controller.cs" />
     <Compile Include="Controller\Billing_controller.cs" />
     <Compile Include="Controller\Booking_controller.cs" />
-    <Compile Include="Controller\Booking_interface.cs" />
     <Compile Include="Controller\Calender_controller.cs" />
+    <Compile Include="Controller\ChangeStatus_controller.cs" />
     <Compile Include="Controller\Clinical_Notes_Add_controller.cs" />
     <Compile Include="Controller\Clinical_Findings_controller.cs" />
     <Compile Include="Controller\Common_controller.cs" />
@@ -99,6 +93,7 @@
     <Compile Include="Controller\Daily_NewPatients_controller.cs" />
     <Compile Include="Controller\Daily_Treatment_Count_controller.cs" />
     <Compile Include="Controller\Day_Wise_Receipt_controller.cs" />
+    <Compile Include="Controller\Dentalwork_controller.cs" />
     <Compile Include="Controller\Doctor_Practice_controller.cs" />
     <Compile Include="Controller\DoctorWise_appointment_report_controller.cs" />
     <Compile Include="Controller\Doctor_Controller.cs" />
@@ -106,7 +101,6 @@
     <Compile Include="Controller\Doctor_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Edit_Practice_Details_controller.cs" />
     <Compile Include="Controller\EMR_controller.cs" />
-    <Compile Include="Controller\EMR_Interface.cs" />
     <Compile Include="Controller\Expense_controller.cs" />
     <Compile Include="Controller\Expiry_Report_controller.cs" />
     <Compile Include="Controller\Export_controller.cs" />
@@ -115,19 +109,17 @@
     <Compile Include="Controller\Image_Zoom_controller.cs" />
     <Compile Include="Controller\Group_Wise_Report_controller.cs" />
     <Compile Include="Controller\Invoice_controller.cs" />
-    <Compile Include="Controller\invoice_interface.cs" />
     <Compile Include="Controller\ItemListForSales_controller.cs" />
     <Compile Include="Controller\Item_List_Controller.cs" />
     <Compile Include="Controller\LabDental_controller.cs" />
     <Compile Include="Controller\LabMedical_controller.cs" />
+    <Compile Include="Controller\LabResultEntry_controller.cs" />
     <Compile Include="Controller\LabtrackingReport_controller.cs" />
+    <Compile Include="Controller\LabWorks_controller.cs" />
     <Compile Include="Controller\Ledger_controller.cs" />
-    <Compile Include="Controller\Ledger_interface.cs" />
     <Compile Include="Controller\Login_controller.cs" />
-    <Compile Include="Controller\login_interface.cs" />
     <Compile Include="Controller\MainCalendar_Controller.cs" />
     <Compile Include="Controller\Manufacture_controller.cs" />
-    <Compile Include="Controller\manufacture_interface.cs" />
     <Compile Include="Controller\Medical_History_controller.cs" />
     <Compile Include="Controller\Missing_Checkout_Report_controller.cs" />
     <Compile Include="Controller\Monthly_Appointment_count_controller.cs" />
@@ -139,12 +131,9 @@
     <Compile Include="Controller\New_Debit_Account_controller.cs" />
     <Compile Include="Controller\Patients_controller.cs" />
     <Compile Include="Controller\Patients_First_Appointment_controller.cs" />
-    <Compile Include="Controller\patients_interface.cs" />
     <Compile Include="Controller\Patient_Edit_controller.cs" />
-    <Compile Include="Controller\patient_edit_interface.cs" />
     <Compile Include="Controller\Paymode_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Practice_Controller.cs" />
-    <Compile Include="Controller\Practice_interface.cs" />
     <Compile Include="Controller\Prescription_Add_controller.cs" />
     <Compile Include="Controller\Prescription_Add_interface.cs" />
     <Compile Include="Controller\Prescription_Show_controller.cs" />
@@ -153,7 +142,6 @@
     <Compile Include="Controller\Printout_controller.cs" />
     <Compile Include="Controller\Procedure_Catalog_controller.cs" />
     <Compile Include="Controller\Profile_Details_controller.cs" />
-    <Compile Include="Controller\profile_details_interface.cs" />
     <Compile Include="Controller\purchasebatch_controller.cs" />
     <Compile Include="Controller\PurchaseItemReturnReport_controller.cs" />
     <Compile Include="Controller\purchaseItem_controller.cs" />
@@ -171,7 +159,6 @@
     <Compile Include="Controller\Purchase_return_list_controller.cs" />
     <Compile Include="Controller\Purchase_Return_Report_controller.cs" />
     <Compile Include="Controller\Receipt_controller.cs" />
-    <Compile Include="Controller\Receipt_interface.cs" />
     <Compile Include="Controller\Reports_controller.cs" />
     <Compile Include="Controller\SalesOrderItemReport_controller.cs" />
     <Compile Include="Controller\SalesReport_Items_controller.cs" />
@@ -192,15 +179,15 @@
     <Compile Include="Controller\Staff_controller.cs" />
     <Compile Include="Controller\stock_controller.cs" />
     <Compile Include="Controller\Supplier_controller.cs" />
-    <Compile Include="Controller\supplier_interface.cs" />
+    <Compile Include="Controller\Trackingnullstatus_controller.cs" />
     <Compile Include="Controller\Treatment_controller.cs" />
     <Compile Include="Controller\Treatment_For_Each_Category_controller.cs" />
     <Compile Include="Controller\Treatment_For_Each_Doctor_controller.cs" />
-    <Compile Include="Controller\treatment_interface.cs" />
     <Compile Include="Controller\Visiting_History_controller.cs" />
     <Compile Include="Controller\Vital_Signs_controller.cs" />
     <Compile Include="Model\Add_Finished_Treatment_model.cs" />
     <Compile Include="Model\Add_Item_model.cs" />
+    <Compile Include="Model\Add_Labwork_model.cs" />
     <Compile Include="Model\Add_New_Patient_model.cs" />
     <Compile Include="Model\Add_Appointment_model.cs" />
     <Compile Include="Model\Add_Attachments_model.cs" />
@@ -224,6 +211,7 @@
     <Compile Include="Model\Connection.cs" />
     <Compile Include="Model\Contact_model.cs" />
     <Compile Include="Model\Daily_Invoice_Report_model.cs" />
+    <Compile Include="Model\Dentalwork_model.cs" />
     <Compile Include="Model\Doctor_Practice_model.cs" />
     <Compile Include="Model\Doctor_model.cs" />
     <Compile Include="Model\Edit_Practice_Details_model.cs" />
@@ -232,12 +220,13 @@
     <Compile Include="Model\Export_model.cs" />
     <Compile Include="Model\GeneralFunctions.cs" />
     <Compile Include="Model\GlobalVariables.cs" />
-    <Compile Include="Model\Global_Variables.cs" />
     <Compile Include="Model\Inventory_model.cs" />
     <Compile Include="Model\Item_List_Model.cs" />
     <Compile Include="Model\LabDental_model.cs" />
     <Compile Include="Model\LabMedical_model.cs" />
+    <Compile Include="Model\LabResultEntry_model.cs" />
     <Compile Include="Model\LabtrackingReport_model.cs" />
+    <Compile Include="Model\LabWorks_model.cs" />
     <Compile Include="Model\Ledger_model.cs" />
     <Compile Include="Model\Login_model.cs" />
     <Compile Include="Model\MainCalendar_Model.cs" />
@@ -286,6 +275,12 @@
     </Compile>
     <Compile Include="View\Add_Finished_Procedure.Designer.cs">
       <DependentUpon>Add_Finished_Procedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add_Labwork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Add_Labwork.designer.cs">
+      <DependentUpon>Add_Labwork.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Add_New_Patients.cs">
       <SubType>Form</SubType>
@@ -383,6 +378,12 @@
     <Compile Include="View\Add_Clinical_Notes.designer.cs">
       <DependentUpon>Add_Clinical_Notes.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ChangeStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChangeStatus.designer.cs">
+      <DependentUpon>ChangeStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Clinical_Findings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -445,6 +446,12 @@
     </Compile>
     <Compile Include="View\Day_Wise_Receipt.designer.cs">
       <DependentUpon>Day_Wise_Receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dentalwork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dentalwork.designer.cs">
+      <DependentUpon>Dentalwork.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Discharge_Summery.cs">
       <SubType>Form</SubType>
@@ -560,11 +567,23 @@
     <Compile Include="View\Item_List.Designer.cs">
       <DependentUpon>Item_List.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\LabResultEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LabResultEntry.designer.cs">
+      <DependentUpon>LabResultEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\LabtrackingReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\LabtrackingReport.designer.cs">
       <DependentUpon>LabtrackingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LabWorks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LabWorks.designer.cs">
+      <DependentUpon>LabWorks.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Main.cs">
       <SubType>Form</SubType>
@@ -980,6 +999,12 @@
     <Compile Include="View\Show_Appointment.designer.cs">
       <DependentUpon>Show_Appointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Trackingnullstatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Trackingnullstatus.designer.cs">
+      <DependentUpon>Trackingnullstatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Treatment_For_Each_Category.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1025,6 +1050,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Add_Finished_Procedure.resx">
       <DependentUpon>Add_Finished_Procedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Add_Labwork.resx">
+      <DependentUpon>Add_Labwork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Add_New_Patients.resx">
       <DependentUpon>Add_New_Patients.cs</DependentUpon>
@@ -1074,6 +1102,9 @@
     <EmbeddedResource Include="View\Add_Clinical_Notes.resx">
       <DependentUpon>Add_Clinical_Notes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ChangeStatus.resx">
+      <DependentUpon>ChangeStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Clinical_Findings.resx">
       <DependentUpon>Clinical_Findings.cs</DependentUpon>
     </EmbeddedResource>
@@ -1103,6 +1134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Day_Wise_Receipt.resx">
       <DependentUpon>Day_Wise_Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dentalwork.resx">
+      <DependentUpon>Dentalwork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Discharge_Summery.resx">
       <DependentUpon>Discharge_Summery.cs</DependentUpon>
@@ -1161,8 +1195,17 @@
     <EmbeddedResource Include="View\Item_List.resx">
       <DependentUpon>Item_List.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\LabResultEntry.resx">
+      <DependentUpon>LabResultEntry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\LabtrackingReport.resx">
       <DependentUpon>LabtrackingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LabWorks.resx">
+      <DependentUpon>LabWorks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Main_Calendar.resx">
+      <DependentUpon>Main_Calendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Manufacture.resx">
       <DependentUpon>Manufacture.cs</DependentUpon>
@@ -1364,6 +1407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Show_Appointment.resx">
       <DependentUpon>Show_Appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Trackingnullstatus.resx">
+      <DependentUpon>Trackingnullstatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Treatment_For_Each_Category.resx">
       <DependentUpon>Treatment_For_Each_Category.cs</DependentUpon>

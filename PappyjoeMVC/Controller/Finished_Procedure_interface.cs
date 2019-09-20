@@ -9,7 +9,7 @@ namespace PappyjoeMVC.Controller
 {
     public interface Finished_Procedure_interface
     {
-        void Setcontroller(Finished_Procedre_controller controller);
-        void Load_Data(DataTable dtb);
+        //void Setcontroller(Finished_Procedre_controller controller);
+        //void Load_Data(DataTable dtb);
     }
 }

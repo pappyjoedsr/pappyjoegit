@@ -5,18 +5,12 @@ namespace PappyjoeMVC.Controller
 {
     public class Login_controller
     {
-        login_interface intr;
         Login_model _model = new Login_model();
         Connection db = new Connection();
-        public Login_controller(login_interface inttr)
-        {
-            intr = inttr;
-            intr.setcontroller(this);
-        }
-        public void GetActivation()
+        public DataTable GetActivation()
         {
             DataTable dtb = _model.GetActivation();
-            intr.Load_Login(dtb);
+            return dtb;
         }
         public void update_activation()
         {
@@ -27,18 +21,14 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.GetActivation();
             return dtb;
         }
-        public DataTable Get_userdetails()
+        public DataTable Get_userdetails(string Username,string Password)
         {
-            _model.Username = intr.Username;
-            _model.Password = intr.Password;
-            DataTable dttb = _model.Get_userdetails();
+            DataTable dttb = _model.Get_userdetails(Username, Password);
             return dttb;
         }
-        public DataTable Get_Doctor_Activation()
+        public DataTable Get_Doctor_Activation(string Username,string Password)
         {
-            _model.Username = intr.Username;
-            _model.Password = intr.Password;
-            DataTable dtb = _model.Get_Doctor_Activation();
+            DataTable dtb = _model.Get_Doctor_Activation(Username, Password);
             return dtb;
         }
         public DataTable Get_smsconfig()
@@ -48,15 +38,15 @@ namespace PappyjoeMVC.Controller
         }
         public void delete_activation()
         {
-            db.execute("DELETE from tbl_activation");
+            _model.delete_activation();
         }
         public void save_activation(string listgetcode, string listactcode, string lblhexcode)
         {
-            int medi = db.execute("insert into tbl_activation(getcode,actcode,registrationdate,hexacode ) values('" + listgetcode + "','" + listactcode + "','" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "','" + lblhexcode + "')");
+            _model.save_activation( listgetcode,  listactcode,  lblhexcode);
         }
         public void Save_activation_Null()
         {
-            db.execute("insert into tbl_activation (getcode,actcode,registrationdate,hexacode) values('10','10',NULL,NULL)");
+            _model.Save_activation_Null();
         }
     }
 }

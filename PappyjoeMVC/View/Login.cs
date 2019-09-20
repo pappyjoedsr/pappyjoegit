@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using PappyjoeMVC.Controller;
 using Microsoft.Win32;
 using System.Net.NetworkInformation;
@@ -15,32 +14,18 @@ using System.Security.Cryptography;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Login : Form,login_interface
+    public partial class Login : Form
     {
-        Login_controller cntrl;
+        Login_controller cntrl=new Login_controller();
         public string hexcodes1 = "";
         public string hexcodes2 = "";
         public int intAgain;
         public string regdate1 = "";
-        string DOCTORID = "", STAFFID = "";
+        string DOCTORID = "";
 
-        public string Username
-        {
-            get { return txt_userName.Text; }
-            set { txt_userName.Text = value; }
-        }
-        public string Password
-        {
-            get { return txt_password.Text; }
-            set { txt_password.Text = value; }
-        }
         public Login()
         {
             InitializeComponent();
-        }
-        public void setcontroller(Login_controller controller)
-        {
-            cntrl = controller;
         }
         [System.Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint = "DeleteObject")]
         private static extern bool DeleteObject(System.IntPtr hObject);
@@ -65,7 +50,8 @@ namespace PappyjoeMVC.View
         {
             Lab_InvalidLogin.Hide();
             Lab_InvaldActivation.Hide();
-             this.cntrl.GetActivation();
+            DataTable dtb= this.cntrl.GetActivation();
+            Load_Login(dtb);
         }
 
         public void Load_Login(DataTable choice)
@@ -279,8 +265,8 @@ namespace PappyjoeMVC.View
                     }
                     if (actcode == listactcode)
                     {
-                        this.cntrl.delete_activation();// int medidel = db.execute("DELETE from tbl_activation");
-                        this.cntrl.save_activation(listgetcode, listactcode, lblhexcode.Text);// int medi = db.execute("insert into tbl_activation(getcode,actcode,registrationdate,hexacode ) values('" + listgetcode + "','" + listactcode + "','" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "','" + lblhexcode.Text + "')");
+                        this.cntrl.delete_activation();
+                        this.cntrl.save_activation(listgetcode, listactcode, lblhexcode.Text);
                         MessageBox.Show("Activation successfully completed...", "Activated", MessageBoxButtons.OK, MessageBoxIcon.None);
                         panel1.Hide();
                         panel2.Show();
@@ -331,13 +317,13 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                DataTable sd = this.cntrl.Get_userdetails();
+                DataTable sd = this.cntrl.Get_userdetails(txt_userName.Text,txt_password.Text);
                 if (sd.Rows.Count > 0)
                 {
                     string name = sd.Rows[0]["username"].ToString();
                     string password = sd.Rows[0]["password"].ToString();
                     string type = sd.Rows[0]["type"].ToString();
-                    DataTable doctor = this.cntrl.Get_Doctor_Activation();
+                    DataTable doctor = this.cntrl.Get_Doctor_Activation(txt_userName.Text,txt_password.Text);
                     if (doctor.Rows.Count > 0)
                     {
                         if (doctor.Rows[0]["activate_login"].ToString() == "Yes")
@@ -348,24 +334,20 @@ namespace PappyjoeMVC.View
                             DOCTORID = doctor.Rows[0][0].ToString();
                             PappyjoeMVC.Model.Connection.MyGlobals.loginType = type;
                             PappyjoeMVC.Model.Connection.MyGlobals.Doctor_id = DOCTORID;
-                            var form2 = new Main();
-                            //form2.doctor_id = DOCTORID;
-                            form2.Show();
-                            form2.Closed += (sender1, args) => this.Close();
-                            this.Hide();
+                            
                             DataTable sms = this.cntrl.Get_smsconfig();
                             if (sms.Rows.Count > 0)
                             {
                                 if (String.IsNullOrWhiteSpace(sms.Rows[0]["smsName"].ToString()) || String.IsNullOrWhiteSpace(sms.Rows[0]["smsPass"].ToString()))
                                 {
                                     MessageBox.Show("SMS Service not Activated!!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    PappyjoeMVC.Model.Global_Variables.smsName = "";
-                                    PappyjoeMVC.Model.Global_Variables.smsPass = "";
+                                    PappyjoeMVC.Model.GlobalVariables.smsName = "";
+                                    PappyjoeMVC.Model.GlobalVariables.smsPass = "";
                                 }
                                 else
                                 {
-                                    PappyjoeMVC.Model.Global_Variables.smsName = sms.Rows[0]["smsName"].ToString();
-                                    PappyjoeMVC.Model.Global_Variables.smsPass = sms.Rows[0]["smsPass"].ToString();
+                                    PappyjoeMVC.Model.GlobalVariables.smsName = sms.Rows[0]["smsName"].ToString();
+                                    PappyjoeMVC.Model.GlobalVariables.smsPass = sms.Rows[0]["smsPass"].ToString();
                                 }
                                 if (String.IsNullOrWhiteSpace(sms.Rows[0]["emailName"].ToString()) || String.IsNullOrWhiteSpace(sms.Rows[0]["emailPass"].ToString()))
                                 {
@@ -376,6 +358,11 @@ namespace PappyjoeMVC.View
                             {
                                 MessageBox.Show("SMS and Email Services are not Activated!!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
+                            var form2 = new PappyjoeMVC.View.Main_Calendar();
+                            form2.doctor_id = DOCTORID;
+                            form2.Closed += (sender1, args) => this.Close();
+                            this.Hide();
+                            form2.ShowDialog();
                         }
                         else
                         {
@@ -395,5 +382,9 @@ namespace PappyjoeMVC.View
             }
         }
 
+        private void Btn_Login_Click(object sender, EventArgs e)
+        {
+            loginfunction();
+        }
     }
 }

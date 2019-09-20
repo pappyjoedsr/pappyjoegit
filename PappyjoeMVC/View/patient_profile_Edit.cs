@@ -13,27 +13,22 @@ using PappyjoeMVC.Controller;
 using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
-    public partial class Patient_Profile_Edit : Form,patient_edit_interface
+    public partial class Patient_Profile_Edit : Form
     {
-        public string patient_id = "";
-        public string doctor_id = "";
-        Patient_Edit_controller cntrl;
-        Common_model mdl = new Common_model();
         Connection db = new Connection();
-        public string aa, bb, gg, caaa, uaaa, ubbb, loadedPath = "";
-        public string path = "";
+        public string patient_id = "", doctor_id = "";
+        Patient_Edit_controller cntrl = new Patient_Edit_controller();
+        public string aa, bb, gg, caaa, uaaa, ubbb, loadedPath = "", path = "",gender="";
         private void grmedical_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int b = e.RowIndex;
             bb = grmedical.Rows[b].Cells[0].Value.ToString();
         }
-
         private void DateTimePickerDob_ValueChanged(object sender, EventArgs e)
         {
             int age = DateTime.Now.Year - DateTimePickerDob.Value.Year - (DateTime.Now.DayOfYear < DateTimePickerDob.Value.DayOfYear ? 1 : 0);
             txtAge.Text = age.ToString();
         }
-
         private void txtPrimaryMobNbr_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
@@ -46,13 +41,11 @@ namespace PappyjoeMVC.View
                 e.Handled = false;
             }
         }
-
         private void txtAdmitDate_Click(object sender, EventArgs e)
         {
             DateTimePickerAdmitDate.Show();
             txtAdmitDate.Hide();
         }
-         
         private void txtSecondaryMobNbr_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
@@ -78,193 +71,18 @@ namespace PappyjoeMVC.View
                 e.Handled = false;
             }
         }
-        public string Ptname
-        {
-            get { return this.txtPatientName.Text; }
-            set{txtPatientName.Text = value;}
-        }
-        public string patId
-        {
-            get { return this.txtPatientId.Text; }
-            set { txtPatientId.Text = value; }
-        }
-        public string aadhar
-        {
-            get { return this.txtAdhaarId.Text; }
-            set { txtAdhaarId.Text = value; }
-        }
-        public string age
-        {
-            get { return this.txtAge.Text; }
-            set { txtAge.Text = value; }
-        }
-        public string blood
-        {
-            get
-            {
-                if (cmbBloodGroup.Text != "Select")
-                {
-                    return  cmbBloodGroup.Text;
-                }
-                else
-                    return  "";
-                
-            }
-            set { cmbBloodGroup.Text = value; }
-        }
-        public string family
-        {
-            get { return this.txtAccompaniedBy.Text; }
-            set { txtAccompaniedBy.Text = value; }
-        }
-        public string Pmob
-        {
-            get { return this.txtPrimaryMobNbr.Text; }
-            set { txtPrimaryMobNbr.Text = value; }
-        }
-        public string Smob
-        {
-            get { return this.txtSecondaryMobNbr.Text; }
-            set { txtSecondaryMobNbr.Text = value; }
-        }
-        public string Landline
-        {
-            get { return this.txtLandLineNbr.Text; }
-            set { txtLandLineNbr.Text = value; }
-        }
-        public string street
-        {
-            get { return this.txtStreetAddress.Text; }
-            set { txtStreetAddress.Text = value; }
-        }
-
-        public string email
-        {
-            get { return this.txtEmail.Text; }
-            set { txtEmail.Text = value; }
-        }
-        public string locality
-        {
-            get { return this.txtLocality.Text; }
-            set { txtLocality.Text = value; }
-        }
-        public string city
-        {
-            get { return this.txtCity.Text; }
-            set { txtCity.Text = value; }
-        }
-        public string opticket
-        {
-            get { return this.txtFileNo.Text; }
-            set { txtFileNo.Text = value; }
-        }
-
-        public string pin
-        {
-            get { return this.txtPin.Text; }
-            set { txtPin.Text = value; }
-        }
-        
-        public string refferedby
-        {
-            get { return this.txtReferredBy.Text; }
-            set { txtReferredBy.Text = value; }
-        }
-        public string doctername
-        {
-            get { return this.cmbDoctorName.Text; }
-            set { cmbDoctorName.Text = value; }
-        }
-        public string occupation
-        {
-            get { return this.txtOccupation.Text; }
-            set { txtOccupation.Text = value; }
-        }
-       
-        public string Gender
-        {
-            get
-            {
-                if (RBtnMale.Checked == true)
-                    return "Male";
-                else
-                    return "Female";
-            }
-            set
-            {
-                if (value == "Male")
-                    RBtnMale.Checked = true;
-                else
-                    RBtnFemale.Checked = true;
-            }
-        }
-        public string AdmitDate
-        {
-            get
-            {
-                if (DateTime.Now.Date.ToString("MM/dd/yyyy") == DateTimePickerAdmitDate.Value.ToString("MM/dd/yyyy"))
-                {
-                    return DateTimePickerAdmitDate.Value.ToString("yyyy-MM-dd");
-                }
-                else
-                {
-                    return DateTimePickerAdmitDate.Value.ToString("yyyy-MM-dd");
-                }
-            }
-            set
-            {
-                DateTimePickerAdmitDate.Value =Convert.ToDateTime(value);
-            }
-        }
-        public string Visited
-        {
-            get
-            {
-                if (DateTimePickerAdmitDate.Visible == true)
-                {
-                    if (DateTime.Now.Date.ToString("MM/dd/yyyy") == DateTimePickerAdmitDate.Value.ToString("MM/dd/yyyy"))
-                    {
-                        return  DateTimePickerAdmitDate.Value.ToString("yyyy-MM-dd");
-                    }
-                    else
-                    {
-                        return  DateTimePickerAdmitDate.Value.ToString("yyyy-MM-dd");
-                    } 
-                }
-                return DateTimePickerAdmitDate.Value.ToString("yyyy-MM-dd");
-            }
-            set
-            {
-                DateTimePickerAdmitDate.Value = Convert.ToDateTime(value); 
-            }
-        }
-        string dob = "";
-        public string Dob
-        {
-            get
-            {
-                if (DateTimePickerDob.Visible == true)
-                {
-                    if (DateTime.Now.Date.ToString("MM/dd/yyyy") == DateTimePickerDob.Value.ToString("MM/dd/yyyy"))
-                    {
-                        dob= null;
-                    }
-                    else
-                    {
-                        dob= DateTimePickerDob.Value.ToString("yyyy-MM-dd");
-                    }
-                }
-                return dob;
-            }
-            set
-            {
-                DateTimePickerDob.Value =Convert.ToDateTime(value);
-            }
-        }
         private void btnSavePatient_Click(object sender, EventArgs e)
         {
             try
             {
+                if(RBtnMale.Checked==true)
+                {
+                    gender = RBtnMale.Text;
+                }
+                else
+                {
+                    gender = RBtnFemale.Text;
+                }
                 int i = 0;
                 if (String.IsNullOrWhiteSpace(txtPatientName.Text))
                 {
@@ -274,7 +92,7 @@ namespace PappyjoeMVC.View
                 {
                     if (txtPrimaryMobNbr.Text != "")
                     {
-                        i = this.cntrl.update(patient_id);
+                        i = this.cntrl.update(txtPatientName.Text, txtPatientId.Text, txtAdhaarId.Text,gender, txtAge.Text, DateTimePickerDob.Value.ToString("yyyy-MM-dd"), cmbBloodGroup.Text, txtAccompaniedBy.Text, txtPrimaryMobNbr.Text, txtSecondaryMobNbr.Text, txtLandLineNbr.Text, txtEmail.Text,txtStreetAddress.Text,txtLocality.Text,txtCity.Text,txtPin.Text,txtReferredBy.Text, txtFileNo.Text, DateTimePickerAdmitDate.Value.ToString("yyyy-MM-dd"),txtOccupation.Text, cmbDoctorName.Text,patient_id);
                         if (i > 0)
                         {
                             if (pictureBox_PatientPhoto.Image == null)
@@ -312,14 +130,11 @@ namespace PappyjoeMVC.View
                                     System.IO.File.Copy(path, @"\\" + this.cntrl.getserver() + "\\Pappyjoe_utilities\\patient_image\\" + patient_id);
                                 }
                             }
-                                catch (Exception ex)
-                                {
-                                }
+                                catch { }
                             }
                             var form2 = new Patient_Profile_Details();
                             form2.doctor_id = doctor_id;
                             form2.patient_id = patient_id;
-                            Profile_Details_controller controller = new Profile_Details_controller(form2);
                             form2.Closed += (sender1, args) => this.Close();
                             this.Hide();
                             form2.ShowDialog();
@@ -380,7 +195,6 @@ namespace PappyjoeMVC.View
                         MessageBox.Show("Patient Deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         var form2 = new Patients();
                         form2.doctor_id = doctor_id;
-                        Patients_controller controller = new Patients_controller(form2);
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
                         form2.ShowDialog();
@@ -407,7 +221,7 @@ namespace PappyjoeMVC.View
         {
             if (!String.IsNullOrWhiteSpace(txtMedicalHistory.Text))
             {
-               this.cntrl.save(txtMedicalHistory.Text);
+                this.cntrl.save(txtMedicalHistory.Text);
                 grmedical.Rows.Add(txtMedicalHistory.Text);
             }
             btnMedicalHistoryCancel.Hide();
@@ -470,7 +284,6 @@ namespace PappyjoeMVC.View
             var form2 = new Patient_Profile_Details();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Profile_Details_controller controller = new Profile_Details_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -496,14 +309,10 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        public void Setcontroller(Patient_Edit_controller cntroller)
-        {
-            cntrl = cntroller;
-        }
 
         private void patient_profile_Edit_Load(object sender, EventArgs e)
         {
-            DataTable dt_doc = mdl.get_all_doctorname();
+            DataTable dt_doc = this.cntrl.get_all_doctorname();
             cmbDoctorName.DataSource = dt_doc;
             cmbDoctorName.ValueMember = "id";
             cmbDoctorName.DisplayMember = "doctor_name";
@@ -513,7 +322,7 @@ namespace PappyjoeMVC.View
                 if (doctor_id != "1")
                 {
                     string id;
-                    id = mdl.privillage_E(doctor_id);
+                    id = this.cntrl.privillage_E(doctor_id);
                     if (int.Parse(id) > 0)
                     {
                         btnSavePatient.Enabled = false;
@@ -522,7 +331,7 @@ namespace PappyjoeMVC.View
                     {
                         btnSavePatient.Enabled = true;
                     }
-                    id = mdl.privillage_D(doctor_id);
+                    id = this.cntrl.privillage_D(doctor_id);
                     if (int.Parse(id) > 0)
                     {
                         btnDelete.Enabled = false;
@@ -537,7 +346,7 @@ namespace PappyjoeMVC.View
                 this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
                 this.cntrl.get_medicalId(patient_id);
                 this.cntrl.get_groupid(patient_id);
-                DataTable dt7 = mdl.Get_Patient_Details(patient_id);
+                DataTable dt7 = this.cntrl.Get_Patient_Details(patient_id);
                 txtPatientName.Text = dt7.Rows[0]["pt_name"].ToString();
                 txtPatientId.Text = dt7.Rows[0]["pt_id"].ToString();
                 txtPatientId.BackColor = Color.White;
@@ -639,13 +448,13 @@ namespace PappyjoeMVC.View
                     grmedical.Rows[j].Cells[1].Style.BackColor = Color.FromArgb(62, 165, 195);
                 }
             }
-            DataTable dt35 = this.cntrl.Get_medicalname();
-            for (int j = 0; j < dt35.Rows.Count; j++)
+            string dt35 = this.cntrl.Get_medicalname();
+            if (dt35!="")
             {
-                DataTable mht = this.cntrl.patient_medical(patient_id, dt35.Rows[j][0].ToString());
-                if (mht.Rows.Count == 0)
+                string mht = this.cntrl.patient_medical(patient_id, dt35);
+                if (mht=="")
                 {
-                    grmedical.Rows.Add(dt35.Rows[j][0].ToString());
+                    grmedical.Rows.Add(dt35);
                 }
             }
         }
@@ -666,13 +475,13 @@ namespace PappyjoeMVC.View
                 gridgroups.Rows[j].Cells[0].Style.BackColor = Color.FromArgb(62, 165, 195);
                 gridgroups.Rows[j].Cells[1].Style.BackColor = Color.FromArgb(62, 165, 195);
             }
-            DataTable dt9 = this.cntrl.groupname();
-            for (int j = 0; j < dt9.Rows.Count; j++)
+            string dt9 = this.cntrl.groupname();
+            if (dt9!="")
             {
-                DataTable gt = this.cntrl.patient_group(patient_id, dt9.Rows[j][0].ToString());
-                if (gt.Rows.Count == 0)
+                string gt = this.cntrl.patient_group(patient_id, dt9);
+                if (gt =="")
                 {
-                    gridgroups.Rows.Add(dt9.Rows[j][0].ToString());
+                    gridgroups.Rows.Add(dt9);
                 }
             }
         }

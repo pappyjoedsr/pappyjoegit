@@ -116,7 +116,6 @@
             this.txt_phone.Size = new System.Drawing.Size(207, 22);
             this.txt_phone.TabIndex = 8;
             this.txt_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_phone_KeyPress);
-            this.txt_phone.Leave += new System.EventHandler(this.txt_phone_Leave);
             // 
             // txt_Address1
             // 
