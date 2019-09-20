@@ -13,6 +13,11 @@ namespace PappyjoeMVC.Controller
             DataTable dt11 = db.table("select * from tbl_city order by id");
             return dt11;
         }
+        public string doctr_privillage_for_addnewPatient(string doctor_id)
+        {
+            string s = cmdl.doctr_privillage_for_addnewPatient(doctor_id);
+            return s;
+        }
         public string Get_DoctorName(string dridd)
         {
             string dt = cmdl.Get_DoctorName(dridd);
