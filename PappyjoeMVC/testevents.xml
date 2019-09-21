@@ -2,10 +2,6 @@
 <Calendar CompactMode="1" Version="1">
 	<Options WorkWeekMask="0" WorkDayStartTime="08:00:00" WorkDayEndTime="17:00:00" ScaleMinTime="07:00:00" dtScaleMaxTime="18:00:00" DayView_ScaleInterval="15" DayView_Scale2TimeZone="GLOPPPPPJEAAOGAAEGAAJGAABGAAACAADFAAEHAABGAAOGAAEGAABGAACHAAEGAAACAAEFAAJGAANGAAFGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJEAAOGAAEGAAJGAABGAAACAAEEAABGAAJHAAMGAAJGAAHGAAIGAAEHAAACAAEFAAJGAANGAAFGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEMPPPPPP" AdditionalOptions="495"/>
 	<Events>
-		<Event EventID="-5" StartTime="2019-21-09T16:30:00" EndTime="2019-21-09T16:45:00" Subject="sam" Location="4:30 PM-4:45 PM" Body="6" LabelID="1" BusyStatus="2" CreationTime="2019-20-09T15:38:08" LastModificationTime="2019-20-09T15:38:08"/>
-		<Event EventID="-4" StartTime="2019-20-09T17:00:00" EndTime="2019-20-09T17:15:00" Subject="vandana" Location="5:00 PM-5:15 PM" Body="5" LabelID="9" BusyStatus="2" CreationTime="2019-20-09T15:38:08" LastModificationTime="2019-20-09T15:38:08"/>
-		<Event EventID="-3" StartTime="2019-21-09T15:30:00" EndTime="2019-21-09T15:45:00" Subject="vandana" Location="3:30 PM-3:45 PM" Body="4" LabelID="1" BusyStatus="2" CreationTime="2019-20-09T15:38:08" LastModificationTime="2019-20-09T15:38:08"/>
-		<Event EventID="-2" StartTime="2019-21-09T14:15:00" EndTime="2019-21-09T14:30:00" Subject="aswini (CANCELLED)" Location="2:15 PM-2:30 PM" Body="3" LabelID="10" BusyStatus="3" CreationTime="2019-20-09T15:38:08" LastModificationTime="2019-20-09T15:38:08"/>
-		<Event EventID="-1" StartTime="2019-20-09T16:30:00" EndTime="2019-20-09T16:45:00" Subject="vinu (CANCELLED)" Location="4:30 PM-4:45 PM" Body="2" LabelID="10" BusyStatus="3" CreationTime="2019-20-09T15:38:08" LastModificationTime="2019-20-09T15:38:08"/>
+		<Event EventID="-16" StartTime="2019-21-09T19:15:00" EndTime="2019-21-09T19:30:00" Subject="Drake" Location="7:15 PM-7:30 PM" Body="17" LabelID="9" BusyStatus="2" CreationTime="2019-21-09T09:48:27" LastModificationTime="2019-21-09T09:48:27"/>
 	</Events>
 </Calendar>
