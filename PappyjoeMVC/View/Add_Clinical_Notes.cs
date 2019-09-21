@@ -15,6 +15,7 @@ namespace PappyjoeMVC.View
         string idcomp, iddiag, idobs, idinv, idnote = "";
         public string patient_id = "";
         static int rowvalue;
+       public  bool caledr_edit_flag = false;
         public Add_Clinical_Notes()
         {
             InitializeComponent();
@@ -867,7 +868,6 @@ namespace PappyjoeMVC.View
                     else
                     {
                         var form2 = new Add_New_Patients();
-                        //Add_New_patient_controller cn = new Add_New_patient_controller(form2);
                         form2.doctor_id = doctor_id;
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
@@ -877,7 +877,6 @@ namespace PappyjoeMVC.View
                 else
                 {
                     var form2 = new Add_New_Patients();
-                    //Add_New_patient_controller cn = new Add_New_patient_controller(form2);
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
@@ -955,7 +954,30 @@ namespace PappyjoeMVC.View
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-
+            if (doctor_id != "1")
+            {
+                string id = this.cntrl.privilge_for_inventory(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var form2 = new PappyjoeMVC.View.StockReport();
+                    form2.doctor_id = doctor_id;
+                    form2.Show();
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                var form2 = new PappyjoeMVC.View.StockReport();
+                form2.doctor_id = doctor_id;
+                form2.Show();
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+            }
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
@@ -978,7 +1000,11 @@ namespace PappyjoeMVC.View
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
 
         private void ClinicalNotesAdd_Load(object sender, EventArgs e)
@@ -1030,6 +1056,14 @@ namespace PappyjoeMVC.View
                 if (dt.Rows[0]["pt_id"].ToString() != "")
                 {
                     linkLabel_id.Text = dt.Rows[0]["pt_id"].ToString();
+                }
+                if(caledr_edit_flag==true)
+                {
+                    string clin_id = this.cntrl.get_clinicId(patient_id);
+                    if(clin_id!="")
+                    {
+                        clinic_id = clin_id;
+                    }
                 }
 
                 if (clinic_id != "")
@@ -1255,6 +1289,14 @@ namespace PappyjoeMVC.View
             //Clinical_Findings_controller cn = new Clinical_Findings_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Login();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

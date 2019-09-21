@@ -50,6 +50,11 @@ namespace PappyjoeMVC.Controller
             DataTable d = model.Patient_search(_Patientid);
             return d;
         }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string s = model.privilge_for_inventory(doctor_id);
+            return s;
+        }
         public int submit(string patient_id, string dr_id, string doctor, string temp_type, string bp_type, string pulse, string txttemp, string text_Bp_Syst, string text_Bp_Dias, string text_Weight, string text_Resp, string dtp_date, string Txtheight)
         {
             int i = _model.submit(patient_id, dr_id, doctor, temp_type, bp_type, pulse, txttemp, text_Bp_Syst, text_Bp_Dias, text_Weight, text_Resp, dtp_date, Txtheight);

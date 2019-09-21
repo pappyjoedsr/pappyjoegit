@@ -11,7 +11,6 @@ namespace PappyjoeMVC.View
     public partial class Reports : Form
     {
         Reports_controller cntrl = new Reports_controller();
-        Common_model model = new Common_model();
         public string doctor_id = "0";
         public string staff_id = "0";
         public string patient_id = "0";
@@ -158,7 +157,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Add_New_Patients();
             form2.doctor_id = doctor_id;
-            //Add_New_patient_controller cnt = new Add_New_patient_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -1854,11 +1852,40 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
-            var form2 = new StockReport();
-            form2.doctor_id = doctor_id;
+            if (doctor_id != "1")
+            {
+                string id = this.cntrl.privilge_for_inventory(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var form2 = new PappyjoeMVC.View.StockReport();
+                    form2.doctor_id = doctor_id;
+                    form2.Show();
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                var form2 = new PappyjoeMVC.View.StockReport();
+                form2.doctor_id = doctor_id;
+                form2.Show();
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+            }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+             var form2 = new PappyjoeMVC.View.Login();
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
         }
+
         private void Chk_Type_CheckedChanged(object sender, EventArgs e)
         {
             if (Chk_Type.Checked)

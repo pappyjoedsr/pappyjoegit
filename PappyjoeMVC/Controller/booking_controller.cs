@@ -100,7 +100,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable appointmentId()
         {
-            DataTable dt_a = appointmentId();
+            DataTable dt_a = _model.appointmentId();
             return dt_a;
         }
         public DataTable clinicdetails()

@@ -136,9 +136,10 @@ namespace PappyjoeMVC.View
                     txtdruglicenseno.Text = dtb_details.Rows[0]["Dl_Number"].ToString();
                     txttaxno.Text = dtb_details.Rows[0]["Dl_Number2"].ToString();
                     txtpath.Text = dtb_details.Rows[0]["path"].ToString();
-                    if (txtpath.Text != "")
+                    string curFile = this.cntrl.getserver() + "\\Pappyjoe_utilities\\Logo\\" + txtpath.Text;
+                    if (System.IO.File.Exists(curFile))
                     {
-                        pictureBox1.Image = Image.FromFile(db.server() + txtpath.Text);
+                        pictureBox1.Image = Image.FromFile(curFile);
                     }
                     btn_Save.Text = "Update";
                 }

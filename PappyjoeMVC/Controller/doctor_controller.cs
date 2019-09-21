@@ -10,13 +10,23 @@ namespace PappyjoeMVC.Controller
         Common_model cmdl = new Common_model();
         public DataTable load_city()
         {
-            DataTable dt11 = db.table("select * from tbl_city order by id");
+            DataTable dt11 = _model.load_city();
             return dt11;
+        }
+        public string doctr_privillage_for_addnewPatient(string doctor_id)
+        {
+            string s = cmdl.doctr_privillage_for_addnewPatient(doctor_id);
+            return s;
         }
         public string Get_DoctorName(string dridd)
         {
             string dt = cmdl.Get_DoctorName(dridd);
             return dt;
+        }
+        public string Load_CompanyName()
+        {
+            string dtb = cmdl.Load_CompanyName();
+            return dtb;
         }
         public DataTable get_companyName()
         {
@@ -272,6 +282,20 @@ namespace PappyjoeMVC.Controller
         public DataTable Patient_search(string _Patientid)
         {
             DataTable dtb = cmdl.Patient_search(_Patientid);
+            return dtb;
+        }
+        public DataTable get_company_details()
+        {
+            DataTable dtb = cmdl.get_company_details();
+            return dtb;
+        }
+        public void save_details(string _PName, string _ptag, string _phone, string _email, string _website, string _clinicAbout)
+        {
+            _model.save_details( _PName,  _ptag,  _phone,  _email,  _website,  _clinicAbout);
+        }
+        public string permission_for_settings(string doctor_id)
+        {
+            string dtb = cmdl.permission_for_settings(doctor_id);
             return dtb;
         }
     }

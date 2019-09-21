@@ -1558,8 +1558,8 @@ namespace PappyjoeMVC.View
                 ClearAll_grid2_Properties();
                 DateTime d = DateTime.Now;
                 d = d.AddMonths(-1);
-                DateTime todate = DateTime.Now;
-                DataTable dtb= this.cntrl.Recently_added(d, todate);
+                string todate = DateTime.Now.ToString("yyyy/MM/dd");
+                DataTable dtb= this.cntrl.Recently_added(Convert.ToDateTime( d).ToString("yyyy/MM/dd"), todate);
                 Create_Datagrid(dtb);
                 Design_Datagrid();
                 //sqlstr = "SELECT  id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,Opticket as 'File No' FROM  tbl_patient  where Visited between '" + d.ToString("yyyy-MM-dd HH:mm") + "' and '" + todate.ToString("yyyy-MM-dd HH:mm") + "' and tbl_patient.Profile_Status='Active' order by tbl_patient.Date DESC limit 20";
@@ -1697,7 +1697,8 @@ namespace PappyjoeMVC.View
                 SetPatient_SearchControlls();
                 txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
                 left_button_click = 8;
-                this.cntrl.cancelled_appointment();
+                DataTable dtb= this.cntrl.cancelled_appointment();
+                Create_Datagrid(dtb);
                 Design_Datagrid();
                 //string sqlstr = "";
                 //sqlstr = "select p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age,p.primary_mobile_number as Mobile,p.street_address as 'Street Address',p.locality as Locality,p.Opticket as 'File No' from  tbl_appointment A left join tbl_patient P on A.pt_id=P.id  where status='Cancelled' order by p.id";
@@ -1889,7 +1890,7 @@ namespace PappyjoeMVC.View
             if (doctor_id != "1")
             {
                 string id;
-                id = mdl.doctr_privillage_for_addnewPatient(doctor_id);// db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PAT' and Permission='A'");
+                id = mdl.doctr_privillage_for_addnewPatient(doctor_id);
                 if (int.Parse(id) > 0)
                 {
                     MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -1898,18 +1899,18 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    form2.Show();
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
+                    form2.ShowDialog();
                 }
             }
             else
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                form2.Show();
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
+                form2.ShowDialog();
             }
         }
 
@@ -1917,7 +1918,142 @@ namespace PappyjoeMVC.View
         {
             if (DGV_Patients.RowCount > 0)
             {
-                if (left_button_click == 0 && Inactive_Flag == false)
+                if (left_button_click == 1)
+                {
+                    if (e.ColumnIndex == 3 && e.RowIndex >= 0)
+                    {
+                        string id;
+                        id = this.cntrl.privilege_D(doctor_id);
+                        if (int.Parse(id) > 0)
+                        {
+                            MessageBox.Show("There is No Privilege to Delete Appointment", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        else
+                        {
+                            if (MessageBox.Show("Delete this appointment.. Confirm?", "Remove Appointment", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            {
+                                int ua = e.RowIndex;
+                                string uaa = DGV_Patients.Rows[e.RowIndex].Cells[1].Value.ToString();
+                                int i = this.cntrl.delete(uaa);
+                                butt_Go_Click(this, new System.EventArgs());// buttonapp_Click(this, new System.EventArgs());
+                            }
+                        }
+                    }
+                    else if (e.ColumnIndex == 2 && e.RowIndex >= 0)
+                    {
+                        int r = e.RowIndex;
+                        id1 = DGV_Patients.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        var form2 = new Show_Appointment();
+                        form2.patient_id = id1.ToString();
+                        form2.doctor_id = doctor_id;
+                        form2.Closed += (sender1, args) => this.Close();
+                        this.Hide();
+                        form2.ShowDialog();
+                    }
+                }
+                else if (left_button_click == 2)
+                {
+                    if (e.ColumnIndex == 3 && DGV_Patients.Rows[e.RowIndex].Cells[0].Value.ToString() != "0" && e.RowIndex >= 0)
+                    {
+                        var form2 = new Clinical_Findings();
+                        form2.doctor_id = doctor_id;
+                        form2.patient_id = DGV_Patients.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        form2.Closed += (sender1, args) => this.Close();
+                        this.Hide();
+                        form2.ShowDialog();
+                    }
+                }
+                else if (left_button_click == 3)
+                {
+                    if (e.ColumnIndex == 2 && DGV_Patients.Rows[e.RowIndex].Cells[0].Value.ToString() != "0" && e.RowIndex >= 0)
+                    {
+                        var form2 = new Treatment_Plans();
+                        form2.doctor_id = doctor_id;
+                        form2.patient_id = DGV_Patients.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        form2.Closed += (sender1, args) => this.Close();
+                        this.Hide();
+                        form2.ShowDialog();
+                    }
+                }
+                else if (left_button_click == 4)
+                {
+                    if (e.ColumnIndex == 2 && DGV_Patients.Rows[e.RowIndex].Cells[0].Value.ToString() != "0" && e.RowIndex >= 0)
+                    {
+                        var form2 = new Finished_Procedure();
+                        form2.doctor_id = doctor_id;
+                        form2.patient_id = DGV_Patients.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        form2.Closed += (sender1, args) => this.Close();
+                        this.Hide();
+                        form2.ShowDialog();
+                    }
+                }
+                else if (left_button_click == 5)
+                {
+                    if (e.ColumnIndex == 2 && DGV_Patients.Rows[e.RowIndex].Cells[0].Value.ToString() != "0" && e.RowIndex >= 0)
+                    {
+                        var form2 = new Prescription_Show();
+                        form2.doctor_id = doctor_id;
+                        form2.patient_id = DGV_Patients.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        form2.Closed += (sender1, args) => this.Close();
+                        this.Hide();
+                        form2.ShowDialog();
+                    }
+                }
+                else if (left_button_click == 6)
+                {
+                    if (e.ColumnIndex == 6 && e.RowIndex >= 0)
+                    {
+                        int r = e.RowIndex;
+                        id1 = DGV_Patients.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        var form2 = new Patient_Profile_Details();
+                        form2.doctor_id = doctor_id;
+                        form2.patient_id = id1.ToString();
+                        form2.Closed += (sender1, args) => this.Close();
+                        this.Hide();
+                        form2.ShowDialog();
+                    }
+                }
+                else if (left_button_click == 7)
+                {
+                    if (e.ColumnIndex == 6 && e.RowIndex >= 0)
+                    {
+                        int r = e.RowIndex;
+                        id1 = DGV_Patients.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        var form2 = new Patient_Profile_Details();
+                        form2.doctor_id = doctor_id;
+                        form2.patient_id = id1.ToString();
+                        form2.Closed += (sender1, args) => this.Close();
+                        this.Hide();
+                        form2.ShowDialog();
+                    }
+                }
+                else if (left_button_click == 8)
+                {
+                    if (e.ColumnIndex == 2 && e.RowIndex >= 0)
+                    {
+                        int r = e.RowIndex;
+                        id1 = DGV_Patients.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        var form2 = new Patient_Profile_Details();
+                        form2.doctor_id = doctor_id;
+                        form2.patient_id = id1.ToString();
+                        form2.Closed += (sender1, args) => this.Close();
+                        this.Hide();
+                        form2.ShowDialog();
+                    }
+                }
+                else if (left_button_click == 9)
+                {
+                    if (e.ColumnIndex == 3 && DGV_Patients.Rows[e.RowIndex].Cells[0].Value.ToString() != "0" && e.RowIndex >= 0)
+                    {
+                        var form2 = new Vital_Signs();
+                        form2.doctor_id = doctor_id;
+                        form2.patient_id = DGV_Patients.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        form2.Closed += (sender1, args) => this.Close();
+                        this.Hide();
+                        form2.ShowDialog();
+                    }
+                }
+              else  if (left_button_click == 0 && Inactive_Flag == false)
                 {
                     //if (e.ColumnIndex == 2 || e.ColumnIndex==1||e.ColumnIndex==3||e.ColumnIndex==4||e.ColumnIndex==5||e.ColumnIndex==6||e.ColumnIndex==7||e.ColumnIndex==8)
                     if (e.RowIndex >= 0)
@@ -2111,6 +2247,14 @@ namespace PappyjoeMVC.View
             }
         }
 
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Login();
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         public void SetPatient_SearchControlls()
         {
             txt_Search.Visible = true;
@@ -2261,13 +2405,13 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                    DataTable dtb= this.cntrl.Recently_added(d, todate);
+                    DataTable dtb= this.cntrl.Recently_added(d.ToString("yyyy/MM/dd"), todate.ToString("yyyy/MM/dd"));
                     Create_Datagrid(dtb);
                     //sqlstr = "SELECT  id Pid, pt_id 'Patient Id',pt_name 'Patient Name', gender Gender,age Age, primary_mobile_number Mobile,street_address 'Street Address',locality Locality, Opticket as 'File No'  FROM  tbl_patient where Visited between '" + d + "' and '" + todate + "' and tbl_patient.Profile_Status='Active' ORDER BY id DESC limit 30";
                 }
                 else
                 {
-                   DataTable dtb= this.cntrl.recently_added_search(d, todate, txt_Search.Text);
+                   DataTable dtb= this.cntrl.recently_added_search(d.ToString("yyyy/MM/dd"), todate.ToString("yyyy/MM/dd"), txt_Search.Text);
                     Create_Datagrid(dtb);
                     //sqlstr = /*"SELECT  id Pid, pt_id 'Patient Id',pt_name 'Patient Name', gender Gender,age Age, primary_mobile_number Mobile,street_address 'Street Address',locality Locality, Opticket as 'File No' FROM  tbl_patient where Visited between '" + d + "' and '" + todate + "' and tbl_patient.Profile_Status='Active' and (pt_id like '%" + txt_Search.Text + "%' or pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%') ORDER BY id DESC limit 30"*/;
                 }
@@ -2362,23 +2506,23 @@ namespace PappyjoeMVC.View
                     //sqlstr = " SELECT p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age ,p.primary_mobile_number as Mobile,p.street_address as Street Address,p.locality as Locality,p.Opticket as 'File No' FROM tbl_patient P inner join tbl_pt_group G on P.id = G.pt_id where G.group_id='" + id4 + "' and Profile_Status='Active' and (P.pt_id like '%" + txt_Search.Text + "%' or P.pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%') ORDER BY P.id DESC";
                 }
             }
-            DataTable dt_pt = db.table(sqlstr);
-            lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
-            if (dt_pt.Rows.Count > 0)
-            {
-                Create_Datagrid(dt_pt);
+            //DataTable dt_pt = db.table(sqlstr);
+            ////lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
+            //if (dt_pt.Rows.Count > 0)
+            //{
+                //Create_Datagrid(dt_pt);
                 Design_Datagrid();
-                if (DGV_Patients.Rows.Count > 0)
-                {
-                    DGV_Patients.Columns[0].Visible = false;
-                    lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
-                }
-            }
-            else
-            {
-                lab_Displaying.Visible = true;
-                lab_7.Text = "0 Patient(s)";
-            }
+                //if (DGV_Patients.Rows.Count > 0)
+                //{
+                //    //DGV_Patients.Columns[0].Visible = false;
+                //    //lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
+                //}
+            //}
+            //else
+            //{
+            //    lab_Displaying.Visible = true;
+            //    lab_7.Text = "0 Patient(s)";
+            //}
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -2398,6 +2542,16 @@ namespace PappyjoeMVC.View
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+        }
+
+        private void txt_Search_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelallpatient_Click(object sender, EventArgs e)
+        {
+            btn_AllPatient_Click(null,null);
         }
 
         private void txt_Search_Click(object sender, EventArgs e)

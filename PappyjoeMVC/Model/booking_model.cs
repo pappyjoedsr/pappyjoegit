@@ -53,7 +53,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Get_calenderColor(string dr_id)
         {
-            DataTable dt_d = db.table("select calendar_color,mobile_number,email_id from tbl_doctor where  id=" + dr_id + " ORDER BY ");
+            DataTable dt_d = db.table("select calendar_color,mobile_number,email_id from tbl_doctor where  id=" + dr_id + "  ");
             return dt_d;
         }
         public DataTable get_doctor_login(string id)

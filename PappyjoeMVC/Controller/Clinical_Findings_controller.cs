@@ -6,6 +6,11 @@ namespace PappyjoeMVC.Controller
     {
         Clinical_Findings_model _model = new Clinical_Findings_model();
         Common_model model = new Common_model();
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string s = model.privilge_for_inventory(doctor_id);
+            return s;
+        }
         public string user_priv_EMRCF_A(string doctor_id)
         {
             string s = _model.user_priv_EMRCF_A(doctor_id);

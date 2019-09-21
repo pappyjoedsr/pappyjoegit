@@ -20,6 +20,11 @@ namespace PappyjoeMVC.Controller
             string dtb = cmodel.doctr_privillage_for_addnewPatient(doctor_id);
             return dtb;
         }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string s = cmodel.privilge_for_inventory(doctor_id);
+            return s;
+        }
         public string permission_for_settings(string doctor_id)
         {
             string s = cmodel.permission_for_settings(doctor_id);

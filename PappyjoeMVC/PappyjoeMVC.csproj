@@ -1132,6 +1132,9 @@
     <EmbeddedResource Include="View\Daily_Treatment_Count.resx">
       <DependentUpon>Daily_Treatment_Count.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\DatePicker.resx">
+      <DependentUpon>DatePicker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Day_Wise_Receipt.resx">
       <DependentUpon>Day_Wise_Receipt.cs</DependentUpon>
     </EmbeddedResource>

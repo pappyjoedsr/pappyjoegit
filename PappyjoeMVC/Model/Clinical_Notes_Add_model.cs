@@ -144,6 +144,11 @@ namespace PappyjoeMVC.Model
             DataTable dt_cf = db.table("SELECT tbl_clinical_findings.id,tbl_clinical_findings.date,tbl_doctor.doctor_name FROM tbl_clinical_findings join tbl_doctor on tbl_clinical_findings.dr_id=tbl_doctor.id where tbl_clinical_findings.id='" + id + "' and pt_id='" + ptid + "'");
             return dt_cf;
         }
+        public string get_clinicId(string ptid)
+        {
+            string clincid = db.scalar("select id from tbl_clinical_findings where pt_id='"+ptid+"'");
+            return clincid;
+        }
         public DataTable getComplaints(string id)
         {
             System.Data.DataTable dt_cf_Complaints = db.table("SELECT  id,complaint_id FROM tbl_pt_chief_compaints where tbl_pt_chief_compaints.clinical_finding_id='" + id + "' ORDER BY tbl_pt_chief_compaints.id");

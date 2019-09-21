@@ -117,14 +117,14 @@ namespace PappyjoeMVC.Model
             DataTable dtb = db.table("SELECT  DISTINCT A.id AS Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d.ToString("yyyy-MM-dd HH:mm") + "' and '" + todate.ToString("yyyy-MM-dd HH:mm") + "' and A.status<>'CANCELLED' and A.status <>'scheduled' ");
             return dtb;
         }
-        public DataTable Recently_added(DateTime d, DateTime todate)
+        public DataTable Recently_added(string d, string todate)
         {
-            DataTable dtb = db.table("SELECT  id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,Opticket as 'File No' FROM  tbl_patient  where Visited between '" + d.ToString("yyyy-MM-dd HH:mm") + "' and '" + todate.ToString("yyyy-MM-dd HH:mm") + "' and tbl_patient.Profile_Status='Active' order by tbl_patient.Date DESC limit 20");
+            DataTable dtb = db.table("SELECT  id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,Opticket as 'File No' FROM  tbl_patient  where Visited between '" + d + "' and '" + todate + "' and tbl_patient.Profile_Status='Active' order by tbl_patient.Date DESC limit 20");
             return dtb;
         }
         public DataTable upcomming_appointments(DateTime startDateTime)
         {
-            DataTable dtb = db.table("SELECT  DISTINCT A.pt_id AS Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on A.pt_id=P.ID WHERE  start_datetime >=  '" + startDateTime.ToString("yyyy-MM-dd") + "' and p.Profile_Status='Active'");//  order by id desc";
+            DataTable dtb = db.table("SELECT  DISTINCT A.pt_id AS Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on A.pt_id=P.ID WHERE  start_datetime >=  '" + startDateTime.ToString("yyyy-MM-dd") + "' and p.Profile_Status='Active' and  status !='Cancelled'");//  order by id desc";
             return dtb;
         }
         public DataTable birthday()
@@ -159,7 +159,7 @@ namespace PappyjoeMVC.Model
             DataTable dtb = db.table("SELECT  DISTINCT A.id AS Pid,P.pt_id 'Patient Id',P.pt_name 'Patient Name', P.gender Gender,P.age Age,P. primary_mobile_number Mobile ,P.street_address 'Street Address',P.locality Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d + "' and '" + todate + "' and A.status<>'CANCELLED' and A.status <>'scheduled' and (P.pt_id like '%" + name + "%' or P.pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') ");
             return dtb;
         }
-        public DataTable recently_added_search(DateTime d, DateTime todate, string name)
+        public DataTable recently_added_search(string d, string todate, string name)
         {
             DataTable dtb = db.table("SELECT  id Pid, pt_id 'Patient Id',pt_name 'Patient Name', gender Gender,age Age, primary_mobile_number Mobile,street_address 'Street Address',locality Locality, Opticket as 'File No' FROM  tbl_patient where Visited between '" + d + "' and '" + todate + "' and tbl_patient.Profile_Status='Active' and (pt_id like '%" + name + "%' or pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') ORDER BY id DESC limit 30");
             return dtb;
