@@ -317,6 +317,48 @@ namespace PappyjoeMVC.View
             cmbDoctorName.ValueMember = "id";
             cmbDoctorName.DisplayMember = "doctor_name";
             DateTimePickerDob.MaxDate = DateTime.Now.Date;
+            DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn()
+            {
+                Name = "Check"
+            };
+            grmedical.Columns.Add(check);
+            check.Width = 100;
+            check.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            string dt8 = this.cntrl.get_medicalId(patient_id);
+            if (dt8!="")
+            {
+                    string mht = this.cntrl.patient_medical(patient_id, dt8);
+                    if (mht != "")
+                    {
+                        grmedical.Rows.Add(dt8);
+                    }
+            }
+            DataGridViewCheckBoxColumn checkgroup = new DataGridViewCheckBoxColumn()
+            {
+                Name = "Check"
+            };
+            gridgroups.Columns.Add(checkgroup);
+            checkgroup.Width = 100;
+            checkgroup.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            string dt9 = this.cntrl.groupname();
+            if (dt9 != "")
+            {
+                string gt = this.cntrl.patient_group(patient_id, dt9);
+                if (gt != "")
+                {
+                    gridgroups.Rows.Add(dt9);
+                }
+            }
+
+
+
+
+
+
+
+
+
+
             try
             {
                 if (doctor_id != "1")
@@ -429,61 +471,9 @@ namespace PappyjoeMVC.View
             }
         }
 
-        public void Fill_modeical(DataTable dt8)
-        {
-            DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn()
-            {
-                Name = "Check"
-            };
-            grmedical.Columns.Add(check);
-            check.Width = 100;
-            check.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            if (dt8.Rows.Count > 0)
-            {
-                for (int j = 0; j < dt8.Rows.Count; j++)
-                {
-                    grmedical.Rows.Add(dt8.Rows[j][0].ToString());
-                    grmedical.Rows[j].Cells[1].Value = true;
-                    grmedical.Rows[j].Cells[0].Style.BackColor = Color.FromArgb(62, 165, 195);
-                    grmedical.Rows[j].Cells[1].Style.BackColor = Color.FromArgb(62, 165, 195);
-                }
-            }
-            string dt35 = this.cntrl.Get_medicalname();
-            if (dt35!="")
-            {
-                string mht = this.cntrl.patient_medical(patient_id, dt35);
-                if (mht=="")
-                {
-                    grmedical.Rows.Add(dt35);
-                }
-            }
-        }
-
         public void Fill_Group(DataTable group)
         {
-            DataGridViewCheckBoxColumn checkgroup = new DataGridViewCheckBoxColumn()
-            {
-                Name = "Check"
-            };
-            gridgroups.Columns.Add(checkgroup);
-            checkgroup.Width = 100;
-            checkgroup.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            for (int j = 0; j < group.Rows.Count; j++)
-            {
-                gridgroups.Rows.Add(group.Rows[j][0].ToString());
-                gridgroups.Rows[j].Cells[1].Value = true;
-                gridgroups.Rows[j].Cells[0].Style.BackColor = Color.FromArgb(62, 165, 195);
-                gridgroups.Rows[j].Cells[1].Style.BackColor = Color.FromArgb(62, 165, 195);
-            }
-            string dt9 = this.cntrl.groupname();
-            if (dt9!="")
-            {
-                string gt = this.cntrl.patient_group(patient_id, dt9);
-                if (gt =="")
-                {
-                    gridgroups.Rows.Add(dt9);
-                }
-            }
+            
         }
 
         private void gridgroups_CellClick(object sender, DataGridViewCellEventArgs e)

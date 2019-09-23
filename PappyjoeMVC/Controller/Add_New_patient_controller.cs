@@ -7,6 +7,7 @@ namespace PappyjoeMVC.Controller
 
         Connection db = new Connection();
         Common_model mdl = new Common_model();
+        SMS_model s = new SMS_model();
         Add_New_Patient_model _model = new Add_New_Patient_model();
         public string Get_pnonenumber(string number)
         {
@@ -18,7 +19,11 @@ namespace PappyjoeMVC.Controller
             string server = db.server();
             return server;
         }
-
+        public string SendSMS(string User, string password, string Mobile_Number, string Message)
+        {
+            string val = s.SendSMS(User, password, Mobile_Number, Message);
+            return val;
+        }
         public DataTable Get_patient_details(string name)
         {
             DataTable dtb = _model.Get_patient_details(name);

@@ -456,7 +456,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            this.Hide();
             form2.ShowDialog();
         }
         public void printdetails(DataTable tbmain)

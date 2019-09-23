@@ -33,8 +33,14 @@ namespace PappyjoeMVC.View
                 panel_Search.Visible = false;
                 lab_Change_AppoinmtName.Visible = true;
                 panel_Appmnt.Visible = true;
-                dateTimePickefrom.MaxDate = DateTime.Now;
-                dateTimePicketo.MinDate = DateTime.Now;
+                var dateFrom = dateTimePickefrom.Value.ToShortDateString();
+                var dateTo = dateTimePicketo.Value.ToShortDateString();
+                if (Convert.ToDateTime(dateFrom).Date > Convert.ToDateTime(dateTo).Date)
+                {
+                    MessageBox.Show("From date should be less than to date", "From Date is grater ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dateTimePicketo.Value = DateTime.Today;
+                    return;
+                }
                 lab_7.Visible = true;
                 panl_FilterPatient.Visible = false;
                 lab_Change_AppoinmtName.Text = "APPOINTMENTS";
@@ -2563,11 +2569,6 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        public void Setcontroller(Patients_controller controller)
-        {
-            cntrl = controller;
-        }
-
         private void panel_titile_Paint(object sender, PaintEventArgs e)
         {
 
@@ -2575,6 +2576,8 @@ namespace PappyjoeMVC.View
 
         private void patients_Load(object sender, EventArgs e)
         {
+            dateTimePickefrom.Value = DateTime.Today;
+            dateTimePicketo.Value = DateTime.Today;
             toolStripButton3.BackColor = Color.SkyBlue;
             toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
             string docnam = mdl.Get_DoctorName(doctor_id);

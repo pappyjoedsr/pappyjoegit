@@ -128,6 +128,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.FormClosed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
         }
         private void textBox4_Click(object sender, EventArgs e)
@@ -615,6 +616,7 @@ namespace PappyjoeMVC.View
                         form2.doctor_id = doctor_id;
                         form2.patient_id = patient_id;
                         form2.FormClosed += (sender1, args) => this.Close();
+                        this.Hide();
                         form2.ShowDialog();
                     }
                     else
