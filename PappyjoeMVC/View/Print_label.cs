@@ -12,13 +12,11 @@ namespace PappyjoeMVC.View
 {
     public partial class Print_Label : Form
     {
-        Print_Label_model mdl = new Print_Label_model();
         Patients_model _model = new Patients_model();
         public Print_Label()
         {
             InitializeComponent();
         }
-
         private void Print_label_Load(object sender, EventArgs e)
         {
             string sqlstr = "";

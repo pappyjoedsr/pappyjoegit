@@ -15,11 +15,11 @@ namespace PappyjoeMVC.Model
             DataTable dt2 = db.table("select * from tbl_drug_type");
             return dt2;
         }
-        public DataTable Fill_unit_combo()
-        {
-            DataTable dt3 = db.table("select * from tbl_unit");
-            return dt3;
-        }
+        //public DataTable Fill_unit_combo()
+        //{
+        //    DataTable dt3 = db.table("select * from tbl_unit");
+        //    return dt3;
+        //}
         public DataTable get_value_from_drugtype(string strtype)
         {
             DataTable dt_drug_type = db.table("select * from tbl_drug_type where dr_type='" + strtype + "'");

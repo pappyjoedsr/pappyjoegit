@@ -1628,7 +1628,7 @@ namespace PappyjoeMVC.View
                 {
                     listpatientsearch.Visible = true;
                 }
-                listpatientsearch.Location = new Point(toolStripTextBox1.Width = 1020, 39);
+                listpatientsearch.Location = new Point(toolStripTextBox1.Width - 352, 39);
             }
             else
             {
@@ -1881,17 +1881,6 @@ namespace PappyjoeMVC.View
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
              var form2 = new PappyjoeMVC.View.Login();
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.ShowDialog();
-        }
-
-        private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
-        {
-            var form2 = new Patient_Profile_Details();
-            form2.doctor_id = doctor_id;
-            form2.patient_id = listpatientsearch.SelectedValue.ToString();
-            listpatientsearch.Visible = false;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

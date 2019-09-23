@@ -24,11 +24,11 @@ namespace PappyjoeMVC.Model
             string p = db.scalar("select MAX(id) from tbl_addproceduresettings");
             return p;
         }
-        public DataTable Get_all_procedures()
-        {
-            DataTable treatment = db.table("select id,name,cost from tbl_addproceduresettings ORDER BY id DESC");
-            return treatment;
-        }
+        //public DataTable Get_all_procedures()
+        //{
+        //    DataTable treatment = db.table("select id,name,cost from tbl_addproceduresettings ORDER BY id DESC");
+        //    return treatment;
+        //}
         public void Save_treatment(string dr_id, string patient_id, string _date , string _doctor , string _patientname , string _totalcost , string _totaldiscount , string _grandtotal )
         {
             int i = db.execute("insert into tbl_treatment_plan_main (date,dr_id,dr_name,pt_id,pt_name,total_cost,total_discount,grand_total) values('" + _date + "','" + dr_id + "','" + _doctor + "','" + patient_id + "','" + _patientname + "','" + _totalcost + "','" + _totaldiscount + "','" + _grandtotal + "')");

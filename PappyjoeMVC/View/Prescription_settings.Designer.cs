@@ -60,9 +60,6 @@
             this.text_presc_search = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView_prescription = new System.Windows.Forms.DataGridView();
-            this.button_invetory = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label34 = new System.Windows.Forms.Label();
             this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ptype = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +70,9 @@
             this.inventory_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.button_invetory = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label34 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_prescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -131,7 +131,7 @@
             this.text_strength.BackColor = System.Drawing.Color.White;
             this.text_strength.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_strength.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_strength.Location = new System.Drawing.Point(107, 126);
+            this.text_strength.Location = new System.Drawing.Point(106, 125);
             this.text_strength.Name = "text_strength";
             this.text_strength.Size = new System.Drawing.Size(77, 22);
             this.text_strength.TabIndex = 125;
@@ -163,7 +163,7 @@
             this.combo_unit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_unit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combo_unit.FormattingEnabled = true;
-            this.combo_unit.Location = new System.Drawing.Point(187, 126);
+            this.combo_unit.Location = new System.Drawing.Point(192, 126);
             this.combo_unit.Name = "combo_unit";
             this.combo_unit.Size = new System.Drawing.Size(81, 23);
             this.combo_unit.TabIndex = 135;
@@ -291,7 +291,7 @@
             // 
             this.text_unit.BackColor = System.Drawing.Color.White;
             this.text_unit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_unit.Location = new System.Drawing.Point(107, 126);
+            this.text_unit.Location = new System.Drawing.Point(192, 126);
             this.text_unit.Name = "text_unit";
             this.text_unit.Size = new System.Drawing.Size(79, 22);
             this.text_unit.TabIndex = 126;
@@ -417,36 +417,6 @@
             this.dataGridView_prescription.TabIndex = 144;
             this.dataGridView_prescription.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_prescription_CellClick);
             // 
-            // button_invetory
-            // 
-            this.button_invetory.AutoSize = true;
-            this.button_invetory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button_invetory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_invetory.FlatAppearance.BorderSize = 0;
-            this.button_invetory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_invetory.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.button_invetory.Location = new System.Drawing.Point(865, 23);
-            this.button_invetory.Name = "button_invetory";
-            this.button_invetory.Size = new System.Drawing.Size(244, 23);
-            this.button_invetory.TabIndex = 150;
-            this.button_invetory.Text = "Add same product in Inventory part..? Click here";
-            this.button_invetory.UseVisualStyleBackColor = false;
-            this.button_invetory.Visible = false;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.ForeColor = System.Drawing.Color.Red;
-            this.label34.Location = new System.Drawing.Point(499, 55);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(86, 13);
-            this.label34.TabIndex = 151;
-            this.label34.Text = "It can\'t be Empty";
-            // 
             // pid
             // 
             this.pid.DataPropertyName = "id";
@@ -534,7 +504,37 @@
             this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.delete.Width = 27;
             // 
-            // Prescription_settings
+            // button_invetory
+            // 
+            this.button_invetory.AutoSize = true;
+            this.button_invetory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button_invetory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_invetory.FlatAppearance.BorderSize = 0;
+            this.button_invetory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_invetory.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.button_invetory.Location = new System.Drawing.Point(865, 23);
+            this.button_invetory.Name = "button_invetory";
+            this.button_invetory.Size = new System.Drawing.Size(244, 23);
+            this.button_invetory.TabIndex = 150;
+            this.button_invetory.Text = "Add same product in Inventory part..? Click here";
+            this.button_invetory.UseVisualStyleBackColor = false;
+            this.button_invetory.Visible = false;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.ForeColor = System.Drawing.Color.Red;
+            this.label34.Location = new System.Drawing.Point(499, 55);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(86, 13);
+            this.label34.TabIndex = 151;
+            this.label34.Text = "It can\'t be Empty";
+            // 
+            // Prescription_Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -568,7 +568,7 @@
             this.Controls.Add(this.button_addtype);
             this.Controls.Add(this.text_type);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Prescription_settings";
+            this.Name = "Prescription_Settings";
             this.Text = "Prescription Settings";
             this.Load += new System.EventHandler(this.Prescription_settings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_prescription)).EndInit();

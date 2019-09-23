@@ -153,7 +153,7 @@ namespace PappyjoeMVC.Model
         {
             System.Data.DataTable dt_cf_Complaints = db.table("SELECT  id,complaint_id FROM tbl_pt_chief_compaints where tbl_pt_chief_compaints.clinical_finding_id='" + id + "' ORDER BY tbl_pt_chief_compaints.id");
             return dt_cf_Complaints;
-        }
+        }//SELECT complaint_id FROM tbl_pt_chief_compaints WHERE clinical_finding_id='" + App_dtb.Rows[0]["EHR_clinicalfindings"] +
         public DataTable get_observation(string id)
         {
             System.Data.DataTable dt_cf_observe = db.table("SELECT id,observation_id FROM tbl_pt_observation where tbl_pt_observation.clinical_finding_id='" + id + "' ORDER BY tbl_pt_observation.id");
@@ -168,12 +168,12 @@ namespace PappyjoeMVC.Model
         {
             System.Data.DataTable dt_cf_diagnosis = db.table("SELECT diagnosis_id,id FROM tbl_pt_diagnosis where tbl_pt_diagnosis.clinical_finding_id='" + id + "' ORDER BY tbl_pt_diagnosis.id");
             return dt_cf_diagnosis;
-        }
+        }//SELECT diagnosis_id FROM  tbl_pt_diagnosis WHERE clinical_finding_id='" + App_dtb.Rows[0]["EHR_clinicalfindings"] +
         public DataTable get_note(string id)
         {
             System.Data.DataTable dt_cf_note = db.table("SELECT note_name,id FROM tbl_pt_note where tbl_pt_note.clinical_findings_id='" + id + "' ORDER BY tbl_pt_note.id");
             return dt_cf_note;
-        }
+        }//SELECT note_name FROM tbl_pt_note WHERE clinical_findings_id='" + App_dtb.Rows[0]["EHR_clinicalfindings"] + "'
         public int insertInto_clinical_findings(string ptid, string dt, string date)
         {
             int i = db.execute("insert into tbl_clinical_findings (pt_id,dr_id,date) values ('" + ptid + "','" + dt + "','" + date + "')");

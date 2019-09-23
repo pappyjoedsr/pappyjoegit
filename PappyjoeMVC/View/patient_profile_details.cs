@@ -789,7 +789,7 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.StockReport();
+            var form2 = new StockReport();
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();

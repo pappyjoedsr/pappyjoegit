@@ -28,7 +28,7 @@ namespace PappyjoeMVC.View
             DataTable dtb = this.cntrl.fill_type_combo();
             FillTypeCombo(dtb);
             DataTable dtb_unit= this.cntrl.fill_unit_combo();
-            FillUnitCombo(dtb);
+            FillUnitCombo(dtb_unit);
             dataGridView_prescription.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             dataGridView_prescription.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView_prescription.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Regular);
@@ -103,6 +103,7 @@ namespace PappyjoeMVC.View
                     if (dt_drug_type.Rows.Count == 0)
                     {
                         this.cntrl.SaveDrug(text_type.Text);
+                        StrType = text_type.Text;
                     }
                 }
                 if (text_unit.Visible == false)
@@ -115,6 +116,7 @@ namespace PappyjoeMVC.View
                     if (dt_drug_unit.Rows.Count == 0)
                     {
                         this.cntrl.save_unit(text_unit.Text);
+                        StrUnit = text_unit.Text;
                     }
                 }
                 if (StrType != "" && StrUnit != "")
@@ -122,7 +124,7 @@ namespace PappyjoeMVC.View
                     if (button_save.Text == "Save")
                     {
                         string name = this.cntrl.check_drugname(txtitemname.Text);
-                        if (name!="")
+                        if (name==txtitemname.Text)
                         {
                             MessageBox.Show("Drug " + txtitemname.Text + "' already existed", "Duplication Encountered", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
@@ -139,7 +141,7 @@ namespace PappyjoeMVC.View
                     else
                     {
                         string dtb = this.cntrl.check_exists_drug(id);
-                        if (dtb!="")
+                        if (Convert.ToInt32(dtb)>0)
                         {
                             MessageBox.Show("Cannot edit this drug, It is used in prescriptions...", "Edit Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
@@ -222,7 +224,7 @@ namespace PappyjoeMVC.View
                         else
                         {
                             string dtb = this.cntrl.check_exists_drug(id);
-                            if (dtb!="")
+                            if (Convert.ToInt32(dtb)>0)
                             {
                                 MessageBox.Show("Cannot edit this drug, It is used in prescriptions...", "Edit Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }

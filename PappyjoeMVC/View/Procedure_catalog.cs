@@ -10,7 +10,7 @@ namespace PappyjoeMVC.View
     public partial class Procedure_Catalog : Form
     {
         Procedure_Catalog_controller cntrl=new Procedure_Catalog_controller();
-        string idd = null;
+        //string idd = null;
         int refresh;
         public Procedure_Catalog()
         {
@@ -80,6 +80,7 @@ namespace PappyjoeMVC.View
         {
             Dictionary<string, int> dict = new Dictionary<string, int>();
             int rowNum = 0;
+            Dgv_Procedure.Rows.Clear();
             for (int j = 0; j < dt.Rows.Count; j++)
             {
                 string id = dt.Rows[j]["id"].ToString();
@@ -153,7 +154,7 @@ namespace PappyjoeMVC.View
                 comboaddunder.Show();
                 DataTable dtb = this.cntrl.get_procedure_category_value();
                 AddCategory(dtb);
-                btnAddNewCategory.Show();
+                btnAddNewCategory.Show();  
             }
             else
             {
@@ -245,6 +246,9 @@ namespace PappyjoeMVC.View
                 else
                 {
                   DataTable dtb= this.cntrl.get_procedureName(txt_procedurename.Text);
+                    GetProcedureName(dtb);
+                    DataTable dt = this.cntrl.FormLoad();
+                    FormLoad(dt);
                 }
             }
         }
