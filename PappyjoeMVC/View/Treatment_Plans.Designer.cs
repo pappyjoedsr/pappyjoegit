@@ -392,6 +392,7 @@
             this.linkLabel_id.Name = "linkLabel_id";
             this.linkLabel_id.Size = new System.Drawing.Size(0, 13);
             this.linkLabel_id.TabIndex = 73;
+            this.linkLabel_id.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_id_LinkClicked);
             // 
             // pictureBox1
             // 
@@ -413,6 +414,7 @@
             this.linkLabel_Name.Name = "linkLabel_Name";
             this.linkLabel_Name.Size = new System.Drawing.Size(0, 13);
             this.linkLabel_Name.TabIndex = 74;
+            this.linkLabel_Name.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Name_LinkClicked);
             // 
             // label21
             // 
@@ -483,7 +485,7 @@
             this.labl_Lab.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labl_Lab.ForeColor = System.Drawing.Color.DimGray;
             this.labl_Lab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labl_Lab.Location = new System.Drawing.Point(17, 289);
+            this.labl_Lab.Location = new System.Drawing.Point(17, 290);
             this.labl_Lab.Name = "labl_Lab";
             this.labl_Lab.Size = new System.Drawing.Size(166, 32);
             this.labl_Lab.TabIndex = 61;
@@ -499,7 +501,7 @@
             this.label44.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.ForeColor = System.Drawing.Color.DimGray;
             this.label44.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label44.Location = new System.Drawing.Point(14, 113);
+            this.label44.Location = new System.Drawing.Point(14, 115);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(166, 32);
             this.label44.TabIndex = 60;
@@ -514,7 +516,7 @@
             this.labelledger.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelledger.ForeColor = System.Drawing.Color.DimGray;
             this.labelledger.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelledger.Location = new System.Drawing.Point(14, 445);
+            this.labelledger.Location = new System.Drawing.Point(14, 447);
             this.labelledger.Name = "labelledger";
             this.labelledger.Size = new System.Drawing.Size(166, 32);
             this.labelledger.TabIndex = 49;
@@ -544,7 +546,7 @@
             this.labelpayment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelpayment.ForeColor = System.Drawing.Color.DimGray;
             this.labelpayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelpayment.Location = new System.Drawing.Point(14, 411);
+            this.labelpayment.Location = new System.Drawing.Point(14, 412);
             this.labelpayment.Name = "labelpayment";
             this.labelpayment.Size = new System.Drawing.Size(166, 32);
             this.labelpayment.TabIndex = 47;
@@ -559,7 +561,7 @@
             this.labelattachment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelattachment.ForeColor = System.Drawing.Color.DimGray;
             this.labelattachment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelattachment.Location = new System.Drawing.Point(14, 326);
+            this.labelattachment.Location = new System.Drawing.Point(14, 325);
             this.labelattachment.Name = "labelattachment";
             this.labelattachment.Size = new System.Drawing.Size(166, 32);
             this.labelattachment.TabIndex = 46;
@@ -589,7 +591,7 @@
             this.labelfinished.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelfinished.ForeColor = System.Drawing.Color.DimGray;
             this.labelfinished.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelfinished.Location = new System.Drawing.Point(14, 219);
+            this.labelfinished.Location = new System.Drawing.Point(14, 220);
             this.labelfinished.Name = "labelfinished";
             this.labelfinished.Size = new System.Drawing.Size(166, 32);
             this.labelfinished.TabIndex = 44;
@@ -620,7 +622,7 @@
             this.labelclinical.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelclinical.ForeColor = System.Drawing.Color.DimGray;
             this.labelclinical.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelclinical.Location = new System.Drawing.Point(14, 149);
+            this.labelclinical.Location = new System.Drawing.Point(14, 150);
             this.labelclinical.Name = "labelclinical";
             this.labelclinical.Size = new System.Drawing.Size(166, 32);
             this.labelclinical.TabIndex = 42;

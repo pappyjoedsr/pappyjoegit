@@ -130,6 +130,36 @@ namespace PappyjoeMVC.View
         {
             toolStripTextBox1.Clear();
         }
+
+        private void labelallpatient_Click(object sender, EventArgs e)
+        {
+            var form2 = new Patients();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void linkLabel_Name_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void linkLabel_id_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
             try

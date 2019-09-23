@@ -606,16 +606,22 @@ namespace PappyjoeMVC.View
 
         private void linkLabel_Name_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Patient_Profile_Edit a = new Patient_Profile_Edit();
-            a.patient_id = linkLabel_id.Text.ToString();
-            a.Show();
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
 
         private void linkLabel_id_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Patient_Profile_Edit a = new Patient_Profile_Edit();
-            a.patient_id = linkLabel_id.Text.ToString();
-            a.Show();
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)

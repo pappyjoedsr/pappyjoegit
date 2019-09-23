@@ -1,12 +1,7 @@
 ﻿using PappyjoeMVC.Controller;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
@@ -20,12 +15,13 @@ namespace PappyjoeMVC.View
             form = this;
         }
         public string doctor_id = "", patient_id = "", chstatus = "";
-        LabtrackingReport_controller ctrlr=new LabtrackingReport_controller();
+        LabtrackingReport_controller ctrlr = new LabtrackingReport_controller();
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             var form2 = new Main_Calendar();
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
         }
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -33,6 +29,7 @@ namespace PappyjoeMVC.View
             var form2 = new Patients();
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
         }
         private void toolStripButton4_Click(object sender, EventArgs e)
@@ -40,6 +37,7 @@ namespace PappyjoeMVC.View
             var form2 = new Communication();
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
         }
         private void toolStripButton5_Click(object sender, EventArgs e)
@@ -47,6 +45,7 @@ namespace PappyjoeMVC.View
             var form2 = new StockReport();
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
         }
         private void toolStripButton6_Click(object sender, EventArgs e)
@@ -54,6 +53,7 @@ namespace PappyjoeMVC.View
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
         }
         private void toolStripButton10_Click(object sender, EventArgs e)
@@ -61,6 +61,7 @@ namespace PappyjoeMVC.View
             var form2 = new Expense(); ;
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
         }
         private void toolStripButton7_Click(object sender, EventArgs e)
@@ -68,6 +69,7 @@ namespace PappyjoeMVC.View
             var form2 = new Doctor_Profile();
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
         }
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
@@ -87,12 +89,12 @@ namespace PappyjoeMVC.View
                     {
                         if (String.IsNullOrWhiteSpace(textBox2.Text))
                         {
-                            DataTable keyprs=this.ctrlr.txtkeypress();
-                            dataGridView1.DataSource=keyprs;
+                            DataTable keyprs = this.ctrlr.txtkeypress();
+                            dataGridView1.DataSource = keyprs;
                         }
                         else
                         {
-                            DataTable keyprs2=this.ctrlr.txtkeypress2(textBox2.Text);
+                            DataTable keyprs2 = this.ctrlr.txtkeypress2(textBox2.Text);
                             dataGridView1.DataSource = keyprs2;
 
                         }
@@ -118,12 +120,12 @@ namespace PappyjoeMVC.View
                 {
                     if (String.IsNullOrWhiteSpace(textBox2.Text))
                     {
-                        DataTable keyup=this.ctrlr.txtkeyup();
+                        DataTable keyup = this.ctrlr.txtkeyup();
                         dataGridView1.DataSource = keyup;
                     }
                     else
                     {
-                        DataTable keyup2=this.ctrlr.txtkeyup2(textBox2.Text);
+                        DataTable keyup2 = this.ctrlr.txtkeyup2(textBox2.Text);
                         dataGridView1.DataSource = keyup2;
                     }
                 }
@@ -141,22 +143,22 @@ namespace PappyjoeMVC.View
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            DataTable stact=this.ctrlr.stactive();
+            DataTable stact = this.ctrlr.stactive();
             dataGridView1.DataSource = stact;
         }
         private void btnsent_Click(object sender, EventArgs e)
         {
-            DataTable stsnt=this.ctrlr.statsent();
+            DataTable stsnt = this.ctrlr.statsent();
             dataGridView1.DataSource = stsnt;
         }
         private void btn_Inproduction_Click(object sender, EventArgs e)
         {
-            DataTable dt_pt=this.ctrlr.statinproductn();
+            DataTable dt_pt = this.ctrlr.statinproductn();
             dataGridView1.DataSource = dt_pt;
         }
         private void btn_Intransit_Click(object sender, EventArgs e)
         {
-            DataTable dt_pt=this.ctrlr.statintransit();
+            DataTable dt_pt = this.ctrlr.statintransit();
             dataGridView1.DataSource = dt_pt;
         }
         private void btn_Recieved_Click(object sender, EventArgs e)
@@ -311,7 +313,7 @@ namespace PappyjoeMVC.View
                     string status = dataGridView1.Rows[k].Cells[7].Value.ToString();
                     ChangeStatus statuschange = new PappyjoeMVC.View.ChangeStatus(jobno, patient, doctor, lab, workname, due, status);
                     statuschange.ShowDialog();
-                    DataTable dt=this.ctrlr.selectall();
+                    DataTable dt = this.ctrlr.selectall();
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         chstatus = dt.Rows[i][13].ToString();
@@ -328,6 +330,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
         }
     }
