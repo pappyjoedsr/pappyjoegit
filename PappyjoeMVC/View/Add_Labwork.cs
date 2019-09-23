@@ -537,6 +537,27 @@ namespace PappyjoeMVC.View
             if (chk75.Checked) { teeth[42] = "75"; } else { teeth[42] = ""; }
             listeeth();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try

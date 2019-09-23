@@ -861,6 +861,7 @@
             this.linkLabel_id.Name = "linkLabel_id";
             this.linkLabel_id.Size = new System.Drawing.Size(0, 13);
             this.linkLabel_id.TabIndex = 73;
+            this.linkLabel_id.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_id_LinkClicked);
             // 
             // PB_Ptimage
             // 
@@ -882,6 +883,7 @@
             this.linkLabel_Name.Name = "linkLabel_Name";
             this.linkLabel_Name.Size = new System.Drawing.Size(0, 13);
             this.linkLabel_Name.TabIndex = 74;
+            this.linkLabel_Name.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Name_LinkClicked);
             // 
             // Lab_PtName
             // 
