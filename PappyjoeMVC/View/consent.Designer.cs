@@ -449,6 +449,7 @@
             this.Controls.Add(this.lbltoper);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Consent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consent";
             this.Load += new System.EventHandler(this.consent_Load);
             this.lbltoper.ResumeLayout(false);
