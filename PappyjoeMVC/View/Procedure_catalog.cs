@@ -16,36 +16,6 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        //public string ProcedureName
-        //{
-        //    get { return this.txt_procedurename.Text; }
-        //    set { txt_procedurename.Text = value; }
-        //}
-        //public string ProcedCost
-        //{
-        //    get { return this.txt_procedurecost.Text; }
-        //    set { txt_procedurecost.Text = value; }
-        //}
-        //public string Notes
-        //{
-        //    get { return this.richnotes.Text; }
-        //    set { richnotes.Text = value; }
-        //}
-        //public string ComboCategory
-        //{
-        //    get { return this.comboaddunder.Text; }
-        //    set { comboaddunder.Text = value; }
-        //}
-        //public string TextCategory
-        //{
-        //    get { return this.txt_AddCategory.Text; }
-        //    set { txt_AddCategory.Text = value; }
-        //}
-        //public void SetController(procedure_catalog_controller controller)
-        //{
-        //    cntrl = controller;
-        //}
-
         private void Procedure_catalog_Load(object sender, EventArgs e)
         {
             Dgv_Procedure.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -245,6 +215,7 @@ namespace PappyjoeMVC.View
                 else
                 {
                   DataTable dtb= this.cntrl.get_procedureName(txt_procedurename.Text);
+                  GetProcedureName(dtb);
                 }
             }
         }

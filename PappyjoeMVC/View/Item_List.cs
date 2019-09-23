@@ -18,7 +18,7 @@ namespace PappyjoeMVC.View
         Item_List_Controller cntrl=new Item_List_Controller();
         Supplier suplier = new Supplier();
         Manufacture manufacture = new Manufacture();
-        public string doctor_id = "";
+        public string doctor_id = "",patient_id="";
         public Item_List()
         {
             InitializeComponent();
@@ -28,10 +28,6 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
             this.formname = formname;
-        }
-        public void Setcontroller(Item_List_Controller controller)
-        {
-            cntrl = controller;
         }
         private void FrmItemList_Load(object sender, EventArgs e)
         {
@@ -43,7 +39,7 @@ namespace PappyjoeMVC.View
                 clinicn = dtb.Rows[0][0].ToString();
                 toolStripButton1.Text = clinicn.Replace("¤", "'");
             }
-            string dt_doctor = cntrl.Get_DoctorId(doctor_id);
+            string dt_doctor = this.cntrl.Get_DoctorName(doctor_id);
             if (dt_doctor!="")
             {
                 toolStripTextDoctor.Text = "Logged In As : " + dt_doctor.ToString();
@@ -268,6 +264,110 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.ShowDialog();
            
+        }
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            var form2 = new Main_Calendar();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            var form2 = new Patients();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            var form2 = new Communication();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            var form2 = new Reports();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+        private void toolStripButton10_Click(object sender, EventArgs e)
+        {
+            var form2 = new Expense();
+            form2.doctor_id = doctor_id;
+            form2.ShowDialog();
+        }
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            if (PappyjoeMVC.Model.Connection.MyGlobals.loginType != "staff")
+            {
+                var form2 = new Doctor_Profile();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
+        }
+        private void toolStripButton11_Click(object sender, EventArgs e)
+        {
+            var form2 = new LabtrackingReport();
+            form2.patient_id = patient_id;
+            form2.doctor_id = doctor_id;
+            form2.FormClosed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+            toolStripTextBox1.Clear();
+        }
+        private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (toolStripTextBox1.Text != "")
+            {
+                System.Data.DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox1.Text);
+                listpatientsearch.DataSource = dtdr;
+                listpatientsearch.DisplayMember = "patient";
+                listpatientsearch.ValueMember = "id";
+                if (listpatientsearch.Items.Count == 0)
+                {
+                    listpatientsearch.Visible = false;
+                }          
+                else
+                {
+                    listpatientsearch.Visible = true;
+                }
+                listpatientsearch.Location = new Point(toolStrip1.Width + 763, 30);
+            }
+            else
+            {
+                listpatientsearch.Visible = false;
+            }
+        }
+        private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
+        {
+            var form2 = new Patient_Profile_Details();
+            form2.doctor_id = doctor_id;                                           
+            form2.patient_id = listpatientsearch.SelectedValue.ToString();
+            listpatientsearch.Visible = false;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            var form2 = new StockReport();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
     }
 }

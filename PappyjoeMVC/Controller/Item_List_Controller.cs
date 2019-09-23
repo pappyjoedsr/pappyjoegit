@@ -66,5 +66,15 @@ namespace PappyjoeMVC.Controller
             int i = _model.delete(id);
             return i;
         }
+        public string Get_DoctorName(string doctor_id)
+        {
+            string dtb = cmdl.Get_DoctorName(doctor_id);
+            return dtb;
+        }
+        public DataTable Patient_search(string patid)
+        {
+            DataTable dtb = cmdl.Patient_search(patid);
+            return dtb;
+        }
     }
 }
