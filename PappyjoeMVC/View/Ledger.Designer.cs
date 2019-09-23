@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ledger));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripBAttachment = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
@@ -161,18 +161,6 @@
             this.toolStripBAttachment.Text = "Fast Track";
             this.toolStripBAttachment.Visible = false;
             // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton3.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(60, 37);
-            this.toolStripButton3.Text = "Records";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
             // toolStripButton2
             // 
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -184,6 +172,18 @@
             this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
             this.toolStripButton2.Text = "Calendar";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton3.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(60, 37);
+            this.toolStripButton3.Text = "Records";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton4
             // 
@@ -347,7 +347,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 40);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // labelallpatient
@@ -463,7 +463,7 @@
             this.labl_Lab.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labl_Lab.ForeColor = System.Drawing.Color.DimGray;
             this.labl_Lab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labl_Lab.Location = new System.Drawing.Point(15, 291);
+            this.labl_Lab.Location = new System.Drawing.Point(15, 290);
             this.labl_Lab.Name = "labl_Lab";
             this.labl_Lab.Size = new System.Drawing.Size(166, 32);
             this.labl_Lab.TabIndex = 67;
@@ -478,7 +478,7 @@
             this.label44.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.ForeColor = System.Drawing.Color.DimGray;
             this.label44.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label44.Location = new System.Drawing.Point(14, 113);
+            this.label44.Location = new System.Drawing.Point(14, 115);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(166, 32);
             this.label44.TabIndex = 66;
@@ -494,7 +494,7 @@
             this.labelledger.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelledger.ForeColor = System.Drawing.Color.White;
             this.labelledger.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelledger.Location = new System.Drawing.Point(14, 443);
+            this.labelledger.Location = new System.Drawing.Point(14, 445);
             this.labelledger.Name = "labelledger";
             this.labelledger.Size = new System.Drawing.Size(166, 32);
             this.labelledger.TabIndex = 49;
@@ -525,7 +525,7 @@
             this.labelpayment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelpayment.ForeColor = System.Drawing.Color.DimGray;
             this.labelpayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelpayment.Location = new System.Drawing.Point(14, 409);
+            this.labelpayment.Location = new System.Drawing.Point(14, 410);
             this.labelpayment.Name = "labelpayment";
             this.labelpayment.Size = new System.Drawing.Size(166, 32);
             this.labelpayment.TabIndex = 47;
@@ -540,7 +540,7 @@
             this.labelattachment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelattachment.ForeColor = System.Drawing.Color.DimGray;
             this.labelattachment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelattachment.Location = new System.Drawing.Point(14, 324);
+            this.labelattachment.Location = new System.Drawing.Point(14, 325);
             this.labelattachment.Name = "labelattachment";
             this.labelattachment.Size = new System.Drawing.Size(166, 32);
             this.labelattachment.TabIndex = 46;
@@ -570,7 +570,7 @@
             this.labelfinished.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelfinished.ForeColor = System.Drawing.Color.DimGray;
             this.labelfinished.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelfinished.Location = new System.Drawing.Point(14, 219);
+            this.labelfinished.Location = new System.Drawing.Point(14, 220);
             this.labelfinished.Name = "labelfinished";
             this.labelfinished.Size = new System.Drawing.Size(166, 32);
             this.labelfinished.TabIndex = 44;
@@ -601,7 +601,7 @@
             this.labelclinical.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelclinical.ForeColor = System.Drawing.Color.DimGray;
             this.labelclinical.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelclinical.Location = new System.Drawing.Point(14, 149);
+            this.labelclinical.Location = new System.Drawing.Point(14, 150);
             this.labelclinical.Name = "labelclinical";
             this.labelclinical.Size = new System.Drawing.Size(166, 32);
             this.labelclinical.TabIndex = 42;
@@ -784,8 +784,8 @@
             this.DGV_Transaction.AllowUserToDeleteRows = false;
             this.DGV_Transaction.AllowUserToResizeColumns = false;
             this.DGV_Transaction.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.DGV_Transaction.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.DGV_Transaction.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Transaction.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -795,26 +795,26 @@
             this.DGV_Transaction.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.DGV_Transaction.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGV_Transaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_Transaction.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_Transaction.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGV_Transaction.Location = new System.Drawing.Point(7, 5);
             this.DGV_Transaction.MultiSelect = false;
             this.DGV_Transaction.Name = "DGV_Transaction";
             this.DGV_Transaction.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Transaction.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Transaction.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DGV_Transaction.RowHeadersVisible = false;
             this.DGV_Transaction.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_Transaction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

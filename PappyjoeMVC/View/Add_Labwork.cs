@@ -213,6 +213,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Login();
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
         }
         private void TTP_SearchText_Click(object sender, EventArgs e)

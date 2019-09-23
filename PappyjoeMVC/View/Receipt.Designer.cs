@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receipt));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_Add = new System.Windows.Forms.Button();
@@ -392,7 +392,7 @@
             this.toolStriptextdoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStriptextdoctor.Name = "toolStriptextdoctor";
             this.toolStriptextdoctor.ReadOnly = true;
-            this.toolStriptextdoctor.Size = new System.Drawing.Size(250, 23);
+            this.toolStriptextdoctor.Size = new System.Drawing.Size(250, 40);
             this.toolStriptextdoctor.Text = "doctorname";
             // 
             // panel4
@@ -516,7 +516,7 @@
             this.labl_Lab.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labl_Lab.ForeColor = System.Drawing.Color.DimGray;
             this.labl_Lab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labl_Lab.Location = new System.Drawing.Point(13, 291);
+            this.labl_Lab.Location = new System.Drawing.Point(13, 290);
             this.labl_Lab.Name = "labl_Lab";
             this.labl_Lab.Size = new System.Drawing.Size(166, 32);
             this.labl_Lab.TabIndex = 66;
@@ -531,7 +531,7 @@
             this.Lab_VitalSigns.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_VitalSigns.ForeColor = System.Drawing.Color.DimGray;
             this.Lab_VitalSigns.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lab_VitalSigns.Location = new System.Drawing.Point(14, 113);
+            this.Lab_VitalSigns.Location = new System.Drawing.Point(14, 115);
             this.Lab_VitalSigns.Name = "Lab_VitalSigns";
             this.Lab_VitalSigns.Size = new System.Drawing.Size(166, 32);
             this.Lab_VitalSigns.TabIndex = 65;
@@ -546,7 +546,7 @@
             this.Lab_Ledger.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Ledger.ForeColor = System.Drawing.Color.DimGray;
             this.Lab_Ledger.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lab_Ledger.Location = new System.Drawing.Point(14, 439);
+            this.Lab_Ledger.Location = new System.Drawing.Point(14, 445);
             this.Lab_Ledger.Name = "Lab_Ledger";
             this.Lab_Ledger.Size = new System.Drawing.Size(166, 32);
             this.Lab_Ledger.TabIndex = 49;
@@ -562,7 +562,7 @@
             this.Lab_Invoice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Invoice.ForeColor = System.Drawing.Color.DimGray;
             this.Lab_Invoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lab_Invoice.Location = new System.Drawing.Point(14, 371);
+            this.Lab_Invoice.Location = new System.Drawing.Point(14, 375);
             this.Lab_Invoice.Name = "Lab_Invoice";
             this.Lab_Invoice.Size = new System.Drawing.Size(166, 32);
             this.Lab_Invoice.TabIndex = 48;
@@ -578,7 +578,7 @@
             this.Lab_Payment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Payment.ForeColor = System.Drawing.Color.White;
             this.Lab_Payment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lab_Payment.Location = new System.Drawing.Point(14, 405);
+            this.Lab_Payment.Location = new System.Drawing.Point(14, 410);
             this.Lab_Payment.Name = "Lab_Payment";
             this.Lab_Payment.Size = new System.Drawing.Size(166, 32);
             this.Lab_Payment.TabIndex = 47;
@@ -593,7 +593,7 @@
             this.Lab_Attachmnt.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Attachmnt.ForeColor = System.Drawing.Color.DimGray;
             this.Lab_Attachmnt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lab_Attachmnt.Location = new System.Drawing.Point(14, 320);
+            this.Lab_Attachmnt.Location = new System.Drawing.Point(14, 325);
             this.Lab_Attachmnt.Name = "Lab_Attachmnt";
             this.Lab_Attachmnt.Size = new System.Drawing.Size(166, 32);
             this.Lab_Attachmnt.TabIndex = 46;
@@ -623,7 +623,7 @@
             this.Lab_Finished.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Finished.ForeColor = System.Drawing.Color.DimGray;
             this.Lab_Finished.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lab_Finished.Location = new System.Drawing.Point(14, 219);
+            this.Lab_Finished.Location = new System.Drawing.Point(14, 220);
             this.Lab_Finished.Name = "Lab_Finished";
             this.Lab_Finished.Size = new System.Drawing.Size(166, 32);
             this.Lab_Finished.TabIndex = 44;
@@ -654,7 +654,7 @@
             this.Lab_Clinical.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Clinical.ForeColor = System.Drawing.Color.DimGray;
             this.Lab_Clinical.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lab_Clinical.Location = new System.Drawing.Point(14, 149);
+            this.Lab_Clinical.Location = new System.Drawing.Point(14, 150);
             this.Lab_Clinical.Name = "Lab_Clinical";
             this.Lab_Clinical.Size = new System.Drawing.Size(166, 32);
             this.Lab_Clinical.TabIndex = 42;
@@ -698,7 +698,7 @@
             // 
             this.Lab_Account.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Account.ForeColor = System.Drawing.Color.DarkGreen;
-            this.Lab_Account.Location = new System.Drawing.Point(1, 356);
+            this.Lab_Account.Location = new System.Drawing.Point(1, 360);
             this.Lab_Account.Name = "Lab_Account";
             this.Lab_Account.Size = new System.Drawing.Size(179, 13);
             this.Lab_Account.TabIndex = 15;
@@ -771,22 +771,22 @@
             this.Dgv_payment.AllowUserToDeleteRows = false;
             this.Dgv_payment.AllowUserToResizeColumns = false;
             this.Dgv_payment.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.Dgv_payment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.Dgv_payment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_payment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.Dgv_payment.BackgroundColor = System.Drawing.Color.White;
             this.Dgv_payment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_payment.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Dgv_payment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_payment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_payment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_payment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_payment.ColumnHeadersVisible = false;
             this.Dgv_payment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -796,14 +796,14 @@
             this.Column4,
             this.Column6,
             this.Column5});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Dgv_payment.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Dgv_payment.DefaultCellStyle = dataGridViewCellStyle3;
             this.Dgv_payment.Location = new System.Drawing.Point(4, 3);
             this.Dgv_payment.Name = "Dgv_payment";
             this.Dgv_payment.ReadOnly = true;
