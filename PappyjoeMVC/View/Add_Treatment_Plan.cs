@@ -13,7 +13,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Add_Treatment_Plan : Form
     {
-        Add_Treatmentplan_controller cntrl;
+        Add_Treatmentplan_controller cntrl=new Add_Treatmentplan_controller();
         public string doctor_id = ""; public string patient_id = "";
         string id;
         Decimal discounttotal = 0;

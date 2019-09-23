@@ -793,6 +793,7 @@
             this.BtnCard.Text = "Card";
             this.BtnCard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnCard.UseVisualStyleBackColor = false;
+            this.BtnCard.Click += new System.EventHandler(this.BtnCard_Click);
             // 
             // editpatient
             // 
