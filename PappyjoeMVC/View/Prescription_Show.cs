@@ -1767,6 +1767,16 @@ namespace PappyjoeMVC.View
             form2.ShowDialog();
         }
 
+        private void labl_Lab_Click(object sender, EventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.LabWorks();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         public void SetController(Prescription_Show_controller controller)
         {
             cntrl = controller;

@@ -896,6 +896,13 @@ namespace PappyjoeMVC.View
             form2.ShowDialog();
         }
 
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Login();
+            form2.Closed += (sender1, args) => this.Close();
+            form2.ShowDialog();
+        }
+
         private void btn_purOrder_Click(object sender, EventArgs e)
         {
             backColor_Change();
