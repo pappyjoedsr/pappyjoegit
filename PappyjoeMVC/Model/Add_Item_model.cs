@@ -14,11 +14,11 @@ namespace PappyjoeMVC.Model
             DataTable dt_manufact = db.table("select * from tbl_manufacturer order by id");
             return dt_manufact;
         }
-        public DataTable fill_unit()
-        {
-            DataTable dt_Units = db.table("select * from tbl_unit order by id");
-            return dt_Units;
-        }
+        //public DataTable fill_unit()
+        //{
+        //    DataTable dt_Units = db.table("select * from tbl_unit order by id");
+        //    return dt_Units;
+        //}
         public int Save_data(string _itemname, string _itemcode, string _manufacture, string _category, string _location, string _packing, string _isbatch, string _Sales1, string _SalesMin, string _SalesMax, string _Purch_Rate, string _punit, string _sUnit, int _unitmf, string _Purch_Rate2, string _Sales2, string _SalesMin1, string _SalesMax1, string _isOneUnitOnly, string _ReorderQty, string _CostBase, string _istax, string _MinimumStock)
         {
             int i = db.execute("insert into tbl_ITEMS(item_name,item_code,manufacturer,Cat_Number,Location,Packing,Dep_Number,ISBatch,IsExpDate,IsSerial,Sales_Rate,Sales_Rate_min,Sales_Rate_Max,Open_Cost,Open_Stock,Current_Stock,FreeStock,LOWEST_COST,PurchRateType,Purch_Rate,Sup_Code,Unit1,Unit2,UnitMF,Purch_Rate2,Sales_Rate2,Sales_Rate_min2,Sales_Rate_Max2,OneUnitOnly,ReorderQty,CostBase,PayAfterSale,ItemGroup,Taxable,MinimumStock)values('" + _itemname + "','" + _itemcode + "','" + _manufacture + "','" + _category + "','" + _location + "','" + _packing + "','1','" + _isbatch + "','False','False','" + _Sales1 + "','" + _SalesMin + "','" + _SalesMax + "','0','0','0','0','0','0','" + _Purch_Rate + "','1','" + _punit + "','" + _sUnit + "','" + _unitmf + "','" + _Purch_Rate2 + "','" + _Sales2 + "','" + _SalesMin1 + "','" + _SalesMax1 + "','" + _isOneUnitOnly + "','" + _ReorderQty + "','" + _CostBase + "','False','False','" + _istax + "','" + _MinimumStock + "')");

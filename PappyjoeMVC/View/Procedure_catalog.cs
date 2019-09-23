@@ -10,12 +10,42 @@ namespace PappyjoeMVC.View
     public partial class Procedure_Catalog : Form
     {
         Procedure_Catalog_controller cntrl=new Procedure_Catalog_controller();
-        string idd = null;
+        //string idd = null;
         int refresh;
         public Procedure_Catalog()
         {
             InitializeComponent();
         }
+        //public string ProcedureName
+        //{
+        //    get { return this.txt_procedurename.Text; }
+        //    set { txt_procedurename.Text = value; }
+        //}
+        //public string ProcedCost
+        //{
+        //    get { return this.txt_procedurecost.Text; }
+        //    set { txt_procedurecost.Text = value; }
+        //}
+        //public string Notes
+        //{
+        //    get { return this.richnotes.Text; }
+        //    set { richnotes.Text = value; }
+        //}
+        //public string ComboCategory
+        //{
+        //    get { return this.comboaddunder.Text; }
+        //    set { comboaddunder.Text = value; }
+        //}
+        //public string TextCategory
+        //{
+        //    get { return this.txt_AddCategory.Text; }
+        //    set { txt_AddCategory.Text = value; }
+        //}
+        //public void SetController(procedure_catalog_controller controller)
+        //{
+        //    cntrl = controller;
+        //}
+
         private void Procedure_catalog_Load(object sender, EventArgs e)
         {
             Dgv_Procedure.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -50,6 +80,7 @@ namespace PappyjoeMVC.View
         {
             Dictionary<string, int> dict = new Dictionary<string, int>();
             int rowNum = 0;
+            Dgv_Procedure.Rows.Clear();
             for (int j = 0; j < dt.Rows.Count; j++)
             {
                 string id = dt.Rows[j]["id"].ToString();
@@ -123,7 +154,7 @@ namespace PappyjoeMVC.View
                 comboaddunder.Show();
                 DataTable dtb = this.cntrl.get_procedure_category_value();
                 AddCategory(dtb);
-                btnAddNewCategory.Show();
+                btnAddNewCategory.Show();  
             }
             else
             {
@@ -215,7 +246,9 @@ namespace PappyjoeMVC.View
                 else
                 {
                   DataTable dtb= this.cntrl.get_procedureName(txt_procedurename.Text);
-                  GetProcedureName(dtb);
+                    GetProcedureName(dtb);
+                    DataTable dt = this.cntrl.FormLoad();
+                    FormLoad(dt);
                 }
             }
         }

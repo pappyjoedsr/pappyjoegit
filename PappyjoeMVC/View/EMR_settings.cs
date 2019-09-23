@@ -161,7 +161,8 @@ namespace PappyjoeMVC.View
                         else
                         {
                             this.cntrl.Delete_complaints(id_comp);
-                            this.cntrl.Fill_grid();
+                          DataTable dtb=  this.cntrl.Fill_grid();
+                            FillGrid(dtb);
                         }
                     }
                 }

@@ -6,6 +6,7 @@ namespace PappyjoeMVC.Controller
     public class Billing_controller
     {
         Billing_model mdl = new Billing_model();
+        Common_model cmodel = new Common_model();
         public int save(string TaxName, string Tax)
         {
             int i = mdl.save(TaxName, Tax);
@@ -13,7 +14,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable Fill_BillGrid()
         {
-            DataTable dtb = mdl.Fill_BillGrid();
+            DataTable dtb = cmodel.Fill_LoadTax();
             return dtb;
         }
         public int update(string id, string TaxName, string Tax)

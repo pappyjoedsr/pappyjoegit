@@ -66,14 +66,29 @@ namespace PappyjoeMVC.Controller
             int i = _model.delete(id);
             return i;
         }
-        public string Get_DoctorName(string doctor_id)
-        {
-            string dtb = cmdl.Get_DoctorName(doctor_id);
-            return dtb;
-        }
         public DataTable Patient_search(string patid)
         {
             DataTable dtb = cmdl.Patient_search(patid);
+            return dtb;
+        }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string id = cmdl.privilge_for_inventory(doctor_id);
+            return id;
+        }
+        public string doctr_privillage_for_addnewPatient(string doctor_id)
+        {
+            string dtb = cmdl.doctr_privillage_for_addnewPatient(doctor_id);
+            return dtb;
+        }
+        public string Get_DoctorName(string doctor_id)
+        {
+            string dctr = cmdl.Get_DoctorName(doctor_id);
+            return dctr;
+        }
+        public string permission_for_settings(string doctor_id)
+        {
+            string dtb = cmdl.permission_for_settings(doctor_id);
             return dtb;
         }
     }

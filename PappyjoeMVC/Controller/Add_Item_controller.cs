@@ -5,6 +5,7 @@ namespace PappyjoeMVC.Controller
     public class Add_Item_controller
     {
         Add_Item_model _Model = new Add_Item_model();
+        Common_model cmodel = new Common_model();
         public DataTable fill_category()
         {
             DataTable dtb = _Model.fill_category();
@@ -17,7 +18,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable fill_unit()
         {
-            DataTable dtb = _Model.fill_unit();
+            DataTable dtb = cmodel.Fill_unit_combo();
             return dtb;
         }
         public int Save_data(string _itemname, string _itemcode, string _manufacture, string _category, string _location, string _packing, string _isbatch, string _Sales1, string _SalesMin, string _SalesMax, string _Purch_Rate, string _punit, string _sUnit, int _unitmf, string _Purch_Rate2, string _Sales2, string _SalesMin1, string _SalesMax1, string _isOneUnitOnly, string _ReorderQty, string _CostBase, string _istax, string _MinimumStock)

@@ -2139,7 +2139,7 @@ namespace PappyjoeMVC.View
                 {
                     listpatientsearch.Visible = true;
                 }
-                listpatientsearch.Location = new Point(toolStripTextBox1.Width - 352, 39);
+                listpatientsearch.Location = new Point(toolStripTextBox1.Width = 1014, 39);
             }
             else
             {

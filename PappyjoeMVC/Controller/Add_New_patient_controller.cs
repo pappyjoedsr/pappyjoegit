@@ -4,7 +4,7 @@ namespace PappyjoeMVC.Controller
 {
     public class Add_New_patient_controller
     {
-       
+
         Connection db = new Connection();
         Common_model mdl = new Common_model();
         Add_New_Patient_model _model = new Add_New_Patient_model();
@@ -18,6 +18,7 @@ namespace PappyjoeMVC.Controller
             string server = db.server();
             return server;
         }
+
         public DataTable Get_patient_details(string name)
         {
             DataTable dtb = _model.Get_patient_details(name);
@@ -31,7 +32,7 @@ namespace PappyjoeMVC.Controller
         public int Save(string _name, string _id, string _aadhar, string _gender, string _dob, string _age, string _blood, string _accompained, string _pmobile, string _smobile, string _landline, string _email, string _street, string
        _locality, string _city, string _pincode, string _referred, string _file, string _admit, string _doctor, string _occupation)
         {
-            int i = _model.Save( _name,  _id,  _aadhar,  _gender,  _dob,  _age,  _blood,  _accompained,  _pmobile,  _smobile,  _landline,  _email,  _street, _locality,  _city,  _pincode,  _referred,  _file,  _admit,  _doctor,  _occupation);
+            int i = _model.Save(_name, _id, _aadhar, _gender, _dob, _age, _blood, _accompained, _pmobile, _smobile, _landline, _email, _street, _locality, _city, _pincode, _referred, _file, _admit, _doctor, _occupation);
             return i;
         }
         public string get_maxId()
@@ -106,8 +107,28 @@ namespace PappyjoeMVC.Controller
         }
         public string Get_DoctorName(string doctor_id)
         {
-            string dctr= mdl.Get_DoctorName(doctor_id);
+            string dctr = mdl.Get_DoctorName(doctor_id);
             return dctr;
+        }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string id = mdl.privilge_for_inventory(doctor_id);
+            return id;
+        }
+        public DataTable Patient_search(string patid)
+        {
+            DataTable dtb = mdl.Patient_search(patid);
+            return dtb;
+        }
+        public string doctr_privillage_for_addnewPatient(string doctor_id)
+        {
+            string dtb = mdl.doctr_privillage_for_addnewPatient(doctor_id);
+            return dtb;
+        }
+        public string permission_for_settings(string doctor_id)
+        {
+            string dtb = mdl.permission_for_settings(doctor_id);
+            return dtb;
         }
     }
 }

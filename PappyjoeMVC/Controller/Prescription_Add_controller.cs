@@ -37,7 +37,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable Fill_unit_combo()
         {
-            DataTable dtb = pmodel.Fill_unit_combo();
+            DataTable dtb = cmodel.Fill_unit_combo();
             return dtb;
         }
         public DataTable fill_type_combo()

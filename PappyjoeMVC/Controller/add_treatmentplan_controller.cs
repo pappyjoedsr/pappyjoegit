@@ -30,7 +30,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable Get_all_procedures()
         {
-            DataTable dtb = _Model.Get_all_procedures();
+            DataTable dtb = cmodel.get_All_proceure();// _Model.Get_all_procedures();
             return dtb;
         }
         public void Save_treatment(string dr_id, string patient_id, string _date, string _doctor, string _patientname, string _totalcost, string _totaldiscount, string _grandtotal)

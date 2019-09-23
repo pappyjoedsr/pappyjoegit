@@ -42,7 +42,7 @@ namespace PappyjoeMVC.Model
         {
             DataTable dt = db.table("select DISTINCT id,doctor_name from tbl_doctor  where login_type='doctor' or login_type ='admin' and activate_login='yes' order by doctor_name");
             return dt;
-        }
+        }//select id,doctor_name from tbl_doctor where (login_type='admin'or login_type='doctor' )and activate_login='Yes'
         public DataTable Get_Patient_Details(string id)
         {
             DataTable clinicname = db.table("select * from tbl_patient where id='" + id + "'");
@@ -108,6 +108,11 @@ namespace PappyjoeMVC.Model
             DataTable dt3 = db.table("select * from  tbl_addproceduresettings order by id");
             return dt3;
         }
+        //public DataTable Get_all_procedures()
+        //{
+        //    DataTable treatment = db.table("select id,name,cost from tbl_addproceduresettings ORDER BY id DESC");
+        //    return treatment;
+        //}
         public DataTable Patient_search(string _Patientid)
         {
             DataTable dtdr = db.table("select id, CONCAT(pt_name, ',', age, ',', gender) as patient from tbl_patient where (pt_name like '" + _Patientid + "%'   or pt_id like '%" + _Patientid + "%' or primary_mobile_number like '%" + _Patientid + "%') and Profile_Status = 'Active'");
@@ -155,6 +160,16 @@ namespace PappyjoeMVC.Model
         {
             DataTable patient = db.table("select pt_name,gender,street_address,city,primary_mobile_number,date,date_of_birth from tbl_patient where id='" + patient_id + "'");
             return patient;
+        }
+        public DataTable Fill_unit_combo()
+        {
+            DataTable dt3 = db.table("select * from tbl_unit  order by id");
+            return dt3;
+        }
+        public DataTable Fill_LoadTax()
+        {
+            DataTable dtb = db.table("select * from tbl_tax order by id");
+            return dtb;
         }
     }
 }

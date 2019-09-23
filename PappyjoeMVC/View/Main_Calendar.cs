@@ -3941,7 +3941,7 @@ namespace PappyjoeMVC.View
                         DateTime Timeonly = DateTime.Now;
                         dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Style.BackColor = Color.FromArgb(0, 0, 255);
                         dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value = " ";
-                        this.cntrl.update_appointment_status_checkout(Convert.ToString(Timeonly.ToString("hh:mm tt")), dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[0].Value.ToString());// int j = db.execute("update tbl_appointment set status='Checked Out',checkout='" + Convert.ToString(Timeonly.ToString("hh:mm tt")) + "' where id='" + dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'");
+                        this.cntrl.update_appointment_status_checkout(Convert.ToString(Timeonly.ToString("hh:mm tt")), dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[0].Value.ToString());
                         long_sub = Convert.ToInt64(label9.Text);
                         long_add = Convert.ToInt64(label10.Text);
                         label9.Text = Convert.ToString(long_sub - 1);
@@ -3957,16 +3957,16 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        //string id1 = "";
-                        //var form2 = new Pappyjoe.SimplestAppointment();//not sure
-                        //form2.doctor_id = doctor_id;
-                        //id1 = dataGridViewAppointment.Rows[e.RowIndex].Cells[0].Value.ToString();
-                        //DataTable dtdr = db.table("SELECT pt_id,pt_name,id,book_datetime from tbl_appointment where id='" + id1 + "'");
-                        //row_Val = e.RowIndex;
-                        //form2.patient_id = dtdr.Rows[0]["pt_id"].ToString();
-                        //form2.strApp_id = id1;
-                        //form2.Appointment_list += childForm_VitalSignChanged; // Form List
-                        //form2.ShowDialog(this);
+                        string id1 = "";
+                        var form2 = new SimpleAppointment();
+                        form2.doctor_id = doctor_id;
+                        id1 = dataGridViewAppointment.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        DataTable dtdr = this.cntrl.get_pat_for_simpleappoint(id1);
+                        row_Val = e.RowIndex;
+                        form2.patient_id = dtdr.Rows[0]["pt_id"].ToString();
+                        form2.strApp_id = id1;
+                        form2.Appointment_list += childForm_VitalSignChanged; 
+                        form2.ShowDialog(this);
                     }
                 }
             }

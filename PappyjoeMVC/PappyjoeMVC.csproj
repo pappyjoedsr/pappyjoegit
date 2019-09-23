@@ -84,7 +84,6 @@
     <Compile Include="Controller\ChangeStatus_controller.cs" />
     <Compile Include="Controller\Clinical_Notes_Add_controller.cs" />
     <Compile Include="Controller\Clinical_Findings_controller.cs" />
-    <Compile Include="Controller\Common_controller.cs" />
     <Compile Include="Controller\Communication_controller.cs" />
     <Compile Include="Controller\Communication_Setting_controller.cs" />
     <Compile Include="Controller\Contact_controller.cs" />
@@ -175,6 +174,7 @@
     <Compile Include="Controller\Sales_Return_List_Controller.cs" />
     <Compile Include="Controller\Sales_Return_Report_controller.cs" />
     <Compile Include="Controller\Show_Appointment_controller.cs" />
+    <Compile Include="Controller\SimpleAppointment_controller.cs" />
     <Compile Include="Controller\Staff_controller.cs" />
     <Compile Include="Controller\stock_controller.cs" />
     <Compile Include="Controller\Supplier_controller.cs" />
@@ -253,6 +253,7 @@
     <Compile Include="Model\Sales_Report_model.cs" />
     <Compile Include="Model\Sales_Return_Model.cs" />
     <Compile Include="Model\Show_Appointment_model.cs" />
+    <Compile Include="Model\SimpleAppointment_model.cs" />
     <Compile Include="Model\SMS_model.cs" />
     <Compile Include="Model\Staff_model.cs" />
     <Compile Include="Model\StockItem_model.cs" />
@@ -787,6 +788,12 @@
     <Compile Include="View\Sales_Return_Report.designer.cs">
       <DependentUpon>Sales_Return_Report.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SimpleAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SimpleAppointment.Designer.cs">
+      <DependentUpon>SimpleAppointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\StockReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1303,6 +1310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Sales_Return_Report.resx">
       <DependentUpon>Sales_Return_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SimpleAppointment.resx">
+      <DependentUpon>SimpleAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\StockReport.resx">
       <DependentUpon>StockReport.cs</DependentUpon>
