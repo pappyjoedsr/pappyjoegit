@@ -7,8 +7,8 @@ namespace PappyjoeMVC.Controller
 
         Printout_model mdl = new Printout_model();
         Common_model cmdl = new Common_model();
-
-        public DataTable Get_practice_details()
+        Connection db = new Connection()
+;        public DataTable Get_practice_details()
         {
             DataTable dt = mdl.Get_practice_details();
             return dt;
@@ -59,6 +59,11 @@ namespace PappyjoeMVC.Controller
         {
             DataTable dtb = cmdl.get_company_details();
             return dtb;
+        }
+        public string getserver()
+        {
+            string ret = db.server();
+            return ret;
         }
         //receipt
         public DataTable load_receipt_print()

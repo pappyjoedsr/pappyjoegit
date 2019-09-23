@@ -5,14 +5,15 @@ namespace PappyjoeMVC.Controller
     public class Add_Unit_controller
     {
         Add_Unit_model _model = new Add_Unit_model();
+        Common_model cmodel = new Common_model();
         public DataTable Load_Data()
         {
-            DataTable dtb = _model.Load_Data();
+            DataTable dtb = cmodel.Fill_unit_combo();
             return dtb;
         }
         public DataTable get_units()
         {
-            DataTable dtb = _model.Load_Data();
+            DataTable dtb = cmodel.Fill_unit_combo();
             return dtb;
         }
         public int save(string Units)

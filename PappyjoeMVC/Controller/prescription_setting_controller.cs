@@ -6,6 +6,7 @@ namespace PappyjoeMVC.Controller
     public class Prescription_Setting_controller
     {
         Prescription_Setting_model _model = new Prescription_Setting_model();
+        Common_model cmodel = new Common_model();
         public DataTable get_drug()
         {
             DataTable dt = _model.get_drug();
@@ -18,7 +19,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable fill_unit_combo()
         {
-            DataTable dtb = _model.Fill_unit_combo();
+            DataTable dtb = cmodel.Fill_unit_combo();
             return dtb;
         }
         public DataTable get_value_from_drugtype(string type)

@@ -2139,7 +2139,7 @@ namespace PappyjoeMVC.View
                 {
                     listpatientsearch.Visible = true;
                 }
-                listpatientsearch.Location = new Point(toolStripTextBox1.Width - 352, 39);
+                listpatientsearch.Location = new Point(toolStripTextBox1.Width - 352, 32);
             }
             else
             {
@@ -2382,9 +2382,10 @@ namespace PappyjoeMVC.View
         private void txt_Search_KeyUp(object sender, KeyEventArgs e)
         {
             DateTime d = DateTime.Now;
-            d = d.AddMonths(-1);
+            d = d.AddMonths(-1); 
+             
             DateTime todate = DateTime.Now;
-            string sqlstr = "";
+            //string sqlstr = "";
             lab_7.Text = ""; lab_Displaying.Visible = true;
             DateTime startDateTime = Convert.ToDateTime(DateTime.Today.ToString("d") + " " + DateTime.Now.ToString("hh:mm:ss tt"));
             ClearAll_grid2_Properties();

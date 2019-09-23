@@ -159,6 +159,11 @@ namespace PappyjoeMVC.Controller
             string dtb = cmodel.permission_for_settings(doctor_id);
             return dtb;
         }
+        public DataTable get_pat_for_simpleappoint(string id1)
+        {
+            DataTable dtb = model.get_pat_for_simpleappoint(id1);
+            return dtb;
+        }
     }
 }
  

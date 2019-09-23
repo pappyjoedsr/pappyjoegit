@@ -61,6 +61,8 @@ namespace PappyjoeMVC.View
                     text_taxname.Text = "";
                     buttonsave.Text = "Save";
                     text_taxvalue.Text = "";
+                    DataTable dtb = this.cntrl.Fill_BillGrid();
+                    FillBillGrid(dtb);
                 }
                 else
                 {

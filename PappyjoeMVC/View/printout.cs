@@ -175,9 +175,13 @@ namespace PappyjoeMVC.View
                             if (dtp.Rows.Count > 0)
                             {
                                 string path = dtp.Rows[0]["path"].ToString();
-                                logo = Image.FromFile(db.server() + path);
-                                e.Graphics.DrawImage(logo, 30, 50, 100, 100);
-                                xx = 150;
+                                string curFile = this.cntrl.getserver() + "\\Pappyjoe_utilities\\Logo\\" + path;
+                                if (System.IO.File.Exists(curFile))
+                                {
+                                    logo = System.Drawing.Image.FromFile(curFile);
+                                    e.Graphics.DrawImage(logo, 30, 50, 100, 100);
+                                    xx = 150;
+                                }
                             }
                         }
                         catch (Exception ex)
@@ -821,13 +825,10 @@ namespace PappyjoeMVC.View
                 int leftmargin = int.Parse(left.Substring(0, left.IndexOf("m")));
                 string right = combo_rightmargin1.Text;
                 int rightmargin = int.Parse(right.Substring(0, right.IndexOf("m")));
-                //string foottop = combo_footer_topmargin1.Text;
-                //int footer = int.Parse(foottop.Substring(0, foottop.IndexOf("m")));
                 printDocument_invoice.DefaultPageSettings.Margins.Top = topmargin;
                 printDocument_invoice.DefaultPageSettings.Margins.Left = leftmargin;
                 printDocument_invoice.DefaultPageSettings.Margins.Bottom = bottommargin;
                 printDocument_invoice.DefaultPageSettings.Margins.Right = rightmargin;
-                //printDocument_invoice.DefaultPageSettings.Margins.Bottom = footer;
                 printDocument_invoice.OriginAtMargins = true;
 
                 if (combo_paper_size1.SelectedIndex != -1)
@@ -874,7 +875,6 @@ namespace PappyjoeMVC.View
 
                     }
                     paperSize.RawKind = (int)PaperKind.Custom;
-
                     printDocument_invoice.DefaultPageSettings.PaperSize = paperSize;
                     printDocument_invoice.PrinterSettings.DefaultPageSettings.PaperSize = paperSize;
                 }
@@ -906,9 +906,13 @@ namespace PappyjoeMVC.View
                             if (dtp.Rows.Count > 0)
                             {
                                 string path = dtp.Rows[0]["path"].ToString();
-                                logo = System.Drawing.Image.FromFile(pathimage + path);
-                                e.Graphics.DrawImage(logo, 30, 50, 100, 100);
-                                xx = 150;
+                                string curFile = this.cntrl.getserver() + "\\Pappyjoe_utilities\\Logo\\" + path;
+                                if (System.IO.File.Exists(curFile))
+                                {
+                                    logo = System.Drawing.Image.FromFile(curFile);
+                                    e.Graphics.DrawImage(logo, 30, 50, 100, 100);
+                                    xx = 150;
+                                }
                             }
                         }
                         catch(Exception ex)
@@ -1437,6 +1441,11 @@ namespace PappyjoeMVC.View
             try
             {
                 prescription_flag = true;
+                tabControl2.TabPages.Remove(tabPage5);
+                tabControl3.TabPages.Remove(tabPage13);
+                tabControl4.TabPages.Remove(tabPage17);
+                tabControl5.TabPages.Remove(tabPage21);
+
                 tabControl1.TabPages.Remove(tabPage2);
                 tabControl1.TabPages.Remove(tabPage9);
                 tabControl1.TabPages.Remove(tabPage10);
@@ -1559,9 +1568,15 @@ namespace PappyjoeMVC.View
                             if (dtp.Rows.Count > 0)
                             {
                                 string path = dtp.Rows[0]["path"].ToString();
-                                logo = System.Drawing.Image.FromFile(pathimage + path);
-                                e.Graphics.DrawImage(logo, 30, 50, 100, 100);
-                                xx = 150;
+                                string curFile = this.cntrl.getserver() + "\\Pappyjoe_utilities\\Logo\\" + path;
+                                if (System.IO.File.Exists(curFile))
+                                {
+                                    logo = System.Drawing.Image.FromFile(curFile);
+                                    e.Graphics.DrawImage(logo, 30, 50, 100, 100);
+                                    xx = 150;
+                                }
+
+                                
                             }
                         }
                         catch (Exception ex)

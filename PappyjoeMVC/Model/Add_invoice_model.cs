@@ -64,7 +64,7 @@ namespace PappyjoeMVC.Model
         public DataTable Get_invoice_prefix()
         {
             DataTable invno = db.table("select invoice_prefix,invoice_number,invoive_automation from tbl_invoice_automaticid where invoive_automation='Yes'");
-            return invno;
+            return invno;   
         }
         public DataTable search_procedure_completed(string patient_id, string search)
         {

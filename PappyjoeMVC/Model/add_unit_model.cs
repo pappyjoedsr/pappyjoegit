@@ -5,11 +5,11 @@ namespace PappyjoeMVC.Model
     public class Add_Unit_model
     {
         Connection db = new Connection();
-        public DataTable Load_Data()
-        {
-            DataTable dtb = db.table("select * from tbl_unit order by id");
-            return dtb;
-        }
+        //public DataTable Load_Data()
+        //{
+        //    DataTable dtb = db.table("select * from tbl_unit order by id");
+        //    return dtb;
+        //}
         public int save(string _unit)
         {
             int i = db.execute("insert into tbl_unit (name) values('" + _unit + "')");
