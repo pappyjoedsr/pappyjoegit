@@ -22,10 +22,6 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        public void SetController(Add_Treatmentplan_controller controller)
-        {
-            cntrl = controller;
-        }
         private void AddTreatmentPlan_Load(object sender, EventArgs e)
         {
             try
