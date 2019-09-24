@@ -72,5 +72,6 @@ namespace PappyjoeMVC.Controller
             string dtb = cmodel.doctr_privillage_for_addnewPatient(doctor_id);
             return dtb;
         }
+        
     }
 }

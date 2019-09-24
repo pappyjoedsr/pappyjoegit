@@ -35,7 +35,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable Get_Patient_details(string patient_id)
         {
-            DataTable dtb = _model.Get_Patient_details(patient_id);
+            DataTable dtb = mdl.Get_Patient_Details(patient_id);//.Get_Patient_details(patient_id);
             return dtb;// intr.patientload(dtb);
         }
         public DataTable pt_medical(string pt_id)

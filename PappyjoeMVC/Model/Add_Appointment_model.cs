@@ -54,11 +54,11 @@ namespace PappyjoeMVC.Model
             string b = db.scalar("select id from tbl_User_Privilege where UserID=" + doctrid + " and Category='CLMS' and Permission='A'");
             return b;
         }
-        public DataTable smsdetails()
-        {
-            DataTable dt = db.table("select smsName,smsPass from tbl_SmsEmailConfig");
-            return dt;
-        }
+        //public DataTable smsdetails()
+        //{
+        //    DataTable dt = db.table("select smsName,smsPass from tbl_SmsEmailConfig");
+        //    return dt;
+        //}
         public DataTable clinicdetails()
         {
             DataTable dtb = db.table("select name,locality,contact_no from tbl_practice_details");

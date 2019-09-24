@@ -358,7 +358,7 @@
             this.toolStripTextBDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextBDoctor.Name = "toolStripTextBDoctor";
             this.toolStripTextBDoctor.ReadOnly = true;
-            this.toolStripTextBDoctor.Size = new System.Drawing.Size(250, 23);
+            this.toolStripTextBDoctor.Size = new System.Drawing.Size(250, 40);
             this.toolStripTextBDoctor.Text = "doctorname";
             // 
             // toolStripTextBox1

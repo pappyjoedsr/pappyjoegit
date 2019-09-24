@@ -15,7 +15,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable smsdetails()
         {
-            DataTable dt = mdl.smsdetails();
+            DataTable dt = cmdl.smsdetails();
             return dt;
         }
         public string SendSMS(string User, string password, string Mobile_Number, string Message)

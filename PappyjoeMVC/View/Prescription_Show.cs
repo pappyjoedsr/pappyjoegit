@@ -705,10 +705,10 @@ namespace PappyjoeMVC.View
                     if (td_prescription_main.Rows.Count > 0)
                     {
                         this.cntrl.save_prescriptionmain(td_prescription_main.Rows[0]["pt_id"].ToString(), td_prescription_main.Rows[0]["dr_id"].ToString(), td_prescription_main.Rows[0]["notes"].ToString());// db.table("insert into tbl_prescription_main (pt_id,dr_id,date,notes) values('" + td_prescription_main.Rows[0]["pt_id"].ToString() + "','" + td_prescription_main.Rows[0]["dr_id"].ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + td_prescription_main.Rows[0]["notes"].ToString() + "')");
-                        System.Data.DataTable dt = this.cntrl.Maxid();// db.table("select MAX(id) from tbl_prescription_main");
-                        if (dt.Rows.Count > 0)
+                        string  dt = this.cntrl.Maxid();// db.table("select MAX(id) from tbl_prescription_main");
+                        if (Convert.ToInt32( dt)> 0)
                         {
-                            presid = Int32.Parse(dt.Rows[0][0].ToString());
+                            presid = Int32.Parse(dt);
                         }
                         else
                         {

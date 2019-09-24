@@ -1372,7 +1372,7 @@ namespace PappyjoeMVC.View
                     if (checkBoxReview.Checked == true)
                     {
                         this.cntrl.update_review(dateTimeReview.Value.ToString("yyyy-MM-dd HH:mm"), j_Review);
-                        DataTable dt_review = this.cntrl.get_reviewid(patient_id, DateTime.Now.ToString("yyyy-MM-dd"), dateTimeReview.Value.ToString("yyyy-MM-dd HH:mm"));
+                        DataTable dt_review = this.cntrl.get_reviewid(patient_id,dateTimeReview.Value.ToString("yyyy-MM-dd HH:mm"));//
                         if (dt_review.Rows.Count == 0)
                         {
                             this.cntrl.save_review(dateTimeReview.Value.ToString("yyyy-MM-dd HH:mm"), patient_id);

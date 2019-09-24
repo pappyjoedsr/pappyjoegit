@@ -64,7 +64,7 @@ namespace PappyjoeMVC.Model
         public DataTable Get_invoice_prefix()
         {
             DataTable invno = db.table("select invoice_prefix,invoice_number,invoive_automation from tbl_invoice_automaticid where invoive_automation='Yes'");
-            return invno;   
+            return invno;
         }
         public DataTable search_procedure_completed(string patient_id, string search)
         {
@@ -187,11 +187,6 @@ namespace PappyjoeMVC.Model
             DataTable print = db.table("select * from  tbl_invoice_printsettings");
             return print;
         }
-        //public DataTable get_invoice_doctorname(string patient_id)
-        //{
-        //    DataTable dtb = Add_inv_model.get_invoice_doctorname(patient_id);
-        //    return dtb;
-        //}
         public DataTable Get_date(string invoice_plan_id)
         {
             DataTable dt_invo = db.table("SELECT invoice,date FROM tbl_invoices_main WHERE id = '" + invoice_plan_id + "'");

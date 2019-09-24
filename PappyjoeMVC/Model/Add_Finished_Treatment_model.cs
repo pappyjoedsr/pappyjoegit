@@ -37,10 +37,10 @@ namespace PappyjoeMVC.Model
         {
             DataTable dtb = db.table("SELECT id,name,cost from tbl_addproceduresettings where name like'" + _search + "%' ORDER BY id DESC");
             return dtb;
-        }
+        } 
         public DataTable get_procedure_Name(string id)
         {
-            DataTable dt = db.table("select name,cost from tbl_addproceduresettings where id ='" + id + "'");
+            DataTable dt = db.table("select id,name,cost from tbl_addproceduresettings where id ='" + id + "'");
             return dt;
         }
         public DataTable Get_treatment_details(string plan_p_id)
@@ -73,11 +73,6 @@ namespace PappyjoeMVC.Model
         public void update_review(string date, int j_Review)
         {
             db.execute("UPDATE tbl_completed_id SET review='YES',Review_date='" + date + "' WHERE id='" + j_Review + "'");
-        }
-        public DataTable get_reviewid(string patient_id, string date, string date1)
-        {
-            DataTable dt_review = db.table("SELECT id FROM tbl_review where  pt_id='" + patient_id + "' and fix_datetime='" + date + "' and review_datetime='" + date1 + "' ORDER BY id");
-            return dt_review;
         }
         public void update_review_No(string date, int j_Review)
         {
