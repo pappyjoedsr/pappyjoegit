@@ -771,9 +771,8 @@ namespace PappyjoeMVC.View
         private void labelledger_Click(object sender, EventArgs e)
         {
             var form2 = new Ledger();
+            form2.patient_id = patient_id;
             form2.doctor_id = doctor_id;
-            form2.patient_id = listpatientsearch.SelectedValue.ToString();
-            listpatientsearch.Visible = false;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
