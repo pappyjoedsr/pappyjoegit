@@ -1291,6 +1291,11 @@ namespace PappyjoeMVC.View
             }
         }
 
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btn_ClearAll_Click(object sender, EventArgs e)
         {
             btnAddNewPatient.Visible = false;

@@ -74,6 +74,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimpleAppointment));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dpStartTimeDate = new System.Windows.Forms.DateTimePicker();
             this.btn_ClearAll = new System.Windows.Forms.Button();
             this.Panl_Prescrption = new System.Windows.Forms.Panel();
             this.Lab_DrugId = new System.Windows.Forms.Label();
@@ -288,7 +289,6 @@
             this.drugid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drugtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dpStartTimeDate = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.Panl_Prescrption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
@@ -357,6 +357,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1140, 762);
             this.panel1.TabIndex = 1;
+            // 
+            // dpStartTimeDate
+            // 
+            this.dpStartTimeDate.CalendarForeColor = System.Drawing.Color.DarkSlateGray;
+            this.dpStartTimeDate.CalendarTrailingForeColor = System.Drawing.Color.DarkSlateGray;
+            this.dpStartTimeDate.Enabled = false;
+            this.dpStartTimeDate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpStartTimeDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpStartTimeDate.Location = new System.Drawing.Point(702, 8);
+            this.dpStartTimeDate.Name = "dpStartTimeDate";
+            this.dpStartTimeDate.Size = new System.Drawing.Size(116, 22);
+            this.dpStartTimeDate.TabIndex = 407;
             // 
             // btn_ClearAll
             // 
@@ -1279,7 +1291,7 @@
             this.checkBoxReview.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.checkBoxReview.Location = new System.Drawing.Point(809, 63);
             this.checkBoxReview.Name = "checkBoxReview";
-            this.checkBoxReview.Size = new System.Drawing.Size(118, 19);
+            this.checkBoxReview.Size = new System.Drawing.Size(117, 19);
             this.checkBoxReview.TabIndex = 404;
             this.checkBoxReview.Text = "Next Review Date";
             this.checkBoxReview.UseVisualStyleBackColor = true;
@@ -1385,7 +1397,7 @@
             this.label33.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label33.Location = new System.Drawing.Point(32, 23);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(63, 13);
+            this.label33.Size = new System.Drawing.Size(62, 13);
             this.label33.TabIndex = 369;
             this.label33.Text = "Treatments";
             // 
@@ -1550,7 +1562,7 @@
             this.linkLab_template.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLab_template.Location = new System.Drawing.Point(186, 15);
             this.linkLab_template.Name = "linkLab_template";
-            this.linkLab_template.Size = new System.Drawing.Size(53, 13);
+            this.linkLab_template.Size = new System.Drawing.Size(52, 13);
             this.linkLab_template.TabIndex = 392;
             this.linkLab_template.TabStop = true;
             this.linkLab_template.Text = "Template";
@@ -1562,7 +1574,7 @@
             this.Lnk_AddTemplate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lnk_AddTemplate.Location = new System.Drawing.Point(240, 15);
             this.Lnk_AddTemplate.Name = "Lnk_AddTemplate";
-            this.Lnk_AddTemplate.Size = new System.Drawing.Size(77, 13);
+            this.Lnk_AddTemplate.Size = new System.Drawing.Size(76, 13);
             this.Lnk_AddTemplate.TabIndex = 393;
             this.Lnk_AddTemplate.TabStop = true;
             this.Lnk_AddTemplate.Text = "Add Template";
@@ -1657,6 +1669,7 @@
             this.btn_Close.TabIndex = 312;
             this.btn_Close.Text = "CLOSE";
             this.btn_Close.UseVisualStyleBackColor = false;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
             // 
             // panel8
             // 
@@ -2615,7 +2628,6 @@
             this.txt_search.Text = "Search by  Patient Id, Name";
             this.txt_search.Visible = false;
             this.txt_search.Click += new System.EventHandler(this.txt_search_Click);
-            //this.txt_search.TextChanged += new System.EventHandler(this.d);
             // 
             // panel10
             // 
@@ -3045,18 +3057,6 @@
             this.status.ReadOnly = true;
             this.status.Visible = false;
             this.status.Width = 30;
-            // 
-            // dpStartTimeDate
-            // 
-            this.dpStartTimeDate.CalendarForeColor = System.Drawing.Color.DarkSlateGray;
-            this.dpStartTimeDate.CalendarTrailingForeColor = System.Drawing.Color.DarkSlateGray;
-            this.dpStartTimeDate.Enabled = false;
-            this.dpStartTimeDate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dpStartTimeDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpStartTimeDate.Location = new System.Drawing.Point(702, 8);
-            this.dpStartTimeDate.Name = "dpStartTimeDate";
-            this.dpStartTimeDate.Size = new System.Drawing.Size(116, 22);
-            this.dpStartTimeDate.TabIndex = 407;
             // 
             // SimpleAppointment
             // 
