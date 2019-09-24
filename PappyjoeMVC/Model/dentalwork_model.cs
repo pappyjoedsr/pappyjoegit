@@ -15,11 +15,11 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table("Select id,labname from tbl_Laboratory");
             return dt;
         }
-        public DataTable practicedetails()
-        {
-            DataTable dt = db.table("select name,path,contact_no  from tbl_practice_details");
-            return dt;
-        }
+        //public DataTable practicedetails()
+        //{
+        //    DataTable dt = db.table("select name,path,contact_no  from tbl_practice_details");
+        //    return dt;
+        //}
         public DataTable dentalwrk(string patid,string wrkid)
         {
             DataTable dt = db.table("select id,work_id,work_name,labname,assign_date,duedate from tbl_lab_main where pt_id='" + patid + "' and type='Dental' and id='" + wrkid + "'");

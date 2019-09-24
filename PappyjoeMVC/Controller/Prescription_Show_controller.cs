@@ -97,16 +97,16 @@ namespace PappyjoeMVC.Controller
         {
             db.table("insert into tbl_prescription_main (pt_id,dr_id,date,notes) values('" + pt_id + "','" + dr_id + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + notes + "')");
         }
-        public DataTable Maxid()
+        public string Maxid()
         {
-            DataTable dtb = _model.Maxid();
+            string dtb = _model.Maxid();
             return dtb;
         }
         public DataTable get_allprescription(string prescription_id)
         {
-            DataTable td_prescription_Sub = db.table("SELECT pres_id,pt_id,dr_name,dr_id,date,drug_name,strength,strength_gr,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,status,drug_id FROM tbl_prescription  WHERE pres_id= '" + prescription_id + "' ORDER BY id");
+            DataTable td_prescription_Sub = _model.get_allprescription(prescription_id);
             return td_prescription_Sub;
-        }
+        }// DataTable Dt_Prescription = db.table("SELECT pres_id,pt_id,dr_name,dr_id,date,drug_name, strength, strength_gr,duration_unit, duration_period,morning,noon,night,food,add_instruction, drug_type, status, drug_id  FROM tbl_prescription WHERE pres_id='" + App_dtb.Rows[0]["EHR_prescription"].ToString() + "'");
         public void save_prescription(int pres_id, string pt_id, string dr_name, string dr_id, string date, string drug_name, string strength, string strength_gr, string duration_unit, string duration_period, string morning, string noon, string night, string food, string add_instruction, string drug_type, string status, string drug_id)
         {
             _model.save_prescription(pres_id, pt_id, dr_name, dr_id, date, drug_name, strength, strength_gr, duration_unit, duration_period, morning, noon, night, food, add_instruction, drug_type, status, drug_id);

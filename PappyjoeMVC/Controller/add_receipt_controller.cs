@@ -90,9 +90,9 @@ namespace PappyjoeMVC.Controller
             int inv = _model.save_payment(advance, receipt_no, amount_paid, invoice_no, procedure_name, mode_of_payment, pt_id, payment_date, dr_id, payment_due, total, cost, pt_name);
             return inv;
         }
-        public DataTable receipt_autoid()
+        public string receipt_autoid()
         {
-            DataTable dtb = _model.receipt_autoid();
+            string dtb = _model.receipt_autoid();
             return dtb;
         }
         public void update_receiptAutoid(int receip)

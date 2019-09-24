@@ -10,11 +10,11 @@ namespace PappyjoeMVC.Model
             string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PAT' and Permission='E'");
             return id;
         }
-        public DataTable Get_Patient_details(string patient_id)
-        {
-            DataTable rs_patients = db.table("select * from tbl_patient where id='" + patient_id + "'");
-            return rs_patients;
-        }
+        //public DataTable Get_Patient_details(string patient_id)
+        //{
+        //    DataTable rs_patients = db.table("select * from tbl_patient where id='" + patient_id + "'");
+        //    return rs_patients;
+        //}
         public DataTable pt_medical(string patient_id)
         {
             DataTable dt8 = db.table("select med_id from tbl_pt_medhistory where pt_id='" + patient_id + "'");

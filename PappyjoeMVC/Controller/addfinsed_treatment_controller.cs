@@ -72,9 +72,9 @@ namespace PappyjoeMVC.Controller
         {
             _model.update_review(date, j_Review);
         }
-        public DataTable get_reviewid(string patient_id, string date, string date1)
+        public DataTable get_reviewid(string patient_id,string date1)
         {
-            DataTable dtb = _model.get_reviewid(patient_id, date, date1);
+            DataTable dtb = cmodel.get_reviewId(patient_id, date1);
             return dtb;
         }
         public void save_review(string date, string patient_id)

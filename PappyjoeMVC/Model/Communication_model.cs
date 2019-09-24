@@ -31,13 +31,6 @@ namespace PappyjoeMVC.Model
             int i = db.execute("insert into tbl_pt_sms_communication (pt_id,send_datetime,type,message_status,message) values('" + patntid + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm") + "','group','sent','" + msg + "')");
             return i;
         }
-        //sms centre
-
-        public DataTable selsms()
-        {
-            DataTable dt = db.table("select smsName,smsPass from tbl_SmsEmailConfig");
-            return dt;
-        }
         public DataTable selgrp()
         {
             DataTable dt = db.table("select tbl_pt_group.pt_id,tbl_pt_group.group_id,tbl_patient.pt_name,tbl_patient.primary_mobile_number from tbl_pt_group inner join tbl_patient on tbl_pt_group.pt_id=tbl_patient.id");

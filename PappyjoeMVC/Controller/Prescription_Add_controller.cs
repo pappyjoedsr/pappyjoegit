@@ -118,9 +118,9 @@ namespace PappyjoeMVC.Controller
         {
             _model.save_prescriptionmain(ptid, d_id, date, prescription_bill_status, note);
         }
-        public DataTable Maxid()
+        public string Maxid()
         {
-            DataTable dtb = _model.Maxid();
+            string dtb = _model.Maxid();
             return dtb;
         }
         public void save_prescription(int pres_id, string pt_id, string dr_name, string dr_id, string date, string drug_name, string strength, string strength_gr, string duration_unit, string duration_period, string morning, string noon, string night, string food, string add_instruction, string drug_type, string status, string drug_id)

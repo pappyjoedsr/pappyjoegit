@@ -416,7 +416,7 @@ namespace PappyjoeMVC.View
                 string sexage = "";
                 string address = "";
                 address = "";
-                System.Data.DataTable dt1 = db.table("select * from tbl_patient where id='" + patient_id + "'");
+                System.Data.DataTable dt1 = this.cntrl.Get_Patient_Details(patient_id);// db.table("select * from tbl_patient where id='" + patient_id + "'");
                 if (dt1.Rows.Count > 0)
                 {
                     sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");

@@ -81,9 +81,9 @@ namespace PappyjoeMVC.Model
             int inv1 = db.execute("insert into tbl_payment(advance,receipt_no,amount_paid,invoice_no,procedure_name,mode_of_payment,pt_id,payment_date,dr_id,payment_due,total,cost,pt_name)values('" + advance + "','" + receipt_no + "','" + amount_paid + "','" + invoice_no + "','" + procedure_name + "','" + mode_of_payment + "','" + pt_id + "','" + payment_date + "','" + dr_id + "','" + payment_due + "','" + total + "','" + cost + "','" + pt_name + "')");
             return inv1;
         }
-        public DataTable receipt_autoid()
+        public string receipt_autoid()
         {
-            DataTable rec = db.table("select receipt_number from tbl_receipt_automationid");
+            string rec = db.scalar("select receipt_number from tbl_receipt_automationid");
             return rec;
         }
         public void update_receiptAutoid(int receip)
