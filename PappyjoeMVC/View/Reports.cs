@@ -1863,18 +1863,18 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new PappyjoeMVC.View.StockReport();
                     form2.doctor_id = doctor_id;
-                    form2.Show();
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
+                    form2.ShowDialog();
                 }
             }
             else
             {
                 var form2 = new PappyjoeMVC.View.StockReport();
                 form2.doctor_id = doctor_id;
-                form2.Show();
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
+                form2.ShowDialog();
             }
         }
 

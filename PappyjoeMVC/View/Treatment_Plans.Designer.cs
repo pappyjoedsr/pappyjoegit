@@ -217,6 +217,7 @@
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(72, 37);
             this.toolStripButton5.Text = "Inventory";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton6
             // 
@@ -295,6 +296,7 @@
             this.logOuntToolStripMenuItem.Name = "logOuntToolStripMenuItem";
             this.logOuntToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.logOuntToolStripMenuItem.Text = "Logout";
+            this.logOuntToolStripMenuItem.Click += new System.EventHandler(this.logOuntToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -357,7 +359,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 40);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // panel5
@@ -432,7 +434,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label12.Location = new System.Drawing.Point(48, 25);
+            this.label12.Location = new System.Drawing.Point(66, 25);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(63, 13);
             this.label12.TabIndex = 68;
