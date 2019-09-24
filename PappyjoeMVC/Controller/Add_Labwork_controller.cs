@@ -83,20 +83,25 @@ namespace PappyjoeMVC.Controller
             DataTable dt = mdl.getwrkname(wrkname);
             return dt;
         }
-        public string getprev(string doctrid)
+        public string privilge_for_inventory(string doctor_id)
         {
-            string e = lm.getprev(doctrid);
-            return e;
+            string id = cm.privilge_for_inventory(doctor_id);
+            return id;
         }
         public DataTable Patient_search(string txtbox)
         {
             DataTable dt = cm.Patient_search(txtbox);
             return dt;
         }
-        public string doctr_privillage_for_addnewPatient(string doctrid)
+        public string doctr_privillage_for_addnewPatient(string doctor_id)
         {
-            string t = cm.doctr_privillage_for_addnewPatient(doctrid);
-            return t;
+            string dtb = cm.doctr_privillage_for_addnewPatient(doctor_id);
+            return dtb;
+        }
+        public string permission_for_settings(string doctor_id)
+        {
+            string dtb = cm.permission_for_settings(doctor_id);
+            return dtb;
         }
     }
 }

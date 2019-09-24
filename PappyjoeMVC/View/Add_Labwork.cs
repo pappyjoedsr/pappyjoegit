@@ -1,7 +1,12 @@
 ﻿using PappyjoeMVC.Controller;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
@@ -12,17 +17,18 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        Add_Labwork_controller ctrlr = new Add_Labwork_controller();
-        public string patient_id = "", doctor_id = "", checkvalue = "", ID = "", ids = "", r = "", f = "";
+        bool flag ;
+        Add_Labwork_controller ctrlr=new Add_Labwork_controller();
+        public string patient_id = "", doctor_id = "", checkvalue = "",ID="",ids="",r="",f="";
         public string[] teeth = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
         private void toolStripButton12_Click(object sender, EventArgs e)
         {
-            var frmAddlabwork = new PappyjoeMVC.View.LabtrackingReport();
-            frmAddlabwork.doctor_id = doctor_id;
-            frmAddlabwork.patient_id = patient_id;
-            frmAddlabwork.Closed += (sender1, args) => this.Close();
+            var form2 = new LabtrackingReport();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
-            frmAddlabwork.ShowDialog();
+            form2.ShowDialog();
         }
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -32,6 +38,24 @@ namespace PappyjoeMVC.View
                 {
                     this.dataGridView3.Rows.RemoveAt(e.RowIndex);
                 }
+            }
+        }
+       
+        public void maxid(string iddt)
+        {
+            for (int i = 0; i < dataGridView3.Rows.Count; i++)
+            {
+                int a = i + 1;
+                int k = 0;
+                if (iddt!="")
+                {
+                    k = Convert.ToInt32(iddt);
+                }
+                else
+                {
+                    k = 1;
+                }
+                this.ctrlr.labresult( k.ToString() ,a.ToString(),dataGridView3.Rows[i].Cells[7].Value.ToString(),dataGridView3.Rows[i].Cells[6].Value.ToString(),Convert.ToInt32(patient_id).ToString(),dataGridView3.Rows[i].Cells[4].Value.ToString(),dataGridView3.Rows[i].Cells[5].Value.ToString());
             }
         }
         //dental rb
@@ -56,7 +80,7 @@ namespace PappyjoeMVC.View
                     pnlDental.Show();
                     pnladddental.Show();
                     c.Hide();
-                    DataTable dt = this.ctrlr.dentallab();
+                    DataTable dt=this.ctrlr.dentallab();
                     dentallab(dt);
                 }
                 else
@@ -69,10 +93,10 @@ namespace PappyjoeMVC.View
                     c.Show();
                     c.Visible = true;
                     c.Location = new Point(1015, 141);
-                    DataTable tbShade = this.ctrlr.Lab_Medi_TemplateMain();
-                    dataGridView2.DataSource = tbShade;
+                    DataTable tbshade=this.ctrlr.Lab_Medi_TemplateMain();
+                    dataGridView2.DataSource = tbshade;
                     checkvalue = "1";
-                    DataTable tblab = this.ctrlr.getLabdata();
+                    DataTable tblab=this.ctrlr.getLabdata();
                     combolab.DataSource = tblab;
                     combolab.DisplayMember = "labname";
                     combolab.ValueMember = "id";
@@ -95,8 +119,8 @@ namespace PappyjoeMVC.View
                     c.Show();
                     c.Visible = true;
                     c.Location = new Point(1015, 141);
-                    DataTable tbShade = this.ctrlr.Lab_Medi_TemplateMain();
-                    dataGridView2.DataSource = tbShade;
+                    DataTable tbshade = this.ctrlr.Lab_Medi_TemplateMain();
+                    dataGridView2.DataSource = tbshade;
                     checkvalue = "1";
                     DataTable tblab = this.ctrlr.getLabdata();
                     combolab.DataSource = tblab;
@@ -117,7 +141,7 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.LabWorks();
@@ -135,14 +159,13 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Main_Calendar();
             form2.doctor_id = doctor_id;
-            form2.Show();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
         }
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.Patients();
+            var form2 = new Patients();
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
@@ -159,9 +182,9 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            string id = this.ctrlr.getprev(doctor_id);
             if (doctor_id != "1")
             {
+                string id = this.ctrlr.privilge_for_inventory(doctor_id);
                 if (int.Parse(id) > 0)
                 {
                     MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -200,19 +223,42 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.Doctor_Profile();
-            form2.doctor_id = doctor_id;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.ShowDialog();
+            if (PappyjoeMVC.Model.Connection.MyGlobals.loginType != "staff")
+            {
+                var form2 = new Doctor_Profile();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
         }
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form2 = new Practice_Details();
-            form2.doctor_id = doctor_id;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.ShowDialog();
+            if (doctor_id != "1")
+            {
+                string id;
+                id = this.ctrlr.permission_for_settings(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    var form2 = new Practice_Details();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("There is No Privilege to Clinic Settings", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+            }
+            else
+            {
+                var form2 = new Practice_Details();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
         }
         private void logOuntToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -225,35 +271,37 @@ namespace PappyjoeMVC.View
         {
             TTP_SearchText.Clear();
         }
+        
         private void TTP_SearchText_TextChanged(object sender, EventArgs e)
         {
-            DataTable dtdr = this.ctrlr.Patient_search(TTP_SearchText.Text);
-            if (TTP_SearchText.Text != "")
-            {
-                listpatientsearch.DataSource = dtdr;
-                listpatientsearch.DisplayMember = "patient";
-                listpatientsearch.ValueMember = "id";
-                if (listpatientsearch.Items.Count == 0)
+                if (TTP_SearchText.Text != "")
                 {
-                    listpatientsearch.Visible = false;
+                    DataTable dtdr=this.ctrlr.Patient_search(TTP_SearchText.Text);
+                    listpatientsearch.DataSource = dtdr;
+                    listpatientsearch.DisplayMember = "patient";
+                    listpatientsearch.ValueMember = "id";
+                    if (listpatientsearch.Items.Count == 0)
+                    {
+                        listpatientsearch.Visible = false;
+                    }
+                    else
+                    {
+                        listpatientsearch.Visible = true;
+                    }
+                    listpatientsearch.Location = new Point(toolStrip1.Width - 350, 32);
                 }
                 else
                 {
-                    listpatientsearch.Visible = true;
+                    listpatientsearch.Visible = false;
                 }
-                listpatientsearch.Location = new Point(toolStrip1.Width - 350, 32);
-            }
-            else
-            {
-                listpatientsearch.Visible = false;
-            }
         }
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
-            string doctrid = this.ctrlr.doctr_privillage_for_addnewPatient(doctor_id);
             if (doctor_id != "1")
             {
-                if (int.Parse(doctrid) > 0)
+                string id;
+                id = this.ctrlr.doctr_privillage_for_addnewPatient(doctor_id);
+                if (int.Parse(id) > 0)
                 {
                     MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
@@ -262,6 +310,7 @@ namespace PappyjoeMVC.View
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
                     form2.ShowDialog();
                 }
             }
@@ -270,6 +319,7 @@ namespace PappyjoeMVC.View
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
                 form2.ShowDialog();
             }
         }
@@ -542,35 +592,10 @@ namespace PappyjoeMVC.View
             if (chk75.Checked) { teeth[42] = "75"; } else { teeth[42] = ""; }
             listeeth();
         }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
-            form2.doctor_id = doctor_id;
-            form2.patient_id = patient_id;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.ShowDialog();
-        }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
-            form2.doctor_id = doctor_id;
-            form2.patient_id = patient_id;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.ShowDialog();
-        }
-
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        public void testrslt(DataTable tbshade)
         {
             try
             {
-                string k = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string p = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string q = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
-                DataTable tbshade = this.ctrlr.testrslt(q);
                 for (int i = 0; i < tbshade.Rows.Count; i++)
                 {
                     labelmaintest.Text = tbshade.Rows[i]["Test Name"].ToString();
@@ -586,26 +611,35 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string k = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string p = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string q = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
+                DataTable dt = this.ctrlr.testrslt(q);
+                testrslt(dt);
+        }
         private void listBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            var form2 = new Patient_Profile_Details();
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            DataTable dt = this.ctrlr.grid3data(linkLabel1.Text);
+            DataTable dt=this.ctrlr.grid3data(linkLabel1.Text);
             dataGridView3.DataSource = dt;
         }
         private void dgvdentalwork_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             ids = dgvdentalwork.Rows[e.RowIndex].Cells[0].Value.ToString();
-            r = dgvdentalwork.Rows[e.RowIndex].Cells[1].Value.ToString();
+            r = dgvdentalwork.Rows[e.RowIndex].Cells[4].Value.ToString();
             f = dgvdentalwork.Rows[e.RowIndex].Cells[2].Value.ToString();
-            DataTable workname = this.ctrlr.getwrkname(r);
+            DataTable workname=this.ctrlr.getwrkname(r);
             for (int i = 0; i < workname.Rows.Count; i++)
             {
                 txtwork_id.Text = workname.Rows[i]["id"].ToString();
@@ -623,22 +657,9 @@ namespace PappyjoeMVC.View
                     {
                         ID = this.ctrlr.selectid(labelmaintest.Text);
                         this.ctrlr.inslabmain(patient_id, comboBox6.SelectedValue.ToString(), labelmaintest.Text, ID, Convert.ToDateTime(dateTimePicker1.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dateTimePicker1.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(dateTimePicker1.Text).ToString("yyyy-MM-dd"));
-                        string id1 = this.ctrlr.maxid();
-                        for (int i = 0; i < dataGridView3.Rows.Count; i++)
-                        {
-                            int a = i + 1;
-                            int k = 0;
-                            if (id1 != "")
-                            {
-                                k = Convert.ToInt32(id1);
-                            }
-                            else
-                            {
-                                k = 1;
-                            }
-                            this.ctrlr.labresult(k.ToString(), a.ToString(), dataGridView3.Rows[i].Cells[7].Value.ToString(), dataGridView3.Rows[i].Cells[6].Value.ToString(), Convert.ToInt32(patient_id).ToString(), dataGridView3.Rows[i].Cells[4].Value.ToString(), dataGridView3.Rows[i].Cells[5].Value.ToString());
-                        }
-                        var form2 = new LabWorks();
+                        string id=this.ctrlr.maxid();
+                        maxid(id);
+                        var form2 = new PappyjoeMVC.View.LabWorks();
                         form2.doctor_id = doctor_id;
                         form2.patient_id = patient_id;
                         form2.FormClosed += (sender1, args) => this.Close();
@@ -656,10 +677,11 @@ namespace PappyjoeMVC.View
                     {
                         this.ctrlr.inslabmain2(patient_id, doctor_id, txtworkname.Text, txtwork_id.Text, Convert.ToDateTime(dateTimePicker1.Text).ToString("yyyy-MM-dd"));
                         this.ctrlr.insdentlab(ID, txtworkname.Text, txtWorktype.Text, cmbAlloytype.Text, cmbShade.Text, patient_id, label15.Text);
-                        var form2 = new LabWorks();
+                        var form2 = new PappyjoeMVC.View.LabWorks();
                         form2.doctor_id = doctor_id;
                         form2.patient_id = patient_id;
                         form2.FormClosed += (sender1, args) => this.Close();
+                        this.Hide();
                         form2.ShowDialog();
                     }
                     else
@@ -675,6 +697,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
+                toolStripButton9.Text = PappyjoeMVC.Model.GlobalVariables.Version;
                 radioButton2.Checked = false;
                 radioButton1.Checked = false;
                 pnlDental.Hide();
@@ -683,7 +706,7 @@ namespace PappyjoeMVC.View
                 c.Hide();
                 panel13.Visible = true;
                 panel13.Location = new Point(4, 600);
-                DataTable rs_patients = this.ctrlr.Get_Patient_Details(patient_id);
+                DataTable rs_patients=this.ctrlr.Get_Patient_Details(patient_id);
                 if (rs_patients.Rows[0]["pt_name"].ToString() != "")
                 {
                     linkLabel1.Text = rs_patients.Rows[0]["pt_name"].ToString();
@@ -692,13 +715,13 @@ namespace PappyjoeMVC.View
                 {
                     linkLabel2.Text = rs_patients.Rows[0]["pt_id"].ToString();
                 }
-                DataTable doctorcombo = this.ctrlr.getdoctrdetails();
+                DataTable doctorcombo=this.ctrlr.getdoctrdetails();
                 comboBox6.DisplayMember = "doctor_name";
                 comboBox6.ValueMember = "id";
                 comboBox6.DataSource = doctorcombo;
                 label15.Text = "";
-                DataTable tbShade = this.ctrlr.Lab_Medi_TemplateMain();
-                dataGridView2.DataSource = tbShade;
+                DataTable tbshade = this.ctrlr.Lab_Medi_TemplateMain();
+                dataGridView2.DataSource = tbshade;
                 checkvalue = "1";
                 DataTable tblab = this.ctrlr.getLabdata();
                 combolab.DataSource = tblab;
