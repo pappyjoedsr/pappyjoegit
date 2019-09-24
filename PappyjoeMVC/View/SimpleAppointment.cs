@@ -179,7 +179,7 @@ namespace PappyjoeMVC.View
             int presid = 0;
             int treat = 0;
             DataTable dt_ptiantId = new DataTable();
-            dt_ptiantId = this.cntrl.get_patient_name(patient_id);/
+            dt_ptiantId = this.cntrl.get_patient_name(patient_id);
             if (dgv_Diagnosis.Rows.Count > 0)
             {
                 if (dgv_Diagnosis[1, 0].Value != null)

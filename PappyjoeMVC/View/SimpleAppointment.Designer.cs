@@ -2615,7 +2615,7 @@
             this.txt_search.Text = "Search by  Patient Id, Name";
             this.txt_search.Visible = false;
             this.txt_search.Click += new System.EventHandler(this.txt_search_Click);
-            this.txt_search.TextChanged += new System.EventHandler(this.d);
+            //this.txt_search.TextChanged += new System.EventHandler(this.d);
             // 
             // panel10
             // 
