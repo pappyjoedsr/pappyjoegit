@@ -72,5 +72,20 @@ namespace PappyjoeMVC.Controller
             string dt = mdl.Get_DoctorName(doctr_id);
             return dt;
         }
+        public DataTable Patient_search(string patid)
+        {
+            DataTable dtb = mdl.Patient_search(patid);
+            return dtb;
+        }
+        public string doctr_privillage_for_addnewPatient(string doctor_id)
+        {
+            string dtb = mdl.doctr_privillage_for_addnewPatient(doctor_id);
+            return dtb;
+        }
+        public string permission_for_settings(string doctor_id)
+        {
+            string dtb = mdl.permission_for_settings(doctor_id);
+            return dtb;
+        }
     }
 }

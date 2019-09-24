@@ -580,12 +580,31 @@ namespace PappyjoeMVC.View
 
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
-            var form2 = new Add_New_Patients();
-            form2.doctor_id = doctor_id;
-            //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.ShowDialog();
+            if (doctor_id != "1")
+            {
+                string id;
+                id = this.cntrl.doctr_privillage_for_addnewPatient(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var form2 = new Add_New_Patients();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.ShowDialog();
+                }
+            }
+            else
+            {
+                var form2 = new Add_New_Patients();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -734,6 +753,62 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+        }
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+            toolStripTextBox1.Clear();
+        }
+        private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (toolStripTextBox1.Text != "")
+            {
+                DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox1.Text);
+                listpatientsearch.DataSource = dtdr;
+                listpatientsearch.DisplayMember = "patient";
+                listpatientsearch.ValueMember = "id";
+                if (listpatientsearch.Items.Count == 0)
+                {
+                    listpatientsearch.Visible = false;
+                }
+                else
+                {
+                    listpatientsearch.Visible = true;
+                }
+                listpatientsearch.Location = new Point(toolStripTextBox1.Width + 763, 30);
+            }
+            else
+            {
+                listpatientsearch.Visible = false;
+            }
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (doctor_id != "1")
+            {
+                string id;
+                id = this.cntrl.permission_for_settings(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    var form2 = new Practice_Details();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("There is No Privilege to Clinic Settings", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+            }
+            else
+            {
+                var form2 = new Practice_Details();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
         }
 
         private void toolStripButton10_Click(object sender, EventArgs e)
