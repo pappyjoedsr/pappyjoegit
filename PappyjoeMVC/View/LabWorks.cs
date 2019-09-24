@@ -124,6 +124,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new PappyjoeMVC.View.Login();
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
         }
         private void toolStripTextBox1_Click(object sender, EventArgs e)
