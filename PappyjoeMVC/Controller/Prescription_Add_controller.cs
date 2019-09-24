@@ -4,21 +4,19 @@ namespace PappyjoeMVC.Controller
 {
     public class Prescription_Add_controller
     {
-        //Prescription_Add_interface intr;
         Common_model cmodel = new Common_model();
         Prescription_Setting_model pmodel = new Prescription_Setting_model();
         Prescription_model _model = new Prescription_model();
         Inventory_model inmodel = new Inventory_model();
-        //addfinsed_treatment_model fmodel = new addfinsed_treatment_model();
-        //public Prescription_Add_controller(Prescription_Add_interface inttr)
-        //{
-        //    intr = inttr;
-        //    intr.SetController(this);
-        //}
         public DataTable Get_CompanyNAme()
         {
             DataTable dtb = cmodel.Get_CompanyNAme();
             return dtb;
+        }
+         public string privilge_for_inventory(string doctor_id)
+        {
+            string s = cmodel.privilge_for_inventory(doctor_id);
+            return s;
         }
         public DataTable Get_patient_id_name_gender(string patient_id)
         {

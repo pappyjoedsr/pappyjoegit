@@ -749,15 +749,17 @@
             // 
             // settingsToolStripMenuItem
             // 
+            this.settingsToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
+            this.logoutToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1429953040_Log_Out;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -861,6 +863,7 @@
             this.linkLabel_id.Name = "linkLabel_id";
             this.linkLabel_id.Size = new System.Drawing.Size(0, 13);
             this.linkLabel_id.TabIndex = 73;
+            this.linkLabel_id.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_id_LinkClicked);
             // 
             // PB_Ptimage
             // 
@@ -882,6 +885,7 @@
             this.linkLabel_Name.Name = "linkLabel_Name";
             this.linkLabel_Name.Size = new System.Drawing.Size(0, 13);
             this.linkLabel_Name.TabIndex = 74;
+            this.linkLabel_Name.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Name_LinkClicked);
             // 
             // Lab_PtName
             // 
@@ -897,11 +901,11 @@
             // 
             this.Lab_Pt_Id.AutoSize = true;
             this.Lab_Pt_Id.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Pt_Id.Location = new System.Drawing.Point(48, 28);
+            this.Lab_Pt_Id.Location = new System.Drawing.Point(66, 24);
             this.Lab_Pt_Id.Name = "Lab_Pt_Id";
-            this.Lab_Pt_Id.Size = new System.Drawing.Size(60, 13);
+            this.Lab_Pt_Id.Size = new System.Drawing.Size(63, 13);
             this.Lab_Pt_Id.TabIndex = 68;
-            this.Lab_Pt_Id.Text = "Patient ID:";
+            this.Lab_Pt_Id.Text = "Patient ID :";
             // 
             // panel5
             // 
@@ -953,7 +957,7 @@
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_Attachments";
-            this.Text = "Add_Attachments";
+            this.Text = "Add Attachments";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Add_Attachments_Load);
             this.Resize += new System.EventHandler(this.Add_Attachments_Resize);

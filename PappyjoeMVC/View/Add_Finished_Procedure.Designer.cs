@@ -323,6 +323,7 @@
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(72, 37);
             this.toolStripButton5.Text = "Inventory";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton6
             // 
@@ -401,16 +402,19 @@
             // 
             // settingsToolStripMenuItem
             // 
+            this.settingsToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
+            this.logoutToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1429953040_Log_Out;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -460,7 +464,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 40);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // panel1
@@ -500,29 +504,32 @@
             // lab_PatName
             // 
             this.lab_PatName.AutoSize = true;
+            this.lab_PatName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_PatName.Location = new System.Drawing.Point(58, 10);
             this.lab_PatName.Name = "lab_PatName";
-            this.lab_PatName.Size = new System.Drawing.Size(77, 13);
+            this.lab_PatName.Size = new System.Drawing.Size(81, 13);
             this.lab_PatName.TabIndex = 60;
             this.lab_PatName.Text = "Patient Name :";
             // 
             // lab_PatientId
             // 
             this.lab_PatientId.AutoSize = true;
+            this.lab_PatientId.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_PatientId.Location = new System.Drawing.Point(79, 30);
             this.lab_PatientId.Name = "lab_PatientId";
-            this.lab_PatientId.Size = new System.Drawing.Size(57, 13);
+            this.lab_PatientId.Size = new System.Drawing.Size(60, 13);
             this.lab_PatientId.TabIndex = 59;
             this.lab_PatientId.Text = "Patient ID:";
             // 
             // linkLabel_Name
             // 
             this.linkLabel_Name.AutoSize = true;
+            this.linkLabel_Name.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel_Name.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel_Name.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.linkLabel_Name.Location = new System.Drawing.Point(139, 10);
             this.linkLabel_Name.Name = "linkLabel_Name";
-            this.linkLabel_Name.Size = new System.Drawing.Size(55, 13);
+            this.linkLabel_Name.Size = new System.Drawing.Size(59, 13);
             this.linkLabel_Name.TabIndex = 65;
             this.linkLabel_Name.TabStop = true;
             this.linkLabel_Name.Text = "linkLabel1";
@@ -531,11 +538,12 @@
             // linkLabel_id
             // 
             this.linkLabel_id.AutoSize = true;
+            this.linkLabel_id.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel_id.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel_id.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.linkLabel_id.Location = new System.Drawing.Point(139, 30);
             this.linkLabel_id.Name = "linkLabel_id";
-            this.linkLabel_id.Size = new System.Drawing.Size(55, 13);
+            this.linkLabel_id.Size = new System.Drawing.Size(59, 13);
             this.linkLabel_id.TabIndex = 64;
             this.linkLabel_id.TabStop = true;
             this.linkLabel_id.Text = "linkLabel1";
@@ -888,7 +896,7 @@
             this.lab_By.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_By.Location = new System.Drawing.Point(11, 14);
             this.lab_By.Name = "lab_By";
-            this.lab_By.Size = new System.Drawing.Size(18, 13);
+            this.lab_By.Size = new System.Drawing.Size(19, 13);
             this.lab_By.TabIndex = 17;
             this.lab_By.Text = "By";
             // 
@@ -1651,7 +1659,7 @@
             this.TOTALCOST.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TOTALCOST.Location = new System.Drawing.Point(218, 9);
             this.TOTALCOST.Name = "TOTALCOST";
-            this.TOTALCOST.Size = new System.Drawing.Size(71, 15);
+            this.TOTALCOST.Size = new System.Drawing.Size(74, 15);
             this.TOTALCOST.TabIndex = 9;
             this.TOTALCOST.Text = "TOTAL COST";
             // 
@@ -1732,7 +1740,7 @@
             this.lab_GrantTotal.ForeColor = System.Drawing.Color.LimeGreen;
             this.lab_GrantTotal.Location = new System.Drawing.Point(469, 6);
             this.lab_GrantTotal.Name = "lab_GrantTotal";
-            this.lab_GrantTotal.Size = new System.Drawing.Size(80, 15);
+            this.lab_GrantTotal.Size = new System.Drawing.Size(83, 15);
             this.lab_GrantTotal.TabIndex = 14;
             this.lab_GrantTotal.Text = "GRANT TOTAL";
             // 
@@ -1754,7 +1762,7 @@
             this.lab_TotalDiscount.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_TotalDiscount.Location = new System.Drawing.Point(334, 6);
             this.lab_TotalDiscount.Name = "lab_TotalDiscount";
-            this.lab_TotalDiscount.Size = new System.Drawing.Size(99, 15);
+            this.lab_TotalDiscount.Size = new System.Drawing.Size(102, 15);
             this.lab_TotalDiscount.TabIndex = 12;
             this.lab_TotalDiscount.Text = "TOTAL DISCOUNT";
             // 
@@ -1899,7 +1907,7 @@
             this.qtylabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.qtylabel.Location = new System.Drawing.Point(272, 12);
             this.qtylabel.Name = "qtylabel";
-            this.qtylabel.Size = new System.Drawing.Size(63, 15);
+            this.qtylabel.Size = new System.Drawing.Size(65, 15);
             this.qtylabel.TabIndex = 1;
             this.qtylabel.Text = "QUANTITY";
             // 
@@ -1954,7 +1962,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(399, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 15);
+            this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "COST";
             // 
@@ -1975,7 +1983,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(555, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 15);
+            this.label5.Size = new System.Drawing.Size(65, 15);
             this.label5.TabIndex = 4;
             this.label5.Text = "DISCOUNT";
             // 

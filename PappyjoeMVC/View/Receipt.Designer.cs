@@ -426,6 +426,7 @@
             this.linkLabel_id.Name = "linkLabel_id";
             this.linkLabel_id.Size = new System.Drawing.Size(0, 13);
             this.linkLabel_id.TabIndex = 73;
+            this.linkLabel_id.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_id_LinkClicked);
             // 
             // pictureBox1
             // 
@@ -448,6 +449,7 @@
             this.linkLabel_Name.Name = "linkLabel_Name";
             this.linkLabel_Name.Size = new System.Drawing.Size(0, 13);
             this.linkLabel_Name.TabIndex = 74;
+            this.linkLabel_Name.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Name_LinkClicked);
             // 
             // Lab_PtName
             // 
@@ -516,12 +518,13 @@
             this.labl_Lab.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labl_Lab.ForeColor = System.Drawing.Color.DimGray;
             this.labl_Lab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labl_Lab.Location = new System.Drawing.Point(13, 291);
+            this.labl_Lab.Location = new System.Drawing.Point(13, 290);
             this.labl_Lab.Name = "labl_Lab";
             this.labl_Lab.Size = new System.Drawing.Size(166, 32);
             this.labl_Lab.TabIndex = 66;
             this.labl_Lab.Text = "Lab";
             this.labl_Lab.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labl_Lab.Click += new System.EventHandler(this.labl_Lab_Click);
             // 
             // Lab_VitalSigns
             // 
@@ -531,7 +534,7 @@
             this.Lab_VitalSigns.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_VitalSigns.ForeColor = System.Drawing.Color.DimGray;
             this.Lab_VitalSigns.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lab_VitalSigns.Location = new System.Drawing.Point(14, 113);
+            this.Lab_VitalSigns.Location = new System.Drawing.Point(14, 115);
             this.Lab_VitalSigns.Name = "Lab_VitalSigns";
             this.Lab_VitalSigns.Size = new System.Drawing.Size(166, 32);
             this.Lab_VitalSigns.TabIndex = 65;
@@ -546,7 +549,7 @@
             this.Lab_Ledger.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Ledger.ForeColor = System.Drawing.Color.DimGray;
             this.Lab_Ledger.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lab_Ledger.Location = new System.Drawing.Point(14, 439);
+            this.Lab_Ledger.Location = new System.Drawing.Point(14, 445);
             this.Lab_Ledger.Name = "Lab_Ledger";
             this.Lab_Ledger.Size = new System.Drawing.Size(166, 32);
             this.Lab_Ledger.TabIndex = 49;
@@ -562,7 +565,7 @@
             this.Lab_Invoice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Invoice.ForeColor = System.Drawing.Color.DimGray;
             this.Lab_Invoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lab_Invoice.Location = new System.Drawing.Point(14, 371);
+            this.Lab_Invoice.Location = new System.Drawing.Point(14, 375);
             this.Lab_Invoice.Name = "Lab_Invoice";
             this.Lab_Invoice.Size = new System.Drawing.Size(166, 32);
             this.Lab_Invoice.TabIndex = 48;
@@ -578,7 +581,7 @@
             this.Lab_Payment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Payment.ForeColor = System.Drawing.Color.White;
             this.Lab_Payment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lab_Payment.Location = new System.Drawing.Point(14, 405);
+            this.Lab_Payment.Location = new System.Drawing.Point(14, 410);
             this.Lab_Payment.Name = "Lab_Payment";
             this.Lab_Payment.Size = new System.Drawing.Size(166, 32);
             this.Lab_Payment.TabIndex = 47;
@@ -593,7 +596,7 @@
             this.Lab_Attachmnt.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Attachmnt.ForeColor = System.Drawing.Color.DimGray;
             this.Lab_Attachmnt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lab_Attachmnt.Location = new System.Drawing.Point(14, 320);
+            this.Lab_Attachmnt.Location = new System.Drawing.Point(14, 325);
             this.Lab_Attachmnt.Name = "Lab_Attachmnt";
             this.Lab_Attachmnt.Size = new System.Drawing.Size(166, 32);
             this.Lab_Attachmnt.TabIndex = 46;
@@ -623,7 +626,7 @@
             this.Lab_Finished.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Finished.ForeColor = System.Drawing.Color.DimGray;
             this.Lab_Finished.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lab_Finished.Location = new System.Drawing.Point(14, 219);
+            this.Lab_Finished.Location = new System.Drawing.Point(14, 220);
             this.Lab_Finished.Name = "Lab_Finished";
             this.Lab_Finished.Size = new System.Drawing.Size(166, 32);
             this.Lab_Finished.TabIndex = 44;
@@ -654,7 +657,7 @@
             this.Lab_Clinical.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Clinical.ForeColor = System.Drawing.Color.DimGray;
             this.Lab_Clinical.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lab_Clinical.Location = new System.Drawing.Point(14, 149);
+            this.Lab_Clinical.Location = new System.Drawing.Point(14, 150);
             this.Lab_Clinical.Name = "Lab_Clinical";
             this.Lab_Clinical.Size = new System.Drawing.Size(166, 32);
             this.Lab_Clinical.TabIndex = 42;
@@ -698,7 +701,7 @@
             // 
             this.Lab_Account.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Account.ForeColor = System.Drawing.Color.DarkGreen;
-            this.Lab_Account.Location = new System.Drawing.Point(1, 356);
+            this.Lab_Account.Location = new System.Drawing.Point(1, 360);
             this.Lab_Account.Name = "Lab_Account";
             this.Lab_Account.Size = new System.Drawing.Size(179, 13);
             this.Lab_Account.TabIndex = 15;

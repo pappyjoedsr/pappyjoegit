@@ -1019,7 +1019,7 @@ namespace PappyjoeMVC.View
                     {
                         listpatientsearch.Visible = true;
                     }
-                    listpatientsearch.Location = new System.Drawing.Point(toolStrip1.Width - 350, 32);
+                    listpatientsearch.Location = new System.Drawing.Point(toolStrip1.Width - 352, 32);
                     listpatientsearch.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
                 }
                 else
@@ -2258,6 +2258,26 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Add_New_Patients();
             form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void linkLabel_Name_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void linkLabel_id_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

@@ -170,8 +170,7 @@ namespace PappyjoeMVC.View
                                 this.cntrl.update_autogenerateid(n);
                             }
                         }
-                        SMS_model a = new SMS_model();
-                        a.SendSMS(smsName1, smsPass1, txtPMobNumber.Text, "Dear " + txtPatName.Text + " welcome to " + toolStripButton1.Text);
+                        this.cntrl.SendSMS(smsName1, smsPass1, txtPMobNumber.Text, "Dear " + txtPatName.Text + " welcome to " + toolStripButton1.Text);
                         Clear_data();
                         if (i > 0)
                         {
@@ -277,8 +276,8 @@ namespace PappyjoeMVC.View
             txtxAge.Text = "";
             cmdBloodbroup.SelectedIndex = 0;
             txtAccompained.Text = "";
-            DTP_Dob.Value = Convert.ToDateTime(DateTime.Now.ToString("MM/dd/yyyy"));
-            dateTimePickervisited.Value = Convert.ToDateTime(DateTime.Now.ToString("MM/dd/yyyy"));
+            DTP_Dob.Value = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
+            dateTimePickervisited.Value = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
             txtPMobNumber.Text = "";
             txtSMobileNumber.Text = "";
             txtLandline.Text = "";
@@ -782,7 +781,6 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -792,7 +790,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();

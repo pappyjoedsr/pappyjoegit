@@ -254,9 +254,9 @@ namespace PappyjoeMVC.View
                 else
                 {
                     label_empty.Hide();
-                    lbltotal1.Text = Convert.ToDecimal(totalinvoice).ToString("#0.00");
+                    lbltotal1.Text = Convert.ToDecimal(credit).ToString("#0.00");
                     lbltotal2.Text = Convert.ToDecimal(totalpayment).ToString("#0.00");
-                    lbltotal3.Text = Convert.ToDecimal(balance1).ToString("#0.00");
+                    lbltotal3.Text = Convert.ToDecimal(totalcredit + balance1).ToString("#0.00");
                 }
             }
             catch (Exception ex)

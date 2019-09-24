@@ -1349,7 +1349,6 @@ namespace PappyjoeMVC.View
             this.toolStripconsnt.Size = new System.Drawing.Size(62, 37);
             this.toolStripconsnt.Text = "Consent";
             this.toolStripconsnt.Visible = false;
-            this.toolStripconsnt.Click += new System.EventHandler(this.toolStripconsnt_Click);
             // 
             // toolstripincomeandexpence
             // 
@@ -1407,7 +1406,7 @@ namespace PappyjoeMVC.View
             // 
             this.settingsToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -1415,7 +1414,7 @@ namespace PappyjoeMVC.View
             // 
             this.logoutToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1429953040_Log_Out;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -1468,7 +1467,7 @@ namespace PappyjoeMVC.View
             this.toolStripldoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripldoc.Name = "toolStripldoc";
             this.toolStripldoc.ReadOnly = true;
-            this.toolStripldoc.Size = new System.Drawing.Size(250, 40);
+            this.toolStripldoc.Size = new System.Drawing.Size(250, 23);
             this.toolStripldoc.Text = "Search";
             // 
             // gbxMonthView
@@ -2163,7 +2162,7 @@ namespace PappyjoeMVC.View
             this.label11.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label11.Location = new System.Drawing.Point(7, 77);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 13);
+            this.label11.Size = new System.Drawing.Size(62, 13);
             this.label11.TabIndex = 3;
             this.label11.Text = "Booked By";
             // 
@@ -4110,27 +4109,27 @@ namespace PappyjoeMVC.View
             if (doctor_id != "1")
             {
                 string id;
-                id = this.cntrl.doctr_privillage_for_addnewPatient(doctor_id);// db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PAT' and Permission='A'");
+                id = this.cntrl.doctr_privillage_for_addnewPatient(doctor_id);
                 if (int.Parse(id) > 0)
                 {
                     MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
                 else
                 {
-                    //var form2 = new WindowsFormsApplication3.add_new_patient();
-                    //form2.doctor_id = doctor_id;
-                    //form2.Show();
-                    //form2.Closed += (sender1, args) => this.Close();
-                    //this.Hide();
+                    var form2 = new Add_New_Patients();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.ShowDialog();
                 }
             }
             else
             {
-                //var form2 = new WindowsFormsApplication3.add_new_patient();
-                //form2.doctor_id = doctor_id;
-                //form2.Show();
-                //form2.Closed += (sender1, args) => this.Close();
-                //this.Hide();
+                var form2 = new Add_New_Patients();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
             }
         }
 
@@ -4165,19 +4164,11 @@ namespace PappyjoeMVC.View
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //var form2 = new WindowsFormsApplication3.login();
-            //form2.Show();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
+            var form2 = new Login();
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
-
-        private void toolStripconsnt_Click(object sender, EventArgs e)
-        {
-            //var form2 = new PappyjoeMVC.Consent();
-            //form2.doctor_id = doctor_id;
-            //form2.Show();
-        }
-
         private void toolstripincomeandexpence_Click(object sender, EventArgs e)
         {
 

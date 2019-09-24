@@ -173,7 +173,6 @@
     <Compile Include="Controller\Sales_Return_Controller.cs" />
     <Compile Include="Controller\Sales_Return_List_Controller.cs" />
     <Compile Include="Controller\Sales_Return_Report_controller.cs" />
-    <Compile Include="Controller\Search_Patient_controller.cs" />
     <Compile Include="Controller\Show_Appointment_controller.cs" />
     <Compile Include="Controller\SimpleAppointment_controller.cs" />
     <Compile Include="Controller\SimpleAppointment_Template_controller.cs" />
@@ -241,7 +240,6 @@
     <Compile Include="Model\Practice_Model.cs" />
     <Compile Include="Model\Prescription_model.cs" />
     <Compile Include="Model\Prescription_Setting_model.cs" />
-    <Compile Include="Model\Print_Label_model.cs" />
     <Compile Include="Model\Printout_model.cs" />
     <Compile Include="Model\Procedure_Catalog_model.cs" />
     <Compile Include="Model\profile_Details_model.cs" />

@@ -319,6 +319,7 @@
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(72, 37);
             this.toolStripButton5.Text = "Inventory";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton6
             // 
@@ -458,7 +459,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 40);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // panel6
@@ -486,31 +487,34 @@
             // label21
             // 
             this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label21.Location = new System.Drawing.Point(60, 8);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(77, 13);
+            this.label21.Size = new System.Drawing.Size(81, 13);
             this.label21.TabIndex = 52;
             this.label21.Text = "Patient Name :";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label24.Location = new System.Drawing.Point(81, 27);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(57, 13);
+            this.label24.Size = new System.Drawing.Size(60, 13);
             this.label24.TabIndex = 52;
             this.label24.Text = "Patient ID:";
             // 
             // linkLabel_Name
             // 
             this.linkLabel_Name.AutoSize = true;
+            this.linkLabel_Name.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel_Name.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel_Name.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.linkLabel_Name.Location = new System.Drawing.Point(141, 8);
             this.linkLabel_Name.Name = "linkLabel_Name";
-            this.linkLabel_Name.Size = new System.Drawing.Size(55, 13);
+            this.linkLabel_Name.Size = new System.Drawing.Size(59, 13);
             this.linkLabel_Name.TabIndex = 56;
             this.linkLabel_Name.TabStop = true;
             this.linkLabel_Name.Text = "linkLabel1";
@@ -520,11 +524,12 @@
             // linkLabel_id
             // 
             this.linkLabel_id.AutoSize = true;
+            this.linkLabel_id.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel_id.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel_id.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.linkLabel_id.Location = new System.Drawing.Point(141, 27);
             this.linkLabel_id.Name = "linkLabel_id";
-            this.linkLabel_id.Size = new System.Drawing.Size(55, 13);
+            this.linkLabel_id.Size = new System.Drawing.Size(59, 13);
             this.linkLabel_id.TabIndex = 56;
             this.linkLabel_id.TabStop = true;
             this.linkLabel_id.Text = "linkLabel1";
@@ -966,7 +971,7 @@
             this.label18.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label18.Location = new System.Drawing.Point(11, 17);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(55, 13);
+            this.label18.Size = new System.Drawing.Size(56, 13);
             this.label18.TabIndex = 47;
             this.label18.Text = "By doctor";
             // 
@@ -1795,7 +1800,7 @@
             this.lab_teeth.ForeColor = System.Drawing.Color.Blue;
             this.lab_teeth.Location = new System.Drawing.Point(360, 75);
             this.lab_teeth.Name = "lab_teeth";
-            this.lab_teeth.Size = new System.Drawing.Size(38, 13);
+            this.lab_teeth.Size = new System.Drawing.Size(37, 13);
             this.lab_teeth.TabIndex = 238;
             this.lab_teeth.Text = " Teeth";
             this.lab_teeth.Click += new System.EventHandler(this.lab_teeth_Click);

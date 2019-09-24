@@ -435,6 +435,7 @@
             this.Lnk_Id.TabIndex = 64;
             this.Lnk_Id.TabStop = true;
             this.Lnk_Id.Text = "linkLabel1";
+            this.Lnk_Id.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Lnk_Id_LinkClicked);
             // 
             // label24
             // 
@@ -442,7 +443,7 @@
             this.label24.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(631, 22);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(80, 13);
+            this.label24.Size = new System.Drawing.Size(79, 13);
             this.label24.TabIndex = 14;
             this.label24.Text = "Total Payable :";
             // 
@@ -467,6 +468,7 @@
             this.Lnk_Name.TabIndex = 65;
             this.Lnk_Name.TabStop = true;
             this.Lnk_Name.Text = "linkLabel1";
+            this.Lnk_Name.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Lnk_Name_LinkClicked);
             // 
             // Lab_advance_Available
             // 
@@ -681,7 +683,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(44, 49);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 13);
+            this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Total Payable";
             // 
@@ -854,7 +856,7 @@
             this.Bank.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bank.Location = new System.Drawing.Point(396, 83);
             this.Bank.Name = "Bank";
-            this.Bank.Size = new System.Drawing.Size(32, 13);
+            this.Bank.Size = new System.Drawing.Size(33, 13);
             this.Bank.TabIndex = 7;
             this.Bank.Text = "Bank";
             // 

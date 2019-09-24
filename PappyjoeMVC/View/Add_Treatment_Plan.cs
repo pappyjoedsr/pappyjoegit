@@ -13,7 +13,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Add_Treatment_Plan : Form
     {
-        Add_Treatmentplan_controller cntrl;
+        Add_Treatmentplan_controller cntrl=new Add_Treatmentplan_controller();
         public string doctor_id = ""; public string patient_id = "";
         string id;
         Decimal discounttotal = 0;
@@ -21,10 +21,6 @@ namespace PappyjoeMVC.View
         public Add_Treatment_Plan()
         {
             InitializeComponent();
-        }
-        public void SetController(Add_Treatmentplan_controller controller)
-        {
-            cntrl = controller;
         }
         private void AddTreatmentPlan_Load(object sender, EventArgs e)
         {
@@ -1597,6 +1593,34 @@ namespace PappyjoeMVC.View
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            if (doctor_id != "1")
+            {
+                string id = this.cntrl.privilge_for_inventory(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var form2 = new PappyjoeMVC.View.StockReport();
+                    form2.doctor_id = doctor_id;
+                    form2.Show();
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                var form2 = new PappyjoeMVC.View.StockReport();
+                form2.doctor_id = doctor_id;
+                form2.Show();
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+            }
         }
     }
 }

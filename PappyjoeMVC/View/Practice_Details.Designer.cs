@@ -111,6 +111,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLab = new System.Windows.Forms.Button();
             this.btnLab_dental = new System.Windows.Forms.Button();
+            this.listpatientsearch = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -909,8 +910,9 @@
             // 
             this.settingsToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
@@ -957,7 +959,9 @@
             this.toolStripTextBox1.ForeColor = System.Drawing.SystemColors.GrayText;
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(250, 40);
-            this.toolStripTextBox1.Text = "Search ";
+            this.toolStripTextBox1.Text = "Search by Patient Name, id, Mobile No";
+            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
+            this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
             // 
             // toolStripldoc
             // 
@@ -1062,6 +1066,19 @@
             this.btnLab_dental.UseVisualStyleBackColor = false;
             this.btnLab_dental.Click += new System.EventHandler(this.btnLab_dental_Click);
             // 
+            // listpatientsearch
+            // 
+            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.listpatientsearch.FormattingEnabled = true;
+            this.listpatientsearch.ItemHeight = 21;
+            this.listpatientsearch.Location = new System.Drawing.Point(1016, 35);
+            this.listpatientsearch.Name = "listpatientsearch";
+            this.listpatientsearch.Size = new System.Drawing.Size(250, 84);
+            this.listpatientsearch.TabIndex = 299;
+            this.listpatientsearch.Visible = false;
+            // 
             // Practice_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1069,6 +1086,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1370, 741);
+            this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.btnLab_dental);
             this.Controls.Add(this.btnLab);
             this.Controls.Add(this.panel_main);
@@ -1227,5 +1245,6 @@
         private System.Windows.Forms.Button btnLab_dental;
         private System.Windows.Forms.Button btnLab;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ListBox listpatientsearch;
     }
 }

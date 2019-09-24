@@ -66,11 +66,11 @@ namespace PappyjoeMVC.View
                 string doctr_id=this.ctrlr.privilege_A(doctor_id);
                 if (doctr_id != "1")
                 {
-                btn_Add.Enabled = false;
+                btn_Add.Enabled = true;
                 }
                 else
                 {
-                btn_Add.Enabled = true;
+                btn_Add.Enabled = false;
                 }
                 DataTable ptntdtls=this.ctrlr.Get_Patient_Details(patient_id);
                 Get_Patient_Details(ptntdtls);
@@ -147,7 +147,7 @@ namespace PappyjoeMVC.View
                 {
                     apntid = this.dataGridView2.Rows[i].Cells[1].Value.ToString();
                 }
-                var form2 = new PappyjoeMVC.View.Add_Appointment();
+                var form2 = new Add_Appointment();
                 form2.patient_id = patient_id;
                 form2.doctor_id = doctor_id;
                 form2.appointment_id = apntid;
@@ -448,6 +448,27 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.ShowDialog();
         }
+
+        private void linkLabel_Name_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void linkLabel_id_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }

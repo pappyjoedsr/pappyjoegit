@@ -199,18 +199,18 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
         }
 
         private void labelallpatient_Click_1(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Patients();
             form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
         }
 
         private void text_Pulse_KeyPress(object sender, KeyPressEventArgs e)
@@ -620,19 +620,39 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new PappyjoeMVC.View.StockReport();
                     form2.doctor_id = doctor_id;
-                    form2.Show();
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
+                    form2.ShowDialog();
                 }
             }
             else
             {
                 var form2 = new PappyjoeMVC.View.StockReport();
                 form2.doctor_id = doctor_id;
-                form2.Show();
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
+                form2.ShowDialog();
             }
+        }
+
+        private void linkLabel_Name_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void linkLabel_id_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
     }
 }
