@@ -12,6 +12,11 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.Load_finishedtreatments(patient_id);
             return dtb;
         }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string s = cmodel.privilge_for_inventory(doctor_id);
+            return s;
+        }
         public DataTable load_proceduresgrid()
         {
             DataTable dt_pt = _model.load_proceduresgrid();

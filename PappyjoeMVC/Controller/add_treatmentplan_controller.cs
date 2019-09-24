@@ -14,6 +14,11 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _Model.get_ProcedureTreatment(id);
             return dtb;
         }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string s = cmodel.privilge_for_inventory(doctor_id);
+            return s;
+        }
         public DataTable check_procedurename(string AddProcedureName)
         {
             DataTable dtb = _Model.check_procedurename(AddProcedureName);

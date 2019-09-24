@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using PappyjoeMVC.Model;
+using System;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;  
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
     public partial class Ledger : Form
@@ -29,7 +24,7 @@ namespace PappyjoeMVC.View
         public decimal b;
         public decimal credit;
         string totalamt;
-        Ledger_controller cntrl=new  Ledger_controller() ;
+        Ledger_controller cntrl = new Ledger_controller();
         Connection db = new Connection();
         private void Ledger_Load(object sender, EventArgs e)
         {
@@ -221,7 +216,7 @@ namespace PappyjoeMVC.View
         }
         public void SetController(Ledger_controller controller)
         {
-           cntrl = controller;
+            cntrl = controller;
         }
 
         private void btnpayreminder_Click(object sender, EventArgs e)
@@ -229,8 +224,8 @@ namespace PappyjoeMVC.View
             try
             {
                 string doctor_name = "";
-               string doct = this.cntrl.Get_DoctorName(doctor_id);
-                if (doct!="")
+                string doct = this.cntrl.Get_DoctorName(doctor_id);
+                if (doct != "")
                 {
                     doctor_name = doct;
                 }
@@ -298,7 +293,7 @@ namespace PappyjoeMVC.View
                                     MessageBox.Show("There is No Dues for this patient:" + Pname.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                             }
-                            catch(Exception ex)
+                            catch (Exception ex)
                             {
                             }
                         }
