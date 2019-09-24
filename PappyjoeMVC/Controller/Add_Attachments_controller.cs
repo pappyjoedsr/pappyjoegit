@@ -13,6 +13,11 @@ namespace PappyjoeMVC.Controller
             string id = mdl.selectdoctrid();
             return id;
         }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string s = cmdl.privilge_for_inventory(doctor_id);
+            return s;
+        }
         public string clinicname()
         {
             string dt = mdl.clinicname();

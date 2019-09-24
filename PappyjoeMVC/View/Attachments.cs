@@ -1,15 +1,8 @@
-﻿using Microsoft.Win32;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Controller;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
@@ -41,7 +34,7 @@ namespace PappyjoeMVC.View
             }
             else
             {
-                string previd=this.ctrlr.getprevid(doctor_id);
+                string previd = this.ctrlr.getprevid(doctor_id);
                 getprevid(previd);
             }
         }
@@ -104,8 +97,8 @@ namespace PappyjoeMVC.View
         {
             if (doctor_id != "1")
             {
-                string id=this.ctrlr.privillage_A(doctor_id);
-                if (id!="")
+                string id = this.ctrlr.privillage_A(doctor_id);
+                if (id != "")
                 {
                     if (int.Parse(id) > 0)
                     {
@@ -346,7 +339,7 @@ namespace PappyjoeMVC.View
                                 this.ctrlr.delete(cid);
                                 Dgv_Category.Rows.RemoveAt(index);
                                 Dgv_Category.Rows.Clear();
-                                DataTable dt=this.ctrlr.GetCategory();
+                                DataTable dt = this.ctrlr.GetCategory();
                                 GetCategory(dt);
                             }
                             else
@@ -379,14 +372,14 @@ namespace PappyjoeMVC.View
             { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
-        
+
         private void Attachments_Load(object sender, EventArgs e)
         {
-            string id=this.ctrlr.privillage_A(doctor_id);
+            string id = this.ctrlr.privillage_A(doctor_id);
             privillage_A(id);
             toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
             toolStripButton1.Text = this.ctrlr.Load_CompanyName();
-            dctr=this.ctrlr.Get_DoctorName(doctor_id);
+            dctr = this.ctrlr.Get_DoctorName(doctor_id);
             if (dctr != "")
             {
                 toolStripTextDoctor.Text = "Logged In As : " + dctr;
@@ -397,16 +390,16 @@ namespace PappyjoeMVC.View
             Btn_CategoryClose.Visible = false;
             btn_CategoryAdd.Location = new Point(138, 70);
             Dgv_Category.Location = new Point(0, 45);
-            DataTable catgry=this.ctrlr.GetCategory();
+            DataTable catgry = this.ctrlr.GetCategory();
             GetCategory(catgry);
-            DataTable patnt=this.ctrlr.GetPatientDetails(patient_id);
+            DataTable patnt = this.ctrlr.GetPatientDetails(patient_id);
             GetPatientDetails(patnt);
             string pay = this.ctrlr.GetPayment(patient_id);
-            if (pay!="")
+            if (pay != "")
             {
                 label8.Text = pay + " due";
             }
-            DataTable attach=this.ctrlr.getattachment(patient_id);
+            DataTable attach = this.ctrlr.getattachment(patient_id);
             getattachment(attach);
         }
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -435,6 +428,30 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
+            if (doctor_id != "1")
+            {
+                string id = this.ctrlr.privilge_for_inventory(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var form2 = new PappyjoeMVC.View.StockReport();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.ShowDialog();
+                }
+            }
+            else
+            {
+                var form2 = new PappyjoeMVC.View.StockReport();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
         }
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
@@ -477,7 +494,7 @@ namespace PappyjoeMVC.View
         }
         public void doctr_privillage_for_addnewPatient(string patnt)
         {
-            if (patnt!="")
+            if (patnt != "")
             {
                 string id = patnt;
                 if (int.Parse(id) > 0)
@@ -541,8 +558,8 @@ namespace PappyjoeMVC.View
         }
         public void setcontrolls_aftersave()
         {
-            Dgv_Category.Rows.Clear();                                                                 
-            DataTable catgry=this.ctrlr.GetCategory();
+            Dgv_Category.Rows.Clear();
+            DataTable catgry = this.ctrlr.GetCategory();
             GetCategory(catgry);
             txt_Category.Text = "";
             controll_visibility();
@@ -610,7 +627,6 @@ namespace PappyjoeMVC.View
         private void labelfinished_Click(object sender, EventArgs e)
         {
             var form2 = new Finished_Procedure();
-
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
@@ -765,7 +781,7 @@ namespace PappyjoeMVC.View
             {
                 try
                 {
-                    string path=this.ctrlr.getpath(attach_id);
+                    string path = this.ctrlr.getpath(attach_id);
                     getpath(path);
                 }
                 catch (Exception ex)
