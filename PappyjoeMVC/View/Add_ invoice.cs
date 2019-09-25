@@ -122,7 +122,7 @@ namespace PappyjoeMVC.View
             DataTable dtb1 = this.cntrl.get_planed_procedure(patient_id);
             Load_planed_procedure(dtb1);
            DataTable dt_load= this.cntrl.load_AllProcedures();
-            Load_searchProcedures(dtb);
+            Load_searchProcedures(dt_load);
             if (invoiceid != "")
             {
                 btn_SaveInvoice.Text = "Update";
