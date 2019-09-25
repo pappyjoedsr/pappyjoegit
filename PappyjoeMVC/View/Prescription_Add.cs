@@ -115,7 +115,7 @@ namespace PappyjoeMVC.View
             try
             {
                 string checkdataname = this.cntrl.check_drugname(drugnametextbox.Text);
-                if (checkdataname!="")
+                if (checkdataname!="0")
                 {
                     MessageBox.Show("Drug " + drugnametextbox.Text + "' already exist", "Duplication Encountered", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -483,7 +483,7 @@ namespace PappyjoeMVC.View
                         var form2 = new Prescription_Show();
                         form2.doctor_id = doctor_id;
                         form2.patient_id = patient_id;
-                        Prescription_Show_controller controller = new Prescription_Show_controller(form2);
+                        //Prescription_Show_controller controller = new Prescription_Show_controller(form2);
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
                         form2.ShowDialog();
@@ -517,7 +517,7 @@ namespace PappyjoeMVC.View
                             var form2 = new Prescription_Show();
                             form2.doctor_id = doctor_id;
                             form2.patient_id = patient_id;
-                            Prescription_Show_controller controller = new Prescription_Show_controller(form2);
+                            //Prescription_Show_controller controller = new Prescription_Show_controller(form2);
                             form2.Closed += (sender1, args) => this.Close();
                             this.Hide();
                             form2.ShowDialog();
@@ -589,7 +589,7 @@ namespace PappyjoeMVC.View
             var form2 = new Prescription_Show();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Prescription_Show_controller controller = new Prescription_Show_controller(form2);
+            //Prescription_Show_controller controller = new Prescription_Show_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
