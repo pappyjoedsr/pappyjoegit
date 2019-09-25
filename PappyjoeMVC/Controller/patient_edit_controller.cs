@@ -7,9 +7,9 @@ namespace PappyjoeMVC.Controller
         Connection db = new Connection();
         Common_model mdl = new Common_model();
         Patient_Edit_model _model = new Patient_Edit_model();
-        public string get_medicalId(string pt_id)
+        public DataTable get_medicalId(string pt_id)
         {
-            string dtb = _model.get_medicalId(pt_id);
+            DataTable dtb = _model.get_medicalId(pt_id);
             return dtb;
         }
         public DataTable get_all_doctorname()
@@ -32,9 +32,9 @@ namespace PappyjoeMVC.Controller
             string e = mdl.privillage_D(doctor_id);
             return e;
         }
-        public string Get_medicalname()
+        public DataTable  Get_medicalname()
         {
-            string dtb = _model.Get_medicalname();
+            DataTable dtb = _model.Get_medicalname();
             return dtb;
         }
         public string patient_medical(string idd, string medid)
@@ -42,14 +42,14 @@ namespace PappyjoeMVC.Controller
             string dtb = _model.patient_medical(idd, medid);
             return dtb;
         }
-        public string get_groupid(string idd)
+        public DataTable get_groupid(string idd)
         {
-            string dtb = _model.get_groupid(idd);
+            DataTable dtb = _model.get_groupid(idd);
             return dtb;
         }
-        public string groupname()
+        public DataTable groupname()
         {
-            string dtb = _model.groupname();
+            DataTable dtb = _model.groupname();
             return dtb;
         }
         public string patient_group(string idd, string grpid)
