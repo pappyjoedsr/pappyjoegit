@@ -899,7 +899,7 @@
             this.toolStripSeparator4,
             this.printAllToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(206, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(206, 98);
             // 
             // printToolStripMenuItem1
             // 
@@ -926,6 +926,7 @@
             this.printAllToolStripMenuItem.Name = "printAllToolStripMenuItem";
             this.printAllToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.printAllToolStripMenuItem.Text = "Print All ";
+            this.printAllToolStripMenuItem.Click += new System.EventHandler(this.printAllToolStripMenuItem_Click);
             // 
             // Receipt
             // 
