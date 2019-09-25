@@ -18,6 +18,11 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.Get_invoice_details(patient_id);
             return dtb;
         }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string s = cmodel.privilge_for_inventory(doctor_id);
+            return s;
+        }
         public DataTable Patient_invoice(string patient_id, string invoices)
         {
             DataTable dtb = _model.Patient_invoice(patient_id, invoices);

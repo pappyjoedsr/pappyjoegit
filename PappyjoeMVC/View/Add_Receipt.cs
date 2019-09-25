@@ -1,15 +1,11 @@
-﻿using System;
+﻿using PappyjoeMVC.Controller;
+using PappyjoeMVC.Model;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
     public partial class Add_Receipt : Form
@@ -17,7 +13,7 @@ namespace PappyjoeMVC.View
         public string doctor_id = "";
         public string patient_id = "0";
         string admin_id = "0";
-        string advanceamt = "0"; 
+        string advanceamt = "0";
         decimal advance;
         decimal total = 0, ab;
         public int status = 0;
@@ -29,21 +25,21 @@ namespace PappyjoeMVC.View
         string id15; public string staff_id = "";
         public string inv, inv_number, services;
         DataGridViewLinkColumn Deletelink1 = new DataGridViewLinkColumn();
-        Add_Receipt_controller cntrl =new Add_Receipt_controller();
+        Add_Receipt_controller cntrl = new Add_Receipt_controller();
         public string[] invoices = new string[100];
         Common_model cmodel = new Common_model();
         public Add_Receipt()
         {
             InitializeComponent();
         }
-       
+
         private void Add_receipt_Load(object sender, EventArgs e)
         {
             try
             {
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
                 string admin = cmodel.Get_adminId();
-                if (admin!="")
+                if (admin != "")
                 {
                     if (admin != doctor_id.ToString())
                     {
@@ -58,7 +54,7 @@ namespace PappyjoeMVC.View
                 {
                     toolStripButton7.Visible = false;
                 }
-                toolStripButton1.Text = this.cntrl.Load_CompanyName();  
+                toolStripButton1.Text = this.cntrl.Load_CompanyName();
                 listpatientsearch.Hide();
                 string docnam = cmodel.Get_DoctorName(doctor_id);
                 if (docnam != "")
@@ -115,7 +111,7 @@ namespace PappyjoeMVC.View
                 {
                     btn_PayPreService.Text = "SAVE ADVANCE";
                     Btn_payonetime.Visible = false;
-                    DataTable dtb= this.cntrl.Get_invoice_details(patient_id );
+                    DataTable dtb = this.cntrl.Get_invoice_details(patient_id);
                     LoadGrid_status0(dtb);
                     foreach (DataGridViewColumn cl in DGV_Invoice.Columns)
                     {
@@ -134,7 +130,7 @@ namespace PappyjoeMVC.View
                     int p = 0;
                     while (p < invoices.Length && invoices[p] != null)
                     {
-                      DataTable dt1= this.cntrl.Patient_invoice(patient_id, invoices[p]);
+                        DataTable dt1 = this.cntrl.Patient_invoice(patient_id, invoices[p]);
                         if (dt1.Rows.Count > 0)
                         {
                             ab = Convert.ToDecimal(dt1.Rows[0][3].ToString());
@@ -176,7 +172,7 @@ namespace PappyjoeMVC.View
                                     Lab_TotalPayable.Text = string.Format("{0:C}", tot) + " due";
                                 }
                             }
-                            catch(Exception ex)
+                            catch (Exception ex)
                             {
                                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
@@ -204,7 +200,7 @@ namespace PappyjoeMVC.View
             }
         }
 
-         int rowindex;
+        int rowindex;
         decimal due_after_payment;
         private void DGV_Invoice_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -270,7 +266,7 @@ namespace PappyjoeMVC.View
                         lab_due_after_advance.Text = string.Format("{0:C}", Convert.ToDecimal(tot1 - advB));
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -292,7 +288,7 @@ namespace PappyjoeMVC.View
 
         private void DGV_MainGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-           try
+            try
             {
                 if (Convert.ToDecimal(rows_GridView3.ToString()) >= 0)
                 {
@@ -659,7 +655,7 @@ namespace PappyjoeMVC.View
                         {
                             decimal a = 0;
                             a = decimal.Parse(advanceamt) - advance;
-                            this.cntrl.update_advance(a, patient_id); 
+                            this.cntrl.update_advance(a, patient_id);
                             string rec = this.cntrl.receipt_autoid();
                             int receip = int.Parse(rec) + 1;
                             this.cntrl.update_receiptAutoid(receip);
@@ -753,7 +749,7 @@ namespace PappyjoeMVC.View
                 DGV_Invoice.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 DGV_Invoice.Columns[2].Visible = false;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -802,7 +798,7 @@ namespace PappyjoeMVC.View
                         }
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -897,12 +893,12 @@ namespace PappyjoeMVC.View
                     txt_pay_from_advance.Text = string.Format("{0:C}", Convert.ToDecimal(advB.ToString()));
                     lab_due_after_advance.Text = string.Format("{0:C}", Convert.ToDecimal(tot1 - advB));
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -1038,23 +1034,23 @@ namespace PappyjoeMVC.View
                                 Doctor_Name = totalinv.Rows[0]["dr_id"].ToString();
                                 if (Cmb_ModeOfPaymnt.SelectedIndex == 1)
                                 {
-                                    inv = this.cntrl.save_payment_checkwise(Add_advanceamt.ToString(), txt_ReceiptNo.Text.ToString() ,Convert.ToDecimal( DGV_MainGrid[9, i].Value.ToString()), DGV_MainGrid[7, i].Value.ToString() , DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text , patient_id , dateTimePicker1.Value.ToString("yyyy-MM-dd") , Doctor_Name , totalinv.Rows[0]["invoice_main_id"].ToString() , totalinv.Rows[0]["total"].ToString(), totalinv.Rows[0]["cost"].ToString() , totalinv.Rows[0]["pt_name"].ToString() , txt_BankNAme.Text , txt_Number.Text );//
+                                    inv = this.cntrl.save_payment_checkwise(Add_advanceamt.ToString(), txt_ReceiptNo.Text.ToString(), Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()), DGV_MainGrid[7, i].Value.ToString(), DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text, patient_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), Doctor_Name, totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString(), totalinv.Rows[0]["cost"].ToString(), totalinv.Rows[0]["pt_name"].ToString(), txt_BankNAme.Text, txt_Number.Text);//
                                 }
                                 else if (Cmb_ModeOfPaymnt.SelectedIndex == 2)
                                 {
-                                    inv = this.cntrl.save_payment_cardWise(Add_advanceamt.ToString(), txt_ReceiptNo.Text.ToString() , Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()) , DGV_MainGrid[7, i].Value.ToString() , DGV_MainGrid[8, i].Value.ToString() , Cmb_ModeOfPaymnt.Text , patient_id , dateTimePicker1.Value.ToString("yyyy-MM-dd") , Doctor_Name , totalinv.Rows[0]["invoice_main_id"].ToString() , totalinv.Rows[0]["total"].ToString() , totalinv.Rows[0]["cost"].ToString() , totalinv.Rows[0]["pt_name"].ToString() , txt_BankNAme.Text, txt_4Digit.Text);
+                                    inv = this.cntrl.save_payment_cardWise(Add_advanceamt.ToString(), txt_ReceiptNo.Text.ToString(), Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()), DGV_MainGrid[7, i].Value.ToString(), DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text, patient_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), Doctor_Name, totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString(), totalinv.Rows[0]["cost"].ToString(), totalinv.Rows[0]["pt_name"].ToString(), txt_BankNAme.Text, txt_4Digit.Text);
                                 }
                                 else if (Cmb_ModeOfPaymnt.SelectedIndex == 3)
                                 {
-                                    inv = this.cntrl.Save_payment_DD(Add_advanceamt.ToString(), txt_ReceiptNo.Text.ToString() , Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()) , DGV_MainGrid[7, i].Value.ToString() , DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text , patient_id , dateTimePicker1.Value.ToString("yyyy-MM-dd") , Doctor_Name , totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString() , totalinv.Rows[0]["cost"].ToString() , totalinv.Rows[0]["pt_name"].ToString() , txt_BankNAme.Text , txt_Number.Text);
+                                    inv = this.cntrl.Save_payment_DD(Add_advanceamt.ToString(), txt_ReceiptNo.Text.ToString(), Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()), DGV_MainGrid[7, i].Value.ToString(), DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text, patient_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), Doctor_Name, totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString(), totalinv.Rows[0]["cost"].ToString(), totalinv.Rows[0]["pt_name"].ToString(), txt_BankNAme.Text, txt_Number.Text);
                                 }
                                 else if (Cmb_ModeOfPaymnt.SelectedIndex == 0)
                                 {
-                                    inv = this.cntrl.save_payment(Add_advanceamt.ToString() , txt_ReceiptNo.Text.ToString() , Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()) ,DGV_MainGrid[7, i].Value.ToString() , DGV_MainGrid[8, i].Value.ToString() , Cmb_ModeOfPaymnt.Text , patient_id , dateTimePicker1.Value.ToString("yyyy-MM-dd") , Doctor_Name , totalinv.Rows[0]["invoice_main_id"].ToString() , totalinv.Rows[0]["total"].ToString() , totalinv.Rows[0]["cost"].ToString() , totalinv.Rows[0]["pt_name"].ToString());
+                                    inv = this.cntrl.save_payment(Add_advanceamt.ToString(), txt_ReceiptNo.Text.ToString(), Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()), DGV_MainGrid[7, i].Value.ToString(), DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text, patient_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), Doctor_Name, totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString(), totalinv.Rows[0]["cost"].ToString(), totalinv.Rows[0]["pt_name"].ToString());
                                 }
                                 else if (Cmb_ModeOfPaymnt.SelectedIndex > 3) // other payment method..
                                 {
-                                    inv = this.cntrl.save_payment(Add_advanceamt.ToString(), txt_ReceiptNo.Text.ToString() , Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()) , DGV_MainGrid[7, i].Value.ToString() , DGV_MainGrid[8, i].Value.ToString() , Cmb_ModeOfPaymnt.Text, patient_id , dateTimePicker1.Value.ToString("yyyy-MM-dd") , Doctor_Name , totalinv.Rows[0]["invoice_main_id"].ToString() , totalinv.Rows[0]["total"].ToString() , totalinv.Rows[0]["cost"].ToString() , totalinv.Rows[0]["pt_name"].ToString());
+                                    inv = this.cntrl.save_payment(Add_advanceamt.ToString(), txt_ReceiptNo.Text.ToString(), Convert.ToDecimal(DGV_MainGrid[9, i].Value.ToString()), DGV_MainGrid[7, i].Value.ToString(), DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text, patient_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), Doctor_Name, totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString(), totalinv.Rows[0]["cost"].ToString(), totalinv.Rows[0]["pt_name"].ToString());
                                 }
                                 if (inv > 0)
                                 {
@@ -1092,7 +1088,7 @@ namespace PappyjoeMVC.View
                         a = Convert.ToDecimal(advanceamt);
                         this.cntrl.update_advance(a, patient_id);
                         string rec = this.cntrl.receipt_autoid();
-                        if (Convert.ToInt32(rec)> 0)
+                        if (Convert.ToInt32(rec) > 0)
                         {
                             int receip = int.Parse(rec) + 1;
                             this.cntrl.update_receiptAutoid(receip);
@@ -1122,7 +1118,7 @@ namespace PappyjoeMVC.View
                     MessageBox.Show("This receipt number already exists..Choose another one. If Receipt number is autogenereted, you can change it from settings", "Receipt number exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -1384,6 +1380,42 @@ namespace PappyjoeMVC.View
             form2.ShowDialog();
         }
 
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            if (doctor_id != "1")
+            {
+                string id = this.cntrl.privilge_for_inventory(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var form2 = new PappyjoeMVC.View.StockReport();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.ShowDialog();
+                }
+            }
+            else
+            {
+                var form2 = new PappyjoeMVC.View.StockReport();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Login();
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         public void Advance_paymentPrint(decimal total)
         {
             try
@@ -1532,7 +1564,7 @@ namespace PappyjoeMVC.View
                 swriter.Close();
                 System.Diagnostics.Process.Start(Apppath + "\\AdvancePaymentReceipt.html");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Some error occured!..please try again later..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -1605,7 +1637,7 @@ namespace PappyjoeMVC.View
                 power -= 3;
             }
             if (n >= 1000)
-              {
+            {
                 if (n % 1000 > 0) words += NumWords(Math.Floor(n / 1000)) + " thousand, ";
                 else words += NumWords(Math.Floor(n / 1000)) + " thousand";
                 n %= 1000;
