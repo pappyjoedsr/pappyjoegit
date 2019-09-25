@@ -13,6 +13,7 @@ namespace PappyjoeMVC.Controller
         Common_model cm = new Common_model();
         LabtrackingReport_model mdl = new LabtrackingReport_model();
         Dentalwork_model dm = new Dentalwork_model();
+        Communication_model c = new Communication_model();
         public DataTable selectall()
         {
             DataTable dt = mdl.selectall();
@@ -102,6 +103,11 @@ namespace PappyjoeMVC.Controller
         {
             string t = cm.doctr_privillage_for_addnewPatient(doctrid);
             return t;
+        }
+        public string frmInventory(string doctor_id)
+        {
+            string s = c.frmInventory(doctor_id);
+            return s;
         }
     }
 }

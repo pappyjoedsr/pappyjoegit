@@ -221,8 +221,8 @@ namespace PappyjoeMVC.View
         {
             if (txt_StaffSearch.Text != "")
             {
-                btn_selectall.Visible = false;
-                btn_Deselectall.Visible = false;
+                btn_staffSelectall.Visible = false;
+                btnStaffDeselectAll.Visible = false;
                 if (dt.Rows.Count > 0)
                 {
                     DGV_Staff.DataSource = dt;
@@ -526,7 +526,7 @@ namespace PappyjoeMVC.View
                     {
                         if (txt_Recipients.Text == "")
                         {
-                            lst_GridItems.Items.Add(name);
+                            lst_GridItems.Items.Add(name); 
                             txt_Recipients.Text = txt_Recipients.Text.ToString() + name;
                         }
                         else
