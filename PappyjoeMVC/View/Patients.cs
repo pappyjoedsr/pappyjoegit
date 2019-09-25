@@ -674,8 +674,6 @@ namespace PappyjoeMVC.View
             }
         }
 
-
-
         private void labeltreatment_Click_1(object sender, EventArgs e)
         {
             try
@@ -1423,21 +1421,6 @@ namespace PappyjoeMVC.View
                    DataTable drtb=  this.cntrl.Get_all_Patients();
                     Create_Datagrid(drtb);
                     Design_Datagrid();
-                    //if (dt_pt.Rows.Count > 0)
-                    //{
-                    //    Create_Datagrid(dt_pt);
-                    //    Design_Datagrid();
-                    //    if (DGV_Patients.Rows.Count > 0)
-                    //    {
-                    //        DGV_Patients.Columns[0].Visible = false;
-                    //        lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
-                    //    }
-                    //}
-                    //else
-                    //{
-                    //    lab_Displaying.Visible = false;
-                    //    lab_7.Text = "0  Patient(s)";
-                    //}
                 }
                 else
                 {
@@ -1447,25 +1430,6 @@ namespace PappyjoeMVC.View
                     DataTable dtb= this.cntrl.Get_all_Patients();
                     Create_Datagrid(dtb);
                     Design_Datagrid();
-                    //string sqlstr = "";
-                    //sqlstr = "SELECT id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,Opticket as 'File No' FROM tbl_patient where Profile_Status='Active' ORDER BY id DESC";
-                    //DataTable dt_pt = db.table(sqlstr);
-                    //if (dt_pt.Rows.Count > 0)
-                    //{
-                    //    Create_Datagrid(dt_pt);
-                    //    Design_Datagrid();
-                    //    if (DGV_Patients.Rows.Count > 0)
-                    //    {
-                    //        DGV_Patients.Columns[0].Visible = false;
-                    //        lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
-                    //    }
-                    //}
-                    //else
-                    //{
-                    //    lab_Displaying.Visible = false;
-                    //    lab_7.Text = "0  Patient(s)";
-                    //}
-
                 }
             }
             catch (Exception ex)
@@ -1513,23 +1477,6 @@ namespace PappyjoeMVC.View
                 DataTable dtb= this.cntrl.recently_visited(d, todate);
                 Create_Datagrid(dtb);
                 Design_Datagrid();
-                //sqlstr = "SELECT  DISTINCT A.pt_id AS Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d.ToString("yyyy-MM-dd HH:mm") + "' and '" + todate.ToString("yyyy-MM-dd HH:mm") + "' and A.status<>'CANCELLED' and A.status <>'scheduled' ";// ORDER BY P. id DESC";//   p.Profile_Status='Active'  ";
-                //DataTable dt_pt = db.table(sqlstr);
-                //if (dt_pt.Rows.Count > 0)
-                //{
-                //    Create_Datagrid(dt_pt);
-                //    Design_Datagrid();
-                //    if (DGV_Patients.Rows.Count > 0)
-                //    {
-                //        DGV_Patients.Columns[0].Visible = false;
-                //        lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
-                //    }
-                //}
-                //else
-                //{
-                //    lab_Displaying.Visible = true;
-                //    lab_7.Text = "0  Patient(s)";
-                //}
             }
             catch (Exception ex)
             {
@@ -1562,23 +1509,6 @@ namespace PappyjoeMVC.View
                 DataTable dtb= this.cntrl.Recently_added(Convert.ToDateTime( d).ToString("yyyy/MM/dd"), todate);
                 Create_Datagrid(dtb);
                 Design_Datagrid();
-                //sqlstr = "SELECT  id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,Opticket as 'File No' FROM  tbl_patient  where Visited between '" + d.ToString("yyyy-MM-dd HH:mm") + "' and '" + todate.ToString("yyyy-MM-dd HH:mm") + "' and tbl_patient.Profile_Status='Active' order by tbl_patient.Date DESC limit 20";
-                //DataTable dt_pt = db.table(sqlstr);
-                //if (dt_pt.Rows.Count > 0)
-                //{
-                //    Create_Datagrid(dt_pt);
-                //    Design_Datagrid();
-                //    if (DGV_Patients.Rows.Count > 0)
-                //    {
-                //        DGV_Patients.Columns[0].Visible = false;
-                //        lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
-                //    }
-                //}
-                //else
-                //{
-                //    lab_Displaying.Visible = true;
-                //    lab_7.Text = "0  Patient(s)";
-                //}
             }
             catch (Exception ex)
             {
@@ -1609,23 +1539,6 @@ namespace PappyjoeMVC.View
                DataTable dtb= this.cntrl.upcomming_appointments(startDateTime);
                 Create_Datagrid(dtb);
                 Design_Datagrid();
-                //sqlstr = "SELECT  DISTINCT A.pt_id AS Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on A.pt_id=P.ID WHERE  start_datetime >=  '" + startDateTime.ToString("yyyy-MM-dd") + "' and p.Profile_Status='Active'";//  order by id desc";
-                //DataTable dt_pt = db.table(sqlstr);
-                //if (dt_pt.Rows.Count > 0)
-                //{
-                //    Create_Datagrid(dt_pt);
-                //    Design_Datagrid();
-                //    if (DGV_Patients.Rows.Count > 0)
-                //    {
-                //        DGV_Patients.Columns[0].Visible = false;
-                //        lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
-                //    }
-                //}
-                //else
-                //{
-                //    lab_Displaying.Visible = true;
-                //    lab_7.Text = "0  Patient(s)";
-                //}
             }
             catch (Exception ex)
             {
@@ -1655,23 +1568,6 @@ namespace PappyjoeMVC.View
                 DataTable dtb= this.cntrl.birthday();
                 Create_Datagrid(dtb);
                 Design_Datagrid();
-                //sqlstr = "select id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,Opticket as 'File No' from tbl_patient where MONTH(date_of_birth) ='" + DateTime.Now.Month + "' and DAY(date_of_birth)> '" + DateTime.Now.Day + "'  and date_of_birth !='" + "" + "' and tbl_patient.Profile_Status='Active' order by date_of_birth ASC";
-                //DataTable dt_pt = db.table(sqlstr);
-                //if (dt_pt.Rows.Count > 0)
-                //{
-                //    Create_Datagrid(dt_pt);
-                //    Design_Datagrid();
-                //    if (DGV_Patients.Rows.Count > 0)
-                //    {
-                //        DGV_Patients.Columns[0].Visible = false;
-                //        lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
-                //    }
-                //}
-                //else
-                //{
-                //    lab_Displaying.Visible = true;
-                //    lab_7.Text = "0  Patient(s)";
-                //}
             }
             catch (Exception ex)
             {
@@ -1700,24 +1596,6 @@ namespace PappyjoeMVC.View
                 DataTable dtb= this.cntrl.cancelled_appointment();
                 Create_Datagrid(dtb);
                 Design_Datagrid();
-                //string sqlstr = "";
-                //sqlstr = "select p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age,p.primary_mobile_number as Mobile,p.street_address as 'Street Address',p.locality as Locality,p.Opticket as 'File No' from  tbl_appointment A left join tbl_patient P on A.pt_id=P.id  where status='Cancelled' order by p.id";
-                //DataTable dt_pt = db.table(sqlstr);
-                //if (dt_pt.Rows.Count > 0)
-                //{
-                //    Create_Datagrid(dt_pt);
-                //    Design_Datagrid();
-                //    if (DGV_Patients.Rows.Count > 0)
-                //    {
-                //        DGV_Patients.Columns[0].Visible = false;
-                //        lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
-                //    }
-                //}
-                //else
-                //{
-                //    lab_Displaying.Visible = true;
-                //    lab_7.Text = "0  Patient(s)";
-                //}
             }
             catch (Exception ex)
             {
@@ -1746,23 +1624,6 @@ namespace PappyjoeMVC.View
                 DataTable dtb=  this.cntrl.innactive_patients();
                 Create_Datagrid(dtb);
                 Design_Datagrid();
-                //sqlstr = " SELECT P.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM tbl_patient P where  Profile_Status ='Cancelled' ORDER BY P.id DESC";            //}
-                //DataTable dt_pt = db.table(sqlstr);
-                //if (dt_pt.Rows.Count > 0)
-                //{
-                //    Create_Datagrid(dt_pt);
-                //    Design_Datagrid();
-                //    if (DGV_Patients.Rows.Count > 0)
-                //    {
-                //        DGV_Patients.Columns[0].Visible = false;
-                //        lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
-                //    }
-                //}
-                //else
-                //{
-                //    lab_Displaying.Visible = true;
-                //    lab_7.Text = "0  Patient(s)";
-                //}
             }
             catch (Exception ex)
             {
@@ -1792,25 +1653,11 @@ namespace PappyjoeMVC.View
                     lab_7.Text = "";
                     lab_Displaying.Visible = true;
                     int g = e.RowIndex;
-                    //string sqlstr = "";
                     id4 = grgroup.Rows[g].Cells[1].Value.ToString();
                     DataTable dtb= this.cntrl.patients_wit_group(id4);
                     Create_Datagrid(dtb);
                     Design_Datagrid();
-                    //sqlstr = " SELECT P.id AS Pid,P.pt_id AS 'Patient Id',pt_name AS 'Patient Name', gender AS Gender,age AS Age, primary_mobile_number AS  Mobile,street_address AS 'Street Address',locality AS Locality,Opticket as 'File No' FROM tbl_patient P inner join tbl_pt_group G on P.id = G.pt_id where G.group_id='" + id4 + "' and Profile_Status='Active' ORDER BY P.id DESC";
-                    //DataTable dt_pt = db.table(sqlstr);
-                    //if (dt_pt.Rows.Count > 0)
-                    //{
-                    //    Create_Datagrid(dt_pt);
-                    //    Design_Datagrid();
-                    //    lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
-                    //    DGV_Patients.Columns[0].Visible = false;
-                    //}
-                    //else
-                    //{
-                    //    lab_7.Text = "0 Patient(s)";
                     lab_Displaying.Visible = true;
-                    //}
                 }
                 else
                 {
@@ -1838,14 +1685,6 @@ namespace PappyjoeMVC.View
                     lab_LongMsg.Hide();
                    DataTable dtb=  this.cntrl.Get_all_Patients();
                     Create_Datagrid(dtb);
-                    //string sqlstr = "";
-                    //sqlstr = "SELECT id AS Pid,pt_id AS 'Patient Id' ,pt_name AS 'Patient Name', gender AS 'Gender',age AS 'Age', primary_mobile_number AS 'Mobile',street_address AS 'Street Address', locality AS Locality, Opticket as 'File No' FROM tbl_patient where Profile_Status='Active' ORDER BY id DESC";
-                    //DataTable dt_pt = db.table(sqlstr);
-                    //Create_Datagrid(dt_pt);
-                    //Design_Datagrid();
-                    //lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
-                    //DGV_Patients.Columns[0].Visible = false;
-
                 }
                 else
                 {
@@ -1856,21 +1695,6 @@ namespace PappyjoeMVC.View
                     panl_DisplayingPatient.Visible = true;
                   DataTable dtb=  this.cntrl.Get_all_Patients();
                     Create_Datagrid(dtb);
-                    //string sqlstr = "";
-                    //sqlstr = "SELECT id AS Pid,pt_id 'Patient Id',pt_name 'Patient Name', gender Gender ,age Age, primary_mobile_number Mobile,street_address 'Street Address', locality Locality,Opticket as 'File No' FROM tbl_patient where Profile_Status='Active' ORDER BY id DESC";
-                    //DataTable dt_pt = db.table(sqlstr);
-                    //if (dt_pt.Rows.Count > 0)
-                    //{
-                    //    Create_Datagrid(dt_pt);
-                    //    Design_Datagrid();
-                    //    lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
-                    //    lab_LongMsg.Hide();
-                    //}
-                    //else
-                    //{
-                    //    lab_LongMsg.Show();
-                    //    lab_LongMsg.Location = new Point(350, 350);
-                    //}
                 }
             }
             catch (Exception ex)
@@ -2055,7 +1879,6 @@ namespace PappyjoeMVC.View
                 }
               else  if (left_button_click == 0 && Inactive_Flag == false)
                 {
-                    //if (e.ColumnIndex == 2 || e.ColumnIndex==1||e.ColumnIndex==3||e.ColumnIndex==4||e.ColumnIndex==5||e.ColumnIndex==6||e.ColumnIndex==7||e.ColumnIndex==8)
                     if (e.RowIndex >= 0)
                     {
                         int r = e.RowIndex;
@@ -2172,7 +1995,6 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -2182,7 +2004,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -2223,7 +2044,6 @@ namespace PappyjoeMVC.View
             if (doctor_id != "1")
             {
                 string id=this.cntrl.inventry_prevlage(doctor_id);
-                //id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='INVENTORY' and Permission='A'");
                 if (int.Parse(id) > 0)
                 {
                     MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -2407,13 +2227,11 @@ namespace PappyjoeMVC.View
                 {
                     DataTable dtb= this.cntrl.Recently_added(d.ToString("yyyy/MM/dd"), todate.ToString("yyyy/MM/dd"));
                     Create_Datagrid(dtb);
-                    //sqlstr = "SELECT  id Pid, pt_id 'Patient Id',pt_name 'Patient Name', gender Gender,age Age, primary_mobile_number Mobile,street_address 'Street Address',locality Locality, Opticket as 'File No'  FROM  tbl_patient where Visited between '" + d + "' and '" + todate + "' and tbl_patient.Profile_Status='Active' ORDER BY id DESC limit 30";
                 }
                 else
                 {
                    DataTable dtb= this.cntrl.recently_added_search(d.ToString("yyyy/MM/dd"), todate.ToString("yyyy/MM/dd"), txt_Search.Text);
                     Create_Datagrid(dtb);
-                    //sqlstr = /*"SELECT  id Pid, pt_id 'Patient Id',pt_name 'Patient Name', gender Gender,age Age, primary_mobile_number Mobile,street_address 'Street Address',locality Locality, Opticket as 'File No' FROM  tbl_patient where Visited between '" + d + "' and '" + todate + "' and tbl_patient.Profile_Status='Active' and (pt_id like '%" + txt_Search.Text + "%' or pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%') ORDER BY id DESC limit 30"*/;
                 }
             }
 
@@ -2422,13 +2240,11 @@ namespace PappyjoeMVC.View
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
                   DataTable dtb= this.cntrl.recently_visited(d, todate); Create_Datagrid(dtb);
-                    //sqlstr = "SELECT  DISTINCT A.id AS Pid,P.pt_id 'Patient Id',P.pt_name 'Patient Name', P.gender Gender,P.age Age,P. primary_mobile_number Mobile ,P.street_address 'Street Address',P.locality Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d + "' and '" + todate + "' and A.status<>'CANCELLED' and A.status <>'scheduled' ";
                 }
                 else
                 {
                    DataTable dtb= this.cntrl.recently_visited_search(d, todate, txt_Search.Text);
                     Create_Datagrid(dtb);
-                    //sqlstr = "SELECT  DISTINCT A.id AS Pid,P.pt_id 'Patient Id',P.pt_name 'Patient Name', P.gender Gender,P.age Age,P. primary_mobile_number Mobile ,P.street_address 'Street Address',P.locality Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d + "' and '" + todate + "' and A.status<>'CANCELLED' and A.status <>'scheduled' and (P.pt_id like '%" + txt_Search.Text + "%' or P.pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%') ";
                 }
             }
             else if (upcommingAppoinments_Flag == true)
@@ -2437,13 +2253,11 @@ namespace PappyjoeMVC.View
                 {
                     DataTable dtb= this.cntrl.upcomming_appointments(startDateTime);
                     Create_Datagrid(dtb);
-                    //sqlstr = "SELECT  DISTINCT P.id AS Pid,P.pt_id AS 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age, P.primary_mobile_number as Mobile, P.street_address as 'Street Address', P.locality as Locality, P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on A.pt_id=P.ID WHERE  start_datetime >=  '" + startDateTime.ToString("yyyy-MM-dd") + "' and p.Profile_Status='Active'";
                 }
                 else
                 {
                    DataTable dtb= this.cntrl.upcomming_appointments_search(startDateTime, txt_Search.Text);
                     Create_Datagrid(dtb);
-                    //sqlstr = "SELECT  DISTINCT P.id AS Pid,P.pt_id AS 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age, P.primary_mobile_number as Mobile, P.street_address as 'Street Address', P.locality as Locality, P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on A.pt_id=P.ID WHERE  ( A.pt_id like '%" + txt_Search.Text + "%' or P.pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%') and start_datetime >=  '" + startDateTime.ToString("yyyy-MM-dd") + "' and p.Profile_Status='Active'   ";
                 }
             }
             else if (Upcomingbirthday_flag == true)
@@ -2452,13 +2266,11 @@ namespace PappyjoeMVC.View
                 {
                    DataTable dtb=  this.cntrl.birthday();
                     Create_Datagrid(dtb);
-                    //sqlstr = "select id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as Gender,age as Age, primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as 'Locality',Opticket as 'File No' from tbl_patient where MONTH(date_of_birth) ='" + DateTime.Now.Month + "' and DAY(date_of_birth)> '" + DateTime.Now.Day + "'  and date_of_birth !='" + "" + "' and tbl_patient.Profile_Status='Active' order by date_of_birth ASC";
                 }
                 else
                 {
                    DataTable dtb= this.cntrl.birthday_search(txt_Search.Text);
                     Create_Datagrid(dtb);
-                    //sqlstr = "select id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as Gender,age as Age, primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as 'Locality',Opticket as 'File No' from tbl_patient where  tbl_patient.Profile_Status='Active' and (pt_id like '%" + txt_Search.Text + "%' or pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%') and MONTH(date_of_birth) ='" + DateTime.Now.Month + "' and DAY(date_of_birth)> '" + DateTime.Now.Day + "'  and date_of_birth !='" + "" + "'  order by date_of_birth ASC";
                 }
             }
             else if (CancelledAppoinmnt_Flag == true)
@@ -2467,13 +2279,11 @@ namespace PappyjoeMVC.View
                 {
                    DataTable dtb=  this.cntrl.cancelled_appointment();
                     Create_Datagrid(dtb);
-                    //sqlstr = "select p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age,p.primary_mobile_number as Mobile,p.street_address as 'Street Address',p.locality as Locality,p.Opticket as 'File No' from tbl_appointment A left join tbl_patient P on A.pt_id=P.id  where status='Cancelled' order by p.id DESC";
                 }
                 else
                 {
                    DataTable dtb= this.cntrl.cancelled_appointmnt_search(txt_Search.Text);
                     Create_Datagrid(dtb);
-                    //sqlstr = "select p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age,p.primary_mobile_number as Mobile,p.street_address as 'Street Address',p.locality as Locality,p.Opticket as 'File No' from tbl_appointment A left join tbl_patient P on A.pt_id=P.id  where status='Cancelled' and (A.pt_id like '%" + txt_Search.Text + "%' or A.pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%') order by p.id DESC";
                 }
             }
             else if (Inactive_Flag == true)
@@ -2482,13 +2292,11 @@ namespace PappyjoeMVC.View
                 {
                     DataTable dtb= this.cntrl.innactive_patients();
                     Create_Datagrid(dtb);
-                    //sqlstr = "select p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age ,p.primary_mobile_number as Mobile,p.street_address as Street Address,p.locality as Locality,p.Opticket as 'File No' from  tbl_patient P  where P.Profile_Status='Cancelled' order by p.id DESC";
                 }
                 else
                 {
                    DataTable dtb= this.cntrl.innactive_patients_search(txt_Search.Text);
                     Create_Datagrid(dtb);
-                    //sqlstr = "select id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as Gender,age as Age, primary_mobile_number as Mobile,street_address   as 'Street Address',locality as Locality,Opticket as 'File No' from tbl_patient where  tbl_patient.Profile_Status='Cancelled' and (pt_id like '%" + txt_Search.Text + "%' or pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%')order by id DESC";
                 }
             }
             else if (Group_flag == true)
@@ -2497,32 +2305,14 @@ namespace PappyjoeMVC.View
                 {
                   DataTable dtb=  this.cntrl.patients_wit_group(id4);
                     Create_Datagrid(dtb);
-                    //sqlstr = " SELECT p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age ,p.primary_mobile_number as Mobile,p.street_address as Street Address,p.locality as Locality,p.Opticket as 'File No' FROM tbl_patient P inner join tbl_pt_group G on P.id = G.pt_id where G.group_id='" + id4 + "' and Profile_Status='Active' ORDER BY P.id DESC";
                 }
                 else
                 {
                    DataTable dtb=  this.cntrl.patients_wit_group_search(id4, txt_Search.Text);
                     Create_Datagrid(dtb);
-                    //sqlstr = " SELECT p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age ,p.primary_mobile_number as Mobile,p.street_address as Street Address,p.locality as Locality,p.Opticket as 'File No' FROM tbl_patient P inner join tbl_pt_group G on P.id = G.pt_id where G.group_id='" + id4 + "' and Profile_Status='Active' and (P.pt_id like '%" + txt_Search.Text + "%' or P.pt_name like '%" + txt_Search.Text + "%' or primary_mobile_number like '%" + txt_Search.Text + "%' or email_address like '%" + txt_Search.Text + "%' or Opticket like '%" + txt_Search.Text + "%' or street_address like '%" + txt_Search.Text + "%') ORDER BY P.id DESC";
                 }
             }
-            //DataTable dt_pt = db.table(sqlstr);
-            ////lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
-            //if (dt_pt.Rows.Count > 0)
-            //{
-                //Create_Datagrid(dt_pt);
                 Design_Datagrid();
-                //if (DGV_Patients.Rows.Count > 0)
-                //{
-                //    //DGV_Patients.Columns[0].Visible = false;
-                //    //lab_7.Text = dt_pt.Rows.Count.ToString() + " Patient(s)";
-                //}
-            //}
-            //else
-            //{
-            //    lab_Displaying.Visible = true;
-            //    lab_7.Text = "0 Patient(s)";
-            //}
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -2602,7 +2392,6 @@ namespace PappyjoeMVC.View
                 DataTable dtb= this.cntrl.Get_all_Patients();
                 Create_Datagrid(dtb);
                 Design_Datagrid();
-                //DGV_Patients.Columns[0].Visible = false;
                 //-----Group Add------
                 grgroup.ColumnCount = 2;
                 grgroup.ColumnHeadersVisible = false;
@@ -2628,7 +2417,6 @@ namespace PappyjoeMVC.View
                 DataTable dtb= this.cntrl.Get_all_Patients();
                 Create_Datagrid(dtb);
                 Design_Datagrid();
-                //DGV_Patients.Columns[0].Visible = false;
                 //-----Group Add------
                 grgroup.ColumnCount = 2;
                 grgroup.ColumnHeadersVisible = false;
@@ -2724,7 +2512,5 @@ namespace PappyjoeMVC.View
             DGV_Patients.ColumnCount = 0;
             DGV_Patients.RowTemplate.Height = 25;
         }
-
-
     }
 }

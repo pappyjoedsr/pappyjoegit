@@ -1125,6 +1125,9 @@ namespace PappyjoeMVC.View
             var form2 = new Add_Receipt();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
             form2.status = 1;
             int i = 0; int j = 0;
             while (i < dgv_invoice.Rows.Count)
@@ -1418,7 +1421,7 @@ namespace PappyjoeMVC.View
             var form2 = new Prescription_Show();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            Prescription_Show_controller controller = new Prescription_Show_controller(form2);
+            //Prescription_Show_controller controller = new Prescription_Show_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

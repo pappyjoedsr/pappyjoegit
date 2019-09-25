@@ -52,10 +52,7 @@ namespace PappyjoeMVC.View
                     linkLabel_id.Text = rs_patients.Rows[0]["pt_id"].ToString();
                 }
                 DataTable dt_pt = this.cntrl.Get_all_procedures();
-                for (int j = 0; j < dt_pt.Rows.Count; j++)
-                {
-                    proceduretreatgrid.Rows.Add(dt_pt.Rows[j]["id"].ToString(), dt_pt.Rows[j]["name"].ToString(), Convert.ToDecimal(dt_pt.Rows[j]["cost"].ToString()).ToString("##.##"));
-                }
+                fill_proceduregrid(dt_pt);
                 DataTable dtdr = this.cntrl.get_all_doctorname();
                 Cmb_Doctor.DataSource = dtdr;
                 Cmb_Doctor.DisplayMember = "doctor_name";
@@ -120,8 +117,8 @@ namespace PappyjoeMVC.View
                         this.cntrl.save_Procedure(txt_procedure.Text, txt_Cost.Text);
                         string p = this.cntrl.Procedure_maxid();
                         int pid = int.Parse(p);
-                        DataTable treatment = this.cntrl.Get_all_procedures();
-                        proceduretreatgrid.DataSource = treatment;
+                        DataTable dt_pt = this.cntrl.Get_all_procedures();
+                        fill_proceduregrid(dt_pt);
                     }
                     else
                     {
@@ -136,7 +133,17 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error !.....", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-       
+       public void fill_proceduregrid(DataTable dt_pt)
+        {
+            if(dt_pt.Rows.Count>0)
+            {
+                proceduretreatgrid.Rows.Clear();
+                for (int j = 0; j < dt_pt.Rows.Count; j++)
+                {
+                    proceduretreatgrid.Rows.Add(dt_pt.Rows[j]["id"].ToString(), dt_pt.Rows[j]["name"].ToString(), Convert.ToDecimal(dt_pt.Rows[j]["cost"].ToString()).ToString("##.##"));
+                }
+            }
+        }
 
         private void addbut_Click(object sender, EventArgs e)
         {
@@ -1621,6 +1628,22 @@ namespace PappyjoeMVC.View
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
             }
+        }
+
+        private void searchtextbox_Click(object sender, EventArgs e)
+        {
+            searchtextbox.Text = "";
+        }
+
+        private void searchtextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchtextbox_KeyUp(object sender, KeyEventArgs e)
+        {
+            DataTable dt = this.cntrl.Search_procedure(searchtextbox.Text);
+            fill_proceduregrid(dt);
         }
     }
 }

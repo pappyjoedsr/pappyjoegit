@@ -655,7 +655,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Communication();
             form2.doctor_id = doctor_id;
-            //Communication_controller controller = new Communication_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -682,7 +681,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -692,9 +690,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            //Expense_controller controller = new Expense_controller(form2);
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
             form2.ShowDialog();
         }
 
@@ -702,7 +697,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Doctor_Profile();
             form2.doctor_id = doctor_id;
-            //Doctor_Controller controller = new Doctor_Controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -889,9 +883,16 @@ namespace PappyjoeMVC.View
         private void toolStripButton12_Click(object sender, EventArgs e)
         {
             var form2 = new LabtrackingReport();
-            //form2.patient_id = patient_id;
             form2.doctor_id = doctor_id;
             form2.FormClosed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Login();
+            form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
         }

@@ -4,14 +4,14 @@ namespace PappyjoeMVC.Model
     public class Patient_Edit_model
     {
         Connection db = new Connection();
-        public string get_medicalId(string idd)
+        public DataTable  get_medicalId(string idd)
         {
-            string dt8 = db.scalar("select med_id from tbl_pt_medhistory where pt_id='" + idd + "'");
+            DataTable dt8 = db.table("select med_id from tbl_pt_medhistory where pt_id='" + idd + "'");
             return dt8;
         }
-        public string Get_medicalname()
+        public DataTable  Get_medicalname()
         {
-            string dt35 = db.scalar("select name from tbl_medhistory order by name");
+            DataTable dt35 = db.table("select name from tbl_medhistory order by name");
             return dt35;
         }
         public string patient_medical(string idd, string medid)
@@ -19,14 +19,14 @@ namespace PappyjoeMVC.Model
             string mht = db.scalar("select med_id from tbl_pt_medhistory where pt_id='" + idd + "' and med_id='" + medid + "'");
             return mht;
         }
-        public string get_groupid(string idd)
+        public DataTable  get_groupid(string idd)
         {
-            string group = db.scalar("select group_id from tbl_pt_group where pt_id='" + idd + "'");
+            DataTable group = db.table("select group_id from tbl_pt_group where pt_id='" + idd + "'");
             return group;
         }
-        public string groupname()
+        public DataTable groupname()
         {
-            string dt9 = db.scalar("Select name from tbl_group");
+            DataTable dt9 = db.table("Select name from tbl_group");
             return dt9;
         }
         public string patient_group(string idd, string grpid)

@@ -5,16 +5,16 @@ namespace PappyjoeMVC.Controller
 {
     public class Prescription_Show_controller
     {
-        prescriptionshow_interface intr;
+        //prescriptionshow_interface intr;
         Prescription_model _model = new Prescription_model();
         Connection db = new Connection();
         Common_model cmodel = new Common_model();
         Booking_model bmodel = new Booking_model();
-        public Prescription_Show_controller(prescriptionshow_interface inttr)
-        {
-            intr = inttr;
-            intr.SetController(this);
-        }
+        //public Prescription_Show_controller(prescriptionshow_interface inttr)
+        //{
+        //    intr = inttr;
+        //    intr.SetController(this);
+        //}
         public string privilge_for_inventory(string doctor_id)
         {
             string s = cmodel.privilge_for_inventory(doctor_id);

@@ -221,8 +221,8 @@ namespace PappyjoeMVC.View
         {
             if (txt_StaffSearch.Text != "")
             {
-                btn_staffSelectall.Visible = false;
-                btnStaffDeselectAll.Visible = false;
+                btn_selectall.Visible = false;
+                btn_Deselectall.Visible = false;
                 if (dt.Rows.Count > 0)
                 {
                     DGV_Staff.DataSource = dt;
@@ -319,9 +319,6 @@ namespace PappyjoeMVC.View
                 LoadStaff(staff);
                 DGV_transactional.RowsDefaultCellStyle.ForeColor = Color.Black;
                 DGV_transactional.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8, FontStyle.Regular);
-                btn_Deselectall.Visible = false;
-                btn_Group_Deselect.Visible = false;
-                btnStaffDeselectAll.Visible = false;
             }
             catch (Exception ex)
             {
@@ -1193,7 +1190,6 @@ namespace PappyjoeMVC.View
             if (doctor_id != "1")
             {
                 string id = this.ctrlr.frmInventory(doctor_id); 
-                //db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='INVENTORY' and Permission='A'");
                 if (int.Parse(id) > 0)
                 {
                     MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);

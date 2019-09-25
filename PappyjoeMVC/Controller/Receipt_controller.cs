@@ -44,7 +44,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable get_printSettings()
         {
-            DataTable print = get_printSettings();
+            DataTable print = Model.get_printSettings();
             return print;
         }
         public DataTable get_company_details()

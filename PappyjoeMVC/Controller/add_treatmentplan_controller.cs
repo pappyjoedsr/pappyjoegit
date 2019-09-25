@@ -9,6 +9,7 @@ namespace PappyjoeMVC.Controller
         Add_Treatmentplan_model _Model = new Add_Treatmentplan_model();
         Common_model cmodel = new Common_model();
         Connection db = new Connection();
+        Add_Finished_Treatment_model fmodel = new Add_Finished_Treatment_model();
         public DataTable get_ProcedureTreatment(string id)
         {
             DataTable dtb = _Model.get_ProcedureTreatment(id);
@@ -84,6 +85,11 @@ namespace PappyjoeMVC.Controller
         public DataTable Get_Patient_Details(string id)
         {
             DataTable dtb = cmodel.Get_Patient_Details(id);
+            return dtb;
+        }
+        public DataTable Search_procedure(string _search)
+        {
+            DataTable dtb = fmodel.Search_procedure(_search);
             return dtb;
         }
     }
