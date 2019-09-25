@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using PappyjoeMVC.Model;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
     public partial class Add__invoice : Form
     {
         public string doctor_id = "0"; public string staff_id = "";
         public string patient_id = "";
-        string  admin_id = "0";
+        string admin_id = "0";
         public string complete_proce_id = "";
         string id;
         string P_Plan_id = "0";
@@ -27,7 +22,7 @@ namespace PappyjoeMVC.View
         Decimal P_tax = 0;
         string stock_id = "0";
         public string[] teeth = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
-        Add_Invoice_controller cntrl=new Add_Invoice_controller();
+        Add_Invoice_controller cntrl = new Add_Invoice_controller();
         Common_model cmodel = new Common_model();
         public string invoiceid = "";
         public string jhjj;
@@ -40,14 +35,14 @@ namespace PappyjoeMVC.View
         {
             toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
             string admin = this.cntrl.get_adminid();
-            if (admin!="")
+            if (admin != "")
             {
                 if (admin != doctor_id)
                 {
                     admin_id = admin;
                 }
             }
-                toolStripButton1.Text = this.cntrl.Load_CompanyName();
+            toolStripButton1.Text = this.cntrl.Load_CompanyName();
             string docnam = cmodel.Get_DoctorName(doctor_id);
             if (docnam != "")
             {
@@ -58,7 +53,7 @@ namespace PappyjoeMVC.View
             DGV_Invoice.Hide();
             label14.Hide();
             Cmb_batch.Hide();
-            foreach (DataGridViewColumn column in DGV_Invoice.Columns) 
+            foreach (DataGridViewColumn column in DGV_Invoice.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
@@ -122,17 +117,17 @@ namespace PappyjoeMVC.View
                 Cmb_tax.ValueMember = "id";
                 Cmb_tax.Text = "";
             }
-            DataTable dtb= this.cntrl.get_completed_procedure_details(patient_id);
+            DataTable dtb = this.cntrl.get_completed_procedure_details(patient_id);
             Load_procedureGrid(dtb);
-            DataTable dtb1= this.cntrl.get_planed_procedure(patient_id);
+            DataTable dtb1 = this.cntrl.get_planed_procedure(patient_id);
             Load_planed_procedure(dtb1);
            DataTable dt_load= this.cntrl.load_AllProcedures();
-            Load_searchProcedures(dt_load);
+            Load_searchProcedures(dtb);
             if (invoiceid != "")
             {
                 btn_SaveInvoice.Text = "Update";
                 text_billno.Text = invoiceid;
-               DataTable dtb_1= this.cntrl.Get_invoice_deatils(patient_id, invoiceid);
+                DataTable dtb_1 = this.cntrl.Get_invoice_deatils(patient_id, invoiceid);
                 load_invoice_details(dtb);
             }
             if (complete_proce_id != "")
@@ -161,7 +156,7 @@ namespace PappyjoeMVC.View
                 txt_TotalCost.Text = totalcost.ToString("F");
                 txt_TotalDiscount.Text = discounttotal.ToString("F");
                 txt_TotalTax.Text = taxtotalamount.ToString("F");
-                txt_GrantTotal.Text = totalgrant.ToString("F"); 
+                txt_GrantTotal.Text = totalgrant.ToString("F");
                 panel2.Show();
                 panel3.Show();
                 panel6.Show();
@@ -222,7 +217,7 @@ namespace PappyjoeMVC.View
                     string drid = dt2.Rows[i]["dr_id"].ToString();
                     try
                     {
-                        string  dr_Name = cmodel.Get_DoctorName(drid);
+                        string dr_Name = cmodel.Get_DoctorName(drid);
                         DGV_Invoice.Rows.Add(dt2.Rows[i][4].ToString(), dt2.Rows[i][5].ToString(), dt2.Rows[i][6].ToString(), dt2.Rows[i][7].ToString(), dt2.Rows[i][8].ToString(), dt2.Rows[i][9].ToString(), dt2.Rows[i][10].ToString(), dt2.Rows[i][18].ToString(), dt2.Rows[i][19].ToString(), dt2.Rows[i][17].ToString(), dr_Name, "0");
                         i++;
                         DGV_Invoice.Rows[DGV_Invoice.Rows.Count - 1].Cells[17].Value = PappyjoeMVC.Properties.Resources.deleteicon;
@@ -248,9 +243,9 @@ namespace PappyjoeMVC.View
             DGV_Procedure.RowCount = 0;
             DataTable dt_tp1 = this.cntrl.search_procedure_completed(patient_id, txt_SearchProcedure.Text);
             Load_procedureGrid(dt_tp1);
-            DataTable dt_planed=  this.cntrl.Search_procedure_planed(patient_id, txt_SearchProcedure.Text);
+            DataTable dt_planed = this.cntrl.Search_procedure_planed(patient_id, txt_SearchProcedure.Text);
             Load_planed_procedure(dt_planed);
-            DataTable dtb_procedure= this.cntrl.search_procedures(txt_SearchProcedure.Text);
+            DataTable dtb_procedure = this.cntrl.search_procedures(txt_SearchProcedure.Text);
             Load_searchProcedures(dtb_procedure);
         }
 
@@ -295,12 +290,12 @@ namespace PappyjoeMVC.View
                 Lab_teeth.Text = "Teeth";
                 if (P_Plan_id != "0")
                 {
-                    DataTable dt_tratmnt= this.cntrl.Get_treatment_details(P_Plan_id);
+                    DataTable dt_tratmnt = this.cntrl.Get_treatment_details(P_Plan_id);
                     Fill_Alltreatment_deatils(dt_tratmnt);
                 }
                 if (P_Completed_id != "0")
                 {
-                    DataTable dtb= this.cntrl.Get_completed_table_details(P_Completed_id);
+                    DataTable dtb = this.cntrl.Get_completed_table_details(P_Completed_id);
                     Fill_Alltreatment_deatils(dtb);
                 }
                 Chk_MultiplyCost.Checked = false;
@@ -432,7 +427,7 @@ namespace PappyjoeMVC.View
                 }
                 calculations();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -1818,7 +1813,7 @@ namespace PappyjoeMVC.View
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             label33.Text = "";
-           checkBox_control();
+            checkBox_control();
             panel1.Hide();
         }
 
@@ -1866,7 +1861,7 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(NMUP_Unit.Text) || String.IsNullOrWhiteSpace(procedure_item.Text) || procedure_item.Text == "PRODUCTS AND SERVICES")
                 {
-                    MessageBox.Show("Please enter the Quantity and Cost...","Data not found",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Please enter the Quantity and Cost...", "Data not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -1948,11 +1943,11 @@ namespace PappyjoeMVC.View
                         lab_AddTax.Show();
                         CMB_Discount.Text = "INR";
                         txt_Discount.Text = "0";
-                        Cmb_tax.Text = "NA"; 
+                        Cmb_tax.Text = "NA";
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
             }
@@ -2038,7 +2033,7 @@ namespace PappyjoeMVC.View
                         if (DGV_Invoice.RowCount > 0)
                         {
                             int j = 1;
-                            this.cntrl.save_invoice_main(patient_id,linkL_Name.Text.ToString(), text_billno.Text.ToString());
+                            this.cntrl.save_invoice_main(patient_id, linkL_Name.Text.ToString(), text_billno.Text.ToString());
                             string dt1 = this.cntrl.get_invoiceMain_maxid();
                             int invoice_main_id = 0;
                             try
@@ -2066,8 +2061,8 @@ namespace PappyjoeMVC.View
                                 {
                                     if (jj == 0)
                                     {
-                                        DataTable  dt_pt =this.cntrl.get_completed_id(patient_id, DTP_Date.Value.ToString("yyyy-MM-dd"));
-                                        if ( dt_pt.Rows.Count == 0)
+                                        DataTable dt_pt = this.cntrl.get_completed_id(patient_id, DTP_Date.Value.ToString("yyyy-MM-dd"));
+                                        if (dt_pt.Rows.Count == 0)
                                         {
                                             this.cntrl.save_completedid(DTP_Date.Value.ToString("yyyy-MM-dd"), patient_id);
                                             string dt = this.cntrl.get_completedMaxid();
@@ -2097,7 +2092,7 @@ namespace PappyjoeMVC.View
                                             jj = Int32.Parse(dt_pt.Rows[0][0].ToString());
                                         }
                                     }
-                                    this.cntrl.Save_tbl_completed_procedures(jj, patient_id, DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[1, i].Value.ToString(), DGV_Invoice[3, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString(), DGV_Invoice[5, i].Value.ToString(), DGV_Invoice[4, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[12, i].Value.ToString(), DGV_Invoice[10, i].Value.ToString(),"0", DGV_Invoice[13, i].Value.ToString());
+                                    this.cntrl.Save_tbl_completed_procedures(jj, patient_id, DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[1, i].Value.ToString(), DGV_Invoice[3, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString(), DGV_Invoice[5, i].Value.ToString(), DGV_Invoice[4, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[12, i].Value.ToString(), DGV_Invoice[10, i].Value.ToString(), "0", DGV_Invoice[13, i].Value.ToString());
                                     string dt_procedure = this.cntrl.get_completed_procedure_maxid();
                                     int completed_max_id;
                                     if (Int32.Parse(dt_procedure) == 0)
@@ -2108,8 +2103,8 @@ namespace PappyjoeMVC.View
                                     {
                                         completed_max_id = Int32.Parse(dt_procedure);
                                     }
-                                    this.cntrl.save_invoice_details(text_billno.Text.ToString(),linkL_Name.Text.ToString() ,patient_id,DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[1, i].Value.ToString(), DGV_Invoice[3, i].Value.ToString() , DGV_Invoice[2, i].Value.ToString() , DGV_Invoice[4, i].Value.ToString(),DGV_Invoice[5, i].Value.ToString() , DGV_Invoice[6, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString() , DGV_Invoice[12, i].Value.ToString() , DGV_Invoice[8, i].Value.ToString() , DGV_Invoice[9, i].Value.ToString() ,DGV_Invoice[10, i].Value.ToString() , DGV_Invoice[8, i].Value.ToString() ,DGV_Invoice[9, i].Value.ToString(), j ,completed_max_id );
-                                }                             
+                                    this.cntrl.save_invoice_details(text_billno.Text.ToString(), linkL_Name.Text.ToString(), patient_id, DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[1, i].Value.ToString(), DGV_Invoice[3, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString(), DGV_Invoice[4, i].Value.ToString(), DGV_Invoice[5, i].Value.ToString(), DGV_Invoice[6, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString(), DGV_Invoice[12, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[9, i].Value.ToString(), DGV_Invoice[10, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[9, i].Value.ToString(), j, completed_max_id);
+                                }
                                 if (DGV_Invoice[14, i].Value.ToString() != "0")
                                 {
                                     if (jj == 0)
@@ -2157,11 +2152,11 @@ namespace PappyjoeMVC.View
                                         completed_max_id = Int32.Parse(dt_procedure);
                                     }
                                     this.cntrl.update_treatment_status(DGV_Invoice[14, i].Value.ToString());
-                                    this.cntrl.save_invoice_items(text_billno.Text.ToString(), linkL_Name.Text.ToString(),patient_id ,DGV_Invoice[0, i].Value.ToString() , DGV_Invoice[1, i].Value.ToString() ,DGV_Invoice[3, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString() , DGV_Invoice[4, i].Value.ToString(),DGV_Invoice[5, i].Value.ToString(),DGV_Invoice[6, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString(),DGV_Invoice[12, i].Value.ToString() , DGV_Invoice[8, i].Value.ToString() , DGV_Invoice[9, i].Value.ToString(), DGV_Invoice[10, i].Value.ToString() ,DGV_Invoice[8, i].Value.ToString(),DGV_Invoice[9, i].Value.ToString(), j , DGV_Invoice[14, i].Value.ToString(),completed_max_id );
+                                    this.cntrl.save_invoice_items(text_billno.Text.ToString(), linkL_Name.Text.ToString(), patient_id, DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[1, i].Value.ToString(), DGV_Invoice[3, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString(), DGV_Invoice[4, i].Value.ToString(), DGV_Invoice[5, i].Value.ToString(), DGV_Invoice[6, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString(), DGV_Invoice[12, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[9, i].Value.ToString(), DGV_Invoice[10, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[9, i].Value.ToString(), j, DGV_Invoice[14, i].Value.ToString(), completed_max_id);
                                 }
                                 if (DGV_Invoice[15, i].Value.ToString() != "0")
                                 {
-                                    this.cntrl.save_invoice_items(text_billno.Text.ToString(), linkL_Name.Text.ToString(), patient_id, DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[1, i].Value.ToString(), DGV_Invoice[3, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString(), DGV_Invoice[4, i].Value.ToString(), DGV_Invoice[5, i].Value.ToString(), DGV_Invoice[6, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString(), DGV_Invoice[12, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[9, i].Value.ToString(), DGV_Invoice[10, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[9, i].Value.ToString(), j, DGV_Invoice[14, i].Value.ToString(),Convert.ToInt32( DGV_Invoice[15, i].Value.ToString()));
+                                    this.cntrl.save_invoice_items(text_billno.Text.ToString(), linkL_Name.Text.ToString(), patient_id, DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[1, i].Value.ToString(), DGV_Invoice[3, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString(), DGV_Invoice[4, i].Value.ToString(), DGV_Invoice[5, i].Value.ToString(), DGV_Invoice[6, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString(), DGV_Invoice[12, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[9, i].Value.ToString(), DGV_Invoice[10, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[9, i].Value.ToString(), j, DGV_Invoice[14, i].Value.ToString(), Convert.ToInt32(DGV_Invoice[15, i].Value.ToString()));
                                     this.cntrl.Set_completed_status0(DGV_Invoice[15, i].Value.ToString());
                                 }
                             }
@@ -2208,12 +2203,12 @@ namespace PappyjoeMVC.View
                         this.cntrl.get_taxValue(DGV_Invoice[5, i].Value.ToString());
                         string tax = DGV_Invoice[5, i].Value.ToString();
                         string discount = DGV_Invoice[3, i].Value.ToString();
-                        this.cntrl.save_incove_items(text_billno.Text.ToString(),linkL_Name.Text.ToString(),patient_id,DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString() , DGV_Invoice[1, i].Value.ToString() ,discount,DGV_Invoice[4, i].Value.ToString() , tax ,  DGV_Invoice[6, i].Value.ToString() , date.ToString() , RTB_Notes.Text.ToString() , txt_TotalCost.Text.ToString(), txt_TotalDiscount.Text.ToString() , txt_TotalTax.Text.ToString(), txt_GrantTotal.Text.ToString(), DGV_Invoice[9, i].Value.ToString() , DGV_Invoice[7, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(),  DGV_Invoice[6, i].Value.ToString() );
+                        this.cntrl.save_incove_items(text_billno.Text.ToString(), linkL_Name.Text.ToString(), patient_id, DGV_Invoice[0, i].Value.ToString(), DGV_Invoice[2, i].Value.ToString(), DGV_Invoice[1, i].Value.ToString(), discount, DGV_Invoice[4, i].Value.ToString(), tax, DGV_Invoice[6, i].Value.ToString(), date.ToString(), RTB_Notes.Text.ToString(), txt_TotalCost.Text.ToString(), txt_TotalDiscount.Text.ToString(), txt_TotalTax.Text.ToString(), txt_GrantTotal.Text.ToString(), DGV_Invoice[9, i].Value.ToString(), DGV_Invoice[7, i].Value.ToString(), DGV_Invoice[8, i].Value.ToString(), DGV_Invoice[6, i].Value.ToString());
                         if (DGV_Invoice[11, i].Value.ToString() != "0")
                         {
                             this.cntrl.Set_completed_status0(DGV_Invoice[11, i].Value.ToString());
                         }
-                        
+
                     }
                     btn_SaveInvoice.Text = "SAVE";
                     var form2 = new Invoice();
@@ -2328,7 +2323,7 @@ namespace PappyjoeMVC.View
 
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
-               var form2 = new Patient_Profile_Details();
+            var form2 = new Patient_Profile_Details();
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
@@ -2426,7 +2421,30 @@ namespace PappyjoeMVC.View
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-
+            if (doctor_id != "1")
+            {
+                string id = this.cntrl.privilge_for_inventory(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var form2 = new PappyjoeMVC.View.StockReport();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.ShowDialog();
+                }
+            }
+            else
+            {
+                var form2 = new PappyjoeMVC.View.StockReport();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
         }
 
         private void linkL_Name_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -2444,6 +2462,14 @@ namespace PappyjoeMVC.View
             var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Login();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

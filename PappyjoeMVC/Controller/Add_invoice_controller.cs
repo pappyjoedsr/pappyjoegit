@@ -14,6 +14,11 @@ namespace PappyjoeMVC.Controller
             string admin = cmodel.Get_adminId();
             return admin;
         }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string s = cmodel.privilge_for_inventory(doctor_id);
+            return s;
+        }
         public string Load_CompanyName()
         {
             string dtb = cmodel.Load_CompanyName();
