@@ -516,35 +516,38 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                lst_GridItems.Items.Clear();
-                bool value = Convert.ToBoolean(DGV_Patient.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue);
-                string name = DGV_Patient.Rows[e.RowIndex].Cells["patient_name"].Value.ToString();
-
-                if (value == false)
+                if (e.ColumnIndex == 3 && e.RowIndex > -1)
                 {
-                    if (txt_Recipients.Text == "")
+                    lst_GridItems.Items.Clear();
+                    bool value = Convert.ToBoolean(DGV_Patient.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue);
+                    string name = DGV_Patient.Rows[e.RowIndex].Cells["patient_name"].Value.ToString();
+
+                    if (value == false)
                     {
-                        lst_GridItems.Items.Add(name);
-                        txt_Recipients.Text = txt_Recipients.Text.ToString() + name;
+                        if (txt_Recipients.Text == "")
+                        {
+                            lst_GridItems.Items.Add(name);
+                            txt_Recipients.Text = txt_Recipients.Text.ToString() + name;
+                        }
+                        else
+                        {
+                            if (!lst_GridItems.Items.Contains(name))
+                            {
+                                lst_GridItems.Items.Add(name);
+                                txt_Recipients.Text = txt_Recipients.Text.ToString() + "," + name;
+                            }
+                        }
                     }
                     else
                     {
-                        if (!lst_GridItems.Items.Contains(name))
+                        int index = txt_Recipients.Text.IndexOf(name);
+                        int idx = lst_GridItems.Items.IndexOf(name);
+                        if (index != -1)
                         {
-                            lst_GridItems.Items.Add(name);
-                            txt_Recipients.Text = txt_Recipients.Text.ToString() + "," + name;
+                            txt_Recipients.Text = txt_Recipients.Text.Replace("," + name, "");
+                            txt_Recipients.Text = txt_Recipients.Text.Replace(name + ",", "");
+                            txt_Recipients.Text = txt_Recipients.Text.Replace(name, "");
                         }
-                    }
-                }
-                else
-                {
-                    int index = txt_Recipients.Text.IndexOf(name);
-                    int idx = lst_GridItems.Items.IndexOf(name);
-                    if (index != -1)
-                    {
-                        txt_Recipients.Text = txt_Recipients.Text.Replace("," + name, "");
-                        txt_Recipients.Text = txt_Recipients.Text.Replace(name + ",", "");
-                        txt_Recipients.Text = txt_Recipients.Text.Replace(name, "");
                     }
                 }
             }
