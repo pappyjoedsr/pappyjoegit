@@ -82,11 +82,11 @@ namespace PappyjoeMVC.Model
         {
            db.execute("update tbl_appointment set status='CANCELLED'  where id='" + ContextEvent + "'");
         }
-        public DataTable get_sms_details()
-        {
-            DataTable sms = db.table("select smsName,smsPass from tbl_SmsEmailConfig");
-            return sms;
-        }
+        //public DataTable get_sms_details()
+        //{
+        //    DataTable sms = db.table("select smsName,smsPass from tbl_SmsEmailConfig");
+        //    return sms;
+        //}
         public DataTable get_patient_details(string ContextEvent)
         {
             DataTable tl_appoitment = db.table("select pt_id,mobile_no,plan_new_procedure,pt_name from tbl_appointment where id='" +ContextEvent + "'");

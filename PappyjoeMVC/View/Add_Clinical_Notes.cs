@@ -1323,10 +1323,10 @@ namespace PappyjoeMVC.View
                         if (dt != "")
                         {
                             this.cntrl.insertInto_clinical_findings(patient_id, dt.ToString(), dateTimePicker1.Value.ToString("yyyy-MM-dd"));
-                            DataTable treatment = this.cntrl.MaxId_clinic_findings();
-                            if (treatment.Rows[0][0].ToString() != "")
+                            string treatment = this.cntrl.MaxId_clinic_findings();
+                            if (Convert.ToInt32( treatment)>0)
                             {
-                                treat = int.Parse(treatment.Rows[0][0].ToString());
+                                treat = int.Parse(treatment);
                             }
                             else
                             {

@@ -18,6 +18,11 @@ namespace PappyjoeMVC.Model
             DataTable clinicname = db.table("select name,id,path from tbl_practice_details");
             return clinicname;
         }
+        public DataTable practicedetails()
+        {
+            DataTable dt = db.table("select name,path,contact_no  from tbl_practice_details");
+            return dt;
+        }
         public string Get_DoctorName(string doctor_id)
         {
             string docnam = db.scalar("select doctor_name from tbl_doctor Where id='" + doctor_id + "'");
@@ -42,7 +47,7 @@ namespace PappyjoeMVC.Model
         {
             DataTable dt = db.table("select DISTINCT id,doctor_name from tbl_doctor  where login_type='doctor' or login_type ='admin' and activate_login='yes' order by doctor_name");
             return dt;
-        }//select id,doctor_name from tbl_doctor where (login_type='admin'or login_type='doctor' )and activate_login='Yes'
+        }
         public DataTable Get_Patient_Details(string id)
         {
             DataTable clinicname = db.table("select * from tbl_patient where id='" + id + "'");
@@ -98,6 +103,11 @@ namespace PappyjoeMVC.Model
             DataTable dtb = db.table("select emailName,emailPass from tbl_SmsEmailConfig");
             return dtb;
         }
+        public DataTable smsdetails()
+        {
+            DataTable dt = db.table("select smsName,smsPass from tbl_SmsEmailConfig");
+            return dt;
+        }
         public DataTable getpatemail(string patient_id)
         {
             DataTable query = db.table("select email_address,pt_name from tbl_patient where id='" + patient_id + "'");
@@ -108,11 +118,6 @@ namespace PappyjoeMVC.Model
             DataTable dt3 = db.table("select * from  tbl_addproceduresettings order by id");
             return dt3;
         }
-        //public DataTable Get_all_procedures()
-        //{
-        //    DataTable treatment = db.table("select id,name,cost from tbl_addproceduresettings ORDER BY id DESC");
-        //    return treatment;
-        //}
         public DataTable Patient_search(string _Patientid)
         {
             DataTable dtdr = db.table("select id, CONCAT(pt_name, ',', age, ',', gender) as patient from tbl_patient where (pt_name like '" + _Patientid + "%'   or pt_id like '%" + _Patientid + "%' or primary_mobile_number like '%" + _Patientid + "%') and Profile_Status = 'Active'");

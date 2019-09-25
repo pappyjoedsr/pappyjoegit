@@ -14,6 +14,11 @@ namespace PappyjoeMVC.Controller
             string id = cmdl.privillage_A(doctrid);
             return id;
         }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string s = cmdl.privilge_for_inventory(doctor_id);
+            return s;
+        }
         public string getprevid(string id)
         {
             string k = mdl.getprevid(id);

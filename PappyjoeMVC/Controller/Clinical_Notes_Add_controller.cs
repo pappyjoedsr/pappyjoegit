@@ -228,40 +228,34 @@ namespace PappyjoeMVC.Controller
             string d = model.Get_DoctorId(name);
             return d;
         }
-        public int insertInto_clinical_findings(string ptid, string dt, string date)
+        public void insertInto_clinical_findings(string ptid, string dt, string date)
         {
-            int i = _model.insertInto_clinical_findings(ptid, dt, date);
-            return i;
+            _model.insertInto_clinical_findings(ptid, dt, date);
         }
-        public DataTable MaxId_clinic_findings()
+        public string MaxId_clinic_findings()
         {
-            DataTable dt = _model.MaxId_clinic_findings();
+            string dt = _model.MaxId_clinic_findings();
             return dt;
         }
-        public int insrtto_investi(int treat, string one)
+        public void insrtto_investi(int treat, string one)
         {
-            int i = _model.insrtto_investi(treat, one);
-            return i;
+             _model.insrtto_investi(treat, one);
         }
-        public int insrtto_diagno(int treat, string one)
+        public void insrtto_diagno(int treat, string one)
         {
-            int i = _model.insrtto_diagno(treat, one);
-            return i;
+            _model.insrtto_diagno(treat, one);
         }
-        public int insrtto_note(int treat, string one)
+        public void insrtto_note(int treat, string one)
         {
-            int i = _model.insrtto_note(treat, one);
-            return i;
+             _model.insrtto_note(treat, one);
         }
-        public int insrtto_obser(int treat, string one)
+        public void insrtto_obser(int treat, string one)
         {
-            int i = _model.insrtto_obser(treat, one);
-            return i;
+            _model.insrtto_obser(treat, one);
         }
-        public int insrtto_chief_comp(int treat, string one)
+        public void insrtto_chief_comp(int treat, string one)
         {
-            int i = _model.insrtto_chief_comp(treat, one);
-            return i;
+          _model.insrtto_chief_comp(treat, one);
         }
         public int Update_clinical_findings(string ptid, string dt, string id)
         {

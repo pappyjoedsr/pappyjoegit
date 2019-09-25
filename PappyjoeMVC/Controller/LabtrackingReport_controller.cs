@@ -95,7 +95,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable practicedetails()
         {
-            DataTable dt = dm.practicedetails();
+            DataTable dt = cm.practicedetails();
             return dt;
         }
         public string doctr_privillage_for_addnewPatient(string doctrid)

@@ -62,8 +62,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimpleAppointment));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dpStartTimeDate = new System.Windows.Forms.DateTimePicker();
             this.btn_ClearAll = new System.Windows.Forms.Button();
             this.Panl_Prescrption = new System.Windows.Forms.Panel();
             this.Lab_DrugId = new System.Windows.Forms.Label();
@@ -250,6 +261,34 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.btnprint = new System.Windows.Forms.Button();
+            this.DGV_treatmentTemp = new System.Windows.Forms.DataGridView();
+            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.service = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.distype = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.disRs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.treatementnote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tooth1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridView_drugnewTemp = new System.Windows.Forms.DataGridView();
+            this.dgrugname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.srength = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbStrenth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.period = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.morning = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.night = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFood = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instruction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drugid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drugtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.Panl_Prescrption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
@@ -277,6 +316,8 @@
             this.groupBox1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_treatmentTemp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_drugnewTemp)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -284,6 +325,7 @@
             this.panel1.AutoScroll = true;
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.dpStartTimeDate);
             this.panel1.Controls.Add(this.btn_ClearAll);
             this.panel1.Controls.Add(this.Panl_Prescrption);
             this.panel1.Controls.Add(this.groupBox6);
@@ -311,10 +353,22 @@
             this.panel1.Controls.Add(this.panel10);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnprint);
-            this.panel1.Location = new System.Drawing.Point(3, 2);
+            this.panel1.Location = new System.Drawing.Point(3, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1140, 762);
             this.panel1.TabIndex = 1;
+            // 
+            // dpStartTimeDate
+            // 
+            this.dpStartTimeDate.CalendarForeColor = System.Drawing.Color.DarkSlateGray;
+            this.dpStartTimeDate.CalendarTrailingForeColor = System.Drawing.Color.DarkSlateGray;
+            this.dpStartTimeDate.Enabled = false;
+            this.dpStartTimeDate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpStartTimeDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpStartTimeDate.Location = new System.Drawing.Point(702, 8);
+            this.dpStartTimeDate.Name = "dpStartTimeDate";
+            this.dpStartTimeDate.Size = new System.Drawing.Size(116, 22);
+            this.dpStartTimeDate.TabIndex = 407;
             // 
             // btn_ClearAll
             // 
@@ -330,6 +384,7 @@
             this.btn_ClearAll.TabIndex = 387;
             this.btn_ClearAll.Text = "CLEAR ALL";
             this.btn_ClearAll.UseVisualStyleBackColor = false;
+            this.btn_ClearAll.Click += new System.EventHandler(this.btn_ClearAll_Click);
             // 
             // Panl_Prescrption
             // 
@@ -387,6 +442,7 @@
             this.addinsbut.TabIndex = 30;
             this.addinsbut.Text = "Add instruction";
             this.addinsbut.UseVisualStyleBackColor = false;
+            this.addinsbut.Click += new System.EventHandler(this.addinsbut_Click);
             // 
             // rich_inctrn
             // 
@@ -441,6 +497,7 @@
             this.btn_PresCancel.TabIndex = 29;
             this.btn_PresCancel.Text = "Cancel";
             this.btn_PresCancel.UseVisualStyleBackColor = false;
+            this.btn_PresCancel.Click += new System.EventHandler(this.btn_PresCancel_Click);
             // 
             // drugnametext
             // 
@@ -603,6 +660,7 @@
             this.btn_prescriptionadd.TabIndex = 14;
             this.btn_prescriptionadd.Text = "Add";
             this.btn_prescriptionadd.UseVisualStyleBackColor = false;
+            this.btn_prescriptionadd.Click += new System.EventHandler(this.btn_prescriptionadd_Click);
             // 
             // label39
             // 
@@ -660,6 +718,8 @@
             this.txt_Notes.Size = new System.Drawing.Size(214, 22);
             this.txt_Notes.TabIndex = 406;
             this.txt_Notes.Text = "Search";
+            this.txt_Notes.Click += new System.EventHandler(this.txt_Notes_Click);
+            this.txt_Notes.TextChanged += new System.EventHandler(this.txt_Notes_TextChanged);
             // 
             // dgv_fillNotes
             // 
@@ -703,6 +763,7 @@
             this.dgv_fillNotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_fillNotes.Size = new System.Drawing.Size(323, 51);
             this.dgv_fillNotes.TabIndex = 405;
+            this.dgv_fillNotes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_fillNotes_CellClick);
             // 
             // N_id
             // 
@@ -760,6 +821,7 @@
             this.dhv_fillDiagnosis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dhv_fillDiagnosis.Size = new System.Drawing.Size(323, 51);
             this.dhv_fillDiagnosis.TabIndex = 404;
+            this.dhv_fillDiagnosis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dhv_fillDiagnosis_CellClick);
             // 
             // Did
             // 
@@ -786,6 +848,8 @@
             this.txt_DiaSearch.Size = new System.Drawing.Size(214, 22);
             this.txt_DiaSearch.TabIndex = 403;
             this.txt_DiaSearch.Text = "Search";
+            this.txt_DiaSearch.Click += new System.EventHandler(this.txt_DiaSearch_Click);
+            this.txt_DiaSearch.TextChanged += new System.EventHandler(this.txt_DiaSearch_TextChanged);
             // 
             // txt_cmpltsSearch
             // 
@@ -796,6 +860,8 @@
             this.txt_cmpltsSearch.Size = new System.Drawing.Size(214, 22);
             this.txt_cmpltsSearch.TabIndex = 402;
             this.txt_cmpltsSearch.Text = "Search";
+            this.txt_cmpltsSearch.Click += new System.EventHandler(this.txt_cmpltsSearch_Click);
+            this.txt_cmpltsSearch.TextChanged += new System.EventHandler(this.txt_cmpltsSearch_TextChanged);
             // 
             // dgv_fillComplaints
             // 
@@ -839,6 +905,7 @@
             this.dgv_fillComplaints.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_fillComplaints.Size = new System.Drawing.Size(323, 51);
             this.dgv_fillComplaints.TabIndex = 388;
+            this.dgv_fillComplaints.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_fillComplaints_CellClick);
             // 
             // i_d
             // 
@@ -1034,6 +1101,7 @@
             this.dgv_Complaints.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Complaints.Size = new System.Drawing.Size(587, 75);
             this.dgv_Complaints.TabIndex = 346;
+            this.dgv_Complaints.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Complaints_CellClick);
             // 
             // colId
             // 
@@ -1094,6 +1162,7 @@
             this.dgv_Diagnosis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Diagnosis.Size = new System.Drawing.Size(587, 75);
             this.dgv_Diagnosis.TabIndex = 341;
+            this.dgv_Diagnosis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Diagnosis_CellClick);
             // 
             // column_id
             // 
@@ -1195,6 +1264,7 @@
             this.dgv_notes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_notes.Size = new System.Drawing.Size(587, 75);
             this.dgv_notes.TabIndex = 348;
+            this.dgv_notes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_notes_CellClick);
             // 
             // noteId
             // 
@@ -1221,7 +1291,7 @@
             this.checkBoxReview.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.checkBoxReview.Location = new System.Drawing.Point(809, 63);
             this.checkBoxReview.Name = "checkBoxReview";
-            this.checkBoxReview.Size = new System.Drawing.Size(118, 19);
+            this.checkBoxReview.Size = new System.Drawing.Size(117, 19);
             this.checkBoxReview.TabIndex = 404;
             this.checkBoxReview.Text = "Next Review Date";
             this.checkBoxReview.UseVisualStyleBackColor = true;
@@ -1285,6 +1355,7 @@
             this.dgv_filltreatment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_filltreatment.Size = new System.Drawing.Size(323, 77);
             this.dgv_filltreatment.TabIndex = 408;
+            this.dgv_filltreatment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_filltreatment_CellClick);
             // 
             // T_id
             // 
@@ -1316,6 +1387,8 @@
             this.txt_treatment.Size = new System.Drawing.Size(214, 22);
             this.txt_treatment.TabIndex = 407;
             this.txt_treatment.Text = "Search";
+            this.txt_treatment.Click += new System.EventHandler(this.txt_treatment_Click);
+            this.txt_treatment.TextChanged += new System.EventHandler(this.txt_treatment_TextChanged);
             // 
             // label33
             // 
@@ -1324,7 +1397,7 @@
             this.label33.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label33.Location = new System.Drawing.Point(32, 23);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(63, 13);
+            this.label33.Size = new System.Drawing.Size(62, 13);
             this.label33.TabIndex = 369;
             this.label33.Text = "Treatments";
             // 
@@ -1389,6 +1462,7 @@
             this.Dgv_filltemplate.Size = new System.Drawing.Size(39, 34);
             this.Dgv_filltemplate.TabIndex = 410;
             this.Dgv_filltemplate.Visible = false;
+            this.Dgv_filltemplate.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_filltemplate_CellClick);
             // 
             // _P_id
             // 
@@ -1447,6 +1521,7 @@
             this.dgv_fillPrescription.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_fillPrescription.Size = new System.Drawing.Size(323, 51);
             this.dgv_fillPrescription.TabIndex = 409;
+            this.dgv_fillPrescription.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_fillPrescription_CellClick);
             // 
             // P_id
             // 
@@ -1478,6 +1553,8 @@
             this.txt_Prescrptn.Size = new System.Drawing.Size(214, 22);
             this.txt_Prescrptn.TabIndex = 408;
             this.txt_Prescrptn.Text = "Search";
+            this.txt_Prescrptn.Click += new System.EventHandler(this.txt_Prescrptn_Click);
+            this.txt_Prescrptn.TextChanged += new System.EventHandler(this.txt_Prescrptn_TextChanged);
             // 
             // linkLab_template
             // 
@@ -1485,10 +1562,11 @@
             this.linkLab_template.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLab_template.Location = new System.Drawing.Point(186, 15);
             this.linkLab_template.Name = "linkLab_template";
-            this.linkLab_template.Size = new System.Drawing.Size(53, 13);
+            this.linkLab_template.Size = new System.Drawing.Size(52, 13);
             this.linkLab_template.TabIndex = 392;
             this.linkLab_template.TabStop = true;
             this.linkLab_template.Text = "Template";
+            this.linkLab_template.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLab_template_LinkClicked);
             // 
             // Lnk_AddTemplate
             // 
@@ -1496,11 +1574,12 @@
             this.Lnk_AddTemplate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lnk_AddTemplate.Location = new System.Drawing.Point(240, 15);
             this.Lnk_AddTemplate.Name = "Lnk_AddTemplate";
-            this.Lnk_AddTemplate.Size = new System.Drawing.Size(77, 13);
+            this.Lnk_AddTemplate.Size = new System.Drawing.Size(76, 13);
             this.Lnk_AddTemplate.TabIndex = 393;
             this.Lnk_AddTemplate.TabStop = true;
             this.Lnk_AddTemplate.Text = "Add Template";
             this.Lnk_AddTemplate.Visible = false;
+            this.Lnk_AddTemplate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Lnk_AddTemplate_LinkClicked);
             // 
             // linkLabel1
             // 
@@ -1512,6 +1591,7 @@
             this.linkLabel1.TabIndex = 394;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Drugs";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // dateTimePicker1
             // 
@@ -1589,6 +1669,7 @@
             this.btn_Close.TabIndex = 312;
             this.btn_Close.Text = "CLOSE";
             this.btn_Close.UseVisualStyleBackColor = false;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
             // 
             // panel8
             // 
@@ -1624,6 +1705,7 @@
             this.btn_Add.TabIndex = 313;
             this.btn_Add.Text = "SAVE ";
             this.btn_Add.UseVisualStyleBackColor = false;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // groupBox4
             // 
@@ -1699,6 +1781,7 @@
             this.dgv_prescrptn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_prescrptn.Size = new System.Drawing.Size(776, 91);
             this.dgv_prescrptn.TabIndex = 347;
+            this.dgv_prescrptn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_prescrptn_CellClick);
             // 
             // id
             // 
@@ -1849,6 +1932,8 @@
             this.Lab_Cost.TabIndex = 275;
             this.Lab_Cost.Text = "0";
             this.Lab_Cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Lab_Cost.TextChanged += new System.EventHandler(this.Lab_Cost_TextChanged);
+            this.Lab_Cost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Lab_Cost_KeyPress);
             // 
             // Lab_TotalTax
             // 
@@ -1899,6 +1984,7 @@
             this.button3.TabIndex = 271;
             this.button3.Text = "Cancel";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // NMUP_Unit
             // 
@@ -1910,17 +1996,20 @@
             this.NMUP_Unit.Size = new System.Drawing.Size(63, 20);
             this.NMUP_Unit.TabIndex = 270;
             this.NMUP_Unit.Text = "1";
+            this.NMUP_Unit.TextChanged += new System.EventHandler(this.NMUP_Unit_TextChanged);
+            this.NMUP_Unit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NMUP_Unit_KeyPress);
             // 
             // lab_AddDiscount
             // 
             this.lab_AddDiscount.AutoSize = true;
             this.lab_AddDiscount.BackColor = System.Drawing.Color.Gainsboro;
             this.lab_AddDiscount.ForeColor = System.Drawing.Color.Blue;
-            this.lab_AddDiscount.Location = new System.Drawing.Point(394, 74);
+            this.lab_AddDiscount.Location = new System.Drawing.Point(394, 83);
             this.lab_AddDiscount.Name = "lab_AddDiscount";
             this.lab_AddDiscount.Size = new System.Drawing.Size(77, 15);
             this.lab_AddDiscount.TabIndex = 264;
             this.lab_AddDiscount.Text = "add discount";
+            this.lab_AddDiscount.Click += new System.EventHandler(this.lab_AddDiscount_Click);
             // 
             // lab_AddTax
             // 
@@ -1932,6 +2021,7 @@
             this.lab_AddTax.Size = new System.Drawing.Size(47, 15);
             this.lab_AddTax.TabIndex = 267;
             this.lab_AddTax.Text = "add tax";
+            this.lab_AddTax.Click += new System.EventHandler(this.lab_AddTax_Click);
             // 
             // text_billno
             // 
@@ -1953,6 +2043,9 @@
             this.Cmb_tax.TabIndex = 268;
             this.Cmb_tax.Text = "NA";
             this.Cmb_tax.Visible = false;
+            this.Cmb_tax.SelectedIndexChanged += new System.EventHandler(this.Cmb_tax_SelectedIndexChanged);
+            this.Cmb_tax.SelectionChangeCommitted += new System.EventHandler(this.Cmb_tax_SelectionChangeCommitted);
+            this.Cmb_tax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_tax_KeyPress);
             // 
             // CMB_Discount
             // 
@@ -1968,6 +2061,7 @@
             this.CMB_Discount.TabIndex = 266;
             this.CMB_Discount.Text = "INR";
             this.CMB_Discount.Visible = false;
+            this.CMB_Discount.SelectedIndexChanged += new System.EventHandler(this.CMB_Discount_SelectedIndexChanged);
             // 
             // btn_TreatmentAdd
             // 
@@ -1981,6 +2075,7 @@
             this.btn_TreatmentAdd.TabIndex = 254;
             this.btn_TreatmentAdd.Text = "Add";
             this.btn_TreatmentAdd.UseVisualStyleBackColor = false;
+            this.btn_TreatmentAdd.Click += new System.EventHandler(this.btn_TreatmentAdd_Click);
             // 
             // txt_Discount
             // 
@@ -1993,6 +2088,8 @@
             this.txt_Discount.TabIndex = 265;
             this.txt_Discount.Text = "0";
             this.txt_Discount.WordWrap = false;
+            this.txt_Discount.TextChanged += new System.EventHandler(this.txt_Discount_TextChanged);
+            this.txt_Discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Discount_KeyPress);
             // 
             // lab_Total
             // 
@@ -2177,6 +2274,7 @@
             this.dgv_treatment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_treatment.Size = new System.Drawing.Size(769, 97);
             this.dgv_treatment.TabIndex = 383;
+            this.dgv_treatment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_treatment_CellClick);
             // 
             // treatmentid
             // 
@@ -2291,6 +2389,7 @@
             this.listpatientsearch.Size = new System.Drawing.Size(273, 89);
             this.listpatientsearch.TabIndex = 316;
             this.listpatientsearch.Visible = false;
+            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
             // 
             // txtPatientID
             // 
@@ -2301,6 +2400,7 @@
             this.txtPatientID.ReadOnly = true;
             this.txtPatientID.Size = new System.Drawing.Size(273, 22);
             this.txtPatientID.TabIndex = 384;
+            this.txtPatientID.TextChanged += new System.EventHandler(this.txtPatientID_TextChanged);
             // 
             // label7
             // 
@@ -2455,6 +2555,7 @@
             this.txtAge.ReadOnly = true;
             this.txtAge.Size = new System.Drawing.Size(32, 22);
             this.txtAge.TabIndex = 379;
+            this.txtAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAge_KeyPress);
             // 
             // label21
             // 
@@ -2514,6 +2615,7 @@
             this.btnAddNewPatient.Text = "Add New Patient";
             this.btnAddNewPatient.UseVisualStyleBackColor = false;
             this.btnAddNewPatient.Visible = false;
+            this.btnAddNewPatient.Click += new System.EventHandler(this.btnAddNewPatient_Click);
             // 
             // txt_search
             // 
@@ -2525,6 +2627,7 @@
             this.txt_search.TabIndex = 352;
             this.txt_search.Text = "Search by  Patient Id, Name";
             this.txt_search.Visible = false;
+            this.txt_search.Click += new System.EventHandler(this.txt_search_Click);
             // 
             // panel10
             // 
@@ -2675,6 +2778,285 @@
             this.btnprint.TabIndex = 405;
             this.btnprint.Text = "PRINT";
             this.btnprint.UseVisualStyleBackColor = false;
+            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
+            // 
+            // DGV_treatmentTemp
+            // 
+            this.DGV_treatmentTemp.AllowUserToAddRows = false;
+            this.DGV_treatmentTemp.AllowUserToDeleteRows = false;
+            this.DGV_treatmentTemp.AllowUserToResizeColumns = false;
+            this.DGV_treatmentTemp.AllowUserToResizeRows = false;
+            this.DGV_treatmentTemp.BackgroundColor = System.Drawing.Color.White;
+            this.DGV_treatmentTemp.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.DGV_treatmentTemp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_treatmentTemp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            this.DGV_treatmentTemp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_treatmentTemp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_id,
+            this.service,
+            this.qty,
+            this.cost,
+            this.discount,
+            this.distype,
+            this.total,
+            this.disRs,
+            this.colDrid,
+            this.dr,
+            this.treatementnote,
+            this.tooth1,
+            this.dataGridViewImageColumn6});
+            this.DGV_treatmentTemp.Location = new System.Drawing.Point(631, 4);
+            this.DGV_treatmentTemp.Name = "DGV_treatmentTemp";
+            this.DGV_treatmentTemp.ReadOnly = true;
+            this.DGV_treatmentTemp.RowHeadersVisible = false;
+            this.DGV_treatmentTemp.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DGV_treatmentTemp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.DGV_treatmentTemp.Size = new System.Drawing.Size(21, 46);
+            this.DGV_treatmentTemp.TabIndex = 389;
+            this.DGV_treatmentTemp.Visible = false;
+            // 
+            // col_id
+            // 
+            this.col_id.HeaderText = "id";
+            this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
+            this.col_id.Visible = false;
+            // 
+            // service
+            // 
+            this.service.HeaderText = "Service";
+            this.service.Name = "service";
+            this.service.ReadOnly = true;
+            this.service.Width = 200;
+            // 
+            // qty
+            // 
+            this.qty.HeaderText = "Qty";
+            this.qty.Name = "qty";
+            this.qty.ReadOnly = true;
+            this.qty.Width = 30;
+            // 
+            // cost
+            // 
+            this.cost.HeaderText = "Cost";
+            this.cost.Name = "cost";
+            this.cost.ReadOnly = true;
+            this.cost.Width = 75;
+            // 
+            // discount
+            // 
+            this.discount.HeaderText = "Discount";
+            this.discount.Name = "discount";
+            this.discount.ReadOnly = true;
+            this.discount.Width = 55;
+            // 
+            // distype
+            // 
+            this.distype.HeaderText = "Dis. Type";
+            this.distype.Name = "distype";
+            this.distype.ReadOnly = true;
+            this.distype.Width = 75;
+            // 
+            // total
+            // 
+            this.total.HeaderText = "Total";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
+            this.total.Width = 75;
+            // 
+            // disRs
+            // 
+            this.disRs.HeaderText = "discount in rs";
+            this.disRs.Name = "disRs";
+            this.disRs.ReadOnly = true;
+            this.disRs.Visible = false;
+            this.disRs.Width = 75;
+            // 
+            // colDrid
+            // 
+            this.colDrid.HeaderText = "dr_id";
+            this.colDrid.Name = "colDrid";
+            this.colDrid.ReadOnly = true;
+            this.colDrid.Visible = false;
+            // 
+            // dr
+            // 
+            this.dr.HeaderText = "Doctor ";
+            this.dr.Name = "dr";
+            this.dr.ReadOnly = true;
+            this.dr.Visible = false;
+            // 
+            // treatementnote
+            // 
+            this.treatementnote.HeaderText = "treatementnote";
+            this.treatementnote.Name = "treatementnote";
+            this.treatementnote.ReadOnly = true;
+            // 
+            // tooth1
+            // 
+            this.tooth1.HeaderText = "tooth";
+            this.tooth1.Name = "tooth1";
+            this.tooth1.ReadOnly = true;
+            this.tooth1.Visible = false;
+            // 
+            // dataGridViewImageColumn6
+            // 
+            this.dataGridViewImageColumn6.HeaderText = "Del";
+            this.dataGridViewImageColumn6.Name = "dataGridViewImageColumn6";
+            this.dataGridViewImageColumn6.ReadOnly = true;
+            // 
+            // dataGridView_drugnewTemp
+            // 
+            this.dataGridView_drugnewTemp.AllowUserToAddRows = false;
+            this.dataGridView_drugnewTemp.AllowUserToResizeColumns = false;
+            this.dataGridView_drugnewTemp.AllowUserToResizeRows = false;
+            this.dataGridView_drugnewTemp.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView_drugnewTemp.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView_drugnewTemp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_drugnewTemp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle36;
+            this.dataGridView_drugnewTemp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_drugnewTemp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgrugname,
+            this.srength,
+            this.cmbStrenth,
+            this.duration,
+            this.period,
+            this.morning,
+            this.noon,
+            this.night,
+            this.ColFood,
+            this.instruction,
+            this.drugid,
+            this.drugtype,
+            this.status});
+            this.dataGridView_drugnewTemp.Location = new System.Drawing.Point(681, 4);
+            this.dataGridView_drugnewTemp.Name = "dataGridView_drugnewTemp";
+            this.dataGridView_drugnewTemp.ReadOnly = true;
+            this.dataGridView_drugnewTemp.RowHeadersVisible = false;
+            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.dataGridView_drugnewTemp.RowsDefaultCellStyle = dataGridViewCellStyle44;
+            this.dataGridView_drugnewTemp.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView_drugnewTemp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_drugnewTemp.Size = new System.Drawing.Size(95, 74);
+            this.dataGridView_drugnewTemp.TabIndex = 406;
+            this.dataGridView_drugnewTemp.Visible = false;
+            // 
+            // dgrugname
+            // 
+            this.dgrugname.HeaderText = "DRUG NAME";
+            this.dgrugname.Name = "dgrugname";
+            this.dgrugname.ReadOnly = true;
+            this.dgrugname.Width = 180;
+            // 
+            // srength
+            // 
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.srength.DefaultCellStyle = dataGridViewCellStyle37;
+            this.srength.HeaderText = "STRENGTH";
+            this.srength.MinimumWidth = 20;
+            this.srength.Name = "srength";
+            this.srength.ReadOnly = true;
+            // 
+            // cmbStrenth
+            // 
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.cmbStrenth.DefaultCellStyle = dataGridViewCellStyle38;
+            this.cmbStrenth.HeaderText = "StregthCmb";
+            this.cmbStrenth.Name = "cmbStrenth";
+            this.cmbStrenth.ReadOnly = true;
+            this.cmbStrenth.Visible = false;
+            this.cmbStrenth.Width = 30;
+            // 
+            // duration
+            // 
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.duration.DefaultCellStyle = dataGridViewCellStyle39;
+            this.duration.HeaderText = "DURATION";
+            this.duration.Name = "duration";
+            this.duration.ReadOnly = true;
+            // 
+            // period
+            // 
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.period.DefaultCellStyle = dataGridViewCellStyle40;
+            this.period.HeaderText = "PERIOD";
+            this.period.Name = "period";
+            this.period.ReadOnly = true;
+            this.period.Visible = false;
+            this.period.Width = 50;
+            // 
+            // morning
+            // 
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.morning.DefaultCellStyle = dataGridViewCellStyle41;
+            this.morning.HeaderText = "MORNING";
+            this.morning.Name = "morning";
+            this.morning.ReadOnly = true;
+            // 
+            // noon
+            // 
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.noon.DefaultCellStyle = dataGridViewCellStyle42;
+            this.noon.HeaderText = "NOON";
+            this.noon.Name = "noon";
+            this.noon.ReadOnly = true;
+            // 
+            // night
+            // 
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.night.DefaultCellStyle = dataGridViewCellStyle43;
+            this.night.HeaderText = "NIGHT";
+            this.night.Name = "night";
+            this.night.ReadOnly = true;
+            // 
+            // ColFood
+            // 
+            this.ColFood.HeaderText = "FOOD";
+            this.ColFood.Name = "ColFood";
+            this.ColFood.ReadOnly = true;
+            // 
+            // instruction
+            // 
+            this.instruction.HeaderText = "INSTRUCTION";
+            this.instruction.Name = "instruction";
+            this.instruction.ReadOnly = true;
+            this.instruction.Width = 150;
+            // 
+            // drugid
+            // 
+            this.drugid.HeaderText = "drugid";
+            this.drugid.Name = "drugid";
+            this.drugid.ReadOnly = true;
+            this.drugid.Visible = false;
+            // 
+            // drugtype
+            // 
+            this.drugtype.HeaderText = "drug type";
+            this.drugtype.Name = "drugtype";
+            this.drugtype.ReadOnly = true;
+            this.drugtype.Visible = false;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Visible = false;
+            this.status.Width = 30;
             // 
             // SimpleAppointment
             // 
@@ -2683,6 +3065,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1144, 701);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.DGV_treatmentTemp);
+            this.Controls.Add(this.dataGridView_drugnewTemp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SimpleAppointment";
             this.Text = "SimpleAppointment";
@@ -2724,6 +3108,8 @@
             this.panel10.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_treatmentTemp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_drugnewTemp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2918,5 +3304,34 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button btnprint;
+        private System.Windows.Forms.DataGridView DGV_treatmentTemp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn service;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn discount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn distype;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn disRs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn treatementnote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tooth1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn6;
+        private System.Windows.Forms.DataGridView dataGridView_drugnewTemp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgrugname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn srength;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmbStrenth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn period;
+        private System.Windows.Forms.DataGridViewTextBoxColumn morning;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn night;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColFood;
+        private System.Windows.Forms.DataGridViewTextBoxColumn instruction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drugid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drugtype;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DateTimePicker dpStartTimeDate;
     }
 }

@@ -660,8 +660,8 @@ namespace PappyjoeMVC.View
                             decimal a = 0;
                             a = decimal.Parse(advanceamt) - advance;
                             this.cntrl.update_advance(a, patient_id); 
-                            DataTable rec = this.cntrl.receipt_autoid();
-                            int receip = int.Parse(rec.Rows[0][0].ToString()) + 1;
+                            string rec = this.cntrl.receipt_autoid();
+                            int receip = int.Parse(rec) + 1;
                             this.cntrl.update_receiptAutoid(receip);
                             if (doctor_id == admin_id)
                             {
@@ -1091,10 +1091,10 @@ namespace PappyjoeMVC.View
                         decimal a = 0;
                         a = Convert.ToDecimal(advanceamt);
                         this.cntrl.update_advance(a, patient_id);
-                        DataTable rec = this.cntrl.receipt_autoid();
-                        if (rec.Rows.Count > 0)
+                        string rec = this.cntrl.receipt_autoid();
+                        if (Convert.ToInt32(rec)> 0)
                         {
-                            int receip = int.Parse(rec.Rows[0][0].ToString()) + 1;
+                            int receip = int.Parse(rec) + 1;
                             this.cntrl.update_receiptAutoid(receip);
                         }
                         DGV_MainGrid.Enabled = true;
@@ -1161,7 +1161,6 @@ namespace PappyjoeMVC.View
             }
             else if (Cmb_ModeOfPaymnt.SelectedIndex == 3)
             {
-
                 payment_show(true, true, true, true, false, false, false, false);
             }
             else

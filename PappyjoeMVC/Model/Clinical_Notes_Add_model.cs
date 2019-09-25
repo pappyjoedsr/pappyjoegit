@@ -153,7 +153,7 @@ namespace PappyjoeMVC.Model
         {
             System.Data.DataTable dt_cf_Complaints = db.table("SELECT  id,complaint_id FROM tbl_pt_chief_compaints where tbl_pt_chief_compaints.clinical_finding_id='" + id + "' ORDER BY tbl_pt_chief_compaints.id");
             return dt_cf_Complaints;
-        }//SELECT complaint_id FROM tbl_pt_chief_compaints WHERE clinical_finding_id='" + App_dtb.Rows[0]["EHR_clinicalfindings"] +
+        }
         public DataTable get_observation(string id)
         {
             System.Data.DataTable dt_cf_observe = db.table("SELECT id,observation_id FROM tbl_pt_observation where tbl_pt_observation.clinical_finding_id='" + id + "' ORDER BY tbl_pt_observation.id");
@@ -168,46 +168,40 @@ namespace PappyjoeMVC.Model
         {
             System.Data.DataTable dt_cf_diagnosis = db.table("SELECT diagnosis_id,id FROM tbl_pt_diagnosis where tbl_pt_diagnosis.clinical_finding_id='" + id + "' ORDER BY tbl_pt_diagnosis.id");
             return dt_cf_diagnosis;
-        }//SELECT diagnosis_id FROM  tbl_pt_diagnosis WHERE clinical_finding_id='" + App_dtb.Rows[0]["EHR_clinicalfindings"] +
+        }
         public DataTable get_note(string id)
         {
             System.Data.DataTable dt_cf_note = db.table("SELECT note_name,id FROM tbl_pt_note where tbl_pt_note.clinical_findings_id='" + id + "' ORDER BY tbl_pt_note.id");
             return dt_cf_note;
-        }//SELECT note_name FROM tbl_pt_note WHERE clinical_findings_id='" + App_dtb.Rows[0]["EHR_clinicalfindings"] + "'
-        public int insertInto_clinical_findings(string ptid, string dt, string date)
-        {
-            int i = db.execute("insert into tbl_clinical_findings (pt_id,dr_id,date) values ('" + ptid + "','" + dt + "','" + date + "')");
-            return i;
         }
-        public DataTable MaxId_clinic_findings()
+        public void insertInto_clinical_findings(string ptid, string dt, string date)
         {
-            DataTable treatment = db.table("select MAX(id) from tbl_clinical_findings");
+             db.execute("insert into tbl_clinical_findings (pt_id,dr_id,date) values ('" + ptid + "','" + dt + "','" + date + "')");
+        }
+        public string MaxId_clinic_findings()
+        {
+            string treatment = db.scalar("select MAX(id) from tbl_clinical_findings");
             return treatment;
         }
-        public int insrtto_investi(int treat, string one)
+        public void insrtto_investi(int treat, string one)
         {
-            int i = db.execute("insert into tbl_pt_investigations (clinical_finding_id,investigation_id) values('" + treat + "','" + one.Replace("'", " ") + "')");
-            return i;
+           db.execute("insert into tbl_pt_investigations (clinical_finding_id,investigation_id) values('" + treat + "','" + one.Replace("'", " ") + "')");
         }
-        public int insrtto_diagno(int treat, string one)
+        public void insrtto_diagno(int treat, string one)
         {
-            int i = db.execute("insert into tbl_pt_diagnosis (clinical_finding_id,diagnosis_id) values('" + treat + "','" + one.Replace("'", " ") + "')");
-            return i;
+            db.execute("insert into tbl_pt_diagnosis (clinical_finding_id,diagnosis_id) values('" + treat + "','" + one.Replace("'", " ") + "')");
         }
-        public int insrtto_note(int treat, string one)
+        public void insrtto_note(int treat, string one)
         {
-            int i = db.execute("insert into tbl_pt_note (clinical_findings_id,note_name) values('" + treat + "','" + one.Replace("'", " ") + "')");
-            return i;
+           db.execute("insert into tbl_pt_note (clinical_findings_id,note_name) values('" + treat + "','" + one.Replace("'", " ") + "')");
         }
-        public int insrtto_obser(int treat, string one)
+        public void insrtto_obser(int treat, string one)
         {
-            int i = db.execute("insert into tbl_pt_observation (clinical_finding_id,observation_id) values('" + treat + "','" + one.Replace("'", " ") + "')");
-            return i;
+            db.execute("insert into tbl_pt_observation (clinical_finding_id,observation_id) values('" + treat + "','" + one.Replace("'", " ") + "')");
         }
-        public int insrtto_chief_comp(int treat, string one)
+        public void insrtto_chief_comp(int treat, string one)
         {
-            int i = db.execute("insert into tbl_pt_chief_compaints (clinical_finding_id,complaint_id) values('" + treat + "','" + one.Replace("'", " ") + "')");
-            return i;
+            db.execute("insert into tbl_pt_chief_compaints (clinical_finding_id,complaint_id) values('" + treat + "','" + one.Replace("'", " ") + "')");
         }
         public int Update_clinical_findings(string ptid, string dt, string id)
         {

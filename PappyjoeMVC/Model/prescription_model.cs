@@ -41,7 +41,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable ge_drug(string id1)
         {
-            DataTable dt = db.table("select name,strength,strength_gr,type,instructions from tbl_adddrug where id ='" + id1 + "'");
+            DataTable dt = db.table("select name,strength,strength_gr,type,instructions,id from tbl_adddrug where id ='" + id1 + "'");
             return dt;
         }
         public DataTable get_template(string idtemp)
@@ -58,14 +58,14 @@ namespace PappyjoeMVC.Model
         {
             db.table("insert into tbl_prescription_main (pt_id,dr_id,date,pay_status,notes) values('" + ptid + "','" + d_id + "','" + date + "','" + prescription_bill_status + "','" + note + "')");
         }
-        public DataTable Maxid()
+        public string Maxid()
         {
-            DataTable dt = db.table("select MAX(id) from tbl_prescription_main");
+            string dt = db.scalar("select MAX(id) from tbl_prescription_main");
             return dt;
         }
         public void save_prescription(int pres_id, string pt_id, string dr_name, string dr_id, string date, string drug_name, string strength, string strength_gr, string duration_unit, string duration_period, string morning, string noon, string night, string food, string add_instruction, string drug_type, string status, string drug_id)
         {
-            db.table("insert into tbl_prescription (pres_id,pt_id,dr_name,dr_id,date,drug_name,strength,strength_gr,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,status,drug_id) values('" + pres_id + "','" + pt_id + "','" + dr_name + "','" + dr_id + "','" + date + "','" + drug_name + "','" + strength + "','" + strength_gr + "','" + duration_unit + "','" + duration_period + "','" + morning + "','" + noon + "','" + night + "','" + food + "','" + add_instruction + "','" + drug_type + "'," + status + ",'" + drug_id + "')");
+            db.table("insert into tbl_prescription (pres_id,pt_id,dr_name,dr_id,date,drug_name,strength,strength_gr,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,status,drug_id) values('" + pres_id + "','" + pt_id + "','" + dr_name + "','" + dr_id + "','" + date + "','" + drug_name + "','" + strength + "','" + strength_gr + "','  " + duration_unit + "','" + duration_period + "','" + morning + "','" + noon + "','" + night + "','" + food + "','" + add_instruction + "','" + drug_type + "'," + status + ",'" + drug_id + "')");
         }
         public void update_prescription_review(string date, int presid)
         {
@@ -133,6 +133,22 @@ namespace PappyjoeMVC.Model
         {
             DataTable print = db.table("select header,left_text,right_text,fullwidth_context,left_sign,right_sign from tbl_presciption_printsettings");
             return print;
+        }
+        public DataTable get_allprescription(string prescription_id)
+        {
+            DataTable td_prescription_Sub = db.table("SELECT pres_id,pt_id,dr_name,dr_id,date,drug_name,strength,strength_gr,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,status,drug_id FROM tbl_prescription  WHERE pres_id= '" + prescription_id + "' ORDER BY id");
+            return td_prescription_Sub;
+        }
+        //simple appointment template
+        public DataTable get_drug_name()
+        {
+            DataTable dt_prescription = db.table("select id,name from tbl_adddrug");
+            return dt_prescription;
+        }
+        public string get_patientname(string ptid)
+        {
+            string dt_patient = db.scalar("select Pt_name from tbl_patient where id='" + ptid + "'");
+            return dt_patient;
         }
     }
 }

@@ -449,10 +449,10 @@ namespace PappyjoeMVC.View
                     {
                         prescription_check();
                         this.cntrl.save_prescriptionmain(patient_id, d_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), Prescription_bill_status, Txtnote.Text);
-                        DataTable dt = this.cntrl.Maxid();
-                        if (dt.Rows.Count > 0)
+                        string dt = this.cntrl.Maxid();
+                        if (Convert.ToInt32( dt)> 0)
                         {
-                            presid = Int32.Parse(dt.Rows[0][0].ToString());
+                            presid = Int32.Parse(dt);
                         }
                         else
                         {

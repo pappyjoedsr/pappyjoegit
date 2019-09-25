@@ -57,7 +57,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable selsms()
         {
-            DataTable dt = mdl.selsms();
+            DataTable dt = cmdl.smsdetails();
             return dt;
         }
         public int inssms(string patntid, string date, string msg)

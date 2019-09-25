@@ -96,7 +96,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable get_sms_details()
         {
-            DataTable dtb = model.get_sms_details();
+            DataTable dtb = cmodel.smsdetails();
             return dtb;
         }
         public DataTable get_patient_details(string ContextEvent)

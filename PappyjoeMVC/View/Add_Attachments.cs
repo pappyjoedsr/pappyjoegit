@@ -1,15 +1,8 @@
-﻿using Microsoft.Win32;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Controller;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
@@ -26,8 +19,8 @@ namespace PappyjoeMVC.View
         OpenFileDialog open7 = new OpenFileDialog();
         OpenFileDialog open8 = new OpenFileDialog();
         OpenFileDialog open9 = new OpenFileDialog();
-        public string patient_id = "", admin_id ="", doctor_id ="", pth="";
-        public int flag = 0, len,p2 = 0, p3 = 0, p4 = 0, p5 = 0, p6 = 0, p7 = 0, p8 = 0, p9 = 0;
+        public string patient_id = "", admin_id = "", doctor_id = "", pth = "";
+        public int flag = 0, len, p2 = 0, p3 = 0, p4 = 0, p5 = 0, p6 = 0, p7 = 0, p8 = 0, p9 = 0;
         Add_Attachments_controller ctrlr = new Add_Attachments_controller();
         public Add_Attachments()
         {
@@ -48,7 +41,7 @@ namespace PappyjoeMVC.View
                 {
                     listpatientsearch.Visible = true;
                 }
-                listpatientsearch.Location = new Point(toolStrip1.Width - 350, 32);
+                listpatientsearch.Location = new Point(toolStrip1.Width - 353, 32);
             }
             else
             {
@@ -102,7 +95,7 @@ namespace PappyjoeMVC.View
                     Cmb_category8.SelectedIndex = 0;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             return dtcatgry;
         }
@@ -112,7 +105,7 @@ namespace PappyjoeMVC.View
             {
                 this.WindowState = FormWindowState.Maximized;
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-                string doctrid=this.ctrlr.selectdoctrid();
+                string doctrid = this.ctrlr.selectdoctrid();
                 if (doctrid != "")
                 {
                     if (doctrid != doctor_id)
@@ -120,25 +113,25 @@ namespace PappyjoeMVC.View
                         admin_id = doctrid;
                     }
                 }
-                string clinic=this.ctrlr.clinicname();
+                string clinic = this.ctrlr.clinicname();
                 if (clinic != "")
                 {
                     toolStripButton1.Text = clinic.Replace("¤", "'");
                 }
-                string doctrname=this.ctrlr.Get_DoctorName(doctor_id);
+                string doctrname = this.ctrlr.Get_DoctorName(doctor_id);
                 if (doctrname != "")
                 {
                     toolStripTextDoctor.Text = "Logged In As : " + doctrname;
                 }
-                DataTable catgry=this.ctrlr.GetCategory();
+                DataTable catgry = this.ctrlr.GetCategory();
                 GetCategory(catgry);
-                DataTable patntdtls=this.ctrlr.GetPatientDetails(patient_id);
+                DataTable patntdtls = this.ctrlr.GetPatientDetails(patient_id);
                 if (patntdtls.Rows.Count > 0)
                 {
                     linkLabel_id.Text = patntdtls.Rows[0]["pt_id"].ToString();
                     linkLabel_Name.Text = patntdtls.Rows[0]["pt_name"].ToString();
                 }
-                string paymnt=this.ctrlr.GetPayment(patient_id);
+                string paymnt = this.ctrlr.GetPayment(patient_id);
                 if (paymnt != "")
                 {
                     Lab_due.Text = paymnt + " due";
@@ -184,12 +177,12 @@ namespace PappyjoeMVC.View
                     PB_8.Image = PappyjoeMVC.Properties.Resources.upload;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
-            DataTable dt=this.ctrlr.Patient_search(toolStripTextBox1.Text);
+            DataTable dt = this.ctrlr.Patient_search(toolStripTextBox1.Text);
             Patient_search(dt);
         }
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
@@ -256,8 +249,8 @@ namespace PappyjoeMVC.View
                     p2 = 0;
                 }
             }
-            catch(Exception ex)
-            { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error);}
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void PB_1_MouseEnter(object sender, EventArgs e)
         {
@@ -310,8 +303,8 @@ namespace PappyjoeMVC.View
                     p3 = 0;
                 }
             }
-            catch(Exception ex)
-            { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error);}
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void Pb_2_MouseEnter(object sender, EventArgs e)
         {
@@ -358,7 +351,7 @@ namespace PappyjoeMVC.View
                     p4 = 0;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void PB_4_Click(object sender, EventArgs e)
@@ -398,8 +391,8 @@ namespace PappyjoeMVC.View
                     p5 = 0;
                 }
             }
-            catch(Exception ex)
-            { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error);}
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void Pb_5_Click(object sender, EventArgs e)
         {
@@ -438,8 +431,8 @@ namespace PappyjoeMVC.View
                     p6 = 0;
                 }
             }
-            catch(Exception ex)
-            { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error);}
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void PB_6_Click(object sender, EventArgs e)
         {
@@ -478,7 +471,7 @@ namespace PappyjoeMVC.View
                     p7 = 0;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void PB_7_Click(object sender, EventArgs e)
@@ -518,7 +511,7 @@ namespace PappyjoeMVC.View
                     p8 = 0;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void PB_8_Click(object sender, EventArgs e)
@@ -558,7 +551,7 @@ namespace PappyjoeMVC.View
                     p9 = 0;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void Pb_3_MouseEnter(object sender, EventArgs e)
@@ -615,6 +608,30 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
+            if (doctor_id != "1")
+            {
+                string id = this.ctrlr.privilge_for_inventory(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var form2 = new PappyjoeMVC.View.StockReport();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.ShowDialog();
+                }
+            }
+            else
+            {
+                var form2 = new PappyjoeMVC.View.StockReport();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
         }
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
@@ -679,7 +696,7 @@ namespace PappyjoeMVC.View
             }
             catch (Exception ex)
             { MessageBox.Show("Error!..", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error); }
-        } 
+        }
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
             toolStripTextBox1.Clear();
@@ -690,7 +707,7 @@ namespace PappyjoeMVC.View
         }
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string prvlge=this.ctrlr.settingsprivilage(doctor_id);
+            string prvlge = this.ctrlr.settingsprivilage(doctor_id);
             settingsprivilage(prvlge);
         }
         public void settingsprivilage(string doctrid)
@@ -728,6 +745,10 @@ namespace PappyjoeMVC.View
         }
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var form2 = new PappyjoeMVC.View.Login();
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
@@ -923,7 +944,7 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             { MessageBox.Show("Error!..", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-        public void save_image(string realfile, string server, string filename,string catgry)
+        public void save_image(string realfile, string server, string filename, string catgry)
         {
             if (realfile != "")
             {
@@ -943,7 +964,7 @@ namespace PappyjoeMVC.View
                 }
                 string pathimage = "\\" + "\\Pappyjoe_utilities" + "\\" + "\\Attachments\\" + "\\" + realfile;
                 txt_path3.Text = pathimage;
-                this.ctrlr.insattach(patient_id,realfile,pathimage,doctor_id,catgry);
+                this.ctrlr.insattach(patient_id, realfile, pathimage, doctor_id, catgry);
                 flag = 1;
             }
         }

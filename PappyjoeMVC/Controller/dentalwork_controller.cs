@@ -21,7 +21,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable practicedetails()
         {
-            DataTable dt = mdl.practicedetails();
+            DataTable dt = cm.practicedetails();
             return dt;
         }
         public DataTable smsinfo()
