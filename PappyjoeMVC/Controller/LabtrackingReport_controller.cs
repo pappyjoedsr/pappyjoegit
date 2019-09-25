@@ -88,15 +88,20 @@ namespace PappyjoeMVC.Controller
             DataTable dt = cm.Patient_search(txtbox);
             return dt;
         }
-        public string userprivilege(string doctrid)
+        public string permission_for_settings(string doctor_id)
         {
-            string e = mdl.userprivilege(doctrid);
-            return e;
+            string dtb = cm.permission_for_settings(doctor_id);
+            return dtb;
         }
         public DataTable practicedetails()
         {
             DataTable dt = dm.practicedetails();
             return dt;
+        }
+        public string doctr_privillage_for_addnewPatient(string doctrid)
+        {
+            string t = cm.doctr_privillage_for_addnewPatient(doctrid);
+            return t;
         }
     }
 }
