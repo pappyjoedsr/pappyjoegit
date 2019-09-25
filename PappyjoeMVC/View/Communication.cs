@@ -520,10 +520,10 @@ namespace PappyjoeMVC.View
             try
             {
                 lst_GridItems.Items.Clear();
-                bool value = Convert.ToBoolean(DGV_Patient.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue);
+                string value = DGV_Patient.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue.ToString();
                 string name = DGV_Patient.Rows[e.RowIndex].Cells["patient_name"].Value.ToString();
 
-                if (value == false)
+                if (value == "")
                 {
                     if (txt_Recipients.Text == "")
                     {
@@ -543,7 +543,7 @@ namespace PappyjoeMVC.View
                 {
                     int index = txt_Recipients.Text.IndexOf(name);
                     int idx = lst_GridItems.Items.IndexOf(name);
-                    if (index != -1)
+                    if (index == -1)
                     {
                         txt_Recipients.Text = txt_Recipients.Text.Replace("," + name, "");
                         txt_Recipients.Text = txt_Recipients.Text.Replace(name + ",", "");
