@@ -221,8 +221,8 @@ namespace PappyjoeMVC.View
         {
             if (txt_StaffSearch.Text != "")
             {
-                btn_selectall.Visible = false;
-                btn_Deselectall.Visible = false;
+                btn_staffSelectall.Visible = false;
+                btnStaffDeselectAll.Visible = false;
                 if (dt.Rows.Count > 0)
                 {
                     DGV_Staff.DataSource = dt;
@@ -319,6 +319,9 @@ namespace PappyjoeMVC.View
                 LoadStaff(staff);
                 DGV_transactional.RowsDefaultCellStyle.ForeColor = Color.Black;
                 DGV_transactional.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8, FontStyle.Regular);
+                btn_Deselectall.Visible = false;
+                btn_Group_Deselect.Visible = false;
+                btnStaffDeselectAll.Visible = false;
             }
             catch (Exception ex)
             {

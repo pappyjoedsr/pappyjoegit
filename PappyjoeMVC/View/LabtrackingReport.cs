@@ -74,10 +74,35 @@ namespace PappyjoeMVC.View
         }
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
-            var form2 = new Add_New_Patients(); ;
-            form2.doctor_id = doctor_id;
-            form2.Closed += (sender1, args) => this.Close();
-            form2.ShowDialog();
+            try
+            {
+                string doctrid = this.ctrlr.doctr_privillage_for_addnewPatient(doctor_id);
+                if (doctor_id != "1")
+                {
+                    if (int.Parse(doctrid) > 0)
+                    {
+                        MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                    else
+                    {
+                        var form2 = new PappyjoeMVC.View.Add_New_Patients();
+                        form2.doctor_id = doctor_id;
+                        form2.Closed += (sender1, args) => this.Close();
+                        this.Hide();
+                        form2.ShowDialog();
+                    }
+                }
+                else
+                {
+                    var form2 = new PappyjoeMVC.View.Add_New_Patients();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -236,14 +261,16 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                string id = this.ctrlr.userprivilege(doctor_id);
                 if (doctor_id != "1")
                 {
+                    string id;
+                    id = this.ctrlr.permission_for_settings(doctor_id);
                     if (int.Parse(id) > 0)
                     {
-                        var form2 = new PappyjoeMVC.View.Practice_Details();
+                        var form2 = new Practice_Details();
                         form2.doctor_id = doctor_id;
                         form2.Closed += (sender1, args) => this.Close();
+                        this.Hide();
                         form2.ShowDialog();
                     }
                     else
@@ -253,9 +280,10 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    var form2 = new PappyjoeMVC.View.Practice_Details();
+                    var form2 = new Practice_Details();
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
                     form2.ShowDialog();
                 }
             }
@@ -266,6 +294,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Login();
             form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
         }
         private void LabtrackingReport_Load(object sender, EventArgs e)
