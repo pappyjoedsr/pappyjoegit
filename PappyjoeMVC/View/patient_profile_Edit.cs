@@ -312,55 +312,13 @@ namespace PappyjoeMVC.View
 
         private void patient_profile_Edit_Load(object sender, EventArgs e)
         {
-            DataTable dt_doc = this.cntrl.get_all_doctorname();
-            cmbDoctorName.DataSource = dt_doc;
-            cmbDoctorName.ValueMember = "id";
-            cmbDoctorName.DisplayMember = "doctor_name";
-            DateTimePickerDob.MaxDate = DateTime.Now.Date;
-            DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn()
-            {
-                Name = "Check"
-            };
-            grmedical.Columns.Add(check);
-            check.Width = 100;
-            check.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            string dt8 = this.cntrl.get_medicalId(patient_id);
-            if (dt8!="")
-            {
-                    string mht = this.cntrl.patient_medical(patient_id, dt8);
-                    if (mht != "")
-                    {
-                        grmedical.Rows.Add(dt8);
-                    }
-            }
-            DataGridViewCheckBoxColumn checkgroup = new DataGridViewCheckBoxColumn()
-            {
-                Name = "Check"
-            };
-            gridgroups.Columns.Add(checkgroup);
-            checkgroup.Width = 100;
-            checkgroup.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            string dt9 = this.cntrl.groupname();
-            if (dt9 != "")
-            {
-                string gt = this.cntrl.patient_group(patient_id, dt9);
-                if (gt != "")
-                {
-                    gridgroups.Rows.Add(dt9);
-                }
-            }
-
-
-
-
-
-
-
-
-
-
             try
             {
+                DataTable dt_doc = this.cntrl.get_all_doctorname();
+                cmbDoctorName.DataSource = dt_doc;
+                cmbDoctorName.ValueMember = "id";
+                cmbDoctorName.DisplayMember = "doctor_name";
+                DateTimePickerDob.MaxDate = DateTime.Now.Date;
                 if (doctor_id != "1")
                 {
                     string id;
@@ -383,11 +341,96 @@ namespace PappyjoeMVC.View
                         btnDelete.Enabled = true;
                     }
                 }
+                //DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn()
+                //{
+                //    Name = "Check"
+                //};
+                //grmedical.Columns.Add(check);
+                //check.Width = 100;
+                //check.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                //DataTable dt8 = this.cntrl.get_medicalId(patient_id);
+                //if (dt8.Rows.Count>0)
+                //{
+                //    string mht = this.cntrl.patient_medical(patient_id, dt8.Rows[0][0].ToString());
+                //    if (mht != "")
+                //    {
+                //        grmedical.Rows.Add(dt8);
+                //    }
+                //}
+                //DataGridViewCheckBoxColumn checkgroup = new DataGridViewCheckBoxColumn()
+                //{
+                //    Name = "Check"
+                //};
+                //gridgroups.Columns.Add(checkgroup);
+                //checkgroup.Width = 100;
+                //checkgroup.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                //string dt9 = this.cntrl.groupname();
+                //if (dt9 != "")
+                //{
+                //    string gt = this.cntrl.patient_group(patient_id, dt9);
+                //    if (gt != "")
+                //    {
+                //        gridgroups.Rows.Add(dt9);
+                //    }
+                //}
+
                 this.MinimumSize = new System.Drawing.Size(570, 650);
                 this.AutoSize = true;
                 this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-                this.cntrl.get_medicalId(patient_id);
-                this.cntrl.get_groupid(patient_id);
+
+                DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn()
+                {
+                    Name = "Check"
+                };
+                grmedical.Columns.Add(check);
+                check.Width = 100;
+                check.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DataTable dt8 = this.cntrl.get_medicalId(patient_id);
+                for (int j = 0; j < dt8.Rows.Count; j++)
+                {
+                    grmedical.Rows.Add(dt8.Rows[j][0].ToString());
+                    grmedical.Rows[j].Cells[1].Value = true;
+                    grmedical.Rows[j].Cells[0].Style.BackColor = Color.FromArgb(62, 165, 195);
+                    grmedical.Rows[j].Cells[1].Style.BackColor = Color.FromArgb(62, 165, 195);
+                }
+                DataTable dt35 = this.cntrl.Get_medicalname();// db.table("select name from tbl_medhistory order by name");
+                for (int j = 0; j < dt35.Rows.Count; j++)
+                {
+                    string mht = this.cntrl.patient_medical(patient_id, dt35.Rows[j][0].ToString());// db.table("select med_id from tbl_pt_medhistory where pt_id='" + idd + "' and med_id='" + dt35.Rows[j][0].ToString() + "'");
+                    if (mht=="0")
+                    {
+                        grmedical.Rows.Add(dt35.Rows[j][0].ToString());
+                    }
+                }
+                DataGridViewCheckBoxColumn checkgroup = new DataGridViewCheckBoxColumn()
+                {
+                    Name = "Check"
+                };
+                gridgroups.Columns.Add(checkgroup);
+                checkgroup.Width = 100;
+                checkgroup.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DataTable group = this.cntrl.get_groupid(patient_id);// db.table("select group_id from tbl_pt_group where pt_id='" + idd + "'");
+                for (int j = 0; j < group.Rows.Count; j++)
+                {
+                    gridgroups.Rows.Add(group.Rows[j][0].ToString());
+                    gridgroups.Rows[j].Cells[1].Value = true;
+                    gridgroups.Rows[j].Cells[0].Style.BackColor = Color.FromArgb(62, 165, 195);
+                    gridgroups.Rows[j].Cells[1].Style.BackColor = Color.FromArgb(62, 165, 195);
+                }
+                DataTable dt9 = this.cntrl.groupname();// db.table("Select name from tbl_group");
+                for (int j = 0; j < dt9.Rows.Count; j++)
+                {
+                    string gt = this.cntrl.patient_group(patient_id, dt9.Rows[j][0].ToString());// db.table("select group_id from tbl_pt_group where pt_id='" + idd + "' and group_id='" + dt9.Rows[j][0].ToString() + "'");
+                    if (gt == "0")
+                    {
+                        gridgroups.Rows.Add(dt9.Rows[j][0].ToString());
+                    }
+                }
+
+
+
+                //this.cntrl.get_medicalId(patient_id);
+                //this.cntrl.get_groupid(patient_id);
                 DataTable dt7 = this.cntrl.Get_Patient_Details(patient_id);
                 txtPatientName.Text = dt7.Rows[0]["pt_name"].ToString();
                 txtPatientId.Text = dt7.Rows[0]["pt_id"].ToString();

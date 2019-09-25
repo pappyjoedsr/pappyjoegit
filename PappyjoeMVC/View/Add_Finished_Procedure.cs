@@ -254,7 +254,7 @@ namespace PappyjoeMVC.View
                         RTB_Addnotes.Text = "";
                         RTB_Addnotes.Width = 450;
                         txt_Cost.Text = dt.Rows[0]["cost"].ToString();
-                        Lab_ToatlValue.Text = Convert.ToString(decimal.Round(Convert.ToDecimal(dt.Rows[0][1].ToString()), 2, MidpointRounding.AwayFromZero));
+                        Lab_ToatlValue.Text = Convert.ToString(decimal.Round(Convert.ToDecimal(dt.Rows[0]["cost"].ToString()), 2, MidpointRounding.AwayFromZero));
                     }
                     lab_teethValues.Text = "";
                     lab_teeth.Text = "Teeth";
