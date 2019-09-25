@@ -351,7 +351,7 @@ namespace PappyjoeMVC.View
         }
         private void buttonClose_Click(object sender, EventArgs e)
         {
-             this.Close();
+            this.Close();
         }
         private void Grvsummary_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
         {
