@@ -46,7 +46,7 @@ namespace PappyjoeMVC.View
         //string includelogo = "0";
         PaperSize paperSize; System.Drawing.Image logo = null;
         Connection db = new Connection();
-        Prescription_Show_controller cntrl;
+        Prescription_Show_controller cntrl=new Prescription_Show_controller();
         private void prescriptionShow_Load(object sender, EventArgs e)
         {
             try
