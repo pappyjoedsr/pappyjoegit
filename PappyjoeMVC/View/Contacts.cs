@@ -65,6 +65,8 @@ namespace PappyjoeMVC.View
                     i++;
                 }
             }
+            else
+            { dgv_Contact.Rows.Clear(); }
         }
 
         private void dgv_Contact_CellClick(object sender, DataGridViewCellEventArgs e)

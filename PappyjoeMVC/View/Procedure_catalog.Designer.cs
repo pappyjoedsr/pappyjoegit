@@ -225,6 +225,8 @@
             this.textsearch.Name = "textsearch";
             this.textsearch.Size = new System.Drawing.Size(287, 20);
             this.textsearch.TabIndex = 148;
+            this.textsearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textsearch_KeyPress);
+            this.textsearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textsearch_KeyUp);
             // 
             // buttonrefresh
             // 
@@ -238,6 +240,7 @@
             this.buttonrefresh.TabIndex = 147;
             this.buttonrefresh.Text = "Refresh";
             this.buttonrefresh.UseVisualStyleBackColor = false;
+            this.buttonrefresh.Click += new System.EventHandler(this.buttonrefresh_Click);
             // 
             // label8
             // 
@@ -261,6 +264,7 @@
             this.buttonclear.TabIndex = 144;
             this.buttonclear.Text = "Clear All";
             this.buttonclear.UseVisualStyleBackColor = false;
+            this.buttonclear.Click += new System.EventHandler(this.buttonclear_Click);
             // 
             // buttonsave
             // 
@@ -478,7 +482,7 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // Procedure_catalog
+            // Procedure_Catalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -486,7 +490,7 @@
             this.ClientSize = new System.Drawing.Size(1350, 657);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Procedure_catalog";
+            this.Name = "Procedure_Catalog";
             this.Text = "Procedure Catalog";
             this.Load += new System.EventHandler(this.Procedure_catalog_Load);
             this.panel1.ResumeLayout(false);
