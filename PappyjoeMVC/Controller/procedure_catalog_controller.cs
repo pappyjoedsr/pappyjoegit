@@ -53,5 +53,10 @@ namespace PappyjoeMVC.Controller
             string s = _model.Get_IGST_id();
             return s;
         }
+        public DataTable srchprocedure(string name)
+        {
+            DataTable dtb = _model.srchprocedure(name);
+            return dtb;
+        }
     }
 }
