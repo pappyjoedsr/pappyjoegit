@@ -324,7 +324,7 @@ namespace PappyjoeMVC.View
         }
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            ActiveForm.Close();
+            this.Close();
         }
         private void BtnExport_Click(object sender, EventArgs e)
         {

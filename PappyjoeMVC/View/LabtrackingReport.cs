@@ -255,7 +255,7 @@ namespace PappyjoeMVC.View
                     {
                         listpatientsearch.Visible = true;
                     }
-                    listpatientsearch.Location = new Point(toolStrip1.Width - 350, 32);
+                    listpatientsearch.Location = new Point(toolStripTextBox1.Width + 763, 30);
                 }
                 else
                 {
