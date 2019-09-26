@@ -915,7 +915,7 @@ namespace PappyjoeMVC.View
         private void btn_purchaReturn_Click(object sender, EventArgs e)
         {
             backColor_Change();
-            btn_purOrder.BackColor = Color.SteelBlue;
+            btn_purchaReturn.BackColor = Color.SteelBlue;
             FormHide();
             panel_main.Show();
             pur_return.Close();

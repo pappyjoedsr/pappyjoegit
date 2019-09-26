@@ -866,7 +866,6 @@ namespace PappyjoeMVC.View
                     int i = this.cntrl.Save_data(txt_ItemName.Text, txt_ItemCode.Text, Cmb_Manufacture.SelectedValue.ToString(), Cmb_Category.SelectedValue.ToString(), txt_Location.Text, txt_Packing.Text, _isbatch, txt_SalesRate.Text, txt_SalesRateMin.Text, txt_SalesRateMax.Text, txt_PurchaseRate.Text, cmb_Unit1.Text, _sUnit, UnitMF, txt_PurchRate2.Text, txt_SalesRate2.Text, txt_SalesRateMin2.Text, txt_SalesRateMax2.Text, isOneUnitOnly, txt_reorderStockQty.Text, txt_CostBase.Text, _istax, txt_minimumStockforSale.Text);
                     if (i > 0)
                     {
-
                         if (chkprescription.Checked == true)
                         {
                             string rs_item = this.cntrl.get_max_itemid();
@@ -977,11 +976,9 @@ namespace PappyjoeMVC.View
         private void cancel_Click(object sender, EventArgs e)
         {
             string formname = "ItemAdd";
-            var form2 = new Item_List(formname);
-            //ItemList_Controller controller = new ItemList_Controller(form2);
+            var form2 = new PappyjoeMVC.View.Item_List(formname);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog(); 
         }
 
         private void txt_reorderStockQty_KeyPress(object sender, KeyPressEventArgs e)
