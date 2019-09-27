@@ -16,6 +16,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Communication : Form
     {
+        bool flag = false;
         int tabstatus = 0, tabstatus1 = 0;
         public static string template = "";
         public string doctor_id = "", staff_id = "", patient_id = "", id1 = "";
@@ -191,37 +192,12 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public void srch(DataTable dt)
-        {
-            try
-            {
-                if (txt_searchPatient.Text != "")
-                {
-                    DGV_Patient.DataSource = null;
-                    btn_selectall.Visible = false;
-                    btn_Deselectall.Visible = false;
-                    if (dt.Rows.Count > 0)
-                    {
-                        DGV_Patient.DataSource = dt;
-                        btn_Back.Visible = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Entered data could not be found", "Not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txt_searchPatient.Text = "";
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         public void srchstaff(DataTable dt)
         {
             if (txt_StaffSearch.Text != "")
             {
                 btn_staffSelectall.Visible = false;
+                DGV_Patient.DataSource = null;
                 btnStaffDeselectAll.Visible = false;
                 if (dt.Rows.Count > 0)
                 {
@@ -239,9 +215,10 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                DGV_Patient.DataSource = null;
                 if (dt.Rows.Count > 0)
                 {
+                    if (flag == false)
+                        DGV_Patient.Rows.Clear();
                     int t1 = 0;
                     foreach (DataRow dr in dt.Rows)
                     {
@@ -250,16 +227,20 @@ namespace PappyjoeMVC.View
                         DGV_Patient.Rows[t1].Cells[1].Value = dr["pt_name"].ToString();
                         DGV_Patient.Rows[t1].Cells[2].Value = dr["primary_mobile_number"].ToString();
                         t1++;
-                        DGV_transactional.RowsDefaultCellStyle.ForeColor = Color.Black;
-                        DGV_transactional.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8, FontStyle.Regular);
+                        DGV_Patient.RowsDefaultCellStyle.ForeColor = Color.Black;
+                        DGV_Patient.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8, FontStyle.Regular);
+                    }
+                    DGV_Patient.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
+                    DGV_Patient.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                    DGV_Patient.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                    DGV_Patient.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    DGV_Patient.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    DGV_Patient.EnableHeadersVisualStyles = false;
+                    foreach (DataGridViewColumn cl in DGV_Patient.Columns)
+                    {
+                        cl.SortMode = DataGridViewColumnSortMode.NotSortable;
                     }
                 }
-                DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn()
-                {
-                };
-                DGV_Patient.Columns.Add(check);
-                check.Width = 25;
-                check.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             catch (Exception ex)
             {
@@ -312,7 +293,18 @@ namespace PappyjoeMVC.View
                     toolStripTextDoctor.Text = "Logged In As : " + dt1;
                 }
                 DataTable data = this.ctrlr.LoadData();
-                LoadData(data);
+                if (data.Rows.Count > 0)
+                {
+                    flag = true;
+                    LoadData(data);
+                    DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn()
+                    {
+
+                    };
+                    DGV_Patient.Columns.Add(check);
+                    check.Width = 25;
+                    check.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                }
                 DataTable grp = this.ctrlr.LoadGrp();
                 LoadGrp(grp);
                 DataTable staff = this.ctrlr.LoadStaff();
@@ -329,8 +321,28 @@ namespace PappyjoeMVC.View
         }
         private void btn_SearchPatient_Click(object sender, EventArgs e)
         {
-            DataTable sr = this.ctrlr.srch(txt_searchPatient.Text);
-            srch(sr);
+            try
+            {
+                if (txt_searchPatient.Text != "")
+                {
+                    btn_selectall.Visible = false;
+                    btn_Deselectall.Visible = false;
+                    DataTable sr = this.ctrlr.srch(txt_searchPatient.Text);
+                    if (sr.Rows.Count > 0)
+                    {
+                        flag = false;
+                        LoadData(sr);
+                        btn_Back.Visible = true;
+                        btn_Back.Location = new Point(356, 36);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Entered data could not be found", "Not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void btn_Staff_Search_Click(object sender, EventArgs e)
         {
@@ -655,12 +667,13 @@ namespace PappyjoeMVC.View
                 btn_selectall.Visible = true;
                 btn_Deselectall.Visible = false;
                 DGV_Patient.Visible = true;
-                DataTable dt = this.ctrlr.back();
+                flag = false;
+                DataTable dt = this.ctrlr.LoadData();
                 if (dt.Rows.Count > 0)
                 {
-                    DGV_Patient.DataSource = dt;
+                    LoadData(dt);
+                    btn_Back.Visible = false;
                 }
-                btn_Back.Visible = false;
             }
             catch (Exception ex)
             {

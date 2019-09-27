@@ -100,11 +100,6 @@ namespace PappyjoeMVC.Controller
             DataTable dt = mdl.srchstaff(dname);
             return dt;
         }
-        public DataTable back()
-        {
-            DataTable dt = mdl.back();
-            return dt;
-        }
         public DataTable staffback()
         {
             DataTable dt = mdl.Staffback();
