@@ -50,7 +50,7 @@ namespace PappyjoeMVC.View
         {
             Dictionary<string, int> dict = new Dictionary<string, int>();
             int rowNum = 0;
-            Dgv_Procedure.Rows.Clear();
+            //Dgv_Procedure.Rows.Clear();
             for (int j = 0; j < dt.Rows.Count; j++)
             {
                 string id = dt.Rows[j]["id"].ToString();
@@ -217,9 +217,9 @@ namespace PappyjoeMVC.View
                 {
                     DataTable dtb= this.cntrl.get_procedureName(txt_procedurename.Text);
                     GetProcedureName(dtb);
-                    Dgv_Procedure.Rows.Clear();
+                    //Dgv_Procedure.Rows.Clear();
                     DataTable dt = this.cntrl.FormLoad();
-                    FormLoad(dt); 
+                    FormLoad(dt);
                 }
             }
         }
