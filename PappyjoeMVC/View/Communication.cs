@@ -18,14 +18,14 @@ namespace PappyjoeMVC.View
     {
         int tabstatus = 0, tabstatus1 = 0;
         public static string template = "";
-        public string doctor_id = "",staff_id = "", patient_id = "", id1="";
+        public string doctor_id = "", staff_id = "", patient_id = "", id1 = "";
         Communication_controller ctrlr = new Communication_controller();
         public Communication()
         {
             InitializeComponent();
         }
         public void selecttemp(DataTable dt)
-        {                                                                                                          
+        {
             try
             {
                 if (dt.Rows.Count > 0)
@@ -59,18 +59,18 @@ namespace PappyjoeMVC.View
                     Panl_AddTemplate.Visible = true;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void selgrp(DataTable dt)
         {
-            if( dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
             {
                 string pid = dt.Rows[0][0].ToString();
                 string pname = dt.Rows[0][2].ToString();
-                string mobno="91"+dt.Rows[0][3].ToString();
+                string mobno = "91" + dt.Rows[0][3].ToString();
                 string txt = "Dear " + pname + ", " + txt_SMS.Text.ToString();
                 msg.Text = txt;
                 no.Text = mobno;
@@ -107,10 +107,10 @@ namespace PappyjoeMVC.View
                                     string number = "91" + DGV_Patient.Rows[i].Cells[2].Value.ToString();
                                     string text = "Dear " + DGV_Patient.Rows[i].Cells[1].Value.ToString() + ", " + txt_SMS.Text.ToString();
                                     msg.Text = text;
-                                    string s=this.ctrlr.SendSMS(smsName, smsPass, number, text);
+                                    string s = this.ctrlr.SendSMS(smsName, smsPass, number, text);
                                     if (s == "SMS message(s) sent")
                                     { MessageBox.Show("Messages will be sent to entered numbers", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-                                    this.ctrlr.inssms(patient_id, DateTime.Now.ToString("yyyy-MM-dd"),text);
+                                    this.ctrlr.inssms(patient_id, DateTime.Now.ToString("yyyy-MM-dd"), text);
                                 }
                             }
                             txt_Recipients.Text = "";
@@ -186,7 +186,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -261,10 +261,10 @@ namespace PappyjoeMVC.View
                 check.Width = 25;
                 check.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }                                                                              
+            }
         }
         public void LoadGrp(DataTable dt)
         {
@@ -319,6 +319,8 @@ namespace PappyjoeMVC.View
                 LoadStaff(staff);
                 DGV_transactional.RowsDefaultCellStyle.ForeColor = Color.Black;
                 DGV_transactional.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8, FontStyle.Regular);
+                btn_Deselectall.Visible = false;
+                btnStaffDeselectAll.Visible = false;
             }
             catch (Exception ex)
             {
@@ -327,12 +329,12 @@ namespace PappyjoeMVC.View
         }
         private void btn_SearchPatient_Click(object sender, EventArgs e)
         {
-            DataTable sr=this.ctrlr.srch(txt_searchPatient.Text);
+            DataTable sr = this.ctrlr.srch(txt_searchPatient.Text);
             srch(sr);
         }
         private void btn_Staff_Search_Click(object sender, EventArgs e)
         {
-            DataTable srstaff=this.ctrlr.srchstaff(txt_StaffSearch.Text);
+            DataTable srstaff = this.ctrlr.srchstaff(txt_StaffSearch.Text);
             srchstaff(srstaff);
         }
         private void btn_selectall_Click(object sender, EventArgs e)
@@ -367,7 +369,7 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-       private void btn_Deselectall_Click(object sender, EventArgs e)
+        private void btn_Deselectall_Click(object sender, EventArgs e)
         {
             try
             {
@@ -391,7 +393,8 @@ namespace PappyjoeMVC.View
                 }
             }
             catch (Exception ex)
-            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btn_Group_SelectAll_Click(object sender, EventArgs e)
@@ -521,12 +524,12 @@ namespace PappyjoeMVC.View
                     lst_GridItems.Items.Clear();
                     bool value = Convert.ToBoolean(DGV_Patient.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue);
                     string name = DGV_Patient.Rows[e.RowIndex].Cells["patient_name"].Value.ToString();
-
                     if (value == false)
                     {
+                        
                         if (txt_Recipients.Text == "")
                         {
-                            lst_GridItems.Items.Add(name); 
+                            lst_GridItems.Items.Add(name);
                             txt_Recipients.Text = txt_Recipients.Text.ToString() + name;
                         }
                         else
@@ -551,7 +554,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -560,7 +563,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                if (e.ColumnIndex == 1 || e.RowIndex > -1)
+                if (e.ColumnIndex == 2 && e.RowIndex > -1)
                 {
                     lst_GridItems.Items.Clear();
                     bool value = Convert.ToBoolean(dgv_Group.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue);
@@ -604,39 +607,43 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                lst_GridItems.Items.Clear();
-                bool value = Convert.ToBoolean(DGV_Staff.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue);
-                string name = DGV_Staff.Rows[e.RowIndex].Cells[2].Value.ToString();
-                if (value == false)
+                if (e.ColumnIndex == 4 && e.RowIndex > -1)
                 {
-                    if (txt_Recipients.Text == "")
+                    lst_GridItems.Items.Clear();
+                    bool value = Convert.ToBoolean(DGV_Staff.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue);
+                    string name = DGV_Staff.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    if (value == false)
                     {
-                        lst_GridItems.Items.Add(name);
-                        txt_Recipients.Text = txt_Recipients.Text.ToString() + name;
+                        if (txt_Recipients.Text == "")
+                        {
+                            lst_GridItems.Items.Add(name);
+                            txt_Recipients.Text = txt_Recipients.Text.ToString() + name;
+                        }
+                        else
+                        {
+                            if (!lst_GridItems.Items.Contains(name))
+                            {
+                                lst_GridItems.Items.Add(name);
+                                txt_Recipients.Text = txt_Recipients.Text.ToString() + "," + name;
+                            }
+                        }
                     }
                     else
                     {
-                        if (!lst_GridItems.Items.Contains(name))
+                        int index = txt_Recipients.Text.IndexOf(name);
+                        int idx = lst_GridItems.Items.IndexOf(name);
+                        if (index != -1)
                         {
-                            lst_GridItems.Items.Add(name);
-                            txt_Recipients.Text = txt_Recipients.Text.ToString() + "," + name;
+                            txt_Recipients.Text = txt_Recipients.Text.Replace("," + name, "");
+                            txt_Recipients.Text = txt_Recipients.Text.Replace(name + ",", "");
+                            txt_Recipients.Text = txt_Recipients.Text.Replace(name, "");
                         }
                     }
                 }
-                else
-                {
-                    int index = txt_Recipients.Text.IndexOf(name);
-                    int idx = lst_GridItems.Items.IndexOf(name);
-                    if (index != -1)
-                    {
-                        txt_Recipients.Text = txt_Recipients.Text.Replace("," + name, "");
-                        txt_Recipients.Text = txt_Recipients.Text.Replace(name + ",", "");
-                        txt_Recipients.Text = txt_Recipients.Text.Replace(name, "");
-                    }
-                }
             }
-            catch(Exception ex)
-            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btn_Back_Click(object sender, EventArgs e)
@@ -696,25 +703,26 @@ namespace PappyjoeMVC.View
                 DGV_transactional.Rows.Clear();
                 DateTime startDateTime = Convert.ToDateTime(DTP_DateFrom.Value.Date.ToString("d") + " 00:01:00 AM");
                 DateTime endDateTime = Convert.ToDateTime(DTP_DateTo.Value.Date.ToString("d") + " 23:59:00 PM");
-                DataTable st=this.ctrlr.status(DTP_DateFrom.Value.Date.ToString("yyyy-MM-dd"), DTP_DateTo.Value.Date.ToString("yyyy-MM-dd"));
+                DataTable st = this.ctrlr.status(DTP_DateFrom.Value.Date.ToString("yyyy-MM-dd"), DTP_DateTo.Value.Date.ToString("yyyy-MM-dd"));
                 status(st);
-                int failcnt=this.ctrlr.failcount(DTP_DateFrom.Value.Date.ToString("yyyy-MM-dd"), DTP_DateTo.Value.Date.ToString("yyyy-MM-dd"));
-                    if (failcnt!= 0)
-                    {
-                        txtFailedSms.Text = "";
-                        txtFailedSms.Text = failcnt.ToString();
-                        lab_Msg.Visible = false;
-                    }
-                int smscnt=this.ctrlr.smscount(DTP_DateFrom.Value.Date.ToString("yyyy-MM-dd"), DTP_DateTo.Value.Date.ToString("yyyy-MM-dd"));
-                    if (smscnt!= 0)
-                    {
-                        txt_Sendsms.Text = "";
-                        txt_Sendsms.Text = smscnt.ToString();
-                        lab_Msg.Visible = false;
-                    }
+                int failcnt = this.ctrlr.failcount(DTP_DateFrom.Value.Date.ToString("yyyy-MM-dd"), DTP_DateTo.Value.Date.ToString("yyyy-MM-dd"));
+                if (failcnt != 0)
+                {
+                    txtFailedSms.Text = "";
+                    txtFailedSms.Text = failcnt.ToString();
+                    lab_Msg.Visible = false;
+                }
+                int smscnt = this.ctrlr.smscount(DTP_DateFrom.Value.Date.ToString("yyyy-MM-dd"), DTP_DateTo.Value.Date.ToString("yyyy-MM-dd"));
+                if (smscnt != 0)
+                {
+                    txt_Sendsms.Text = "";
+                    txt_Sendsms.Text = smscnt.ToString();
+                    lab_Msg.Visible = false;
+                }
             }
-            catch(Exception ex)
-            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void status(DataTable dt)
@@ -767,7 +775,7 @@ namespace PappyjoeMVC.View
             panl_templates.Visible = true;
             Panl_AddTemplate.Visible = false;
             DGV_SMSTemplates.Visible = true;
-            DataTable tmp=this.ctrlr.selecttemp();
+            DataTable tmp = this.ctrlr.selecttemp();
             selecttemp(tmp);
         }
         private void btn_TemplateCancel_Click(object sender, EventArgs e)
@@ -799,7 +807,7 @@ namespace PappyjoeMVC.View
                     if (i > 0)
                     {
                         txt_AddTemplates.Text = "";
-                        DataTable dtb=this.ctrlr.selecttemp();
+                        DataTable dtb = this.ctrlr.selecttemp();
                         selecttemp(dtb);
                     }
                     else
@@ -809,7 +817,8 @@ namespace PappyjoeMVC.View
                 }
             }
             catch (Exception ex)
-            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void DGV_SMSTemplates_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -846,7 +855,7 @@ namespace PappyjoeMVC.View
                     Lab_Tabpg2MSG.Visible = true;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -881,7 +890,8 @@ namespace PappyjoeMVC.View
                 }
             }
             catch (Exception ex)
-            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btn_SendSMS_Click(object sender, EventArgs e)
@@ -900,12 +910,12 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        DataTable snd=this.ctrlr.selsms();
+                        DataTable snd = this.ctrlr.selsms();
                         selsms(snd);
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -930,10 +940,10 @@ namespace PappyjoeMVC.View
                 dgvtempNew.Visible = false;
                 Btn_birthSMS.Visible = false;
                 Lab_Tabpg2MSG.Visible = false;
-                DataTable follow=this.ctrlr.upfollowup(DTP_Tab2From.Value.Date.ToString("yyyy-MM-dd"), DTP_Tab2TO.Value.Date.ToString("yyyy-MM-dd"));
+                DataTable follow = this.ctrlr.upfollowup(DTP_Tab2From.Value.Date.ToString("yyyy-MM-dd"), DTP_Tab2TO.Value.Date.ToString("yyyy-MM-dd"));
                 upfollowup(follow);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -957,9 +967,9 @@ namespace PappyjoeMVC.View
                 dgvtempNew.Rows.Clear();
                 Lab_Tabpg2MSG.Visible = false;
                 DGV_upcoming_birthday.Rows.Clear();
-                DataTable brth=this.ctrlr.upbirthday(DTP_Tab2From.Value.Month.ToString(), DTP_Tab2From.Value.Day.ToString(), DTP_Tab2TO.Value.Month.ToString(), DTP_Tab2TO.Value.Day.ToString());
+                DataTable brth = this.ctrlr.upbirthday(DTP_Tab2From.Value.Month.ToString(), DTP_Tab2From.Value.Day.ToString(), DTP_Tab2TO.Value.Month.ToString(), DTP_Tab2TO.Value.Day.ToString());
                 upbirthday(brth);
-                DataTable brthtmp=this.ctrlr.birthdaytemp();
+                DataTable brthtmp = this.ctrlr.birthdaytemp();
                 birthdaytemp(brthtmp);
             }
             catch (Exception ex)
@@ -994,7 +1004,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -1022,7 +1032,7 @@ namespace PappyjoeMVC.View
         }
         private void Btn_birthSMS_Click(object sender, EventArgs e)
         {
-            DataTable sm=this.ctrlr.selsms();
+            DataTable sm = this.ctrlr.selsms();
             selsms(sm);
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -1087,7 +1097,7 @@ namespace PappyjoeMVC.View
                     ForeBrush.Dispose();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -1126,7 +1136,7 @@ namespace PappyjoeMVC.View
                     ForeBrush.Dispose();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -1189,7 +1199,7 @@ namespace PappyjoeMVC.View
         {
             if (doctor_id != "1")
             {
-                string id = this.ctrlr.frmInventory(doctor_id); 
+                string id = this.ctrlr.frmInventory(doctor_id);
                 if (int.Parse(id) > 0)
                 {
                     MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -1296,27 +1306,27 @@ namespace PappyjoeMVC.View
         }
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
-            DataTable dtb=this.ctrlr.Patient_search(toolStripTextBox1.Text);
+            DataTable dtb = this.ctrlr.Patient_search(toolStripTextBox1.Text);
             if (toolStripTextBox1.Text != "")
             {
-            listpatientsearch.DataSource = dtb;
-            listpatientsearch.DisplayMember = "patient";
-            listpatientsearch.ValueMember = "id";
-            if (listpatientsearch.Items.Count == 0)
-            {
-             listpatientsearch.Visible = false;
+                listpatientsearch.DataSource = dtb;
+                listpatientsearch.DisplayMember = "patient";
+                listpatientsearch.ValueMember = "id";
+                if (listpatientsearch.Items.Count == 0)
+                {
+                    listpatientsearch.Visible = false;
+                }
+                else
+                {
+                    listpatientsearch.Visible = true;
+                }
+                listpatientsearch.Location = new Point(toolStrip1.Width - 350, -2);
             }
             else
             {
-            listpatientsearch.Visible = true;
-            }
-            listpatientsearch.Location = new Point(toolStrip1.Width - 350, -2);
-            }
-            else
-            {
-            listpatientsearch.Visible = false;
+                listpatientsearch.Visible = false;
             }
         }
     }
 }
-    
+

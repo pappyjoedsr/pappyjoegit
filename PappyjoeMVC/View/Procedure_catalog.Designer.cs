@@ -44,6 +44,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.textsearch = new System.Windows.Forms.TextBox();
             this.buttonrefresh = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -132,7 +133,8 @@
             this.Column3,
             this.Column2,
             this.Column5,
-            this.Column6});
+            this.Column6,
+            this.delete});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -142,7 +144,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Dgv_Procedure.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Dgv_Procedure.Location = new System.Drawing.Point(25, 360);
+            this.Dgv_Procedure.Location = new System.Drawing.Point(27, 360);
             this.Dgv_Procedure.MultiSelect = false;
             this.Dgv_Procedure.Name = "Dgv_Procedure";
             this.Dgv_Procedure.ReadOnly = true;
@@ -165,6 +167,7 @@
             this.Dgv_Procedure.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_Procedure.Size = new System.Drawing.Size(772, 279);
             this.Dgv_Procedure.TabIndex = 149;
+            this.Dgv_Procedure.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Procedure_CellClick);
             // 
             // Column1
             // 
@@ -216,6 +219,16 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             this.Column6.Width = 150;
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "";
+            this.delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.delete.Width = 25;
             // 
             // textsearch
             // 
@@ -505,12 +518,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView Dgv_Procedure;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.TextBox textsearch;
         private System.Windows.Forms.Button buttonrefresh;
         private System.Windows.Forms.Label label8;
@@ -535,5 +542,12 @@
         private System.Windows.Forms.Label lab_Pro_nameError;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewImageColumn delete;
     }
 }

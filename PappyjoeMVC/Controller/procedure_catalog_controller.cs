@@ -58,5 +58,16 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.srchprocedure(name);
             return dtb;
         }
+        public int delproceduretax(int procid)
+        {
+           int i=_model.delproceduretax(procid);
+           return i;
+
+        }
+        public int delprocdresetngs(int procid)
+        {
+            int ii=_model.delprocdresetngs(procid);
+            return ii;
+        }
     }
 }
