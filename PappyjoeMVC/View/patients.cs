@@ -33,8 +33,15 @@ namespace PappyjoeMVC.View
                 panel_Search.Visible = false;
                 lab_Change_AppoinmtName.Visible = true;
                 panel_Appmnt.Visible = true;
-                dateTimePickefrom.MaxDate = DateTime.Now;
-                dateTimePicketo.MinDate = DateTime.Now;
+               
+                var dateFrom = dateTimePickefrom.Value.ToShortDateString();
+                var dateTo = dateTimePicketo.Value.ToShortDateString();
+                if (Convert.ToDateTime(dateFrom).Date > Convert.ToDateTime(dateTo).Date)
+                {
+                    MessageBox.Show("From date should be less than to date", "From Date is grater ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dateTimePicketo.Value = DateTime.Today;
+                    return;
+                }
                 lab_7.Visible = true;
                 panl_FilterPatient.Visible = false;
                 lab_Change_AppoinmtName.Text = "APPOINTMENTS";
@@ -2430,6 +2437,8 @@ namespace PappyjoeMVC.View
                 DataTable dt_grp = this.cntrl.group();
                 Load_Group(dt_grp);
             }
+            dateTimePickefrom.Value = DateTime.Now;
+            dateTimePicketo.Value = DateTime.Now;
         }
 
         public void Load_Group(DataTable dt_gd)

@@ -16,36 +16,6 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        //public string ProcedureName
-        //{
-        //    get { return this.txt_procedurename.Text; }
-        //    set { txt_procedurename.Text = value; }
-        //}
-        //public string ProcedCost
-        //{
-        //    get { return this.txt_procedurecost.Text; }
-        //    set { txt_procedurecost.Text = value; }
-        //}
-        //public string Notes
-        //{
-        //    get { return this.richnotes.Text; }
-        //    set { richnotes.Text = value; }
-        //}
-        //public string ComboCategory
-        //{
-        //    get { return this.comboaddunder.Text; }
-        //    set { comboaddunder.Text = value; }
-        //}
-        //public string TextCategory
-        //{
-        //    get { return this.txt_AddCategory.Text; }
-        //    set { txt_AddCategory.Text = value; }
-        //}
-        //public void SetController(procedure_catalog_controller controller)
-        //{
-        //    cntrl = controller;
-        //}
-
         private void Procedure_catalog_Load(object sender, EventArgs e)
         {
             Dgv_Procedure.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -80,7 +50,7 @@ namespace PappyjoeMVC.View
         {
             Dictionary<string, int> dict = new Dictionary<string, int>();
             int rowNum = 0;
-            Dgv_Procedure.Rows.Clear();
+            //Dgv_Procedure.Rows.Clear();
             for (int j = 0; j < dt.Rows.Count; j++)
             {
                 string id = dt.Rows[j]["id"].ToString();
@@ -245,8 +215,9 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                  DataTable dtb= this.cntrl.get_procedureName(txt_procedurename.Text);
+                    DataTable dtb= this.cntrl.get_procedureName(txt_procedurename.Text);
                     GetProcedureName(dtb);
+                    //Dgv_Procedure.Rows.Clear();
                     DataTable dt = this.cntrl.FormLoad();
                     FormLoad(dt);
                 }
@@ -292,5 +263,188 @@ namespace PappyjoeMVC.View
             }
 
         }
+        private void buttonclear_Click(object sender, EventArgs e)
+        {
+            txt_procedurename.Text = "";
+            txt_procedurecost.Text = "";
+            richnotes.Text = "";
+            lab_Pro_nameError.Hide();
+            lab_ProCost.Hide();
+            errorProvider1.Dispose();
+            chk_gst.Checked = false;
+            chk_igst.Checked = false;
+            checkaddunder.Checked = false;
+            buttonsave.Text = "Save New Procedure";
+        }
+
+        private void buttonrefresh_Click(object sender, EventArgs e)
+        {
+            if (refresh == 0)
+            {
+                Dgv_Procedure.Rows.Clear();
+                DataTable dt = this.cntrl.FormLoad();
+                Dictionary<string, int> dict = new Dictionary<string, int>();
+                int rowNum = 0;
+                for (int j = 0; j < dt.Rows.Count; j++)
+                {
+                    string id = dt.Rows[j]["id"].ToString();
+                    string taxname;
+                    if (dt.Rows[j]["tax_name"].ToString() == "NA")
+                    {
+                        taxname = null;
+                    }
+                    else
+                    {
+                        taxname = dt.Rows[j]["tax_name"].ToString();
+                    }
+                    string procedurename = dt.Rows[j]["name"].ToString();
+                    string cost = dt.Rows[j]["cost"].ToString();
+                    string category = dt.Rows[j]["category"].ToString();
+                    string notes = dt.Rows[j]["notes"].ToString();
+                    string abc;
+                    if (taxname == null)
+                    {
+                        abc = id + "" + taxname;
+                    }
+                    else
+                    {
+                        abc = id + "," + taxname;
+                    }
+                    //string abc = id + "," + taxname;
+                    string abc1 = id + "," + procedurename;
+                    string abc2 = id + "," + cost;
+                    string abc3 = id + "," + category;
+                    string abc4 = id + "," + notes;
+
+                    string[] items = abc.Split(',');
+                    string[] items1 = abc1.Split(',');
+                    string[] items2 = abc2.Split(',');
+                    string[] items3 = abc3.Split(',');
+                    string[] items4 = abc4.Split(',');
+
+                    if (dict.ContainsKey(items[0]))
+                    {
+                        if (Dgv_Procedure.Rows[dict[items[0]]].Cells[3].Value != null)
+                        {
+                            Dgv_Procedure.Rows[dict[items[0]]].Cells[3].Value += " , " + items[1];
+                        }
+                    }
+                    else
+                    {
+                        dict.Add(items[0], rowNum);
+                        Dgv_Procedure.Rows.Add(items[0], items1[1], items2[1], items[1], items4[1], items3[1]);
+                        rowNum++;
+                    }
+                    Dgv_Procedure.Rows[dict[items[0]]].Cells[2].Value += "";
+                    Dgv_Procedure.Rows[dict[items[0]]].Cells[3].Value += "";
+                    Dgv_Procedure.Rows[dict[items[0]]].Cells[4].Value += "";
+                    Dgv_Procedure.Rows[dict[items[0]]].Cells[5].Value += "";
+                }
+                refresh = 1;
+            }
+            else
+            {
+                buttonsave.Text = "Save New Procedure";
+                txt_procedurename.Clear();
+                txt_procedurecost.Clear();
+                comboaddunder.Text = null;
+                richnotes.Clear();
+                chk_igst.Checked = false;
+                chk_gst.Checked = false;
+            }
+        }
+        private void textsearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = e.KeyChar != (char)Keys.Back && !char.IsSeparator(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsDigit(e.KeyChar);
+        }
+        private void textsearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            Dgv_Procedure.Rows.Clear();
+            DataTable dt = this.cntrl.srchprocedure(textsearch.Text);
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            int rowNum = 0;
+            for (int j = 0; j < dt.Rows.Count; j++)
+            {
+                string id = dt.Rows[j]["id"].ToString();
+                string taxname;
+                if (dt.Rows[j]["tax_name"].ToString() == null)
+                {
+                    taxname = null;
+                }
+                taxname = dt.Rows[j]["tax_name"].ToString();
+                string procedurename = dt.Rows[j]["name"].ToString();
+                string cost = dt.Rows[j]["cost"].ToString();
+                string category = dt.Rows[j]["category"].ToString();
+                string notes = dt.Rows[j]["notes"].ToString();
+                string abc;
+                if (taxname == null)
+                {
+                    abc = id + "" + taxname;
+                }
+                else
+                {
+                    abc = id + "," + taxname;
+                }
+                string abc1 = id + "," + procedurename;
+                string abc2 = id + "," + cost;
+                string abc3 = id + "," + category;
+                string abc4 = id + "," + notes;
+
+                string[] items = abc.Split(',');
+                string[] items1 = abc1.Split(',');
+                string[] items2 = abc2.Split(',');
+                string[] items3 = abc3.Split(',');
+                string[] items4 = abc4.Split(',');
+
+                if (dict.ContainsKey(items[0]))
+                {
+                    if (Dgv_Procedure.Rows[dict[items[0]]].Cells[3].Value != null)
+                    {
+                        Dgv_Procedure.Rows[dict[items[0]]].Cells[3].Value += " , " + items[1];
+                    }
+                }
+                else
+                {
+                    dict.Add(items[0], rowNum);
+                    Dgv_Procedure.Rows.Add(items[0], items1[1], items2[1], items[1], items4[1], items3[1]);
+                    rowNum++;
+                }
+                Dgv_Procedure.Rows[dict[items[0]]].Cells[2].Value += "";
+                Dgv_Procedure.Rows[dict[items[0]]].Cells[3].Value += "";
+                Dgv_Procedure.Rows[dict[items[0]]].Cells[4].Value += "";
+                Dgv_Procedure.Rows[dict[items[0]]].Cells[5].Value += "";
+            }
+        }
+        private void Dgv_Procedure_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    int procedureid = Convert.ToInt32(Dgv_Procedure.CurrentRow.Cells[0].Value.ToString());
+                    if (Dgv_Procedure.CurrentCell.OwningColumn.Name == "delete")
+                    {
+                        DialogResult res = MessageBox.Show("Are you sure you want to delete..?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (res == DialogResult.Yes)
+                        {
+                            int i = this.cntrl.delproceduretax(procedureid);
+                            int ii= this.cntrl.delprocdresetngs(procedureid);
+                            if (i > 0 &&ii>0)
+                            {
+                                Dgv_Procedure.Rows.RemoveAt(Dgv_Procedure.CurrentRow.Index);
+                                DataTable dt = this.cntrl.FormLoad();
+                                Dgv_Procedure.DataSource = dt;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+                 
     }
 }

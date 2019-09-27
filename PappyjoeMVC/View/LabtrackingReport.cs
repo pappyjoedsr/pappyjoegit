@@ -42,11 +42,30 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            var form2 = new StockReport();
-            form2.doctor_id = doctor_id;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.ShowDialog();
+            if (doctor_id != "1")
+            {
+                string id = this.ctrlr.frmInventory(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var form2 = new PappyjoeMVC.View.StockReport();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.ShowDialog();
+                }
+            }
+            else
+            {
+                var form2 = new PappyjoeMVC.View.StockReport();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
         }
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
@@ -58,10 +77,8 @@ namespace PappyjoeMVC.View
         }
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
-            var form2 = new Expense(); ;
+            var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
             form2.ShowDialog();
         }
         private void toolStripButton7_Click(object sender, EventArgs e)
@@ -238,7 +255,7 @@ namespace PappyjoeMVC.View
                     {
                         listpatientsearch.Visible = true;
                     }
-                    listpatientsearch.Location = new Point(toolStrip1.Width - 350, 32);
+                    listpatientsearch.Location = new Point(toolStripTextBox1.Width + 763, 30);
                 }
                 else
                 {

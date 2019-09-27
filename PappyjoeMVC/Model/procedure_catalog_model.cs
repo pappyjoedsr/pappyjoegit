@@ -4,36 +4,6 @@ namespace PappyjoeMVC.Model
     public class Procedure_Catalog_model
     {
         Connection db = new Connection();
-        //private string _procName = "";
-        //public string ProcedureName
-        //{
-        //    get { return _procName; }
-        //    set { _procName = value; }
-        //}
-        //private string _procost = "";
-        //public string ProcedCost
-        //{
-        //    get { return _procost; }
-        //    set { _procost = value; }
-        //}
-        //private string _notes = "";
-        //public string Notes
-        //{
-        //    get { return _notes; }
-        //    set { _notes = value; }
-        //}
-        //private string _comboCategory= "";
-        //public string ComboCategory
-        //{
-        //    get { return _comboCategory; }
-        //    set { _comboCategory = value; }
-        //}
-        //private string _textCategory = "";
-        //public string TextCategory
-        //{
-        //    get { return _textCategory; }
-        //    set { _textCategory = value; }
-        //}
         public DataTable FormLoad()
         {
             DataTable dt = db.table(" select A.id,A.name,A.cost,A.category,A.notes,T.tax_name from tbl_addproceduresettings A left join tbl_proceduretax  P ON P.procedure_id = A.id left join tbl_tax T on T.id= P.tax_id ORDER BY A.id Desc");
@@ -76,6 +46,21 @@ namespace PappyjoeMVC.Model
         {
             string s = db.scalar("select id from tbl_tax where tax_name= 'IGST'");
             return s;
+        }
+        public DataTable srchprocedure(string name)
+        {
+            DataTable dtb = db.table(" select A.id,A.name,A.cost,A.category,A.notes,T.tax_name from tbl_addproceduresettings A left join tbl_proceduretax  P ON P.procedure_id = A.id left join tbl_tax T on T.id= P.tax_id where name like '%" + name + "%'  ORDER BY A.id Desc");
+            return dtb;
+        }
+        public int delproceduretax(int procid)
+        {
+            int i = db.execute("delete from tbl_proceduretax where procedure_id='" + procid + "'");
+            return i;
+        }
+        public int delprocdresetngs(int procid)
+        {
+            int ii = db.execute("delete from tbl_addproceduresettings where id='" + procid + "'");
+            return ii;
         }
     }
 }

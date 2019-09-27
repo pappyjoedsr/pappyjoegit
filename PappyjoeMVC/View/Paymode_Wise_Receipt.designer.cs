@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Paymode_Wise_Receipt));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lab_Amount = new System.Windows.Forms.Label();
             this.Lab_totalExpense = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -145,9 +145,9 @@
             this.panel2.Controls.Add(this.Lab_Doctor);
             this.panel2.Controls.Add(this.Lab_Total);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(1, 103);
+            this.panel2.Location = new System.Drawing.Point(0, 95);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1369, 48);
+            this.panel2.Size = new System.Drawing.Size(1369, 47);
             this.panel2.TabIndex = 105;
             // 
             // Cmb_Modeofpayment
@@ -273,7 +273,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(5, 5);
+            this.label6.Location = new System.Drawing.Point(3, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(318, 40);
             this.label6.TabIndex = 0;
@@ -363,7 +363,7 @@
             this.panel3.Controls.Add(this.Lab_Due);
             this.panel3.Controls.Add(this.Lab_Msg);
             this.panel3.Controls.Add(this.Dgv_Receipt);
-            this.panel3.Location = new System.Drawing.Point(1, 150);
+            this.panel3.Location = new System.Drawing.Point(0, 142);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1369, 601);
             this.panel3.TabIndex = 106;
@@ -441,17 +441,17 @@
             this.ColTAmount,
             this.ColamountPaid,
             this.colTAmountDue});
-            this.Dgv_Receipt.Location = new System.Drawing.Point(0, 0);
+            this.Dgv_Receipt.Location = new System.Drawing.Point(1, 0);
             this.Dgv_Receipt.Name = "Dgv_Receipt";
             this.Dgv_Receipt.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Receipt.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Receipt.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_Receipt.RowHeadersVisible = false;
             this.Dgv_Receipt.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Dgv_Receipt.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -590,9 +590,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.DTP_From);
-            this.panel1.Location = new System.Drawing.Point(1, -3);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1369, 108);
+            this.panel1.Size = new System.Drawing.Size(1369, 121);
             this.panel1.TabIndex = 104;
             // 
             // Paymode_Wise_Receipt

@@ -159,7 +159,6 @@ namespace PappyjoeMVC.View
         private void btn_AddNewItem_Click(object sender, EventArgs e)
         {
             var form2 = new Add_Drug();
-            //AddItem_controller controller = new AddItem_controller(form2);
             form2.ShowDialog();
         }
 

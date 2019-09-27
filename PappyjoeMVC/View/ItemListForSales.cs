@@ -10,7 +10,7 @@ namespace PappyjoeMVC.View
         public static string Form_Name = "";
         public static string Item_Code = "";
         string item_code = ""; string item_Name = ""; string Stock = ""; string ItemID = "";
-        ItemListForSales_controller cntrl;
+        ItemListForSales_controller cntrl=new ItemListForSales_controller();
         public ItemListForSales()
         {
             InitializeComponent();
@@ -28,11 +28,7 @@ namespace PappyjoeMVC.View
             Form_Name = formName;
             Item_Code = text;
         }
-        public void setcontroller(ItemListForSales_controller controller)
-        {
-            cntrl = controller;
-        }
-
+       
         private void ItemListForSales_Load(object sender, EventArgs e)
         {
             try

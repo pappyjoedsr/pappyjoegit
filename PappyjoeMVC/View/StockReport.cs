@@ -718,7 +718,7 @@ namespace PappyjoeMVC.View
                 {
                     listpatientsearch.Visible = true;
                 }
-                listpatientsearch.Location = new Point(toolStripTextBox1.Width + 766, 39);
+                listpatientsearch.Location = new Point(toolStripTextBox1.Width + 763, 30);
             }
             else
             {
@@ -915,7 +915,7 @@ namespace PappyjoeMVC.View
         private void btn_purchaReturn_Click(object sender, EventArgs e)
         {
             backColor_Change();
-            btn_purOrder.BackColor = Color.SteelBlue;
+            btn_purchaReturn.BackColor = Color.SteelBlue;
             FormHide();
             panel_main.Show();
             pur_return.Close();

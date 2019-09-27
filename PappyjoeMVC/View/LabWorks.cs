@@ -1,14 +1,9 @@
 ﻿using PappyjoeMVC.Controller;
 using PappyjoeMVC.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
@@ -20,7 +15,7 @@ namespace PappyjoeMVC.View
             InitializeComponent();
         }
         StreamWriter sWrite;
-        public int k, Dexist =0;
+        public int k, Dexist = 0;
         Connection db = new Connection();
         LabWorks_controller ctrlr = new LabWorks_controller();
         public static string strphone = "";
@@ -226,11 +221,11 @@ namespace PappyjoeMVC.View
         }
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-                DataTable dtp = this.ctrlr.practicedetails();
-                practicedetails(dtp);
-                workname = label1.Text;
-                DataTable dt=this.ctrlr.printdetails(patient_id, workname, workiddental);
-                printdetails(dt);
+            DataTable dtp = this.ctrlr.practicedetails();
+            practicedetails(dtp);
+            workname = label1.Text;
+            DataTable dt = this.ctrlr.printdetails(patient_id, workname, workiddental);
+            printdetails(dt);
         }
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
@@ -242,7 +237,7 @@ namespace PappyjoeMVC.View
         }
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            DataTable sm=this.ctrlr.smsinfo();
+            DataTable sm = this.ctrlr.smsinfo();
             smsinfo(sm);
         }
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
@@ -313,7 +308,7 @@ namespace PappyjoeMVC.View
 
                                 text = text + " (" + (j + 1) + ")" + tbshade.Rows[j][1].ToString() + " :" + tbshade.Rows[j][2].ToString() + " " + tbshade.Rows[j][5].ToString();
                             }
-                            DataTable dtp=this.ctrlr.practicedetails();
+                            DataTable dtp = this.ctrlr.practicedetails();
                             practicedetails(dtp);
                             string res = this.ctrlr.SendSMS(smsName, smsPass, mob_number, "Dear " + strPatientName + ",  Your Lab Test Result : " + text + "--- Regards " + toolStripButton1.Text + "," + strphone);
                             if (res == "SMS message(s) sent")
@@ -336,7 +331,7 @@ namespace PappyjoeMVC.View
                 }
                 if (smsName != "" && smsPass != "")
                 {
-                    DataTable dt=this.ctrlr.tbmain(patient_id, workiddental);
+                    DataTable dt = this.ctrlr.tbmain(patient_id, workiddental);
                     tbmain(dt);
                 }
             }
@@ -471,7 +466,7 @@ namespace PappyjoeMVC.View
                 {
                     k = e.RowIndex;
                     label1.Text = dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[4].Value.ToString();
-                    string type=this.ctrlr.seltype(patient_id, dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    string type = this.ctrlr.seltype(patient_id, dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[2].Value.ToString());
                     seltype(type);
                 }
             }
@@ -732,7 +727,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                if (docnam!="")
+                if (docnam != "")
                 {
                     toolStripTextDoctor.Text = "Logged In As : " + docnam;
                 }

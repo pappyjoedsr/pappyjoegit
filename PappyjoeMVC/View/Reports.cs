@@ -1749,106 +1749,71 @@ namespace PappyjoeMVC.View
         private void lbldaily_Click(object sender, EventArgs e)
         {
             var form2 = new Daily_Invoice_Report();
-            form2.patient_id = patient_id;
-            form2.FormClosed += (sender1, args) => this.Close();
-            //this.Hide();
             form2.ShowDialog();
         }
         private void lblMonthlySummary_Click(object sender, EventArgs e)
         {
             var form2 = new Monthly_Invoice_Report();
-            form2.doctor_id= doctor_id;
-            form2.FormClosed += (sender1, args) => this.Close();
-            //this.Hide();
             form2.ShowDialog();
         }
         private void label14_Click(object sender, EventArgs e)
         {
             var form2 = new Doctor_Wise_Invoice();
-            form2.doctor_id = doctor_id;
-            form2.FormClosed += (sender1, args) => this.Close();
-            //this.Hide();
             form2.ShowDialog();
         }
         private void label2_Click(object sender, EventArgs e)
         {
             var form2 = new Day_Wise_Receipt();
-            form2.doctor_id = doctor_id;
-            form2.FormClosed += (sender1, args) => this.Close();
-            //this.Hide();
             form2.ShowDialog();
         }
         private void Lab_Receipt_Month_Click(object sender, EventArgs e)
         {
             var form2 = new Month_Wise_Receipt();
-            form2.doctor_id = doctor_id;
-            form2.FormClosed += (sender1, args) => this.Close();
-            //this.Hide();
             form2.ShowDialog();
         }
         private void Lab_Receipt_PerDoctor_Click(object sender, EventArgs e)
         {
             var form2 = new Doctor_Wise_Receipt();
-            form2.doctor_id = doctor_id;
-            form2.FormClosed += (sender1, args) => this.Close();
-            //this.Hide();
             form2.ShowDialog();
         }
         private void lab_receipt_ModeOfPayment_Click(object sender, EventArgs e)
         {
             var form2 = new Paymode_Wise_Receipt();
-            form2.doctor_id = doctor_id;
-            form2.FormClosed += (sender1, args) => this.Close();
-            //this.Hide();
             form2.ShowDialog();
         }
         private void label6_Click(object sender, EventArgs e)
         {
             var form2 = new Purchase_Report();
-            form2.FormClosed += (sender1, args) => this.Close();
-            //this.Hide();
             form2.ShowDialog();
         }
         private void lab_Purch_Order_Click(object sender, EventArgs e)
         {
             var form2 = new Purchase_Order_Report();
-            form2.FormClosed += (sender1, args) => this.Close();
-            //this.Hide();
             form2.ShowDialog();         
         }
         private void lab_purch_return_Click(object sender, EventArgs e)
         {
             var form2 = new Purchase_Return_Report();
-            form2.FormClosed += (sender1, args) => this.Close();
-            //this.Hide();
             form2.ShowDialog();
         }
         private void Lab_Salesreport_Click(object sender, EventArgs e)
         {
             var form2 = new Sales_Report();
-            form2.FormClosed += (sender1, args) => this.Close();
-            //this.Hide();
             form2.ShowDialog();
         }
         private void Lab_SalesOrde_Click(object sender, EventArgs e)
         {
             var form2 = new Sales_Order_Report();
-            form2.FormClosed += (sender1, args) => this.Close();
-            //this.Hide();
             form2.ShowDialog();
         }
         private void sales_return_Click(object sender, EventArgs e)
         {
             var form2 = new Sales_Return_Report();
-            form2.FormClosed += (sender1, args) => this.Close();
-            //this.Hide();
             form2.ShowDialog();
         }
         private void label7_Click(object sender, EventArgs e)
         {
             var form2 = new Expiry_Report();
-            form2.FormClosed += (sender1, args) => this.Close();
-            //this.Hide();
             form2.ShowDialog();
         }
         private void toolStripButton13_Click(object sender, EventArgs e)
