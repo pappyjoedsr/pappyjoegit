@@ -131,8 +131,8 @@
             this.toolStripButton11,
             this.toolStripButton8,
             this.toolStripSeparator2,
-            this.toolStripDropDownButton1,
             this.toolStripButton9,
+            this.toolStripDropDownButton1,
             this.toolStripTextBox1,
             this.toolStripTextDoctor});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
