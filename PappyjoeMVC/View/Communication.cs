@@ -251,27 +251,53 @@ namespace PappyjoeMVC.View
         {
             if (dt.Rows.Count > 0)
             {
-                dgv_Group.DataSource = dt;
+                int row = 0;
+                DataGridViewLinkColumn Deletelink = new DataGridViewLinkColumn();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    dgv_Group.Rows.Add();
+                    dgv_Group.Rows[row].Cells[0].Value = dr[0].ToString();
+                    row++;
+                }
+                dgv_Group.Columns.Add(Deletelink);
+                DataGridViewCheckBoxColumn check1 = new DataGridViewCheckBoxColumn()
+                {
+
+                };
+                dgv_Group.Columns.Add(check1);
+                check1.Width = 25;
+                check1.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgv_Group.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
+                dgv_Group.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgv_Group.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                dgv_Group.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dgv_Group.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dgv_Group.EnableHeadersVisualStyles = false;
             }
-            DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn()
-            {
-            };
-            dgv_Group.Columns.Add(check);
-            check.Width = 25;
-            check.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
         public void LoadStaff(DataTable dt)
         {
             if (dt.Rows.Count > 0)
             {
-                DGV_Staff.DataSource = dt;
+                int t1 = 0;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    DGV_Staff.Rows.Add();
+                    DGV_Staff.Rows[t1].Cells[0].Value = dr["id"].ToString();
+                    DGV_Staff.Rows[t1].Cells[1].Value = dr["doctor_name"].ToString();
+                    DGV_Staff.Rows[t1].Cells[2].Value = dr["mobile_number"].ToString();
+                    t1++;
+                    DGV_Staff.RowsDefaultCellStyle.ForeColor = Color.Black;
+                    DGV_Staff.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8, FontStyle.Regular);
+                }
+                DGV_Staff.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
+                DGV_Staff.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                DGV_Staff.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                DGV_Staff.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                DGV_Staff.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                DGV_Staff.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                DGV_Staff.EnableHeadersVisualStyles = false;
             }
-            DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn()
-            {
-            };
-            DGV_Staff.Columns.Add(check);
-            check.Width = 25;
-            check.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
         private void Communication_Load(object sender, EventArgs e)
         {
@@ -308,7 +334,25 @@ namespace PappyjoeMVC.View
                 DataTable grp = this.ctrlr.LoadGrp();
                 LoadGrp(grp);
                 DataTable staff = this.ctrlr.LoadStaff();
-                LoadStaff(staff);
+                DGV_Staff.Visible = true;
+                if (staff.Rows.Count > 0)
+                {
+                    LoadStaff(staff);
+                    if (DGV_Staff.Rows.Count > 0)
+                    {
+                        DataGridViewCheckBoxColumn check2 = new DataGridViewCheckBoxColumn()
+                        {
+                           
+                        };
+                        DGV_Staff.Columns.Add(check2);
+                        check2.Width = 50;
+                        check2.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    }
+                    foreach (DataGridViewColumn cl in DGV_Staff.Columns)
+                    {
+                        cl.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    }
+                }
                 DGV_transactional.RowsDefaultCellStyle.ForeColor = Color.Black;
                 DGV_transactional.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8, FontStyle.Regular);
                 btn_Deselectall.Visible = false;
@@ -346,8 +390,28 @@ namespace PappyjoeMVC.View
         }
         private void btn_Staff_Search_Click(object sender, EventArgs e)
         {
-            DataTable srstaff = this.ctrlr.srchstaff(txt_StaffSearch.Text);
-            srchstaff(srstaff);
+            try
+            {
+                if (txt_StaffSearch.Text != "")
+                {
+                    btn_staffSelectall.Visible = false;
+                    btnStaffDeselectAll.Visible = false;
+                    DataTable dt = this.ctrlr.srchstaff(txt_StaffSearch.Text);
+                    if (dt.Rows.Count > 0)
+                    {
+                        DGV_Staff.Rows.Clear();
+                        LoadStaff(dt);
+                        btn_StaffBack.Visible = true;
+                        btn_StaffBack.Location = new Point(348, 37);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Entered data could not be found", "Not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void btn_selectall_Click(object sender, EventArgs e)
         {
@@ -420,16 +484,16 @@ namespace PappyjoeMVC.View
                 int i = 0;
                 foreach (DataGridViewRow row in dgv_Group.Rows)
                 {
-                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
                     chk.Value = true;
                     if (txt_Recipients.Text == "")
                     {
-                        string name = dgv_Group.Rows[i].Cells[1].Value.ToString();
+                        string name = dgv_Group.Rows[i].Cells[0].Value.ToString();
                         txt_Recipients.Text = txt_Recipients.Text.ToString() + name;
                     }
                     else
                     {
-                        string name = dgv_Group.Rows[i].Cells[1].Value.ToString();
+                        string name = dgv_Group.Rows[i].Cells[0].Value.ToString();
                         txt_Recipients.Text = txt_Recipients.Text.ToString() + "," + name;
                     }
                     i++;
@@ -450,7 +514,7 @@ namespace PappyjoeMVC.View
                 int i = 0;
                 foreach (DataGridViewRow row in dgv_Group.Rows)
                 {
-                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
                     chk.Value = false;
                     string name = dgv_Group.Rows[i].Cells[0].Value.ToString();
                     int index = txt_Recipients.Text.IndexOf(name);
@@ -479,16 +543,16 @@ namespace PappyjoeMVC.View
                 int i = 0;
                 foreach (DataGridViewRow row in DGV_Staff.Rows)
                 {
-                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
                     chk.Value = true;
                     if (txt_Recipients.Text == "")
                     {
-                        string name = DGV_Staff.Rows[i].Cells[2].Value.ToString();
+                        string name = DGV_Staff.Rows[i].Cells[1].Value.ToString();
                         txt_Recipients.Text = txt_Recipients.Text.ToString() + name;
                     }
                     else
                     {
-                        string name = DGV_Staff.Rows[i].Cells[2].Value.ToString();
+                        string name = DGV_Staff.Rows[i].Cells[1].Value.ToString();
                         txt_Recipients.Text = txt_Recipients.Text.ToString() + "," + name;
                     }
                     i++;
@@ -510,7 +574,7 @@ namespace PappyjoeMVC.View
                 int i = 0;
                 foreach (DataGridViewRow row in DGV_Staff.Rows)
                 {
-                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
                     chk.Value = false;
                     string name = DGV_Staff.Rows[i].Cells[1].Value.ToString();
                     int index = txt_Recipients.Text.IndexOf(name);
@@ -575,39 +639,41 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                if (e.ColumnIndex == 2 && e.RowIndex > -1)
+                if (e.ColumnIndex == 3 && e.RowIndex > -1)
                 {
-                    lst_GridItems.Items.Clear();
                     bool value = Convert.ToBoolean(dgv_Group.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue);
-                    string name = dgv_Group.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    if (value == false)
-                    {
-                        if (txt_Recipients.Text == "")
+                        if (value == false)
                         {
-                            lst_GridItems.Items.Add(name);
-                            txt_Recipients.Text = txt_Recipients.Text.ToString() + name;
-                        }
-                        else
-                        {
-                            if (!lst_GridItems.Items.Contains(name))
+                            string name1 = dgv_Group.Rows[e.RowIndex].Cells[0].Value.ToString();
+                            int index = txt_Recipients.Text.IndexOf(name1);
+                            if (index != -1)
                             {
-                                lst_GridItems.Items.Add(name);
+                                txt_Recipients.Text = txt_Recipients.Text.Replace("," + name1, "");
+                                txt_Recipients.Text = txt_Recipients.Text.Replace(name1 + ",", "");
+                                txt_Recipients.Text = txt_Recipients.Text.Replace(name1, "");
+                            }
+                            if (txt_Recipients.Text == "")
+                            {
+                                string name = dgv_Group.Rows[e.RowIndex].Cells[0].Value.ToString();
+                                txt_Recipients.Text = txt_Recipients.Text.ToString() + name;
+                            }
+                            else
+                            {
+                                string name = dgv_Group.Rows[e.RowIndex].Cells[0].Value.ToString();
                                 txt_Recipients.Text = txt_Recipients.Text.ToString() + "," + name;
                             }
                         }
-                    }
-                    else
-                    {
-                        int index = txt_Recipients.Text.IndexOf(name);
-                        int idx = lst_GridItems.Items.IndexOf(name);
-                        if (index != -1)
+                        else
                         {
-                            txt_Recipients.Text = txt_Recipients.Text.Replace("," + name, "");
-                            txt_Recipients.Text = txt_Recipients.Text.Replace(name + ",", "");
-                            txt_Recipients.Text = txt_Recipients.Text.Replace(name, "");
-                            lst_GridItems.Items.RemoveAt(idx);
+                            string name = dgv_Group.Rows[e.RowIndex].Cells[0].Value.ToString();
+                            int index = txt_Recipients.Text.IndexOf(name);
+                            if (index != -1)
+                            {
+                                txt_Recipients.Text = txt_Recipients.Text.Replace("," + name, "");
+                                txt_Recipients.Text = txt_Recipients.Text.Replace(name + ",", "");
+                                txt_Recipients.Text = txt_Recipients.Text.Replace(name, "");
+                            }
                         }
-                    }
                 }
             }
             catch (Exception ex)
@@ -619,11 +685,11 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                if (e.ColumnIndex == 4 && e.RowIndex > -1)
+                if (e.ColumnIndex == 3 && e.RowIndex > -1)
                 {
                     lst_GridItems.Items.Clear();
                     bool value = Convert.ToBoolean(DGV_Staff.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue);
-                    string name = DGV_Staff.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    string name = DGV_Staff.Rows[e.RowIndex].Cells[1].Value.ToString();
                     if (value == false)
                     {
                         if (txt_Recipients.Text == "")
