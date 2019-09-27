@@ -52,5 +52,15 @@ namespace PappyjoeMVC.Model
             DataTable dtb = db.table(" select A.id,A.name,A.cost,A.category,A.notes,T.tax_name from tbl_addproceduresettings A left join tbl_proceduretax  P ON P.procedure_id = A.id left join tbl_tax T on T.id= P.tax_id where name like '%" + name + "%'  ORDER BY A.id Desc");
             return dtb;
         }
+        public int delproceduretax(int procid)
+        {
+            int i = db.execute("delete from tbl_proceduretax where procedure_id='" + procid + "'");
+            return i;
+        }
+        public int delprocdresetngs(int procid)
+        {
+            int ii = db.execute("delete from tbl_addproceduresettings where id='" + procid + "'");
+            return ii;
+        }
     }
 }

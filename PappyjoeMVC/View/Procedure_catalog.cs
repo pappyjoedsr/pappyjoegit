@@ -217,8 +217,9 @@ namespace PappyjoeMVC.View
                 {
                     DataTable dtb= this.cntrl.get_procedureName(txt_procedurename.Text);
                     GetProcedureName(dtb);
+                    Dgv_Procedure.Rows.Clear();
                     DataTable dt = this.cntrl.FormLoad();
-                    FormLoad(dt);
+                    FormLoad(dt); 
                 }
             }
         }
@@ -414,5 +415,36 @@ namespace PappyjoeMVC.View
                 Dgv_Procedure.Rows[dict[items[0]]].Cells[5].Value += "";
             }
         }
+        private void Dgv_Procedure_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    int procedureid = Convert.ToInt32(Dgv_Procedure.CurrentRow.Cells[0].Value.ToString());
+                    if (Dgv_Procedure.CurrentCell.OwningColumn.Name == "delete")
+                    {
+                        DialogResult res = MessageBox.Show("Are you sure you want to delete..?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (res == DialogResult.Yes)
+                        {
+                            int i = this.cntrl.delproceduretax(procedureid);
+                            int ii= this.cntrl.delprocdresetngs(procedureid);
+                            if (i > 0 &&ii>0)
+                            {
+                                Dgv_Procedure.Rows.RemoveAt(Dgv_Procedure.CurrentRow.Index);
+                                DataTable dt = this.cntrl.FormLoad();
+                                Dgv_Procedure.DataSource = dt;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+                 
     }
 }
