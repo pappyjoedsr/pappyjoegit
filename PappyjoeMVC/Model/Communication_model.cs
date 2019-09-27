@@ -41,11 +41,6 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table("select * from tbl_templates");
             return dt;
         }
-        public DataTable back()
-        {
-            DataTable dt = db.table("select pt_id,pt_name,primary_mobile_number from tbl_patient where primary_mobile_number <> '' and  Profile_Status !='Cancelled'");
-            return dt;
-        }
         public DataTable LoadData()
         {
             DataTable dt = db.table("select pt_id,pt_name,primary_mobile_number from tbl_patient where primary_mobile_number <> '' and  Profile_Status !='Cancelled'");

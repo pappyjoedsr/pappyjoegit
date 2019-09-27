@@ -1645,5 +1645,18 @@ namespace PappyjoeMVC.View
             DataTable dt = this.cntrl.Search_procedure(searchtextbox.Text);
             fill_proceduregrid(dt);
         }
+
+        private void txt_Cost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == (char)Keys.Back || e.KeyChar == Char.Parse("."))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Please Enter The Correct cost");
+            }
+        }
     }
 }

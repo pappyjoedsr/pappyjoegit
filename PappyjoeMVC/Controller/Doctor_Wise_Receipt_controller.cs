@@ -16,7 +16,7 @@ namespace PappyjoeMVC.Controller
         {
             string e = mdl.getdocid(drname);
             return e;
-        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+        }                                                 
         public DataTable getinvdata(string invno, string service)
         {
             DataTable dt = mdl.getinvdata(invno, service);
