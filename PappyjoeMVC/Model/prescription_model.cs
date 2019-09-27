@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System;
 namespace PappyjoeMVC.Model
 {
     public class Prescription_model
@@ -98,6 +99,11 @@ namespace PappyjoeMVC.Model
             db.execute("insert into tbl_template (temp_id,pt_id,pt_name,dr_id,dr_name,date,drug_name,strength,strength_gr,duration,morning,noon,night,food,add_instruction,drug_type,drug_id,pres_id,duration_period,status) values('" + temp_id + "','" + pt_id + "','" + pt_name + "','" + dr_id + "','" + dr_name + "','" + date + "','" + drug_name + "','" + strength + "','" + strength_gr + "','" + duration + "','" + morning + "','" + noon + "','" + night + "','" + food + "','" + add_instruction + "','" + drug_type + "','" + drug_id + "','" + pres_id + "','" + duration_period + "','" + status + "')");
         }
         //prescription show
+        public DataTable clinicpath()
+        {
+            DataTable dtp = db.table("select path from tbl_practice_details");
+            return dtp;
+        }
         public string add_privillege(string doctor_id)
         {
             string privid = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRP' and Permission='A'");
@@ -123,7 +129,7 @@ namespace PappyjoeMVC.Model
             System.Data.DataTable dt_pre_main = db.table("SELECT tbl_prescription_main.id,tbl_prescription_main.date,tbl_doctor.doctor_name  FROM tbl_prescription_main join tbl_doctor on tbl_prescription_main.dr_id=tbl_doctor.id  where tbl_prescription_main.pt_id='" + patient_id + "' ORDER BY tbl_prescription_main.date DESC");
             return dt_pre_main;
         }
-
+      
         public DataTable prescription_details(string id)
         {
             System.Data.DataTable dt_prescription = db.table("SELECT drug_name,strength,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,strength_gr,status FROM tbl_prescription WHERE pres_id='" + id + "' ORDER BY id");
@@ -138,6 +144,59 @@ namespace PappyjoeMVC.Model
         {
             DataTable td_prescription_Sub = db.table("SELECT pres_id,pt_id,dr_name,dr_id,date,drug_name,strength,strength_gr,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,status,drug_id FROM tbl_prescription  WHERE pres_id= '" + prescription_id + "' ORDER BY id");
             return td_prescription_Sub;
+        }
+        public DataTable patient_details(string patient_id)
+        {
+            System.Data.DataTable dt1 = db.table("select pt_id,pt_name,gender,age,street_address,city,primary_mobile_number,locality,email_address,pincode from tbl_patient where id='" + patient_id + "'");
+            return dt1;
+        }
+        public DataTable patient_prescptn(string prescription_id, string patient_id)
+        {
+            System.Data.DataTable dt_cf = db.table("SELECT tbl_prescription_main.id,tbl_prescription_main.date,tbl_doctor.doctor_name,tbl_prescription_main.notes FROM tbl_prescription_main join tbl_doctor on tbl_prescription_main.dr_id=tbl_doctor.id where tbl_prescription_main.id='" + prescription_id + "' and tbl_prescription_main.pt_id='" + patient_id + "'");
+            return dt_cf;
+        }
+        public void delete_allprescription(string prescription_id)
+        {
+            db.execute("delete from tbl_prescription_main where id='" + prescription_id + "'");
+            db.execute("delete from tbl_prescription where pres_id='" + prescription_id + "'");
+        }
+        public DataTable get_presctnMain(string prescription_id)
+        {
+            System.Data.DataTable td_prescription_main = db.table("SELECT id,pt_id,dr_id,date,notes FROM tbl_prescription_main WHERE id='" + prescription_id + "' ORDER BY id");
+            return td_prescription_main;
+        }
+        public void save_prescriptionmain(string pt_id, string dr_id, string notes)
+        {
+            db.table("insert into tbl_prescription_main (pt_id,dr_id,date,notes) values('" + pt_id + "','" + dr_id + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + notes + "')");
+        }
+        public DataTable Get_companynameNo()
+        {
+            DataTable dtp = db.table("select name,contact_no from tbl_practice_details");
+            return dtp;
+        }
+        public DataTable printsettings_details()
+        {
+            DataTable print = db.table("select * from tbl_presciption_printsettings");
+            return print;
+        }
+        public DataTable table_details(string prescription_id, string patient_id)
+        {
+            DataTable dt_cf = db.table("SELECT tbl_prescription_main.id,tbl_prescription_main.date,tbl_doctor.doctor_name,tbl_prescription_main.notes,tbl_prescription_main.review,tbl_prescription_main.Review_date FROM tbl_prescription_main join tbl_doctor on tbl_prescription_main.dr_id=tbl_doctor.id where tbl_prescription_main.id='" + prescription_id + "' and tbl_prescription_main.pt_id='" + patient_id + "'");
+            return dt_cf;
+        }
+        public DataTable get_patientnumber(string patient_id)
+        {
+            DataTable pat = db.table("select pt_name,primary_mobile_number from tbl_patient where id='" + patient_id + "'");
+            return pat;
+        }
+        public DataTable remindersms()
+        {
+            DataTable smsreminder = db.table("select * from tbl_appt_reminder_sms");
+            return smsreminder;
+        }
+        public void savecommunication(string patient_id, string text)
+        {
+            db.execute("insert into tbl_pt_sms_communication (pt_id,send_datetime,type,message_status,message) values('" + patient_id + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm") + "','patient','sent','" + text + "')");
         }
         //simple appointment template
         public DataTable get_drug_name()

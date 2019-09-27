@@ -104,7 +104,6 @@
     <Compile Include="Controller\Expiry_Report_controller.cs" />
     <Compile Include="Controller\Export_controller.cs" />
     <Compile Include="Controller\Finished_Procedre_controller.cs" />
-    <Compile Include="Controller\Finished_Procedure_interface.cs" />
     <Compile Include="Controller\Image_Zoom_controller.cs" />
     <Compile Include="Controller\Group_Wise_Report_controller.cs" />
     <Compile Include="Controller\Invoice_controller.cs" />
@@ -134,9 +133,7 @@
     <Compile Include="Controller\Paymode_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Practice_Controller.cs" />
     <Compile Include="Controller\Prescription_Add_controller.cs" />
-    <Compile Include="Controller\Prescription_Add_interface.cs" />
     <Compile Include="Controller\Prescription_Show_controller.cs" />
-    <Compile Include="Controller\prescriptionshow_interface.cs" />
     <Compile Include="Controller\Prescription_Setting_controller.cs" />
     <Compile Include="Controller\Printout_controller.cs" />
     <Compile Include="Controller\Procedure_Catalog_controller.cs" />

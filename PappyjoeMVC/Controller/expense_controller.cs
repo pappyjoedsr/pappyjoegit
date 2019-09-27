@@ -49,7 +49,6 @@ namespace PappyjoeMVC.Controller
         {
             DataTable dtb = _model.fill_dgv_debit();
             return dtb;
-            //intr.fill_dgv_debit(dtb);
         }
         public int update_dgv_credit(int Incom_ID, string datevisitedincome, string comboBoxincomacc, string textBoxdescincome, string txtamountincome, string textBoxnameofincome)
         {

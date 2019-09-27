@@ -219,20 +219,11 @@ namespace PappyjoeMVC.Controller
             int i = _model.update_doctor(doctor_id, _drname, _number, _email, _gender, _year, _about, _path);
             return i;
         }
-        //public int update_dremail(string doctor_id, string _email, string _password)//asw not found
-        //{
-        //    int i = _model.update_dremail(doctor_id, _email,  _password);
-        //    return i;
-        //}
         public DataTable get_dr_password(string doctor_id)
         {
             DataTable dtb = _model.get_dr_password(doctor_id);
             return dtb;
         }
-        //public void update_logintable(string doctor, string paswd)//not found
-        //{
-        //    _model.update_logintable(doctor, paswd);
-        //}
         public DataTable get_doctor_details(string doctor_id)
         {
             DataTable dtb = _model.get_doctor_details(doctor_id);

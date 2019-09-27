@@ -1656,5 +1656,18 @@ namespace PappyjoeMVC.View
                 form2.ShowDialog();
             }
         }
+
+        private void txtcost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == (char)Keys.Back || e.KeyChar == Char.Parse("."))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Please Enter The Correct cost");
+            }
+        }
     }
 }
