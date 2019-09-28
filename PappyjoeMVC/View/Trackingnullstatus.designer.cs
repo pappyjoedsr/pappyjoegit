@@ -34,16 +34,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Trackingnullstatus));
             this.dataGridView1_treatment_paln = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.addLabOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label41 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.img = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.addLabOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label41 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_treatment_paln)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -97,37 +97,6 @@
             this.dataGridView1_treatment_paln.TabIndex = 265;
             this.dataGridView1_treatment_paln.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_treatment_paln_CellContentClick);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator4,
-            this.addLabOrderToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(166, 32);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(162, 6);
-            // 
-            // addLabOrderToolStripMenuItem
-            // 
-            this.addLabOrderToolStripMenuItem.Name = "addLabOrderToolStripMenuItem";
-            this.addLabOrderToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.addLabOrderToolStripMenuItem.Text = "Add Lab Order";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label41.Location = new System.Drawing.Point(13, 5);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(94, 21);
-            this.label41.TabIndex = 266;
-            this.label41.Text = "LAB ORDER";
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "Work ID";
@@ -174,6 +143,37 @@
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator4,
+            this.addLabOrderToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(166, 32);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(162, 6);
+            // 
+            // addLabOrderToolStripMenuItem
+            // 
+            this.addLabOrderToolStripMenuItem.Name = "addLabOrderToolStripMenuItem";
+            this.addLabOrderToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.addLabOrderToolStripMenuItem.Text = "Add Lab Order";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label41.Location = new System.Drawing.Point(13, 5);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(94, 21);
+            this.label41.TabIndex = 266;
+            this.label41.Text = "LAB ORDER";
+            // 
             // Trackingnullstatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,7 +185,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Trackingnullstatus";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Trackingnullstatus";
+            this.Text = "Lab Order";
             this.Load += new System.EventHandler(this.Trackingnullstatus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_treatment_paln)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
