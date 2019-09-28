@@ -356,7 +356,7 @@ namespace PappyjoeMVC.View
                     string status = dataGridView1.Rows[k].Cells[7].Value.ToString();
                     ChangeStatus statuschange = new PappyjoeMVC.View.ChangeStatus(jobno, patient, doctor, lab, workname, due, status);
                     statuschange.ShowDialog();
-                    DataTable dt = this.ctrlr.selectall();
+                    DataTable dt = this.ctrlr.selectall(jobno);
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         chstatus = dt.Rows[i][13].ToString();
