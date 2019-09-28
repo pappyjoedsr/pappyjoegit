@@ -131,7 +131,7 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            int i = this.cntrl.Save_Drug(txtitemname.Text, text_type.Text, text_unit.Text, text_strength.Text, rich_instruction.Text);
+                            int i = this.cntrl.Save_Drug(txtitemname.Text, StrType, StrUnit, text_strength.Text, rich_instruction.Text);
                             if (i > 0)
                             {
                                 MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -147,7 +147,7 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            int i = this.cntrl.Update_drug(id,txtitemname.Text, text_type.Text, text_unit.Text, text_strength.Text, rich_instruction.Text);
+                            int i = this.cntrl.Update_drug(id,txtitemname.Text, StrType, StrUnit, text_strength.Text, rich_instruction.Text);
                         }
                     }
                     DataTable dt = this.cntrl.get_drug();
@@ -264,7 +264,7 @@ namespace PappyjoeMVC.View
         {
             combotype.Hide();
             button_addtype.Hide();
-            text_type.Focus();
+            text_type.Focus(); 
             text_type.Show();
             linkLabel2.Show();
         }

@@ -96,7 +96,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.ForeColor = System.Drawing.Color.Red;
-            this.label39.Location = new System.Drawing.Point(282, 96);
+            this.label39.Location = new System.Drawing.Point(282, 82);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(86, 13);
             this.label39.TabIndex = 136;
@@ -112,7 +112,7 @@
             this.txtitemname.Location = new System.Drawing.Point(107, 49);
             this.txtitemname.Name = "txtitemname";
             this.txtitemname.Size = new System.Drawing.Size(164, 22);
-            this.txtitemname.TabIndex = 122;
+            this.txtitemname.TabIndex = 1;
             this.txtitemname.TextChanged += new System.EventHandler(this.txtitemname_TextChanged);
             // 
             // label4
@@ -131,10 +131,10 @@
             this.text_strength.BackColor = System.Drawing.Color.White;
             this.text_strength.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_strength.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_strength.Location = new System.Drawing.Point(106, 125);
+            this.text_strength.Location = new System.Drawing.Point(106, 127);
             this.text_strength.Name = "text_strength";
             this.text_strength.Size = new System.Drawing.Size(77, 22);
-            this.text_strength.TabIndex = 125;
+            this.text_strength.TabIndex = 12;
             // 
             // label19
             // 

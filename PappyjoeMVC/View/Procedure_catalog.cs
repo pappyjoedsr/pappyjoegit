@@ -50,7 +50,7 @@ namespace PappyjoeMVC.View
         {
             Dictionary<string, int> dict = new Dictionary<string, int>();
             int rowNum = 0;
-            //Dgv_Procedure.Rows.Clear();
+            Dgv_Procedure.Rows.Clear();
             for (int j = 0; j < dt.Rows.Count; j++)
             {
                 string id = dt.Rows[j]["id"].ToString();
@@ -59,7 +59,7 @@ namespace PappyjoeMVC.View
                 {
                     taxname = null;
                 }
-                else
+                else 
                 {
                     taxname = dt.Rows[j]["tax_name"].ToString();
                 }
@@ -433,7 +433,7 @@ namespace PappyjoeMVC.View
                             {
                                 Dgv_Procedure.Rows.RemoveAt(Dgv_Procedure.CurrentRow.Index);
                                 DataTable dt = this.cntrl.FormLoad();
-                                Dgv_Procedure.DataSource = dt;
+                                FormLoad(dt);
                             }
                         }
                     }

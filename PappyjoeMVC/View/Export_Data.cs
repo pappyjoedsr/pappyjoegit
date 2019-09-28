@@ -69,7 +69,7 @@ namespace PappyjoeMVC.View
                         ExcelApp.Cells[3, i].Font.Color = Color.FromArgb(255, 255, 255);
                         ExcelApp.Cells[3, i].Interior.Color = Color.FromArgb(0, 102, 204);
                     }
-                    for (int i = 0; i <= dataGridView_procedurecatalog.Rows.Count; i++)
+                    for (int i = 0; i < dataGridView_procedurecatalog.Rows.Count; i++)
                     {
                         try
                         {
@@ -93,7 +93,7 @@ namespace PappyjoeMVC.View
                 }
                 if (check_contact.Checked == true)
                 {
-                    DataTable contact = this.cntrl.patient_details(dtpFrom.Value, dtpTo.Value);
+                    DataTable contact = this.cntrl.patient_details( dtpFrom.Value, dtpTo.Value);
                     dataGridView_contact.DataSource = contact;
                     Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
                     ExcelApp.Application.Workbooks.Add(Type.Missing);
@@ -127,7 +127,7 @@ namespace PappyjoeMVC.View
                         ExcelApp.Cells[4, i].Font.Color = Color.FromArgb(255, 255, 255);
                         ExcelApp.Cells[4, i].Interior.Color = Color.FromArgb(0, 102, 204);
                     }
-                    for (int i = 0; i <= dataGridView_contact.Rows.Count; i++)
+                    for (int i = 0; i < dataGridView_contact.Rows.Count; i++)
                     {
                         try
                         {
@@ -218,7 +218,7 @@ namespace PappyjoeMVC.View
                         ExcelApp.Cells[4, i].Font.Color = Color.FromArgb(255, 255, 255);
                         ExcelApp.Cells[4, i].Interior.Color = Color.FromArgb(0, 102, 204);
                     }
-                    for (int i = 0; i <= dataGridView_appt.Rows.Count; i++)
+                    for (int i = 0; i < dataGridView_appt.Rows.Count; i++)
                     {
                         try
                         {
@@ -444,7 +444,7 @@ namespace PappyjoeMVC.View
                         ExcelApp.Cells[4, i].Font.Color = Color.FromArgb(255, 255, 255);
                         ExcelApp.Cells[4, i].Interior.Color = Color.FromArgb(0, 102, 204);
                     }
-                    for (int i = 0; i <= dataGridView_prescription.Rows.Count - 1; i++)
+                    for (int i = 0; i < dataGridView_prescription.Rows.Count - 1; i++)
                     {
                         try
                         {
