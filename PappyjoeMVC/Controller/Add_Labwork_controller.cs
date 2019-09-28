@@ -43,9 +43,9 @@ namespace PappyjoeMVC.Controller
             string dt = mdl.selectid(mtest);
             return dt;
         }
-        public int inslabmain(string patid, string dr_id, string mtest, string wrkid, string dte, string duedate, string rcvdate)
+        public int inslabmain(string patid, string dr_id, string wrkname, string wrkid, string dte, string duedate, string rcvdate)
         {
-            int j = mdl.inslabmain(patid, dr_id, mtest, wrkid, dte, duedate, rcvdate);
+            int j = mdl.inslabmain(patid, dr_id, wrkname, wrkid, dte, duedate, rcvdate);
             return j;
         }
         public int inslabmain2(string patid, string dr_id, string work_name, string work_id,string date)

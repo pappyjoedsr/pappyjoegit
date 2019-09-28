@@ -18,8 +18,9 @@ namespace PappyjoeMVC.View
             InitializeComponent();
         }
         bool flag ;
+        public static string ID = "";
         Add_Labwork_controller ctrlr=new Add_Labwork_controller();
-        public string patient_id = "", doctor_id = "", checkvalue = "",ID="",ids="",r="",f="";
+        public string patient_id = "", doctor_id = "", checkvalue = "",ids="",r="",f="";
         public string[] teeth = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
         private void toolStripButton12_Click(object sender, EventArgs e)
         {
@@ -676,7 +677,8 @@ namespace PappyjoeMVC.View
                     if (txtworkname.Text.Trim() != "" && txtwork_id.Text.Trim() != "")
                     {
                         this.ctrlr.inslabmain2(patient_id, doctor_id, txtworkname.Text, txtwork_id.Text, Convert.ToDateTime(dateTimePicker1.Text).ToString("yyyy-MM-dd"));
-                        this.ctrlr.insdentlab(ID, txtworkname.Text, txtWorktype.Text, cmbAlloytype.Text, cmbShade.Text, patient_id, label15.Text);
+                        string id = this.ctrlr.maxid();
+                        this.ctrlr.insdentlab(id, txtworkname.Text, txtWorktype.Text, cmbAlloytype.Text, cmbShade.Text, patient_id, label15.Text);
                         var form2 = new PappyjoeMVC.View.LabWorks();
                         form2.doctor_id = doctor_id;
                         form2.patient_id = patient_id;
