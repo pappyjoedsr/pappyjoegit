@@ -69,7 +69,6 @@ namespace PappyjoeMVC.Controller
         }
         public int investigation_insert(string investtextbox)
         {
-            //_model.Investigation = intr.Investigation;
             int i = _model.investigation_insert(investtextbox);
             return i;
         }
