@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
     public partial class Add_Drug : Form
     {
-        Add_Item_controller cntrl=new Add_Item_controller();
+        Add_Item_controller cntrl = new Add_Item_controller();
         public bool editFlag = false;
         DataTable dt_ForEditItems = new DataTable();
         public static int Item_Id;
-        public bool cal_flag = false; string  isOneUnitOnly = "", unit2 = "", _isbatch="", _istax="", _sUnit="";
+        public bool cal_flag = false; string isOneUnitOnly = "", unit2 = "", _isbatch = "", _istax = "", _sUnit = "";
         private DataTable dtb;
         int UnitMF = 0;
         public Add_Drug()
@@ -728,7 +723,7 @@ namespace PappyjoeMVC.View
 
         private void txt_SalesRateMax2_Leave(object sender, EventArgs e)
         {
-              if (!string.IsNullOrWhiteSpace(txt_PurchRate2.Text) && !string.IsNullOrWhiteSpace(txt_SalesRateMax2.Text))
+            if (!string.IsNullOrWhiteSpace(txt_PurchRate2.Text) && !string.IsNullOrWhiteSpace(txt_SalesRateMax2.Text))
             {
                 if (Convert.ToDecimal(txt_PurchRate2.Text) > 0 && Convert.ToDecimal(txt_SalesRateMax2.Text) > 0)
                 {
@@ -792,7 +787,7 @@ namespace PappyjoeMVC.View
                 pnltax.Visible = false;
                 txtprice.Text = "";
                 txttax.Text = "";
-            }  
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -834,7 +829,7 @@ namespace PappyjoeMVC.View
                 }
                 if (Chk_HavebatchNo.Checked == true)
                 {
-                    _isbatch="true";
+                    _isbatch = "true";
                 }
                 else
                 {
@@ -842,19 +837,19 @@ namespace PappyjoeMVC.View
                 }
                 if (Chk_Taxable.Checked == true)
                 {
-                    _istax="true";
+                    _istax = "true";
                 }
                 else
                 {
-                    _istax=" false";
+                    _istax = " false";
                 }
                 if (chk_OneUnitOnly.Checked == true)
                 {
-                    _sUnit= "null";
+                    _sUnit = "null";
                 }
                 else
                 {
-                    _sUnit=cmb_unit2.Text;
+                    _sUnit = cmb_unit2.Text;
                 }
                 if (save.Text == "SAVE")
                 {
@@ -870,7 +865,7 @@ namespace PappyjoeMVC.View
                         {
                             string rs_item = this.cntrl.get_max_itemid();
                             string itemid = rs_item;
-                            this.cntrl.savedrugtable(itemid,txt_ItemName.Text, cmbdrugtype.Text, txtstrength.Text, cmbstrength.Text, txtinstructions.Text);
+                            this.cntrl.savedrugtable(itemid, txt_ItemName.Text, cmbdrugtype.Text, txtstrength.Text, cmbstrength.Text, txtinstructions.Text);
                         }
                         MessageBox.Show("Item added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         clear();
@@ -884,7 +879,7 @@ namespace PappyjoeMVC.View
                         if (chkprescription.Checked == true)
                         {
                             string rs_item = this.cntrl.get_drugid(Item_Id.ToString());
-                            if (rs_item!="")
+                            if (rs_item != "")
                             {
                                 this.cntrl.update_drug(Item_Id.ToString(), txt_ItemName.Text, cmbdrugtype.Text, txtstrength.Text, cmbstrength.Text, txtinstructions.Text);
                             }
@@ -893,7 +888,7 @@ namespace PappyjoeMVC.View
                                 DataTable rs_additem = this.cntrl.select_id_drug(txt_ItemName.Text, cmbdrugtype.Text, txtstrength.Text, cmbstrength.Text, txtinstructions.Text);
                                 if (rs_additem.Rows.Count > 0)
                                 {
-                                    this.cntrl.update(Item_Id.ToString(), rs_additem.Rows[0]["id"].ToString(), txt_ItemName.Text, cmbdrugtype.Text, txtstrength.Text, cmbstrength.Text, txtinstructions.Text); 
+                                    this.cntrl.update(Item_Id.ToString(), rs_additem.Rows[0]["id"].ToString(), txt_ItemName.Text, cmbdrugtype.Text, txtstrength.Text, cmbstrength.Text, txtinstructions.Text);
                                 }
                                 else
                                 {
@@ -928,7 +923,7 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-      
+
         public void checkNull()
         {
             if (string.IsNullOrWhiteSpace(txt_reorderStockQty.Text))
