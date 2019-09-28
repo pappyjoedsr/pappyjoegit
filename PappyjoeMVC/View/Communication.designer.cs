@@ -114,6 +114,9 @@
             this.lst_GridItems = new System.Windows.Forms.ListBox();
             this.panel16 = new System.Windows.Forms.Panel();
             this.DGV_Patient = new System.Windows.Forms.DataGridView();
+            this.pt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patient_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView_template = new System.Windows.Forms.DataGridView();
             this.SlNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -189,9 +192,6 @@
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
-            this.pt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patient_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel19.SuspendLayout();
             this.panl_templates.SuspendLayout();
             this.Panl_AddTemplate.SuspendLayout();
@@ -1067,6 +1067,30 @@
             this.DGV_Patient.Size = new System.Drawing.Size(448, 519);
             this.DGV_Patient.TabIndex = 3;
             this.DGV_Patient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Patient_CellClick);
+            // 
+            // pt_id
+            // 
+            this.pt_id.DataPropertyName = "id";
+            this.pt_id.HeaderText = "pt_id";
+            this.pt_id.Name = "pt_id";
+            this.pt_id.ReadOnly = true;
+            this.pt_id.Visible = false;
+            // 
+            // patient_name
+            // 
+            this.patient_name.DataPropertyName = "pt_name";
+            this.patient_name.HeaderText = "PATIENT NAME";
+            this.patient_name.Name = "patient_name";
+            this.patient_name.ReadOnly = true;
+            this.patient_name.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "primary_mobile_number";
+            this.Column3.HeaderText = "MOBILE NUMBER";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 150;
             // 
             // dataGridView_template
             // 
@@ -2015,30 +2039,6 @@
             this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
             this.toolStripButton12.Text = "Lab Tracking";
             this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
-            // 
-            // pt_id
-            // 
-            this.pt_id.DataPropertyName = "id";
-            this.pt_id.HeaderText = "pt_id";
-            this.pt_id.Name = "pt_id";
-            this.pt_id.ReadOnly = true;
-            this.pt_id.Visible = false;
-            // 
-            // patient_name
-            // 
-            this.patient_name.DataPropertyName = "pt_name";
-            this.patient_name.HeaderText = "PATIENT NAME";
-            this.patient_name.Name = "patient_name";
-            this.patient_name.ReadOnly = true;
-            this.patient_name.Width = 200;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "primary_mobile_number";
-            this.Column3.HeaderText = "MOBILE NUMBER";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 150;
             // 
             // Communication
             // 

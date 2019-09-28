@@ -121,7 +121,7 @@ namespace PappyjoeMVC.View
                         {
                             for (j = 0; j < dgv_Group.Rows.Count; j++)
                             {
-                                if (Convert.ToBoolean(dgv_Group.Rows[j].Cells[2].Value) == true)
+                                if (Convert.ToBoolean(dgv_Group.Rows[j].Cells[3].Value) == true)
                                 {
                                     DataTable grp = this.ctrlr.selgrp();
                                     selgrp(grp);
@@ -138,10 +138,10 @@ namespace PappyjoeMVC.View
                         {
                             for (int y = 0; y < DGV_Staff.Rows.Count; y++)
                             {
-                                if (Convert.ToBoolean(DGV_Staff.Rows[y].Cells[1].Value) == true)
+                                if (Convert.ToBoolean(DGV_Staff.Rows[y].Cells[3].Value) == true)
                                 {
-                                    string n = "91" + DGV_Staff.Rows[y].Cells[3].Value.ToString();
-                                    string t = "Dear " + DGV_Staff.Rows[y].Cells[2].Value.ToString() + ", " + txt_SMS.Text.ToString();
+                                    string n = "91" + DGV_Staff.Rows[y].Cells[2].Value.ToString();
+                                    string t = "Dear " + DGV_Staff.Rows[y].Cells[1].Value.ToString() + ", " + txt_SMS.Text.ToString();
                                     msg.Text = t;
                                     string sms = this.ctrlr.SendSMS(smsName, smsPass, n, msg.Text.ToString());
                                     if (sms == "SMS message(s) sent")
@@ -408,6 +408,7 @@ namespace PappyjoeMVC.View
                     {
                         MessageBox.Show("Entered data could not be found", "Not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                    txt_StaffSearch.Text = "";
                 }
             }
             catch (Exception ex)
@@ -1095,16 +1096,55 @@ namespace PappyjoeMVC.View
                 case 0:
                     {
                         tabstatus = 0;
+                        txt_Recipients.Text = "";
+                        txt_searchPatient.Text = "";
+                        txt_SMS.Text = "";
+                        foreach (DataGridViewRow row in DGV_Staff.Rows)
+                        {
+                            DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
+                            chk.Value = false;
+                        }
+                        foreach (DataGridViewRow row in dgv_Group.Rows)
+                        {
+                            DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
+                            chk.Value = false;
+                        }
                         break;
                     }
                 case 1:
                     {
                         tabstatus = 1;
+                        txt_SMS.Text = "";
+                        txt_Recipients.Text = "";
+                        txt_searchPatient.Text = "";
+                        foreach (DataGridViewRow row in DGV_Staff.Rows)
+                        {
+                            DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
+                            chk.Value = false;
+                        }
+                        foreach (DataGridViewRow row in DGV_Patient.Rows)
+                        {
+                            DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
+                            chk.Value = false;
+                        }
                         break;
                     }
                 case 2:
                     {
                         tabstatus = 2;
+                        txt_SMS.Text = "";
+                        txt_Recipients.Text = "";
+                        txt_searchPatient.Text = "";
+                        foreach (DataGridViewRow row in dgv_Group.Rows)
+                        {
+                            DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
+                            chk.Value = false;
+                        }
+                        foreach (DataGridViewRow row in DGV_Patient.Rows)
+                        {
+                            DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
+                            chk.Value = false;
+                        }
                         break;
                     }
             }
@@ -1121,16 +1161,48 @@ namespace PappyjoeMVC.View
                 case 0:
                     {
                         tabstatus1 = 0;
+                        txt_Sendsms.Text = "";
+                        txtFailedSms.Text = "";
+                        DGV_transactional.Rows.Clear();
+                        DGV_upcoming_birthday.Rows.Clear();
+                        DGV_upcoming_followups.Rows.Clear();
+                        DTP_DateFrom.Text = DateTime.Now.Date.ToString();
+                        DTP_DateTo.Text = DateTime.Now.Date.ToString();
+                        DTP_Tab2From.Text = DateTime.Now.Date.ToString();
+                        DTP_Tab2TO.Text = DateTime.Now.Date.ToString();
                         break;
                     }
                 case 1:
                     {
                         tabstatus1 = 1;
+                        txt_Recipients.Text = "";
+                        txt_searchPatient.Text = "";
+                        DGV_upcoming_birthday.Rows.Clear();
+                        DGV_upcoming_followups.Rows.Clear();
+                        foreach (DataGridViewRow row in DGV_Patient.Rows)
+                        {
+                            DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
+                            chk.Value = false;
+                        }
+                        DTP_Tab2From.Text = DateTime.Now.Date.ToString();
+                        DTP_Tab2TO.Text = DateTime.Now.Date.ToString();
                         break;
                     }
                 case 2:
                     {
                         tabstatus1 = 2;
+                        txt_Recipients.Text = "";
+                        txt_searchPatient.Text = "";
+                        txt_Sendsms.Text = "";
+                        txtFailedSms.Text = "";
+                        DTP_DateFrom.Text = DateTime.Now.Date.ToString();
+                        DTP_DateTo.Text = DateTime.Now.Date.ToString();
+                        foreach (DataGridViewRow row in DGV_Patient.Rows)
+                        {
+                            DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
+                            chk.Value = false;
+                        }
+                        DGV_transactional.Rows.Clear();
                         break;
                     }
             }
