@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Item_List));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -64,7 +64,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel_main = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_search = new System.Windows.Forms.TextBox();
@@ -78,6 +77,7 @@
             this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel_main = new System.Windows.Forms.Panel();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.toolStrip1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -519,16 +519,6 @@
             this.panel2.Size = new System.Drawing.Size(1043, 538);
             this.panel2.TabIndex = 44;
             // 
-            // panel_main
-            // 
-            this.panel_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_main.Location = new System.Drawing.Point(189, 99);
-            this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(1026, 515);
-            this.panel_main.TabIndex = 74;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
@@ -573,6 +563,7 @@
             this.Cmb_Manufacture.Size = new System.Drawing.Size(359, 25);
             this.Cmb_Manufacture.TabIndex = 1;
             this.Cmb_Manufacture.SelectedIndexChanged += new System.EventHandler(this.Cmb_Manufacture_SelectedIndexChanged);
+            this.Cmb_Manufacture.Click += new System.EventHandler(this.Cmb_Manufacture_Click);
             // 
             // label2
             // 
@@ -627,8 +618,8 @@
             this.Dgv_Product.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.Dgv_Product.RowHeadersVisible = false;
             this.Dgv_Product.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Dgv_Product.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Dgv_Product.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_Product.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Dgv_Product.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_Product.Size = new System.Drawing.Size(650, 405);
@@ -677,6 +668,16 @@
             this.ColDelete.Name = "ColDelete";
             this.ColDelete.ReadOnly = true;
             this.ColDelete.Width = 26;
+            // 
+            // panel_main
+            // 
+            this.panel_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_main.Location = new System.Drawing.Point(189, 99);
+            this.panel_main.Name = "panel_main";
+            this.panel_main.Size = new System.Drawing.Size(1026, 515);
+            this.panel_main.TabIndex = 74;
             // 
             // listpatientsearch
             // 
