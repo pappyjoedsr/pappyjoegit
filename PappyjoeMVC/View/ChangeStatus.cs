@@ -51,6 +51,7 @@ namespace PappyjoeMVC.View
                 int i = this.ctrlr.statusupdate(comboBox1.SelectedItem.ToString().Trim(), label7.Text);
                 if (i > 0)
                 {
+                    LabtrackingReport.form.Show();
                     this.Close();
                 }
             }

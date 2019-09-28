@@ -14,9 +14,9 @@ namespace PappyjoeMVC.Controller
         LabtrackingReport_model mdl = new LabtrackingReport_model();
         Dentalwork_model dm = new Dentalwork_model();
         Communication_model c = new Communication_model();
-        public DataTable selectall()
+        public DataTable selectall(string jobno)
         {
-            DataTable dt = mdl.selectall();
+            DataTable dt = mdl.selectall(jobno);
             return dt;
         }
         public DataTable txtkeypress()
