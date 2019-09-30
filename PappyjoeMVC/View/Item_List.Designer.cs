@@ -563,7 +563,7 @@
             this.Cmb_Manufacture.Size = new System.Drawing.Size(359, 25);
             this.Cmb_Manufacture.TabIndex = 1;
             this.Cmb_Manufacture.SelectedIndexChanged += new System.EventHandler(this.Cmb_Manufacture_SelectedIndexChanged);
-            this.Cmb_Manufacture.Click += new System.EventHandler(this.Cmb_Manufacture_Click);
+            //this.Cmb_Manufacture.Click += new System.EventHandler(this.Cmb_Manufacture_Click);
             // 
             // label2
             // 

@@ -4,12 +4,11 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using PappyjoeMVC.Model;
 namespace PappyjoeMVC.View
 {
     public partial class StockReport : Form
     {
-        stock_controller cntrl=new stock_controller();
+        stock_controller cntrl = new stock_controller();
         public string doctor_id = "";
         Purchase purchase = new Purchase();
         Sales sales = new Sales();
@@ -423,7 +422,7 @@ namespace PappyjoeMVC.View
                 int num = 1;
                 for (int i = 0; i < btn_temp.Rows.Count; i++)
                 {
-                    DGV_Stock.Rows.Add(num, btn_temp.Rows[i][1].ToString(),btn_temp.Rows[i][2].ToString(), btn_temp.Rows[i][3].ToString(), btn_temp.Rows[i][4].ToString());
+                    DGV_Stock.Rows.Add(num, btn_temp.Rows[i][1].ToString(), btn_temp.Rows[i][2].ToString(), btn_temp.Rows[i][3].ToString(), btn_temp.Rows[i][4].ToString());
                     num++;
                     DGV_Stock.Rows[i].DefaultCellStyle.ForeColor = Color.Red;
                 }
@@ -672,6 +671,7 @@ namespace PappyjoeMVC.View
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             var form2 = new StockReport();
+            form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
