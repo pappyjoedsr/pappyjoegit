@@ -10,9 +10,9 @@ namespace PappyjoeMVC.Model
     public class LabtrackingReport_model
     {
         Connection db = new Connection();
-        public DataTable selectall()
+        public DataTable selectall(string jobno)
         {
-            DataTable dt = db.table("select * from tbl_lab_main where type='Dental'");
+            DataTable dt = db.table("select * from tbl_lab_main where type='Dental' and id='"+jobno+"' ");
             return dt;
         }
         public DataTable txtkeypress()
