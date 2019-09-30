@@ -46,7 +46,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable get_salesrate_unit(string itemid)
         {
-            DataTable dt_cost = db.table("select Packing,Sales_Rate,Unit1,Unit2 from tbl_ITEMS where item_code='" + itemid + "'");
+            DataTable dt_cost = db.table("select Packing,Sales_Rate,Unit1,Unit2 from tbl_ITEMS where id='" + itemid + "'");
             return dt_cost;
         }
         public DataTable  sales_details(int invnum_Edit)

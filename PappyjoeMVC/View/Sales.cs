@@ -762,6 +762,8 @@ namespace PappyjoeMVC.View
                                     }
                                     clear_itemdetails();
                                 }
+
+                                btn_AddtoGrid.Text = "Add"; btn_cancel.Visible = false;
                             }
                             else
                             {
@@ -1040,6 +1042,7 @@ namespace PappyjoeMVC.View
                         txt_IGST.Text = dgv_SalesItem.Rows[rowindex].Cells["colIGST"].Value.ToString();
                         txt_Qty.Text = dgv_SalesItem.Rows[rowindex].Cells["ColQty"].Value.ToString();
                         txt_Free.Text = dgv_SalesItem.Rows[rowindex].Cells["ColFree"].Value.ToString();
+                        itemId= dgv_SalesItem.Rows[rowindex].Cells["id"].Value.ToString();
                         if (salesOrder_flag == true)
                         {
                             cmb_Unit.Items.Clear();
@@ -1652,7 +1655,7 @@ namespace PappyjoeMVC.View
             {
                 for (int j = 0; j < dgv_BatchSale.Rows.Count; j++)
                 {
-                    if (dgv_SalesItem.Rows[i].Cells["colItemCode"].Value.ToString() == dgv_BatchSale.Rows[j].Cells["coiltem_code"].Value.ToString())
+                    if (dgv_SalesItem.Rows[i].Cells["id"].Value.ToString() == dgv_BatchSale.Rows[j].Cells["coiltem_code"].Value.ToString())
                     {
                         affect = 0;
                     }
