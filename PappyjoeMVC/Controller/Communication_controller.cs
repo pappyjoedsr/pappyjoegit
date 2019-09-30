@@ -112,14 +112,14 @@ namespace PappyjoeMVC.Controller
             DataTable dt = mdl.status(stime, etime);
             return dt;
         }
-        public int failcount(string stime, string etime)
+        public string failcount(string stime, string etime)
         {
-            int t = Convert.ToInt32(mdl.failcount(stime, etime));
+            string t = mdl.failcount(stime, etime);
             return t;
         }
-        public int smscount(string stime, string etime)
+        public string smscount(string stime, string etime)
         {
-            int dt = Convert.ToInt32(mdl.smscount(stime, etime));
+            string dt = mdl.smscount(stime, etime);
             return dt;
         }
         //end
