@@ -731,6 +731,7 @@ namespace PappyjoeMVC.View
             {
                 TabControl_SMSCentre.Visible = true;
                 txt_searchPatient.Text = "";
+                txt_Recipients.Text = "";
                 btn_selectall.Visible = true;
                 btn_Deselectall.Visible = false;
                 DGV_Patient.Visible = true;
@@ -753,6 +754,7 @@ namespace PappyjoeMVC.View
             {
                 TabControl_SMSCentre.Visible = true;
                 txt_StaffSearch.Text = "";
+                txt_Recipients.Text = "";
                 btn_staffSelectall.Visible = true;
                 btnStaffDeselectAll.Visible = false;
                 DGV_Staff.Visible = true;
@@ -785,15 +787,15 @@ namespace PappyjoeMVC.View
                 DateTime endDateTime = Convert.ToDateTime(DTP_DateTo.Value.Date.ToString("d") + " 23:59:00 PM");
                 DataTable st = this.ctrlr.status(DTP_DateFrom.Value.Date.ToString("yyyy-MM-dd"), DTP_DateTo.Value.Date.ToString("yyyy-MM-dd"));
                 status(st);
-                int failcnt = this.ctrlr.failcount(DTP_DateFrom.Value.Date.ToString("yyyy-MM-dd"), DTP_DateTo.Value.Date.ToString("yyyy-MM-dd"));
-                if (failcnt != 0)
+                string failcnt = this.ctrlr.failcount(DTP_DateFrom.Value.Date.ToString("yyyy-MM-dd"), DTP_DateTo.Value.Date.ToString("yyyy-MM-dd"));
+                if (Convert.ToInt32(failcnt) != 0)
                 {
                     txtFailedSms.Text = "";
                     txtFailedSms.Text = failcnt.ToString();
                     lab_Msg.Visible = false;
                 }
-                int smscnt = this.ctrlr.smscount(DTP_DateFrom.Value.Date.ToString("yyyy-MM-dd"), DTP_DateTo.Value.Date.ToString("yyyy-MM-dd"));
-                if (smscnt != 0)
+                string smscnt = this.ctrlr.smscount(DTP_DateFrom.Value.Date.ToString("yyyy-MM-dd"), DTP_DateTo.Value.Date.ToString("yyyy-MM-dd"));
+                if (Convert.ToInt32(smscnt) != 0)
                 {
                     txt_Sendsms.Text = "";
                     txt_Sendsms.Text = smscnt.ToString();
