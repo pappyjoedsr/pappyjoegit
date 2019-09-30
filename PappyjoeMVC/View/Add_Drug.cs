@@ -12,7 +12,6 @@ namespace PappyjoeMVC.View
         DataTable dt_ForEditItems = new DataTable();
         public static int Item_Id;
         public bool cal_flag = false; string isOneUnitOnly = "", unit2 = "", _isbatch = "", _istax = "", _sUnit = "";
-        private DataTable dtb;
         int UnitMF = 0;
         public Add_Drug()
         {
@@ -922,6 +921,8 @@ namespace PappyjoeMVC.View
                     MessageBox.Show("Please add Manufacture !", "Empty field occured", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+            txtstrength.Text = "";
+            txtinstructions.Text = "";
         }
 
         public void checkNull()

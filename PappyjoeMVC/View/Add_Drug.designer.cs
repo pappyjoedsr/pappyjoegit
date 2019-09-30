@@ -146,7 +146,7 @@
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.save);
             this.panel5.Controls.Add(this.cancel);
-            this.panel5.Location = new System.Drawing.Point(4, 3);
+            this.panel5.Location = new System.Drawing.Point(4, 2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(805, 36);
             this.panel5.TabIndex = 85;
@@ -356,7 +356,7 @@
             this.label43.ForeColor = System.Drawing.Color.Blue;
             this.label43.Location = new System.Drawing.Point(717, 60);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(72, 13);
+            this.label43.Size = new System.Drawing.Size(73, 13);
             this.label43.TabIndex = 112;
             this.label43.Text = "TAX Extractor";
             this.label43.Click += new System.EventHandler(this.label43_Click);
@@ -1171,7 +1171,7 @@
             this.Lab_isunit1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Lab_isunit1.Location = new System.Drawing.Point(467, 137);
             this.Lab_isunit1.Name = "Lab_isunit1";
-            this.Lab_isunit1.Size = new System.Drawing.Size(96, 15);
+            this.Lab_isunit1.Size = new System.Drawing.Size(95, 15);
             this.Lab_isunit1.TabIndex = 86;
             this.Lab_isunit1.Text = "Times Sales Unit ";
             this.Lab_isunit1.Visible = false;
@@ -1446,7 +1446,7 @@
             this.panel2.Size = new System.Drawing.Size(825, 1);
             this.panel2.TabIndex = 281;
             // 
-            // frmAddDrug
+            // Add_Drug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1456,7 +1456,7 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmAddDrug";
+            this.Name = "Add_Drug";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Items";
             this.Load += new System.EventHandler(this.frmAddDrug_Load);

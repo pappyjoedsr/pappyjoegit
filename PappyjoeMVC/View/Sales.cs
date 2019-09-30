@@ -1020,6 +1020,7 @@ namespace PappyjoeMVC.View
         {
             clear_itemdetails();
             btn_AddtoGrid.Text = "Add";
+            btn_cancel.Visible = false;
         }
         private void dgv_SalesItem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -2000,6 +2001,50 @@ namespace PappyjoeMVC.View
             clear_itemdetails();
             clear_All_Data();
         }
+
+        private void txt_Discount_TextAlignChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Discount_Leave(object sender, EventArgs e)
+        {
+            if (txt_Discount.Text == "")
+            {
+                txt_Discount.Text = "0";
+            }
+        }
+
+        private void txt_Discount_Click(object sender, EventArgs e)
+        {
+            if (txt_Discount.Text == "0")
+            {
+                txt_Discount.Text = "";
+            }
+        }
+
+        private void txt_Discount_KeyUp(object sender, KeyEventArgs e)
+        {
+            decimal totaldis = 0, totalamount = 0, totaldisper = 0;
+            decimal d;
+            if (decimal.TryParse(txt_DiscAmount.Text, out d))
+            {
+                if (decimal.TryParse(txt_Discount.Text, out d))
+                {
+                    totalamount = Convert.ToDecimal(Txt_TotalAmount.Text);
+                    totaldisper = Convert.ToDecimal(txt_Discount.Text);
+                    totaldis = Convert.ToDecimal((totalamount * totaldisper) / 100);
+                    txt_DiscAmount.Text = Convert.ToDecimal(totaldis).ToString("##.00");
+                    txt_GrandTotal.Text = Convert.ToDecimal(Convert.ToDecimal(Txt_TotalAmount.Text) - Convert.ToDecimal(totaldis)).ToString("##.00");
+                }
+                else
+                {
+                    txt_DiscAmount.Text = "00.00";
+                    txt_GrandTotal.Text = Txt_TotalAmount.Text;
+                }
+            }
+        }
+
         public void call_Item_Batch(string item_Code, decimal qty, string unit)
         {
             dtFor_CurrentStockUpdate_Bill.Columns.Clear();

@@ -180,9 +180,9 @@ namespace PappyjoeMVC.View
         }
         public void check_purchaseRate(string dt_PurNum)
         {
-            if (dt_PurNum != "")
+            if (Convert.ToInt32(dt_PurNum)>0)
             {
-                string dt_Cost = this.cntrl.purchit_details(Itemid);
+                string dt_Cost = this.cntrl.purchit_details(dt_PurNum, Itemid);
                 if (dt_Cost != "" && dt_Cost != "0")
                 {
                     if (txtUnitCost.Text == dt_Cost)
@@ -508,7 +508,9 @@ namespace PappyjoeMVC.View
                     DataTable dtp = this.cntrl.companydetails();
                     if (dtp.Rows.Count > 0)
                     {
-                        strclinicname = dtp.Rows[0]["name"].ToString();
+                        string clinicn = "";
+                        clinicn = dtp.Rows[0]["name"].ToString();
+                        strclinicname = clinicn.Replace("¤", "'");
                         strphone = dtp.Rows[0]["contact_no"].ToString();
                         strStreet = dtp.Rows[0]["street_address"].ToString();
                         stremail = dtp.Rows[0]["email"].ToString();

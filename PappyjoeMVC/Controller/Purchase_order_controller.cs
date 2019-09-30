@@ -11,6 +11,7 @@ namespace PappyjoeMVC.Controller
     {
         purchase_order_model _model = new purchase_order_model();
         Inventory_model imodel = new Inventory_model();
+        Common_model cmodel = new Common_model();
         public DataTable master_details(int purch_id1)
         {
             DataTable dtb = _model.master_details(purch_id1);
@@ -51,9 +52,9 @@ namespace PappyjoeMVC.Controller
             string maxid = _model.max_purNo(Itemid);
             return maxid;
         }
-        public string purchit_details(string dt_PurNum)
+        public string purchit_details(string dt_PurNum,string itemid)
         {
-            string value = _model.purchit_details(dt_PurNum);
+            string value = _model.purchit_details(dt_PurNum, itemid);
             return value;
         }
         public void save_master(string OrerNo, string OrderDate, string Supplierid)

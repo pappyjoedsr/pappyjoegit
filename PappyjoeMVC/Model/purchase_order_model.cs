@@ -64,9 +64,9 @@ namespace PappyjoeMVC.Model
             string dt_PurNum = db.scalar("select MAX(PurchNumber)from tbl_PURCHIT where Item_Code='" + Itemid + "'");
             return dt_PurNum;
         }
-        public string purchit_details(string dt_PurNum)
+        public string purchit_details(string dt_PurNum,string itemid)
         {
-            string dt_Cost = db.scalar("select Rate from tbl_PURCHIT where PurchNumber='" + Convert.ToInt32(dt_PurNum) + "' ");
+            string dt_Cost = db.scalar("select Rate from tbl_PURCHIT where PurchNumber='" + Convert.ToInt32(dt_PurNum) + "' and Item_Code='"+ itemid + "' ");
             return dt_Cost;
         }
         public void save_master(string OrerNo, string OrderDate, string Supplierid)
