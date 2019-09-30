@@ -16,6 +16,7 @@ namespace PappyjoeMVC.View
         public static string itemcode;
         public static string Itemid;
         int Rowindex = 0;
+
         public PurchaseOrder()
         {
             InitializeComponent();
@@ -25,7 +26,14 @@ namespace PappyjoeMVC.View
             InitializeComponent();
             itemcode = item_code;
             Itemid = item_id;
-        } 
+        }
+
+        public PurchaseOrder(int purch_id)
+        {
+            InitializeComponent();
+            purch_id1 = purch_id;
+            flagedit = true;
+        }
 
         private void frmPurchaseOrder_Load(object sender, EventArgs e)
         {

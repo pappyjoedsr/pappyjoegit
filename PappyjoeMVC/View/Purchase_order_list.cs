@@ -133,6 +133,8 @@ namespace PappyjoeMVC.View
                     if (dgvItemData.CurrentCell.OwningColumn.Name == "edit")
                     {
                         PappyjoeMVC.Model.Connection.MyGlobals.global_Flag = true;
+                        var form2 = new PappyjoeMVC.View.PurchaseOrder(purch_id);
+                        form2.ShowDialog();
                     }
                     else if (dgvItemData.CurrentCell.OwningColumn.Name == "del")
                     {
