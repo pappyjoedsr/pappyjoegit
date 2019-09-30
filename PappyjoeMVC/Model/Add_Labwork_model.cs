@@ -32,7 +32,7 @@ namespace PappyjoeMVC.Model
         }
         public int inslabmain(string patid,string dr_id, string wrkname, string wrkid, string dte, string duedate, string rcvdate)
         {
-            int i = db.execute("INSERT into tbl_lab_main(pt_id,dr_id,work_name,work_id,labname,lab_id,date,duedate,recievedate,status,type,trackingstatus)VALUES('" + Convert.ToInt32(patid) + "','" + Convert.ToInt32(dr_id) + "','" +wrkname + "','" + wrkid + "','','0','" + Convert.ToDateTime(dte).ToString("yyyy-MM-dd") + "','" + Convert.ToDateTime(duedate).ToString("yyyy-MM-dd") + "','" + Convert.ToDateTime(rcvdate).ToString("yyyy-MM-dd") + "','','Medical','')");
+            int i = db.execute("INSERT into tbl_lab_main(pt_id,dr_id,work_name,work_id,labname,lab_id,date,duedate,recievedate,status,type,trackingstatus)VALUES('" + Convert.ToInt32(patid) + "','" + Convert.ToInt32(dr_id) + "','" +wrkname + "','" + wrkid + "','','0','" + Convert.ToDateTime(dte).ToString("yyyy-MM-dd") + "','" + Convert.ToDateTime(duedate).ToString("yyyy-MM-dd") + "','" + Convert.ToDateTime(rcvdate).ToString("yyyy-MM-dd") + "','','Medical','Active')");
             return i;
         }
         public int inslabmain2(string patid, string dr_id, string work_name, string work_id, string date)
