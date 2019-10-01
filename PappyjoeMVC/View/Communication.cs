@@ -823,7 +823,7 @@ namespace PappyjoeMVC.View
                         DGV_transactional.Rows[t1].Cells[2].Value = dr["message"].ToString();
                         DGV_transactional.Rows[t1].Cells[3].Value = dr["send_datetime"].ToString();
                         t1++;
-                        DGV_transactional.RowsDefaultCellStyle.ForeColor = Color.Black;
+                        DGV_transactional.RowsDefaultCellStyle.ForeColor = Color.Black;  
                         DGV_transactional.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8, FontStyle.Regular);
                     }
                 }
