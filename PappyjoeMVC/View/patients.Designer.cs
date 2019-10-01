@@ -990,8 +990,9 @@
             // 
             this.lab_filterPatient.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_filterPatient.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lab_filterPatient.Image = ((System.Drawing.Image)(resources.GetObject("lab_filterPatient.Image")));
             this.lab_filterPatient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lab_filterPatient.Location = new System.Drawing.Point(5, 7);
+            this.lab_filterPatient.Location = new System.Drawing.Point(13, 7);
             this.lab_filterPatient.Name = "lab_filterPatient";
             this.lab_filterPatient.Size = new System.Drawing.Size(182, 39);
             this.lab_filterPatient.TabIndex = 16;
