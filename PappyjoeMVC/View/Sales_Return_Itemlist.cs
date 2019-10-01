@@ -13,7 +13,7 @@ namespace PappyjoeMVC.View
 {
     public partial class Sales_Return_Itemlist : Form
     {
-        //private DataTable dtb_itemlist;
+        
         public DataTable ItemList; public static string invNumber;
         Sales_Retuen_Itemlist_Controller cntrl = new Sales_Retuen_Itemlist_Controller();
         
@@ -77,7 +77,7 @@ namespace PappyjoeMVC.View
         {
             if (txt_Search.Text != "")
             {
-                DataTable dtb = this.cntrl.search_itemlist(invNumber, txt_Search.Text);// db.table("select S.Item_Code,item_name,RetQty from tbl_SALEIT S inner join tbl_ITEMS A on A.item_code=S.Item_Code where S.InvNumber='" + Convert.ToInt32(invNumber) + "' and S.Item_Code like'" + txt_Search.Text + "%' or item_name like '" + txt_Search.Text + "%'");
+                DataTable dtb = this.cntrl.search_itemlist(invNumber, txt_Search.Text);
                 if (dtb.Rows.Count > 0)
                 {
                     dgv_Item.Rows.Clear();
@@ -99,7 +99,7 @@ namespace PappyjoeMVC.View
             {
                 Lab_Msg.Visible = false;
                 DataTable dt1 = new DataTable();
-                dt1 = this.cntrl.itemdetails_from_salesit(invNumber);// db.table("select S.Item_Code,item_name,RetQty from tbl_SALEIT S inner join tbl_ITEMS A on A.item_code=S.Item_Code where S.InvNumber='" + Convert.ToInt32(invNumber) + "'");
+                dt1 = this.cntrl.itemdetails_from_salesit(invNumber);
                 if (dt1.Rows.Count > 0)
                 {
                     dgv_Item.Rows.Clear();
