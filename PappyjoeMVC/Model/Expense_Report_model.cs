@@ -4,7 +4,6 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
 
 namespace PappyjoeMVC.Model
 {
@@ -56,9 +55,6 @@ namespace PappyjoeMVC.Model
             DataTable dfd = db.table("select date_format(date,'%b %Y') AS 'MONTH', COUNT(*) AS 'EXPENSE' from tbl_expense where date between '" + d1 + "' and '" + d2 + "' GROUP BY date_format(date,'%b %Y') ");
             return dfd;
         }
-    public class Expense_Report_model
-    {
-        Connection db = new Connection();
         //Expense Daily Report                                                                                                                                                                                                                                                                                       
         public DataTable getdctrdtls()
         {
