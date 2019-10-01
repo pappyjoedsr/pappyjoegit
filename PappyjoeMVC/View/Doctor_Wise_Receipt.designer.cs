@@ -262,7 +262,8 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.Gainsboro;
             this.panel4.Controls.Add(this.Lab_Doctorname);
             this.panel4.Controls.Add(this.combo_doctors);
@@ -391,7 +392,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(11, -2);
+            this.label6.Location = new System.Drawing.Point(11, 1);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(274, 40);
             this.label6.TabIndex = 1;
@@ -528,7 +529,8 @@
             this.DgvReceiptReceivedPerDoctor.AllowUserToResizeRows = false;
             dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
             this.DgvReceiptReceivedPerDoctor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.DgvReceiptReceivedPerDoctor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DgvReceiptReceivedPerDoctor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvReceiptReceivedPerDoctor.BackgroundColor = System.Drawing.Color.White;
             this.DgvReceiptReceivedPerDoctor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvReceiptReceivedPerDoctor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -568,7 +570,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Controls.Add(this.btn_Close);
             this.panel1.Controls.Add(this.label2);
@@ -593,8 +596,10 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Doctor_Wise_Receipt";
-            this.Text = "Doctor_Wise_Receipt";
+            this.Text = "Doctor Wise Receipt";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Doctor_Wise_Receipt_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

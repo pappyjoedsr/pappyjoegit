@@ -167,7 +167,7 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.label_empty);
             this.panel3.Controls.Add(this.Grvsummary);
-            this.panel3.Location = new System.Drawing.Point(3, 101);
+            this.panel3.Location = new System.Drawing.Point(3, 111);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1352, 546);
             this.panel3.TabIndex = 226;
@@ -192,7 +192,8 @@
             this.Grvsummary.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.Grvsummary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.Grvsummary.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Grvsummary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Grvsummary.BackgroundColor = System.Drawing.Color.White;
             this.Grvsummary.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grvsummary.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -209,7 +210,7 @@
             this.TOTAL_COST,
             this.TOTALINCOME,
             this.TOTAL_AMOUT_DUE});
-            this.Grvsummary.Location = new System.Drawing.Point(0, 0);
+            this.Grvsummary.Location = new System.Drawing.Point(0, -4);
             this.Grvsummary.Name = "Grvsummary";
             this.Grvsummary.ReadOnly = true;
             this.Grvsummary.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -579,7 +580,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.combodoctors);
             this.panel2.Controls.Add(this.dateTimePickerdaily1);
-            this.panel2.Location = new System.Drawing.Point(-1, -15);
+            this.panel2.Location = new System.Drawing.Point(-1, -5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1355, 116);
             this.panel2.TabIndex = 225;
@@ -634,8 +635,10 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Daily_Invoice_Report";
-            this.Text = "Daily_Invoice_Report";
+            this.Text = "Daily Invoice Report";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Daily_Invoice_Report_Load);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

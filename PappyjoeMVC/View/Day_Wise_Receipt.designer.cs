@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Day_Wise_Receipt));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lab_tax = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.Lab_Discount = new System.Windows.Forms.Label();
@@ -60,7 +60,6 @@
             this.Lab_Due = new System.Windows.Forms.Label();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.DGV_Receipt = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.ColSLNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColInv = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +74,7 @@
             this.ColTotalIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAmountPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTotalDue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Receipt)).BeginInit();
@@ -280,7 +280,8 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.Chk_RemoveAmountDue);
             this.panel2.Controls.Add(this.cmb_doctor);
@@ -435,18 +436,19 @@
             this.DGV_Receipt.AllowUserToDeleteRows = false;
             this.DGV_Receipt.AllowUserToResizeColumns = false;
             this.DGV_Receipt.AllowUserToResizeRows = false;
-            this.DGV_Receipt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DGV_Receipt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_Receipt.BackgroundColor = System.Drawing.Color.White;
             this.DGV_Receipt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV_Receipt.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DGV_Receipt.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Receipt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Receipt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Receipt.ColumnHeadersHeight = 28;
             this.DGV_Receipt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DGV_Receipt.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -465,14 +467,14 @@
             this.ColAmountPaid,
             this.ColTotalDue});
             this.DGV_Receipt.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_Receipt.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_Receipt.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGV_Receipt.GridColor = System.Drawing.Color.Gainsboro;
             this.DGV_Receipt.Location = new System.Drawing.Point(-3, 3);
             this.DGV_Receipt.Name = "DGV_Receipt";
@@ -482,28 +484,6 @@
             this.DGV_Receipt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Receipt.Size = new System.Drawing.Size(1367, 533);
             this.DGV_Receipt.TabIndex = 5;
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Controls.Add(this.Lab_Due);
-            this.panel4.Controls.Add(this.Lab_Paid);
-            this.panel4.Controls.Add(this.Lab_tax);
-            this.panel4.Controls.Add(this.Lab_Discount);
-            this.panel4.Controls.Add(this.Lab_Amount);
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.Lab_totalExpense);
-            this.panel4.Controls.Add(this.Lab_TotalIncome);
-            this.panel4.Controls.Add(this.Lab_Msg);
-            this.panel4.Controls.Add(this.DGV_Receipt);
-            this.panel4.Location = new System.Drawing.Point(3, 162);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1364, 578);
-            this.panel4.TabIndex = 106;
             // 
             // ColSLNo
             // 
@@ -589,6 +569,28 @@
             this.ColTotalDue.Name = "ColTotalDue";
             this.ColTotalDue.Width = 80;
             // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.Lab_Due);
+            this.panel4.Controls.Add(this.Lab_Paid);
+            this.panel4.Controls.Add(this.Lab_tax);
+            this.panel4.Controls.Add(this.Lab_Discount);
+            this.panel4.Controls.Add(this.Lab_Amount);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.Lab_totalExpense);
+            this.panel4.Controls.Add(this.Lab_TotalIncome);
+            this.panel4.Controls.Add(this.Lab_Msg);
+            this.panel4.Controls.Add(this.DGV_Receipt);
+            this.panel4.Location = new System.Drawing.Point(3, 162);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1364, 578);
+            this.panel4.TabIndex = 106;
+            // 
             // Day_Wise_Receipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -598,8 +600,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Day_Wise_Receipt";
-            this.Text = "Day_Wise_Receipt";
+            this.Text = "Day Wise Receipt";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Day_Wise_Receipt_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
