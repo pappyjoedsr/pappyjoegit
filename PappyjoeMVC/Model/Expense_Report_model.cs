@@ -65,9 +65,7 @@ namespace PappyjoeMVC.Model
             DataTable dtp = db.table("select name,contact_no,street_address,email,website from tbl_practice_details");
             return dtp;
         }
-    public class Expense_Report_model
-    {
-        Connection db = new Connection();
+  
         public DataTable Expense_type_data()
         {
             System.Data.DataTable doctor_rs = db.table("select distinct id,name from tbl_expense_type");
