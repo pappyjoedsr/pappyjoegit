@@ -133,12 +133,12 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Inventory_dt_stock()
         {
-            System.Data.DataTable dt_stock = db.table("  select item_code,(select item_name from tbl_ITEMS where item_code=B.Item_Code ) item_name , (select Unit1 from tbl_ITEMS where item_code=B.Item_Code ) unit,(select sum( qty) from tbl_batchnumber where Item_Code=B.Item_Code) qty  from tbl_batchnumber B group by item_code order by B.item_code ");
+            System.Data.DataTable dt_stock = db.table("  select item_code,(select item_name from tbl_ITEMS where id=B.Item_Code ) item_name , (select Unit1 from tbl_ITEMS where id=B.Item_Code ) unit,(select sum( qty) from tbl_batchnumber where Item_Code=B.Item_Code) qty  from tbl_batchnumber B group by item_code order by B.item_code ");
             return dt_stock;
         }
         public DataTable Inventory_gvShow(string dr)
         {
-            System.Data.DataTable dtunit = db.table(" select OneUnitOnly,UnitMF,Unit1,Unit2 from tbl_ITEMS where item_code='" + dr + "'");
+            System.Data.DataTable dtunit = db.table(" select OneUnitOnly,UnitMF,Unit1,Unit2 from tbl_ITEMS where id='" + dr + "'");
             return dtunit;
         }
         public DataTable GetDoctorId_byLogintype(string drid)

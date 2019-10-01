@@ -45,7 +45,6 @@ namespace PappyjoeMVC.View
                 if (flag_from_inventory == true)
                 {
                     DataTable dt = this.cntrl.SalesOrderdetls(date_From, date_To);
-                    //DataTable dt = db.table("select distinct M.DocNumber,M.DocDate,M.Cus_Id,(select count(ItemCode) from tbl_SalesOrder where DocNumber=M.DocNumber) 'qty',(select sum(Qty*Cost) from tbl_SalesOrder where DocNumber=M.DocNumber) 'amount',M.Cus_Id,M.CustomerName,M.Phone from tbl_SalesOrder_Master M inner join tbl_SalesOrder S on S.DocNumber=M.DocNumber where M.DocDate between '" + Convert.ToDateTime(date_From).ToString("yyyy-MM-dd") + "' and '" + Convert.ToDateTime(date_To).ToString("yyyy-MM-dd") + "' and  Status <>'S' and  Status <>'D'");
                     if (dt.Rows.Count > 0)
                     {
                         Fill_dgvSale(dt);
@@ -55,7 +54,6 @@ namespace PappyjoeMVC.View
                 {
                     string date = DateTime.Now.ToString("yyyy-MM-dd");
                     DataTable dtb = this.cntrl.getSales(date);
-                    //dtb = db.table("select distinct M.DocNumber,M.DocDate,M.Cus_Id,(select count(ItemCode) from tbl_SalesOrder where DocNumber=M.DocNumber) 'qty',(select sum(Qty*Cost) from tbl_SalesOrder where DocNumber=M.DocNumber) 'amount',M.Cus_Id,M.CustomerName,M.Phone from tbl_SalesOrder_Master M inner join tbl_SalesOrder S on S.DocNumber=M.DocNumber  where M.DocDate='" + date + "' and  Status <>'S' and  Status <>'D'");
                     if (dtb.Rows.Count > 0)
                     {
                         Fill_dgvSale(dtb);
@@ -127,7 +125,7 @@ namespace PappyjoeMVC.View
                     else if (dgv_sales.CurrentCell.OwningColumn.Name == "delete")
                     {
                         int i = 0, j = 0;
-                        if (invnum != null)
+                        if (invnum >0)
                         {
                             DialogResult res = MessageBox.Show("Are you sure you want to delete?", "Delete confirmation",
                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -136,7 +134,6 @@ namespace PappyjoeMVC.View
                             }
                             else
                             {
-                                //i = db.execute("update tbl_SalesOrder_Master set Status='D'where DocNumber='" + invnum + "' ");
                                 i = this.cntrl.update_salesOrder(invnum);
                                 if (i > 0)
                                 {
@@ -177,7 +174,6 @@ namespace PappyjoeMVC.View
             Lab_Msg.Visible = false;
             string date = DateTime.Now.ToString("MM/dd/yyyy");
             DataTable dtb = this.cntrl.get_dataRefresh(date);
-            //dtb = db.table("select distinct M.DocNumber,M.DocDate,M.Cus_Id,(select count(ItemCode) from tbl_SalesOrder where DocNumber=M.DocNumber) 'qty',(select sum(Qty*Cost) from tbl_SalesOrder where DocNumber=M.DocNumber) amount,M.Cus_Id,M.CustomerName,M.Phone from tbl_SalesOrder_Master M inner join tbl_SalesOrder S on S.DocNumber=M.DocNumber  where M.DocDate='" + date + "' and  Status <>'S' and  Status <>'D'");
             if (dtb.Rows.Count > 0)
             {
                 Fill_dgvSale(dtb);
@@ -203,7 +199,6 @@ namespace PappyjoeMVC.View
                 else
                 {
                     DataTable dt = this.cntrl.showdata(from, to);
-                    // db.table("select distinct M.DocNumber,M.DocDate,M.Cus_Id,(select count(ItemCode) from tbl_SalesOrder where DocNumber=M.DocNumber) 'qty',(select sum(Qty*Cost) from tbl_SalesOrder where DocNumber=M.DocNumber) 'amount',M.Cus_Id,M.CustomerName,M.Phone from tbl_SalesOrder_Master M inner join tbl_SalesOrder S on S.DocNumber=M.DocNumber where M.DocDate between '" + from + "' and '" + to + "' and  Status <>'S' and  Status <>'D'");
                     if (dt.Rows.Count > 0)
                     {
                         Fill_dgvSale(dt);
