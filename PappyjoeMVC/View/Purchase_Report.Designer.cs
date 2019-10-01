@@ -72,7 +72,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(1156, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 171;
             this.label2.Text = "Total Amount";
             // 
@@ -133,7 +133,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(1156, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "Total Cost";
             // 
@@ -168,7 +168,7 @@
             this.lblinvoices.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblinvoices.Location = new System.Drawing.Point(1156, 10);
             this.lblinvoices.Name = "lblinvoices";
-            this.lblinvoices.Size = new System.Drawing.Size(80, 13);
+            this.lblinvoices.Size = new System.Drawing.Size(81, 13);
             this.lblinvoices.TabIndex = 0;
             this.lblinvoices.Text = "Total Purchase";
             // 
@@ -361,7 +361,6 @@
             this.dgvPurchase.AllowUserToDeleteRows = false;
             this.dgvPurchase.AllowUserToResizeColumns = false;
             this.dgvPurchase.AllowUserToResizeRows = false;
-            this.dgvPurchase.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvPurchase.BackgroundColor = System.Drawing.Color.White;
             this.dgvPurchase.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPurchase.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -376,6 +375,7 @@
             this.TotalAmount,
             this.DiscAmount,
             this.GrandTotal});
+            this.dgvPurchase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPurchase.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvPurchase.Location = new System.Drawing.Point(0, 0);
             this.dgvPurchase.Name = "dgvPurchase";
@@ -385,7 +385,7 @@
             this.dgvPurchase.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPurchase.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPurchase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPurchase.Size = new System.Drawing.Size(1371, 780);
+            this.dgvPurchase.Size = new System.Drawing.Size(1374, 612);
             this.dgvPurchase.TabIndex = 1;
             this.dgvPurchase.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchase_CellDoubleClick);
             // 
@@ -434,7 +434,8 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Purchase_Report";
-            this.Text = "Purchase_Report";
+            this.Text = "Purchase Report";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Purchase_Report_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reports));
             this.rad_income = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -70,15 +70,15 @@
             this.lbltreatmenteachdoctor = new System.Windows.Forms.Label();
             this.lblmonthtreatment = new System.Windows.Forms.Label();
             this.lbleachcategory = new System.Windows.Forms.Label();
+            this.paneldailysummary = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblMonthlySummary = new System.Windows.Forms.Label();
+            this.lbldaily = new System.Windows.Forms.Label();
             this.panelpatients = new System.Windows.Forms.Panel();
             this.lblgroupwisereport = new System.Windows.Forms.Label();
             this.lblmonthnewpatient = new System.Windows.Forms.Label();
             this.lblfirstappoint = new System.Windows.Forms.Label();
             this.lbldailynewpatient = new System.Windows.Forms.Label();
-            this.paneldailysummary = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.lblMonthlySummary = new System.Windows.Forms.Label();
-            this.lbldaily = new System.Windows.Forms.Label();
             this.lblrelatedrepo = new System.Windows.Forms.Label();
             this.panelappointments = new System.Windows.Forms.Panel();
             this.lblVisitingHistory = new System.Windows.Forms.Label();
@@ -134,8 +134,8 @@
             this.panl_Expanse.SuspendLayout();
             this.panel4.SuspendLayout();
             this.paneltreatments.SuspendLayout();
-            this.panelpatients.SuspendLayout();
             this.paneldailysummary.SuspendLayout();
+            this.panelpatients.SuspendLayout();
             this.panelappointments.SuspendLayout();
             this.label46.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -531,6 +531,7 @@
             this.Lab_ExpanseCategory.Size = new System.Drawing.Size(172, 17);
             this.Lab_ExpanseCategory.TabIndex = 112;
             this.Lab_ExpanseCategory.Text = "EXPENSE  CATEGORY WISE";
+            this.Lab_ExpanseCategory.Click += new System.EventHandler(this.Lab_ExpanseCategory_Click_1);
             // 
             // Lab_MonthlyExapanse
             // 
@@ -556,6 +557,7 @@
             this.Lab_DailyExpanse.Size = new System.Drawing.Size(104, 17);
             this.Lab_DailyExpanse.TabIndex = 110;
             this.Lab_DailyExpanse.Text = "DAILY EXPENSE";
+            this.Lab_DailyExpanse.Click += new System.EventHandler(this.Lab_DailyExpanse_Click);
             // 
             // panl_Expanse
             // 
@@ -571,10 +573,8 @@
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Controls.Add(this.paneltreatments);
             this.panel4.Controls.Add(this.panl_Expanse);
             this.panel4.Controls.Add(this.paneldailysummary);
-            this.panel4.Controls.Add(this.panelpatients);
             this.panel4.Controls.Add(this.panelPayment);
             this.panel4.Controls.Add(this.lblrelatedrepo);
             this.panel4.Controls.Add(this.Panel_inventory);
@@ -592,7 +592,7 @@
             this.paneltreatments.Controls.Add(this.lblmonthtreatment);
             this.paneltreatments.Controls.Add(this.lbleachcategory);
             this.paneltreatments.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.paneltreatments.Location = new System.Drawing.Point(5, 43);
+            this.paneltreatments.Location = new System.Drawing.Point(17, 193);
             this.paneltreatments.Name = "paneltreatments";
             this.paneltreatments.Size = new System.Drawing.Size(307, 132);
             this.paneltreatments.TabIndex = 133;
@@ -649,13 +649,64 @@
             this.lbleachcategory.Text = "TREATMENTS FOR EACH CATEGORY";
             this.lbleachcategory.Click += new System.EventHandler(this.lbleachcategory_Click);
             // 
+            // paneldailysummary
+            // 
+            this.paneldailysummary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.paneldailysummary.Controls.Add(this.label14);
+            this.paneldailysummary.Controls.Add(this.lblMonthlySummary);
+            this.paneldailysummary.Controls.Add(this.lbldaily);
+            this.paneldailysummary.Location = new System.Drawing.Point(12, 29);
+            this.paneldailysummary.Name = "paneldailysummary";
+            this.paneldailysummary.Size = new System.Drawing.Size(307, 115);
+            this.paneldailysummary.TabIndex = 137;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label14.Location = new System.Drawing.Point(12, 80);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(157, 17);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "DOCTOR WISE INVOICE ";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // lblMonthlySummary
+            // 
+            this.lblMonthlySummary.AutoSize = true;
+            this.lblMonthlySummary.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMonthlySummary.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonthlySummary.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblMonthlySummary.Location = new System.Drawing.Point(12, 47);
+            this.lblMonthlySummary.Name = "lblMonthlySummary";
+            this.lblMonthlySummary.Size = new System.Drawing.Size(128, 17);
+            this.lblMonthlySummary.TabIndex = 1;
+            this.lblMonthlySummary.Text = "MONTHLY INVOICE";
+            this.lblMonthlySummary.Click += new System.EventHandler(this.lblMonthlySummary_Click);
+            // 
+            // lbldaily
+            // 
+            this.lbldaily.AutoSize = true;
+            this.lbldaily.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbldaily.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldaily.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbldaily.Location = new System.Drawing.Point(12, 14);
+            this.lbldaily.Name = "lbldaily";
+            this.lbldaily.Size = new System.Drawing.Size(101, 17);
+            this.lbldaily.TabIndex = 0;
+            this.lbldaily.Text = "DAILY INVOICE";
+            this.lbldaily.Click += new System.EventHandler(this.lbldaily_Click);
+            // 
             // panelpatients
             // 
+            this.panelpatients.Controls.Add(this.paneltreatments);
             this.panelpatients.Controls.Add(this.lblgroupwisereport);
             this.panelpatients.Controls.Add(this.lblmonthnewpatient);
             this.panelpatients.Controls.Add(this.lblfirstappoint);
             this.panelpatients.Controls.Add(this.lbldailynewpatient);
-            this.panelpatients.Location = new System.Drawing.Point(6, 195);
+            this.panelpatients.Location = new System.Drawing.Point(3, 167);
             this.panelpatients.Name = "panelpatients";
             this.panelpatients.Size = new System.Drawing.Size(307, 135);
             this.panelpatients.TabIndex = 131;
@@ -712,56 +763,6 @@
             this.lbldailynewpatient.Text = "DAILY NEW PATIENTS";
             this.lbldailynewpatient.Click += new System.EventHandler(this.lbldailynewpatient_Click);
             // 
-            // paneldailysummary
-            // 
-            this.paneldailysummary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.paneldailysummary.Controls.Add(this.label14);
-            this.paneldailysummary.Controls.Add(this.lblMonthlySummary);
-            this.paneldailysummary.Controls.Add(this.lbldaily);
-            this.paneldailysummary.Location = new System.Drawing.Point(4, 240);
-            this.paneldailysummary.Name = "paneldailysummary";
-            this.paneldailysummary.Size = new System.Drawing.Size(307, 115);
-            this.paneldailysummary.TabIndex = 137;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label14.Location = new System.Drawing.Point(12, 80);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(157, 17);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "DOCTOR WISE INVOICE ";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // lblMonthlySummary
-            // 
-            this.lblMonthlySummary.AutoSize = true;
-            this.lblMonthlySummary.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblMonthlySummary.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonthlySummary.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblMonthlySummary.Location = new System.Drawing.Point(12, 47);
-            this.lblMonthlySummary.Name = "lblMonthlySummary";
-            this.lblMonthlySummary.Size = new System.Drawing.Size(128, 17);
-            this.lblMonthlySummary.TabIndex = 1;
-            this.lblMonthlySummary.Text = "MONTHLY INVOICE";
-            this.lblMonthlySummary.Click += new System.EventHandler(this.lblMonthlySummary_Click);
-            // 
-            // lbldaily
-            // 
-            this.lbldaily.AutoSize = true;
-            this.lbldaily.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbldaily.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldaily.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbldaily.Location = new System.Drawing.Point(12, 14);
-            this.lbldaily.Name = "lbldaily";
-            this.lbldaily.Size = new System.Drawing.Size(101, 17);
-            this.lbldaily.TabIndex = 0;
-            this.lbldaily.Text = "DAILY INVOICE";
-            this.lbldaily.Click += new System.EventHandler(this.lbldaily_Click);
-            // 
             // lblrelatedrepo
             // 
             this.lblrelatedrepo.AutoSize = true;
@@ -777,6 +778,7 @@
             // 
             this.panelappointments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelappointments.BackColor = System.Drawing.Color.White;
+            this.panelappointments.Controls.Add(this.panelpatients);
             this.panelappointments.Controls.Add(this.lblVisitingHistory);
             this.panelappointments.Controls.Add(this.lblMissingCheckoutReports);
             this.panelappointments.Controls.Add(this.lblappointmenteachdoctor);
@@ -1104,8 +1106,8 @@
             this.Grvreports.AllowUserToOrderColumns = true;
             this.Grvreports.AllowUserToResizeColumns = false;
             this.Grvreports.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.Grvreports.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.Grvreports.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Grvreports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1113,14 +1115,14 @@
             this.Grvreports.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grvreports.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Grvreports.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Ivory;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grvreports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Ivory;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grvreports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Grvreports.ColumnHeadersHeight = 28;
             this.Grvreports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Grvreports.Location = new System.Drawing.Point(4, 46);
@@ -1439,10 +1441,10 @@
             this.panel4.PerformLayout();
             this.paneltreatments.ResumeLayout(false);
             this.paneltreatments.PerformLayout();
-            this.panelpatients.ResumeLayout(false);
-            this.panelpatients.PerformLayout();
             this.paneldailysummary.ResumeLayout(false);
             this.paneldailysummary.PerformLayout();
+            this.panelpatients.ResumeLayout(false);
+            this.panelpatients.PerformLayout();
             this.panelappointments.ResumeLayout(false);
             this.panelappointments.PerformLayout();
             this.label46.ResumeLayout(false);

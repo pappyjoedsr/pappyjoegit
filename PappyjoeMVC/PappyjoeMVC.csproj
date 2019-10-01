@@ -100,7 +100,9 @@
     <Compile Include="Controller\Doctor_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Edit_Practice_Details_controller.cs" />
     <Compile Include="Controller\EMR_controller.cs" />
+    <Compile Include="Controller\Expense_Category_Controller.cs" />
     <Compile Include="Controller\Expense_controller.cs" />
+    <Compile Include="Controller\Expense_Daily_Report_controller.cs" />
     <Compile Include="Controller\Expiry_Report_controller.cs" />
     <Compile Include="Controller\Export_controller.cs" />
     <Compile Include="Controller\Finished_Procedre_controller.cs" />
@@ -493,6 +495,12 @@
     </Compile>
     <Compile Include="View\EMR_Settings.Designer.cs">
       <DependentUpon>EMR_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Expense Daily Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Expense Daily Report.Designer.cs">
+      <DependentUpon>Expense Daily Report.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Expense.cs">
       <SubType>Form</SubType>
@@ -1185,8 +1193,14 @@
     <EmbeddedResource Include="View\EMR_Settings.resx">
       <DependentUpon>EMR_Settings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Expense Daily Report.resx">
+      <DependentUpon>Expense Daily Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Expense.resx">
       <DependentUpon>Expense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Expense_Category_Wise_Report.resx">
+      <DependentUpon>Expense_Category_Wise_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Expiry_Report.resx">
       <DependentUpon>Expiry_Report.cs</DependentUpon>

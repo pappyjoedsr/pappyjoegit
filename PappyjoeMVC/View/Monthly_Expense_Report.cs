@@ -138,7 +138,7 @@ namespace PappyjoeMVC.View
         }
         public void bind_grid(DataTable dt)
         {
-            int k = 0;
+            int k = 1;
             Dgv_Expense.Rows.Clear();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -151,6 +151,7 @@ namespace PappyjoeMVC.View
                 Dgv_Expense.Rows[i].Cells["CoAmountCr"].Value = Convert.ToDecimal(dt.Rows[i]["amount"].ToString()).ToString("#00.00");
                 Dgv_Expense.Rows[i].Cells["colAmountdr"].Value = Convert.ToDecimal(dt.Rows[i]["amountincome"].ToString()).ToString("#00.00");
                 Dgv_Expense.Rows[i].Cells["ColDescription"].Value = dt.Rows[i]["description"].ToString();
+                k++;
             }
         }
         public void fill_grid()
