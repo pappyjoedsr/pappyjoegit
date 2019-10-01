@@ -214,6 +214,7 @@
     <Compile Include="Model\Edit_Practice_Details_model.cs" />
     <Compile Include="Model\EMR_model.cs" />
     <Compile Include="Model\Expense_model.cs" />
+    <Compile Include="Model\Expense_Report_model.cs" />
     <Compile Include="Model\Export_model.cs" />
     <Compile Include="Model\GeneralFunctions.cs" />
     <Compile Include="Model\GlobalVariables.cs" />
@@ -497,6 +498,12 @@
     </Compile>
     <Compile Include="View\Expense.Designer.cs">
       <DependentUpon>Expense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Expense_Category_Wise_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Expense_Category_Wise_Report.Designer.cs">
+      <DependentUpon>Expense_Category_Wise_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Expiry_Report.cs">
       <SubType>Form</SubType>

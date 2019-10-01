@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dentalwork));
             this.btnsms = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -161,7 +162,7 @@
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label12.Location = new System.Drawing.Point(412, 95);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(65, 13);
+            this.label12.Size = new System.Drawing.Size(66, 13);
             this.label12.TabIndex = 33;
             this.label12.Text = "WORK TYPE";
             // 
@@ -187,7 +188,7 @@
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label10.Location = new System.Drawing.Point(50, 127);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 13);
+            this.label10.Size = new System.Drawing.Size(64, 13);
             this.label10.TabIndex = 31;
             this.label10.Text = "ALLOY TYPE";
             // 
@@ -209,7 +210,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label8.Location = new System.Drawing.Point(365, 154);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 13);
+            this.label8.Size = new System.Drawing.Size(110, 13);
             this.label8.TabIndex = 26;
             this.label8.Text = "WORK ASSIGN DATE";
             // 
@@ -234,7 +235,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label7.Location = new System.Drawing.Point(418, 181);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.Size = new System.Drawing.Size(58, 13);
             this.label7.TabIndex = 23;
             this.label7.Text = "DUE DATE";
             // 
@@ -255,7 +256,7 @@
             this.lbltooth.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lbltooth.Location = new System.Drawing.Point(24, 153);
             this.lbltooth.Name = "lbltooth";
-            this.lbltooth.Size = new System.Drawing.Size(91, 13);
+            this.lbltooth.Size = new System.Drawing.Size(92, 13);
             this.lbltooth.TabIndex = 9;
             this.lbltooth.Text = "TOOTH NUMBER";
             // 
@@ -277,7 +278,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(65, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "JOB NO.";
             // 
@@ -298,7 +299,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(417, 123);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "LAB NAME";
             // 
@@ -333,15 +334,19 @@
             this.panel1.Size = new System.Drawing.Size(795, 218);
             this.panel1.TabIndex = 5;
             // 
-            // dentalwork
+            // Dentalwork
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(795, 218);
             this.Controls.Add(this.panel1);
-            this.Name = "dentalwork";
-            this.Text = "dentalwork";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Dentalwork";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Dental Work";
             this.Load += new System.EventHandler(this.dentalwork_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

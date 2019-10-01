@@ -39,10 +39,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgv_Item = new System.Windows.Forms.DataGridView();
+            this.Lab_Msg = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colitem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBatch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lab_Msg = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Item)).BeginInit();
             this.SuspendLayout();
@@ -167,11 +167,23 @@
             this.dgv_Item.TabIndex = 0;
             this.dgv_Item.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Item_CellDoubleClick);
             // 
+            // Lab_Msg
+            // 
+            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.ForeColor = System.Drawing.Color.Red;
+            this.Lab_Msg.Location = new System.Drawing.Point(249, 44);
+            this.Lab_Msg.Name = "Lab_Msg";
+            this.Lab_Msg.Size = new System.Drawing.Size(82, 13);
+            this.Lab_Msg.TabIndex = 292;
+            this.Lab_Msg.Text = "No Items Found";
+            this.Lab_Msg.Visible = false;
+            // 
             // id
             // 
             this.id.HeaderText = "Id";
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // colitem
             // 
@@ -186,17 +198,6 @@
             this.colBatch.Name = "colBatch";
             this.colBatch.ReadOnly = true;
             this.colBatch.Width = 170;
-            // 
-            // Lab_Msg
-            // 
-            this.Lab_Msg.AutoSize = true;
-            this.Lab_Msg.ForeColor = System.Drawing.Color.Red;
-            this.Lab_Msg.Location = new System.Drawing.Point(249, 44);
-            this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(82, 13);
-            this.Lab_Msg.TabIndex = 292;
-            this.Lab_Msg.Text = "No Items Found";
-            this.Lab_Msg.Visible = false;
             // 
             // Sales_Return_Itemlist
             // 
@@ -213,6 +214,8 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btn_OK);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Sales_Return_Itemlist";
             this.Text = "Item List";
             this.Load += new System.EventHandler(this.Sales_Return_Itemlist_Load);
@@ -233,9 +236,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgv_Item;
+        private System.Windows.Forms.Label Lab_Msg;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn colitem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBatch;
-        private System.Windows.Forms.Label Lab_Msg;
     }
 }
