@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reports));
             this.rad_income = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -314,7 +314,7 @@
             this.panelPayment.Controls.Add(this.lab_receipt_ModeOfPayment);
             this.panelPayment.Controls.Add(this.Lab_Receipt_PerDoctor);
             this.panelPayment.Controls.Add(this.label2);
-            this.panelPayment.Location = new System.Drawing.Point(12, 43);
+            this.panelPayment.Location = new System.Drawing.Point(8, 29);
             this.panelPayment.Name = "panelPayment";
             this.panelPayment.Size = new System.Drawing.Size(307, 137);
             this.panelPayment.TabIndex = 269;
@@ -358,7 +358,7 @@
             this.toolStripTextBDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextBDoctor.Name = "toolStripTextBDoctor";
             this.toolStripTextBDoctor.ReadOnly = true;
-            this.toolStripTextBDoctor.Size = new System.Drawing.Size(250, 23);
+            this.toolStripTextBDoctor.Size = new System.Drawing.Size(250, 40);
             this.toolStripTextBDoctor.Text = "doctorname";
             // 
             // toolStripTextBox1
@@ -543,6 +543,7 @@
             this.Lab_MonthlyExapanse.Size = new System.Drawing.Size(131, 17);
             this.Lab_MonthlyExapanse.TabIndex = 111;
             this.Lab_MonthlyExapanse.Text = "MONTHLY EXPENSE";
+            this.Lab_MonthlyExapanse.Click += new System.EventHandler(this.Lab_MonthlyExapanse_Click);
             // 
             // Lab_DailyExpanse
             // 
@@ -561,7 +562,7 @@
             this.panl_Expanse.Controls.Add(this.Lab_ExpanseCategory);
             this.panl_Expanse.Controls.Add(this.Lab_MonthlyExapanse);
             this.panl_Expanse.Controls.Add(this.Lab_DailyExpanse);
-            this.panl_Expanse.Location = new System.Drawing.Point(26, 161);
+            this.panl_Expanse.Location = new System.Drawing.Point(5, 109);
             this.panl_Expanse.Name = "panl_Expanse";
             this.panl_Expanse.Size = new System.Drawing.Size(307, 102);
             this.panl_Expanse.TabIndex = 143;
@@ -571,11 +572,11 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.paneltreatments);
-            this.panel4.Controls.Add(this.panelpatients);
+            this.panel4.Controls.Add(this.panl_Expanse);
             this.panel4.Controls.Add(this.paneldailysummary);
+            this.panel4.Controls.Add(this.panelpatients);
             this.panel4.Controls.Add(this.panelPayment);
             this.panel4.Controls.Add(this.lblrelatedrepo);
-            this.panel4.Controls.Add(this.panl_Expanse);
             this.panel4.Controls.Add(this.Panel_inventory);
             this.panel4.Controls.Add(this.panelappointments);
             this.panel4.Location = new System.Drawing.Point(1052, 113);
@@ -591,7 +592,7 @@
             this.paneltreatments.Controls.Add(this.lblmonthtreatment);
             this.paneltreatments.Controls.Add(this.lbleachcategory);
             this.paneltreatments.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.paneltreatments.Location = new System.Drawing.Point(17, 193);
+            this.paneltreatments.Location = new System.Drawing.Point(5, 43);
             this.paneltreatments.Name = "paneltreatments";
             this.paneltreatments.Size = new System.Drawing.Size(307, 132);
             this.paneltreatments.TabIndex = 133;
@@ -654,7 +655,7 @@
             this.panelpatients.Controls.Add(this.lblmonthnewpatient);
             this.panelpatients.Controls.Add(this.lblfirstappoint);
             this.panelpatients.Controls.Add(this.lbldailynewpatient);
-            this.panelpatients.Location = new System.Drawing.Point(3, 167);
+            this.panelpatients.Location = new System.Drawing.Point(6, 195);
             this.panelpatients.Name = "panelpatients";
             this.panelpatients.Size = new System.Drawing.Size(307, 135);
             this.panelpatients.TabIndex = 131;
@@ -717,7 +718,7 @@
             this.paneldailysummary.Controls.Add(this.label14);
             this.paneldailysummary.Controls.Add(this.lblMonthlySummary);
             this.paneldailysummary.Controls.Add(this.lbldaily);
-            this.paneldailysummary.Location = new System.Drawing.Point(12, 29);
+            this.paneldailysummary.Location = new System.Drawing.Point(4, 240);
             this.paneldailysummary.Name = "paneldailysummary";
             this.paneldailysummary.Size = new System.Drawing.Size(307, 115);
             this.paneldailysummary.TabIndex = 137;
@@ -1103,8 +1104,8 @@
             this.Grvreports.AllowUserToOrderColumns = true;
             this.Grvreports.AllowUserToResizeColumns = false;
             this.Grvreports.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.Grvreports.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.Grvreports.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.Grvreports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1112,14 +1113,14 @@
             this.Grvreports.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grvreports.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Grvreports.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Ivory;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grvreports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Ivory;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grvreports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.Grvreports.ColumnHeadersHeight = 28;
             this.Grvreports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Grvreports.Location = new System.Drawing.Point(4, 46);

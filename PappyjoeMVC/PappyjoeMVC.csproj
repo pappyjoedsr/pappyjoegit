@@ -121,6 +121,7 @@
     <Compile Include="Controller\Medical_History_controller.cs" />
     <Compile Include="Controller\Missing_Checkout_Report_controller.cs" />
     <Compile Include="Controller\Monthly_Appointment_count_controller.cs" />
+    <Compile Include="Controller\Monthly_Expense_controller.cs" />
     <Compile Include="Controller\Monthly_Invoice_Report_controller.cs" />
     <Compile Include="Controller\Monthly_New_Patients_controller.cs" />
     <Compile Include="Controller\Monthly_Treatment_Count_controller.cs" />
@@ -603,6 +604,12 @@
     </Compile>
     <Compile Include="View\Manufacture.Designer.cs">
       <DependentUpon>Manufacture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Monthly_Expense_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Monthly_Expense_Report.Designer.cs">
+      <DependentUpon>Monthly_Expense_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Monthly_Treatment_Count.cs">
       <SubType>Form</SubType>
@@ -1228,6 +1235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Manufacture.resx">
       <DependentUpon>Manufacture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Monthly_Expense_Report.resx">
+      <DependentUpon>Monthly_Expense_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Monthly_Treatment_Count.resx">
       <DependentUpon>Monthly_Treatment_Count.cs</DependentUpon>

@@ -527,8 +527,8 @@
             this.DgvReceiptReceivedPerDoctor.AllowUserToDeleteRows = false;
             this.DgvReceiptReceivedPerDoctor.AllowUserToResizeColumns = false;
             this.DgvReceiptReceivedPerDoctor.AllowUserToResizeRows = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            this.DgvReceiptReceivedPerDoctor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            //dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            //this.DgvReceiptReceivedPerDoctor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.DgvReceiptReceivedPerDoctor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvReceiptReceivedPerDoctor.BackgroundColor = System.Drawing.Color.White;
