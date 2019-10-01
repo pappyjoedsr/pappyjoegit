@@ -145,7 +145,7 @@ namespace PappyjoeMVC.View
                 DGV_SALES.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_SALES.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 DGV_SALES.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_SALES.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_SALES.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 foreach (DataGridViewColumn cl in DGV_SALES.Columns)
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;

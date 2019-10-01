@@ -844,7 +844,7 @@ namespace PappyjoeMVC.View
                             num = num + 1;
                         }
                     }
-                    Lab_Msg.Show();
+                    //Lab_Msg.Show();
                     this.Grvreports.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     this.Grvreports.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     this.Grvreports.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -1899,6 +1899,13 @@ namespace PappyjoeMVC.View
                 this.Hide();
                 form2.ShowDialog();
             }
+        }
+
+        private void Lab_ExpanseCategory_Click(object sender, EventArgs e)
+        {
+            Expense_Category_Wise_Report d = new Expense_Category_Wise_Report();
+            //d.doctor_id = doctor_id;
+            d.ShowDialog();
         }
 
         private void Lab_MonthlyExapanse_Click(object sender, EventArgs e)
