@@ -1908,6 +1908,12 @@ namespace PappyjoeMVC.View
             d.ShowDialog();
         }
 
+        private void Lab_MonthlyExapanse_Click(object sender, EventArgs e)
+        {
+            var form2 = new Monthly_Expense_Report();
+            form2.ShowDialog();
+        }
+
         private void Chk_Type_CheckedChanged(object sender, EventArgs e)
         {
             if (Chk_Type.Checked)

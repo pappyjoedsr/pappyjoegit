@@ -183,6 +183,8 @@
             this.Controls.Add(this.dataGridView1_treatment_paln);
             this.Controls.Add(this.label41);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Trackingnullstatus";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lab Order";

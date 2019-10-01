@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Doctor_Wise_Invoice));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,6 +52,15 @@
             this.lblNoRecord = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvMonthlyReports = new System.Windows.Forms.DataGridView();
+            this.Slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pt_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctor_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoice_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.services = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Invoice_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grant_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.due = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.BtnExport = new System.Windows.Forms.Button();
@@ -64,15 +73,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dptMonthly_To = new System.Windows.Forms.DateTimePicker();
             this.dptMonthly_From = new System.Windows.Forms.DateTimePicker();
-            this.Slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pt_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doctor_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.invoice_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.services = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Invoice_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grant_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.due = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -225,18 +225,19 @@
             this.dgvMonthlyReports.AllowUserToDeleteRows = false;
             this.dgvMonthlyReports.AllowUserToResizeColumns = false;
             this.dgvMonthlyReports.AllowUserToResizeRows = false;
-            this.dgvMonthlyReports.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvMonthlyReports.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMonthlyReports.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvMonthlyReports.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMonthlyReports.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMonthlyReports.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMonthlyReports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMonthlyReports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvMonthlyReports.ColumnHeadersHeight = 28;
             this.dgvMonthlyReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMonthlyReports.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -249,17 +250,17 @@
             this.grant_total,
             this.total_payment,
             this.due});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMonthlyReports.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMonthlyReports.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgvMonthlyReports.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvMonthlyReports.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvMonthlyReports.Location = new System.Drawing.Point(-1, 0);
+            this.dgvMonthlyReports.Location = new System.Drawing.Point(-1, 4);
             this.dgvMonthlyReports.MultiSelect = false;
             this.dgvMonthlyReports.Name = "dgvMonthlyReports";
             this.dgvMonthlyReports.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -270,6 +271,106 @@
             this.dgvMonthlyReports.Size = new System.Drawing.Size(1362, 544);
             this.dgvMonthlyReports.TabIndex = 118;
             this.dgvMonthlyReports.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvMonthlyReports_ColumnAdded);
+            // 
+            // Slno
+            // 
+            this.Slno.DataPropertyName = "slno";
+            this.Slno.HeaderText = "SLNO.";
+            this.Slno.Name = "Slno";
+            this.Slno.Width = 70;
+            // 
+            // pt_name
+            // 
+            this.pt_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pt_name.DataPropertyName = "pt_name";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.pt_name.DefaultCellStyle = dataGridViewCellStyle12;
+            this.pt_name.FillWeight = 166.1734F;
+            this.pt_name.HeaderText = "PATIENT NAME";
+            this.pt_name.Name = "pt_name";
+            this.pt_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // doctor_name
+            // 
+            this.doctor_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.doctor_name.DataPropertyName = "doctor_name";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.doctor_name.DefaultCellStyle = dataGridViewCellStyle13;
+            this.doctor_name.HeaderText = "DOCTOR";
+            this.doctor_name.Name = "doctor_name";
+            this.doctor_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // invoice_no
+            // 
+            this.invoice_no.DataPropertyName = "invoice_no";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.invoice_no.DefaultCellStyle = dataGridViewCellStyle14;
+            this.invoice_no.FillWeight = 159.3434F;
+            this.invoice_no.HeaderText = "INVOICE";
+            this.invoice_no.Name = "invoice_no";
+            this.invoice_no.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.invoice_no.Width = 80;
+            // 
+            // services
+            // 
+            this.services.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.services.DataPropertyName = "services";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.services.DefaultCellStyle = dataGridViewCellStyle15;
+            this.services.HeaderText = "SERVICES";
+            this.services.Name = "services";
+            this.services.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Invoice_date
+            // 
+            this.Invoice_date.DataPropertyName = "date";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.Invoice_date.DefaultCellStyle = dataGridViewCellStyle16;
+            this.Invoice_date.FillWeight = 89.46581F;
+            this.Invoice_date.HeaderText = "DATE";
+            this.Invoice_date.Name = "Invoice_date";
+            this.Invoice_date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Invoice_date.Width = 80;
+            // 
+            // grant_total
+            // 
+            this.grant_total.DataPropertyName = "Cost";
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle17.Format = "N2";
+            dataGridViewCellStyle17.NullValue = null;
+            this.grant_total.DefaultCellStyle = dataGridViewCellStyle17;
+            this.grant_total.FillWeight = 95.35242F;
+            this.grant_total.HeaderText = "COST";
+            this.grant_total.Name = "grant_total";
+            this.grant_total.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // total_payment
+            // 
+            this.total_payment.DataPropertyName = "Payment";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle18.Format = "N2";
+            dataGridViewCellStyle18.NullValue = null;
+            this.total_payment.DefaultCellStyle = dataGridViewCellStyle18;
+            this.total_payment.FillWeight = 138.7734F;
+            this.total_payment.HeaderText = "INCOME";
+            this.total_payment.Name = "total_payment";
+            this.total_payment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // due
+            // 
+            this.due.DataPropertyName = "due";
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle19.Format = "N2";
+            dataGridViewCellStyle19.NullValue = null;
+            this.due.DefaultCellStyle = dataGridViewCellStyle19;
+            this.due.FillWeight = 69.97183F;
+            this.due.HeaderText = "AMOUNT DUE";
+            this.due.Name = "due";
+            this.due.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // panel1
             // 
@@ -283,7 +384,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dptMonthly_To);
             this.panel1.Controls.Add(this.dptMonthly_From);
-            this.panel1.Location = new System.Drawing.Point(2, 1);
+            this.panel1.Location = new System.Drawing.Point(2, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1364, 116);
             this.panel1.TabIndex = 122;
@@ -422,106 +523,6 @@
             this.dptMonthly_From.Size = new System.Drawing.Size(201, 22);
             this.dptMonthly_From.TabIndex = 120;
             // 
-            // Slno
-            // 
-            this.Slno.DataPropertyName = "slno";
-            this.Slno.HeaderText = "SLNO.";
-            this.Slno.Name = "Slno";
-            this.Slno.Width = 70;
-            // 
-            // pt_name
-            // 
-            this.pt_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.pt_name.DataPropertyName = "pt_name";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.pt_name.DefaultCellStyle = dataGridViewCellStyle2;
-            this.pt_name.FillWeight = 166.1734F;
-            this.pt_name.HeaderText = "PATIENT NAME";
-            this.pt_name.Name = "pt_name";
-            this.pt_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // doctor_name
-            // 
-            this.doctor_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.doctor_name.DataPropertyName = "doctor_name";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.doctor_name.DefaultCellStyle = dataGridViewCellStyle3;
-            this.doctor_name.HeaderText = "DOCTOR";
-            this.doctor_name.Name = "doctor_name";
-            this.doctor_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // invoice_no
-            // 
-            this.invoice_no.DataPropertyName = "invoice_no";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.invoice_no.DefaultCellStyle = dataGridViewCellStyle4;
-            this.invoice_no.FillWeight = 159.3434F;
-            this.invoice_no.HeaderText = "INVOICE";
-            this.invoice_no.Name = "invoice_no";
-            this.invoice_no.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.invoice_no.Width = 80;
-            // 
-            // services
-            // 
-            this.services.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.services.DataPropertyName = "services";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.services.DefaultCellStyle = dataGridViewCellStyle5;
-            this.services.HeaderText = "SERVICES";
-            this.services.Name = "services";
-            this.services.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Invoice_date
-            // 
-            this.Invoice_date.DataPropertyName = "date";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.Invoice_date.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Invoice_date.FillWeight = 89.46581F;
-            this.Invoice_date.HeaderText = "DATE";
-            this.Invoice_date.Name = "Invoice_date";
-            this.Invoice_date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Invoice_date.Width = 80;
-            // 
-            // grant_total
-            // 
-            this.grant_total.DataPropertyName = "Cost";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.grant_total.DefaultCellStyle = dataGridViewCellStyle7;
-            this.grant_total.FillWeight = 95.35242F;
-            this.grant_total.HeaderText = "COST";
-            this.grant_total.Name = "grant_total";
-            this.grant_total.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // total_payment
-            // 
-            this.total_payment.DataPropertyName = "Payment";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.total_payment.DefaultCellStyle = dataGridViewCellStyle8;
-            this.total_payment.FillWeight = 138.7734F;
-            this.total_payment.HeaderText = "INCOME";
-            this.total_payment.Name = "total_payment";
-            this.total_payment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // due
-            // 
-            this.due.DataPropertyName = "due";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.due.DefaultCellStyle = dataGridViewCellStyle9;
-            this.due.FillWeight = 69.97183F;
-            this.due.HeaderText = "AMOUNT DUE";
-            this.due.Name = "due";
-            this.due.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // Doctor_Wise_Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -531,8 +532,10 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Doctor_Wise_Invoice";
-            this.Text = "Doctor_Wise_Invoice";
+            this.Text = "Doctor Wise Invoice";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Doctor_Wise_Invoice_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
