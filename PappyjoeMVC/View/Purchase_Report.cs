@@ -262,6 +262,7 @@ namespace PappyjoeMVC.View
         }
         public void load()
         {
+            dptMonthly_From.Value = DateTime.Now.Date;
             fdate = dptMonthly_From.Value.ToString("yyyy-MM-dd");
             tdate = dptMonthly_To.Value.ToString("yyyy-MM-dd");
             total_pur = 0; cost1 = 0; grandtotal1 = 0;                                                                    

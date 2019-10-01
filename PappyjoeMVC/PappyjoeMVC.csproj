@@ -100,6 +100,7 @@
     <Compile Include="Controller\Doctor_Wise_Receipt_controller.cs" />
     <Compile Include="Controller\Edit_Practice_Details_controller.cs" />
     <Compile Include="Controller\EMR_controller.cs" />
+    <Compile Include="Controller\Expense_Category_Controller.cs" />
     <Compile Include="Controller\Expense_controller.cs" />
     <Compile Include="Controller\Expiry_Report_controller.cs" />
     <Compile Include="Controller\Export_controller.cs" />
@@ -1180,6 +1181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Expense.resx">
       <DependentUpon>Expense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Expense_Category_Wise_Report.resx">
+      <DependentUpon>Expense_Category_Wise_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Expiry_Report.resx">
       <DependentUpon>Expiry_Report.cs</DependentUpon>

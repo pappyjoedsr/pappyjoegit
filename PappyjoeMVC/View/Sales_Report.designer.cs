@@ -226,7 +226,6 @@
             this.DGV_SALES.AllowUserToDeleteRows = false;
             this.DGV_SALES.AllowUserToResizeColumns = false;
             this.DGV_SALES.AllowUserToResizeRows = false;
-            this.DGV_SALES.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DGV_SALES.BackgroundColor = System.Drawing.Color.White;
             this.DGV_SALES.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV_SALES.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -249,6 +248,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV_SALES.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DGV_SALES.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGV_SALES.GridColor = System.Drawing.Color.DimGray;
             this.DGV_SALES.Location = new System.Drawing.Point(0, 0);
             this.DGV_SALES.Name = "DGV_SALES";
@@ -258,7 +258,7 @@
             this.DGV_SALES.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DGV_SALES.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_SALES.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_SALES.Size = new System.Drawing.Size(1363, 386);
+            this.DGV_SALES.Size = new System.Drawing.Size(1370, 393);
             this.DGV_SALES.TabIndex = 0;
             this.DGV_SALES.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_SALES_CellDoubleClick);
             // 
@@ -408,7 +408,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.Btn_Show);
             this.panel1.Controls.Add(this.Txtgrandtotal);
@@ -440,10 +441,12 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.Lab_Msg);
             this.panel2.Controls.Add(this.DGV_SALES);
-            this.panel2.Location = new System.Drawing.Point(0, 130);
+            this.panel2.Location = new System.Drawing.Point(0, 133);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1370, 393);
             this.panel2.TabIndex = 184;
@@ -473,7 +476,8 @@
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Sales_Report";
-            this.Text = "Sales_Report";
+            this.Text = "Sales Report";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Sales_Report_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.panel3.ResumeLayout(false);

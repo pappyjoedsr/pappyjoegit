@@ -105,13 +105,13 @@
             this.from = new System.Windows.Forms.Label();
             this.to = new System.Windows.Forms.Label();
             this.Grvreports = new System.Windows.Forms.DataGridView();
-            this.btnprint = new System.Windows.Forms.Button();
             this.lblhide = new System.Windows.Forms.Label();
             this.checkcancel = new System.Windows.Forms.CheckBox();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnprint = new System.Windows.Forms.Button();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -358,7 +358,7 @@
             this.toolStripTextBDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextBDoctor.Name = "toolStripTextBDoctor";
             this.toolStripTextBDoctor.ReadOnly = true;
-            this.toolStripTextBDoctor.Size = new System.Drawing.Size(250, 23);
+            this.toolStripTextBDoctor.Size = new System.Drawing.Size(250, 40);
             this.toolStripTextBDoctor.Text = "doctorname";
             // 
             // toolStripTextBox1
@@ -514,7 +514,7 @@
             this.Panel_inventory.Controls.Add(this.Lab_SalesOrde);
             this.Panel_inventory.Controls.Add(this.sales_return);
             this.Panel_inventory.Controls.Add(this.Lab_Salesreport);
-            this.Panel_inventory.Location = new System.Drawing.Point(1, 314);
+            this.Panel_inventory.Location = new System.Drawing.Point(1, 567);
             this.Panel_inventory.Name = "Panel_inventory";
             this.Panel_inventory.Size = new System.Drawing.Size(307, 325);
             this.Panel_inventory.TabIndex = 111;
@@ -531,6 +531,7 @@
             this.Lab_ExpanseCategory.Size = new System.Drawing.Size(172, 17);
             this.Lab_ExpanseCategory.TabIndex = 112;
             this.Lab_ExpanseCategory.Text = "EXPENSE  CATEGORY WISE";
+            this.Lab_ExpanseCategory.Click += new System.EventHandler(this.Lab_ExpanseCategory_Click);
             // 
             // Lab_MonthlyExapanse
             // 
@@ -591,7 +592,7 @@
             this.paneltreatments.Controls.Add(this.lblmonthtreatment);
             this.paneltreatments.Controls.Add(this.lbleachcategory);
             this.paneltreatments.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.paneltreatments.Location = new System.Drawing.Point(17, 193);
+            this.paneltreatments.Location = new System.Drawing.Point(17, 358);
             this.paneltreatments.Name = "paneltreatments";
             this.paneltreatments.Size = new System.Drawing.Size(307, 132);
             this.paneltreatments.TabIndex = 133;
@@ -654,7 +655,7 @@
             this.panelpatients.Controls.Add(this.lblmonthnewpatient);
             this.panelpatients.Controls.Add(this.lblfirstappoint);
             this.panelpatients.Controls.Add(this.lbldailynewpatient);
-            this.panelpatients.Location = new System.Drawing.Point(3, 167);
+            this.panelpatients.Location = new System.Drawing.Point(3, 279);
             this.panelpatients.Name = "panelpatients";
             this.panelpatients.Size = new System.Drawing.Size(307, 135);
             this.panelpatients.TabIndex = 131;
@@ -717,7 +718,7 @@
             this.paneldailysummary.Controls.Add(this.label14);
             this.paneldailysummary.Controls.Add(this.lblMonthlySummary);
             this.paneldailysummary.Controls.Add(this.lbldaily);
-            this.paneldailysummary.Location = new System.Drawing.Point(12, 29);
+            this.paneldailysummary.Location = new System.Drawing.Point(12, 23);
             this.paneldailysummary.Name = "paneldailysummary";
             this.paneldailysummary.Size = new System.Drawing.Size(307, 115);
             this.paneldailysummary.TabIndex = 137;
@@ -782,7 +783,7 @@
             this.panelappointments.Controls.Add(this.lblappointmenteachpatientgroup);
             this.panelappointments.Controls.Add(this.lbldailyappointcount);
             this.panelappointments.Controls.Add(this.lblmonthappointmentcount);
-            this.panelappointments.Location = new System.Drawing.Point(18, 291);
+            this.panelappointments.Location = new System.Drawing.Point(18, 389);
             this.panelappointments.Name = "panelappointments";
             this.panelappointments.Size = new System.Drawing.Size(307, 199);
             this.panelappointments.TabIndex = 138;
@@ -1132,22 +1133,6 @@
             this.Grvreports.Size = new System.Drawing.Size(1034, 452);
             this.Grvreports.TabIndex = 137;
             // 
-            // btnprint
-            // 
-            this.btnprint.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnprint.ForeColor = System.Drawing.Color.White;
-            this.btnprint.Image = ((System.Drawing.Image)(resources.GetObject("btnprint.Image")));
-            this.btnprint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnprint.Location = new System.Drawing.Point(692, 10);
-            this.btnprint.Name = "btnprint";
-            this.btnprint.Size = new System.Drawing.Size(100, 32);
-            this.btnprint.TabIndex = 11;
-            this.btnprint.Text = "Print";
-            this.btnprint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnprint.UseVisualStyleBackColor = false;
-            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
-            // 
             // lblhide
             // 
             this.lblhide.AutoSize = true;
@@ -1213,6 +1198,22 @@
             this.toolStrip1.Size = new System.Drawing.Size(1361, 40);
             this.toolStrip1.TabIndex = 275;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnprint
+            // 
+            this.btnprint.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnprint.ForeColor = System.Drawing.Color.White;
+            this.btnprint.Image = ((System.Drawing.Image)(resources.GetObject("btnprint.Image")));
+            this.btnprint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnprint.Location = new System.Drawing.Point(692, 10);
+            this.btnprint.Name = "btnprint";
+            this.btnprint.Size = new System.Drawing.Size(100, 32);
+            this.btnprint.TabIndex = 11;
+            this.btnprint.Text = "Print";
+            this.btnprint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnprint.UseVisualStyleBackColor = false;
+            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
             // toolStripButton1
             // 
