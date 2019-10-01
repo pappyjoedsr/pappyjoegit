@@ -392,7 +392,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(11, 6);
+            this.label6.Location = new System.Drawing.Point(11, 1);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(274, 40);
             this.label6.TabIndex = 1;
@@ -527,10 +527,9 @@
             this.DgvReceiptReceivedPerDoctor.AllowUserToDeleteRows = false;
             this.DgvReceiptReceivedPerDoctor.AllowUserToResizeColumns = false;
             this.DgvReceiptReceivedPerDoctor.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.DgvReceiptReceivedPerDoctor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.DgvReceiptReceivedPerDoctor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            //dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            //this.DgvReceiptReceivedPerDoctor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.DgvReceiptReceivedPerDoctor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvReceiptReceivedPerDoctor.BackgroundColor = System.Drawing.Color.White;
             this.DgvReceiptReceivedPerDoctor.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -599,7 +598,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Doctor_Wise_Receipt";
-            this.Text = " ";
+            this.Text = "Doctor Wise Receipt";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Doctor_Wise_Receipt_Load);
             this.panel4.ResumeLayout(false);
