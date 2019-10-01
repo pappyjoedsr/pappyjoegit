@@ -1919,6 +1919,13 @@ namespace PappyjoeMVC.View
             var form2 = new Expense_Daily_Report();
             form2.ShowDialog();
         }
+
+        private void Lab_ExpanseCategory_Click_1(object sender, EventArgs e)
+        {
+            var form = new Expense_Category_Wise_Report();
+            form.ShowDialog();
+        }
+
         private void Chk_Type_CheckedChanged(object sender, EventArgs e)
         {
             if (Chk_Type.Checked)
