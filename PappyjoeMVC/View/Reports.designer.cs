@@ -65,22 +65,22 @@
             this.Lab_DailyExpanse = new System.Windows.Forms.Label();
             this.panl_Expanse = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.paneltreatments = new System.Windows.Forms.Panel();
-            this.lbldailytreatmentcount = new System.Windows.Forms.Label();
-            this.lbltreatmenteachdoctor = new System.Windows.Forms.Label();
-            this.lblmonthtreatment = new System.Windows.Forms.Label();
-            this.lbleachcategory = new System.Windows.Forms.Label();
-            this.panelpatients = new System.Windows.Forms.Panel();
-            this.lblgroupwisereport = new System.Windows.Forms.Label();
-            this.lblmonthnewpatient = new System.Windows.Forms.Label();
-            this.lblfirstappoint = new System.Windows.Forms.Label();
-            this.lbldailynewpatient = new System.Windows.Forms.Label();
             this.paneldailysummary = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.lblMonthlySummary = new System.Windows.Forms.Label();
             this.lbldaily = new System.Windows.Forms.Label();
             this.lblrelatedrepo = new System.Windows.Forms.Label();
             this.panelappointments = new System.Windows.Forms.Panel();
+            this.panelpatients = new System.Windows.Forms.Panel();
+            this.paneltreatments = new System.Windows.Forms.Panel();
+            this.lbldailytreatmentcount = new System.Windows.Forms.Label();
+            this.lbltreatmenteachdoctor = new System.Windows.Forms.Label();
+            this.lblmonthtreatment = new System.Windows.Forms.Label();
+            this.lbleachcategory = new System.Windows.Forms.Label();
+            this.lblgroupwisereport = new System.Windows.Forms.Label();
+            this.lblmonthnewpatient = new System.Windows.Forms.Label();
+            this.lblfirstappoint = new System.Windows.Forms.Label();
+            this.lbldailynewpatient = new System.Windows.Forms.Label();
             this.lblVisitingHistory = new System.Windows.Forms.Label();
             this.lblMissingCheckoutReports = new System.Windows.Forms.Label();
             this.lblappointmenteachdoctor = new System.Windows.Forms.Label();
@@ -133,10 +133,10 @@
             this.Panel_inventory.SuspendLayout();
             this.panl_Expanse.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.paneltreatments.SuspendLayout();
-            this.panelpatients.SuspendLayout();
             this.paneldailysummary.SuspendLayout();
             this.panelappointments.SuspendLayout();
+            this.panelpatients.SuspendLayout();
+            this.paneltreatments.SuspendLayout();
             this.label46.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grvreports)).BeginInit();
@@ -358,7 +358,7 @@
             this.toolStripTextBDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextBDoctor.Name = "toolStripTextBDoctor";
             this.toolStripTextBDoctor.ReadOnly = true;
-            this.toolStripTextBDoctor.Size = new System.Drawing.Size(250, 23);
+            this.toolStripTextBDoctor.Size = new System.Drawing.Size(250, 40);
             this.toolStripTextBDoctor.Text = "doctorname";
             // 
             // toolStripTextBox1
@@ -555,6 +555,7 @@
             this.Lab_DailyExpanse.Size = new System.Drawing.Size(104, 17);
             this.Lab_DailyExpanse.TabIndex = 110;
             this.Lab_DailyExpanse.Text = "DAILY EXPENSE";
+            this.Lab_DailyExpanse.Click += new System.EventHandler(this.Lab_DailyExpanse_Click);
             // 
             // panl_Expanse
             // 
@@ -570,8 +571,6 @@
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Controls.Add(this.paneltreatments);
-            this.panel4.Controls.Add(this.panelpatients);
             this.panel4.Controls.Add(this.paneldailysummary);
             this.panel4.Controls.Add(this.panelPayment);
             this.panel4.Controls.Add(this.lblrelatedrepo);
@@ -582,134 +581,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(315, 643);
             this.panel4.TabIndex = 277;
-            // 
-            // paneltreatments
-            // 
-            this.paneltreatments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.paneltreatments.Controls.Add(this.lbldailytreatmentcount);
-            this.paneltreatments.Controls.Add(this.lbltreatmenteachdoctor);
-            this.paneltreatments.Controls.Add(this.lblmonthtreatment);
-            this.paneltreatments.Controls.Add(this.lbleachcategory);
-            this.paneltreatments.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.paneltreatments.Location = new System.Drawing.Point(17, 193);
-            this.paneltreatments.Name = "paneltreatments";
-            this.paneltreatments.Size = new System.Drawing.Size(307, 132);
-            this.paneltreatments.TabIndex = 133;
-            // 
-            // lbldailytreatmentcount
-            // 
-            this.lbldailytreatmentcount.AutoSize = true;
-            this.lbldailytreatmentcount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbldailytreatmentcount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldailytreatmentcount.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbldailytreatmentcount.Location = new System.Drawing.Point(12, 14);
-            this.lbldailytreatmentcount.Name = "lbldailytreatmentcount";
-            this.lbldailytreatmentcount.Size = new System.Drawing.Size(174, 17);
-            this.lbldailytreatmentcount.TabIndex = 115;
-            this.lbldailytreatmentcount.Text = "DAILY TREATMENT COUNT";
-            this.lbldailytreatmentcount.Click += new System.EventHandler(this.lbldailytreatmentcount_Click);
-            // 
-            // lbltreatmenteachdoctor
-            // 
-            this.lbltreatmenteachdoctor.AutoSize = true;
-            this.lbltreatmenteachdoctor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbltreatmenteachdoctor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltreatmenteachdoctor.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbltreatmenteachdoctor.Location = new System.Drawing.Point(12, 80);
-            this.lbltreatmenteachdoctor.Name = "lbltreatmenteachdoctor";
-            this.lbltreatmenteachdoctor.Size = new System.Drawing.Size(216, 17);
-            this.lbltreatmenteachdoctor.TabIndex = 116;
-            this.lbltreatmenteachdoctor.Text = "TREATMENTS FOR EACH DOCTOR";
-            this.lbltreatmenteachdoctor.Click += new System.EventHandler(this.lbltreatmenteachdoctor_Click);
-            // 
-            // lblmonthtreatment
-            // 
-            this.lblmonthtreatment.AutoSize = true;
-            this.lblmonthtreatment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblmonthtreatment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmonthtreatment.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblmonthtreatment.Location = new System.Drawing.Point(13, 113);
-            this.lblmonthtreatment.Name = "lblmonthtreatment";
-            this.lblmonthtreatment.Size = new System.Drawing.Size(201, 17);
-            this.lblmonthtreatment.TabIndex = 117;
-            this.lblmonthtreatment.Text = "MONTHLY TREATMENT COUNT";
-            this.lblmonthtreatment.Click += new System.EventHandler(this.lblmonthtreatment_Click);
-            // 
-            // lbleachcategory
-            // 
-            this.lbleachcategory.AutoSize = true;
-            this.lbleachcategory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbleachcategory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbleachcategory.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbleachcategory.Location = new System.Drawing.Point(12, 47);
-            this.lbleachcategory.Name = "lbleachcategory";
-            this.lbleachcategory.Size = new System.Drawing.Size(228, 17);
-            this.lbleachcategory.TabIndex = 118;
-            this.lbleachcategory.Text = "TREATMENTS FOR EACH CATEGORY";
-            this.lbleachcategory.Click += new System.EventHandler(this.lbleachcategory_Click);
-            // 
-            // panelpatients
-            // 
-            this.panelpatients.Controls.Add(this.lblgroupwisereport);
-            this.panelpatients.Controls.Add(this.lblmonthnewpatient);
-            this.panelpatients.Controls.Add(this.lblfirstappoint);
-            this.panelpatients.Controls.Add(this.lbldailynewpatient);
-            this.panelpatients.Location = new System.Drawing.Point(3, 167);
-            this.panelpatients.Name = "panelpatients";
-            this.panelpatients.Size = new System.Drawing.Size(307, 135);
-            this.panelpatients.TabIndex = 131;
-            // 
-            // lblgroupwisereport
-            // 
-            this.lblgroupwisereport.AutoSize = true;
-            this.lblgroupwisereport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblgroupwisereport.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblgroupwisereport.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblgroupwisereport.Location = new System.Drawing.Point(14, 112);
-            this.lblgroupwisereport.Name = "lblgroupwisereport";
-            this.lblgroupwisereport.Size = new System.Drawing.Size(108, 17);
-            this.lblgroupwisereport.TabIndex = 112;
-            this.lblgroupwisereport.Text = "PATIENT GROUP";
-            this.lblgroupwisereport.Click += new System.EventHandler(this.lblgroupwisereport_Click);
-            // 
-            // lblmonthnewpatient
-            // 
-            this.lblmonthnewpatient.AutoSize = true;
-            this.lblmonthnewpatient.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblmonthnewpatient.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmonthnewpatient.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblmonthnewpatient.Location = new System.Drawing.Point(12, 80);
-            this.lblmonthnewpatient.Name = "lblmonthnewpatient";
-            this.lblmonthnewpatient.Size = new System.Drawing.Size(162, 17);
-            this.lblmonthnewpatient.TabIndex = 111;
-            this.lblmonthnewpatient.Text = "MONTHLY NEW PATIENT";
-            this.lblmonthnewpatient.Click += new System.EventHandler(this.lblmonthnewpatient_Click);
-            // 
-            // lblfirstappoint
-            // 
-            this.lblfirstappoint.AutoSize = true;
-            this.lblfirstappoint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblfirstappoint.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfirstappoint.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblfirstappoint.Location = new System.Drawing.Point(12, 47);
-            this.lblfirstappoint.Name = "lblfirstappoint";
-            this.lblfirstappoint.Size = new System.Drawing.Size(203, 17);
-            this.lblfirstappoint.TabIndex = 110;
-            this.lblfirstappoint.Text = "PATIENTS FIRST APPOINTMENT";
-            this.lblfirstappoint.Click += new System.EventHandler(this.lblfirstappoint_Click);
-            // 
-            // lbldailynewpatient
-            // 
-            this.lbldailynewpatient.AutoSize = true;
-            this.lbldailynewpatient.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbldailynewpatient.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldailynewpatient.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbldailynewpatient.Location = new System.Drawing.Point(12, 14);
-            this.lbldailynewpatient.Name = "lbldailynewpatient";
-            this.lbldailynewpatient.Size = new System.Drawing.Size(142, 17);
-            this.lbldailynewpatient.TabIndex = 109;
-            this.lbldailynewpatient.Text = "DAILY NEW PATIENTS";
-            this.lbldailynewpatient.Click += new System.EventHandler(this.lbldailynewpatient_Click);
             // 
             // paneldailysummary
             // 
@@ -776,6 +647,7 @@
             // 
             this.panelappointments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelappointments.BackColor = System.Drawing.Color.White;
+            this.panelappointments.Controls.Add(this.panelpatients);
             this.panelappointments.Controls.Add(this.lblVisitingHistory);
             this.panelappointments.Controls.Add(this.lblMissingCheckoutReports);
             this.panelappointments.Controls.Add(this.lblappointmenteachdoctor);
@@ -786,6 +658,135 @@
             this.panelappointments.Name = "panelappointments";
             this.panelappointments.Size = new System.Drawing.Size(307, 199);
             this.panelappointments.TabIndex = 138;
+            // 
+            // panelpatients
+            // 
+            this.panelpatients.Controls.Add(this.paneltreatments);
+            this.panelpatients.Controls.Add(this.lblgroupwisereport);
+            this.panelpatients.Controls.Add(this.lblmonthnewpatient);
+            this.panelpatients.Controls.Add(this.lblfirstappoint);
+            this.panelpatients.Controls.Add(this.lbldailynewpatient);
+            this.panelpatients.Location = new System.Drawing.Point(11, 16);
+            this.panelpatients.Name = "panelpatients";
+            this.panelpatients.Size = new System.Drawing.Size(307, 135);
+            this.panelpatients.TabIndex = 131;
+            // 
+            // paneltreatments
+            // 
+            this.paneltreatments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.paneltreatments.Controls.Add(this.lbldailytreatmentcount);
+            this.paneltreatments.Controls.Add(this.lbltreatmenteachdoctor);
+            this.paneltreatments.Controls.Add(this.lblmonthtreatment);
+            this.paneltreatments.Controls.Add(this.lbleachcategory);
+            this.paneltreatments.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.paneltreatments.Location = new System.Drawing.Point(18, 14);
+            this.paneltreatments.Name = "paneltreatments";
+            this.paneltreatments.Size = new System.Drawing.Size(307, 132);
+            this.paneltreatments.TabIndex = 133;
+            // 
+            // lbldailytreatmentcount
+            // 
+            this.lbldailytreatmentcount.AutoSize = true;
+            this.lbldailytreatmentcount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbldailytreatmentcount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldailytreatmentcount.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbldailytreatmentcount.Location = new System.Drawing.Point(12, 14);
+            this.lbldailytreatmentcount.Name = "lbldailytreatmentcount";
+            this.lbldailytreatmentcount.Size = new System.Drawing.Size(174, 17);
+            this.lbldailytreatmentcount.TabIndex = 115;
+            this.lbldailytreatmentcount.Text = "DAILY TREATMENT COUNT";
+            this.lbldailytreatmentcount.Click += new System.EventHandler(this.lbldailytreatmentcount_Click);
+            // 
+            // lbltreatmenteachdoctor
+            // 
+            this.lbltreatmenteachdoctor.AutoSize = true;
+            this.lbltreatmenteachdoctor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbltreatmenteachdoctor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltreatmenteachdoctor.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbltreatmenteachdoctor.Location = new System.Drawing.Point(12, 80);
+            this.lbltreatmenteachdoctor.Name = "lbltreatmenteachdoctor";
+            this.lbltreatmenteachdoctor.Size = new System.Drawing.Size(216, 17);
+            this.lbltreatmenteachdoctor.TabIndex = 116;
+            this.lbltreatmenteachdoctor.Text = "TREATMENTS FOR EACH DOCTOR";
+            this.lbltreatmenteachdoctor.Click += new System.EventHandler(this.lbltreatmenteachdoctor_Click);
+            // 
+            // lblmonthtreatment
+            // 
+            this.lblmonthtreatment.AutoSize = true;
+            this.lblmonthtreatment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblmonthtreatment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmonthtreatment.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblmonthtreatment.Location = new System.Drawing.Point(13, 113);
+            this.lblmonthtreatment.Name = "lblmonthtreatment";
+            this.lblmonthtreatment.Size = new System.Drawing.Size(201, 17);
+            this.lblmonthtreatment.TabIndex = 117;
+            this.lblmonthtreatment.Text = "MONTHLY TREATMENT COUNT";
+            this.lblmonthtreatment.Click += new System.EventHandler(this.lblmonthtreatment_Click);
+            // 
+            // lbleachcategory
+            // 
+            this.lbleachcategory.AutoSize = true;
+            this.lbleachcategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbleachcategory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbleachcategory.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbleachcategory.Location = new System.Drawing.Point(12, 47);
+            this.lbleachcategory.Name = "lbleachcategory";
+            this.lbleachcategory.Size = new System.Drawing.Size(228, 17);
+            this.lbleachcategory.TabIndex = 118;
+            this.lbleachcategory.Text = "TREATMENTS FOR EACH CATEGORY";
+            this.lbleachcategory.Click += new System.EventHandler(this.lbleachcategory_Click);
+            // 
+            // lblgroupwisereport
+            // 
+            this.lblgroupwisereport.AutoSize = true;
+            this.lblgroupwisereport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblgroupwisereport.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblgroupwisereport.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblgroupwisereport.Location = new System.Drawing.Point(14, 112);
+            this.lblgroupwisereport.Name = "lblgroupwisereport";
+            this.lblgroupwisereport.Size = new System.Drawing.Size(108, 17);
+            this.lblgroupwisereport.TabIndex = 112;
+            this.lblgroupwisereport.Text = "PATIENT GROUP";
+            this.lblgroupwisereport.Click += new System.EventHandler(this.lblgroupwisereport_Click);
+            // 
+            // lblmonthnewpatient
+            // 
+            this.lblmonthnewpatient.AutoSize = true;
+            this.lblmonthnewpatient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblmonthnewpatient.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmonthnewpatient.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblmonthnewpatient.Location = new System.Drawing.Point(12, 80);
+            this.lblmonthnewpatient.Name = "lblmonthnewpatient";
+            this.lblmonthnewpatient.Size = new System.Drawing.Size(162, 17);
+            this.lblmonthnewpatient.TabIndex = 111;
+            this.lblmonthnewpatient.Text = "MONTHLY NEW PATIENT";
+            this.lblmonthnewpatient.Click += new System.EventHandler(this.lblmonthnewpatient_Click);
+            // 
+            // lblfirstappoint
+            // 
+            this.lblfirstappoint.AutoSize = true;
+            this.lblfirstappoint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblfirstappoint.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfirstappoint.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblfirstappoint.Location = new System.Drawing.Point(12, 47);
+            this.lblfirstappoint.Name = "lblfirstappoint";
+            this.lblfirstappoint.Size = new System.Drawing.Size(203, 17);
+            this.lblfirstappoint.TabIndex = 110;
+            this.lblfirstappoint.Text = "PATIENTS FIRST APPOINTMENT";
+            this.lblfirstappoint.Click += new System.EventHandler(this.lblfirstappoint_Click);
+            // 
+            // lbldailynewpatient
+            // 
+            this.lbldailynewpatient.AutoSize = true;
+            this.lbldailynewpatient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbldailynewpatient.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldailynewpatient.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbldailynewpatient.Location = new System.Drawing.Point(12, 14);
+            this.lbldailynewpatient.Name = "lbldailynewpatient";
+            this.lbldailynewpatient.Size = new System.Drawing.Size(142, 17);
+            this.lbldailynewpatient.TabIndex = 109;
+            this.lbldailynewpatient.Text = "DAILY NEW PATIENTS";
+            this.lbldailynewpatient.Click += new System.EventHandler(this.lbldailynewpatient_Click);
             // 
             // lblVisitingHistory
             // 
@@ -1436,14 +1437,14 @@
             this.panl_Expanse.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.paneltreatments.ResumeLayout(false);
-            this.paneltreatments.PerformLayout();
-            this.panelpatients.ResumeLayout(false);
-            this.panelpatients.PerformLayout();
             this.paneldailysummary.ResumeLayout(false);
             this.paneldailysummary.PerformLayout();
             this.panelappointments.ResumeLayout(false);
             this.panelappointments.PerformLayout();
+            this.panelpatients.ResumeLayout(false);
+            this.panelpatients.PerformLayout();
+            this.paneltreatments.ResumeLayout(false);
+            this.paneltreatments.PerformLayout();
             this.label46.ResumeLayout(false);
             this.label46.PerformLayout();
             this.panel2.ResumeLayout(false);
