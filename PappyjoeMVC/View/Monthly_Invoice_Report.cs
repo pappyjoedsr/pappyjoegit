@@ -51,16 +51,16 @@ namespace PappyjoeMVC.View
                 dptMonthly_From.Value = DateTime.Now.AddMonths(-1).Date;
                 dptMonthly_To.Value = DateTime.Now.Date;
                 gridload();
-                dgvMonthlyReports.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgvMonthlyReports.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgvMonthlyReports.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgvMonthlyReports.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgvMonthlyReports.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgvMonthlyReports.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgvMonthlyReports.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgvMonthlyReports.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgvMonthlyReports.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgvMonthlyReports.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvMonthlyReports.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvMonthlyReports.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvMonthlyReports.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvMonthlyReports.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvMonthlyReports.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvMonthlyReports.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvMonthlyReports.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvMonthlyReports.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvMonthlyReports.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvMonthlyReports.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 foreach (DataGridViewColumn cl in dgvMonthlyReports.Columns)
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;

@@ -152,7 +152,7 @@
             this.panel6.Controls.Add(this.Cmb_AccountName);
             this.panel6.Controls.Add(this.Lab_Account);
             this.panel6.Controls.Add(this.chk_Account);
-            this.panel6.Location = new System.Drawing.Point(676, 3);
+            this.panel6.Location = new System.Drawing.Point(676, 2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(256, 62);
             this.panel6.TabIndex = 12;
@@ -199,12 +199,13 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.Dgv_ChartExpanse);
-            this.panel4.Location = new System.Drawing.Point(1151, 143);
+            this.panel4.Location = new System.Drawing.Point(1146, 143);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(213, 565);
+            this.panel4.Size = new System.Drawing.Size(219, 565);
             this.panel4.TabIndex = 108;
             // 
             // Dgv_ChartExpanse
@@ -221,12 +222,12 @@
             this.Dgv_ChartExpanse.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.Dgv_ChartExpanse.ColumnHeadersHeight = 28;
             this.Dgv_ChartExpanse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Dgv_ChartExpanse.Location = new System.Drawing.Point(-6, 0);
+            this.Dgv_ChartExpanse.Location = new System.Drawing.Point(2, 1);
             this.Dgv_ChartExpanse.Name = "Dgv_ChartExpanse";
             this.Dgv_ChartExpanse.RowHeadersVisible = false;
             this.Dgv_ChartExpanse.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Dgv_ChartExpanse.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_ChartExpanse.Size = new System.Drawing.Size(216, 558);
+            this.Dgv_ChartExpanse.Size = new System.Drawing.Size(244, 558);
             this.Dgv_ChartExpanse.TabIndex = 0;
             this.Dgv_ChartExpanse.DataSourceChanged += new System.EventHandler(this.Dgv_ChartExpanse_DataSourceChanged);
             // 
@@ -290,7 +291,7 @@
             this.panel5.Controls.Add(this.rad_Income);
             this.panel5.Controls.Add(this.Chk_Type);
             this.panel5.Controls.Add(this.rad_Expanse);
-            this.panel5.Location = new System.Drawing.Point(537, 81);
+            this.panel5.Location = new System.Drawing.Point(537, 80);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(136, 59);
             this.panel5.TabIndex = 104;
@@ -308,7 +309,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(1, 77);
+            this.panel2.Location = new System.Drawing.Point(1, 78);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1362, 65);
             this.panel2.TabIndex = 106;
@@ -424,14 +425,11 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.Controls.Add(this.Lab_Msg);
             this.panel3.Controls.Add(this.Dgv_Expanse);
             this.panel3.Controls.Add(this.chart_EXpanse);
-            this.panel3.Controls.Add(this.Lab_Msg);
-            this.panel3.Location = new System.Drawing.Point(1, 141);
+            this.panel3.Location = new System.Drawing.Point(1, 145);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1144, 570);
             this.panel3.TabIndex = 109;
@@ -541,7 +539,7 @@
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(263, 193);
+            this.Lab_Msg.Location = new System.Drawing.Point(268, 181);
             this.Lab_Msg.Name = "Lab_Msg";
             this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
             this.Lab_Msg.TabIndex = 277;

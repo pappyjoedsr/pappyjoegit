@@ -64,7 +64,7 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(244, 37);
+            this.button1.Location = new System.Drawing.Point(244, 43);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(58, 22);
             this.button1.TabIndex = 299;
@@ -78,7 +78,7 @@
             this.dptMonthly_From.CalendarFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dptMonthly_From.CalendarMonthBackground = System.Drawing.Color.Gainsboro;
             this.dptMonthly_From.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dptMonthly_From.Location = new System.Drawing.Point(50, 6);
+            this.dptMonthly_From.Location = new System.Drawing.Point(50, 12);
             this.dptMonthly_From.Name = "dptMonthly_From";
             this.dptMonthly_From.Size = new System.Drawing.Size(188, 22);
             this.dptMonthly_From.TabIndex = 167;
@@ -89,7 +89,7 @@
             this.label6.BackColor = System.Drawing.Color.Gainsboro;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(6, 10);
+            this.label6.Location = new System.Drawing.Point(6, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 17);
             this.label6.TabIndex = 169;
@@ -100,7 +100,7 @@
             this.dptMonthly_To.CalendarFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dptMonthly_To.CalendarMonthBackground = System.Drawing.Color.Gainsboro;
             this.dptMonthly_To.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dptMonthly_To.Location = new System.Drawing.Point(49, 36);
+            this.dptMonthly_To.Location = new System.Drawing.Point(49, 42);
             this.dptMonthly_To.Name = "dptMonthly_To";
             this.dptMonthly_To.Size = new System.Drawing.Size(189, 22);
             this.dptMonthly_To.TabIndex = 168;
@@ -111,7 +111,7 @@
             this.txtTotalItem.Enabled = false;
             this.txtTotalItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalItem.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtTotalItem.Location = new System.Drawing.Point(1251, 6);
+            this.txtTotalItem.Location = new System.Drawing.Point(1251, 12);
             this.txtTotalItem.Name = "txtTotalItem";
             this.txtTotalItem.ReadOnly = true;
             this.txtTotalItem.Size = new System.Drawing.Size(96, 22);
@@ -124,9 +124,9 @@
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label.Location = new System.Drawing.Point(1180, 15);
+            this.label.Location = new System.Drawing.Point(1180, 21);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(56, 13);
+            this.label.Size = new System.Drawing.Size(57, 13);
             this.label.TabIndex = 0;
             this.label.Text = "Total Item";
             // 
@@ -136,7 +136,7 @@
             this.label5.BackColor = System.Drawing.Color.Gainsboro;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(18, 37);
+            this.label5.Location = new System.Drawing.Point(18, 43);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(22, 17);
             this.label5.TabIndex = 170;
@@ -150,7 +150,7 @@
             this.BtnExport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExport.ForeColor = System.Drawing.Color.White;
             this.BtnExport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnExport.Location = new System.Drawing.Point(1062, 6);
+            this.BtnExport.Location = new System.Drawing.Point(1062, 12);
             this.BtnExport.Name = "BtnExport";
             this.BtnExport.Size = new System.Drawing.Size(120, 30);
             this.BtnExport.TabIndex = 298;
@@ -165,7 +165,7 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(5, 8);
+            this.label8.Location = new System.Drawing.Point(5, 14);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(207, 21);
             this.label8.TabIndex = 297;
@@ -182,7 +182,7 @@
             this.panel1.Controls.Add(this.txtTotalItem);
             this.panel1.Controls.Add(this.label);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(0, 50);
+            this.panel1.Location = new System.Drawing.Point(0, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1371, 68);
             this.panel1.TabIndex = 195;
@@ -196,7 +196,7 @@
             this.btnprint.ForeColor = System.Drawing.Color.White;
             this.btnprint.Image = ((System.Drawing.Image)(resources.GetObject("btnprint.Image")));
             this.btnprint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnprint.Location = new System.Drawing.Point(1183, 6);
+            this.btnprint.Location = new System.Drawing.Point(1183, 12);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(91, 30);
             this.btnprint.TabIndex = 165;
@@ -210,7 +210,7 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
-            this.panel4.Location = new System.Drawing.Point(0, 47);
+            this.panel4.Location = new System.Drawing.Point(0, 53);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1371, 1);
             this.panel4.TabIndex = 198;
@@ -223,7 +223,7 @@
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.btnprint);
             this.panel3.Controls.Add(this.BTNClose);
-            this.panel3.Location = new System.Drawing.Point(0, -3);
+            this.panel3.Location = new System.Drawing.Point(0, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1371, 57);
             this.panel3.TabIndex = 196;
@@ -235,7 +235,7 @@
             this.BTNClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNClose.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNClose.ForeColor = System.Drawing.Color.White;
-            this.BTNClose.Location = new System.Drawing.Point(1275, 6);
+            this.BTNClose.Location = new System.Drawing.Point(1275, 12);
             this.BTNClose.Name = "BTNClose";
             this.BTNClose.Size = new System.Drawing.Size(91, 30);
             this.BTNClose.TabIndex = 177;
@@ -275,7 +275,7 @@
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(343, 213);
+            this.Lab_Msg.Location = new System.Drawing.Point(343, 219);
             this.Lab_Msg.Name = "Lab_Msg";
             this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
             this.Lab_Msg.TabIndex = 279;
@@ -302,7 +302,7 @@
             this.PURCHASEORDER_DATE,
             this.SUPPLIER_NAME});
             this.dgvPurchase.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvPurchase.Location = new System.Drawing.Point(0, 0);
+            this.dgvPurchase.Location = new System.Drawing.Point(0, 8);
             this.dgvPurchase.Name = "dgvPurchase";
             this.dgvPurchase.ReadOnly = true;
             this.dgvPurchase.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -319,7 +319,7 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.Controls.Add(this.Lab_Msg);
             this.panel2.Controls.Add(this.dgvPurchase);
-            this.panel2.Location = new System.Drawing.Point(0, 117);
+            this.panel2.Location = new System.Drawing.Point(0, 123);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1368, 612);
             this.panel2.TabIndex = 197;
@@ -336,7 +336,8 @@
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Purchase_Order_Report";
-            this.Text = "Purchase_Order_Report";
+            this.Text = "Purchase Order Report";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Purchase_Order_Report_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
