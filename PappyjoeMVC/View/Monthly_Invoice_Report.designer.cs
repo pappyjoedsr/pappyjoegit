@@ -380,7 +380,7 @@
             this.panel5.Controls.Add(this.lbltotal1);
             this.panel5.Controls.Add(this.lbltotal2);
             this.panel5.Controls.Add(this.label7);
-            this.panel5.Location = new System.Drawing.Point(748, 3);
+            this.panel5.Location = new System.Drawing.Point(800, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(560, 55);
             this.panel5.TabIndex = 119;
@@ -443,7 +443,7 @@
             this.LabTotal3.BackColor = System.Drawing.Color.Gainsboro;
             this.LabTotal3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabTotal3.ForeColor = System.Drawing.Color.Red;
-            this.LabTotal3.Location = new System.Drawing.Point(260, 26);
+            this.LabTotal3.Location = new System.Drawing.Point(273, 26);
             this.LabTotal3.Name = "LabTotal3";
             this.LabTotal3.Size = new System.Drawing.Size(40, 17);
             this.LabTotal3.TabIndex = 223;
@@ -456,7 +456,7 @@
             this.lbltotal3.BackColor = System.Drawing.Color.Gainsboro;
             this.lbltotal3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal3.ForeColor = System.Drawing.Color.Red;
-            this.lbltotal3.Location = new System.Drawing.Point(469, 26);
+            this.lbltotal3.Location = new System.Drawing.Point(508, 26);
             this.lbltotal3.Name = "lbltotal3";
             this.lbltotal3.Size = new System.Drawing.Size(40, 17);
             this.lbltotal3.TabIndex = 219;
@@ -469,7 +469,7 @@
             this.lbltotal1.BackColor = System.Drawing.Color.Gainsboro;
             this.lbltotal1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal1.ForeColor = System.Drawing.Color.Red;
-            this.lbltotal1.Location = new System.Drawing.Point(164, 26);
+            this.lbltotal1.Location = new System.Drawing.Point(165, 26);
             this.lbltotal1.Name = "lbltotal1";
             this.lbltotal1.Size = new System.Drawing.Size(40, 17);
             this.lbltotal1.TabIndex = 222;
@@ -482,7 +482,7 @@
             this.lbltotal2.BackColor = System.Drawing.Color.Gainsboro;
             this.lbltotal2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal2.ForeColor = System.Drawing.Color.Red;
-            this.lbltotal2.Location = new System.Drawing.Point(355, 28);
+            this.lbltotal2.Location = new System.Drawing.Point(402, 28);
             this.lbltotal2.Name = "lbltotal2";
             this.lbltotal2.Size = new System.Drawing.Size(40, 17);
             this.lbltotal2.TabIndex = 221;

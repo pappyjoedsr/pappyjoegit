@@ -60,6 +60,7 @@
             this.Lab_Due = new System.Windows.Forms.Label();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.DGV_Receipt = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.ColSLNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColInv = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,7 +75,6 @@
             this.ColTotalIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAmountPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTotalDue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Receipt)).BeginInit();
@@ -85,10 +85,10 @@
             // 
             this.Lab_tax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Lab_tax.AutoSize = true;
-            this.Lab_tax.BackColor = System.Drawing.Color.LightGray;
+            this.Lab_tax.BackColor = System.Drawing.Color.White;
             this.Lab_tax.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_tax.ForeColor = System.Drawing.Color.ForestGreen;
-            this.Lab_tax.Location = new System.Drawing.Point(806, 497);
+            this.Lab_tax.Location = new System.Drawing.Point(869, 527);
             this.Lab_tax.Name = "Lab_tax";
             this.Lab_tax.Size = new System.Drawing.Size(33, 17);
             this.Lab_tax.TabIndex = 286;
@@ -98,10 +98,10 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.LightGray;
+            this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label7.Location = new System.Drawing.Point(895, 480);
+            this.label7.Location = new System.Drawing.Point(938, 508);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 17);
             this.label7.TabIndex = 285;
@@ -111,10 +111,10 @@
             // 
             this.Lab_Discount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Lab_Discount.AutoSize = true;
-            this.Lab_Discount.BackColor = System.Drawing.Color.LightGray;
+            this.Lab_Discount.BackColor = System.Drawing.Color.White;
             this.Lab_Discount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Discount.ForeColor = System.Drawing.Color.ForestGreen;
-            this.Lab_Discount.Location = new System.Drawing.Point(895, 497);
+            this.Lab_Discount.Location = new System.Drawing.Point(991, 527);
             this.Lab_Discount.Name = "Lab_Discount";
             this.Lab_Discount.Size = new System.Drawing.Size(33, 17);
             this.Lab_Discount.TabIndex = 284;
@@ -124,10 +124,10 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.LightGray;
+            this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label9.Location = new System.Drawing.Point(806, 480);
+            this.label9.Location = new System.Drawing.Point(849, 508);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 17);
             this.label9.TabIndex = 287;
@@ -137,10 +137,10 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.LightGray;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(1022, 480);
+            this.label1.Location = new System.Drawing.Point(1065, 508);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 17);
             this.label1.TabIndex = 283;
@@ -150,6 +150,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Controls.Add(this.btn_Close);
             this.panel1.Controls.Add(this.btn_Export);
             this.panel1.Controls.Add(this.label6);
@@ -356,10 +357,10 @@
             // 
             this.Lab_Amount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Lab_Amount.AutoSize = true;
-            this.Lab_Amount.BackColor = System.Drawing.Color.LightGray;
+            this.Lab_Amount.BackColor = System.Drawing.Color.White;
             this.Lab_Amount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Amount.ForeColor = System.Drawing.Color.ForestGreen;
-            this.Lab_Amount.Location = new System.Drawing.Point(1022, 497);
+            this.Lab_Amount.Location = new System.Drawing.Point(1113, 527);
             this.Lab_Amount.Name = "Lab_Amount";
             this.Lab_Amount.Size = new System.Drawing.Size(33, 17);
             this.Lab_Amount.TabIndex = 282;
@@ -369,10 +370,10 @@
             // 
             this.Lab_totalExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Lab_totalExpense.AutoSize = true;
-            this.Lab_totalExpense.BackColor = System.Drawing.Color.LightGray;
+            this.Lab_totalExpense.BackColor = System.Drawing.Color.White;
             this.Lab_totalExpense.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_totalExpense.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_totalExpense.Location = new System.Drawing.Point(1248, 480);
+            this.Lab_totalExpense.Location = new System.Drawing.Point(1291, 508);
             this.Lab_totalExpense.Name = "Lab_totalExpense";
             this.Lab_totalExpense.Size = new System.Drawing.Size(65, 17);
             this.Lab_totalExpense.TabIndex = 281;
@@ -382,10 +383,10 @@
             // 
             this.Lab_TotalIncome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Lab_TotalIncome.AutoSize = true;
-            this.Lab_TotalIncome.BackColor = System.Drawing.Color.LightGray;
+            this.Lab_TotalIncome.BackColor = System.Drawing.Color.White;
             this.Lab_TotalIncome.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_TotalIncome.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_TotalIncome.Location = new System.Drawing.Point(1150, 480);
+            this.Lab_TotalIncome.Location = new System.Drawing.Point(1193, 508);
             this.Lab_TotalIncome.Name = "Lab_TotalIncome";
             this.Lab_TotalIncome.Size = new System.Drawing.Size(67, 17);
             this.Lab_TotalIncome.TabIndex = 280;
@@ -395,10 +396,10 @@
             // 
             this.Lab_Paid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Lab_Paid.AutoSize = true;
-            this.Lab_Paid.BackColor = System.Drawing.Color.LightGray;
+            this.Lab_Paid.BackColor = System.Drawing.Color.White;
             this.Lab_Paid.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Paid.ForeColor = System.Drawing.Color.ForestGreen;
-            this.Lab_Paid.Location = new System.Drawing.Point(1150, 497);
+            this.Lab_Paid.Location = new System.Drawing.Point(1219, 527);
             this.Lab_Paid.Name = "Lab_Paid";
             this.Lab_Paid.Size = new System.Drawing.Size(33, 17);
             this.Lab_Paid.TabIndex = 278;
@@ -408,10 +409,10 @@
             // 
             this.Lab_Due.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Lab_Due.AutoSize = true;
-            this.Lab_Due.BackColor = System.Drawing.Color.LightGray;
+            this.Lab_Due.BackColor = System.Drawing.Color.White;
             this.Lab_Due.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Due.ForeColor = System.Drawing.Color.Red;
-            this.Lab_Due.Location = new System.Drawing.Point(1248, 497);
+            this.Lab_Due.Location = new System.Drawing.Point(1314, 527);
             this.Lab_Due.Name = "Lab_Due";
             this.Lab_Due.Size = new System.Drawing.Size(33, 17);
             this.Lab_Due.TabIndex = 279;
@@ -481,93 +482,10 @@
             this.DGV_Receipt.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGV_Receipt.RowHeadersVisible = false;
             this.DGV_Receipt.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.DGV_Receipt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_Receipt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_Receipt.Size = new System.Drawing.Size(1367, 533);
+            this.DGV_Receipt.Size = new System.Drawing.Size(1367, 467);
             this.DGV_Receipt.TabIndex = 5;
-            // 
-            // ColSLNo
-            // 
-            this.ColSLNo.HeaderText = "SLNO";
-            this.ColSLNo.Name = "ColSLNo";
-            this.ColSLNo.Width = 40;
-            // 
-            // ColPtName
-            // 
-            this.ColPtName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColPtName.HeaderText = "PATIENT ";
-            this.ColPtName.Name = "ColPtName";
-            // 
-            // ColInv
-            // 
-            this.ColInv.HeaderText = "INVOICE ";
-            this.ColInv.Name = "ColInv";
-            this.ColInv.Width = 70;
-            // 
-            // ColReceipt
-            // 
-            this.ColReceipt.HeaderText = "RECEIPT ";
-            this.ColReceipt.Name = "ColReceipt";
-            this.ColReceipt.Width = 70;
-            // 
-            // ColDrName
-            // 
-            this.ColDrName.HeaderText = "DOCTOR ";
-            this.ColDrName.Name = "ColDrName";
-            this.ColDrName.Width = 150;
-            // 
-            // ColProcedure
-            // 
-            this.ColProcedure.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColProcedure.HeaderText = "PROCEDURE";
-            this.ColProcedure.Name = "ColProcedure";
-            // 
-            // DATE
-            // 
-            this.DATE.HeaderText = " DATE";
-            this.DATE.Name = "DATE";
-            this.DATE.Width = 80;
-            // 
-            // ColModeofpayment
-            // 
-            this.ColModeofpayment.HeaderText = "MODE OF PAYMENT";
-            this.ColModeofpayment.Name = "ColModeofpayment";
-            this.ColModeofpayment.Width = 70;
-            // 
-            // ColTotao_Cost
-            // 
-            this.ColTotao_Cost.HeaderText = " COST";
-            this.ColTotao_Cost.Name = "ColTotao_Cost";
-            this.ColTotao_Cost.Width = 80;
-            // 
-            // ColTax
-            // 
-            this.ColTax.HeaderText = "TAX";
-            this.ColTax.Name = "ColTax";
-            this.ColTax.Width = 80;
-            // 
-            // COlDIS
-            // 
-            this.COlDIS.HeaderText = "DISCOUNT";
-            this.COlDIS.Name = "COlDIS";
-            this.COlDIS.Width = 80;
-            // 
-            // ColTotalIncome
-            // 
-            this.ColTotalIncome.HeaderText = "TOTAL AMOUNT";
-            this.ColTotalIncome.Name = "ColTotalIncome";
-            this.ColTotalIncome.Width = 80;
-            // 
-            // ColAmountPaid
-            // 
-            this.ColAmountPaid.HeaderText = "AMOUNT PAID";
-            this.ColAmountPaid.Name = "ColAmountPaid";
-            this.ColAmountPaid.Width = 80;
-            // 
-            // ColTotalDue
-            // 
-            this.ColTotalDue.HeaderText = "AMOUNT DUE";
-            this.ColTotalDue.Name = "ColTotalDue";
-            this.ColTotalDue.Width = 80;
             // 
             // panel4
             // 
@@ -590,6 +508,89 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1364, 578);
             this.panel4.TabIndex = 106;
+            // 
+            // ColSLNo
+            // 
+            this.ColSLNo.HeaderText = "SLNO";
+            this.ColSLNo.Name = "ColSLNo";
+            this.ColSLNo.Width = 40;
+            // 
+            // ColPtName
+            // 
+            this.ColPtName.HeaderText = "PATIENT ";
+            this.ColPtName.Name = "ColPtName";
+            this.ColPtName.Width = 175;
+            // 
+            // ColInv
+            // 
+            this.ColInv.HeaderText = "INVOICE ";
+            this.ColInv.Name = "ColInv";
+            this.ColInv.Width = 70;
+            // 
+            // ColReceipt
+            // 
+            this.ColReceipt.HeaderText = "RECEIPT ";
+            this.ColReceipt.Name = "ColReceipt";
+            this.ColReceipt.Width = 70;
+            // 
+            // ColDrName
+            // 
+            this.ColDrName.HeaderText = "DOCTOR ";
+            this.ColDrName.Name = "ColDrName";
+            this.ColDrName.Width = 125;
+            // 
+            // ColProcedure
+            // 
+            this.ColProcedure.HeaderText = "PROCEDURE";
+            this.ColProcedure.Name = "ColProcedure";
+            this.ColProcedure.Width = 200;
+            // 
+            // DATE
+            // 
+            this.DATE.HeaderText = " DATE";
+            this.DATE.Name = "DATE";
+            this.DATE.Width = 80;
+            // 
+            // ColModeofpayment
+            // 
+            this.ColModeofpayment.HeaderText = "MODE OF PAYMENT";
+            this.ColModeofpayment.Name = "ColModeofpayment";
+            this.ColModeofpayment.Width = 120;
+            // 
+            // ColTotao_Cost
+            // 
+            this.ColTotao_Cost.HeaderText = " COST";
+            this.ColTotao_Cost.Name = "ColTotao_Cost";
+            this.ColTotao_Cost.Width = 80;
+            // 
+            // ColTax
+            // 
+            this.ColTax.HeaderText = "TAX";
+            this.ColTax.Name = "ColTax";
+            this.ColTax.Width = 50;
+            // 
+            // COlDIS
+            // 
+            this.COlDIS.HeaderText = "DISCOUNT";
+            this.COlDIS.Name = "COlDIS";
+            this.COlDIS.Width = 76;
+            // 
+            // ColTotalIncome
+            // 
+            this.ColTotalIncome.HeaderText = "TOTAL AMOUNT";
+            this.ColTotalIncome.Name = "ColTotalIncome";
+            // 
+            // ColAmountPaid
+            // 
+            this.ColAmountPaid.HeaderText = "AMOUNT PAID";
+            this.ColAmountPaid.Name = "ColAmountPaid";
+            this.ColAmountPaid.Width = 90;
+            // 
+            // ColTotalDue
+            // 
+            this.ColTotalDue.HeaderText = "AMOUNT DUE";
+            this.ColTotalDue.Name = "ColTotalDue";
+            this.ColTotalDue.Width = 88;
             // 
             // Day_Wise_Receipt
             // 

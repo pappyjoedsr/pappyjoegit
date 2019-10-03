@@ -130,7 +130,7 @@ namespace PappyjoeMVC.View
             }
             else
             {
-                Dgv_Expense.Columns["CoAmountCr"].Visible = true;
+                Dgv_Expense.Columns["CoAmountCr"].Visible = true;  
                 Dgv_Expense.Columns["colAmountdr"].Visible = true;
             }
             int count = Dgv_Expense.Rows.Count;

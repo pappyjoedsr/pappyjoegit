@@ -28,35 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Month_Wise_Receipt));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Month_Wise_Receipt));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lab_tax = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.Lab_Discount = new System.Windows.Forms.Label();
-            this.amount_due = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Patient_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.invoice_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recept_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
-            this.doctor_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Payment_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mode_of_payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tax_inrs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount_insr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.income = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount_paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.procedure_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -83,6 +69,20 @@
             this.label_empty = new System.Windows.Forms.Label();
             this.DgvReceiptReceivedPerMonth = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Patient_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoice_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recept_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctor_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.procedure_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Payment_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mode_of_payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tax_inrs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount_insr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.income = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount_paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount_due = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReceiptReceivedPerMonth)).BeginInit();
@@ -96,7 +96,7 @@
             this.Lab_tax.BackColor = System.Drawing.Color.Transparent;
             this.Lab_tax.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_tax.ForeColor = System.Drawing.Color.ForestGreen;
-            this.Lab_tax.Location = new System.Drawing.Point(795, 504);
+            this.Lab_tax.Location = new System.Drawing.Point(939, 528);
             this.Lab_tax.Name = "Lab_tax";
             this.Lab_tax.Size = new System.Drawing.Size(33, 17);
             this.Lab_tax.TabIndex = 296;
@@ -109,7 +109,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label7.Location = new System.Drawing.Point(894, 471);
+            this.label7.Location = new System.Drawing.Point(992, 500);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 17);
             this.label7.TabIndex = 295;
@@ -122,43 +122,11 @@
             this.Lab_Discount.BackColor = System.Drawing.Color.Transparent;
             this.Lab_Discount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Discount.ForeColor = System.Drawing.Color.ForestGreen;
-            this.Lab_Discount.Location = new System.Drawing.Point(894, 504);
+            this.Lab_Discount.Location = new System.Drawing.Point(1041, 528);
             this.Lab_Discount.Name = "Lab_Discount";
             this.Lab_Discount.Size = new System.Drawing.Size(33, 17);
             this.Lab_Discount.TabIndex = 294;
             this.Lab_Discount.Text = "0.00";
-            // 
-            // amount_due
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.amount_due.DefaultCellStyle = dataGridViewCellStyle11;
-            this.amount_due.HeaderText = "AMOUNT DUE";
-            this.amount_due.Name = "amount_due";
-            this.amount_due.Width = 80;
-            // 
-            // slno
-            // 
-            this.slno.HeaderText = "SL. NO.";
-            this.slno.Name = "slno";
-            this.slno.Width = 40;
-            // 
-            // Patient_name
-            // 
-            this.Patient_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Patient_name.HeaderText = "PATIENT";
-            this.Patient_name.Name = "Patient_name";
-            // 
-            // invoice_no
-            // 
-            this.invoice_no.HeaderText = "INVOICE";
-            this.invoice_no.Name = "invoice_no";
-            this.invoice_no.Width = 70;
-            // 
-            // recept_No
-            // 
-            this.recept_No.HeaderText = "RECEIPT";
-            this.recept_No.Name = "recept_No";
-            this.recept_No.Width = 70;
             // 
             // label9
             // 
@@ -167,77 +135,11 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label9.Location = new System.Drawing.Point(795, 471);
+            this.label9.Location = new System.Drawing.Point(919, 500);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 17);
             this.label9.TabIndex = 297;
             this.label9.Text = "Total Tax";
-            // 
-            // doctor_name
-            // 
-            this.doctor_name.HeaderText = "DOCTOR ";
-            this.doctor_name.Name = "doctor_name";
-            this.doctor_name.Width = 150;
-            // 
-            // Payment_date
-            // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Payment_date.DefaultCellStyle = dataGridViewCellStyle12;
-            this.Payment_date.HeaderText = "DATE";
-            this.Payment_date.Name = "Payment_date";
-            this.Payment_date.Width = 80;
-            // 
-            // mode_of_payment
-            // 
-            this.mode_of_payment.HeaderText = "MODE OF PAYMENT";
-            this.mode_of_payment.Name = "mode_of_payment";
-            this.mode_of_payment.Width = 70;
-            // 
-            // cost
-            // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.cost.DefaultCellStyle = dataGridViewCellStyle13;
-            this.cost.HeaderText = "COST";
-            this.cost.Name = "cost";
-            this.cost.Width = 80;
-            // 
-            // tax_inrs
-            // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.tax_inrs.DefaultCellStyle = dataGridViewCellStyle14;
-            this.tax_inrs.HeaderText = "TAX";
-            this.tax_inrs.Name = "tax_inrs";
-            this.tax_inrs.Width = 80;
-            // 
-            // Discount_insr
-            // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Discount_insr.DefaultCellStyle = dataGridViewCellStyle15;
-            this.Discount_insr.HeaderText = "DISCOUNT";
-            this.Discount_insr.Name = "Discount_insr";
-            this.Discount_insr.Width = 80;
-            // 
-            // income
-            // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.income.DefaultCellStyle = dataGridViewCellStyle16;
-            this.income.HeaderText = "TOTAL AMOUNT";
-            this.income.Name = "income";
-            this.income.Width = 80;
-            // 
-            // amount_paid
-            // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.amount_paid.DefaultCellStyle = dataGridViewCellStyle17;
-            this.amount_paid.HeaderText = "AMOUNT PAID";
-            this.amount_paid.Name = "amount_paid";
-            this.amount_paid.Width = 80;
-            // 
-            // procedure_name
-            // 
-            this.procedure_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.procedure_name.HeaderText = "PROCEDURE";
-            this.procedure_name.Name = "procedure_name";
             // 
             // label3
             // 
@@ -246,7 +148,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(1025, 471);
+            this.label3.Location = new System.Drawing.Point(1103, 500);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 17);
             this.label3.TabIndex = 293;
@@ -268,7 +170,7 @@
             this.panel1.Controls.Add(this.dtp1ReceptReceivedPerMonth2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1364, 103);
+            this.panel1.Size = new System.Drawing.Size(1368, 103);
             this.panel1.TabIndex = 256;
             // 
             // btn_Close
@@ -396,7 +298,7 @@
             this.panel4.Controls.Add(this.label5);
             this.panel4.Location = new System.Drawing.Point(0, 103);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1364, 62);
+            this.panel4.Size = new System.Drawing.Size(1371, 62);
             this.panel4.TabIndex = 257;
             // 
             // Chk_CheckoutTime
@@ -466,7 +368,7 @@
             this.Lab_Amount.BackColor = System.Drawing.Color.Transparent;
             this.Lab_Amount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Amount.ForeColor = System.Drawing.Color.ForestGreen;
-            this.Lab_Amount.Location = new System.Drawing.Point(1025, 504);
+            this.Lab_Amount.Location = new System.Drawing.Point(1147, 528);
             this.Lab_Amount.Name = "Lab_Amount";
             this.Lab_Amount.Size = new System.Drawing.Size(33, 17);
             this.Lab_Amount.TabIndex = 292;
@@ -479,7 +381,7 @@
             this.Lab_totalExpense.BackColor = System.Drawing.Color.Transparent;
             this.Lab_totalExpense.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_totalExpense.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_totalExpense.Location = new System.Drawing.Point(1236, 471);
+            this.Lab_totalExpense.Location = new System.Drawing.Point(1296, 500);
             this.Lab_totalExpense.Name = "Lab_totalExpense";
             this.Lab_totalExpense.Size = new System.Drawing.Size(65, 17);
             this.Lab_totalExpense.TabIndex = 291;
@@ -492,7 +394,7 @@
             this.Lab_TotalIncome.BackColor = System.Drawing.Color.Transparent;
             this.Lab_TotalIncome.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_TotalIncome.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_TotalIncome.Location = new System.Drawing.Point(1138, 471);
+            this.Lab_TotalIncome.Location = new System.Drawing.Point(1212, 500);
             this.Lab_TotalIncome.Name = "Lab_TotalIncome";
             this.Lab_TotalIncome.Size = new System.Drawing.Size(67, 17);
             this.Lab_TotalIncome.TabIndex = 290;
@@ -505,7 +407,7 @@
             this.Lab_Paid.BackColor = System.Drawing.Color.Transparent;
             this.Lab_Paid.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Paid.ForeColor = System.Drawing.Color.ForestGreen;
-            this.Lab_Paid.Location = new System.Drawing.Point(1138, 504);
+            this.Lab_Paid.Location = new System.Drawing.Point(1233, 528);
             this.Lab_Paid.Name = "Lab_Paid";
             this.Lab_Paid.Size = new System.Drawing.Size(33, 17);
             this.Lab_Paid.TabIndex = 288;
@@ -518,7 +420,7 @@
             this.Lab_Due.BackColor = System.Drawing.Color.Transparent;
             this.Lab_Due.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Due.ForeColor = System.Drawing.Color.Red;
-            this.Lab_Due.Location = new System.Drawing.Point(1236, 504);
+            this.Lab_Due.Location = new System.Drawing.Point(1315, 528);
             this.Lab_Due.Name = "Lab_Due";
             this.Lab_Due.Size = new System.Drawing.Size(33, 17);
             this.Lab_Due.TabIndex = 289;
@@ -543,21 +445,21 @@
             this.DgvReceiptReceivedPerMonth.AllowUserToDeleteRows = false;
             this.DgvReceiptReceivedPerMonth.AllowUserToResizeColumns = false;
             this.DgvReceiptReceivedPerMonth.AllowUserToResizeRows = false;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            this.DgvReceiptReceivedPerMonth.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            this.DgvReceiptReceivedPerMonth.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.DgvReceiptReceivedPerMonth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvReceiptReceivedPerMonth.BackgroundColor = System.Drawing.Color.White;
             this.DgvReceiptReceivedPerMonth.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvReceiptReceivedPerMonth.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DgvReceiptReceivedPerMonth.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvReceiptReceivedPerMonth.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvReceiptReceivedPerMonth.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.DgvReceiptReceivedPerMonth.ColumnHeadersHeight = 28;
             this.DgvReceiptReceivedPerMonth.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DgvReceiptReceivedPerMonth.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -583,12 +485,12 @@
             dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgvReceiptReceivedPerMonth.DefaultCellStyle = dataGridViewCellStyle20;
-            this.DgvReceiptReceivedPerMonth.Location = new System.Drawing.Point(-1, 3);
+            this.DgvReceiptReceivedPerMonth.Location = new System.Drawing.Point(4, 4);
             this.DgvReceiptReceivedPerMonth.Name = "DgvReceiptReceivedPerMonth";
             this.DgvReceiptReceivedPerMonth.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DgvReceiptReceivedPerMonth.RowHeadersVisible = false;
             this.DgvReceiptReceivedPerMonth.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvReceiptReceivedPerMonth.Size = new System.Drawing.Size(1359, 518);
+            this.DgvReceiptReceivedPerMonth.Size = new System.Drawing.Size(1367, 466);
             this.DgvReceiptReceivedPerMonth.TabIndex = 0;
             // 
             // panel3
@@ -608,10 +510,108 @@
             this.panel3.Controls.Add(this.Lab_Due);
             this.panel3.Controls.Add(this.label_empty);
             this.panel3.Controls.Add(this.DgvReceiptReceivedPerMonth);
-            this.panel3.Location = new System.Drawing.Point(0, 161);
+            this.panel3.Location = new System.Drawing.Point(0, 164);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1365, 576);
+            this.panel3.Size = new System.Drawing.Size(1374, 574);
             this.panel3.TabIndex = 258;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // slno
+            // 
+            this.slno.HeaderText = "SLNO";
+            this.slno.Name = "slno";
+            this.slno.Width = 40;
+            // 
+            // Patient_name
+            // 
+            this.Patient_name.HeaderText = "PATIENT";
+            this.Patient_name.Name = "Patient_name";
+            this.Patient_name.Width = 160;
+            // 
+            // invoice_no
+            // 
+            this.invoice_no.HeaderText = "INVOICE";
+            this.invoice_no.Name = "invoice_no";
+            this.invoice_no.Width = 70;
+            // 
+            // recept_No
+            // 
+            this.recept_No.HeaderText = "RECEIPT";
+            this.recept_No.Name = "recept_No";
+            this.recept_No.Width = 70;
+            // 
+            // doctor_name
+            // 
+            this.doctor_name.HeaderText = "DOCTOR ";
+            this.doctor_name.Name = "doctor_name";
+            this.doctor_name.Width = 150;
+            // 
+            // procedure_name
+            // 
+            this.procedure_name.HeaderText = "PROCEDURE";
+            this.procedure_name.Name = "procedure_name";
+            this.procedure_name.Width = 190;
+            // 
+            // Payment_date
+            // 
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Payment_date.DefaultCellStyle = dataGridViewCellStyle13;
+            this.Payment_date.HeaderText = "DATE";
+            this.Payment_date.Name = "Payment_date";
+            this.Payment_date.Width = 80;
+            // 
+            // mode_of_payment
+            // 
+            this.mode_of_payment.HeaderText = "MODE OF PAYMENT";
+            this.mode_of_payment.Name = "mode_of_payment";
+            this.mode_of_payment.Width = 119;
+            // 
+            // cost
+            // 
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.cost.DefaultCellStyle = dataGridViewCellStyle14;
+            this.cost.HeaderText = "COST";
+            this.cost.Name = "cost";
+            this.cost.Width = 80;
+            // 
+            // tax_inrs
+            // 
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.tax_inrs.DefaultCellStyle = dataGridViewCellStyle15;
+            this.tax_inrs.HeaderText = "TAX";
+            this.tax_inrs.Name = "tax_inrs";
+            this.tax_inrs.Width = 50;
+            // 
+            // Discount_insr
+            // 
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Discount_insr.DefaultCellStyle = dataGridViewCellStyle16;
+            this.Discount_insr.HeaderText = "DISCOUNT";
+            this.Discount_insr.Name = "Discount_insr";
+            this.Discount_insr.Width = 75;
+            // 
+            // income
+            // 
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.income.DefaultCellStyle = dataGridViewCellStyle17;
+            this.income.HeaderText = "TOTAL AMOUNT";
+            this.income.Name = "income";
+            // 
+            // amount_paid
+            // 
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.amount_paid.DefaultCellStyle = dataGridViewCellStyle18;
+            this.amount_paid.HeaderText = "AMOUNT PAID";
+            this.amount_paid.Name = "amount_paid";
+            this.amount_paid.Width = 90;
+            // 
+            // amount_due
+            // 
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.amount_due.DefaultCellStyle = dataGridViewCellStyle19;
+            this.amount_due.HeaderText = "AMOUNT DUE";
+            this.amount_due.Name = "amount_due";
+            this.amount_due.Width = 88;
             // 
             // Month_Wise_Receipt
             // 
@@ -643,21 +643,7 @@
         private System.Windows.Forms.Label Lab_tax;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label Lab_Discount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amount_due;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Patient_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn invoice_no;
-        private System.Windows.Forms.DataGridViewTextBoxColumn recept_No;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doctor_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Payment_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mode_of_payment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tax_inrs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Discount_insr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn income;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amount_paid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn procedure_name;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
@@ -684,5 +670,19 @@
         private System.Windows.Forms.Label label_empty;
         private System.Windows.Forms.DataGridView DgvReceiptReceivedPerMonth;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Patient_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invoice_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn recept_No;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doctor_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn procedure_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Payment_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mode_of_payment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tax_inrs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Discount_insr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn income;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount_paid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount_due;
     }
 }

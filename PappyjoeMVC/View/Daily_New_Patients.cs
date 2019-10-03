@@ -99,7 +99,7 @@ namespace PappyjoeMVC.View
                 string doctor = combodoctors.Text;
                 string date1 = dateTimePickerdailynewpatient1.Value.ToString("yyyy-MM-dd");
                 string date2 = dateTimePickerdailynewpatient2.Value.ToString("yyyy-MM-dd");
-                Grvdailynewpatient.DataSource = this.cntrl.DailyNewPatient(date1, date2, doctor);
+                Grvdailynewpatient.DataSource  = this.cntrl.Dailynewpatient(date1, date2, doctor);// this.cntrl.DailyNewPatient(date1, date2, doctor);
                 Grvdailynewpatient.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 Grvdailynewpatient.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 Grvdailynewpatient.EnableHeadersVisualStyles = false;
@@ -139,7 +139,7 @@ namespace PappyjoeMVC.View
                 }
                 label4.Visible = true;
                 var dateFrom = dateTimePickerdailynewpatient1.Value.ToShortDateString();
-                var dateTo = dateTimePickerdailynewpatient1.Value.ToShortDateString();
+                var dateTo = dateTimePickerdailynewpatient2.Value.ToShortDateString();
                 if (Convert.ToDateTime(dateFrom).Date > Convert.ToDateTime(dateTo).Date)
                 {
                     MessageBox.Show("From date should be less than to date", "From Date is grater ", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -147,8 +147,8 @@ namespace PappyjoeMVC.View
                 }
                 string doctor = combodoctors.Text;
                 string date1 = dateTimePickerdailynewpatient1.Value.ToString("yyyy-MM-dd");
-                string date2 = dateTimePickerdailynewpatient1.Value.ToString("yyyy-MM-dd");
-                Grvdailynewpatient.DataSource = this.cntrl.DailyNewPatient(date1, date2, doctor);
+                string date2 = dateTimePickerdailynewpatient2.Value.ToString("yyyy-MM-dd");
+                Grvdailynewpatient.DataSource = this.cntrl.Dailynewpatient(date1, date2, doctor);// this.cntrl.DailyNewPatient(date1, date2, doctor);
                 Grvdailynewpatient.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 Grvdailynewpatient.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 Grvdailynewpatient.EnableHeadersVisualStyles = false;
@@ -204,7 +204,7 @@ namespace PappyjoeMVC.View
                     doctor = "All Doctor";
                 }
                 var dateFrom = dateTimePickerdailynewpatient1.Value.ToShortDateString();
-                var dateTo = dateTimePickerdailynewpatient1.Value.ToShortDateString();
+                var dateTo = dateTimePickerdailynewpatient2.Value.ToShortDateString();
                 if (Convert.ToDateTime(dateFrom).Date > Convert.ToDateTime(dateTo).Date)
                 {
                     MessageBox.Show("From date should be less than to date", "From Date is grater ", MessageBoxButtons.OK, MessageBoxIcon.Information);

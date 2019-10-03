@@ -456,8 +456,8 @@ namespace PappyjoeMVC.View
                 }
                 label4.Visible = true;
                 string doctor = cmbDoctor.Text;
-                string date1 = dateTimePickermonthnewpatient1.Value.ToString("MM/dd/yyyy");
-                string date2 = dateTimePickermonthnewpatient2.Value.ToString("MM/dd/yyyy");
+                string date1 = dateTimePickermonthnewpatient1.Value.ToString("yyyy-MM-dd");
+                string date2 = dateTimePickermonthnewpatient2.Value.ToString("yyyy-MM-dd");
                 Grvmonthnewpatient.DataSource = this.cntrl.DailyNewPatient(date1, date2, doctor);
                 Grvmonthnewpatient.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 Grvmonthnewpatient.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

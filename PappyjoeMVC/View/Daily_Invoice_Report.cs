@@ -262,9 +262,9 @@ namespace PappyjoeMVC.View
                 else
                 {
                     label_empty.Hide();
-                    lbltotal1.Text = Convert.ToDecimal(credit).ToString("#0.00");
+                    lbltotal1.Text = Convert.ToDecimal(totalinvoice).ToString("#0.00");
                     lbltotal2.Text = Convert.ToDecimal(totalpayment).ToString("#0.00");
-                    lbltotal3.Text = Convert.ToDecimal(totalcredit + balance1).ToString("#0.00");
+                    lbltotal3.Text = Convert.ToDecimal(balance).ToString("#0.00");
                 }
             }
             catch (Exception ex)
@@ -274,13 +274,13 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                if (Grvsummary.Rows.Count == 0)
-                {
+                //if (Grvsummary.Rows.Count == 0)
+                //{
                     lbltotal1.Text = "00.00";
                     lbltotal2.Text = "00.00";
                     lbltotal3.Text = "00.00";
                     combodoctors_SelectedIndexChanged(sender, e);
-                }
+                //}
             }
             catch (Exception ex)
             {

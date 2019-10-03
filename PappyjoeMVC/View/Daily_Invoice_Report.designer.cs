@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Daily_Invoice_Report));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_show = new System.Windows.Forms.Button();
             this.btnEXPORT = new System.Windows.Forms.Button();
@@ -39,6 +39,15 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_empty = new System.Windows.Forms.Label();
             this.Grvsummary = new System.Windows.Forms.DataGridView();
+            this.SL_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PATIENT_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INVOICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RECEIPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRODUCT_AND_SERVICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Doctor_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL_COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTALINCOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL_AMOUT_DUE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbltotal1 = new System.Windows.Forms.Label();
@@ -70,15 +79,6 @@
             this.dateTimePickerdaily1 = new System.Windows.Forms.DateTimePicker();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.SL_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PATIENT_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INVOICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RECEIPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRODUCT_AND_SERVICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Doctor_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOTAL_COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOTALINCOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOTAL_AMOUT_DUE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grvsummary)).BeginInit();
@@ -190,8 +190,8 @@
             this.Grvsummary.AllowUserToDeleteRows = false;
             this.Grvsummary.AllowUserToResizeColumns = false;
             this.Grvsummary.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.Grvsummary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.Grvsummary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.Grvsummary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Grvsummary.BackgroundColor = System.Drawing.Color.White;
@@ -215,13 +215,90 @@
             this.Grvsummary.ReadOnly = true;
             this.Grvsummary.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.Grvsummary.RowHeadersVisible = false;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.Grvsummary.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.Grvsummary.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.Grvsummary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grvsummary.Size = new System.Drawing.Size(1349, 515);
             this.Grvsummary.TabIndex = 0;
             this.Grvsummary.DataSourceChanged += new System.EventHandler(this.Grvsummary_DataSourceChanged);
             this.Grvsummary.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.Grvsummary_ColumnAdded);
+            // 
+            // SL_NO
+            // 
+            this.SL_NO.HeaderText = "SL.";
+            this.SL_NO.Name = "SL_NO";
+            this.SL_NO.ReadOnly = true;
+            this.SL_NO.Width = 70;
+            // 
+            // PATIENT_NAME
+            // 
+            this.PATIENT_NAME.DataPropertyName = "pt_name";
+            this.PATIENT_NAME.HeaderText = "PATIENT NAME";
+            this.PATIENT_NAME.Name = "PATIENT_NAME";
+            this.PATIENT_NAME.ReadOnly = true;
+            this.PATIENT_NAME.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.PATIENT_NAME.Width = 140;
+            // 
+            // INVOICE
+            // 
+            this.INVOICE.DataPropertyName = "invoice_no";
+            this.INVOICE.HeaderText = "INVOICE";
+            this.INVOICE.Name = "INVOICE";
+            this.INVOICE.ReadOnly = true;
+            this.INVOICE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.INVOICE.Width = 170;
+            // 
+            // RECEIPT
+            // 
+            this.RECEIPT.DataPropertyName = "receipt_no";
+            this.RECEIPT.HeaderText = "RECEIPT";
+            this.RECEIPT.Name = "RECEIPT";
+            this.RECEIPT.ReadOnly = true;
+            this.RECEIPT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.RECEIPT.Width = 170;
+            // 
+            // PRODUCT_AND_SERVICE
+            // 
+            this.PRODUCT_AND_SERVICE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PRODUCT_AND_SERVICE.DataPropertyName = "services";
+            this.PRODUCT_AND_SERVICE.HeaderText = "PRODUCT AND SERVICES";
+            this.PRODUCT_AND_SERVICE.Name = "PRODUCT_AND_SERVICE";
+            this.PRODUCT_AND_SERVICE.ReadOnly = true;
+            this.PRODUCT_AND_SERVICE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Doctor_name
+            // 
+            this.Doctor_name.DataPropertyName = "doctor_name";
+            this.Doctor_name.HeaderText = "DOCTOR";
+            this.Doctor_name.Name = "Doctor_name";
+            this.Doctor_name.ReadOnly = true;
+            this.Doctor_name.Width = 140;
+            // 
+            // TOTAL_COST
+            // 
+            this.TOTAL_COST.DataPropertyName = "cost";
+            this.TOTAL_COST.HeaderText = " COST";
+            this.TOTAL_COST.Name = "TOTAL_COST";
+            this.TOTAL_COST.ReadOnly = true;
+            this.TOTAL_COST.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.TOTAL_COST.Width = 120;
+            // 
+            // TOTALINCOME
+            // 
+            this.TOTALINCOME.DataPropertyName = "amount_paid";
+            this.TOTALINCOME.HeaderText = "TOTAL INCOME";
+            this.TOTALINCOME.Name = "TOTALINCOME";
+            this.TOTALINCOME.ReadOnly = true;
+            this.TOTALINCOME.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.TOTALINCOME.Width = 140;
+            // 
+            // TOTAL_AMOUT_DUE
+            // 
+            this.TOTAL_AMOUT_DUE.HeaderText = "TOTAL AMOUNT DUE";
+            this.TOTAL_AMOUT_DUE.Name = "TOTAL_AMOUT_DUE";
+            this.TOTAL_AMOUT_DUE.ReadOnly = true;
+            this.TOTAL_AMOUT_DUE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.TOTAL_AMOUT_DUE.Width = 140;
             // 
             // panel1
             // 
@@ -243,7 +320,7 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.lbltotal3);
             this.panel4.Controls.Add(this.lbltotal2);
-            this.panel4.Location = new System.Drawing.Point(741, 5);
+            this.panel4.Location = new System.Drawing.Point(760, 5);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(590, 56);
             this.panel4.TabIndex = 219;
@@ -311,7 +388,7 @@
             this.lbltotal3.BackColor = System.Drawing.Color.Gainsboro;
             this.lbltotal3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal3.ForeColor = System.Drawing.Color.Red;
-            this.lbltotal3.Location = new System.Drawing.Point(490, 32);
+            this.lbltotal3.Location = new System.Drawing.Point(533, 32);
             this.lbltotal3.Name = "lbltotal3";
             this.lbltotal3.Size = new System.Drawing.Size(40, 17);
             this.lbltotal3.TabIndex = 5;
@@ -324,7 +401,7 @@
             this.lbltotal2.BackColor = System.Drawing.Color.Gainsboro;
             this.lbltotal2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal2.ForeColor = System.Drawing.Color.Red;
-            this.lbltotal2.Location = new System.Drawing.Point(348, 31);
+            this.lbltotal2.Location = new System.Drawing.Point(395, 31);
             this.lbltotal2.Name = "lbltotal2";
             this.lbltotal2.Size = new System.Drawing.Size(40, 17);
             this.lbltotal2.TabIndex = 216;
@@ -547,83 +624,6 @@
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
-            // 
-            // SL_NO
-            // 
-            this.SL_NO.HeaderText = "SL.";
-            this.SL_NO.Name = "SL_NO";
-            this.SL_NO.ReadOnly = true;
-            this.SL_NO.Width = 70;
-            // 
-            // PATIENT_NAME
-            // 
-            this.PATIENT_NAME.DataPropertyName = "pt_name";
-            this.PATIENT_NAME.HeaderText = "PATIENT NAME";
-            this.PATIENT_NAME.Name = "PATIENT_NAME";
-            this.PATIENT_NAME.ReadOnly = true;
-            this.PATIENT_NAME.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.PATIENT_NAME.Width = 140;
-            // 
-            // INVOICE
-            // 
-            this.INVOICE.DataPropertyName = "invoice_no";
-            this.INVOICE.HeaderText = "INVOICE";
-            this.INVOICE.Name = "INVOICE";
-            this.INVOICE.ReadOnly = true;
-            this.INVOICE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.INVOICE.Width = 170;
-            // 
-            // RECEIPT
-            // 
-            this.RECEIPT.DataPropertyName = "receipt_no";
-            this.RECEIPT.HeaderText = "RECEIPT";
-            this.RECEIPT.Name = "RECEIPT";
-            this.RECEIPT.ReadOnly = true;
-            this.RECEIPT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.RECEIPT.Width = 170;
-            // 
-            // PRODUCT_AND_SERVICE
-            // 
-            this.PRODUCT_AND_SERVICE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PRODUCT_AND_SERVICE.DataPropertyName = "services";
-            this.PRODUCT_AND_SERVICE.HeaderText = "PRODUCT AND SERVICES";
-            this.PRODUCT_AND_SERVICE.Name = "PRODUCT_AND_SERVICE";
-            this.PRODUCT_AND_SERVICE.ReadOnly = true;
-            this.PRODUCT_AND_SERVICE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Doctor_name
-            // 
-            this.Doctor_name.DataPropertyName = "doctor_name";
-            this.Doctor_name.HeaderText = "DOCTOR";
-            this.Doctor_name.Name = "Doctor_name";
-            this.Doctor_name.ReadOnly = true;
-            this.Doctor_name.Width = 140;
-            // 
-            // TOTAL_COST
-            // 
-            this.TOTAL_COST.DataPropertyName = "cost";
-            this.TOTAL_COST.HeaderText = " COST";
-            this.TOTAL_COST.Name = "TOTAL_COST";
-            this.TOTAL_COST.ReadOnly = true;
-            this.TOTAL_COST.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.TOTAL_COST.Width = 120;
-            // 
-            // TOTALINCOME
-            // 
-            this.TOTALINCOME.DataPropertyName = "amount_paid";
-            this.TOTALINCOME.HeaderText = "TOTAL INCOME";
-            this.TOTALINCOME.Name = "TOTALINCOME";
-            this.TOTALINCOME.ReadOnly = true;
-            this.TOTALINCOME.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.TOTALINCOME.Width = 140;
-            // 
-            // TOTAL_AMOUT_DUE
-            // 
-            this.TOTAL_AMOUT_DUE.HeaderText = "TOTAL AMOUNT DUE";
-            this.TOTAL_AMOUT_DUE.Name = "TOTAL_AMOUT_DUE";
-            this.TOTAL_AMOUT_DUE.ReadOnly = true;
-            this.TOTAL_AMOUT_DUE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.TOTAL_AMOUT_DUE.Width = 140;
             // 
             // Daily_Invoice_Report
             // 

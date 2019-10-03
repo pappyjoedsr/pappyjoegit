@@ -51,23 +51,23 @@ namespace PappyjoeMVC.View
                 DGV_Receipt.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                 DGV_Receipt.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 8, FontStyle.Regular);
                 DGV_Receipt.EnableHeadersVisualStyles = false;
-                DGV_Receipt.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_Receipt.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_Receipt.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_Receipt.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_Receipt.Columns[12].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_Receipt.Columns[13].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_Receipt.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_Receipt.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_Receipt.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_Receipt.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_Receipt.Columns[12].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_Receipt.Columns[13].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                 DGV_Receipt.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_Receipt.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_Receipt.Columns[12].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_Receipt.Columns[13].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_Receipt.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_Receipt.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_Receipt.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_Receipt.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_Receipt.Columns[12].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_Receipt.Columns[13].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_Receipt.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_Receipt.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_Receipt.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 foreach (DataGridViewColumn cl in DGV_Receipt.Columns)
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;
-                    cl.Width = 100;
+                    //cl.Width = 100;
                 }
                 cmb_flag = false;
             }
@@ -90,7 +90,7 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        DGV_Receipt.Rows[i].Cells["COlDIS"].Value = " ";
+                        DGV_Receipt.Rows[i].Cells["COlDIS"].Value = 0;
                         discount = 0;
                     }
                     DGV_Receipt.Rows[i].Cells["ColTax"].Value = dt_inv.Rows[0]["tax_inrs"].ToString();
