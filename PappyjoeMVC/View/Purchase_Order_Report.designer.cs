@@ -182,7 +182,7 @@
             this.panel1.Controls.Add(this.txtTotalItem);
             this.panel1.Controls.Add(this.label);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(0, 61);
+            this.panel1.Location = new System.Drawing.Point(0, 58);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1371, 68);
             this.panel1.TabIndex = 195;
@@ -223,7 +223,7 @@
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.btnprint);
             this.panel3.Controls.Add(this.BTNClose);
-            this.panel3.Location = new System.Drawing.Point(0, 4);
+            this.panel3.Location = new System.Drawing.Point(0, 1);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1371, 57);
             this.panel3.TabIndex = 196;
@@ -302,7 +302,7 @@
             this.PURCHASEORDER_DATE,
             this.SUPPLIER_NAME});
             this.dgvPurchase.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvPurchase.Location = new System.Drawing.Point(0, 8);
+            this.dgvPurchase.Location = new System.Drawing.Point(0, 5);
             this.dgvPurchase.Name = "dgvPurchase";
             this.dgvPurchase.ReadOnly = true;
             this.dgvPurchase.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

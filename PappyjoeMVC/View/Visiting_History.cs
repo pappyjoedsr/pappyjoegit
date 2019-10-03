@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Visiting_History : Form
+    public partial class Visiting_History : Form  
     {
         Visiting_History_controller cntrl=new Visiting_History_controller();
         public string drctid = "";
@@ -42,7 +42,7 @@ namespace PappyjoeMVC.View
                 dgvVisitingHistory.EnableHeadersVisualStyles = false;
                 dgvVisitingHistory.Location = new System.Drawing.Point(5, 5);
                 dgvVisitingHistory.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgvVisitingHistory.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvVisitingHistory.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 foreach (DataGridViewColumn cl in dgvVisitingHistory.Columns)
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;

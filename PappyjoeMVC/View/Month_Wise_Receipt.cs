@@ -22,7 +22,13 @@ namespace PappyjoeMVC.View
         DataTable dtp = new DataTable();
         decimal tax = 0, discount = 0,totlcost=0, amount = 0, paid = 0, due = 0,Totaltax = 0, Totaldiscount = 0, Totalamount = 0, Totalpaid = 0, Totaldue = 0;
         public string doctor_id = "",qty="", doc_id, ID, date1, date2, checkStr = "0", PathName = "", service, strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "";
-        Month_Wise_Receipt_controller ctrlr=new Month_Wise_Receipt_controller();
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        Month_Wise_Receipt_controller ctrlr =new Month_Wise_Receipt_controller();
         public void receiptReceivedLoad()
         {
             try
@@ -91,7 +97,7 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        DgvReceiptReceivedPerMonth.Rows[i].Cells["Discount_insr"].Value = "";
+                        DgvReceiptReceivedPerMonth.Rows[i].Cells["Discount_insr"].Value = 0;
                         discount = 0;
                     }
                     DgvReceiptReceivedPerMonth.Rows[i].Cells["tax_inrs"].Value = dt_inv.Rows[0]["tax_inrs"].ToString();
@@ -188,25 +194,25 @@ namespace PappyjoeMVC.View
                 receiptReceivedLoad();
                 DgvReceiptReceivedPerMonth.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DgvReceiptReceivedPerMonth.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DgvReceiptReceivedPerMonth.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DgvReceiptReceivedPerMonth.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DgvReceiptReceivedPerMonth.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DgvReceiptReceivedPerMonth.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DgvReceiptReceivedPerMonth.Columns[12].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DgvReceiptReceivedPerMonth.Columns[13].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DgvReceiptReceivedPerMonth.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DgvReceiptReceivedPerMonth.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DgvReceiptReceivedPerMonth.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DgvReceiptReceivedPerMonth.Columns[12].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DgvReceiptReceivedPerMonth.Columns[13].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                 DgvReceiptReceivedPerMonth.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DgvReceiptReceivedPerMonth.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DgvReceiptReceivedPerMonth.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DgvReceiptReceivedPerMonth.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DgvReceiptReceivedPerMonth.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DgvReceiptReceivedPerMonth.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DgvReceiptReceivedPerMonth.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DgvReceiptReceivedPerMonth.Columns[13].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DgvReceiptReceivedPerMonth.Columns[12].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DgvReceiptReceivedPerMonth.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DgvReceiptReceivedPerMonth.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DgvReceiptReceivedPerMonth.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DgvReceiptReceivedPerMonth.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DgvReceiptReceivedPerMonth.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DgvReceiptReceivedPerMonth.Columns[13].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DgvReceiptReceivedPerMonth.Columns[12].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 foreach (DataGridViewColumn cl in DgvReceiptReceivedPerMonth.Columns)
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;
-                    cl.Width = 100;
+                    //cl.Width = 100;
                 }
             }
             catch (Exception ex)

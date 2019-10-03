@@ -28,6 +28,7 @@ namespace PappyjoeMVC.View
             load();
             dgvPurchase.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             dgvPurchase.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvPurchase.EnableHeadersVisualStyles = false;
             dgvPurchase.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPurchase.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPurchase.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;

@@ -40,24 +40,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Doctor_Wise_Appointment_Report));
             this.label_empty = new System.Windows.Forms.Label();
             this.Grvappointforeachdoctor = new System.Windows.Forms.DataGridView();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookeddate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Startdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Schedule = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.waiting = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Engaged = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Checkout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Search = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.dataGridVieweachdoctorappoinmt = new System.Windows.Forms.DataGridView();
-            this.slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ptid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patientname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chartappointeachdoctor = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -75,6 +62,19 @@
             this.Lab_Doctorname = new System.Windows.Forms.Label();
             this.Lab_Total = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ptid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookeddate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Startdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Schedule = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.waiting = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Engaged = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Checkout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             panel4 = new System.Windows.Forms.Panel();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grvappointforeachdoctor)).BeginInit();
@@ -133,71 +133,6 @@
             this.Grvappointforeachdoctor.Size = new System.Drawing.Size(223, 544);
             this.Grvappointforeachdoctor.TabIndex = 0;
             this.Grvappointforeachdoctor.DataSourceChanged += new System.EventHandler(this.Grvappointforeachdoctor_DataSourceChanged);
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "email_address";
-            this.Email.HeaderText = "EMAIL ID";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 150;
-            // 
-            // doctor
-            // 
-            this.doctor.DataPropertyName = "doctor_name";
-            this.doctor.HeaderText = "DOCTOR NAME";
-            this.doctor.Name = "doctor";
-            this.doctor.ReadOnly = true;
-            // 
-            // bookeddate
-            // 
-            this.bookeddate.DataPropertyName = "book_datetime";
-            this.bookeddate.HeaderText = "BOOKED DATE";
-            this.bookeddate.Name = "bookeddate";
-            this.bookeddate.ReadOnly = true;
-            // 
-            // Startdate
-            // 
-            this.Startdate.DataPropertyName = "start_datetime";
-            this.Startdate.HeaderText = "APPOINTMENT DATE";
-            this.Startdate.Name = "Startdate";
-            this.Startdate.ReadOnly = true;
-            this.Startdate.Width = 135;
-            // 
-            // duration
-            // 
-            this.duration.DataPropertyName = "duration";
-            this.duration.HeaderText = "DURATION (MINS)";
-            this.duration.Name = "duration";
-            this.duration.ReadOnly = true;
-            // 
-            // Schedule
-            // 
-            this.Schedule.DataPropertyName = "schedule";
-            this.Schedule.HeaderText = "SHEDULE";
-            this.Schedule.Name = "Schedule";
-            this.Schedule.ReadOnly = true;
-            // 
-            // waiting
-            // 
-            this.waiting.DataPropertyName = "waiting";
-            this.waiting.HeaderText = "WAITING";
-            this.waiting.Name = "waiting";
-            this.waiting.ReadOnly = true;
-            // 
-            // Engaged
-            // 
-            this.Engaged.DataPropertyName = "engaged";
-            this.Engaged.HeaderText = "ENGAGED";
-            this.Engaged.Name = "Engaged";
-            this.Engaged.ReadOnly = true;
-            // 
-            // Checkout
-            // 
-            this.Checkout.DataPropertyName = "checkout";
-            this.Checkout.HeaderText = "CHECK OUT";
-            this.Checkout.Name = "Checkout";
-            this.Checkout.ReadOnly = true;
             // 
             // btn_Search
             // 
@@ -262,9 +197,6 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridVieweachdoctorappoinmt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridVieweachdoctorappoinmt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridVieweachdoctorappoinmt.BackgroundColor = System.Drawing.Color.White;
             this.dataGridVieweachdoctorappoinmt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridVieweachdoctorappoinmt.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -293,9 +225,10 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridVieweachdoctorappoinmt.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridVieweachdoctorappoinmt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridVieweachdoctorappoinmt.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridVieweachdoctorappoinmt.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridVieweachdoctorappoinmt.Location = new System.Drawing.Point(0, -2);
+            this.dataGridVieweachdoctorappoinmt.Location = new System.Drawing.Point(0, 0);
             this.dataGridVieweachdoctorappoinmt.Name = "dataGridVieweachdoctorappoinmt";
             this.dataGridVieweachdoctorappoinmt.ReadOnly = true;
             this.dataGridVieweachdoctorappoinmt.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -313,39 +246,6 @@
             this.dataGridVieweachdoctorappoinmt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridVieweachdoctorappoinmt.Size = new System.Drawing.Size(1129, 544);
             this.dataGridVieweachdoctorappoinmt.TabIndex = 0;
-            // 
-            // slno
-            // 
-            this.slno.DataPropertyName = "Sino";
-            this.slno.HeaderText = "Sl No";
-            this.slno.Name = "slno";
-            this.slno.ReadOnly = true;
-            this.slno.Visible = false;
-            this.slno.Width = 85;
-            // 
-            // ptid
-            // 
-            this.ptid.DataPropertyName = "pt_id";
-            this.ptid.HeaderText = "PATIENT ID";
-            this.ptid.Name = "ptid";
-            this.ptid.ReadOnly = true;
-            this.ptid.Width = 150;
-            // 
-            // patientname
-            // 
-            this.patientname.DataPropertyName = "pt_name";
-            this.patientname.HeaderText = "PATIENT NAME";
-            this.patientname.Name = "patientname";
-            this.patientname.ReadOnly = true;
-            this.patientname.Width = 150;
-            // 
-            // Mobile
-            // 
-            this.Mobile.DataPropertyName = "primary_mobile_number";
-            this.Mobile.HeaderText = "MOBILE ";
-            this.Mobile.Name = "Mobile";
-            this.Mobile.ReadOnly = true;
-            this.Mobile.Width = 125;
             // 
             // chartappointeachdoctor
             // 
@@ -578,7 +478,105 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Total Appointments : ";
             // 
-            // DoctorWise_appointment_report
+            // slno
+            // 
+            this.slno.DataPropertyName = "Sino";
+            this.slno.HeaderText = "Sl No";
+            this.slno.Name = "slno";
+            this.slno.ReadOnly = true;
+            this.slno.Visible = false;
+            this.slno.Width = 85;
+            // 
+            // ptid
+            // 
+            this.ptid.DataPropertyName = "pt_id";
+            this.ptid.HeaderText = "PATIENT ID";
+            this.ptid.Name = "ptid";
+            this.ptid.ReadOnly = true;
+            this.ptid.Width = 60;
+            // 
+            // patientname
+            // 
+            this.patientname.DataPropertyName = "pt_name";
+            this.patientname.HeaderText = "PATIENT NAME";
+            this.patientname.Name = "patientname";
+            this.patientname.ReadOnly = true;
+            this.patientname.Width = 125;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "email_address";
+            this.Email.HeaderText = "EMAIL ID";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 150;
+            // 
+            // Mobile
+            // 
+            this.Mobile.DataPropertyName = "primary_mobile_number";
+            this.Mobile.HeaderText = "MOBILE ";
+            this.Mobile.Name = "Mobile";
+            this.Mobile.ReadOnly = true;
+            this.Mobile.Width = 80;
+            // 
+            // doctor
+            // 
+            this.doctor.DataPropertyName = "doctor_name";
+            this.doctor.HeaderText = "DOCTOR NAME";
+            this.doctor.Name = "doctor";
+            this.doctor.ReadOnly = true;
+            // 
+            // bookeddate
+            // 
+            this.bookeddate.DataPropertyName = "book_datetime";
+            this.bookeddate.HeaderText = "BOOKED DATE";
+            this.bookeddate.Name = "bookeddate";
+            this.bookeddate.ReadOnly = true;
+            // 
+            // Startdate
+            // 
+            this.Startdate.DataPropertyName = "start_datetime";
+            this.Startdate.HeaderText = "APPOINTMENT DATE";
+            this.Startdate.Name = "Startdate";
+            this.Startdate.ReadOnly = true;
+            this.Startdate.Width = 135;
+            // 
+            // duration
+            // 
+            this.duration.DataPropertyName = "duration";
+            this.duration.HeaderText = "DURATION (MINS)";
+            this.duration.Name = "duration";
+            this.duration.ReadOnly = true;
+            // 
+            // Schedule
+            // 
+            this.Schedule.DataPropertyName = "schedule";
+            this.Schedule.HeaderText = "SHEDULE";
+            this.Schedule.Name = "Schedule";
+            this.Schedule.ReadOnly = true;
+            // 
+            // waiting
+            // 
+            this.waiting.DataPropertyName = "waiting";
+            this.waiting.HeaderText = "WAITING";
+            this.waiting.Name = "waiting";
+            this.waiting.ReadOnly = true;
+            // 
+            // Engaged
+            // 
+            this.Engaged.DataPropertyName = "engaged";
+            this.Engaged.HeaderText = "ENGAGED";
+            this.Engaged.Name = "Engaged";
+            this.Engaged.ReadOnly = true;
+            // 
+            // Checkout
+            // 
+            this.Checkout.DataPropertyName = "checkout";
+            this.Checkout.HeaderText = "CHECK OUT";
+            this.Checkout.Name = "Checkout";
+            this.Checkout.ReadOnly = true;
+            // 
+            // Doctor_Wise_Appointment_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -588,7 +586,7 @@
             this.Controls.Add(this.label25);
             this.Controls.Add(panel4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "DoctorWise_appointment_report";
+            this.Name = "Doctor_Wise_Appointment_Report";
             this.Text = "Appointment Report of Each Doctor ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DoctorWise_appointment_report_Load);
@@ -609,25 +607,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doctor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bookeddate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Startdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn duration;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Schedule;
-        private System.Windows.Forms.DataGridViewTextBoxColumn waiting;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Engaged;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Checkout;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label Lab_Msg;
         private System.Windows.Forms.DataGridView dataGridVieweachdoctorappoinmt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ptid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patientname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mobile;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartappointeachdoctor;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
@@ -647,5 +631,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_empty;
         private System.Windows.Forms.DataGridView Grvappointforeachdoctor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ptid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mobile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doctor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookeddate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Startdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Schedule;
+        private System.Windows.Forms.DataGridViewTextBoxColumn waiting;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Engaged;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Checkout;
     }
 }

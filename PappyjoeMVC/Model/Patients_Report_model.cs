@@ -15,11 +15,11 @@ namespace PappyjoeMVC.Model
             string query;
             if (doctor != "All Doctor")
             {
-                query = "select date_format(date,'%b%Y') as 'MONTH',COUNT(*) AS TOTAL from tbl_patient where doctorname='" + doctor + "' and date between '" + d1 + "' and '" + d2 + "' group by date_format(date,'%b%Y') ";
+                query = "select date_format(date,'%b%Y') as 'MONTH',COUNT(*) AS TOTAL from tbl_patient where doctorname='" + doctor + "' and date between '" + d1 + "' and '" + d2 + "' and Profile_Status ='Active' group by date_format(date,'%b%Y') ";
             }
             else
             {
-                query = "select date_format(date,'%b%Y') as 'MONTH',COUNT(*) AS TOTAL from tbl_patient where date between '" + d1 + "' and '" + d2 + "' group by date_format(date,'%b%Y') ";
+                query = "select date_format(date,'%b%Y') as 'MONTH',COUNT(*) AS TOTAL from tbl_patient where date between '" + d1 + "' and '" + d2 + "' and Profile_Status ='Active' group by date_format(date,'%b%Y') ";
             }
             DataTable dfd = db.table(query);
             return dfd;
@@ -29,11 +29,11 @@ namespace PappyjoeMVC.Model
             string query;
             if (doctor != "All Doctor")
             {
-                query = "SELECT date As DATE,COUNT(*) As COUNT  FROM tbl_patient where doctorname='" + doctor + "' and date between '" + d1 + "' and '" + d2 + "' group by  date";
+                query = "SELECT date As DATE,COUNT(*) As COUNT  FROM tbl_patient where doctorname='" + doctor + "' and date between '" + d1 + "' and '" + d2 + "' and Profile_Status ='Active' group by  date";
             }
             else
             {
-                query = "SELECT date As DATE,COUNT(*) As COUNT  FROM tbl_patient where date between '" + d1 + "' and '" + d2 + "' group by  date";
+                query = "SELECT date As DATE,COUNT(*) As COUNT  FROM tbl_patient where date between '" + d1 + "' and '" + d2 + "' and Profile_Status ='Active' group by  date";
             }
             DataTable dfd = db.table(query);
             return dfd;
@@ -68,11 +68,11 @@ namespace PappyjoeMVC.Model
             string query;
             if (doctor_id == "All Doctor")
             {
-                query = "select date_format(date,'%b%Y') as 'MONTH',COUNT(*) AS TOTAL from tbl_patient where date >= '" + d11 + "' and date<= '" + d22 + "' group by date_format(date,'%b%Y') ";
+                query = "select date_format(date,'%b%Y') as 'MONTH',COUNT(*) AS TOTAL from tbl_patient where date >= '" + d11 + "' and date<= '" + d22 + "' and Profile_Status='Active' group by date_format(date,'%b%Y') ";
             }
             else
             {
-                query = "select date_format(date,'%b%Y') as 'MONTH',COUNT(*) AS TOTAL from tbl_patient where doctorname='" + doctor_id + "' and date >= '" + d11 + "' and date<= '" + d22 + "' group by date_format(date,'%b%Y') ";
+                query = "select date_format(date,'%b%Y') as 'MONTH',COUNT(*) AS TOTAL from tbl_patient where doctorname='" + doctor_id + "' and date >= '" + d11 + "' and date<= '" + d22 + "' and Profile_Status='Active' group by date_format(date,'%b%Y') ";
             }
             DataTable dfd = db.table(query);
             return dfd;
@@ -94,7 +94,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable dtb_group(string cmb,string d1,string d2)
         {
-            DataTable dtb_group = db.table("select cast(date as date) AS  'date' ,pt_id,pt_name,primary_mobile_number,email_address,doctorname,group_id from tbl_patient  WHERE tbl_patient.Profile_Status='Active' and group_id='" + cmb + "' and date  between '" + d1 + "' and '" + d2 + "' GROUP BY id,pt_id,pt_name,date,primary_mobile_number,email_address,doctorname,group_id  having COUNT(pt_id)=1 ");
+            DataTable dtb_group = db.table("select cast(date as date) AS  'date' ,a.pt_id,pt_name,primary_mobile_number,email_address,doctorname,b.group_id from tbl_patient a inner join tbl_pt_group b  on a.id=b.pt_id WHERE a.Profile_Status='Active' and b.group_id='" + cmb + "' and date  between '" + d1+ "' and '" + d2 + "' GROUP BY a.id,a.pt_id,pt_name,date,primary_mobile_number,email_address,doctorname,b.group_id");
             return dtb_group;
         }
         public DataTable dtb_procedure(string cmb,string d1,string d2)

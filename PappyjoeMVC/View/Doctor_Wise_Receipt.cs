@@ -61,7 +61,7 @@ namespace PappyjoeMVC.View
             foreach (DataGridViewColumn cl in DgvReceiptReceivedPerDoctor.Columns)
             {
                 cl.SortMode = DataGridViewColumnSortMode.NotSortable;
-                cl.Width = 100;
+                //cl.Width = 100;
             }
         }
         public void receiptReceivedLoad()
@@ -143,16 +143,16 @@ namespace PappyjoeMVC.View
                     }
                     for (int j = 0; j < DgvReceiptReceivedPerDoctor.Rows.Count; j++)
                     {
-                        //////Totaltax = Totaltax +Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["tax_inrs"].Value);
-                        //////Totaldiscount = Totaldiscount + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["Discount_insr"].Value);
-                        //////Totalamount = Totalamount + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["income"].Value);
-                        //////Totalpaid = Totalpaid + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_paid"].Value);
-                        //////Totaldue = Totaldue + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_due"].Value);
-                        Totaltax = Totaltax + tax;
-                        Totaldiscount = Totaldiscount + discount;
-                        Totalamount = Totalamount + amount;
-                        Totalpaid = Totalpaid + paid;
-                        Totaldue = Totaldue + due;
+                        Totaltax = Totaltax + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["tax_inrs"].Value);
+                        Totaldiscount = Totaldiscount + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["Discount_insr"].Value);
+                        Totalamount = Totalamount + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["income"].Value);
+                        Totalpaid = Totalpaid + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_paid"].Value);
+                        Totaldue = Totaldue + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_due"].Value);
+                        //Totaltax = Totaltax + tax;
+                        //Totaldiscount = Totaldiscount + discount;
+                        //Totalamount = Totalamount + amount;
+                        //Totalpaid = Totalpaid + paid;
+                        //Totaldue = Totaldue + due;
                     }
                     Lab_Discount.Text = Convert.ToDecimal(Totaldiscount).ToString("#0.00");
                     Lab_tax.Text = Convert.ToDecimal(Totaltax).ToString("#0.00");
@@ -186,7 +186,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    DgvReceiptReceivedPerDoctor.Rows[i].Cells["Discount_insr"].Value = "";
+                    DgvReceiptReceivedPerDoctor.Rows[i].Cells["Discount_insr"].Value = 0;
                     discount = 0;
                 }
                 DgvReceiptReceivedPerDoctor.Rows[i].Cells["tax_inrs"].Value = dt_inv.Rows[i]["tax_inrs"].ToString();

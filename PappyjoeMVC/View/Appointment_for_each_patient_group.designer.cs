@@ -38,10 +38,6 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.start_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_ViewGrid = new System.Windows.Forms.Button();
             this.btn_ViewChart = new System.Windows.Forms.Button();
             this.cmbptgrp = new System.Windows.Forms.ComboBox();
@@ -55,14 +51,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.dataGridViewappoinmentpatientgroup = new System.Windows.Forms.DataGridView();
-            this.Sino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pt_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.group_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doctor_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.primary_mobile_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.book_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.booked_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chartappointeachpatientgroup = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -78,6 +66,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePickerappointperpatientgroup2 = new System.Windows.Forms.DateTimePicker();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.Sino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pt_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.group_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctor_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.primary_mobile_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.start_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.booked_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -87,38 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grvappointeachgroup)).BeginInit();
             this.label25.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // start_datetime
-            // 
-            this.start_datetime.DataPropertyName = "start_datetime";
-            this.start_datetime.HeaderText = "APPOINTMENT DATE";
-            this.start_datetime.Name = "start_datetime";
-            this.start_datetime.ReadOnly = true;
-            this.start_datetime.Width = 135;
-            // 
-            // duration
-            // 
-            this.duration.DataPropertyName = "duration";
-            this.duration.HeaderText = "DURATION (MINS)";
-            this.duration.Name = "duration";
-            this.duration.ReadOnly = true;
-            this.duration.Width = 85;
-            // 
-            // email_address
-            // 
-            this.email_address.DataPropertyName = "email_address";
-            this.email_address.HeaderText = "EMAIL";
-            this.email_address.Name = "email_address";
-            this.email_address.ReadOnly = true;
-            this.email_address.Width = 130;
-            // 
-            // note
-            // 
-            this.note.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.note.DataPropertyName = "note";
-            this.note.HeaderText = "NOTE";
-            this.note.Name = "note";
-            this.note.ReadOnly = true;
             // 
             // btn_ViewGrid
             // 
@@ -265,7 +233,7 @@
             this.panel2.Controls.Add(this.chartappointeachpatientgroup);
             this.panel2.Location = new System.Drawing.Point(4, 138);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1141, 548);
+            this.panel2.Size = new System.Drawing.Size(1162, 548);
             this.panel2.TabIndex = 98;
             // 
             // Lab_Msg
@@ -289,9 +257,6 @@
             this.dataGridViewappoinmentpatientgroup.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
             this.dataGridViewappoinmentpatientgroup.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewappoinmentpatientgroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewappoinmentpatientgroup.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewappoinmentpatientgroup.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewappoinmentpatientgroup.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -319,10 +284,11 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewappoinmentpatientgroup.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewappoinmentpatientgroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewappoinmentpatientgroup.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridViewappoinmentpatientgroup.EnableHeadersVisualStyles = false;
             this.dataGridViewappoinmentpatientgroup.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridViewappoinmentpatientgroup.Location = new System.Drawing.Point(-3, 1);
+            this.dataGridViewappoinmentpatientgroup.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewappoinmentpatientgroup.Margin = new System.Windows.Forms.Padding(16, 3, 3, 3);
             this.dataGridViewappoinmentpatientgroup.Name = "dataGridViewappoinmentpatientgroup";
             this.dataGridViewappoinmentpatientgroup.ReadOnly = true;
@@ -342,73 +308,8 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewappoinmentpatientgroup.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewappoinmentpatientgroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewappoinmentpatientgroup.Size = new System.Drawing.Size(1139, 545);
+            this.dataGridViewappoinmentpatientgroup.Size = new System.Drawing.Size(1162, 548);
             this.dataGridViewappoinmentpatientgroup.TabIndex = 0;
-            // 
-            // Sino
-            // 
-            this.Sino.DataPropertyName = "Sino";
-            this.Sino.HeaderText = "Sl No";
-            this.Sino.Name = "Sino";
-            this.Sino.ReadOnly = true;
-            this.Sino.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Sino.Visible = false;
-            // 
-            // pt_id
-            // 
-            this.pt_id.DataPropertyName = "pt_id";
-            this.pt_id.HeaderText = "PATIENT ID";
-            this.pt_id.Name = "pt_id";
-            this.pt_id.ReadOnly = true;
-            this.pt_id.Width = 95;
-            // 
-            // pt_name
-            // 
-            this.pt_name.DataPropertyName = "pt_name";
-            this.pt_name.HeaderText = "PATIENT NAME";
-            this.pt_name.Name = "pt_name";
-            this.pt_name.ReadOnly = true;
-            this.pt_name.Width = 150;
-            // 
-            // group_id
-            // 
-            this.group_id.DataPropertyName = "group_id";
-            this.group_id.HeaderText = "PATIENT GROUP";
-            this.group_id.Name = "group_id";
-            this.group_id.ReadOnly = true;
-            this.group_id.Width = 150;
-            // 
-            // doctor_name
-            // 
-            this.doctor_name.DataPropertyName = "doctor_name";
-            this.doctor_name.HeaderText = "DOCTOR";
-            this.doctor_name.Name = "doctor_name";
-            this.doctor_name.ReadOnly = true;
-            // 
-            // primary_mobile_number
-            // 
-            this.primary_mobile_number.DataPropertyName = "primary_mobile_number";
-            this.primary_mobile_number.HeaderText = "MOBILE NUMBER";
-            this.primary_mobile_number.Name = "primary_mobile_number";
-            this.primary_mobile_number.ReadOnly = true;
-            this.primary_mobile_number.Width = 125;
-            // 
-            // book_datetime
-            // 
-            this.book_datetime.DataPropertyName = "book_datetime";
-            this.book_datetime.FillWeight = 200F;
-            this.book_datetime.HeaderText = "BOOKED DATE";
-            this.book_datetime.Name = "book_datetime";
-            this.book_datetime.ReadOnly = true;
-            this.book_datetime.Width = 140;
-            // 
-            // booked_by
-            // 
-            this.booked_by.DataPropertyName = "booked_by";
-            this.booked_by.HeaderText = "BOOKED  BY";
-            this.booked_by.Name = "booked_by";
-            this.booked_by.ReadOnly = true;
-            this.booked_by.Width = 150;
             // 
             // chartappointeachpatientgroup
             // 
@@ -425,7 +326,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Appointment (s)";
             this.chartappointeachpatientgroup.Series.Add(series1);
-            this.chartappointeachpatientgroup.Size = new System.Drawing.Size(1141, 548);
+            this.chartappointeachpatientgroup.Size = new System.Drawing.Size(1162, 548);
             this.chartappointeachpatientgroup.TabIndex = 9;
             this.chartappointeachpatientgroup.Text = "chart1";
             // 
@@ -446,9 +347,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.Grvappointeachgroup);
             this.panel3.Controls.Add(this.label_empty);
-            this.panel3.Location = new System.Drawing.Point(1149, 138);
+            this.panel3.Location = new System.Drawing.Point(1168, 138);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(213, 548);
+            this.panel3.Size = new System.Drawing.Size(202, 548);
             this.panel3.TabIndex = 100;
             // 
             // Grvappointeachgroup
@@ -478,13 +379,12 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Grvappointeachgroup.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Grvappointeachgroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Grvappointeachgroup.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.Grvappointeachgroup.Location = new System.Drawing.Point(0, 0);
+            this.Grvappointeachgroup.Location = new System.Drawing.Point(2, 0);
             this.Grvappointeachgroup.Name = "Grvappointeachgroup";
             this.Grvappointeachgroup.RowHeadersVisible = false;
             this.Grvappointeachgroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grvappointeachgroup.Size = new System.Drawing.Size(213, 548);
+            this.Grvappointeachgroup.Size = new System.Drawing.Size(194, 548);
             this.Grvappointeachgroup.TabIndex = 0;
             // 
             // GROUP
@@ -591,6 +491,102 @@
             this.dateTimePickerappointperpatientgroup2.Size = new System.Drawing.Size(204, 22);
             this.dateTimePickerappointperpatientgroup2.TabIndex = 5;
             // 
+            // Sino
+            // 
+            this.Sino.DataPropertyName = "Sino";
+            this.Sino.HeaderText = "Sl No";
+            this.Sino.Name = "Sino";
+            this.Sino.ReadOnly = true;
+            this.Sino.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Sino.Visible = false;
+            this.Sino.Width = 5;
+            // 
+            // pt_id
+            // 
+            this.pt_id.DataPropertyName = "pt_id";
+            this.pt_id.HeaderText = "PATIENT ID";
+            this.pt_id.Name = "pt_id";
+            this.pt_id.ReadOnly = true;
+            this.pt_id.Width = 60;
+            // 
+            // pt_name
+            // 
+            this.pt_name.DataPropertyName = "pt_name";
+            this.pt_name.HeaderText = "PATIENT NAME";
+            this.pt_name.Name = "pt_name";
+            this.pt_name.ReadOnly = true;
+            this.pt_name.Width = 150;
+            // 
+            // group_id
+            // 
+            this.group_id.DataPropertyName = "group_id";
+            this.group_id.HeaderText = "PATIENT GROUP";
+            this.group_id.Name = "group_id";
+            this.group_id.ReadOnly = true;
+            // 
+            // doctor_name
+            // 
+            this.doctor_name.DataPropertyName = "doctor_name";
+            this.doctor_name.HeaderText = "DOCTOR";
+            this.doctor_name.Name = "doctor_name";
+            this.doctor_name.ReadOnly = true;
+            // 
+            // primary_mobile_number
+            // 
+            this.primary_mobile_number.DataPropertyName = "primary_mobile_number";
+            this.primary_mobile_number.HeaderText = "MOBILE";
+            this.primary_mobile_number.Name = "primary_mobile_number";
+            this.primary_mobile_number.ReadOnly = true;
+            this.primary_mobile_number.Width = 70;
+            // 
+            // book_datetime
+            // 
+            this.book_datetime.DataPropertyName = "book_datetime";
+            this.book_datetime.FillWeight = 200F;
+            this.book_datetime.HeaderText = "BOOKED DATE";
+            this.book_datetime.Name = "book_datetime";
+            this.book_datetime.ReadOnly = true;
+            // 
+            // start_datetime
+            // 
+            this.start_datetime.DataPropertyName = "start_datetime";
+            this.start_datetime.HeaderText = "APPOINTMENT DATE";
+            this.start_datetime.Name = "start_datetime";
+            this.start_datetime.ReadOnly = true;
+            this.start_datetime.Width = 120;
+            // 
+            // booked_by
+            // 
+            this.booked_by.DataPropertyName = "booked_by";
+            this.booked_by.HeaderText = "BOOKED  BY";
+            this.booked_by.Name = "booked_by";
+            this.booked_by.ReadOnly = true;
+            this.booked_by.Width = 80;
+            // 
+            // duration
+            // 
+            this.duration.DataPropertyName = "duration";
+            this.duration.HeaderText = "DURATION (MINS)";
+            this.duration.Name = "duration";
+            this.duration.ReadOnly = true;
+            this.duration.Width = 80;
+            // 
+            // email_address
+            // 
+            this.email_address.DataPropertyName = "email_address";
+            this.email_address.HeaderText = "EMAIL";
+            this.email_address.Name = "email_address";
+            this.email_address.ReadOnly = true;
+            this.email_address.Width = 130;
+            // 
+            // note
+            // 
+            this.note.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.note.DataPropertyName = "note";
+            this.note.HeaderText = "NOTE";
+            this.note.Name = "note";
+            this.note.ReadOnly = true;
+            // 
             // Appointment_for_each_patient_group
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -623,11 +619,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridViewTextBoxColumn start_datetime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn duration;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email_address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn note;
         private System.Windows.Forms.Button btn_ViewGrid;
         private System.Windows.Forms.Button btn_ViewChart;
         private System.Windows.Forms.ComboBox cmbptgrp;
@@ -641,14 +632,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label Lab_Msg;
         private System.Windows.Forms.DataGridView dataGridViewappoinmentpatientgroup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sino;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pt_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pt_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn group_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doctor_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn primary_mobile_number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn book_datetime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn booked_by;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartappointeachpatientgroup;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel3;
@@ -664,5 +647,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePickerappointperpatientgroup2;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pt_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pt_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn group_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doctor_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn primary_mobile_number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn book_datetime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn start_datetime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn booked_by;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email_address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn note;
     }
 }
