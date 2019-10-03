@@ -45,19 +45,19 @@ namespace PappyjoeMVC.View
             string d1 = dtp1ReceptReceivedPerDoctor1.Value.ToString("yyyy-MM-dd");
             string d2 = dtp1ReceptReceivedPerDoctor2.Value.ToString("yyyy-MM-dd");
             receiptReceivedLoad();
-            DgvReceiptReceivedPerDoctor.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerDoctor.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerDoctor.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerDoctor.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerDoctor.Columns[12].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerDoctor.Columns[13].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            DgvReceiptReceivedPerDoctor.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DgvReceiptReceivedPerDoctor.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DgvReceiptReceivedPerDoctor.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DgvReceiptReceivedPerDoctor.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DgvReceiptReceivedPerDoctor.Columns[12].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DgvReceiptReceivedPerDoctor.Columns[13].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             DgvReceiptReceivedPerDoctor.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerDoctor.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerDoctor.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerDoctor.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerDoctor.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerDoctor.Columns[12].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            DgvReceiptReceivedPerDoctor.Columns[13].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            DgvReceiptReceivedPerDoctor.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DgvReceiptReceivedPerDoctor.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DgvReceiptReceivedPerDoctor.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DgvReceiptReceivedPerDoctor.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DgvReceiptReceivedPerDoctor.Columns[12].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DgvReceiptReceivedPerDoctor.Columns[13].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             foreach (DataGridViewColumn cl in DgvReceiptReceivedPerDoctor.Columns)
             {
                 cl.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -141,13 +141,18 @@ namespace PappyjoeMVC.View
                         due = decimal.Parse(dtb_Receipt.Rows[i]["DUE AFTER PAYMENT"].ToString());
                         paid = decimal.Parse(dtb_Receipt.Rows[i]["amount_paid"].ToString());
                     }
-                    for(int j=0;j<DgvReceiptReceivedPerDoctor.Rows.Count;j++)
+                    for (int j = 0; j < DgvReceiptReceivedPerDoctor.Rows.Count; j++)
                     {
-                        Totaltax = Totaltax +Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["tax_inrs"].Value);
-                        Totaldiscount = Totaldiscount + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["Discount_insr"].Value);
-                        Totalamount = Totalamount + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["income"].Value);
-                        Totalpaid = Totalpaid + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_paid"].Value);
-                        Totaldue = Totaldue + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_due"].Value);
+                        //////Totaltax = Totaltax +Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["tax_inrs"].Value);
+                        //////Totaldiscount = Totaldiscount + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["Discount_insr"].Value);
+                        //////Totalamount = Totalamount + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["income"].Value);
+                        //////Totalpaid = Totalpaid + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_paid"].Value);
+                        //////Totaldue = Totaldue + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_due"].Value);
+                        Totaltax = Totaltax + tax;
+                        Totaldiscount = Totaldiscount + discount;
+                        Totalamount = Totalamount + amount;
+                        Totalpaid = Totalpaid + paid;
+                        Totaldue = Totaldue + due;
                     }
                     Lab_Discount.Text = Convert.ToDecimal(Totaldiscount).ToString("#0.00");
                     Lab_tax.Text = Convert.ToDecimal(Totaltax).ToString("#0.00");

@@ -182,10 +182,11 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.Lab_Msg);
             this.panel2.Controls.Add(this.dgvExpiry);
-            this.panel2.Location = new System.Drawing.Point(0, 98);
+            this.panel2.Location = new System.Drawing.Point(0, 99);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1300, 555);
             this.panel2.TabIndex = 126;
@@ -209,7 +210,8 @@
             this.dgvExpiry.AllowUserToDeleteRows = false;
             this.dgvExpiry.AllowUserToResizeColumns = false;
             this.dgvExpiry.AllowUserToResizeRows = false;
-            this.dgvExpiry.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvExpiry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvExpiry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvExpiry.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvExpiry.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -237,7 +239,7 @@
             this.dgvExpiry.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvExpiry.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvExpiry.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvExpiry.Location = new System.Drawing.Point(0, 0);
+            this.dgvExpiry.Location = new System.Drawing.Point(0, 4);
             this.dgvExpiry.MultiSelect = false;
             this.dgvExpiry.Name = "dgvExpiry";
             this.dgvExpiry.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -529,7 +531,8 @@
             this.Controls.Add(this.Dgv_ChartExpanse);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Expiry_Report";
-            this.Text = "Expiry_Report";
+            this.Text = "Expiry Report";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Expiry_Report_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

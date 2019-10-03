@@ -110,10 +110,10 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.Controls.Add(this.Lab_Msg);
             this.panel2.Controls.Add(this.Dgv_Order);
-            this.panel2.Location = new System.Drawing.Point(0, 91);
+            this.panel2.Location = new System.Drawing.Point(0, 97);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1370, 421);
             this.panel2.TabIndex = 188;
@@ -153,7 +153,7 @@
             this.Phone,
             this.totalItems});
             this.Dgv_Order.GridColor = System.Drawing.Color.Gainsboro;
-            this.Dgv_Order.Location = new System.Drawing.Point(-1, 0);
+            this.Dgv_Order.Location = new System.Drawing.Point(3, 4);
             this.Dgv_Order.Name = "Dgv_Order";
             this.Dgv_Order.ReadOnly = true;
             this.Dgv_Order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -258,9 +258,7 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.Btn_Show);
             this.panel1.Controls.Add(this.dptMonthly_From);
@@ -269,7 +267,7 @@
             this.panel1.Controls.Add(this.Txt_totalInvoice);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lblinvoices);
-            this.panel1.Location = new System.Drawing.Point(0, 42);
+            this.panel1.Location = new System.Drawing.Point(0, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1370, 52);
             this.panel1.TabIndex = 187;
@@ -350,15 +348,14 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
             this.panel3.Controls.Add(this.BtnExport);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.btnprint);
             this.panel3.Controls.Add(this.BTNClose);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Location = new System.Drawing.Point(0, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1370, 43);
             this.panel3.TabIndex = 186;
@@ -374,7 +371,8 @@
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Sales_Order_Report";
-            this.Text = "Sales_Order_Report";
+            this.Text = "Sales Order Report";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Sales_Order_Report_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
