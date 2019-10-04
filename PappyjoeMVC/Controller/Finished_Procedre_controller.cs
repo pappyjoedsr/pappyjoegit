@@ -15,6 +15,11 @@ namespace PappyjoeMVC.Controller
             string privid = _model.Add_privilliege(doctor_id);
             return privid;
         }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string s = cmodel.privilge_for_inventory(doctor_id);
+            return s;
+        }
         public string edit_privillege(string doctor_id)
         {
             string privid = _model.edit_privillege(doctor_id);

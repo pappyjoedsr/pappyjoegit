@@ -755,7 +755,6 @@ namespace PappyjoeMVC.View
             }
         }
 
-
         private void listpatientsearch_MouseClick_1(object sender, MouseEventArgs e)
         {
             var form2 = new Patient_Profile_Details();

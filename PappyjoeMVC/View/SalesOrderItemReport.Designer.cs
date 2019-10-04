@@ -336,7 +336,7 @@
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SalesOrderItemReport";
-            this.Text = "SalesOrderItemReport";
+            this.Text = "Sales Order Item Report";
             this.Load += new System.EventHandler(this.SalesOrderItemReport_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_orderItems)).EndInit();

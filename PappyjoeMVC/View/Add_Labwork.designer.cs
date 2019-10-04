@@ -412,7 +412,7 @@
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label12.Location = new System.Drawing.Point(20, 6);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(125, 13);
+            this.label12.Size = new System.Drawing.Size(126, 13);
             this.label12.TabIndex = 23;
             this.label12.Text = "DENTAL LAB WORK LIST";
             // 
@@ -779,7 +779,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label17.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label17.Location = new System.Drawing.Point(67, 25);
+            this.label17.Location = new System.Drawing.Point(66, 25);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(63, 13);
             this.label17.TabIndex = 57;
@@ -2061,7 +2061,7 @@
             this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label11.Location = new System.Drawing.Point(20, 6);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(122, 13);
+            this.label11.Size = new System.Drawing.Size(124, 13);
             this.label11.TabIndex = 23;
             this.label11.Text = "MEDICAL LAB TEST LIST";
             // 

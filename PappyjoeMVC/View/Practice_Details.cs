@@ -632,7 +632,6 @@ namespace PappyjoeMVC.View
             form_hide();
             var form2 = new Item_List();
             form2.doctor_id = doctor_id;
-            //ItemList_Controller controller = new ItemList_Controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -642,7 +641,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Doctor_Profile();
             form2.doctor_id = doctor_id;
-            //doctor_controller controller = new doctor_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -651,7 +649,6 @@ namespace PappyjoeMVC.View
         private void button2_Click(object sender, EventArgs e)
         {
             var form2 = new AppointmentBooking();
-            //Booking_controller controller = new Booking_controller();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -669,7 +666,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -684,7 +680,6 @@ namespace PappyjoeMVC.View
             labmedical.TopLevel = false;
             panel_main.Controls.Add(labmedical);
             labmedical.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //LabMedical_controller controller = new LabMedical_controller(labmedical);
             labmedical.Show();
         }
 

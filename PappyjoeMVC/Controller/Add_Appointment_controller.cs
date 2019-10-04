@@ -13,6 +13,11 @@ namespace PappyjoeMVC.Controller
             DataTable dt = mdl.smsreminder();
             return dt;
         }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string s = cmdl.privilge_for_inventory(doctor_id);
+            return s;
+        }
         public DataTable smsdetails()
         {
             DataTable dt = cmdl.smsdetails();
