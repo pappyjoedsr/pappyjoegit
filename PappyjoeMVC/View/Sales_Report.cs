@@ -137,7 +137,7 @@ namespace PappyjoeMVC.View
                 DGV_SALES.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_SALES.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_SALES.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_SALES.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_SALES.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                 DGV_SALES.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
                 DGV_SALES.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 DGV_SALES.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

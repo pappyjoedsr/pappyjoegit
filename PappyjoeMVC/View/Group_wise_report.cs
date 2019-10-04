@@ -112,12 +112,13 @@ namespace PappyjoeMVC.View
                         dgv_group.Columns[1].Width = 120;
                         dgv_group.Columns[2].Width = 60;
                         dgv_group.Columns[3].Width = 150;
-                        dgv_group.Columns[4].Width = 80;
+                        dgv_group.Columns[4].Width = 90;
                         dgv_group.Columns[5].Width = 100;
                         dgv_group.Columns[6].Width = 120;
                         dgv_group.Columns[7].Width = 85;
                         dgv_group.Columns[8].Width = 80;
                         dgv_group.Columns[9].Width = 110;
+                        dgv_group.Columns[10].Width = 130;
                         dgv_group.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                         dgv_group.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                         dgv_group.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -316,6 +317,23 @@ namespace PappyjoeMVC.View
                 dgv_group.Columns[12].HeaderText = "TOTAL AMOUNT";
                 dgv_group.Columns[13].HeaderText = "AMOUNT PAID";
                 dgv_group.Columns[14].HeaderText = "AMOUNT DUE";
+
+                dgv_group.Columns[0].Width = 40;
+                dgv_group.Columns[1].Width = 120;
+                dgv_group.Columns[2].Width = 65;
+                dgv_group.Columns[3].Width = 65;
+                dgv_group.Columns[4].Width = 135;
+                dgv_group.Columns[5].Width = 100;
+                dgv_group.Columns[6].Width = 100;
+                dgv_group.Columns[7].Width = 80;
+
+                dgv_group.Columns[8].Width = 115;
+                dgv_group.Columns[9].Width = 90;
+                dgv_group.Columns[10].Width = 50;
+                dgv_group.Columns[11].Width = 70;
+                dgv_group.Columns[12].Width = 110;
+                dgv_group.Columns[13].Width = 110;
+                dgv_group.Columns[14].Width = 120;
 
                 dgv_group.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgv_group.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;

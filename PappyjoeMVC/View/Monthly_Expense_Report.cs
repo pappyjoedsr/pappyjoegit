@@ -75,12 +75,7 @@ namespace PappyjoeMVC.View
                 Dgv_Expense.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                 Dgv_Expense.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 8, FontStyle.Bold);
                 Dgv_Expense.EnableHeadersVisualStyles = false;
-                Dgv_Expense.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                Dgv_Expense.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                Dgv_Expense.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                Dgv_Expense.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                Dgv_Expense.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                Dgv_Expense.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+               
                 foreach (DataGridViewColumn cl in Dgv_Expense.Columns)
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -153,6 +148,12 @@ namespace PappyjoeMVC.View
                 Dgv_Expense.Rows[i].Cells["ColDescription"].Value = dt.Rows[i]["description"].ToString();
                 k++;
             }
+            Dgv_Expense.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgv_Expense.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgv_Expense.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgv_Expense.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgv_Expense.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgv_Expense.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
         public void fill_grid()
         {

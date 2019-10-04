@@ -360,17 +360,35 @@ namespace PappyjoeMVC.View
                         ExcelApp.Cells[4, 2].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
                         ExcelApp.Cells[3, 2].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
                         ExcelApp.Cells[2, 2].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
-                        for (int i = 1; i < griddailyteatment.Columns.Count + 1; i++)
+                        if(Chk_Cost.Checked==true)
                         {
-                            ExcelApp.Cells[5, i] = griddailyteatment.Columns[i - 1].HeaderText;
-                            ExcelApp.Cells[5, i].ColumnWidth = 25;
-                            ExcelApp.Cells[5, i].EntireRow.Font.Bold = true;
-                            ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
-                            ExcelApp.Cells[5, i].Font.Size = 10;
-                            ExcelApp.Cells[5, i].Font.Name = "Arial";
-                            ExcelApp.Cells[5, i].Font.Color = Color.FromArgb(255, 255, 255);
-                            ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
+                            for (int i = 1; i < griddailyteatment.Columns.Count + 1; i++)
+                            {
+                                ExcelApp.Cells[5, i] = griddailyteatment.Columns[i - 1].HeaderText;
+                                ExcelApp.Cells[5, i].ColumnWidth = 25;
+                                ExcelApp.Cells[5, i].EntireRow.Font.Bold = true;
+                                ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
+                                ExcelApp.Cells[5, i].Font.Size = 10;
+                                ExcelApp.Cells[5, i].Font.Name = "Arial";
+                                ExcelApp.Cells[5, i].Font.Color = Color.FromArgb(255, 255, 255);
+                                ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
+                            }
                         }
+                        else
+                        {
+                            for (int i = 1; i < griddailyteatment.Columns.Count ; i++)
+                            {
+                                ExcelApp.Cells[5, i] = griddailyteatment.Columns[i - 1].HeaderText;
+                                ExcelApp.Cells[5, i].ColumnWidth = 25;
+                                ExcelApp.Cells[5, i].EntireRow.Font.Bold = true;
+                                ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
+                                ExcelApp.Cells[5, i].Font.Size = 10;
+                                ExcelApp.Cells[5, i].Font.Name = "Arial";
+                                ExcelApp.Cells[5, i].Font.Color = Color.FromArgb(255, 255, 255);
+                                ExcelApp.Cells[5, i].Interior.Color = Color.FromArgb(0, 102, 204);
+                            }
+                        }
+                        
                         for (int i = 0; i <= griddailyteatment.Rows.Count; i++)
                         {
                             try

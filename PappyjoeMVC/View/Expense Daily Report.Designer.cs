@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expense_Daily_Report));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dateTimePickerdailytreatment2 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePickerdailytreatment1 = new System.Windows.Forms.DateTimePicker();
@@ -59,6 +59,7 @@
             this.btnprint = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Lab_Msg = new System.Windows.Forms.Label();
             this.Dgv_Expanse = new System.Windows.Forms.DataGridView();
             this.Sl_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +70,6 @@
             this.Amountincom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discreption = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chart_EXpanse = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.Lab_Msg = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_ChartExpanse)).BeginInit();
@@ -330,7 +330,7 @@
             // 
             // btn_Export
             // 
-            this.btn_Export.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_Export.BackColor = System.Drawing.Color.DodgerBlue;
             this.btn_Export.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_Export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Export.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -392,7 +392,7 @@
             // 
             // btnprint
             // 
-            this.btnprint.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnprint.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnprint.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnprint.ForeColor = System.Drawing.Color.White;
@@ -433,6 +433,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1144, 570);
             this.panel3.TabIndex = 109;
+            // 
+            // Lab_Msg
+            // 
+            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
+            this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Lab_Msg.Location = new System.Drawing.Point(268, 181);
+            this.Lab_Msg.Name = "Lab_Msg";
+            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.TabIndex = 277;
+            this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.Visible = false;
             // 
             // Dgv_Expanse
             // 
@@ -517,34 +530,21 @@
             // chart_EXpanse
             // 
             this.chart_EXpanse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea2.Name = "ChartArea1";
-            this.chart_EXpanse.ChartAreas.Add(chartArea2);
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            chartArea1.Name = "ChartArea1";
+            this.chart_EXpanse.ChartAreas.Add(chartArea1);
             this.chart_EXpanse.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chart_EXpanse.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            this.chart_EXpanse.Legends.Add(legend1);
             this.chart_EXpanse.Location = new System.Drawing.Point(0, 0);
             this.chart_EXpanse.Name = "chart_EXpanse";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Expense Count";
-            this.chart_EXpanse.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Expense Count";
+            this.chart_EXpanse.Series.Add(series1);
             this.chart_EXpanse.Size = new System.Drawing.Size(1144, 570);
             this.chart_EXpanse.TabIndex = 313;
             this.chart_EXpanse.Text = "chart1";
-            // 
-            // Lab_Msg
-            // 
-            this.Lab_Msg.AutoSize = true;
-            this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
-            this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(268, 181);
-            this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
-            this.Lab_Msg.TabIndex = 277;
-            this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
-            this.Lab_Msg.Visible = false;
             // 
             // Expense_Daily_Report
             // 

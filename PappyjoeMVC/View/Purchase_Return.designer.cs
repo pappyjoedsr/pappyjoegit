@@ -88,6 +88,18 @@
             this.txtTotalCost = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvItemData = new System.Windows.Forms.DataGridView();
+            this.Item_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Packing = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.igst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.free = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit_Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Del = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPrint = new System.Windows.Forms.Button();
@@ -107,18 +119,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_SupplierId = new System.Windows.Forms.TextBox();
             this.btn_Save = new System.Windows.Forms.Button();
-            this.Item_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Packing = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gst = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.igst = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.free = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit_Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Del = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGridData)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -295,7 +295,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label7.Location = new System.Drawing.Point(535, 21);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 15);
+            this.label7.Size = new System.Drawing.Size(30, 15);
             this.label7.TabIndex = 219;
             this.label7.Text = "IGST";
             // 
@@ -316,7 +316,7 @@
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label12.Location = new System.Drawing.Point(454, 21);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(28, 15);
+            this.label12.Size = new System.Drawing.Size(27, 15);
             this.label12.TabIndex = 221;
             this.label12.Text = "GST";
             // 
@@ -772,6 +772,109 @@
             this.dgvItemData.TabIndex = 248;
             this.dgvItemData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemData_CellClick);
             // 
+            // Item_Id
+            // 
+            this.Item_Id.DataPropertyName = "Item_ID";
+            this.Item_Id.HeaderText = "Item Id";
+            this.Item_Id.Name = "Item_Id";
+            this.Item_Id.ReadOnly = true;
+            this.Item_Id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Item_Id.Visible = false;
+            // 
+            // itemcode
+            // 
+            this.itemcode.HeaderText = "Item Code";
+            this.itemcode.Name = "itemcode";
+            this.itemcode.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "Desccription";
+            this.description.HeaderText = "Description";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            this.description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.description.Width = 150;
+            // 
+            // Packing
+            // 
+            this.Packing.DataPropertyName = "Packing";
+            this.Packing.HeaderText = "Packing";
+            this.Packing.Name = "Packing";
+            this.Packing.ReadOnly = true;
+            this.Packing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // note
+            // 
+            this.note.DataPropertyName = "Unit";
+            this.note.HeaderText = "Unit";
+            this.note.Name = "note";
+            this.note.ReadOnly = true;
+            this.note.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.note.Width = 150;
+            // 
+            // gst
+            // 
+            this.gst.HeaderText = "GST";
+            this.gst.Name = "gst";
+            this.gst.ReadOnly = true;
+            // 
+            // igst
+            // 
+            this.igst.HeaderText = "IGST";
+            this.igst.Name = "igst";
+            this.igst.ReadOnly = true;
+            // 
+            // col_qty
+            // 
+            this.col_qty.DataPropertyName = "Qty";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.col_qty.DefaultCellStyle = dataGridViewCellStyle2;
+            this.col_qty.HeaderText = "Qty";
+            this.col_qty.Name = "col_qty";
+            this.col_qty.ReadOnly = true;
+            this.col_qty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // free
+            // 
+            this.free.DataPropertyName = "free";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.free.DefaultCellStyle = dataGridViewCellStyle3;
+            this.free.HeaderText = "Free ";
+            this.free.Name = "free";
+            this.free.ReadOnly = true;
+            this.free.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Unit_Cost
+            // 
+            this.Unit_Cost.DataPropertyName = "Unit_Cost";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Unit_Cost.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Unit_Cost.HeaderText = "Unit Cost";
+            this.Unit_Cost.Name = "Unit_Cost";
+            this.Unit_Cost.ReadOnly = true;
+            this.Unit_Cost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Amount
+            // 
+            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Amount.DataPropertyName = "Amount";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Amount.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            this.Amount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Amount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Del
+            // 
+            this.Del.HeaderText = "Del";
+            this.Del.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.Del.Name = "Del";
+            this.Del.ReadOnly = true;
+            this.Del.Width = 50;
+            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -958,6 +1061,7 @@
             this.txtSupplierName.ReadOnly = true;
             this.txtSupplierName.Size = new System.Drawing.Size(228, 22);
             this.txtSupplierName.TabIndex = 0;
+            this.txtSupplierName.TextChanged += new System.EventHandler(this.txtSupplierName_TextChanged);
             // 
             // label3
             // 
@@ -995,110 +1099,7 @@
             this.btn_Save.UseVisualStyleBackColor = false;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
-            // Item_Id
-            // 
-            this.Item_Id.DataPropertyName = "Item_ID";
-            this.Item_Id.HeaderText = "Item Id";
-            this.Item_Id.Name = "Item_Id";
-            this.Item_Id.ReadOnly = true;
-            this.Item_Id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Item_Id.Visible = false;
-            // 
-            // itemcode
-            // 
-            this.itemcode.HeaderText = "Item Code";
-            this.itemcode.Name = "itemcode";
-            this.itemcode.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "Desccription";
-            this.description.HeaderText = "Description";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            this.description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.description.Width = 150;
-            // 
-            // Packing
-            // 
-            this.Packing.DataPropertyName = "Packing";
-            this.Packing.HeaderText = "Packing";
-            this.Packing.Name = "Packing";
-            this.Packing.ReadOnly = true;
-            this.Packing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // note
-            // 
-            this.note.DataPropertyName = "Unit";
-            this.note.HeaderText = "Unit";
-            this.note.Name = "note";
-            this.note.ReadOnly = true;
-            this.note.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.note.Width = 150;
-            // 
-            // gst
-            // 
-            this.gst.HeaderText = "GST";
-            this.gst.Name = "gst";
-            this.gst.ReadOnly = true;
-            // 
-            // igst
-            // 
-            this.igst.HeaderText = "IGST";
-            this.igst.Name = "igst";
-            this.igst.ReadOnly = true;
-            // 
-            // col_qty
-            // 
-            this.col_qty.DataPropertyName = "Qty";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.col_qty.DefaultCellStyle = dataGridViewCellStyle2;
-            this.col_qty.HeaderText = "Qty";
-            this.col_qty.Name = "col_qty";
-            this.col_qty.ReadOnly = true;
-            this.col_qty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // free
-            // 
-            this.free.DataPropertyName = "free";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.free.DefaultCellStyle = dataGridViewCellStyle3;
-            this.free.HeaderText = "Free ";
-            this.free.Name = "free";
-            this.free.ReadOnly = true;
-            this.free.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Unit_Cost
-            // 
-            this.Unit_Cost.DataPropertyName = "Unit_Cost";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Unit_Cost.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Unit_Cost.HeaderText = "Unit Cost";
-            this.Unit_Cost.Name = "Unit_Cost";
-            this.Unit_Cost.ReadOnly = true;
-            this.Unit_Cost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Amount
-            // 
-            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Amount.DataPropertyName = "Amount";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Amount.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
-            this.Amount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Amount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Del
-            // 
-            this.Del.HeaderText = "Del";
-            this.Del.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.Del.Name = "Del";
-            this.Del.ReadOnly = true;
-            this.Del.Width = 50;
-            // 
-            // FrmPurchase_Return
+            // Purchase_Return
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1106,7 +1107,7 @@
             this.ClientSize = new System.Drawing.Size(1186, 653);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmPurchase_Return";
+            this.Name = "Purchase_Return";
             this.Text = "Purchase Return";
             this.Load += new System.EventHandler(this.FrmPurchase_Return_Load);
             this.panel1.ResumeLayout(false);

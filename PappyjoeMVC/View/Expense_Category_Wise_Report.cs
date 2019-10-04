@@ -211,7 +211,7 @@ namespace PappyjoeMVC.View
                 Dgv_Expanse.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                 Dgv_Expanse.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 Dgv_Expanse.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                Dgv_Expanse.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                Dgv_Expanse.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             foreach (DataGridViewColumn cl in Dgv_Expanse.Columns)
             {

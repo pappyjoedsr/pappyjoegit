@@ -268,6 +268,12 @@ namespace PappyjoeMVC.View
                 Dgv_Expanse.Rows[i].Cells["Discreption"].Value = dt.Rows[i]["description"].ToString();
                 k++;
             }
+            Dgv_Expanse.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgv_Expanse.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgv_Expanse.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgv_Expanse.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgv_Expanse.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgv_Expanse.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
         public void fill_grid()
         {

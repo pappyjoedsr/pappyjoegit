@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
 namespace PappyjoeMVC.View
 {
     public partial class Purchase_return_Batch : Form
@@ -23,12 +17,11 @@ namespace PappyjoeMVC.View
         public Purchase_return_Batch(string text1, string text2, int v, decimal qtty)
         {
             InitializeComponent();
-            unit1 = text1; 
+            unit1 = text1;
             itemcode1 = text2;
             Pur_no1 = v;
             qty = qtty;
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             decimal qty = 0;
@@ -124,6 +117,11 @@ namespace PappyjoeMVC.View
                     tb.KeyPress += new KeyPressEventHandler(dgvPurchaseBatch_KeyPress);
                 }
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void Purchase_return_Batch_Load(object sender, EventArgs e)
