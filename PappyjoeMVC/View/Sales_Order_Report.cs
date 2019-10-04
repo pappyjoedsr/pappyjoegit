@@ -48,6 +48,8 @@ namespace PappyjoeMVC.View
         }
         private void Sales_Order_Report_Load(object sender, EventArgs e)
         {
+            dateFrom = dptMonthly_From.Value.ToString("yyyy-MM-dd");
+            dateTo = dptMonthly_To.Value.ToString("yyyy-MM-dd");
             DataTable dt=this.ctrlr.salesorder(dateFrom, dateTo);
             salesorder(dt);
             Dgv_Order.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;

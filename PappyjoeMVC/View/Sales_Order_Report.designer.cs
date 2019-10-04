@@ -137,7 +137,6 @@
             this.Dgv_Order.AllowUserToDeleteRows = false;
             this.Dgv_Order.AllowUserToResizeColumns = false;
             this.Dgv_Order.AllowUserToResizeRows = false;
-            this.Dgv_Order.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Dgv_Order.BackgroundColor = System.Drawing.Color.White;
             this.Dgv_Order.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_Order.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -152,8 +151,9 @@
             this.CustomerName,
             this.Phone,
             this.totalItems});
+            this.Dgv_Order.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Dgv_Order.GridColor = System.Drawing.Color.Gainsboro;
-            this.Dgv_Order.Location = new System.Drawing.Point(3, 4);
+            this.Dgv_Order.Location = new System.Drawing.Point(0, 0);
             this.Dgv_Order.Name = "Dgv_Order";
             this.Dgv_Order.ReadOnly = true;
             this.Dgv_Order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -161,7 +161,7 @@
             this.Dgv_Order.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Dgv_Order.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Dgv_Order.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_Order.Size = new System.Drawing.Size(1371, 780);
+            this.Dgv_Order.Size = new System.Drawing.Size(1370, 421);
             this.Dgv_Order.TabIndex = 2;
             this.Dgv_Order.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Order_CellClick);
             this.Dgv_Order.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Order_CellDoubleClick);
@@ -287,7 +287,7 @@
             // BtnExport
             // 
             this.BtnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnExport.BackColor = System.Drawing.Color.LimeGreen;
+            this.BtnExport.BackColor = System.Drawing.Color.DodgerBlue;
             this.BtnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExport.ForeColor = System.Drawing.Color.White;
@@ -316,7 +316,7 @@
             // btnprint
             // 
             this.btnprint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnprint.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnprint.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnprint.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnprint.ForeColor = System.Drawing.Color.White;

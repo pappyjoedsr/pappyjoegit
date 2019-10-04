@@ -309,6 +309,7 @@
             this.btnClear.TabIndex = 274;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtSupplierName
             // 
@@ -1251,7 +1252,7 @@
             this.txtTotal_item.Text = "0";
             this.txtTotal_item.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // frmPurchase
+            // Purchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1261,7 +1262,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmPurchase";
+            this.Name = "Purchase";
             this.Text = "Purchase";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPurchase_Load);

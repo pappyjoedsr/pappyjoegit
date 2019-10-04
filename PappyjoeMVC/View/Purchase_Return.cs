@@ -672,6 +672,11 @@ namespace PappyjoeMVC.View
             }
         }
 
+        private void txtSupplierName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         public void clear()
         {
             cmbUnit.Items.Clear();

@@ -1376,7 +1376,7 @@ namespace PappyjoeMVC.View
                                     {
                                         newQty = Convert.ToInt32(dgvGridData.Rows[l].Cells["col_temp_qty"].Value.ToString());
                                     }
-                                    a = this.cntrl.save_batchNumber(dgvGridData.Rows[l].Cells["tempItem_code"].Value.ToString(), dgvGridData.Rows[l].Cells["Branch_No"].Value.ToString(), newQty, unit2Is, dt.Rows[0]["UnitMF"].ToString(), txtPurchInvNumber.Text, Convert.ToDateTime(dgvGridData.Rows[l].Cells["Prd_Date"].Value.ToString()).ToString("yyyy-MM-dd"), Convert.ToDateTime(dgvGridData.Rows[l].Cells["Exp_Date"].Value.ToString()).ToString("yyyy-MM-dd"), dgvGridData.Rows[l].Cells["period"].Value.ToString(), txt_SupplierId.Text, dtpPurchDate.Value.ToString("yyyy-MM-dd"), IsExpDate);
+                                    a = this.cntrl.save_batchNumber(dgvGridData.Rows[l].Cells["tempItem_code"].Value.ToString(), dgvGridData.Rows[l].Cells["Branch_No"].Value.ToString(), newQty, unit2Is, dt.Rows[0]["UnitMF"].ToString(), txtPurchInvNumber.Text, Convert.ToDateTime(dgvGridData.Rows[l].Cells["Prd_Date"].Value.ToString()).ToString("yyyy-MM-dd"),dgvGridData.Rows[l].Cells["Exp_Date"].Value.ToString(), dgvGridData.Rows[l].Cells["period"].Value.ToString(), txt_SupplierId.Text, dtpPurchDate.Value.ToString("yyyy-MM-dd"), IsExpDate);
                                     if (a > 0)
                                     {
                                         batch_entry = this.cntrl.get_maxEntryNo();
@@ -1399,7 +1399,7 @@ namespace PappyjoeMVC.View
                                                 tempqty = Convert.ToDecimal(dgvGridData.Rows[l].Cells["col_temp_qty"].Value.ToString());
                                             }
 
-                                            this.cntrl.save_batchpurchase(txtPurchInvNumber.Text, dtpPurchDate.Value.ToString("yyyy-MM-dd"), txt_SupplierId.Text, dgvGridData.Rows[l].Cells["tempItem_code"].Value.ToString(), dgvGridData.Rows[l].Cells["Branch_No"].Value.ToString(), tempqty, unit2Is, dt.Rows[0]["UnitMF"].ToString(), Convert.ToDateTime(dgvGridData.Rows[l].Cells["Prd_Date"].Value.ToString()).ToString("yyyy-MM-dd"), Convert.ToDateTime(dgvGridData.Rows[l].Cells["Exp_Date"].Value.ToString()).ToString("yyyy-MM-dd"), IsExpDate, batch_entry.Rows[0][0].ToString());
+                                            this.cntrl.save_batchpurchase(txtPurchInvNumber.Text, dtpPurchDate.Value.ToString("yyyy-MM-dd"), txt_SupplierId.Text, dgvGridData.Rows[l].Cells["tempItem_code"].Value.ToString(), dgvGridData.Rows[l].Cells["Branch_No"].Value.ToString(), tempqty, unit2Is, dt.Rows[0]["UnitMF"].ToString(), Convert.ToDateTime(dgvGridData.Rows[l].Cells["Prd_Date"].Value.ToString()).ToString("yyyy-MM-dd"),dgvGridData.Rows[l].Cells["Exp_Date"].Value.ToString(), IsExpDate, batch_entry.Rows[0][0].ToString());
                                         }
                                     }
                                 }
@@ -1947,5 +1947,18 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }  
         }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txt_Itemcode.Clear();
+            txtDescription.Clear();
+            txtPacking.Clear();
+            txt_qty.Text = "0";
+            txt_free.Text = "0";
+            txtUnitCost.Text = "0.0";
+            txtAmount.Text = "0.00";
+            txtGst.Text = "0.0";
+            txtIgst.Text = "0.0";
+            cmbUnit.Text = "";
+        }  
     }
 }
