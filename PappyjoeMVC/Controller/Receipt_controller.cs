@@ -12,6 +12,11 @@ namespace PappyjoeMVC.Controller
             string id = Model.check_add_privillege(doctor_id);
             return id;
         }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string s = cmodel.privilge_for_inventory(doctor_id);
+            return s;
+        }
         public DataTable Get_CompanyNAme()
         {
             DataTable dtb = cmodel.Get_CompanyNAme();

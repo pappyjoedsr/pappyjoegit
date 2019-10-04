@@ -1150,7 +1150,7 @@
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Practice_Details";
-            this.Text = "PracticeDetails";
+            this.Text = "Practice Details";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PracticeDetails_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.PracticeDetails_Paint);

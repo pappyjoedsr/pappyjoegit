@@ -13,6 +13,11 @@ namespace PappyjoeMVC.Controller
             string e = mdl.privilege_A(doctor_id);
             return e;
         }
+        public string privilge_for_inventory(string doctor_id)
+        {
+            string s = cmdl.privilge_for_inventory(doctor_id);
+            return s;
+        }
         public string doctr_privillage_for_addnewPatient(string doctor_id)
         {
             string e = cmdl.doctr_privillage_for_addnewPatient(doctor_id);

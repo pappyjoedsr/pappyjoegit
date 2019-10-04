@@ -598,12 +598,6 @@
     <Compile Include="View\LabWorks.designer.cs">
       <DependentUpon>LabWorks.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Main_Calendar.cs">
       <SubType>Form</SubType>
     </Compile>

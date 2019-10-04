@@ -210,7 +210,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(15, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(525, 26);
+            this.label1.Size = new System.Drawing.Size(522, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "You need to select an Initial Value. You can choose an alphanumeric prefix (will " +
     "not be incremented), \r\nand a numeric part which will be automatically incremente" +
@@ -336,7 +336,7 @@
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label10.Location = new System.Drawing.Point(15, 25);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(525, 26);
+            this.label10.Size = new System.Drawing.Size(522, 26);
             this.label10.TabIndex = 5;
             this.label10.Text = "You need to select an Initial Value. You can choose an alphanumeric prefix (will " +
     "not be incremented), \r\nand a numeric part which will be automatically incremente" +
@@ -351,7 +351,6 @@
             this.text_invoice_number.TabIndex = 11;
             this.text_invoice_number.TextChanged += new System.EventHandler(this.text_invoice_number_TextChanged);
             this.text_invoice_number.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_invoice_number_KeyPress);
-            //this.text_invoice_number.KeyUp += new System.Windows.Forms.KeyEventHandler(this.text_invoice_number_KeyUp);
             // 
             // tabPage3
             // 
@@ -463,7 +462,7 @@
             this.label15.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label15.Location = new System.Drawing.Point(15, 25);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(525, 26);
+            this.label15.Size = new System.Drawing.Size(522, 26);
             this.label15.TabIndex = 14;
             this.label15.Text = "You need to select an Initial Value. You can choose an alphanumeric prefix (will " +
     "not be incremented), \r\nand a numeric part which will be automatically incremente" +
@@ -478,7 +477,6 @@
             this.text_receipt_number.TabIndex = 20;
             this.text_receipt_number.TextChanged += new System.EventHandler(this.text_receipt_number_TextChanged);
             this.text_receipt_number.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_receipt_number_KeyPress);
-            //this.text_receipt_number.KeyUp += new System.Windows.Forms.KeyEventHandler(this.text_receipt_number_KeyUp);
             // 
             // errorProvider1
             // 
@@ -494,7 +492,8 @@
             this.Controls.Add(this.label19);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AutomaticId_generation";
-            this.Text = "AutomaticId_generation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Automatic Id Generation";
             this.Load += new System.EventHandler(this.AutomaticId_generation_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

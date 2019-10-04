@@ -2033,7 +2033,6 @@
             this.btn_invoice_save.TabIndex = 0;
             this.btn_invoice_save.Text = "Save";
             this.btn_invoice_save.UseVisualStyleBackColor = false;
-            //this.btn_invoice_save.Click += new System.EventHandler(this.btn_invoice_save_Click);
             // 
             // button2
             // 
@@ -2047,7 +2046,6 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "Preview";
             this.button2.UseVisualStyleBackColor = false;
-            //this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // printPreviewControl1
             // 
@@ -3848,7 +3846,7 @@
             // 
             this.printDocument_receipt.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_receipt_PrintPage);
             // 
-            // printout
+            // Printout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -3857,8 +3855,8 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label13);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "printout";
-            this.Text = "printout";
+            this.Name = "Printout";
+            this.Text = "Printout";
             this.Load += new System.EventHandler(this.printout_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

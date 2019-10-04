@@ -598,7 +598,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            //expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
 
@@ -608,7 +607,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                //doctor_controller controlr = new doctor_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -767,7 +765,6 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -777,7 +774,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -789,7 +785,6 @@ namespace PappyjoeMVC.View
             var form2 = new Prescription_Show();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            //Prescription_Show_controller controller = new Prescription_Show_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -800,7 +795,6 @@ namespace PappyjoeMVC.View
             var form2 = new Clinical_Findings();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            //Clinical_Findings_controller controller = new Clinical_Findings_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -838,6 +832,52 @@ namespace PappyjoeMVC.View
         private void linkLabel_id_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            if (doctor_id != "1")
+            {
+                string id = this.cntrl.privilge_for_inventory(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var form2 = new PappyjoeMVC.View.StockReport();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.ShowDialog();
+                }
+            }
+            else
+            {
+                var form2 = new PappyjoeMVC.View.StockReport();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Login();
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void labl_Lab_Click(object sender, EventArgs e)
+        {
+            var form2 = new LabWorks();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();

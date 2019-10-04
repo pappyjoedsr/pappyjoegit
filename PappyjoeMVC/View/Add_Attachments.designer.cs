@@ -823,7 +823,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 40);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // btn_Save
@@ -881,7 +881,7 @@
             this.linkLabel_Name.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.linkLabel_Name.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel_Name.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.linkLabel_Name.Location = new System.Drawing.Point(129, 6);
+            this.linkLabel_Name.Location = new System.Drawing.Point(128, 6);
             this.linkLabel_Name.Name = "linkLabel_Name";
             this.linkLabel_Name.Size = new System.Drawing.Size(0, 13);
             this.linkLabel_Name.TabIndex = 74;
@@ -901,7 +901,7 @@
             // 
             this.Lab_Pt_Id.AutoSize = true;
             this.Lab_Pt_Id.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Pt_Id.Location = new System.Drawing.Point(48, 25);
+            this.Lab_Pt_Id.Location = new System.Drawing.Point(66, 25);
             this.Lab_Pt_Id.Name = "Lab_Pt_Id";
             this.Lab_Pt_Id.Size = new System.Drawing.Size(63, 13);
             this.Lab_Pt_Id.TabIndex = 68;

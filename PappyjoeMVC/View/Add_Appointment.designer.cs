@@ -235,7 +235,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label12.Location = new System.Drawing.Point(48, 25);
+            this.label12.Location = new System.Drawing.Point(68, 25);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 13);
             this.label12.TabIndex = 68;
@@ -619,16 +619,18 @@
             // 
             // settingsToolStripMenuItem
             // 
+            this.settingsToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.ToolTipText = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
+            this.logoutToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1429953040_Log_Out;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -680,7 +682,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 40);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // linkLabel_Name
@@ -688,7 +690,7 @@
             this.linkLabel_Name.AutoSize = true;
             this.linkLabel_Name.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel_Name.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.linkLabel_Name.Location = new System.Drawing.Point(129, 6);
+            this.linkLabel_Name.Location = new System.Drawing.Point(128, 6);
             this.linkLabel_Name.Name = "linkLabel_Name";
             this.linkLabel_Name.Size = new System.Drawing.Size(0, 13);
             this.linkLabel_Name.TabIndex = 74;

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Purchase_Item_Report));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtPurch_no = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -115,7 +115,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(830, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 171;
             this.label2.Text = "Total Amount";
             // 
@@ -185,7 +185,7 @@
             this.label.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label.Location = new System.Drawing.Point(850, 31);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(56, 13);
+            this.label.Size = new System.Drawing.Size(57, 13);
             this.label.TabIndex = 0;
             this.label.Text = "Total Item";
             // 
@@ -316,14 +316,14 @@
             this.GST,
             this.IGST,
             this.AMOUNT});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPurchase.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPurchase.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPurchase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPurchase.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvPurchase.Location = new System.Drawing.Point(0, 0);
@@ -394,8 +394,8 @@
             // 
             // FREE
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.FREE.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.FREE.DefaultCellStyle = dataGridViewCellStyle1;
             this.FREE.FillWeight = 103.4646F;
             this.FREE.HeaderText = "FREE";
             this.FREE.Name = "FREE";
@@ -404,8 +404,8 @@
             // 
             // UNIT_COST
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.UNIT_COST.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.UNIT_COST.DefaultCellStyle = dataGridViewCellStyle2;
             this.UNIT_COST.FillWeight = 103.4646F;
             this.UNIT_COST.HeaderText = "UNIT COST";
             this.UNIT_COST.Name = "UNIT_COST";
@@ -414,8 +414,8 @@
             // 
             // GST
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.GST.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.GST.DefaultCellStyle = dataGridViewCellStyle3;
             this.GST.HeaderText = "GST";
             this.GST.Name = "GST";
             this.GST.ReadOnly = true;
@@ -423,8 +423,8 @@
             // 
             // IGST
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.IGST.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.IGST.DefaultCellStyle = dataGridViewCellStyle4;
             this.IGST.HeaderText = "IGST";
             this.IGST.Name = "IGST";
             this.IGST.ReadOnly = true;
@@ -432,8 +432,8 @@
             // 
             // AMOUNT
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.AMOUNT.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.AMOUNT.DefaultCellStyle = dataGridViewCellStyle5;
             this.AMOUNT.FillWeight = 103.4646F;
             this.AMOUNT.HeaderText = "TOTAL AMOUNT";
             this.AMOUNT.Name = "AMOUNT";
@@ -460,7 +460,7 @@
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Purchase_Item_Report";
-            this.Text = "Purchase_Item_Report";
+            this.Text = "Purchase Item Report";
             this.Load += new System.EventHandler(this.Purchase_Item_Report_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

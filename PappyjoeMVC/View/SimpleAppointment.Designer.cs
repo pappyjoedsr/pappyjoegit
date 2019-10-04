@@ -1291,7 +1291,7 @@
             this.checkBoxReview.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.checkBoxReview.Location = new System.Drawing.Point(809, 63);
             this.checkBoxReview.Name = "checkBoxReview";
-            this.checkBoxReview.Size = new System.Drawing.Size(117, 19);
+            this.checkBoxReview.Size = new System.Drawing.Size(118, 19);
             this.checkBoxReview.TabIndex = 404;
             this.checkBoxReview.Text = "Next Review Date";
             this.checkBoxReview.UseVisualStyleBackColor = true;
@@ -1397,7 +1397,7 @@
             this.label33.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label33.Location = new System.Drawing.Point(32, 23);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(62, 13);
+            this.label33.Size = new System.Drawing.Size(63, 13);
             this.label33.TabIndex = 369;
             this.label33.Text = "Treatments";
             // 
@@ -1562,7 +1562,7 @@
             this.linkLab_template.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLab_template.Location = new System.Drawing.Point(186, 15);
             this.linkLab_template.Name = "linkLab_template";
-            this.linkLab_template.Size = new System.Drawing.Size(52, 13);
+            this.linkLab_template.Size = new System.Drawing.Size(53, 13);
             this.linkLab_template.TabIndex = 392;
             this.linkLab_template.TabStop = true;
             this.linkLab_template.Text = "Template";
@@ -1574,7 +1574,7 @@
             this.Lnk_AddTemplate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lnk_AddTemplate.Location = new System.Drawing.Point(240, 15);
             this.Lnk_AddTemplate.Name = "Lnk_AddTemplate";
-            this.Lnk_AddTemplate.Size = new System.Drawing.Size(76, 13);
+            this.Lnk_AddTemplate.Size = new System.Drawing.Size(77, 13);
             this.Lnk_AddTemplate.TabIndex = 393;
             this.Lnk_AddTemplate.TabStop = true;
             this.Lnk_AddTemplate.Text = "Add Template";
@@ -3069,7 +3069,7 @@
             this.Controls.Add(this.dataGridView_drugnewTemp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SimpleAppointment";
-            this.Text = "SimpleAppointment";
+            this.Text = "Simple Appointment";
             this.Load += new System.EventHandler(this.SimpleAppointment_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

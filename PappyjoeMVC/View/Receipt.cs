@@ -634,7 +634,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Reports();
             form2.doctor_id = doctor_id;
-            //Reports_controller controller = new Reports_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -644,7 +643,6 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
-            //expense_controller controller = new expense_controller(form2);
             form2.ShowDialog();
         }
 
@@ -654,7 +652,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Doctor_Profile();
                 form2.doctor_id = doctor_id;
-                //doctor_controller controlr = new doctor_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -686,7 +683,6 @@ namespace PappyjoeMVC.View
             var form2 = new Vital_Signs();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            //Vital_Signs_controller controller = new Vital_Signs_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -872,7 +868,6 @@ namespace PappyjoeMVC.View
             var form2 = new Prescription_Show();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            //Prescription_Show_controller controller = new Prescription_Show_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
@@ -929,6 +924,42 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show("Printing Error..", "Print error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            if (doctor_id != "1")
+            {
+                string id = this.cntrl.privilge_for_inventory(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var form2 = new PappyjoeMVC.View.StockReport();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.ShowDialog();
+                }
+            }
+            else
+            {
+                var form2 = new PappyjoeMVC.View.StockReport();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form2 = new PappyjoeMVC.View.Login();
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
 
         static String NumWordsWrapper(double n)

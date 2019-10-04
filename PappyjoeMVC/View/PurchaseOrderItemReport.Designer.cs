@@ -92,7 +92,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(407, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 171;
             this.label2.Text = "Total Amount";
             // 
@@ -165,7 +165,7 @@
             this.label.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label.Location = new System.Drawing.Point(427, 32);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(56, 13);
+            this.label.Size = new System.Drawing.Size(57, 13);
             this.label.TabIndex = 0;
             this.label.Text = "Total Item";
             // 
@@ -393,7 +393,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PurchaseOrderItemReport";
-            this.Text = "PurchaseOrderItemReport";
+            this.Text = "Purchase Order Item Report";
             this.Load += new System.EventHandler(this.PurchaseOrderItemReport_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
