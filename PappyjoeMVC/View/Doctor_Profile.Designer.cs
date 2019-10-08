@@ -304,12 +304,12 @@
             this.toolStripButton10,
             this.toolStripButton7,
             this.toolStripButton12,
+            this.toolStripTextDoctor,
             this.toolStripButton8,
             this.toolStripSeparator2,
             this.toolStripDropDownButton1,
             this.toolStripButton9,
-            this.toolStripTextBox1,
-            this.toolStripTextDoctor});
+            this.toolStripTextBox1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1370, 46);
@@ -510,7 +510,7 @@
             this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox1.ForeColor = System.Drawing.SystemColors.GrayText;
             this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(291, 46);
+            this.toolStripTextBox1.Size = new System.Drawing.Size(291, 23);
             this.toolStripTextBox1.Text = "Search by Patient Name, id, Mobile No";
             this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
@@ -522,7 +522,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(291, 23);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(291, 46);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // panel_edit_dr
