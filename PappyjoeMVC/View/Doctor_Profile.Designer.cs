@@ -304,15 +304,15 @@
             this.toolStripButton10,
             this.toolStripButton7,
             this.toolStripButton12,
-            this.toolStripTextDoctor,
             this.toolStripButton8,
             this.toolStripSeparator2,
-            this.toolStripDropDownButton1,
             this.toolStripButton9,
-            this.toolStripTextBox1});
+            this.toolStripDropDownButton1,
+            this.toolStripTextBox1,
+            this.toolStripTextDoctor});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1370, 46);
+            this.toolStrip1.Size = new System.Drawing.Size(1362, 46);
             this.toolStrip1.TabIndex = 30;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -462,7 +462,7 @@
             // 
             this.settingsToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -470,7 +470,7 @@
             // 
             this.logoutToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1429953040_Log_Out;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -484,11 +484,11 @@
             // 
             this.toolStripDropDownButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.Image = global::PappyjoeMVC.Properties.Resources._1435669279_question_balloon_basic_blue;
+            this.toolStripDropDownButton1.Image = global::PappyjoeMVC.Properties.Resources.appbar_user_add__2_1;
             this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 43);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(32, 43);
             this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.ToolTipText = "Add new Patient";
             // 
@@ -496,11 +496,11 @@
             // 
             this.toolStripButton9.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = global::PappyjoeMVC.Properties.Resources.appbar_user_add__2_1;
+            this.toolStripButton9.Image = global::PappyjoeMVC.Properties.Resources._1435669279_question_balloon_basic_blue;
             this.toolStripButton9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(32, 43);
+            this.toolStripButton9.Size = new System.Drawing.Size(29, 43);
             this.toolStripButton9.Text = "toolStripButton9";
             this.toolStripButton9.ToolTipText = "Pappyjoe Version 16.2";
             this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
@@ -510,7 +510,7 @@
             this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox1.ForeColor = System.Drawing.SystemColors.GrayText;
             this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(291, 23);
+            this.toolStripTextBox1.Size = new System.Drawing.Size(230, 46);
             this.toolStripTextBox1.Text = "Search by Patient Name, id, Mobile No";
             this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
@@ -522,7 +522,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(291, 46);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(180, 46);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // panel_edit_dr
@@ -577,9 +577,9 @@
             this.panel_edit_dr.Controls.Add(this.label17);
             this.panel_edit_dr.Controls.Add(this.pictureBox_Docter_Image);
             this.panel_edit_dr.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.panel_edit_dr.Location = new System.Drawing.Point(0, 39);
+            this.panel_edit_dr.Location = new System.Drawing.Point(0, 46);
             this.panel_edit_dr.Name = "panel_edit_dr";
-            this.panel_edit_dr.Size = new System.Drawing.Size(1598, 723);
+            this.panel_edit_dr.Size = new System.Drawing.Size(1362, 680);
             this.panel_edit_dr.TabIndex = 31;
             this.panel_edit_dr.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_edit_dr_Paint);
             // 
@@ -590,9 +590,9 @@
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
             this.listpatientsearch.ItemHeight = 21;
-            this.listpatientsearch.Location = new System.Drawing.Point(967, 0);
+            this.listpatientsearch.Location = new System.Drawing.Point(1036, 10);
             this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(292, 84);
+            this.listpatientsearch.Size = new System.Drawing.Size(228, 84);
             this.listpatientsearch.TabIndex = 70;
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
@@ -631,7 +631,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1486, 5);
+            this.button2.Location = new System.Drawing.Point(1250, 5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 35);
             this.button2.TabIndex = 27;
@@ -660,8 +660,6 @@
             // 
             // panel_DoctorProfile_Add
             // 
-            this.panel_DoctorProfile_Add.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_DoctorProfile_Add.BackColor = System.Drawing.Color.White;
             this.panel_DoctorProfile_Add.Controls.Add(this.panel_register);
             this.panel_DoctorProfile_Add.Controls.Add(this.panel_recognition);
@@ -670,9 +668,9 @@
             this.panel_DoctorProfile_Add.Controls.Add(this.panel_education);
             this.panel_DoctorProfile_Add.Controls.Add(this.panel_specialization);
             this.panel_DoctorProfile_Add.Controls.Add(this.panel_service);
-            this.panel_DoctorProfile_Add.Location = new System.Drawing.Point(841, 173);
+            this.panel_DoctorProfile_Add.Location = new System.Drawing.Point(839, 173);
             this.panel_DoctorProfile_Add.Name = "panel_DoctorProfile_Add";
-            this.panel_DoctorProfile_Add.Size = new System.Drawing.Size(529, 510);
+            this.panel_DoctorProfile_Add.Size = new System.Drawing.Size(523, 507);
             this.panel_DoctorProfile_Add.TabIndex = 66;
             this.panel_DoctorProfile_Add.Visible = false;
             // 
@@ -688,9 +686,9 @@
             this.panel_register.Controls.Add(this.text_reg_number);
             this.panel_register.Controls.Add(this.combo_reg_year);
             this.panel_register.Controls.Add(this.combo_reg_regcouncil);
-            this.panel_register.Location = new System.Drawing.Point(0, 432);
+            this.panel_register.Location = new System.Drawing.Point(4, 432);
             this.panel_register.Name = "panel_register";
-            this.panel_register.Size = new System.Drawing.Size(522, 65);
+            this.panel_register.Size = new System.Drawing.Size(481, 56);
             this.panel_register.TabIndex = 45;
             this.panel_register.Visible = false;
             // 
@@ -698,7 +696,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(131, 7);
+            this.label33.Location = new System.Drawing.Point(131, 6);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(29, 15);
             this.label33.TabIndex = 4;
@@ -708,7 +706,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(6, 7);
+            this.label32.Location = new System.Drawing.Point(6, 6);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(68, 15);
             this.label32.TabIndex = 4;
@@ -718,7 +716,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(241, 7);
+            this.label34.Location = new System.Drawing.Point(200, 6);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(93, 15);
             this.label34.TabIndex = 4;
@@ -730,9 +728,9 @@
             this.button_reg_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_reg_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_reg_save.ForeColor = System.Drawing.Color.White;
-            this.button_reg_save.Location = new System.Drawing.Point(441, 32);
+            this.button_reg_save.Location = new System.Drawing.Point(402, 26);
             this.button_reg_save.Name = "button_reg_save";
-            this.button_reg_save.Size = new System.Drawing.Size(71, 25);
+            this.button_reg_save.Size = new System.Drawing.Size(72, 22);
             this.button_reg_save.TabIndex = 9;
             this.button_reg_save.Text = "Update";
             this.button_reg_save.UseVisualStyleBackColor = false;
@@ -744,9 +742,9 @@
             this.button_reg_add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_reg_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_reg_add.ForeColor = System.Drawing.Color.White;
-            this.button_reg_add.Location = new System.Drawing.Point(355, 32);
+            this.button_reg_add.Location = new System.Drawing.Point(315, 26);
             this.button_reg_add.Name = "button_reg_add";
-            this.button_reg_add.Size = new System.Drawing.Size(84, 25);
+            this.button_reg_add.Size = new System.Drawing.Size(72, 22);
             this.button_reg_add.TabIndex = 9;
             this.button_reg_add.Text = "Add new";
             this.button_reg_add.UseVisualStyleBackColor = false;
@@ -756,7 +754,7 @@
             // 
             this.text_reg_number.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_reg_number.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_reg_number.Location = new System.Drawing.Point(5, 32);
+            this.text_reg_number.Location = new System.Drawing.Point(5, 26);
             this.text_reg_number.Name = "text_reg_number";
             this.text_reg_number.Size = new System.Drawing.Size(116, 23);
             this.text_reg_number.TabIndex = 19;
@@ -767,7 +765,7 @@
             this.combo_reg_year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_reg_year.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_reg_year.FormattingEnabled = true;
-            this.combo_reg_year.Location = new System.Drawing.Point(133, 32);
+            this.combo_reg_year.Location = new System.Drawing.Point(129, 26);
             this.combo_reg_year.Name = "combo_reg_year";
             this.combo_reg_year.Size = new System.Drawing.Size(54, 23);
             this.combo_reg_year.TabIndex = 20;
@@ -777,7 +775,7 @@
             this.combo_reg_regcouncil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.combo_reg_regcouncil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_reg_regcouncil.FormattingEnabled = true;
-            this.combo_reg_regcouncil.Location = new System.Drawing.Point(246, 32);
+            this.combo_reg_regcouncil.Location = new System.Drawing.Point(199, 26);
             this.combo_reg_regcouncil.Name = "combo_reg_regcouncil";
             this.combo_reg_regcouncil.Size = new System.Drawing.Size(98, 23);
             this.combo_reg_regcouncil.TabIndex = 21;
@@ -792,9 +790,9 @@
             this.panel_recognition.Controls.Add(this.label30);
             this.panel_recognition.Controls.Add(this.button_save_awards);
             this.panel_recognition.Controls.Add(this.combo_award_year);
-            this.panel_recognition.Location = new System.Drawing.Point(2, 298);
+            this.panel_recognition.Location = new System.Drawing.Point(4, 298);
             this.panel_recognition.Name = "panel_recognition";
-            this.panel_recognition.Size = new System.Drawing.Size(525, 61);
+            this.panel_recognition.Size = new System.Drawing.Size(481, 56);
             this.panel_recognition.TabIndex = 43;
             this.panel_recognition.Visible = false;
             // 
@@ -802,7 +800,7 @@
             // 
             this.text_awardname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_awardname.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_awardname.Location = new System.Drawing.Point(65, 15);
+            this.text_awardname.Location = new System.Drawing.Point(58, 15);
             this.text_awardname.Name = "text_awardname";
             this.text_awardname.Size = new System.Drawing.Size(177, 23);
             this.text_awardname.TabIndex = 17;
@@ -821,7 +819,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(269, 18);
+            this.label30.Location = new System.Drawing.Point(251, 18);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(29, 15);
             this.label30.TabIndex = 4;
@@ -833,9 +831,9 @@
             this.button_save_awards.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_save_awards.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save_awards.ForeColor = System.Drawing.Color.White;
-            this.button_save_awards.Location = new System.Drawing.Point(441, 15);
+            this.button_save_awards.Location = new System.Drawing.Point(402, 15);
             this.button_save_awards.Name = "button_save_awards";
-            this.button_save_awards.Size = new System.Drawing.Size(71, 25);
+            this.button_save_awards.Size = new System.Drawing.Size(72, 23);
             this.button_save_awards.TabIndex = 9;
             this.button_save_awards.Text = "Update";
             this.button_save_awards.UseVisualStyleBackColor = false;
@@ -847,7 +845,7 @@
             this.combo_award_year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_award_year.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_award_year.FormattingEnabled = true;
-            this.combo_award_year.Location = new System.Drawing.Point(322, 15);
+            this.combo_award_year.Location = new System.Drawing.Point(295, 15);
             this.combo_award_year.Name = "combo_award_year";
             this.combo_award_year.Size = new System.Drawing.Size(95, 23);
             this.combo_award_year.TabIndex = 18;
@@ -860,9 +858,9 @@
             this.panel_membership.Controls.Add(this.label31);
             this.panel_membership.Controls.Add(this.combo_membership);
             this.panel_membership.Controls.Add(this.button_save_membership);
-            this.panel_membership.Location = new System.Drawing.Point(2, 367);
+            this.panel_membership.Location = new System.Drawing.Point(4, 367);
             this.panel_membership.Name = "panel_membership";
-            this.panel_membership.Size = new System.Drawing.Size(523, 55);
+            this.panel_membership.Size = new System.Drawing.Size(481, 56);
             this.panel_membership.TabIndex = 44;
             this.panel_membership.Visible = false;
             // 
@@ -872,9 +870,9 @@
             this.button_add_membership.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_add_membership.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add_membership.ForeColor = System.Drawing.Color.White;
-            this.button_add_membership.Location = new System.Drawing.Point(351, 14);
+            this.button_add_membership.Location = new System.Drawing.Point(315, 14);
             this.button_add_membership.Name = "button_add_membership";
-            this.button_add_membership.Size = new System.Drawing.Size(84, 25);
+            this.button_add_membership.Size = new System.Drawing.Size(72, 22);
             this.button_add_membership.TabIndex = 9;
             this.button_add_membership.Text = "Add new";
             this.button_add_membership.UseVisualStyleBackColor = false;
@@ -884,7 +882,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(6, 13);
+            this.label31.Location = new System.Drawing.Point(6, 18);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(74, 15);
             this.label31.TabIndex = 4;
@@ -896,7 +894,7 @@
             this.combo_membership.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_membership.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_membership.FormattingEnabled = true;
-            this.combo_membership.Location = new System.Drawing.Point(113, 14);
+            this.combo_membership.Location = new System.Drawing.Point(105, 14);
             this.combo_membership.Name = "combo_membership";
             this.combo_membership.Size = new System.Drawing.Size(195, 23);
             this.combo_membership.TabIndex = 7;
@@ -908,9 +906,9 @@
             this.button_save_membership.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_save_membership.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save_membership.ForeColor = System.Drawing.Color.White;
-            this.button_save_membership.Location = new System.Drawing.Point(441, 14);
+            this.button_save_membership.Location = new System.Drawing.Point(402, 14);
             this.button_save_membership.Name = "button_save_membership";
-            this.button_save_membership.Size = new System.Drawing.Size(71, 25);
+            this.button_save_membership.Size = new System.Drawing.Size(72, 22);
             this.button_save_membership.TabIndex = 9;
             this.button_save_membership.Text = "Update";
             this.button_save_membership.UseVisualStyleBackColor = false;
@@ -932,9 +930,9 @@
             this.panel_experience.Controls.Add(this.text_experience_company);
             this.panel_experience.Controls.Add(this.label18);
             this.panel_experience.Controls.Add(this.combo_experience_city);
-            this.panel_experience.Location = new System.Drawing.Point(2, 209);
+            this.panel_experience.Location = new System.Drawing.Point(4, 209);
             this.panel_experience.Name = "panel_experience";
-            this.panel_experience.Size = new System.Drawing.Size(525, 84);
+            this.panel_experience.Size = new System.Drawing.Size(482, 67);
             this.panel_experience.TabIndex = 42;
             this.panel_experience.Visible = false;
             // 
@@ -953,7 +951,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(6, 2);
+            this.label24.Location = new System.Drawing.Point(7, 6);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(35, 15);
             this.label24.TabIndex = 4;
@@ -963,7 +961,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(142, 2);
+            this.label25.Location = new System.Drawing.Point(142, 6);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(19, 15);
             this.label25.TabIndex = 4;
@@ -973,7 +971,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(6, 29);
+            this.label26.Location = new System.Drawing.Point(6, 24);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(30, 15);
             this.label26.TabIndex = 4;
@@ -983,7 +981,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(159, 29);
+            this.label27.Location = new System.Drawing.Point(159, 24);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(59, 15);
             this.label27.TabIndex = 4;
@@ -993,7 +991,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(318, 29);
+            this.label28.Location = new System.Drawing.Point(318, 24);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(28, 15);
             this.label28.TabIndex = 4;
@@ -1005,9 +1003,9 @@
             this.button_experience_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_experience_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_experience_save.ForeColor = System.Drawing.Color.White;
-            this.button_experience_save.Location = new System.Drawing.Point(441, 6);
+            this.button_experience_save.Location = new System.Drawing.Point(402, 6);
             this.button_experience_save.Name = "button_experience_save";
-            this.button_experience_save.Size = new System.Drawing.Size(71, 25);
+            this.button_experience_save.Size = new System.Drawing.Size(72, 22);
             this.button_experience_save.TabIndex = 9;
             this.button_experience_save.Text = "Update";
             this.button_experience_save.UseVisualStyleBackColor = false;
@@ -1028,7 +1026,7 @@
             // 
             this.text_experience_role.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_experience_role.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_experience_role.Location = new System.Drawing.Point(8, 55);
+            this.text_experience_role.Location = new System.Drawing.Point(8, 42);
             this.text_experience_role.Name = "text_experience_role";
             this.text_experience_role.Size = new System.Drawing.Size(116, 23);
             this.text_experience_role.TabIndex = 13;
@@ -1037,7 +1035,7 @@
             // 
             this.text_experience_company.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_experience_company.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_experience_company.Location = new System.Drawing.Point(161, 55);
+            this.text_experience_company.Location = new System.Drawing.Point(161, 42);
             this.text_experience_company.Name = "text_experience_company";
             this.text_experience_company.Size = new System.Drawing.Size(130, 23);
             this.text_experience_company.TabIndex = 13;
@@ -1046,7 +1044,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(134, 55);
+            this.label18.Location = new System.Drawing.Point(134, 46);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(17, 15);
             this.label18.TabIndex = 14;
@@ -1069,7 +1067,7 @@
             "kolkata",
             "kanpur",
             "dehradun"});
-            this.combo_experience_city.Location = new System.Drawing.Point(314, 54);
+            this.combo_experience_city.Location = new System.Drawing.Point(314, 41);
             this.combo_experience_city.Name = "combo_experience_city";
             this.combo_experience_city.Size = new System.Drawing.Size(105, 23);
             this.combo_experience_city.TabIndex = 15;
@@ -1088,9 +1086,9 @@
             this.panel_education.Controls.Add(this.combo_education_year);
             this.panel_education.Controls.Add(this.button_save_education);
             this.panel_education.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.panel_education.Location = new System.Drawing.Point(2, 125);
+            this.panel_education.Location = new System.Drawing.Point(4, 124);
             this.panel_education.Name = "panel_education";
-            this.panel_education.Size = new System.Drawing.Size(523, 77);
+            this.panel_education.Size = new System.Drawing.Size(482, 67);
             this.panel_education.TabIndex = 41;
             this.panel_education.Visible = false;
             // 
@@ -1100,7 +1098,7 @@
             this.combo_education_degree.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_education_degree.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_education_degree.FormattingEnabled = true;
-            this.combo_education_degree.Location = new System.Drawing.Point(10, 14);
+            this.combo_education_degree.Location = new System.Drawing.Point(9, 11);
             this.combo_education_degree.Name = "combo_education_degree";
             this.combo_education_degree.Size = new System.Drawing.Size(140, 23);
             this.combo_education_degree.TabIndex = 29;
@@ -1110,7 +1108,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(6, 50);
+            this.label21.Location = new System.Drawing.Point(15, 42);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(44, 15);
             this.label21.TabIndex = 4;
@@ -1120,7 +1118,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(167, 50);
+            this.label22.Location = new System.Drawing.Point(171, 42);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(47, 15);
             this.label22.TabIndex = 4;
@@ -1130,7 +1128,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(328, 50);
+            this.label23.Location = new System.Drawing.Point(337, 37);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(29, 15);
             this.label23.TabIndex = 4;
@@ -1142,9 +1140,9 @@
             this.button_education_add_college.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_education_add_college.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_education_add_college.ForeColor = System.Drawing.Color.White;
-            this.button_education_add_college.Location = new System.Drawing.Point(224, 44);
+            this.button_education_add_college.Location = new System.Drawing.Point(224, 38);
             this.button_education_add_college.Name = "button_education_add_college";
-            this.button_education_add_college.Size = new System.Drawing.Size(84, 25);
+            this.button_education_add_college.Size = new System.Drawing.Size(72, 22);
             this.button_education_add_college.TabIndex = 34;
             this.button_education_add_college.Text = "Add new";
             this.button_education_add_college.UseVisualStyleBackColor = false;
@@ -1156,9 +1154,9 @@
             this.button_education_adddegree.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_education_adddegree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_education_adddegree.ForeColor = System.Drawing.Color.White;
-            this.button_education_adddegree.Location = new System.Drawing.Point(66, 44);
+            this.button_education_adddegree.Location = new System.Drawing.Point(66, 38);
             this.button_education_adddegree.Name = "button_education_adddegree";
-            this.button_education_adddegree.Size = new System.Drawing.Size(84, 25);
+            this.button_education_adddegree.Size = new System.Drawing.Size(72, 22);
             this.button_education_adddegree.TabIndex = 35;
             this.button_education_adddegree.Text = "Add new";
             this.button_education_adddegree.UseVisualStyleBackColor = false;
@@ -1170,7 +1168,7 @@
             this.combo_education_college.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_education_college.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_education_college.FormattingEnabled = true;
-            this.combo_education_college.Location = new System.Drawing.Point(175, 13);
+            this.combo_education_college.Location = new System.Drawing.Point(155, 11);
             this.combo_education_college.Name = "combo_education_college";
             this.combo_education_college.Size = new System.Drawing.Size(140, 23);
             this.combo_education_college.TabIndex = 30;
@@ -1182,7 +1180,7 @@
             this.combo_education_year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_education_year.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_education_year.FormattingEnabled = true;
-            this.combo_education_year.Location = new System.Drawing.Point(331, 16);
+            this.combo_education_year.Location = new System.Drawing.Point(304, 11);
             this.combo_education_year.Name = "combo_education_year";
             this.combo_education_year.Size = new System.Drawing.Size(88, 23);
             this.combo_education_year.TabIndex = 31;
@@ -1193,9 +1191,9 @@
             this.button_save_education.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_save_education.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save_education.ForeColor = System.Drawing.Color.White;
-            this.button_save_education.Location = new System.Drawing.Point(441, 14);
+            this.button_save_education.Location = new System.Drawing.Point(402, 11);
             this.button_save_education.Name = "button_save_education";
-            this.button_save_education.Size = new System.Drawing.Size(71, 25);
+            this.button_save_education.Size = new System.Drawing.Size(72, 22);
             this.button_save_education.TabIndex = 36;
             this.button_save_education.Text = "Update";
             this.button_save_education.UseVisualStyleBackColor = false;
@@ -1209,9 +1207,9 @@
             this.panel_specialization.Controls.Add(this.label8);
             this.panel_specialization.Controls.Add(this.button_save_special);
             this.panel_specialization.Controls.Add(this.button_add_special);
-            this.panel_specialization.Location = new System.Drawing.Point(2, 70);
+            this.panel_specialization.Location = new System.Drawing.Point(4, 70);
             this.panel_specialization.Name = "panel_specialization";
-            this.panel_specialization.Size = new System.Drawing.Size(520, 46);
+            this.panel_specialization.Size = new System.Drawing.Size(483, 43);
             this.panel_specialization.TabIndex = 40;
             this.panel_specialization.Visible = false;
             // 
@@ -1221,7 +1219,7 @@
             this.combo_special.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_special.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_special.FormattingEnabled = true;
-            this.combo_special.Location = new System.Drawing.Point(112, 14);
+            this.combo_special.Location = new System.Drawing.Point(104, 10);
             this.combo_special.Name = "combo_special";
             this.combo_special.Size = new System.Drawing.Size(178, 23);
             this.combo_special.TabIndex = 7;
@@ -1243,9 +1241,9 @@
             this.button_save_special.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_save_special.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save_special.ForeColor = System.Drawing.Color.White;
-            this.button_save_special.Location = new System.Drawing.Point(441, 14);
+            this.button_save_special.Location = new System.Drawing.Point(402, 10);
             this.button_save_special.Name = "button_save_special";
-            this.button_save_special.Size = new System.Drawing.Size(71, 25);
+            this.button_save_special.Size = new System.Drawing.Size(72, 22);
             this.button_save_special.TabIndex = 9;
             this.button_save_special.Text = "Update";
             this.button_save_special.UseVisualStyleBackColor = false;
@@ -1257,9 +1255,9 @@
             this.button_add_special.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_add_special.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add_special.ForeColor = System.Drawing.Color.White;
-            this.button_add_special.Location = new System.Drawing.Point(352, 14);
+            this.button_add_special.Location = new System.Drawing.Point(315, 10);
             this.button_add_special.Name = "button_add_special";
-            this.button_add_special.Size = new System.Drawing.Size(84, 25);
+            this.button_add_special.Size = new System.Drawing.Size(72, 22);
             this.button_add_special.TabIndex = 9;
             this.button_add_special.Text = "Add new";
             this.button_add_special.UseVisualStyleBackColor = false;
@@ -1273,9 +1271,9 @@
             this.panel_service.Controls.Add(this.label7);
             this.panel_service.Controls.Add(this.combo_service);
             this.panel_service.Controls.Add(this.button_save_service);
-            this.panel_service.Location = new System.Drawing.Point(2, 12);
+            this.panel_service.Location = new System.Drawing.Point(4, 12);
             this.panel_service.Name = "panel_service";
-            this.panel_service.Size = new System.Drawing.Size(521, 50);
+            this.panel_service.Size = new System.Drawing.Size(483, 43);
             this.panel_service.TabIndex = 39;
             this.panel_service.Visible = false;
             // 
@@ -1285,9 +1283,9 @@
             this.button_add_service.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_add_service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add_service.ForeColor = System.Drawing.Color.White;
-            this.button_add_service.Location = new System.Drawing.Point(352, 12);
+            this.button_add_service.Location = new System.Drawing.Point(315, 12);
             this.button_add_service.Name = "button_add_service";
-            this.button_add_service.Size = new System.Drawing.Size(84, 25);
+            this.button_add_service.Size = new System.Drawing.Size(72, 22);
             this.button_add_service.TabIndex = 9;
             this.button_add_service.Text = "Add new";
             this.button_add_service.UseVisualStyleBackColor = false;
@@ -1309,7 +1307,7 @@
             this.combo_service.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_service.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_service.FormattingEnabled = true;
-            this.combo_service.Location = new System.Drawing.Point(112, 12);
+            this.combo_service.Location = new System.Drawing.Point(78, 12);
             this.combo_service.Name = "combo_service";
             this.combo_service.Size = new System.Drawing.Size(180, 23);
             this.combo_service.TabIndex = 7;
@@ -1321,9 +1319,9 @@
             this.button_save_service.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_save_service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save_service.ForeColor = System.Drawing.Color.White;
-            this.button_save_service.Location = new System.Drawing.Point(441, 12);
+            this.button_save_service.Location = new System.Drawing.Point(402, 12);
             this.button_save_service.Name = "button_save_service";
-            this.button_save_service.Size = new System.Drawing.Size(71, 25);
+            this.button_save_service.Size = new System.Drawing.Size(72, 22);
             this.button_save_service.TabIndex = 9;
             this.button_save_service.Text = "Update";
             this.button_save_service.UseVisualStyleBackColor = false;
@@ -1392,7 +1390,7 @@
             this.panel5.BackColor = System.Drawing.Color.DarkGray;
             this.panel5.Location = new System.Drawing.Point(0, 113);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1596, 1);
+            this.panel5.Size = new System.Drawing.Size(1360, 1);
             this.panel5.TabIndex = 54;
             // 
             // rich_about
@@ -1579,7 +1577,7 @@
             this.button_GoToClinic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_GoToClinic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_GoToClinic.ForeColor = System.Drawing.Color.White;
-            this.button_GoToClinic.Location = new System.Drawing.Point(1486, 38);
+            this.button_GoToClinic.Location = new System.Drawing.Point(1250, 38);
             this.button_GoToClinic.Name = "button_GoToClinic";
             this.button_GoToClinic.Size = new System.Drawing.Size(110, 35);
             this.button_GoToClinic.TabIndex = 9;
@@ -1667,7 +1665,7 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridView_awards.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView_awards.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_awards.Size = new System.Drawing.Size(689, 63);
+            this.dataGridView_awards.Size = new System.Drawing.Size(694, 60);
             this.dataGridView_awards.TabIndex = 5;
             this.dataGridView_awards.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_awards_CellClick);
             // 
@@ -2142,9 +2140,9 @@
             this.panel_clinicaldetails.Controls.Add(this.text_clinic_special);
             this.panel_clinicaldetails.Controls.Add(this.dataGridView_clinic_special);
             this.panel_clinicaldetails.Controls.Add(this.button_clinic_specialdelete);
-            this.panel_clinicaldetails.Location = new System.Drawing.Point(3, 751);
+            this.panel_clinicaldetails.Location = new System.Drawing.Point(4, 732);
             this.panel_clinicaldetails.Name = "panel_clinicaldetails";
-            this.panel_clinicaldetails.Size = new System.Drawing.Size(1590, 817);
+            this.panel_clinicaldetails.Size = new System.Drawing.Size(1358, 700);
             this.panel_clinicaldetails.TabIndex = 32;
             // 
             // Btn_Close
@@ -2154,7 +2152,7 @@
             this.Btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Close.ForeColor = System.Drawing.Color.White;
-            this.Btn_Close.Location = new System.Drawing.Point(1464, 5);
+            this.Btn_Close.Location = new System.Drawing.Point(1232, 5);
             this.Btn_Close.Name = "Btn_Close";
             this.Btn_Close.Size = new System.Drawing.Size(111, 35);
             this.Btn_Close.TabIndex = 27;
@@ -2830,7 +2828,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1362, 742);
             this.Controls.Add(this.panel_clinicaldetails);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel_edit_dr);

@@ -1363,7 +1363,7 @@ namespace PappyjoeMVC.View
                     listpatientsearch.Visible = true;
 
                 }
-                listpatientsearch.Location = new Point(toolStrip1.Width - 410, 1);
+                listpatientsearch.Location = new Point(toolStrip1.Width - 330, 1);
             }
             else
             {
