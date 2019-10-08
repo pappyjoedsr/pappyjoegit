@@ -114,6 +114,7 @@ namespace PappyjoeMVC.View
         private void frmstockReport_Load(object sender, EventArgs e)
         {
             panel_main.Hide(); Lab_Msg.Visible = false;
+            toolStripButton5.BackColor = Color.SkyBlue;
             btn_Stock.BackColor = Color.SteelBlue;
             toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
             toolStripButton1.Text = this.cntrl.Load_CompanyName();
