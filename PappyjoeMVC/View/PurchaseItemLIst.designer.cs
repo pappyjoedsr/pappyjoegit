@@ -244,15 +244,16 @@
             this.Cost2.ReadOnly = true;
             this.Cost2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // frmPurchaseItemLIst
+            // PurchaseItemLIst
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(708, 514);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmPurchaseItemLIst";
+            this.Name = "PurchaseItemLIst";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Item List";
             this.Load += new System.EventHandler(this.frmPurchaseItemLIst_Load);

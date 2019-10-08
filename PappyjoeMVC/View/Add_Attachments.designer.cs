@@ -276,7 +276,7 @@
             this.btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Close.ForeColor = System.Drawing.Color.White;
-            this.btn_Close.Location = new System.Drawing.Point(1271, 88);
+            this.btn_Close.Location = new System.Drawing.Point(1254, 90);
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(89, 30);
             this.btn_Close.TabIndex = 282;
@@ -566,13 +566,13 @@
             // listpatientsearch
             // 
             this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
-            this.listpatientsearch.ItemHeight = 21;
-            this.listpatientsearch.Location = new System.Drawing.Point(1011, 31);
+            this.listpatientsearch.ItemHeight = 20;
+            this.listpatientsearch.Location = new System.Drawing.Point(994, 38);
             this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(251, 42);
+            this.listpatientsearch.Size = new System.Drawing.Size(251, 80);
             this.listpatientsearch.TabIndex = 277;
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
@@ -823,7 +823,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 40);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // btn_Save
@@ -833,7 +833,7 @@
             this.btn_Save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Save.ForeColor = System.Drawing.Color.White;
-            this.btn_Save.Location = new System.Drawing.Point(1182, 88);
+            this.btn_Save.Location = new System.Drawing.Point(1165, 90);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(89, 30);
             this.btn_Save.TabIndex = 283;
@@ -848,7 +848,7 @@
             this.panel2.Controls.Add(this.linkLabel_Name);
             this.panel2.Controls.Add(this.Lab_PtName);
             this.panel2.Controls.Add(this.Lab_Pt_Id);
-            this.panel2.Location = new System.Drawing.Point(4, 38);
+            this.panel2.Location = new System.Drawing.Point(4, 41);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(414, 42);
             this.panel2.TabIndex = 279;
@@ -912,7 +912,7 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.DarkGray;
-            this.panel5.Location = new System.Drawing.Point(0, 82);
+            this.panel5.Location = new System.Drawing.Point(0, 85);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1386, 1);
             this.panel5.TabIndex = 278;

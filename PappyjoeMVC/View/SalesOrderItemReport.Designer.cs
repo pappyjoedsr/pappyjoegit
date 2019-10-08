@@ -100,11 +100,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(732, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 17);
+            this.label2.Size = new System.Drawing.Size(85, 17);
             this.label2.TabIndex = 171;
             this.label2.Text = "Total Amount";
             // 
@@ -133,11 +133,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(755, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Total Cost";
             // 
@@ -167,11 +167,11 @@
             // lblinvoices
             // 
             this.lblinvoices.AutoSize = true;
-            this.lblinvoices.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblinvoices.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblinvoices.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblinvoices.Location = new System.Drawing.Point(733, 10);
             this.lblinvoices.Name = "lblinvoices";
-            this.lblinvoices.Size = new System.Drawing.Size(90, 17);
+            this.lblinvoices.Size = new System.Drawing.Size(86, 17);
             this.lblinvoices.TabIndex = 0;
             this.lblinvoices.Text = "Total Invoices";
             // 
@@ -334,6 +334,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SalesOrderItemReport";
             this.Text = "Sales Order Item Report";

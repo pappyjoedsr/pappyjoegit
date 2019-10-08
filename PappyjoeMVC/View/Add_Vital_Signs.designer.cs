@@ -105,7 +105,7 @@
             this.label21.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label21.Location = new System.Drawing.Point(48, 6);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(77, 13);
+            this.label21.Size = new System.Drawing.Size(81, 13);
             this.label21.TabIndex = 69;
             this.label21.Text = "Patient Name :";
             // 
@@ -126,7 +126,7 @@
             // 
             this.dtp_date.Location = new System.Drawing.Point(368, 17);
             this.dtp_date.Name = "dtp_date";
-            this.dtp_date.Size = new System.Drawing.Size(200, 20);
+            this.dtp_date.Size = new System.Drawing.Size(200, 22);
             this.dtp_date.TabIndex = 12;
             // 
             // label15
@@ -158,7 +158,7 @@
             this.label18.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label18.Location = new System.Drawing.Point(84, 20);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(56, 13);
+            this.label18.Size = new System.Drawing.Size(55, 13);
             this.label18.TabIndex = 287;
             this.label18.Text = "By doctor";
             // 
@@ -168,7 +168,7 @@
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label10.Location = new System.Drawing.Point(461, 305);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(59, 13);
+            this.label10.Size = new System.Drawing.Size(61, 13);
             this.label10.TabIndex = 295;
             this.label10.Text = "BMI Status";
             this.label10.Visible = false;
@@ -214,7 +214,7 @@
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label12.Location = new System.Drawing.Point(65, 25);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(60, 13);
+            this.label12.Size = new System.Drawing.Size(63, 13);
             this.label12.TabIndex = 68;
             this.label12.Text = "Patient ID :";
             // 
@@ -770,13 +770,13 @@
             // listpatientsearch
             // 
             this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
-            this.listpatientsearch.ItemHeight = 21;
+            this.listpatientsearch.ItemHeight = 20;
             this.listpatientsearch.Location = new System.Drawing.Point(882, 42);
             this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(250, 84);
+            this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
             this.listpatientsearch.TabIndex = 295;
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
@@ -854,6 +854,8 @@
             this.Controls.Add(this.label41);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel5);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_Vital_Signs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

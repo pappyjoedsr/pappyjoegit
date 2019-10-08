@@ -350,6 +350,7 @@
             this.ClientSize = new System.Drawing.Size(968, 564);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Sales_order_list";
             this.Text = "Sales Order List";

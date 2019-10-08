@@ -43,14 +43,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.dgvItemData = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.dtpTo = new System.Windows.Forms.DateTimePicker();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.SL_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pur_order_noee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +52,14 @@
             this.purId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.del = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemData)).BeginInit();
             this.panel1.SuspendLayout();
@@ -229,6 +229,84 @@
             this.dgvItemData.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvItemData_CellMouseDoubleClick);
             this.dgvItemData.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvItemData_MouseClick);
             // 
+            // SL_NO
+            // 
+            this.SL_NO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SL_NO.FillWeight = 50F;
+            this.SL_NO.HeaderText = "SlNo";
+            this.SL_NO.Name = "SL_NO";
+            this.SL_NO.ReadOnly = true;
+            // 
+            // Pur_order_noee
+            // 
+            this.Pur_order_noee.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Pur_order_noee.FillWeight = 50F;
+            this.Pur_order_noee.HeaderText = "Order No";
+            this.Pur_order_noee.Name = "Pur_order_noee";
+            this.Pur_order_noee.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.FillWeight = 70F;
+            this.Column1.HeaderText = "Order Date";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Supplier
+            // 
+            this.Supplier.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Supplier.FillWeight = 150F;
+            this.Supplier.HeaderText = "Supplier";
+            this.Supplier.Name = "Supplier";
+            this.Supplier.ReadOnly = true;
+            // 
+            // col_qty
+            // 
+            this.col_qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.col_qty.DefaultCellStyle = dataGridViewCellStyle2;
+            this.col_qty.FillWeight = 60F;
+            this.col_qty.HeaderText = "Total Items";
+            this.col_qty.Name = "col_qty";
+            this.col_qty.ReadOnly = true;
+            this.col_qty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Amount
+            // 
+            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Amount.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Amount.FillWeight = 60F;
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            this.Amount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // purId
+            // 
+            this.purId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.purId.HeaderText = "Pur_id";
+            this.purId.Name = "purId";
+            this.purId.ReadOnly = true;
+            this.purId.Visible = false;
+            // 
+            // edit
+            // 
+            this.edit.HeaderText = "EDIT";
+            this.edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            this.edit.Width = 30;
+            // 
+            // del
+            // 
+            this.del.HeaderText = "DEL";
+            this.del.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.del.Name = "del";
+            this.del.ReadOnly = true;
+            this.del.Width = 30;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -308,84 +386,6 @@
             this.panel1.Size = new System.Drawing.Size(915, 92);
             this.panel1.TabIndex = 274;
             // 
-            // SL_NO
-            // 
-            this.SL_NO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SL_NO.FillWeight = 50F;
-            this.SL_NO.HeaderText = "SlNo";
-            this.SL_NO.Name = "SL_NO";
-            this.SL_NO.ReadOnly = true;
-            // 
-            // Pur_order_noee
-            // 
-            this.Pur_order_noee.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Pur_order_noee.FillWeight = 50F;
-            this.Pur_order_noee.HeaderText = "Order No";
-            this.Pur_order_noee.Name = "Pur_order_noee";
-            this.Pur_order_noee.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.FillWeight = 70F;
-            this.Column1.HeaderText = "Order Date";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Supplier
-            // 
-            this.Supplier.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Supplier.FillWeight = 150F;
-            this.Supplier.HeaderText = "Supplier";
-            this.Supplier.Name = "Supplier";
-            this.Supplier.ReadOnly = true;
-            // 
-            // col_qty
-            // 
-            this.col_qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.col_qty.DefaultCellStyle = dataGridViewCellStyle2;
-            this.col_qty.FillWeight = 60F;
-            this.col_qty.HeaderText = "Total Items";
-            this.col_qty.Name = "col_qty";
-            this.col_qty.ReadOnly = true;
-            this.col_qty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Amount
-            // 
-            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Amount.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Amount.FillWeight = 60F;
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
-            this.Amount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // purId
-            // 
-            this.purId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.purId.HeaderText = "Pur_id";
-            this.purId.Name = "purId";
-            this.purId.ReadOnly = true;
-            this.purId.Visible = false;
-            // 
-            // edit
-            // 
-            this.edit.HeaderText = "EDIT";
-            this.edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.edit.Name = "edit";
-            this.edit.ReadOnly = true;
-            this.edit.Width = 30;
-            // 
-            // del
-            // 
-            this.del.HeaderText = "DEL";
-            this.del.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.del.Name = "del";
-            this.del.ReadOnly = true;
-            this.del.Width = 30;
-            // 
             // Purchase_order_list
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,6 +393,7 @@
             this.ClientSize = new System.Drawing.Size(915, 564);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Purchase_order_list";
             this.Text = "Purchase Order List";

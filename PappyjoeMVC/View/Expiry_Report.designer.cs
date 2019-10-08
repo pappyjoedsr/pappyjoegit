@@ -125,7 +125,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.LightGray;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(277, 68);
             this.label3.Name = "label3";
@@ -137,11 +137,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.LightGray;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(6, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 17);
+            this.label1.Size = new System.Drawing.Size(38, 17);
             this.label1.TabIndex = 122;
             this.label1.Text = "From";
             // 
@@ -210,8 +210,6 @@
             this.dgvExpiry.AllowUserToDeleteRows = false;
             this.dgvExpiry.AllowUserToResizeColumns = false;
             this.dgvExpiry.AllowUserToResizeRows = false;
-            this.dgvExpiry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvExpiry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvExpiry.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvExpiry.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -237,9 +235,10 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvExpiry.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvExpiry.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvExpiry.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvExpiry.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvExpiry.Location = new System.Drawing.Point(0, 4);
+            this.dgvExpiry.Location = new System.Drawing.Point(0, 0);
             this.dgvExpiry.MultiSelect = false;
             this.dgvExpiry.Name = "dgvExpiry";
             this.dgvExpiry.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -247,7 +246,7 @@
             this.dgvExpiry.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvExpiry.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvExpiry.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvExpiry.Size = new System.Drawing.Size(1300, 557);
+            this.dgvExpiry.Size = new System.Drawing.Size(1300, 555);
             this.dgvExpiry.TabIndex = 118;
             // 
             // col_slno

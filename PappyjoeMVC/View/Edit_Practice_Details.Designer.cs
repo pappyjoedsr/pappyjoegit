@@ -697,6 +697,7 @@
             this.Controls.Add(this.panel_city);
             this.Controls.Add(this.panl_country);
             this.Controls.Add(this.btn_Cancel);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Edit_Practice_Details";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

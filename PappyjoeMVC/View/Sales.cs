@@ -898,7 +898,7 @@ namespace PappyjoeMVC.View
             foreach (DataGridViewRow row in dgv_BatchSale.Rows)
             {
                 DataRow dRow = FrmBatchsale_edit.NewRow();
-                if (row.Cells["coiltem_code"].Value.ToString() == txt_ItemCode.Text)
+                if (row.Cells["coiltem_code"].Value.ToString() == itemId)
                 {
                     foreach (DataGridViewCell cell in row.Cells)
                     {
@@ -1042,7 +1042,7 @@ namespace PappyjoeMVC.View
                         txt_IGST.Text = dgv_SalesItem.Rows[rowindex].Cells["colIGST"].Value.ToString();
                         txt_Qty.Text = dgv_SalesItem.Rows[rowindex].Cells["ColQty"].Value.ToString();
                         txt_Free.Text = dgv_SalesItem.Rows[rowindex].Cells["ColFree"].Value.ToString();
-                        itemId= dgv_SalesItem.Rows[rowindex].Cells["id"].Value.ToString();
+                        itemId = dgv_SalesItem.Rows[rowindex].Cells["id"].Value.ToString();
                         if (salesOrder_flag == true)
                         {
                             cmb_Unit.Items.Clear();
@@ -1713,7 +1713,7 @@ namespace PappyjoeMVC.View
                                         DataTable dtb = this.cntrl.Get_itemdetails(dt_drug_inv_Details.Rows[0]["inventory_id"].ToString());
                                         if (dtb.Rows.Count > 0)
                                         {
-                                            txt_ItemCode.Text = dtb.Rows[0]["item_code"].ToString();
+                                            txt_ItemCode.Text = dtb.Rows[0]["id"].ToString();// dtb.Rows[0]["item_code"].ToString();
                                             txt_Discription.Text = dtb.Rows[0]["item_name"].ToString();
                                             txt_GST.Text = dtb.Rows[0]["GST"].ToString();
                                             txt_IGST.Text = dtb.Rows[0]["IGST"].ToString();
@@ -1731,11 +1731,11 @@ namespace PappyjoeMVC.View
                                             decimal qty = 0;
                                             qty = Convert.ToDecimal(txt_Qty.Text);
                                             string unit = cmb_Unit.Text;
-                                            call_Item_Batch(itemId, qty, unit);
+                                            call_Item_Batch(dtb.Rows[0]["id"].ToString(), qty, unit);
                                             if (dtFor_CurrentStockUpdate_Bill != null)
                                             {
                                                 Fiil_BatchSale_Grid_Prescription_bill();
-                                                dgv_SalesItem.Rows.Add(txt_ItemCode.Text, txt_Discription.Text, txt_Packing.Text, cmb_Unit.Text, txt_GST.Text, txt_IGST.Text, txt_Qty.Text, txt_Free.Text, txt_UnitCost.Text, txt_Amount.Text, PappyjoeMVC.Properties.Resources.editicon, PappyjoeMVC.Properties.Resources.deleteicon);
+                                                dgv_SalesItem.Rows.Add(txt_ItemCode.Text, dtb.Rows[0]["item_code"].ToString(), txt_Discription.Text, txt_Packing.Text, cmb_Unit.Text, txt_GST.Text, txt_IGST.Text, txt_Qty.Text, txt_Free.Text, txt_UnitCost.Text, txt_Amount.Text, PappyjoeMVC.Properties.Resources.editicon, PappyjoeMVC.Properties.Resources.deleteicon);
                                                 clear_itemdetails();
                                                 // Total Calculation
                                                 Decimal TotalGst = 0;
@@ -2055,7 +2055,7 @@ namespace PappyjoeMVC.View
             decimal Stock = 0;
             decimal curent_Stock = 0;
             TotalStock = 0;
-            DataTable Dt_updateStock = this.cntrl.Get_stock(itemId);
+            DataTable Dt_updateStock = this.cntrl.Get_stock(item_Code);
             if (Dt_updateStock.Rows[0][0].ToString() != "")
             {
                 TotalStock = Convert.ToDecimal(Dt_updateStock.Rows[0][0].ToString());

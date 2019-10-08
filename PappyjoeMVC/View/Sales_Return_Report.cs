@@ -37,6 +37,8 @@ namespace PappyjoeMVC.View
         }
         private void Sales_Return_Report_Load(object sender, EventArgs e)
         {
+            dateFrom = dptMonthly_From.Value.ToString("yyyy-MM-dd");
+            dateTo = dptMonthly_To.Value.ToString("yyyy-MM-dd");
             DataTable dt=this.ctrlr.salesreturn(dateFrom,dateTo);
             salesreturn(dt);
             dgv_Return.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
@@ -48,7 +50,7 @@ namespace PappyjoeMVC.View
             dgv_Return.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_Return.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_Return.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_Return.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_Return.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgv_Return.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_Return.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dgv_Return.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -60,7 +62,7 @@ namespace PappyjoeMVC.View
             dgv_Return.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_Return.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_Return.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_Return.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_Return.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             foreach (DataGridViewColumn cl in dgv_Return.Columns)
             {
                 cl.SortMode = DataGridViewColumnSortMode.NotSortable;

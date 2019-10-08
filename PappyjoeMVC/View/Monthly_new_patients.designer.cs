@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monthly_New_Patients));
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.emailaddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +56,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.Lab_Doctorname = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnprint = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.btnchart = new System.Windows.Forms.Button();
             this.btnsearch = new System.Windows.Forms.Button();
@@ -66,7 +67,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePickermonthnewpatient2 = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnprint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridmonthlypatient)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartmonthnewpatient)).BeginInit();
@@ -160,27 +160,27 @@
             this.Mobile,
             this.emailaddress,
             this.Doctor});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridmonthlypatient.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridmonthlypatient.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridmonthlypatient.GridColor = System.Drawing.Color.Gainsboro;
             this.dataGridmonthlypatient.Location = new System.Drawing.Point(4, 3);
             this.dataGridmonthlypatient.Name = "dataGridmonthlypatient";
             this.dataGridmonthlypatient.ReadOnly = true;
             this.dataGridmonthlypatient.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridmonthlypatient.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridmonthlypatient.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridmonthlypatient.RowHeadersVisible = false;
             this.dataGridmonthlypatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridmonthlypatient.Size = new System.Drawing.Size(1076, 537);
@@ -214,17 +214,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartmonthnewpatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea4.Name = "ChartArea1";
-            this.chartmonthnewpatient.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartmonthnewpatient.Legends.Add(legend4);
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            chartArea1.Name = "ChartArea1";
+            this.chartmonthnewpatient.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartmonthnewpatient.Legends.Add(legend1);
             this.chartmonthnewpatient.Location = new System.Drawing.Point(4, 3);
             this.chartmonthnewpatient.Name = "chartmonthnewpatient";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Patients";
-            this.chartmonthnewpatient.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Patients";
+            this.chartmonthnewpatient.Series.Add(series1);
             this.chartmonthnewpatient.Size = new System.Drawing.Size(1076, 537);
             this.chartmonthnewpatient.TabIndex = 7;
             this.chartmonthnewpatient.Text = "chart1";
@@ -264,8 +264,8 @@
             this.Grvmonthnewpatient.AllowUserToDeleteRows = false;
             this.Grvmonthnewpatient.AllowUserToResizeColumns = false;
             this.Grvmonthnewpatient.AllowUserToResizeRows = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            this.Grvmonthnewpatient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.Grvmonthnewpatient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.Grvmonthnewpatient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Grvmonthnewpatient.BackgroundColor = System.Drawing.Color.White;
@@ -274,14 +274,14 @@
             this.Grvmonthnewpatient.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.Grvmonthnewpatient.ColumnHeadersHeight = 28;
             this.Grvmonthnewpatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grvmonthnewpatient.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grvmonthnewpatient.DefaultCellStyle = dataGridViewCellStyle4;
             this.Grvmonthnewpatient.GridColor = System.Drawing.Color.Gainsboro;
             this.Grvmonthnewpatient.Location = new System.Drawing.Point(-3, 3);
             this.Grvmonthnewpatient.Name = "Grvmonthnewpatient";
@@ -358,6 +358,23 @@
             this.panel1.Size = new System.Drawing.Size(1299, 84);
             this.panel1.TabIndex = 223;
             // 
+            // btnprint
+            // 
+            this.btnprint.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnprint.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnprint.ForeColor = System.Drawing.Color.White;
+            this.btnprint.Image = ((System.Drawing.Image)(resources.GetObject("btnprint.Image")));
+            this.btnprint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnprint.Location = new System.Drawing.Point(1123, 44);
+            this.btnprint.Name = "btnprint";
+            this.btnprint.Size = new System.Drawing.Size(85, 30);
+            this.btnprint.TabIndex = 11;
+            this.btnprint.Text = "PRINT";
+            this.btnprint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnprint.UseVisualStyleBackColor = false;
+            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
+            // 
             // buttonClose
             // 
             this.buttonClose.BackColor = System.Drawing.Color.Tomato;
@@ -409,11 +426,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(859, 21);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 17);
+            this.label5.Size = new System.Drawing.Size(108, 17);
             this.label5.TabIndex = 105;
             this.label5.Text = "TOTAL PATIENTS :";
             // 
@@ -456,7 +473,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(266, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 13);
+            this.label2.Size = new System.Drawing.Size(19, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "To";
             // 
@@ -487,24 +504,7 @@
             this.panel2.Size = new System.Drawing.Size(1299, 61);
             this.panel2.TabIndex = 224;
             // 
-            // btnprint
-            // 
-            this.btnprint.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnprint.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnprint.ForeColor = System.Drawing.Color.White;
-            this.btnprint.Image = ((System.Drawing.Image)(resources.GetObject("btnprint.Image")));
-            this.btnprint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnprint.Location = new System.Drawing.Point(1123, 44);
-            this.btnprint.Name = "btnprint";
-            this.btnprint.Size = new System.Drawing.Size(85, 30);
-            this.btnprint.TabIndex = 11;
-            this.btnprint.Text = "PRINT";
-            this.btnprint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnprint.UseVisualStyleBackColor = false;
-            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
-            // 
-            // Monthly_new_patients
+            // Monthly_New_Patients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -514,7 +514,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Monthly_new_patients";
+            this.Name = "Monthly_New_Patients";
             this.Text = "Monthly New Patients";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Monthly_new_patients_Load);

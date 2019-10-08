@@ -373,7 +373,7 @@
             this.lblDLNumber.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblDLNumber.Location = new System.Drawing.Point(80, 127);
             this.lblDLNumber.Name = "lblDLNumber";
-            this.lblDLNumber.Size = new System.Drawing.Size(35, 17);
+            this.lblDLNumber.Size = new System.Drawing.Size(34, 17);
             this.lblDLNumber.TabIndex = 97;
             this.lblDLNumber.Text = "Web";
             // 
@@ -538,7 +538,7 @@
             this.ColDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColDelete.Width = 27;
             // 
-            // frmSupplier
+            // Supplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -548,8 +548,9 @@
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.gbContactDetails);
             this.Controls.Add(this.btnSaveSupplier);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmSupplier";
+            this.Name = "Supplier";
             this.Text = "Supplier";
             this.Load += new System.EventHandler(this.frmSupplier_Load);
             this.gbContactDetails.ResumeLayout(false);

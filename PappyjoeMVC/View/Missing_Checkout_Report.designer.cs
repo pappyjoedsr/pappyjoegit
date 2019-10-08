@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Missing_Checkout_Report));
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -111,14 +111,14 @@
             this.dgvMissingCheckout.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMissingCheckout.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMissingCheckout.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMissingCheckout.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMissingCheckout.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMissingCheckout.ColumnHeadersHeight = 30;
             this.dgvMissingCheckout.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMissingCheckout.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -128,14 +128,14 @@
             this.start_datetime,
             this.duration,
             this.booked_by});
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle56.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMissingCheckout.DefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMissingCheckout.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvMissingCheckout.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvMissingCheckout.Location = new System.Drawing.Point(0, 1);
             this.dgvMissingCheckout.MultiSelect = false;
@@ -150,8 +150,8 @@
             // patient_id
             // 
             this.patient_id.DataPropertyName = "patient_id";
-            dataGridViewCellStyle50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patient_id.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patient_id.DefaultCellStyle = dataGridViewCellStyle2;
             this.patient_id.FillWeight = 66.49349F;
             this.patient_id.HeaderText = "ID";
             this.patient_id.Name = "patient_id";
@@ -159,8 +159,8 @@
             // pt_name
             // 
             this.pt_name.DataPropertyName = "pt_name";
-            dataGridViewCellStyle51.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.pt_name.DefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.pt_name.DefaultCellStyle = dataGridViewCellStyle3;
             this.pt_name.FillWeight = 159.0594F;
             this.pt_name.HeaderText = "PATIENT NAME";
             this.pt_name.Name = "pt_name";
@@ -168,8 +168,8 @@
             // book_datetime
             // 
             this.book_datetime.DataPropertyName = "book_datetime";
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.book_datetime.DefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.book_datetime.DefaultCellStyle = dataGridViewCellStyle4;
             this.book_datetime.FillWeight = 91.37056F;
             this.book_datetime.HeaderText = "BOOKED DATE";
             this.book_datetime.Name = "book_datetime";
@@ -177,8 +177,8 @@
             // start_datetime
             // 
             this.start_datetime.DataPropertyName = "start_datetime";
-            dataGridViewCellStyle53.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.start_datetime.DefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.start_datetime.DefaultCellStyle = dataGridViewCellStyle5;
             this.start_datetime.FillWeight = 117.6935F;
             this.start_datetime.HeaderText = "APPOINTMENT DATE";
             this.start_datetime.Name = "start_datetime";
@@ -186,8 +186,8 @@
             // duration
             // 
             this.duration.DataPropertyName = "duration";
-            dataGridViewCellStyle54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.duration.DefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.duration.DefaultCellStyle = dataGridViewCellStyle6;
             this.duration.FillWeight = 47.68956F;
             this.duration.HeaderText = "DURATION (MINS)";
             this.duration.Name = "duration";
@@ -195,8 +195,8 @@
             // booked_by
             // 
             this.booked_by.DataPropertyName = "booked_by";
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.booked_by.DefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.booked_by.DefaultCellStyle = dataGridViewCellStyle7;
             this.booked_by.FillWeight = 117.6935F;
             this.booked_by.HeaderText = "BOOKED BY";
             this.booked_by.Name = "booked_by";
@@ -412,6 +412,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Missing_Checkout_Report";
             this.Text = "Missing and Checkout Report";

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monthly_Treatment_Count));
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -122,8 +122,8 @@
             this.gridmonthlytreatment.Location = new System.Drawing.Point(0, 0);
             this.gridmonthlytreatment.Name = "gridmonthlytreatment";
             this.gridmonthlytreatment.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
-            this.gridmonthlytreatment.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
+            this.gridmonthlytreatment.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridmonthlytreatment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridmonthlytreatment.Size = new System.Drawing.Size(1065, 556);
             this.gridmonthlytreatment.TabIndex = 0;
@@ -160,18 +160,18 @@
             // chartmonthtreatment
             // 
             this.chartmonthtreatment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea6.Name = "ChartArea1";
-            this.chartmonthtreatment.ChartAreas.Add(chartArea6);
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            chartArea1.Name = "ChartArea1";
+            this.chartmonthtreatment.ChartAreas.Add(chartArea1);
             this.chartmonthtreatment.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend6.Name = "Legend1";
-            this.chartmonthtreatment.Legends.Add(legend6);
+            legend1.Name = "Legend1";
+            this.chartmonthtreatment.Legends.Add(legend1);
             this.chartmonthtreatment.Location = new System.Drawing.Point(0, 0);
             this.chartmonthtreatment.Name = "chartmonthtreatment";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Treatment Count";
-            this.chartmonthtreatment.Series.Add(series6);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Treatment Count";
+            this.chartmonthtreatment.Series.Add(series1);
             this.chartmonthtreatment.Size = new System.Drawing.Size(1065, 556);
             this.chartmonthtreatment.TabIndex = 7;
             this.chartmonthtreatment.Text = "chart1";
@@ -231,8 +231,8 @@
             this.Grvmonthtreatment.AllowUserToDeleteRows = false;
             this.Grvmonthtreatment.AllowUserToResizeColumns = false;
             this.Grvmonthtreatment.AllowUserToResizeRows = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Grvmonthtreatment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Grvmonthtreatment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.Grvmonthtreatment.BackgroundColor = System.Drawing.Color.White;
             this.Grvmonthtreatment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grvmonthtreatment.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -317,11 +317,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(920, 29);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 17);
+            this.label5.Size = new System.Drawing.Size(94, 17);
             this.label5.TabIndex = 107;
             this.label5.Text = "TOTAL COUNT:";
             // 
@@ -445,7 +445,7 @@
             this.btnprint.UseVisualStyleBackColor = false;
             this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
-            // Monthly_treatment_count
+            // Monthly_Treatment_Count
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -455,7 +455,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Monthly_treatment_count";
+            this.Name = "Monthly_Treatment_Count";
             this.Text = "Monthly Treatment Count";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Monthly_treatment_count_Load);

@@ -128,6 +128,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label5);
+            this.panel1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Location = new System.Drawing.Point(8, 68);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(465, 176);
@@ -294,6 +295,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label13.Location = new System.Drawing.Point(12, 68);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(103, 21);
@@ -373,6 +375,7 @@
             // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.checkBox4.Location = new System.Drawing.Point(267, 332);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(80, 21);
@@ -386,6 +389,7 @@
             this.checkBox3.Checked = true;
             this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.checkBox3.Location = new System.Drawing.Point(155, 332);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(75, 21);
@@ -397,6 +401,7 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.checkBox2.Location = new System.Drawing.Point(267, 257);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(80, 21);
@@ -410,6 +415,7 @@
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.checkBox1.Location = new System.Drawing.Point(156, 257);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(75, 21);
@@ -495,6 +501,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label11.Location = new System.Drawing.Point(12, 443);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(51, 21);
@@ -504,6 +511,7 @@
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label10.Location = new System.Drawing.Point(12, 393);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(108, 50);
@@ -514,6 +522,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label9.Location = new System.Drawing.Point(12, 363);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 21);
@@ -524,6 +533,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label8.Location = new System.Drawing.Point(12, 325);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(104, 21);
@@ -534,6 +544,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label7.Location = new System.Drawing.Point(12, 291);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 21);
@@ -544,6 +555,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label6.Location = new System.Drawing.Point(12, 247);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 21);
@@ -554,6 +566,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 21);
@@ -738,6 +751,8 @@
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.cmdCancel);
             this.Controls.Add(this.cmdOK);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AppointmentBooking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

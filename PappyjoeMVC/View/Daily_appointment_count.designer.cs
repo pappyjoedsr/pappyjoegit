@@ -117,6 +117,14 @@
             this.dataGridViewDailyappoinment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDailyappoinment.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewDailyappoinment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDailyappoinment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewDailyappoinment.ColumnHeadersHeight = 28;
             this.dataGridViewDailyappoinment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewDailyappoinment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -128,14 +136,6 @@
             this.email_id,
             this.book_datetime,
             this.booked_by});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewDailyappoinment.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewDailyappoinment.GridColor = System.Drawing.Color.Gainsboro;
             this.dataGridViewDailyappoinment.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewDailyappoinment.Name = "dataGridViewDailyappoinment";
@@ -484,7 +484,7 @@
             this.btnViewdatalist.UseVisualStyleBackColor = false;
             this.btnViewdatalist.Click += new System.EventHandler(this.btnViewdatalist_Click);
             // 
-            // Daily_appointment_count
+            // Daily_Appointment_Count
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -493,8 +493,10 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Daily_appointment_count";
+            this.Name = "Daily_Appointment_Count";
             this.Text = "Daily Appointment Count";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Daily_appointment_count_Load);

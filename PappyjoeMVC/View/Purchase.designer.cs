@@ -155,7 +155,7 @@
             this.panel2.Controls.Add(this.btn_Save);
             this.panel2.Controls.Add(this.txt_SupplierId);
             this.panel2.Controls.Add(this.btnPrint);
-            this.panel2.Location = new System.Drawing.Point(2, 2);
+            this.panel2.Location = new System.Drawing.Point(2, 1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1124, 176);
             this.panel2.TabIndex = 276;
@@ -410,7 +410,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.BtnCancel);
-            this.groupBox1.Location = new System.Drawing.Point(2, 182);
+            this.groupBox1.Location = new System.Drawing.Point(2, 181);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1122, 85);
             this.groupBox1.TabIndex = 277;
@@ -758,9 +758,9 @@
             this.panel4.Controls.Add(this.lblTotal);
             this.panel4.Controls.Add(this.txtTotalCost);
             this.panel4.Controls.Add(this.txtTotal_item);
-            this.panel4.Location = new System.Drawing.Point(2, 270);
+            this.panel4.Location = new System.Drawing.Point(2, 268);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1123, 380);
+            this.panel4.Size = new System.Drawing.Size(1123, 384);
             this.panel4.TabIndex = 278;
             // 
             // label17
@@ -1261,6 +1261,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Purchase";
             this.Text = "Purchase";

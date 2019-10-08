@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patient_Profile_Details));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -403,7 +404,7 @@
             this.toolStripldoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripldoc.Name = "toolStripldoc";
             this.toolStripldoc.ReadOnly = true;
-            this.toolStripldoc.Size = new System.Drawing.Size(250, 23);
+            this.toolStripldoc.Size = new System.Drawing.Size(250, 40);
             this.toolStripldoc.Text = "doctorrname";
             // 
             // panel1
@@ -1485,20 +1486,20 @@
             this.gridgroups.ColumnHeadersVisible = false;
             this.gridgroups.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column4});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridgroups.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridgroups.DefaultCellStyle = dataGridViewCellStyle6;
             this.gridgroups.Location = new System.Drawing.Point(6, 61);
             this.gridgroups.Name = "gridgroups";
             this.gridgroups.ReadOnly = true;
             this.gridgroups.RowHeadersVisible = false;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridgroups.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridgroups.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.gridgroups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridgroups.Size = new System.Drawing.Size(248, 200);
             this.gridgroups.TabIndex = 242;
@@ -1543,25 +1544,34 @@
             this.grmedical.BackgroundColor = System.Drawing.Color.White;
             this.grmedical.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grmedical.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grmedical.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.grmedical.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grmedical.ColumnHeadersVisible = false;
             this.grmedical.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grmedical.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grmedical.DefaultCellStyle = dataGridViewCellStyle9;
             this.grmedical.GridColor = System.Drawing.Color.White;
             this.grmedical.Location = new System.Drawing.Point(3, 54);
             this.grmedical.Name = "grmedical";
             this.grmedical.ReadOnly = true;
             this.grmedical.RowHeadersVisible = false;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grmedical.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.grmedical.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.grmedical.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grmedical.Size = new System.Drawing.Size(249, 201);
             this.grmedical.TabIndex = 241;
@@ -1588,13 +1598,13 @@
             // listpatientsearch
             // 
             this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
-            this.listpatientsearch.ItemHeight = 21;
+            this.listpatientsearch.ItemHeight = 20;
             this.listpatientsearch.Location = new System.Drawing.Point(1023, 34);
             this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(249, 86);
+            this.listpatientsearch.Size = new System.Drawing.Size(249, 82);
             this.listpatientsearch.TabIndex = 298;
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
@@ -1647,6 +1657,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelallpatient);
             this.Controls.Add(this.toolStrip1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Patient_Profile_Details";
             this.Text = "Patient Profile Details";

@@ -76,10 +76,6 @@
             this.txt_ItemCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_SalesItem = new System.Windows.Forms.DataGridView();
-            this.Txt_TotalAmount = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.txt_totalItems = new System.Windows.Forms.TextBox();
-            this.label47 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDiscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +84,10 @@
             this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Txt_TotalAmount = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.txt_totalItems = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -712,60 +712,6 @@
             this.dgv_SalesItem.TabIndex = 0;
             this.dgv_SalesItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SalesItem_CellClick);
             // 
-            // Txt_TotalAmount
-            // 
-            this.Txt_TotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_TotalAmount.BackColor = System.Drawing.Color.White;
-            this.Txt_TotalAmount.Enabled = false;
-            this.Txt_TotalAmount.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_TotalAmount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txt_TotalAmount.Location = new System.Drawing.Point(941, 571);
-            this.Txt_TotalAmount.MaxLength = 8;
-            this.Txt_TotalAmount.Name = "Txt_TotalAmount";
-            this.Txt_TotalAmount.Size = new System.Drawing.Size(111, 22);
-            this.Txt_TotalAmount.TabIndex = 317;
-            this.Txt_TotalAmount.Text = "0.00";
-            this.Txt_TotalAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label45
-            // 
-            this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label45.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label45.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label45.Location = new System.Drawing.Point(805, 573);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(132, 20);
-            this.label45.TabIndex = 316;
-            this.label45.Text = "Total Amount";
-            // 
-            // txt_totalItems
-            // 
-            this.txt_totalItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_totalItems.BackColor = System.Drawing.Color.White;
-            this.txt_totalItems.Enabled = false;
-            this.txt_totalItems.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_totalItems.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_totalItems.Location = new System.Drawing.Point(941, 549);
-            this.txt_totalItems.MaxLength = 8;
-            this.txt_totalItems.Name = "txt_totalItems";
-            this.txt_totalItems.Size = new System.Drawing.Size(111, 22);
-            this.txt_totalItems.TabIndex = 319;
-            this.txt_totalItems.Text = "0";
-            this.txt_totalItems.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label47
-            // 
-            this.label47.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label47.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label47.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label47.Location = new System.Drawing.Point(805, 548);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(132, 20);
-            this.label47.TabIndex = 318;
-            this.label47.Text = "Total Items";
-            // 
             // id
             // 
             this.id.HeaderText = "id";
@@ -828,6 +774,60 @@
             this.colDelete.ReadOnly = true;
             this.colDelete.Width = 26;
             // 
+            // Txt_TotalAmount
+            // 
+            this.Txt_TotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_TotalAmount.BackColor = System.Drawing.Color.White;
+            this.Txt_TotalAmount.Enabled = false;
+            this.Txt_TotalAmount.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_TotalAmount.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Txt_TotalAmount.Location = new System.Drawing.Point(941, 571);
+            this.Txt_TotalAmount.MaxLength = 8;
+            this.Txt_TotalAmount.Name = "Txt_TotalAmount";
+            this.Txt_TotalAmount.Size = new System.Drawing.Size(111, 22);
+            this.Txt_TotalAmount.TabIndex = 317;
+            this.Txt_TotalAmount.Text = "0.00";
+            this.Txt_TotalAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label45
+            // 
+            this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label45.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label45.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label45.Location = new System.Drawing.Point(805, 573);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(132, 20);
+            this.label45.TabIndex = 316;
+            this.label45.Text = "Total Amount";
+            // 
+            // txt_totalItems
+            // 
+            this.txt_totalItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_totalItems.BackColor = System.Drawing.Color.White;
+            this.txt_totalItems.Enabled = false;
+            this.txt_totalItems.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_totalItems.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_totalItems.Location = new System.Drawing.Point(941, 549);
+            this.txt_totalItems.MaxLength = 8;
+            this.txt_totalItems.Name = "txt_totalItems";
+            this.txt_totalItems.Size = new System.Drawing.Size(111, 22);
+            this.txt_totalItems.TabIndex = 319;
+            this.txt_totalItems.Text = "0";
+            this.txt_totalItems.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label47
+            // 
+            this.label47.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label47.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label47.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label47.Location = new System.Drawing.Point(805, 548);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(132, 20);
+            this.label47.TabIndex = 318;
+            this.label47.Text = "Total Items";
+            // 
             // SalesOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -842,6 +842,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SalesOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

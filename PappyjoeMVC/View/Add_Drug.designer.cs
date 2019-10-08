@@ -1455,6 +1455,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_Drug";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

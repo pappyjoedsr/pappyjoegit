@@ -481,7 +481,7 @@
             this.btnprint.UseVisualStyleBackColor = false;
             this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
-            // Daily_treatment_count
+            // Daily_Treatment_Count
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -490,8 +490,9 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Daily_treatment_count";
+            this.Name = "Daily_Treatment_Count";
             this.Text = "Daily Treatment Count";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Daily_treatment_count_Load);

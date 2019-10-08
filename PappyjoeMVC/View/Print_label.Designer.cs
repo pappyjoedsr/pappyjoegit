@@ -205,15 +205,16 @@
             this.colselected.HeaderText = "Selected";
             this.colselected.Name = "colselected";
             // 
-            // Print_label
+            // Print_Label
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 621);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Print_label";
+            this.Name = "Print_Label";
             this.Text = "Print Label";
             this.Load += new System.EventHandler(this.Print_label_Load);
             this.panel1.ResumeLayout(false);

@@ -1039,7 +1039,7 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // patient_profile_Edit
+            // Patient_Profile_Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1052,8 +1052,9 @@
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "patient_profile_Edit";
+            this.Name = "Patient_Profile_Edit";
             this.Text = "Patient Profile";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.patient_profile_Edit_Load);

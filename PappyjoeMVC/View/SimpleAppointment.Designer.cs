@@ -355,7 +355,7 @@
             this.panel1.Controls.Add(this.btnprint);
             this.panel1.Location = new System.Drawing.Point(3, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1140, 762);
+            this.panel1.Size = new System.Drawing.Size(1140, 779);
             this.panel1.TabIndex = 1;
             // 
             // dpStartTimeDate
@@ -369,6 +369,7 @@
             this.dpStartTimeDate.Name = "dpStartTimeDate";
             this.dpStartTimeDate.Size = new System.Drawing.Size(116, 22);
             this.dpStartTimeDate.TabIndex = 407;
+            this.dpStartTimeDate.Visible = false;
             // 
             // btn_ClearAll
             // 
@@ -411,7 +412,7 @@
             this.Panl_Prescrption.Controls.Add(this.label39);
             this.Panl_Prescrption.Controls.Add(this.label40);
             this.Panl_Prescrption.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Panl_Prescrption.Location = new System.Drawing.Point(2, 573);
+            this.Panl_Prescrption.Location = new System.Drawing.Point(1, 572);
             this.Panl_Prescrption.Name = "Panl_Prescrption";
             this.Panl_Prescrption.Size = new System.Drawing.Size(796, 124);
             this.Panl_Prescrption.TabIndex = 363;
@@ -1118,6 +1119,7 @@
             // coldel
             // 
             this.coldel.HeaderText = "del";
+            this.coldel.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
             this.coldel.Name = "coldel";
             this.coldel.Width = 20;
             // 
@@ -1179,6 +1181,7 @@
             // del
             // 
             this.del.HeaderText = "del";
+            this.del.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
             this.del.Name = "del";
             this.del.Width = 20;
             // 
@@ -1281,6 +1284,7 @@
             // colDele_Nots
             // 
             this.colDele_Nots.HeaderText = "del";
+            this.colDele_Nots.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
             this.colDele_Nots.Name = "colDele_Nots";
             this.colDele_Nots.Width = 20;
             // 
@@ -1620,7 +1624,7 @@
             // 
             this.panel23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel23.BackColor = System.Drawing.Color.DimGray;
-            this.panel23.Location = new System.Drawing.Point(802, 620);
+            this.panel23.Location = new System.Drawing.Point(802, 637);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(1, 134);
             this.panel23.TabIndex = 402;
@@ -1640,7 +1644,7 @@
             // 
             this.panel22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel22.BackColor = System.Drawing.Color.DimGray;
-            this.panel22.Location = new System.Drawing.Point(802, 471);
+            this.panel22.Location = new System.Drawing.Point(802, 488);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(1, 150);
             this.panel22.TabIndex = 401;
@@ -1652,7 +1656,7 @@
             this.panel21.BackColor = System.Drawing.Color.DimGray;
             this.panel21.Location = new System.Drawing.Point(802, 142);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(1, 333);
+            this.panel21.Size = new System.Drawing.Size(1, 350);
             this.panel21.TabIndex = 399;
             // 
             // btn_Close
@@ -1872,6 +1876,7 @@
             // colDelete
             // 
             this.colDelete.HeaderText = "";
+            this.colDelete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
             this.colDelete.Name = "colDelete";
             this.colDelete.ReadOnly = true;
             this.colDelete.Width = 20;
@@ -1917,7 +1922,7 @@
             this.panl_Treatment.Controls.Add(this.label46);
             this.panl_Treatment.Controls.Add(this.lab_BillNo);
             this.panl_Treatment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panl_Treatment.Location = new System.Drawing.Point(-6, 16);
+            this.panl_Treatment.Location = new System.Drawing.Point(-6, 15);
             this.panl_Treatment.Name = "panl_Treatment";
             this.panl_Treatment.Size = new System.Drawing.Size(793, 116);
             this.panl_Treatment.TabIndex = 401;
@@ -2345,6 +2350,7 @@
             // col_del
             // 
             this.col_del.HeaderText = "";
+            this.col_del.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
             this.col_del.Name = "col_del";
             this.col_del.ReadOnly = true;
             this.col_del.Width = 20;
@@ -3067,6 +3073,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.DGV_treatmentTemp);
             this.Controls.Add(this.dataGridView_drugnewTemp);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SimpleAppointment";
             this.Text = "Simple Appointment";
@@ -3168,21 +3175,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgv_Complaints;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colcmplaint;
-        private System.Windows.Forms.DataGridViewImageColumn coldel;
         private System.Windows.Forms.DataGridView dgv_Diagnosis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn column_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewImageColumn del;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dgv_notes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noteId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn complaint;
-        private System.Windows.Forms.DataGridViewImageColumn colDele_Nots;
         private System.Windows.Forms.CheckBox checkBoxReview;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.DataGridView dgv_filltreatment;
@@ -3215,19 +3213,6 @@
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dgv_prescrptn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Prescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Strength;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Duration_;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _Period;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mornin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _Noon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _Night;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _Food;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _Instruction;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _Drugtype;
-        private System.Windows.Forms.DataGridViewImageColumn colDelete;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Panel panl_Treatment;
         private System.Windows.Forms.TextBox Lab_Cost;
@@ -3255,17 +3240,6 @@
         private System.Windows.Forms.Label Lab_GrandTotal;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.DataGridView dgv_treatment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn treatmentid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn treatement;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _Unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _Cost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _Dis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dis_type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _Dis_inrs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _Tax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total_tax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Coltotalcost;
-        private System.Windows.Forms.DataGridViewImageColumn col_del;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox listpatientsearch;
         private System.Windows.Forms.TextBox txtPatientID;
@@ -3333,5 +3307,38 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn drugtype;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DateTimePicker dpStartTimeDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colcmplaint;
+        private System.Windows.Forms.DataGridViewImageColumn coldel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewImageColumn del;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noteId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn complaint;
+        private System.Windows.Forms.DataGridViewImageColumn colDele_Nots;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Strength;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Duration_;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _Period;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mornin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _Noon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _Night;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _Food;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _Instruction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _Drugtype;
+        private System.Windows.Forms.DataGridViewImageColumn colDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn treatmentid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn treatement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _Unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _Cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _Dis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dis_type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _Dis_inrs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _Tax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total_tax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Coltotalcost;
+        private System.Windows.Forms.DataGridViewImageColumn col_del;
     }
 }

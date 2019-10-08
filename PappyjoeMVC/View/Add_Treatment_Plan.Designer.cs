@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Treatment_Plan));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -408,7 +408,7 @@
             // 
             this.logoutToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1429953040_Log_Out;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -620,33 +620,33 @@
             this.proceduretreatgrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.proceduretreatgrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.proceduretreatgrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.proceduretreatgrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.proceduretreatgrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.proceduretreatgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.proceduretreatgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.proceduretreatgrid.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.proceduretreatgrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.proceduretreatgrid.Location = new System.Drawing.Point(1, 108);
             this.proceduretreatgrid.Name = "proceduretreatgrid";
             this.proceduretreatgrid.ReadOnly = true;
             this.proceduretreatgrid.RowHeadersVisible = false;
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.proceduretreatgrid.RowsDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.proceduretreatgrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.proceduretreatgrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.proceduretreatgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.proceduretreatgrid.Size = new System.Drawing.Size(399, 479);
@@ -694,7 +694,7 @@
             this.searchtextbox.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.searchtextbox.Location = new System.Drawing.Point(4, 83);
             this.searchtextbox.Name = "searchtextbox";
-            this.searchtextbox.Size = new System.Drawing.Size(387, 20);
+            this.searchtextbox.Size = new System.Drawing.Size(387, 22);
             this.searchtextbox.TabIndex = 9;
             this.searchtextbox.Text = "Search";
             this.searchtextbox.Click += new System.EventHandler(this.searchtextbox_Click);
@@ -762,7 +762,7 @@
             this.txt_Cost.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.txt_Cost.Location = new System.Drawing.Point(177, 29);
             this.txt_Cost.Name = "txt_Cost";
-            this.txt_Cost.Size = new System.Drawing.Size(151, 20);
+            this.txt_Cost.Size = new System.Drawing.Size(151, 22);
             this.txt_Cost.TabIndex = 12;
             this.txt_Cost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cost_KeyPress);
             // 
@@ -772,7 +772,7 @@
             this.txt_procedure.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.txt_procedure.Location = new System.Drawing.Point(10, 29);
             this.txt_procedure.Name = "txt_procedure";
-            this.txt_procedure.Size = new System.Drawing.Size(151, 20);
+            this.txt_procedure.Size = new System.Drawing.Size(151, 22);
             this.txt_procedure.TabIndex = 11;
             // 
             // Lab_ShowProcedure
@@ -954,7 +954,7 @@
             this.DTP_Date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.DTP_Date.Location = new System.Drawing.Point(301, 14);
             this.DTP_Date.Name = "DTP_Date";
-            this.DTP_Date.Size = new System.Drawing.Size(200, 20);
+            this.DTP_Date.Size = new System.Drawing.Size(200, 22);
             this.DTP_Date.TabIndex = 45;
             // 
             // Cmb_Doctor
@@ -1078,7 +1078,7 @@
             this.label19.ForeColor = System.Drawing.Color.Blue;
             this.label19.Location = new System.Drawing.Point(283, 137);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(88, 13);
+            this.label19.Size = new System.Drawing.Size(94, 13);
             this.label19.TabIndex = 44;
             this.label19.Text = "Show ChildTeeth";
             this.label19.Click += new System.EventHandler(this.label19_Click);
@@ -1161,7 +1161,7 @@
             this.chkfulch.AutoSize = true;
             this.chkfulch.Location = new System.Drawing.Point(168, 3);
             this.chkfulch.Name = "chkfulch";
-            this.chkfulch.Size = new System.Drawing.Size(75, 17);
+            this.chkfulch.Size = new System.Drawing.Size(83, 17);
             this.chkfulch.TabIndex = 45;
             this.chkfulch.Text = "Full Mouth";
             this.chkfulch.UseVisualStyleBackColor = true;
@@ -1700,7 +1700,7 @@
             this.chk_fullmouth.AutoSize = true;
             this.chk_fullmouth.Location = new System.Drawing.Point(99, 3);
             this.chk_fullmouth.Name = "chk_fullmouth";
-            this.chk_fullmouth.Size = new System.Drawing.Size(75, 17);
+            this.chk_fullmouth.Size = new System.Drawing.Size(83, 17);
             this.chk_fullmouth.TabIndex = 4;
             this.chk_fullmouth.Text = "Full Mouth";
             this.chk_fullmouth.UseVisualStyleBackColor = true;
@@ -1711,7 +1711,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(3, 3);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(85, 17);
+            this.checkBox1.Size = new System.Drawing.Size(94, 17);
             this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "Multiply Cost";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -2030,14 +2030,14 @@
             this.DGV_Procedure.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV_Procedure.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DGV_Procedure.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Procedure.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Procedure.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DGV_Procedure.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Procedure.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column8,
@@ -2151,9 +2151,9 @@
             // 
             // Column4
             // 
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Red;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column4.HeaderText = "Del";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -2230,6 +2230,8 @@
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.toolStrip1);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_Treatment_Plan";
             this.Text = " Add Treatment Plan";

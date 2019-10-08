@@ -149,7 +149,7 @@
             // LAb_Drugname
             // 
             this.LAb_Drugname.AutoSize = true;
-            this.LAb_Drugname.BackColor = System.Drawing.SystemColors.Control;
+            this.LAb_Drugname.BackColor = System.Drawing.Color.White;
             this.LAb_Drugname.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LAb_Drugname.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.LAb_Drugname.Location = new System.Drawing.Point(22, 18);
@@ -635,6 +635,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(994, 377);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SimpleAppointment_Template";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

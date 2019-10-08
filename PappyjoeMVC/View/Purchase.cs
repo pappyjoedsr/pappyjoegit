@@ -880,11 +880,11 @@ namespace PappyjoeMVC.View
                             if (dgvItemData.Rows.Count == 1)
                             {
                                 dgvGridData.Rows.Clear();
-                                dgvGridData.Rows.Add(txt_Itemcode.Text, dt_forBatch.Rows[0]["Branch_No"].ToString(), cmbUnit.Text, txt_qty.Text, dt_forBatch.Rows[0]["Prd_Date"].ToString(), dt_forBatch.Rows[0]["Exp_Date"].ToString(), dt_forBatch.Rows[0]["prd"].ToString());
+                                dgvGridData.Rows.Add(Item_id, dt_forBatch.Rows[0]["Branch_No"].ToString(), cmbUnit.Text, txt_qty.Text, dt_forBatch.Rows[0]["Prd_Date"].ToString(), dt_forBatch.Rows[0]["Exp_Date"].ToString(), dt_forBatch.Rows[0]["prd"].ToString());
                             }
                             else
                             {
-                                dgvGridData.Rows.Add(txt_Itemcode.Text, dt_forBatch.Rows[0]["Branch_No"].ToString(), cmbUnit.Text, txt_qty.Text, dt_forBatch.Rows[0]["Prd_Date"].ToString(), dt_forBatch.Rows[0]["Exp_Date"].ToString(), dt_forBatch.Rows[0]["prd"].ToString());
+                                dgvGridData.Rows.Add(Item_id, dt_forBatch.Rows[0]["Branch_No"].ToString(), cmbUnit.Text, txt_qty.Text, dt_forBatch.Rows[0]["Prd_Date"].ToString(), dt_forBatch.Rows[0]["Exp_Date"].ToString(), dt_forBatch.Rows[0]["prd"].ToString());
                                 update_Grid();
                             }
                         }

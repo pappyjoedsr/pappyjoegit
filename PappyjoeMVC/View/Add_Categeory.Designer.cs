@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Categeory));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -72,7 +73,7 @@
             this.panel2.Controls.Add(this.btnOK);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txt_Cat_Name);
-            this.panel2.Location = new System.Drawing.Point(0, 4);
+            this.panel2.Location = new System.Drawing.Point(0, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(606, 190);
             this.panel2.TabIndex = 12;
@@ -218,6 +219,14 @@
             this.dgvCategory.BackgroundColor = System.Drawing.Color.White;
             this.dgvCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCategory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCategory.ColumnHeadersHeight = 28;
             this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -227,28 +236,28 @@
             this.Description,
             this.EDIT,
             this.DEL});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCategory.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCategory.Location = new System.Drawing.Point(0, 0);
-            this.dgvCategory.Name = "dgvCategory";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCategory.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCategory.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCategory.Location = new System.Drawing.Point(0, 0);
+            this.dgvCategory.Name = "dgvCategory";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCategory.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCategory.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dgvCategory.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvCategory.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvCategory.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvCategory.Size = new System.Drawing.Size(606, 334);
             this.dgvCategory.TabIndex = 4;
@@ -263,8 +272,8 @@
             // Category_number
             // 
             this.Category_number.DataPropertyName = "Cat_Number";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Category_number.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Category_number.DefaultCellStyle = dataGridViewCellStyle2;
             this.Category_number.HeaderText = "Category Number";
             this.Category_number.Name = "Category_number";
             this.Category_number.Width = 150;
@@ -272,8 +281,8 @@
             // Category_Name
             // 
             this.Category_Name.DataPropertyName = "Name";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Category_Name.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Category_Name.DefaultCellStyle = dataGridViewCellStyle3;
             this.Category_Name.HeaderText = "Category Name";
             this.Category_Name.Name = "Category_Name";
             this.Category_Name.Width = 200;
@@ -281,8 +290,8 @@
             // Description
             // 
             this.Description.DataPropertyName = "Description";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Description.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Description.DefaultCellStyle = dataGridViewCellStyle4;
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
             this.Description.Width = 170;
@@ -299,7 +308,7 @@
             this.DEL.Name = "DEL";
             this.DEL.Width = 25;
             // 
-            // frmAddCategeory
+            // Add_Categeory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -307,8 +316,9 @@
             this.ClientSize = new System.Drawing.Size(609, 533);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmAddCategeory";
+            this.Name = "Add_Categeory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Categeory";
             this.Load += new System.EventHandler(this.frmAddCategeory_Load);

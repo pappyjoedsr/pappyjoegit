@@ -279,7 +279,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(383, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 17);
+            this.label2.Size = new System.Drawing.Size(34, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Web";
             // 
@@ -485,7 +485,7 @@
             this.m_id.Name = "m_id";
             this.m_id.Visible = false;
             // 
-            // FrmManufacture
+            // Manufacture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -495,8 +495,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.btn_Save);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmManufacture";
+            this.Name = "Manufacture";
             this.Text = "Manufacture";
             this.Load += new System.EventHandler(this.FrmManufacture_Load);
             this.groupBox1.ResumeLayout(false);

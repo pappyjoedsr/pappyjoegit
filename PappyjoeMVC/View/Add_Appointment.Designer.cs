@@ -79,7 +79,6 @@
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextDoctor = new System.Windows.Forms.ToolStripTextBox();
             this.linkLabel_Name = new System.Windows.Forms.LinkLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelallpatient = new System.Windows.Forms.Label();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
@@ -621,7 +620,7 @@
             // 
             this.settingsToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.ToolTipText = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
@@ -630,7 +629,7 @@
             // 
             this.logoutToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1429953040_Log_Out;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -682,7 +681,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 40);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // linkLabel_Name
@@ -696,18 +695,10 @@
             this.linkLabel_Name.TabIndex = 74;
             this.linkLabel_Name.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Name_LinkClicked);
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel3.Location = new System.Drawing.Point(192, 40);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1, 48);
-            this.panel3.TabIndex = 302;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.labelallpatient);
-            this.panel1.Location = new System.Drawing.Point(2, 42);
+            this.panel1.Location = new System.Drawing.Point(762, 43);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(143, 45);
             this.panel1.TabIndex = 301;
@@ -718,25 +709,28 @@
             this.labelallpatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelallpatient.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelallpatient.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.labelallpatient.Image = global::PappyjoeMVC.Properties.Resources.SP;
             this.labelallpatient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelallpatient.Location = new System.Drawing.Point(4, 4);
             this.labelallpatient.Name = "labelallpatient";
-            this.labelallpatient.Size = new System.Drawing.Size(106, 38);
+            this.labelallpatient.Size = new System.Drawing.Size(131, 38);
             this.labelallpatient.TabIndex = 248;
             this.labelallpatient.Text = "All Patients";
             this.labelallpatient.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelallpatient.Visible = false;
             this.labelallpatient.Click += new System.EventHandler(this.labelallpatient_Click);
             // 
             // listpatientsearch
             // 
             this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
-            this.listpatientsearch.ItemHeight = 21;
+            this.listpatientsearch.ItemHeight = 20;
             this.listpatientsearch.Location = new System.Drawing.Point(1015, 40);
             this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(250, 42);
+            this.listpatientsearch.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
             this.listpatientsearch.TabIndex = 295;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
             // 
@@ -800,7 +794,7 @@
             this.panel2.Controls.Add(this.linkLabel_Name);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(196, 43);
+            this.panel2.Location = new System.Drawing.Point(2, 42);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(414, 42);
             this.panel2.TabIndex = 296;
@@ -836,16 +830,17 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel2);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_Appointment";
             this.Text = "Add_Appointment";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Add_Appointment_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -915,7 +910,6 @@
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextDoctor;
         private System.Windows.Forms.LinkLabel linkLabel_Name;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelallpatient;
         private System.Windows.Forms.ListBox listpatientsearch;

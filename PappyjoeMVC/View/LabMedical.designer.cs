@@ -575,7 +575,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(30, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Test Type";
             // 
@@ -786,7 +786,7 @@
             this.lblMainTestName.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblMainTestName.Location = new System.Drawing.Point(30, 58);
             this.lblMainTestName.Name = "lblMainTestName";
-            this.lblMainTestName.Size = new System.Drawing.Size(55, 13);
+            this.lblMainTestName.Size = new System.Drawing.Size(56, 13);
             this.lblMainTestName.TabIndex = 1;
             this.lblMainTestName.Text = "Main Test";
             // 
@@ -1027,7 +1027,7 @@
             this.lblTesttype.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblTesttype.Location = new System.Drawing.Point(16, 95);
             this.lblTesttype.Name = "lblTesttype";
-            this.lblTesttype.Size = new System.Drawing.Size(51, 13);
+            this.lblTesttype.Size = new System.Drawing.Size(53, 13);
             this.lblTesttype.TabIndex = 3;
             this.lblTesttype.Text = "Test Type";
             // 
@@ -1371,7 +1371,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(14, 17);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 13);
+            this.label5.Size = new System.Drawing.Size(92, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "TEMPLATE NAME";
             // 
@@ -1459,7 +1459,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(372, 54);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 23;
             this.label4.Text = "TEST";
             // 
@@ -1469,7 +1469,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(201, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 22;
             this.label2.Text = "TEST TYPE";
             // 
@@ -1621,7 +1621,7 @@
             this.lblmaintest.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblmaintest.Location = new System.Drawing.Point(14, 54);
             this.lblmaintest.Name = "lblmaintest";
-            this.lblmaintest.Size = new System.Drawing.Size(60, 13);
+            this.lblmaintest.Size = new System.Drawing.Size(62, 13);
             this.lblmaintest.TabIndex = 19;
             this.lblmaintest.Text = "MAIN TEST";
             // 
@@ -1872,6 +1872,7 @@
             this.ClientSize = new System.Drawing.Size(1276, 698);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.tabLabMasters);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LabMedical";
             this.Text = "Lab Medical";

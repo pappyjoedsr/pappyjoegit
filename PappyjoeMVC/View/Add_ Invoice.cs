@@ -2474,5 +2474,22 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.ShowDialog();
         }
+
+        private void lab_ShowChildteeth_Click(object sender, EventArgs e)
+        {
+
+            if (lab_ShowChildteeth.Text == "Show ChildTeeth")
+            {
+                panel4.Show();
+                lab_ShowChildteeth.Text = "Hide ChildTeeth";
+                // childteethview();
+            }
+            else
+            {
+                panel4.Hide();
+                lab_ShowChildteeth.Text = "Show ChildTeeth";
+                //  childteethHide();
+            }
+        }
     }
 }

@@ -128,6 +128,8 @@ namespace PappyjoeMVC.View
         {
             try
             {
+                dateFrom = dptMonthly_From.Value.ToString("yyyy-MM-dd");
+                dateTo = dptMonthly_To.Value.ToString("yyyy-MM-dd");
                 DataTable dt = this.ctrlr.salesinv(dateFrom, dateTo);
                 salesinv(dt);
                 DGV_SALES.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;

@@ -28,14 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Doctors_Practice_Details));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox_services = new System.Windows.Forms.TextBox();
+            this.dataGridView_services = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column38 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.img1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.button_services = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.dataGridView_council = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,15 +55,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button_council = new System.Windows.Forms.Button();
             this.textBox_council = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox_services = new System.Windows.Forms.TextBox();
-            this.dataGridView_services = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column38 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.img1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.button_services = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -80,26 +80,26 @@
             this.textBox_membership = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView_membership = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button_college = new System.Windows.Forms.Button();
-            this.dataGridView_college = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox_college = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox_college = new System.Windows.Forms.TextBox();
+            this.dataGridView_college = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.button_college = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_services)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_council)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_services)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_degree)).BeginInit();
             this.panel6.SuspendLayout();
@@ -120,6 +120,109 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(383, 333);
             this.panel1.TabIndex = 274;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label2.Location = new System.Drawing.Point(14, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.TabIndex = 276;
+            this.label2.Text = "Services";
+            // 
+            // textBox_services
+            // 
+            this.textBox_services.Location = new System.Drawing.Point(84, 3);
+            this.textBox_services.Name = "textBox_services";
+            this.textBox_services.Size = new System.Drawing.Size(206, 20);
+            this.textBox_services.TabIndex = 275;
+            // 
+            // dataGridView_services
+            // 
+            this.dataGridView_services.AllowUserToAddRows = false;
+            this.dataGridView_services.AllowUserToDeleteRows = false;
+            this.dataGridView_services.AllowUserToResizeRows = false;
+            this.dataGridView_services.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView_services.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView_services.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView_services.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_services.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView_services.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_services.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.Column30,
+            this.Column35,
+            this.Column38,
+            this.img1});
+            this.dataGridView_services.Location = new System.Drawing.Point(3, 36);
+            this.dataGridView_services.Name = "dataGridView_services";
+            this.dataGridView_services.ReadOnly = true;
+            this.dataGridView_services.RowHeadersVisible = false;
+            this.dataGridView_services.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView_services.Size = new System.Drawing.Size(374, 291);
+            this.dataGridView_services.TabIndex = 271;
+            this.dataGridView_services.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_services_MouseClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            this.id.Width = 50;
+            // 
+            // Column30
+            // 
+            this.Column30.HeaderText = "SL.NO";
+            this.Column30.Name = "Column30";
+            this.Column30.ReadOnly = true;
+            this.Column30.Width = 50;
+            // 
+            // Column35
+            // 
+            this.Column35.HeaderText = "SERVICES";
+            this.Column35.Name = "Column35";
+            this.Column35.ReadOnly = true;
+            this.Column35.Width = 230;
+            // 
+            // Column38
+            // 
+            this.Column38.HeaderText = "EDIT";
+            this.Column38.Name = "Column38";
+            this.Column38.ReadOnly = true;
+            this.Column38.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column38.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column38.Width = 35;
+            // 
+            // img1
+            // 
+            this.img1.HeaderText = "DEL";
+            this.img1.Name = "img1";
+            this.img1.ReadOnly = true;
+            this.img1.Width = 35;
+            // 
+            // button_services
+            // 
+            this.button_services.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_services.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_services.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_services.ForeColor = System.Drawing.Color.White;
+            this.button_services.Location = new System.Drawing.Point(302, 3);
+            this.button_services.Name = "button_services";
+            this.button_services.Size = new System.Drawing.Size(75, 27);
+            this.button_services.TabIndex = 80;
+            this.button_services.Text = "Save";
+            this.button_services.UseVisualStyleBackColor = false;
+            this.button_services.Click += new System.EventHandler(this.button_services_Click);
             // 
             // panel7
             // 
@@ -235,109 +338,6 @@
             this.textBox_council.Name = "textBox_council";
             this.textBox_council.Size = new System.Drawing.Size(166, 20);
             this.textBox_council.TabIndex = 275;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(14, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 13);
-            this.label2.TabIndex = 276;
-            this.label2.Text = "Services";
-            // 
-            // textBox_services
-            // 
-            this.textBox_services.Location = new System.Drawing.Point(84, 3);
-            this.textBox_services.Name = "textBox_services";
-            this.textBox_services.Size = new System.Drawing.Size(206, 20);
-            this.textBox_services.TabIndex = 275;
-            // 
-            // dataGridView_services
-            // 
-            this.dataGridView_services.AllowUserToAddRows = false;
-            this.dataGridView_services.AllowUserToDeleteRows = false;
-            this.dataGridView_services.AllowUserToResizeRows = false;
-            this.dataGridView_services.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView_services.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView_services.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView_services.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_services.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView_services.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_services.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.Column30,
-            this.Column35,
-            this.Column38,
-            this.img1});
-            this.dataGridView_services.Location = new System.Drawing.Point(3, 36);
-            this.dataGridView_services.Name = "dataGridView_services";
-            this.dataGridView_services.ReadOnly = true;
-            this.dataGridView_services.RowHeadersVisible = false;
-            this.dataGridView_services.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView_services.Size = new System.Drawing.Size(374, 291);
-            this.dataGridView_services.TabIndex = 271;
-            this.dataGridView_services.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_services_MouseClick);
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 50;
-            // 
-            // Column30
-            // 
-            this.Column30.HeaderText = "SL.NO";
-            this.Column30.Name = "Column30";
-            this.Column30.ReadOnly = true;
-            this.Column30.Width = 50;
-            // 
-            // Column35
-            // 
-            this.Column35.HeaderText = "SERVICES";
-            this.Column35.Name = "Column35";
-            this.Column35.ReadOnly = true;
-            this.Column35.Width = 230;
-            // 
-            // Column38
-            // 
-            this.Column38.HeaderText = "EDIT";
-            this.Column38.Name = "Column38";
-            this.Column38.ReadOnly = true;
-            this.Column38.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column38.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column38.Width = 35;
-            // 
-            // img1
-            // 
-            this.img1.HeaderText = "DEL";
-            this.img1.Name = "img1";
-            this.img1.ReadOnly = true;
-            this.img1.Width = 35;
-            // 
-            // button_services
-            // 
-            this.button_services.BackColor = System.Drawing.Color.LimeGreen;
-            this.button_services.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_services.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_services.ForeColor = System.Drawing.Color.White;
-            this.button_services.Location = new System.Drawing.Point(302, 3);
-            this.button_services.Name = "button_services";
-            this.button_services.Size = new System.Drawing.Size(75, 27);
-            this.button_services.TabIndex = 80;
-            this.button_services.Text = "Save";
-            this.button_services.UseVisualStyleBackColor = false;
-            this.button_services.Click += new System.EventHandler(this.button_services_Click);
             // 
             // cancel
             // 
@@ -650,12 +650,27 @@
             this.dataGridView_membership.TabIndex = 271;
             this.dataGridView_membership.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_membership_MouseClick);
             // 
-            // dataGridViewImageColumn6
+            // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewImageColumn6.HeaderText = "DEL";
-            this.dataGridViewImageColumn6.Name = "dataGridViewImageColumn6";
-            this.dataGridViewImageColumn6.ReadOnly = true;
-            this.dataGridViewImageColumn6.Width = 35;
+            this.dataGridViewTextBoxColumn7.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Visible = false;
+            this.dataGridViewTextBoxColumn7.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "SL.NO";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "MEMBERSHIP";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 230;
             // 
             // dataGridViewImageColumn5
             // 
@@ -666,27 +681,12 @@
             this.dataGridViewImageColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn5.Width = 35;
             // 
-            // dataGridViewTextBoxColumn9
+            // dataGridViewImageColumn6
             // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "MEMBERSHIP";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 230;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "SL.NO";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            this.dataGridViewTextBoxColumn7.Width = 50;
+            this.dataGridViewImageColumn6.HeaderText = "DEL";
+            this.dataGridViewImageColumn6.Name = "dataGridViewImageColumn6";
+            this.dataGridViewImageColumn6.ReadOnly = true;
+            this.dataGridViewImageColumn6.Width = 35;
             // 
             // panel3
             // 
@@ -700,19 +700,23 @@
             this.panel3.TabIndex = 278;
             this.panel3.Visible = false;
             // 
-            // button_college
+            // label3
             // 
-            this.button_college.BackColor = System.Drawing.Color.LimeGreen;
-            this.button_college.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_college.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_college.ForeColor = System.Drawing.Color.White;
-            this.button_college.Location = new System.Drawing.Point(302, 4);
-            this.button_college.Name = "button_college";
-            this.button_college.Size = new System.Drawing.Size(75, 27);
-            this.button_college.TabIndex = 80;
-            this.button_college.Text = "Save";
-            this.button_college.UseVisualStyleBackColor = false;
-            this.button_college.Click += new System.EventHandler(this.button_college_Click);
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label3.Location = new System.Drawing.Point(20, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 276;
+            this.label3.Text = "College";
+            // 
+            // textBox_college
+            // 
+            this.textBox_college.Location = new System.Drawing.Point(68, 7);
+            this.textBox_college.Name = "textBox_college";
+            this.textBox_college.Size = new System.Drawing.Size(222, 20);
+            this.textBox_college.TabIndex = 275;
             // 
             // dataGridView_college
             // 
@@ -747,12 +751,27 @@
             this.dataGridView_college.TabIndex = 271;
             this.dataGridView_college.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_college_MouseClick);
             // 
-            // dataGridViewImageColumn4
+            // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewImageColumn4.HeaderText = "DEL";
-            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
-            this.dataGridViewImageColumn4.ReadOnly = true;
-            this.dataGridViewImageColumn4.Width = 35;
+            this.dataGridViewTextBoxColumn4.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            this.dataGridViewTextBoxColumn4.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "SL.";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "COLLEGE";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 230;
             // 
             // dataGridViewImageColumn3
             // 
@@ -763,45 +782,26 @@
             this.dataGridViewImageColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn3.Width = 35;
             // 
-            // dataGridViewTextBoxColumn6
+            // dataGridViewImageColumn4
             // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "COLLEGE";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 230;
+            this.dataGridViewImageColumn4.HeaderText = "DEL";
+            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
+            this.dataGridViewImageColumn4.ReadOnly = true;
+            this.dataGridViewImageColumn4.Width = 35;
             // 
-            // dataGridViewTextBoxColumn5
+            // button_college
             // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "SL.";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            this.dataGridViewTextBoxColumn4.Width = 50;
-            // 
-            // textBox_college
-            // 
-            this.textBox_college.Location = new System.Drawing.Point(68, 7);
-            this.textBox_college.Name = "textBox_college";
-            this.textBox_college.Size = new System.Drawing.Size(222, 20);
-            this.textBox_college.TabIndex = 275;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(20, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
-            this.label3.TabIndex = 276;
-            this.label3.Text = "College";
+            this.button_college.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_college.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_college.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_college.ForeColor = System.Drawing.Color.White;
+            this.button_college.Location = new System.Drawing.Point(302, 4);
+            this.button_college.Name = "button_college";
+            this.button_college.Size = new System.Drawing.Size(75, 27);
+            this.button_college.TabIndex = 80;
+            this.button_college.Text = "Save";
+            this.button_college.UseVisualStyleBackColor = false;
+            this.button_college.Click += new System.EventHandler(this.button_college_Click);
             // 
             // panel4
             // 
@@ -815,7 +815,7 @@
             this.panel4.TabIndex = 278;
             this.panel4.Visible = false;
             // 
-            // doctorsPracticedetails
+            // Doctors_Practice_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -828,17 +828,18 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "doctorsPracticedetails";
+            this.Name = "Doctors_Practice_Details";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.doctorsPracticedetails_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_services)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_council)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_services)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_degree)).EndInit();

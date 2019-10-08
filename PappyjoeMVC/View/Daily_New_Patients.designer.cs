@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Daily_New_Patients));
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -63,10 +64,10 @@
             this.btnViewGrid = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.btnviewchart = new System.Windows.Forms.Button();
+            this.btnprint = new System.Windows.Forms.Button();
             this.BtnExport = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnprint = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDailyNewPatient)).BeginInit();
@@ -235,6 +236,14 @@
             this.dgvDailyNewPatient.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDailyNewPatient.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvDailyNewPatient.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDailyNewPatient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDailyNewPatient.ColumnHeadersHeight = 28;
             this.dgvDailyNewPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDailyNewPatient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -246,15 +255,15 @@
             this.email,
             this.Doctor});
             this.dgvDailyNewPatient.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvDailyNewPatient.Location = new System.Drawing.Point(2, 4);
+            this.dgvDailyNewPatient.Location = new System.Drawing.Point(2, 0);
             this.dgvDailyNewPatient.MultiSelect = false;
             this.dgvDailyNewPatient.Name = "dgvDailyNewPatient";
             this.dgvDailyNewPatient.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvDailyNewPatient.RowHeadersVisible = false;
             this.dgvDailyNewPatient.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dgvDailyNewPatient.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dgvDailyNewPatient.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDailyNewPatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDailyNewPatient.Size = new System.Drawing.Size(1083, 563);
             this.dgvDailyNewPatient.TabIndex = 248;
@@ -315,17 +324,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartDailyNewPatients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea2.Name = "ChartArea1";
-            this.chartDailyNewPatients.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartDailyNewPatients.Legends.Add(legend2);
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            chartArea1.Name = "ChartArea1";
+            this.chartDailyNewPatients.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartDailyNewPatients.Legends.Add(legend1);
             this.chartDailyNewPatients.Location = new System.Drawing.Point(2, 1);
             this.chartDailyNewPatients.Name = "chartDailyNewPatients";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "New Patient Count";
-            this.chartDailyNewPatients.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "New Patient Count";
+            this.chartDailyNewPatients.Series.Add(series1);
             this.chartDailyNewPatients.Size = new System.Drawing.Size(1082, 563);
             this.chartDailyNewPatients.TabIndex = 9;
             this.chartDailyNewPatients.Text = "chart1";
@@ -346,8 +355,8 @@
             this.Grvdailynewpatient.AllowUserToDeleteRows = false;
             this.Grvdailynewpatient.AllowUserToResizeColumns = false;
             this.Grvdailynewpatient.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.Grvdailynewpatient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.Grvdailynewpatient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.Grvdailynewpatient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Grvdailynewpatient.BackgroundColor = System.Drawing.Color.White;
@@ -360,8 +369,8 @@
             this.Grvdailynewpatient.Location = new System.Drawing.Point(3, 0);
             this.Grvdailynewpatient.Name = "Grvdailynewpatient";
             this.Grvdailynewpatient.RowHeadersVisible = false;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.Grvdailynewpatient.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.Grvdailynewpatient.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.Grvdailynewpatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grvdailynewpatient.Size = new System.Drawing.Size(206, 563);
             this.Grvdailynewpatient.TabIndex = 0;
@@ -426,6 +435,22 @@
             this.btnviewchart.UseVisualStyleBackColor = false;
             this.btnviewchart.Click += new System.EventHandler(this.btnviewchart_Click);
             // 
+            // btnprint
+            // 
+            this.btnprint.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnprint.ForeColor = System.Drawing.Color.White;
+            this.btnprint.Image = ((System.Drawing.Image)(resources.GetObject("btnprint.Image")));
+            this.btnprint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnprint.Location = new System.Drawing.Point(305, 12);
+            this.btnprint.Name = "btnprint";
+            this.btnprint.Size = new System.Drawing.Size(85, 30);
+            this.btnprint.TabIndex = 11;
+            this.btnprint.Text = "PRINT";
+            this.btnprint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnprint.UseVisualStyleBackColor = false;
+            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
+            // 
             // BtnExport
             // 
             this.BtnExport.BackColor = System.Drawing.Color.DodgerBlue;
@@ -463,23 +488,7 @@
             this.panel1.Size = new System.Drawing.Size(1296, 71);
             this.panel1.TabIndex = 255;
             // 
-            // btnprint
-            // 
-            this.btnprint.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnprint.ForeColor = System.Drawing.Color.White;
-            this.btnprint.Image = ((System.Drawing.Image)(resources.GetObject("btnprint.Image")));
-            this.btnprint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnprint.Location = new System.Drawing.Point(305, 12);
-            this.btnprint.Name = "btnprint";
-            this.btnprint.Size = new System.Drawing.Size(85, 30);
-            this.btnprint.TabIndex = 11;
-            this.btnprint.Text = "PRINT";
-            this.btnprint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnprint.UseVisualStyleBackColor = false;
-            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
-            // 
-            // Daily_NewPatients
+            // Daily_New_Patients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -488,8 +497,10 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Daily_NewPatients";
+            this.Name = "Daily_New_Patients";
             this.Text = "Daily New Patients";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Daily_NewPatients_Load);

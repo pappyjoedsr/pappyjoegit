@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patients_First_Appointment));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -182,8 +182,8 @@
             this.Grvpatientfirstappoint.AllowUserToDeleteRows = false;
             this.Grvpatientfirstappoint.AllowUserToResizeColumns = false;
             this.Grvpatientfirstappoint.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.Grvpatientfirstappoint.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.Grvpatientfirstappoint.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Grvpatientfirstappoint.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -246,11 +246,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(883, 26);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 17);
+            this.label5.Size = new System.Drawing.Size(108, 17);
             this.label5.TabIndex = 1;
             this.label5.Text = "TOTAL PATIENTS :";
             // 
@@ -283,7 +283,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(281, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(18, 13);
+            this.label4.Size = new System.Drawing.Size(19, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "To";
             // 
@@ -295,7 +295,7 @@
             this.dateTimePickerfirstappoint2.Size = new System.Drawing.Size(205, 22);
             this.dateTimePickerfirstappoint2.TabIndex = 6;
             // 
-            // Patients_first_appointment
+            // Patients_First_Appointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -304,7 +304,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Patients_first_appointment";
+            this.Name = "Patients_First_Appointment";
             this.Text = "Patients First Appointment";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Patients_first_appointment_Load);

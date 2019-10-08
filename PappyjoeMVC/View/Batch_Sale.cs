@@ -63,8 +63,10 @@ namespace PappyjoeMVC.View
                         dgv_batchSale.Rows[i].Cells["ColStock"].Value = dtbBatchsale.Rows[i]["colStock"].ToString();
                         TotalStock = TotalStock + Convert.ToDecimal(dtbBatchsale.Rows[i]["colStock"].ToString());
                         dgv_batchSale.Rows[i].Cells["ColPrd_Date"].Value = Convert.ToDateTime(dtbBatchsale.Rows[i]["prddate"].ToString()).ToString("MM/dd/yyyy");
-                        dgv_batchSale.Rows[i].Cells["colExpDate"].Value = Convert.ToDateTime(dtbBatchsale.Rows[i]["expdate"].ToString()).ToString("MM/dd/yyyy");
-
+                        if (dtbBatchsale.Rows[i]["expdate"].ToString() != "")
+                            dgv_batchSale.Rows[i].Cells["colExpDate"].Value = Convert.ToDateTime(dtbBatchsale.Rows[i]["expdate"].ToString()).ToString("MM/dd/yyyy");
+                        else
+                            dgv_batchSale.Rows[i].Cells["colExpDate"].Value = "";
                     }
                     calc();
                 }
@@ -101,7 +103,12 @@ namespace PappyjoeMVC.View
                     dgv_batchSale.Rows[i].Cells["ColStock"].Value = dtb.Rows[i]["Qty"].ToString();
                     TotalStock = TotalStock + Convert.ToDecimal(dtb.Rows[i]["Qty"].ToString());
                     dgv_batchSale.Rows[i].Cells["ColPrd_Date"].Value = Convert.ToDateTime(dtb.Rows[i]["PrdDate"].ToString()).ToString("MM/dd/yyyy");
-                    dgv_batchSale.Rows[i].Cells["colExpDate"].Value = Convert.ToDateTime(dtb.Rows[i]["ExpDate"].ToString()).ToString("MM/dd/yyyy");
+                    if (dtb.Rows[i]["ExpDate"].ToString() != "")
+                    {
+                        dgv_batchSale.Rows[i].Cells["colExpDate"].Value = Convert.ToDateTime(dtb.Rows[i]["ExpDate"].ToString()).ToString("MM/dd/yyyy");
+                    }
+                    else
+                        dgv_batchSale.Rows[i].Cells["colExpDate"].Value = "";
                 }
             }
         }

@@ -88,11 +88,11 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(1147, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 17);
+            this.label2.Size = new System.Drawing.Size(85, 17);
             this.label2.TabIndex = 175;
             this.label2.Text = "Total Amount";
             // 
@@ -124,11 +124,11 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(1147, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 17);
+            this.label1.Size = new System.Drawing.Size(65, 17);
             this.label1.TabIndex = 171;
             this.label1.Text = "Total Paid";
             // 
@@ -192,11 +192,11 @@
             // 
             this.lblinvoices.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblinvoices.AutoSize = true;
-            this.lblinvoices.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblinvoices.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblinvoices.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblinvoices.Location = new System.Drawing.Point(1147, 11);
             this.lblinvoices.Name = "lblinvoices";
-            this.lblinvoices.Size = new System.Drawing.Size(88, 17);
+            this.lblinvoices.Size = new System.Drawing.Size(84, 17);
             this.lblinvoices.TabIndex = 0;
             this.lblinvoices.Text = "Total Returns";
             // 
@@ -223,7 +223,7 @@
             // BtnExport
             // 
             this.BtnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnExport.BackColor = System.Drawing.Color.LimeGreen;
+            this.BtnExport.BackColor = System.Drawing.Color.DodgerBlue;
             this.BtnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExport.ForeColor = System.Drawing.Color.White;
@@ -252,7 +252,7 @@
             // btnprint
             // 
             this.btnprint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnprint.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnprint.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnprint.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnprint.ForeColor = System.Drawing.Color.White;
@@ -334,7 +334,6 @@
             this.dgv_Return.AllowUserToDeleteRows = false;
             this.dgv_Return.AllowUserToResizeColumns = false;
             this.dgv_Return.AllowUserToResizeRows = false;
-            this.dgv_Return.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgv_Return.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Return.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Return.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -353,8 +352,9 @@
             this.IGST,
             this.Paid,
             this.TotalAmount});
+            this.dgv_Return.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Return.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgv_Return.Location = new System.Drawing.Point(0, 4);
+            this.dgv_Return.Location = new System.Drawing.Point(0, 0);
             this.dgv_Return.Name = "dgv_Return";
             this.dgv_Return.ReadOnly = true;
             this.dgv_Return.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -362,7 +362,7 @@
             this.dgv_Return.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_Return.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgv_Return.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Return.Size = new System.Drawing.Size(1367, 785);
+            this.dgv_Return.Size = new System.Drawing.Size(1370, 437);
             this.dgv_Return.TabIndex = 2;
             this.dgv_Return.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Return_CellDoubleClick);
             // 

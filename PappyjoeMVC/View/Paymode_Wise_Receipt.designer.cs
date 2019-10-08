@@ -57,7 +57,6 @@
             this.Lab_Due = new System.Windows.Forms.Label();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.Dgv_Receipt = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.ColSLNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPt_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Colinvo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +74,7 @@
             this.ColTAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColamountPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTAmountDue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Receipt)).BeginInit();
@@ -172,21 +172,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(1204, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 132;
             this.label1.Text = "Mode of Payment";
             // 
             // Chk_RemoveAmountDue
             // 
             this.Chk_RemoveAmountDue.AutoSize = true;
-            this.Chk_RemoveAmountDue.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Chk_RemoveAmountDue.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Chk_RemoveAmountDue.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Chk_RemoveAmountDue.Location = new System.Drawing.Point(1028, 15);
             this.Chk_RemoveAmountDue.Name = "Chk_RemoveAmountDue";
-            this.Chk_RemoveAmountDue.Size = new System.Drawing.Size(171, 17);
+            this.Chk_RemoveAmountDue.Size = new System.Drawing.Size(172, 17);
             this.Chk_RemoveAmountDue.TabIndex = 131;
             this.Chk_RemoveAmountDue.Text = "Remove patient amount due";
             this.Chk_RemoveAmountDue.UseVisualStyleBackColor = true;
@@ -230,11 +231,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(574, 15);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 17);
+            this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "TOTAL COUNT:";
             // 
@@ -322,11 +323,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.LightGray;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(17, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 17);
+            this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "From";
             // 
@@ -334,11 +335,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.LightGray;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(277, 62);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(22, 17);
+            this.label4.Size = new System.Drawing.Size(19, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "To";
             // 
@@ -459,24 +460,6 @@
             this.Dgv_Receipt.Size = new System.Drawing.Size(1366, 466);
             this.Dgv_Receipt.TabIndex = 0;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.btn_Close);
-            this.panel1.Controls.Add(this.btn_Export);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.btnprint);
-            this.panel1.Controls.Add(this.btn_Show);
-            this.panel1.Controls.Add(this.Dtp_ReceiptTO);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.DTP_From);
-            this.panel1.Location = new System.Drawing.Point(1, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1369, 121);
-            this.panel1.TabIndex = 104;
-            // 
             // ColSLNo
             // 
             this.ColSLNo.FillWeight = 0.0963385F;
@@ -594,6 +577,24 @@
             this.colTAmountDue.HeaderText = "AMOUNT DUE";
             this.colTAmountDue.Name = "colTAmountDue";
             this.colTAmountDue.Width = 80;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.btn_Close);
+            this.panel1.Controls.Add(this.btn_Export);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.btnprint);
+            this.panel1.Controls.Add(this.btn_Show);
+            this.panel1.Controls.Add(this.Dtp_ReceiptTO);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.DTP_From);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1369, 121);
+            this.panel1.TabIndex = 104;
             // 
             // Paymode_Wise_Receipt
             // 

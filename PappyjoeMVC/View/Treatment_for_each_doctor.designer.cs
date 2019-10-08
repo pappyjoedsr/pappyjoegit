@@ -238,11 +238,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(618, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 17);
+            this.label5.Size = new System.Drawing.Size(94, 17);
             this.label5.TabIndex = 120;
             this.label5.Text = "TOTAL COUNT:";
             // 
@@ -449,7 +449,7 @@
             this.btnprint.UseVisualStyleBackColor = false;
             this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
-            // Treatment_for_each_doctor
+            // Treatment_For_Each_Doctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -459,7 +459,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Treatment_for_each_doctor";
+            this.Name = "Treatment_For_Each_Doctor";
             this.Text = "Treatment for Each Doctor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Treatment_for_each_doctor_Load);

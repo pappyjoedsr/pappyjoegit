@@ -205,11 +205,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(515, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 17);
+            this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 132;
             this.label1.Text = "Ledger:";
             // 
@@ -240,11 +240,11 @@
             this.Lab_Account.AutoSize = true;
             this.Lab_Account.BackColor = System.Drawing.Color.Transparent;
             this.Lab_Account.Enabled = false;
-            this.Lab_Account.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lab_Account.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Account.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Lab_Account.Location = new System.Drawing.Point(7, 29);
             this.Lab_Account.Name = "Lab_Account";
-            this.Lab_Account.Size = new System.Drawing.Size(80, 13);
+            this.Lab_Account.Size = new System.Drawing.Size(81, 13);
             this.Lab_Account.TabIndex = 129;
             this.Lab_Account.Text = "Account Name";
             // 
@@ -252,11 +252,11 @@
             // 
             this.chk_Account.AutoSize = true;
             this.chk_Account.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.chk_Account.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_Account.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chk_Account.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk_Account.Location = new System.Drawing.Point(5, 6);
             this.chk_Account.Name = "chk_Account";
-            this.chk_Account.Size = new System.Drawing.Size(126, 17);
+            this.chk_Account.Size = new System.Drawing.Size(128, 17);
             this.chk_Account.TabIndex = 98;
             this.chk_Account.Text = "With Account Name";
             this.chk_Account.UseVisualStyleBackColor = false;
@@ -284,11 +284,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Gainsboro;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(8, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 17);
+            this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "From:";
             // 
@@ -318,11 +318,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Gainsboro;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(273, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 17);
+            this.label4.Size = new System.Drawing.Size(22, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "To:";
             // 
@@ -340,11 +340,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(1171, 25);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 17);
+            this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "TOTAL COUNT:";
             // 

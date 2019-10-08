@@ -454,12 +454,6 @@
     <Compile Include="View\Dentalwork.designer.cs">
       <DependentUpon>Dentalwork.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Discharge_Summery.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Discharge_Summery.Designer.cs">
-      <DependentUpon>Discharge_Summery.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Doctors_Practice_Details.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1165,9 +1159,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Dentalwork.resx">
       <DependentUpon>Dentalwork.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Discharge_Summery.resx">
-      <DependentUpon>Discharge_Summery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Doctors_Practice_Details.resx">
       <DependentUpon>Doctors_Practice_Details.cs</DependentUpon>

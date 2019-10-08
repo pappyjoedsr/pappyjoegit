@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add__invoice));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -464,7 +464,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 40);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // panel7
@@ -493,6 +493,7 @@
             // 
             this.lab_patName.AutoSize = true;
             this.lab_patName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_patName.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lab_patName.Location = new System.Drawing.Point(60, 8);
             this.lab_patName.Name = "lab_patName";
             this.lab_patName.Size = new System.Drawing.Size(81, 13);
@@ -503,6 +504,7 @@
             // 
             this.lab_PTId.AutoSize = true;
             this.lab_PTId.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_PTId.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lab_PTId.Location = new System.Drawing.Point(81, 27);
             this.lab_PTId.Name = "lab_PTId";
             this.lab_PTId.Size = new System.Drawing.Size(60, 13);
@@ -575,6 +577,7 @@
             // 
             this.treatmentplanl.AutoSize = true;
             this.treatmentplanl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treatmentplanl.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.treatmentplanl.Location = new System.Drawing.Point(7, 10);
             this.treatmentplanl.Name = "treatmentplanl";
             this.treatmentplanl.Size = new System.Drawing.Size(79, 21);
@@ -612,13 +615,13 @@
             // listpatientsearch
             // 
             this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
-            this.listpatientsearch.ItemHeight = 21;
+            this.listpatientsearch.ItemHeight = 20;
             this.listpatientsearch.Location = new System.Drawing.Point(1010, 41);
             this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(250, 84);
+            this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
             this.listpatientsearch.TabIndex = 273;
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
@@ -688,7 +691,7 @@
             this.panel1.Controls.Add(this.CHk_FullMouth);
             this.panel1.Controls.Add(this.Chk_MultiplyCost);
             this.panel1.Controls.Add(this.btn_Done);
-            this.panel1.Location = new System.Drawing.Point(282, 251);
+            this.panel1.Location = new System.Drawing.Point(282, 277);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(644, 293);
             this.panel1.TabIndex = 262;
@@ -697,7 +700,8 @@
             // chk_fulmac
             // 
             this.chk_fulmac.AutoSize = true;
-            this.chk_fulmac.Location = new System.Drawing.Point(48, 180);
+            this.chk_fulmac.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk_fulmac.Location = new System.Drawing.Point(59, 166);
             this.chk_fulmac.Name = "chk_fulmac";
             this.chk_fulmac.Size = new System.Drawing.Size(75, 17);
             this.chk_fulmac.TabIndex = 59;
@@ -729,10 +733,12 @@
             this.lab_ShowChildteeth.Size = new System.Drawing.Size(88, 13);
             this.lab_ShowChildteeth.TabIndex = 44;
             this.lab_ShowChildteeth.Text = "Show ChildTeeth";
+            this.lab_ShowChildteeth.Click += new System.EventHandler(this.lab_ShowChildteeth_Click);
             // 
             // chk41
             // 
             this.chk41.AutoSize = true;
+            this.chk41.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk41.Location = new System.Drawing.Point(273, 120);
             this.chk41.Name = "chk41";
             this.chk41.Size = new System.Drawing.Size(38, 17);
@@ -744,6 +750,7 @@
             // chk18
             // 
             this.chk18.AutoSize = true;
+            this.chk18.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk18.Location = new System.Drawing.Point(6, 65);
             this.chk18.Name = "chk18";
             this.chk18.Size = new System.Drawing.Size(38, 17);
@@ -755,6 +762,7 @@
             // chk31
             // 
             this.chk31.AutoSize = true;
+            this.chk31.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk31.Location = new System.Drawing.Point(330, 123);
             this.chk31.Name = "chk31";
             this.chk31.Size = new System.Drawing.Size(38, 17);
@@ -766,6 +774,7 @@
             // chk21
             // 
             this.chk21.AutoSize = true;
+            this.chk21.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk21.Location = new System.Drawing.Point(330, 67);
             this.chk21.Name = "chk21";
             this.chk21.Size = new System.Drawing.Size(38, 17);
@@ -806,6 +815,7 @@
             // chk75
             // 
             this.chk75.AutoSize = true;
+            this.chk75.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk75.Location = new System.Drawing.Point(363, 71);
             this.chk75.Name = "chk75";
             this.chk75.Size = new System.Drawing.Size(38, 17);
@@ -817,6 +827,7 @@
             // chk74
             // 
             this.chk74.AutoSize = true;
+            this.chk74.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk74.Location = new System.Drawing.Point(319, 71);
             this.chk74.Name = "chk74";
             this.chk74.Size = new System.Drawing.Size(38, 17);
@@ -828,6 +839,7 @@
             // chk73
             // 
             this.chk73.AutoSize = true;
+            this.chk73.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk73.Location = new System.Drawing.Point(283, 71);
             this.chk73.Name = "chk73";
             this.chk73.Size = new System.Drawing.Size(38, 17);
@@ -839,6 +851,7 @@
             // chk72
             // 
             this.chk72.AutoSize = true;
+            this.chk72.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk72.Location = new System.Drawing.Point(244, 71);
             this.chk72.Name = "chk72";
             this.chk72.Size = new System.Drawing.Size(38, 17);
@@ -850,6 +863,7 @@
             // chk71
             // 
             this.chk71.AutoSize = true;
+            this.chk71.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk71.Location = new System.Drawing.Point(213, 71);
             this.chk71.Name = "chk71";
             this.chk71.Size = new System.Drawing.Size(38, 17);
@@ -861,6 +875,7 @@
             // chk81
             // 
             this.chk81.AutoSize = true;
+            this.chk81.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk81.Location = new System.Drawing.Point(175, 71);
             this.chk81.Name = "chk81";
             this.chk81.Size = new System.Drawing.Size(38, 17);
@@ -872,6 +887,7 @@
             // chk82
             // 
             this.chk82.AutoSize = true;
+            this.chk82.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk82.Location = new System.Drawing.Point(131, 71);
             this.chk82.Name = "chk82";
             this.chk82.Size = new System.Drawing.Size(38, 17);
@@ -883,6 +899,7 @@
             // chk83
             // 
             this.chk83.AutoSize = true;
+            this.chk83.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk83.Location = new System.Drawing.Point(98, 71);
             this.chk83.Name = "chk83";
             this.chk83.Size = new System.Drawing.Size(38, 17);
@@ -894,6 +911,7 @@
             // chk84
             // 
             this.chk84.AutoSize = true;
+            this.chk84.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk84.Location = new System.Drawing.Point(54, 71);
             this.chk84.Name = "chk84";
             this.chk84.Size = new System.Drawing.Size(38, 17);
@@ -905,6 +923,7 @@
             // chk85
             // 
             this.chk85.AutoSize = true;
+            this.chk85.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk85.Location = new System.Drawing.Point(13, 71);
             this.chk85.Name = "chk85";
             this.chk85.Size = new System.Drawing.Size(38, 17);
@@ -916,6 +935,7 @@
             // chk65
             // 
             this.chk65.AutoSize = true;
+            this.chk65.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk65.Location = new System.Drawing.Point(363, 57);
             this.chk65.Name = "chk65";
             this.chk65.Size = new System.Drawing.Size(38, 17);
@@ -927,6 +947,7 @@
             // chk64
             // 
             this.chk64.AutoSize = true;
+            this.chk64.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk64.Location = new System.Drawing.Point(319, 57);
             this.chk64.Name = "chk64";
             this.chk64.Size = new System.Drawing.Size(38, 17);
@@ -938,6 +959,7 @@
             // chk63
             // 
             this.chk63.AutoSize = true;
+            this.chk63.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk63.Location = new System.Drawing.Point(283, 57);
             this.chk63.Name = "chk63";
             this.chk63.Size = new System.Drawing.Size(38, 17);
@@ -949,6 +971,7 @@
             // chk62
             // 
             this.chk62.AutoSize = true;
+            this.chk62.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk62.Location = new System.Drawing.Point(244, 57);
             this.chk62.Name = "chk62";
             this.chk62.Size = new System.Drawing.Size(38, 17);
@@ -960,6 +983,7 @@
             // chk61
             // 
             this.chk61.AutoSize = true;
+            this.chk61.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk61.Location = new System.Drawing.Point(213, 57);
             this.chk61.Name = "chk61";
             this.chk61.Size = new System.Drawing.Size(38, 17);
@@ -971,6 +995,7 @@
             // chk51
             // 
             this.chk51.AutoSize = true;
+            this.chk51.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk51.Location = new System.Drawing.Point(175, 57);
             this.chk51.Name = "chk51";
             this.chk51.Size = new System.Drawing.Size(38, 17);
@@ -982,6 +1007,7 @@
             // chk52
             // 
             this.chk52.AutoSize = true;
+            this.chk52.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk52.Location = new System.Drawing.Point(131, 57);
             this.chk52.Name = "chk52";
             this.chk52.Size = new System.Drawing.Size(38, 17);
@@ -993,6 +1019,7 @@
             // chk53
             // 
             this.chk53.AutoSize = true;
+            this.chk53.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk53.Location = new System.Drawing.Point(97, 57);
             this.chk53.Name = "chk53";
             this.chk53.Size = new System.Drawing.Size(38, 17);
@@ -1004,6 +1031,7 @@
             // chk54
             // 
             this.chk54.AutoSize = true;
+            this.chk54.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk54.Location = new System.Drawing.Point(53, 57);
             this.chk54.Name = "chk54";
             this.chk54.Size = new System.Drawing.Size(38, 17);
@@ -1015,6 +1043,7 @@
             // chk55
             // 
             this.chk55.AutoSize = true;
+            this.chk55.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk55.Location = new System.Drawing.Point(13, 57);
             this.chk55.Name = "chk55";
             this.chk55.Size = new System.Drawing.Size(38, 17);
@@ -1026,6 +1055,7 @@
             // chk38
             // 
             this.chk38.AutoSize = true;
+            this.chk38.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk38.Location = new System.Drawing.Point(600, 123);
             this.chk38.Name = "chk38";
             this.chk38.Size = new System.Drawing.Size(38, 17);
@@ -1037,6 +1067,7 @@
             // chk37
             // 
             this.chk37.AutoSize = true;
+            this.chk37.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk37.Location = new System.Drawing.Point(558, 123);
             this.chk37.Name = "chk37";
             this.chk37.Size = new System.Drawing.Size(38, 17);
@@ -1048,6 +1079,7 @@
             // chk36
             // 
             this.chk36.AutoSize = true;
+            this.chk36.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk36.Location = new System.Drawing.Point(524, 123);
             this.chk36.Name = "chk36";
             this.chk36.Size = new System.Drawing.Size(38, 17);
@@ -1059,6 +1091,7 @@
             // chk35
             // 
             this.chk35.AutoSize = true;
+            this.chk35.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk35.Location = new System.Drawing.Point(480, 123);
             this.chk35.Name = "chk35";
             this.chk35.Size = new System.Drawing.Size(38, 17);
@@ -1070,6 +1103,7 @@
             // chk34
             // 
             this.chk34.AutoSize = true;
+            this.chk34.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk34.Location = new System.Drawing.Point(440, 123);
             this.chk34.Name = "chk34";
             this.chk34.Size = new System.Drawing.Size(38, 17);
@@ -1081,6 +1115,7 @@
             // chk33
             // 
             this.chk33.AutoSize = true;
+            this.chk33.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk33.Location = new System.Drawing.Point(404, 123);
             this.chk33.Name = "chk33";
             this.chk33.Size = new System.Drawing.Size(38, 17);
@@ -1092,6 +1127,7 @@
             // chk32
             // 
             this.chk32.AutoSize = true;
+            this.chk32.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk32.Location = new System.Drawing.Point(369, 123);
             this.chk32.Name = "chk32";
             this.chk32.Size = new System.Drawing.Size(38, 17);
@@ -1103,6 +1139,7 @@
             // chk42
             // 
             this.chk42.AutoSize = true;
+            this.chk42.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk42.Location = new System.Drawing.Point(236, 120);
             this.chk42.Name = "chk42";
             this.chk42.Size = new System.Drawing.Size(38, 17);
@@ -1114,6 +1151,7 @@
             // chk43
             // 
             this.chk43.AutoSize = true;
+            this.chk43.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk43.Location = new System.Drawing.Point(201, 120);
             this.chk43.Name = "chk43";
             this.chk43.Size = new System.Drawing.Size(38, 17);
@@ -1125,6 +1163,7 @@
             // chk44
             // 
             this.chk44.AutoSize = true;
+            this.chk44.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk44.Location = new System.Drawing.Point(161, 120);
             this.chk44.Name = "chk44";
             this.chk44.Size = new System.Drawing.Size(38, 17);
@@ -1136,6 +1175,7 @@
             // chk45
             // 
             this.chk45.AutoSize = true;
+            this.chk45.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk45.Location = new System.Drawing.Point(119, 120);
             this.chk45.Name = "chk45";
             this.chk45.Size = new System.Drawing.Size(38, 17);
@@ -1147,6 +1187,7 @@
             // chk46
             // 
             this.chk46.AutoSize = true;
+            this.chk46.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk46.Location = new System.Drawing.Point(84, 120);
             this.chk46.Name = "chk46";
             this.chk46.Size = new System.Drawing.Size(38, 17);
@@ -1158,6 +1199,7 @@
             // chk47
             // 
             this.chk47.AutoSize = true;
+            this.chk47.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk47.Location = new System.Drawing.Point(48, 120);
             this.chk47.Name = "chk47";
             this.chk47.Size = new System.Drawing.Size(38, 17);
@@ -1169,6 +1211,7 @@
             // chk48
             // 
             this.chk48.AutoSize = true;
+            this.chk48.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk48.Location = new System.Drawing.Point(8, 120);
             this.chk48.Name = "chk48";
             this.chk48.Size = new System.Drawing.Size(38, 17);
@@ -1180,6 +1223,7 @@
             // chk28
             // 
             this.chk28.AutoSize = true;
+            this.chk28.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk28.Location = new System.Drawing.Point(600, 67);
             this.chk28.Name = "chk28";
             this.chk28.Size = new System.Drawing.Size(38, 17);
@@ -1191,6 +1235,7 @@
             // chk27
             // 
             this.chk27.AutoSize = true;
+            this.chk27.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk27.Location = new System.Drawing.Point(558, 67);
             this.chk27.Name = "chk27";
             this.chk27.Size = new System.Drawing.Size(38, 17);
@@ -1202,6 +1247,7 @@
             // chk26
             // 
             this.chk26.AutoSize = true;
+            this.chk26.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk26.Location = new System.Drawing.Point(522, 67);
             this.chk26.Name = "chk26";
             this.chk26.Size = new System.Drawing.Size(38, 17);
@@ -1213,6 +1259,7 @@
             // chk25
             // 
             this.chk25.AutoSize = true;
+            this.chk25.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk25.Location = new System.Drawing.Point(478, 67);
             this.chk25.Name = "chk25";
             this.chk25.Size = new System.Drawing.Size(38, 17);
@@ -1224,6 +1271,7 @@
             // chk24
             // 
             this.chk24.AutoSize = true;
+            this.chk24.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk24.Location = new System.Drawing.Point(438, 67);
             this.chk24.Name = "chk24";
             this.chk24.Size = new System.Drawing.Size(38, 17);
@@ -1235,6 +1283,7 @@
             // chk23
             // 
             this.chk23.AutoSize = true;
+            this.chk23.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk23.Location = new System.Drawing.Point(404, 67);
             this.chk23.Name = "chk23";
             this.chk23.Size = new System.Drawing.Size(38, 17);
@@ -1246,6 +1295,7 @@
             // chk22
             // 
             this.chk22.AutoSize = true;
+            this.chk22.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk22.Location = new System.Drawing.Point(369, 67);
             this.chk22.Name = "chk22";
             this.chk22.Size = new System.Drawing.Size(38, 17);
@@ -1257,6 +1307,7 @@
             // chk11
             // 
             this.chk11.AutoSize = true;
+            this.chk11.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk11.Location = new System.Drawing.Point(272, 65);
             this.chk11.Name = "chk11";
             this.chk11.Size = new System.Drawing.Size(38, 17);
@@ -1268,6 +1319,7 @@
             // chk12
             // 
             this.chk12.AutoSize = true;
+            this.chk12.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk12.Location = new System.Drawing.Point(235, 65);
             this.chk12.Name = "chk12";
             this.chk12.Size = new System.Drawing.Size(38, 17);
@@ -1279,6 +1331,7 @@
             // chk13
             // 
             this.chk13.AutoSize = true;
+            this.chk13.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk13.Location = new System.Drawing.Point(201, 65);
             this.chk13.Name = "chk13";
             this.chk13.Size = new System.Drawing.Size(38, 17);
@@ -1290,6 +1343,7 @@
             // chk14
             // 
             this.chk14.AutoSize = true;
+            this.chk14.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk14.Location = new System.Drawing.Point(157, 65);
             this.chk14.Name = "chk14";
             this.chk14.Size = new System.Drawing.Size(38, 17);
@@ -1301,6 +1355,7 @@
             // chk15
             // 
             this.chk15.AutoSize = true;
+            this.chk15.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk15.Location = new System.Drawing.Point(117, 65);
             this.chk15.Name = "chk15";
             this.chk15.Size = new System.Drawing.Size(38, 17);
@@ -1312,6 +1367,7 @@
             // chk16
             // 
             this.chk16.AutoSize = true;
+            this.chk16.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk16.Location = new System.Drawing.Point(83, 65);
             this.chk16.Name = "chk16";
             this.chk16.Size = new System.Drawing.Size(38, 17);
@@ -1323,6 +1379,7 @@
             // chk17
             // 
             this.chk17.AutoSize = true;
+            this.chk17.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.chk17.Location = new System.Drawing.Point(48, 65);
             this.chk17.Name = "chk17";
             this.chk17.Size = new System.Drawing.Size(38, 17);
@@ -1334,6 +1391,7 @@
             // CHk_FullMouth
             // 
             this.CHk_FullMouth.AutoSize = true;
+            this.CHk_FullMouth.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.CHk_FullMouth.Location = new System.Drawing.Point(99, 3);
             this.CHk_FullMouth.Name = "CHk_FullMouth";
             this.CHk_FullMouth.Size = new System.Drawing.Size(75, 17);
@@ -1345,6 +1403,7 @@
             // Chk_MultiplyCost
             // 
             this.Chk_MultiplyCost.AutoSize = true;
+            this.Chk_MultiplyCost.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Chk_MultiplyCost.Location = new System.Drawing.Point(3, 3);
             this.Chk_MultiplyCost.Name = "Chk_MultiplyCost";
             this.Chk_MultiplyCost.Size = new System.Drawing.Size(85, 17);
@@ -1434,6 +1493,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label14.Location = new System.Drawing.Point(16, 80);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(48, 13);
@@ -1505,6 +1565,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label12.Location = new System.Drawing.Point(270, 154);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(26, 13);
@@ -1516,6 +1577,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(7, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
@@ -1526,7 +1588,7 @@
             // 
             this.DTP_Date.CalendarForeColor = System.Drawing.Color.DarkSlateGray;
             this.DTP_Date.CalendarTitleForeColor = System.Drawing.Color.DarkSlateGray;
-            this.DTP_Date.Location = new System.Drawing.Point(295, 150);
+            this.DTP_Date.Location = new System.Drawing.Point(300, 150);
             this.DTP_Date.Name = "DTP_Date";
             this.DTP_Date.Size = new System.Drawing.Size(200, 20);
             this.DTP_Date.TabIndex = 41;
@@ -1656,6 +1718,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label7.Location = new System.Drawing.Point(586, 37);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
@@ -1667,6 +1730,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label6.Location = new System.Drawing.Point(430, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 13);
@@ -1689,6 +1753,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(214, 37);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
@@ -1700,6 +1765,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(329, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
@@ -1711,6 +1777,7 @@
             this.procedure_item.AutoSize = true;
             this.procedure_item.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.procedure_item.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.procedure_item.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.procedure_item.Location = new System.Drawing.Point(7, 58);
             this.procedure_item.Name = "procedure_item";
             this.procedure_item.Size = new System.Drawing.Size(163, 17);
@@ -1722,6 +1789,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(61, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 13);
@@ -1733,6 +1801,7 @@
             this.lab_BillNo.AutoSize = true;
             this.lab_BillNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lab_BillNo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_BillNo.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lab_BillNo.Location = new System.Drawing.Point(7, 12);
             this.lab_BillNo.Name = "lab_BillNo";
             this.lab_BillNo.Size = new System.Drawing.Size(76, 17);
@@ -1765,6 +1834,7 @@
             this.label30.AutoSize = true;
             this.label30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label30.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label30.Location = new System.Drawing.Point(555, 59);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(21, 21);
@@ -1776,6 +1846,7 @@
             this.label29.AutoSize = true;
             this.label29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label29.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label29.Location = new System.Drawing.Point(318, 55);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(25, 25);
@@ -1787,6 +1858,7 @@
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label28.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label28.Location = new System.Drawing.Point(134, 49);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(20, 25);
@@ -1822,6 +1894,7 @@
             this.txt_TotalTax.AutoSize = true;
             this.txt_TotalTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txt_TotalTax.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TotalTax.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.txt_TotalTax.Location = new System.Drawing.Point(372, 60);
             this.txt_TotalTax.Name = "txt_TotalTax";
             this.txt_TotalTax.Size = new System.Drawing.Size(84, 20);
@@ -1833,6 +1906,7 @@
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label25.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label25.Location = new System.Drawing.Point(372, 39);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(62, 13);
@@ -1844,6 +1918,7 @@
             this.txt_TotalDiscount.AutoSize = true;
             this.txt_TotalDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txt_TotalDiscount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TotalDiscount.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.txt_TotalDiscount.Location = new System.Drawing.Point(176, 60);
             this.txt_TotalDiscount.Name = "txt_TotalDiscount";
             this.txt_TotalDiscount.Size = new System.Drawing.Size(126, 20);
@@ -1855,6 +1930,7 @@
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label26.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label26.Location = new System.Drawing.Point(176, 39);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(96, 13);
@@ -1866,6 +1942,7 @@
             this.txt_TotalCost.AutoSize = true;
             this.txt_TotalCost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txt_TotalCost.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TotalCost.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.txt_TotalCost.Location = new System.Drawing.Point(31, 60);
             this.txt_TotalCost.Name = "txt_TotalCost";
             this.txt_TotalCost.Size = new System.Drawing.Size(90, 20);
@@ -1877,6 +1954,7 @@
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label27.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label27.Location = new System.Drawing.Point(31, 39);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(69, 13);
@@ -1895,14 +1973,14 @@
             this.DGV_Invoice.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DGV_Invoice.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DGV_Invoice.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Invoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle73.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle73.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle73.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle73.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle73.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle73.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Invoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle73;
             this.DGV_Invoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Invoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.service_id,
@@ -1926,14 +2004,14 @@
             this.DGV_Invoice.Location = new System.Drawing.Point(2, 323);
             this.DGV_Invoice.Name = "DGV_Invoice";
             this.DGV_Invoice.ReadOnly = true;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Invoice.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle80.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle80.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle80.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle80.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle80.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle80.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle80.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Invoice.RowHeadersDefaultCellStyle = dataGridViewCellStyle80;
             this.DGV_Invoice.RowHeadersVisible = false;
             this.DGV_Invoice.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_Invoice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1950,8 +2028,8 @@
             // 
             // Column5
             // 
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle74;
             this.Column5.HeaderText = "SERVICE";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -1959,8 +2037,8 @@
             // 
             // Column7
             // 
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle75;
             this.Column7.HeaderText = "COST";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
@@ -1968,8 +2046,8 @@
             // 
             // Column6
             // 
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle76;
             this.Column6.HeaderText = "UNIT";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -1977,8 +2055,8 @@
             // 
             // Column8
             // 
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle77;
             this.Column8.HeaderText = "DISCOUNT";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
@@ -1992,16 +2070,16 @@
             // 
             // Column13
             // 
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column13.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column13.DefaultCellStyle = dataGridViewCellStyle78;
             this.Column13.HeaderText = "TAX";
             this.Column13.Name = "Column13";
             this.Column13.ReadOnly = true;
             // 
             // Column14
             // 
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column14.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column14.DefaultCellStyle = dataGridViewCellStyle79;
             this.Column14.HeaderText = "TOTAL";
             this.Column14.Name = "Column14";
             this.Column14.ReadOnly = true;
@@ -2121,14 +2199,14 @@
             this.DGV_Procedure.Location = new System.Drawing.Point(2, 38);
             this.DGV_Procedure.Name = "DGV_Procedure";
             this.DGV_Procedure.ReadOnly = true;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Procedure.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle83.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle83.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle83.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle83.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle83.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle83.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Procedure.RowHeadersDefaultCellStyle = dataGridViewCellStyle83;
             this.DGV_Procedure.RowHeadersVisible = false;
             this.DGV_Procedure.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Procedure.Size = new System.Drawing.Size(413, 550);
@@ -2153,8 +2231,8 @@
             // 
             // list
             // 
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.list.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle81.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.list.DefaultCellStyle = dataGridViewCellStyle81;
             this.list.HeaderText = "list";
             this.list.Name = "list";
             this.list.ReadOnly = true;
@@ -2162,8 +2240,8 @@
             // Column2
             // 
             this.Column2.DataPropertyName = "cost";
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle82.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle82;
             this.Column2.HeaderText = "Cost";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -2201,6 +2279,7 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.toolStrip1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add__invoice";
             this.Text = "Add Invoice";

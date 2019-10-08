@@ -259,6 +259,8 @@ namespace PappyjoeMVC.View
         {
             try
             {
+                dateFrom = dptFrom.Value.ToString("yyyy-MM-dd");
+                dateTo = dptTo.Value.ToString("yyyy-MM-dd");
                 DataTable dt = this.ctrlr.datewiseexpiry(dateFrom, dateTo);
                 datewiseexpiry(dt);
                 dgvExpiry.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;

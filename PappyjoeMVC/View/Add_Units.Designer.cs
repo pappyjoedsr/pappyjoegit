@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Units));
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_Unitname = new System.Windows.Forms.TextBox();
@@ -135,20 +134,12 @@
             this.units,
             this.edit,
             this.del});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Units.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Units.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Units.Location = new System.Drawing.Point(0, 0);
             this.dgv_Units.Name = "dgv_Units";
             this.dgv_Units.RowHeadersVisible = false;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.dgv_Units.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.dgv_Units.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Units.Size = new System.Drawing.Size(278, 264);
             this.dgv_Units.TabIndex = 0;
             this.dgv_Units.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Units_CellClick);
@@ -179,7 +170,7 @@
             this.del.HeaderText = "";
             this.del.Name = "del";
             // 
-            // frmAddUnits
+            // Add_Units
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -187,8 +178,10 @@
             this.ClientSize = new System.Drawing.Size(281, 340);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmAddUnits";
+            this.Name = "Add_Units";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Units";
             this.Load += new System.EventHandler(this.frmAddUnits_Load);

@@ -29,37 +29,37 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Doctor_Profile));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -163,36 +163,10 @@
             this.text_phone = new System.Windows.Forms.TextBox();
             this.button_GoToClinic = new System.Windows.Forms.Button();
             this.dataGridView_reg = new System.Windows.Forms.DataGridView();
-            this.colm_RegId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_reg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_regNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Del_Reg = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridView_awards = new System.Windows.Forms.DataGridView();
-            this.award_colm_Dr_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Award_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Del_Awrd = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridView_experience = new System.Windows.Forms.DataGridView();
-            this.Exp_Dr_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_from = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_To = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Exp_Company = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_city = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Del_Exp = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridView_education = new System.Windows.Forms.DataGridView();
-            this.colm_Edu_Dr_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colm_Degree_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colm_Collage_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_college = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_degree = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Del_Degre = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridView_member = new System.Windows.Forms.DataGridView();
-            this.colm_Member_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_member = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Del_Mebr = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridView_specialization = new System.Windows.Forms.DataGridView();
             this.ColmDr_id_Spec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colm_Spec_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -260,6 +234,32 @@
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_clinic_specialdelete = new System.Windows.Forms.Button();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.colm_Edu_Dr_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colm_Degree_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colm_Collage_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_college = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_degree = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Del_Degre = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Exp_Dr_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_from = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_To = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Exp_Company = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_city = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Del_Exp = new System.Windows.Forms.DataGridViewImageColumn();
+            this.award_colm_Dr_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Award_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Del_Awrd = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colm_Member_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_member = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Del_Mebr = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colm_RegId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_reg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_regNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Del_Reg = new System.Windows.Forms.DataGridViewImageColumn();
             this.toolStrip1.SuspendLayout();
             this.panel_edit_dr.SuspendLayout();
             this.panel_DoctorProfile_Add.SuspendLayout();
@@ -312,7 +312,7 @@
             this.toolStripTextDoctor});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1370, 40);
+            this.toolStrip1.Size = new System.Drawing.Size(1370, 46);
             this.toolStrip1.TabIndex = 30;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -324,13 +324,13 @@
             this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(103, 37);
+            this.toolStripButton1.Size = new System.Drawing.Size(103, 43);
             this.toolStripButton1.Text = "Pappyjoe Clinic";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 46);
             // 
             // toolStripBAttachment
             // 
@@ -339,7 +339,7 @@
             this.toolStripBAttachment.ForeColor = System.Drawing.Color.White;
             this.toolStripBAttachment.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripBAttachment.Name = "toolStripBAttachment";
-            this.toolStripBAttachment.Size = new System.Drawing.Size(72, 37);
+            this.toolStripBAttachment.Size = new System.Drawing.Size(72, 43);
             this.toolStripBAttachment.Text = "Fast Track";
             this.toolStripBAttachment.Visible = false;
             // 
@@ -350,7 +350,7 @@
             this.toolStripButton2.ForeColor = System.Drawing.Color.White;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
+            this.toolStripButton2.Size = new System.Drawing.Size(65, 43);
             this.toolStripButton2.Text = "Calendar";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -361,7 +361,7 @@
             this.toolStripButton3.ForeColor = System.Drawing.Color.White;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(60, 37);
+            this.toolStripButton3.Size = new System.Drawing.Size(60, 43);
             this.toolStripButton3.Text = "Records";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
@@ -372,7 +372,7 @@
             this.toolStripButton4.ForeColor = System.Drawing.Color.White;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(114, 37);
+            this.toolStripButton4.Size = new System.Drawing.Size(114, 43);
             this.toolStripButton4.Text = "Communications";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
@@ -383,7 +383,7 @@
             this.toolStripButton5.ForeColor = System.Drawing.Color.White;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(72, 37);
+            this.toolStripButton5.Size = new System.Drawing.Size(72, 43);
             this.toolStripButton5.Text = "Inventory";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
@@ -394,7 +394,7 @@
             this.toolStripButton6.ForeColor = System.Drawing.Color.White;
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(59, 37);
+            this.toolStripButton6.Size = new System.Drawing.Size(59, 43);
             this.toolStripButton6.Text = "Reports";
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
@@ -405,7 +405,7 @@
             this.toolStripButton11.ForeColor = System.Drawing.Color.White;
             this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton11.Name = "toolStripButton11";
-            this.toolStripButton11.Size = new System.Drawing.Size(62, 37);
+            this.toolStripButton11.Size = new System.Drawing.Size(62, 43);
             this.toolStripButton11.Text = "Consent";
             this.toolStripButton11.Visible = false;
             // 
@@ -416,7 +416,7 @@
             this.toolStripButton10.ForeColor = System.Drawing.Color.White;
             this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(62, 37);
+            this.toolStripButton10.Size = new System.Drawing.Size(62, 43);
             this.toolStripButton10.Text = "Expense";
             this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
             // 
@@ -427,7 +427,7 @@
             this.toolStripButton7.ForeColor = System.Drawing.Color.White;
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(56, 37);
+            this.toolStripButton7.Size = new System.Drawing.Size(56, 43);
             this.toolStripButton7.Text = "Profiles";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
@@ -438,7 +438,7 @@
             this.toolStripButton12.ForeColor = System.Drawing.Color.White;
             this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
+            this.toolStripButton12.Size = new System.Drawing.Size(87, 43);
             this.toolStripButton12.Text = "Lab Tracking";
             this.toolStripButton12.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
@@ -454,7 +454,7 @@
             this.toolStripButton8.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(33, 37);
+            this.toolStripButton8.Size = new System.Drawing.Size(33, 43);
             this.toolStripButton8.Text = "toolStripButton8";
             this.toolStripButton8.ToolTipText = "Settings";
             // 
@@ -462,7 +462,7 @@
             // 
             this.settingsToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -470,7 +470,7 @@
             // 
             this.logoutToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1429953040_Log_Out;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -478,7 +478,7 @@
             // 
             this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 46);
             // 
             // toolStripDropDownButton1
             // 
@@ -488,7 +488,7 @@
             this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 37);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 43);
             this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.ToolTipText = "Add new Patient";
             // 
@@ -500,7 +500,7 @@
             this.toolStripButton9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(32, 37);
+            this.toolStripButton9.Size = new System.Drawing.Size(32, 43);
             this.toolStripButton9.Text = "toolStripButton9";
             this.toolStripButton9.ToolTipText = "Pappyjoe Version 16.2";
             this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
@@ -510,7 +510,7 @@
             this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox1.ForeColor = System.Drawing.SystemColors.GrayText;
             this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(250, 40);
+            this.toolStripTextBox1.Size = new System.Drawing.Size(291, 46);
             this.toolStripTextBox1.Text = "Search by Patient Name, id, Mobile No";
             this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
@@ -522,7 +522,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(291, 23);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // panel_edit_dr
@@ -577,10 +577,11 @@
             this.panel_edit_dr.Controls.Add(this.label17);
             this.panel_edit_dr.Controls.Add(this.pictureBox_Docter_Image);
             this.panel_edit_dr.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.panel_edit_dr.Location = new System.Drawing.Point(0, 42);
+            this.panel_edit_dr.Location = new System.Drawing.Point(0, 39);
             this.panel_edit_dr.Name = "panel_edit_dr";
-            this.panel_edit_dr.Size = new System.Drawing.Size(1370, 627);
+            this.panel_edit_dr.Size = new System.Drawing.Size(1598, 723);
             this.panel_edit_dr.TabIndex = 31;
+            this.panel_edit_dr.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_edit_dr_Paint);
             // 
             // listpatientsearch
             // 
@@ -589,9 +590,9 @@
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
             this.listpatientsearch.ItemHeight = 21;
-            this.listpatientsearch.Location = new System.Drawing.Point(1015, 0);
+            this.listpatientsearch.Location = new System.Drawing.Point(967, 0);
             this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(250, 84);
+            this.listpatientsearch.Size = new System.Drawing.Size(292, 84);
             this.listpatientsearch.TabIndex = 70;
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
@@ -600,26 +601,26 @@
             // 
             this.txtPic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPic.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtPic.Location = new System.Drawing.Point(26, 90);
+            this.txtPic.Location = new System.Drawing.Point(17, 87);
             this.txtPic.Name = "txtPic";
-            this.txtPic.Size = new System.Drawing.Size(85, 20);
+            this.txtPic.Size = new System.Drawing.Size(99, 23);
             this.txtPic.TabIndex = 69;
             this.txtPic.Visible = false;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.DarkGray;
-            this.panel8.Location = new System.Drawing.Point(144, 115);
+            this.panel8.Location = new System.Drawing.Point(125, 114);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1, 495);
+            this.panel8.Size = new System.Drawing.Size(1, 511);
             this.panel8.TabIndex = 68;
             // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.DarkGray;
-            this.panel11.Location = new System.Drawing.Point(834, 115);
+            this.panel11.Location = new System.Drawing.Point(831, 115);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1, 495);
+            this.panel11.Size = new System.Drawing.Size(1, 510);
             this.panel11.TabIndex = 67;
             // 
             // button2
@@ -630,9 +631,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1274, 4);
+            this.button2.Location = new System.Drawing.Point(1486, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 30);
+            this.button2.Size = new System.Drawing.Size(110, 35);
             this.button2.TabIndex = 27;
             this.button2.Text = "GO BACK";
             this.button2.UseVisualStyleBackColor = false;
@@ -651,14 +652,16 @@
             "AWARDS",
             "MEMBERSHIPS",
             "REGISTRATION"});
-            this.cmbDrProfile.Location = new System.Drawing.Point(933, 122);
+            this.cmbDrProfile.Location = new System.Drawing.Point(939, 144);
             this.cmbDrProfile.Name = "cmbDrProfile";
-            this.cmbDrProfile.Size = new System.Drawing.Size(326, 21);
+            this.cmbDrProfile.Size = new System.Drawing.Size(355, 23);
             this.cmbDrProfile.TabIndex = 46;
             this.cmbDrProfile.SelectedIndexChanged += new System.EventHandler(this.cmbDrProfile_SelectedIndexChanged);
             // 
             // panel_DoctorProfile_Add
             // 
+            this.panel_DoctorProfile_Add.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_DoctorProfile_Add.BackColor = System.Drawing.Color.White;
             this.panel_DoctorProfile_Add.Controls.Add(this.panel_register);
             this.panel_DoctorProfile_Add.Controls.Add(this.panel_recognition);
@@ -667,9 +670,9 @@
             this.panel_DoctorProfile_Add.Controls.Add(this.panel_education);
             this.panel_DoctorProfile_Add.Controls.Add(this.panel_specialization);
             this.panel_DoctorProfile_Add.Controls.Add(this.panel_service);
-            this.panel_DoctorProfile_Add.Location = new System.Drawing.Point(873, 149);
+            this.panel_DoctorProfile_Add.Location = new System.Drawing.Point(841, 173);
             this.panel_DoctorProfile_Add.Name = "panel_DoctorProfile_Add";
-            this.panel_DoctorProfile_Add.Size = new System.Drawing.Size(489, 442);
+            this.panel_DoctorProfile_Add.Size = new System.Drawing.Size(529, 510);
             this.panel_DoctorProfile_Add.TabIndex = 66;
             this.panel_DoctorProfile_Add.Visible = false;
             // 
@@ -685,9 +688,9 @@
             this.panel_register.Controls.Add(this.text_reg_number);
             this.panel_register.Controls.Add(this.combo_reg_year);
             this.panel_register.Controls.Add(this.combo_reg_regcouncil);
-            this.panel_register.Location = new System.Drawing.Point(6, 374);
+            this.panel_register.Location = new System.Drawing.Point(0, 432);
             this.panel_register.Name = "panel_register";
-            this.panel_register.Size = new System.Drawing.Size(481, 56);
+            this.panel_register.Size = new System.Drawing.Size(522, 65);
             this.panel_register.TabIndex = 45;
             this.panel_register.Visible = false;
             // 
@@ -695,7 +698,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(112, 6);
+            this.label33.Location = new System.Drawing.Point(131, 7);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(29, 15);
             this.label33.TabIndex = 4;
@@ -705,7 +708,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(5, 6);
+            this.label32.Location = new System.Drawing.Point(6, 7);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(68, 15);
             this.label32.TabIndex = 4;
@@ -715,7 +718,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(207, 6);
+            this.label34.Location = new System.Drawing.Point(241, 7);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(93, 15);
             this.label34.TabIndex = 4;
@@ -727,9 +730,9 @@
             this.button_reg_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_reg_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_reg_save.ForeColor = System.Drawing.Color.White;
-            this.button_reg_save.Location = new System.Drawing.Point(378, 28);
+            this.button_reg_save.Location = new System.Drawing.Point(441, 32);
             this.button_reg_save.Name = "button_reg_save";
-            this.button_reg_save.Size = new System.Drawing.Size(61, 22);
+            this.button_reg_save.Size = new System.Drawing.Size(71, 25);
             this.button_reg_save.TabIndex = 9;
             this.button_reg_save.Text = "Update";
             this.button_reg_save.UseVisualStyleBackColor = false;
@@ -741,9 +744,9 @@
             this.button_reg_add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_reg_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_reg_add.ForeColor = System.Drawing.Color.White;
-            this.button_reg_add.Location = new System.Drawing.Point(304, 28);
+            this.button_reg_add.Location = new System.Drawing.Point(355, 32);
             this.button_reg_add.Name = "button_reg_add";
-            this.button_reg_add.Size = new System.Drawing.Size(72, 22);
+            this.button_reg_add.Size = new System.Drawing.Size(84, 25);
             this.button_reg_add.TabIndex = 9;
             this.button_reg_add.Text = "Add new";
             this.button_reg_add.UseVisualStyleBackColor = false;
@@ -753,9 +756,9 @@
             // 
             this.text_reg_number.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_reg_number.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_reg_number.Location = new System.Drawing.Point(4, 28);
+            this.text_reg_number.Location = new System.Drawing.Point(5, 32);
             this.text_reg_number.Name = "text_reg_number";
-            this.text_reg_number.Size = new System.Drawing.Size(100, 20);
+            this.text_reg_number.Size = new System.Drawing.Size(116, 23);
             this.text_reg_number.TabIndex = 19;
             // 
             // combo_reg_year
@@ -764,9 +767,9 @@
             this.combo_reg_year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_reg_year.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_reg_year.FormattingEnabled = true;
-            this.combo_reg_year.Location = new System.Drawing.Point(114, 28);
+            this.combo_reg_year.Location = new System.Drawing.Point(133, 32);
             this.combo_reg_year.Name = "combo_reg_year";
-            this.combo_reg_year.Size = new System.Drawing.Size(87, 21);
+            this.combo_reg_year.Size = new System.Drawing.Size(54, 23);
             this.combo_reg_year.TabIndex = 20;
             // 
             // combo_reg_regcouncil
@@ -774,9 +777,9 @@
             this.combo_reg_regcouncil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.combo_reg_regcouncil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_reg_regcouncil.FormattingEnabled = true;
-            this.combo_reg_regcouncil.Location = new System.Drawing.Point(211, 28);
+            this.combo_reg_regcouncil.Location = new System.Drawing.Point(246, 32);
             this.combo_reg_regcouncil.Name = "combo_reg_regcouncil";
-            this.combo_reg_regcouncil.Size = new System.Drawing.Size(85, 21);
+            this.combo_reg_regcouncil.Size = new System.Drawing.Size(98, 23);
             this.combo_reg_regcouncil.TabIndex = 21;
             this.combo_reg_regcouncil.Click += new System.EventHandler(this.combo_reg_regcouncil_Click);
             // 
@@ -789,9 +792,9 @@
             this.panel_recognition.Controls.Add(this.label30);
             this.panel_recognition.Controls.Add(this.button_save_awards);
             this.panel_recognition.Controls.Add(this.combo_award_year);
-            this.panel_recognition.Location = new System.Drawing.Point(7, 258);
+            this.panel_recognition.Location = new System.Drawing.Point(2, 298);
             this.panel_recognition.Name = "panel_recognition";
-            this.panel_recognition.Size = new System.Drawing.Size(482, 53);
+            this.panel_recognition.Size = new System.Drawing.Size(525, 61);
             this.panel_recognition.TabIndex = 43;
             this.panel_recognition.Visible = false;
             // 
@@ -799,16 +802,16 @@
             // 
             this.text_awardname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_awardname.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_awardname.Location = new System.Drawing.Point(56, 13);
+            this.text_awardname.Location = new System.Drawing.Point(65, 15);
             this.text_awardname.Name = "text_awardname";
-            this.text_awardname.Size = new System.Drawing.Size(152, 20);
+            this.text_awardname.Size = new System.Drawing.Size(177, 23);
             this.text_awardname.TabIndex = 17;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(5, 16);
+            this.label29.Location = new System.Drawing.Point(6, 18);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(41, 15);
             this.label29.TabIndex = 4;
@@ -818,7 +821,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(231, 16);
+            this.label30.Location = new System.Drawing.Point(269, 18);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(29, 15);
             this.label30.TabIndex = 4;
@@ -830,9 +833,9 @@
             this.button_save_awards.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_save_awards.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save_awards.ForeColor = System.Drawing.Color.White;
-            this.button_save_awards.Location = new System.Drawing.Point(378, 13);
+            this.button_save_awards.Location = new System.Drawing.Point(441, 15);
             this.button_save_awards.Name = "button_save_awards";
-            this.button_save_awards.Size = new System.Drawing.Size(61, 22);
+            this.button_save_awards.Size = new System.Drawing.Size(71, 25);
             this.button_save_awards.TabIndex = 9;
             this.button_save_awards.Text = "Update";
             this.button_save_awards.UseVisualStyleBackColor = false;
@@ -844,9 +847,9 @@
             this.combo_award_year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_award_year.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_award_year.FormattingEnabled = true;
-            this.combo_award_year.Location = new System.Drawing.Point(276, 13);
+            this.combo_award_year.Location = new System.Drawing.Point(322, 15);
             this.combo_award_year.Name = "combo_award_year";
-            this.combo_award_year.Size = new System.Drawing.Size(82, 21);
+            this.combo_award_year.Size = new System.Drawing.Size(95, 23);
             this.combo_award_year.TabIndex = 18;
             // 
             // panel_membership
@@ -857,9 +860,9 @@
             this.panel_membership.Controls.Add(this.label31);
             this.panel_membership.Controls.Add(this.combo_membership);
             this.panel_membership.Controls.Add(this.button_save_membership);
-            this.panel_membership.Location = new System.Drawing.Point(6, 318);
+            this.panel_membership.Location = new System.Drawing.Point(2, 367);
             this.panel_membership.Name = "panel_membership";
-            this.panel_membership.Size = new System.Drawing.Size(482, 48);
+            this.panel_membership.Size = new System.Drawing.Size(523, 55);
             this.panel_membership.TabIndex = 44;
             this.panel_membership.Visible = false;
             // 
@@ -869,9 +872,9 @@
             this.button_add_membership.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_add_membership.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add_membership.ForeColor = System.Drawing.Color.White;
-            this.button_add_membership.Location = new System.Drawing.Point(301, 12);
+            this.button_add_membership.Location = new System.Drawing.Point(351, 14);
             this.button_add_membership.Name = "button_add_membership";
-            this.button_add_membership.Size = new System.Drawing.Size(72, 22);
+            this.button_add_membership.Size = new System.Drawing.Size(84, 25);
             this.button_add_membership.TabIndex = 9;
             this.button_add_membership.Text = "Add new";
             this.button_add_membership.UseVisualStyleBackColor = false;
@@ -881,7 +884,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(5, 11);
+            this.label31.Location = new System.Drawing.Point(6, 13);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(74, 15);
             this.label31.TabIndex = 4;
@@ -893,9 +896,9 @@
             this.combo_membership.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_membership.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_membership.FormattingEnabled = true;
-            this.combo_membership.Location = new System.Drawing.Point(97, 12);
+            this.combo_membership.Location = new System.Drawing.Point(113, 14);
             this.combo_membership.Name = "combo_membership";
-            this.combo_membership.Size = new System.Drawing.Size(168, 21);
+            this.combo_membership.Size = new System.Drawing.Size(195, 23);
             this.combo_membership.TabIndex = 7;
             this.combo_membership.Click += new System.EventHandler(this.combo_membership_Click);
             // 
@@ -905,9 +908,9 @@
             this.button_save_membership.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_save_membership.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save_membership.ForeColor = System.Drawing.Color.White;
-            this.button_save_membership.Location = new System.Drawing.Point(378, 12);
+            this.button_save_membership.Location = new System.Drawing.Point(441, 14);
             this.button_save_membership.Name = "button_save_membership";
-            this.button_save_membership.Size = new System.Drawing.Size(61, 22);
+            this.button_save_membership.Size = new System.Drawing.Size(71, 25);
             this.button_save_membership.TabIndex = 9;
             this.button_save_membership.Text = "Update";
             this.button_save_membership.UseVisualStyleBackColor = false;
@@ -929,9 +932,9 @@
             this.panel_experience.Controls.Add(this.text_experience_company);
             this.panel_experience.Controls.Add(this.label18);
             this.panel_experience.Controls.Add(this.combo_experience_city);
-            this.panel_experience.Location = new System.Drawing.Point(7, 181);
+            this.panel_experience.Location = new System.Drawing.Point(2, 209);
             this.panel_experience.Name = "panel_experience";
-            this.panel_experience.Size = new System.Drawing.Size(480, 73);
+            this.panel_experience.Size = new System.Drawing.Size(525, 84);
             this.panel_experience.TabIndex = 42;
             this.panel_experience.Visible = false;
             // 
@@ -941,16 +944,16 @@
             this.combo_eperience_from.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_eperience_from.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_eperience_from.FormattingEnabled = true;
-            this.combo_eperience_from.Location = new System.Drawing.Point(47, 2);
+            this.combo_eperience_from.Location = new System.Drawing.Point(55, 2);
             this.combo_eperience_from.Name = "combo_eperience_from";
-            this.combo_eperience_from.Size = new System.Drawing.Size(48, 21);
+            this.combo_eperience_from.Size = new System.Drawing.Size(55, 23);
             this.combo_eperience_from.TabIndex = 12;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(5, 2);
+            this.label24.Location = new System.Drawing.Point(6, 2);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(35, 15);
             this.label24.TabIndex = 4;
@@ -960,7 +963,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(122, 2);
+            this.label25.Location = new System.Drawing.Point(142, 2);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(19, 15);
             this.label25.TabIndex = 4;
@@ -970,7 +973,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(5, 25);
+            this.label26.Location = new System.Drawing.Point(6, 29);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(30, 15);
             this.label26.TabIndex = 4;
@@ -980,7 +983,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(136, 25);
+            this.label27.Location = new System.Drawing.Point(159, 29);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(59, 15);
             this.label27.TabIndex = 4;
@@ -990,7 +993,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(273, 25);
+            this.label28.Location = new System.Drawing.Point(318, 29);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(28, 15);
             this.label28.TabIndex = 4;
@@ -1002,9 +1005,9 @@
             this.button_experience_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_experience_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_experience_save.ForeColor = System.Drawing.Color.White;
-            this.button_experience_save.Location = new System.Drawing.Point(378, 5);
+            this.button_experience_save.Location = new System.Drawing.Point(441, 6);
             this.button_experience_save.Name = "button_experience_save";
-            this.button_experience_save.Size = new System.Drawing.Size(61, 22);
+            this.button_experience_save.Size = new System.Drawing.Size(71, 25);
             this.button_experience_save.TabIndex = 9;
             this.button_experience_save.Text = "Update";
             this.button_experience_save.UseVisualStyleBackColor = false;
@@ -1016,34 +1019,34 @@
             this.combo_experience_to.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_experience_to.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_experience_to.FormattingEnabled = true;
-            this.combo_experience_to.Location = new System.Drawing.Point(147, 2);
+            this.combo_experience_to.Location = new System.Drawing.Point(171, 2);
             this.combo_experience_to.Name = "combo_experience_to";
-            this.combo_experience_to.Size = new System.Drawing.Size(48, 21);
+            this.combo_experience_to.Size = new System.Drawing.Size(55, 23);
             this.combo_experience_to.TabIndex = 12;
             // 
             // text_experience_role
             // 
             this.text_experience_role.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_experience_role.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_experience_role.Location = new System.Drawing.Point(7, 48);
+            this.text_experience_role.Location = new System.Drawing.Point(8, 55);
             this.text_experience_role.Name = "text_experience_role";
-            this.text_experience_role.Size = new System.Drawing.Size(100, 20);
+            this.text_experience_role.Size = new System.Drawing.Size(116, 23);
             this.text_experience_role.TabIndex = 13;
             // 
             // text_experience_company
             // 
             this.text_experience_company.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_experience_company.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_experience_company.Location = new System.Drawing.Point(138, 48);
+            this.text_experience_company.Location = new System.Drawing.Point(161, 55);
             this.text_experience_company.Name = "text_experience_company";
-            this.text_experience_company.Size = new System.Drawing.Size(112, 20);
+            this.text_experience_company.Size = new System.Drawing.Size(130, 23);
             this.text_experience_company.TabIndex = 13;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(115, 48);
+            this.label18.Location = new System.Drawing.Point(134, 55);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(17, 15);
             this.label18.TabIndex = 14;
@@ -1066,9 +1069,9 @@
             "kolkata",
             "kanpur",
             "dehradun"});
-            this.combo_experience_city.Location = new System.Drawing.Point(269, 47);
+            this.combo_experience_city.Location = new System.Drawing.Point(314, 54);
             this.combo_experience_city.Name = "combo_experience_city";
-            this.combo_experience_city.Size = new System.Drawing.Size(91, 21);
+            this.combo_experience_city.Size = new System.Drawing.Size(105, 23);
             this.combo_experience_city.TabIndex = 15;
             // 
             // panel_education
@@ -1085,9 +1088,9 @@
             this.panel_education.Controls.Add(this.combo_education_year);
             this.panel_education.Controls.Add(this.button_save_education);
             this.panel_education.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.panel_education.Location = new System.Drawing.Point(7, 108);
+            this.panel_education.Location = new System.Drawing.Point(2, 125);
             this.panel_education.Name = "panel_education";
-            this.panel_education.Size = new System.Drawing.Size(482, 67);
+            this.panel_education.Size = new System.Drawing.Size(523, 77);
             this.panel_education.TabIndex = 41;
             this.panel_education.Visible = false;
             // 
@@ -1097,9 +1100,9 @@
             this.combo_education_degree.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_education_degree.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_education_degree.FormattingEnabled = true;
-            this.combo_education_degree.Location = new System.Drawing.Point(9, 12);
+            this.combo_education_degree.Location = new System.Drawing.Point(10, 14);
             this.combo_education_degree.Name = "combo_education_degree";
-            this.combo_education_degree.Size = new System.Drawing.Size(121, 21);
+            this.combo_education_degree.Size = new System.Drawing.Size(140, 23);
             this.combo_education_degree.TabIndex = 29;
             this.combo_education_degree.Click += new System.EventHandler(this.combo_education_degree_Click);
             // 
@@ -1107,7 +1110,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(5, 43);
+            this.label21.Location = new System.Drawing.Point(6, 50);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(44, 15);
             this.label21.TabIndex = 4;
@@ -1117,7 +1120,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(143, 43);
+            this.label22.Location = new System.Drawing.Point(167, 50);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(47, 15);
             this.label22.TabIndex = 4;
@@ -1127,7 +1130,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(281, 43);
+            this.label23.Location = new System.Drawing.Point(328, 50);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(29, 15);
             this.label23.TabIndex = 4;
@@ -1139,9 +1142,9 @@
             this.button_education_add_college.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_education_add_college.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_education_add_college.ForeColor = System.Drawing.Color.White;
-            this.button_education_add_college.Location = new System.Drawing.Point(192, 38);
+            this.button_education_add_college.Location = new System.Drawing.Point(224, 44);
             this.button_education_add_college.Name = "button_education_add_college";
-            this.button_education_add_college.Size = new System.Drawing.Size(72, 22);
+            this.button_education_add_college.Size = new System.Drawing.Size(84, 25);
             this.button_education_add_college.TabIndex = 34;
             this.button_education_add_college.Text = "Add new";
             this.button_education_add_college.UseVisualStyleBackColor = false;
@@ -1153,9 +1156,9 @@
             this.button_education_adddegree.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_education_adddegree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_education_adddegree.ForeColor = System.Drawing.Color.White;
-            this.button_education_adddegree.Location = new System.Drawing.Point(57, 38);
+            this.button_education_adddegree.Location = new System.Drawing.Point(66, 44);
             this.button_education_adddegree.Name = "button_education_adddegree";
-            this.button_education_adddegree.Size = new System.Drawing.Size(72, 22);
+            this.button_education_adddegree.Size = new System.Drawing.Size(84, 25);
             this.button_education_adddegree.TabIndex = 35;
             this.button_education_adddegree.Text = "Add new";
             this.button_education_adddegree.UseVisualStyleBackColor = false;
@@ -1167,9 +1170,9 @@
             this.combo_education_college.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_education_college.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_education_college.FormattingEnabled = true;
-            this.combo_education_college.Location = new System.Drawing.Point(150, 11);
+            this.combo_education_college.Location = new System.Drawing.Point(175, 13);
             this.combo_education_college.Name = "combo_education_college";
-            this.combo_education_college.Size = new System.Drawing.Size(121, 21);
+            this.combo_education_college.Size = new System.Drawing.Size(140, 23);
             this.combo_education_college.TabIndex = 30;
             this.combo_education_college.Click += new System.EventHandler(this.combo_education_college_Click);
             // 
@@ -1179,9 +1182,9 @@
             this.combo_education_year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_education_year.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_education_year.FormattingEnabled = true;
-            this.combo_education_year.Location = new System.Drawing.Point(284, 14);
+            this.combo_education_year.Location = new System.Drawing.Point(331, 16);
             this.combo_education_year.Name = "combo_education_year";
-            this.combo_education_year.Size = new System.Drawing.Size(76, 21);
+            this.combo_education_year.Size = new System.Drawing.Size(88, 23);
             this.combo_education_year.TabIndex = 31;
             // 
             // button_save_education
@@ -1190,9 +1193,9 @@
             this.button_save_education.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_save_education.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save_education.ForeColor = System.Drawing.Color.White;
-            this.button_save_education.Location = new System.Drawing.Point(378, 12);
+            this.button_save_education.Location = new System.Drawing.Point(441, 14);
             this.button_save_education.Name = "button_save_education";
-            this.button_save_education.Size = new System.Drawing.Size(61, 22);
+            this.button_save_education.Size = new System.Drawing.Size(71, 25);
             this.button_save_education.TabIndex = 36;
             this.button_save_education.Text = "Update";
             this.button_save_education.UseVisualStyleBackColor = false;
@@ -1206,9 +1209,9 @@
             this.panel_specialization.Controls.Add(this.label8);
             this.panel_specialization.Controls.Add(this.button_save_special);
             this.panel_specialization.Controls.Add(this.button_add_special);
-            this.panel_specialization.Location = new System.Drawing.Point(6, 61);
+            this.panel_specialization.Location = new System.Drawing.Point(2, 70);
             this.panel_specialization.Name = "panel_specialization";
-            this.panel_specialization.Size = new System.Drawing.Size(483, 40);
+            this.panel_specialization.Size = new System.Drawing.Size(520, 46);
             this.panel_specialization.TabIndex = 40;
             this.panel_specialization.Visible = false;
             // 
@@ -1218,9 +1221,9 @@
             this.combo_special.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_special.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_special.FormattingEnabled = true;
-            this.combo_special.Location = new System.Drawing.Point(96, 12);
+            this.combo_special.Location = new System.Drawing.Point(112, 14);
             this.combo_special.Name = "combo_special";
-            this.combo_special.Size = new System.Drawing.Size(153, 21);
+            this.combo_special.Size = new System.Drawing.Size(178, 23);
             this.combo_special.TabIndex = 7;
             this.combo_special.Click += new System.EventHandler(this.combo_special_Click);
             // 
@@ -1228,7 +1231,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(5, 11);
+            this.label8.Location = new System.Drawing.Point(6, 13);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(84, 15);
             this.label8.TabIndex = 4;
@@ -1240,9 +1243,9 @@
             this.button_save_special.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_save_special.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save_special.ForeColor = System.Drawing.Color.White;
-            this.button_save_special.Location = new System.Drawing.Point(378, 12);
+            this.button_save_special.Location = new System.Drawing.Point(441, 14);
             this.button_save_special.Name = "button_save_special";
-            this.button_save_special.Size = new System.Drawing.Size(61, 22);
+            this.button_save_special.Size = new System.Drawing.Size(71, 25);
             this.button_save_special.TabIndex = 9;
             this.button_save_special.Text = "Update";
             this.button_save_special.UseVisualStyleBackColor = false;
@@ -1254,9 +1257,9 @@
             this.button_add_special.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_add_special.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add_special.ForeColor = System.Drawing.Color.White;
-            this.button_add_special.Location = new System.Drawing.Point(302, 12);
+            this.button_add_special.Location = new System.Drawing.Point(352, 14);
             this.button_add_special.Name = "button_add_special";
-            this.button_add_special.Size = new System.Drawing.Size(72, 22);
+            this.button_add_special.Size = new System.Drawing.Size(84, 25);
             this.button_add_special.TabIndex = 9;
             this.button_add_special.Text = "Add new";
             this.button_add_special.UseVisualStyleBackColor = false;
@@ -1270,9 +1273,9 @@
             this.panel_service.Controls.Add(this.label7);
             this.panel_service.Controls.Add(this.combo_service);
             this.panel_service.Controls.Add(this.button_save_service);
-            this.panel_service.Location = new System.Drawing.Point(5, 10);
+            this.panel_service.Location = new System.Drawing.Point(2, 12);
             this.panel_service.Name = "panel_service";
-            this.panel_service.Size = new System.Drawing.Size(483, 43);
+            this.panel_service.Size = new System.Drawing.Size(521, 50);
             this.panel_service.TabIndex = 39;
             this.panel_service.Visible = false;
             // 
@@ -1282,9 +1285,9 @@
             this.button_add_service.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_add_service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add_service.ForeColor = System.Drawing.Color.White;
-            this.button_add_service.Location = new System.Drawing.Point(302, 10);
+            this.button_add_service.Location = new System.Drawing.Point(352, 12);
             this.button_add_service.Name = "button_add_service";
-            this.button_add_service.Size = new System.Drawing.Size(72, 22);
+            this.button_add_service.Size = new System.Drawing.Size(84, 25);
             this.button_add_service.TabIndex = 9;
             this.button_add_service.Text = "Add new";
             this.button_add_service.UseVisualStyleBackColor = false;
@@ -1294,7 +1297,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(5, 12);
+            this.label7.Location = new System.Drawing.Point(6, 14);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 15);
             this.label7.TabIndex = 2;
@@ -1306,9 +1309,9 @@
             this.combo_service.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_service.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combo_service.FormattingEnabled = true;
-            this.combo_service.Location = new System.Drawing.Point(96, 10);
+            this.combo_service.Location = new System.Drawing.Point(112, 12);
             this.combo_service.Name = "combo_service";
-            this.combo_service.Size = new System.Drawing.Size(155, 21);
+            this.combo_service.Size = new System.Drawing.Size(180, 23);
             this.combo_service.TabIndex = 7;
             this.combo_service.Click += new System.EventHandler(this.combo_service_Click);
             // 
@@ -1318,9 +1321,9 @@
             this.button_save_service.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_save_service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save_service.ForeColor = System.Drawing.Color.White;
-            this.button_save_service.Location = new System.Drawing.Point(378, 10);
+            this.button_save_service.Location = new System.Drawing.Point(441, 12);
             this.button_save_service.Name = "button_save_service";
-            this.button_save_service.Size = new System.Drawing.Size(61, 22);
+            this.button_save_service.Size = new System.Drawing.Size(71, 25);
             this.button_save_service.TabIndex = 9;
             this.button_save_service.Text = "Update";
             this.button_save_service.UseVisualStyleBackColor = false;
@@ -1329,55 +1332,55 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.DarkGray;
-            this.panel9.Location = new System.Drawing.Point(-74, 609);
+            this.panel9.Location = new System.Drawing.Point(-227, 625);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(909, 1);
+            this.panel9.Size = new System.Drawing.Size(1060, 1);
             this.panel9.TabIndex = 61;
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.DarkGray;
-            this.panel7.Location = new System.Drawing.Point(-74, 538);
+            this.panel7.Location = new System.Drawing.Point(-70, 549);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(909, 1);
+            this.panel7.Size = new System.Drawing.Size(901, 1);
             this.panel7.TabIndex = 60;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.DarkGray;
-            this.panel6.Location = new System.Drawing.Point(-71, 466);
+            this.panel6.Location = new System.Drawing.Point(-70, 474);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(906, 1);
+            this.panel6.Size = new System.Drawing.Size(901, 1);
             this.panel6.TabIndex = 59;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
-            this.panel4.Location = new System.Drawing.Point(-74, 394);
+            this.panel4.Location = new System.Drawing.Point(-69, 401);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(909, 1);
+            this.panel4.Size = new System.Drawing.Size(901, 1);
             this.panel4.TabIndex = 58;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
-            this.panel3.Location = new System.Drawing.Point(-76, 322);
+            this.panel3.Location = new System.Drawing.Point(-70, 328);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(910, 1);
+            this.panel3.Size = new System.Drawing.Size(901, 1);
             this.panel3.TabIndex = 57;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
-            this.panel2.Location = new System.Drawing.Point(-76, 250);
+            this.panel2.Location = new System.Drawing.Point(-70, 256);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(910, 1);
+            this.panel2.Size = new System.Drawing.Size(901, 1);
             this.panel2.TabIndex = 56;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkGray;
-            this.panel1.Location = new System.Drawing.Point(-75, 178);
+            this.panel1.Location = new System.Drawing.Point(-78, 184);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(910, 1);
             this.panel1.TabIndex = 55;
@@ -1387,36 +1390,36 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.DarkGray;
-            this.panel5.Location = new System.Drawing.Point(0, 115);
+            this.panel5.Location = new System.Drawing.Point(0, 113);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1368, 1);
+            this.panel5.Size = new System.Drawing.Size(1596, 1);
             this.panel5.TabIndex = 54;
             // 
             // rich_about
             // 
             this.rich_about.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rich_about.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.rich_about.Location = new System.Drawing.Point(416, 70);
+            this.rich_about.Location = new System.Drawing.Point(509, 51);
             this.rich_about.Name = "rich_about";
-            this.rich_about.Size = new System.Drawing.Size(188, 39);
+            this.rich_about.Size = new System.Drawing.Size(210, 44);
             this.rich_about.TabIndex = 28;
             this.rich_about.Text = "";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(318, 75);
+            this.label6.Location = new System.Drawing.Point(412, 53);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.Size = new System.Drawing.Size(43, 15);
             this.label6.TabIndex = 27;
             this.label6.Text = "About ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(200, 75);
+            this.label5.Location = new System.Drawing.Point(233, 73);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 13);
+            this.label5.Size = new System.Drawing.Size(94, 15);
             this.label5.TabIndex = 27;
             this.label5.Text = "years experience";
             // 
@@ -1504,17 +1507,17 @@
             "58",
             "59",
             "60"});
-            this.combo_year.Location = new System.Drawing.Point(144, 70);
+            this.combo_year.Location = new System.Drawing.Point(160, 67);
             this.combo_year.Name = "combo_year";
-            this.combo_year.Size = new System.Drawing.Size(50, 21);
+            this.combo_year.Size = new System.Drawing.Size(58, 23);
             this.combo_year.TabIndex = 26;
             // 
             // radio_female
             // 
             this.radio_female.AutoSize = true;
-            this.radio_female.Location = new System.Drawing.Point(212, 41);
+            this.radio_female.Location = new System.Drawing.Point(247, 42);
             this.radio_female.Name = "radio_female";
-            this.radio_female.Size = new System.Drawing.Size(59, 17);
+            this.radio_female.Size = new System.Drawing.Size(63, 19);
             this.radio_female.TabIndex = 24;
             this.radio_female.TabStop = true;
             this.radio_female.Text = "Female";
@@ -1523,9 +1526,9 @@
             // radio_male
             // 
             this.radio_male.AutoSize = true;
-            this.radio_male.Location = new System.Drawing.Point(144, 41);
+            this.radio_male.Location = new System.Drawing.Point(160, 42);
             this.radio_male.Name = "radio_male";
-            this.radio_male.Size = new System.Drawing.Size(48, 17);
+            this.radio_male.Size = new System.Drawing.Size(51, 19);
             this.radio_male.TabIndex = 24;
             this.radio_male.TabStop = true;
             this.radio_male.Text = "Male";
@@ -1535,38 +1538,38 @@
             // 
             this.text_drname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_drname.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_drname.Location = new System.Drawing.Point(144, 10);
+            this.text_drname.Location = new System.Drawing.Point(160, 13);
             this.text_drname.Name = "text_drname";
-            this.text_drname.Size = new System.Drawing.Size(203, 20);
+            this.text_drname.Size = new System.Drawing.Size(236, 23);
             this.text_drname.TabIndex = 23;
             // 
             // textPassword
             // 
             this.textPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textPassword.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.textPassword.Location = new System.Drawing.Point(723, 72);
+            this.textPassword.Location = new System.Drawing.Point(843, 51);
             this.textPassword.Name = "textPassword";
             this.textPassword.PasswordChar = '*';
-            this.textPassword.Size = new System.Drawing.Size(159, 20);
+            this.textPassword.Size = new System.Drawing.Size(185, 23);
             this.textPassword.TabIndex = 11;
             // 
             // text_email
             // 
             this.text_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_email.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_email.Location = new System.Drawing.Point(723, 41);
+            this.text_email.Location = new System.Drawing.Point(843, 13);
             this.text_email.Name = "text_email";
-            this.text_email.Size = new System.Drawing.Size(159, 20);
+            this.text_email.Size = new System.Drawing.Size(185, 23);
             this.text_email.TabIndex = 11;
             // 
             // text_phone
             // 
             this.text_phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_phone.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_phone.Location = new System.Drawing.Point(416, 38);
+            this.text_phone.Location = new System.Drawing.Point(509, 13);
             this.text_phone.MaxLength = 25;
             this.text_phone.Name = "text_phone";
-            this.text_phone.Size = new System.Drawing.Size(180, 20);
+            this.text_phone.Size = new System.Drawing.Size(210, 23);
             this.text_phone.TabIndex = 10;
             // 
             // button_GoToClinic
@@ -1576,9 +1579,9 @@
             this.button_GoToClinic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_GoToClinic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_GoToClinic.ForeColor = System.Drawing.Color.White;
-            this.button_GoToClinic.Location = new System.Drawing.Point(1274, 33);
+            this.button_GoToClinic.Location = new System.Drawing.Point(1486, 38);
             this.button_GoToClinic.Name = "button_GoToClinic";
-            this.button_GoToClinic.Size = new System.Drawing.Size(94, 30);
+            this.button_GoToClinic.Size = new System.Drawing.Size(110, 35);
             this.button_GoToClinic.TabIndex = 9;
             this.button_GoToClinic.Text = "GO TO CLINIC";
             this.button_GoToClinic.UseVisualStyleBackColor = false;
@@ -1589,8 +1592,8 @@
             this.dataGridView_reg.AccessibleDescription = "";
             this.dataGridView_reg.AllowUserToAddRows = false;
             this.dataGridView_reg.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.White;
-            this.dataGridView_reg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView_reg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_reg.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_reg.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_reg.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -1602,73 +1605,33 @@
             this.column_year,
             this.col_regNo,
             this.Del_Reg});
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_reg.DefaultCellStyle = dataGridViewCellStyle33;
-            this.dataGridView_reg.Location = new System.Drawing.Point(145, 539);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_reg.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView_reg.Location = new System.Drawing.Point(131, 556);
             this.dataGridView_reg.Name = "dataGridView_reg";
             this.dataGridView_reg.ReadOnly = true;
             this.dataGridView_reg.RowHeadersVisible = false;
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView_reg.RowsDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView_reg.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_reg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_reg.Size = new System.Drawing.Size(686, 69);
+            this.dataGridView_reg.Size = new System.Drawing.Size(689, 63);
             this.dataGridView_reg.TabIndex = 5;
             this.dataGridView_reg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_reg_CellClick);
-            // 
-            // colm_RegId
-            // 
-            this.colm_RegId.DataPropertyName = "reg_council_id";
-            this.colm_RegId.HeaderText = "reg_id";
-            this.colm_RegId.Name = "colm_RegId";
-            this.colm_RegId.ReadOnly = true;
-            this.colm_RegId.Visible = false;
-            // 
-            // col_reg
-            // 
-            this.col_reg.DataPropertyName = "name";
-            this.col_reg.HeaderText = "Register Council";
-            this.col_reg.Name = "col_reg";
-            this.col_reg.ReadOnly = true;
-            this.col_reg.Width = 297;
-            // 
-            // column_year
-            // 
-            this.column_year.DataPropertyName = "year";
-            this.column_year.HeaderText = "Year";
-            this.column_year.Name = "column_year";
-            this.column_year.ReadOnly = true;
-            this.column_year.Width = 130;
-            // 
-            // col_regNo
-            // 
-            this.col_regNo.DataPropertyName = "reg_no";
-            this.col_regNo.HeaderText = "Register Number";
-            this.col_regNo.Name = "col_regNo";
-            this.col_regNo.ReadOnly = true;
-            this.col_regNo.Width = 229;
-            // 
-            // Del_Reg
-            // 
-            this.Del_Reg.HeaderText = "";
-            this.Del_Reg.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.Del_Reg.Name = "Del_Reg";
-            this.Del_Reg.ReadOnly = true;
-            this.Del_Reg.Width = 30;
             // 
             // dataGridView_awards
             // 
             this.dataGridView_awards.AllowUserToAddRows = false;
             this.dataGridView_awards.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle35.BackColor = System.Drawing.Color.White;
-            this.dataGridView_awards.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dataGridView_awards.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_awards.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_awards.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_awards.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -1679,74 +1642,42 @@
             this.Award_name,
             this.year,
             this.Del_Awrd});
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_awards.DefaultCellStyle = dataGridViewCellStyle36;
-            this.dataGridView_awards.Location = new System.Drawing.Point(144, 394);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_awards.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView_awards.Location = new System.Drawing.Point(131, 406);
             this.dataGridView_awards.Name = "dataGridView_awards";
             this.dataGridView_awards.ReadOnly = true;
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_awards.RowHeadersDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_awards.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView_awards.RowHeadersVisible = false;
-            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView_awards.RowsDefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView_awards.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView_awards.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_awards.Size = new System.Drawing.Size(686, 69);
+            this.dataGridView_awards.Size = new System.Drawing.Size(689, 63);
             this.dataGridView_awards.TabIndex = 5;
             this.dataGridView_awards.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_awards_CellClick);
-            // 
-            // award_colm_Dr_id
-            // 
-            this.award_colm_Dr_id.DataPropertyName = "dr_id";
-            this.award_colm_Dr_id.HeaderText = "id";
-            this.award_colm_Dr_id.Name = "award_colm_Dr_id";
-            this.award_colm_Dr_id.ReadOnly = true;
-            this.award_colm_Dr_id.Visible = false;
-            // 
-            // Award_name
-            // 
-            this.Award_name.DataPropertyName = "name";
-            this.Award_name.HeaderText = "Name";
-            this.Award_name.Name = "Award_name";
-            this.Award_name.ReadOnly = true;
-            this.Award_name.Width = 531;
-            // 
-            // year
-            // 
-            this.year.DataPropertyName = "year";
-            this.year.HeaderText = "Year";
-            this.year.Name = "year";
-            this.year.ReadOnly = true;
-            this.year.Width = 127;
-            // 
-            // Del_Awrd
-            // 
-            this.Del_Awrd.HeaderText = "";
-            this.Del_Awrd.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.Del_Awrd.Name = "Del_Awrd";
-            this.Del_Awrd.ReadOnly = true;
-            this.Del_Awrd.Width = 30;
             // 
             // dataGridView_experience
             // 
             this.dataGridView_experience.AllowUserToAddRows = false;
             this.dataGridView_experience.AllowUserToDeleteRows = false;
             this.dataGridView_experience.AllowUserToResizeRows = false;
-            dataGridViewCellStyle39.BackColor = System.Drawing.Color.White;
-            this.dataGridView_experience.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            this.dataGridView_experience.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView_experience.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_experience.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_experience.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -1760,90 +1691,34 @@
             this.Exp_Company,
             this.Col_city,
             this.Del_Exp});
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle40.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_experience.DefaultCellStyle = dataGridViewCellStyle40;
-            this.dataGridView_experience.Location = new System.Drawing.Point(145, 322);
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_experience.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridView_experience.Location = new System.Drawing.Point(131, 333);
             this.dataGridView_experience.Name = "dataGridView_experience";
             this.dataGridView_experience.ReadOnly = true;
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_experience.RowHeadersDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_experience.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView_experience.RowHeadersVisible = false;
-            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView_experience.RowsDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView_experience.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView_experience.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_experience.Size = new System.Drawing.Size(686, 69);
+            this.dataGridView_experience.Size = new System.Drawing.Size(689, 63);
             this.dataGridView_experience.TabIndex = 5;
             this.dataGridView_experience.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_experience_CellClick);
-            // 
-            // Exp_Dr_id
-            // 
-            this.Exp_Dr_id.DataPropertyName = "dr_id";
-            this.Exp_Dr_id.HeaderText = "id";
-            this.Exp_Dr_id.Name = "Exp_Dr_id";
-            this.Exp_Dr_id.ReadOnly = true;
-            this.Exp_Dr_id.Visible = false;
-            // 
-            // Col_from
-            // 
-            this.Col_from.DataPropertyName = "from_year";
-            this.Col_from.HeaderText = "From";
-            this.Col_from.Name = "Col_from";
-            this.Col_from.ReadOnly = true;
-            this.Col_from.Width = 55;
-            // 
-            // Col_To
-            // 
-            this.Col_To.DataPropertyName = "to_year";
-            this.Col_To.HeaderText = "To";
-            this.Col_To.Name = "Col_To";
-            this.Col_To.ReadOnly = true;
-            this.Col_To.Width = 55;
-            // 
-            // Col_Role
-            // 
-            this.Col_Role.DataPropertyName = "role";
-            this.Col_Role.HeaderText = "Role";
-            this.Col_Role.Name = "Col_Role";
-            this.Col_Role.ReadOnly = true;
-            this.Col_Role.Width = 150;
-            // 
-            // Exp_Company
-            // 
-            this.Exp_Company.DataPropertyName = "company";
-            this.Exp_Company.HeaderText = "Company";
-            this.Exp_Company.Name = "Exp_Company";
-            this.Exp_Company.ReadOnly = true;
-            this.Exp_Company.Width = 235;
-            // 
-            // Col_city
-            // 
-            this.Col_city.DataPropertyName = "city_name";
-            this.Col_city.HeaderText = "City";
-            this.Col_city.Name = "Col_city";
-            this.Col_city.ReadOnly = true;
-            this.Col_city.Width = 161;
-            // 
-            // Del_Exp
-            // 
-            this.Del_Exp.HeaderText = "";
-            this.Del_Exp.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.Del_Exp.Name = "Del_Exp";
-            this.Del_Exp.ReadOnly = true;
-            this.Del_Exp.Width = 30;
             // 
             // dataGridView_education
             // 
@@ -1851,8 +1726,8 @@
             this.dataGridView_education.AllowUserToDeleteRows = false;
             this.dataGridView_education.AllowUserToResizeColumns = false;
             this.dataGridView_education.AllowUserToResizeRows = false;
-            dataGridViewCellStyle43.BackColor = System.Drawing.Color.White;
-            this.dataGridView_education.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            this.dataGridView_education.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView_education.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_education.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_education.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -1866,89 +1741,34 @@
             this.Col_degree,
             this.Col_year,
             this.Del_Degre});
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle44.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_education.DefaultCellStyle = dataGridViewCellStyle44;
-            this.dataGridView_education.Location = new System.Drawing.Point(144, 250);
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_education.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGridView_education.Location = new System.Drawing.Point(131, 261);
             this.dataGridView_education.Name = "dataGridView_education";
             this.dataGridView_education.ReadOnly = true;
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle45.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_education.RowHeadersDefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_education.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridView_education.RowHeadersVisible = false;
-            dataGridViewCellStyle46.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView_education.RowsDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView_education.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView_education.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_education.Size = new System.Drawing.Size(686, 69);
+            this.dataGridView_education.Size = new System.Drawing.Size(689, 63);
             this.dataGridView_education.TabIndex = 5;
             this.dataGridView_education.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_education_CellClick);
-            // 
-            // colm_Edu_Dr_id
-            // 
-            this.colm_Edu_Dr_id.DataPropertyName = "dr_id";
-            this.colm_Edu_Dr_id.HeaderText = "dr_id";
-            this.colm_Edu_Dr_id.Name = "colm_Edu_Dr_id";
-            this.colm_Edu_Dr_id.ReadOnly = true;
-            this.colm_Edu_Dr_id.Visible = false;
-            // 
-            // colm_Degree_Id
-            // 
-            this.colm_Degree_Id.DataPropertyName = "degree_id";
-            this.colm_Degree_Id.HeaderText = "degreeid";
-            this.colm_Degree_Id.Name = "colm_Degree_Id";
-            this.colm_Degree_Id.ReadOnly = true;
-            this.colm_Degree_Id.Visible = false;
-            // 
-            // colm_Collage_id
-            // 
-            this.colm_Collage_id.DataPropertyName = "college_id";
-            this.colm_Collage_id.HeaderText = "collegeid";
-            this.colm_Collage_id.Name = "colm_Collage_id";
-            this.colm_Collage_id.ReadOnly = true;
-            this.colm_Collage_id.Visible = false;
-            // 
-            // Col_college
-            // 
-            this.Col_college.DataPropertyName = "college";
-            this.Col_college.HeaderText = "College";
-            this.Col_college.Name = "Col_college";
-            this.Col_college.ReadOnly = true;
-            this.Col_college.Width = 300;
-            // 
-            // Col_degree
-            // 
-            this.Col_degree.DataPropertyName = "degree";
-            this.Col_degree.HeaderText = "Degree";
-            this.Col_degree.Name = "Col_degree";
-            this.Col_degree.ReadOnly = true;
-            this.Col_degree.Width = 260;
-            // 
-            // Col_year
-            // 
-            this.Col_year.DataPropertyName = "year";
-            this.Col_year.HeaderText = "Year";
-            this.Col_year.Name = "Col_year";
-            this.Col_year.ReadOnly = true;
-            // 
-            // Del_Degre
-            // 
-            this.Del_Degre.HeaderText = "";
-            this.Del_Degre.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.Del_Degre.Name = "Del_Degre";
-            this.Del_Degre.ReadOnly = true;
-            this.Del_Degre.Width = 30;
             // 
             // dataGridView_member
             // 
@@ -1956,8 +1776,8 @@
             this.dataGridView_member.AllowUserToDeleteRows = false;
             this.dataGridView_member.AllowUserToResizeColumns = false;
             this.dataGridView_member.AllowUserToResizeRows = false;
-            dataGridViewCellStyle47.BackColor = System.Drawing.Color.White;
-            this.dataGridView_member.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.dataGridView_member.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridView_member.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_member.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_member.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -1967,49 +1787,25 @@
             this.colm_Member_id,
             this.col_member,
             this.Del_Mebr});
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle48.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_member.DefaultCellStyle = dataGridViewCellStyle48;
-            this.dataGridView_member.Location = new System.Drawing.Point(144, 466);
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_member.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGridView_member.Location = new System.Drawing.Point(131, 480);
             this.dataGridView_member.Name = "dataGridView_member";
             this.dataGridView_member.ReadOnly = true;
             this.dataGridView_member.RowHeadersVisible = false;
-            dataGridViewCellStyle49.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView_member.RowsDefaultCellStyle = dataGridViewCellStyle49;
-            this.dataGridView_member.Size = new System.Drawing.Size(686, 69);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView_member.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            this.dataGridView_member.Size = new System.Drawing.Size(689, 63);
             this.dataGridView_member.TabIndex = 5;
             this.dataGridView_member.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_member_CellClick);
-            // 
-            // colm_Member_id
-            // 
-            this.colm_Member_id.DataPropertyName = "membership_id";
-            this.colm_Member_id.HeaderText = "member";
-            this.colm_Member_id.Name = "colm_Member_id";
-            this.colm_Member_id.ReadOnly = true;
-            this.colm_Member_id.Visible = false;
-            // 
-            // col_member
-            // 
-            this.col_member.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_member.DataPropertyName = "name";
-            this.col_member.HeaderText = "Memberships";
-            this.col_member.Name = "col_member";
-            this.col_member.ReadOnly = true;
-            // 
-            // Del_Mebr
-            // 
-            this.Del_Mebr.HeaderText = "";
-            this.Del_Mebr.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.Del_Mebr.Name = "Del_Mebr";
-            this.Del_Mebr.ReadOnly = true;
-            this.Del_Mebr.Width = 30;
             // 
             // dataGridView_specialization
             // 
@@ -2017,8 +1813,8 @@
             this.dataGridView_specialization.AllowUserToDeleteRows = false;
             this.dataGridView_specialization.AllowUserToResizeColumns = false;
             this.dataGridView_specialization.AllowUserToResizeRows = false;
-            dataGridViewCellStyle50.BackColor = System.Drawing.Color.White;
-            this.dataGridView_specialization.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            this.dataGridView_specialization.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridView_specialization.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_specialization.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_specialization.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -2029,31 +1825,31 @@
             this.colm_Spec_id,
             this.Col_Col_special,
             this.Del_Spe});
-            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle51.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle51.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle51.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_specialization.DefaultCellStyle = dataGridViewCellStyle51;
-            this.dataGridView_specialization.Location = new System.Drawing.Point(144, 179);
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_specialization.DefaultCellStyle = dataGridViewCellStyle20;
+            this.dataGridView_specialization.Location = new System.Drawing.Point(131, 189);
             this.dataGridView_specialization.Name = "dataGridView_specialization";
             this.dataGridView_specialization.ReadOnly = true;
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle52.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle52.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_specialization.RowHeadersDefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_specialization.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridView_specialization.RowHeadersVisible = false;
-            dataGridViewCellStyle53.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView_specialization.RowsDefaultCellStyle = dataGridViewCellStyle53;
-            this.dataGridView_specialization.Size = new System.Drawing.Size(686, 69);
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView_specialization.RowsDefaultCellStyle = dataGridViewCellStyle22;
+            this.dataGridView_specialization.Size = new System.Drawing.Size(689, 63);
             this.dataGridView_specialization.TabIndex = 5;
             this.dataGridView_specialization.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_specialization_CellClick);
             // 
@@ -2093,8 +1889,8 @@
             // 
             this.dataGridView_services.AllowUserToAddRows = false;
             this.dataGridView_services.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle54.BackColor = System.Drawing.Color.White;
-            this.dataGridView_services.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
+            this.dataGridView_services.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridView_services.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_services.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_services.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -2105,28 +1901,28 @@
             this.Colm_Id,
             this.Col_service,
             this.Del_Services});
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle55.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle55.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_services.DefaultCellStyle = dataGridViewCellStyle55;
-            this.dataGridView_services.Location = new System.Drawing.Point(145, 115);
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_services.DefaultCellStyle = dataGridViewCellStyle24;
+            this.dataGridView_services.Location = new System.Drawing.Point(131, 117);
             this.dataGridView_services.Name = "dataGridView_services";
             this.dataGridView_services.ReadOnly = true;
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle56.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_services.RowHeadersDefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_services.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridView_services.RowHeadersVisible = false;
             this.dataGridView_services.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_services.Size = new System.Drawing.Size(687, 64);
+            this.dataGridView_services.Size = new System.Drawing.Size(689, 63);
             this.dataGridView_services.TabIndex = 5;
             this.dataGridView_services.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_services_CellClick);
             // 
@@ -2167,7 +1963,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label16.Location = new System.Drawing.Point(31, 569);
+            this.label16.Location = new System.Drawing.Point(25, 560);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(94, 17);
             this.label16.TabIndex = 4;
@@ -2178,7 +1974,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label15.Location = new System.Drawing.Point(32, 501);
+            this.label15.Location = new System.Drawing.Point(32, 492);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(94, 17);
             this.label15.TabIndex = 4;
@@ -2189,7 +1985,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label14.Location = new System.Drawing.Point(66, 429);
+            this.label14.Location = new System.Drawing.Point(62, 418);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 17);
             this.label14.TabIndex = 4;
@@ -2200,7 +1996,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label13.Location = new System.Drawing.Point(47, 359);
+            this.label13.Location = new System.Drawing.Point(40, 344);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(80, 17);
             this.label13.TabIndex = 4;
@@ -2211,7 +2007,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label12.Location = new System.Drawing.Point(48, 288);
+            this.label12.Location = new System.Drawing.Point(41, 296);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(78, 17);
             this.label12.TabIndex = 4;
@@ -2222,7 +2018,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label11.Location = new System.Drawing.Point(20, 217);
+            this.label11.Location = new System.Drawing.Point(8, 207);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(101, 17);
             this.label11.TabIndex = 4;
@@ -2234,9 +2030,9 @@
             this.button_edit_drname.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_edit_drname.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_edit_drname.ForeColor = System.Drawing.Color.White;
-            this.button_edit_drname.Location = new System.Drawing.Point(910, 40);
+            this.button_edit_drname.Location = new System.Drawing.Point(1062, 46);
             this.button_edit_drname.Name = "button_edit_drname";
-            this.button_edit_drname.Size = new System.Drawing.Size(57, 23);
+            this.button_edit_drname.Size = new System.Drawing.Size(66, 27);
             this.button_edit_drname.TabIndex = 3;
             this.button_edit_drname.Text = "Update";
             this.button_edit_drname.UseVisualStyleBackColor = false;
@@ -2246,7 +2042,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(650, 76);
+            this.label10.Location = new System.Drawing.Point(758, 53);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(57, 15);
             this.label10.TabIndex = 2;
@@ -2256,7 +2052,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(650, 42);
+            this.label20.Location = new System.Drawing.Point(758, 18);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(36, 15);
             this.label20.TabIndex = 2;
@@ -2266,7 +2062,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(318, 42);
+            this.label19.Location = new System.Drawing.Point(412, 18);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(91, 15);
             this.label19.TabIndex = 2;
@@ -2277,7 +2073,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label17.Location = new System.Drawing.Point(65, 142);
+            this.label17.Location = new System.Drawing.Point(61, 128);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(63, 17);
             this.label17.TabIndex = 2;
@@ -2287,7 +2083,7 @@
             // 
             this.pictureBox_Docter_Image.BackColor = System.Drawing.Color.White;
             this.pictureBox_Docter_Image.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Docter_Image.Location = new System.Drawing.Point(26, 7);
+            this.pictureBox_Docter_Image.Location = new System.Drawing.Point(18, 4);
             this.pictureBox_Docter_Image.Name = "pictureBox_Docter_Image";
             this.pictureBox_Docter_Image.Size = new System.Drawing.Size(85, 81);
             this.pictureBox_Docter_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2346,9 +2142,9 @@
             this.panel_clinicaldetails.Controls.Add(this.text_clinic_special);
             this.panel_clinicaldetails.Controls.Add(this.dataGridView_clinic_special);
             this.panel_clinicaldetails.Controls.Add(this.button_clinic_specialdelete);
-            this.panel_clinicaldetails.Location = new System.Drawing.Point(3, 135);
+            this.panel_clinicaldetails.Location = new System.Drawing.Point(3, 751);
             this.panel_clinicaldetails.Name = "panel_clinicaldetails";
-            this.panel_clinicaldetails.Size = new System.Drawing.Size(1363, 708);
+            this.panel_clinicaldetails.Size = new System.Drawing.Size(1590, 817);
             this.panel_clinicaldetails.TabIndex = 32;
             // 
             // Btn_Close
@@ -2358,9 +2154,9 @@
             this.Btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Close.ForeColor = System.Drawing.Color.White;
-            this.Btn_Close.Location = new System.Drawing.Point(1255, 4);
+            this.Btn_Close.Location = new System.Drawing.Point(1464, 5);
             this.Btn_Close.Name = "Btn_Close";
-            this.Btn_Close.Size = new System.Drawing.Size(95, 30);
+            this.Btn_Close.Size = new System.Drawing.Size(111, 35);
             this.Btn_Close.TabIndex = 27;
             this.Btn_Close.Text = "Close";
             this.Btn_Close.UseVisualStyleBackColor = false;
@@ -2370,7 +2166,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(477, 258);
+            this.label37.Location = new System.Drawing.Point(556, 298);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(83, 13);
             this.label37.TabIndex = 11;
@@ -2382,9 +2178,9 @@
             this.button_clinic_servaddnew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_clinic_servaddnew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_clinic_servaddnew.ForeColor = System.Drawing.Color.White;
-            this.button_clinic_servaddnew.Location = new System.Drawing.Point(609, 207);
+            this.button_clinic_servaddnew.Location = new System.Drawing.Point(710, 239);
             this.button_clinic_servaddnew.Name = "button_clinic_servaddnew";
-            this.button_clinic_servaddnew.Size = new System.Drawing.Size(75, 23);
+            this.button_clinic_servaddnew.Size = new System.Drawing.Size(87, 27);
             this.button_clinic_servaddnew.TabIndex = 9;
             this.button_clinic_servaddnew.Text = "Add new";
             this.button_clinic_servaddnew.UseVisualStyleBackColor = false;
@@ -2396,9 +2192,9 @@
             this.button_clinicservicesave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_clinicservicesave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_clinicservicesave.ForeColor = System.Drawing.Color.White;
-            this.button_clinicservicesave.Location = new System.Drawing.Point(687, 207);
+            this.button_clinicservicesave.Location = new System.Drawing.Point(801, 239);
             this.button_clinicservicesave.Name = "button_clinicservicesave";
-            this.button_clinicservicesave.Size = new System.Drawing.Size(75, 23);
+            this.button_clinicservicesave.Size = new System.Drawing.Size(87, 27);
             this.button_clinicservicesave.TabIndex = 9;
             this.button_clinicservicesave.Text = "Update";
             this.button_clinicservicesave.UseVisualStyleBackColor = false;
@@ -2409,9 +2205,9 @@
             this.combo_clinic_service.Cursor = System.Windows.Forms.Cursors.Hand;
             this.combo_clinic_service.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_clinic_service.FormattingEnabled = true;
-            this.combo_clinic_service.Location = new System.Drawing.Point(472, 207);
+            this.combo_clinic_service.Location = new System.Drawing.Point(551, 239);
             this.combo_clinic_service.Name = "combo_clinic_service";
-            this.combo_clinic_service.Size = new System.Drawing.Size(121, 21);
+            this.combo_clinic_service.Size = new System.Drawing.Size(140, 23);
             this.combo_clinic_service.TabIndex = 7;
             this.combo_clinic_service.Click += new System.EventHandler(this.combo_clinic_service_Click);
             // 
@@ -2421,9 +2217,9 @@
             this.button_clinic_servdelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_clinic_servdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_clinic_servdelete.ForeColor = System.Drawing.Color.White;
-            this.button_clinic_servdelete.Location = new System.Drawing.Point(389, 206);
+            this.button_clinic_servdelete.Location = new System.Drawing.Point(454, 238);
             this.button_clinic_servdelete.Name = "button_clinic_servdelete";
-            this.button_clinic_servdelete.Size = new System.Drawing.Size(75, 23);
+            this.button_clinic_servdelete.Size = new System.Drawing.Size(87, 27);
             this.button_clinic_servdelete.TabIndex = 6;
             this.button_clinic_servdelete.Text = "Delete";
             this.button_clinic_servdelete.UseVisualStyleBackColor = false;
@@ -2433,9 +2229,9 @@
             // 
             this.pictureBox_logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pictureBox_logo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_logo.Location = new System.Drawing.Point(144, 468);
+            this.pictureBox_logo.Location = new System.Drawing.Point(168, 540);
             this.pictureBox_logo.Name = "pictureBox_logo";
-            this.pictureBox_logo.Size = new System.Drawing.Size(121, 102);
+            this.pictureBox_logo.Size = new System.Drawing.Size(141, 118);
             this.pictureBox_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_logo.TabIndex = 26;
             this.pictureBox_logo.TabStop = false;
@@ -2446,7 +2242,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(471, 187);
+            this.label36.Location = new System.Drawing.Point(549, 216);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(47, 13);
             this.label36.TabIndex = 2;
@@ -2456,16 +2252,16 @@
             // 
             this.text_clinic_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_clinic_email.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_clinic_email.Location = new System.Drawing.Point(356, 383);
+            this.text_clinic_email.Location = new System.Drawing.Point(415, 442);
             this.text_clinic_email.Name = "text_clinic_email";
-            this.text_clinic_email.Size = new System.Drawing.Size(195, 20);
+            this.text_clinic_email.Size = new System.Drawing.Size(227, 23);
             this.text_clinic_email.TabIndex = 25;
             // 
             // label35
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(48, 207);
+            this.label35.Location = new System.Drawing.Point(56, 239);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(55, 17);
             this.label35.TabIndex = 2;
@@ -2475,16 +2271,16 @@
             // 
             this.text_clinic_mobile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_clinic_mobile.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_clinic_mobile.Location = new System.Drawing.Point(152, 383);
+            this.text_clinic_mobile.Location = new System.Drawing.Point(177, 442);
             this.text_clinic_mobile.Name = "text_clinic_mobile";
-            this.text_clinic_mobile.Size = new System.Drawing.Size(183, 20);
+            this.text_clinic_mobile.Size = new System.Drawing.Size(213, 23);
             this.text_clinic_mobile.TabIndex = 24;
             // 
             // label44
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(51, 147);
+            this.label44.Location = new System.Drawing.Point(59, 170);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(49, 17);
             this.label44.TabIndex = 2;
@@ -2496,9 +2292,9 @@
             this.button_clinic_logo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_clinic_logo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_clinic_logo.ForeColor = System.Drawing.Color.White;
-            this.button_clinic_logo.Location = new System.Drawing.Point(152, 424);
+            this.button_clinic_logo.Location = new System.Drawing.Point(177, 489);
             this.button_clinic_logo.Name = "button_clinic_logo";
-            this.button_clinic_logo.Size = new System.Drawing.Size(75, 30);
+            this.button_clinic_logo.Size = new System.Drawing.Size(87, 35);
             this.button_clinic_logo.TabIndex = 23;
             this.button_clinic_logo.Text = "Update";
             this.button_clinic_logo.UseVisualStyleBackColor = false;
@@ -2508,7 +2304,7 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(46, 84);
+            this.label45.Location = new System.Drawing.Point(54, 97);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(54, 17);
             this.label45.TabIndex = 2;
@@ -2518,7 +2314,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(62, 464);
+            this.label43.Location = new System.Drawing.Point(72, 535);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(38, 17);
             this.label43.TabIndex = 22;
@@ -2529,7 +2325,7 @@
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(21, 25);
+            this.label46.Location = new System.Drawing.Point(24, 29);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(77, 17);
             this.label46.TabIndex = 2;
@@ -2539,7 +2335,7 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(48, 391);
+            this.label40.Location = new System.Drawing.Point(56, 451);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(52, 17);
             this.label40.TabIndex = 22;
@@ -2548,16 +2344,16 @@
             // text_clinic_service
             // 
             this.text_clinic_service.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_clinic_service.Location = new System.Drawing.Point(472, 208);
+            this.text_clinic_service.Location = new System.Drawing.Point(551, 240);
             this.text_clinic_service.Name = "text_clinic_service";
-            this.text_clinic_service.Size = new System.Drawing.Size(121, 20);
+            this.text_clinic_service.Size = new System.Drawing.Size(140, 23);
             this.text_clinic_service.TabIndex = 8;
             // 
             // label41
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(353, 365);
+            this.label41.Location = new System.Drawing.Point(412, 421);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(34, 13);
             this.label41.TabIndex = 20;
@@ -2567,8 +2363,8 @@
             // 
             this.dataGridView_clinic_service.AllowUserToAddRows = false;
             this.dataGridView_clinic_service.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle57.BackColor = System.Drawing.Color.White;
-            this.dataGridView_clinic_service.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.White;
+            this.dataGridView_clinic_service.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridView_clinic_service.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_clinic_service.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_clinic_service.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -2577,27 +2373,27 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.service});
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle58.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle58.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_clinic_service.DefaultCellStyle = dataGridViewCellStyle58;
-            this.dataGridView_clinic_service.Location = new System.Drawing.Point(152, 176);
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_clinic_service.DefaultCellStyle = dataGridViewCellStyle27;
+            this.dataGridView_clinic_service.Location = new System.Drawing.Point(177, 203);
             this.dataGridView_clinic_service.Name = "dataGridView_clinic_service";
             this.dataGridView_clinic_service.ReadOnly = true;
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle59.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle59.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_clinic_service.RowHeadersDefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_clinic_service.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.dataGridView_clinic_service.RowHeadersVisible = false;
-            this.dataGridView_clinic_service.Size = new System.Drawing.Size(231, 57);
+            this.dataGridView_clinic_service.Size = new System.Drawing.Size(269, 66);
             this.dataGridView_clinic_service.TabIndex = 5;
             this.dataGridView_clinic_service.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_clinic_service_CellClick);
             // 
@@ -2629,7 +2425,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(149, 365);
+            this.label42.Location = new System.Drawing.Point(174, 421);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(87, 13);
             this.label42.TabIndex = 21;
@@ -2639,18 +2435,18 @@
             // 
             this.text_clinic_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_clinic_name.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_clinic_name.Location = new System.Drawing.Point(152, 21);
+            this.text_clinic_name.Location = new System.Drawing.Point(177, 24);
             this.text_clinic_name.Name = "text_clinic_name";
-            this.text_clinic_name.Size = new System.Drawing.Size(231, 20);
+            this.text_clinic_name.Size = new System.Drawing.Size(269, 23);
             this.text_clinic_name.TabIndex = 7;
             // 
             // rich_clinic_about
             // 
             this.rich_clinic_about.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rich_clinic_about.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.rich_clinic_about.Location = new System.Drawing.Point(152, 315);
+            this.rich_clinic_about.Location = new System.Drawing.Point(177, 363);
             this.rich_clinic_about.Name = "rich_clinic_about";
-            this.rich_clinic_about.Size = new System.Drawing.Size(231, 34);
+            this.rich_clinic_about.Size = new System.Drawing.Size(269, 39);
             this.rich_clinic_about.TabIndex = 19;
             this.rich_clinic_about.Text = "";
             // 
@@ -2658,9 +2454,9 @@
             // 
             this.text_website.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_website.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_website.Location = new System.Drawing.Point(152, 79);
+            this.text_website.Location = new System.Drawing.Point(177, 91);
             this.text_website.Name = "text_website";
-            this.text_website.Size = new System.Drawing.Size(231, 20);
+            this.text_website.Size = new System.Drawing.Size(269, 23);
             this.text_website.TabIndex = 9;
             // 
             // combo_clinic_special
@@ -2668,9 +2464,9 @@
             this.combo_clinic_special.Cursor = System.Windows.Forms.Cursors.Hand;
             this.combo_clinic_special.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_clinic_special.FormattingEnabled = true;
-            this.combo_clinic_special.Location = new System.Drawing.Point(477, 279);
+            this.combo_clinic_special.Location = new System.Drawing.Point(556, 322);
             this.combo_clinic_special.Name = "combo_clinic_special";
-            this.combo_clinic_special.Size = new System.Drawing.Size(121, 21);
+            this.combo_clinic_special.Size = new System.Drawing.Size(140, 23);
             this.combo_clinic_special.TabIndex = 15;
             this.combo_clinic_special.Click += new System.EventHandler(this.combo_clinic_special_Click);
             // 
@@ -2678,9 +2474,9 @@
             // 
             this.text_tagline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_tagline.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_tagline.Location = new System.Drawing.Point(152, 142);
+            this.text_tagline.Location = new System.Drawing.Point(177, 164);
             this.text_tagline.Name = "text_tagline";
-            this.text_tagline.Size = new System.Drawing.Size(231, 20);
+            this.text_tagline.Size = new System.Drawing.Size(269, 23);
             this.text_tagline.TabIndex = 10;
             // 
             // button_clinic_specialaddnew
@@ -2689,9 +2485,9 @@
             this.button_clinic_specialaddnew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_clinic_specialaddnew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_clinic_specialaddnew.ForeColor = System.Drawing.Color.White;
-            this.button_clinic_specialaddnew.Location = new System.Drawing.Point(609, 279);
+            this.button_clinic_specialaddnew.Location = new System.Drawing.Point(710, 322);
             this.button_clinic_specialaddnew.Name = "button_clinic_specialaddnew";
-            this.button_clinic_specialaddnew.Size = new System.Drawing.Size(75, 23);
+            this.button_clinic_specialaddnew.Size = new System.Drawing.Size(87, 27);
             this.button_clinic_specialaddnew.TabIndex = 18;
             this.button_clinic_specialaddnew.Text = "Add new";
             this.button_clinic_specialaddnew.UseVisualStyleBackColor = false;
@@ -2701,7 +2497,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(12, 273);
+            this.label38.Location = new System.Drawing.Point(14, 315);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(93, 17);
             this.label38.TabIndex = 12;
@@ -2713,9 +2509,9 @@
             this.button_clinicspecialsave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_clinicspecialsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_clinicspecialsave.ForeColor = System.Drawing.Color.White;
-            this.button_clinicspecialsave.Location = new System.Drawing.Point(687, 279);
+            this.button_clinicspecialsave.Location = new System.Drawing.Point(801, 322);
             this.button_clinicspecialsave.Name = "button_clinicspecialsave";
-            this.button_clinicspecialsave.Size = new System.Drawing.Size(75, 23);
+            this.button_clinicspecialsave.Size = new System.Drawing.Size(87, 27);
             this.button_clinicspecialsave.TabIndex = 17;
             this.button_clinicspecialsave.Text = "Update";
             this.button_clinicspecialsave.UseVisualStyleBackColor = false;
@@ -2725,7 +2521,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(56, 332);
+            this.label39.Location = new System.Drawing.Point(65, 383);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(43, 17);
             this.label39.TabIndex = 12;
@@ -2734,9 +2530,9 @@
             // text_clinic_special
             // 
             this.text_clinic_special.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_clinic_special.Location = new System.Drawing.Point(477, 279);
+            this.text_clinic_special.Location = new System.Drawing.Point(556, 322);
             this.text_clinic_special.Name = "text_clinic_special";
-            this.text_clinic_special.Size = new System.Drawing.Size(121, 20);
+            this.text_clinic_special.Size = new System.Drawing.Size(140, 23);
             this.text_clinic_special.TabIndex = 16;
             // 
             // dataGridView_clinic_special
@@ -2745,8 +2541,8 @@
             this.dataGridView_clinic_special.AllowUserToDeleteRows = false;
             this.dataGridView_clinic_special.AllowUserToResizeColumns = false;
             this.dataGridView_clinic_special.AllowUserToResizeRows = false;
-            dataGridViewCellStyle60.BackColor = System.Drawing.Color.White;
-            this.dataGridView_clinic_special.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.White;
+            this.dataGridView_clinic_special.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
             this.dataGridView_clinic_special.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_clinic_special.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_clinic_special.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -2755,27 +2551,27 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.name});
-            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle61.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle61.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle61.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle61.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle61.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_clinic_special.DefaultCellStyle = dataGridViewCellStyle61;
-            this.dataGridView_clinic_special.Location = new System.Drawing.Point(152, 243);
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_clinic_special.DefaultCellStyle = dataGridViewCellStyle30;
+            this.dataGridView_clinic_special.Location = new System.Drawing.Point(177, 280);
             this.dataGridView_clinic_special.Name = "dataGridView_clinic_special";
             this.dataGridView_clinic_special.ReadOnly = true;
-            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle62.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle62.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle62.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle62.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle62.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_clinic_special.RowHeadersDefaultCellStyle = dataGridViewCellStyle62;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_clinic_special.RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
             this.dataGridView_clinic_special.RowHeadersVisible = false;
-            this.dataGridView_clinic_special.Size = new System.Drawing.Size(231, 57);
+            this.dataGridView_clinic_special.Size = new System.Drawing.Size(269, 66);
             this.dataGridView_clinic_special.TabIndex = 13;
             this.dataGridView_clinic_special.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_clinic_special_CellClick);
             // 
@@ -2809,9 +2605,9 @@
             this.button_clinic_specialdelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_clinic_specialdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_clinic_specialdelete.ForeColor = System.Drawing.Color.White;
-            this.button_clinic_specialdelete.Location = new System.Drawing.Point(389, 273);
+            this.button_clinic_specialdelete.Location = new System.Drawing.Point(454, 315);
             this.button_clinic_specialdelete.Name = "button_clinic_specialdelete";
-            this.button_clinic_specialdelete.Size = new System.Drawing.Size(75, 23);
+            this.button_clinic_specialdelete.Size = new System.Drawing.Size(87, 27);
             this.button_clinic_specialdelete.TabIndex = 14;
             this.button_clinic_specialdelete.Text = "Delete";
             this.button_clinic_specialdelete.UseVisualStyleBackColor = false;
@@ -2821,15 +2617,225 @@
             // 
             this.openFileDialog2.FileName = "openFileDialog2";
             // 
+            // colm_Edu_Dr_id
+            // 
+            this.colm_Edu_Dr_id.DataPropertyName = "dr_id";
+            this.colm_Edu_Dr_id.HeaderText = "dr_id";
+            this.colm_Edu_Dr_id.Name = "colm_Edu_Dr_id";
+            this.colm_Edu_Dr_id.ReadOnly = true;
+            this.colm_Edu_Dr_id.Visible = false;
+            // 
+            // colm_Degree_Id
+            // 
+            this.colm_Degree_Id.DataPropertyName = "degree_id";
+            this.colm_Degree_Id.HeaderText = "degreeid";
+            this.colm_Degree_Id.Name = "colm_Degree_Id";
+            this.colm_Degree_Id.ReadOnly = true;
+            this.colm_Degree_Id.Visible = false;
+            // 
+            // colm_Collage_id
+            // 
+            this.colm_Collage_id.DataPropertyName = "college_id";
+            this.colm_Collage_id.HeaderText = "collegeid";
+            this.colm_Collage_id.Name = "colm_Collage_id";
+            this.colm_Collage_id.ReadOnly = true;
+            this.colm_Collage_id.Visible = false;
+            // 
+            // Col_college
+            // 
+            this.Col_college.DataPropertyName = "college";
+            this.Col_college.HeaderText = "College";
+            this.Col_college.Name = "Col_college";
+            this.Col_college.ReadOnly = true;
+            this.Col_college.Width = 330;
+            // 
+            // Col_degree
+            // 
+            this.Col_degree.DataPropertyName = "degree";
+            this.Col_degree.HeaderText = "Degree";
+            this.Col_degree.Name = "Col_degree";
+            this.Col_degree.ReadOnly = true;
+            this.Col_degree.Width = 280;
+            // 
+            // Col_year
+            // 
+            this.Col_year.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Col_year.DataPropertyName = "year";
+            this.Col_year.HeaderText = "Year";
+            this.Col_year.Name = "Col_year";
+            this.Col_year.ReadOnly = true;
+            // 
+            // Del_Degre
+            // 
+            this.Del_Degre.HeaderText = "";
+            this.Del_Degre.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.Del_Degre.Name = "Del_Degre";
+            this.Del_Degre.ReadOnly = true;
+            this.Del_Degre.Width = 30;
+            // 
+            // Exp_Dr_id
+            // 
+            this.Exp_Dr_id.DataPropertyName = "dr_id";
+            this.Exp_Dr_id.HeaderText = "id";
+            this.Exp_Dr_id.Name = "Exp_Dr_id";
+            this.Exp_Dr_id.ReadOnly = true;
+            this.Exp_Dr_id.Visible = false;
+            // 
+            // Col_from
+            // 
+            this.Col_from.DataPropertyName = "from_year";
+            this.Col_from.HeaderText = "From";
+            this.Col_from.Name = "Col_from";
+            this.Col_from.ReadOnly = true;
+            this.Col_from.Width = 90;
+            // 
+            // Col_To
+            // 
+            this.Col_To.DataPropertyName = "to_year";
+            this.Col_To.HeaderText = "To";
+            this.Col_To.Name = "Col_To";
+            this.Col_To.ReadOnly = true;
+            this.Col_To.Width = 90;
+            // 
+            // Col_Role
+            // 
+            this.Col_Role.DataPropertyName = "role";
+            this.Col_Role.HeaderText = "Role";
+            this.Col_Role.Name = "Col_Role";
+            this.Col_Role.ReadOnly = true;
+            this.Col_Role.Width = 150;
+            // 
+            // Exp_Company
+            // 
+            this.Exp_Company.DataPropertyName = "company";
+            this.Exp_Company.HeaderText = "Company";
+            this.Exp_Company.Name = "Exp_Company";
+            this.Exp_Company.ReadOnly = true;
+            this.Exp_Company.Width = 235;
+            // 
+            // Col_city
+            // 
+            this.Col_city.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Col_city.DataPropertyName = "city_name";
+            this.Col_city.HeaderText = "City";
+            this.Col_city.Name = "Col_city";
+            this.Col_city.ReadOnly = true;
+            // 
+            // Del_Exp
+            // 
+            this.Del_Exp.HeaderText = "";
+            this.Del_Exp.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.Del_Exp.Name = "Del_Exp";
+            this.Del_Exp.ReadOnly = true;
+            this.Del_Exp.Width = 30;
+            // 
+            // award_colm_Dr_id
+            // 
+            this.award_colm_Dr_id.DataPropertyName = "dr_id";
+            this.award_colm_Dr_id.HeaderText = "id";
+            this.award_colm_Dr_id.Name = "award_colm_Dr_id";
+            this.award_colm_Dr_id.ReadOnly = true;
+            this.award_colm_Dr_id.Visible = false;
+            // 
+            // Award_name
+            // 
+            this.Award_name.DataPropertyName = "name";
+            this.Award_name.HeaderText = "Name";
+            this.Award_name.Name = "Award_name";
+            this.Award_name.ReadOnly = true;
+            this.Award_name.Width = 531;
+            // 
+            // year
+            // 
+            this.year.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.year.DataPropertyName = "year";
+            this.year.HeaderText = "Year";
+            this.year.Name = "year";
+            this.year.ReadOnly = true;
+            // 
+            // Del_Awrd
+            // 
+            this.Del_Awrd.HeaderText = "";
+            this.Del_Awrd.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.Del_Awrd.Name = "Del_Awrd";
+            this.Del_Awrd.ReadOnly = true;
+            this.Del_Awrd.Width = 30;
+            // 
+            // colm_Member_id
+            // 
+            this.colm_Member_id.DataPropertyName = "membership_id";
+            this.colm_Member_id.HeaderText = "member";
+            this.colm_Member_id.Name = "colm_Member_id";
+            this.colm_Member_id.ReadOnly = true;
+            this.colm_Member_id.Visible = false;
+            // 
+            // col_member
+            // 
+            this.col_member.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_member.DataPropertyName = "name";
+            this.col_member.HeaderText = "Memberships";
+            this.col_member.Name = "col_member";
+            this.col_member.ReadOnly = true;
+            // 
+            // Del_Mebr
+            // 
+            this.Del_Mebr.HeaderText = "";
+            this.Del_Mebr.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.Del_Mebr.Name = "Del_Mebr";
+            this.Del_Mebr.ReadOnly = true;
+            this.Del_Mebr.Width = 30;
+            // 
+            // colm_RegId
+            // 
+            this.colm_RegId.DataPropertyName = "reg_council_id";
+            this.colm_RegId.HeaderText = "reg_id";
+            this.colm_RegId.Name = "colm_RegId";
+            this.colm_RegId.ReadOnly = true;
+            this.colm_RegId.Visible = false;
+            // 
+            // col_reg
+            // 
+            this.col_reg.DataPropertyName = "name";
+            this.col_reg.HeaderText = "Register Council";
+            this.col_reg.Name = "col_reg";
+            this.col_reg.ReadOnly = true;
+            this.col_reg.Width = 330;
+            // 
+            // column_year
+            // 
+            this.column_year.DataPropertyName = "year";
+            this.column_year.HeaderText = "Year";
+            this.column_year.Name = "column_year";
+            this.column_year.ReadOnly = true;
+            this.column_year.Width = 169;
+            // 
+            // col_regNo
+            // 
+            this.col_regNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_regNo.DataPropertyName = "reg_no";
+            this.col_regNo.HeaderText = "Register Number";
+            this.col_regNo.Name = "col_regNo";
+            this.col_regNo.ReadOnly = true;
+            // 
+            // Del_Reg
+            // 
+            this.Del_Reg.HeaderText = "";
+            this.Del_Reg.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.Del_Reg.Name = "Del_Reg";
+            this.Del_Reg.ReadOnly = true;
+            this.Del_Reg.Width = 30;
+            // 
             // Doctor_Profile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 682);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panel_clinicaldetails);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel_edit_dr);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Doctor_Profile";
             this.Text = "Doctor Profile";
@@ -2998,28 +3004,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colm_RegId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_reg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn column_year;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_regNo;
-        private System.Windows.Forms.DataGridViewImageColumn Del_Reg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Exp_Dr_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_from;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_To;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Role;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Exp_Company;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_city;
-        private System.Windows.Forms.DataGridViewImageColumn Del_Exp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colm_Edu_Dr_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colm_Degree_Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colm_Collage_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_college;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_degree;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_year;
-        private System.Windows.Forms.DataGridViewImageColumn Del_Degre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colm_Member_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_member;
-        private System.Windows.Forms.DataGridViewImageColumn Del_Mebr;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColmDr_id_Spec;
         private System.Windows.Forms.DataGridViewTextBoxColumn colm_Spec_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Col_special;
@@ -3071,9 +3055,31 @@
         private System.Windows.Forms.Button button_clinic_specialdelete;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.ListBox listpatientsearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colm_RegId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_reg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column_year;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_regNo;
+        private System.Windows.Forms.DataGridViewImageColumn Del_Reg;
         private System.Windows.Forms.DataGridViewTextBoxColumn award_colm_Dr_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Award_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn year;
         private System.Windows.Forms.DataGridViewImageColumn Del_Awrd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Exp_Dr_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_from;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_To;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Role;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Exp_Company;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_city;
+        private System.Windows.Forms.DataGridViewImageColumn Del_Exp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colm_Edu_Dr_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colm_Degree_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colm_Collage_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_college;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_degree;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_year;
+        private System.Windows.Forms.DataGridViewImageColumn Del_Degre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colm_Member_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_member;
+        private System.Windows.Forms.DataGridViewImageColumn Del_Mebr;
     }
 }

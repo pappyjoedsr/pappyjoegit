@@ -294,11 +294,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(278, 75);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 254;
             this.label3.Text = "Type";
             // 
@@ -322,11 +322,11 @@
             // 
             this.Lab_Doctorname.AutoSize = true;
             this.Lab_Doctorname.BackColor = System.Drawing.Color.Transparent;
-            this.Lab_Doctorname.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lab_Doctorname.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Doctorname.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Lab_Doctorname.Location = new System.Drawing.Point(12, 75);
             this.Lab_Doctorname.Name = "Lab_Doctorname";
-            this.Lab_Doctorname.Size = new System.Drawing.Size(39, 13);
+            this.Lab_Doctorname.Size = new System.Drawing.Size(40, 13);
             this.Lab_Doctorname.TabIndex = 252;
             this.Lab_Doctorname.Text = "Group";
             // 
@@ -361,11 +361,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.LightGray;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(278, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 17);
+            this.label2.Size = new System.Drawing.Size(19, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "To";
             // 
@@ -431,11 +431,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.LightGray;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(15, 105);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 17);
+            this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "From";
             // 

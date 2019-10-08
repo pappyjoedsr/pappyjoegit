@@ -183,7 +183,7 @@
             this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(428, 26);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 13);
+            this.label6.Size = new System.Drawing.Size(83, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Can\'t Be Empty";
             // 
@@ -365,7 +365,7 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(428, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 13);
+            this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "Can\'t Be Empty";
             // 
@@ -1167,7 +1167,7 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // EMR_settings
+            // EMR_Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1175,8 +1175,9 @@
             this.ClientSize = new System.Drawing.Size(1146, 698);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.tabControl1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "EMR_settings";
+            this.Name = "EMR_Settings";
             this.Text = "EMR Settings";
             this.Load += new System.EventHandler(this.EMR_settings_Load);
             this.tabControl1.ResumeLayout(false);

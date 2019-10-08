@@ -119,7 +119,7 @@
             this.label18.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label18.Location = new System.Drawing.Point(341, 4);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(54, 17);
+            this.label18.Size = new System.Drawing.Size(53, 17);
             this.label18.TabIndex = 251;
             this.label18.Text = "To Date";
             // 
@@ -139,7 +139,7 @@
             this.dtpfrom.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpfrom.Location = new System.Drawing.Point(121, 29);
             this.dtpfrom.Name = "dtpfrom";
-            this.dtpfrom.Size = new System.Drawing.Size(197, 20);
+            this.dtpfrom.Size = new System.Drawing.Size(197, 22);
             this.dtpfrom.TabIndex = 249;
             // 
             // dTPToDate
@@ -147,7 +147,7 @@
             this.dTPToDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dTPToDate.Location = new System.Drawing.Point(341, 29);
             this.dTPToDate.Name = "dTPToDate";
-            this.dTPToDate.Size = new System.Drawing.Size(206, 20);
+            this.dTPToDate.Size = new System.Drawing.Size(206, 22);
             this.dTPToDate.TabIndex = 242;
             // 
             // BtnPrintPreview
@@ -465,7 +465,7 @@
             this.label11.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label11.Location = new System.Drawing.Point(86, 368);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(95, 17);
+            this.label11.Size = new System.Drawing.Size(94, 17);
             this.label11.TabIndex = 10;
             this.label11.Text = "Treatment Plan";
             // 
@@ -560,7 +560,7 @@
             // 
             this.DtpDischargeDate.Location = new System.Drawing.Point(201, 24);
             this.DtpDischargeDate.Name = "DtpDischargeDate";
-            this.DtpDischargeDate.Size = new System.Drawing.Size(290, 20);
+            this.DtpDischargeDate.Size = new System.Drawing.Size(290, 22);
             this.DtpDischargeDate.TabIndex = 1;
             // 
             // checkBoxreview
@@ -593,7 +593,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(56, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 17);
+            this.label1.Size = new System.Drawing.Size(130, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "DATE OF DISCHARGE";
             // 
@@ -604,7 +604,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(98, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 17);
+            this.label2.Size = new System.Drawing.Size(88, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "DEPARTMENT";
             this.label2.Visible = false;
@@ -627,7 +627,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(55, 189);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 17);
+            this.label5.Size = new System.Drawing.Size(131, 17);
             this.label5.TabIndex = 3;
             this.label5.Text = "LAB INVESTIGATIONS";
             // 
@@ -638,7 +638,7 @@
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label6.Location = new System.Drawing.Point(76, 269);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 17);
+            this.label6.Size = new System.Drawing.Size(110, 17);
             this.label6.TabIndex = 3;
             this.label6.Text = "SURGICAL NOTES";
             // 
@@ -649,7 +649,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label7.Location = new System.Drawing.Point(19, 347);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(169, 17);
+            this.label7.Size = new System.Drawing.Size(168, 17);
             this.label7.TabIndex = 3;
             this.label7.Text = "CONDITION AT DISCHARGE";
             // 
@@ -671,7 +671,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label8.Location = new System.Drawing.Point(45, 423);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(142, 17);
+            this.label8.Size = new System.Drawing.Size(141, 17);
             this.label8.TabIndex = 3;
             this.label8.Text = "ADVICE AT DISCHARGE";
             // 
@@ -682,7 +682,7 @@
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label10.Location = new System.Drawing.Point(419, 502);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.Size = new System.Drawing.Size(32, 13);
             this.label10.TabIndex = 238;
             this.label10.Text = "TIME";
             // 
@@ -702,7 +702,7 @@
             this.DtpReview.Enabled = false;
             this.DtpReview.Location = new System.Drawing.Point(203, 500);
             this.DtpReview.Name = "DtpReview";
-            this.DtpReview.Size = new System.Drawing.Size(207, 20);
+            this.DtpReview.Size = new System.Drawing.Size(207, 22);
             this.DtpReview.TabIndex = 237;
             // 
             // richTxt_LabInvestigations
@@ -758,6 +758,8 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CaseSheet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

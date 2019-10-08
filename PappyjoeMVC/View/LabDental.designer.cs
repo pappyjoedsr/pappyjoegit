@@ -42,6 +42,8 @@
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Executivename = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EDT = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DELE = new System.Windows.Forms.DataGridViewImageColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -56,6 +58,14 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtwork = new System.Windows.Forms.TextBox();
             this.dgvdentalwork = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tooth_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.work_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.work_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aloytpe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ed = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dl = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtalloy = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -76,16 +86,6 @@
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.EDT = new System.Windows.Forms.DataGridViewImageColumn();
-            this.DELE = new System.Windows.Forms.DataGridViewImageColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tooth_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.work_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.work_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aloytpe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ed = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dl = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnllab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLabs)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -229,6 +229,20 @@
             this.Executivename.Name = "Executivename";
             this.Executivename.Width = 150;
             // 
+            // EDT
+            // 
+            this.EDT.HeaderText = "";
+            this.EDT.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.EDT.Name = "EDT";
+            this.EDT.Width = 50;
+            // 
+            // DELE
+            // 
+            this.DELE.HeaderText = "";
+            this.DELE.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.DELE.Name = "DELE";
+            this.DELE.Width = 50;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -284,7 +298,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label8.Location = new System.Drawing.Point(384, 90);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(98, 13);
+            this.label8.Size = new System.Drawing.Size(99, 13);
             this.label8.TabIndex = 11;
             this.label8.Text = " EXECUTIVE NAME";
             // 
@@ -302,7 +316,7 @@
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label10.Location = new System.Drawing.Point(392, 62);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 13);
+            this.label10.Size = new System.Drawing.Size(92, 13);
             this.label10.TabIndex = 9;
             this.label10.Text = "PHONE NUMBER";
             // 
@@ -335,7 +349,7 @@
             this.label12.Location = new System.Drawing.Point(25, 59);
             this.label12.Name = "label12";
             this.label12.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label12.Size = new System.Drawing.Size(60, 13);
+            this.label12.Size = new System.Drawing.Size(59, 13);
             this.label12.TabIndex = 5;
             this.label12.Text = "LAB NAME";
             // 
@@ -422,6 +436,68 @@
             this.dgvdentalwork.TabIndex = 30;
             this.dgvdentalwork.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdentalwork_CellContentClick);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // tooth_number
+            // 
+            this.tooth_number.DataPropertyName = "tooth_number";
+            this.tooth_number.HeaderText = "Tooth Number";
+            this.tooth_number.Name = "tooth_number";
+            this.tooth_number.ReadOnly = true;
+            this.tooth_number.Visible = false;
+            this.tooth_number.Width = 200;
+            // 
+            // work_name
+            // 
+            this.work_name.DataPropertyName = "work_name";
+            this.work_name.HeaderText = "Work Name";
+            this.work_name.Name = "work_name";
+            this.work_name.ReadOnly = true;
+            this.work_name.Width = 200;
+            // 
+            // work_type
+            // 
+            this.work_type.DataPropertyName = "work_type";
+            this.work_type.HeaderText = "Work type";
+            this.work_type.Name = "work_type";
+            this.work_type.ReadOnly = true;
+            // 
+            // shade
+            // 
+            this.shade.DataPropertyName = "shade";
+            this.shade.HeaderText = "Shade";
+            this.shade.Name = "shade";
+            this.shade.ReadOnly = true;
+            // 
+            // aloytpe
+            // 
+            this.aloytpe.DataPropertyName = "aloytype";
+            this.aloytpe.HeaderText = "Alloy type";
+            this.aloytpe.Name = "aloytpe";
+            this.aloytpe.ReadOnly = true;
+            // 
+            // ed
+            // 
+            this.ed.HeaderText = "";
+            this.ed.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.ed.Name = "ed";
+            this.ed.ReadOnly = true;
+            this.ed.Width = 50;
+            // 
+            // dl
+            // 
+            this.dl.HeaderText = "";
+            this.dl.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.dl.Name = "dl";
+            this.dl.ReadOnly = true;
+            this.dl.Width = 50;
+            // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -450,7 +526,7 @@
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(394, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 27;
             this.label3.Text = "Alloy Type";
             // 
@@ -539,7 +615,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(391, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 17;
             this.label2.Text = "Work Type";
             // 
@@ -549,7 +625,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(828, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 16;
             this.label1.Text = "Tooth Number";
             this.label1.Visible = false;
@@ -621,82 +697,6 @@
             this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
             this.dataGridViewImageColumn4.Width = 50;
             // 
-            // EDT
-            // 
-            this.EDT.HeaderText = "";
-            this.EDT.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.EDT.Name = "EDT";
-            this.EDT.Width = 50;
-            // 
-            // DELE
-            // 
-            this.DELE.HeaderText = "";
-            this.DELE.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.DELE.Name = "DELE";
-            this.DELE.Width = 50;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // tooth_number
-            // 
-            this.tooth_number.DataPropertyName = "tooth_number";
-            this.tooth_number.HeaderText = "Tooth Number";
-            this.tooth_number.Name = "tooth_number";
-            this.tooth_number.ReadOnly = true;
-            this.tooth_number.Visible = false;
-            this.tooth_number.Width = 200;
-            // 
-            // work_name
-            // 
-            this.work_name.DataPropertyName = "work_name";
-            this.work_name.HeaderText = "Work Name";
-            this.work_name.Name = "work_name";
-            this.work_name.ReadOnly = true;
-            this.work_name.Width = 200;
-            // 
-            // work_type
-            // 
-            this.work_type.DataPropertyName = "work_type";
-            this.work_type.HeaderText = "Work type";
-            this.work_type.Name = "work_type";
-            this.work_type.ReadOnly = true;
-            // 
-            // shade
-            // 
-            this.shade.DataPropertyName = "shade";
-            this.shade.HeaderText = "Shade";
-            this.shade.Name = "shade";
-            this.shade.ReadOnly = true;
-            // 
-            // aloytpe
-            // 
-            this.aloytpe.DataPropertyName = "aloytype";
-            this.aloytpe.HeaderText = "Alloy type";
-            this.aloytpe.Name = "aloytpe";
-            this.aloytpe.ReadOnly = true;
-            // 
-            // ed
-            // 
-            this.ed.HeaderText = "";
-            this.ed.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.ed.Name = "ed";
-            this.ed.ReadOnly = true;
-            this.ed.Width = 50;
-            // 
-            // dl
-            // 
-            this.dl.HeaderText = "";
-            this.dl.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.dl.Name = "dl";
-            this.dl.ReadOnly = true;
-            this.dl.Width = 50;
-            // 
             // LabDental
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -705,6 +705,7 @@
             this.ClientSize = new System.Drawing.Size(1272, 698);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.tpDenatl);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LabDental";
             this.Text = "Dental Master";

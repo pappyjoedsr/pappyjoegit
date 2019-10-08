@@ -970,7 +970,7 @@
             this.toolStripldoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripldoc.Name = "toolStripldoc";
             this.toolStripldoc.ReadOnly = true;
-            this.toolStripldoc.Size = new System.Drawing.Size(250, 23);
+            this.toolStripldoc.Size = new System.Drawing.Size(250, 40);
             this.toolStripldoc.Text = "doctorrname";
             // 
             // txttaxno
@@ -1069,13 +1069,13 @@
             // listpatientsearch
             // 
             this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
-            this.listpatientsearch.ItemHeight = 21;
+            this.listpatientsearch.ItemHeight = 20;
             this.listpatientsearch.Location = new System.Drawing.Point(1016, 35);
             this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(250, 84);
+            this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
             this.listpatientsearch.TabIndex = 299;
             this.listpatientsearch.Visible = false;
             // 

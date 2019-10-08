@@ -3854,6 +3854,7 @@
             this.ClientSize = new System.Drawing.Size(1084, 635);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label13);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Printout";
             this.Text = "Printout";

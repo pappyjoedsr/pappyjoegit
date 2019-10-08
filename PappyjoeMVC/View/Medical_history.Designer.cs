@@ -446,6 +446,7 @@
             this.ClientSize = new System.Drawing.Size(1053, 612);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label2);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Medical_History";
             this.Text = "Medical History";

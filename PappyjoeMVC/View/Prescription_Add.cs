@@ -283,8 +283,8 @@ namespace PappyjoeMVC.View
             dataGridView_templatenew.Show();
             drugspanel.Hide();
             templatepanel1.Show();
-            dataGridView2.Hide();
-            presdruggrid.Show();
+            presdruggrid.Hide();
+            dataGridView2.Show();
             savebut.Text = "SAVE TEMPLATE";
         }
 

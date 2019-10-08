@@ -111,6 +111,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label21.Location = new System.Drawing.Point(35, 295);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(64, 17);
@@ -121,6 +122,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label20.Location = new System.Drawing.Point(35, 261);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(54, 17);
@@ -131,6 +133,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label18.Location = new System.Drawing.Point(35, 159);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(64, 17);
@@ -163,6 +166,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label17.Location = new System.Drawing.Point(35, 127);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(67, 17);
@@ -199,7 +203,7 @@
             this.textSmsUname.Size = new System.Drawing.Size(269, 20);
             this.textSmsUname.TabIndex = 126;
             // 
-            // communication_settings
+            // Communication_Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -221,7 +225,7 @@
             this.Controls.Add(this.textSmsUname);
             this.Controls.Add(this.label19);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "communication_settings";
+            this.Name = "Communication_Settings";
             this.Text = "Communication Settings";
             this.Load += new System.EventHandler(this.communication_settings_Load);
             this.ResumeLayout(false);

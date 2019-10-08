@@ -358,7 +358,7 @@
             this.toolStripTextBDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextBDoctor.Name = "toolStripTextBDoctor";
             this.toolStripTextBDoctor.ReadOnly = true;
-            this.toolStripTextBDoctor.Size = new System.Drawing.Size(250, 23);
+            this.toolStripTextBDoctor.Size = new System.Drawing.Size(250, 40);
             this.toolStripTextBDoctor.Text = "doctorname";
             // 
             // toolStripTextBox1
@@ -1423,6 +1423,7 @@
             this.Controls.Add(this.lblhide);
             this.Controls.Add(this.checkcancel);
             this.Controls.Add(this.toolStrip1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Reports";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

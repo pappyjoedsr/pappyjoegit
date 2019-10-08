@@ -563,7 +563,6 @@
             this.Cmb_Manufacture.Size = new System.Drawing.Size(359, 25);
             this.Cmb_Manufacture.TabIndex = 1;
             this.Cmb_Manufacture.SelectedIndexChanged += new System.EventHandler(this.Cmb_Manufacture_SelectedIndexChanged);
-            //this.Cmb_Manufacture.Click += new System.EventHandler(this.Cmb_Manufacture_Click);
             // 
             // label2
             // 
@@ -707,6 +706,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.toolStrip1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Item_List";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

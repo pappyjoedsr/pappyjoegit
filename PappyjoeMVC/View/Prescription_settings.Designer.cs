@@ -567,6 +567,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_addtype);
             this.Controls.Add(this.text_type);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Prescription_Settings";
             this.Text = "Prescription Settings";

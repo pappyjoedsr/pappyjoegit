@@ -240,6 +240,7 @@
             this.Controls.Add(this.btn_Batches);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ItemListForSales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

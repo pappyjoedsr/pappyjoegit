@@ -39,10 +39,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgv_Item = new System.Windows.Forms.DataGridView();
-            this.Lab_Msg = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colitem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBatch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lab_Msg = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Item)).BeginInit();
             this.SuspendLayout();
@@ -167,17 +167,6 @@
             this.dgv_Item.TabIndex = 0;
             this.dgv_Item.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Item_CellDoubleClick);
             // 
-            // Lab_Msg
-            // 
-            this.Lab_Msg.AutoSize = true;
-            this.Lab_Msg.ForeColor = System.Drawing.Color.Red;
-            this.Lab_Msg.Location = new System.Drawing.Point(249, 44);
-            this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(82, 13);
-            this.Lab_Msg.TabIndex = 292;
-            this.Lab_Msg.Text = "No Items Found";
-            this.Lab_Msg.Visible = false;
-            // 
             // id
             // 
             this.id.HeaderText = "Id";
@@ -199,6 +188,17 @@
             this.colBatch.ReadOnly = true;
             this.colBatch.Width = 170;
             // 
+            // Lab_Msg
+            // 
+            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.ForeColor = System.Drawing.Color.Red;
+            this.Lab_Msg.Location = new System.Drawing.Point(249, 44);
+            this.Lab_Msg.Name = "Lab_Msg";
+            this.Lab_Msg.Size = new System.Drawing.Size(82, 13);
+            this.Lab_Msg.TabIndex = 292;
+            this.Lab_Msg.Text = "No Items Found";
+            this.Lab_Msg.Visible = false;
+            // 
             // Sales_Return_Itemlist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,10 +213,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btn_OK);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Sales_Return_Itemlist";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Item List";
             this.Load += new System.EventHandler(this.Sales_Return_Itemlist_Load);
             this.panel1.ResumeLayout(false);

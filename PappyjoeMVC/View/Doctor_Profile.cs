@@ -1361,7 +1361,9 @@ namespace PappyjoeMVC.View
                 else
                 {
                     listpatientsearch.Visible = true;
+
                 }
+                listpatientsearch.Location = new Point(toolStrip1.Width - 410, 1);
             }
             else
             {
@@ -1478,6 +1480,11 @@ namespace PappyjoeMVC.View
                 this.Hide();
                 form2.ShowDialog();
             }
+        }
+
+        private void panel_edit_dr_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)

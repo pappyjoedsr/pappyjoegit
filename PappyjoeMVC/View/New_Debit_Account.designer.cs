@@ -98,7 +98,7 @@
             this.label1.TabIndex = 249;
             this.label1.Text = "Account Name";
             // 
-            // New_DebitAccount
+            // New_Debit_Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,8 +109,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtAccountName);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "New_DebitAccount";
+            this.Name = "New_Debit_Account";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Debit Account";
             this.Load += new System.EventHandler(this.New_DebitAccount_Load);

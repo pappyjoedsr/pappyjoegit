@@ -1467,7 +1467,7 @@ namespace PappyjoeMVC.View
             this.toolStripldoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripldoc.Name = "toolStripldoc";
             this.toolStripldoc.ReadOnly = true;
-            this.toolStripldoc.Size = new System.Drawing.Size(250, 23);
+            this.toolStripldoc.Size = new System.Drawing.Size(250, 40);
             this.toolStripldoc.Text = "Search";
             // 
             // gbxMonthView
@@ -2191,7 +2191,7 @@ namespace PappyjoeMVC.View
             // listpatientsearch
             // 
             this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listpatientsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
             this.listpatientsearch.ItemHeight = 20;
@@ -2224,6 +2224,7 @@ namespace PappyjoeMVC.View
             this.Controls.Add(this.sbStatusBar);
             this.Controls.Add(this.OptionsPane);
             this.Controls.Add(this.toolBar1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Menu = this.mainMenu1;
             this.Name = "Main_Calendar";

@@ -364,15 +364,16 @@
             this.dateTimePickefrom.Size = new System.Drawing.Size(154, 20);
             this.dateTimePickefrom.TabIndex = 237;
             // 
-            // MedicalCertificate
+            // Medical_Certificate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(521, 537);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MedicalCertificate";
+            this.Name = "Medical_Certificate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Medical Certificate";
             this.Load += new System.EventHandler(this.MedicalCertificate_Load);
