@@ -1078,6 +1078,7 @@
             this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
             this.listpatientsearch.TabIndex = 299;
             this.listpatientsearch.Visible = false;
+            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
             // 
             // Practice_Details
             // 

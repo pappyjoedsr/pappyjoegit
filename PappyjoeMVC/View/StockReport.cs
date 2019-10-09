@@ -695,11 +695,14 @@ namespace PappyjoeMVC.View
 
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
-            var form2 = new Doctor_Profile();
-            form2.doctor_id = doctor_id;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.ShowDialog();
+            if (PappyjoeMVC.Model.Connection.MyGlobals.loginType != "staff")
+            {
+                var form2 = new Doctor_Profile();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
         }
 
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)

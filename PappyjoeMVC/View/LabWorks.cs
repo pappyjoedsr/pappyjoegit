@@ -23,11 +23,14 @@ namespace PappyjoeMVC.View
         public string addr = "", loc = "", gen = "", patient_id = "", age = "", address = "", sexage = "", Apppath = "", doctor_id = "", typ = "", n = "", workiddental = "", workname = "", strPatientName = "", mob_number = "", path = "", contact_no = "", logo_name = "", clinicn = "", strclinicname = "", strStreet = "", stremail = "", strwebsite = "";
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
-            var form2 = new Doctor_Profile();
-            form2.doctor_id = doctor_id;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.ShowDialog();
+            if (PappyjoeMVC.Model.Connection.MyGlobals.loginType != "staff")
+            {
+                var form2 = new Doctor_Profile();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
         }
         private void label44_Click(object sender, EventArgs e)
         {

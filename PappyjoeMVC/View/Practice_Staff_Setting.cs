@@ -660,7 +660,7 @@ namespace PappyjoeMVC.View
                         chkAPTadd.Checked = false;
                     if (dr["Permission"].ToString() == "E")
                         chkAPTedit.Checked = false;
-                    if (dr["Permission"].ToString() == "D")
+                    if (dr["Permission"].ToString() == "D") 
                         chkAPTdelete.Checked = false;
                     if (dr["Permission"].ToString() == "AP")
                         chkAPTClinicAppoinment.Checked = false;
@@ -703,12 +703,12 @@ namespace PappyjoeMVC.View
                     if (chkEMRCFadd.Checked == true || chkEMRCFedit.Checked == true || chkEMRCFdelete.Checked == true)
                     {
                         chkEMRCF.Checked = true;
-                        chkEMR.Checked = true;
+                        //chkEMR.Checked = true;
                     }
                     else
                     {
                         chkEMRCF.Checked = false;
-                        chkEMR.Checked = false;
+                        //chkEMR.Checked = false;
                     }
                 }
                 else if (dr["Category"].ToString() == "EMRTP")
@@ -722,12 +722,12 @@ namespace PappyjoeMVC.View
                     if (chkEMRTPadd.Checked == true || chkEMRTPedit.Checked == true || chkEMRTPdelete.Checked == true)
                     {
                         chkEMRTP.Checked = true;
-                        chkEMR.Checked = true;
+                        //chkEMR.Checked = true;
                     }
                     else
                     {
                         chkEMRTP.Checked = false;
-                        chkEMR.Checked = false;
+                        //chkEMR.Checked = false;
                     }
                 }
                 else if (dr["Category"].ToString() == "EMRFP")
@@ -739,12 +739,12 @@ namespace PappyjoeMVC.View
                     if (chkEMRFPadd.Checked == true || chkEMRFPdelete.Checked == true)
                     {
                         chkEMRFP.Checked = true;
-                        chkEMR.Checked = true;
+                        //chkEMR.Checked = true;
                     }
                     else
                     {
                         chkEMRFP.Checked = false;
-                        chkEMR.Checked = false;
+                        //chkEMR.Checked = false;
                     }
                 }
                 else if (dr["Category"].ToString() == "EMRF")
@@ -771,12 +771,12 @@ namespace PappyjoeMVC.View
                     if (chkEMRPadd.Checked == true || chkEMRPedit.Checked == true || chkEMRPdelete.Checked == true)
                     {
                         chkEMRP.Checked = true;
-                        chkEMR.Checked = true;
+                        //chkEMR.Checked = true;
                     }
                     else
                     {
                         chkEMRP.Checked = false;
-                        chkEMR.Checked = false;
+                        //chkEMR.Checked = false;
                     }
                 }
                 else if (dr["Category"].ToString() == "EMRI")
@@ -790,74 +790,74 @@ namespace PappyjoeMVC.View
                     if (chkEMRIadd.Checked == true || chkEMRIedit.Checked == true || chkEMRIdelete.Checked == true)
                     {
                         chkEMRI.Checked = true;
-                        chkEMR.Checked = true;
+                        //chkEMR.Checked = true;
                     }
                     else
                     {
                         chkEMRI.Checked = false;
-                        chkEMR.Checked = false;
+                        //chkEMR.Checked = false;
                     }
                 }
                 else if (dr["Category"].ToString() == "RPTDS")
                 {
                     if (dr["Permission"].ToString() == "A")
                         chkRPTDSadd.Checked = false;
-                    chkRPT.Checked = false;
+                    //chkRPT.Checked = false;
                 }
                 else if (dr["Category"].ToString() == "RPTINC")
                 {
                     if (dr["Permission"].ToString() == "A")
                         chkRPTINCadd.Checked = false;
-                    chkRPT.Checked = false;
+                    //chkRPT.Checked = false;
                 }
                 else if (dr["Category"].ToString() == "RPTINCM")
                 {
                     if (dr["Permission"].ToString() == "A")
                         chkRPTIncom.Checked = false;
-                    chkRPT.Checked = false;
+                    //chkRPT.Checked = false;
                 }
 
                 else if (dr["Category"].ToString() == "RPTPAY")
                 {
                     if (dr["Permission"].ToString() == "A")
                         chkRPTPAYadd.Checked = false;
-                    chkRPT.Checked = false;
+                    //chkRPT.Checked = false;
                 }
                 else if (dr["Category"].ToString() == "RPTAPT")
                 {
                     if (dr["Permission"].ToString() == "A")
                         chkRPTAPTadd.Checked = false;
-                    chkRPT.Checked = false;
+                    //chkRPT.Checked = false;
                 }
                 else if (dr["Category"].ToString() == "RPTPAT")
                 {
                     if (dr["Permission"].ToString() == "A")
                         chkRPTPATadd.Checked = false;
-                    chkRPT.Checked = false;
+                    //chkRPT.Checked = false;
                 }
                 else if (dr["Category"].ToString() == "RPTEXP")
                 {
                     if (dr["Permission"].ToString() == "A")
                         chkRPTEXPadd.Checked = false;
-                    chkRPT.Checked = false;
+                    //chkRPT.Checked = false;
                 }
                 else if (dr["Category"].ToString() == "RPTINV")
                 {
                     if (dr["Permission"].ToString() == "A")
                         chkRPTINVadd.Checked = false;
-                    chkRPT.Checked = false;
+                    //chkRPT.Checked = false;
                 }
                 else if (dr["Category"].ToString() == "RPTEMR")
                 {
                     if (dr["Permission"].ToString() == "A")
                         chkRPTEMRadd.Checked = false;
-                    chkRPT.Checked = false;
+                    //chkRPT.Checked = false;
                 }
                 else if (dr["Category"].ToString() == "INVAI")
                 {
                     if (dr["Permission"].ToString() == "A")
                         chkINVAIadd.Checked = false;
-                    chkINV.Checked = false;
+                    //chkINV.Checked = false;
                 }
                 else if (dr["Category"].ToString() == "INVAS")
                 {
@@ -890,6 +890,22 @@ namespace PappyjoeMVC.View
                     if (dr["Permission"].ToString() == "A")
                         chkInventory.Checked = false;
                 }
+            }
+            if(chkEMRCF.Checked==true || chkEMRTP.Checked == true || chkEMRFP.Checked == true || chkEMRP.Checked ==true || chkEMRI.Checked == true)
+            {
+                chkEMR.Checked = true;
+            }
+            else
+            {
+                chkEMR.Checked = false;
+            }
+            if (chkRPTINCadd.Checked ==true || chkRPTIncom.Checked == true || chkRPTPAYadd.Checked == true || chkRPTAPTadd.Checked == true || chkRPTPATadd.Checked ==true  || chkRPTINVadd.Checked== true || chkRPTEMRadd.Checked == true )
+            {
+                chkRPT.Checked = true;
+            }
+            else
+            {
+                chkRPT.Checked = false;
             }
         }
 

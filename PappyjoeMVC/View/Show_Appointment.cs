@@ -1,13 +1,7 @@
 ﻿using PappyjoeMVC.Controller;
-using PappyjoeMVC.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
@@ -16,8 +10,8 @@ namespace PappyjoeMVC.View
     {
         bool dltflag = false;
         bool Editflag = false;
-        public static string apntid="";
-        public string patient_id = "",doctor_id="",appointment_id="";
+        public static string apntid = "";
+        public string patient_id = "", doctor_id = "", appointment_id = "";
         Show_Appointment_controller ctrlr = new Show_Appointment_controller();
         public Show_Appointment()
         {
@@ -39,7 +33,7 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             { MessageBox.Show("Error!..", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-       
+
         public void show(DataTable dt)
         {
             try
@@ -63,29 +57,29 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                string doctr_id=this.ctrlr.privilege_A(doctor_id);
-                if (doctr_id != "1")
+                string doctr_id = this.ctrlr.privilege_A(doctor_id);
+                if (int.Parse(doctr_id) > 0)
                 {
-                btn_Add.Enabled = true;
+                    btn_Add.Enabled = false;
                 }
                 else
                 {
-                btn_Add.Enabled = false;
+                    btn_Add.Enabled = true;
                 }
-                DataTable ptntdtls=this.ctrlr.Get_Patient_Details(patient_id);
+                DataTable ptntdtls = this.ctrlr.Get_Patient_Details(patient_id);
                 Get_Patient_Details(ptntdtls);
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-                DataTable cmpny=this.ctrlr.Get_CompanyNAme();
+                DataTable cmpny = this.ctrlr.Get_CompanyNAme();
                 if (cmpny.Rows.Count > 0)
                 {
-                  string clinicn = "";
-                  clinicn = cmpny.Rows[0][0].ToString();
-                  toolStripButton1.Text = clinicn.Replace("¤", "'");
+                    string clinicn = "";
+                    clinicn = cmpny.Rows[0][0].ToString();
+                    toolStripButton1.Text = clinicn.Replace("¤", "'");
                 }
-                string docname=this.ctrlr.Get_DoctorName(doctor_id);
+                string docname = this.ctrlr.Get_DoctorName(doctor_id);
                 if (docname != "")
                 {
-                  toolStripTextDoctor.Text = "Logged In As : " + docname;
+                    toolStripTextDoctor.Text = "Logged In As : " + docname;
                 }
                 panelmain.Show();
                 label41.Text = "APPOINTMENTS";
@@ -123,7 +117,7 @@ namespace PappyjoeMVC.View
                 dataGridView2.Columns[11].Width = 75;
                 dataGridView2.Columns[0].Visible = false;
                 dataGridView2.Columns[1].Visible = false;
-                DataTable dt=this.ctrlr.show(patient_id);
+                DataTable dt = this.ctrlr.show(patient_id);
                 show(dt);
                 if (dataGridView2.Rows.Count <= 0)
                 {
@@ -143,6 +137,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
+              
                 for (int i = 0; i < dataGridView2.Rows.Count; i++)
                 {
                     apntid = this.dataGridView2.Rows[i].Cells[1].Value.ToString();
@@ -191,7 +186,7 @@ namespace PappyjoeMVC.View
         }
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
-            DataTable srch=this.ctrlr.Patient_search(toolStripTextBox1.Text);
+            DataTable srch = this.ctrlr.Patient_search(toolStripTextBox1.Text);
             Patient_search(srch);
         }
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -303,34 +298,34 @@ namespace PappyjoeMVC.View
         }
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
-        try
-        {
-            string doctrid = this.ctrlr.doctr_privillage_for_addnewPatient(doctor_id);
-            if (doctor_id != "1")
+            try
             {
-                string id;
-                id = doctrid;
-                if (int.Parse(id) > 0)
+                string doctrid = this.ctrlr.doctr_privillage_for_addnewPatient(doctor_id);
+                if (doctor_id != "1")
+                {
+                    string id;
+                    id = doctrid;
+                    if (int.Parse(id) > 0)
+                    {
+                        var form2 = new Add_New_Patients();
+                        form2.doctor_id = doctor_id;
+                        form2.Closed += (sender1, args) => this.Close();
+                        this.Hide();
+                        form2.ShowDialog(); ;
+                    }
+                    else
+                    {
+                        MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                }
+                else
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog(); ;
+                    form2.ShowDialog();
                 }
-                else
-                {
-                    MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-            }
-            else
-            {
-                var form2 = new Add_New_Patients();
-                form2.doctor_id = doctor_id;
-                form2.Closed += (sender1, args) => this.Close();
-                this.Hide();
-                form2.ShowDialog();
-            }
             }
             catch (Exception ex)
             { MessageBox.Show("Error!..", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error); }
@@ -339,12 +334,25 @@ namespace PappyjoeMVC.View
         {
             try
             {
-            string doctrid=this.ctrlr.settingsprivilage(doctor_id);
-            if (doctor_id != "1")
-            {
-                string id;
-                id = doctrid;
-                if (int.Parse(id) > 0)
+                string doctrid = this.ctrlr.settingsprivilage(doctor_id);
+                if (doctor_id != "1")
+                {
+                    string id;
+                    id = doctrid;
+                    if (int.Parse(id) > 0)
+                    {
+                        var form2 = new Practice_Details();
+                        form2.doctor_id = doctor_id;
+                        form2.Closed += (sender1, args) => this.Close();
+                        this.Hide();
+                        form2.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("There is No Privilege to Clinic Settings", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                }
+                else
                 {
                     var form2 = new Practice_Details();
                     form2.doctor_id = doctor_id;
@@ -352,19 +360,6 @@ namespace PappyjoeMVC.View
                     this.Hide();
                     form2.ShowDialog();
                 }
-                else
-                {
-                    MessageBox.Show("There is No Privilege to Clinic Settings", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-            }
-            else
-            {
-                var form2 = new Practice_Details();
-                form2.doctor_id = doctor_id;
-                form2.Closed += (sender1, args) => this.Close();
-                this.Hide();
-                form2.ShowDialog();
-            }
             }
             catch (Exception ex)
             { MessageBox.Show("Error!..", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error); }
@@ -527,7 +522,7 @@ namespace PappyjoeMVC.View
                     }
                     if (dltflag == false)
                     {
-                        string doctr_id=this.ctrlr.privilege_D(doctor_id);
+                        string doctr_id = this.ctrlr.privilege_D(doctor_id);
                         if (int.Parse(doctr_id) > 0)
                         {
                             dltflag = false;
@@ -576,7 +571,7 @@ namespace PappyjoeMVC.View
                             dataGridView2.Columns[11].Width = 75;
                             dataGridView2.Columns[0].Visible = false;
                             dataGridView2.Columns[1].Visible = false;
-                            DataTable dt=this.ctrlr.show(patient_id);
+                            DataTable dt = this.ctrlr.show(patient_id);
                             show(dt);
                         }
                     }
