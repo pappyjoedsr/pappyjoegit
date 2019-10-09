@@ -261,7 +261,7 @@
             // dtp1ReceptReceivedPerMonth1
             // 
             this.dtp1ReceptReceivedPerMonth1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp1ReceptReceivedPerMonth1.Location = new System.Drawing.Point(64, 60);
+            this.dtp1ReceptReceivedPerMonth1.Location = new System.Drawing.Point(64, 59);
             this.dtp1ReceptReceivedPerMonth1.Name = "dtp1ReceptReceivedPerMonth1";
             this.dtp1ReceptReceivedPerMonth1.Size = new System.Drawing.Size(206, 22);
             this.dtp1ReceptReceivedPerMonth1.TabIndex = 1;

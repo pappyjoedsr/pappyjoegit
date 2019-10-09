@@ -1360,7 +1360,7 @@
             // DTP_DateFrom
             // 
             this.DTP_DateFrom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTP_DateFrom.Location = new System.Drawing.Point(130, 8);
+            this.DTP_DateFrom.Location = new System.Drawing.Point(130, 9);
             this.DTP_DateFrom.Name = "DTP_DateFrom";
             this.DTP_DateFrom.Size = new System.Drawing.Size(244, 25);
             this.DTP_DateFrom.TabIndex = 8;
@@ -1370,7 +1370,7 @@
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label49.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label49.Location = new System.Drawing.Point(380, 9);
+            this.label49.Location = new System.Drawing.Point(380, 13);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(22, 17);
             this.label49.TabIndex = 5;
@@ -1381,7 +1381,7 @@
             this.DTP_DateTo.CalendarForeColor = System.Drawing.Color.DarkSlateGray;
             this.DTP_DateTo.CalendarTitleForeColor = System.Drawing.Color.DarkSlateGray;
             this.DTP_DateTo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTP_DateTo.Location = new System.Drawing.Point(425, 7);
+            this.DTP_DateTo.Location = new System.Drawing.Point(425, 9);
             this.DTP_DateTo.Name = "DTP_DateTo";
             this.DTP_DateTo.Size = new System.Drawing.Size(236, 25);
             this.DTP_DateTo.TabIndex = 28;
@@ -1394,7 +1394,7 @@
             this.btprom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btprom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btprom.ForeColor = System.Drawing.Color.White;
-            this.btprom.Location = new System.Drawing.Point(667, 3);
+            this.btprom.Location = new System.Drawing.Point(667, 6);
             this.btprom.Name = "btprom";
             this.btprom.Size = new System.Drawing.Size(158, 30);
             this.btprom.TabIndex = 4;
@@ -1703,7 +1703,7 @@
             this.DTP_Tab2TO.CalendarForeColor = System.Drawing.Color.DarkSlateGray;
             this.DTP_Tab2TO.CalendarTitleForeColor = System.Drawing.Color.DarkSlateGray;
             this.DTP_Tab2TO.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTP_Tab2TO.Location = new System.Drawing.Point(347, 7);
+            this.DTP_Tab2TO.Location = new System.Drawing.Point(347, 10);
             this.DTP_Tab2TO.Name = "DTP_Tab2TO";
             this.DTP_Tab2TO.Size = new System.Drawing.Size(229, 25);
             this.DTP_Tab2TO.TabIndex = 3;
@@ -1713,7 +1713,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label8.Location = new System.Drawing.Point(314, 10);
+            this.label8.Location = new System.Drawing.Point(314, 14);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(22, 17);
             this.label8.TabIndex = 1;
@@ -1724,7 +1724,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label9.Location = new System.Drawing.Point(13, 10);
+            this.label9.Location = new System.Drawing.Point(13, 14);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 17);
             this.label9.TabIndex = 0;
@@ -1735,7 +1735,7 @@
             this.DTP_Tab2From.CalendarForeColor = System.Drawing.Color.DarkSlateGray;
             this.DTP_Tab2From.CalendarTitleForeColor = System.Drawing.Color.DarkSlateGray;
             this.DTP_Tab2From.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTP_Tab2From.Location = new System.Drawing.Point(66, 4);
+            this.DTP_Tab2From.Location = new System.Drawing.Point(66, 10);
             this.DTP_Tab2From.Name = "DTP_Tab2From";
             this.DTP_Tab2From.Size = new System.Drawing.Size(227, 25);
             this.DTP_Tab2From.TabIndex = 2;

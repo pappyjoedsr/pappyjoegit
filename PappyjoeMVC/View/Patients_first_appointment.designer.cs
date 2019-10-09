@@ -134,7 +134,7 @@
             this.Lab_Doctorname.BackColor = System.Drawing.Color.Transparent;
             this.Lab_Doctorname.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Doctorname.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Doctorname.Location = new System.Drawing.Point(617, 26);
+            this.Lab_Doctorname.Location = new System.Drawing.Point(617, 24);
             this.Lab_Doctorname.Name = "Lab_Doctorname";
             this.Lab_Doctorname.Size = new System.Drawing.Size(74, 13);
             this.Lab_Doctorname.TabIndex = 218;
@@ -145,7 +145,7 @@
             this.cmbDoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDoctor.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.cmbDoctor.FormattingEnabled = true;
-            this.cmbDoctor.Location = new System.Drawing.Point(697, 22);
+            this.cmbDoctor.Location = new System.Drawing.Point(697, 20);
             this.cmbDoctor.Name = "cmbDoctor";
             this.cmbDoctor.Size = new System.Drawing.Size(164, 21);
             this.cmbDoctor.TabIndex = 217;
@@ -237,7 +237,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(1006, 26);
+            this.label2.Location = new System.Drawing.Point(1006, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 2;
@@ -248,7 +248,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(883, 26);
+            this.label5.Location = new System.Drawing.Point(883, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 17);
             this.label5.TabIndex = 1;

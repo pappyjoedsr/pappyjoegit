@@ -95,7 +95,7 @@
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(885, 46);
+            this.btn_Refresh.Location = new System.Drawing.Point(885, 48);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(74, 30);
             this.btn_Refresh.TabIndex = 299;
@@ -146,7 +146,7 @@
             this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPayment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayment.ForeColor = System.Drawing.Color.White;
-            this.btnPayment.Location = new System.Drawing.Point(737, 1);
+            this.btnPayment.Location = new System.Drawing.Point(737, 3);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.Size = new System.Drawing.Size(85, 30);
             this.btnPayment.TabIndex = 206;
@@ -157,7 +157,7 @@
             // rad_Credit
             // 
             this.rad_Credit.AutoSize = true;
-            this.rad_Credit.Location = new System.Drawing.Point(803, 52);
+            this.rad_Credit.Location = new System.Drawing.Point(803, 55);
             this.rad_Credit.Name = "rad_Credit";
             this.rad_Credit.Size = new System.Drawing.Size(76, 17);
             this.rad_Credit.TabIndex = 205;
@@ -170,7 +170,7 @@
             // 
             this.rad_Cash.AutoSize = true;
             this.rad_Cash.Checked = true;
-            this.rad_Cash.Location = new System.Drawing.Point(727, 52);
+            this.rad_Cash.Location = new System.Drawing.Point(727, 55);
             this.rad_Cash.Name = "rad_Cash";
             this.rad_Cash.Size = new System.Drawing.Size(73, 17);
             this.rad_Cash.TabIndex = 204;

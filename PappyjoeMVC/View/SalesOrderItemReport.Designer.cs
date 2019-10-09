@@ -102,7 +102,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(732, 56);
+            this.label2.Location = new System.Drawing.Point(736, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 17);
             this.label2.TabIndex = 171;
@@ -112,7 +112,7 @@
             // 
             this.Txtgrandtotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txtgrandtotal.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txtgrandtotal.Location = new System.Drawing.Point(840, 50);
+            this.Txtgrandtotal.Location = new System.Drawing.Point(840, 53);
             this.Txtgrandtotal.Name = "Txtgrandtotal";
             this.Txtgrandtotal.ReadOnly = true;
             this.Txtgrandtotal.Size = new System.Drawing.Size(96, 25);
@@ -123,7 +123,7 @@
             // 
             this.Txttotaldiscount.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txttotaldiscount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txttotaldiscount.Location = new System.Drawing.Point(840, 29);
+            this.Txttotaldiscount.Location = new System.Drawing.Point(840, 30);
             this.Txttotaldiscount.Name = "Txttotaldiscount";
             this.Txttotaldiscount.ReadOnly = true;
             this.Txttotaldiscount.Size = new System.Drawing.Size(96, 22);
@@ -145,7 +145,7 @@
             // 
             this.Txt_totalInvoice.Font = new System.Drawing.Font("Segoe UI Light", 8.25F);
             this.Txt_totalInvoice.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txt_totalInvoice.Location = new System.Drawing.Point(840, 5);
+            this.Txt_totalInvoice.Location = new System.Drawing.Point(840, 7);
             this.Txt_totalInvoice.Name = "Txt_totalInvoice";
             this.Txt_totalInvoice.ReadOnly = true;
             this.Txt_totalInvoice.Size = new System.Drawing.Size(96, 22);
@@ -169,7 +169,7 @@
             this.lblinvoices.AutoSize = true;
             this.lblinvoices.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblinvoices.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblinvoices.Location = new System.Drawing.Point(733, 10);
+            this.lblinvoices.Location = new System.Drawing.Point(735, 10);
             this.lblinvoices.Name = "lblinvoices";
             this.lblinvoices.Size = new System.Drawing.Size(86, 17);
             this.lblinvoices.TabIndex = 0;

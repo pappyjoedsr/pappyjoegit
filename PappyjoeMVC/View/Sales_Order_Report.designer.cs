@@ -67,7 +67,7 @@
             this.Btn_Show.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Show.ForeColor = System.Drawing.Color.White;
             this.Btn_Show.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_Show.Location = new System.Drawing.Point(513, 7);
+            this.Btn_Show.Location = new System.Drawing.Point(513, 12);
             this.Btn_Show.Name = "Btn_Show";
             this.Btn_Show.Size = new System.Drawing.Size(65, 22);
             this.Btn_Show.TabIndex = 300;
@@ -81,7 +81,7 @@
             this.dptMonthly_From.CalendarFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dptMonthly_From.CalendarMonthBackground = System.Drawing.Color.Gainsboro;
             this.dptMonthly_From.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dptMonthly_From.Location = new System.Drawing.Point(56, 9);
+            this.dptMonthly_From.Location = new System.Drawing.Point(56, 12);
             this.dptMonthly_From.Name = "dptMonthly_From";
             this.dptMonthly_From.Size = new System.Drawing.Size(201, 22);
             this.dptMonthly_From.TabIndex = 167;
@@ -92,7 +92,7 @@
             this.label6.BackColor = System.Drawing.Color.Gainsboro;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(11, 8);
+            this.label6.Location = new System.Drawing.Point(11, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 15);
             this.label6.TabIndex = 169;
@@ -103,7 +103,7 @@
             this.dptMonthly_To.CalendarFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dptMonthly_To.CalendarMonthBackground = System.Drawing.Color.Gainsboro;
             this.dptMonthly_To.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dptMonthly_To.Location = new System.Drawing.Point(306, 9);
+            this.dptMonthly_To.Location = new System.Drawing.Point(306, 12);
             this.dptMonthly_To.Name = "dptMonthly_To";
             this.dptMonthly_To.Size = new System.Drawing.Size(201, 22);
             this.dptMonthly_To.TabIndex = 168;
@@ -240,7 +240,7 @@
             this.label5.BackColor = System.Drawing.Color.Gainsboro;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(277, 10);
+            this.label5.Location = new System.Drawing.Point(277, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(20, 15);
             this.label5.TabIndex = 170;

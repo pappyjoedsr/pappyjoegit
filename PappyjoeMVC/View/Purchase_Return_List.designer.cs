@@ -62,7 +62,7 @@
             this.BtnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnShow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.BtnShow.ForeColor = System.Drawing.Color.White;
-            this.BtnShow.Location = new System.Drawing.Point(586, 48);
+            this.BtnShow.Location = new System.Drawing.Point(586, 53);
             this.BtnShow.Name = "BtnShow";
             this.BtnShow.Size = new System.Drawing.Size(67, 24);
             this.BtnShow.TabIndex = 302;
@@ -77,7 +77,7 @@
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(879, 51);
+            this.btn_Refresh.Location = new System.Drawing.Point(879, 50);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(74, 30);
             this.btn_Refresh.TabIndex = 297;
@@ -123,14 +123,14 @@
             // 
             // DTP_To
             // 
-            this.DTP_To.Location = new System.Drawing.Point(368, 51);
+            this.DTP_To.Location = new System.Drawing.Point(368, 55);
             this.DTP_To.Name = "DTP_To";
             this.DTP_To.Size = new System.Drawing.Size(200, 20);
             this.DTP_To.TabIndex = 3;
             // 
             // DTP_From
             // 
-            this.DTP_From.Location = new System.Drawing.Point(87, 52);
+            this.DTP_From.Location = new System.Drawing.Point(87, 55);
             this.DTP_From.Name = "DTP_From";
             this.DTP_From.Size = new System.Drawing.Size(200, 20);
             this.DTP_From.TabIndex = 2;
@@ -140,7 +140,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(10, 52);
+            this.label1.Location = new System.Drawing.Point(10, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 0;
@@ -170,7 +170,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(302, 53);
+            this.label2.Location = new System.Drawing.Point(302, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 1;

@@ -86,7 +86,7 @@
             this.Lab_Doctorname.BackColor = System.Drawing.Color.Gainsboro;
             this.Lab_Doctorname.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Doctorname.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Doctorname.Location = new System.Drawing.Point(831, 25);
+            this.Lab_Doctorname.Location = new System.Drawing.Point(831, 18);
             this.Lab_Doctorname.Name = "Lab_Doctorname";
             this.Lab_Doctorname.Size = new System.Drawing.Size(87, 17);
             this.Lab_Doctorname.TabIndex = 109;
@@ -97,7 +97,7 @@
             this.Cmb_Doctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_Doctor.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_Doctor.FormattingEnabled = true;
-            this.Cmb_Doctor.Location = new System.Drawing.Point(921, 22);
+            this.Cmb_Doctor.Location = new System.Drawing.Point(921, 16);
             this.Cmb_Doctor.Name = "Cmb_Doctor";
             this.Cmb_Doctor.Size = new System.Drawing.Size(147, 21);
             this.Cmb_Doctor.TabIndex = 108;
@@ -137,7 +137,7 @@
             // dateTimePickermonthlyappoint1
             // 
             this.dateTimePickermonthlyappoint1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickermonthlyappoint1.Location = new System.Drawing.Point(62, 18);
+            this.dateTimePickermonthlyappoint1.Location = new System.Drawing.Point(62, 15);
             this.dateTimePickermonthlyappoint1.Name = "dateTimePickermonthlyappoint1";
             this.dateTimePickermonthlyappoint1.Size = new System.Drawing.Size(206, 22);
             this.dateTimePickermonthlyappoint1.TabIndex = 2;
@@ -148,7 +148,7 @@
             this.label2.BackColor = System.Drawing.Color.Gainsboro;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(281, 20);
+            this.label2.Location = new System.Drawing.Point(281, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(22, 17);
             this.label2.TabIndex = 5;
@@ -160,7 +160,7 @@
             this.searchmonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchmonth.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchmonth.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.searchmonth.Location = new System.Drawing.Point(539, 20);
+            this.searchmonth.Location = new System.Drawing.Point(539, 15);
             this.searchmonth.Name = "searchmonth";
             this.searchmonth.Size = new System.Drawing.Size(75, 22);
             this.searchmonth.TabIndex = 107;
@@ -171,7 +171,7 @@
             // dateTimePickermonthlyappoint2
             // 
             this.dateTimePickermonthlyappoint2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickermonthlyappoint2.Location = new System.Drawing.Point(315, 18);
+            this.dateTimePickermonthlyappoint2.Location = new System.Drawing.Point(315, 15);
             this.dateTimePickermonthlyappoint2.Name = "dateTimePickermonthlyappoint2";
             this.dateTimePickermonthlyappoint2.Size = new System.Drawing.Size(208, 22);
             this.dateTimePickermonthlyappoint2.TabIndex = 3;
@@ -181,7 +181,7 @@
             this.Lab_total.AutoSize = true;
             this.Lab_total.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_total.ForeColor = System.Drawing.Color.Red;
-            this.Lab_total.Location = new System.Drawing.Point(774, 23);
+            this.Lab_total.Location = new System.Drawing.Point(774, 18);
             this.Lab_total.Name = "Lab_total";
             this.Lab_total.Size = new System.Drawing.Size(45, 17);
             this.Lab_total.TabIndex = 11;
@@ -192,7 +192,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(636, 22);
+            this.label3.Location = new System.Drawing.Point(636, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 17);
             this.label3.TabIndex = 10;
@@ -522,7 +522,7 @@
             this.label_empty.TabIndex = 91;
             this.label_empty.Text = "No Records Found !";
             // 
-            // Monthly_appointment_count
+            // Monthly_Appointment_Count
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -532,7 +532,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Monthly_appointment_count";
+            this.Name = "Monthly_Appointment_Count";
             this.Text = "Monthly Appointment Count";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Monthly_appointment_count_Load);

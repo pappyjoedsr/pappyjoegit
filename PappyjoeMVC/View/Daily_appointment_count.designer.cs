@@ -119,7 +119,7 @@
             this.dataGridViewDailyappoinment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -229,7 +229,7 @@
             this.comboBoxdoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxdoctor.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.comboBoxdoctor.FormattingEnabled = true;
-            this.comboBoxdoctor.Location = new System.Drawing.Point(946, 19);
+            this.comboBoxdoctor.Location = new System.Drawing.Point(946, 17);
             this.comboBoxdoctor.Name = "comboBoxdoctor";
             this.comboBoxdoctor.Size = new System.Drawing.Size(149, 21);
             this.comboBoxdoctor.TabIndex = 97;
@@ -241,7 +241,7 @@
             this.Lab_Doctor.BackColor = System.Drawing.Color.Transparent;
             this.Lab_Doctor.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Doctor.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Doctor.Location = new System.Drawing.Point(839, 22);
+            this.Lab_Doctor.Location = new System.Drawing.Point(839, 19);
             this.Lab_Doctor.Name = "Lab_Doctor";
             this.Lab_Doctor.Size = new System.Drawing.Size(92, 17);
             this.Lab_Doctor.TabIndex = 96;
@@ -270,7 +270,7 @@
             // 
             this.dateTimePickerdailyappointcount2.CalendarFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerdailyappointcount2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerdailyappointcount2.Location = new System.Drawing.Point(315, 15);
+            this.dateTimePickerdailyappointcount2.Location = new System.Drawing.Point(315, 16);
             this.dateTimePickerdailyappointcount2.Name = "dateTimePickerdailyappointcount2";
             this.dateTimePickerdailyappointcount2.Size = new System.Drawing.Size(197, 22);
             this.dateTimePickerdailyappointcount2.TabIndex = 4;
@@ -279,7 +279,7 @@
             // 
             this.dateTimePickerdailyappointcount1.CalendarFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerdailyappointcount1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerdailyappointcount1.Location = new System.Drawing.Point(53, 14);
+            this.dateTimePickerdailyappointcount1.Location = new System.Drawing.Point(53, 16);
             this.dateTimePickerdailyappointcount1.Name = "dateTimePickerdailyappointcount1";
             this.dateTimePickerdailyappointcount1.Size = new System.Drawing.Size(201, 22);
             this.dateTimePickerdailyappointcount1.TabIndex = 3;
@@ -290,7 +290,7 @@
             this.label1.BackColor = System.Drawing.Color.Gainsboro;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(9, 16);
+            this.label1.Location = new System.Drawing.Point(9, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 17);
             this.label1.TabIndex = 5;
@@ -302,7 +302,7 @@
             this.serchdaily.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.serchdaily.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serchdaily.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.serchdaily.Location = new System.Drawing.Point(530, 15);
+            this.serchdaily.Location = new System.Drawing.Point(530, 16);
             this.serchdaily.Name = "serchdaily";
             this.serchdaily.Size = new System.Drawing.Size(75, 23);
             this.serchdaily.TabIndex = 94;
@@ -316,7 +316,7 @@
             this.label3.BackColor = System.Drawing.Color.Gainsboro;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(279, 17);
+            this.label3.Location = new System.Drawing.Point(279, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 17);
             this.label3.TabIndex = 6;
@@ -327,7 +327,7 @@
             this.lbltotal.AutoSize = true;
             this.lbltotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lbltotal.Location = new System.Drawing.Point(636, 18);
+            this.lbltotal.Location = new System.Drawing.Point(636, 19);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(133, 17);
             this.lbltotal.TabIndex = 1;

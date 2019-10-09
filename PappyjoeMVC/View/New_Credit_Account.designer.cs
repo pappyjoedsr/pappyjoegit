@@ -45,7 +45,7 @@
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(328, 19);
+            this.btnSubmit.Location = new System.Drawing.Point(328, 17);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(77, 24);
             this.btnSubmit.TabIndex = 253;
@@ -69,7 +69,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(61, 50);
+            this.label3.Location = new System.Drawing.Point(56, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 17);
             this.label3.TabIndex = 251;
@@ -81,7 +81,7 @@
             this.txtAccountName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAccountName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAccountName.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtAccountName.Location = new System.Drawing.Point(116, 19);
+            this.txtAccountName.Location = new System.Drawing.Point(116, 18);
             this.txtAccountName.Name = "txtAccountName";
             this.txtAccountName.Size = new System.Drawing.Size(207, 22);
             this.txtAccountName.TabIndex = 250;

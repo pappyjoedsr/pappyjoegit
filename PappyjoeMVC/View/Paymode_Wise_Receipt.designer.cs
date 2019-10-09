@@ -185,7 +185,7 @@
             this.Chk_RemoveAmountDue.AutoSize = true;
             this.Chk_RemoveAmountDue.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Chk_RemoveAmountDue.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Chk_RemoveAmountDue.Location = new System.Drawing.Point(1028, 15);
+            this.Chk_RemoveAmountDue.Location = new System.Drawing.Point(1028, 13);
             this.Chk_RemoveAmountDue.Name = "Chk_RemoveAmountDue";
             this.Chk_RemoveAmountDue.Size = new System.Drawing.Size(172, 17);
             this.Chk_RemoveAmountDue.TabIndex = 131;
@@ -199,7 +199,7 @@
             this.cmb_doctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_doctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_doctor.FormattingEnabled = true;
-            this.cmb_doctor.Location = new System.Drawing.Point(843, 13);
+            this.cmb_doctor.Location = new System.Drawing.Point(843, 11);
             this.cmb_doctor.Name = "cmb_doctor";
             this.cmb_doctor.Size = new System.Drawing.Size(149, 21);
             this.cmb_doctor.TabIndex = 130;
@@ -211,7 +211,7 @@
             this.Lab_Doctor.BackColor = System.Drawing.Color.Transparent;
             this.Lab_Doctor.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
             this.Lab_Doctor.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Doctor.Location = new System.Drawing.Point(765, 17);
+            this.Lab_Doctor.Location = new System.Drawing.Point(765, 15);
             this.Lab_Doctor.Name = "Lab_Doctor";
             this.Lab_Doctor.Size = new System.Drawing.Size(75, 13);
             this.Lab_Doctor.TabIndex = 129;
@@ -222,7 +222,7 @@
             this.Lab_Total.AutoSize = true;
             this.Lab_Total.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Total.ForeColor = System.Drawing.Color.Red;
-            this.Lab_Total.Location = new System.Drawing.Point(675, 15);
+            this.Lab_Total.Location = new System.Drawing.Point(675, 13);
             this.Lab_Total.Name = "Lab_Total";
             this.Lab_Total.Size = new System.Drawing.Size(45, 17);
             this.Lab_Total.TabIndex = 2;
@@ -245,7 +245,7 @@
             this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Close.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Close.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Close.Location = new System.Drawing.Point(815, 54);
+            this.btn_Close.Location = new System.Drawing.Point(815, 52);
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(100, 32);
             this.btn_Close.TabIndex = 130;
@@ -261,7 +261,7 @@
             this.btn_Export.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Export.ForeColor = System.Drawing.Color.White;
             this.btn_Export.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_Export.Location = new System.Drawing.Point(715, 54);
+            this.btn_Export.Location = new System.Drawing.Point(715, 52);
             this.btn_Export.Name = "btn_Export";
             this.btn_Export.Size = new System.Drawing.Size(100, 32);
             this.btn_Export.TabIndex = 11;
@@ -288,7 +288,7 @@
             this.btnprint.ForeColor = System.Drawing.Color.White;
             this.btnprint.Image = ((System.Drawing.Image)(resources.GetObject("btnprint.Image")));
             this.btnprint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnprint.Location = new System.Drawing.Point(615, 54);
+            this.btnprint.Location = new System.Drawing.Point(615, 52);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(100, 32);
             this.btnprint.TabIndex = 10;
@@ -303,7 +303,7 @@
             this.btn_Show.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Show.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btn_Show.ForeColor = System.Drawing.Color.White;
-            this.btn_Show.Location = new System.Drawing.Point(515, 54);
+            this.btn_Show.Location = new System.Drawing.Point(515, 52);
             this.btn_Show.Name = "btn_Show";
             this.btn_Show.Size = new System.Drawing.Size(100, 32);
             this.btn_Show.TabIndex = 7;
@@ -314,7 +314,7 @@
             // Dtp_ReceiptTO
             // 
             this.Dtp_ReceiptTO.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dtp_ReceiptTO.Location = new System.Drawing.Point(306, 59);
+            this.Dtp_ReceiptTO.Location = new System.Drawing.Point(306, 57);
             this.Dtp_ReceiptTO.Name = "Dtp_ReceiptTO";
             this.Dtp_ReceiptTO.Size = new System.Drawing.Size(203, 22);
             this.Dtp_ReceiptTO.TabIndex = 6;
@@ -346,7 +346,7 @@
             // DTP_From
             // 
             this.DTP_From.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTP_From.Location = new System.Drawing.Point(64, 60);
+            this.DTP_From.Location = new System.Drawing.Point(64, 57);
             this.DTP_From.Name = "DTP_From";
             this.DTP_From.Size = new System.Drawing.Size(207, 22);
             this.DTP_From.TabIndex = 5;

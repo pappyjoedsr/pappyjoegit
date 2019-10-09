@@ -375,7 +375,7 @@
             this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_search.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btn_search.ForeColor = System.Drawing.Color.White;
-            this.btn_search.Location = new System.Drawing.Point(530, 101);
+            this.btn_search.Location = new System.Drawing.Point(530, 97);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(87, 28);
             this.btn_search.TabIndex = 111;
@@ -403,7 +403,7 @@
             // dtp1GroupReport
             // 
             this.dtp1GroupReport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp1GroupReport.Location = new System.Drawing.Point(62, 103);
+            this.dtp1GroupReport.Location = new System.Drawing.Point(62, 100);
             this.dtp1GroupReport.Name = "dtp1GroupReport";
             this.dtp1GroupReport.Size = new System.Drawing.Size(206, 22);
             this.dtp1GroupReport.TabIndex = 1;
@@ -422,7 +422,7 @@
             // dtp1groupreport2
             // 
             this.dtp1groupreport2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp1groupreport2.Location = new System.Drawing.Point(316, 102);
+            this.dtp1groupreport2.Location = new System.Drawing.Point(316, 100);
             this.dtp1groupreport2.Name = "dtp1groupreport2";
             this.dtp1groupreport2.Size = new System.Drawing.Size(203, 22);
             this.dtp1groupreport2.TabIndex = 2;
@@ -433,7 +433,7 @@
             this.label1.BackColor = System.Drawing.Color.LightGray;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(15, 105);
+            this.label1.Location = new System.Drawing.Point(19, 105);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 4;

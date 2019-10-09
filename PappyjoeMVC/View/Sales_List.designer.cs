@@ -74,7 +74,7 @@
             this.btnexport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnexport.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnexport.ForeColor = System.Drawing.Color.White;
-            this.btnexport.Location = new System.Drawing.Point(656, 49);
+            this.btnexport.Location = new System.Drawing.Point(656, 47);
             this.btnexport.Name = "btnexport";
             this.btnexport.Size = new System.Drawing.Size(74, 30);
             this.btnexport.TabIndex = 302;
@@ -88,7 +88,7 @@
             this.BtnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnShow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.BtnShow.ForeColor = System.Drawing.Color.White;
-            this.BtnShow.Location = new System.Drawing.Point(580, 49);
+            this.BtnShow.Location = new System.Drawing.Point(580, 47);
             this.BtnShow.Name = "BtnShow";
             this.BtnShow.Size = new System.Drawing.Size(74, 30);
             this.BtnShow.TabIndex = 297;
@@ -103,7 +103,7 @@
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(804, 48);
+            this.btn_Refresh.Location = new System.Drawing.Point(804, 47);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(74, 30);
             this.btn_Refresh.TabIndex = 296;
@@ -127,7 +127,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(306, 56);
+            this.label2.Location = new System.Drawing.Point(306, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 291;
@@ -235,7 +235,7 @@
             // 
             // DTP_To
             // 
-            this.DTP_To.Location = new System.Drawing.Point(368, 54);
+            this.DTP_To.Location = new System.Drawing.Point(368, 52);
             this.DTP_To.Name = "DTP_To";
             this.DTP_To.Size = new System.Drawing.Size(200, 20);
             this.DTP_To.TabIndex = 3;
@@ -332,7 +332,7 @@
             // 
             // DTP_From
             // 
-            this.DTP_From.Location = new System.Drawing.Point(86, 54);
+            this.DTP_From.Location = new System.Drawing.Point(86, 52);
             this.DTP_From.Name = "DTP_From";
             this.DTP_From.Size = new System.Drawing.Size(200, 20);
             this.DTP_From.TabIndex = 2;

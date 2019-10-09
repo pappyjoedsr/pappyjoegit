@@ -610,7 +610,7 @@
             this.combodoctors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combodoctors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.combodoctors.FormattingEnabled = true;
-            this.combodoctors.Location = new System.Drawing.Point(36, 59);
+            this.combodoctors.Location = new System.Drawing.Point(36, 60);
             this.combodoctors.Name = "combodoctors";
             this.combodoctors.Size = new System.Drawing.Size(162, 21);
             this.combodoctors.TabIndex = 1;

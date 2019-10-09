@@ -103,7 +103,7 @@
             this.Lab_Doctorname.BackColor = System.Drawing.Color.Transparent;
             this.Lab_Doctorname.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Doctorname.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Doctorname.Location = new System.Drawing.Point(652, 28);
+            this.Lab_Doctorname.Location = new System.Drawing.Point(652, 24);
             this.Lab_Doctorname.Name = "Lab_Doctorname";
             this.Lab_Doctorname.Size = new System.Drawing.Size(96, 17);
             this.Lab_Doctorname.TabIndex = 112;
@@ -114,7 +114,7 @@
             this.btnsearch.BackColor = System.Drawing.Color.LimeGreen;
             this.btnsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsearch.ForeColor = System.Drawing.Color.White;
-            this.btnsearch.Location = new System.Drawing.Point(533, 23);
+            this.btnsearch.Location = new System.Drawing.Point(533, 21);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(75, 23);
             this.btnsearch.TabIndex = 111;
@@ -138,7 +138,7 @@
             // 
             this.combodoctors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combodoctors.FormattingEnabled = true;
-            this.combodoctors.Location = new System.Drawing.Point(757, 28);
+            this.combodoctors.Location = new System.Drawing.Point(757, 22);
             this.combodoctors.Name = "combodoctors";
             this.combodoctors.Size = new System.Drawing.Size(142, 21);
             this.combodoctors.TabIndex = 8;
@@ -148,7 +148,7 @@
             // dateTimePickerdailynewpatient1
             // 
             this.dateTimePickerdailynewpatient1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerdailynewpatient1.Location = new System.Drawing.Point(51, 22);
+            this.dateTimePickerdailynewpatient1.Location = new System.Drawing.Point(51, 21);
             this.dateTimePickerdailynewpatient1.Name = "dateTimePickerdailynewpatient1";
             this.dateTimePickerdailynewpatient1.Size = new System.Drawing.Size(206, 22);
             this.dateTimePickerdailynewpatient1.TabIndex = 1;
@@ -156,7 +156,7 @@
             // dateTimePickerdailynewpatient2
             // 
             this.dateTimePickerdailynewpatient2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerdailynewpatient2.Location = new System.Drawing.Point(310, 23);
+            this.dateTimePickerdailynewpatient2.Location = new System.Drawing.Point(310, 21);
             this.dateTimePickerdailynewpatient2.Name = "dateTimePickerdailynewpatient2";
             this.dateTimePickerdailynewpatient2.Size = new System.Drawing.Size(211, 22);
             this.dateTimePickerdailynewpatient2.TabIndex = 2;
@@ -178,7 +178,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(1070, 26);
+            this.label4.Location = new System.Drawing.Point(1070, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 17);
             this.label4.TabIndex = 7;
@@ -189,7 +189,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(941, 26);
+            this.label5.Location = new System.Drawing.Point(941, 24);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(112, 17);
             this.label5.TabIndex = 6;
