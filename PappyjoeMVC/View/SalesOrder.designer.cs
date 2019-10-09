@@ -194,7 +194,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(405, 20);
+            this.label3.Location = new System.Drawing.Point(405, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(14, 18);
             this.label3.TabIndex = 308;
@@ -256,7 +256,7 @@
             this.txt_OrderNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_OrderNo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_OrderNo.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_OrderNo.Location = new System.Drawing.Point(114, 68);
+            this.txt_OrderNo.Location = new System.Drawing.Point(114, 64);
             this.txt_OrderNo.MaxLength = 45;
             this.txt_OrderNo.Name = "txt_OrderNo";
             this.txt_OrderNo.Size = new System.Drawing.Size(196, 22);
@@ -278,7 +278,7 @@
             this.lblDocumentDate.AutoSize = true;
             this.lblDocumentDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDocumentDate.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblDocumentDate.Location = new System.Drawing.Point(30, 43);
+            this.lblDocumentDate.Location = new System.Drawing.Point(34, 43);
             this.lblDocumentDate.Name = "lblDocumentDate";
             this.lblDocumentDate.Size = new System.Drawing.Size(62, 17);
             this.lblDocumentDate.TabIndex = 69;
@@ -290,7 +290,7 @@
             this.txtDocumentNumber.Enabled = false;
             this.txtDocumentNumber.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocumentNumber.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtDocumentNumber.Location = new System.Drawing.Point(114, 18);
+            this.txtDocumentNumber.Location = new System.Drawing.Point(114, 16);
             this.txtDocumentNumber.MaxLength = 45;
             this.txtDocumentNumber.Name = "txtDocumentNumber";
             this.txtDocumentNumber.Size = new System.Drawing.Size(196, 22);
@@ -300,7 +300,7 @@
             // 
             this.dtpDocumentDate.CustomFormat = "dd-MM-yyyy";
             this.dtpDocumentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDocumentDate.Location = new System.Drawing.Point(115, 42);
+            this.dtpDocumentDate.Location = new System.Drawing.Point(114, 41);
             this.dtpDocumentDate.Name = "dtpDocumentDate";
             this.dtpDocumentDate.Size = new System.Drawing.Size(196, 20);
             this.dtpDocumentDate.TabIndex = 97;
@@ -310,7 +310,7 @@
             this.lblDocumentNumber.AutoSize = true;
             this.lblDocumentNumber.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDocumentNumber.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblDocumentNumber.Location = new System.Drawing.Point(9, 19);
+            this.lblDocumentNumber.Location = new System.Drawing.Point(13, 19);
             this.lblDocumentNumber.Name = "lblDocumentNumber";
             this.lblDocumentNumber.Size = new System.Drawing.Size(83, 17);
             this.lblDocumentNumber.TabIndex = 68;
@@ -334,7 +334,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label7.Location = new System.Drawing.Point(18, 93);
+            this.label7.Location = new System.Drawing.Point(22, 93);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 17);
             this.label7.TabIndex = 215;
@@ -356,7 +356,7 @@
             // 
             this.DTP_OrderDate.CustomFormat = "dd-MM-yyyy";
             this.DTP_OrderDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTP_OrderDate.Location = new System.Drawing.Point(114, 94);
+            this.DTP_OrderDate.Location = new System.Drawing.Point(114, 91);
             this.DTP_OrderDate.Name = "DTP_OrderDate";
             this.DTP_OrderDate.Size = new System.Drawing.Size(196, 20);
             this.DTP_OrderDate.TabIndex = 99;
@@ -481,7 +481,7 @@
             this.btn_item_Choose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_item_Choose.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_item_Choose.ForeColor = System.Drawing.Color.White;
-            this.btn_item_Choose.Location = new System.Drawing.Point(114, 35);
+            this.btn_item_Choose.Location = new System.Drawing.Point(114, 36);
             this.btn_item_Choose.Name = "btn_item_Choose";
             this.btn_item_Choose.Size = new System.Drawing.Size(19, 24);
             this.btn_item_Choose.TabIndex = 308;
