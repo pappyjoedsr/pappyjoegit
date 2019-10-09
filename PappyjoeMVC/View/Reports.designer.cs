@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reports));
             this.rad_income = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -150,7 +150,7 @@
             this.rad_income.AutoSize = true;
             this.rad_income.Enabled = false;
             this.rad_income.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.rad_income.Location = new System.Drawing.Point(639, 23);
+            this.rad_income.Location = new System.Drawing.Point(639, 24);
             this.rad_income.Name = "rad_income";
             this.rad_income.Size = new System.Drawing.Size(60, 17);
             this.rad_income.TabIndex = 14;
@@ -180,7 +180,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Chk_Type.AutoSize = true;
             this.Chk_Type.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Chk_Type.Location = new System.Drawing.Point(511, 23);
+            this.Chk_Type.Location = new System.Drawing.Point(511, 24);
             this.Chk_Type.Name = "Chk_Type";
             this.Chk_Type.Size = new System.Drawing.Size(50, 17);
             this.Chk_Type.TabIndex = 16;
@@ -196,7 +196,7 @@
             this.rad_Expense.AutoSize = true;
             this.rad_Expense.Enabled = false;
             this.rad_Expense.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.rad_Expense.Location = new System.Drawing.Point(566, 23);
+            this.rad_Expense.Location = new System.Drawing.Point(566, 24);
             this.rad_Expense.Name = "rad_Expense";
             this.rad_Expense.Size = new System.Drawing.Size(66, 17);
             this.rad_Expense.TabIndex = 13;
@@ -222,7 +222,7 @@
             "EMR",
             "EXPENSE",
             "INVENTORY"});
-            this.comborepcategory.Location = new System.Drawing.Point(122, 19);
+            this.comborepcategory.Location = new System.Drawing.Point(122, 20);
             this.comborepcategory.Name = "comborepcategory";
             this.comborepcategory.Size = new System.Drawing.Size(137, 25);
             this.comborepcategory.TabIndex = 1;
@@ -249,7 +249,7 @@
             this.combodoctors.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combodoctors.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.combodoctors.FormattingEnabled = true;
-            this.combodoctors.Location = new System.Drawing.Point(278, 19);
+            this.combodoctors.Location = new System.Drawing.Point(278, 20);
             this.combodoctors.Name = "combodoctors";
             this.combodoctors.Size = new System.Drawing.Size(215, 25);
             this.combodoctors.TabIndex = 8;
@@ -1042,7 +1042,7 @@
             this.dateTimePickerrepo2.CalendarForeColor = System.Drawing.Color.DarkSlateGray;
             this.dateTimePickerrepo2.CalendarTitleForeColor = System.Drawing.Color.DarkSlateGray;
             this.dateTimePickerrepo2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerrepo2.Location = new System.Drawing.Point(344, 14);
+            this.dateTimePickerrepo2.Location = new System.Drawing.Point(344, 15);
             this.dateTimePickerrepo2.Name = "dateTimePickerrepo2";
             this.dateTimePickerrepo2.Size = new System.Drawing.Size(243, 23);
             this.dateTimePickerrepo2.TabIndex = 5;
@@ -1068,7 +1068,7 @@
             this.dateTimePickerepo1.CalendarForeColor = System.Drawing.Color.DarkSlateGray;
             this.dateTimePickerepo1.CalendarTitleForeColor = System.Drawing.Color.DarkSlateGray;
             this.dateTimePickerepo1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerepo1.Location = new System.Drawing.Point(60, 12);
+            this.dateTimePickerepo1.Location = new System.Drawing.Point(60, 15);
             this.dateTimePickerepo1.Name = "dateTimePickerepo1";
             this.dateTimePickerepo1.Size = new System.Drawing.Size(237, 23);
             this.dateTimePickerepo1.TabIndex = 2;
@@ -1080,7 +1080,7 @@
             this.from.AutoSize = true;
             this.from.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.from.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.from.Location = new System.Drawing.Point(8, 14);
+            this.from.Location = new System.Drawing.Point(8, 18);
             this.from.Name = "from";
             this.from.Size = new System.Drawing.Size(38, 17);
             this.from.TabIndex = 3;
@@ -1093,7 +1093,7 @@
             this.to.AutoSize = true;
             this.to.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.to.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.to.Location = new System.Drawing.Point(308, 15);
+            this.to.Location = new System.Drawing.Point(308, 18);
             this.to.Name = "to";
             this.to.Size = new System.Drawing.Size(22, 17);
             this.to.TabIndex = 4;
@@ -1106,8 +1106,8 @@
             this.Grvreports.AllowUserToOrderColumns = true;
             this.Grvreports.AllowUserToResizeColumns = false;
             this.Grvreports.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.Grvreports.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.Grvreports.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Grvreports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1115,14 +1115,14 @@
             this.Grvreports.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grvreports.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Grvreports.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Ivory;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grvreports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Ivory;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grvreports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Grvreports.ColumnHeadersHeight = 28;
             this.Grvreports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Grvreports.Location = new System.Drawing.Point(4, 46);
