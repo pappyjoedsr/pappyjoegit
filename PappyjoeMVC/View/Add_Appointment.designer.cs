@@ -732,6 +732,7 @@
             this.listpatientsearch.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
             this.listpatientsearch.TabIndex = 295;
+            this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
             // 
             // btn_Close
@@ -839,7 +840,7 @@
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_Appointment";
-            this.Text = "Add_Appointment";
+            this.Text = "Add Appointment";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Add_Appointment_Load);
             this.panel6.ResumeLayout(false);

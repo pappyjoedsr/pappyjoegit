@@ -32,34 +32,34 @@ namespace PappyjoeMVC.View
             try
             {
                 if (doctor_id != "1")
-                {
+                 {
                     string privid;
                     privid = this.cntrl.Add_privilliege(doctor_id);
                     if (int.Parse(privid) > 0)
                     {
-                        btn_Add.Enabled = true;
+                        btn_Add.Enabled = false ;
                     }
                     else
                     {
-                        btn_Add.Enabled = false;
+                        btn_Add.Enabled = true;
                     }
                     privid = this.cntrl.edit_privillege(doctor_id);
                     if (int.Parse(privid) > 0)
                     {
-                        editToolStripMenuItem1.Enabled = true;
+                        editToolStripMenuItem1.Enabled = false;
                     }
                     else
                     {
-                        editToolStripMenuItem1.Enabled = false;
+                        editToolStripMenuItem1.Enabled = true;
                     }
                     privid = this.cntrl.delete_privillage(doctor_id);
                     if (int.Parse(privid) > 0)
                     {
-                        deleteToolStripMenuItem1.Enabled = true;
+                        deleteToolStripMenuItem1.Enabled = false;
                     }
                     else
                     {
-                        deleteToolStripMenuItem1.Enabled = false;
+                        deleteToolStripMenuItem1.Enabled = true;
                     }
                 }
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;

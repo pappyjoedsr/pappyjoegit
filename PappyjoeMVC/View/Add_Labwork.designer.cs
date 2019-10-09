@@ -878,11 +878,11 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label18.Location = new System.Drawing.Point(-1, 95);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(90, 21);
+            this.label18.Size = new System.Drawing.Size(87, 21);
             this.label18.TabIndex = 317;
             this.label18.Text = "LAB WORK";
             // 
