@@ -121,9 +121,9 @@
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(8, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 25);
+            this.label3.Size = new System.Drawing.Size(134, 25);
             this.label3.TabIndex = 178;
-            this.label3.Text = "Sales Report";
+            this.label3.Text = "SALES REPORT";
             // 
             // btnprint
             // 
@@ -329,7 +329,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Gainsboro;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label6.Location = new System.Drawing.Point(14, 14);
             this.label6.Name = "label6";
@@ -354,7 +354,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(1187, 33);
             this.label1.Name = "label1";
@@ -392,11 +392,11 @@
             // 
             this.lblinvoices.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblinvoices.AutoSize = true;
-            this.lblinvoices.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblinvoices.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblinvoices.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblinvoices.Location = new System.Drawing.Point(1166, 10);
             this.lblinvoices.Name = "lblinvoices";
-            this.lblinvoices.Size = new System.Drawing.Size(80, 15);
+            this.lblinvoices.Size = new System.Drawing.Size(78, 15);
             this.lblinvoices.TabIndex = 0;
             this.lblinvoices.Text = "Total Invoices";
             // 
@@ -431,11 +431,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Gainsboro;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(29, 44);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 15);
+            this.label5.Size = new System.Drawing.Size(19, 15);
             this.label5.TabIndex = 170;
             this.label5.Text = "To";
             // 

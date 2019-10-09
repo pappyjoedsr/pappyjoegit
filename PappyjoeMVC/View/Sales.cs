@@ -616,7 +616,7 @@ namespace PappyjoeMVC.View
         {
             if (txt_UnitCost.Text == "")
             {
-                txt_UnitCost.Text = "0.00";
+                txt_UnitCost.Text = "0.00"; 
             }
         }
         private void txt_Amount_KeyPress(object sender, KeyPressEventArgs e)

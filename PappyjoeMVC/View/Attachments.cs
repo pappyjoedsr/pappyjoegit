@@ -25,11 +25,11 @@ namespace PappyjoeMVC.View
                 privid = id;
                 if (int.Parse(privid) > 0)
                 {
-                    button1.Visible = false;
+                    button1.Enabled = false;
                 }
                 else
                 {
-                    button1.Visible = true;
+                    button1.Enabled = true;
                 }
             }
             else
@@ -703,7 +703,6 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
-            form2.Show();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

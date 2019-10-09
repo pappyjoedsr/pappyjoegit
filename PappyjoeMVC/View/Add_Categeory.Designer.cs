@@ -81,12 +81,12 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label8.Location = new System.Drawing.Point(9, 8);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 21);
+            this.label8.Size = new System.Drawing.Size(113, 21);
             this.label8.TabIndex = 294;
             this.label8.Text = "Add Category";
             // 

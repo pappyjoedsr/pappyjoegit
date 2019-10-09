@@ -549,10 +549,10 @@
             // Lab_TreatmentPlan
             // 
             this.Lab_TreatmentPlan.AutoSize = true;
-            this.Lab_TreatmentPlan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lab_TreatmentPlan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_TreatmentPlan.Location = new System.Drawing.Point(5, 97);
             this.Lab_TreatmentPlan.Name = "Lab_TreatmentPlan";
-            this.Lab_TreatmentPlan.Size = new System.Drawing.Size(138, 21);
+            this.Lab_TreatmentPlan.Size = new System.Drawing.Size(144, 21);
             this.Lab_TreatmentPlan.TabIndex = 263;
             this.Lab_TreatmentPlan.Text = "TREATMENT PLAN";
             // 

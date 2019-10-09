@@ -770,11 +770,11 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label41.Location = new System.Drawing.Point(19, 98);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(109, 20);
+            this.label41.Size = new System.Drawing.Size(114, 20);
             this.label41.TabIndex = 299;
             this.label41.Text = "APPOINTMENT";
             // 

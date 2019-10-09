@@ -61,11 +61,11 @@ namespace PappyjoeMVC.View
                     id = this.cntrl.check_add_privillege(doctor_id);// db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PMT' and Permission='A'");
                     if (int.Parse(id) > 0)
                     {
-                        btn_Add.Visible = false;
+                        btn_Add.Enabled = false;
                     }
                     else
                     {
-                        btn_Add.Visible = true;
+                        btn_Add.Enabled = true;
                     }
                 }
                 //Privilege ends
@@ -235,7 +235,7 @@ namespace PappyjoeMVC.View
                     Lab_Msg.Hide();
                     Lab_Msg.Location = new System.Drawing.Point(165, 165);
                 }
-                btn_Add.Show();
+                //btn_Add.Show();
                 Dgv_payment.Show();
             }
             catch (Exception ex)

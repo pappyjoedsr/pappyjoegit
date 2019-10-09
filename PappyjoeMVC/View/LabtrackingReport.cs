@@ -322,6 +322,7 @@ namespace PappyjoeMVC.View
                 toolStripButton4.Visible = true;
                 listpatientsearch.Visible = false;
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+                toolStripButton12.BackColor = Color.SkyBlue;
                 if (clinicname.Rows.Count > 0)
                 {
                     string clinicn = "";

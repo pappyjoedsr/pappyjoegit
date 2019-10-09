@@ -451,7 +451,7 @@
             this.panel1.Controls.Add(this.btn_Recieved);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Location = new System.Drawing.Point(0, 99);
+            this.panel1.Location = new System.Drawing.Point(0, 94);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1370, 642);
             this.panel1.TabIndex = 258;
@@ -473,9 +473,9 @@
             // label1
             // 
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(12, 44);
+            this.label1.Location = new System.Drawing.Point(0, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 25);
             this.label1.TabIndex = 256;
@@ -486,7 +486,7 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.DarkGray;
-            this.panel5.Location = new System.Drawing.Point(-20, 95);
+            this.panel5.Location = new System.Drawing.Point(-20, 90);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1410, 1);
             this.panel5.TabIndex = 261;

@@ -576,11 +576,11 @@
             // treatmentplanl
             // 
             this.treatmentplanl.AutoSize = true;
-            this.treatmentplanl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treatmentplanl.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treatmentplanl.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.treatmentplanl.Location = new System.Drawing.Point(7, 10);
             this.treatmentplanl.Name = "treatmentplanl";
-            this.treatmentplanl.Size = new System.Drawing.Size(79, 21);
+            this.treatmentplanl.Size = new System.Drawing.Size(81, 21);
             this.treatmentplanl.TabIndex = 44;
             this.treatmentplanl.Text = "INVOICES";
             // 
