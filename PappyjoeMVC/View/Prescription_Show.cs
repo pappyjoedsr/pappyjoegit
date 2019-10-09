@@ -59,11 +59,11 @@ namespace PappyjoeMVC.View
                     privid = this.cntrl.add_privillege(doctor_id);// db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRP' and Permission='A'");
                     if (int.Parse(privid) > 0)
                     {
-                        BtnAdd.Visible = false;
+                        BtnAdd.Enabled = false;
                     }
                     else
                     {
-                        BtnAdd.Visible = true;
+                        BtnAdd.Enabled = true;
                     }
                     //edit
                     privid = this.cntrl.edit_privillege(doctor_id);// db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='EMRP' and Permission='E'");

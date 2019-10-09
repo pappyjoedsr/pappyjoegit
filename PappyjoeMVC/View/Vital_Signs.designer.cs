@@ -418,11 +418,11 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label41.Location = new System.Drawing.Point(6, 9);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(98, 21);
+            this.label41.Size = new System.Drawing.Size(102, 21);
             this.label41.TabIndex = 275;
             this.label41.Text = "VITAL SIGNS";
             // 

@@ -418,11 +418,11 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label18.Location = new System.Drawing.Point(9, 8);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(143, 21);
+            this.label18.Size = new System.Drawing.Size(145, 21);
             this.label18.TabIndex = 293;
             this.label18.Text = "PURCHASE ORDER";
             // 

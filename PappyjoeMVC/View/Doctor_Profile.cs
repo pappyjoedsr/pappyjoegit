@@ -476,7 +476,7 @@ namespace PappyjoeMVC.View
             fill_all_combo();
             cmbDrProfile.Text = "Select values";
             toolStripButton7.BackColor = Color.SkyBlue;
-            toolStripDropDownButton1.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
+            toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
 
             if (PappyjoeMVC.Model.Connection.MyGlobals.loginType != "staff")
             {
@@ -1392,30 +1392,7 @@ namespace PappyjoeMVC.View
 
         private void toolStripButton9_Click(object sender, EventArgs e)
         {
-            if (doctor_id != "1")
-            {
-                string id=this.cntrl.doctr_privillage_for_addnewPatient(doctor_id);
-                if (int.Parse(id) > 0)
-                {
-                    MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                else
-                {
-                    var form2 = new PappyjoeMVC.View.Add_New_Patients();
-                    form2.doctor_id = doctor_id;
-                    form2.Closed += (sender1, args) => this.Close();
-                    this.Hide();
-                    form2.ShowDialog();
-                }
-            }
-            else
-            {
-                var form2 = new PappyjoeMVC.View.Add_New_Patients();
-                form2.doctor_id = doctor_id;
-                form2.Closed += (sender1, args) => this.Close();
-                this.Hide();
-                form2.ShowDialog();
-            }
+           
         }
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1485,6 +1462,34 @@ namespace PappyjoeMVC.View
         private void panel_edit_dr_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void toolStripDropDownButton1_Click(object sender, EventArgs e)
+        {
+            if (doctor_id != "1")
+            {
+                string id = this.cntrl.doctr_privillage_for_addnewPatient(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var form2 = new PappyjoeMVC.View.Add_New_Patients();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.ShowDialog();
+                }
+            }
+            else
+            {
+                var form2 = new PappyjoeMVC.View.Add_New_Patients();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+            }
         }
 
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)

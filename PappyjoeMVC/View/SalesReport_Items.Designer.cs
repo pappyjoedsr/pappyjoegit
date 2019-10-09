@@ -303,9 +303,9 @@
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label8.Location = new System.Drawing.Point(3, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(138, 21);
+            this.label8.Size = new System.Drawing.Size(164, 21);
             this.label8.TabIndex = 295;
-            this.label8.Text = "Sales Item Details";
+            this.label8.Text = "SALES  ITEM DETAILS";
             // 
             // btnprint
             // 
