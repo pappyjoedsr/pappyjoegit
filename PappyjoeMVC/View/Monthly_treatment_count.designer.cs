@@ -179,7 +179,7 @@
             // dateTimePickermontreatment2
             // 
             this.dateTimePickermontreatment2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickermontreatment2.Location = new System.Drawing.Point(322, 23);
+            this.dateTimePickermontreatment2.Location = new System.Drawing.Point(322, 24);
             this.dateTimePickermontreatment2.Name = "dateTimePickermontreatment2";
             this.dateTimePickermontreatment2.Size = new System.Drawing.Size(205, 22);
             this.dateTimePickermontreatment2.TabIndex = 3;
@@ -187,7 +187,7 @@
             // dateTimePickermontreatment1
             // 
             this.dateTimePickermontreatment1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickermontreatment1.Location = new System.Drawing.Point(59, 23);
+            this.dateTimePickermontreatment1.Location = new System.Drawing.Point(59, 24);
             this.dateTimePickermontreatment1.Name = "dateTimePickermontreatment1";
             this.dateTimePickermontreatment1.Size = new System.Drawing.Size(205, 22);
             this.dateTimePickermontreatment1.TabIndex = 2;
@@ -254,7 +254,7 @@
             // 
             this.comboBoxdoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxdoctor.FormattingEnabled = true;
-            this.comboBoxdoctor.Location = new System.Drawing.Point(714, 26);
+            this.comboBoxdoctor.Location = new System.Drawing.Point(714, 25);
             this.comboBoxdoctor.Name = "comboBoxdoctor";
             this.comboBoxdoctor.Size = new System.Drawing.Size(149, 21);
             this.comboBoxdoctor.TabIndex = 127;
@@ -296,7 +296,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(1025, 28);
+            this.label4.Location = new System.Drawing.Point(1025, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 17);
             this.label4.TabIndex = 125;
@@ -319,7 +319,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(920, 29);
+            this.label5.Location = new System.Drawing.Point(920, 27);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 17);
             this.label5.TabIndex = 107;
@@ -330,7 +330,7 @@
             this.btnselect.BackColor = System.Drawing.Color.LimeGreen;
             this.btnselect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnselect.ForeColor = System.Drawing.Color.White;
-            this.btnselect.Location = new System.Drawing.Point(545, 23);
+            this.btnselect.Location = new System.Drawing.Point(545, 24);
             this.btnselect.Name = "btnselect";
             this.btnselect.Size = new System.Drawing.Size(75, 23);
             this.btnselect.TabIndex = 1;

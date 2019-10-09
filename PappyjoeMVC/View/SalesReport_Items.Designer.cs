@@ -135,7 +135,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(1028, 37);
+            this.label1.Location = new System.Drawing.Point(1026, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 8;
@@ -158,7 +158,7 @@
             this.Txt_totalItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_totalItems.Font = new System.Drawing.Font("Segoe UI Light", 8.25F);
             this.Txt_totalItems.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txt_totalItems.Location = new System.Drawing.Point(1101, 10);
+            this.Txt_totalItems.Location = new System.Drawing.Point(1102, 10);
             this.Txt_totalItems.Name = "Txt_totalItems";
             this.Txt_totalItems.ReadOnly = true;
             this.Txt_totalItems.Size = new System.Drawing.Size(96, 22);
@@ -171,7 +171,7 @@
             this.lblinvoices.AutoSize = true;
             this.lblinvoices.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblinvoices.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblinvoices.Location = new System.Drawing.Point(1024, 15);
+            this.lblinvoices.Location = new System.Drawing.Point(1021, 15);
             this.lblinvoices.Name = "lblinvoices";
             this.lblinvoices.Size = new System.Drawing.Size(71, 17);
             this.lblinvoices.TabIndex = 0;
@@ -182,7 +182,7 @@
             this.txt_IGST.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_IGST.Font = new System.Drawing.Font("Segoe UI Light", 8.25F);
             this.txt_IGST.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_IGST.Location = new System.Drawing.Point(887, 10);
+            this.txt_IGST.Location = new System.Drawing.Point(888, 10);
             this.txt_IGST.Name = "txt_IGST";
             this.txt_IGST.ReadOnly = true;
             this.txt_IGST.Size = new System.Drawing.Size(96, 22);
@@ -230,7 +230,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(818, 13);
+            this.label5.Location = new System.Drawing.Point(815, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 17);
             this.label5.TabIndex = 0;

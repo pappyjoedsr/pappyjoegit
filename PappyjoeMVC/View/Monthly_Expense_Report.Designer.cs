@@ -368,7 +368,7 @@
             this.label3.BackColor = System.Drawing.Color.Gainsboro;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(6, 23);
+            this.label3.Location = new System.Drawing.Point(6, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 4;
@@ -504,7 +504,7 @@
             // dateTimePickerdailytreatment1
             // 
             this.dateTimePickerdailytreatment1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerdailytreatment1.Location = new System.Drawing.Point(51, 22);
+            this.dateTimePickerdailytreatment1.Location = new System.Drawing.Point(51, 21);
             this.dateTimePickerdailytreatment1.Name = "dateTimePickerdailytreatment1";
             this.dateTimePickerdailytreatment1.Size = new System.Drawing.Size(207, 22);
             this.dateTimePickerdailytreatment1.TabIndex = 5;
@@ -515,7 +515,7 @@
             this.btnselect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnselect.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnselect.ForeColor = System.Drawing.Color.White;
-            this.btnselect.Location = new System.Drawing.Point(935, 30);
+            this.btnselect.Location = new System.Drawing.Point(935, 21);
             this.btnselect.Name = "btnselect";
             this.btnselect.Size = new System.Drawing.Size(75, 23);
             this.btnselect.TabIndex = 7;
@@ -529,7 +529,7 @@
             this.label4.BackColor = System.Drawing.Color.Gainsboro;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(265, 23);
+            this.label4.Location = new System.Drawing.Point(265, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(19, 13);
             this.label4.TabIndex = 9;
@@ -540,7 +540,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(1141, 29);
+            this.label2.Location = new System.Drawing.Point(1141, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 2;
@@ -551,7 +551,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(1037, 32);
+            this.label5.Location = new System.Drawing.Point(1037, 26);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 1;

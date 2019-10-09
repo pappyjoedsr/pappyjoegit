@@ -83,7 +83,7 @@
             this.Btn_Show.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Show.ForeColor = System.Drawing.Color.White;
             this.Btn_Show.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_Show.Location = new System.Drawing.Point(594, 57);
+            this.Btn_Show.Location = new System.Drawing.Point(594, 55);
             this.Btn_Show.Name = "Btn_Show";
             this.Btn_Show.Size = new System.Drawing.Size(65, 22);
             this.Btn_Show.TabIndex = 303;
@@ -99,7 +99,7 @@
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(811, 50);
+            this.btn_Refresh.Location = new System.Drawing.Point(811, 51);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(71, 30);
             this.btn_Refresh.TabIndex = 290;
@@ -124,7 +124,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(318, 57);
+            this.label3.Location = new System.Drawing.Point(318, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 17);
             this.label3.TabIndex = 288;
@@ -135,7 +135,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label8.Location = new System.Drawing.Point(10, 57);
+            this.label8.Location = new System.Drawing.Point(10, 58);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 17);
             this.label8.TabIndex = 287;
@@ -169,7 +169,7 @@
             // 
             // DTP_To
             // 
-            this.DTP_To.Location = new System.Drawing.Point(379, 57);
+            this.DTP_To.Location = new System.Drawing.Point(379, 56);
             this.DTP_To.Name = "DTP_To";
             this.DTP_To.Size = new System.Drawing.Size(200, 20);
             this.DTP_To.TabIndex = 3;

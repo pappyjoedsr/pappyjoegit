@@ -121,7 +121,7 @@
             this.cmbptgrp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbptgrp.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.cmbptgrp.FormattingEnabled = true;
-            this.cmbptgrp.Location = new System.Drawing.Point(930, 20);
+            this.cmbptgrp.Location = new System.Drawing.Point(930, 16);
             this.cmbptgrp.Name = "cmbptgrp";
             this.cmbptgrp.Size = new System.Drawing.Size(151, 21);
             this.cmbptgrp.TabIndex = 89;
@@ -192,7 +192,7 @@
             this.btn_show.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_show.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_show.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_show.Location = new System.Drawing.Point(529, 16);
+            this.btn_show.Location = new System.Drawing.Point(529, 15);
             this.btn_show.Name = "btn_show";
             this.btn_show.Size = new System.Drawing.Size(85, 22);
             this.btn_show.TabIndex = 91;
@@ -431,7 +431,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(837, 21);
+            this.label6.Location = new System.Drawing.Point(837, 18);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 17);
             this.label6.TabIndex = 92;
@@ -530,7 +530,7 @@
             this.Lab_Total.AutoSize = true;
             this.Lab_Total.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Total.ForeColor = System.Drawing.Color.Red;
-            this.Lab_Total.Location = new System.Drawing.Point(770, 21);
+            this.Lab_Total.Location = new System.Drawing.Point(770, 18);
             this.Lab_Total.Name = "Lab_Total";
             this.Lab_Total.Size = new System.Drawing.Size(45, 17);
             this.Lab_Total.TabIndex = 2;
@@ -551,7 +551,7 @@
             // dateTimePickerappointperpatientgroup1
             // 
             this.dateTimePickerappointperpatientgroup1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerappointperpatientgroup1.Location = new System.Drawing.Point(51, 16);
+            this.dateTimePickerappointperpatientgroup1.Location = new System.Drawing.Point(51, 15);
             this.dateTimePickerappointperpatientgroup1.Name = "dateTimePickerappointperpatientgroup1";
             this.dateTimePickerappointperpatientgroup1.Size = new System.Drawing.Size(209, 22);
             this.dateTimePickerappointperpatientgroup1.TabIndex = 4;
@@ -562,7 +562,7 @@
             this.label4.BackColor = System.Drawing.Color.Gainsboro;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(270, 19);
+            this.label4.Location = new System.Drawing.Point(270, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(22, 17);
             this.label4.TabIndex = 7;
@@ -573,7 +573,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(635, 20);
+            this.label1.Location = new System.Drawing.Point(635, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 17);
             this.label1.TabIndex = 1;
@@ -582,7 +582,7 @@
             // dateTimePickerappointperpatientgroup2
             // 
             this.dateTimePickerappointperpatientgroup2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerappointperpatientgroup2.Location = new System.Drawing.Point(306, 16);
+            this.dateTimePickerappointperpatientgroup2.Location = new System.Drawing.Point(306, 15);
             this.dateTimePickerappointperpatientgroup2.Name = "dateTimePickerappointperpatientgroup2";
             this.dateTimePickerappointperpatientgroup2.Size = new System.Drawing.Size(204, 22);
             this.dateTimePickerappointperpatientgroup2.TabIndex = 5;

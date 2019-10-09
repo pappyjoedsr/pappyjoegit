@@ -99,7 +99,7 @@
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(814, 49);
+            this.btn_Refresh.Location = new System.Drawing.Point(814, 50);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(74, 30);
             this.btn_Refresh.TabIndex = 295;
@@ -148,7 +148,7 @@
             this.btn_Sales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Sales.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Sales.ForeColor = System.Drawing.Color.White;
-            this.btn_Sales.Location = new System.Drawing.Point(889, 48);
+            this.btn_Sales.Location = new System.Drawing.Point(889, 50);
             this.btn_Sales.Name = "btn_Sales";
             this.btn_Sales.Size = new System.Drawing.Size(72, 30);
             this.btn_Sales.TabIndex = 210;
@@ -184,7 +184,7 @@
             // 
             // DTP_To
             // 
-            this.DTP_To.Location = new System.Drawing.Point(367, 57);
+            this.DTP_To.Location = new System.Drawing.Point(367, 55);
             this.DTP_To.Name = "DTP_To";
             this.DTP_To.Size = new System.Drawing.Size(200, 20);
             this.DTP_To.TabIndex = 3;
@@ -226,7 +226,7 @@
             // 
             // DTP_From
             // 
-            this.DTP_From.Location = new System.Drawing.Point(84, 57);
+            this.DTP_From.Location = new System.Drawing.Point(84, 55);
             this.DTP_From.Name = "DTP_From";
             this.DTP_From.Size = new System.Drawing.Size(200, 20);
             this.DTP_From.TabIndex = 2;

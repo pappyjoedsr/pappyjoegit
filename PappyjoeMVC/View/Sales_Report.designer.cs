@@ -293,7 +293,7 @@
             this.Txtgrandtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Txtgrandtotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txtgrandtotal.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txtgrandtotal.Location = new System.Drawing.Point(1253, 50);
+            this.Txtgrandtotal.Location = new System.Drawing.Point(1253, 51);
             this.Txtgrandtotal.Name = "Txtgrandtotal";
             this.Txtgrandtotal.ReadOnly = true;
             this.Txtgrandtotal.Size = new System.Drawing.Size(96, 25);
@@ -308,7 +308,7 @@
             this.dptMonthly_From.CalendarTitleForeColor = System.Drawing.Color.DarkSlateGray;
             this.dptMonthly_From.CalendarTrailingForeColor = System.Drawing.Color.DarkSlateGray;
             this.dptMonthly_From.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dptMonthly_From.Location = new System.Drawing.Point(58, 6);
+            this.dptMonthly_From.Location = new System.Drawing.Point(58, 10);
             this.dptMonthly_From.Name = "dptMonthly_From";
             this.dptMonthly_From.Size = new System.Drawing.Size(214, 22);
             this.dptMonthly_From.TabIndex = 167;
@@ -331,7 +331,7 @@
             this.label6.BackColor = System.Drawing.Color.Gainsboro;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(14, 10);
+            this.label6.Location = new System.Drawing.Point(14, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 15);
             this.label6.TabIndex = 169;
@@ -342,7 +342,7 @@
             this.Txttotaldiscount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Txttotaldiscount.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txttotaldiscount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txttotaldiscount.Location = new System.Drawing.Point(1253, 29);
+            this.Txttotaldiscount.Location = new System.Drawing.Point(1253, 28);
             this.Txttotaldiscount.Name = "Txttotaldiscount";
             this.Txttotaldiscount.ReadOnly = true;
             this.Txttotaldiscount.Size = new System.Drawing.Size(96, 22);
@@ -356,7 +356,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(1166, 33);
+            this.label1.Location = new System.Drawing.Point(1187, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 15);
             this.label1.TabIndex = 8;
@@ -394,7 +394,7 @@
             this.lblinvoices.AutoSize = true;
             this.lblinvoices.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblinvoices.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblinvoices.Location = new System.Drawing.Point(1168, 10);
+            this.lblinvoices.Location = new System.Drawing.Point(1166, 10);
             this.lblinvoices.Name = "lblinvoices";
             this.lblinvoices.Size = new System.Drawing.Size(80, 15);
             this.lblinvoices.TabIndex = 0;

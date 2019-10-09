@@ -115,6 +115,7 @@ namespace PappyjoeMVC.View
         {
             panel_main.Hide(); Lab_Msg.Visible = false;
             btn_Stock.BackColor = Color.SteelBlue;
+            toolStripButton5.BackColor = Color.SkyBlue;
             toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
             toolStripButton1.Text = this.cntrl.Load_CompanyName();
             string docnam = this.cntrl.Get_DoctorName(doctor_id);
