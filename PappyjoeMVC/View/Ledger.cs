@@ -69,7 +69,7 @@ namespace PappyjoeMVC.View
                 label31.Text = "Available advance: " + string.Format("{0:C}", 0);
             }
             listpatientsearch.Hide();
-            System.Data.DataTable pat = this.cntrl.Get_pat_iDName(patient_id);
+             System.Data.DataTable pat = this.cntrl.Get_pat_iDName(patient_id);
             linkLabel_id.Text = pat.Rows[0]["pt_id"].ToString();
             linkLabel_Name.Text = pat.Rows[0]["pt_name"].ToString();
             DataTable dt_invoice = this.cntrl.LedgerInvoice(patient_id);
@@ -768,14 +768,14 @@ namespace PappyjoeMVC.View
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
-                }
+                } 
             }
             else
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
-                this.Hide();
+                this.Hide();   
                 form2.ShowDialog();
             }
         }

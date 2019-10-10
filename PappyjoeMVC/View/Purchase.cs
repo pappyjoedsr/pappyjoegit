@@ -879,13 +879,13 @@ namespace PappyjoeMVC.View
                         {
                             if (dgvItemData.Rows.Count == 1)
                             {
-                                dgvGridData.Rows.Clear();
-                                dgvGridData.Rows.Add(Item_id, dt_forBatch.Rows[0]["Branch_No"].ToString(), cmbUnit.Text, txt_qty.Text, dt_forBatch.Rows[0]["Prd_Date"].ToString(), dt_forBatch.Rows[0]["Exp_Date"].ToString(), dt_forBatch.Rows[0]["prd"].ToString());
+                                dgvGridData.Rows.Clear(); fill_Updategrid();
+                                //dgvGridData.Rows.Add(Item_id, dt_forBatch.Rows[0]["Branch_No"].ToString(), cmbUnit.Text, txt_qty.Text, dt_forBatch.Rows[0]["Prd_Date"].ToString(), dt_forBatch.Rows[0]["Exp_Date"].ToString(), dt_forBatch.Rows[0]["prd"].ToString());
                             }
                             else
                             {
-                                dgvGridData.Rows.Add(Item_id, dt_forBatch.Rows[0]["Branch_No"].ToString(), cmbUnit.Text, txt_qty.Text, dt_forBatch.Rows[0]["Prd_Date"].ToString(), dt_forBatch.Rows[0]["Exp_Date"].ToString(), dt_forBatch.Rows[0]["prd"].ToString());
-                                update_Grid();
+                                //dgvGridData.Rows.Add(Item_id, dt_forBatch.Rows[0]["Branch_No"].ToString(), cmbUnit.Text, txt_qty.Text, dt_forBatch.Rows[0]["Prd_Date"].ToString(), dt_forBatch.Rows[0]["Exp_Date"].ToString(), dt_forBatch.Rows[0]["prd"].ToString());
+                                update_Grid(); fill_Updategrid();
                             }
                         }
                         foreach (DataGridViewRow row1 in dgvItemData.Rows)
@@ -938,7 +938,7 @@ namespace PappyjoeMVC.View
                             qtycal = Convert.ToInt32(txt_qty.Text);
                             igstcalcc = (((ucost * qtycal) * igst) / 100);
                         }
-                        if (dtb.Rows[0]["ISBatch"].ToString() == "True")
+                        if (dtb.Rows[0]["ISBatch"].ToString() == "true")
                         {
                             if (dt_forBatch != null)
                             {

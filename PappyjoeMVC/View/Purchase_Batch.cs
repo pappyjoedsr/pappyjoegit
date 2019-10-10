@@ -88,7 +88,7 @@ namespace PappyjoeMVC.View
                         }
                     }
                 }
-                if (dtb.Rows[0]["ISBatch"].ToString() != "True")
+                if (dtb.Rows[0]["ISBatch"].ToString() != "true")
                 {
                     dgvPurchaseBatch.Rows[0].Cells["Branch_No"].Value = purNo + "_" + Itemcode;
                     dgvPurchaseBatch.Columns[0].ReadOnly = true;
