@@ -654,14 +654,22 @@ namespace PappyjoeMVC.View
                         if (dt_unit1.Rows.Count > 0)
                         {
                             decimal unitmf = Convert.ToDecimal(dt_unit1.Rows[0]["UnitMF"].ToString());
-                            if (dt_unit1.Rows[0]["Unit1"].ToString() == unit)
+                            if(unitmf>0)
                             {
-                                Stock = qty * unitmf;
+                                if (dt_unit1.Rows[0]["Unit1"].ToString() == unit)
+                                {
+                                    Stock = qty * unitmf;
+                                }
+                                else
+                                {
+                                    Stock = qty;
+                                }
                             }
                             else
                             {
                                 Stock = qty;
                             }
+                           
                         }
                         if (btn_AddtoGrid.Text == "Add")
                         {
