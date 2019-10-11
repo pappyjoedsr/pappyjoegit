@@ -155,8 +155,8 @@ namespace PappyjoeMVC.View
             txt_Itemcode.Text = itemcode;
             DataTable dtb = this.cntrl.get_itemname(Itemid);
             Load_discription(dtb);
-            string dt_max = this.cntrl.max_purNo(Itemid);
-            check_purchaseRate(dt_max);
+            //string dt_max = this.cntrl.max_purNo(Itemid);
+            check_purchaseRate();
         }
         private void txt_Itemcode_KeyUp(object sender, KeyEventArgs e)
         {
@@ -172,8 +172,8 @@ namespace PappyjoeMVC.View
                     {
                         DataTable dtb = this.cntrl.get_itemname(Itemid);
                         Load_discription(dtb);
-                       string dt_max= this.cntrl.max_purNo(Itemid);
-                        check_purchaseRate(dt_max);
+                       //string dt_max= this.cntrl.max_purNo(Itemid);
+                        check_purchaseRate();
                     }
                 }
             }
@@ -186,11 +186,11 @@ namespace PappyjoeMVC.View
                 txtUnitCost.Text = dt.Rows[0]["Purch_Rate"].ToString();
             }
         }
-        public void check_purchaseRate(string dt_PurNum)
+        public void check_purchaseRate()
         {
-            if (Convert.ToInt32(dt_PurNum)>0)
-            {
-                string dt_Cost = this.cntrl.purchit_details(dt_PurNum, Itemid);
+            //if (Convert.ToInt32(dt_PurNum)>0)
+            //{
+                string dt_Cost = this.cntrl.purchit_details( Itemid);
                 if (dt_Cost != "" && dt_Cost != "0")
                 {
                     if (txtUnitCost.Text == dt_Cost)
@@ -204,7 +204,7 @@ namespace PappyjoeMVC.View
                     }
                 }
 
-            }
+            //}
         }
         private void txt_qty_Click(object sender, EventArgs e)
         {
