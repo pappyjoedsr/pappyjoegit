@@ -75,7 +75,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable load_purchase_order_details(int Pur_order_no1)
         {
-            DataTable dt = db.table("select M.Suppleir_id,S.Supplier_Name,P.Item_code,P.Description,P.Qty,P.UnitCost,P.Amount from tbl_PurchaseOrder P inner join tbl_Purchase_order_master M on M.Pur_order_no=P.Pur_order_no inner join tbl_Supplier S on S.Supplier_Code=M.Suppleir_id where P.Pur_order_no='" + Pur_order_no1 + "'");
+            DataTable dt = db.table("select M.Suppleir_id,S.Supplier_Name,P.Item_code as id,P.Description,P.Qty,P.UnitCost,P.Amount,i.Item_code from tbl_PurchaseOrder P inner join tbl_Purchase_order_master M on M.Pur_order_no=P.Pur_order_no inner join tbl_Supplier S on S.Supplier_Code=M.Suppleir_id left join tbl_items i on i.id=p.Item_code where P.Pur_order_no='" + Pur_order_no1 + "'");
             return dt;
         }
         public string get_suppliercode(string sup_id)
