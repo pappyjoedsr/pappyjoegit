@@ -46,11 +46,6 @@
             this.btnReport = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.presgrid = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lbPatient = new System.Windows.Forms.ListBox();
             this.txtPatient = new System.Windows.Forms.TextBox();
@@ -84,6 +79,11 @@
             this.lbIdoctor = new System.Windows.Forms.ListBox();
             this.dtpDocumentDate = new System.Windows.Forms.DateTimePicker();
             this.txtDocumentNumber = new System.Windows.Forms.TextBox();
+            this.presgrid = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_cancel = new System.Windows.Forms.Button();
@@ -162,9 +162,9 @@
             this.rad_CashSale = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.presgrid)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.presgrid)).BeginInit();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SalesItem)).BeginInit();
@@ -268,104 +268,8 @@
             this.panel2.Controls.Add(this.txtDocumentNumber);
             this.panel2.Location = new System.Drawing.Point(1, 45);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1031, 156);
+            this.panel2.Size = new System.Drawing.Size(1077, 156);
             this.panel2.TabIndex = 278;
-            // 
-            // presgrid
-            // 
-            this.presgrid.AllowUserToAddRows = false;
-            this.presgrid.AllowUserToDeleteRows = false;
-            this.presgrid.AllowUserToResizeColumns = false;
-            this.presgrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.presgrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.presgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.presgrid.BackgroundColor = System.Drawing.Color.White;
-            this.presgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.presgrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.presgrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.presgrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.presgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.presgrid.ColumnHeadersVisible = false;
-            this.presgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.date});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.presgrid.DefaultCellStyle = dataGridViewCellStyle5;
-            this.presgrid.Location = new System.Drawing.Point(1038, 71);
-            this.presgrid.Name = "presgrid";
-            this.presgrid.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.presgrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.presgrid.RowHeadersVisible = false;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.presgrid.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.presgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.presgrid.Size = new System.Drawing.Size(125, 540);
-            this.presgrid.TabIndex = 314;
-            this.presgrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.presgrid_CellClick);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "id";
-            this.Column1.HeaderText = "id";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "name";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column2.HeaderText = "prescription";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // date
-            // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date.DefaultCellStyle = dataGridViewCellStyle4;
-            this.date.HeaderText = "Date";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            this.date.Visible = false;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label14.Location = new System.Drawing.Point(1040, 48);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(99, 13);
-            this.label14.TabIndex = 314;
-            this.label14.Text = "PRESCRIPTION LIST";
             // 
             // panel7
             // 
@@ -774,19 +678,111 @@
             this.txtDocumentNumber.Size = new System.Drawing.Size(196, 22);
             this.txtDocumentNumber.TabIndex = 222;
             // 
+            // presgrid
+            // 
+            this.presgrid.AllowUserToAddRows = false;
+            this.presgrid.AllowUserToDeleteRows = false;
+            this.presgrid.AllowUserToResizeColumns = false;
+            this.presgrid.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presgrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.presgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.presgrid.BackgroundColor = System.Drawing.Color.White;
+            this.presgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.presgrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.presgrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.presgrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.presgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.presgrid.ColumnHeadersVisible = false;
+            this.presgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.date});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.presgrid.DefaultCellStyle = dataGridViewCellStyle5;
+            this.presgrid.Location = new System.Drawing.Point(1063, 71);
+            this.presgrid.Name = "presgrid";
+            this.presgrid.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.presgrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.presgrid.RowHeadersVisible = false;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presgrid.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.presgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.presgrid.Size = new System.Drawing.Size(125, 540);
+            this.presgrid.TabIndex = 314;
+            this.presgrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.presgrid_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "id";
+            this.Column1.HeaderText = "id";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "name";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column2.HeaderText = "prescription";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // date
+            // 
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date.DefaultCellStyle = dataGridViewCellStyle4;
+            this.date.HeaderText = "Date";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            this.date.Visible = false;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label14.Location = new System.Drawing.Point(1040, 48);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(99, 13);
+            this.label14.TabIndex = 314;
+            this.label14.Text = "PRESCRIPTION LIST";
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.groupBox2);
             this.panel4.Controls.Add(this.dgv_SalesItem);
-            this.panel4.Location = new System.Drawing.Point(2, 204);
+            this.panel4.Location = new System.Drawing.Point(1, 205);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1030, 322);
+            this.panel4.Size = new System.Drawing.Size(1094, 322);
             this.panel4.TabIndex = 313;
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.btn_cancel);
             this.groupBox2.Controls.Add(this.btn_item_Choose);
             this.groupBox2.Controls.Add(this.label52);
@@ -1174,8 +1170,6 @@
             this.dgv_SalesItem.AllowUserToDeleteRows = false;
             this.dgv_SalesItem.AllowUserToResizeColumns = false;
             this.dgv_SalesItem.AllowUserToResizeRows = false;
-            this.dgv_SalesItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_SalesItem.BackgroundColor = System.Drawing.Color.White;
             this.dgv_SalesItem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1225,7 +1219,7 @@
             this.dgv_SalesItem.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_SalesItem.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgv_SalesItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv_SalesItem.Size = new System.Drawing.Size(1027, 227);
+            this.dgv_SalesItem.Size = new System.Drawing.Size(1031, 227);
             this.dgv_SalesItem.TabIndex = 0;
             this.dgv_SalesItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SalesItem_CellClick);
             // 
@@ -1752,11 +1746,11 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.presgrid)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.presgrid)).EndInit();
             this.panel4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
