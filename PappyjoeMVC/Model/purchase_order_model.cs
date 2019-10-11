@@ -31,7 +31,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Load_item_details(int purch_id1)
         {
-            DataTable Purchase = db.table("select * from tbl_PurchaseOrder where Pur_order_no='" + purch_id1 + "'");
+            DataTable Purchase = db.table("select P.Pur_order_no,p.Item_code as id,P.Description,p.Qty,p.UnitCost,p.Amount,I.Item_code from tbl_PurchaseOrder p inner join tbl_ITEMS I on p.Item_code=I.id  where Pur_order_no='" + purch_id1 + "'");
             return Purchase;
         }
         public DataTable Doc_number()
@@ -66,7 +66,7 @@ namespace PappyjoeMVC.Model
         }
         public string purchit_details(string itemid)
         {
-            string dt_Cost = db.scalar(" select Purch_Rate	 from tbl_ITEMS where id='" + itemid + "'");
+            string dt_Cost = db.scalar(" select Purch_Rate from tbl_ITEMS where id='" + itemid + "'");
 
             //string dt_Cost = db.scalar("select Rate from tbl_PURCHIT where PurchNumber='" + Convert.ToInt32(dt_PurNum) + "' and Item_Code='"+ itemid + "' ");
             return dt_Cost;

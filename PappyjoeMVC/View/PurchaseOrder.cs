@@ -85,6 +85,7 @@ namespace PappyjoeMVC.View
                 {
                     dgvItemData.Rows.Add();
                     string temp = Purchase.Rows[i]["Item_code"].ToString();
+                    dgvItemData.Rows[i].Cells["id"].Value= Purchase.Rows[i]["id"].ToString();
                     dgvItemData.Rows[i].Cells["Item_Id"].Value = Purchase.Rows[i]["Item_code"].ToString();
                     dgvItemData.Rows[i].Cells["description"].Value = Purchase.Rows[i]["Description"].ToString();
                     dgvItemData.Rows[i].Cells["col_qty"].Value = Purchase.Rows[i]["Qty"].ToString();
@@ -296,12 +297,12 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
-                        dgvItemData.Rows.Add(txt_Itemcode.Text, txtDescription.Text, txt_qty.Text, txtUnitCost.Text, txtAmount.Text);
+                        dgvItemData.Rows.Add(Itemid,txt_Itemcode.Text, txtDescription.Text, txt_qty.Text, txtUnitCost.Text, txtAmount.Text);
                     }
                 }
                 if (Btn_Add.Text == "Update") 
                 {
-                    dgvItemData.Rows[Rowindex].Cells["id"].Value = txt_Itemcode.Text;
+                    dgvItemData.Rows[Rowindex].Cells["id"].Value = Itemid;
                     dgvItemData.Rows[Rowindex].Cells["Item_Id"].Value = txt_Itemcode.Text;
                     dgvItemData.Rows[Rowindex].Cells["description"].Value = txtDescription.Text;
                     dgvItemData.Rows[Rowindex].Cells["col_qty"].Value = txt_qty.Text;
@@ -379,6 +380,7 @@ namespace PappyjoeMVC.View
                 Rowindex = dgvItemData.CurrentRow.Index;
                 if (dgvItemData.CurrentCell.OwningColumn.Name == "ItemEdit")
                 {
+                    Itemid= dgvItemData.CurrentRow.Cells["id"].Value.ToString();
                     txt_Itemcode.Text = dgvItemData.CurrentRow.Cells["Item_Id"].Value.ToString();
                     txtDescription.Text = dgvItemData.CurrentRow.Cells["description"].Value.ToString();
                     txt_qty.Text = dgvItemData.CurrentRow.Cells["col_qty"].Value.ToString();
@@ -428,7 +430,7 @@ namespace PappyjoeMVC.View
                         this.cntrl.save_master(txtPurchOrderNo.Text, dtpPurchDate.Value.ToString("yyyy-MM-dd"), txt_SupplierId.Text);
                         foreach (DataGridViewRow row in dgvItemData.Rows)
                         {
-                            this.cntrl.save_items(txtPurchOrderNo.Text, row.Cells["Item_Id"].Value.ToString(), row.Cells["description"].Value.ToString(), row.Cells["col_qty"].Value.ToString(), row.Cells["Unit_Cost"].Value.ToString(), row.Cells["Amount"].Value.ToString());
+                            this.cntrl.save_items(txtPurchOrderNo.Text, row.Cells["id"].Value.ToString(), row.Cells["description"].Value.ToString(), row.Cells["col_qty"].Value.ToString(), row.Cells["Unit_Cost"].Value.ToString(), row.Cells["Amount"].Value.ToString());
                         }
                         clear();
                         DialogResult res = MessageBox.Show("Data has been successfully saved, Do you want to print...?", "Success",
@@ -465,7 +467,7 @@ namespace PappyjoeMVC.View
                         this.cntrl.save_master(txtPurchOrderNo.Text,dtpPurchDate.Value.ToString("yyyy-MM-dd"), txt_SupplierId.Text);
                         foreach (DataGridViewRow row in dgvItemData.Rows)
                         {
-                            this.cntrl.save_items(txtPurchOrderNo.Text, row.Cells["Item_Id"].Value.ToString(), row.Cells["description"].Value.ToString(), row.Cells["col_qty"].Value.ToString(), row.Cells["Unit_Cost"].Value.ToString(), row.Cells["Amount"].Value.ToString());
+                            this.cntrl.save_items(txtPurchOrderNo.Text, row.Cells["id"].Value.ToString(), row.Cells["description"].Value.ToString(), row.Cells["col_qty"].Value.ToString(), row.Cells["Unit_Cost"].Value.ToString(), row.Cells["Amount"].Value.ToString());
                         }
                         clear();
                         DialogResult res = MessageBox.Show("Data updated Successfully,Do you want to print ?", "Success ",

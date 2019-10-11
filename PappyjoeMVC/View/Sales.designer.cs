@@ -1743,6 +1743,7 @@
             this.Name = "Sales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Sales";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmSales_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
