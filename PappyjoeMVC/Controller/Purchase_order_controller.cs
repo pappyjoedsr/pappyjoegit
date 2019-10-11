@@ -52,9 +52,9 @@ namespace PappyjoeMVC.Controller
             string maxid = _model.max_purNo(Itemid);
             return maxid;
         }
-        public string purchit_details(string dt_PurNum,string itemid)
+        public string purchit_details(string itemid)
         {
-            string value = _model.purchit_details(dt_PurNum, itemid);
+            string value = _model.purchit_details(itemid);
             return value;
         }
         public void save_master(string OrerNo, string OrderDate, string Supplierid)
