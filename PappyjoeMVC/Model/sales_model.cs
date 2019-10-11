@@ -101,8 +101,7 @@ namespace PappyjoeMVC.Model
         public int Save_itemdetails(int DocNo,  string Docdate, string Item_Code, string Description, string Packing, string Unit, decimal GST, decimal IGST, int Qty, int FreeQty,decimal Rate, decimal TotalAmount, string UNIT2, decimal UnitMF, decimal CostBase)
         { 
           int j = db.execute("insert into tbl_SALEIT (InvNumber,InvDate,Item_Code,Description,Packing,Unit,GST,IGST,Qty,FreeQty,Rate,TotalAmount,UNIT2,UnitMF,CostBase,Taxable,RetQty) values('" + DocNo + "','" + Docdate + "','" + Item_Code + "','" + Description + "'," +
-                             "'" + Packing + "','" + Unit + "','" + GST + "','" + IGST + "','" + Qty + "'," +
-                             "'" + FreeQty + "','" + Rate + "','" + TotalAmount + "','" + UNIT2 + "','" + UnitMF + "','" + CostBase + "','Yes','0')");
+                             "'" + Packing + "','" + Unit + "','" + GST + "','" + IGST + "','" + Qty + "'," + "'" + FreeQty + "','" + Rate + "','" + TotalAmount + "','" + UNIT2 + "','" + UnitMF + "','" + CostBase + "','Yes','0')");
             return j;
         }
         public void update_batchnumber(decimal currentStock,string BatchEntry)
@@ -144,7 +143,6 @@ namespace PappyjoeMVC.Model
         }
         public DataTable get_batchdetails(string item_Code)
         {
-
             DataTable dtb = db.table("select Entry_No,BatchNumber,Qty,cast(PrdDate as date) PrdDate,cast(ExpDate as date) ExpDate, Unit2,UnitMF from tbl_BatchNumber where Item_Code='" + item_Code + "'and Qty>0  order by ExpDate");
             return dtb;
         }

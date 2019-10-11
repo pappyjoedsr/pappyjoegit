@@ -713,11 +713,12 @@
             // 
             // Txt_TotalAmount
             // 
+            this.Txt_TotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_TotalAmount.BackColor = System.Drawing.Color.White;
             this.Txt_TotalAmount.Enabled = false;
             this.Txt_TotalAmount.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_TotalAmount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txt_TotalAmount.Location = new System.Drawing.Point(869, 562);
+            this.Txt_TotalAmount.Location = new System.Drawing.Point(939, 562);
             this.Txt_TotalAmount.MaxLength = 8;
             this.Txt_TotalAmount.Name = "Txt_TotalAmount";
             this.Txt_TotalAmount.Size = new System.Drawing.Size(111, 22);
@@ -727,10 +728,11 @@
             // 
             // label45
             // 
+            this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label45.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label45.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label45.Location = new System.Drawing.Point(733, 564);
+            this.label45.Location = new System.Drawing.Point(803, 564);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(132, 20);
             this.label45.TabIndex = 316;
@@ -738,11 +740,12 @@
             // 
             // txt_totalItems
             // 
+            this.txt_totalItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_totalItems.BackColor = System.Drawing.Color.White;
             this.txt_totalItems.Enabled = false;
             this.txt_totalItems.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_totalItems.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_totalItems.Location = new System.Drawing.Point(869, 540);
+            this.txt_totalItems.Location = new System.Drawing.Point(939, 540);
             this.txt_totalItems.MaxLength = 8;
             this.txt_totalItems.Name = "txt_totalItems";
             this.txt_totalItems.Size = new System.Drawing.Size(111, 22);
@@ -752,10 +755,11 @@
             // 
             // label47
             // 
+            this.label47.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label47.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label47.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label47.Location = new System.Drawing.Point(733, 539);
+            this.label47.Location = new System.Drawing.Point(803, 539);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(132, 20);
             this.label47.TabIndex = 318;
@@ -840,11 +844,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 600);
-            this.Controls.Add(this.Txt_TotalAmount);
-            this.Controls.Add(this.label45);
             this.Controls.Add(this.txt_totalItems);
+            this.Controls.Add(this.Txt_TotalAmount);
             this.Controls.Add(this.label47);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.label45);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -853,7 +857,6 @@
             this.Name = "SalesOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sales Order";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmSalesOrder_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

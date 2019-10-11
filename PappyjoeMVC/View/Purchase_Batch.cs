@@ -14,16 +14,17 @@ namespace PappyjoeMVC.View
         public int qtyE;
         int Count;
         string itemid1;
-        DataTable editgrid1 = new DataTable(); public static DataTable gridData = new DataTable();
+        DataTable editgrid1 = new DataTable();
+        public static DataTable gridData = new DataTable();
         private string form_name;
         bool ermsg = false, flagbatchError = false, flagdateError = false;
         int flag = 0;
-        private string text1;
-        private string text2;
-        private DataTable editgrid;
-        private int qty;
+        //private string text1;
+        //private string text2;
+        //private DataTable editgrid;
+        //private int qty;
         string Itemcode = "", purNo = "";
-        private string item_id;
+        //private string item_id;
 
         public Purchase_Batch()
         {
@@ -92,7 +93,6 @@ namespace PappyjoeMVC.View
                 {
                     dgvPurchaseBatch.Rows[0].Cells["Branch_No"].Value = purNo + "_" + Itemcode;
                     dgvPurchaseBatch.Columns[0].ReadOnly = true;
-
                 }
                 else
                 {

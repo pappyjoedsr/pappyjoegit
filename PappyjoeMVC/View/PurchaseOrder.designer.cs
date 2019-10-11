@@ -672,6 +672,7 @@
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // Item_Id
             // 
@@ -745,7 +746,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PurchaseOrder";
             this.Text = "Purchase Order";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPurchaseOrder_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
