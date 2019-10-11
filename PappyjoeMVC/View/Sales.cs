@@ -669,7 +669,6 @@ namespace PappyjoeMVC.View
                             {
                                 Stock = qty;
                             }
-                           
                         }
                         if (btn_AddtoGrid.Text == "Add")
                         {
@@ -1127,7 +1126,7 @@ namespace PappyjoeMVC.View
                                 txt_GrandTotal.Text = Convert.ToDecimal(Txt_TotalAmount.Text).ToString("##0.00");
                             }
                             dgv_SalesItem.Rows.RemoveAt(index);
-                            fill_Batch_delete(itmCode, quantity);
+                            fill_Batch_delete(itmCode,quantity);
                         }
                     }
                 }
@@ -1371,7 +1370,7 @@ namespace PappyjoeMVC.View
                     txt_PhoneNo.Text = dtb_master.Rows[0]["phone1"].ToString();
                 }
                 DataTable dtb_sales = this.cntrl.sales_items_details(invnum_Edit);
-                decimal gstAmount = 0, igstAmount = 0;// TotalGst = 0;
+                decimal gstAmount = 0, igstAmount = 0;//TotalGst = 0;
                 decimal TotalAmount = 0, DisAmount = 0, TotalCost = 0, ToatalGST = 0, TotalIGST = 0;
                 int qty = 0;
                 for (int i = 0; i < dtb_sales.Rows.Count; i++)
@@ -1745,13 +1744,12 @@ namespace PappyjoeMVC.View
                                                 Fiil_BatchSale_Grid_Prescription_bill();
                                                 dgv_SalesItem.Rows.Add(txt_ItemCode.Text, dtb.Rows[0]["item_code"].ToString(), txt_Discription.Text, txt_Packing.Text, cmb_Unit.Text, txt_GST.Text, txt_IGST.Text, txt_Qty.Text, txt_Free.Text, txt_UnitCost.Text, txt_Amount.Text, PappyjoeMVC.Properties.Resources.editicon, PappyjoeMVC.Properties.Resources.deleteicon);
                                                 clear_itemdetails();
-                                                // Total Calculation
+                                               //Total Calculation
                                                 Decimal TotalGst = 0;
                                                 Decimal Total_Igst = 0; 
                                                 int Totalqty = 0;
                                                 Decimal TotalAmount = 0;
                                                 Decimal TotalCost = 0; decimal gstAmount = 0; decimal igstAmount = 0;
-
                                                 foreach (DataGridViewRow dr in dgv_SalesItem.Rows)
                                                 {
                                                     if (dr.Cells["ColGST"].Value != null && dr.Cells["ColGST"].Value.ToString() != "")
@@ -1798,7 +1796,6 @@ namespace PappyjoeMVC.View
                                                     txt_TotalCost.Text = Convert.ToDecimal(TotalCost).ToString("##0.00");
                                                 }
                                             }
-
                                         }
                                     }
                                 }

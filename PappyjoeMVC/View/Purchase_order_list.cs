@@ -117,7 +117,7 @@ namespace PappyjoeMVC.View
             if (purch_id > 0)
             {
                 PappyjoeMVC.Model.Connection.MyGlobals.global_Flag = true;
-                var form2 = new PappyjoeMVC.View.Purchase(purch_id.ToString());
+                var form2 = new PappyjoeMVC.View.Purchase(purch_id);
                 form2.ShowDialog();
             }
         }

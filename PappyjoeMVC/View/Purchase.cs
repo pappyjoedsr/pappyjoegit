@@ -260,7 +260,12 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-
+        public Purchase(int purch_id)
+        {
+            InitializeComponent();
+            Pur_order_no1 = purch_id;
+            purchOrder_flag = true;
+        }
         public Purchase(string item_code)
         {
             InitializeComponent();
@@ -1139,7 +1144,7 @@ namespace PappyjoeMVC.View
                             {
                                 txt_Itemcode.Text = dgvItemData.Rows[Rowindex].Cells["itemid"].Value.ToString();
                                 txtDescription.Text = dgvItemData.Rows[Rowindex].Cells["description"].Value.ToString();
-                                txtPacking.Text = dgvItemData.Rows[Rowindex].Cells["Packing"].Value.ToString();
+                                //txtPacking.Text = dgvItemData.Rows[Rowindex].Cells["Packing"].Value.ToString();
                                 txt_qty.Text = dgvItemData.Rows[Rowindex].Cells["col_qty"].Value.ToString();
                                 txt_free.Text = dgvItemData.Rows[Rowindex].Cells["free"].Value.ToString();
                                 txtUnitCost.Text = dgvItemData.Rows[Rowindex].Cells["Unit_Cost"].Value.ToString();
@@ -1272,6 +1277,7 @@ namespace PappyjoeMVC.View
         {
             if (dtitems.Rows.Count > 0)
             {
+                txtPacking.Text = dtitems.Rows[0]["packing"].ToString();
                 cmbUnit.Items.Clear();
                 if (Convert.ToInt32(dtitems.Rows[0]["UnitMF"].ToString()) == 0)
                 {
@@ -1855,11 +1861,15 @@ namespace PappyjoeMVC.View
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
                             dgvItemData.Rows.Add();
-                            dgvItemData.Rows[i].Cells["Item_Id"].Value = dt.Rows[i]["Item_code"].ToString();
+                            //dgvItemData.Rows[i].Cells["id"].Value = data_from_purchase1.Rows[i]["id"].ToString();
+                            dgvItemData.Rows[i].Cells["itemid"].Value = dt.Rows[i]["Item_code"].ToString();
                             dgvItemData.Rows[i].Cells["description"].Value = dt.Rows[i]["Description"].ToString();
-                            dgvItemData.Rows[i].Cells["col_qty"].Value = dt.Rows[i]["Qty"].ToString();
-                            dgvItemData.Rows[i].Cells["Unit_Cost"].Value = dt.Rows[i]["UnitCost"].ToString();
-                            dgvItemData.Rows[i].Cells["Amount"].Value = dt.Rows[i]["Amount"].ToString();
+                            dgvItemData.Rows[i].Cells["col_qty"].Value = "0";// dt.Rows[i]["Qty"].ToString();
+                            dgvItemData.Rows[i].Cells["gst"].Value = "0";
+                            dgvItemData.Rows[i].Cells["igst"].Value = "0";
+                            dgvItemData.Rows[i].Cells["free"].Value = "0";
+                            dgvItemData.Rows[i].Cells["Unit_Cost"].Value = "0.00";// dt.Rows[i]["UnitCost"].ToString();
+                            dgvItemData.Rows[i].Cells["Amount"].Value = "0.00";// dt.Rows[i]["Amount"].ToString();
                             dgvItemData.Rows[i].Cells["amt"].Value = dt.Rows[i]["Amount"].ToString();
                             total = Convert.ToDecimal(dt.Rows[i]["Amount"].ToString());
                             total1 = total1 + total;

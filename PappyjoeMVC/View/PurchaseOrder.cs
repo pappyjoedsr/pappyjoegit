@@ -299,8 +299,9 @@ namespace PappyjoeMVC.View
                         dgvItemData.Rows.Add(txt_Itemcode.Text, txtDescription.Text, txt_qty.Text, txtUnitCost.Text, txtAmount.Text);
                     }
                 }
-                if (Btn_Add.Text == "Update")
+                if (Btn_Add.Text == "Update") 
                 {
+                    dgvItemData.Rows[Rowindex].Cells["id"].Value = txt_Itemcode.Text;
                     dgvItemData.Rows[Rowindex].Cells["Item_Id"].Value = txt_Itemcode.Text;
                     dgvItemData.Rows[Rowindex].Cells["description"].Value = txtDescription.Text;
                     dgvItemData.Rows[Rowindex].Cells["col_qty"].Value = txt_qty.Text;
