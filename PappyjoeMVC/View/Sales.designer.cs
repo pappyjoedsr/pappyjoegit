@@ -254,8 +254,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.presgrid);
-            this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.label1);
@@ -270,7 +268,7 @@
             this.panel2.Controls.Add(this.txtDocumentNumber);
             this.panel2.Location = new System.Drawing.Point(1, 45);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1085, 156);
+            this.panel2.Size = new System.Drawing.Size(1031, 156);
             this.panel2.TabIndex = 278;
             // 
             // presgrid
@@ -282,7 +280,9 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.presgrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.presgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.presgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.presgrid.BackgroundColor = System.Drawing.Color.White;
             this.presgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.presgrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -309,7 +309,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.presgrid.DefaultCellStyle = dataGridViewCellStyle5;
-            this.presgrid.Location = new System.Drawing.Point(995, 26);
+            this.presgrid.Location = new System.Drawing.Point(1038, 71);
             this.presgrid.Name = "presgrid";
             this.presgrid.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -324,7 +324,7 @@
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.presgrid.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.presgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.presgrid.Size = new System.Drawing.Size(108, 540);
+            this.presgrid.Size = new System.Drawing.Size(125, 540);
             this.presgrid.TabIndex = 314;
             this.presgrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.presgrid_CellClick);
             // 
@@ -361,7 +361,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label14.Location = new System.Drawing.Point(983, 3);
+            this.label14.Location = new System.Drawing.Point(1040, 48);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(99, 13);
             this.label14.TabIndex = 314;
@@ -381,7 +381,7 @@
             this.panel7.Controls.Add(this.txt_City);
             this.panel7.Controls.Add(this.txtPatientID);
             this.panel7.Controls.Add(this.txt_Street);
-            this.panel7.Location = new System.Drawing.Point(668, 3);
+            this.panel7.Location = new System.Drawing.Point(689, 3);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(338, 150);
             this.panel7.TabIndex = 312;
@@ -539,7 +539,7 @@
             this.panel6.Controls.Add(this.label16);
             this.panel6.Controls.Add(this.label18);
             this.panel6.Controls.Add(this.label17);
-            this.panel6.Location = new System.Drawing.Point(351, 7);
+            this.panel6.Location = new System.Drawing.Point(357, 7);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(302, 138);
             this.panel6.TabIndex = 311;
@@ -780,7 +780,7 @@
             this.panel4.Controls.Add(this.dgv_SalesItem);
             this.panel4.Location = new System.Drawing.Point(2, 204);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(970, 322);
+            this.panel4.Size = new System.Drawing.Size(1030, 322);
             this.panel4.TabIndex = 313;
             // 
             // groupBox2
@@ -817,7 +817,7 @@
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Location = new System.Drawing.Point(3, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(963, 84);
+            this.groupBox2.Size = new System.Drawing.Size(1023, 84);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -831,7 +831,7 @@
             this.btn_cancel.ForeColor = System.Drawing.Color.White;
             this.btn_cancel.Location = new System.Drawing.Point(894, 43);
             this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(65, 25);
+            this.btn_cancel.Size = new System.Drawing.Size(125, 25);
             this.btn_cancel.TabIndex = 308;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = false;
@@ -890,7 +890,7 @@
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label48.ForeColor = System.Drawing.Color.Red;
-            this.label48.Location = new System.Drawing.Point(-132, 16);
+            this.label48.Location = new System.Drawing.Point(-72, 16);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(14, 18);
             this.label48.TabIndex = 303;
@@ -928,7 +928,7 @@
             this.btn_AddtoGrid.ForeColor = System.Drawing.Color.White;
             this.btn_AddtoGrid.Location = new System.Drawing.Point(894, 19);
             this.btn_AddtoGrid.Name = "btn_AddtoGrid";
-            this.btn_AddtoGrid.Size = new System.Drawing.Size(65, 25);
+            this.btn_AddtoGrid.Size = new System.Drawing.Size(125, 25);
             this.btn_AddtoGrid.TabIndex = 8;
             this.btn_AddtoGrid.Text = "Add";
             this.btn_AddtoGrid.UseVisualStyleBackColor = false;
@@ -1174,6 +1174,8 @@
             this.dgv_SalesItem.AllowUserToDeleteRows = false;
             this.dgv_SalesItem.AllowUserToResizeColumns = false;
             this.dgv_SalesItem.AllowUserToResizeRows = false;
+            this.dgv_SalesItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_SalesItem.BackgroundColor = System.Drawing.Color.White;
             this.dgv_SalesItem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1208,7 +1210,6 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_SalesItem.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dgv_SalesItem.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv_SalesItem.Location = new System.Drawing.Point(0, 95);
             this.dgv_SalesItem.Name = "dgv_SalesItem";
             this.dgv_SalesItem.ReadOnly = true;
@@ -1224,7 +1225,7 @@
             this.dgv_SalesItem.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_SalesItem.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgv_SalesItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv_SalesItem.Size = new System.Drawing.Size(970, 227);
+            this.dgv_SalesItem.Size = new System.Drawing.Size(1027, 227);
             this.dgv_SalesItem.TabIndex = 0;
             this.dgv_SalesItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SalesItem_CellClick);
             // 
@@ -1347,7 +1348,7 @@
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel5.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panel5.Location = new System.Drawing.Point(983, 42);
+            this.panel5.Location = new System.Drawing.Point(1034, 42);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1, 607);
             this.panel5.TabIndex = 314;
@@ -1439,13 +1440,13 @@
             // 
             // Txt_TotalAmount
             // 
-            this.Txt_TotalAmount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Txt_TotalAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Txt_TotalAmount.BackColor = System.Drawing.Color.White;
             this.Txt_TotalAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Txt_TotalAmount.Enabled = false;
             this.Txt_TotalAmount.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_TotalAmount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txt_TotalAmount.Location = new System.Drawing.Point(865, 565);
+            this.Txt_TotalAmount.Location = new System.Drawing.Point(870, 561);
             this.Txt_TotalAmount.MaxLength = 8;
             this.Txt_TotalAmount.Name = "Txt_TotalAmount";
             this.Txt_TotalAmount.Size = new System.Drawing.Size(111, 22);
@@ -1455,13 +1456,13 @@
             // 
             // txt_GrandTotal
             // 
-            this.txt_GrandTotal.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txt_GrandTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_GrandTotal.BackColor = System.Drawing.Color.White;
             this.txt_GrandTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_GrandTotal.Enabled = false;
             this.txt_GrandTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_GrandTotal.ForeColor = System.Drawing.Color.Red;
-            this.txt_GrandTotal.Location = new System.Drawing.Point(865, 616);
+            this.txt_GrandTotal.Location = new System.Drawing.Point(870, 612);
             this.txt_GrandTotal.MaxLength = 20;
             this.txt_GrandTotal.Name = "txt_GrandTotal";
             this.txt_GrandTotal.ReadOnly = true;
@@ -1472,12 +1473,12 @@
             // 
             // label44
             // 
-            this.label44.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label44.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label44.AutoSize = true;
             this.label44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label44.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label44.Location = new System.Drawing.Point(719, 620);
+            this.label44.Location = new System.Drawing.Point(724, 616);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(111, 27);
             this.label44.TabIndex = 323;
@@ -1485,11 +1486,11 @@
             // 
             // label45
             // 
-            this.label45.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label45.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label45.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label45.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label45.Location = new System.Drawing.Point(719, 566);
+            this.label45.Location = new System.Drawing.Point(724, 562);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(140, 22);
             this.label45.TabIndex = 325;
@@ -1497,12 +1498,12 @@
             // 
             // txt_Discount
             // 
-            this.txt_Discount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txt_Discount.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_Discount.BackColor = System.Drawing.Color.White;
             this.txt_Discount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_Discount.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Discount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_Discount.Location = new System.Drawing.Point(811, 592);
+            this.txt_Discount.Location = new System.Drawing.Point(816, 588);
             this.txt_Discount.MaxLength = 8;
             this.txt_Discount.Name = "txt_Discount";
             this.txt_Discount.Size = new System.Drawing.Size(49, 22);
@@ -1516,11 +1517,11 @@
             // 
             // label46
             // 
-            this.label46.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label46.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label46.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label46.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label46.Location = new System.Drawing.Point(718, 591);
+            this.label46.Location = new System.Drawing.Point(723, 587);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(88, 22);
             this.label46.TabIndex = 328;
@@ -1528,13 +1529,13 @@
             // 
             // txt_DiscAmount
             // 
-            this.txt_DiscAmount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txt_DiscAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_DiscAmount.BackColor = System.Drawing.Color.White;
             this.txt_DiscAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_DiscAmount.Enabled = false;
             this.txt_DiscAmount.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_DiscAmount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_DiscAmount.Location = new System.Drawing.Point(865, 592);
+            this.txt_DiscAmount.Location = new System.Drawing.Point(870, 588);
             this.txt_DiscAmount.MaxLength = 8;
             this.txt_DiscAmount.Name = "txt_DiscAmount";
             this.txt_DiscAmount.Size = new System.Drawing.Size(111, 22);
@@ -1544,13 +1545,13 @@
             // 
             // txt_totalItems
             // 
-            this.txt_totalItems.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_totalItems.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_totalItems.BackColor = System.Drawing.Color.White;
             this.txt_totalItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_totalItems.Enabled = false;
             this.txt_totalItems.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_totalItems.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_totalItems.Location = new System.Drawing.Point(865, 539);
+            this.txt_totalItems.Location = new System.Drawing.Point(870, 535);
             this.txt_totalItems.MaxLength = 8;
             this.txt_totalItems.Name = "txt_totalItems";
             this.txt_totalItems.Size = new System.Drawing.Size(111, 22);
@@ -1560,11 +1561,11 @@
             // 
             // label47
             // 
-            this.label47.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label47.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label47.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label47.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label47.Location = new System.Drawing.Point(719, 539);
+            this.label47.Location = new System.Drawing.Point(724, 535);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(141, 22);
             this.label47.TabIndex = 330;
@@ -1572,11 +1573,11 @@
             // 
             // label40
             // 
-            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label40.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label40.Location = new System.Drawing.Point(455, 539);
+            this.label40.Location = new System.Drawing.Point(460, 535);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(136, 22);
             this.label40.TabIndex = 315;
@@ -1584,13 +1585,13 @@
             // 
             // txt_TotalCost
             // 
-            this.txt_TotalCost.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txt_TotalCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_TotalCost.BackColor = System.Drawing.Color.White;
             this.txt_TotalCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_TotalCost.Enabled = false;
             this.txt_TotalCost.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TotalCost.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_TotalCost.Location = new System.Drawing.Point(597, 539);
+            this.txt_TotalCost.Location = new System.Drawing.Point(602, 535);
             this.txt_TotalCost.MaxLength = 8;
             this.txt_TotalCost.Name = "txt_TotalCost";
             this.txt_TotalCost.Size = new System.Drawing.Size(100, 22);
@@ -1600,13 +1601,13 @@
             // 
             // Txt_TotalIGST
             // 
-            this.Txt_TotalIGST.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Txt_TotalIGST.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Txt_TotalIGST.BackColor = System.Drawing.Color.White;
             this.Txt_TotalIGST.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Txt_TotalIGST.Enabled = false;
             this.Txt_TotalIGST.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_TotalIGST.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txt_TotalIGST.Location = new System.Drawing.Point(597, 565);
+            this.Txt_TotalIGST.Location = new System.Drawing.Point(602, 561);
             this.Txt_TotalIGST.MaxLength = 8;
             this.Txt_TotalIGST.Name = "Txt_TotalIGST";
             this.Txt_TotalIGST.Size = new System.Drawing.Size(100, 22);
@@ -1616,11 +1617,11 @@
             // 
             // label41
             // 
-            this.label41.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label41.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label41.Location = new System.Drawing.Point(455, 567);
+            this.label41.Location = new System.Drawing.Point(460, 563);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(136, 22);
             this.label41.TabIndex = 317;
@@ -1628,13 +1629,13 @@
             // 
             // txt_CGST
             // 
-            this.txt_CGST.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txt_CGST.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_CGST.BackColor = System.Drawing.Color.White;
             this.txt_CGST.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_CGST.Enabled = false;
             this.txt_CGST.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CGST.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_CGST.Location = new System.Drawing.Point(597, 592);
+            this.txt_CGST.Location = new System.Drawing.Point(602, 588);
             this.txt_CGST.MaxLength = 8;
             this.txt_CGST.Name = "txt_CGST";
             this.txt_CGST.Size = new System.Drawing.Size(100, 22);
@@ -1644,11 +1645,11 @@
             // 
             // label42
             // 
-            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label42.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label42.Location = new System.Drawing.Point(455, 593);
+            this.label42.Location = new System.Drawing.Point(460, 589);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(136, 22);
             this.label42.TabIndex = 319;
@@ -1656,13 +1657,13 @@
             // 
             // txt_SGST
             // 
-            this.txt_SGST.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txt_SGST.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_SGST.BackColor = System.Drawing.Color.White;
             this.txt_SGST.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_SGST.Enabled = false;
             this.txt_SGST.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SGST.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_SGST.Location = new System.Drawing.Point(597, 618);
+            this.txt_SGST.Location = new System.Drawing.Point(602, 614);
             this.txt_SGST.MaxLength = 8;
             this.txt_SGST.Name = "txt_SGST";
             this.txt_SGST.Size = new System.Drawing.Size(100, 22);
@@ -1672,11 +1673,11 @@
             // 
             // label43
             // 
-            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label43.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label43.Location = new System.Drawing.Point(455, 619);
+            this.label43.Location = new System.Drawing.Point(460, 615);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(136, 22);
             this.label43.TabIndex = 321;
@@ -1684,7 +1685,7 @@
             // 
             // rad_CreditSale
             // 
-            this.rad_CreditSale.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.rad_CreditSale.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rad_CreditSale.AutoSize = true;
             this.rad_CreditSale.Location = new System.Drawing.Point(378, 630);
             this.rad_CreditSale.Name = "rad_CreditSale";
@@ -1714,9 +1715,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1276, 651);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.presgrid);
             this.Controls.Add(this.rad_CreditSale);
             this.Controls.Add(this.rad_CashSale);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.Txt_TotalAmount);
             this.Controls.Add(this.txt_GrandTotal);
             this.Controls.Add(this.label44);
