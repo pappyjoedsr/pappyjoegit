@@ -41,7 +41,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Get_unites(string Item_Id)
         {
-            DataTable dtitems = db.table("select Unit1,Unit2,UnitMF from tbl_ITEMS where id='" + Item_Id + "'");
+            DataTable dtitems = db.table("select Unit1,Unit2,UnitMF,packing from tbl_ITEMS where id='" + Item_Id + "'");
             return dtitems;
         }
         public DataTable Get_itemdetails_from_purchaseit(string Itemid)
