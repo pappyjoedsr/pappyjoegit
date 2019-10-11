@@ -168,8 +168,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txt_City);
@@ -208,8 +206,7 @@
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -238,7 +235,7 @@
             this.lbPatient.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPatient.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lbPatient.FormattingEnabled = true;
-            this.lbPatient.Location = new System.Drawing.Point(429, 40);
+            this.lbPatient.Location = new System.Drawing.Point(429, 38);
             this.lbPatient.Name = "lbPatient";
             this.lbPatient.Size = new System.Drawing.Size(249, 67);
             this.lbPatient.TabIndex = 282;
@@ -348,8 +345,6 @@
             // 
             // txt_PhoneNo
             // 
-            this.txt_PhoneNo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_PhoneNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_PhoneNo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_PhoneNo.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -369,8 +364,6 @@
             // 
             // txtPatient
             // 
-            this.txtPatient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPatient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPatient.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPatient.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -395,8 +388,6 @@
             // 
             // txtPatientID
             // 
-            this.txtPatientID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPatientID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPatientID.Enabled = false;
             this.txtPatientID.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -710,25 +701,23 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_SalesItem.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_SalesItem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_SalesItem.Location = new System.Drawing.Point(0, 0);
+            this.dgv_SalesItem.Location = new System.Drawing.Point(4, 5);
             this.dgv_SalesItem.Name = "dgv_SalesItem";
             this.dgv_SalesItem.ReadOnly = true;
             this.dgv_SalesItem.RowHeadersVisible = false;
             this.dgv_SalesItem.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_SalesItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv_SalesItem.Size = new System.Drawing.Size(1048, 295);
+            this.dgv_SalesItem.Size = new System.Drawing.Size(1043, 287);
             this.dgv_SalesItem.TabIndex = 0;
             this.dgv_SalesItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SalesItem_CellClick);
             // 
             // Txt_TotalAmount
             // 
-            this.Txt_TotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_TotalAmount.BackColor = System.Drawing.Color.White;
             this.Txt_TotalAmount.Enabled = false;
             this.Txt_TotalAmount.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_TotalAmount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txt_TotalAmount.Location = new System.Drawing.Point(933, 562);
+            this.Txt_TotalAmount.Location = new System.Drawing.Point(869, 562);
             this.Txt_TotalAmount.MaxLength = 8;
             this.Txt_TotalAmount.Name = "Txt_TotalAmount";
             this.Txt_TotalAmount.Size = new System.Drawing.Size(111, 22);
@@ -738,11 +727,10 @@
             // 
             // label45
             // 
-            this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label45.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label45.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label45.Location = new System.Drawing.Point(797, 564);
+            this.label45.Location = new System.Drawing.Point(733, 564);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(132, 20);
             this.label45.TabIndex = 316;
@@ -750,12 +738,11 @@
             // 
             // txt_totalItems
             // 
-            this.txt_totalItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_totalItems.BackColor = System.Drawing.Color.White;
             this.txt_totalItems.Enabled = false;
             this.txt_totalItems.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_totalItems.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_totalItems.Location = new System.Drawing.Point(933, 540);
+            this.txt_totalItems.Location = new System.Drawing.Point(869, 540);
             this.txt_totalItems.MaxLength = 8;
             this.txt_totalItems.Name = "txt_totalItems";
             this.txt_totalItems.Size = new System.Drawing.Size(111, 22);
@@ -765,11 +752,10 @@
             // 
             // label47
             // 
-            this.label47.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label47.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label47.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label47.Location = new System.Drawing.Point(797, 539);
+            this.label47.Location = new System.Drawing.Point(733, 539);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(132, 20);
             this.label47.TabIndex = 318;

@@ -139,7 +139,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Get_itemdetails(string inventory_id)
         {
-            DataTable dtb = db.table(" select i.id,i.Sales_Rate_Max,i.Packing,i.Unit1,i.Unit2,i.OneUnitOnly,p.GST,p.IGST,i.item_name,i.item_code,i.OneUnitOnly,i.Unit1,i.Unit2 from tbl_ITEMS i inner join tbl_PURCHIT p on p.Item_Code = i.item_code where i.id='" +inventory_id + "'");
+            DataTable dtb = db.table(" select i.id,i.Sales_Rate_Max,i.Packing,i.Unit1,i.Unit2,i.OneUnitOnly,p.GST,p.IGST,i.item_name,i.item_code,i.OneUnitOnly,i.Unit1,i.Unit2 from tbl_ITEMS i inner join tbl_PURCHIT p on p.Item_Code = i.id where i.id='" +inventory_id + "'");
             return dtb;
         }
         public DataTable get_batchdetails(string item_Code)
