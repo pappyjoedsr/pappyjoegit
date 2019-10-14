@@ -253,7 +253,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel19.Controls.Add(this.no);
-            this.panel19.Controls.Add(this.panl_templates);
             this.panel19.Controls.Add(this.Btn_useTemplates);
             this.panel19.Controls.Add(this.label12);
             this.panel19.Controls.Add(this.txt_Recipients);
@@ -285,9 +284,9 @@
             this.panl_templates.Controls.Add(this.btn_TemplateCancel);
             this.panl_templates.Controls.Add(this.DGV_SMSTemplates);
             this.panl_templates.Controls.Add(this.btn_add_template);
-            this.panl_templates.Location = new System.Drawing.Point(3, 20);
+            this.panl_templates.Location = new System.Drawing.Point(3, 3);
             this.panl_templates.Name = "panl_templates";
-            this.panl_templates.Size = new System.Drawing.Size(513, 600);
+            this.panl_templates.Size = new System.Drawing.Size(469, 600);
             this.panl_templates.TabIndex = 16;
             this.panl_templates.Visible = false;
             // 
@@ -298,7 +297,7 @@
             this.panel1.BackColor = System.Drawing.Color.DarkGray;
             this.panel1.Location = new System.Drawing.Point(0, 43);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(516, 1);
+            this.panel1.Size = new System.Drawing.Size(472, 1);
             this.panel1.TabIndex = 16;
             // 
             // Panl_AddTemplate
@@ -372,7 +371,7 @@
             this.btn_TemplateCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_TemplateCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_TemplateCancel.ForeColor = System.Drawing.Color.White;
-            this.btn_TemplateCancel.Location = new System.Drawing.Point(428, 7);
+            this.btn_TemplateCancel.Location = new System.Drawing.Point(384, 7);
             this.btn_TemplateCancel.Name = "btn_TemplateCancel";
             this.btn_TemplateCancel.Size = new System.Drawing.Size(73, 26);
             this.btn_TemplateCancel.TabIndex = 4;
@@ -412,7 +411,7 @@
             this.DGV_SMSTemplates.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGV_SMSTemplates.RowHeadersVisible = false;
             this.DGV_SMSTemplates.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.DGV_SMSTemplates.Size = new System.Drawing.Size(513, 543);
+            this.DGV_SMSTemplates.Size = new System.Drawing.Size(469, 543);
             this.DGV_SMSTemplates.TabIndex = 15;
             this.DGV_SMSTemplates.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_SMSTemplates_CellClick);
             // 
@@ -437,7 +436,7 @@
             this.btn_add_template.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add_template.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add_template.ForeColor = System.Drawing.Color.White;
-            this.btn_add_template.Location = new System.Drawing.Point(337, 7);
+            this.btn_add_template.Location = new System.Drawing.Point(293, 7);
             this.btn_add_template.Name = "btn_add_template";
             this.btn_add_template.Size = new System.Drawing.Size(92, 26);
             this.btn_add_template.TabIndex = 6;
@@ -934,6 +933,7 @@
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
             this.tabPage3.Controls.Add(this.msg);
+            this.tabPage3.Controls.Add(this.panl_templates);
             this.tabPage3.Controls.Add(this.panel13);
             this.tabPage3.Controls.Add(this.panel20);
             this.tabPage3.Controls.Add(this.panel19);
