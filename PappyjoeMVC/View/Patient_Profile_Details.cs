@@ -3,6 +3,9 @@ using PappyjoeMVC.Model;
 using System;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.Drawing.Printing;
+using System.IO;
 using System.Windows.Forms;
 namespace PappyjoeMVC.View
 {
@@ -824,6 +827,274 @@ namespace PappyjoeMVC.View
 
         private void BtnCard_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string barCode = txtPatientId.Text;
+                Bitmap bitMap = new Bitmap(barCode.Length * 40, 20);
+                using (Graphics graphics = Graphics.FromImage(bitMap))
+                {
+                    Font oFont = new Font("IDAutomationHC39M", 16);
+                    PointF point = new PointF(2f, 2f);
+                    SolidBrush blackBrush = new SolidBrush(Color.Black);
+                    SolidBrush whiteBrush = new SolidBrush(Color.White);
+                    graphics.FillRectangle(whiteBrush, 0, 0, bitMap.Width, bitMap.Height);
+                    graphics.DrawString(barCode, oFont, blackBrush, point);
+                }
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    bitMap.Save(ms, ImageFormat.Png);
+                    pictureBox_barcode.Image = bitMap;
+                    pictureBox_barcode.Height = bitMap.Height;
+                    pictureBox_barcode.Width = bitMap.Width;
+                }
+                PrintDocument printdocument = new PrintDocument();
+                printdocument.PrintPage += print_Patient_Card_PrintPage;
+                printdocument.Print();
+            }
+            catch
+            {
+                MessageBox.Show("Please check your printer...!!", "Print Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void print_Patient_Card_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            int yy = 2;
+            string sexage = "";
+            int Dexist = 0;
+            System.Data.DataTable dt1 = this.cntrl.Get_Patient_details(patient_id);// db.table("select * from tbl_patient where id='" + patient_id + "'");
+            if (dt1.Rows.Count > 0)
+            {
+                e.Graphics.DrawImage(pictureBox_Logo.Image, 10, yy);
+                yy = yy + 160;
+                e.Graphics.DrawImage(pictureBox_barcode.Image, 80, yy);
+                using (System.Drawing.Font printFont = new System.Drawing.Font("Arial", 15.0f))
+                {
+                    yy = yy + 30;
+                    e.Graphics.DrawString(dt1.Rows[0]["pt_name"].ToString(), printFont, Brushes.Black, 10, yy);
+                }
+                using (System.Drawing.Font printFont1 = new System.Drawing.Font("Arial", 10.0f, FontStyle.Bold))
+                {
+                    if (dt1.Rows[0]["gender"].ToString() != "")
+                    {
+                        sexage = dt1.Rows[0]["gender"].ToString();
+                        Dexist = 1;
+                    }
+                    if (dt1.Rows[0]["age"].ToString() != "")
+                    {
+                        if (Dexist == 1)
+                        {
+                            sexage = sexage + "Age:" + dt1.Rows[0]["age"].ToString() + " Y";
+                        }
+                        else
+                        {
+                            sexage = dt1.Rows[0]["age"].ToString() + " Y";
+                        }
+                    }
+                    yy = yy + 40;
+                    e.Graphics.DrawString("Reg.Dt :" + Convert.ToDateTime(dt1.Rows[0]["date"].ToString()).ToString("dd/MM/yyyy") + "        " + sexage, printFont1, Brushes.Black, 10, yy);
+                    yy = yy + 20;
+                    e.Graphics.DrawString(dt1.Rows[0]["Street_address"].ToString(), printFont1, Brushes.Black, 10, yy);
+                    yy = yy + 20;
+                    e.Graphics.DrawString(dt1.Rows[0]["locality"].ToString(), printFont1, Brushes.Black, 10, yy);
+                    yy = yy + 20;
+                    e.Graphics.DrawString("Ph :" + dt1.Rows[0]["primary_mobile_number"].ToString(), printFont1, Brushes.Black, 10, yy);
+                }
+                using (System.Drawing.Font printFont2 = new System.Drawing.Font("Arial", 15.0f))
+                {
+                    yy = yy + 20;
+                    e.Graphics.DrawString(dt1.Rows[0]["pt_Id"].ToString(), printFont2, Brushes.Black, 80, yy);
+                }
+            }
+        }
+
+        private void btnprint_Click(object sender, EventArgs e)
+        {
+            PrintDocument printdocument = new PrintDocument();
+            printdocument.PrintPage += printDocument1_PrintPage;
+            printdocument.Print();
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.Show();
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            int w = e.MarginBounds.Width / 2;
+            int x = e.MarginBounds.Left;
+            int y = e.MarginBounds.Top;
+            Font printFont = new Font("Arial", 10);
+            string tabDataText = toolStripButton1.Text;
+            var tabDataForeColor = Color.Blue;
+            var txtDataWidth = e.Graphics.MeasureString(tabDataText, printFont).Width;
+            using (var sf = new StringFormat())
+            {
+                sf.LineAlignment = StringAlignment.Center;
+                sf.Alignment = StringAlignment.Center;
+                e.Graphics.DrawString(tabDataText, new Font(this.Font.Name, 18),
+                     new SolidBrush(tabDataForeColor),
+                     e.MarginBounds.Left + (e.MarginBounds.Width / 2),
+                     e.MarginBounds.Top - 55,
+                     sf);
+            }
+            e.HasMorePages = false;
+            int iLeftMargin = e.MarginBounds.Left;
+            string date = System.DateTime.Now.ToShortDateString();
+            e.Graphics.DrawString("Patient Registration Form", new Font("Arial", 16, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 200, 75);
+            string underLine = "--------------------------------------------";
+            e.Graphics.DrawString(underLine, new Font("Arial", 14, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 200, 95);
+            e.Graphics.DrawString("Printed By:", new Font("Arial", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 1, 130);
+            e.Graphics.DrawString("Admin", new Font("Arial", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 75, 130);
+            e.Graphics.DrawString("Date:", new Font("Arial", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 150, 130);
+            e.Graphics.DrawString(date, new Font("Arial", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 195, 130);
+            e.Graphics.DrawString("No: " + patient_id, new Font("Arial", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 370, 130);
+            e.Graphics.DrawString("Personal Details", new Font("Arial", 12, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 10, 160);
+
+            int xyy = 190;
+            if (txtPatientName.Visible == true)
+            {
+                e.Graphics.DrawString(this.lab_PatientName.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtPatientName.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtPatientId.Visible == true)
+            {
+                e.Graphics.DrawString(this.labPatientId.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtPatientId.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtAdhaarId.Visible == true)
+            {
+                e.Graphics.DrawString(this.labAdhaarId.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtAdhaarId.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtGender.Visible == true)
+            {
+                e.Graphics.DrawString(this.labGender.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtGender.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtDob.Visible == true)
+            {
+                e.Graphics.DrawString(this.labDob.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtDob.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtRefferedBy.Visible == true)
+            {
+                e.Graphics.DrawString(this.labRefferedBy.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtRefferedBy.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtBloodGroup.Visible == true)
+            {
+                e.Graphics.DrawString(this.labAdhaarId.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtAdhaarId.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                txtBloodGroup.Hide();
+                labBloodGroup.Hide();
+                xyy = xyy + 30;
+            }
+            if (txtAccompainedBy.Visible == true)
+            {
+                e.Graphics.DrawString(this.labAccompainedBy.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtAccompainedBy.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtPrimaryMobNo.Visible == true)
+            {
+                e.Graphics.DrawString(this.labPrimaryMobileNumber.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtPrimaryMobNo.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+
+                xyy = xyy + 30;
+            }
+            if (txtSecondaryMobNo.Visible == true)
+            {
+                e.Graphics.DrawString(this.labSecondaryMobileNumbr.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtSecondaryMobNo.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+
+                xyy = xyy + 30;
+            }
+            if (txtLandLineNo.Visible == true)
+            {
+                e.Graphics.DrawString(this.labLandLineNo.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtLandLineNo.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+
+                xyy = xyy + 30;
+            }
+            if (txtEmailAddress.Visible == true)
+            {
+                e.Graphics.DrawString(this.labEmailAddress.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtEmailAddress.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtStreetAddress.Visible == true)
+            {
+                e.Graphics.DrawString(this.labStreetAddress.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtStreetAddress.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+
+                xyy = xyy + 30;
+            }
+            if (txtLocality.Visible == true)
+            {
+                e.Graphics.DrawString(this.labLocality.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtLocality.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtCity.Visible == true)
+            {
+                e.Graphics.DrawString(this.labCity.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtCity.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtPinCode.Visible == true)
+            {
+                e.Graphics.DrawString(this.labPinCode.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtPinCode.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+
+            if (txtopticket.Visible == true)
+            {
+                e.Graphics.DrawString(this.lblopti.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtopticket.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtAge.Visible == true)
+            {
+                e.Graphics.DrawString(this.labAge.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtAge.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtvisiteddate.Visible == true)
+            {
+                e.Graphics.DrawString(this.LabDateOfAdm.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtvisiteddate.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtDoctor.Visible == true)
+            {
+                e.Graphics.DrawString(this.LabDoctorName.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtDoctor.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtOccupation.Visible == true)
+            {
+                e.Graphics.DrawString(this.LabOccupation.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtOccupation.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+
+            if (grmedical.Rows.Count > 0)
+            {
+                xyy = xyy + 60;
+                e.Graphics.DrawString("Medical History", new Font("Arial", 12, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 10, xyy);
+                xyy = xyy + 30;
+                for (int j = 0; j < grmedical.Rows.Count; j++)
+                {
+                    e.Graphics.DrawString(grmedical.Rows[j].Cells[0].Value.ToString(), new Font("Arial", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                    xyy = xyy + 20;
+                }
+            }
 
         }
 
