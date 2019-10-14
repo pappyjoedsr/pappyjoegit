@@ -1554,5 +1554,8 @@
   <ItemGroup>
     <None Include="Resources\appnotfilled.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_small.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
