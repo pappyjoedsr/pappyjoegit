@@ -3192,9 +3192,9 @@ namespace PappyjoeMVC.View
                     }
                 }
                 bk.ModifyEvent(ContextEvent);
-                AppointmentBooking.ShowDialog(this);
+                bk.ShowDialog(this);
             }
-        }
+        } 
 
         private void mnuContextDeleteEvent_Click(object sender, System.EventArgs e)
         {
