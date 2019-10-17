@@ -775,7 +775,7 @@ namespace PappyjoeMVC.View
             try
             {
                 var dateFrom = DTP_DateFrom.Value.ToShortDateString();
-                var dateTo = DTP_DateFrom.Value.ToShortDateString();
+                var dateTo = DTP_DateTo.Value.ToShortDateString();
                 if (Convert.ToDateTime(dateFrom).Date > Convert.ToDateTime(dateTo).Date)
                 {
                     MessageBox.Show("From date should be less than to date", "From Date is grater ", MessageBoxButtons.OK, MessageBoxIcon.Information);

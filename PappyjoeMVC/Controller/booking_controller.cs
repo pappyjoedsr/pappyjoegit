@@ -132,9 +132,9 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = cmodel.send_email();
             return dtb;
         }
-        public void update_appointment(DateTime StartT, string diff1, string note, string patient_id, string patient_name, string dr_id, string mobile_no, string email, string gpl_app_id)
+        public void update_appointment(DateTime StartT, string diff1, string note,string procedure, string patient_id, string patient_name, string dr_id, string mobile_no, string email, string gpl_app_id)
         {
-            _model.update_appointment( StartT,  diff1,  note,  patient_id,  patient_name,  dr_id,  mobile_no,  email,  gpl_app_id);
+            _model.update_appointment( StartT,  diff1,  note, procedure, patient_id,  patient_name,  dr_id,  mobile_no,  email,  gpl_app_id);
         }
 
         public DataTable get_appointment_procedure(string id)

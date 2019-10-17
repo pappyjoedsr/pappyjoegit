@@ -46,7 +46,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Appointcountforeachdoctor(string d1, string d2)
         {
-            DataTable dfd = db.table("SELECT tbl_doctor.doctor_name AS 'DOCTOR',COUNT(*) AS 'APPOINTMENTS' FROM tbl_appointment INNER JOIN tbl_doctor ON tbl_appointment.dr_id = tbl_doctor.id right join tbl_patient  on tbl_patient.id = tbl_appointment.pt_id where  tbl_appointment.book_datetime >= '" + d1 + "' and tbl_appointment.book_datetime<='" + d2 + "' and tbl_patient.Profile_Status !='Cancelled'  group by tbl_doctor.doctor_name");
+            DataTable dfd = db.table("SELECT tbl_doctor.doctor_name AS 'DOCTOR',COUNT(*) AS 'APPOINTMENTS' FROM tbl_appointment INNER JOIN tbl_doctor ON tbl_appointment.dr_id = tbl_doctor.id right join tbl_patient  on tbl_patient.id = tbl_appointment.pt_id where  tbl_appointment.start_datetime >= '" + d1 + "' and tbl_appointment.start_datetime<='" + d2 + "' and tbl_patient.Profile_Status !='Cancelled'  group by tbl_doctor.doctor_name");
             return dfd;
         }
         public DataTable dt_docApt1(string date1, string date2, string select_dr_id)
@@ -76,7 +76,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Monthlyappointcount(string d1, string d2)
         {
-            DataTable dfd = db.table("select date_format(book_datetime,'%b %Y') AS 'MONTH', COUNT(*) AS 'APPOINTMENT' from tbl_appointment right join tbl_patient  on tbl_patient.id = tbl_appointment.pt_id  where book_datetime between '" + d1 + "' and '" + d2 + "' and tbl_patient.Profile_Status !='Cancelled' GROUP BY date_format(book_datetime,'%b %Y')");
+            DataTable dfd = db.table("select date_format(start_datetime,'%b %Y') AS 'MONTH', COUNT(*) AS 'APPOINTMENT' from tbl_appointment right join tbl_patient  on tbl_patient.id = tbl_appointment.pt_id  where start_datetime between '" + d1 + "' and '" + d2 + "' and tbl_patient.Profile_Status !='Cancelled' GROUP BY date_format(start_datetime,'%b %Y')");
             return dfd;
         }
         public DataTable datatableeachdoctorappoinment(string d1, string d2)
@@ -107,7 +107,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Dailyappointcount_dOCTORwISE(string d5, string d6, string drctr)
         {
-            DataTable dfd = db.table("select cast( book_datetime as date) AS 'BOOK DATE', COUNT(*) AS 'APPOINTMENT' from tbl_appointment right join tbl_patient  on tbl_patient.id = tbl_appointment.pt_id where book_datetime between '" + d5 + "' and '" + d6 + "' and tbl_appointment.dr_id='" + drctr + "' and tbl_patient.Profile_Status !='Cancelled'  group by book_datetime");
+            DataTable dfd = db.table("select cast( book_datetime as date) AS 'APPOINTMENT DATE', COUNT(*) AS 'APPOINTMENT' from tbl_appointment right join tbl_patient  on tbl_patient.id = tbl_appointment.pt_id where start_datetime between '" + d5 + "' and '" + d6 + "' and tbl_appointment.dr_id='" + drctr + "' and tbl_patient.Profile_Status !='Cancelled'  group by start_datetime");
             return dfd;
         }
         public DataTable gridviewtabledailyappoiment(string date1, string date2)
@@ -117,7 +117,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Dailyappointcount(string d5, string d6)
         {
-            DataTable dfd = db.table("select cast( book_datetime as date) AS 'BOOK DATE', COUNT(*) AS 'APPOINTMENT' from tbl_appointment right join tbl_patient  on tbl_patient.id = tbl_appointment.pt_id  where book_datetime between '" + d5 + "' and '" + d6 + "' and tbl_patient.Profile_Status !='Cancelled' group by book_datetime");
+            DataTable dfd = db.table("select cast( book_datetime as date) AS 'APPOINTMENT DATE', COUNT(*) AS 'APPOINTMENT' from tbl_appointment right join tbl_patient  on tbl_patient.id = tbl_appointment.pt_id  where start_datetime between '" + d5 + "' and '" + d6 + "' and tbl_patient.Profile_Status !='Cancelled' group by book_datetime");
             return dfd;
         }
         public DataTable btn_shwClick(string d1, string d2, string cmbCon)

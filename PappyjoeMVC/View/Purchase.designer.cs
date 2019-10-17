@@ -1110,6 +1110,7 @@
             this.dgvGridData.RowHeadersVisible = false;
             this.dgvGridData.Size = new System.Drawing.Size(498, 113);
             this.dgvGridData.TabIndex = 267;
+            this.dgvGridData.Visible = false;
             // 
             // tempItem_code
             // 

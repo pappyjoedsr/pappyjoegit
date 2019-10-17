@@ -164,6 +164,7 @@
             this.dgvGridData.RowHeadersVisible = false;
             this.dgvGridData.Size = new System.Drawing.Size(351, 132);
             this.dgvGridData.TabIndex = 267;
+            this.dgvGridData.Visible = false;
             // 
             // tempItem_code
             // 
@@ -546,7 +547,7 @@
             this.panel5.Controls.Add(this.label22);
             this.panel5.Controls.Add(this.txtTotal_item);
             this.panel5.Controls.Add(this.txtTotalCost);
-            this.panel5.Location = new System.Drawing.Point(450, 497);
+            this.panel5.Location = new System.Drawing.Point(475, 492);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(627, 153);
             this.panel5.TabIndex = 277;
@@ -556,7 +557,7 @@
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label17.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label17.Location = new System.Drawing.Point(16, 104);
+            this.label17.Location = new System.Drawing.Point(27, 104);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(154, 25);
             this.label17.TabIndex = 287;
@@ -567,7 +568,7 @@
             this.txtSgst.BackColor = System.Drawing.Color.White;
             this.txtSgst.Enabled = false;
             this.txtSgst.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtSgst.Location = new System.Drawing.Point(180, 105);
+            this.txtSgst.Location = new System.Drawing.Point(191, 105);
             this.txtSgst.MaxLength = 8;
             this.txtSgst.Name = "txtSgst";
             this.txtSgst.ReadOnly = true;
@@ -581,7 +582,7 @@
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label16.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label16.Location = new System.Drawing.Point(16, 70);
+            this.label16.Location = new System.Drawing.Point(27, 70);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(154, 25);
             this.label16.TabIndex = 285;
@@ -592,7 +593,7 @@
             this.txtCgst.BackColor = System.Drawing.Color.White;
             this.txtCgst.Enabled = false;
             this.txtCgst.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtCgst.Location = new System.Drawing.Point(180, 72);
+            this.txtCgst.Location = new System.Drawing.Point(191, 72);
             this.txtCgst.MaxLength = 8;
             this.txtCgst.Name = "txtCgst";
             this.txtCgst.ReadOnly = true;
@@ -606,7 +607,7 @@
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label13.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label13.Location = new System.Drawing.Point(16, 9);
+            this.label13.Location = new System.Drawing.Point(27, 9);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(154, 25);
             this.label13.TabIndex = 282;
@@ -617,7 +618,7 @@
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label15.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label15.Location = new System.Drawing.Point(16, 38);
+            this.label15.Location = new System.Drawing.Point(27, 38);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(154, 25);
             this.label15.TabIndex = 281;
@@ -628,7 +629,7 @@
             this.txtIgstResult.BackColor = System.Drawing.Color.White;
             this.txtIgstResult.Enabled = false;
             this.txtIgstResult.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtIgstResult.Location = new System.Drawing.Point(180, 39);
+            this.txtIgstResult.Location = new System.Drawing.Point(191, 39);
             this.txtIgstResult.MaxLength = 8;
             this.txtIgstResult.Name = "txtIgstResult";
             this.txtIgstResult.ReadOnly = true;
@@ -642,7 +643,7 @@
             this.txt_TotalAmount.BackColor = System.Drawing.Color.White;
             this.txt_TotalAmount.Enabled = false;
             this.txt_TotalAmount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_TotalAmount.Location = new System.Drawing.Point(475, 40);
+            this.txt_TotalAmount.Location = new System.Drawing.Point(479, 41);
             this.txt_TotalAmount.MaxLength = 8;
             this.txt_TotalAmount.Name = "txt_TotalAmount";
             this.txt_TotalAmount.ReadOnly = true;
@@ -656,7 +657,7 @@
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label24.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label24.Location = new System.Drawing.Point(329, 10);
+            this.label24.Location = new System.Drawing.Point(333, 10);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(143, 25);
             this.label24.TabIndex = 255;
@@ -667,7 +668,7 @@
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label22.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label22.Location = new System.Drawing.Point(329, 38);
+            this.label22.Location = new System.Drawing.Point(333, 38);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(143, 25);
             this.label22.TabIndex = 249;
@@ -678,7 +679,7 @@
             this.txtTotal_item.BackColor = System.Drawing.Color.White;
             this.txtTotal_item.Enabled = false;
             this.txtTotal_item.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtTotal_item.Location = new System.Drawing.Point(475, 7);
+            this.txtTotal_item.Location = new System.Drawing.Point(479, 12);
             this.txtTotal_item.MaxLength = 8;
             this.txtTotal_item.Name = "txtTotal_item";
             this.txtTotal_item.ReadOnly = true;
@@ -692,7 +693,7 @@
             this.txtTotalCost.BackColor = System.Drawing.Color.White;
             this.txtTotalCost.Enabled = false;
             this.txtTotalCost.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtTotalCost.Location = new System.Drawing.Point(180, 12);
+            this.txtTotalCost.Location = new System.Drawing.Point(191, 12);
             this.txtTotalCost.MaxLength = 8;
             this.txtTotalCost.Name = "txtTotalCost";
             this.txtTotalCost.ReadOnly = true;
