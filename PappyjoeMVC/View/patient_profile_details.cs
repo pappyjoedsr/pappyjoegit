@@ -910,12 +910,12 @@ namespace PappyjoeMVC.View
 
         private void btnprint_Click(object sender, EventArgs e)
         {
-            PrintDocument printdocument = new PrintDocument();
+            PrintDocument printdocument = new PrintDocument  ();
             printdocument.PrintPage += printDocument1_PrintPage;
             printdocument.Print();
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.Show();
-        }
+        }  
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
