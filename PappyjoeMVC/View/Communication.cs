@@ -626,7 +626,7 @@ namespace PappyjoeMVC.View
                         {
                             txt_Recipients.Text = txt_Recipients.Text.Replace("," + name, "");
                             txt_Recipients.Text = txt_Recipients.Text.Replace(name + ",", "");
-                            txt_Recipients.Text = txt_Recipients.Text.Replace(name, "");
+                            txt_Recipients.Text = txt_Recipients.Text.Replace(name  , "");
                         }
                     }
                 }
