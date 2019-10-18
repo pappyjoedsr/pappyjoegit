@@ -505,7 +505,7 @@
             this.lab_PTId.AutoSize = true;
             this.lab_PTId.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_PTId.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lab_PTId.Location = new System.Drawing.Point(81, 27);
+            this.lab_PTId.Location = new System.Drawing.Point(60, 27);
             this.lab_PTId.Name = "lab_PTId";
             this.lab_PTId.Size = new System.Drawing.Size(60, 13);
             this.lab_PTId.TabIndex = 68;

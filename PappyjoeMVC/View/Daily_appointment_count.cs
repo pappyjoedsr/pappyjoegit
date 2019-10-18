@@ -57,7 +57,7 @@ namespace PappyjoeMVC.View
                 }
                 Grvdailyappointcount.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
                 Grvdailyappointcount.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-                Grvdailyappointcount.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
+                Grvdailyappointcount.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 8, FontStyle.Regular);
                 Grvdailyappointcount.EnableHeadersVisualStyles = false;
                 Grvdailyappointcount.Location = new System.Drawing.Point(5, 5);
                 foreach (DataGridViewColumn cl in Grvdailyappointcount.Columns)

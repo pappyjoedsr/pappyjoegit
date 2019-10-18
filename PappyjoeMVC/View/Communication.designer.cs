@@ -57,6 +57,12 @@
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.no = new System.Windows.Forms.Label();
+            this.Btn_useTemplates = new System.Windows.Forms.Button();
+            this.txt_Recipients = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.btn_SendSMS = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_SMS = new System.Windows.Forms.TextBox();
             this.panl_templates = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Panl_AddTemplate = new System.Windows.Forms.Panel();
@@ -69,12 +75,6 @@
             this.col1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_add_template = new System.Windows.Forms.Button();
-            this.Btn_useTemplates = new System.Windows.Forms.Button();
-            this.txt_Recipients = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.btn_SendSMS = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_SMS = new System.Windows.Forms.TextBox();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -275,6 +275,80 @@
             this.no.Text = "label3";
             this.no.Visible = false;
             // 
+            // Btn_useTemplates
+            // 
+            this.Btn_useTemplates.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Btn_useTemplates.BackColor = System.Drawing.Color.LimeGreen;
+            this.Btn_useTemplates.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_useTemplates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_useTemplates.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_useTemplates.ForeColor = System.Drawing.Color.White;
+            this.Btn_useTemplates.Location = new System.Drawing.Point(564, 134);
+            this.Btn_useTemplates.Name = "Btn_useTemplates";
+            this.Btn_useTemplates.Size = new System.Drawing.Size(100, 30);
+            this.Btn_useTemplates.TabIndex = 14;
+            this.Btn_useTemplates.Text = "USE TEMPLATES";
+            this.Btn_useTemplates.UseVisualStyleBackColor = false;
+            this.Btn_useTemplates.Click += new System.EventHandler(this.Btn_useTemplates_Click);
+            // 
+            // txt_Recipients
+            // 
+            this.txt_Recipients.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Recipients.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_Recipients.Location = new System.Drawing.Point(38, 57);
+            this.txt_Recipients.Multiline = true;
+            this.txt_Recipients.Name = "txt_Recipients";
+            this.txt_Recipients.Size = new System.Drawing.Size(626, 47);
+            this.txt_Recipients.TabIndex = 2;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.Red;
+            this.label21.Location = new System.Drawing.Point(150, 151);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(313, 13);
+            this.label21.TabIndex = 13;
+            this.label21.Text = "DO NOT ENTER \" Dear Patient / Patient Name \" IN SMS TEXT.";
+            // 
+            // btn_SendSMS
+            // 
+            this.btn_SendSMS.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_SendSMS.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_SendSMS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SendSMS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SendSMS.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SendSMS.ForeColor = System.Drawing.Color.White;
+            this.btn_SendSMS.Location = new System.Drawing.Point(564, 281);
+            this.btn_SendSMS.Name = "btn_SendSMS";
+            this.btn_SendSMS.Size = new System.Drawing.Size(100, 30);
+            this.btn_SendSMS.TabIndex = 11;
+            this.btn_SendSMS.Text = "SEND MESSAGE";
+            this.btn_SendSMS.UseVisualStyleBackColor = false;
+            this.btn_SendSMS.Click += new System.EventHandler(this.btn_SendSMS_Click);
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label13.Location = new System.Drawing.Point(38, 129);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 17);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "SMS Text:";
+            // 
+            // txt_SMS
+            // 
+            this.txt_SMS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_SMS.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_SMS.Location = new System.Drawing.Point(38, 172);
+            this.txt_SMS.Multiline = true;
+            this.txt_SMS.Name = "txt_SMS";
+            this.txt_SMS.Size = new System.Drawing.Size(626, 104);
+            this.txt_SMS.TabIndex = 4;
+            // 
             // panl_templates
             // 
             this.panl_templates.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -443,80 +517,6 @@
             this.btn_add_template.Text = "Add Templates";
             this.btn_add_template.UseVisualStyleBackColor = false;
             this.btn_add_template.Click += new System.EventHandler(this.btn_add_template_Click);
-            // 
-            // Btn_useTemplates
-            // 
-            this.Btn_useTemplates.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Btn_useTemplates.BackColor = System.Drawing.Color.LimeGreen;
-            this.Btn_useTemplates.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_useTemplates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_useTemplates.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_useTemplates.ForeColor = System.Drawing.Color.White;
-            this.Btn_useTemplates.Location = new System.Drawing.Point(564, 134);
-            this.Btn_useTemplates.Name = "Btn_useTemplates";
-            this.Btn_useTemplates.Size = new System.Drawing.Size(100, 30);
-            this.Btn_useTemplates.TabIndex = 14;
-            this.Btn_useTemplates.Text = "USE TEMPLATES";
-            this.Btn_useTemplates.UseVisualStyleBackColor = false;
-            this.Btn_useTemplates.Click += new System.EventHandler(this.Btn_useTemplates_Click);
-            // 
-            // txt_Recipients
-            // 
-            this.txt_Recipients.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Recipients.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_Recipients.Location = new System.Drawing.Point(38, 57);
-            this.txt_Recipients.Multiline = true;
-            this.txt_Recipients.Name = "txt_Recipients";
-            this.txt_Recipients.Size = new System.Drawing.Size(626, 47);
-            this.txt_Recipients.TabIndex = 2;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.ForeColor = System.Drawing.Color.Red;
-            this.label21.Location = new System.Drawing.Point(150, 151);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(313, 13);
-            this.label21.TabIndex = 13;
-            this.label21.Text = "DO NOT ENTER \" Dear Patient / Patient Name \" IN SMS TEXT.";
-            // 
-            // btn_SendSMS
-            // 
-            this.btn_SendSMS.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_SendSMS.BackColor = System.Drawing.Color.LimeGreen;
-            this.btn_SendSMS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_SendSMS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_SendSMS.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SendSMS.ForeColor = System.Drawing.Color.White;
-            this.btn_SendSMS.Location = new System.Drawing.Point(564, 281);
-            this.btn_SendSMS.Name = "btn_SendSMS";
-            this.btn_SendSMS.Size = new System.Drawing.Size(100, 30);
-            this.btn_SendSMS.TabIndex = 11;
-            this.btn_SendSMS.Text = "SEND MESSAGE";
-            this.btn_SendSMS.UseVisualStyleBackColor = false;
-            this.btn_SendSMS.Click += new System.EventHandler(this.btn_SendSMS_Click);
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label13.Location = new System.Drawing.Point(38, 129);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 17);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "SMS Text:";
-            // 
-            // txt_SMS
-            // 
-            this.txt_SMS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_SMS.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_SMS.Location = new System.Drawing.Point(38, 172);
-            this.txt_SMS.Multiline = true;
-            this.txt_SMS.Name = "txt_SMS";
-            this.txt_SMS.Size = new System.Drawing.Size(626, 104);
-            this.txt_SMS.TabIndex = 4;
             // 
             // Column10
             // 
@@ -1144,13 +1144,15 @@
             this.pntransactionalsms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pntransactionalsms.Controls.Add(this.panel18);
             this.pntransactionalsms.Controls.Add(this.panel8);
+            this.pntransactionalsms.Controls.Add(this.panel10);
             this.pntransactionalsms.Controls.Add(this.panel7);
             this.pntransactionalsms.Controls.Add(this.panel6);
             this.pntransactionalsms.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pntransactionalsms.Location = new System.Drawing.Point(4, 4);
             this.pntransactionalsms.Name = "pntransactionalsms";
-            this.pntransactionalsms.Size = new System.Drawing.Size(1351, 663);
+            this.pntransactionalsms.Size = new System.Drawing.Size(1344, 643);
             this.pntransactionalsms.TabIndex = 7;
             // 
             // panel8
@@ -1160,7 +1162,7 @@
             this.panel8.BackColor = System.Drawing.Color.DarkGray;
             this.panel8.Location = new System.Drawing.Point(-4, 56);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1356, 1);
+            this.panel8.Size = new System.Drawing.Size(1349, 1);
             this.panel8.TabIndex = 32;
             // 
             // panel7
@@ -1169,13 +1171,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Controls.Add(this.panel18);
-            this.panel7.Controls.Add(this.panel10);
             this.panel7.Controls.Add(this.lab_Msg);
             this.panel7.Controls.Add(this.DGV_transactional);
-            this.panel7.Location = new System.Drawing.Point(4, 59);
+            this.panel7.Location = new System.Drawing.Point(1, 61);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1342, 601);
+            this.panel7.Size = new System.Drawing.Size(1135, 564);
             this.panel7.TabIndex = 31;
             // 
             // panel18
@@ -1187,9 +1187,9 @@
             this.panel18.Controls.Add(this.txtFailedSms);
             this.panel18.Controls.Add(this.lab_FailedSMS);
             this.panel18.Controls.Add(this.txt_Sendsms);
-            this.panel18.Location = new System.Drawing.Point(1144, 3);
+            this.panel18.Location = new System.Drawing.Point(1142, 59);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(198, 595);
+            this.panel18.Size = new System.Drawing.Size(198, 557);
             this.panel18.TabIndex = 32;
             // 
             // lab_TotalSms
@@ -1238,10 +1238,10 @@
             // 
             this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel10.BackColor = System.Drawing.Color.Black;
-            this.panel10.Location = new System.Drawing.Point(1140, -10);
+            this.panel10.BackColor = System.Drawing.Color.DarkGray;
+            this.panel10.Location = new System.Drawing.Point(1139, 56);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1, 607);
+            this.panel10.Size = new System.Drawing.Size(1, 589);
             this.panel10.TabIndex = 27;
             // 
             // lab_Msg
@@ -1285,8 +1285,9 @@
             this.DGV_transactional.RowHeadersVisible = false;
             dataGridViewCellStyle17.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.DGV_transactional.RowsDefaultCellStyle = dataGridViewCellStyle17;
+            this.DGV_transactional.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_transactional.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_transactional.Size = new System.Drawing.Size(1342, 601);
+            this.DGV_transactional.Size = new System.Drawing.Size(1135, 564);
             this.DGV_transactional.TabIndex = 15;
             // 
             // Column20
@@ -1343,7 +1344,7 @@
             this.panel6.Controls.Add(this.btprom);
             this.panel6.Location = new System.Drawing.Point(5, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1344, 43);
+            this.panel6.Size = new System.Drawing.Size(1337, 43);
             this.panel6.TabIndex = 30;
             // 
             // label2
@@ -1394,7 +1395,7 @@
             this.btprom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btprom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btprom.ForeColor = System.Drawing.Color.White;
-            this.btprom.Location = new System.Drawing.Point(667, 6);
+            this.btprom.Location = new System.Drawing.Point(660, 6);
             this.btprom.Name = "btprom";
             this.btprom.Size = new System.Drawing.Size(158, 30);
             this.btprom.TabIndex = 4;

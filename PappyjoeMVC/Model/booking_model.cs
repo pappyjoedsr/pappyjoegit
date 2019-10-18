@@ -75,9 +75,9 @@ namespace PappyjoeMVC.Model
         {
             db.execute("insert into tbl_pt_sms_communication (pt_id,send_datetime,type,message_status,message) values('" + patient_id + "','" + DateTime.Now.ToString("yyyy-MM-dd hh:mm") + "','patient','sent','Dear " + ptnaame + " " + "Your appointment for " + procedure + " has been confirmed at " + StartT + " " + cmbStartTime + " with " + "Dr " + combodoctor + " Regards ')");
         }
-        public void update_appointment(DateTime StartT, string diff1, string note, string patient_id, string patient_name, string dr_id, string mobile_no, string email, string gpl_app_id)
+        public void update_appointment(DateTime StartT, string diff1, string note,string procedure, string patient_id, string patient_name, string dr_id, string mobile_no, string email, string gpl_app_id)
         {
-            int j = db.execute("update tbl_appointment set start_datetime='" + Convert.ToDateTime(StartT).ToString("yyyy-MM-dd HH:mm") + "',duration='" + diff1 + "',note='" + note + "',pt_id='" + patient_id + "',pt_name='" + patient_name + "',dr_id='" + dr_id + "',mobile_no='" + mobile_no + "',email_id='" + email + "' where id='" + gpl_app_id + "'");
+            int j = db.execute("update tbl_appointment set start_datetime='" + Convert.ToDateTime(StartT).ToString("yyyy-MM-dd HH:mm") + "',duration='" + diff1 + "',note='" + note + "',plan_new_procedure='"+procedure+"',pt_id='" + patient_id + "',pt_name='" + patient_name + "',dr_id='" + dr_id + "',mobile_no='" + mobile_no + "',email_id='" + email + "' where id='" + gpl_app_id + "'");
         }
         public DataTable get_appointment_procedure(string id)
         {

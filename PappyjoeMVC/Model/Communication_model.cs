@@ -74,17 +74,17 @@ namespace PappyjoeMVC.Model
         //delivery report
         public DataTable status(string stime, string etime)
         {
-            DataTable dt = db.table("select S.message_status,P.pt_id,P.pt_name,S.message,S.send_datetime from tbl_pt_sms_communication S INNER JOIN tbl_patient P ON S.pt_id=P.id where S.send_datetime between '" + stime + "' and '" + etime + "'");
+            DataTable dt = db.table("select S.message_status,P.pt_id,P.pt_name,S.message,S.send_datetime from tbl_pt_sms_communication S INNER JOIN tbl_patient P ON S.pt_id=P.id where S.send_datetime between '" + stime + "' and '" + etime + "' and P.Profile_Status!='Cancelled'");
             return dt;
         }
         public string failcount(string stime, string etime)
         {
-            string t = db.scalar("select count(*) from tbl_pt_sms_communication where send_datetime between '" + stime + "' and '" + etime + "' and message_status='failure'  group by message_status");
+            string t = db.scalar("select count(*) from tbl_pt_sms_communication S INNER JOIN tbl_patient P ON S.pt_id=P.id where send_datetime between '" + stime + "' and '" + etime + "' and message_status='failure' and P.Profile_Status!='Cancelled' group by message_status");
             return t;
         }
         public string smscount(string stime, string etime)
         {
-            string dt = db.scalar("select count(*) from tbl_pt_sms_communication where send_datetime between '" + stime + "' and '" + etime + "' and message_status='sent' group by message_status");
+            string dt = db.scalar("select count(*) from tbl_pt_sms_communication S INNER JOIN tbl_patient P ON S.pt_id=P.id where send_datetime between '" + stime + "' and '" + etime + "' and message_status='sent' and P.Profile_Status!='Cancelled' group by message_status");
             return dt;
         }
         //end

@@ -95,45 +95,7 @@ namespace PappyjoeMVC.View
                         label9.Text = "Total Cost";
                         Lab_TotalIncome.Visible = true;
                         Lab_totalExpense.Visible = true;
-                        dgv_group.ColumnCount = 12;
-                        dgv_group.Columns[0].HeaderText = "SLNO";
-                        dgv_group.Columns[1].HeaderText = "PATIENT NAME";
-                        dgv_group.Columns[2].HeaderText = "INVOICE";
-                        dgv_group.Columns[3].HeaderText = "PROCEDURE";
-                        dgv_group.Columns[4].HeaderText = "INVOICE DATE";
-                        dgv_group.Columns[5].HeaderText = "DOCTOR";
-                        dgv_group.Columns[6].HeaderText = "GROUP";
-                        dgv_group.Columns[7].HeaderText = "COST";
-                        dgv_group.Columns[8].HeaderText = "DISCOUNT";
-                        dgv_group.Columns[9].HeaderText = "AMOUNT";
-                        dgv_group.Columns[10].HeaderText = "TOTAL PAYMENT";
-                        dgv_group.Columns[11].HeaderText = "TOTAL AMOUNT DUE";
-                        dgv_group.Columns[0].Width = 40;
-                        dgv_group.Columns[1].Width = 120;
-                        dgv_group.Columns[2].Width = 60;
-                        dgv_group.Columns[3].Width = 150;
-                        dgv_group.Columns[4].Width = 90;
-                        dgv_group.Columns[5].Width = 100;
-                        dgv_group.Columns[6].Width = 120;
-                        dgv_group.Columns[7].Width = 85;
-                        dgv_group.Columns[8].Width = 80;
-                        dgv_group.Columns[9].Width = 110;
-                        dgv_group.Columns[10].Width = 130;
-                        dgv_group.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                        dgv_group.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                        dgv_group.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                        dgv_group.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                        dgv_group.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                        dgv_group.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                        dgv_group.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                        dgv_group.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                        dgv_group.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                        dgv_group.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                        dgv_group.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                        dgv_group.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                        dgv_group.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                        dgv_group.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                        dgv_group.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                       
                         DataTable d= this.cntrl.dtb_invoice(date1, date2, cmb_group.Text);
                         Invoice(d);
                     }
@@ -251,6 +213,45 @@ namespace PappyjoeMVC.View
             {
                 for (int z = 0; z < dt1.Rows.Count; z++)
                 {
+                    dgv_group.ColumnCount = 12;
+                    dgv_group.Columns[0].HeaderText = "SLNO";
+                    dgv_group.Columns[1].HeaderText = "PATIENT NAME";
+                    dgv_group.Columns[2].HeaderText = "INVOICE";
+                    dgv_group.Columns[3].HeaderText = "PROCEDURE";
+                    dgv_group.Columns[4].HeaderText = "INVOICE DATE";
+                    dgv_group.Columns[5].HeaderText = "DOCTOR";
+                    dgv_group.Columns[6].HeaderText = "GROUP";
+                    dgv_group.Columns[7].HeaderText = "COST";
+                    dgv_group.Columns[8].HeaderText = "DISCOUNT";
+                    dgv_group.Columns[9].HeaderText = "AMOUNT";
+                    dgv_group.Columns[10].HeaderText = "TOTAL PAYMENT";
+                    dgv_group.Columns[11].HeaderText = "TOTAL AMOUNT DUE";
+                    dgv_group.Columns[0].Width = 40;
+                    dgv_group.Columns[1].Width = 120;
+                    dgv_group.Columns[2].Width = 60;
+                    dgv_group.Columns[3].Width = 150;
+                    dgv_group.Columns[4].Width = 90;
+                    dgv_group.Columns[5].Width = 100;
+                    dgv_group.Columns[6].Width = 120;
+                    dgv_group.Columns[7].Width = 85;
+                    dgv_group.Columns[8].Width = 80;
+                    dgv_group.Columns[9].Width = 110;
+                    dgv_group.Columns[10].Width = 130;
+                    dgv_group.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    dgv_group.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    dgv_group.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    dgv_group.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    dgv_group.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    dgv_group.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    dgv_group.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    dgv_group.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    dgv_group.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    dgv_group.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    dgv_group.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    dgv_group.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    dgv_group.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    dgv_group.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    dgv_group.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                     int slno = z + 1;
                     string pt_id = dt1.Rows[z]["pt_id"].ToString();
                     string name = dt1.Rows[z]["pt_name"].ToString();
@@ -391,6 +392,10 @@ namespace PappyjoeMVC.View
                 Lab_Amount.Text = Convert.ToDecimal(Totalamount).ToString("#0.00");
                 Lab_Paid.Text = Convert.ToDecimal(Totalpaid).ToString("#0.00");
                 Lab_Due.Text = Convert.ToDecimal(Totaldue).ToString("#0.00");
+            }
+            else
+            {
+                label_empty.Visible = true;
             }
         }
 

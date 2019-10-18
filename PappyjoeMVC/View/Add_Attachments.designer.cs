@@ -901,7 +901,7 @@
             // 
             this.Lab_Pt_Id.AutoSize = true;
             this.Lab_Pt_Id.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Pt_Id.Location = new System.Drawing.Point(66, 25);
+            this.Lab_Pt_Id.Location = new System.Drawing.Point(48, 25);
             this.Lab_Pt_Id.Name = "Lab_Pt_Id";
             this.Lab_Pt_Id.Size = new System.Drawing.Size(63, 13);
             this.Lab_Pt_Id.TabIndex = 68;
