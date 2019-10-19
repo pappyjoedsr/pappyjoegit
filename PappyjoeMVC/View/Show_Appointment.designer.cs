@@ -370,7 +370,6 @@
             // 
             // labelallpatient
             // 
-            this.labelallpatient.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelallpatient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelallpatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelallpatient.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -399,7 +398,6 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.Controls.Add(this.linkLabel_id);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.linkLabel_Name);

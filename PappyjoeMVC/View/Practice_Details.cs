@@ -817,15 +817,6 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.ShowDialog();
         }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            var form2 = new textform();
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.ShowDialog();
-        }
-
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
             var form2 = new Expense();

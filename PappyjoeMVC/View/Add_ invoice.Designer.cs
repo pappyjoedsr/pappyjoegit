@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add__invoice));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,29 +39,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add__invoice));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripBAttachment = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripButton();
             this.TTP_SearchText = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextDoctor = new System.Windows.Forms.ToolStripTextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.PB_Img = new System.Windows.Forms.PictureBox();
             this.lab_patName = new System.Windows.Forms.Label();
             this.lab_PTId = new System.Windows.Forms.Label();
             this.linkL_Name = new System.Windows.Forms.LinkLabel();
@@ -76,66 +59,6 @@
             this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.chk_fulmac = new System.Windows.Forms.CheckBox();
-            this.BtnCancel = new System.Windows.Forms.Button();
-            this.lab_ShowChildteeth = new System.Windows.Forms.Label();
-            this.chk41 = new System.Windows.Forms.CheckBox();
-            this.chk18 = new System.Windows.Forms.CheckBox();
-            this.chk31 = new System.Windows.Forms.CheckBox();
-            this.chk21 = new System.Windows.Forms.CheckBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.chk75 = new System.Windows.Forms.CheckBox();
-            this.chk74 = new System.Windows.Forms.CheckBox();
-            this.chk73 = new System.Windows.Forms.CheckBox();
-            this.chk72 = new System.Windows.Forms.CheckBox();
-            this.chk71 = new System.Windows.Forms.CheckBox();
-            this.chk81 = new System.Windows.Forms.CheckBox();
-            this.chk82 = new System.Windows.Forms.CheckBox();
-            this.chk83 = new System.Windows.Forms.CheckBox();
-            this.chk84 = new System.Windows.Forms.CheckBox();
-            this.chk85 = new System.Windows.Forms.CheckBox();
-            this.chk65 = new System.Windows.Forms.CheckBox();
-            this.chk64 = new System.Windows.Forms.CheckBox();
-            this.chk63 = new System.Windows.Forms.CheckBox();
-            this.chk62 = new System.Windows.Forms.CheckBox();
-            this.chk61 = new System.Windows.Forms.CheckBox();
-            this.chk51 = new System.Windows.Forms.CheckBox();
-            this.chk52 = new System.Windows.Forms.CheckBox();
-            this.chk53 = new System.Windows.Forms.CheckBox();
-            this.chk54 = new System.Windows.Forms.CheckBox();
-            this.chk55 = new System.Windows.Forms.CheckBox();
-            this.chk38 = new System.Windows.Forms.CheckBox();
-            this.chk37 = new System.Windows.Forms.CheckBox();
-            this.chk36 = new System.Windows.Forms.CheckBox();
-            this.chk35 = new System.Windows.Forms.CheckBox();
-            this.chk34 = new System.Windows.Forms.CheckBox();
-            this.chk33 = new System.Windows.Forms.CheckBox();
-            this.chk32 = new System.Windows.Forms.CheckBox();
-            this.chk42 = new System.Windows.Forms.CheckBox();
-            this.chk43 = new System.Windows.Forms.CheckBox();
-            this.chk44 = new System.Windows.Forms.CheckBox();
-            this.chk45 = new System.Windows.Forms.CheckBox();
-            this.chk46 = new System.Windows.Forms.CheckBox();
-            this.chk47 = new System.Windows.Forms.CheckBox();
-            this.chk48 = new System.Windows.Forms.CheckBox();
-            this.chk28 = new System.Windows.Forms.CheckBox();
-            this.chk27 = new System.Windows.Forms.CheckBox();
-            this.chk26 = new System.Windows.Forms.CheckBox();
-            this.chk25 = new System.Windows.Forms.CheckBox();
-            this.chk24 = new System.Windows.Forms.CheckBox();
-            this.chk23 = new System.Windows.Forms.CheckBox();
-            this.chk22 = new System.Windows.Forms.CheckBox();
-            this.chk11 = new System.Windows.Forms.CheckBox();
-            this.chk12 = new System.Windows.Forms.CheckBox();
-            this.chk13 = new System.Windows.Forms.CheckBox();
-            this.chk14 = new System.Windows.Forms.CheckBox();
-            this.chk15 = new System.Windows.Forms.CheckBox();
-            this.chk16 = new System.Windows.Forms.CheckBox();
-            this.chk17 = new System.Windows.Forms.CheckBox();
-            this.CHk_FullMouth = new System.Windows.Forms.CheckBox();
-            this.Chk_MultiplyCost = new System.Windows.Forms.CheckBox();
-            this.btn_Done = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lab_Msg = new System.Windows.Forms.Label();
             this.Cmb_batch = new System.Windows.Forms.ComboBox();
@@ -206,17 +129,94 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.planid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chk_fulmac = new System.Windows.Forms.CheckBox();
+            this.BtnCancel = new System.Windows.Forms.Button();
+            this.lab_ShowChildteeth = new System.Windows.Forms.Label();
+            this.chk41 = new System.Windows.Forms.CheckBox();
+            this.chk18 = new System.Windows.Forms.CheckBox();
+            this.chk31 = new System.Windows.Forms.CheckBox();
+            this.chk21 = new System.Windows.Forms.CheckBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.chk75 = new System.Windows.Forms.CheckBox();
+            this.chk74 = new System.Windows.Forms.CheckBox();
+            this.chk73 = new System.Windows.Forms.CheckBox();
+            this.chk72 = new System.Windows.Forms.CheckBox();
+            this.chk71 = new System.Windows.Forms.CheckBox();
+            this.chk81 = new System.Windows.Forms.CheckBox();
+            this.chk82 = new System.Windows.Forms.CheckBox();
+            this.chk83 = new System.Windows.Forms.CheckBox();
+            this.chk84 = new System.Windows.Forms.CheckBox();
+            this.chk85 = new System.Windows.Forms.CheckBox();
+            this.chk65 = new System.Windows.Forms.CheckBox();
+            this.chk64 = new System.Windows.Forms.CheckBox();
+            this.chk63 = new System.Windows.Forms.CheckBox();
+            this.chk62 = new System.Windows.Forms.CheckBox();
+            this.chk61 = new System.Windows.Forms.CheckBox();
+            this.chk51 = new System.Windows.Forms.CheckBox();
+            this.chk52 = new System.Windows.Forms.CheckBox();
+            this.chk53 = new System.Windows.Forms.CheckBox();
+            this.chk54 = new System.Windows.Forms.CheckBox();
+            this.chk55 = new System.Windows.Forms.CheckBox();
+            this.chk38 = new System.Windows.Forms.CheckBox();
+            this.chk37 = new System.Windows.Forms.CheckBox();
+            this.chk36 = new System.Windows.Forms.CheckBox();
+            this.chk35 = new System.Windows.Forms.CheckBox();
+            this.chk34 = new System.Windows.Forms.CheckBox();
+            this.chk33 = new System.Windows.Forms.CheckBox();
+            this.chk32 = new System.Windows.Forms.CheckBox();
+            this.chk42 = new System.Windows.Forms.CheckBox();
+            this.chk43 = new System.Windows.Forms.CheckBox();
+            this.chk44 = new System.Windows.Forms.CheckBox();
+            this.chk45 = new System.Windows.Forms.CheckBox();
+            this.chk46 = new System.Windows.Forms.CheckBox();
+            this.chk47 = new System.Windows.Forms.CheckBox();
+            this.chk48 = new System.Windows.Forms.CheckBox();
+            this.chk28 = new System.Windows.Forms.CheckBox();
+            this.chk27 = new System.Windows.Forms.CheckBox();
+            this.chk26 = new System.Windows.Forms.CheckBox();
+            this.chk25 = new System.Windows.Forms.CheckBox();
+            this.chk24 = new System.Windows.Forms.CheckBox();
+            this.chk23 = new System.Windows.Forms.CheckBox();
+            this.chk22 = new System.Windows.Forms.CheckBox();
+            this.chk11 = new System.Windows.Forms.CheckBox();
+            this.chk12 = new System.Windows.Forms.CheckBox();
+            this.chk13 = new System.Windows.Forms.CheckBox();
+            this.chk14 = new System.Windows.Forms.CheckBox();
+            this.chk15 = new System.Windows.Forms.CheckBox();
+            this.chk16 = new System.Windows.Forms.CheckBox();
+            this.chk17 = new System.Windows.Forms.CheckBox();
+            this.CHk_FullMouth = new System.Windows.Forms.CheckBox();
+            this.Chk_MultiplyCost = new System.Windows.Forms.CheckBox();
+            this.btn_Done = new System.Windows.Forms.Button();
+            this.PB_Img = new System.Windows.Forms.PictureBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBAttachment = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_Img)).BeginInit();
             this.panel9.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Invoice)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Procedure)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Img)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -248,204 +248,16 @@
             this.toolStrip1.TabIndex = 80;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton1.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(103, 37);
-            this.toolStripButton1.Text = "Pappyjoe Clinic";
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton2.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
-            this.toolStripButton2.Text = "Calendar";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripBAttachment
-            // 
-            this.toolStripBAttachment.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripBAttachment.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripBAttachment.ForeColor = System.Drawing.Color.White;
-            this.toolStripBAttachment.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBAttachment.Image")));
-            this.toolStripBAttachment.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripBAttachment.Name = "toolStripBAttachment";
-            this.toolStripBAttachment.Size = new System.Drawing.Size(72, 37);
-            this.toolStripBAttachment.Text = "Fast Track";
-            this.toolStripBAttachment.Visible = false;
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton3.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(60, 37);
-            this.toolStripButton3.Text = "Records";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton4.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(114, 37);
-            this.toolStripButton4.Text = "Communications";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton5.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(72, 37);
-            this.toolStripButton5.Text = "Inventory";
-            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton6.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(59, 37);
-            this.toolStripButton6.Text = "Reports";
-            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
-            // 
-            // toolStripButton11
-            // 
-            this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton11.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
-            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton11.Name = "toolStripButton11";
-            this.toolStripButton11.Size = new System.Drawing.Size(62, 37);
-            this.toolStripButton11.Text = "Consent";
-            this.toolStripButton11.Visible = false;
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton10.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(62, 37);
-            this.toolStripButton10.Text = "Expense";
-            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton7.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(56, 37);
-            this.toolStripButton7.Text = "Profiles";
-            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
-            // 
-            // toolStripButton12
-            // 
-            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton12.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
-            this.toolStripButton12.Text = "Lab Tracking";
-            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
-            // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem,
-            this.logoutToolStripMenuItem});
-            this.toolStripButton8.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
-            this.toolStripButton8.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(33, 37);
-            this.toolStripButton8.Text = "toolStripButton8";
-            this.toolStripButton8.ToolTipText = "Settings";
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
-            // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1429953040_Log_Out;
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = global::PappyjoeMVC.Properties.Resources._1435669279_question_balloon_basic_blue;
-            this.toolStripButton9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(29, 37);
-            this.toolStripButton9.Text = "toolStripButton9";
-            this.toolStripButton9.ToolTipText = "Pappyjoe Version 16.2";
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.Image = global::PappyjoeMVC.Properties.Resources.appbar_user_add__2_1;
-            this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(32, 37);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.ToolTipText = "Add new Patient";
-            this.toolStripDropDownButton1.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
             // 
             // TTP_SearchText
             // 
@@ -478,16 +290,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(420, 48);
             this.panel7.TabIndex = 255;
-            // 
-            // PB_Img
-            // 
-            this.PB_Img.Image = ((System.Drawing.Image)(resources.GetObject("PB_Img.Image")));
-            this.PB_Img.Location = new System.Drawing.Point(8, 3);
-            this.PB_Img.Name = "PB_Img";
-            this.PB_Img.Size = new System.Drawing.Size(44, 42);
-            this.PB_Img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PB_Img.TabIndex = 72;
-            this.PB_Img.TabStop = false;
             // 
             // lab_patName
             // 
@@ -645,786 +447,6 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1360, 1);
             this.panel10.TabIndex = 260;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.BackgroundImage = global::PappyjoeMVC.Properties.Resources.AdultTooth;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.chk_fulmac);
-            this.panel1.Controls.Add(this.BtnCancel);
-            this.panel1.Controls.Add(this.lab_ShowChildteeth);
-            this.panel1.Controls.Add(this.chk41);
-            this.panel1.Controls.Add(this.chk18);
-            this.panel1.Controls.Add(this.chk31);
-            this.panel1.Controls.Add(this.chk21);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.chk38);
-            this.panel1.Controls.Add(this.chk37);
-            this.panel1.Controls.Add(this.chk36);
-            this.panel1.Controls.Add(this.chk35);
-            this.panel1.Controls.Add(this.chk34);
-            this.panel1.Controls.Add(this.chk33);
-            this.panel1.Controls.Add(this.chk32);
-            this.panel1.Controls.Add(this.chk42);
-            this.panel1.Controls.Add(this.chk43);
-            this.panel1.Controls.Add(this.chk44);
-            this.panel1.Controls.Add(this.chk45);
-            this.panel1.Controls.Add(this.chk46);
-            this.panel1.Controls.Add(this.chk47);
-            this.panel1.Controls.Add(this.chk48);
-            this.panel1.Controls.Add(this.chk28);
-            this.panel1.Controls.Add(this.chk27);
-            this.panel1.Controls.Add(this.chk26);
-            this.panel1.Controls.Add(this.chk25);
-            this.panel1.Controls.Add(this.chk24);
-            this.panel1.Controls.Add(this.chk23);
-            this.panel1.Controls.Add(this.chk22);
-            this.panel1.Controls.Add(this.chk11);
-            this.panel1.Controls.Add(this.chk12);
-            this.panel1.Controls.Add(this.chk13);
-            this.panel1.Controls.Add(this.chk14);
-            this.panel1.Controls.Add(this.chk15);
-            this.panel1.Controls.Add(this.chk16);
-            this.panel1.Controls.Add(this.chk17);
-            this.panel1.Controls.Add(this.CHk_FullMouth);
-            this.panel1.Controls.Add(this.Chk_MultiplyCost);
-            this.panel1.Controls.Add(this.btn_Done);
-            this.panel1.Location = new System.Drawing.Point(282, 277);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(644, 293);
-            this.panel1.TabIndex = 262;
-            this.panel1.Visible = false;
-            // 
-            // chk_fulmac
-            // 
-            this.chk_fulmac.AutoSize = true;
-            this.chk_fulmac.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk_fulmac.Location = new System.Drawing.Point(59, 166);
-            this.chk_fulmac.Name = "chk_fulmac";
-            this.chk_fulmac.Size = new System.Drawing.Size(75, 17);
-            this.chk_fulmac.TabIndex = 59;
-            this.chk_fulmac.Text = "Full Mouth";
-            this.chk_fulmac.UseVisualStyleBackColor = true;
-            this.chk_fulmac.CheckedChanged += new System.EventHandler(this.chk_fulmac_CheckedChanged);
-            // 
-            // BtnCancel
-            // 
-            this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnCancel.BackColor = System.Drawing.Color.Tomato;
-            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancel.ForeColor = System.Drawing.Color.White;
-            this.BtnCancel.Location = new System.Drawing.Point(512, 3);
-            this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(61, 24);
-            this.BtnCancel.TabIndex = 254;
-            this.BtnCancel.Text = "Cancel";
-            this.BtnCancel.UseVisualStyleBackColor = false;
-            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
-            // 
-            // lab_ShowChildteeth
-            // 
-            this.lab_ShowChildteeth.AutoSize = true;
-            this.lab_ShowChildteeth.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lab_ShowChildteeth.ForeColor = System.Drawing.Color.Blue;
-            this.lab_ShowChildteeth.Location = new System.Drawing.Point(283, 137);
-            this.lab_ShowChildteeth.Name = "lab_ShowChildteeth";
-            this.lab_ShowChildteeth.Size = new System.Drawing.Size(88, 13);
-            this.lab_ShowChildteeth.TabIndex = 44;
-            this.lab_ShowChildteeth.Text = "Show ChildTeeth";
-            this.lab_ShowChildteeth.Click += new System.EventHandler(this.lab_ShowChildteeth_Click);
-            // 
-            // chk41
-            // 
-            this.chk41.AutoSize = true;
-            this.chk41.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk41.Location = new System.Drawing.Point(273, 120);
-            this.chk41.Name = "chk41";
-            this.chk41.Size = new System.Drawing.Size(38, 17);
-            this.chk41.TabIndex = 38;
-            this.chk41.Text = "41";
-            this.chk41.UseVisualStyleBackColor = true;
-            this.chk41.CheckStateChanged += new System.EventHandler(this.chk41_CheckStateChanged);
-            // 
-            // chk18
-            // 
-            this.chk18.AutoSize = true;
-            this.chk18.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk18.Location = new System.Drawing.Point(6, 65);
-            this.chk18.Name = "chk18";
-            this.chk18.Size = new System.Drawing.Size(38, 17);
-            this.chk18.TabIndex = 37;
-            this.chk18.Text = "18";
-            this.chk18.UseVisualStyleBackColor = true;
-            this.chk18.CheckStateChanged += new System.EventHandler(this.chk18_CheckStateChanged);
-            // 
-            // chk31
-            // 
-            this.chk31.AutoSize = true;
-            this.chk31.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk31.Location = new System.Drawing.Point(330, 123);
-            this.chk31.Name = "chk31";
-            this.chk31.Size = new System.Drawing.Size(38, 17);
-            this.chk31.TabIndex = 36;
-            this.chk31.Text = "31";
-            this.chk31.UseVisualStyleBackColor = true;
-            this.chk31.CheckStateChanged += new System.EventHandler(this.chk31_CheckStateChanged);
-            // 
-            // chk21
-            // 
-            this.chk21.AutoSize = true;
-            this.chk21.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk21.Location = new System.Drawing.Point(330, 67);
-            this.chk21.Name = "chk21";
-            this.chk21.Size = new System.Drawing.Size(38, 17);
-            this.chk21.TabIndex = 35;
-            this.chk21.Text = "21";
-            this.chk21.UseVisualStyleBackColor = true;
-            this.chk21.CheckStateChanged += new System.EventHandler(this.chk21_CheckStateChanged);
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = global::PappyjoeMVC.Properties.Resources.pedo;
-            this.panel4.Controls.Add(this.chk75);
-            this.panel4.Controls.Add(this.chk74);
-            this.panel4.Controls.Add(this.chk73);
-            this.panel4.Controls.Add(this.chk72);
-            this.panel4.Controls.Add(this.chk71);
-            this.panel4.Controls.Add(this.chk81);
-            this.panel4.Controls.Add(this.chk82);
-            this.panel4.Controls.Add(this.chk83);
-            this.panel4.Controls.Add(this.chk84);
-            this.panel4.Controls.Add(this.chk85);
-            this.panel4.Controls.Add(this.chk65);
-            this.panel4.Controls.Add(this.chk64);
-            this.panel4.Controls.Add(this.chk63);
-            this.panel4.Controls.Add(this.chk62);
-            this.panel4.Controls.Add(this.chk61);
-            this.panel4.Controls.Add(this.chk51);
-            this.panel4.Controls.Add(this.chk52);
-            this.panel4.Controls.Add(this.chk53);
-            this.panel4.Controls.Add(this.chk54);
-            this.panel4.Controls.Add(this.chk55);
-            this.panel4.Location = new System.Drawing.Point(140, 154);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(409, 133);
-            this.panel4.TabIndex = 33;
-            this.panel4.Visible = false;
-            // 
-            // chk75
-            // 
-            this.chk75.AutoSize = true;
-            this.chk75.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk75.Location = new System.Drawing.Point(363, 71);
-            this.chk75.Name = "chk75";
-            this.chk75.Size = new System.Drawing.Size(38, 17);
-            this.chk75.TabIndex = 58;
-            this.chk75.Text = "75";
-            this.chk75.UseVisualStyleBackColor = true;
-            this.chk75.CheckStateChanged += new System.EventHandler(this.chk75_CheckStateChanged);
-            // 
-            // chk74
-            // 
-            this.chk74.AutoSize = true;
-            this.chk74.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk74.Location = new System.Drawing.Point(319, 71);
-            this.chk74.Name = "chk74";
-            this.chk74.Size = new System.Drawing.Size(38, 17);
-            this.chk74.TabIndex = 57;
-            this.chk74.Text = "74";
-            this.chk74.UseVisualStyleBackColor = true;
-            this.chk74.CheckStateChanged += new System.EventHandler(this.chk74_CheckStateChanged);
-            // 
-            // chk73
-            // 
-            this.chk73.AutoSize = true;
-            this.chk73.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk73.Location = new System.Drawing.Point(283, 71);
-            this.chk73.Name = "chk73";
-            this.chk73.Size = new System.Drawing.Size(38, 17);
-            this.chk73.TabIndex = 56;
-            this.chk73.Text = "73";
-            this.chk73.UseVisualStyleBackColor = true;
-            this.chk73.CheckStateChanged += new System.EventHandler(this.chk73_CheckStateChanged);
-            // 
-            // chk72
-            // 
-            this.chk72.AutoSize = true;
-            this.chk72.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk72.Location = new System.Drawing.Point(244, 71);
-            this.chk72.Name = "chk72";
-            this.chk72.Size = new System.Drawing.Size(38, 17);
-            this.chk72.TabIndex = 55;
-            this.chk72.Text = "72";
-            this.chk72.UseVisualStyleBackColor = true;
-            this.chk72.CheckStateChanged += new System.EventHandler(this.chk72_CheckStateChanged);
-            // 
-            // chk71
-            // 
-            this.chk71.AutoSize = true;
-            this.chk71.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk71.Location = new System.Drawing.Point(213, 71);
-            this.chk71.Name = "chk71";
-            this.chk71.Size = new System.Drawing.Size(38, 17);
-            this.chk71.TabIndex = 54;
-            this.chk71.Text = "71";
-            this.chk71.UseVisualStyleBackColor = true;
-            this.chk71.CheckStateChanged += new System.EventHandler(this.chk71_CheckStateChanged);
-            // 
-            // chk81
-            // 
-            this.chk81.AutoSize = true;
-            this.chk81.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk81.Location = new System.Drawing.Point(175, 71);
-            this.chk81.Name = "chk81";
-            this.chk81.Size = new System.Drawing.Size(38, 17);
-            this.chk81.TabIndex = 53;
-            this.chk81.Text = "81";
-            this.chk81.UseVisualStyleBackColor = true;
-            this.chk81.CheckStateChanged += new System.EventHandler(this.chk81_CheckStateChanged);
-            // 
-            // chk82
-            // 
-            this.chk82.AutoSize = true;
-            this.chk82.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk82.Location = new System.Drawing.Point(131, 71);
-            this.chk82.Name = "chk82";
-            this.chk82.Size = new System.Drawing.Size(38, 17);
-            this.chk82.TabIndex = 52;
-            this.chk82.Text = "82";
-            this.chk82.UseVisualStyleBackColor = true;
-            this.chk82.CheckStateChanged += new System.EventHandler(this.chk82_CheckStateChanged);
-            // 
-            // chk83
-            // 
-            this.chk83.AutoSize = true;
-            this.chk83.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk83.Location = new System.Drawing.Point(98, 71);
-            this.chk83.Name = "chk83";
-            this.chk83.Size = new System.Drawing.Size(38, 17);
-            this.chk83.TabIndex = 51;
-            this.chk83.Text = "83";
-            this.chk83.UseVisualStyleBackColor = true;
-            this.chk83.CheckStateChanged += new System.EventHandler(this.chk83_CheckStateChanged);
-            // 
-            // chk84
-            // 
-            this.chk84.AutoSize = true;
-            this.chk84.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk84.Location = new System.Drawing.Point(54, 71);
-            this.chk84.Name = "chk84";
-            this.chk84.Size = new System.Drawing.Size(38, 17);
-            this.chk84.TabIndex = 50;
-            this.chk84.Text = "84";
-            this.chk84.UseVisualStyleBackColor = true;
-            this.chk84.CheckStateChanged += new System.EventHandler(this.chk84_CheckStateChanged);
-            // 
-            // chk85
-            // 
-            this.chk85.AutoSize = true;
-            this.chk85.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk85.Location = new System.Drawing.Point(13, 71);
-            this.chk85.Name = "chk85";
-            this.chk85.Size = new System.Drawing.Size(38, 17);
-            this.chk85.TabIndex = 49;
-            this.chk85.Text = "85";
-            this.chk85.UseVisualStyleBackColor = true;
-            this.chk85.CheckStateChanged += new System.EventHandler(this.chk85_CheckStateChanged);
-            // 
-            // chk65
-            // 
-            this.chk65.AutoSize = true;
-            this.chk65.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk65.Location = new System.Drawing.Point(363, 57);
-            this.chk65.Name = "chk65";
-            this.chk65.Size = new System.Drawing.Size(38, 17);
-            this.chk65.TabIndex = 44;
-            this.chk65.Text = "65";
-            this.chk65.UseVisualStyleBackColor = true;
-            this.chk65.CheckStateChanged += new System.EventHandler(this.chk65_CheckStateChanged);
-            // 
-            // chk64
-            // 
-            this.chk64.AutoSize = true;
-            this.chk64.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk64.Location = new System.Drawing.Point(319, 57);
-            this.chk64.Name = "chk64";
-            this.chk64.Size = new System.Drawing.Size(38, 17);
-            this.chk64.TabIndex = 43;
-            this.chk64.Text = "64";
-            this.chk64.UseVisualStyleBackColor = true;
-            this.chk64.CheckStateChanged += new System.EventHandler(this.chk64_CheckStateChanged);
-            // 
-            // chk63
-            // 
-            this.chk63.AutoSize = true;
-            this.chk63.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk63.Location = new System.Drawing.Point(283, 57);
-            this.chk63.Name = "chk63";
-            this.chk63.Size = new System.Drawing.Size(38, 17);
-            this.chk63.TabIndex = 42;
-            this.chk63.Text = "63";
-            this.chk63.UseVisualStyleBackColor = true;
-            this.chk63.CheckStateChanged += new System.EventHandler(this.chk63_CheckStateChanged);
-            // 
-            // chk62
-            // 
-            this.chk62.AutoSize = true;
-            this.chk62.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk62.Location = new System.Drawing.Point(244, 57);
-            this.chk62.Name = "chk62";
-            this.chk62.Size = new System.Drawing.Size(38, 17);
-            this.chk62.TabIndex = 41;
-            this.chk62.Text = "62";
-            this.chk62.UseVisualStyleBackColor = true;
-            this.chk62.CheckStateChanged += new System.EventHandler(this.chk62_CheckStateChanged);
-            // 
-            // chk61
-            // 
-            this.chk61.AutoSize = true;
-            this.chk61.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk61.Location = new System.Drawing.Point(213, 57);
-            this.chk61.Name = "chk61";
-            this.chk61.Size = new System.Drawing.Size(38, 17);
-            this.chk61.TabIndex = 40;
-            this.chk61.Text = "61";
-            this.chk61.UseVisualStyleBackColor = true;
-            this.chk61.CheckStateChanged += new System.EventHandler(this.chk61_CheckStateChanged);
-            // 
-            // chk51
-            // 
-            this.chk51.AutoSize = true;
-            this.chk51.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk51.Location = new System.Drawing.Point(175, 57);
-            this.chk51.Name = "chk51";
-            this.chk51.Size = new System.Drawing.Size(38, 17);
-            this.chk51.TabIndex = 39;
-            this.chk51.Text = "51";
-            this.chk51.UseVisualStyleBackColor = true;
-            this.chk51.CheckStateChanged += new System.EventHandler(this.chk51_CheckStateChanged);
-            // 
-            // chk52
-            // 
-            this.chk52.AutoSize = true;
-            this.chk52.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk52.Location = new System.Drawing.Point(131, 57);
-            this.chk52.Name = "chk52";
-            this.chk52.Size = new System.Drawing.Size(38, 17);
-            this.chk52.TabIndex = 38;
-            this.chk52.Text = "52";
-            this.chk52.UseVisualStyleBackColor = true;
-            this.chk52.CheckStateChanged += new System.EventHandler(this.chk52_CheckStateChanged);
-            // 
-            // chk53
-            // 
-            this.chk53.AutoSize = true;
-            this.chk53.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk53.Location = new System.Drawing.Point(97, 57);
-            this.chk53.Name = "chk53";
-            this.chk53.Size = new System.Drawing.Size(38, 17);
-            this.chk53.TabIndex = 37;
-            this.chk53.Text = "53";
-            this.chk53.UseVisualStyleBackColor = true;
-            this.chk53.CheckStateChanged += new System.EventHandler(this.chk53_CheckStateChanged);
-            // 
-            // chk54
-            // 
-            this.chk54.AutoSize = true;
-            this.chk54.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk54.Location = new System.Drawing.Point(53, 57);
-            this.chk54.Name = "chk54";
-            this.chk54.Size = new System.Drawing.Size(38, 17);
-            this.chk54.TabIndex = 36;
-            this.chk54.Text = "54";
-            this.chk54.UseVisualStyleBackColor = true;
-            this.chk54.CheckStateChanged += new System.EventHandler(this.chk54_CheckStateChanged);
-            // 
-            // chk55
-            // 
-            this.chk55.AutoSize = true;
-            this.chk55.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk55.Location = new System.Drawing.Point(13, 57);
-            this.chk55.Name = "chk55";
-            this.chk55.Size = new System.Drawing.Size(38, 17);
-            this.chk55.TabIndex = 35;
-            this.chk55.Text = "55";
-            this.chk55.UseVisualStyleBackColor = true;
-            this.chk55.CheckStateChanged += new System.EventHandler(this.chk55_CheckStateChanged);
-            // 
-            // chk38
-            // 
-            this.chk38.AutoSize = true;
-            this.chk38.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk38.Location = new System.Drawing.Point(600, 123);
-            this.chk38.Name = "chk38";
-            this.chk38.Size = new System.Drawing.Size(38, 17);
-            this.chk38.TabIndex = 32;
-            this.chk38.Text = "38";
-            this.chk38.UseVisualStyleBackColor = true;
-            this.chk38.CheckStateChanged += new System.EventHandler(this.chk38_CheckStateChanged);
-            // 
-            // chk37
-            // 
-            this.chk37.AutoSize = true;
-            this.chk37.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk37.Location = new System.Drawing.Point(558, 123);
-            this.chk37.Name = "chk37";
-            this.chk37.Size = new System.Drawing.Size(38, 17);
-            this.chk37.TabIndex = 31;
-            this.chk37.Text = "37";
-            this.chk37.UseVisualStyleBackColor = true;
-            this.chk37.CheckStateChanged += new System.EventHandler(this.chk37_CheckStateChanged);
-            // 
-            // chk36
-            // 
-            this.chk36.AutoSize = true;
-            this.chk36.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk36.Location = new System.Drawing.Point(524, 123);
-            this.chk36.Name = "chk36";
-            this.chk36.Size = new System.Drawing.Size(38, 17);
-            this.chk36.TabIndex = 30;
-            this.chk36.Text = "36";
-            this.chk36.UseVisualStyleBackColor = true;
-            this.chk36.CheckStateChanged += new System.EventHandler(this.chk36_CheckStateChanged);
-            // 
-            // chk35
-            // 
-            this.chk35.AutoSize = true;
-            this.chk35.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk35.Location = new System.Drawing.Point(480, 123);
-            this.chk35.Name = "chk35";
-            this.chk35.Size = new System.Drawing.Size(38, 17);
-            this.chk35.TabIndex = 29;
-            this.chk35.Text = "35";
-            this.chk35.UseVisualStyleBackColor = true;
-            this.chk35.CheckStateChanged += new System.EventHandler(this.chk35_CheckStateChanged);
-            // 
-            // chk34
-            // 
-            this.chk34.AutoSize = true;
-            this.chk34.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk34.Location = new System.Drawing.Point(440, 123);
-            this.chk34.Name = "chk34";
-            this.chk34.Size = new System.Drawing.Size(38, 17);
-            this.chk34.TabIndex = 28;
-            this.chk34.Text = "34";
-            this.chk34.UseVisualStyleBackColor = true;
-            this.chk34.CheckStateChanged += new System.EventHandler(this.chk34_CheckStateChanged);
-            // 
-            // chk33
-            // 
-            this.chk33.AutoSize = true;
-            this.chk33.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk33.Location = new System.Drawing.Point(404, 123);
-            this.chk33.Name = "chk33";
-            this.chk33.Size = new System.Drawing.Size(38, 17);
-            this.chk33.TabIndex = 27;
-            this.chk33.Text = "33";
-            this.chk33.UseVisualStyleBackColor = true;
-            this.chk33.CheckStateChanged += new System.EventHandler(this.chk33_CheckStateChanged);
-            // 
-            // chk32
-            // 
-            this.chk32.AutoSize = true;
-            this.chk32.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk32.Location = new System.Drawing.Point(369, 123);
-            this.chk32.Name = "chk32";
-            this.chk32.Size = new System.Drawing.Size(38, 17);
-            this.chk32.TabIndex = 26;
-            this.chk32.Text = "32";
-            this.chk32.UseVisualStyleBackColor = true;
-            this.chk32.CheckStateChanged += new System.EventHandler(this.chk32_CheckStateChanged);
-            // 
-            // chk42
-            // 
-            this.chk42.AutoSize = true;
-            this.chk42.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk42.Location = new System.Drawing.Point(236, 120);
-            this.chk42.Name = "chk42";
-            this.chk42.Size = new System.Drawing.Size(38, 17);
-            this.chk42.TabIndex = 25;
-            this.chk42.Text = "42";
-            this.chk42.UseVisualStyleBackColor = true;
-            this.chk42.CheckStateChanged += new System.EventHandler(this.chk42_CheckStateChanged);
-            // 
-            // chk43
-            // 
-            this.chk43.AutoSize = true;
-            this.chk43.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk43.Location = new System.Drawing.Point(201, 120);
-            this.chk43.Name = "chk43";
-            this.chk43.Size = new System.Drawing.Size(38, 17);
-            this.chk43.TabIndex = 43;
-            this.chk43.Text = "43";
-            this.chk43.UseVisualStyleBackColor = true;
-            this.chk43.CheckStateChanged += new System.EventHandler(this.chk43_CheckStateChanged);
-            // 
-            // chk44
-            // 
-            this.chk44.AutoSize = true;
-            this.chk44.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk44.Location = new System.Drawing.Point(161, 120);
-            this.chk44.Name = "chk44";
-            this.chk44.Size = new System.Drawing.Size(38, 17);
-            this.chk44.TabIndex = 23;
-            this.chk44.Text = "44";
-            this.chk44.UseVisualStyleBackColor = true;
-            this.chk44.CheckStateChanged += new System.EventHandler(this.chk44_CheckStateChanged);
-            // 
-            // chk45
-            // 
-            this.chk45.AutoSize = true;
-            this.chk45.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk45.Location = new System.Drawing.Point(119, 120);
-            this.chk45.Name = "chk45";
-            this.chk45.Size = new System.Drawing.Size(38, 17);
-            this.chk45.TabIndex = 22;
-            this.chk45.Text = "45";
-            this.chk45.UseVisualStyleBackColor = true;
-            this.chk45.CheckStateChanged += new System.EventHandler(this.chk45_CheckStateChanged);
-            // 
-            // chk46
-            // 
-            this.chk46.AutoSize = true;
-            this.chk46.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk46.Location = new System.Drawing.Point(84, 120);
-            this.chk46.Name = "chk46";
-            this.chk46.Size = new System.Drawing.Size(38, 17);
-            this.chk46.TabIndex = 21;
-            this.chk46.Text = "46";
-            this.chk46.UseVisualStyleBackColor = true;
-            this.chk46.CheckStateChanged += new System.EventHandler(this.chk46_CheckStateChanged);
-            // 
-            // chk47
-            // 
-            this.chk47.AutoSize = true;
-            this.chk47.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk47.Location = new System.Drawing.Point(48, 120);
-            this.chk47.Name = "chk47";
-            this.chk47.Size = new System.Drawing.Size(38, 17);
-            this.chk47.TabIndex = 20;
-            this.chk47.Text = "47";
-            this.chk47.UseVisualStyleBackColor = true;
-            this.chk47.CheckStateChanged += new System.EventHandler(this.chk47_CheckStateChanged);
-            // 
-            // chk48
-            // 
-            this.chk48.AutoSize = true;
-            this.chk48.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk48.Location = new System.Drawing.Point(8, 120);
-            this.chk48.Name = "chk48";
-            this.chk48.Size = new System.Drawing.Size(38, 17);
-            this.chk48.TabIndex = 19;
-            this.chk48.Text = "48";
-            this.chk48.UseVisualStyleBackColor = true;
-            this.chk48.CheckStateChanged += new System.EventHandler(this.chk48_CheckStateChanged);
-            // 
-            // chk28
-            // 
-            this.chk28.AutoSize = true;
-            this.chk28.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk28.Location = new System.Drawing.Point(600, 67);
-            this.chk28.Name = "chk28";
-            this.chk28.Size = new System.Drawing.Size(38, 17);
-            this.chk28.TabIndex = 18;
-            this.chk28.Text = "28";
-            this.chk28.UseVisualStyleBackColor = true;
-            this.chk28.CheckStateChanged += new System.EventHandler(this.chk28_CheckStateChanged);
-            // 
-            // chk27
-            // 
-            this.chk27.AutoSize = true;
-            this.chk27.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk27.Location = new System.Drawing.Point(558, 67);
-            this.chk27.Name = "chk27";
-            this.chk27.Size = new System.Drawing.Size(38, 17);
-            this.chk27.TabIndex = 17;
-            this.chk27.Text = "27";
-            this.chk27.UseVisualStyleBackColor = true;
-            this.chk27.CheckStateChanged += new System.EventHandler(this.chk27_CheckStateChanged);
-            // 
-            // chk26
-            // 
-            this.chk26.AutoSize = true;
-            this.chk26.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk26.Location = new System.Drawing.Point(522, 67);
-            this.chk26.Name = "chk26";
-            this.chk26.Size = new System.Drawing.Size(38, 17);
-            this.chk26.TabIndex = 16;
-            this.chk26.Text = "26";
-            this.chk26.UseVisualStyleBackColor = true;
-            this.chk26.CheckStateChanged += new System.EventHandler(this.chk26_CheckStateChanged);
-            // 
-            // chk25
-            // 
-            this.chk25.AutoSize = true;
-            this.chk25.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk25.Location = new System.Drawing.Point(478, 67);
-            this.chk25.Name = "chk25";
-            this.chk25.Size = new System.Drawing.Size(38, 17);
-            this.chk25.TabIndex = 15;
-            this.chk25.Text = "25";
-            this.chk25.UseVisualStyleBackColor = true;
-            this.chk25.CheckStateChanged += new System.EventHandler(this.chk25_CheckStateChanged);
-            // 
-            // chk24
-            // 
-            this.chk24.AutoSize = true;
-            this.chk24.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk24.Location = new System.Drawing.Point(438, 67);
-            this.chk24.Name = "chk24";
-            this.chk24.Size = new System.Drawing.Size(38, 17);
-            this.chk24.TabIndex = 14;
-            this.chk24.Text = "24";
-            this.chk24.UseVisualStyleBackColor = true;
-            this.chk24.CheckStateChanged += new System.EventHandler(this.chk24_CheckStateChanged);
-            // 
-            // chk23
-            // 
-            this.chk23.AutoSize = true;
-            this.chk23.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk23.Location = new System.Drawing.Point(404, 67);
-            this.chk23.Name = "chk23";
-            this.chk23.Size = new System.Drawing.Size(38, 17);
-            this.chk23.TabIndex = 13;
-            this.chk23.Text = "23";
-            this.chk23.UseVisualStyleBackColor = true;
-            this.chk23.CheckStateChanged += new System.EventHandler(this.chk23_CheckStateChanged);
-            // 
-            // chk22
-            // 
-            this.chk22.AutoSize = true;
-            this.chk22.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk22.Location = new System.Drawing.Point(369, 67);
-            this.chk22.Name = "chk22";
-            this.chk22.Size = new System.Drawing.Size(38, 17);
-            this.chk22.TabIndex = 12;
-            this.chk22.Text = "22";
-            this.chk22.UseVisualStyleBackColor = true;
-            this.chk22.CheckStateChanged += new System.EventHandler(this.chk22_CheckStateChanged);
-            // 
-            // chk11
-            // 
-            this.chk11.AutoSize = true;
-            this.chk11.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk11.Location = new System.Drawing.Point(272, 65);
-            this.chk11.Name = "chk11";
-            this.chk11.Size = new System.Drawing.Size(38, 17);
-            this.chk11.TabIndex = 11;
-            this.chk11.Text = "11";
-            this.chk11.UseVisualStyleBackColor = true;
-            this.chk11.CheckStateChanged += new System.EventHandler(this.chk11_CheckStateChanged);
-            // 
-            // chk12
-            // 
-            this.chk12.AutoSize = true;
-            this.chk12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk12.Location = new System.Drawing.Point(235, 65);
-            this.chk12.Name = "chk12";
-            this.chk12.Size = new System.Drawing.Size(38, 17);
-            this.chk12.TabIndex = 10;
-            this.chk12.Text = "12";
-            this.chk12.UseVisualStyleBackColor = true;
-            this.chk12.CheckStateChanged += new System.EventHandler(this.chk12_CheckStateChanged);
-            // 
-            // chk13
-            // 
-            this.chk13.AutoSize = true;
-            this.chk13.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk13.Location = new System.Drawing.Point(201, 65);
-            this.chk13.Name = "chk13";
-            this.chk13.Size = new System.Drawing.Size(38, 17);
-            this.chk13.TabIndex = 9;
-            this.chk13.Text = "13";
-            this.chk13.UseVisualStyleBackColor = true;
-            this.chk13.CheckStateChanged += new System.EventHandler(this.chk13_CheckStateChanged);
-            // 
-            // chk14
-            // 
-            this.chk14.AutoSize = true;
-            this.chk14.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk14.Location = new System.Drawing.Point(157, 65);
-            this.chk14.Name = "chk14";
-            this.chk14.Size = new System.Drawing.Size(38, 17);
-            this.chk14.TabIndex = 8;
-            this.chk14.Text = "14";
-            this.chk14.UseVisualStyleBackColor = true;
-            this.chk14.CheckStateChanged += new System.EventHandler(this.chk14_CheckStateChanged);
-            // 
-            // chk15
-            // 
-            this.chk15.AutoSize = true;
-            this.chk15.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk15.Location = new System.Drawing.Point(117, 65);
-            this.chk15.Name = "chk15";
-            this.chk15.Size = new System.Drawing.Size(38, 17);
-            this.chk15.TabIndex = 7;
-            this.chk15.Text = "15";
-            this.chk15.UseVisualStyleBackColor = true;
-            this.chk15.CheckStateChanged += new System.EventHandler(this.chk15_CheckStateChanged);
-            // 
-            // chk16
-            // 
-            this.chk16.AutoSize = true;
-            this.chk16.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk16.Location = new System.Drawing.Point(83, 65);
-            this.chk16.Name = "chk16";
-            this.chk16.Size = new System.Drawing.Size(38, 17);
-            this.chk16.TabIndex = 6;
-            this.chk16.Text = "16";
-            this.chk16.UseVisualStyleBackColor = true;
-            this.chk16.CheckStateChanged += new System.EventHandler(this.chk16_CheckStateChanged);
-            // 
-            // chk17
-            // 
-            this.chk17.AutoSize = true;
-            this.chk17.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk17.Location = new System.Drawing.Point(48, 65);
-            this.chk17.Name = "chk17";
-            this.chk17.Size = new System.Drawing.Size(38, 17);
-            this.chk17.TabIndex = 5;
-            this.chk17.Text = "17";
-            this.chk17.UseVisualStyleBackColor = true;
-            this.chk17.CheckStateChanged += new System.EventHandler(this.chk17_CheckStateChanged);
-            // 
-            // CHk_FullMouth
-            // 
-            this.CHk_FullMouth.AutoSize = true;
-            this.CHk_FullMouth.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.CHk_FullMouth.Location = new System.Drawing.Point(99, 3);
-            this.CHk_FullMouth.Name = "CHk_FullMouth";
-            this.CHk_FullMouth.Size = new System.Drawing.Size(75, 17);
-            this.CHk_FullMouth.TabIndex = 4;
-            this.CHk_FullMouth.Text = "Full Mouth";
-            this.CHk_FullMouth.UseVisualStyleBackColor = true;
-            this.CHk_FullMouth.CheckedChanged += new System.EventHandler(this.CHk_FullMouth_CheckedChanged);
-            // 
-            // Chk_MultiplyCost
-            // 
-            this.Chk_MultiplyCost.AutoSize = true;
-            this.Chk_MultiplyCost.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Chk_MultiplyCost.Location = new System.Drawing.Point(3, 3);
-            this.Chk_MultiplyCost.Name = "Chk_MultiplyCost";
-            this.Chk_MultiplyCost.Size = new System.Drawing.Size(85, 17);
-            this.Chk_MultiplyCost.TabIndex = 3;
-            this.Chk_MultiplyCost.Text = "Multiply Cost";
-            this.Chk_MultiplyCost.UseVisualStyleBackColor = true;
-            this.Chk_MultiplyCost.CheckedChanged += new System.EventHandler(this.Chk_MultiplyCost_CheckedChanged);
-            // 
-            // btn_Done
-            // 
-            this.btn_Done.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Done.BackColor = System.Drawing.Color.LimeGreen;
-            this.btn_Done.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Done.ForeColor = System.Drawing.Color.White;
-            this.btn_Done.Location = new System.Drawing.Point(574, 3);
-            this.btn_Done.Name = "btn_Done";
-            this.btn_Done.Size = new System.Drawing.Size(60, 24);
-            this.btn_Done.TabIndex = 2;
-            this.btn_Done.Text = "Done";
-            this.btn_Done.UseVisualStyleBackColor = false;
-            this.btn_Done.Click += new System.EventHandler(this.btn_Done_Click);
             // 
             // panel3
             // 
@@ -2260,6 +1282,984 @@
             this.C_id.ReadOnly = true;
             this.C_id.Visible = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.BackgroundImage = global::PappyjoeMVC.Properties.Resources.AdultTooth;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.chk_fulmac);
+            this.panel1.Controls.Add(this.BtnCancel);
+            this.panel1.Controls.Add(this.lab_ShowChildteeth);
+            this.panel1.Controls.Add(this.chk41);
+            this.panel1.Controls.Add(this.chk18);
+            this.panel1.Controls.Add(this.chk31);
+            this.panel1.Controls.Add(this.chk21);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.chk38);
+            this.panel1.Controls.Add(this.chk37);
+            this.panel1.Controls.Add(this.chk36);
+            this.panel1.Controls.Add(this.chk35);
+            this.panel1.Controls.Add(this.chk34);
+            this.panel1.Controls.Add(this.chk33);
+            this.panel1.Controls.Add(this.chk32);
+            this.panel1.Controls.Add(this.chk42);
+            this.panel1.Controls.Add(this.chk43);
+            this.panel1.Controls.Add(this.chk44);
+            this.panel1.Controls.Add(this.chk45);
+            this.panel1.Controls.Add(this.chk46);
+            this.panel1.Controls.Add(this.chk47);
+            this.panel1.Controls.Add(this.chk48);
+            this.panel1.Controls.Add(this.chk28);
+            this.panel1.Controls.Add(this.chk27);
+            this.panel1.Controls.Add(this.chk26);
+            this.panel1.Controls.Add(this.chk25);
+            this.panel1.Controls.Add(this.chk24);
+            this.panel1.Controls.Add(this.chk23);
+            this.panel1.Controls.Add(this.chk22);
+            this.panel1.Controls.Add(this.chk11);
+            this.panel1.Controls.Add(this.chk12);
+            this.panel1.Controls.Add(this.chk13);
+            this.panel1.Controls.Add(this.chk14);
+            this.panel1.Controls.Add(this.chk15);
+            this.panel1.Controls.Add(this.chk16);
+            this.panel1.Controls.Add(this.chk17);
+            this.panel1.Controls.Add(this.CHk_FullMouth);
+            this.panel1.Controls.Add(this.Chk_MultiplyCost);
+            this.panel1.Controls.Add(this.btn_Done);
+            this.panel1.Location = new System.Drawing.Point(282, 277);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(644, 293);
+            this.panel1.TabIndex = 262;
+            this.panel1.Visible = false;
+            // 
+            // chk_fulmac
+            // 
+            this.chk_fulmac.AutoSize = true;
+            this.chk_fulmac.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk_fulmac.Location = new System.Drawing.Point(59, 166);
+            this.chk_fulmac.Name = "chk_fulmac";
+            this.chk_fulmac.Size = new System.Drawing.Size(75, 17);
+            this.chk_fulmac.TabIndex = 59;
+            this.chk_fulmac.Text = "Full Mouth";
+            this.chk_fulmac.UseVisualStyleBackColor = true;
+            this.chk_fulmac.CheckedChanged += new System.EventHandler(this.chk_fulmac_CheckedChanged);
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCancel.BackColor = System.Drawing.Color.Tomato;
+            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancel.ForeColor = System.Drawing.Color.White;
+            this.BtnCancel.Location = new System.Drawing.Point(512, 3);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(61, 24);
+            this.BtnCancel.TabIndex = 254;
+            this.BtnCancel.Text = "Cancel";
+            this.BtnCancel.UseVisualStyleBackColor = false;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
+            // lab_ShowChildteeth
+            // 
+            this.lab_ShowChildteeth.AutoSize = true;
+            this.lab_ShowChildteeth.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lab_ShowChildteeth.ForeColor = System.Drawing.Color.Blue;
+            this.lab_ShowChildteeth.Location = new System.Drawing.Point(283, 137);
+            this.lab_ShowChildteeth.Name = "lab_ShowChildteeth";
+            this.lab_ShowChildteeth.Size = new System.Drawing.Size(88, 13);
+            this.lab_ShowChildteeth.TabIndex = 44;
+            this.lab_ShowChildteeth.Text = "Show ChildTeeth";
+            this.lab_ShowChildteeth.Click += new System.EventHandler(this.lab_ShowChildteeth_Click);
+            // 
+            // chk41
+            // 
+            this.chk41.AutoSize = true;
+            this.chk41.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk41.Location = new System.Drawing.Point(273, 120);
+            this.chk41.Name = "chk41";
+            this.chk41.Size = new System.Drawing.Size(38, 17);
+            this.chk41.TabIndex = 38;
+            this.chk41.Text = "41";
+            this.chk41.UseVisualStyleBackColor = true;
+            this.chk41.CheckStateChanged += new System.EventHandler(this.chk41_CheckStateChanged);
+            // 
+            // chk18
+            // 
+            this.chk18.AutoSize = true;
+            this.chk18.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk18.Location = new System.Drawing.Point(6, 65);
+            this.chk18.Name = "chk18";
+            this.chk18.Size = new System.Drawing.Size(38, 17);
+            this.chk18.TabIndex = 37;
+            this.chk18.Text = "18";
+            this.chk18.UseVisualStyleBackColor = true;
+            this.chk18.CheckStateChanged += new System.EventHandler(this.chk18_CheckStateChanged);
+            // 
+            // chk31
+            // 
+            this.chk31.AutoSize = true;
+            this.chk31.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk31.Location = new System.Drawing.Point(330, 123);
+            this.chk31.Name = "chk31";
+            this.chk31.Size = new System.Drawing.Size(38, 17);
+            this.chk31.TabIndex = 36;
+            this.chk31.Text = "31";
+            this.chk31.UseVisualStyleBackColor = true;
+            this.chk31.CheckStateChanged += new System.EventHandler(this.chk31_CheckStateChanged);
+            // 
+            // chk21
+            // 
+            this.chk21.AutoSize = true;
+            this.chk21.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk21.Location = new System.Drawing.Point(330, 67);
+            this.chk21.Name = "chk21";
+            this.chk21.Size = new System.Drawing.Size(38, 17);
+            this.chk21.TabIndex = 35;
+            this.chk21.Text = "21";
+            this.chk21.UseVisualStyleBackColor = true;
+            this.chk21.CheckStateChanged += new System.EventHandler(this.chk21_CheckStateChanged);
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = global::PappyjoeMVC.Properties.Resources.pedo;
+            this.panel4.Controls.Add(this.chk75);
+            this.panel4.Controls.Add(this.chk74);
+            this.panel4.Controls.Add(this.chk73);
+            this.panel4.Controls.Add(this.chk72);
+            this.panel4.Controls.Add(this.chk71);
+            this.panel4.Controls.Add(this.chk81);
+            this.panel4.Controls.Add(this.chk82);
+            this.panel4.Controls.Add(this.chk83);
+            this.panel4.Controls.Add(this.chk84);
+            this.panel4.Controls.Add(this.chk85);
+            this.panel4.Controls.Add(this.chk65);
+            this.panel4.Controls.Add(this.chk64);
+            this.panel4.Controls.Add(this.chk63);
+            this.panel4.Controls.Add(this.chk62);
+            this.panel4.Controls.Add(this.chk61);
+            this.panel4.Controls.Add(this.chk51);
+            this.panel4.Controls.Add(this.chk52);
+            this.panel4.Controls.Add(this.chk53);
+            this.panel4.Controls.Add(this.chk54);
+            this.panel4.Controls.Add(this.chk55);
+            this.panel4.Location = new System.Drawing.Point(140, 154);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(409, 133);
+            this.panel4.TabIndex = 33;
+            this.panel4.Visible = false;
+            // 
+            // chk75
+            // 
+            this.chk75.AutoSize = true;
+            this.chk75.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk75.Location = new System.Drawing.Point(363, 71);
+            this.chk75.Name = "chk75";
+            this.chk75.Size = new System.Drawing.Size(38, 17);
+            this.chk75.TabIndex = 58;
+            this.chk75.Text = "75";
+            this.chk75.UseVisualStyleBackColor = true;
+            this.chk75.CheckStateChanged += new System.EventHandler(this.chk75_CheckStateChanged);
+            // 
+            // chk74
+            // 
+            this.chk74.AutoSize = true;
+            this.chk74.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk74.Location = new System.Drawing.Point(319, 71);
+            this.chk74.Name = "chk74";
+            this.chk74.Size = new System.Drawing.Size(38, 17);
+            this.chk74.TabIndex = 57;
+            this.chk74.Text = "74";
+            this.chk74.UseVisualStyleBackColor = true;
+            this.chk74.CheckStateChanged += new System.EventHandler(this.chk74_CheckStateChanged);
+            // 
+            // chk73
+            // 
+            this.chk73.AutoSize = true;
+            this.chk73.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk73.Location = new System.Drawing.Point(283, 71);
+            this.chk73.Name = "chk73";
+            this.chk73.Size = new System.Drawing.Size(38, 17);
+            this.chk73.TabIndex = 56;
+            this.chk73.Text = "73";
+            this.chk73.UseVisualStyleBackColor = true;
+            this.chk73.CheckStateChanged += new System.EventHandler(this.chk73_CheckStateChanged);
+            // 
+            // chk72
+            // 
+            this.chk72.AutoSize = true;
+            this.chk72.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk72.Location = new System.Drawing.Point(244, 71);
+            this.chk72.Name = "chk72";
+            this.chk72.Size = new System.Drawing.Size(38, 17);
+            this.chk72.TabIndex = 55;
+            this.chk72.Text = "72";
+            this.chk72.UseVisualStyleBackColor = true;
+            this.chk72.CheckStateChanged += new System.EventHandler(this.chk72_CheckStateChanged);
+            // 
+            // chk71
+            // 
+            this.chk71.AutoSize = true;
+            this.chk71.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk71.Location = new System.Drawing.Point(213, 71);
+            this.chk71.Name = "chk71";
+            this.chk71.Size = new System.Drawing.Size(38, 17);
+            this.chk71.TabIndex = 54;
+            this.chk71.Text = "71";
+            this.chk71.UseVisualStyleBackColor = true;
+            this.chk71.CheckStateChanged += new System.EventHandler(this.chk71_CheckStateChanged);
+            // 
+            // chk81
+            // 
+            this.chk81.AutoSize = true;
+            this.chk81.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk81.Location = new System.Drawing.Point(175, 71);
+            this.chk81.Name = "chk81";
+            this.chk81.Size = new System.Drawing.Size(38, 17);
+            this.chk81.TabIndex = 53;
+            this.chk81.Text = "81";
+            this.chk81.UseVisualStyleBackColor = true;
+            this.chk81.CheckStateChanged += new System.EventHandler(this.chk81_CheckStateChanged);
+            // 
+            // chk82
+            // 
+            this.chk82.AutoSize = true;
+            this.chk82.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk82.Location = new System.Drawing.Point(131, 71);
+            this.chk82.Name = "chk82";
+            this.chk82.Size = new System.Drawing.Size(38, 17);
+            this.chk82.TabIndex = 52;
+            this.chk82.Text = "82";
+            this.chk82.UseVisualStyleBackColor = true;
+            this.chk82.CheckStateChanged += new System.EventHandler(this.chk82_CheckStateChanged);
+            // 
+            // chk83
+            // 
+            this.chk83.AutoSize = true;
+            this.chk83.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk83.Location = new System.Drawing.Point(98, 71);
+            this.chk83.Name = "chk83";
+            this.chk83.Size = new System.Drawing.Size(38, 17);
+            this.chk83.TabIndex = 51;
+            this.chk83.Text = "83";
+            this.chk83.UseVisualStyleBackColor = true;
+            this.chk83.CheckStateChanged += new System.EventHandler(this.chk83_CheckStateChanged);
+            // 
+            // chk84
+            // 
+            this.chk84.AutoSize = true;
+            this.chk84.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk84.Location = new System.Drawing.Point(54, 71);
+            this.chk84.Name = "chk84";
+            this.chk84.Size = new System.Drawing.Size(38, 17);
+            this.chk84.TabIndex = 50;
+            this.chk84.Text = "84";
+            this.chk84.UseVisualStyleBackColor = true;
+            this.chk84.CheckStateChanged += new System.EventHandler(this.chk84_CheckStateChanged);
+            // 
+            // chk85
+            // 
+            this.chk85.AutoSize = true;
+            this.chk85.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk85.Location = new System.Drawing.Point(13, 71);
+            this.chk85.Name = "chk85";
+            this.chk85.Size = new System.Drawing.Size(38, 17);
+            this.chk85.TabIndex = 49;
+            this.chk85.Text = "85";
+            this.chk85.UseVisualStyleBackColor = true;
+            this.chk85.CheckStateChanged += new System.EventHandler(this.chk85_CheckStateChanged);
+            // 
+            // chk65
+            // 
+            this.chk65.AutoSize = true;
+            this.chk65.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk65.Location = new System.Drawing.Point(363, 57);
+            this.chk65.Name = "chk65";
+            this.chk65.Size = new System.Drawing.Size(38, 17);
+            this.chk65.TabIndex = 44;
+            this.chk65.Text = "65";
+            this.chk65.UseVisualStyleBackColor = true;
+            this.chk65.CheckStateChanged += new System.EventHandler(this.chk65_CheckStateChanged);
+            // 
+            // chk64
+            // 
+            this.chk64.AutoSize = true;
+            this.chk64.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk64.Location = new System.Drawing.Point(319, 57);
+            this.chk64.Name = "chk64";
+            this.chk64.Size = new System.Drawing.Size(38, 17);
+            this.chk64.TabIndex = 43;
+            this.chk64.Text = "64";
+            this.chk64.UseVisualStyleBackColor = true;
+            this.chk64.CheckStateChanged += new System.EventHandler(this.chk64_CheckStateChanged);
+            // 
+            // chk63
+            // 
+            this.chk63.AutoSize = true;
+            this.chk63.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk63.Location = new System.Drawing.Point(283, 57);
+            this.chk63.Name = "chk63";
+            this.chk63.Size = new System.Drawing.Size(38, 17);
+            this.chk63.TabIndex = 42;
+            this.chk63.Text = "63";
+            this.chk63.UseVisualStyleBackColor = true;
+            this.chk63.CheckStateChanged += new System.EventHandler(this.chk63_CheckStateChanged);
+            // 
+            // chk62
+            // 
+            this.chk62.AutoSize = true;
+            this.chk62.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk62.Location = new System.Drawing.Point(244, 57);
+            this.chk62.Name = "chk62";
+            this.chk62.Size = new System.Drawing.Size(38, 17);
+            this.chk62.TabIndex = 41;
+            this.chk62.Text = "62";
+            this.chk62.UseVisualStyleBackColor = true;
+            this.chk62.CheckStateChanged += new System.EventHandler(this.chk62_CheckStateChanged);
+            // 
+            // chk61
+            // 
+            this.chk61.AutoSize = true;
+            this.chk61.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk61.Location = new System.Drawing.Point(213, 57);
+            this.chk61.Name = "chk61";
+            this.chk61.Size = new System.Drawing.Size(38, 17);
+            this.chk61.TabIndex = 40;
+            this.chk61.Text = "61";
+            this.chk61.UseVisualStyleBackColor = true;
+            this.chk61.CheckStateChanged += new System.EventHandler(this.chk61_CheckStateChanged);
+            // 
+            // chk51
+            // 
+            this.chk51.AutoSize = true;
+            this.chk51.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk51.Location = new System.Drawing.Point(175, 57);
+            this.chk51.Name = "chk51";
+            this.chk51.Size = new System.Drawing.Size(38, 17);
+            this.chk51.TabIndex = 39;
+            this.chk51.Text = "51";
+            this.chk51.UseVisualStyleBackColor = true;
+            this.chk51.CheckStateChanged += new System.EventHandler(this.chk51_CheckStateChanged);
+            // 
+            // chk52
+            // 
+            this.chk52.AutoSize = true;
+            this.chk52.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk52.Location = new System.Drawing.Point(131, 57);
+            this.chk52.Name = "chk52";
+            this.chk52.Size = new System.Drawing.Size(38, 17);
+            this.chk52.TabIndex = 38;
+            this.chk52.Text = "52";
+            this.chk52.UseVisualStyleBackColor = true;
+            this.chk52.CheckStateChanged += new System.EventHandler(this.chk52_CheckStateChanged);
+            // 
+            // chk53
+            // 
+            this.chk53.AutoSize = true;
+            this.chk53.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk53.Location = new System.Drawing.Point(97, 57);
+            this.chk53.Name = "chk53";
+            this.chk53.Size = new System.Drawing.Size(38, 17);
+            this.chk53.TabIndex = 37;
+            this.chk53.Text = "53";
+            this.chk53.UseVisualStyleBackColor = true;
+            this.chk53.CheckStateChanged += new System.EventHandler(this.chk53_CheckStateChanged);
+            // 
+            // chk54
+            // 
+            this.chk54.AutoSize = true;
+            this.chk54.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk54.Location = new System.Drawing.Point(53, 57);
+            this.chk54.Name = "chk54";
+            this.chk54.Size = new System.Drawing.Size(38, 17);
+            this.chk54.TabIndex = 36;
+            this.chk54.Text = "54";
+            this.chk54.UseVisualStyleBackColor = true;
+            this.chk54.CheckStateChanged += new System.EventHandler(this.chk54_CheckStateChanged);
+            // 
+            // chk55
+            // 
+            this.chk55.AutoSize = true;
+            this.chk55.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk55.Location = new System.Drawing.Point(13, 57);
+            this.chk55.Name = "chk55";
+            this.chk55.Size = new System.Drawing.Size(38, 17);
+            this.chk55.TabIndex = 35;
+            this.chk55.Text = "55";
+            this.chk55.UseVisualStyleBackColor = true;
+            this.chk55.CheckStateChanged += new System.EventHandler(this.chk55_CheckStateChanged);
+            // 
+            // chk38
+            // 
+            this.chk38.AutoSize = true;
+            this.chk38.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk38.Location = new System.Drawing.Point(600, 123);
+            this.chk38.Name = "chk38";
+            this.chk38.Size = new System.Drawing.Size(38, 17);
+            this.chk38.TabIndex = 32;
+            this.chk38.Text = "38";
+            this.chk38.UseVisualStyleBackColor = true;
+            this.chk38.CheckStateChanged += new System.EventHandler(this.chk38_CheckStateChanged);
+            // 
+            // chk37
+            // 
+            this.chk37.AutoSize = true;
+            this.chk37.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk37.Location = new System.Drawing.Point(558, 123);
+            this.chk37.Name = "chk37";
+            this.chk37.Size = new System.Drawing.Size(38, 17);
+            this.chk37.TabIndex = 31;
+            this.chk37.Text = "37";
+            this.chk37.UseVisualStyleBackColor = true;
+            this.chk37.CheckStateChanged += new System.EventHandler(this.chk37_CheckStateChanged);
+            // 
+            // chk36
+            // 
+            this.chk36.AutoSize = true;
+            this.chk36.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk36.Location = new System.Drawing.Point(524, 123);
+            this.chk36.Name = "chk36";
+            this.chk36.Size = new System.Drawing.Size(38, 17);
+            this.chk36.TabIndex = 30;
+            this.chk36.Text = "36";
+            this.chk36.UseVisualStyleBackColor = true;
+            this.chk36.CheckStateChanged += new System.EventHandler(this.chk36_CheckStateChanged);
+            // 
+            // chk35
+            // 
+            this.chk35.AutoSize = true;
+            this.chk35.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk35.Location = new System.Drawing.Point(480, 123);
+            this.chk35.Name = "chk35";
+            this.chk35.Size = new System.Drawing.Size(38, 17);
+            this.chk35.TabIndex = 29;
+            this.chk35.Text = "35";
+            this.chk35.UseVisualStyleBackColor = true;
+            this.chk35.CheckStateChanged += new System.EventHandler(this.chk35_CheckStateChanged);
+            // 
+            // chk34
+            // 
+            this.chk34.AutoSize = true;
+            this.chk34.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk34.Location = new System.Drawing.Point(440, 123);
+            this.chk34.Name = "chk34";
+            this.chk34.Size = new System.Drawing.Size(38, 17);
+            this.chk34.TabIndex = 28;
+            this.chk34.Text = "34";
+            this.chk34.UseVisualStyleBackColor = true;
+            this.chk34.CheckStateChanged += new System.EventHandler(this.chk34_CheckStateChanged);
+            // 
+            // chk33
+            // 
+            this.chk33.AutoSize = true;
+            this.chk33.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk33.Location = new System.Drawing.Point(404, 123);
+            this.chk33.Name = "chk33";
+            this.chk33.Size = new System.Drawing.Size(38, 17);
+            this.chk33.TabIndex = 27;
+            this.chk33.Text = "33";
+            this.chk33.UseVisualStyleBackColor = true;
+            this.chk33.CheckStateChanged += new System.EventHandler(this.chk33_CheckStateChanged);
+            // 
+            // chk32
+            // 
+            this.chk32.AutoSize = true;
+            this.chk32.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk32.Location = new System.Drawing.Point(369, 123);
+            this.chk32.Name = "chk32";
+            this.chk32.Size = new System.Drawing.Size(38, 17);
+            this.chk32.TabIndex = 26;
+            this.chk32.Text = "32";
+            this.chk32.UseVisualStyleBackColor = true;
+            this.chk32.CheckStateChanged += new System.EventHandler(this.chk32_CheckStateChanged);
+            // 
+            // chk42
+            // 
+            this.chk42.AutoSize = true;
+            this.chk42.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk42.Location = new System.Drawing.Point(236, 120);
+            this.chk42.Name = "chk42";
+            this.chk42.Size = new System.Drawing.Size(38, 17);
+            this.chk42.TabIndex = 25;
+            this.chk42.Text = "42";
+            this.chk42.UseVisualStyleBackColor = true;
+            this.chk42.CheckStateChanged += new System.EventHandler(this.chk42_CheckStateChanged);
+            // 
+            // chk43
+            // 
+            this.chk43.AutoSize = true;
+            this.chk43.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk43.Location = new System.Drawing.Point(201, 120);
+            this.chk43.Name = "chk43";
+            this.chk43.Size = new System.Drawing.Size(38, 17);
+            this.chk43.TabIndex = 43;
+            this.chk43.Text = "43";
+            this.chk43.UseVisualStyleBackColor = true;
+            this.chk43.CheckStateChanged += new System.EventHandler(this.chk43_CheckStateChanged);
+            // 
+            // chk44
+            // 
+            this.chk44.AutoSize = true;
+            this.chk44.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk44.Location = new System.Drawing.Point(161, 120);
+            this.chk44.Name = "chk44";
+            this.chk44.Size = new System.Drawing.Size(38, 17);
+            this.chk44.TabIndex = 23;
+            this.chk44.Text = "44";
+            this.chk44.UseVisualStyleBackColor = true;
+            this.chk44.CheckStateChanged += new System.EventHandler(this.chk44_CheckStateChanged);
+            // 
+            // chk45
+            // 
+            this.chk45.AutoSize = true;
+            this.chk45.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk45.Location = new System.Drawing.Point(119, 120);
+            this.chk45.Name = "chk45";
+            this.chk45.Size = new System.Drawing.Size(38, 17);
+            this.chk45.TabIndex = 22;
+            this.chk45.Text = "45";
+            this.chk45.UseVisualStyleBackColor = true;
+            this.chk45.CheckStateChanged += new System.EventHandler(this.chk45_CheckStateChanged);
+            // 
+            // chk46
+            // 
+            this.chk46.AutoSize = true;
+            this.chk46.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk46.Location = new System.Drawing.Point(84, 120);
+            this.chk46.Name = "chk46";
+            this.chk46.Size = new System.Drawing.Size(38, 17);
+            this.chk46.TabIndex = 21;
+            this.chk46.Text = "46";
+            this.chk46.UseVisualStyleBackColor = true;
+            this.chk46.CheckStateChanged += new System.EventHandler(this.chk46_CheckStateChanged);
+            // 
+            // chk47
+            // 
+            this.chk47.AutoSize = true;
+            this.chk47.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk47.Location = new System.Drawing.Point(48, 120);
+            this.chk47.Name = "chk47";
+            this.chk47.Size = new System.Drawing.Size(38, 17);
+            this.chk47.TabIndex = 20;
+            this.chk47.Text = "47";
+            this.chk47.UseVisualStyleBackColor = true;
+            this.chk47.CheckStateChanged += new System.EventHandler(this.chk47_CheckStateChanged);
+            // 
+            // chk48
+            // 
+            this.chk48.AutoSize = true;
+            this.chk48.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk48.Location = new System.Drawing.Point(8, 120);
+            this.chk48.Name = "chk48";
+            this.chk48.Size = new System.Drawing.Size(38, 17);
+            this.chk48.TabIndex = 19;
+            this.chk48.Text = "48";
+            this.chk48.UseVisualStyleBackColor = true;
+            this.chk48.CheckStateChanged += new System.EventHandler(this.chk48_CheckStateChanged);
+            // 
+            // chk28
+            // 
+            this.chk28.AutoSize = true;
+            this.chk28.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk28.Location = new System.Drawing.Point(600, 67);
+            this.chk28.Name = "chk28";
+            this.chk28.Size = new System.Drawing.Size(38, 17);
+            this.chk28.TabIndex = 18;
+            this.chk28.Text = "28";
+            this.chk28.UseVisualStyleBackColor = true;
+            this.chk28.CheckStateChanged += new System.EventHandler(this.chk28_CheckStateChanged);
+            // 
+            // chk27
+            // 
+            this.chk27.AutoSize = true;
+            this.chk27.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk27.Location = new System.Drawing.Point(558, 67);
+            this.chk27.Name = "chk27";
+            this.chk27.Size = new System.Drawing.Size(38, 17);
+            this.chk27.TabIndex = 17;
+            this.chk27.Text = "27";
+            this.chk27.UseVisualStyleBackColor = true;
+            this.chk27.CheckStateChanged += new System.EventHandler(this.chk27_CheckStateChanged);
+            // 
+            // chk26
+            // 
+            this.chk26.AutoSize = true;
+            this.chk26.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk26.Location = new System.Drawing.Point(522, 67);
+            this.chk26.Name = "chk26";
+            this.chk26.Size = new System.Drawing.Size(38, 17);
+            this.chk26.TabIndex = 16;
+            this.chk26.Text = "26";
+            this.chk26.UseVisualStyleBackColor = true;
+            this.chk26.CheckStateChanged += new System.EventHandler(this.chk26_CheckStateChanged);
+            // 
+            // chk25
+            // 
+            this.chk25.AutoSize = true;
+            this.chk25.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk25.Location = new System.Drawing.Point(478, 67);
+            this.chk25.Name = "chk25";
+            this.chk25.Size = new System.Drawing.Size(38, 17);
+            this.chk25.TabIndex = 15;
+            this.chk25.Text = "25";
+            this.chk25.UseVisualStyleBackColor = true;
+            this.chk25.CheckStateChanged += new System.EventHandler(this.chk25_CheckStateChanged);
+            // 
+            // chk24
+            // 
+            this.chk24.AutoSize = true;
+            this.chk24.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk24.Location = new System.Drawing.Point(438, 67);
+            this.chk24.Name = "chk24";
+            this.chk24.Size = new System.Drawing.Size(38, 17);
+            this.chk24.TabIndex = 14;
+            this.chk24.Text = "24";
+            this.chk24.UseVisualStyleBackColor = true;
+            this.chk24.CheckStateChanged += new System.EventHandler(this.chk24_CheckStateChanged);
+            // 
+            // chk23
+            // 
+            this.chk23.AutoSize = true;
+            this.chk23.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk23.Location = new System.Drawing.Point(404, 67);
+            this.chk23.Name = "chk23";
+            this.chk23.Size = new System.Drawing.Size(38, 17);
+            this.chk23.TabIndex = 13;
+            this.chk23.Text = "23";
+            this.chk23.UseVisualStyleBackColor = true;
+            this.chk23.CheckStateChanged += new System.EventHandler(this.chk23_CheckStateChanged);
+            // 
+            // chk22
+            // 
+            this.chk22.AutoSize = true;
+            this.chk22.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk22.Location = new System.Drawing.Point(369, 67);
+            this.chk22.Name = "chk22";
+            this.chk22.Size = new System.Drawing.Size(38, 17);
+            this.chk22.TabIndex = 12;
+            this.chk22.Text = "22";
+            this.chk22.UseVisualStyleBackColor = true;
+            this.chk22.CheckStateChanged += new System.EventHandler(this.chk22_CheckStateChanged);
+            // 
+            // chk11
+            // 
+            this.chk11.AutoSize = true;
+            this.chk11.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk11.Location = new System.Drawing.Point(272, 65);
+            this.chk11.Name = "chk11";
+            this.chk11.Size = new System.Drawing.Size(38, 17);
+            this.chk11.TabIndex = 11;
+            this.chk11.Text = "11";
+            this.chk11.UseVisualStyleBackColor = true;
+            this.chk11.CheckStateChanged += new System.EventHandler(this.chk11_CheckStateChanged);
+            // 
+            // chk12
+            // 
+            this.chk12.AutoSize = true;
+            this.chk12.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk12.Location = new System.Drawing.Point(235, 65);
+            this.chk12.Name = "chk12";
+            this.chk12.Size = new System.Drawing.Size(38, 17);
+            this.chk12.TabIndex = 10;
+            this.chk12.Text = "12";
+            this.chk12.UseVisualStyleBackColor = true;
+            this.chk12.CheckStateChanged += new System.EventHandler(this.chk12_CheckStateChanged);
+            // 
+            // chk13
+            // 
+            this.chk13.AutoSize = true;
+            this.chk13.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk13.Location = new System.Drawing.Point(201, 65);
+            this.chk13.Name = "chk13";
+            this.chk13.Size = new System.Drawing.Size(38, 17);
+            this.chk13.TabIndex = 9;
+            this.chk13.Text = "13";
+            this.chk13.UseVisualStyleBackColor = true;
+            this.chk13.CheckStateChanged += new System.EventHandler(this.chk13_CheckStateChanged);
+            // 
+            // chk14
+            // 
+            this.chk14.AutoSize = true;
+            this.chk14.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk14.Location = new System.Drawing.Point(157, 65);
+            this.chk14.Name = "chk14";
+            this.chk14.Size = new System.Drawing.Size(38, 17);
+            this.chk14.TabIndex = 8;
+            this.chk14.Text = "14";
+            this.chk14.UseVisualStyleBackColor = true;
+            this.chk14.CheckStateChanged += new System.EventHandler(this.chk14_CheckStateChanged);
+            // 
+            // chk15
+            // 
+            this.chk15.AutoSize = true;
+            this.chk15.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk15.Location = new System.Drawing.Point(117, 65);
+            this.chk15.Name = "chk15";
+            this.chk15.Size = new System.Drawing.Size(38, 17);
+            this.chk15.TabIndex = 7;
+            this.chk15.Text = "15";
+            this.chk15.UseVisualStyleBackColor = true;
+            this.chk15.CheckStateChanged += new System.EventHandler(this.chk15_CheckStateChanged);
+            // 
+            // chk16
+            // 
+            this.chk16.AutoSize = true;
+            this.chk16.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk16.Location = new System.Drawing.Point(83, 65);
+            this.chk16.Name = "chk16";
+            this.chk16.Size = new System.Drawing.Size(38, 17);
+            this.chk16.TabIndex = 6;
+            this.chk16.Text = "16";
+            this.chk16.UseVisualStyleBackColor = true;
+            this.chk16.CheckStateChanged += new System.EventHandler(this.chk16_CheckStateChanged);
+            // 
+            // chk17
+            // 
+            this.chk17.AutoSize = true;
+            this.chk17.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk17.Location = new System.Drawing.Point(48, 65);
+            this.chk17.Name = "chk17";
+            this.chk17.Size = new System.Drawing.Size(38, 17);
+            this.chk17.TabIndex = 5;
+            this.chk17.Text = "17";
+            this.chk17.UseVisualStyleBackColor = true;
+            this.chk17.CheckStateChanged += new System.EventHandler(this.chk17_CheckStateChanged);
+            // 
+            // CHk_FullMouth
+            // 
+            this.CHk_FullMouth.AutoSize = true;
+            this.CHk_FullMouth.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.CHk_FullMouth.Location = new System.Drawing.Point(99, 3);
+            this.CHk_FullMouth.Name = "CHk_FullMouth";
+            this.CHk_FullMouth.Size = new System.Drawing.Size(75, 17);
+            this.CHk_FullMouth.TabIndex = 4;
+            this.CHk_FullMouth.Text = "Full Mouth";
+            this.CHk_FullMouth.UseVisualStyleBackColor = true;
+            this.CHk_FullMouth.CheckedChanged += new System.EventHandler(this.CHk_FullMouth_CheckedChanged);
+            // 
+            // Chk_MultiplyCost
+            // 
+            this.Chk_MultiplyCost.AutoSize = true;
+            this.Chk_MultiplyCost.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Chk_MultiplyCost.Location = new System.Drawing.Point(3, 3);
+            this.Chk_MultiplyCost.Name = "Chk_MultiplyCost";
+            this.Chk_MultiplyCost.Size = new System.Drawing.Size(85, 17);
+            this.Chk_MultiplyCost.TabIndex = 3;
+            this.Chk_MultiplyCost.Text = "Multiply Cost";
+            this.Chk_MultiplyCost.UseVisualStyleBackColor = true;
+            this.Chk_MultiplyCost.CheckedChanged += new System.EventHandler(this.Chk_MultiplyCost_CheckedChanged);
+            // 
+            // btn_Done
+            // 
+            this.btn_Done.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Done.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_Done.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Done.ForeColor = System.Drawing.Color.White;
+            this.btn_Done.Location = new System.Drawing.Point(574, 3);
+            this.btn_Done.Name = "btn_Done";
+            this.btn_Done.Size = new System.Drawing.Size(60, 24);
+            this.btn_Done.TabIndex = 2;
+            this.btn_Done.Text = "Done";
+            this.btn_Done.UseVisualStyleBackColor = false;
+            this.btn_Done.Click += new System.EventHandler(this.btn_Done_Click);
+            // 
+            // PB_Img
+            // 
+            this.PB_Img.Image = ((System.Drawing.Image)(resources.GetObject("PB_Img.Image")));
+            this.PB_Img.Location = new System.Drawing.Point(8, 3);
+            this.PB_Img.Name = "PB_Img";
+            this.PB_Img.Size = new System.Drawing.Size(44, 42);
+            this.PB_Img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB_Img.TabIndex = 72;
+            this.PB_Img.TabStop = false;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton1.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(103, 37);
+            this.toolStripButton1.Text = "Pappyjoe Clinic";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton2.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
+            this.toolStripButton2.Text = "Calendar";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripBAttachment
+            // 
+            this.toolStripBAttachment.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripBAttachment.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripBAttachment.ForeColor = System.Drawing.Color.White;
+            this.toolStripBAttachment.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBAttachment.Image")));
+            this.toolStripBAttachment.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBAttachment.Name = "toolStripBAttachment";
+            this.toolStripBAttachment.Size = new System.Drawing.Size(72, 37);
+            this.toolStripBAttachment.Text = "Fast Track";
+            this.toolStripBAttachment.Visible = false;
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton3.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(60, 37);
+            this.toolStripButton3.Text = "Records";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton4.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(114, 37);
+            this.toolStripButton4.Text = "Communications";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton5.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(72, 37);
+            this.toolStripButton5.Text = "Inventory";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton6.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(59, 37);
+            this.toolStripButton6.Text = "Reports";
+            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
+            // 
+            // toolStripButton11
+            // 
+            this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton11.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
+            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton11.Name = "toolStripButton11";
+            this.toolStripButton11.Size = new System.Drawing.Size(62, 37);
+            this.toolStripButton11.Text = "Consent";
+            this.toolStripButton11.Visible = false;
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton10.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(62, 37);
+            this.toolStripButton10.Text = "Expense";
+            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton7.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(56, 37);
+            this.toolStripButton7.Text = "Profiles";
+            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton12.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
+            this.toolStripButton12.Text = "Lab Tracking";
+            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton8.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem,
+            this.logoutToolStripMenuItem});
+            this.toolStripButton8.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
+            this.toolStripButton8.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(33, 37);
+            this.toolStripButton8.Text = "toolStripButton8";
+            this.toolStripButton8.ToolTipText = "Settings";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1429953040_Log_Out;
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Image = global::PappyjoeMVC.Properties.Resources._1435669279_question_balloon_basic_blue;
+            this.toolStripButton9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(29, 37);
+            this.toolStripButton9.Text = "toolStripButton9";
+            this.toolStripButton9.ToolTipText = "Pappyjoe Version 16.2";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.Image = global::PappyjoeMVC.Properties.Resources.appbar_user_add__2_1;
+            this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(32, 37);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.ToolTipText = "Add new Patient";
+            this.toolStripDropDownButton1.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
+            // 
             // Add__invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2289,13 +2289,8 @@
             this.toolStrip1.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_Img)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -2304,6 +2299,11 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Procedure)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Img)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
