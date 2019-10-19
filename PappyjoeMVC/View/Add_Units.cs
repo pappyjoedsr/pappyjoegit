@@ -102,7 +102,8 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            this.cntrl.Load_Data();
+            DataTable dtb = this.cntrl.Load_Data();
+            LoadData(dtb);
         }
 
         private void dgv_Units_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -126,7 +127,8 @@ namespace PappyjoeMVC.View
                         i = this.cntrl.delete(unit_id);
                         if (i > 0)
                         {
-                            this.cntrl.Load_Data();
+                            DataTable dtb = this.cntrl.Load_Data();
+                            LoadData(dtb);
                         }
                     }
                     else

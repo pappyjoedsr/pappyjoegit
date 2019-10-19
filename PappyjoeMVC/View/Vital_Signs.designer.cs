@@ -824,7 +824,7 @@
             this.lab_patientId.AutoSize = true;
             this.lab_patientId.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_patientId.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lab_patientId.Location = new System.Drawing.Point(66, 25);
+            this.lab_patientId.Location = new System.Drawing.Point(48, 24);
             this.lab_patientId.Name = "lab_patientId";
             this.lab_patientId.Size = new System.Drawing.Size(63, 13);
             this.lab_patientId.TabIndex = 68;

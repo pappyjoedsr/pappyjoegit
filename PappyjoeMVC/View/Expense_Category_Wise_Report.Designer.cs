@@ -331,7 +331,7 @@
             this.Lab_Total.AutoSize = true;
             this.Lab_Total.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Total.ForeColor = System.Drawing.Color.Red;
-            this.Lab_Total.Location = new System.Drawing.Point(1287, 27);
+            this.Lab_Total.Location = new System.Drawing.Point(1288, 22);
             this.Lab_Total.Name = "Lab_Total";
             this.Lab_Total.Size = new System.Drawing.Size(45, 17);
             this.Lab_Total.TabIndex = 2;

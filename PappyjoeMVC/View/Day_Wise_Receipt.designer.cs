@@ -60,6 +60,7 @@
             this.Lab_Due = new System.Windows.Forms.Label();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.DGV_Receipt = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.ColSLNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColInv = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,7 +75,6 @@
             this.ColTotalIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAmountPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTotalDue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Receipt)).BeginInit();
@@ -487,6 +487,28 @@
             this.DGV_Receipt.Size = new System.Drawing.Size(1367, 467);
             this.DGV_Receipt.TabIndex = 5;
             // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.Lab_Due);
+            this.panel4.Controls.Add(this.Lab_Paid);
+            this.panel4.Controls.Add(this.Lab_tax);
+            this.panel4.Controls.Add(this.Lab_Discount);
+            this.panel4.Controls.Add(this.Lab_Amount);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.Lab_totalExpense);
+            this.panel4.Controls.Add(this.Lab_TotalIncome);
+            this.panel4.Controls.Add(this.Lab_Msg);
+            this.panel4.Controls.Add(this.DGV_Receipt);
+            this.panel4.Location = new System.Drawing.Point(3, 162);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1364, 578);
+            this.panel4.TabIndex = 106;
+            // 
             // ColSLNo
             // 
             this.ColSLNo.HeaderText = "SLNO";
@@ -497,7 +519,7 @@
             // 
             this.ColPtName.HeaderText = "PATIENT ";
             this.ColPtName.Name = "ColPtName";
-            this.ColPtName.Width = 175;
+            this.ColPtName.Width = 158;
             // 
             // ColInv
             // 
@@ -569,28 +591,6 @@
             this.ColTotalDue.HeaderText = "AMOUNT DUE";
             this.ColTotalDue.Name = "ColTotalDue";
             this.ColTotalDue.Width = 88;
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Controls.Add(this.Lab_Due);
-            this.panel4.Controls.Add(this.Lab_Paid);
-            this.panel4.Controls.Add(this.Lab_tax);
-            this.panel4.Controls.Add(this.Lab_Discount);
-            this.panel4.Controls.Add(this.Lab_Amount);
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.Lab_totalExpense);
-            this.panel4.Controls.Add(this.Lab_TotalIncome);
-            this.panel4.Controls.Add(this.Lab_Msg);
-            this.panel4.Controls.Add(this.DGV_Receipt);
-            this.panel4.Location = new System.Drawing.Point(3, 162);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1364, 578);
-            this.panel4.TabIndex = 106;
             // 
             // Day_Wise_Receipt
             // 

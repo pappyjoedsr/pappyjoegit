@@ -64,6 +64,7 @@
             this.Lab_Due = new System.Windows.Forms.Label();
             this.label_empty = new System.Windows.Forms.Label();
             this.DgvReceiptReceivedPerDoctor = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Patient_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoice_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,7 +79,6 @@
             this.income = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount_paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount_due = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReceiptReceivedPerDoctor)).BeginInit();
@@ -469,6 +469,25 @@
             this.DgvReceiptReceivedPerDoctor.Size = new System.Drawing.Size(1367, 454);
             this.DgvReceiptReceivedPerDoctor.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.btn_Close);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btn_search);
+            this.panel1.Controls.Add(this.btn_print);
+            this.panel1.Controls.Add(this.dtp1ReceptReceivedPerDoctor1);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.dtp1ReceptReceivedPerDoctor2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.Btn_Export);
+            this.panel1.Location = new System.Drawing.Point(0, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1370, 102);
+            this.panel1.TabIndex = 257;
+            // 
             // slno
             // 
             this.slno.HeaderText = "SLNO";
@@ -479,7 +498,7 @@
             // 
             this.Patient_name.HeaderText = "PATIENT ";
             this.Patient_name.Name = "Patient_name";
-            this.Patient_name.Width = 175;
+            this.Patient_name.Width = 158;
             // 
             // invoice_no
             // 
@@ -563,25 +582,6 @@
             this.amount_due.HeaderText = "AMOUNT DUE";
             this.amount_due.Name = "amount_due";
             this.amount_due.Width = 90;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.btn_Close);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btn_search);
-            this.panel1.Controls.Add(this.btn_print);
-            this.panel1.Controls.Add(this.dtp1ReceptReceivedPerDoctor1);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.dtp1ReceptReceivedPerDoctor2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.Btn_Export);
-            this.panel1.Location = new System.Drawing.Point(0, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1370, 102);
-            this.panel1.TabIndex = 257;
             // 
             // Doctor_Wise_Receipt
             // 
