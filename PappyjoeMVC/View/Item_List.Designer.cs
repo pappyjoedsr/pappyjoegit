@@ -324,7 +324,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(150, 23);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(150, 40);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // toolStripButton11
@@ -337,6 +337,7 @@
             this.toolStripButton11.Name = "toolStripButton11";
             this.toolStripButton11.Size = new System.Drawing.Size(87, 21);
             this.toolStripButton11.Text = "Lab Tracking";
+            this.toolStripButton11.Visible = false;
             // 
             // panel5
             // 

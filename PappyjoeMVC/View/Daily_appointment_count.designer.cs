@@ -87,7 +87,7 @@
             this.panel4.Controls.Add(this.chartdailyappointcount);
             this.panel4.Location = new System.Drawing.Point(2, 153);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1147, 508);
+            this.panel4.Size = new System.Drawing.Size(1107, 508);
             this.panel4.TabIndex = 102;
             // 
             // Lab_Msg
@@ -109,9 +109,6 @@
             this.dataGridViewDailyappoinment.AllowUserToDeleteRows = false;
             this.dataGridViewDailyappoinment.AllowUserToResizeColumns = false;
             this.dataGridViewDailyappoinment.AllowUserToResizeRows = false;
-            this.dataGridViewDailyappoinment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewDailyappoinment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDailyappoinment.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewDailyappoinment.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -136,6 +133,7 @@
             this.email_id,
             this.book_datetime,
             this.booked_by});
+            this.dataGridViewDailyappoinment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewDailyappoinment.GridColor = System.Drawing.Color.Gainsboro;
             this.dataGridViewDailyappoinment.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewDailyappoinment.Name = "dataGridViewDailyappoinment";
@@ -145,7 +143,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.dataGridViewDailyappoinment.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewDailyappoinment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDailyappoinment.Size = new System.Drawing.Size(1147, 508);
+            this.dataGridViewDailyappoinment.Size = new System.Drawing.Size(1107, 508);
             this.dataGridViewDailyappoinment.TabIndex = 0;
             // 
             // sino
@@ -220,7 +218,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Appointment (s)";
             this.chartdailyappointcount.Series.Add(series1);
-            this.chartdailyappointcount.Size = new System.Drawing.Size(1147, 508);
+            this.chartdailyappointcount.Size = new System.Drawing.Size(1107, 508);
             this.chartdailyappointcount.TabIndex = 9;
             this.chartdailyappointcount.Text = "chart1";
             // 
@@ -349,9 +347,9 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.Grvdailyappointcount);
-            this.panel2.Location = new System.Drawing.Point(1151, 153);
+            this.panel2.Location = new System.Drawing.Point(1115, 153);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(210, 506);
+            this.panel2.Size = new System.Drawing.Size(246, 506);
             this.panel2.TabIndex = 100;
             // 
             // Grvdailyappointcount
@@ -381,7 +379,7 @@
             this.Grvdailyappointcount.Name = "Grvdailyappointcount";
             this.Grvdailyappointcount.RowHeadersVisible = false;
             this.Grvdailyappointcount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grvdailyappointcount.Size = new System.Drawing.Size(210, 506);
+            this.Grvdailyappointcount.Size = new System.Drawing.Size(246, 506);
             this.Grvdailyappointcount.TabIndex = 0;
             this.Grvdailyappointcount.DataSourceChanged += new System.EventHandler(this.Grvdailyappointcount_DataSourceChanged);
             // 

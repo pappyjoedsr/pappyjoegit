@@ -590,7 +590,7 @@ namespace PappyjoeMVC.View
                             {
                                 StartT = StartT.AddMinutes(30);
                             }
-                            this.cntrl.update_appointment(Convert.ToDateTime(StartT), diff1, txtDescription.Text, patient_id, patient_name, dr_id, lab_p_ph.Text, lab_p_email.Text, gpl_app_id);
+                            this.cntrl.update_appointment(Convert.ToDateTime(StartT), diff1, txtDescription.Text,compoprocedure.Text, patient_id, patient_name, dr_id, lab_p_ph.Text, lab_p_email.Text, gpl_app_id);
                         }
                         EditingEvent = null;
                         Main_Calendar.Instance.ContextEvent = null;
