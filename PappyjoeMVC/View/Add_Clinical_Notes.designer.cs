@@ -291,7 +291,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label24.Location = new System.Drawing.Point(85, 24);
+            this.label24.Location = new System.Drawing.Point(65, 25);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(60, 13);
             this.label24.TabIndex = 59;
@@ -754,7 +754,7 @@
             this.notecancel.BackColor = System.Drawing.Color.Tomato;
             this.notecancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.notecancel.ForeColor = System.Drawing.Color.White;
-            this.notecancel.Location = new System.Drawing.Point(65, 36);
+            this.notecancel.Location = new System.Drawing.Point(65, 35);
             this.notecancel.Name = "notecancel";
             this.notecancel.Size = new System.Drawing.Size(57, 22);
             this.notecancel.TabIndex = 248;
@@ -768,7 +768,7 @@
             this.noteadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.noteadd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.noteadd.ForeColor = System.Drawing.Color.White;
-            this.noteadd.Location = new System.Drawing.Point(11, 11);
+            this.noteadd.Location = new System.Drawing.Point(6, 7);
             this.noteadd.Name = "noteadd";
             this.noteadd.Size = new System.Drawing.Size(52, 22);
             this.noteadd.TabIndex = 247;
@@ -781,7 +781,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label14.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label14.Location = new System.Drawing.Point(15, 17);
+            this.label14.Location = new System.Drawing.Point(15, 14);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(51, 13);
             this.label14.TabIndex = 21;
@@ -923,7 +923,7 @@
             this.notesavebut.BackColor = System.Drawing.Color.LimeGreen;
             this.notesavebut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.notesavebut.ForeColor = System.Drawing.Color.White;
-            this.notesavebut.Location = new System.Drawing.Point(12, 36);
+            this.notesavebut.Location = new System.Drawing.Point(12, 35);
             this.notesavebut.Name = "notesavebut";
             this.notesavebut.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.notesavebut.Size = new System.Drawing.Size(52, 22);
@@ -981,7 +981,7 @@
             this.investadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.investadd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.investadd.ForeColor = System.Drawing.Color.White;
-            this.investadd.Location = new System.Drawing.Point(10, 7);
+            this.investadd.Location = new System.Drawing.Point(6, 7);
             this.investadd.Name = "investadd";
             this.investadd.Size = new System.Drawing.Size(52, 22);
             this.investadd.TabIndex = 247;
@@ -1218,7 +1218,7 @@
             this.diagadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.diagadd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.diagadd.ForeColor = System.Drawing.Color.White;
-            this.diagadd.Location = new System.Drawing.Point(7, 8);
+            this.diagadd.Location = new System.Drawing.Point(7, 7);
             this.diagadd.Name = "diagadd";
             this.diagadd.Size = new System.Drawing.Size(51, 22);
             this.diagadd.TabIndex = 247;
@@ -1321,7 +1321,7 @@
             this.compadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.compadd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compadd.ForeColor = System.Drawing.Color.White;
-            this.compadd.Location = new System.Drawing.Point(9, 7);
+            this.compadd.Location = new System.Drawing.Point(6, 7);
             this.compadd.Name = "compadd";
             this.compadd.Size = new System.Drawing.Size(52, 22);
             this.compadd.TabIndex = 246;
@@ -1397,7 +1397,7 @@
             dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.complaintgrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.complaintgrid.RowHeadersVisible = false;
-            this.complaintgrid.Size = new System.Drawing.Size(382, 307);
+            this.complaintgrid.Size = new System.Drawing.Size(382, 384);
             this.complaintgrid.TabIndex = 14;
             this.complaintgrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.complaintgrid_CellClick);
             this.complaintgrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.complaintgrid_CellMouseClick);
@@ -1499,7 +1499,7 @@
             this.obseradd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.obseradd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.obseradd.ForeColor = System.Drawing.Color.White;
-            this.obseradd.Location = new System.Drawing.Point(10, 9);
+            this.obseradd.Location = new System.Drawing.Point(6, 7);
             this.obseradd.Name = "obseradd";
             this.obseradd.Size = new System.Drawing.Size(52, 22);
             this.obseradd.TabIndex = 247;
@@ -1512,7 +1512,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label12.Location = new System.Drawing.Point(13, 16);
+            this.label12.Location = new System.Drawing.Point(13, 13);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 13);
             this.label12.TabIndex = 244;
