@@ -151,13 +151,13 @@ namespace PappyjoeMVC.Controller
             return dtb;
         }
         ///transaction
-        public void start_transaction()
-        {
-            db.begin_trans();
-        }
-        public void stop_trans()
-        {
-            db.close_trans();
-        }
+        //public void start_transaction()
+        //{
+        //    db.begin_trans();
+        //}
+        //public void stop_trans()
+        //{
+        //    db.close_trans();
+        //}
     }
 }
