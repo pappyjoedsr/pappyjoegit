@@ -1936,6 +1936,9 @@ namespace PappyjoeMVC.View
                         txt_Discount.Clear();
                         CMB_Discount.Text = "";
                         Cmb_tax.Text = "";
+                        procedure_item.Text = "";
+                        Lab_Cost.Text = "";
+                        NMUP_Unit.Text = "";
                         txt_Discount.Hide();
                         CMB_Discount.Hide();
                         Cmb_tax.Hide();

@@ -99,7 +99,6 @@ namespace PappyjoeMVC.View
                 DGV_Patients.Columns.Add(img5);
                 lab_LongMsg.Hide();
                 lab_LongMsg.Location = new Point(350, 350);
-                lab_7.Location = new Point(4, 5);
                 lab_7.Text = dt_pt5.Rows.Count.ToString() + " Patient(s)";
                 for (int j = 0; j < dt_pt5.Rows.Count; j++)
                 {
@@ -143,8 +142,7 @@ namespace PappyjoeMVC.View
             {
                 lab_LongMsg.Show();
                 lab_LongMsg.Location = new Point(350, 350);
-                lab_7.Location = new Point(4, 5);
-                lab_7.Text = "Zero Patient(s)";
+                lab_7.Text = " Zero Patient(s)";
                 lab_Displaying.Visible = false;
             }
         }
@@ -410,9 +408,7 @@ namespace PappyjoeMVC.View
                 {
                     lab_LongMsg.Show(); lab_Displaying.Visible = false;
                     lab_LongMsg.Location = new Point(350, 350);
-                    lab_7.Location = new Point(4, 5);
-                    lab_7.Text = "Zero Patient(s)";
-            }
+                }
             }
             catch (Exception ex)
             {
@@ -662,8 +658,6 @@ namespace PappyjoeMVC.View
                     lab_LongMsg.Show();
                     lab_Displaying.Visible = false;
                     lab_LongMsg.Location = new Point(350, 350);
-                    lab_7.Location = new Point(4, 5);
-                    lab_7.Text= "Zero Patient(s)";
                 }
             }
             catch (Exception ex)
@@ -830,8 +824,6 @@ namespace PappyjoeMVC.View
                 {
                     lab_LongMsg.Show(); lab_Displaying.Visible = false;
                     lab_LongMsg.Location = new Point(350, 350);
-                    lab_7.Location = new Point(4, 5);
-                    lab_7.Text= "Zero Patient(s)";
                 }
             }
             catch (Exception ex)
@@ -971,8 +963,6 @@ namespace PappyjoeMVC.View
                 {
                     lab_LongMsg.Show(); lab_Displaying.Visible = false;
                     lab_LongMsg.Location = new Point(350, 350);
-                    lab_7.Location = new Point(4, 5);
-                    lab_7.Text= "Zero Patient(s)";
                 }
             }
             catch (Exception ex)
@@ -1296,10 +1286,6 @@ namespace PappyjoeMVC.View
                 {
                     lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
-                    lab_7.Visible = true;
-                    lab_7.Location = new Point(4, 5);
-                    lab_7.Text= "Zero Patient(s)";
-                    lab_Displaying.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -1348,81 +1334,69 @@ namespace PappyjoeMVC.View
             {
                 int j = 0;
                 string patientName = ""; string patientId = "";
-                if (Payment.Rows.Count > 0)
+                for (int i = 0; i < Payment.Rows.Count; i++)
                 {
-                    for (int i = 0; i < Payment.Rows.Count; i++)
+                    DataTable pat = this.cntrl.Patient_details(Payment.Rows[i]["pt_id"].ToString());
+                    if (pat.Rows.Count > 0)
                     {
-                        DataTable pat = this.cntrl.Patient_details(Payment.Rows[i]["pt_id"].ToString());
-                        if (pat.Rows.Count > 0)
-                        {
-                            patientName = pat.Rows[0][0].ToString();
-                            patientId = pat.Rows[0][1].ToString();
-                        }
-                        DGV_Patients.Rows.Add(String.Format("{0:dddd, MMMM d, yyyy}", Convert.ToDateTime(Payment.Rows[i]["payment_date"].ToString())), "Patient Id  : " + patientId + "\n Patient Name : " + patientName, "", "");
-                        DGV_Patients.Rows[j].Cells[0].Style.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Bold);
-                        DGV_Patients.Rows[j].Cells[0].Style.ForeColor = Color.DarkGreen;
-                        DGV_Patients.Rows[j].Cells[1].Style.Font = new System.Drawing.Font("Segoe UI", 8, FontStyle.Bold);
-                        DGV_Patients.Rows[j].Cells[1].Style.ForeColor = Color.DarkGreen;
-                        DGV_Patients.Rows[j].Height = 35;
-                        DGV_Patients.Rows[j].Cells[0].Style.BackColor = Color.Gainsboro;
-                        DGV_Patients.Rows[j].Cells[1].Style.BackColor = Color.Gainsboro;
-                        DGV_Patients.Rows[j].Cells[2].Style.BackColor = Color.Gainsboro;
-                        DGV_Patients.Rows[j].Cells[3].Style.BackColor = Color.Gainsboro;
+                        patientName = pat.Rows[0][0].ToString();
+                        patientId = pat.Rows[0][1].ToString();
+                    }
+                    DGV_Patients.Rows.Add(String.Format("{0:dddd, MMMM d, yyyy}", Convert.ToDateTime(Payment.Rows[i]["payment_date"].ToString())), "Patient Id  : " + patientId + "\n Patient Name : " + patientName, "", "");
+                    DGV_Patients.Rows[j].Cells[0].Style.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Bold);
+                    DGV_Patients.Rows[j].Cells[0].Style.ForeColor = Color.DarkGreen;
+                    DGV_Patients.Rows[j].Cells[1].Style.Font = new System.Drawing.Font("Segoe UI", 8, FontStyle.Bold);
+                    DGV_Patients.Rows[j].Cells[1].Style.ForeColor = Color.DarkGreen;
+                    DGV_Patients.Rows[j].Height = 35;
+                    DGV_Patients.Rows[j].Cells[0].Style.BackColor = Color.Gainsboro;
+                    DGV_Patients.Rows[j].Cells[1].Style.BackColor = Color.Gainsboro;
+                    DGV_Patients.Rows[j].Cells[2].Style.BackColor = Color.Gainsboro;
+                    DGV_Patients.Rows[j].Cells[3].Style.BackColor = Color.Gainsboro;
+                    j = j + 1;
+                    DGV_Patients.Rows.Add("RECEIPT NUMBER", "INVOICES", "TOWARDS", "AMOUNT PAID");
+                    DGV_Patients.Rows[j].Cells[0].Style.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Bold);
+                    DGV_Patients.Rows[j].Cells[0].Style.ForeColor = Color.White;
+                    DGV_Patients.Rows[j].Cells[1].Style.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Bold);
+                    DGV_Patients.Rows[j].Cells[1].Style.ForeColor = Color.White;
+                    DGV_Patients.Rows[j].Cells[2].Style.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Bold);
+                    DGV_Patients.Rows[j].Cells[2].Style.ForeColor = Color.White;
+                    DGV_Patients.Rows[j].Cells[3].Style.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Bold);
+                    DGV_Patients.Rows[j].Cells[3].Style.ForeColor = Color.White;
+                    DGV_Patients.Rows[j].Cells[0].Style.BackColor = Color.DarkGray;
+                    DGV_Patients.Rows[j].Cells[1].Style.BackColor = Color.DarkGray;
+                    DGV_Patients.Rows[j].Cells[2].Style.BackColor = Color.DarkGray;
+                    DGV_Patients.Rows[j].Cells[3].Style.BackColor = Color.DarkGray;
+                    System.Data.DataTable Payments = this.cntrl.payment_sub(Payment.Rows[i]["payment_date"].ToString());
+                    for (int k = 0; k < Payments.Rows.Count; k++)
+                    {
+                        DGV_Patients.Rows.Add(Payments.Rows[k]["receipt_no"].ToString(), Payments.Rows[k]["invoice_no"].ToString(), Payments.Rows[k]["procedure_name"].ToString(), String.Format("{0:C}", Convert.ToDecimal(Payments.Rows[k]["amount_paid"].ToString())));
                         j = j + 1;
-                        DGV_Patients.Rows.Add("RECEIPT NUMBER", "INVOICES", "TOWARDS", "AMOUNT PAID");
-                        DGV_Patients.Rows[j].Cells[0].Style.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Bold);
-                        DGV_Patients.Rows[j].Cells[0].Style.ForeColor = Color.White;
-                        DGV_Patients.Rows[j].Cells[1].Style.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Bold);
-                        DGV_Patients.Rows[j].Cells[1].Style.ForeColor = Color.White;
-                        DGV_Patients.Rows[j].Cells[2].Style.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Bold);
-                        DGV_Patients.Rows[j].Cells[2].Style.ForeColor = Color.White;
-                        DGV_Patients.Rows[j].Cells[3].Style.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Bold);
-                        DGV_Patients.Rows[j].Cells[3].Style.ForeColor = Color.White;
-                        DGV_Patients.Rows[j].Cells[0].Style.BackColor = Color.DarkGray;
-                        DGV_Patients.Rows[j].Cells[1].Style.BackColor = Color.DarkGray;
-                        DGV_Patients.Rows[j].Cells[2].Style.BackColor = Color.DarkGray;
-                        DGV_Patients.Rows[j].Cells[3].Style.BackColor = Color.DarkGray;
-                        System.Data.DataTable Payments = this.cntrl.payment_sub(Payment.Rows[i]["payment_date"].ToString());
-                        for (int k = 0; k < Payments.Rows.Count; k++)
-                        {
-                            DGV_Patients.Rows.Add(Payments.Rows[k]["receipt_no"].ToString(), Payments.Rows[k]["invoice_no"].ToString(), Payments.Rows[k]["procedure_name"].ToString(), String.Format("{0:C}", Convert.ToDecimal(Payments.Rows[k]["amount_paid"].ToString())));
-                            j = j + 1;
-                            DGV_Patients.Rows[j].Cells[3].Style.ForeColor = Color.Red;
-                            DGV_Patients.Rows[j].Cells[3].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
-                            DGV_Patients.Rows[j].Cells[2].Style.Font = new System.Drawing.Font("Segoe UI", 11, FontStyle.Regular);
-                            DGV_Patients.Rows[j].Cells[2].Style.ForeColor = Color.DodgerBlue;
-                            DGV_Patients.Rows[j].Cells[0].Style.BackColor = Color.WhiteSmoke;
-                            DGV_Patients.Rows[j].Cells[1].Style.BackColor = Color.WhiteSmoke;
-                            DGV_Patients.Rows[j].Cells[2].Style.BackColor = Color.WhiteSmoke;
-                            DGV_Patients.Rows[j].Cells[3].Style.BackColor = Color.WhiteSmoke;
-                        }
-                        j = j + 1;
-                        DGV_Patients.Rows.Add("", "", "", "");
+                        DGV_Patients.Rows[j].Cells[3].Style.ForeColor = Color.Red;
+                        DGV_Patients.Rows[j].Cells[3].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
+                        DGV_Patients.Rows[j].Cells[2].Style.Font = new System.Drawing.Font("Segoe UI", 11, FontStyle.Regular);
+                        DGV_Patients.Rows[j].Cells[2].Style.ForeColor = Color.DodgerBlue;
                         DGV_Patients.Rows[j].Cells[0].Style.BackColor = Color.WhiteSmoke;
                         DGV_Patients.Rows[j].Cells[1].Style.BackColor = Color.WhiteSmoke;
                         DGV_Patients.Rows[j].Cells[2].Style.BackColor = Color.WhiteSmoke;
                         DGV_Patients.Rows[j].Cells[3].Style.BackColor = Color.WhiteSmoke;
-                        j = j + 1;
                     }
-                    if (Payment.Rows.Count <= 0)
-                    {
-                        lab_LongMsg.Show();
-                        lab_LongMsg.Location = new Point(350, 350);
-                    }
-                    else
-                    {
-                        lab_LongMsg.Hide();
-                        lab_LongMsg.Location = new Point(350, 350);
-                    }
+                    j = j + 1;
+                    DGV_Patients.Rows.Add("", "", "", "");
+                    DGV_Patients.Rows[j].Cells[0].Style.BackColor = Color.WhiteSmoke;
+                    DGV_Patients.Rows[j].Cells[1].Style.BackColor = Color.WhiteSmoke;
+                    DGV_Patients.Rows[j].Cells[2].Style.BackColor = Color.WhiteSmoke;
+                    DGV_Patients.Rows[j].Cells[3].Style.BackColor = Color.WhiteSmoke;
+                    j = j + 1;
                 }
-                else
+                if (Payment.Rows.Count <= 0)
                 {
                     lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
-                    lab_7.Visible = true;
-                    lab_7.Location = new Point(4, 5);
-                    lab_7.Text = "Zero Patient(s)";
-                    lab_Displaying.Visible = false;
+                }
+                else
+                {
+                    lab_LongMsg.Hide();
+                    lab_LongMsg.Location = new Point(350, 350);
                 }
             }
             catch (Exception ex)
@@ -2225,8 +2199,6 @@ namespace PappyjoeMVC.View
                     lab_LongMsg.Show();
                     lab_Displaying.Visible = false;
                     lab_LongMsg.Location = new Point(350, 350);
-                    lab_7.Location = new Point(4, 5);
-                    lab_7.Text="Zero Patient(s)";
                 }
             }
             catch (Exception ex)
@@ -2484,24 +2456,11 @@ namespace PappyjoeMVC.View
         {
             if (dtb.Columns.Count > 0)
             {
+                lab_7.Text = dtb.Rows.Count.ToString() + " Patient(s)";
                 lab_LongMsg.Hide();
                 DGV_Patients.ColumnHeadersVisible = true;
                 DGV_Patients.Columns.Clear();
                 DGV_Patients.Rows.Clear();
-                if(dtb.Rows.Count>0)
-                {
-                    lab_7.Text = "";
-                    lab_7.Text = dtb.Rows.Count.ToString() +  " Patient(s)";
-                }
-                else
-                {
-                    lab_LongMsg.Show();
-                    lab_LongMsg.Location = new Point(350, 350);
-                    lab_7.Visible = true;
-                    lab_7.Location = new Point(4, 5);
-                    lab_7.Text = "Zero Patient(s)";
-                    lab_Displaying.Visible = false;
-                }
                 foreach (DataColumn column in dtb.Columns)
                 {
                     DGV_Patients.Columns.Add(column.ColumnName, column.ColumnName);

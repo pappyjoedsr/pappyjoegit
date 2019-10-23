@@ -291,5 +291,10 @@ namespace PappyjoeMVC.View
             btn_Cancelgroup.Visible = false;
             textBox_group.Text = "";
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

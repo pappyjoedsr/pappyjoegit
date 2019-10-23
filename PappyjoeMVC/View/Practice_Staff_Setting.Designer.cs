@@ -33,6 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Practice_Staff_Setting));
             this.label55 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -503,7 +507,15 @@
             this.Activated_Login,
             this.Edit,
             this.Delete});
-            this.dataGridView_Staff.Location = new System.Drawing.Point(9, 10);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Staff.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView_Staff.Location = new System.Drawing.Point(22, 11);
             this.dataGridView_Staff.Name = "dataGridView_Staff";
             this.dataGridView_Staff.ReadOnly = true;
             this.dataGridView_Staff.RowHeadersVisible = false;
@@ -1149,18 +1161,26 @@
             this.dataGridView_notification.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_notification.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_notification.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_notification.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_notification.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_notification.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView_notification.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column9,
             this.Column10});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_notification.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_notification.GridColor = System.Drawing.Color.White;
             this.dataGridView_notification.Location = new System.Drawing.Point(13, 18);
             this.dataGridView_notification.Name = "dataGridView_notification";
@@ -1235,14 +1255,14 @@
             this.dataGridView_visit_timing.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_visit_timing.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_visit_timing.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_visit_timing.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_visit_timing.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_visit_timing.ColumnHeadersHeight = 32;
             this.dataGridView_visit_timing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView_visit_timing.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1262,6 +1282,14 @@
             this.Column25,
             this.Column27,
             this.Column28});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_visit_timing.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView_visit_timing.Location = new System.Drawing.Point(7, 10);
             this.dataGridView_visit_timing.Name = "dataGridView_visit_timing";
             this.dataGridView_visit_timing.ReadOnly = true;
@@ -3940,7 +3968,7 @@
             this.panel1.Controls.Add(this.chkPATdelete);
             this.panel1.Controls.Add(this.chkPAT);
             this.panel1.Controls.Add(this.label71);
-            this.panel1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(244, 17);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(865, 558);
@@ -3950,10 +3978,10 @@
             // 
             this.chkRPTIncom.AutoSize = true;
             this.chkRPTIncom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkRPTIncom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRPTIncom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRPTIncom.Location = new System.Drawing.Point(112, 393);
             this.chkRPTIncom.Name = "chkRPTIncom";
-            this.chkRPTIncom.Size = new System.Drawing.Size(63, 19);
+            this.chkRPTIncom.Size = new System.Drawing.Size(66, 21);
             this.chkRPTIncom.TabIndex = 115;
             this.chkRPTIncom.Text = "Income";
             this.chkRPTIncom.UseVisualStyleBackColor = true;
@@ -3962,10 +3990,10 @@
             // 
             this.chkInventory.AutoSize = true;
             this.chkInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkInventory.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkInventory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkInventory.Location = new System.Drawing.Point(17, 304);
             this.chkInventory.Name = "chkInventory";
-            this.chkInventory.Size = new System.Drawing.Size(73, 19);
+            this.chkInventory.Size = new System.Drawing.Size(77, 21);
             this.chkInventory.TabIndex = 114;
             this.chkInventory.Text = "Inventory";
             this.chkInventory.UseVisualStyleBackColor = true;
@@ -3974,10 +4002,10 @@
             // 
             this.chkAPTClinicAppoinment.AutoSize = true;
             this.chkAPTClinicAppoinment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkAPTClinicAppoinment.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAPTClinicAppoinment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkAPTClinicAppoinment.Location = new System.Drawing.Point(166, 151);
             this.chkAPTClinicAppoinment.Name = "chkAPTClinicAppoinment";
-            this.chkAPTClinicAppoinment.Size = new System.Drawing.Size(132, 19);
+            this.chkAPTClinicAppoinment.Size = new System.Drawing.Size(139, 21);
             this.chkAPTClinicAppoinment.TabIndex = 113;
             this.chkAPTClinicAppoinment.Text = "Clinic Appointments";
             this.chkAPTClinicAppoinment.UseVisualStyleBackColor = true;
@@ -3986,10 +4014,10 @@
             // 
             this.chkInvenSale.AutoSize = true;
             this.chkInvenSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkInvenSale.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkInvenSale.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkInvenSale.Location = new System.Drawing.Point(73, 484);
             this.chkInvenSale.Name = "chkInvenSale";
-            this.chkInvenSale.Size = new System.Drawing.Size(102, 19);
+            this.chkInvenSale.Size = new System.Drawing.Size(109, 21);
             this.chkInvenSale.TabIndex = 112;
             this.chkInvenSale.Text = "Sale(Inventory)";
             this.chkInvenSale.UseVisualStyleBackColor = true;
@@ -3999,10 +4027,10 @@
             // 
             this.chkEMRIdelete.AutoSize = true;
             this.chkEMRIdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRIdelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRIdelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRIdelete.Location = new System.Drawing.Point(612, 268);
             this.chkEMRIdelete.Name = "chkEMRIdelete";
-            this.chkEMRIdelete.Size = new System.Drawing.Size(56, 19);
+            this.chkEMRIdelete.Size = new System.Drawing.Size(61, 21);
             this.chkEMRIdelete.TabIndex = 111;
             this.chkEMRIdelete.Text = "Delete";
             this.chkEMRIdelete.UseVisualStyleBackColor = true;
@@ -4011,10 +4039,10 @@
             // 
             this.chkEMRIedit.AutoSize = true;
             this.chkEMRIedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRIedit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRIedit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRIedit.Location = new System.Drawing.Point(612, 243);
             this.chkEMRIedit.Name = "chkEMRIedit";
-            this.chkEMRIedit.Size = new System.Drawing.Size(43, 19);
+            this.chkEMRIedit.Size = new System.Drawing.Size(46, 21);
             this.chkEMRIedit.TabIndex = 110;
             this.chkEMRIedit.Text = "Edit";
             this.chkEMRIedit.UseVisualStyleBackColor = true;
@@ -4023,10 +4051,10 @@
             // 
             this.chkEMRIadd.AutoSize = true;
             this.chkEMRIadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRIadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRIadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRIadd.Location = new System.Drawing.Point(612, 218);
             this.chkEMRIadd.Name = "chkEMRIadd";
-            this.chkEMRIadd.Size = new System.Drawing.Size(45, 19);
+            this.chkEMRIadd.Size = new System.Drawing.Size(48, 21);
             this.chkEMRIadd.TabIndex = 109;
             this.chkEMRIadd.Text = "Add";
             this.chkEMRIadd.UseVisualStyleBackColor = true;
@@ -4035,10 +4063,10 @@
             // 
             this.chkEMRI.AutoSize = true;
             this.chkEMRI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRI.Location = new System.Drawing.Point(596, 195);
             this.chkEMRI.Name = "chkEMRI";
-            this.chkEMRI.Size = new System.Drawing.Size(61, 19);
+            this.chkEMRI.Size = new System.Drawing.Size(64, 21);
             this.chkEMRI.TabIndex = 108;
             this.chkEMRI.Text = "Invoice";
             this.chkEMRI.UseVisualStyleBackColor = true;
@@ -4048,10 +4076,10 @@
             // 
             this.chkRPTINVadd.AutoSize = true;
             this.chkRPTINVadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkRPTINVadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRPTINVadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRPTINVadd.Location = new System.Drawing.Point(561, 393);
             this.chkRPTINVadd.Name = "chkRPTINVadd";
-            this.chkRPTINVadd.Size = new System.Drawing.Size(73, 19);
+            this.chkRPTINVadd.Size = new System.Drawing.Size(77, 21);
             this.chkRPTINVadd.TabIndex = 105;
             this.chkRPTINVadd.Text = "Inventory";
             this.chkRPTINVadd.UseVisualStyleBackColor = true;
@@ -4060,10 +4088,10 @@
             // 
             this.chkRPTEMRadd.AutoSize = true;
             this.chkRPTEMRadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkRPTEMRadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRPTEMRadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRPTEMRadd.Location = new System.Drawing.Point(399, 393);
             this.chkRPTEMRadd.Name = "chkRPTEMRadd";
-            this.chkRPTEMRadd.Size = new System.Drawing.Size(47, 19);
+            this.chkRPTEMRadd.Size = new System.Drawing.Size(51, 21);
             this.chkRPTEMRadd.TabIndex = 103;
             this.chkRPTEMRadd.Text = "EMR";
             this.chkRPTEMRadd.UseVisualStyleBackColor = true;
@@ -4073,7 +4101,7 @@
             this.chkRPTEXPadd.AutoSize = true;
             this.chkRPTEXPadd.Location = new System.Drawing.Point(730, 509);
             this.chkRPTEXPadd.Name = "chkRPTEXPadd";
-            this.chkRPTEXPadd.Size = new System.Drawing.Size(74, 19);
+            this.chkRPTEXPadd.Size = new System.Drawing.Size(81, 21);
             this.chkRPTEXPadd.TabIndex = 97;
             this.chkRPTEXPadd.Text = "Expenses";
             this.chkRPTEXPadd.UseVisualStyleBackColor = true;
@@ -4083,10 +4111,10 @@
             // 
             this.chkRPTINCadd.AutoSize = true;
             this.chkRPTINCadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkRPTINCadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRPTINCadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRPTINCadd.Location = new System.Drawing.Point(31, 393);
             this.chkRPTINCadd.Name = "chkRPTINCadd";
-            this.chkRPTINCadd.Size = new System.Drawing.Size(61, 19);
+            this.chkRPTINCadd.Size = new System.Drawing.Size(64, 21);
             this.chkRPTINCadd.TabIndex = 95;
             this.chkRPTINCadd.Text = "Invoice";
             this.chkRPTINCadd.UseVisualStyleBackColor = true;
@@ -4095,10 +4123,10 @@
             // 
             this.chkRPTPAYadd.AutoSize = true;
             this.chkRPTPAYadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkRPTPAYadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRPTPAYadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRPTPAYadd.Location = new System.Drawing.Point(466, 393);
             this.chkRPTPAYadd.Name = "chkRPTPAYadd";
-            this.chkRPTPAYadd.Size = new System.Drawing.Size(75, 19);
+            this.chkRPTPAYadd.Size = new System.Drawing.Size(79, 21);
             this.chkRPTPAYadd.TabIndex = 88;
             this.chkRPTPAYadd.Text = "Payments";
             this.chkRPTPAYadd.UseVisualStyleBackColor = true;
@@ -4107,10 +4135,10 @@
             // 
             this.chkRPTPATadd.AutoSize = true;
             this.chkRPTPATadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkRPTPATadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRPTPATadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRPTPATadd.Location = new System.Drawing.Point(314, 393);
             this.chkRPTPATadd.Name = "chkRPTPATadd";
-            this.chkRPTPATadd.Size = new System.Drawing.Size(65, 19);
+            this.chkRPTPATadd.Size = new System.Drawing.Size(69, 21);
             this.chkRPTPATadd.TabIndex = 85;
             this.chkRPTPATadd.Text = "Patients";
             this.chkRPTPATadd.UseVisualStyleBackColor = true;
@@ -4119,10 +4147,10 @@
             // 
             this.chkRPTAPTadd.AutoSize = true;
             this.chkRPTAPTadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkRPTAPTadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRPTAPTadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRPTAPTadd.Location = new System.Drawing.Point(195, 393);
             this.chkRPTAPTadd.Name = "chkRPTAPTadd";
-            this.chkRPTAPTadd.Size = new System.Drawing.Size(99, 19);
+            this.chkRPTAPTadd.Size = new System.Drawing.Size(105, 21);
             this.chkRPTAPTadd.TabIndex = 77;
             this.chkRPTAPTadd.Text = "Appointments";
             this.chkRPTAPTadd.UseVisualStyleBackColor = true;
@@ -4131,10 +4159,10 @@
             // 
             this.chkRPTDSadd.AutoSize = true;
             this.chkRPTDSadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkRPTDSadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRPTDSadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRPTDSadd.Location = new System.Drawing.Point(45, 459);
             this.chkRPTDSadd.Name = "chkRPTDSadd";
-            this.chkRPTDSadd.Size = new System.Drawing.Size(103, 19);
+            this.chkRPTDSadd.Size = new System.Drawing.Size(110, 21);
             this.chkRPTDSadd.TabIndex = 74;
             this.chkRPTDSadd.Text = "Daily Summary";
             this.chkRPTDSadd.UseVisualStyleBackColor = true;
@@ -4144,10 +4172,10 @@
             // 
             this.chkRPT.AutoSize = true;
             this.chkRPT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkRPT.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRPT.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRPT.Location = new System.Drawing.Point(17, 339);
             this.chkRPT.Name = "chkRPT";
-            this.chkRPT.Size = new System.Drawing.Size(63, 19);
+            this.chkRPT.Size = new System.Drawing.Size(70, 21);
             this.chkRPT.TabIndex = 70;
             this.chkRPT.Text = "Reports";
             this.chkRPT.UseVisualStyleBackColor = true;
@@ -4157,10 +4185,10 @@
             // 
             this.chkCLMSadd.AutoSize = true;
             this.chkCLMSadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkCLMSadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkCLMSadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkCLMSadd.Location = new System.Drawing.Point(524, 508);
             this.chkCLMSadd.Name = "chkCLMSadd";
-            this.chkCLMSadd.Size = new System.Drawing.Size(98, 19);
+            this.chkCLMSadd.Size = new System.Drawing.Size(104, 21);
             this.chkCLMSadd.TabIndex = 65;
             this.chkCLMSadd.Text = "Clinic Settings";
             this.chkCLMSadd.UseVisualStyleBackColor = true;
@@ -4170,10 +4198,10 @@
             // 
             this.chkINVVSadd.AutoSize = true;
             this.chkINVVSadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkINVVSadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkINVVSadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkINVVSadd.Location = new System.Drawing.Point(424, 509);
             this.chkINVVSadd.Name = "chkINVVSadd";
-            this.chkINVVSadd.Size = new System.Drawing.Size(80, 19);
+            this.chkINVVSadd.Size = new System.Drawing.Size(86, 21);
             this.chkINVVSadd.TabIndex = 58;
             this.chkINVVSadd.Text = "View Stock";
             this.chkINVVSadd.UseVisualStyleBackColor = true;
@@ -4183,10 +4211,10 @@
             // 
             this.chkINVPIadd.AutoSize = true;
             this.chkINVPIadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkINVPIadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkINVPIadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkINVPIadd.Location = new System.Drawing.Point(291, 509);
             this.chkINVPIadd.Name = "chkINVPIadd";
-            this.chkINVPIadd.Size = new System.Drawing.Size(80, 19);
+            this.chkINVPIadd.Size = new System.Drawing.Size(85, 21);
             this.chkINVPIadd.TabIndex = 55;
             this.chkINVPIadd.Text = "Print Items";
             this.chkINVPIadd.UseVisualStyleBackColor = true;
@@ -4196,10 +4224,10 @@
             // 
             this.chkINVCSadd.AutoSize = true;
             this.chkINVCSadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkINVCSadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkINVCSadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkINVCSadd.Location = new System.Drawing.Point(194, 509);
             this.chkINVCSadd.Name = "chkINVCSadd";
-            this.chkINVCSadd.Size = new System.Drawing.Size(66, 19);
+            this.chkINVCSadd.Size = new System.Drawing.Size(72, 21);
             this.chkINVCSadd.TabIndex = 50;
             this.chkINVCSadd.Text = "Supplier";
             this.chkINVCSadd.UseVisualStyleBackColor = true;
@@ -4209,10 +4237,10 @@
             // 
             this.chkINVASadd.AutoSize = true;
             this.chkINVASadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkINVASadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkINVASadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkINVASadd.Location = new System.Drawing.Point(72, 509);
             this.chkINVASadd.Name = "chkINVASadd";
-            this.chkINVASadd.Size = new System.Drawing.Size(77, 19);
+            this.chkINVASadd.Size = new System.Drawing.Size(83, 21);
             this.chkINVASadd.TabIndex = 47;
             this.chkINVASadd.Text = "Add Stock";
             this.chkINVASadd.UseVisualStyleBackColor = true;
@@ -4235,10 +4263,10 @@
             // 
             this.chkINV.AutoSize = true;
             this.chkINV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkINV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkINV.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkINV.Location = new System.Drawing.Point(316, 474);
             this.chkINV.Name = "chkINV";
-            this.chkINV.Size = new System.Drawing.Size(73, 19);
+            this.chkINV.Size = new System.Drawing.Size(77, 21);
             this.chkINV.TabIndex = 40;
             this.chkINV.Text = "Inventory";
             this.chkINV.UseVisualStyleBackColor = true;
@@ -4248,10 +4276,10 @@
             // 
             this.chkEMRFPdelete.AutoSize = true;
             this.chkEMRFPdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRFPdelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRFPdelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRFPdelete.Location = new System.Drawing.Point(379, 243);
             this.chkEMRFPdelete.Name = "chkEMRFPdelete";
-            this.chkEMRFPdelete.Size = new System.Drawing.Size(56, 19);
+            this.chkEMRFPdelete.Size = new System.Drawing.Size(61, 21);
             this.chkEMRFPdelete.TabIndex = 39;
             this.chkEMRFPdelete.Text = "Delete";
             this.chkEMRFPdelete.UseVisualStyleBackColor = true;
@@ -4260,10 +4288,10 @@
             // 
             this.chkEMRFPadd.AutoSize = true;
             this.chkEMRFPadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRFPadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRFPadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRFPadd.Location = new System.Drawing.Point(379, 218);
             this.chkEMRFPadd.Name = "chkEMRFPadd";
-            this.chkEMRFPadd.Size = new System.Drawing.Size(45, 19);
+            this.chkEMRFPadd.Size = new System.Drawing.Size(48, 21);
             this.chkEMRFPadd.TabIndex = 37;
             this.chkEMRFPadd.Text = "Add";
             this.chkEMRFPadd.UseVisualStyleBackColor = true;
@@ -4272,10 +4300,10 @@
             // 
             this.chkEMRFadd.AutoSize = true;
             this.chkEMRFadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRFadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRFadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRFadd.Location = new System.Drawing.Point(512, 218);
             this.chkEMRFadd.Name = "chkEMRFadd";
-            this.chkEMRFadd.Size = new System.Drawing.Size(45, 19);
+            this.chkEMRFadd.Size = new System.Drawing.Size(48, 21);
             this.chkEMRFadd.TabIndex = 34;
             this.chkEMRFadd.Text = "Add";
             this.chkEMRFadd.UseVisualStyleBackColor = true;
@@ -4284,10 +4312,10 @@
             // 
             this.chkEMRFP.AutoSize = true;
             this.chkEMRFP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRFP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRFP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRFP.Location = new System.Drawing.Point(363, 195);
             this.chkEMRFP.Name = "chkEMRFP";
-            this.chkEMRFP.Size = new System.Drawing.Size(124, 19);
+            this.chkEMRFP.Size = new System.Drawing.Size(135, 21);
             this.chkEMRFP.TabIndex = 33;
             this.chkEMRFP.Text = "Finished Procedure";
             this.chkEMRFP.UseVisualStyleBackColor = true;
@@ -4297,10 +4325,10 @@
             // 
             this.chkEMRF.AutoSize = true;
             this.chkEMRF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRF.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRF.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRF.Location = new System.Drawing.Point(498, 195);
             this.chkEMRF.Name = "chkEMRF";
-            this.chkEMRF.Size = new System.Drawing.Size(91, 19);
+            this.chkEMRF.Size = new System.Drawing.Size(95, 21);
             this.chkEMRF.TabIndex = 32;
             this.chkEMRF.Text = "Attachments";
             this.chkEMRF.UseVisualStyleBackColor = true;
@@ -4310,10 +4338,10 @@
             // 
             this.chkEMRPdelete.AutoSize = true;
             this.chkEMRPdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRPdelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRPdelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRPdelete.Location = new System.Drawing.Point(282, 268);
             this.chkEMRPdelete.Name = "chkEMRPdelete";
-            this.chkEMRPdelete.Size = new System.Drawing.Size(56, 19);
+            this.chkEMRPdelete.Size = new System.Drawing.Size(61, 21);
             this.chkEMRPdelete.TabIndex = 27;
             this.chkEMRPdelete.Text = "Delete";
             this.chkEMRPdelete.UseVisualStyleBackColor = true;
@@ -4322,10 +4350,10 @@
             // 
             this.chkEMRPedit.AutoSize = true;
             this.chkEMRPedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRPedit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRPedit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRPedit.Location = new System.Drawing.Point(282, 243);
             this.chkEMRPedit.Name = "chkEMRPedit";
-            this.chkEMRPedit.Size = new System.Drawing.Size(43, 19);
+            this.chkEMRPedit.Size = new System.Drawing.Size(46, 21);
             this.chkEMRPedit.TabIndex = 26;
             this.chkEMRPedit.Text = "Edit";
             this.chkEMRPedit.UseVisualStyleBackColor = true;
@@ -4334,10 +4362,10 @@
             // 
             this.chkEMRPadd.AutoSize = true;
             this.chkEMRPadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRPadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRPadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRPadd.Location = new System.Drawing.Point(282, 218);
             this.chkEMRPadd.Name = "chkEMRPadd";
-            this.chkEMRPadd.Size = new System.Drawing.Size(45, 19);
+            this.chkEMRPadd.Size = new System.Drawing.Size(48, 21);
             this.chkEMRPadd.TabIndex = 25;
             this.chkEMRPadd.Text = "Add";
             this.chkEMRPadd.UseVisualStyleBackColor = true;
@@ -4346,10 +4374,10 @@
             // 
             this.chkEMRTPdelete.AutoSize = true;
             this.chkEMRTPdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRTPdelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRTPdelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRTPdelete.Location = new System.Drawing.Point(160, 268);
             this.chkEMRTPdelete.Name = "chkEMRTPdelete";
-            this.chkEMRTPdelete.Size = new System.Drawing.Size(56, 19);
+            this.chkEMRTPdelete.Size = new System.Drawing.Size(61, 21);
             this.chkEMRTPdelete.TabIndex = 24;
             this.chkEMRTPdelete.Text = "Delete";
             this.chkEMRTPdelete.UseVisualStyleBackColor = true;
@@ -4358,10 +4386,10 @@
             // 
             this.chkEMRTPedit.AutoSize = true;
             this.chkEMRTPedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRTPedit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRTPedit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRTPedit.Location = new System.Drawing.Point(160, 243);
             this.chkEMRTPedit.Name = "chkEMRTPedit";
-            this.chkEMRTPedit.Size = new System.Drawing.Size(43, 19);
+            this.chkEMRTPedit.Size = new System.Drawing.Size(46, 21);
             this.chkEMRTPedit.TabIndex = 23;
             this.chkEMRTPedit.Text = "Edit";
             this.chkEMRTPedit.UseVisualStyleBackColor = true;
@@ -4370,10 +4398,10 @@
             // 
             this.chkEMRTPadd.AutoSize = true;
             this.chkEMRTPadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRTPadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRTPadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRTPadd.Location = new System.Drawing.Point(160, 218);
             this.chkEMRTPadd.Name = "chkEMRTPadd";
-            this.chkEMRTPadd.Size = new System.Drawing.Size(45, 19);
+            this.chkEMRTPadd.Size = new System.Drawing.Size(48, 21);
             this.chkEMRTPadd.TabIndex = 22;
             this.chkEMRTPadd.Text = "Add";
             this.chkEMRTPadd.UseVisualStyleBackColor = true;
@@ -4382,10 +4410,10 @@
             // 
             this.chkEMRP.AutoSize = true;
             this.chkEMRP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRP.Location = new System.Drawing.Point(266, 195);
             this.chkEMRP.Name = "chkEMRP";
-            this.chkEMRP.Size = new System.Drawing.Size(86, 19);
+            this.chkEMRP.Size = new System.Drawing.Size(93, 21);
             this.chkEMRP.TabIndex = 21;
             this.chkEMRP.Text = "Prescription";
             this.chkEMRP.UseVisualStyleBackColor = true;
@@ -4395,10 +4423,10 @@
             // 
             this.chkEMRTP.AutoSize = true;
             this.chkEMRTP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRTP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRTP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRTP.Location = new System.Drawing.Point(146, 195);
             this.chkEMRTP.Name = "chkEMRTP";
-            this.chkEMRTP.Size = new System.Drawing.Size(107, 19);
+            this.chkEMRTP.Size = new System.Drawing.Size(116, 21);
             this.chkEMRTP.TabIndex = 20;
             this.chkEMRTP.Text = "Treatment Plans";
             this.chkEMRTP.UseVisualStyleBackColor = true;
@@ -4408,10 +4436,10 @@
             // 
             this.chkEMRCFadd.AutoSize = true;
             this.chkEMRCFadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRCFadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRCFadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRCFadd.Location = new System.Drawing.Point(45, 218);
             this.chkEMRCFadd.Name = "chkEMRCFadd";
-            this.chkEMRCFadd.Size = new System.Drawing.Size(45, 19);
+            this.chkEMRCFadd.Size = new System.Drawing.Size(48, 21);
             this.chkEMRCFadd.TabIndex = 19;
             this.chkEMRCFadd.Text = "Add";
             this.chkEMRCFadd.UseVisualStyleBackColor = true;
@@ -4420,10 +4448,10 @@
             // 
             this.chkEMRCFedit.AutoSize = true;
             this.chkEMRCFedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRCFedit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRCFedit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRCFedit.Location = new System.Drawing.Point(45, 243);
             this.chkEMRCFedit.Name = "chkEMRCFedit";
-            this.chkEMRCFedit.Size = new System.Drawing.Size(43, 19);
+            this.chkEMRCFedit.Size = new System.Drawing.Size(46, 21);
             this.chkEMRCFedit.TabIndex = 18;
             this.chkEMRCFedit.Text = "Edit";
             this.chkEMRCFedit.UseVisualStyleBackColor = true;
@@ -4432,10 +4460,10 @@
             // 
             this.chkEMRCFdelete.AutoSize = true;
             this.chkEMRCFdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRCFdelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRCFdelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRCFdelete.Location = new System.Drawing.Point(45, 268);
             this.chkEMRCFdelete.Name = "chkEMRCFdelete";
-            this.chkEMRCFdelete.Size = new System.Drawing.Size(56, 19);
+            this.chkEMRCFdelete.Size = new System.Drawing.Size(61, 21);
             this.chkEMRCFdelete.TabIndex = 17;
             this.chkEMRCFdelete.Text = "Delete";
             this.chkEMRCFdelete.UseVisualStyleBackColor = true;
@@ -4444,10 +4472,10 @@
             // 
             this.chkEMRCF.AutoSize = true;
             this.chkEMRCF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMRCF.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMRCF.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMRCF.Location = new System.Drawing.Point(31, 195);
             this.chkEMRCF.Name = "chkEMRCF";
-            this.chkEMRCF.Size = new System.Drawing.Size(105, 19);
+            this.chkEMRCF.Size = new System.Drawing.Size(110, 21);
             this.chkEMRCF.TabIndex = 16;
             this.chkEMRCF.Text = "Clinical Finding";
             this.chkEMRCF.UseVisualStyleBackColor = true;
@@ -4457,10 +4485,10 @@
             // 
             this.chkPMTadd.AutoSize = true;
             this.chkPMTadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkPMTadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPMTadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkPMTadd.Location = new System.Drawing.Point(332, 76);
             this.chkPMTadd.Name = "chkPMTadd";
-            this.chkPMTadd.Size = new System.Drawing.Size(45, 19);
+            this.chkPMTadd.Size = new System.Drawing.Size(48, 21);
             this.chkPMTadd.TabIndex = 13;
             this.chkPMTadd.Text = "Add";
             this.chkPMTadd.UseVisualStyleBackColor = true;
@@ -4469,10 +4497,10 @@
             // 
             this.chkAPTdelete.AutoSize = true;
             this.chkAPTdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkAPTdelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAPTdelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkAPTdelete.Location = new System.Drawing.Point(166, 126);
             this.chkAPTdelete.Name = "chkAPTdelete";
-            this.chkAPTdelete.Size = new System.Drawing.Size(56, 19);
+            this.chkAPTdelete.Size = new System.Drawing.Size(61, 21);
             this.chkAPTdelete.TabIndex = 12;
             this.chkAPTdelete.Text = "Delete";
             this.chkAPTdelete.UseVisualStyleBackColor = true;
@@ -4481,10 +4509,10 @@
             // 
             this.chkAPTedit.AutoSize = true;
             this.chkAPTedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkAPTedit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAPTedit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkAPTedit.Location = new System.Drawing.Point(166, 101);
             this.chkAPTedit.Name = "chkAPTedit";
-            this.chkAPTedit.Size = new System.Drawing.Size(43, 19);
+            this.chkAPTedit.Size = new System.Drawing.Size(46, 21);
             this.chkAPTedit.TabIndex = 11;
             this.chkAPTedit.Text = "Edit";
             this.chkAPTedit.UseVisualStyleBackColor = true;
@@ -4493,10 +4521,10 @@
             // 
             this.chkAPTadd.AutoSize = true;
             this.chkAPTadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkAPTadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAPTadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkAPTadd.Location = new System.Drawing.Point(166, 76);
             this.chkAPTadd.Name = "chkAPTadd";
-            this.chkAPTadd.Size = new System.Drawing.Size(45, 19);
+            this.chkAPTadd.Size = new System.Drawing.Size(48, 21);
             this.chkAPTadd.TabIndex = 10;
             this.chkAPTadd.Text = "Add";
             this.chkAPTadd.UseVisualStyleBackColor = true;
@@ -4505,10 +4533,10 @@
             // 
             this.chkPMT.AutoSize = true;
             this.chkPMT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkPMT.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPMT.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkPMT.Location = new System.Drawing.Point(316, 52);
             this.chkPMT.Name = "chkPMT";
-            this.chkPMT.Size = new System.Drawing.Size(75, 19);
+            this.chkPMT.Size = new System.Drawing.Size(79, 21);
             this.chkPMT.TabIndex = 9;
             this.chkPMT.Text = "Payments";
             this.chkPMT.UseVisualStyleBackColor = true;
@@ -4518,10 +4546,10 @@
             // 
             this.chkEMR.AutoSize = true;
             this.chkEMR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkEMR.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEMR.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEMR.Location = new System.Drawing.Point(17, 172);
             this.chkEMR.Name = "chkEMR";
-            this.chkEMR.Size = new System.Drawing.Size(47, 19);
+            this.chkEMR.Size = new System.Drawing.Size(51, 21);
             this.chkEMR.TabIndex = 8;
             this.chkEMR.Text = "EMR";
             this.chkEMR.UseVisualStyleBackColor = true;
@@ -4531,10 +4559,10 @@
             // 
             this.chkAPT.AutoSize = true;
             this.chkAPT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkAPT.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAPT.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkAPT.Location = new System.Drawing.Point(150, 52);
             this.chkAPT.Name = "chkAPT";
-            this.chkAPT.Size = new System.Drawing.Size(94, 19);
+            this.chkAPT.Size = new System.Drawing.Size(99, 21);
             this.chkAPT.TabIndex = 7;
             this.chkAPT.Text = "Appointment";
             this.chkAPT.UseVisualStyleBackColor = true;
@@ -4544,10 +4572,10 @@
             // 
             this.chkPATadd.AutoSize = true;
             this.chkPATadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkPATadd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPATadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkPATadd.Location = new System.Drawing.Point(31, 76);
             this.chkPATadd.Name = "chkPATadd";
-            this.chkPATadd.Size = new System.Drawing.Size(45, 19);
+            this.chkPATadd.Size = new System.Drawing.Size(48, 21);
             this.chkPATadd.TabIndex = 5;
             this.chkPATadd.Text = "Add";
             this.chkPATadd.UseVisualStyleBackColor = true;
@@ -4556,10 +4584,10 @@
             // 
             this.chkPATedit.AutoSize = true;
             this.chkPATedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkPATedit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPATedit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkPATedit.Location = new System.Drawing.Point(31, 101);
             this.chkPATedit.Name = "chkPATedit";
-            this.chkPATedit.Size = new System.Drawing.Size(43, 19);
+            this.chkPATedit.Size = new System.Drawing.Size(46, 21);
             this.chkPATedit.TabIndex = 4;
             this.chkPATedit.Text = "Edit";
             this.chkPATedit.UseVisualStyleBackColor = true;
@@ -4568,10 +4596,10 @@
             // 
             this.chkPATdelete.AutoSize = true;
             this.chkPATdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkPATdelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPATdelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkPATdelete.Location = new System.Drawing.Point(31, 126);
             this.chkPATdelete.Name = "chkPATdelete";
-            this.chkPATdelete.Size = new System.Drawing.Size(56, 19);
+            this.chkPATdelete.Size = new System.Drawing.Size(61, 21);
             this.chkPATdelete.TabIndex = 3;
             this.chkPATdelete.Text = "Delete";
             this.chkPATdelete.UseVisualStyleBackColor = true;
@@ -4580,10 +4608,10 @@
             // 
             this.chkPAT.AutoSize = true;
             this.chkPAT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkPAT.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPAT.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkPAT.Location = new System.Drawing.Point(17, 52);
             this.chkPAT.Name = "chkPAT";
-            this.chkPAT.Size = new System.Drawing.Size(60, 19);
+            this.chkPAT.Size = new System.Drawing.Size(63, 21);
             this.chkPAT.TabIndex = 1;
             this.chkPAT.Text = "Patient";
             this.chkPAT.UseVisualStyleBackColor = true;
@@ -4604,8 +4632,8 @@
             this.dataGridView_users.AllowUserToAddRows = false;
             this.dataGridView_users.AllowUserToDeleteRows = false;
             this.dataGridView_users.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dataGridView_users.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dataGridView_users.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView_users.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_users.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_users.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -4616,6 +4644,14 @@
             this.Column31,
             this.name,
             this.usertype});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_users.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView_users.Location = new System.Drawing.Point(8, 56);
             this.dataGridView_users.MultiSelect = false;
             this.dataGridView_users.Name = "dataGridView_users";

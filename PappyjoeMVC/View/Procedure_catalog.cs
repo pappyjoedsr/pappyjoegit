@@ -36,9 +36,9 @@ namespace PappyjoeMVC.View
             refresh = 1;
             DataTable dtb = this.cntrl.FormLoad();
             FormLoad(dtb);
-            Dgv_Procedure.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkGray;
+            Dgv_Procedure.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             Dgv_Procedure.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            Dgv_Procedure.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 11, FontStyle.Bold);
+            Dgv_Procedure.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 10, FontStyle.Regular);
             Dgv_Procedure.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             Dgv_Procedure.EnableHeadersVisualStyles = false;
             foreach (DataGridViewColumn cl in Dgv_Procedure.Columns)
@@ -219,7 +219,7 @@ namespace PappyjoeMVC.View
                     GetProcedureName(dtb);
                     //Dgv_Procedure.Rows.Clear();
                     DataTable dt = this.cntrl.FormLoad();
-                    FormLoad(dt);
+                    //FormLoad(dt);
                 }
             }
         }

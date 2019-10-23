@@ -53,6 +53,11 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = Add_inv_model.Get_quantiry_fromStock(stockid);
             return dtb;
         }
+        public string server()
+        {
+            string server = db.server();
+            return server;
+        }
         public void update_addStock_qty(decimal current_Stock, string completedid)
         {
             inv_model.update_addStock_qty(current_Stock, completedid);

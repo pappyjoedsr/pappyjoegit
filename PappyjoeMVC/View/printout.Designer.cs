@@ -506,9 +506,10 @@
             // radio_landscape
             // 
             this.radio_landscape.AutoSize = true;
-            this.radio_landscape.Location = new System.Drawing.Point(134, 89);
+            this.radio_landscape.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_landscape.Location = new System.Drawing.Point(135, 89);
             this.radio_landscape.Name = "radio_landscape";
-            this.radio_landscape.Size = new System.Drawing.Size(78, 17);
+            this.radio_landscape.Size = new System.Drawing.Size(88, 21);
             this.radio_landscape.TabIndex = 2;
             this.radio_landscape.TabStop = true;
             this.radio_landscape.Text = "Landscape";
@@ -518,9 +519,10 @@
             // radio_potrait
             // 
             this.radio_potrait.AutoSize = true;
+            this.radio_potrait.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio_potrait.Location = new System.Drawing.Point(135, 66);
             this.radio_potrait.Name = "radio_potrait";
-            this.radio_potrait.Size = new System.Drawing.Size(58, 17);
+            this.radio_potrait.Size = new System.Drawing.Size(69, 21);
             this.radio_potrait.TabIndex = 2;
             this.radio_potrait.TabStop = true;
             this.radio_potrait.Text = "Portrait";
@@ -666,7 +668,7 @@
             "A3",
             "A4",
             "A5"});
-            this.combo_paper_size.Location = new System.Drawing.Point(132, 36);
+            this.combo_paper_size.Location = new System.Drawing.Point(135, 36);
             this.combo_paper_size.Name = "combo_paper_size";
             this.combo_paper_size.Size = new System.Drawing.Size(121, 21);
             this.combo_paper_size.TabIndex = 1;
@@ -674,45 +676,50 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 241);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(37, 241);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 13);
+            this.label7.Size = new System.Drawing.Size(87, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "Right Margin:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(25, 199);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 13);
+            this.label6.Size = new System.Drawing.Size(99, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "Bottom Margin:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 157);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(46, 157);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.Size = new System.Drawing.Size(78, 17);
             this.label5.TabIndex = 0;
             this.label5.Text = "Left Margin:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 122);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(45, 122);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.Size = new System.Drawing.Size(79, 17);
             this.label4.TabIndex = 0;
             this.label4.Text = "Top Margin:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 70);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(48, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(76, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Orientation:";
             this.label2.Visible = false;
@@ -720,9 +727,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 39);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(52, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Paper Size:";
             // 
@@ -754,7 +762,7 @@
             this.panel_header.Controls.Add(this.label9);
             this.panel_header.Location = new System.Drawing.Point(14, 75);
             this.panel_header.Name = "panel_header";
-            this.panel_header.Size = new System.Drawing.Size(310, 244);
+            this.panel_header.Size = new System.Drawing.Size(325, 244);
             this.panel_header.TabIndex = 2;
             // 
             // panel_logo
@@ -765,25 +773,27 @@
             this.panel_logo.Controls.Add(this.radio_narrow_logo);
             this.panel_logo.Location = new System.Drawing.Point(15, 157);
             this.panel_logo.Name = "panel_logo";
-            this.panel_logo.Size = new System.Drawing.Size(204, 78);
+            this.panel_logo.Size = new System.Drawing.Size(218, 78);
             this.panel_logo.TabIndex = 2;
             this.panel_logo.Visible = false;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 12);
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(3, 8);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 13);
+            this.label14.Size = new System.Drawing.Size(72, 17);
             this.label14.TabIndex = 0;
             this.label14.Text = "Logo Type:";
             // 
             // radio_square_logo
             // 
             this.radio_square_logo.AutoSize = true;
-            this.radio_square_logo.Location = new System.Drawing.Point(75, 8);
+            this.radio_square_logo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_square_logo.Location = new System.Drawing.Point(81, 8);
             this.radio_square_logo.Name = "radio_square_logo";
-            this.radio_square_logo.Size = new System.Drawing.Size(86, 17);
+            this.radio_square_logo.Size = new System.Drawing.Size(101, 21);
             this.radio_square_logo.TabIndex = 1;
             this.radio_square_logo.TabStop = true;
             this.radio_square_logo.Text = "Square Logo";
@@ -792,9 +802,10 @@
             // radio_wide_logo
             // 
             this.radio_wide_logo.AutoSize = true;
-            this.radio_wide_logo.Location = new System.Drawing.Point(75, 54);
+            this.radio_wide_logo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_wide_logo.Location = new System.Drawing.Point(81, 54);
             this.radio_wide_logo.Name = "radio_wide_logo";
-            this.radio_wide_logo.Size = new System.Drawing.Size(77, 17);
+            this.radio_wide_logo.Size = new System.Drawing.Size(90, 21);
             this.radio_wide_logo.TabIndex = 1;
             this.radio_wide_logo.TabStop = true;
             this.radio_wide_logo.Text = "Wide Logo";
@@ -804,9 +815,10 @@
             // radio_narrow_logo
             // 
             this.radio_narrow_logo.AutoSize = true;
-            this.radio_narrow_logo.Location = new System.Drawing.Point(75, 31);
+            this.radio_narrow_logo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_narrow_logo.Location = new System.Drawing.Point(81, 31);
             this.radio_narrow_logo.Name = "radio_narrow_logo";
-            this.radio_narrow_logo.Size = new System.Drawing.Size(86, 17);
+            this.radio_narrow_logo.Size = new System.Drawing.Size(104, 21);
             this.radio_narrow_logo.TabIndex = 1;
             this.radio_narrow_logo.TabStop = true;
             this.radio_narrow_logo.Text = "Narrow Logo";
@@ -815,7 +827,7 @@
             // 
             // text_right_text
             // 
-            this.text_right_text.Location = new System.Drawing.Point(77, 91);
+            this.text_right_text.Location = new System.Drawing.Point(99, 91);
             this.text_right_text.Name = "text_right_text";
             this.text_right_text.Size = new System.Drawing.Size(221, 20);
             this.text_right_text.TabIndex = 1;
@@ -823,9 +835,10 @@
             // radio_logo_no
             // 
             this.radio_logo_no.AutoSize = true;
-            this.radio_logo_no.Location = new System.Drawing.Point(136, 128);
+            this.radio_logo_no.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_logo_no.Location = new System.Drawing.Point(149, 128);
             this.radio_logo_no.Name = "radio_logo_no";
-            this.radio_logo_no.Size = new System.Drawing.Size(39, 17);
+            this.radio_logo_no.Size = new System.Drawing.Size(44, 21);
             this.radio_logo_no.TabIndex = 1;
             this.radio_logo_no.TabStop = true;
             this.radio_logo_no.Text = "No";
@@ -833,7 +846,7 @@
             // 
             // text_left_text
             // 
-            this.text_left_text.Location = new System.Drawing.Point(77, 52);
+            this.text_left_text.Location = new System.Drawing.Point(99, 52);
             this.text_left_text.Name = "text_left_text";
             this.text_left_text.Size = new System.Drawing.Size(221, 20);
             this.text_left_text.TabIndex = 1;
@@ -841,9 +854,10 @@
             // radio_logo_yes
             // 
             this.radio_logo_yes.AutoSize = true;
-            this.radio_logo_yes.Location = new System.Drawing.Point(87, 129);
+            this.radio_logo_yes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_logo_yes.Location = new System.Drawing.Point(100, 129);
             this.radio_logo_yes.Name = "radio_logo_yes";
-            this.radio_logo_yes.Size = new System.Drawing.Size(43, 17);
+            this.radio_logo_yes.Size = new System.Drawing.Size(45, 21);
             this.radio_logo_yes.TabIndex = 1;
             this.radio_logo_yes.TabStop = true;
             this.radio_logo_yes.Text = "Yes";
@@ -851,7 +865,7 @@
             // 
             // text_header
             // 
-            this.text_header.Location = new System.Drawing.Point(77, 14);
+            this.text_header.Location = new System.Drawing.Point(99, 14);
             this.text_header.Name = "text_header";
             this.text_header.Size = new System.Drawing.Size(221, 20);
             this.text_header.TabIndex = 1;
@@ -859,45 +873,50 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(3, 131);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 13);
+            this.label12.Size = new System.Drawing.Size(90, 17);
             this.label12.TabIndex = 0;
             this.label12.Text = "Include Logo :";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 98);
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(7, 98);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 13);
+            this.label11.Size = new System.Drawing.Size(86, 17);
             this.label11.TabIndex = 0;
             this.label11.Text = "Sub Heading:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(2, 57);
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(7, 57);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 13);
+            this.label10.Size = new System.Drawing.Size(86, 17);
             this.label10.TabIndex = 0;
             this.label10.Text = "Sub Heading:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(31, 20);
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(39, 20);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 13);
+            this.label9.Size = new System.Drawing.Size(54, 17);
             this.label9.TabIndex = 0;
             this.label9.Text = "Header:";
             // 
             // radio_headerno
             // 
             this.radio_headerno.AutoSize = true;
+            this.radio_headerno.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio_headerno.Location = new System.Drawing.Point(125, 52);
             this.radio_headerno.Name = "radio_headerno";
-            this.radio_headerno.Size = new System.Drawing.Size(177, 17);
+            this.radio_headerno.Size = new System.Drawing.Size(213, 21);
             this.radio_headerno.TabIndex = 1;
             this.radio_headerno.Text = "No. I already have a letter head.";
             this.radio_headerno.UseVisualStyleBackColor = true;
@@ -905,9 +924,10 @@
             // radio_headeryes
             // 
             this.radio_headeryes.AutoSize = true;
+            this.radio_headeryes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio_headeryes.Location = new System.Drawing.Point(125, 29);
             this.radio_headeryes.Name = "radio_headeryes";
-            this.radio_headeryes.Size = new System.Drawing.Size(43, 17);
+            this.radio_headeryes.Size = new System.Drawing.Size(45, 21);
             this.radio_headeryes.TabIndex = 1;
             this.radio_headeryes.Text = "Yes";
             this.radio_headeryes.UseVisualStyleBackColor = true;
@@ -915,9 +935,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(22, 29);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 13);
+            this.label8.Size = new System.Drawing.Size(103, 17);
             this.label8.TabIndex = 0;
             this.label8.Text = "Include Header :";
             // 
@@ -1051,6 +1072,7 @@
             this.tabPage6.Controls.Add(this.label17);
             this.tabPage6.Controls.Add(this.label16);
             this.tabPage6.Controls.Add(this.label15);
+            this.tabPage6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -1061,7 +1083,7 @@
             // rich_rightsign
             // 
             this.rich_rightsign.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rich_rightsign.Location = new System.Drawing.Point(20, 169);
+            this.rich_rightsign.Location = new System.Drawing.Point(20, 175);
             this.rich_rightsign.Multiline = false;
             this.rich_rightsign.Name = "rich_rightsign";
             this.rich_rightsign.Size = new System.Drawing.Size(317, 26);
@@ -1071,7 +1093,7 @@
             // rich_leftsign
             // 
             this.rich_leftsign.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rich_leftsign.Location = new System.Drawing.Point(20, 118);
+            this.rich_leftsign.Location = new System.Drawing.Point(20, 124);
             this.rich_leftsign.Multiline = false;
             this.rich_leftsign.Name = "rich_leftsign";
             this.rich_leftsign.Size = new System.Drawing.Size(317, 23);
@@ -1081,7 +1103,7 @@
             // rich_fullwidth
             // 
             this.rich_fullwidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rich_fullwidth.Location = new System.Drawing.Point(20, 74);
+            this.rich_fullwidth.Location = new System.Drawing.Point(20, 78);
             this.rich_fullwidth.Multiline = false;
             this.rich_fullwidth.Name = "rich_fullwidth";
             this.rich_fullwidth.Size = new System.Drawing.Size(317, 25);
@@ -1120,9 +1142,9 @@
             "800 mm",
             "900 mm",
             "1000 mm"});
-            this.combo_footer_topmargin.Location = new System.Drawing.Point(92, 26);
+            this.combo_footer_topmargin.Location = new System.Drawing.Point(99, 26);
             this.combo_footer_topmargin.Name = "combo_footer_topmargin";
-            this.combo_footer_topmargin.Size = new System.Drawing.Size(121, 21);
+            this.combo_footer_topmargin.Size = new System.Drawing.Size(121, 25);
             this.combo_footer_topmargin.TabIndex = 1;
             this.combo_footer_topmargin.Visible = false;
             // 
@@ -1131,7 +1153,7 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(17, 287);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(200, 13);
+            this.label19.Size = new System.Drawing.Size(252, 17);
             this.label19.TabIndex = 0;
             this.label19.Text = "* Signature fields are not added to Emails";
             this.label19.Visible = false;
@@ -1139,36 +1161,40 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(17, 153);
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(17, 155);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(46, 13);
+            this.label18.Size = new System.Drawing.Size(57, 17);
             this.label18.TabIndex = 0;
             this.label18.Text = "Footer 3";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(17, 102);
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(17, 104);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(46, 13);
+            this.label17.Size = new System.Drawing.Size(57, 17);
             this.label17.TabIndex = 0;
             this.label17.Text = "Footer 2";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(17, 58);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(46, 13);
+            this.label16.Size = new System.Drawing.Size(57, 17);
             this.label16.TabIndex = 0;
             this.label16.Text = "Footer 1";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(17, 29);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(64, 13);
+            this.label15.Size = new System.Drawing.Size(79, 17);
             this.label15.TabIndex = 0;
             this.label15.Text = "Top Margin:";
             this.label15.Visible = false;
@@ -1316,16 +1342,17 @@
             this.panel3.Controls.Add(this.radioButton2);
             this.panel3.Location = new System.Drawing.Point(71, 277);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(161, 65);
+            this.panel3.Size = new System.Drawing.Size(182, 65);
             this.panel3.TabIndex = 3;
             this.panel3.Visible = false;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.Location = new System.Drawing.Point(97, 15);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(58, 17);
+            this.radioButton1.Size = new System.Drawing.Size(69, 21);
             this.radioButton1.TabIndex = 2;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = " Colour";
@@ -1334,18 +1361,20 @@
             // label20
             // 
             this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(13, 19);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(67, 13);
+            this.label20.Size = new System.Drawing.Size(80, 17);
             this.label20.TabIndex = 0;
             this.label20.Text = "Printer Type:";
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.Location = new System.Drawing.Point(97, 38);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(58, 17);
+            this.radioButton2.Size = new System.Drawing.Size(63, 21);
             this.radioButton2.TabIndex = 2;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = " Black ";
@@ -1354,9 +1383,10 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(134, 89);
+            this.radioButton3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Location = new System.Drawing.Point(129, 89);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(78, 17);
+            this.radioButton3.Size = new System.Drawing.Size(88, 21);
             this.radioButton3.TabIndex = 2;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Landscape";
@@ -1366,9 +1396,10 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(135, 66);
+            this.radioButton4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton4.Location = new System.Drawing.Point(129, 66);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(58, 17);
+            this.radioButton4.Size = new System.Drawing.Size(69, 21);
             this.radioButton4.TabIndex = 2;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Portrait";
@@ -1403,7 +1434,7 @@
             "600 mm",
             "625 mm",
             "650 mm"});
-            this.comboBox1.Location = new System.Drawing.Point(135, 238);
+            this.comboBox1.Location = new System.Drawing.Point(129, 238);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
@@ -1436,7 +1467,7 @@
             "600 mm",
             "625 mm",
             "650 mm"});
-            this.comboBox2.Location = new System.Drawing.Point(135, 195);
+            this.comboBox2.Location = new System.Drawing.Point(129, 195);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 1;
@@ -1469,7 +1500,7 @@
             "600 mm",
             "625 mm",
             "650 mm"});
-            this.comboBox3.Location = new System.Drawing.Point(135, 154);
+            this.comboBox3.Location = new System.Drawing.Point(129, 154);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 1;
@@ -1502,7 +1533,7 @@
             "600 mm",
             "625 mm",
             "650 mm"});
-            this.comboBox4.Location = new System.Drawing.Point(135, 114);
+            this.comboBox4.Location = new System.Drawing.Point(129, 114);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 21);
             this.comboBox4.TabIndex = 1;
@@ -1514,7 +1545,7 @@
             "A3",
             "A4",
             "A5"});
-            this.comboBox5.Location = new System.Drawing.Point(132, 36);
+            this.comboBox5.Location = new System.Drawing.Point(129, 36);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(121, 21);
             this.comboBox5.TabIndex = 1;
@@ -1522,45 +1553,50 @@
             // label21
             // 
             this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(35, 241);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(70, 13);
+            this.label21.Size = new System.Drawing.Size(87, 17);
             this.label21.TabIndex = 0;
             this.label21.Text = "Right Margin:";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(25, 199);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(78, 13);
+            this.label22.Size = new System.Drawing.Size(99, 17);
             this.label22.TabIndex = 0;
             this.label22.Text = "Bottom Margin:";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(44, 157);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(63, 13);
+            this.label23.Size = new System.Drawing.Size(78, 17);
             this.label23.TabIndex = 0;
             this.label23.Text = "Left Margin:";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(44, 122);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(64, 13);
+            this.label24.Size = new System.Drawing.Size(79, 17);
             this.label24.TabIndex = 0;
             this.label24.Text = "Top Margin:";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(43, 70);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(61, 13);
+            this.label25.Size = new System.Drawing.Size(76, 17);
             this.label25.TabIndex = 0;
             this.label25.Text = "Orientation:";
             this.label25.Visible = false;
@@ -1568,9 +1604,10 @@
             // label26
             // 
             this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.Location = new System.Drawing.Point(44, 39);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(61, 13);
+            this.label26.Size = new System.Drawing.Size(72, 17);
             this.label26.TabIndex = 0;
             this.label26.Text = "Paper Size:";
             // 
@@ -1600,9 +1637,9 @@
             this.panel4.Controls.Add(this.label29);
             this.panel4.Controls.Add(this.label30);
             this.panel4.Controls.Add(this.label31);
-            this.panel4.Location = new System.Drawing.Point(14, 75);
+            this.panel4.Location = new System.Drawing.Point(3, 75);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(310, 244);
+            this.panel4.Size = new System.Drawing.Size(324, 244);
             this.panel4.TabIndex = 2;
             // 
             // panel5
@@ -1987,36 +2024,40 @@
             // label34
             // 
             this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.Location = new System.Drawing.Point(17, 153);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(46, 13);
+            this.label34.Size = new System.Drawing.Size(57, 17);
             this.label34.TabIndex = 0;
             this.label34.Text = "Footer 3";
             // 
             // label35
             // 
             this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.Location = new System.Drawing.Point(17, 102);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(46, 13);
+            this.label35.Size = new System.Drawing.Size(57, 17);
             this.label35.TabIndex = 0;
             this.label35.Text = "Footer 2";
             // 
             // label36
             // 
             this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.Location = new System.Drawing.Point(17, 58);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(46, 13);
+            this.label36.Size = new System.Drawing.Size(57, 17);
             this.label36.TabIndex = 0;
             this.label36.Text = "Footer 1";
             // 
             // label37
             // 
             this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.Location = new System.Drawing.Point(17, 29);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(64, 13);
+            this.label37.Size = new System.Drawing.Size(79, 17);
             this.label37.TabIndex = 0;
             this.label37.Text = "Top Margin:";
             this.label37.Visible = false;
@@ -2146,16 +2187,17 @@
             this.panel8.Controls.Add(this.radio_black1);
             this.panel8.Location = new System.Drawing.Point(71, 277);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(161, 65);
+            this.panel8.Size = new System.Drawing.Size(185, 65);
             this.panel8.TabIndex = 3;
             this.panel8.Visible = false;
             // 
             // radio_color1
             // 
             this.radio_color1.AutoSize = true;
+            this.radio_color1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio_color1.Location = new System.Drawing.Point(97, 15);
             this.radio_color1.Name = "radio_color1";
-            this.radio_color1.Size = new System.Drawing.Size(58, 17);
+            this.radio_color1.Size = new System.Drawing.Size(69, 21);
             this.radio_color1.TabIndex = 2;
             this.radio_color1.TabStop = true;
             this.radio_color1.Text = " Colour";
@@ -2164,18 +2206,20 @@
             // label38
             // 
             this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.Location = new System.Drawing.Point(13, 19);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(67, 13);
+            this.label38.Size = new System.Drawing.Size(84, 16);
             this.label38.TabIndex = 0;
             this.label38.Text = "Printer Type:";
             // 
             // radio_black1
             // 
             this.radio_black1.AutoSize = true;
+            this.radio_black1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio_black1.Location = new System.Drawing.Point(97, 38);
             this.radio_black1.Name = "radio_black1";
-            this.radio_black1.Size = new System.Drawing.Size(58, 17);
+            this.radio_black1.Size = new System.Drawing.Size(63, 21);
             this.radio_black1.TabIndex = 2;
             this.radio_black1.TabStop = true;
             this.radio_black1.Text = " Black ";
@@ -2184,9 +2228,10 @@
             // radio_landscape1
             // 
             this.radio_landscape1.AutoSize = true;
+            this.radio_landscape1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio_landscape1.Location = new System.Drawing.Point(134, 89);
             this.radio_landscape1.Name = "radio_landscape1";
-            this.radio_landscape1.Size = new System.Drawing.Size(78, 17);
+            this.radio_landscape1.Size = new System.Drawing.Size(88, 21);
             this.radio_landscape1.TabIndex = 2;
             this.radio_landscape1.TabStop = true;
             this.radio_landscape1.Text = "Landscape";
@@ -2196,9 +2241,10 @@
             // radio_potrait1
             // 
             this.radio_potrait1.AutoSize = true;
+            this.radio_potrait1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio_potrait1.Location = new System.Drawing.Point(135, 66);
             this.radio_potrait1.Name = "radio_potrait1";
-            this.radio_potrait1.Size = new System.Drawing.Size(58, 17);
+            this.radio_potrait1.Size = new System.Drawing.Size(69, 21);
             this.radio_potrait1.TabIndex = 2;
             this.radio_potrait1.TabStop = true;
             this.radio_potrait1.Text = "Portrait";
@@ -2352,45 +2398,50 @@
             // label39
             // 
             this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.Location = new System.Drawing.Point(35, 241);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(70, 13);
+            this.label39.Size = new System.Drawing.Size(87, 17);
             this.label39.TabIndex = 0;
             this.label39.Text = "Right Margin:";
             // 
             // label40
             // 
             this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.Location = new System.Drawing.Point(25, 199);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(78, 13);
+            this.label40.Size = new System.Drawing.Size(99, 17);
             this.label40.TabIndex = 0;
             this.label40.Text = "Bottom Margin:";
             // 
             // label41
             // 
             this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.Location = new System.Drawing.Point(44, 157);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(63, 13);
+            this.label41.Size = new System.Drawing.Size(78, 17);
             this.label41.TabIndex = 0;
             this.label41.Text = "Left Margin:";
             // 
             // label42
             // 
             this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.Location = new System.Drawing.Point(44, 122);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(64, 13);
+            this.label42.Size = new System.Drawing.Size(79, 17);
             this.label42.TabIndex = 0;
             this.label42.Text = "Top Margin:";
             // 
             // label43
             // 
             this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.Location = new System.Drawing.Point(43, 70);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(61, 13);
+            this.label43.Size = new System.Drawing.Size(76, 17);
             this.label43.TabIndex = 0;
             this.label43.Text = "Orientation:";
             this.label43.Visible = false;
@@ -2398,9 +2449,10 @@
             // label44
             // 
             this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.Location = new System.Drawing.Point(44, 39);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(61, 13);
+            this.label44.Size = new System.Drawing.Size(72, 17);
             this.label44.TabIndex = 0;
             this.label44.Text = "Paper Size:";
             // 
@@ -2432,7 +2484,7 @@
             this.panel_header1.Controls.Add(this.label49);
             this.panel_header1.Location = new System.Drawing.Point(14, 75);
             this.panel_header1.Name = "panel_header1";
-            this.panel_header1.Size = new System.Drawing.Size(310, 244);
+            this.panel_header1.Size = new System.Drawing.Size(333, 244);
             this.panel_header1.TabIndex = 2;
             // 
             // panel_logo1
@@ -2493,7 +2545,7 @@
             // 
             // text_right_text1
             // 
-            this.text_right_text1.Location = new System.Drawing.Point(77, 91);
+            this.text_right_text1.Location = new System.Drawing.Point(100, 97);
             this.text_right_text1.Name = "text_right_text1";
             this.text_right_text1.Size = new System.Drawing.Size(221, 20);
             this.text_right_text1.TabIndex = 1;
@@ -2501,7 +2553,7 @@
             // radio_logo_no1
             // 
             this.radio_logo_no1.AutoSize = true;
-            this.radio_logo_no1.Location = new System.Drawing.Point(136, 128);
+            this.radio_logo_no1.Location = new System.Drawing.Point(151, 128);
             this.radio_logo_no1.Name = "radio_logo_no1";
             this.radio_logo_no1.Size = new System.Drawing.Size(39, 17);
             this.radio_logo_no1.TabIndex = 1;
@@ -2511,7 +2563,7 @@
             // 
             // text_left_text1
             // 
-            this.text_left_text1.Location = new System.Drawing.Point(77, 52);
+            this.text_left_text1.Location = new System.Drawing.Point(100, 58);
             this.text_left_text1.Name = "text_left_text1";
             this.text_left_text1.Size = new System.Drawing.Size(221, 20);
             this.text_left_text1.TabIndex = 1;
@@ -2519,7 +2571,7 @@
             // radio_logo_yes1
             // 
             this.radio_logo_yes1.AutoSize = true;
-            this.radio_logo_yes1.Location = new System.Drawing.Point(87, 129);
+            this.radio_logo_yes1.Location = new System.Drawing.Point(101, 129);
             this.radio_logo_yes1.Name = "radio_logo_yes1";
             this.radio_logo_yes1.Size = new System.Drawing.Size(43, 17);
             this.radio_logo_yes1.TabIndex = 1;
@@ -2529,7 +2581,7 @@
             // 
             // text_header1
             // 
-            this.text_header1.Location = new System.Drawing.Point(77, 14);
+            this.text_header1.Location = new System.Drawing.Point(100, 20);
             this.text_header1.Name = "text_header1";
             this.text_header1.Size = new System.Drawing.Size(221, 20);
             this.text_header1.TabIndex = 1;
@@ -2537,36 +2589,40 @@
             // label46
             // 
             this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.Location = new System.Drawing.Point(3, 131);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(75, 13);
+            this.label46.Size = new System.Drawing.Size(90, 17);
             this.label46.TabIndex = 0;
             this.label46.Text = "Include Logo :";
             // 
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(3, 98);
+            this.label47.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(7, 98);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(72, 13);
+            this.label47.Size = new System.Drawing.Size(86, 17);
             this.label47.TabIndex = 0;
             this.label47.Text = "Sub Heading:";
             // 
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(2, 57);
+            this.label48.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(7, 57);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(72, 13);
+            this.label48.Size = new System.Drawing.Size(86, 17);
             this.label48.TabIndex = 0;
             this.label48.Text = "Sub Heading:";
             // 
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(31, 20);
+            this.label49.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(39, 20);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(45, 13);
+            this.label49.Size = new System.Drawing.Size(54, 17);
             this.label49.TabIndex = 0;
             this.label49.Text = "Header:";
             // 
@@ -2593,9 +2649,10 @@
             // label50
             // 
             this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label50.Location = new System.Drawing.Point(22, 29);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(86, 13);
+            this.label50.Size = new System.Drawing.Size(103, 17);
             this.label50.TabIndex = 0;
             this.label50.Text = "Include Header :";
             // 
@@ -2739,7 +2796,7 @@
             // rich_rightsign1
             // 
             this.rich_rightsign1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rich_rightsign1.Location = new System.Drawing.Point(20, 169);
+            this.rich_rightsign1.Location = new System.Drawing.Point(20, 172);
             this.rich_rightsign1.Multiline = false;
             this.rich_rightsign1.Name = "rich_rightsign1";
             this.rich_rightsign1.Size = new System.Drawing.Size(317, 26);
@@ -2749,7 +2806,7 @@
             // rich_leftsign1
             // 
             this.rich_leftsign1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rich_leftsign1.Location = new System.Drawing.Point(20, 118);
+            this.rich_leftsign1.Location = new System.Drawing.Point(20, 126);
             this.rich_leftsign1.Multiline = false;
             this.rich_leftsign1.Name = "rich_leftsign1";
             this.rich_leftsign1.Size = new System.Drawing.Size(317, 23);
@@ -2759,7 +2816,7 @@
             // rich_fullwidth1
             // 
             this.rich_fullwidth1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rich_fullwidth1.Location = new System.Drawing.Point(20, 74);
+            this.rich_fullwidth1.Location = new System.Drawing.Point(20, 79);
             this.rich_fullwidth1.Multiline = false;
             this.rich_fullwidth1.Name = "rich_fullwidth1";
             this.rich_fullwidth1.Size = new System.Drawing.Size(317, 25);
@@ -2798,7 +2855,7 @@
             "800 mm",
             "900 mm",
             "1000 mm"});
-            this.combo_footer_topmargin1.Location = new System.Drawing.Point(92, 26);
+            this.combo_footer_topmargin1.Location = new System.Drawing.Point(101, 26);
             this.combo_footer_topmargin1.Name = "combo_footer_topmargin1";
             this.combo_footer_topmargin1.Size = new System.Drawing.Size(121, 21);
             this.combo_footer_topmargin1.TabIndex = 1;
@@ -2817,36 +2874,40 @@
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(17, 153);
+            this.label52.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.Location = new System.Drawing.Point(17, 154);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(46, 13);
+            this.label52.Size = new System.Drawing.Size(57, 17);
             this.label52.TabIndex = 0;
             this.label52.Text = "Footer 3";
             // 
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(17, 102);
+            this.label53.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(17, 108);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(46, 13);
+            this.label53.Size = new System.Drawing.Size(57, 17);
             this.label53.TabIndex = 0;
             this.label53.Text = "Footer 2";
             // 
             // label54
             // 
             this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label54.Location = new System.Drawing.Point(17, 58);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(46, 13);
+            this.label54.Size = new System.Drawing.Size(57, 17);
             this.label54.TabIndex = 0;
             this.label54.Text = "Footer 1";
             // 
             // label55
             // 
             this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label55.Location = new System.Drawing.Point(17, 29);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(64, 13);
+            this.label55.Size = new System.Drawing.Size(79, 17);
             this.label55.TabIndex = 0;
             this.label55.Text = "Top Margin:";
             this.label55.Visible = false;
@@ -3014,9 +3075,10 @@
             // radio_landscape2
             // 
             this.radio_landscape2.AutoSize = true;
+            this.radio_landscape2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio_landscape2.Location = new System.Drawing.Point(135, 91);
             this.radio_landscape2.Name = "radio_landscape2";
-            this.radio_landscape2.Size = new System.Drawing.Size(78, 17);
+            this.radio_landscape2.Size = new System.Drawing.Size(88, 21);
             this.radio_landscape2.TabIndex = 2;
             this.radio_landscape2.TabStop = true;
             this.radio_landscape2.Text = "Landscape";
@@ -3026,9 +3088,10 @@
             // radio_potrait2
             // 
             this.radio_potrait2.AutoSize = true;
+            this.radio_potrait2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio_potrait2.Location = new System.Drawing.Point(135, 66);
             this.radio_potrait2.Name = "radio_potrait2";
-            this.radio_potrait2.Size = new System.Drawing.Size(58, 17);
+            this.radio_potrait2.Size = new System.Drawing.Size(69, 21);
             this.radio_potrait2.TabIndex = 2;
             this.radio_potrait2.TabStop = true;
             this.radio_potrait2.Text = "Portrait";
@@ -3182,45 +3245,50 @@
             // label57
             // 
             this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label57.Location = new System.Drawing.Point(35, 241);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(70, 13);
+            this.label57.Size = new System.Drawing.Size(87, 17);
             this.label57.TabIndex = 0;
             this.label57.Text = "Right Margin:";
             // 
             // label58
             // 
             this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label58.Location = new System.Drawing.Point(25, 199);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(78, 13);
+            this.label58.Size = new System.Drawing.Size(99, 17);
             this.label58.TabIndex = 0;
             this.label58.Text = "Bottom Margin:";
             // 
             // label59
             // 
             this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label59.Location = new System.Drawing.Point(44, 157);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(63, 13);
+            this.label59.Size = new System.Drawing.Size(78, 17);
             this.label59.TabIndex = 0;
             this.label59.Text = "Left Margin:";
             // 
             // label60
             // 
             this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label60.Location = new System.Drawing.Point(44, 122);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(64, 13);
+            this.label60.Size = new System.Drawing.Size(79, 17);
             this.label60.TabIndex = 0;
             this.label60.Text = "Top Margin:";
             // 
             // label61
             // 
             this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label61.Location = new System.Drawing.Point(43, 70);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(61, 13);
+            this.label61.Size = new System.Drawing.Size(76, 17);
             this.label61.TabIndex = 0;
             this.label61.Text = "Orientation:";
             this.label61.Visible = false;
@@ -3228,9 +3296,10 @@
             // label62
             // 
             this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label62.Location = new System.Drawing.Point(44, 39);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(61, 13);
+            this.label62.Size = new System.Drawing.Size(72, 17);
             this.label62.TabIndex = 0;
             this.label62.Text = "Paper Size:";
             // 
@@ -3260,9 +3329,9 @@
             this.panel_header2.Controls.Add(this.label65);
             this.panel_header2.Controls.Add(this.label66);
             this.panel_header2.Controls.Add(this.label67);
-            this.panel_header2.Location = new System.Drawing.Point(14, 75);
+            this.panel_header2.Location = new System.Drawing.Point(3, 75);
             this.panel_header2.Name = "panel_header2";
-            this.panel_header2.Size = new System.Drawing.Size(310, 244);
+            this.panel_header2.Size = new System.Drawing.Size(334, 244);
             this.panel_header2.TabIndex = 2;
             // 
             // panel_logo2
@@ -3323,7 +3392,7 @@
             // 
             // text_right_text2
             // 
-            this.text_right_text2.Location = new System.Drawing.Point(77, 91);
+            this.text_right_text2.Location = new System.Drawing.Point(98, 97);
             this.text_right_text2.Name = "text_right_text2";
             this.text_right_text2.Size = new System.Drawing.Size(221, 20);
             this.text_right_text2.TabIndex = 1;
@@ -3331,9 +3400,10 @@
             // radio_logo_no2
             // 
             this.radio_logo_no2.AutoSize = true;
-            this.radio_logo_no2.Location = new System.Drawing.Point(136, 128);
+            this.radio_logo_no2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_logo_no2.Location = new System.Drawing.Point(152, 132);
             this.radio_logo_no2.Name = "radio_logo_no2";
-            this.radio_logo_no2.Size = new System.Drawing.Size(39, 17);
+            this.radio_logo_no2.Size = new System.Drawing.Size(44, 21);
             this.radio_logo_no2.TabIndex = 1;
             this.radio_logo_no2.TabStop = true;
             this.radio_logo_no2.Text = "No";
@@ -3341,7 +3411,7 @@
             // 
             // text_left_text2
             // 
-            this.text_left_text2.Location = new System.Drawing.Point(77, 52);
+            this.text_left_text2.Location = new System.Drawing.Point(98, 58);
             this.text_left_text2.Name = "text_left_text2";
             this.text_left_text2.Size = new System.Drawing.Size(221, 20);
             this.text_left_text2.TabIndex = 1;
@@ -3349,9 +3419,10 @@
             // radio_logo_yes2
             // 
             this.radio_logo_yes2.AutoSize = true;
-            this.radio_logo_yes2.Location = new System.Drawing.Point(87, 129);
+            this.radio_logo_yes2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_logo_yes2.Location = new System.Drawing.Point(103, 133);
             this.radio_logo_yes2.Name = "radio_logo_yes2";
-            this.radio_logo_yes2.Size = new System.Drawing.Size(43, 17);
+            this.radio_logo_yes2.Size = new System.Drawing.Size(45, 21);
             this.radio_logo_yes2.TabIndex = 1;
             this.radio_logo_yes2.TabStop = true;
             this.radio_logo_yes2.Text = "Yes";
@@ -3359,7 +3430,7 @@
             // 
             // text_header2
             // 
-            this.text_header2.Location = new System.Drawing.Point(77, 14);
+            this.text_header2.Location = new System.Drawing.Point(98, 20);
             this.text_header2.Name = "text_header2";
             this.text_header2.Size = new System.Drawing.Size(221, 20);
             this.text_header2.TabIndex = 1;
@@ -3367,45 +3438,50 @@
             // label64
             // 
             this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(3, 131);
+            this.label64.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.Location = new System.Drawing.Point(6, 131);
             this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(75, 13);
+            this.label64.Size = new System.Drawing.Size(90, 17);
             this.label64.TabIndex = 0;
             this.label64.Text = "Include Logo :";
             // 
             // label65
             // 
             this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(3, 98);
+            this.label65.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(10, 98);
             this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(72, 13);
+            this.label65.Size = new System.Drawing.Size(86, 17);
             this.label65.TabIndex = 0;
             this.label65.Text = "Sub Heading:";
             // 
             // label66
             // 
             this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(2, 57);
+            this.label66.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.Location = new System.Drawing.Point(10, 57);
             this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(72, 13);
+            this.label66.Size = new System.Drawing.Size(86, 17);
             this.label66.TabIndex = 0;
             this.label66.Text = "Sub Heading:";
             // 
             // label67
             // 
             this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(31, 20);
+            this.label67.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.Location = new System.Drawing.Point(42, 20);
             this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(45, 13);
+            this.label67.Size = new System.Drawing.Size(54, 17);
             this.label67.TabIndex = 0;
             this.label67.Text = "Header:";
             // 
             // radio_headerno2
             // 
             this.radio_headerno2.AutoSize = true;
-            this.radio_headerno2.Location = new System.Drawing.Point(125, 52);
+            this.radio_headerno2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_headerno2.Location = new System.Drawing.Point(121, 52);
             this.radio_headerno2.Name = "radio_headerno2";
-            this.radio_headerno2.Size = new System.Drawing.Size(177, 17);
+            this.radio_headerno2.Size = new System.Drawing.Size(213, 21);
             this.radio_headerno2.TabIndex = 1;
             this.radio_headerno2.Text = "No. I already have a letter head.";
             this.radio_headerno2.UseVisualStyleBackColor = true;
@@ -3413,9 +3489,10 @@
             // radio_headeryes2
             // 
             this.radio_headeryes2.AutoSize = true;
-            this.radio_headeryes2.Location = new System.Drawing.Point(125, 29);
+            this.radio_headeryes2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio_headeryes2.Location = new System.Drawing.Point(121, 29);
             this.radio_headeryes2.Name = "radio_headeryes2";
-            this.radio_headeryes2.Size = new System.Drawing.Size(43, 17);
+            this.radio_headeryes2.Size = new System.Drawing.Size(45, 21);
             this.radio_headeryes2.TabIndex = 1;
             this.radio_headeryes2.Text = "Yes";
             this.radio_headeryes2.UseVisualStyleBackColor = true;
@@ -3423,9 +3500,10 @@
             // label68
             // 
             this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(22, 29);
+            this.label68.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.Location = new System.Drawing.Point(18, 29);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(86, 13);
+            this.label68.Size = new System.Drawing.Size(103, 17);
             this.label68.TabIndex = 0;
             this.label68.Text = "Include Header :";
             // 
@@ -3569,7 +3647,7 @@
             // rich_rightsign2
             // 
             this.rich_rightsign2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rich_rightsign2.Location = new System.Drawing.Point(20, 169);
+            this.rich_rightsign2.Location = new System.Drawing.Point(20, 174);
             this.rich_rightsign2.Multiline = false;
             this.rich_rightsign2.Name = "rich_rightsign2";
             this.rich_rightsign2.Size = new System.Drawing.Size(317, 26);
@@ -3579,7 +3657,7 @@
             // rich_leftsign2
             // 
             this.rich_leftsign2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rich_leftsign2.Location = new System.Drawing.Point(20, 118);
+            this.rich_leftsign2.Location = new System.Drawing.Point(20, 126);
             this.rich_leftsign2.Multiline = false;
             this.rich_leftsign2.Name = "rich_leftsign2";
             this.rich_leftsign2.Size = new System.Drawing.Size(317, 23);
@@ -3589,7 +3667,7 @@
             // rich_fullwidth2
             // 
             this.rich_fullwidth2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rich_fullwidth2.Location = new System.Drawing.Point(20, 74);
+            this.rich_fullwidth2.Location = new System.Drawing.Point(20, 77);
             this.rich_fullwidth2.Multiline = false;
             this.rich_fullwidth2.Name = "rich_fullwidth2";
             this.rich_fullwidth2.Size = new System.Drawing.Size(317, 25);
@@ -3628,7 +3706,7 @@
             "800 mm",
             "900 mm",
             "1000 mm"});
-            this.combo_footer_topmargin2.Location = new System.Drawing.Point(92, 26);
+            this.combo_footer_topmargin2.Location = new System.Drawing.Point(100, 26);
             this.combo_footer_topmargin2.Name = "combo_footer_topmargin2";
             this.combo_footer_topmargin2.Size = new System.Drawing.Size(121, 21);
             this.combo_footer_topmargin2.TabIndex = 1;
@@ -3647,36 +3725,40 @@
             // label70
             // 
             this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(17, 153);
+            this.label70.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.Location = new System.Drawing.Point(17, 154);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(46, 13);
+            this.label70.Size = new System.Drawing.Size(57, 17);
             this.label70.TabIndex = 0;
             this.label70.Text = "Footer 3";
             // 
             // label71
             // 
             this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(17, 102);
+            this.label71.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label71.Location = new System.Drawing.Point(17, 107);
             this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(46, 13);
+            this.label71.Size = new System.Drawing.Size(57, 17);
             this.label71.TabIndex = 0;
             this.label71.Text = "Footer 2";
             // 
             // label72
             // 
             this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label72.Location = new System.Drawing.Point(17, 58);
             this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(46, 13);
+            this.label72.Size = new System.Drawing.Size(57, 17);
             this.label72.TabIndex = 0;
             this.label72.Text = "Footer 1";
             // 
             // label73
             // 
             this.label73.AutoSize = true;
+            this.label73.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label73.Location = new System.Drawing.Point(17, 29);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(64, 13);
+            this.label73.Size = new System.Drawing.Size(79, 17);
             this.label73.TabIndex = 0;
             this.label73.Text = "Top Margin:";
             this.label73.Visible = false;
@@ -3857,7 +3939,7 @@
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Printout";
-            this.Text = "Printout";
+            this.Text = " bb    ";
             this.Load += new System.EventHandler(this.printout_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

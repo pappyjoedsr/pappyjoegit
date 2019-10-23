@@ -14,6 +14,7 @@ namespace PappyjoeMVC.Controller
         Common_model cmdl = new Common_model();
         LabWorks_model mdl = new LabWorks_model();
         Daily_Invoice_Report_model dm = new Daily_Invoice_Report_model();
+        Connection db = new Connection();
         public DataTable Get_Patient_Details(string patid)
         {
             DataTable dt = cmdl.Get_Patient_Details(patid);
@@ -43,6 +44,11 @@ namespace PappyjoeMVC.Controller
         {
             string dt = cmdl.Get_DoctorName(doctrid);
             return dt;
+        }
+        public string server()
+        {
+            string server = db.server();
+            return server;
         }
         public DataTable Getdata(string patid)
         {

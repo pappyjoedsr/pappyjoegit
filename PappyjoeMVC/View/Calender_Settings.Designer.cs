@@ -43,7 +43,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(295, 93);
+            this.label2.Location = new System.Drawing.Point(305, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 76;
@@ -60,7 +60,7 @@
             "15 minutes",
             "30 minutes",
             "60 minutes"});
-            this.combo_slot.Location = new System.Drawing.Point(165, 85);
+            this.combo_slot.Location = new System.Drawing.Point(175, 86);
             this.combo_slot.Name = "combo_slot";
             this.combo_slot.Size = new System.Drawing.Size(121, 21);
             this.combo_slot.TabIndex = 75;
@@ -69,10 +69,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(32, 88);
+            this.label1.Location = new System.Drawing.Point(23, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 13);
+            this.label1.Size = new System.Drawing.Size(151, 17);
             this.label1.TabIndex = 74;
             this.label1.Text = "Show Calendar Slots of  ";
             // 
@@ -93,7 +94,7 @@
             this.button_savetimings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_savetimings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_savetimings.ForeColor = System.Drawing.Color.White;
-            this.button_savetimings.Location = new System.Drawing.Point(560, 79);
+            this.button_savetimings.Location = new System.Drawing.Point(520, 86);
             this.button_savetimings.Name = "button_savetimings";
             this.button_savetimings.Size = new System.Drawing.Size(99, 33);
             this.button_savetimings.TabIndex = 78;
@@ -110,7 +111,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1214, 750);
+            this.ClientSize = new System.Drawing.Size(1214, 749);
             this.Controls.Add(this.button_savetimings);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label2);
