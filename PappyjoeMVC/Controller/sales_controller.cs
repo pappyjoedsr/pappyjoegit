@@ -93,20 +93,20 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.order_itemsDtails(invnum_order);
             return dtb;
         }
-        public void Save_salesMaster(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        public int Save_salesMaster(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
         {
-             _model.Save_salesMaster(DocNo, Docdate, sales_, ordeNo, Date_, doctor_, lrno, lr_date, throuhg, ptid, ptname, street__, locality, city, phone, payMethod, totalAmnt, disount, gst, igst, gTotal);
-           
+          int i=   _model.Save_salesMaster(DocNo, Docdate, sales_, ordeNo, Date_, doctor_, lrno, lr_date, throuhg, ptid, ptname, street__, locality, city, phone, payMethod, totalAmnt, disount, gst, igst, gTotal);
+            return i;
         }
         public DataTable get_costbase(string itemcode)
         {
             DataTable dtb = _model.get_costbase(itemcode);
             return dtb;
         }
-        public void Save_itemdetails(int DocNo, string Docdate, string Item_Code, string Description, string Packing, string Unit, decimal GST, decimal IGST, int Qty, int FreeQty, decimal Rate, decimal TotalAmount, string UNIT2, decimal UnitMF, decimal CostBase)
+        public int Save_itemdetails(int DocNo, string Docdate, string Item_Code, string Description, string Packing, string Unit, decimal GST, decimal IGST, int Qty, int FreeQty, decimal Rate, decimal TotalAmount, string UNIT2, decimal UnitMF, decimal CostBase)
         {
-           _model.Save_itemdetails(DocNo, Docdate,Item_Code, Description, Packing, Unit, GST, IGST, Qty, FreeQty, Rate, TotalAmount, UNIT2, UnitMF, CostBase);
-            //return i;
+          int i= _model.Save_itemdetails(DocNo, Docdate,Item_Code, Description, Packing, Unit, GST, IGST, Qty, FreeQty, Rate, TotalAmount, UNIT2, UnitMF, CostBase);
+            return i;
         }
         public void update_batchnumber(decimal currentStock, string BatchEntry)
         {

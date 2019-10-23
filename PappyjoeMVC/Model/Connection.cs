@@ -80,51 +80,7 @@ namespace PappyjoeMVC.Model
             }
         }
 
-        // transaction execute//
-        public void begin_trans()
-        {
-           
-            if(this.OpenConnection()==true)
-            {
-                con.BeginTransaction();
-            }
-        }
-        public void trans_execute(string s)
-        {
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand(s, con);
-                cmd.ExecuteNonQuery();
-               
-            }
-            catch(Exception ex)
-            {
-                //transaction.Rollback();
-                //MessageBox.Show(ex.Message);
-            }
-            //finally
-            //{
-            //    CloseConnection();
-            //}
-        }
-
-        public void close_trans()
-        {
-            try
-            {
-                transaction.Commit();
-            }
-            catch (Exception ex)
-            {
-                transaction.Rollback();
-                //MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-        }
-
+      
         /// <summary>
         /// 
         /// </summary>
