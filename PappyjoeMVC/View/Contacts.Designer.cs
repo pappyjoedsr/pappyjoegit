@@ -57,7 +57,7 @@
             this.btn_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancel.ForeColor = System.Drawing.Color.White;
-            this.btn_Cancel.Location = new System.Drawing.Point(177, 101);
+            this.btn_Cancel.Location = new System.Drawing.Point(184, 101);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 28);
             this.btn_Cancel.TabIndex = 289;
@@ -78,20 +78,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(38, 154);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.Size = new System.Drawing.Size(47, 17);
             this.label2.TabIndex = 285;
             this.label2.Text = "Search";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(12, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.Size = new System.Drawing.Size(91, 17);
             this.label1.TabIndex = 286;
             this.label1.Text = "Contact Name";
             // 
@@ -128,7 +130,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Contact.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Contact.GridColor = System.Drawing.Color.DarkSlateGray;
-            this.dgv_Contact.Location = new System.Drawing.Point(97, 181);
+            this.dgv_Contact.Location = new System.Drawing.Point(104, 181);
             this.dgv_Contact.Name = "dgv_Contact";
             this.dgv_Contact.ReadOnly = true;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -190,7 +192,7 @@
             // text_search
             // 
             this.text_search.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_search.Location = new System.Drawing.Point(97, 151);
+            this.text_search.Location = new System.Drawing.Point(104, 151);
             this.text_search.Name = "text_search";
             this.text_search.Size = new System.Drawing.Size(328, 20);
             this.text_search.TabIndex = 283;
@@ -202,7 +204,7 @@
             this.buttonclear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonclear.ForeColor = System.Drawing.Color.White;
-            this.buttonclear.Location = new System.Drawing.Point(434, 69);
+            this.buttonclear.Location = new System.Drawing.Point(441, 70);
             this.buttonclear.Name = "buttonclear";
             this.buttonclear.Size = new System.Drawing.Size(67, 22);
             this.buttonclear.TabIndex = 281;
@@ -216,7 +218,7 @@
             this.buttonsave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonsave.ForeColor = System.Drawing.Color.White;
-            this.buttonsave.Location = new System.Drawing.Point(97, 101);
+            this.buttonsave.Location = new System.Drawing.Point(107, 101);
             this.buttonsave.Name = "buttonsave";
             this.buttonsave.Size = new System.Drawing.Size(75, 28);
             this.buttonsave.TabIndex = 282;
@@ -227,7 +229,7 @@
             // text_contact
             // 
             this.text_contact.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_contact.Location = new System.Drawing.Point(100, 72);
+            this.text_contact.Location = new System.Drawing.Point(107, 72);
             this.text_contact.Name = "text_contact";
             this.text_contact.Size = new System.Drawing.Size(328, 20);
             this.text_contact.TabIndex = 280;

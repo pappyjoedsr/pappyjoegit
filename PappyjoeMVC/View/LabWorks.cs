@@ -18,6 +18,7 @@ namespace PappyjoeMVC.View
         public int k, Dexist = 0;
         Connection db = new Connection();
         LabWorks_controller ctrlr = new LabWorks_controller();
+        public string headng = "";
         public static string strphone = "";
         public string name = "", result = "", units = "", text = "", smsName = "", smsPass = "";
         public string addr = "", loc = "", gen = "", patient_id = "", age = "", address = "", sexage = "", Apppath = "", doctor_id = "", typ = "", n = "", workiddental = "", workname = "", strPatientName = "", mob_number = "", path = "", contact_no = "", logo_name = "", clinicn = "", strclinicname = "", strStreet = "", stremail = "", strwebsite = "";
@@ -245,7 +246,8 @@ namespace PappyjoeMVC.View
         }
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
-            var form = new PappyjoeMVC.View.LabResultEntry();
+            headng="Enter Results";
+            var form = new PappyjoeMVC.View.LabResultEntry(headng);
             form.patient_id = patient_id;
             form.doctor_id = doctor_id;
             form.workid = workiddental;
@@ -438,7 +440,8 @@ namespace PappyjoeMVC.View
                 {
                     if (dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[5].Value.ToString() == "Medical")
                     {
-                        var form2 = new PappyjoeMVC.View.LabResultEntry();
+                        headng = "View Results";
+                        var form2 = new PappyjoeMVC.View.LabResultEntry(headng);
                         form2.patient_id = patient_id;
                         form2.doctor_id = doctor_id;
                         string workid = dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -738,14 +741,15 @@ namespace PappyjoeMVC.View
                 }
                 if (path != "")
                 {
-                    if (File.Exists(db.server() + path))
+                    string curFile = this.ctrlr.server() + "\\Pappyjoe_utilities\\Logo\\" + path;
+                    if (File.Exists(curFile))
                     {
                         logo_name = "";
                         logo_name = path;
                         string Apppath = System.IO.Directory.GetCurrentDirectory();
                         if (!File.Exists(Apppath + "\\" + logo_name))
                         {
-                            System.IO.File.Copy(db.server() + path, Apppath + "\\" + logo_name);
+                            System.IO.File.Copy(curFile, Apppath + "\\" + logo_name);
                         }
                     }
                     else

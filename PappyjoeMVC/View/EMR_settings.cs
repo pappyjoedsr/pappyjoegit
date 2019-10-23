@@ -654,6 +654,11 @@ namespace PappyjoeMVC.View
             }
         }
 
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
             Font TabFont;

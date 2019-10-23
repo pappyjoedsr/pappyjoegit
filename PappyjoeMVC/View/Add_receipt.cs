@@ -27,7 +27,7 @@ namespace PappyjoeMVC.View
         DataGridViewLinkColumn Deletelink1 = new DataGridViewLinkColumn();
         Add_Receipt_controller cntrl = new Add_Receipt_controller();
         public string[] invoices = new string[100];
-        Common_model cmodel = new Common_model();
+        //Common_model cmodel = new Common_model();
         public Add_Receipt()
         {
             InitializeComponent();
@@ -38,7 +38,7 @@ namespace PappyjoeMVC.View
             try
             {
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-                string admin = cmodel.Get_adminId();
+                string admin = cntrl.Get_adminId();
                 if (admin != "")
                 {
                     if (admin != doctor_id.ToString())
@@ -56,7 +56,7 @@ namespace PappyjoeMVC.View
                 }
                 toolStripButton1.Text = this.cntrl.Load_CompanyName();
                 listpatientsearch.Hide();
-                string docnam = cmodel.Get_DoctorName(doctor_id);
+                string docnam = cntrl.Get_DoctorName(doctor_id);
                 if (docnam != "")
                 {
                     toolStripTextDoctor.Text = "Logged In As : " + docnam;
@@ -102,7 +102,7 @@ namespace PappyjoeMVC.View
                 d = total - advance;
                 lab_due_after_advance.Text = string.Format("{0:C}", decimal.Parse(d.ToString())); ;
                 txt_pay_from_advance.Text = string.Format("{0:C}", 0);
-                DataTable dt = cmodel.Get_patient_id_name_gender(patient_id);
+                DataTable dt = cntrl.Get_patient_id_name_gender(patient_id);
                 Lnk_Name.Text = dt.Rows[0][0].ToString();
                 Lnk_Id.Text = dt.Rows[0][1].ToString();
                 Lab_Age.Text = dt.Rows[0][3].ToString();
@@ -112,7 +112,7 @@ namespace PappyjoeMVC.View
                     btn_PayPreService.Text = "SAVE ADVANCE";
                     Btn_payonetime.Visible = false;
                     DataTable dtb = this.cntrl.Get_invoice_details(patient_id);
-                    LoadGrid_status0(dtb);
+                    LoadGrid_status0(dtb);  
                     foreach (DataGridViewColumn cl in DGV_Invoice.Columns)
                     {
                         cl.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -127,7 +127,7 @@ namespace PappyjoeMVC.View
                     panel1.Show();
                     btn_PayPreService.Text = "SAVE";
                     Btn_payonetime.Visible = true;
-                    int p = 0;
+                    int p = 0;  
                     while (p < invoices.Length && invoices[p] != null)
                     {
                         DataTable dt1 = this.cntrl.Patient_invoice(patient_id, invoices[p]);
@@ -146,7 +146,7 @@ namespace PappyjoeMVC.View
                                         int loop = 0;
                                         while (loop < dt2.Rows.Count)
                                         {
-                                            DGV_MainGrid.Rows.Add(dt2.Rows[loop][0].ToString(), dt2.Rows[loop][1].ToString(), dt2.Rows[loop][2].ToString(), 0, 0, due_after_payment, rowindex, dt2.Rows[loop][0].ToString(), dt2.Rows[loop][1].ToString(), dt2.Rows[loop][2].ToString());
+                                            DGV_MainGrid.Rows.Add(dt2.Rows[loop][0].ToString(), dt2.Rows[loop][1].ToString(), dt2.Rows[loop][2].ToString(), 0, dt2.Rows[loop][2].ToString(), due_after_payment, rowindex, dt2.Rows[loop][0].ToString(), dt2.Rows[loop][1].ToString(), dt2.Rows[loop][2].ToString());
                                             loop++;
                                         }
                                     }
@@ -155,7 +155,7 @@ namespace PappyjoeMVC.View
                                         int l = 0;
                                         while (l < dt2.Rows.Count)
                                         {
-                                            DGV_MainGrid.Rows.Add(dt2.Rows[l][0].ToString(), dt2.Rows[l][1].ToString(), dt2.Rows[l][2].ToString(), 0, 0, due_after_payment, rowindex, dt2.Rows[l][0].ToString(), dt2.Rows[l][1].ToString(), dt2.Rows[l][2].ToString());
+                                            DGV_MainGrid.Rows.Add(dt2.Rows[l][0].ToString(), dt2.Rows[l][1].ToString(), dt2.Rows[l][2].ToString(), 0, dt2.Rows[l][2].ToString(), due_after_payment, rowindex, dt2.Rows[l][0].ToString(), dt2.Rows[l][1].ToString(), dt2.Rows[l][2].ToString());
                                             l++;
                                         }
                                     }
@@ -223,7 +223,7 @@ namespace PappyjoeMVC.View
                         int loop = 0;
                         while (loop < dt2.Rows.Count)
                         {
-                            DGV_MainGrid.Rows.Add(dt2.Rows[loop]["invoice_no"].ToString(), dt2.Rows[loop]["services"].ToString(), dt2.Rows[loop]["total"].ToString(), 0, 0, due_after_payment, rowindex, dt2.Rows[loop]["invoice_no"].ToString(), dt2.Rows[loop]["services"].ToString(), dt2.Rows[loop]["total"].ToString());
+                            DGV_MainGrid.Rows.Add(dt2.Rows[loop]["invoice_no"].ToString(), dt2.Rows[loop]["services"].ToString(), dt2.Rows[loop]["total"].ToString(), 0, dt2.Rows[loop]["total"].ToString(), due_after_payment, rowindex, dt2.Rows[loop]["invoice_no"].ToString(), dt2.Rows[loop]["services"].ToString(), dt2.Rows[loop]["total"].ToString());
                             loop++;
                         }
                     }
@@ -244,7 +244,7 @@ namespace PappyjoeMVC.View
                             int l = 0;
                             while (l < dt2.Rows.Count)
                             {
-                                DGV_MainGrid.Rows.Add(dt2.Rows[l][0].ToString(), dt2.Rows[l][1].ToString(), dt2.Rows[l][2].ToString(), 0, 0, due_after_payment, rowindex, dt2.Rows[l][0].ToString(), dt2.Rows[l][1].ToString(), dt2.Rows[l][2].ToString());
+                                DGV_MainGrid.Rows.Add(dt2.Rows[l][0].ToString(), dt2.Rows[l][1].ToString(), dt2.Rows[l][2].ToString(), 0, dt2.Rows[l][2].ToString(), due_after_payment, rowindex, dt2.Rows[l][0].ToString(), dt2.Rows[l][1].ToString(), dt2.Rows[l][2].ToString());
                                 l++;
                             }
                         }
@@ -1420,6 +1420,276 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lab_due_after_advance_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lab_total_payable_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripSeparator1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripBAttachment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripSeparator2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripTextDoctor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lab_TotalPayable_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lab_AvailableAdvanc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lab_advance_Available_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lab_Age_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lab_Gender_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_main_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txt_pay_from_advance_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lab_DDNumber_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lab_Last4Digit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lab_Numbr_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_BankNAme_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_availeble_advance_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lab_CardNo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_4Digit_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Number_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Bank_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_advanced_payment_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_PayNow_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lab_ThiswillAdva_MSg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DGV_Invoice_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txt_ReceiptNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listpatientsearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         public void Advance_paymentPrint(decimal total)

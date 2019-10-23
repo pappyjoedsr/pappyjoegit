@@ -554,7 +554,7 @@ namespace PappyjoeMVC.View
             }
             if (txt_UnitCost.Text != "")
             {
-               TotalAmount_Calculation();
+                TotalAmount_Calculation();
             }
         }
         private void txt_Qty_Leave(object sender, EventArgs e)
@@ -772,7 +772,7 @@ namespace PappyjoeMVC.View
                                 btn_AddtoGrid.Text = "Add"; btn_cancel.Visible = false;
                             }
                             else
-                            {
+                            { 
                                 FrmBatchsale_edit.Rows.Clear();
                                 FrmBatchsale_edit.Columns.Clear();
                                 createTempTable();
@@ -1588,10 +1588,9 @@ namespace PappyjoeMVC.View
                 Sgst = Convert.ToDecimal(txt_SGST.Text);
                 GST = Convert.ToDecimal(Cgst + Sgst);
                 int i = 0, j = 0;
-                this.cntrl.start_transaction();
-                this.cntrl.Save_salesMaster(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
-                //if (i > 0)
-                //{
+                i = this.cntrl.Save_salesMaster(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                if (i > 0)
+                {
                     string unit2;
                     decimal unitMf;
                     if (dgv_SalesItem.Rows.Count > 0)
@@ -1609,11 +1608,11 @@ namespace PappyjoeMVC.View
                                 unit2 = "No";
                                 unitMf = 0;
                             }
-                             this.cntrl.Save_itemdetails(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), dr.Cells["id"].Value.ToString(), dr.Cells["colDiscription"].Value.ToString(), dr.Cells["ColPacking"].Value.ToString(), dr.Cells["ColUnit"].Value.ToString(), Convert.ToDecimal(dr.Cells["ColGST"].Value.ToString()), Convert.ToDecimal(dr.Cells["colIGST"].Value.ToString()), Convert.ToInt32(dr.Cells["ColQty"].Value.ToString()), Convert.ToInt32(dr.Cells["ColFree"].Value.ToString()), Convert.ToDecimal(dr.Cells["colUnitcost"].Value.ToString()), Convert.ToDecimal(dr.Cells["colAmount"].Value.ToString()), unit2, unitMf, Convert.ToDecimal(dt_Unit2.Rows[0]["CostBase"].ToString()));
+                            j = this.cntrl.Save_itemdetails(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), dr.Cells["id"].Value.ToString(), dr.Cells["colDiscription"].Value.ToString(), dr.Cells["ColPacking"].Value.ToString(), dr.Cells["ColUnit"].Value.ToString(), Convert.ToDecimal(dr.Cells["ColGST"].Value.ToString()), Convert.ToDecimal(dr.Cells["colIGST"].Value.ToString()), Convert.ToInt32(dr.Cells["ColQty"].Value.ToString()), Convert.ToInt32(dr.Cells["ColFree"].Value.ToString()), Convert.ToDecimal(dr.Cells["colUnitcost"].Value.ToString()), Convert.ToDecimal(dr.Cells["colAmount"].Value.ToString()), unit2, unitMf, Convert.ToDecimal(dt_Unit2.Rows[0]["CostBase"].ToString()));
                         }
                     }
-                    //if (j > 0)
-                    //{
+                    if (j > 0)
+                    {
                         if (dgv_BatchSale.Rows.Count > 0)
                         {
                             foreach (DataGridViewRow dr in dgv_BatchSale.Rows)
@@ -1626,8 +1625,6 @@ namespace PappyjoeMVC.View
                             {
                                 this.cntrl.update_salesorder(invnum_order);
                             }
-                            this.cntrl.stop_trans();
-
                             DialogResult res = MessageBox.Show("Data saved Successfully, Do you want to print...?", "Success",
                              MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (res == DialogResult.Yes)
@@ -1641,16 +1638,16 @@ namespace PappyjoeMVC.View
                             clear_itemdetails();
                             DocNumber_increment();
                         }
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Insertion failed !....", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //}
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Insertion failed !....", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+                    }
+                    else
+                    {
+                        MessageBox.Show("Insertion failed !....", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Insertion failed !....", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
@@ -1804,7 +1801,7 @@ namespace PappyjoeMVC.View
                             }
                         }
                     }// Prescription Details End
-                } //Grid Count >0
+                } // Grid Count >0
             }
             catch (Exception ex)
             {

@@ -817,7 +817,6 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.ShowDialog();
         }
-
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
             var form2 = new Expense();

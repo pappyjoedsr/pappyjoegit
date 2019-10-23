@@ -142,7 +142,7 @@ namespace PappyjoeMVC.View
             {
                 lab_LongMsg.Show();
                 lab_LongMsg.Location = new Point(350, 350);
-                lab_7.Text = "";
+                lab_7.Text = " Zero Patient(s)";
                 lab_Displaying.Visible = false;
             }
         }

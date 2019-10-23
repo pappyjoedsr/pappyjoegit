@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label19 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbDoctor = new System.Windows.Forms.ComboBox();
@@ -129,40 +129,43 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(591, 107);
+            this.label6.Location = new System.Drawing.Point(582, 105);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.Size = new System.Drawing.Size(48, 17);
             this.label6.TabIndex = 163;
             this.label6.Text = "Doctor";
             // 
             // cmbDoctor
             // 
             this.cmbDoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDoctor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDoctor.FormattingEnabled = true;
             this.cmbDoctor.Location = new System.Drawing.Point(639, 102);
             this.cmbDoctor.Name = "cmbDoctor";
-            this.cmbDoctor.Size = new System.Drawing.Size(184, 21);
+            this.cmbDoctor.Size = new System.Drawing.Size(184, 23);
             this.cmbDoctor.TabIndex = 162;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(319, 107);
+            this.label2.Location = new System.Drawing.Point(318, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 13);
+            this.label2.Size = new System.Drawing.Size(22, 17);
             this.label2.TabIndex = 161;
             this.label2.Text = "To";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(47, 107);
+            this.label1.Location = new System.Drawing.Point(46, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.Size = new System.Drawing.Size(38, 17);
             this.label1.TabIndex = 160;
             this.label1.Text = "From";
             // 
@@ -198,10 +201,11 @@
             // 
             this.check_prescription.AutoSize = true;
             this.check_prescription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.check_prescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_prescription.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.check_prescription.Location = new System.Drawing.Point(595, 141);
+            this.check_prescription.Location = new System.Drawing.Point(601, 141);
             this.check_prescription.Name = "check_prescription";
-            this.check_prescription.Size = new System.Drawing.Size(78, 17);
+            this.check_prescription.Size = new System.Drawing.Size(93, 21);
             this.check_prescription.TabIndex = 154;
             this.check_prescription.Text = "Prescription";
             this.check_prescription.UseVisualStyleBackColor = true;
@@ -210,10 +214,11 @@
             // 
             this.check_procedure.AutoSize = true;
             this.check_procedure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.check_procedure.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_procedure.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.check_procedure.Location = new System.Drawing.Point(463, 141);
             this.check_procedure.Name = "check_procedure";
-            this.check_procedure.Size = new System.Drawing.Size(111, 17);
+            this.check_procedure.Size = new System.Drawing.Size(133, 21);
             this.check_procedure.TabIndex = 153;
             this.check_procedure.Text = "Procedure Catalog";
             this.check_procedure.UseVisualStyleBackColor = true;
@@ -222,10 +227,11 @@
             // 
             this.check_expense.AutoSize = true;
             this.check_expense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.check_expense.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_expense.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.check_expense.Location = new System.Drawing.Point(372, 141);
             this.check_expense.Name = "check_expense";
-            this.check_expense.Size = new System.Drawing.Size(69, 17);
+            this.check_expense.Size = new System.Drawing.Size(78, 21);
             this.check_expense.TabIndex = 156;
             this.check_expense.Text = "Expenses";
             this.check_expense.UseVisualStyleBackColor = true;
@@ -234,10 +240,11 @@
             // 
             this.check_treatment.AutoSize = true;
             this.check_treatment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.check_treatment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_treatment.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.check_treatment.Location = new System.Drawing.Point(276, 141);
             this.check_treatment.Name = "check_treatment";
-            this.check_treatment.Size = new System.Drawing.Size(71, 17);
+            this.check_treatment.Size = new System.Drawing.Size(82, 21);
             this.check_treatment.TabIndex = 155;
             this.check_treatment.Text = "Treatment";
             this.check_treatment.UseVisualStyleBackColor = true;
@@ -246,10 +253,11 @@
             // 
             this.check_appointment.AutoSize = true;
             this.check_appointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.check_appointment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_appointment.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.check_appointment.Location = new System.Drawing.Point(167, 141);
             this.check_appointment.Name = "check_appointment";
-            this.check_appointment.Size = new System.Drawing.Size(82, 17);
+            this.check_appointment.Size = new System.Drawing.Size(99, 21);
             this.check_appointment.TabIndex = 152;
             this.check_appointment.Text = "Appointment";
             this.check_appointment.UseVisualStyleBackColor = true;
@@ -258,10 +266,11 @@
             // 
             this.check_contact.AutoSize = true;
             this.check_contact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.check_contact.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_contact.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.check_contact.Location = new System.Drawing.Point(88, 141);
             this.check_contact.Name = "check_contact";
-            this.check_contact.Size = new System.Drawing.Size(60, 17);
+            this.check_contact.Size = new System.Drawing.Size(68, 21);
             this.check_contact.TabIndex = 151;
             this.check_contact.Text = "Contact";
             this.check_contact.UseVisualStyleBackColor = true;
@@ -269,20 +278,22 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label10.Location = new System.Drawing.Point(32, 80);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(227, 13);
+            this.label10.Size = new System.Drawing.Size(281, 17);
             this.label10.TabIndex = 149;
             this.label10.Text = "1. Select the type(s) of data you want to export";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label8.Location = new System.Drawing.Point(9, 57);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(231, 13);
+            this.label8.Size = new System.Drawing.Size(283, 17);
             this.label8.TabIndex = 150;
             this.label8.Text = "Export all your Pappyjoe Account data to Excel.";
             // 
@@ -541,8 +552,8 @@
             // date
             // 
             this.date.DataPropertyName = "date";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.date.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.date.DefaultCellStyle = dataGridViewCellStyle1;
             this.date.HeaderText = "Date";
             this.date.Name = "date";
             this.date.ReadOnly = true;
@@ -557,8 +568,8 @@
             // pt_name
             // 
             this.pt_name.DataPropertyName = "pt_name";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.pt_name.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.pt_name.DefaultCellStyle = dataGridViewCellStyle2;
             this.pt_name.HeaderText = "Patient Name";
             this.pt_name.Name = "pt_name";
             this.pt_name.ReadOnly = true;
@@ -566,16 +577,16 @@
             // doctor_name
             // 
             this.doctor_name.DataPropertyName = "doctor_name";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.doctor_name.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.doctor_name.DefaultCellStyle = dataGridViewCellStyle3;
             this.doctor_name.HeaderText = "Doctor";
             this.doctor_name.Name = "doctor_name";
             // 
             // procedure_name
             // 
             this.procedure_name.DataPropertyName = "procedure_name";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.procedure_name.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.procedure_name.DefaultCellStyle = dataGridViewCellStyle4;
             this.procedure_name.HeaderText = "Treatment";
             this.procedure_name.Name = "procedure_name";
             this.procedure_name.ReadOnly = true;
@@ -583,8 +594,8 @@
             // note
             // 
             this.note.DataPropertyName = "note";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.note.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.note.DefaultCellStyle = dataGridViewCellStyle5;
             this.note.HeaderText = "Treatment Notes";
             this.note.Name = "note";
             this.note.ReadOnly = true;
@@ -592,8 +603,8 @@
             // discount
             // 
             this.discount.DataPropertyName = "discount";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.discount.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.discount.DefaultCellStyle = dataGridViewCellStyle6;
             this.discount.HeaderText = "Discount";
             this.discount.Name = "discount";
             this.discount.ReadOnly = true;
@@ -601,10 +612,10 @@
             // cost
             // 
             this.cost.DataPropertyName = "cost";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.Format = "N2";
-            dataGridViewCellStyle21.NullValue = null;
-            this.cost.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.cost.DefaultCellStyle = dataGridViewCellStyle7;
             this.cost.HeaderText = "Cost";
             this.cost.Name = "cost";
             this.cost.ReadOnly = true;

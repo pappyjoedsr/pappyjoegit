@@ -412,7 +412,7 @@
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label12.Location = new System.Drawing.Point(20, 6);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(126, 13);
+            this.label12.Size = new System.Drawing.Size(125, 13);
             this.label12.TabIndex = 23;
             this.label12.Text = "DENTAL LAB WORK LIST";
             // 
@@ -834,6 +834,7 @@
             this.listBox1.TabIndex = 315;
             this.listBox1.Visible = false;
             this.listBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseClick);
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // panel8
             // 
@@ -2114,7 +2115,7 @@
             this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label11.Location = new System.Drawing.Point(20, 6);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(124, 13);
+            this.label11.Size = new System.Drawing.Size(122, 13);
             this.label11.TabIndex = 23;
             this.label11.Text = "MEDICAL LAB TEST LIST";
             // 

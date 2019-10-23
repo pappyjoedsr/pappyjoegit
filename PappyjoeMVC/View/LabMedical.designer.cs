@@ -400,10 +400,11 @@
             // lblUnitadd
             // 
             this.lblUnitadd.AutoSize = true;
+            this.lblUnitadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUnitadd.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblUnitadd.Location = new System.Drawing.Point(30, 58);
             this.lblUnitadd.Name = "lblUnitadd";
-            this.lblUnitadd.Size = new System.Drawing.Size(29, 13);
+            this.lblUnitadd.Size = new System.Drawing.Size(31, 17);
             this.lblUnitadd.TabIndex = 0;
             this.lblUnitadd.Text = "Unit";
             // 
@@ -574,10 +575,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(30, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Test Type";
             // 
@@ -634,7 +636,7 @@
             this.btntestcancel.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btntestcancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btntestcancel.ForeColor = System.Drawing.Color.White;
-            this.btntestcancel.Location = new System.Drawing.Point(815, 88);
+            this.btntestcancel.Location = new System.Drawing.Point(820, 88);
             this.btntestcancel.Name = "btntestcancel";
             this.btntestcancel.Size = new System.Drawing.Size(63, 27);
             this.btntestcancel.TabIndex = 14;
@@ -644,7 +646,7 @@
             // 
             // txttestid
             // 
-            this.txttestid.Location = new System.Drawing.Point(753, 33);
+            this.txttestid.Location = new System.Drawing.Point(758, 33);
             this.txttestid.Name = "txttestid";
             this.txttestid.Size = new System.Drawing.Size(100, 20);
             this.txttestid.TabIndex = 13;
@@ -653,7 +655,7 @@
             // txtNVFemale
             // 
             this.txtNVFemale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNVFemale.Location = new System.Drawing.Point(435, 92);
+            this.txtNVFemale.Location = new System.Drawing.Point(440, 92);
             this.txtNVFemale.Name = "txtNVFemale";
             this.txtNVFemale.Size = new System.Drawing.Size(167, 20);
             this.txtNVFemale.TabIndex = 8;
@@ -661,7 +663,7 @@
             // txtNVMale
             // 
             this.txtNVMale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNVMale.Location = new System.Drawing.Point(435, 53);
+            this.txtNVMale.Location = new System.Drawing.Point(440, 53);
             this.txtNVMale.Name = "txtNVMale";
             this.txtNVMale.Size = new System.Drawing.Size(167, 20);
             this.txtNVMale.TabIndex = 7;
@@ -699,7 +701,7 @@
             this.btnSavetest.BackColor = System.Drawing.Color.LimeGreen;
             this.btnSavetest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSavetest.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSavetest.Location = new System.Drawing.Point(736, 88);
+            this.btnSavetest.Location = new System.Drawing.Point(741, 88);
             this.btnSavetest.Name = "btnSavetest";
             this.btnSavetest.Size = new System.Drawing.Size(73, 27);
             this.btnSavetest.TabIndex = 11;
@@ -722,11 +724,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(609, 74);
+            this.label6.Location = new System.Drawing.Point(614, 74);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.Size = new System.Drawing.Size(31, 17);
             this.label6.TabIndex = 5;
             this.label6.Text = "Unit";
             // 
@@ -755,7 +757,7 @@
             this.cmbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbUnit.FormattingEnabled = true;
-            this.cmbUnit.Location = new System.Drawing.Point(604, 92);
+            this.cmbUnit.Location = new System.Drawing.Point(609, 92);
             this.cmbUnit.Name = "cmbUnit";
             this.cmbUnit.Size = new System.Drawing.Size(121, 21);
             this.cmbUnit.TabIndex = 9;
@@ -785,10 +787,11 @@
             // lblMainTestName
             // 
             this.lblMainTestName.AutoSize = true;
+            this.lblMainTestName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMainTestName.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblMainTestName.Location = new System.Drawing.Point(30, 58);
             this.lblMainTestName.Name = "lblMainTestName";
-            this.lblMainTestName.Size = new System.Drawing.Size(56, 13);
+            this.lblMainTestName.Size = new System.Drawing.Size(64, 17);
             this.lblMainTestName.TabIndex = 1;
             this.lblMainTestName.Text = "Main Test";
             // 
@@ -1014,44 +1017,44 @@
             // lblNVMale
             // 
             this.lblNVMale.AutoSize = true;
-            this.lblNVMale.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.lblNVMale.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNVMale.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblNVMale.Location = new System.Drawing.Point(313, 56);
+            this.lblNVMale.Location = new System.Drawing.Point(303, 56);
             this.lblNVMale.Name = "lblNVMale";
-            this.lblNVMale.Size = new System.Drawing.Size(109, 13);
+            this.lblNVMale.Size = new System.Drawing.Size(128, 17);
             this.lblNVMale.TabIndex = 4;
             this.lblNVMale.Text = "Normal Value(MALE)";
             // 
             // lblTesttype
             // 
             this.lblTesttype.AutoSize = true;
-            this.lblTesttype.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.lblTesttype.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTesttype.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblTesttype.Location = new System.Drawing.Point(16, 95);
             this.lblTesttype.Name = "lblTesttype";
-            this.lblTesttype.Size = new System.Drawing.Size(53, 13);
+            this.lblTesttype.Size = new System.Drawing.Size(62, 17);
             this.lblTesttype.TabIndex = 3;
             this.lblTesttype.Text = "Test Type";
             // 
             // lblNVFemale
             // 
             this.lblNVFemale.AutoSize = true;
-            this.lblNVFemale.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.lblNVFemale.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNVFemale.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblNVFemale.Location = new System.Drawing.Point(311, 96);
+            this.lblNVFemale.Location = new System.Drawing.Point(301, 96);
             this.lblNVFemale.Name = "lblNVFemale";
-            this.lblNVFemale.Size = new System.Drawing.Size(121, 13);
+            this.lblNVFemale.Size = new System.Drawing.Size(141, 17);
             this.lblNVFemale.TabIndex = 2;
             this.lblNVFemale.Text = "Normal Value(FEMALE)";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblName.Location = new System.Drawing.Point(16, 53);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(36, 13);
+            this.lblName.Size = new System.Drawing.Size(43, 17);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Name";
             // 
@@ -1201,7 +1204,7 @@
             this.deltempitem});
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle18.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.ControlText;
@@ -1346,7 +1349,7 @@
             this.btnadditems.BackColor = System.Drawing.Color.LimeGreen;
             this.btnadditems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadditems.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnadditems.Location = new System.Drawing.Point(799, 63);
+            this.btnadditems.Location = new System.Drawing.Point(816, 63);
             this.btnadditems.Name = "btnadditems";
             this.btnadditems.Size = new System.Drawing.Size(73, 27);
             this.btnadditems.TabIndex = 32;
@@ -1392,10 +1395,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(14, 17);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 13);
+            this.label5.Size = new System.Drawing.Size(109, 17);
             this.label5.TabIndex = 10;
             this.label5.Text = "TEMPLATE NAME";
             // 
@@ -1419,26 +1423,28 @@
             this.panel1.Controls.Add(this.rdbNvyes);
             this.panel1.Location = new System.Drawing.Point(573, 59);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(217, 35);
+            this.panel1.Size = new System.Drawing.Size(237, 35);
             this.panel1.TabIndex = 26;
             // 
             // lblNmvalue
             // 
             this.lblNmvalue.AutoSize = true;
+            this.lblNmvalue.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNmvalue.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblNmvalue.Location = new System.Drawing.Point(13, 12);
             this.lblNmvalue.Name = "lblNmvalue";
-            this.lblNmvalue.Size = new System.Drawing.Size(88, 13);
+            this.lblNmvalue.Size = new System.Drawing.Size(103, 17);
             this.lblNmvalue.TabIndex = 2;
             this.lblNmvalue.Text = "NORMAL VALUE";
             // 
             // rdbNvno
             // 
             this.rdbNvno.AutoSize = true;
+            this.rdbNvno.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbNvno.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.rdbNvno.Location = new System.Drawing.Point(171, 10);
+            this.rdbNvno.Location = new System.Drawing.Point(181, 10);
             this.rdbNvno.Name = "rdbNvno";
-            this.rdbNvno.Size = new System.Drawing.Size(40, 17);
+            this.rdbNvno.Size = new System.Drawing.Size(44, 21);
             this.rdbNvno.TabIndex = 1;
             this.rdbNvno.TabStop = true;
             this.rdbNvno.Text = "No";
@@ -1448,10 +1454,11 @@
             // rdbNvyes
             // 
             this.rdbNvyes.AutoSize = true;
+            this.rdbNvyes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbNvyes.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.rdbNvyes.Location = new System.Drawing.Point(110, 10);
+            this.rdbNvyes.Location = new System.Drawing.Point(120, 10);
             this.rdbNvyes.Name = "rdbNvyes";
-            this.rdbNvyes.Size = new System.Drawing.Size(40, 17);
+            this.rdbNvyes.Size = new System.Drawing.Size(45, 21);
             this.rdbNvyes.TabIndex = 0;
             this.rdbNvyes.TabStop = true;
             this.rdbNvyes.Text = "Yes";
@@ -1480,20 +1487,22 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(372, 54);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.Size = new System.Drawing.Size(36, 17);
             this.label4.TabIndex = 23;
             this.label4.Text = "TEST";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(201, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.Size = new System.Drawing.Size(68, 17);
             this.label2.TabIndex = 22;
             this.label2.Text = "TEST TYPE";
             // 
@@ -1642,10 +1651,11 @@
             // lblmaintest
             // 
             this.lblmaintest.AutoSize = true;
+            this.lblmaintest.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblmaintest.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblmaintest.Location = new System.Drawing.Point(14, 54);
             this.lblmaintest.Name = "lblmaintest";
-            this.lblmaintest.Size = new System.Drawing.Size(62, 13);
+            this.lblmaintest.Size = new System.Drawing.Size(73, 17);
             this.lblmaintest.TabIndex = 19;
             this.lblmaintest.Text = "MAIN TEST";
             // 
@@ -1725,14 +1735,14 @@
             this.deletetmp});
             dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle23.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvtemplateadd.DefaultCellStyle = dataGridViewCellStyle23;
             this.dgvtemplateadd.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvtemplateadd.Location = new System.Drawing.Point(5, 48);
+            this.dgvtemplateadd.Location = new System.Drawing.Point(11, 51);
             this.dgvtemplateadd.Name = "dgvtemplateadd";
             this.dgvtemplateadd.ReadOnly = true;
             this.dgvtemplateadd.RowHeadersVisible = false;

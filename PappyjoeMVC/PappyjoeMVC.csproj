@@ -86,6 +86,7 @@
     <Compile Include="Controller\Clinical_Findings_controller.cs" />
     <Compile Include="Controller\Communication_controller.cs" />
     <Compile Include="Controller\Communication_Setting_controller.cs" />
+    <Compile Include="Controller\Consultation_controller.cs" />
     <Compile Include="Controller\Contact_controller.cs" />
     <Compile Include="Controller\Daily_Appointment_Count_controller.cs" />
     <Compile Include="Controller\Daily_Invoice_Report_controller.cs" />
@@ -209,6 +210,7 @@
     <Compile Include="Model\Communication_model.cs" />
     <Compile Include="Model\Communication_Setting_model.cs" />
     <Compile Include="Model\Connection.cs" />
+    <Compile Include="Model\Consultation_model.cs" />
     <Compile Include="Model\Contact_model.cs" />
     <Compile Include="Model\Daily_Invoice_Report_model.cs" />
     <Compile Include="Model\Dentalwork_model.cs" />
@@ -408,6 +410,12 @@
     </Compile>
     <Compile Include="View\Consent.Designer.cs">
       <DependentUpon>Consent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Consultation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Consultation.Designer.cs">
+      <DependentUpon>Consultation.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Contacts.cs">
       <SubType>Form</SubType>
@@ -1135,6 +1143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Consent.resx">
       <DependentUpon>Consent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Consultation.resx">
+      <DependentUpon>Consultation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Contacts.resx">
       <DependentUpon>Contacts.cs</DependentUpon>

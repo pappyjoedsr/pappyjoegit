@@ -616,6 +616,12 @@ namespace PappyjoeMVC.View
             DataTable dt = this.ctrlr.testrslt(q);
             testrslt(dt);
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void listBox1_MouseClick(object sender, MouseEventArgs e)
         {
             var form2 = new Patient_Profile_Details();

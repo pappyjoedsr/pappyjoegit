@@ -170,8 +170,6 @@ namespace PappyjoeMVC.View
                                 this.cntrl.update_autogenerateid(n);
                             }
                         }
-                        this.cntrl.SendSMS(smsName1, smsPass1, txtPMobNumber.Text, "Dear " + txtPatName.Text + " welcome to " + toolStripButton1.Text);
-                        Clear_data();
                         if (i > 0)
                         {
                             txtPic.Text = "";
@@ -218,6 +216,7 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                             }
+                            Clear_data();
                             string server = this.cntrl.server();
                             if (path != "")
                             {
@@ -236,6 +235,7 @@ namespace PappyjoeMVC.View
                                 {
                                 }
                             }
+                            this.cntrl.SendSMS(smsName1, smsPass1, txtPMobNumber.Text, "Dear " + txtPatName.Text + " welcome to " + toolStripButton1.Text);
                             if (statusForNewPatient == 1)
                             {
                                 ActiveForm.Close();
