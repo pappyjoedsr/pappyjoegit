@@ -13,7 +13,7 @@ namespace PappyjoeMVC.Model
         public static string Dbpath = System.IO.Directory.GetCurrentDirectory();
         static string machine = Environment.MachineName;
         static MySqlConnection con;
-        public static MySqlConnection conSP;
+        public static MySqlConnection conSP; public static MySqlTransaction transaction;
         private string serve = "";
         private string database;
         private string uid;
@@ -79,6 +79,57 @@ namespace PappyjoeMVC.Model
                 return false;
             }
         }
+
+        // transaction execute//
+        public void begin_trans()
+        {
+           
+            if(this.OpenConnection()==true)
+            {
+                con.BeginTransaction();
+            }
+        }
+        public void trans_execute(string s)
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(s, con);
+                cmd.ExecuteNonQuery();
+               
+            }
+            catch(Exception ex)
+            {
+                //transaction.Rollback();
+                //MessageBox.Show(ex.Message);
+            }
+            //finally
+            //{
+            //    CloseConnection();
+            //}
+        }
+
+        public void close_trans()
+        {
+            try
+            {
+                transaction.Commit();
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                //MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         public int execute(string s)
         {
             int i = 0;
@@ -117,7 +168,7 @@ namespace PappyjoeMVC.Model
                     da.Fill(dt);
                     this.CloseConnection();
                 }
-             }
+            }
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message, "Server Not Found", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -129,13 +180,10 @@ namespace PappyjoeMVC.Model
 
         //sql connection
 
-
-
         //static RegistryKey regKeyAppRoot = Registry.CurrentUser.CreateSubKey("pappyjoe");
         //static string strWindowsState = (string)regKeyAppRoot.GetValue("Server");
         //static string machine = Environment.MachineName;
         //public static string Dbpath = System.IO.Directory.GetCurrentDirectory();
-
         //public static SqlConnection con = new SqlConnection(@"Data Source=" + machine + @";Network Library=DBMSSOCN;Initial Catalog=dental;User ID=sa;Password=a;");  //SERVER
         //public static SqlConnection conSP = new SqlConnection(@"Data Source=" + strWindowsState + @"\SQLEXPRESS;Network Library=DBMSSOCN;Initial Catalog=dental;User ID=sa;Password=a;");  //CLIENT
 

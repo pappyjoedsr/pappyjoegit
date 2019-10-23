@@ -126,7 +126,7 @@
             this.label.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label.Location = new System.Drawing.Point(1180, 21);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(57, 13);
+            this.label.Size = new System.Drawing.Size(56, 13);
             this.label.TabIndex = 0;
             this.label.Text = "Total Item";
             // 
@@ -152,7 +152,7 @@
             this.BtnExport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnExport.Location = new System.Drawing.Point(1062, 12);
             this.BtnExport.Name = "BtnExport";
-            this.BtnExport.Size = new System.Drawing.Size(120, 30);
+            this.BtnExport.Size = new System.Drawing.Size(120, 34);
             this.BtnExport.TabIndex = 298;
             this.BtnExport.Text = "EXPORT TO EXCEL";
             this.BtnExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -173,7 +173,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dptMonthly_From);
@@ -198,7 +199,7 @@
             this.btnprint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnprint.Location = new System.Drawing.Point(1183, 12);
             this.btnprint.Name = "btnprint";
-            this.btnprint.Size = new System.Drawing.Size(91, 30);
+            this.btnprint.Size = new System.Drawing.Size(91, 34);
             this.btnprint.TabIndex = 165;
             this.btnprint.Text = "PRINT";
             this.btnprint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -217,7 +218,8 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
             this.panel3.Controls.Add(this.BtnExport);
             this.panel3.Controls.Add(this.label8);
@@ -237,7 +239,7 @@
             this.BTNClose.ForeColor = System.Drawing.Color.White;
             this.BTNClose.Location = new System.Drawing.Point(1275, 12);
             this.BTNClose.Name = "BTNClose";
-            this.BTNClose.Size = new System.Drawing.Size(91, 30);
+            this.BTNClose.Size = new System.Drawing.Size(91, 34);
             this.BTNClose.TabIndex = 177;
             this.BTNClose.Text = "CLOSE";
             this.BTNClose.UseVisualStyleBackColor = false;

@@ -12,6 +12,7 @@ namespace PappyjoeMVC.Controller
         sales_model _model = new sales_model();
         Common_model cmodel = new Common_model();
         Inventory_model inv_model = new Inventory_model();
+        Connection db = new Connection();
         public DataTable get_itemdetails(string name)
         {
             DataTable dtb = _model.get_itemdetails(name);
@@ -92,20 +93,20 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.order_itemsDtails(invnum_order);
             return dtb;
         }
-        public int Save_salesMaster(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        public void Save_salesMaster(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
         {
-            int i = _model.Save_salesMaster(DocNo, Docdate, sales_, ordeNo, Date_, doctor_, lrno, lr_date, throuhg, ptid, ptname, street__, locality, city, phone, payMethod, totalAmnt, disount, gst, igst, gTotal);
-            return i;
+             _model.Save_salesMaster(DocNo, Docdate, sales_, ordeNo, Date_, doctor_, lrno, lr_date, throuhg, ptid, ptname, street__, locality, city, phone, payMethod, totalAmnt, disount, gst, igst, gTotal);
+           
         }
         public DataTable get_costbase(string itemcode)
         {
             DataTable dtb = _model.get_costbase(itemcode);
             return dtb;
         }
-        public int Save_itemdetails(int DocNo, string Docdate, string Item_Code, string Description, string Packing, string Unit, decimal GST, decimal IGST, int Qty, int FreeQty, decimal Rate, decimal TotalAmount, string UNIT2, decimal UnitMF, decimal CostBase)
+        public void Save_itemdetails(int DocNo, string Docdate, string Item_Code, string Description, string Packing, string Unit, decimal GST, decimal IGST, int Qty, int FreeQty, decimal Rate, decimal TotalAmount, string UNIT2, decimal UnitMF, decimal CostBase)
         {
-            int i = _model.Save_itemdetails(DocNo, Docdate,Item_Code, Description, Packing, Unit, GST, IGST, Qty, FreeQty, Rate, TotalAmount, UNIT2, UnitMF, CostBase);
-            return i;
+           _model.Save_itemdetails(DocNo, Docdate,Item_Code, Description, Packing, Unit, GST, IGST, Qty, FreeQty, Rate, TotalAmount, UNIT2, UnitMF, CostBase);
+            //return i;
         }
         public void update_batchnumber(decimal currentStock, string BatchEntry)
         {
@@ -148,6 +149,15 @@ namespace PappyjoeMVC.Controller
         {
             DataTable dtb = _model.get_batchdetails(item_Code);
             return dtb;
+        }
+        ///transaction
+        public void start_transaction()
+        {
+            db.begin_trans();
+        }
+        public void stop_trans()
+        {
+            db.close_trans();
         }
     }
 }

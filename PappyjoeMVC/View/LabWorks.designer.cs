@@ -928,7 +928,7 @@
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
-            this.toolStripMenuItem1.Text = "Result Enter";
+            this.toolStripMenuItem1.Text = "Enter Results";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
             // printtoolStripMenuItem2

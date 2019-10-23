@@ -68,6 +68,7 @@
             this.Lab_Due = new System.Windows.Forms.Label();
             this.label_empty = new System.Windows.Forms.Label();
             this.DgvReceiptReceivedPerMonth = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Patient_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoice_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,7 +83,6 @@
             this.income = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount_paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount_due = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReceiptReceivedPerMonth)).BeginInit();
@@ -485,13 +485,36 @@
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgvReceiptReceivedPerMonth.DefaultCellStyle = dataGridViewCellStyle10;
-            this.DgvReceiptReceivedPerMonth.Location = new System.Drawing.Point(4, 4);
+            this.DgvReceiptReceivedPerMonth.Location = new System.Drawing.Point(0, 0);
             this.DgvReceiptReceivedPerMonth.Name = "DgvReceiptReceivedPerMonth";
             this.DgvReceiptReceivedPerMonth.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DgvReceiptReceivedPerMonth.RowHeadersVisible = false;
             this.DgvReceiptReceivedPerMonth.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvReceiptReceivedPerMonth.Size = new System.Drawing.Size(1367, 466);
+            this.DgvReceiptReceivedPerMonth.Size = new System.Drawing.Size(1367, 567);
             this.DgvReceiptReceivedPerMonth.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.Lab_tax);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.Lab_Discount);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.Lab_Amount);
+            this.panel3.Controls.Add(this.Lab_totalExpense);
+            this.panel3.Controls.Add(this.Lab_TotalIncome);
+            this.panel3.Controls.Add(this.Lab_Paid);
+            this.panel3.Controls.Add(this.Lab_Due);
+            this.panel3.Controls.Add(this.label_empty);
+            this.panel3.Controls.Add(this.DgvReceiptReceivedPerMonth);
+            this.panel3.Location = new System.Drawing.Point(0, 164);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1374, 574);
+            this.panel3.TabIndex = 258;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // slno
             // 
@@ -521,13 +544,13 @@
             // 
             this.doctor_name.HeaderText = "DOCTOR ";
             this.doctor_name.Name = "doctor_name";
-            this.doctor_name.Width = 150;
+            this.doctor_name.Width = 130;
             // 
             // procedure_name
             // 
             this.procedure_name.HeaderText = "PROCEDURE";
             this.procedure_name.Name = "procedure_name";
-            this.procedure_name.Width = 190;
+            this.procedure_name.Width = 180;
             // 
             // Payment_date
             // 
@@ -578,9 +601,9 @@
             // 
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.amount_paid.DefaultCellStyle = dataGridViewCellStyle8;
-            this.amount_paid.HeaderText = "AMOUNT PAID";
+            this.amount_paid.HeaderText = "AMOUNT RECEIVED";
             this.amount_paid.Name = "amount_paid";
-            this.amount_paid.Width = 90;
+            this.amount_paid.Width = 120;
             // 
             // amount_due
             // 
@@ -588,30 +611,7 @@
             this.amount_due.DefaultCellStyle = dataGridViewCellStyle9;
             this.amount_due.HeaderText = "AMOUNT DUE";
             this.amount_due.Name = "amount_due";
-            this.amount_due.Width = 88;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.Lab_tax);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.Lab_Discount);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.Lab_Amount);
-            this.panel3.Controls.Add(this.Lab_totalExpense);
-            this.panel3.Controls.Add(this.Lab_TotalIncome);
-            this.panel3.Controls.Add(this.Lab_Paid);
-            this.panel3.Controls.Add(this.Lab_Due);
-            this.panel3.Controls.Add(this.label_empty);
-            this.panel3.Controls.Add(this.DgvReceiptReceivedPerMonth);
-            this.panel3.Location = new System.Drawing.Point(0, 164);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1374, 574);
-            this.panel3.TabIndex = 258;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.amount_due.Width = 90;
             // 
             // Month_Wise_Receipt
             // 

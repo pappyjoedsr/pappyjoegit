@@ -84,37 +84,37 @@ namespace PappyjoeMVC.Model
             DataTable dtb_order = db.table("select s.DocNumber,s.DocDate,s.ItemCode as id ,s.Discription,s.Qty,s.Cost,s.TotalAmount,i.item_code from tbl_SalesOrder s inner join tbl_ITEMS i on s.ItemCode=i.id where s.DocNumber='" + invnum_order + "'");
             return dtb_order;
         }
-        public int Save_salesMaster(int DocNo,string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        public void Save_salesMaster(int DocNo,string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
         {
-           int i = db.execute("insert into tbl_SALES(InvNumber,InvDate,Dep_Number,SalesmanCode,OrderNumber,Orderdate,Prescribedby,LRNo,LRDate,Through,cust_number,cust_name,adr1,adr2,adr3,phone1,PayMethod," +
+          db.trans_execute("insert into tbl_SALES(InvNumber,InvDate,Dep_Number,SalesmanCode,OrderNumber,Orderdate,Prescribedby,LRNo,LRDate,Through,cust_number,cust_name,adr1,adr2,adr3,phone1,PayMethod," +
                                "Paid,Discount,UserName,JournalRefNo,SaleType,GST,IGST,TotalAmount)" +
                                "values('" + DocNo + "','" + Docdate + "','1','" + sales_ + "','" + ordeNo + "','" + Date_ + "'," +
                                "'" + doctor_ + "','" + lrno + "','" + lr_date + "','" + throuhg + "','" + ptid + "','" + ptname + "','" + street__ + "'," +
                                "'" + locality + "','" + city + "','" + phone + "','" + payMethod + "','" + totalAmnt + "','" + disount + "','1','1','1','" + Convert.ToDecimal(gst) + "','" + igst + "','" + gTotal + "')");
-            return i;
+            //return i;
         }
         public DataTable get_costbase(string itemcode)
         {
             DataTable dt_Unit2 = db.table("select Unit2,UnitMF,CostBase from tbl_ITEMS where item_code='" + itemcode + "' ");
             return dt_Unit2;
         }
-        public int Save_itemdetails(int DocNo,  string Docdate, string Item_Code, string Description, string Packing, string Unit, decimal GST, decimal IGST, int Qty, int FreeQty,decimal Rate, decimal TotalAmount, string UNIT2, decimal UnitMF, decimal CostBase)
+        public void Save_itemdetails(int DocNo,  string Docdate, string Item_Code, string Description, string Packing, string Unit, decimal GST, decimal IGST, int Qty, int FreeQty,decimal Rate, decimal TotalAmount, string UNIT2, decimal UnitMF, decimal CostBase)
         { 
-          int j = db.execute("insert into tbl_SALEIT (InvNumber,InvDate,Item_Code,Description,Packing,Unit,GST,IGST,Qty,FreeQty,Rate,TotalAmount,UNIT2,UnitMF,CostBase,Taxable,RetQty) values('" + DocNo + "','" + Docdate + "','" + Item_Code + "','" + Description + "'," +
+           db.trans_execute("insert into tbl_SALEIT (InvNumber,InvDate,Item_Code,Description,Packing,Unit,GST,IGST,Qty,FreeQty,Rate,TotalAmount,UNIT2,UnitMF,CostBase,Taxable,RetQty) values('" + DocNo + "','" + Docdate + "','" + Item_Code + "','" + Description + "'," +
                              "'" + Packing + "','" + Unit + "','" + GST + "','" + IGST + "','" + Qty + "'," + "'" + FreeQty + "','" + Rate + "','" + TotalAmount + "','" + UNIT2 + "','" + UnitMF + "','" + CostBase + "','Yes','0')");
-            return j;
-        }
+            //return j;
+              }
         public void update_batchnumber(decimal currentStock,string BatchEntry)
         {
-            db.execute("update tbl_BatchNumber set Qty='" +currentStock + "' where  Entry_No='" + BatchEntry + "'");
+            db.trans_execute("update tbl_BatchNumber set Qty='" +currentStock + "' where  Entry_No='" + BatchEntry + "'");
         }
         public void save_batchsale(int InvNumber, string InvDate, string Item_Code, string BatchNumber, decimal Qty, string BatchEntry)
         {
-            db.execute("insert into tbl_BatchSale (InvNumber,InvDate,Item_Code,BatchNumber,Qty,IsExpDate,BatchEntry,WsInv,RetQty) values('" + InvNumber + "','" + InvDate + "','" + Item_Code + "','" + BatchNumber + "','" + Qty + "','True','" + BatchEntry + "','1',0)");
+            db.trans_execute("insert into tbl_BatchSale (InvNumber,InvDate,Item_Code,BatchNumber,Qty,IsExpDate,BatchEntry,WsInv,RetQty) values('" + InvNumber + "','" + InvDate + "','" + Item_Code + "','" + BatchNumber + "','" + Qty + "','True','" + BatchEntry + "','1',0)");
         }
         public void update_salesorder(string invnum_order)
         {
-            db.execute("update tbl_SalesOrder_Master set Status='S' where DocNumber='" + invnum_order + "'");
+            db.trans_execute("update tbl_SalesOrder_Master set Status='S' where DocNumber='" + invnum_order + "'");
         }
         public DataTable Get_companydetails()
         {

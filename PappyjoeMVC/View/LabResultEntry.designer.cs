@@ -110,9 +110,9 @@
             this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label41.Location = new System.Drawing.Point(12, 12);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(68, 21);
+            this.label41.Size = new System.Drawing.Size(98, 21);
             this.label41.TabIndex = 266;
-            this.label41.Text = " RESULT";
+            this.label41.Text = " View Result";
             // 
             // Column6
             // 
@@ -259,6 +259,7 @@
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LabResultEntry";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LabResultEntry";
             this.Load += new System.EventHandler(this.LabResultEntry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

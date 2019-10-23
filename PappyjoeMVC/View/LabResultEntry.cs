@@ -13,9 +13,10 @@ namespace PappyjoeMVC.View
 {
     public partial class LabResultEntry : Form
     {
-        public LabResultEntry()
+        public LabResultEntry(string head)
         {
             InitializeComponent();
+            label41.Text = head;
         }
         int j;
         LabResultEntry_controller ctrlr=new LabResultEntry_controller();
