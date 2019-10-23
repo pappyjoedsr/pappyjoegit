@@ -254,7 +254,7 @@
             // BtnExport
             // 
             this.BtnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnExport.BackColor = System.Drawing.Color.LimeGreen;
+            this.BtnExport.BackColor = System.Drawing.Color.DodgerBlue;
             this.BtnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExport.ForeColor = System.Drawing.Color.White;
@@ -283,7 +283,7 @@
             // btnprint
             // 
             this.btnprint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnprint.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnprint.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnprint.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnprint.ForeColor = System.Drawing.Color.White;

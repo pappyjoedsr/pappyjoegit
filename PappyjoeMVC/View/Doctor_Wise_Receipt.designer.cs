@@ -172,7 +172,7 @@
             this.panel4.Controls.Add(this.combo_doctors);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(1, 104);
+            this.panel4.Location = new System.Drawing.Point(0, 102);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1372, 40);
             this.panel4.TabIndex = 258;
@@ -353,7 +353,7 @@
             this.panel3.Controls.Add(this.Lab_Due);
             this.panel3.Controls.Add(this.label_empty);
             this.panel3.Controls.Add(this.DgvReceiptReceivedPerDoctor);
-            this.panel3.Location = new System.Drawing.Point(-1, 146);
+            this.panel3.Location = new System.Drawing.Point(0, 141);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1376, 585);
             this.panel3.TabIndex = 259;
@@ -429,8 +429,6 @@
             this.DgvReceiptReceivedPerDoctor.AllowUserToDeleteRows = false;
             this.DgvReceiptReceivedPerDoctor.AllowUserToResizeColumns = false;
             this.DgvReceiptReceivedPerDoctor.AllowUserToResizeRows = false;
-            this.DgvReceiptReceivedPerDoctor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvReceiptReceivedPerDoctor.BackgroundColor = System.Drawing.Color.White;
             this.DgvReceiptReceivedPerDoctor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvReceiptReceivedPerDoctor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -460,13 +458,14 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgvReceiptReceivedPerDoctor.DefaultCellStyle = dataGridViewCellStyle7;
-            this.DgvReceiptReceivedPerDoctor.Location = new System.Drawing.Point(3, 4);
+            this.DgvReceiptReceivedPerDoctor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvReceiptReceivedPerDoctor.Location = new System.Drawing.Point(0, 0);
             this.DgvReceiptReceivedPerDoctor.Name = "DgvReceiptReceivedPerDoctor";
             this.DgvReceiptReceivedPerDoctor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DgvReceiptReceivedPerDoctor.RowHeadersVisible = false;
             this.DgvReceiptReceivedPerDoctor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DgvReceiptReceivedPerDoctor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvReceiptReceivedPerDoctor.Size = new System.Drawing.Size(1367, 454);
+            this.DgvReceiptReceivedPerDoctor.Size = new System.Drawing.Size(1376, 585);
             this.DgvReceiptReceivedPerDoctor.TabIndex = 0;
             // 
             // panel1
@@ -571,9 +570,9 @@
             // 
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.amount_paid.DefaultCellStyle = dataGridViewCellStyle5;
-            this.amount_paid.HeaderText = "AMOUNT PAID";
+            this.amount_paid.HeaderText = "AMOUNT RECEIVED";
             this.amount_paid.Name = "amount_paid";
-            this.amount_paid.Width = 95;
+            this.amount_paid.Width = 118;
             // 
             // amount_due
             // 

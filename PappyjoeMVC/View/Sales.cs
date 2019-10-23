@@ -653,55 +653,28 @@ namespace PappyjoeMVC.View
                         if (dt_unit1.Rows.Count > 0)
                         {
                             decimal unitmf = Convert.ToDecimal(dt_unit1.Rows[0]["UnitMF"].ToString());
-                            if(unitmf>0)
+                            if (unitmf > 0)
                             {
                                 if (dt_unit1.Rows[0]["Unit1"].ToString() == unit)
                                 {
                                     Stock = qty * unitmf;
                                 }
-                                else
-                                {
-                                    Stock = qty;
-                                }
-                            }
-                            else
-                            {
-                                Stock = qty;
-                            }
-                        }
-                        if (btn_AddtoGrid.Text == "Add")
-                        {
-                            if (Stock <= TotalStock)
-                            {
-                                var form2 = new Batch_Sale(item_Code, qty, unit);
-                                form2.ShowDialog();
-                                if (dtFor_CurrentStockUpdate != null)
-                                {
-                                    Fiil_BatchSale_Grid();
-                                    dgv_SalesItem.Rows.Add(itemId, txt_ItemCode.Text, txt_Discription.Text, txt_Packing.Text, cmb_Unit.Text, txt_GST.Text, txt_IGST.Text, txt_Qty.Text, txt_Free.Text, txt_UnitCost.Text, txt_Amount.Text, PappyjoeMVC.Properties.Resources.editicon, PappyjoeMVC.Properties.Resources.deleteicon);
-                                    clear_itemdetails();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Does not add batch!..", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Quantity is greater than the stock", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
-                        }
-                        else
-                        {
-                            if (salesOrder_flag == true)
-                            {
-                                if (itemcheck_Batchgrid() == 0)
+                                if (btn_AddtoGrid.Text == "Add")
                                 {
                                     if (Stock <= TotalStock)
                                     {
                                         var form2 = new Batch_Sale(item_Code, qty, unit);
                                         form2.ShowDialog();
+                                        if (dtFor_CurrentStockUpdate != null)
+                                        {
+                                            Fiil_BatchSale_Grid();
+                                            dgv_SalesItem.Rows.Add(itemId, txt_ItemCode.Text, txt_Discription.Text, txt_Packing.Text, cmb_Unit.Text, txt_GST.Text, txt_IGST.Text, txt_Qty.Text, txt_Free.Text, txt_UnitCost.Text, txt_Amount.Text, PappyjoeMVC.Properties.Resources.editicon, PappyjoeMVC.Properties.Resources.deleteicon);
+                                            clear_itemdetails();
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Does not add batch!..", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        }
                                     }
                                     else
                                     {
@@ -711,89 +684,66 @@ namespace PappyjoeMVC.View
                                 }
                                 else
                                 {
-                                    FrmBatchsale_edit.Rows.Clear();
-                                    FrmBatchsale_edit.Columns.Clear();
-                                    createTempTable();
-                                    if (FrmBatchsale_edit.Rows.Count > 0)
+                                    if (salesOrder_flag == true)
                                     {
-                                        if (Stock <= TotalStock)
+                                        if (itemcheck_Batchgrid() == 0)
                                         {
-                                            var form2 = new Batch_Sale(item_Code, qty, FrmBatchsale_edit, unit);
-                                            form2.ShowDialog();
+                                            if (Stock <= TotalStock)
+                                            {
+                                                var form2 = new Batch_Sale(item_Code, qty, unit);
+                                                form2.ShowDialog();
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Quantity is greater than the stock", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                return;
+                                            }
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Quantity is greater than the stock", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                            return;
+                                            FrmBatchsale_edit.Rows.Clear();
+                                            FrmBatchsale_edit.Columns.Clear();
+                                            createTempTable();
+                                            if (FrmBatchsale_edit.Rows.Count > 0)
+                                            {
+                                                if (Stock <= TotalStock)
+                                                {
+                                                    var form2 = new Batch_Sale(item_Code, qty, FrmBatchsale_edit, unit);
+                                                    form2.ShowDialog();
+                                                }
+                                                else
+                                                {
+                                                    MessageBox.Show("Quantity is greater than the stock", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                    return;
+                                                }
+                                            }
                                         }
-                                    }
-                                }
-                                dgv_SalesItem.Rows[rowindex].Cells["colItemCode"].Value = txt_ItemCode.Text;
-                                dgv_SalesItem.Rows[rowindex].Cells["colDiscription"].Value = txt_Discription.Text;
-                                dgv_SalesItem.Rows[rowindex].Cells["ColPacking"].Value = txt_Packing.Text;
-                                dgv_SalesItem.Rows[rowindex].Cells["ColUnit"].Value = cmb_Unit.Text;
-                                dgv_SalesItem.Rows[rowindex].Cells["ColGST"].Value = txt_GST.Text;
-                                dgv_SalesItem.Rows[rowindex].Cells["colIGST"].Value = txt_IGST.Text;
-                                dgv_SalesItem.Rows[rowindex].Cells["ColQty"].Value = txt_Qty.Text;
-                                dgv_SalesItem.Rows[rowindex].Cells["ColFree"].Value = txt_Free.Text;
-                                dgv_SalesItem.Rows[rowindex].Cells["colUnitcost"].Value = txt_UnitCost.Text;
-                                dgv_SalesItem.Rows[rowindex].Cells["colAmount"].Value = txt_Amount.Text;
-                                if (itemcheck_Batchgrid() == 0)
-                                {
-                                    if (dtFor_CurrentStockUpdate != null)
-                                    {
-                                        Fiil_BatchSale_Grid();
-                                        clear_itemdetails();
-                                        dtFor_CurrentStockUpdate = null;
-                                        batch_flag = false;
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Does not add batch!..", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    }
-                                }
-                                else
-                                {
-                                    if (dtFor_CurrentStockUpdate != null)
-                                    {
-                                        if (dgv_SalesItem.Rows.Count == 1)
+                                        dgv_SalesItem.Rows[rowindex].Cells["colItemCode"].Value = txt_ItemCode.Text;
+                                        dgv_SalesItem.Rows[rowindex].Cells["colDiscription"].Value = txt_Discription.Text;
+                                        dgv_SalesItem.Rows[rowindex].Cells["ColPacking"].Value = txt_Packing.Text;
+                                        dgv_SalesItem.Rows[rowindex].Cells["ColUnit"].Value = cmb_Unit.Text;
+                                        dgv_SalesItem.Rows[rowindex].Cells["ColGST"].Value = txt_GST.Text;
+                                        dgv_SalesItem.Rows[rowindex].Cells["colIGST"].Value = txt_IGST.Text;
+                                        dgv_SalesItem.Rows[rowindex].Cells["ColQty"].Value = txt_Qty.Text;
+                                        dgv_SalesItem.Rows[rowindex].Cells["ColFree"].Value = txt_Free.Text;
+                                        dgv_SalesItem.Rows[rowindex].Cells["colUnitcost"].Value = txt_UnitCost.Text;
+                                        dgv_SalesItem.Rows[rowindex].Cells["colAmount"].Value = txt_Amount.Text;
+                                        if (itemcheck_Batchgrid() == 0)
                                         {
-                                            dgv_BatchSale.Rows.Clear();
+                                            if (dtFor_CurrentStockUpdate != null)
+                                            {
+                                                Fiil_BatchSale_Grid();
+                                                clear_itemdetails();
+                                                dtFor_CurrentStockUpdate = null;
+                                                batch_flag = false;
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Does not add batch!..", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            }
                                         }
                                         else
-                                            update_Grid();
-                                        fill_Updategrid();
-                                        dtFor_CurrentStockUpdate = null; txt_ItemCode.Enabled = true;
-                                        batch_flag = false;
-                                    }
-                                    clear_itemdetails();
-                                }
-
-                                btn_AddtoGrid.Text = "Add"; btn_cancel.Visible = false;
-                            }
-                            else
-                            {
-                                FrmBatchsale_edit.Rows.Clear();
-                                FrmBatchsale_edit.Columns.Clear();
-                                createTempTable();
-                                if (FrmBatchsale_edit.Rows.Count > 0)
-                                {
-                                    if (Stock <= TotalStock)
-                                    {
-                                        var form2 = new Batch_Sale(item_Code, qty, FrmBatchsale_edit, unit);
-                                        form2.ShowDialog();
-                                        if (rowindex > 0)
                                         {
-                                            dgv_SalesItem.Rows[rowindex].Cells["colItemCode"].Value = txt_ItemCode.Text;
-                                            dgv_SalesItem.Rows[rowindex].Cells["colDiscription"].Value = txt_Discription.Text;
-                                            dgv_SalesItem.Rows[rowindex].Cells["ColPacking"].Value = txt_Packing.Text;
-                                            dgv_SalesItem.Rows[rowindex].Cells["ColUnit"].Value = cmb_Unit.Text;
-                                            dgv_SalesItem.Rows[rowindex].Cells["ColGST"].Value = txt_GST.Text;
-                                            dgv_SalesItem.Rows[rowindex].Cells["colIGST"].Value = txt_IGST.Text;
-                                            dgv_SalesItem.Rows[rowindex].Cells["ColQty"].Value = txt_Qty.Text;
-                                            dgv_SalesItem.Rows[rowindex].Cells["ColFree"].Value = txt_Free.Text;
-                                            dgv_SalesItem.Rows[rowindex].Cells["colUnitcost"].Value = txt_UnitCost.Text;
-                                            dgv_SalesItem.Rows[rowindex].Cells["colAmount"].Value = txt_Amount.Text;
                                             if (dtFor_CurrentStockUpdate != null)
                                             {
                                                 if (dgv_SalesItem.Rows.Count == 1)
@@ -803,79 +753,121 @@ namespace PappyjoeMVC.View
                                                 else
                                                     update_Grid();
                                                 fill_Updategrid();
-                                                clear_itemdetails(); txt_ItemCode.Enabled = true;
-                                                btn_AddtoGrid.Text = "Add"; btn_cancel.Visible = false;
-                                                dtFor_CurrentStockUpdate = null;
+                                                dtFor_CurrentStockUpdate = null; txt_ItemCode.Enabled = true;
+                                                batch_flag = false;
                                             }
-                                            else
-                                            {
-                                                MessageBox.Show("Does not add batch!..", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                            }
+                                            clear_itemdetails();
                                         }
+
+                                        btn_AddtoGrid.Text = "Add"; btn_cancel.Visible = false;
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Quantity is greater than the stock", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                        return;
+                                        FrmBatchsale_edit.Rows.Clear();
+                                        FrmBatchsale_edit.Columns.Clear();
+                                        createTempTable();
+                                        if (FrmBatchsale_edit.Rows.Count > 0)
+                                        {
+                                            if (Stock <= TotalStock)
+                                            {
+                                                var form2 = new Batch_Sale(item_Code, qty, FrmBatchsale_edit, unit);
+                                                form2.ShowDialog();
+                                                if (rowindex > 0)
+                                                {
+                                                    dgv_SalesItem.Rows[rowindex].Cells["colItemCode"].Value = txt_ItemCode.Text;
+                                                    dgv_SalesItem.Rows[rowindex].Cells["colDiscription"].Value = txt_Discription.Text;
+                                                    dgv_SalesItem.Rows[rowindex].Cells["ColPacking"].Value = txt_Packing.Text;
+                                                    dgv_SalesItem.Rows[rowindex].Cells["ColUnit"].Value = cmb_Unit.Text;
+                                                    dgv_SalesItem.Rows[rowindex].Cells["ColGST"].Value = txt_GST.Text;
+                                                    dgv_SalesItem.Rows[rowindex].Cells["colIGST"].Value = txt_IGST.Text;
+                                                    dgv_SalesItem.Rows[rowindex].Cells["ColQty"].Value = txt_Qty.Text;
+                                                    dgv_SalesItem.Rows[rowindex].Cells["ColFree"].Value = txt_Free.Text;
+                                                    dgv_SalesItem.Rows[rowindex].Cells["colUnitcost"].Value = txt_UnitCost.Text;
+                                                    dgv_SalesItem.Rows[rowindex].Cells["colAmount"].Value = txt_Amount.Text;
+                                                    if (dtFor_CurrentStockUpdate != null)
+                                                    {
+                                                        if (dgv_SalesItem.Rows.Count == 1)
+                                                        {
+                                                            dgv_BatchSale.Rows.Clear();
+                                                        }
+                                                        else
+                                                            update_Grid();
+                                                        fill_Updategrid();
+                                                        clear_itemdetails(); txt_ItemCode.Enabled = true;
+                                                        btn_AddtoGrid.Text = "Add"; btn_cancel.Visible = false;
+                                                        dtFor_CurrentStockUpdate = null;
+                                                    }
+                                                    else
+                                                    {
+                                                        MessageBox.Show("Does not add batch!..", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Quantity is greater than the stock", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                return;
+                                            }
+                                        }
                                     }
                                 }
+                                foreach (DataGridViewRow dr in dgv_SalesItem.Rows)
+                                {
+                                    if (dr.Cells["ColGST"].Value != null && dr.Cells["ColGST"].Value.ToString() != "")
+                                    {
+                                        gstAmount = ((Convert.ToDecimal(dr.Cells["ColQty"].Value.ToString()) * Convert.ToDecimal(dr.Cells["colUnitcost"].Value.ToString())) * Convert.ToDecimal(dr.Cells["ColGST"].Value.ToString())) / 100;
+                                        TotalGst = TotalGst + gstAmount;
+                                    }
+                                    if (dr.Cells["colIGST"].Value != null && dr.Cells["colIGST"].Value.ToString() != "")
+                                    {
+                                        igstAmount = ((Convert.ToDecimal(dr.Cells["ColQty"].Value.ToString()) * Convert.ToDecimal(dr.Cells["colUnitcost"].Value.ToString())) * Convert.ToDecimal(dr.Cells["colIGST"].Value.ToString())) / 100;
+                                        Total_Igst = Total_Igst + igstAmount;
+                                    }
+                                    if (dr.Cells["colAmount"].Value != null && dr.Cells["colAmount"].Value.ToString() != "")
+                                    {
+                                        TotalAmount = TotalAmount + Convert.ToDecimal(dr.Cells["colAmount"].Value.ToString());
+                                    }
+                                    if (dr.Cells["colUnitcost"].Value != null && dr.Cells["colUnitcost"].Value.ToString() != "")
+                                    {
+                                        TotalCost = TotalCost + (Convert.ToDecimal(dr.Cells["ColQty"].Value.ToString()) * Convert.ToDecimal(dr.Cells["colUnitcost"].Value.ToString()));
+                                    }
+                                }
+                                Totalqty = dgv_SalesItem.Rows.Count;
+                                if (Totalqty > 0)
+                                {
+                                    txt_totalItems.Text = Totalqty.ToString();
+                                }
+                                if (TotalGst > 0)
+                                {
+                                    decimal cgst = TotalGst / 2;
+                                    txt_SGST.Text = Convert.ToDecimal(cgst).ToString("##0.00");
+                                    txt_CGST.Text = Convert.ToDecimal(cgst).ToString("##0.00");
+                                }
+                                if (Total_Igst > 0)
+                                {
+                                    Txt_TotalIGST.Text = Convert.ToDecimal(Total_Igst).ToString("##0.00");
+                                }
+                                if (TotalAmount > 0)
+                                {
+                                    Txt_TotalAmount.Text = Convert.ToDecimal(TotalAmount).ToString("##0.00");
+                                    txt_GrandTotal.Text = Convert.ToDecimal(TotalAmount).ToString("##0.00");
+                                }
+                                if (TotalCost > 0)
+                                {
+                                    txt_TotalCost.Text = Convert.ToDecimal(TotalCost).ToString("##0.00");
+                                }
                             }
-                        }
-                        foreach (DataGridViewRow dr in dgv_SalesItem.Rows)
-                        {
-                            if (dr.Cells["ColGST"].Value != null && dr.Cells["ColGST"].Value.ToString() != "")
+                            else
                             {
-                                gstAmount = ((Convert.ToDecimal(dr.Cells["ColQty"].Value.ToString()) * Convert.ToDecimal(dr.Cells["colUnitcost"].Value.ToString())) * Convert.ToDecimal(dr.Cells["ColGST"].Value.ToString())) / 100;
-                                TotalGst = TotalGst + gstAmount;
-                            }
-                            if (dr.Cells["colIGST"].Value != null && dr.Cells["colIGST"].Value.ToString() != "")
-                            {
-                                igstAmount = ((Convert.ToDecimal(dr.Cells["ColQty"].Value.ToString()) * Convert.ToDecimal(dr.Cells["colUnitcost"].Value.ToString())) * Convert.ToDecimal(dr.Cells["colIGST"].Value.ToString())) / 100;
-                                Total_Igst = Total_Igst + igstAmount;
-                            }
-                            if (dr.Cells["colAmount"].Value != null && dr.Cells["colAmount"].Value.ToString() != "")
-                            {
-                                TotalAmount = TotalAmount + Convert.ToDecimal(dr.Cells["colAmount"].Value.ToString());
-                            }
-                            if (dr.Cells["colUnitcost"].Value != null && dr.Cells["colUnitcost"].Value.ToString() != "")
-                            {
-                                TotalCost = TotalCost + (Convert.ToDecimal(dr.Cells["ColQty"].Value.ToString()) * Convert.ToDecimal(dr.Cells["colUnitcost"].Value.ToString()));
+                                MessageBox.Show("Mandatory fields should not be empty.", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                txt_ItemCode.Focus();
                             }
                         }
-                        Totalqty = dgv_SalesItem.Rows.Count;
-                        if (Totalqty > 0)
+                        else
                         {
-                            txt_totalItems.Text = Totalqty.ToString();
-                        }
-                        if (TotalGst > 0)
-                        {
-                            decimal cgst = TotalGst / 2;
-                            txt_SGST.Text = Convert.ToDecimal(cgst).ToString("##0.00");
-                            txt_CGST.Text = Convert.ToDecimal(cgst).ToString("##0.00");
-                        }
-                        if (Total_Igst > 0)
-                        {
-                            Txt_TotalIGST.Text = Convert.ToDecimal(Total_Igst).ToString("##0.00");
-                        }
-                        if (TotalAmount > 0)
-                        {
-                            Txt_TotalAmount.Text = Convert.ToDecimal(TotalAmount).ToString("##0.00");
-                            txt_GrandTotal.Text = Convert.ToDecimal(TotalAmount).ToString("##0.00");
-                        }
-                        if (TotalCost > 0)
-                        {
-                            txt_TotalCost.Text = Convert.ToDecimal(TotalCost).ToString("##0.00");
+                            MessageBox.Show("Mandatory fields should not be empty.", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("Mandatory fields should not be empty.", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txt_ItemCode.Focus();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Mandatory fields should not be empty.", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

@@ -111,7 +111,6 @@
             // 
             // Cmb_category1
             // 
-            this.Cmb_category1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Cmb_category1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category1.FormattingEnabled = true;
@@ -122,7 +121,7 @@
             // 
             // Cmb_category4
             // 
-            this.Cmb_category4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Cmb_category4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Cmb_category4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category4.FormattingEnabled = true;
@@ -133,7 +132,7 @@
             // 
             // Cmb_category3
             // 
-            this.Cmb_category3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Cmb_category3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Cmb_category3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category3.FormattingEnabled = true;
@@ -144,7 +143,7 @@
             // 
             // Cmb_category8
             // 
-            this.Cmb_category8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Cmb_category8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Cmb_category8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category8.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category8.FormattingEnabled = true;
@@ -155,7 +154,6 @@
             // 
             // Cmb_category2
             // 
-            this.Cmb_category2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Cmb_category2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category2.FormattingEnabled = true;
@@ -175,7 +173,7 @@
             // 
             // Cmb_category7
             // 
-            this.Cmb_category7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Cmb_category7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Cmb_category7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category7.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category7.FormattingEnabled = true;
@@ -195,7 +193,7 @@
             // 
             // Cmb_category6
             // 
-            this.Cmb_category6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Cmb_category6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Cmb_category6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category6.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category6.FormattingEnabled = true;
@@ -206,7 +204,7 @@
             // 
             // Cmb_category5
             // 
-            this.Cmb_category5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Cmb_category5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Cmb_category5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category5.FormattingEnabled = true;
@@ -370,7 +368,7 @@
             // 
             // Pb_5
             // 
-            this.Pb_5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Pb_5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Pb_5.BackColor = System.Drawing.Color.Gainsboro;
             this.Pb_5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Pb_5.Image = global::PappyjoeMVC.Properties.Resources.upload;
@@ -386,7 +384,7 @@
             // 
             // PB_8
             // 
-            this.PB_8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PB_8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.PB_8.BackColor = System.Drawing.Color.Gainsboro;
             this.PB_8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PB_8.Image = global::PappyjoeMVC.Properties.Resources.upload1;
@@ -489,7 +487,7 @@
             // 
             // PB_6
             // 
-            this.PB_6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PB_6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.PB_6.BackColor = System.Drawing.Color.Gainsboro;
             this.PB_6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PB_6.Image = global::PappyjoeMVC.Properties.Resources.upload;
@@ -549,7 +547,7 @@
             // 
             // PB_7
             // 
-            this.PB_7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PB_7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.PB_7.BackColor = System.Drawing.Color.Gainsboro;
             this.PB_7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PB_7.Image = global::PappyjoeMVC.Properties.Resources.upload;

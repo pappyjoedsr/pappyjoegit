@@ -235,7 +235,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(574, 15);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 13);
+            this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "TOTAL COUNT:";
             // 
@@ -245,7 +245,7 @@
             this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Close.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Close.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Close.Location = new System.Drawing.Point(815, 52);
+            this.btn_Close.Location = new System.Drawing.Point(815, 53);
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(100, 32);
             this.btn_Close.TabIndex = 130;
@@ -261,7 +261,7 @@
             this.btn_Export.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Export.ForeColor = System.Drawing.Color.White;
             this.btn_Export.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_Export.Location = new System.Drawing.Point(715, 52);
+            this.btn_Export.Location = new System.Drawing.Point(715, 53);
             this.btn_Export.Name = "btn_Export";
             this.btn_Export.Size = new System.Drawing.Size(100, 32);
             this.btn_Export.TabIndex = 11;
@@ -271,10 +271,11 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(3, 9);
+            this.label6.Location = new System.Drawing.Point(3, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(318, 40);
             this.label6.TabIndex = 0;
@@ -288,7 +289,7 @@
             this.btnprint.ForeColor = System.Drawing.Color.White;
             this.btnprint.Image = ((System.Drawing.Image)(resources.GetObject("btnprint.Image")));
             this.btnprint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnprint.Location = new System.Drawing.Point(615, 52);
+            this.btnprint.Location = new System.Drawing.Point(615, 53);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(100, 32);
             this.btnprint.TabIndex = 10;
@@ -303,7 +304,7 @@
             this.btn_Show.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Show.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btn_Show.ForeColor = System.Drawing.Color.White;
-            this.btn_Show.Location = new System.Drawing.Point(515, 52);
+            this.btn_Show.Location = new System.Drawing.Point(515, 53);
             this.btn_Show.Name = "btn_Show";
             this.btn_Show.Size = new System.Drawing.Size(100, 32);
             this.btn_Show.TabIndex = 7;
@@ -314,7 +315,7 @@
             // Dtp_ReceiptTO
             // 
             this.Dtp_ReceiptTO.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dtp_ReceiptTO.Location = new System.Drawing.Point(306, 57);
+            this.Dtp_ReceiptTO.Location = new System.Drawing.Point(306, 60);
             this.Dtp_ReceiptTO.Name = "Dtp_ReceiptTO";
             this.Dtp_ReceiptTO.Size = new System.Drawing.Size(203, 22);
             this.Dtp_ReceiptTO.TabIndex = 6;
@@ -325,7 +326,7 @@
             this.label3.BackColor = System.Drawing.Color.LightGray;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(17, 62);
+            this.label3.Location = new System.Drawing.Point(17, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 4;
@@ -337,16 +338,16 @@
             this.label4.BackColor = System.Drawing.Color.LightGray;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(277, 62);
+            this.label4.Location = new System.Drawing.Point(277, 66);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(19, 13);
+            this.label4.Size = new System.Drawing.Size(18, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "To";
             // 
             // DTP_From
             // 
             this.DTP_From.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTP_From.Location = new System.Drawing.Point(64, 57);
+            this.DTP_From.Location = new System.Drawing.Point(64, 63);
             this.DTP_From.Name = "DTP_From";
             this.DTP_From.Size = new System.Drawing.Size(207, 22);
             this.DTP_From.TabIndex = 5;
@@ -442,7 +443,7 @@
             this.ColTAmount,
             this.ColamountPaid,
             this.colTAmountDue});
-            this.Dgv_Receipt.Location = new System.Drawing.Point(1, 0);
+            this.Dgv_Receipt.Location = new System.Drawing.Point(0, 0);
             this.Dgv_Receipt.Name = "Dgv_Receipt";
             this.Dgv_Receipt.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -527,7 +528,7 @@
             this.ColNumber.FillWeight = 46.0917F;
             this.ColNumber.HeaderText = "NUMBER";
             this.ColNumber.Name = "ColNumber";
-            this.ColNumber.Width = 50;
+            this.ColNumber.Width = 55;
             // 
             // ColCardNo
             // 
@@ -567,9 +568,8 @@
             // ColamountPaid
             // 
             this.ColamountPaid.FillWeight = 410.0176F;
-            this.ColamountPaid.HeaderText = "AMOUNT PAID";
+            this.ColamountPaid.HeaderText = "AMOUNT RECEIVED";
             this.ColamountPaid.Name = "ColamountPaid";
-            this.ColamountPaid.Width = 80;
             // 
             // colTAmountDue
             // 
@@ -580,7 +580,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Controls.Add(this.btn_Close);
             this.panel1.Controls.Add(this.btn_Export);
@@ -591,7 +592,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.DTP_From);
-            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1369, 121);
             this.panel1.TabIndex = 104;
