@@ -134,6 +134,8 @@
             this.tyid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tnid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noval = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edittempitem = new System.Windows.Forms.DataGridViewImageColumn();
+            this.deltempitem = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnadditems = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -1112,7 +1114,7 @@
             this.dgvTest.RowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvTest.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvTest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTest.Size = new System.Drawing.Size(953, 460);
+            this.dgvTest.Size = new System.Drawing.Size(956, 443);
             this.dgvTest.TabIndex = 0;
             this.dgvTest.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTest_CellClick);
             this.dgvTest.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTest_CellContentClick);
@@ -1194,7 +1196,9 @@
             this.mtidtmp,
             this.tyid,
             this.tnid,
-            this.noval});
+            this.noval,
+            this.edittempitem,
+            this.deltempitem});
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -1214,9 +1218,9 @@
             this.dgvtempitem.RowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvtempitem.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvtempitem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvtempitem.Size = new System.Drawing.Size(721, 236);
+            this.dgvtempitem.Size = new System.Drawing.Size(770, 236);
             this.dgvtempitem.TabIndex = 33;
-            this.dgvtempitem.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvtempitem_RowPostPaint);
+            this.dgvtempitem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtempitem_CellContentClick);
             // 
             // idtmpitm
             // 
@@ -1302,6 +1306,26 @@
             this.noval.Name = "noval";
             this.noval.ReadOnly = true;
             this.noval.Visible = false;
+            // 
+            // edittempitem
+            // 
+            this.edittempitem.HeaderText = "";
+            this.edittempitem.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.edittempitem.Name = "edittempitem";
+            this.edittempitem.ReadOnly = true;
+            this.edittempitem.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.edittempitem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.edittempitem.Width = 50;
+            // 
+            // deltempitem
+            // 
+            this.deltempitem.HeaderText = "";
+            this.deltempitem.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.deltempitem.Name = "deltempitem";
+            this.deltempitem.ReadOnly = true;
+            this.deltempitem.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.deltempitem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.deltempitem.Width = 50;
             // 
             // btnCancel
             // 
@@ -1977,17 +2001,6 @@
         private System.Windows.Forms.Panel pnl2;
         private System.Windows.Forms.Button btnedit;
         private System.Windows.Forms.DataGridView dgvtempitem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idtmpitm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maintsttemp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn test;
-        private System.Windows.Forms.DataGridViewTextBoxColumn testtypetmpitm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Unittmpitm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn normalvaluemale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn normalvaluefemale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mtidtmp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tyid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tnid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noval;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnadditems;
         private System.Windows.Forms.Button button1;
@@ -2040,5 +2053,18 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn12;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtmpitm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maintsttemp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn test;
+        private System.Windows.Forms.DataGridViewTextBoxColumn testtypetmpitm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unittmpitm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn normalvaluemale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn normalvaluefemale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mtidtmp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tyid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tnid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noval;
+        private System.Windows.Forms.DataGridViewImageColumn edittempitem;
+        private System.Windows.Forms.DataGridViewImageColumn deltempitem;
     }
 }
