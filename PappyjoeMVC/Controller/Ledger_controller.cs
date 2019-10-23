@@ -7,6 +7,7 @@ namespace PappyjoeMVC.Controller
 
         Common_model cmodel = new Common_model();
         Ledger_model _model = new Ledger_model();
+        Connection db = new Connection();
         public string Get_DoctorName(string doctor_id)
         {
             string dtb = cmodel.Get_DoctorName(doctor_id);
@@ -16,6 +17,11 @@ namespace PappyjoeMVC.Controller
         {
             string s = cmodel.privilge_for_inventory(doctor_id);
             return s;
+        }
+        public string server()
+        {
+            string server = db.server();
+            return server;
         }
         public DataTable Get_CompanyNAme()
         {

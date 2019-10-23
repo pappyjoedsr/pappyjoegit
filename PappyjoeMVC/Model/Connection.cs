@@ -97,10 +97,11 @@ namespace PappyjoeMVC.Model
             con.Open();
             try
             {
+                //r= cmd.ExecuteScalar() != null ? cmd.ExecuteScalar().ToString() : string.Empty;
                 r = cmd.ExecuteScalar().ToString();
                 this.CloseConnection();
             }
-            catch { r = "0"; }
+            catch (Exception ex) { r = "0"; con.Close(); }
             con.Close();
             return r;
         }

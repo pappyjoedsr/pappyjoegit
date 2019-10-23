@@ -104,14 +104,16 @@ namespace PappyjoeMVC.View
                     }
                     if (path != "")
                     {
-                        if (File.Exists(db.server() + path))
+                        string curFile = this.cntrl.server() + "\\Pappyjoe_utilities\\Logo\\" + path;
+
+                        if (File.Exists(curFile))
                         {
                             logo_name = "";
                             logo_name = path;
                             string Apppath = System.IO.Directory.GetCurrentDirectory();
                             if (!File.Exists(Apppath + "\\" + logo_name))
                             {
-                                System.IO.File.Copy(db.server() + path, Apppath + "\\" + logo_name);
+                                System.IO.File.Copy(curFile, Apppath + "\\" + logo_name);
                             }
                         }
                         else
@@ -1125,10 +1127,10 @@ namespace PappyjoeMVC.View
             var form2 = new Add_Receipt();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.ShowDialog();
             form2.status = 1;
+            //form2.Closed += (sender1, args) => this.Close();
+            //this.Hide();
+            //form2.ShowDialog();
             int i = 0; int j = 0;
             while (i < dgv_invoice.Rows.Count)
             {

@@ -38,6 +38,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -1470,7 +1471,7 @@
             this.lab_Msg.AutoSize = true;
             this.lab_Msg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lab_Msg.ForeColor = System.Drawing.Color.Red;
-            this.lab_Msg.Location = new System.Drawing.Point(350, 86);
+            this.lab_Msg.Location = new System.Drawing.Point(359, 98);
             this.lab_Msg.Name = "lab_Msg";
             this.lab_Msg.Size = new System.Drawing.Size(217, 13);
             this.lab_Msg.TabIndex = 253;
@@ -1541,7 +1542,7 @@
             this.lab_AddDiscount.AutoSize = true;
             this.lab_AddDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lab_AddDiscount.ForeColor = System.Drawing.Color.Blue;
-            this.lab_AddDiscount.Location = new System.Drawing.Point(419, 57);
+            this.lab_AddDiscount.Location = new System.Drawing.Point(432, 57);
             this.lab_AddDiscount.Name = "lab_AddDiscount";
             this.lab_AddDiscount.Size = new System.Drawing.Size(68, 13);
             this.lab_AddDiscount.TabIndex = 23;
@@ -1642,7 +1643,7 @@
             this.lab_AddNotes.AutoSize = true;
             this.lab_AddNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lab_AddNotes.ForeColor = System.Drawing.Color.Blue;
-            this.lab_AddNotes.Location = new System.Drawing.Point(7, 97);
+            this.lab_AddNotes.Location = new System.Drawing.Point(7, 98);
             this.lab_AddNotes.Name = "lab_AddNotes";
             this.lab_AddNotes.Size = new System.Drawing.Size(54, 13);
             this.lab_AddNotes.TabIndex = 28;
@@ -1656,7 +1657,7 @@
             this.CMB_Discount.Items.AddRange(new object[] {
             "%",
             "INR"});
-            this.CMB_Discount.Location = new System.Drawing.Point(495, 58);
+            this.CMB_Discount.Location = new System.Drawing.Point(502, 54);
             this.CMB_Discount.Name = "CMB_Discount";
             this.CMB_Discount.Size = new System.Drawing.Size(54, 21);
             this.CMB_Discount.TabIndex = 27;
@@ -1669,7 +1670,7 @@
             this.btn_Add.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Add.ForeColor = System.Drawing.Color.White;
-            this.btn_Add.Location = new System.Drawing.Point(820, 55);
+            this.btn_Add.Location = new System.Drawing.Point(828, 55);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(73, 24);
             this.btn_Add.TabIndex = 15;
@@ -1681,7 +1682,7 @@
             // 
             this.txt_Discount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Discount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_Discount.Location = new System.Drawing.Point(430, 57);
+            this.txt_Discount.Location = new System.Drawing.Point(436, 57);
             this.txt_Discount.Name = "txt_Discount";
             this.txt_Discount.Size = new System.Drawing.Size(60, 13);
             this.txt_Discount.TabIndex = 26;
@@ -1754,7 +1755,7 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(214, 37);
+            this.label5.Location = new System.Drawing.Point(211, 37);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 18;
@@ -1766,7 +1767,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(329, 37);
+            this.label4.Location = new System.Drawing.Point(326, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 17;
@@ -1790,7 +1791,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(61, 37);
+            this.label3.Location = new System.Drawing.Point(9, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 13);
             this.label3.TabIndex = 16;
@@ -1802,7 +1803,7 @@
             this.lab_BillNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lab_BillNo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_BillNo.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lab_BillNo.Location = new System.Drawing.Point(7, 12);
+            this.lab_BillNo.Location = new System.Drawing.Point(7, 5);
             this.lab_BillNo.Name = "lab_BillNo";
             this.lab_BillNo.Size = new System.Drawing.Size(76, 17);
             this.lab_BillNo.TabIndex = 13;
@@ -2167,10 +2168,11 @@
             // txt_SearchProcedure
             // 
             this.txt_SearchProcedure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_SearchProcedure.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SearchProcedure.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.txt_SearchProcedure.Location = new System.Drawing.Point(5, 10);
             this.txt_SearchProcedure.Name = "txt_SearchProcedure";
-            this.txt_SearchProcedure.Size = new System.Drawing.Size(401, 20);
+            this.txt_SearchProcedure.Size = new System.Drawing.Size(401, 23);
             this.txt_SearchProcedure.TabIndex = 20;
             this.txt_SearchProcedure.Text = "search in procedure";
             this.txt_SearchProcedure.Click += new System.EventHandler(this.txt_SearchProcedure_Click);
@@ -2196,17 +2198,25 @@
             this.Column2,
             this.planid,
             this.C_id});
-            this.DGV_Procedure.Location = new System.Drawing.Point(2, 38);
-            this.DGV_Procedure.Name = "DGV_Procedure";
-            this.DGV_Procedure.ReadOnly = true;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle11.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Procedure.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_Procedure.DefaultCellStyle = dataGridViewCellStyle11;
+            this.DGV_Procedure.Location = new System.Drawing.Point(2, 38);
+            this.DGV_Procedure.Name = "DGV_Procedure";
+            this.DGV_Procedure.ReadOnly = true;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Procedure.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.DGV_Procedure.RowHeadersVisible = false;
             this.DGV_Procedure.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Procedure.Size = new System.Drawing.Size(413, 550);

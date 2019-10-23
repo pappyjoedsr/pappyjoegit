@@ -121,7 +121,7 @@
             this.btn_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancel.ForeColor = System.Drawing.Color.White;
-            this.btn_Cancel.Location = new System.Drawing.Point(186, 53);
+            this.btn_Cancel.Location = new System.Drawing.Point(199, 53);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 28);
             this.btn_Cancel.TabIndex = 279;
@@ -213,7 +213,7 @@
             this.button_add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add.ForeColor = System.Drawing.Color.White;
-            this.button_add.Location = new System.Drawing.Point(103, 53);
+            this.button_add.Location = new System.Drawing.Point(116, 53);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(75, 28);
             this.button_add.TabIndex = 0;
@@ -224,15 +224,17 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(56, 105);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(60, 105);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.Size = new System.Drawing.Size(47, 17);
             this.label4.TabIndex = 2;
             this.label4.Text = "Search";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // text_medhist
             // 
-            this.text_medhist.Location = new System.Drawing.Point(104, 22);
+            this.text_medhist.Location = new System.Drawing.Point(117, 22);
             this.text_medhist.Name = "text_medhist";
             this.text_medhist.Size = new System.Drawing.Size(329, 22);
             this.text_medhist.TabIndex = 1;
@@ -240,7 +242,7 @@
             // 
             // text_search
             // 
-            this.text_search.Location = new System.Drawing.Point(103, 102);
+            this.text_search.Location = new System.Drawing.Point(116, 102);
             this.text_search.Name = "text_search";
             this.text_search.Size = new System.Drawing.Size(329, 22);
             this.text_search.TabIndex = 1;
@@ -249,9 +251,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 25);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.Size = new System.Drawing.Size(99, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Medical History";
             // 
@@ -259,7 +262,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(437, 26);
+            this.label3.Location = new System.Drawing.Point(450, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 2;
@@ -286,7 +289,7 @@
             this.btn_Cancelgroup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Cancelgroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancelgroup.ForeColor = System.Drawing.Color.White;
-            this.btn_Cancelgroup.Location = new System.Drawing.Point(186, 53);
+            this.btn_Cancelgroup.Location = new System.Drawing.Point(182, 53);
             this.btn_Cancelgroup.Name = "btn_Cancelgroup";
             this.btn_Cancelgroup.Size = new System.Drawing.Size(75, 28);
             this.btn_Cancelgroup.TabIndex = 280;
@@ -299,17 +302,18 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(15, 25);
+            this.label5.Location = new System.Drawing.Point(20, 25);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.Size = new System.Drawing.Size(45, 17);
             this.label5.TabIndex = 276;
             this.label5.Text = "Group";
             // 
             // textBox_group
             // 
             this.textBox_group.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.textBox_group.Location = new System.Drawing.Point(103, 22);
+            this.textBox_group.Location = new System.Drawing.Point(99, 22);
             this.textBox_group.Name = "textBox_group";
             this.textBox_group.Size = new System.Drawing.Size(329, 22);
             this.textBox_group.TabIndex = 275;
@@ -320,7 +324,7 @@
             this.button_group.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_group.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_group.ForeColor = System.Drawing.Color.White;
-            this.button_group.Location = new System.Drawing.Point(103, 53);
+            this.button_group.Location = new System.Drawing.Point(99, 53);
             this.button_group.Name = "button_group";
             this.button_group.Size = new System.Drawing.Size(75, 28);
             this.button_group.TabIndex = 80;
@@ -354,7 +358,7 @@
             this.Medgroup,
             this.gedit,
             this.gdelete});
-            this.dataGridView_group.Location = new System.Drawing.Point(103, 128);
+            this.dataGridView_group.Location = new System.Drawing.Point(99, 128);
             this.dataGridView_group.Name = "dataGridView_group";
             this.dataGridView_group.ReadOnly = true;
             this.dataGridView_group.RowHeadersVisible = false;

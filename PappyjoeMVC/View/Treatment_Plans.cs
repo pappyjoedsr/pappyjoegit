@@ -75,14 +75,15 @@ namespace PappyjoeMVC.View
                 }
                 if (path != "")
                 {
-                    if (File.Exists(this.cntrl.server() + path))
+                    string curFile = this.cntrl.server() + "\\Pappyjoe_utilities\\Logo\\" + path;
+                    if (File.Exists(curFile))
                     {
                         logo_name = "";
                         logo_name = path;
                         string Apppath = System.IO.Directory.GetCurrentDirectory();
                         if (!File.Exists(Apppath + "\\" + logo_name))
                         {
-                            System.IO.File.Copy(this.cntrl.server() + path, Apppath + "\\" + logo_name);
+                            System.IO.File.Copy(curFile, Apppath + "\\" + logo_name);
                         }
                     }
                     else

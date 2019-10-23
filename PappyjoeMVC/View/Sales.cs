@@ -772,7 +772,7 @@ namespace PappyjoeMVC.View
                                 btn_AddtoGrid.Text = "Add"; btn_cancel.Visible = false;
                             }
                             else
-                            {
+                            { 
                                 FrmBatchsale_edit.Rows.Clear();
                                 FrmBatchsale_edit.Columns.Clear();
                                 createTempTable();

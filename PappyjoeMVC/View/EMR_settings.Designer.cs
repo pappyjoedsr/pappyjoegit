@@ -181,7 +181,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(428, 26);
+            this.label6.Location = new System.Drawing.Point(439, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 13);
             this.label6.TabIndex = 12;
@@ -208,11 +208,11 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_comp.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView_comp.Location = new System.Drawing.Point(85, 125);
+            this.dataGridView_comp.Location = new System.Drawing.Point(96, 125);
             this.dataGridView_comp.Name = "dataGridView_comp";
             this.dataGridView_comp.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -278,7 +278,7 @@
             // 
             this.text_comp_search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_comp_search.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_comp_search.Location = new System.Drawing.Point(85, 92);
+            this.text_comp_search.Location = new System.Drawing.Point(96, 92);
             this.text_comp_search.Name = "text_comp_search";
             this.text_comp_search.Size = new System.Drawing.Size(331, 22);
             this.text_comp_search.TabIndex = 4;
@@ -290,7 +290,7 @@
             this.button_comp_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_comp_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_comp_refresh.ForeColor = System.Drawing.Color.White;
-            this.button_comp_refresh.Location = new System.Drawing.Point(166, 53);
+            this.button_comp_refresh.Location = new System.Drawing.Point(177, 53);
             this.button_comp_refresh.Name = "button_comp_refresh";
             this.button_comp_refresh.Size = new System.Drawing.Size(75, 28);
             this.button_comp_refresh.TabIndex = 3;
@@ -304,7 +304,7 @@
             this.button_comp_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_comp_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_comp_save.ForeColor = System.Drawing.Color.White;
-            this.button_comp_save.Location = new System.Drawing.Point(85, 53);
+            this.button_comp_save.Location = new System.Drawing.Point(96, 53);
             this.button_comp_save.Name = "button_comp_save";
             this.button_comp_save.Size = new System.Drawing.Size(75, 28);
             this.button_comp_save.TabIndex = 2;
@@ -316,7 +316,7 @@
             // 
             this.text_complaints.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_complaints.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_complaints.Location = new System.Drawing.Point(85, 22);
+            this.text_complaints.Location = new System.Drawing.Point(96, 22);
             this.text_complaints.Name = "text_complaints";
             this.text_complaints.Size = new System.Drawing.Size(331, 22);
             this.text_complaints.TabIndex = 1;
@@ -324,20 +324,22 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(41, 95);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 13);
+            this.label5.Size = new System.Drawing.Size(47, 17);
             this.label5.TabIndex = 0;
             this.label5.Text = "Search";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(16, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Complaints";
             // 
@@ -363,7 +365,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(428, 26);
+            this.label3.Location = new System.Drawing.Point(442, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 11;
@@ -375,7 +377,7 @@
             this.button_observations_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_observations_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_observations_refresh.ForeColor = System.Drawing.Color.White;
-            this.button_observations_refresh.Location = new System.Drawing.Point(166, 53);
+            this.button_observations_refresh.Location = new System.Drawing.Point(179, 53);
             this.button_observations_refresh.Name = "button_observations_refresh";
             this.button_observations_refresh.Size = new System.Drawing.Size(75, 28);
             this.button_observations_refresh.TabIndex = 10;
@@ -386,20 +388,22 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(41, 95);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.Size = new System.Drawing.Size(47, 17);
             this.label4.TabIndex = 9;
             this.label4.Text = "Search";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(13, 25);
+            this.label1.Location = new System.Drawing.Point(16, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.Size = new System.Drawing.Size(79, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Observation";
             // 
@@ -420,7 +424,7 @@
             this.coledit,
             this.coldelete,
             this.Column3});
-            this.dataGridView_observation.Location = new System.Drawing.Point(85, 122);
+            this.dataGridView_observation.Location = new System.Drawing.Point(99, 122);
             this.dataGridView_observation.MultiSelect = false;
             this.dataGridView_observation.Name = "dataGridView_observation";
             this.dataGridView_observation.ReadOnly = true;
@@ -484,7 +488,7 @@
             // 
             this.text_observ_search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_observ_search.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_observ_search.Location = new System.Drawing.Point(85, 92);
+            this.text_observ_search.Location = new System.Drawing.Point(96, 92);
             this.text_observ_search.Name = "text_observ_search";
             this.text_observ_search.Size = new System.Drawing.Size(331, 22);
             this.text_observ_search.TabIndex = 11;
@@ -496,7 +500,7 @@
             this.button_save_observations.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_save_observations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save_observations.ForeColor = System.Drawing.Color.White;
-            this.button_save_observations.Location = new System.Drawing.Point(85, 53);
+            this.button_save_observations.Location = new System.Drawing.Point(96, 53);
             this.button_save_observations.Name = "button_save_observations";
             this.button_save_observations.Size = new System.Drawing.Size(75, 28);
             this.button_save_observations.TabIndex = 9;
@@ -508,7 +512,7 @@
             // 
             this.text_observation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_observation.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_observation.Location = new System.Drawing.Point(85, 22);
+            this.text_observation.Location = new System.Drawing.Point(96, 22);
             this.text_observation.Name = "text_observation";
             this.text_observation.Size = new System.Drawing.Size(331, 22);
             this.text_observation.TabIndex = 8;
@@ -549,7 +553,7 @@
             this.Column9,
             this.Dia_Edit,
             this.Dia_Delete});
-            this.dataGridView_diag.Location = new System.Drawing.Point(85, 122);
+            this.dataGridView_diag.Location = new System.Drawing.Point(96, 122);
             this.dataGridView_diag.Name = "dataGridView_diag";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -610,7 +614,7 @@
             this.button_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_refresh.ForeColor = System.Drawing.Color.White;
-            this.button_refresh.Location = new System.Drawing.Point(166, 53);
+            this.button_refresh.Location = new System.Drawing.Point(172, 53);
             this.button_refresh.Name = "button_refresh";
             this.button_refresh.Size = new System.Drawing.Size(75, 28);
             this.button_refresh.TabIndex = 17;
@@ -624,7 +628,7 @@
             this.button_Save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Save.ForeColor = System.Drawing.Color.White;
-            this.button_Save.Location = new System.Drawing.Point(85, 53);
+            this.button_Save.Location = new System.Drawing.Point(96, 53);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(75, 28);
             this.button_Save.TabIndex = 16;
@@ -636,7 +640,7 @@
             // 
             this.text_diagnosis_search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_diagnosis_search.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_diagnosis_search.Location = new System.Drawing.Point(85, 92);
+            this.text_diagnosis_search.Location = new System.Drawing.Point(96, 92);
             this.text_diagnosis_search.Name = "text_diagnosis_search";
             this.text_diagnosis_search.Size = new System.Drawing.Size(331, 22);
             this.text_diagnosis_search.TabIndex = 18;
@@ -646,7 +650,7 @@
             // 
             this.text_diagnosis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_diagnosis.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_diagnosis.Location = new System.Drawing.Point(85, 22);
+            this.text_diagnosis.Location = new System.Drawing.Point(96, 22);
             this.text_diagnosis.Name = "text_diagnosis";
             this.text_diagnosis.Size = new System.Drawing.Size(330, 22);
             this.text_diagnosis.TabIndex = 15;
@@ -654,10 +658,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label8.Location = new System.Drawing.Point(41, 95);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 13);
+            this.label8.Size = new System.Drawing.Size(47, 17);
             this.label8.TabIndex = 0;
             this.label8.Text = "Search";
             // 
@@ -665,7 +670,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(428, 26);
+            this.label9.Location = new System.Drawing.Point(434, 26);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 13);
             this.label9.TabIndex = 0;
@@ -674,10 +679,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label7.Location = new System.Drawing.Point(16, 25);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.Size = new System.Drawing.Size(65, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "Diagnosis";
             // 
@@ -716,7 +722,7 @@
             this.Column12,
             this.Inv_Edit,
             this.Inv_Delete});
-            this.dataGridView_invest.Location = new System.Drawing.Point(85, 122);
+            this.dataGridView_invest.Location = new System.Drawing.Point(98, 122);
             this.dataGridView_invest.Name = "dataGridView_invest";
             this.dataGridView_invest.ReadOnly = true;
             this.dataGridView_invest.RowHeadersVisible = false;
@@ -774,7 +780,7 @@
             this.button_inves_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_inves_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_inves_refresh.ForeColor = System.Drawing.Color.White;
-            this.button_inves_refresh.Location = new System.Drawing.Point(166, 53);
+            this.button_inves_refresh.Location = new System.Drawing.Point(179, 53);
             this.button_inves_refresh.Name = "button_inves_refresh";
             this.button_inves_refresh.Size = new System.Drawing.Size(75, 28);
             this.button_inves_refresh.TabIndex = 24;
@@ -788,7 +794,7 @@
             this.button_inves_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_inves_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_inves_save.ForeColor = System.Drawing.Color.White;
-            this.button_inves_save.Location = new System.Drawing.Point(85, 53);
+            this.button_inves_save.Location = new System.Drawing.Point(96, 53);
             this.button_inves_save.Name = "button_inves_save";
             this.button_inves_save.Size = new System.Drawing.Size(75, 28);
             this.button_inves_save.TabIndex = 23;
@@ -800,7 +806,7 @@
             // 
             this.text_investigation_search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_investigation_search.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_investigation_search.Location = new System.Drawing.Point(85, 92);
+            this.text_investigation_search.Location = new System.Drawing.Point(98, 92);
             this.text_investigation_search.Name = "text_investigation_search";
             this.text_investigation_search.Size = new System.Drawing.Size(331, 22);
             this.text_investigation_search.TabIndex = 25;
@@ -810,7 +816,7 @@
             // 
             this.text_investigation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_investigation.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_investigation.Location = new System.Drawing.Point(85, 22);
+            this.text_investigation.Location = new System.Drawing.Point(96, 22);
             this.text_investigation.Name = "text_investigation";
             this.text_investigation.Size = new System.Drawing.Size(330, 22);
             this.text_investigation.TabIndex = 22;
@@ -818,10 +824,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label10.Location = new System.Drawing.Point(41, 95);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.Size = new System.Drawing.Size(47, 17);
             this.label10.TabIndex = 3;
             this.label10.Text = "Search";
             // 
@@ -829,7 +836,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(428, 26);
+            this.label11.Location = new System.Drawing.Point(441, 26);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(84, 13);
             this.label11.TabIndex = 4;
@@ -838,10 +845,11 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label12.Location = new System.Drawing.Point(12, 25);
+            this.label12.Location = new System.Drawing.Point(16, 25);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 13);
+            this.label12.Size = new System.Drawing.Size(81, 17);
             this.label12.TabIndex = 5;
             this.label12.Text = "Investigation";
             // 
@@ -929,7 +937,7 @@
             this.button_notes_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_notes_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_notes_refresh.ForeColor = System.Drawing.Color.White;
-            this.button_notes_refresh.Location = new System.Drawing.Point(166, 53);
+            this.button_notes_refresh.Location = new System.Drawing.Point(174, 53);
             this.button_notes_refresh.Name = "button_notes_refresh";
             this.button_notes_refresh.Size = new System.Drawing.Size(75, 28);
             this.button_notes_refresh.TabIndex = 31;
@@ -943,7 +951,7 @@
             this.button_notes_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_notes_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_notes_save.ForeColor = System.Drawing.Color.White;
-            this.button_notes_save.Location = new System.Drawing.Point(85, 53);
+            this.button_notes_save.Location = new System.Drawing.Point(96, 53);
             this.button_notes_save.Name = "button_notes_save";
             this.button_notes_save.Size = new System.Drawing.Size(75, 28);
             this.button_notes_save.TabIndex = 30;
@@ -955,7 +963,7 @@
             // 
             this.text_notes_search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_notes_search.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_notes_search.Location = new System.Drawing.Point(85, 92);
+            this.text_notes_search.Location = new System.Drawing.Point(96, 92);
             this.text_notes_search.Name = "text_notes_search";
             this.text_notes_search.Size = new System.Drawing.Size(331, 22);
             this.text_notes_search.TabIndex = 32;
@@ -965,7 +973,7 @@
             // 
             this.text_notes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_notes.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_notes.Location = new System.Drawing.Point(85, 22);
+            this.text_notes.Location = new System.Drawing.Point(96, 22);
             this.text_notes.Name = "text_notes";
             this.text_notes.Size = new System.Drawing.Size(330, 22);
             this.text_notes.TabIndex = 29;
@@ -973,18 +981,20 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label13.Location = new System.Drawing.Point(41, 95);
+            this.label13.Location = new System.Drawing.Point(30, 95);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
+            this.label13.Size = new System.Drawing.Size(47, 17);
             this.label13.TabIndex = 11;
             this.label13.Text = "Search";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(428, 26);
+            this.label14.Location = new System.Drawing.Point(431, 26);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(84, 13);
             this.label14.TabIndex = 12;
@@ -993,10 +1003,11 @@
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label15.Location = new System.Drawing.Point(39, 25);
+            this.label15.Location = new System.Drawing.Point(16, 25);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(37, 13);
+            this.label15.Size = new System.Drawing.Size(43, 17);
             this.label15.TabIndex = 13;
             this.label15.Text = "Notes";
             // 
@@ -1125,10 +1136,11 @@
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label16.Location = new System.Drawing.Point(41, 95);
+            this.label16.Location = new System.Drawing.Point(27, 95);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(41, 13);
+            this.label16.Size = new System.Drawing.Size(47, 17);
             this.label16.TabIndex = 20;
             this.label16.Text = "Search";
             // 
@@ -1145,10 +1157,11 @@
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label18.Location = new System.Drawing.Point(16, 25);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(53, 13);
+            this.label18.Size = new System.Drawing.Size(59, 17);
             this.label18.TabIndex = 22;
             this.label18.Text = "File label";
             // 

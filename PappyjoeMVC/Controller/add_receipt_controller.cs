@@ -8,6 +8,21 @@ namespace PappyjoeMVC.Controller
         Receipt_Model _model = new Receipt_Model();
         Common_model cmodel = new Common_model();
         Connection db = new Connection();
+        public string Get_adminId()
+        {
+            string admin = cmodel.Get_adminId();
+            return admin;
+        }
+        public string Get_DoctorName(string doctor_id)
+        {
+            string admin = cmodel.Get_DoctorName(doctor_id);
+            return admin;
+        }
+        public DataTable Get_patient_id_name_gender(string patient_id)
+        {
+            DataTable dtb = cmodel.Get_patient_id_name_gender(patient_id);
+            return dtb;
+        }
         public DataTable receipt_number()
         {
             DataTable dtb = _model.receipt_number();
