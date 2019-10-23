@@ -746,7 +746,7 @@
             this.notetextbox.Location = new System.Drawing.Point(67, 9);
             this.notetextbox.Multiline = true;
             this.notetextbox.Name = "notetextbox";
-            this.notetextbox.Size = new System.Drawing.Size(322, 22);
+            this.notetextbox.Size = new System.Drawing.Size(315, 20);
             this.notetextbox.TabIndex = 12;
             // 
             // notecancel
@@ -768,7 +768,7 @@
             this.noteadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.noteadd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.noteadd.ForeColor = System.Drawing.Color.White;
-            this.noteadd.Location = new System.Drawing.Point(6, 7);
+            this.noteadd.Location = new System.Drawing.Point(10, 7);
             this.noteadd.Name = "noteadd";
             this.noteadd.Size = new System.Drawing.Size(52, 22);
             this.noteadd.TabIndex = 247;
@@ -981,7 +981,7 @@
             this.investadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.investadd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.investadd.ForeColor = System.Drawing.Color.White;
-            this.investadd.Location = new System.Drawing.Point(6, 7);
+            this.investadd.Location = new System.Drawing.Point(8, 7);
             this.investadd.Name = "investadd";
             this.investadd.Size = new System.Drawing.Size(52, 22);
             this.investadd.TabIndex = 247;
@@ -1093,7 +1093,7 @@
             this.investtextbox.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.investtextbox.Location = new System.Drawing.Point(67, 9);
             this.investtextbox.Name = "investtextbox";
-            this.investtextbox.Size = new System.Drawing.Size(322, 20);
+            this.investtextbox.Size = new System.Drawing.Size(315, 20);
             this.investtextbox.TabIndex = 15;
             // 
             // investsearchtext
@@ -1277,7 +1277,7 @@
             this.diagtext.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.diagtext.Location = new System.Drawing.Point(67, 9);
             this.diagtext.Name = "diagtext";
-            this.diagtext.Size = new System.Drawing.Size(322, 20);
+            this.diagtext.Size = new System.Drawing.Size(315, 20);
             this.diagtext.TabIndex = 6;
             // 
             // cmb_clinicalfinding
@@ -1434,7 +1434,7 @@
             this.comptextbox.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.comptextbox.Location = new System.Drawing.Point(67, 9);
             this.comptextbox.Name = "comptextbox";
-            this.comptextbox.Size = new System.Drawing.Size(322, 20);
+            this.comptextbox.Size = new System.Drawing.Size(315, 20);
             this.comptextbox.TabIndex = 11;
             this.comptextbox.Visible = false;
             // 
@@ -1499,7 +1499,7 @@
             this.obseradd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.obseradd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.obseradd.ForeColor = System.Drawing.Color.White;
-            this.obseradd.Location = new System.Drawing.Point(6, 7);
+            this.obseradd.Location = new System.Drawing.Point(7, 7);
             this.obseradd.Name = "obseradd";
             this.obseradd.Size = new System.Drawing.Size(52, 22);
             this.obseradd.TabIndex = 247;
@@ -1610,7 +1610,7 @@
             this.obsertextbox.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.obsertextbox.Location = new System.Drawing.Point(67, 9);
             this.obsertextbox.Name = "obsertextbox";
-            this.obsertextbox.Size = new System.Drawing.Size(322, 20);
+            this.obsertextbox.Size = new System.Drawing.Size(315, 20);
             this.obsertextbox.TabIndex = 13;
             // 
             // obsersearchtext

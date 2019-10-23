@@ -120,14 +120,14 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pntransactionalsms = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.lab_TotalSms = new System.Windows.Forms.Label();
             this.txtFailedSms = new System.Windows.Forms.TextBox();
             this.lab_FailedSMS = new System.Windows.Forms.Label();
             this.txt_Sendsms = new System.Windows.Forms.TextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.lab_Msg = new System.Windows.Forms.Label();
             this.DGV_transactional = new System.Windows.Forms.DataGridView();
             this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -210,8 +210,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_template)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.pntransactionalsms.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel18.SuspendLayout();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_transactional)).BeginInit();
             this.panel6.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -1155,29 +1155,6 @@
             this.pntransactionalsms.Size = new System.Drawing.Size(1344, 643);
             this.pntransactionalsms.TabIndex = 7;
             // 
-            // panel8
-            // 
-            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel8.BackColor = System.Drawing.Color.DarkGray;
-            this.panel8.Location = new System.Drawing.Point(-4, 56);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1349, 1);
-            this.panel8.TabIndex = 32;
-            // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Controls.Add(this.lab_Msg);
-            this.panel7.Controls.Add(this.DGV_transactional);
-            this.panel7.Location = new System.Drawing.Point(1, 61);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1135, 564);
-            this.panel7.TabIndex = 31;
-            // 
             // panel18
             // 
             this.panel18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1234,6 +1211,16 @@
             this.txt_Sendsms.TabIndex = 30;
             this.txt_Sendsms.Text = "0";
             // 
+            // panel8
+            // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.BackColor = System.Drawing.Color.DarkGray;
+            this.panel8.Location = new System.Drawing.Point(-4, 56);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1349, 1);
+            this.panel8.TabIndex = 32;
+            // 
             // panel10
             // 
             this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1243,6 +1230,19 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1, 589);
             this.panel10.TabIndex = 27;
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.lab_Msg);
+            this.panel7.Controls.Add(this.DGV_transactional);
+            this.panel7.Location = new System.Drawing.Point(1, 61);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1135, 564);
+            this.panel7.TabIndex = 31;
             // 
             // lab_Msg
             // 
@@ -2063,10 +2063,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_template)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.pntransactionalsms.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_transactional)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
