@@ -773,6 +773,8 @@
             // 
             // btnsave
             // 
+            this.btnsave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnsave.BackColor = System.Drawing.Color.LimeGreen;
             this.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsave.ForeColor = System.Drawing.Color.White;
@@ -786,6 +788,8 @@
             // 
             // lblMainTestName
             // 
+            this.lblMainTestName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMainTestName.AutoSize = true;
             this.lblMainTestName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMainTestName.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -807,6 +811,8 @@
             // 
             // tabLabMasters
             // 
+            this.tabLabMasters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabLabMasters.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabLabMasters.Controls.Add(this.TpMainTest);
             this.tabLabMasters.Controls.Add(this.tpTestType);
@@ -854,6 +860,8 @@
             // 
             // btnCancl
             // 
+            this.btnCancl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancl.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnCancl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancl.ForeColor = System.Drawing.Color.White;
@@ -875,6 +883,8 @@
             // 
             // txtMainTest
             // 
+            this.txtMainTest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMainTest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMainTest.Location = new System.Drawing.Point(100, 54);
             this.txtMainTest.Name = "txtMainTest";
@@ -888,8 +898,9 @@
             this.dgvLabMaster.AllowUserToResizeRows = false;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
             this.dgvLabMaster.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvLabMaster.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvLabMaster.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLabMaster.BackgroundColor = System.Drawing.Color.White;
             this.dgvLabMaster.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLabMaster.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -1204,7 +1215,7 @@
             this.deltempitem});
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             dataGridViewCellStyle18.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.ControlText;
@@ -1735,7 +1746,7 @@
             this.deletetmp});
             dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             dataGridViewCellStyle23.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.ControlText;
