@@ -57,6 +57,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
+                this.Size = Screen.PrimaryScreen.WorkingArea.Size;//to set to the screen size
                 string doctr_id = this.ctrlr.privilege_A(doctor_id);
                 if (int.Parse(doctr_id) > 0)
                 {
@@ -497,6 +498,16 @@ namespace PappyjoeMVC.View
         private void toolStripBAttachment_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripButton13_Click(object sender, EventArgs e)
+        {
+            var form2 = new Consultation();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)

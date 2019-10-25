@@ -343,6 +343,17 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
+
+        private void toolStripButton13_Click(object sender, EventArgs e)
+        {
+            var form2 = new Consultation();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try

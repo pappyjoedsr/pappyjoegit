@@ -95,6 +95,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.Lab_due = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_5)).BeginInit();
@@ -522,10 +523,11 @@
             this.btn_Delete2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete2.ForeColor = System.Drawing.Color.White;
             this.btn_Delete2.Image = ((System.Drawing.Image)(resources.GetObject("btn_Delete2.Image")));
-            this.btn_Delete2.Location = new System.Drawing.Point(581, 101);
+            this.btn_Delete2.Location = new System.Drawing.Point(590, 101);
             this.btn_Delete2.Name = "btn_Delete2";
             this.btn_Delete2.Size = new System.Drawing.Size(36, 32);
             this.btn_Delete2.TabIndex = 265;
+            this.btn_Delete2.Text = " ";
             this.btn_Delete2.UseVisualStyleBackColor = true;
             this.btn_Delete2.Click += new System.EventHandler(this.btn_Delete2_Click);
             // 
@@ -583,6 +585,7 @@
             this.toolStripButton1,
             this.toolStripSeparator1,
             this.toolStripButton2,
+            this.toolStripButton13,
             this.toolStripBAttachment,
             this.toolStripButton3,
             this.toolStripButton4,
@@ -821,7 +824,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 40);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // btn_Save
@@ -936,6 +939,18 @@
             this.panel8.Size = new System.Drawing.Size(1386, 1);
             this.panel8.TabIndex = 281;
             // 
+            // toolStripButton13
+            // 
+            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.toolStripButton13.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
+            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton13.Name = "toolStripButton13";
+            this.toolStripButton13.Size = new System.Drawing.Size(89, 37);
+            this.toolStripButton13.Text = "Consultation";
+            this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
+            // 
             // Add_Attachments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -955,7 +970,7 @@
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_Attachments";
-            this.Text = " ";
+            this.Text = " Add Attachments";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Add_Attachments_Load);
             this.Resize += new System.EventHandler(this.Add_Attachments_Resize);
@@ -1047,5 +1062,6 @@
         private System.Windows.Forms.Label Lab_due;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
     }
 }

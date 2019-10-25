@@ -23,6 +23,7 @@ namespace PappyjoeMVC.View
 
         private void patient_profile_details_Load(object sender, EventArgs e)
         {
+            //this.Size = Screen.PrimaryScreen.WorkingArea.Size;//to set to the screen size
             if (doctor_id != "1")
             {
                 string id;
@@ -1096,6 +1097,16 @@ namespace PappyjoeMVC.View
                 }
             }
 
+        }
+
+        private void toolStripButton13_Click(object sender, EventArgs e)
+        {
+            var form2 = new Consultation();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
 
         private void labelprescription_Click(object sender, EventArgs e)

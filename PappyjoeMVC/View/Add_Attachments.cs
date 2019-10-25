@@ -781,7 +781,15 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.ShowDialog();
         }
-
+        private void toolStripButton13_Click(object sender, EventArgs e)
+        {
+            var form2 = new Consultation();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
         private void btn_Delete2_Click(object sender, EventArgs e)
         {
             Pb_2.Image = PappyjoeMVC.Properties.Resources.upload;
