@@ -102,6 +102,7 @@
             this.lst_procedure.Size = new System.Drawing.Size(229, 69);
             this.lst_procedure.TabIndex = 311;
             this.lst_procedure.Visible = false;
+            this.lst_procedure.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lst_procedure_MouseClick);
             // 
             // label12
             // 
@@ -192,6 +193,7 @@
             this.lnk_view_template.TabIndex = 312;
             this.lnk_view_template.TabStop = true;
             this.lnk_view_template.Text = "View Template";
+            this.lnk_view_template.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_view_template_LinkClicked);
             // 
             // txtPatientID
             // 
@@ -297,6 +299,7 @@
             this.label6.Size = new System.Drawing.Size(52, 17);
             this.label6.TabIndex = 295;
             this.label6.Text = "Doctor ";
+            this.label6.MouseHover += new System.EventHandler(this.label6_MouseHover);
             // 
             // label4
             // 
@@ -377,6 +380,7 @@
             this.btnsave.TabIndex = 276;
             this.btnsave.Text = "Save";
             this.btnsave.UseVisualStyleBackColor = false;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // label5
             // 
@@ -389,6 +393,9 @@
             this.label5.Size = new System.Drawing.Size(90, 17);
             this.label5.TabIndex = 294;
             this.label5.Text = "+ New Patient";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.MouseLeave += new System.EventHandler(this.label5_MouseLeave);
+            this.label5.MouseHover += new System.EventHandler(this.label5_MouseHover);
             // 
             // Consultation
             // 

@@ -26,7 +26,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable itemdetails(string item_code)
         {
-            DataTable dtunit = db.table(" select item_name,OneUnitOnly,UnitMF,Unit1,Unit2 from tbl_ITEMS where id='" + item_code + "'");
+            DataTable dtunit = db.table(" select item_name,OneUnitOnly,UnitMF,Unit1,Unit2,purch_rate,purch_rate2 from tbl_ITEMS where id='" + item_code + "'");
             return dtunit;
         }
         public DataTable search_minimum()

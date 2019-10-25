@@ -72,7 +72,7 @@ namespace PappyjoeMVC.Model
         {
             db.execute("UPDATE tbl_prescription_main SET review='YES',Review_date='" + date + "' WHERE id='" + presid + "'");
         }
-
+        
         public void update_prescription_review_NO(string date, int presid)
         {
             db.execute("UPDATE tbl_prescription_main SET review='NO',Review_date='" + date + "'  WHERE id='" + presid + "'");

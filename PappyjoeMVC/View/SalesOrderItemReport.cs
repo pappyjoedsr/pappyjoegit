@@ -47,7 +47,7 @@ namespace PappyjoeMVC.View
                     dgv_orderItems.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
                     dgv_orderItems.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     dgv_orderItems.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                    dgv_orderItems.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    dgv_orderItems.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                     dgv_orderItems.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     dgv_orderItems.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     dgv_orderItems.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -57,7 +57,7 @@ namespace PappyjoeMVC.View
                     dgv_orderItems.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     dgv_orderItems.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     dgv_orderItems.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                    dgv_orderItems.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    dgv_orderItems.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                     foreach (DataGridViewColumn cl in dgv_orderItems.Columns)
                     {
                         cl.SortMode = DataGridViewColumnSortMode.NotSortable;

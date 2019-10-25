@@ -89,6 +89,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabel_id = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
             this.panel6.SuspendLayout();
             this.label26.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -441,8 +442,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripSeparator1,
-            this.toolStripBAttachment,
             this.toolStripButton2,
+            this.toolStripBAttachment,
+            this.toolStripButton13,
             this.toolStripButton3,
             this.toolStripButton4,
             this.toolStripButton5,
@@ -681,7 +683,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 40);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // linkLabel_Name
@@ -821,6 +823,18 @@
             this.pictureBox1.TabIndex = 72;
             this.pictureBox1.TabStop = false;
             // 
+            // toolStripButton13
+            // 
+            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.toolStripButton13.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
+            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton13.Name = "toolStripButton13";
+            this.toolStripButton13.Size = new System.Drawing.Size(89, 37);
+            this.toolStripButton13.Text = "Consultation";
+            this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
+            // 
             // Add_Appointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -922,5 +936,6 @@
         private System.Windows.Forms.LinkLabel linkLabel_id;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
     }
 }

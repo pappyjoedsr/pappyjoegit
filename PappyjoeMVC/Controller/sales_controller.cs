@@ -150,14 +150,6 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.get_batchdetails(item_Code);
             return dtb;
         }
-        ///transaction
-        //public void start_transaction()
-        //{
-        //    db.begin_trans();
-        //}
-        //public void stop_trans()
-        //{
-        //    db.close_trans();
-        //}
+      
     }
 }

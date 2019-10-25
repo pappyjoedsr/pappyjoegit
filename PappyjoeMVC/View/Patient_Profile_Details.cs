@@ -82,9 +82,9 @@ namespace PappyjoeMVC.View
                     linkLabel_id.Text = rs_patients.Rows[0]["pt_id"].ToString();
                 }
                 //DateTime date_of_submission = Convert.ToDateTime(DateTime.Now.ToString("MM/dd/yyyy"));
-                DateTime date_of_submission = DateTime.Now;
-                DateTime _effective_date = Convert.ToDateTime(rs_patients.Rows[0]["Visited"].ToString());
-                TimeSpan difference = date_of_submission - _effective_date;
+                //DateTime date_of_submission = DateTime.Now;
+                //DateTime _effective_date = Convert.ToDateTime(rs_patients.Rows[0]["Visited"].ToString());
+                //TimeSpan difference = date_of_submission - _effective_date;
                 try
                 {
                     int YX = 20;
@@ -1097,6 +1097,16 @@ namespace PappyjoeMVC.View
                 }
             }
 
+        }
+
+        private void toolStripButton13_Click(object sender, EventArgs e)
+        {
+            var form2 = new Consultation();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
         }
 
         private void labelprescription_Click(object sender, EventArgs e)

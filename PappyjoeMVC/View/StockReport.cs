@@ -168,6 +168,8 @@ namespace PappyjoeMVC.View
                         DataTable dtunit = this.cntrl.itemdetails(dtb.Rows[i]["id"].ToString());
                         if (dtunit.Rows.Count > 0)
                         {
+                            decimal item_rate1 = 0;
+                            decimal item_rate2 = 0;
                             if (dtunit.Rows[0]["OneUnitOnly"].ToString() == "False")
                             {
                                 unitmf = Convert.ToInt32(dtunit.Rows[0]["UnitMF"].ToString());
@@ -175,32 +177,34 @@ namespace PappyjoeMVC.View
                                 qty = Convert.ToInt32(value);
                                 quotient = Convert.ToInt32(qty / unitmf);
                                 Remainder = Convert.ToInt32(qty % unitmf);
+                                item_rate1 = quotient * Convert.ToDecimal(dtunit.Rows[0]["purch_rate"].ToString());
+                                item_rate2 = quotient * Convert.ToDecimal(dtunit.Rows[0]["purch_rate2"].ToString());
                                 if (quotient < Convert.ToDecimal(dtb_Min.Rows[0][0].ToString()))
                                 {
-                                    current_Stock = dtunit.Rows[0]["Unit1"].ToString() + " " + "=" + " " + quotient + " " + "," + " " + dtunit.Rows[0]["Unit2"].ToString() + " " + "=" + Remainder;
-                                    DGV_Stock.Rows.Add(num, dtb.Rows[i]["item_code"].ToString(), dtunit.Rows[0]["item_name"].ToString(), dtunit.Rows[0]["Unit1"].ToString(), current_Stock);
+                                    current_Stock = dtunit.Rows[0]["Unit1"].ToString() + " " + "=" + " " + quotient + " " + "," + " " + dtunit.Rows[0]["Unit2"].ToString() + " " + "=" + Remainder + " Value:" + (item_rate1 + item_rate2).ToString("#.##");
+                                    DGV_Stock.Rows.Add(num, dtb.Rows[i]["item_code"].ToString(), dtunit.Rows[0]["item_name"].ToString(), dtunit.Rows[0]["Unit1"].ToString(),current_Stock);
                                     DGV_Stock.Rows[i].DefaultCellStyle.ForeColor = Color.Red;
                                 }
                                 else
                                 {
-                                    current_Stock = dtunit.Rows[0]["Unit1"].ToString() + " " + "=" + " " + quotient + " " + "," + " " + dtunit.Rows[0]["Unit2"].ToString() + " " + "=" + Remainder;
+                                    current_Stock = dtunit.Rows[0]["Unit1"].ToString() + " " + "=" + " " + quotient + " " + "," + " " + dtunit.Rows[0]["Unit2"].ToString() + " " + "=" + Remainder + " Value:" + (item_rate1 + item_rate2).ToString("#.##");
                                     DGV_Stock.Rows.Add(num, dtb.Rows[i]["item_code"].ToString(), dtunit.Rows[0]["item_name"].ToString(), dtunit.Rows[0]["Unit1"].ToString(), current_Stock);
                                 }
                             }
                             else
                             {
                                 if (Convert.ToDecimal(dtb.Rows[i]["qty"].ToString()) < Convert.ToDecimal(dtb_Min.Rows[0][0].ToString()))
-                                {
+                                { 
                                     stock = Convert.ToDecimal(dtb.Rows[i]["qty"].ToString());
-                                    current_Stock = dtunit.Rows[0]["Unit1"].ToString() + " " + "=" + " " + Math.Floor(stock);
-                                    DGV_Stock.Rows.Add(num, dtb.Rows[i]["item_code"].ToString(), dtunit.Rows[0]["item_name"].ToString(), dtunit.Rows[0]["Unit1"].ToString(), current_Stock);
+                                    current_Stock = dtunit.Rows[0]["Unit1"].ToString() + " " + "=" + " " + Math.Floor(stock) + " Value:" + item_rate1.ToString("#.##");
+                                    DGV_Stock.Rows.Add(num, dtb.Rows[i]["item_code"].ToString(), dtunit.Rows[0]["item_name"].ToString(), dtunit.Rows[0]["Unit1"].ToString(),current_Stock);
                                     DGV_Stock.Rows[i].DefaultCellStyle.ForeColor = Color.Red;
                                 }
                                 else
                                 {
                                     stock = Convert.ToDecimal(dtb.Rows[i]["qty"].ToString());
-                                    current_Stock = dtunit.Rows[0]["Unit1"].ToString() + " " + "=" + " " + Math.Floor(stock);
-                                    DGV_Stock.Rows.Add(num, dtb.Rows[i]["item_code"].ToString(), dtunit.Rows[0]["item_name"].ToString(), dtunit.Rows[0]["Unit1"].ToString(), current_Stock);
+                                    current_Stock = dtunit.Rows[0]["Unit1"].ToString() + " " + "=" + " " + Math.Floor(stock) + " Value:" + item_rate1.ToString("#.##");
+                                    DGV_Stock.Rows.Add(num, dtb.Rows[i]["item_code"].ToString(), dtunit.Rows[0]["item_name"].ToString(), dtunit.Rows[0]["Unit1"].ToString(),current_Stock);
                                 }
                             }
                         }
@@ -896,6 +900,15 @@ namespace PappyjoeMVC.View
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Login();
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void toolStripButton13_Click(object sender, EventArgs e)
+        {
+            var form2 = new Consultation();
+            form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

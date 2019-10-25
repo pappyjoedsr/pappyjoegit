@@ -95,5 +95,10 @@ namespace PappyjoeMVC.Model
             DataTable dt2 = db.table("SELECT * FROM tbl_drug_type WHERE id IN (SELECT MAX(id) FROM tbl_drug_type GROUP BY dr_type)");
             return dt2;
         }
+        public DataTable max_itemid()
+        {
+            DataTable dt_item_code = db.table("SELECT MAX(id) FROM tbl_ITEMS order by id");
+            return dt_item_code;
+        }
     }
 }

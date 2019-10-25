@@ -445,6 +445,15 @@ namespace PappyjoeMVC.View
             form2.ShowDialog();
         }
 
+        private void toolStripButton14_Click(object sender, EventArgs e)
+        {
+            var form2 = new Consultation();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         //private void Cmb_Manufacture_Click(object sender, EventArgs e)
         //{
         //    //DataTable dt = this.cntrl.Fill_manufactureCombo();

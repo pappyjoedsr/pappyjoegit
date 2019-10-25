@@ -84,21 +84,11 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel_main = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripldoc = new System.Windows.Forms.ToolStripTextBox();
-            this.txttaxno = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtdruglicenseno = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnLab = new System.Windows.Forms.Button();
-            this.btnLab_dental = new System.Windows.Forms.Button();
-            this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripBAttachment = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBAttachment = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
@@ -109,8 +99,19 @@
             this.toolStripButton8 = new System.Windows.Forms.ToolStripDropDownButton();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripldoc = new System.Windows.Forms.ToolStripTextBox();
+            this.txttaxno = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtdruglicenseno = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnLab = new System.Windows.Forms.Button();
+            this.btnLab_dental = new System.Windows.Forms.Button();
+            this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -744,8 +745,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripSeparator1,
-            this.toolStripBAttachment,
             this.toolStripButton2,
+            this.toolStripBAttachment,
+            this.toolStripButton13,
             this.toolStripButton3,
             this.toolStripButton4,
             this.toolStripButton5,
@@ -765,131 +767,6 @@
             this.toolStrip1.TabIndex = 144;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripTextBox1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(250, 40);
-            this.toolStripTextBox1.Text = "Search by Patient Name, id, Mobile No";
-            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
-            this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
-            // 
-            // toolStripldoc
-            // 
-            this.toolStripldoc.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripldoc.BackColor = System.Drawing.Color.DodgerBlue;
-            this.toolStripldoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.toolStripldoc.Name = "toolStripldoc";
-            this.toolStripldoc.ReadOnly = true;
-            this.toolStripldoc.Size = new System.Drawing.Size(250, 40);
-            this.toolStripldoc.Text = "doctorrname";
-            // 
-            // txttaxno
-            // 
-            this.txttaxno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txttaxno.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txttaxno.Location = new System.Drawing.Point(378, 625);
-            this.txttaxno.Name = "txttaxno";
-            this.txttaxno.Size = new System.Drawing.Size(382, 20);
-            this.txttaxno.TabIndex = 146;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(300, 624);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(49, 17);
-            this.label19.TabIndex = 148;
-            this.label19.Text = "Tax No";
-            // 
-            // txtdruglicenseno
-            // 
-            this.txtdruglicenseno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtdruglicenseno.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtdruglicenseno.Location = new System.Drawing.Point(378, 585);
-            this.txtdruglicenseno.Name = "txtdruglicenseno";
-            this.txtdruglicenseno.Size = new System.Drawing.Size(382, 20);
-            this.txtdruglicenseno.TabIndex = 145;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(245, 584);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(105, 17);
-            this.label13.TabIndex = 147;
-            this.label13.Text = "Drug License No";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1, 613);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 129);
-            this.button1.TabIndex = 149;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btnLab
-            // 
-            this.btnLab.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnLab.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLab.ForeColor = System.Drawing.Color.White;
-            this.btnLab.Location = new System.Drawing.Point(1, 363);
-            this.btnLab.Name = "btnLab";
-            this.btnLab.Size = new System.Drawing.Size(192, 37);
-            this.btnLab.TabIndex = 151;
-            this.btnLab.Text = "Lab Medical";
-            this.btnLab.UseVisualStyleBackColor = false;
-            this.btnLab.Click += new System.EventHandler(this.btnLab_Click);
-            // 
-            // btnLab_dental
-            // 
-            this.btnLab_dental.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnLab_dental.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLab_dental.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLab_dental.ForeColor = System.Drawing.Color.White;
-            this.btnLab_dental.Location = new System.Drawing.Point(1, 399);
-            this.btnLab_dental.Name = "btnLab_dental";
-            this.btnLab_dental.Size = new System.Drawing.Size(192, 37);
-            this.btnLab_dental.TabIndex = 152;
-            this.btnLab_dental.Text = "Lab Dental";
-            this.btnLab_dental.UseVisualStyleBackColor = false;
-            this.btnLab_dental.Click += new System.EventHandler(this.btnLab_dental_Click);
-            // 
-            // listpatientsearch
-            // 
-            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.listpatientsearch.FormattingEnabled = true;
-            this.listpatientsearch.ItemHeight = 20;
-            this.listpatientsearch.Location = new System.Drawing.Point(1016, 35);
-            this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
-            this.listpatientsearch.TabIndex = 299;
-            this.listpatientsearch.Visible = false;
-            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
-            // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -901,6 +778,23 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(103, 37);
             this.toolStripButton1.Text = "Pappyjoe Clinic";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton2.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
+            this.toolStripButton2.Text = "Calendar";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripBAttachment
             // 
@@ -914,17 +808,17 @@
             this.toolStripBAttachment.Text = "Fast Track";
             this.toolStripBAttachment.Visible = false;
             // 
-            // toolStripButton2
+            // toolStripButton13
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton2.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
-            this.toolStripButton2.Text = "Calendar";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.toolStripButton13.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
+            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton13.Name = "toolStripButton13";
+            this.toolStripButton13.Size = new System.Drawing.Size(89, 37);
+            this.toolStripButton13.Text = "Consultation";
+            this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
             // 
             // toolStripButton3
             // 
@@ -1042,6 +936,12 @@
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
+            // 
             // toolStripButton9
             // 
             this.toolStripButton9.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -1066,6 +966,120 @@
             this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.ToolTipText = "Add new Patient";
             this.toolStripDropDownButton1.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripTextBox1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(250, 40);
+            this.toolStripTextBox1.Text = "Search by Patient Name, id, Mobile No";
+            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
+            this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
+            // 
+            // toolStripldoc
+            // 
+            this.toolStripldoc.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripldoc.BackColor = System.Drawing.Color.DodgerBlue;
+            this.toolStripldoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStripldoc.Name = "toolStripldoc";
+            this.toolStripldoc.ReadOnly = true;
+            this.toolStripldoc.Size = new System.Drawing.Size(250, 23);
+            this.toolStripldoc.Text = "doctorrname";
+            // 
+            // txttaxno
+            // 
+            this.txttaxno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txttaxno.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txttaxno.Location = new System.Drawing.Point(378, 625);
+            this.txttaxno.Name = "txttaxno";
+            this.txttaxno.Size = new System.Drawing.Size(382, 20);
+            this.txttaxno.TabIndex = 146;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(300, 624);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(49, 17);
+            this.label19.TabIndex = 148;
+            this.label19.Text = "Tax No";
+            // 
+            // txtdruglicenseno
+            // 
+            this.txtdruglicenseno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtdruglicenseno.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtdruglicenseno.Location = new System.Drawing.Point(378, 585);
+            this.txtdruglicenseno.Name = "txtdruglicenseno";
+            this.txtdruglicenseno.Size = new System.Drawing.Size(382, 20);
+            this.txtdruglicenseno.TabIndex = 145;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(245, 584);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(105, 17);
+            this.label13.TabIndex = 147;
+            this.label13.Text = "Drug License No";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(1, 613);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(192, 129);
+            this.button1.TabIndex = 149;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnLab
+            // 
+            this.btnLab.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnLab.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLab.ForeColor = System.Drawing.Color.White;
+            this.btnLab.Location = new System.Drawing.Point(1, 363);
+            this.btnLab.Name = "btnLab";
+            this.btnLab.Size = new System.Drawing.Size(192, 37);
+            this.btnLab.TabIndex = 151;
+            this.btnLab.Text = "Lab Medical";
+            this.btnLab.UseVisualStyleBackColor = false;
+            this.btnLab.Click += new System.EventHandler(this.btnLab_Click);
+            // 
+            // btnLab_dental
+            // 
+            this.btnLab_dental.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnLab_dental.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLab_dental.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLab_dental.ForeColor = System.Drawing.Color.White;
+            this.btnLab_dental.Location = new System.Drawing.Point(1, 399);
+            this.btnLab_dental.Name = "btnLab_dental";
+            this.btnLab_dental.Size = new System.Drawing.Size(192, 37);
+            this.btnLab_dental.TabIndex = 152;
+            this.btnLab_dental.Text = "Lab Dental";
+            this.btnLab_dental.UseVisualStyleBackColor = false;
+            this.btnLab_dental.Click += new System.EventHandler(this.btnLab_dental_Click);
+            // 
+            // listpatientsearch
+            // 
+            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.listpatientsearch.FormattingEnabled = true;
+            this.listpatientsearch.ItemHeight = 20;
+            this.listpatientsearch.Location = new System.Drawing.Point(1016, 35);
+            this.listpatientsearch.Name = "listpatientsearch";
+            this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
+            this.listpatientsearch.TabIndex = 299;
+            this.listpatientsearch.Visible = false;
+            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
             // 
             // pictureBox1
             // 
@@ -1247,5 +1261,6 @@
         private System.Windows.Forms.Button btnLab;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
         private System.Windows.Forms.ListBox listpatientsearch;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
     }
 }
