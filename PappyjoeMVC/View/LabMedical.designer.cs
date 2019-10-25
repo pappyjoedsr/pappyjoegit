@@ -134,6 +134,8 @@
             this.tyid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tnid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noval = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edittempitem = new System.Windows.Forms.DataGridViewImageColumn();
+            this.deltempitem = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnadditems = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -771,6 +773,8 @@
             // 
             // btnsave
             // 
+            this.btnsave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnsave.BackColor = System.Drawing.Color.LimeGreen;
             this.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsave.ForeColor = System.Drawing.Color.White;
@@ -784,6 +788,8 @@
             // 
             // lblMainTestName
             // 
+            this.lblMainTestName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMainTestName.AutoSize = true;
             this.lblMainTestName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMainTestName.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -805,6 +811,8 @@
             // 
             // tabLabMasters
             // 
+            this.tabLabMasters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabLabMasters.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabLabMasters.Controls.Add(this.TpMainTest);
             this.tabLabMasters.Controls.Add(this.tpTestType);
@@ -852,6 +860,8 @@
             // 
             // btnCancl
             // 
+            this.btnCancl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancl.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnCancl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancl.ForeColor = System.Drawing.Color.White;
@@ -873,6 +883,8 @@
             // 
             // txtMainTest
             // 
+            this.txtMainTest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMainTest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMainTest.Location = new System.Drawing.Point(100, 54);
             this.txtMainTest.Name = "txtMainTest";
@@ -886,8 +898,9 @@
             this.dgvLabMaster.AllowUserToResizeRows = false;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
             this.dgvLabMaster.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvLabMaster.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvLabMaster.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLabMaster.BackgroundColor = System.Drawing.Color.White;
             this.dgvLabMaster.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLabMaster.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -1115,7 +1128,7 @@
             this.dgvTest.RowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvTest.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvTest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTest.Size = new System.Drawing.Size(953, 460);
+            this.dgvTest.Size = new System.Drawing.Size(956, 443);
             this.dgvTest.TabIndex = 0;
             this.dgvTest.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTest_CellClick);
             this.dgvTest.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTest_CellContentClick);
@@ -1197,10 +1210,12 @@
             this.mtidtmp,
             this.tyid,
             this.tnid,
-            this.noval});
+            this.noval,
+            this.edittempitem,
+            this.deltempitem});
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             dataGridViewCellStyle18.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.ControlText;
@@ -1217,9 +1232,9 @@
             this.dgvtempitem.RowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvtempitem.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvtempitem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvtempitem.Size = new System.Drawing.Size(721, 236);
+            this.dgvtempitem.Size = new System.Drawing.Size(770, 236);
             this.dgvtempitem.TabIndex = 33;
-            this.dgvtempitem.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvtempitem_RowPostPaint);
+            this.dgvtempitem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtempitem_CellContentClick);
             // 
             // idtmpitm
             // 
@@ -1305,6 +1320,26 @@
             this.noval.Name = "noval";
             this.noval.ReadOnly = true;
             this.noval.Visible = false;
+            // 
+            // edittempitem
+            // 
+            this.edittempitem.HeaderText = "";
+            this.edittempitem.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.edittempitem.Name = "edittempitem";
+            this.edittempitem.ReadOnly = true;
+            this.edittempitem.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.edittempitem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.edittempitem.Width = 50;
+            // 
+            // deltempitem
+            // 
+            this.deltempitem.HeaderText = "";
+            this.deltempitem.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.deltempitem.Name = "deltempitem";
+            this.deltempitem.ReadOnly = true;
+            this.deltempitem.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.deltempitem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.deltempitem.Width = 50;
             // 
             // btnCancel
             // 
@@ -1711,7 +1746,7 @@
             this.deletetmp});
             dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             dataGridViewCellStyle23.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.ControlText;
@@ -1987,17 +2022,6 @@
         private System.Windows.Forms.Panel pnl2;
         private System.Windows.Forms.Button btnedit;
         private System.Windows.Forms.DataGridView dgvtempitem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idtmpitm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maintsttemp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn test;
-        private System.Windows.Forms.DataGridViewTextBoxColumn testtypetmpitm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Unittmpitm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn normalvaluemale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn normalvaluefemale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mtidtmp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tyid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tnid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noval;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnadditems;
         private System.Windows.Forms.Button button1;
@@ -2050,5 +2074,18 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn12;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtmpitm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maintsttemp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn test;
+        private System.Windows.Forms.DataGridViewTextBoxColumn testtypetmpitm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unittmpitm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn normalvaluemale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn normalvaluefemale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mtidtmp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tyid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tnid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noval;
+        private System.Windows.Forms.DataGridViewImageColumn edittempitem;
+        private System.Windows.Forms.DataGridViewImageColumn deltempitem;
     }
 }

@@ -45,6 +45,7 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
             this.toolStripBAttachment = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
@@ -228,6 +229,7 @@
             this.toolStripButton1,
             this.toolStripSeparator1,
             this.toolStripButton2,
+            this.toolStripButton13,
             this.toolStripBAttachment,
             this.toolStripButton3,
             this.toolStripButton4,
@@ -277,6 +279,18 @@
             this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
             this.toolStripButton2.Text = "Calendar";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton13
+            // 
+            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.toolStripButton13.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
+            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton13.Name = "toolStripButton13";
+            this.toolStripButton13.Size = new System.Drawing.Size(89, 37);
+            this.toolStripButton13.Text = "Consultation";
+            this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
             // 
             // toolStripBAttachment
             // 
@@ -465,7 +479,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 40);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // panel7
@@ -1581,7 +1595,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(7, 155);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 43;
             this.label2.Text = "By doctor";
             // 
@@ -1722,7 +1736,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label7.Location = new System.Drawing.Point(586, 37);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.Size = new System.Drawing.Size(51, 13);
             this.label7.TabIndex = 20;
             this.label7.Text = "TAX (INR)";
             // 
@@ -1734,7 +1748,7 @@
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label6.Location = new System.Drawing.Point(430, 37);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.Size = new System.Drawing.Size(85, 13);
             this.label6.TabIndex = 19;
             this.label6.Text = "DISCOUNT(INR)";
             // 
@@ -1757,7 +1771,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(211, 37);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 18;
             this.label5.Text = "COST(INR)";
             // 
@@ -1769,7 +1783,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(326, 37);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 17;
             this.label4.Text = "UNIT";
             // 
@@ -1886,7 +1900,7 @@
             this.label24.ForeColor = System.Drawing.Color.LimeGreen;
             this.label24.Location = new System.Drawing.Point(657, 39);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(80, 13);
+            this.label24.Size = new System.Drawing.Size(77, 13);
             this.label24.TabIndex = 7;
             this.label24.Text = "GRANT TOTAL ";
             // 
@@ -1910,7 +1924,7 @@
             this.label25.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label25.Location = new System.Drawing.Point(372, 39);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(62, 13);
+            this.label25.Size = new System.Drawing.Size(59, 13);
             this.label25.TabIndex = 6;
             this.label25.Text = "TOTAL TAX ";
             // 
@@ -1934,7 +1948,7 @@
             this.label26.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label26.Location = new System.Drawing.Point(176, 39);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(96, 13);
+            this.label26.Size = new System.Drawing.Size(93, 13);
             this.label26.TabIndex = 5;
             this.label26.Text = "TOTAL DISCOUNT";
             // 
@@ -1958,7 +1972,7 @@
             this.label27.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label27.Location = new System.Drawing.Point(31, 39);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(69, 13);
+            this.label27.Size = new System.Drawing.Size(66, 13);
             this.label27.TabIndex = 4;
             this.label27.Text = "TOTAL COST";
             // 
@@ -2487,5 +2501,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn C_id;
         private System.Windows.Forms.ListBox listpatientsearch;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
     }
 }

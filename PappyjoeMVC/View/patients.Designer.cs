@@ -699,6 +699,7 @@
             this.lab_Displaying.TabIndex = 40;
             this.lab_Displaying.Text = "Displaying";
             this.lab_Displaying.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lab_Displaying.Click += new System.EventHandler(this.lab_Displaying_Click);
             // 
             // lab_7
             // 
@@ -708,7 +709,7 @@
             this.lab_7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_7.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lab_7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lab_7.Location = new System.Drawing.Point(99, 7);
+            this.lab_7.Location = new System.Drawing.Point(73, 7);
             this.lab_7.Name = "lab_7";
             this.lab_7.Size = new System.Drawing.Size(18, 20);
             this.lab_7.TabIndex = 41;

@@ -33,7 +33,6 @@ namespace PappyjoeMVC.View
                 panel_Search.Visible = false;
                 lab_Change_AppoinmtName.Visible = true;
                 panel_Appmnt.Visible = true;
-               
                 var dateFrom = dateTimePickefrom.Value.ToShortDateString();
                 var dateTo = dateTimePicketo.Value.ToShortDateString();
                 if (Convert.ToDateTime(dateFrom).Date > Convert.ToDateTime(dateTo).Date)
@@ -99,6 +98,7 @@ namespace PappyjoeMVC.View
                 DGV_Patients.Columns.Add(img5);
                 lab_LongMsg.Hide();
                 lab_LongMsg.Location = new Point(350, 350);
+                lab_7.Location = new Point(73, 7);
                 lab_7.Text = dt_pt5.Rows.Count.ToString() + " Patient(s)";
                 for (int j = 0; j < dt_pt5.Rows.Count; j++)
                 {
@@ -142,6 +142,7 @@ namespace PappyjoeMVC.View
             {
                 lab_LongMsg.Show();
                 lab_LongMsg.Location = new Point(350, 350);
+                lab_7.Location= new Point(4,5);
                 lab_7.Text = " Zero Patient(s)";
                 lab_Displaying.Visible = false;
             }
@@ -250,6 +251,7 @@ namespace PappyjoeMVC.View
                 int i = 0;
                 if (dt_cf_main.Rows.Count > 0)
                 {
+                    lab_7.Location = new Point(73, 7);
                     lab_7.Text = dt_cf_main.Rows.Count.ToString() + " Patient(s)";
                     lab_LongMsg.Hide();
                     for (int j = 0; j < dt_cf_main.Rows.Count; j++)
@@ -406,8 +408,11 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    lab_LongMsg.Show(); lab_Displaying.Visible = false;
+                    lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
+                    lab_7.Location = new Point(4, 5);
+                    lab_7.Text = " Zero Patient(s)";
+                    lab_Displaying.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -482,6 +487,7 @@ namespace PappyjoeMVC.View
                 int i = 0;
                 if (dt_cf_main.Rows.Count > 0)
                 {
+                    lab_7.Location = new Point(73, 7);
                     lab_7.Text = dt_cf_main.Rows.Count.ToString() + " Patient(s)";
                     lab_LongMsg.Hide();
                     lab_LongMsg.Location = new Point(350, 350);
@@ -656,8 +662,10 @@ namespace PappyjoeMVC.View
                 else
                 {
                     lab_LongMsg.Show();
-                    lab_Displaying.Visible = false;
                     lab_LongMsg.Location = new Point(350, 350);
+                    lab_7.Location = new Point(4, 5);
+                    lab_7.Text = " Zero Patient(s)";
+                    lab_Displaying.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -731,6 +739,7 @@ namespace PappyjoeMVC.View
                 {
                     lab_LongMsg.Hide();
                     lab_LongMsg.Location = new Point(350, 350);
+                    lab_7.Location = new Point(73, 7);
                     lab_7.Text = dt_pt_main.Rows.Count.ToString() + " Patient(s)";
                     for (int j = 0; j < dt_pt_main.Rows.Count; j++)
                     {
@@ -822,8 +831,11 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    lab_LongMsg.Show(); lab_Displaying.Visible = false;
+                    lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
+                    lab_7.Location = new Point(4, 5);
+                    lab_7.Text = " Zero Patient(s)";
+                    lab_Displaying.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -884,6 +896,7 @@ namespace PappyjoeMVC.View
                 {
                     lab_LongMsg.Hide();
                     lab_LongMsg.Location = new Point(350, 350);
+                    lab_7.Location = new Point(73, 7);
                     lab_7.Text = dt_pt_main.Rows.Count.ToString() + " Patient(s)";
                     for (int j = 0; j < dt_pt_main.Rows.Count; j++)
                     {
@@ -961,8 +974,11 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    lab_LongMsg.Show(); lab_Displaying.Visible = false;
+                    lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
+                    lab_7.Location = new Point(4, 5);
+                    lab_7.Text = " Zero Patient(s)";
+                    lab_Displaying.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -1286,6 +1302,10 @@ namespace PappyjoeMVC.View
                 {
                     lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
+                    lab_7.Visible = true;
+                    lab_7.Location = new Point(4, 5);
+                    lab_7.Text = " Zero Patient(s)";
+                    lab_Displaying.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -1388,15 +1408,19 @@ namespace PappyjoeMVC.View
                     DGV_Patients.Rows[j].Cells[3].Style.BackColor = Color.WhiteSmoke;
                     j = j + 1;
                 }
-                if (Payment.Rows.Count <= 0)
+                if (Payment.Rows.Count >0)
                 {
                     lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
                 }
                 else
                 {
-                    lab_LongMsg.Hide();
+                    lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
+                    lab_7.Visible = true;
+                    lab_7.Location = new Point(4, 5);
+                    lab_7.Text = " Zero Patient(s)";
+                    lab_Displaying.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -1404,7 +1428,6 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void btn_AllPatient_Click(object sender, EventArgs e)
         {
             try
@@ -1418,6 +1441,7 @@ namespace PappyjoeMVC.View
                 CancelledAppoinmnt_Flag = false;
                 Inactive_Flag = false;
                 Group_flag = false;
+                lab_7.Text = "";
                 btn_AllPatient.BackColor = Color.DarkGray;
                 if (doctor_id == "1")
                 {
@@ -1425,7 +1449,7 @@ namespace PappyjoeMVC.View
                     left_button_click = 8;
                     txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
                     SetPatient_SearchControlls();
-                   DataTable drtb=  this.cntrl.Get_all_Patients();
+                    DataTable drtb=  this.cntrl.Get_all_Patients();
                     Create_Datagrid(drtb);
                     Design_Datagrid();
                 }
@@ -1476,7 +1500,6 @@ namespace PappyjoeMVC.View
                 txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
                 SetPatient_SearchControlls();
                 left_button_click = 8;
-                lab_7.Text = "";
                 DateTime d = DateTime.Now;
                 d = d.AddMonths(-1);
                 DateTime todate = DateTime.Now;
@@ -1490,7 +1513,6 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void btn_RecentlyAddes_Click(object sender, EventArgs e)
         {
             try
@@ -1543,7 +1565,7 @@ namespace PappyjoeMVC.View
                 ClearAll_grid2_Properties();
                 left_button_click = 8;
                 DateTime startDateTime = Convert.ToDateTime(DateTime.Today.ToString("d") + " " + DateTime.Now.ToString("hh:mm:ss tt"));
-               DataTable dtb= this.cntrl.upcomming_appointments(startDateTime);
+                DataTable dtb= this.cntrl.upcomming_appointments(startDateTime);
                 Create_Datagrid(dtb);
                 Design_Datagrid();
             }
@@ -1690,7 +1712,7 @@ namespace PappyjoeMVC.View
                     panl_DisplayingPatient.Visible = true;
                     ClearAll_grid2_Properties();
                     lab_LongMsg.Hide();
-                   DataTable dtb=  this.cntrl.Get_all_Patients();
+                    DataTable dtb=  this.cntrl.Get_all_Patients();
                     Create_Datagrid(dtb);
                 }
                 else
@@ -2106,6 +2128,7 @@ namespace PappyjoeMVC.View
                 DGV_Patients.ScrollBars = ScrollBars.Vertical;
                 if (dt_pre_main.Rows.Count > 0)
                 {
+                    lab_7.Location = new Point(73, 7);
                     lab_7.Text = dt_pre_main.Rows.Count.ToString() + " Patient(s)";
                     lab_LongMsg.Hide();
                     lab_LongMsg.Location = new Point(350, 350);
@@ -2114,10 +2137,14 @@ namespace PappyjoeMVC.View
                         DGV_Patients.Rows.Add(dt_pre_main.Rows[j]["pt_id"].ToString(), String.Format("{0:dddd, MMMM d, yyyy}", Convert.ToDateTime(dt_pre_main.Rows[j]["date"].ToString())), "", "", "");
                         DGV_Patients.Rows[i].Cells[1].Style.Font = new System.Drawing.Font("Segoe UI", 7, FontStyle.Bold);
                         DGV_Patients.Rows[i].Cells[1].Style.ForeColor = Color.DarkGreen;
-                        DGV_Patients.Rows[i].Cells[2].Style.Font = new System.Drawing.Font("Segoe UI", 8, FontStyle.Bold);
+                        DGV_Patients.Rows[i].Cells[2].Style.Font = new System.Drawing.Font("Segoe UI", 7, FontStyle.Bold);
+                        DGV_Patients.Rows[i].Cells[2].Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                         DGV_Patients.Rows[i].Cells[2].Style.ForeColor = Color.DarkGreen;
                         DGV_Patients.Rows[i].Cells[1].Style.BackColor = Color.Gainsboro;
                         DGV_Patients.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
+                        DGV_Patients.Rows[i].Cells[3].Style.Font = new System.Drawing.Font("Segoe UI", 7, FontStyle.Bold);
+                        DGV_Patients.Rows[i].Cells[3].Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                        DGV_Patients.Rows[i].Cells[3].Style.ForeColor = Color.DarkGreen;
                         DGV_Patients.Rows[i].Cells[3].Style.BackColor = Color.Gainsboro;
                         DGV_Patients.Rows[i].Cells[4].Style.BackColor = Color.Gainsboro;
                         DGV_Patients.Rows[i].Height = 35;
@@ -2125,10 +2152,10 @@ namespace PappyjoeMVC.View
                         if (rs_patients.Rows.Count > 0)
                         {
                             if (rs_patients.Rows[0]["pt_name"].ToString() != "")
-                            { DGV_Patients.Rows[i].Cells[2].Value = "PATIENT NAME :  " + rs_patients.Rows[0]["pt_name"].ToString(); }
+                            { DGV_Patients.Rows[i].Cells[2].Value = "PATIENT :  " + rs_patients.Rows[0]["pt_name"].ToString(); }
                             if (rs_patients.Rows[0]["pt_id"].ToString() != "")
                             {
-                                DGV_Patients.Rows[i].Cells[2].Value = DGV_Patients.Rows[i].Cells[2].Value + "\r\nPATIENT ID :  " + rs_patients.Rows[0]["pt_id"].ToString();
+                                DGV_Patients.Rows[i].Cells[3].Value = DGV_Patients.Rows[i].Cells[3].Value + "PATIENT ID :  " + rs_patients.Rows[0]["pt_id"].ToString();
                             }
                         }
                         i = i + 1;
@@ -2197,8 +2224,10 @@ namespace PappyjoeMVC.View
                 else
                 {
                     lab_LongMsg.Show();
-                    lab_Displaying.Visible = false;
                     lab_LongMsg.Location = new Point(350, 350);
+                    lab_7.Location = new Point(4, 5);
+                    lab_7.Text = " Zero Patient(s)";
+                    lab_Displaying.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -2351,6 +2380,11 @@ namespace PappyjoeMVC.View
             btn_AllPatient_Click(null,null);
         }
 
+        private void lab_Displaying_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void txt_Search_Click(object sender, EventArgs e)
         {
             txt_Search.Text = "";
@@ -2397,6 +2431,21 @@ namespace PappyjoeMVC.View
                 DGV_Patients.RowTemplate.Height = 25;
                 DGV_Patients.Visible = true;
                 DataTable dtb= this.cntrl.Get_all_Patients();
+                if (dtb.Rows.Count < 0)
+                {
+                    lab_LongMsg.Show();
+                    lab_LongMsg.Location = new Point(350, 350);
+                    lab_7.Visible = true;
+                    lab_7.Location = new Point(4, 5);
+                    lab_7.Text = " Zero Patient(s)";
+                    lab_Displaying.Visible = false;
+                }
+                else
+                {
+                    lab_Displaying.Visible = true;
+                    lab_7.Location = new Point(73, 7);
+                    lab_7.Text = dtb.Rows.Count.ToString() + " Patient(s)";
+                }
                 Create_Datagrid(dtb);
                 Design_Datagrid();
                 //-----Group Add------
@@ -2456,7 +2505,20 @@ namespace PappyjoeMVC.View
         {
             if (dtb.Columns.Count > 0)
             {
-                lab_7.Text = dtb.Rows.Count.ToString() + " Patient(s)";
+                if (dtb.Rows.Count > 0)
+                {
+                    lab_7.Location = new Point(73, 7);
+                    lab_7.Text = dtb.Rows.Count.ToString() + " Patient(s)";
+                }
+                else
+                {
+                    lab_LongMsg.Show();
+                    lab_LongMsg.Location = new Point(350, 350);
+                    lab_7.Visible = true;
+                    lab_7.Location = new Point(4, 5);
+                    lab_7.Text = " Zero Patient(s)";
+                    lab_Displaying.Visible = false;
+                }
                 lab_LongMsg.Hide();
                 DGV_Patients.ColumnHeadersVisible = true;
                 DGV_Patients.Columns.Clear();
@@ -2484,6 +2546,15 @@ namespace PappyjoeMVC.View
                     }
                     DGV_Patients.Columns[0].Visible = false;
                 }
+            }
+            else
+            {
+                lab_LongMsg.Show();
+                lab_LongMsg.Location = new Point(350, 350);
+                lab_7.Visible = true;
+                lab_7.Location = new Point(4, 5);
+                lab_7.Text = " Zero Patient(s)";
+                lab_Displaying.Visible = false;
             }
         }
         public void Design_Datagrid()

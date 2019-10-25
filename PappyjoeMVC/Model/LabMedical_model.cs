@@ -101,9 +101,9 @@ namespace PappyjoeMVC.Model
             int i = db.execute("insert into Lab_Medi_TemplateMain (TemplateName) values('" + txttemp + "') ");
             return i;
         }
-        public int select_Maxid()
+        public string select_Maxid()
         {
-            int id = db.execute("select MAX(id) from Lab_Medi_TemplateMain");
+            string id = db.scalar("select MAX(id) from Lab_Medi_TemplateMain");
             return id;
         }
         public DataTable Get_testnameid_ById(int cmbTesttemp)

@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesOrderItemReport));
             this.panel4 = new System.Windows.Forms.Panel();
-            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DocDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.Txtgrandtotal = new System.Windows.Forms.TextBox();
             this.Txttotaldiscount = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Txt_totalInvoice = new System.Windows.Forms.TextBox();
-            this.CLDocNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SLNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblinvoices = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgv_orderItems = new System.Windows.Forms.DataGridView();
-            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnExport = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btnprint = new System.Windows.Forms.Button();
             this.BTNClose = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.SLNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CLDocNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DocDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_orderItems)).BeginInit();
             this.panel1.SuspendLayout();
@@ -67,36 +67,6 @@
             this.panel4.Size = new System.Drawing.Size(948, 1);
             this.panel4.TabIndex = 185;
             // 
-            // Cost
-            // 
-            this.Cost.HeaderText = "COST";
-            this.Cost.Name = "Cost";
-            this.Cost.ReadOnly = true;
-            // 
-            // Qty
-            // 
-            this.Qty.HeaderText = "QUANTITY";
-            this.Qty.Name = "Qty";
-            this.Qty.ReadOnly = true;
-            // 
-            // Discription
-            // 
-            this.Discription.HeaderText = "DESCRIPTION";
-            this.Discription.Name = "Discription";
-            this.Discription.ReadOnly = true;
-            // 
-            // ItemCode
-            // 
-            this.ItemCode.HeaderText = "ITEM CODE";
-            this.ItemCode.Name = "ItemCode";
-            this.ItemCode.ReadOnly = true;
-            // 
-            // DocDate
-            // 
-            this.DocDate.HeaderText = "DOC DATE";
-            this.DocDate.Name = "DocDate";
-            this.DocDate.ReadOnly = true;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -104,9 +74,9 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(736, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 17);
+            this.label2.Size = new System.Drawing.Size(89, 17);
             this.label2.TabIndex = 171;
-            this.label2.Text = "Total Amount";
+            this.label2.Text = "Total  Amount";
             // 
             // Txtgrandtotal
             // 
@@ -152,18 +122,6 @@
             this.Txt_totalInvoice.TabIndex = 2;
             this.Txt_totalInvoice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // CLDocNumber
-            // 
-            this.CLDocNumber.HeaderText = "DOC NUMBER";
-            this.CLDocNumber.Name = "CLDocNumber";
-            this.CLDocNumber.ReadOnly = true;
-            // 
-            // SLNO
-            // 
-            this.SLNO.HeaderText = "SLNO";
-            this.SLNO.Name = "SLNO";
-            this.SLNO.ReadOnly = true;
-            // 
             // lblinvoices
             // 
             this.lblinvoices.AutoSize = true;
@@ -206,14 +164,14 @@
             this.Qty,
             this.Cost,
             this.TotalAmount});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_orderItems.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_orderItems.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_orderItems.GridColor = System.Drawing.Color.DimGray;
             this.dgv_orderItems.Location = new System.Drawing.Point(0, 0);
             this.dgv_orderItems.Name = "dgv_orderItems";
@@ -225,12 +183,6 @@
             this.dgv_orderItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_orderItems.Size = new System.Drawing.Size(948, 375);
             this.dgv_orderItems.TabIndex = 1;
-            // 
-            // TotalAmount
-            // 
-            this.TotalAmount.HeaderText = "TOTAL AMOUNT";
-            this.TotalAmount.Name = "TotalAmount";
-            this.TotalAmount.ReadOnly = true;
             // 
             // panel1
             // 
@@ -324,6 +276,54 @@
             this.panel3.Size = new System.Drawing.Size(948, 59);
             this.panel3.TabIndex = 187;
             // 
+            // SLNO
+            // 
+            this.SLNO.HeaderText = "SLNO";
+            this.SLNO.Name = "SLNO";
+            this.SLNO.ReadOnly = true;
+            // 
+            // CLDocNumber
+            // 
+            this.CLDocNumber.HeaderText = "DOC NUMBER";
+            this.CLDocNumber.Name = "CLDocNumber";
+            this.CLDocNumber.ReadOnly = true;
+            // 
+            // DocDate
+            // 
+            this.DocDate.HeaderText = "DOC DATE";
+            this.DocDate.Name = "DocDate";
+            this.DocDate.ReadOnly = true;
+            // 
+            // ItemCode
+            // 
+            this.ItemCode.HeaderText = "ITEM CODE";
+            this.ItemCode.Name = "ItemCode";
+            this.ItemCode.ReadOnly = true;
+            // 
+            // Discription
+            // 
+            this.Discription.HeaderText = "DESCRIPTION";
+            this.Discription.Name = "Discription";
+            this.Discription.ReadOnly = true;
+            // 
+            // Qty
+            // 
+            this.Qty.HeaderText = "QUANTITY";
+            this.Qty.Name = "Qty";
+            this.Qty.ReadOnly = true;
+            // 
+            // Cost
+            // 
+            this.Cost.HeaderText = "COST";
+            this.Cost.Name = "Cost";
+            this.Cost.ReadOnly = true;
+            // 
+            // TotalAmount
+            // 
+            this.TotalAmount.HeaderText = "TOTAL   AMOUNT";
+            this.TotalAmount.Name = "TotalAmount";
+            this.TotalAmount.ReadOnly = true;
+            // 
             // SalesOrderItemReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,6 +337,7 @@
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SalesOrderItemReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sales Order Item Report";
             this.Load += new System.EventHandler(this.SalesOrderItemReport_Load);
             this.panel2.ResumeLayout(false);
@@ -352,27 +353,27 @@
         #endregion
 
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Discription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DocDate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Txtgrandtotal;
         private System.Windows.Forms.TextBox Txttotaldiscount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Txt_totalInvoice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CLDocNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SLNO;
         private System.Windows.Forms.Label lblinvoices;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgv_orderItems;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button BtnExport;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnprint;
         private System.Windows.Forms.Button BTNClose;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SLNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CLDocNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DocDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Discription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
     }
 }

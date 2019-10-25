@@ -290,7 +290,6 @@
             this.dgvPurchase.AllowUserToDeleteRows = false;
             this.dgvPurchase.AllowUserToResizeColumns = false;
             this.dgvPurchase.AllowUserToResizeRows = false;
-            this.dgvPurchase.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvPurchase.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPurchase.BackgroundColor = System.Drawing.Color.White;
             this.dgvPurchase.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -303,8 +302,9 @@
             this.PUCHASEORDERNO,
             this.PURCHASEORDER_DATE,
             this.SUPPLIER_NAME});
+            this.dgvPurchase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPurchase.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvPurchase.Location = new System.Drawing.Point(0, 5);
+            this.dgvPurchase.Location = new System.Drawing.Point(0, 0);
             this.dgvPurchase.Name = "dgvPurchase";
             this.dgvPurchase.ReadOnly = true;
             this.dgvPurchase.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -312,16 +312,15 @@
             this.dgvPurchase.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPurchase.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPurchase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPurchase.Size = new System.Drawing.Size(1365, 612);
+            this.dgvPurchase.Size = new System.Drawing.Size(1368, 612);
             this.dgvPurchase.TabIndex = 1;
             this.dgvPurchase.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchase_CellDoubleClick);
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.Controls.Add(this.Lab_Msg);
             this.panel2.Controls.Add(this.dgvPurchase);
-            this.panel2.Location = new System.Drawing.Point(0, 123);
+            this.panel2.Location = new System.Drawing.Point(0, 125);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1368, 612);
             this.panel2.TabIndex = 197;

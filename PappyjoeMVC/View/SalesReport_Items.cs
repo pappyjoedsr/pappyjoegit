@@ -48,7 +48,7 @@ namespace PappyjoeMVC.View
                 DGV_ITEMS.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_ITEMS.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_ITEMS.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_ITEMS.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_ITEMS.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                 DGV_ITEMS.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 DGV_ITEMS.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_ITEMS.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -60,7 +60,7 @@ namespace PappyjoeMVC.View
                 DGV_ITEMS.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_ITEMS.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_ITEMS.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_ITEMS.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DGV_ITEMS.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 foreach (DataGridViewColumn cl in DGV_ITEMS.Columns)
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;

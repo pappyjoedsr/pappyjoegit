@@ -467,6 +467,7 @@
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SalesReport_Items";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sales Report Items";
             this.Load += new System.EventHandler(this.SalesReport_Items_Load);
             this.panel4.ResumeLayout(false);
