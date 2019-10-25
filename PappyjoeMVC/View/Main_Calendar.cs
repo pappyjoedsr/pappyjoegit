@@ -214,6 +214,7 @@ namespace PappyjoeMVC.View
         public string pat_id { get; set; }
         public bool APTAdd = false, APTEdit = false, dr_wise_apt = false;
         private ToolStripButton toolStripButton12;
+        private ToolStripButton toolStripButton10;
         int row_Val = 0; // Appointment List
         //  Privilege check.
         public Main_Calendar()
@@ -604,6 +605,7 @@ namespace PappyjoeMVC.View
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.OptionsPane.SuspendLayout();
             this.panel3.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -1228,6 +1230,7 @@ namespace PappyjoeMVC.View
             this.toolStripSeparator1,
             this.toolStripBfatstrack,
             this.toolStripButton2,
+            this.toolStripButton10,
             this.toolStripButton3,
             this.toolStripButton5,
             this.toolStripButton4,
@@ -1467,7 +1470,7 @@ namespace PappyjoeMVC.View
             this.toolStripldoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripldoc.Name = "toolStripldoc";
             this.toolStripldoc.ReadOnly = true;
-            this.toolStripldoc.Size = new System.Drawing.Size(250, 40);
+            this.toolStripldoc.Size = new System.Drawing.Size(250, 23);
             this.toolStripldoc.Text = "Search";
             // 
             // gbxMonthView
@@ -2162,7 +2165,7 @@ namespace PappyjoeMVC.View
             this.label11.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label11.Location = new System.Drawing.Point(7, 77);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 13);
+            this.label11.Size = new System.Drawing.Size(60, 13);
             this.label11.TabIndex = 3;
             this.label11.Text = "Booked By";
             // 
@@ -2210,6 +2213,18 @@ namespace PappyjoeMVC.View
             this.panel5.Size = new System.Drawing.Size(250, 118);
             this.panel5.TabIndex = 9;
             this.panel5.Visible = false;
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton10.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(89, 37);
+            this.toolStripButton10.Text = "Consultation";
+            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
             // 
             // Main_Calendar
             // 
@@ -3929,14 +3944,14 @@ namespace PappyjoeMVC.View
                     {
                         DateTime Timeonly = DateTime.Now;
                         dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Style.BackColor = Color.FromArgb(0, 0, 255);
-                        dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value = "Check Out";
+                        dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value = "Checked Out";
                         this.cntrl.update_appointment_status_engaged(Convert.ToString(Timeonly.ToString("hh:mm tt")), dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[0].Value.ToString());// int j = db.execute("update tbl_appointment set status='Engage',engaged='" + Convert.ToString(Timeonly.ToString("hh:mm tt")) + "' where id='" + dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'");
                         long_sub = Convert.ToInt64(label8.Text);
                         long_add = Convert.ToInt64(label9.Text);
                         label8.Text = Convert.ToString(long_sub - 1);
                         label9.Text = Convert.ToString(long_add + 1);
                     }
-                    else if (dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value.ToString() == "Check Out")
+                    else if (dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value.ToString() == "Checked Out")
                     {
                         DateTime Timeonly = DateTime.Now;
                         dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Style.BackColor = Color.FromArgb(0, 0, 255);
@@ -4195,6 +4210,13 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void toolStripButton10_Click(object sender, EventArgs e)
+        {
+            var form2 = new Consultation();
+            form2.doctor_id = doctor_id;
             form2.ShowDialog();
         }
 
