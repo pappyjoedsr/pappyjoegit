@@ -762,5 +762,10 @@ namespace PappyjoeMVC.View
             sWrite.Close();
             System.Diagnostics.Process.Start(Apppath + "\\salesOrder.html");
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

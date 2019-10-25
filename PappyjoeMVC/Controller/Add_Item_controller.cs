@@ -98,5 +98,10 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _Model.fill_drugtype();
             return dtb;
         }
+        public DataTable max_itemid()
+        {
+            DataTable dtb = _Model.max_itemid();
+            return dtb;
+        }
     }
 }

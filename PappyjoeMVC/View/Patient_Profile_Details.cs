@@ -81,9 +81,9 @@ namespace PappyjoeMVC.View
                     linkLabel_id.Text = rs_patients.Rows[0]["pt_id"].ToString();
                 }
                 //DateTime date_of_submission = Convert.ToDateTime(DateTime.Now.ToString("MM/dd/yyyy"));
-                DateTime date_of_submission = DateTime.Now;
-                DateTime _effective_date = Convert.ToDateTime(rs_patients.Rows[0]["Visited"].ToString());
-                TimeSpan difference = date_of_submission - _effective_date;
+                //DateTime date_of_submission = DateTime.Now;
+                //DateTime _effective_date = Convert.ToDateTime(rs_patients.Rows[0]["Visited"].ToString());
+                //TimeSpan difference = date_of_submission - _effective_date;
                 try
                 {
                     int YX = 20;

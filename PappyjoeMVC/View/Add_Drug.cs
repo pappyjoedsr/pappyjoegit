@@ -127,6 +127,20 @@ namespace PappyjoeMVC.View
                     BTnClose.Visible = true;
                 }
             }
+            else
+            {
+                load_itemcode();
+            }
+        }
+        public void load_itemcode()
+        {
+            double item_id = 0;
+            DataTable dt_item_code = this.cntrl.max_itemid();
+            if (dt_item_code.Rows.Count > 0)
+            {
+                item_id = Convert.ToDouble(dt_item_code.Rows[0][0].ToString());
+            }
+            txt_ItemCode.Text = "ITEM" + (item_id + 1);
         }
         public void Fill_combo()
         {
@@ -905,6 +919,7 @@ namespace PappyjoeMVC.View
                     }
                 }
                 Fill_combo();
+                load_itemcode();
             }
             else
             {
