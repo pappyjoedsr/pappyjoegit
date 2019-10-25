@@ -563,7 +563,7 @@
             // 
             this.btnTesttype_save.BackColor = System.Drawing.Color.LimeGreen;
             this.btnTesttype_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTesttype_save.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTesttype_save.ForeColor = System.Drawing.Color.White;
             this.btnTesttype_save.Location = new System.Drawing.Point(268, 52);
             this.btnTesttype_save.Name = "btnTesttype_save";
             this.btnTesttype_save.Size = new System.Drawing.Size(75, 28);
@@ -635,6 +635,7 @@
             // 
             this.btntestcancel.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btntestcancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btntestcancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntestcancel.ForeColor = System.Drawing.Color.White;
             this.btntestcancel.Location = new System.Drawing.Point(820, 88);
             this.btntestcancel.Name = "btntestcancel";
@@ -700,7 +701,8 @@
             // 
             this.btnSavetest.BackColor = System.Drawing.Color.LimeGreen;
             this.btnSavetest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSavetest.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSavetest.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSavetest.ForeColor = System.Drawing.Color.White;
             this.btnSavetest.Location = new System.Drawing.Point(741, 88);
             this.btnSavetest.Name = "btnSavetest";
             this.btnSavetest.Size = new System.Drawing.Size(73, 27);
@@ -1359,7 +1361,7 @@
             // 
             this.btnadditems.BackColor = System.Drawing.Color.LimeGreen;
             this.btnadditems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnadditems.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnadditems.ForeColor = System.Drawing.Color.White;
             this.btnadditems.Location = new System.Drawing.Point(816, 63);
             this.btnadditems.Name = "btnadditems";
             this.btnadditems.Size = new System.Drawing.Size(73, 27);
@@ -1372,7 +1374,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.LimeGreen;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(1056, 24);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 27);
@@ -1386,7 +1388,7 @@
             // 
             this.btnclose.BackColor = System.Drawing.Color.Tomato;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnclose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnclose.ForeColor = System.Drawing.Color.White;
             this.btnclose.Location = new System.Drawing.Point(875, 24);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(73, 27);
@@ -1715,7 +1717,7 @@
             // 
             this.btnNewtmp.BackColor = System.Drawing.Color.LimeGreen;
             this.btnNewtmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewtmp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNewtmp.ForeColor = System.Drawing.Color.White;
             this.btnNewtmp.Location = new System.Drawing.Point(506, 18);
             this.btnNewtmp.Name = "btnNewtmp";
             this.btnNewtmp.Size = new System.Drawing.Size(76, 27);
