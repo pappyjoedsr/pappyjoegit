@@ -62,10 +62,11 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    if (button_add.Text == "Update")
+                    if (button_add.Text != "Add")
                     {
                         this.cntrl.update_medical(id, text_medhist.Text);
-                        MessageBox.Show("Updated Successfully..", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        button_add.Text = "Add";
+                        MessageBox.Show("Saved Successfully..", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -144,7 +145,7 @@ namespace PappyjoeMVC.View
                     if (Dgv_medhist.CurrentCell.OwningColumn.Name=="edit")
                     {
                         text_medhist.Text = Dgv_medhist.CurrentRow.Cells["medicl"].Value.ToString();
-                        button_add.Text = "Update";
+                        button_add.Text = "Save";
                         btn_Cancel.Visible = true;
                     }
                     else if (Dgv_medhist.CurrentCell.OwningColumn.Name == "delete")
