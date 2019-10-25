@@ -85,9 +85,17 @@ namespace PappyjoeMVC.View
                     lbPatient.Show();
                     lbPatient.Location = new Point(txt_Pt_search.Location.X, 27);
                     DataTable dtdr = this.cntrl.search_patient(txt_Pt_search.Text);// db.table("select pt_id,pt_name from tbl_patient where pt_name like '%" + txt_Pt_search.Text + "%'  ");
-                    lbPatient.DataSource = dtdr;
-                    lbPatient.DisplayMember = "pt_name";
-                    lbPatient.ValueMember = "pt_id";
+                    if(dtdr.Rows.Count>0)
+                    {
+                        lbPatient.DataSource = dtdr;
+                        lbPatient.DisplayMember = "pt_name";
+                        lbPatient.ValueMember = "pt_id";
+                    }
+                    else
+                    {
+                        lbPatient.Hide();
+                    }
+                    
                 }
                 else
                 {

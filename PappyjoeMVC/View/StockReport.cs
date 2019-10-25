@@ -91,6 +91,7 @@ namespace PappyjoeMVC.View
             if (sales == null || sales.IsDisposed)
                 sales = new Sales();
             sales.TopLevel = false;
+            sales.doctor_id = doctor_id;
             panel_main.Controls.Add(sales);
             sales.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             sales.Show();
