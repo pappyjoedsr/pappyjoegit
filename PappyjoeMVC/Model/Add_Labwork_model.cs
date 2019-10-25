@@ -27,7 +27,7 @@ namespace PappyjoeMVC.Model
         }
         public string selectid(string mtest)
         {
-            string dt = db.scalar("SELECt id from Lab_Medi_TemplateMain WHERE TemplateName='" + mtest + "'");
+            string dt = db.scalar("SELECT A.id FROM tbl_Lab_Medi_MainTest A INNER JOIN Lab_Medi_Template B ON A.id = B.MainTestId inner join Lab_Medi_TemplateMain C on C.id = B.id where A.Main_Test = '" + mtest + "'");
             return dt;
         }
         public int inslabmain(string patid,string dr_id, string wrkname, string wrkid, string dte, string duedate, string rcvdate)

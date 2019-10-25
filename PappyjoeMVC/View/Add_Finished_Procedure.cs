@@ -1675,8 +1675,6 @@ namespace PappyjoeMVC.View
             var form2 = new Consultation();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
             form2.ShowDialog();
         }
     }
