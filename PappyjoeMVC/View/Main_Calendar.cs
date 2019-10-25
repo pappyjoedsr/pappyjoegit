@@ -2165,7 +2165,7 @@ namespace PappyjoeMVC.View
             this.label11.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label11.Location = new System.Drawing.Point(7, 77);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 13);
+            this.label11.Size = new System.Drawing.Size(60, 13);
             this.label11.TabIndex = 3;
             this.label11.Text = "Booked By";
             // 
@@ -3944,14 +3944,14 @@ namespace PappyjoeMVC.View
                     {
                         DateTime Timeonly = DateTime.Now;
                         dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Style.BackColor = Color.FromArgb(0, 0, 255);
-                        dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value = "Check Out";
+                        dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value = "Checked Out";
                         this.cntrl.update_appointment_status_engaged(Convert.ToString(Timeonly.ToString("hh:mm tt")), dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[0].Value.ToString());// int j = db.execute("update tbl_appointment set status='Engage',engaged='" + Convert.ToString(Timeonly.ToString("hh:mm tt")) + "' where id='" + dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'");
                         long_sub = Convert.ToInt64(label8.Text);
                         long_add = Convert.ToInt64(label9.Text);
                         label8.Text = Convert.ToString(long_sub - 1);
                         label9.Text = Convert.ToString(long_add + 1);
                     }
-                    else if (dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value.ToString() == "Check Out")
+                    else if (dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value.ToString() == "Checked Out")
                     {
                         DateTime Timeonly = DateTime.Now;
                         dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Style.BackColor = Color.FromArgb(0, 0, 255);
