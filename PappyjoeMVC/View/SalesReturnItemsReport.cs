@@ -148,8 +148,8 @@ namespace PappyjoeMVC.View
                     dgv_ReturnItems.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     dgv_ReturnItems.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     dgv_ReturnItems.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                    dgv_ReturnItems.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                    dgv_ReturnItems.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    dgv_ReturnItems.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    dgv_ReturnItems.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                     foreach (DataGridViewColumn cl in dgv_ReturnItems.Columns)
                     {
                         cl.SortMode = DataGridViewColumnSortMode.NotSortable;

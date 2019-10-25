@@ -753,7 +753,7 @@ namespace PappyjoeMVC.View
             sWrite.WriteLine("</tr>");
             sWrite.WriteLine("<tr>");
             sWrite.WriteLine("<td align='right'  colspan=4 ><FONT COLOR=black FACE='Geneva,  Sego UI' SIZE=2>Total Amount :  </font></td>");
-            sWrite.WriteLine("<td align='right'  colspan=5 ><FONT COLOR=black FACE='Geneva,  Sego UI' SIZE=2>&nbsp" + String.Format("{0:C}", decimal.Parse(Txt_TotalAmount.Text)) + " </font></td>");
+            sWrite.WriteLine("<td align='right'  colspan=5 ><FONT COLOR=black FACE='Geneva,  Sego UI' SIZE=2>&nbsp" + String.Format("{0:C}",decimal.Parse(Txt_TotalAmount.Text)) + " </font></td>");
             sWrite.WriteLine("</tr>");
             sWrite.WriteLine("</table>");
             sWrite.WriteLine("<script>window.print();</script>");
@@ -761,6 +761,10 @@ namespace PappyjoeMVC.View
             sWrite.WriteLine("</html>");
             sWrite.Close();
             System.Diagnostics.Process.Start(Apppath + "\\salesOrder.html");
+        }
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            printhtml();
         }
     }
 }

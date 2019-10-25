@@ -307,7 +307,7 @@
             this.label21.ForeColor = System.Drawing.Color.Red;
             this.label21.Location = new System.Drawing.Point(150, 151);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(313, 13);
+            this.label21.Size = new System.Drawing.Size(309, 13);
             this.label21.TabIndex = 13;
             this.label21.Text = "DO NOT ENTER \" Dear Patient / Patient Name \" IN SMS TEXT.";
             // 

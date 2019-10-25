@@ -58,6 +58,16 @@
             this.lblPatient = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dgv_SalesItem = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUnitcost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_item_Choose = new System.Windows.Forms.Button();
@@ -75,26 +85,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_ItemCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgv_SalesItem = new System.Windows.Forms.DataGridView();
             this.Txt_TotalAmount = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.txt_totalItems = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUnitcost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_SalesItem)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_SalesItem)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -150,6 +150,7 @@
             this.btnPrint.Text = "PRINT";
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Visible = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnSave
             // 
@@ -433,6 +434,124 @@
             this.panel4.Size = new System.Drawing.Size(1051, 364);
             this.panel4.TabIndex = 295;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.dgv_SalesItem);
+            this.panel2.Location = new System.Drawing.Point(3, 69);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1048, 295);
+            this.panel2.TabIndex = 2;
+            // 
+            // dgv_SalesItem
+            // 
+            this.dgv_SalesItem.AllowUserToAddRows = false;
+            this.dgv_SalesItem.AllowUserToDeleteRows = false;
+            this.dgv_SalesItem.AllowUserToResizeColumns = false;
+            this.dgv_SalesItem.AllowUserToResizeRows = false;
+            this.dgv_SalesItem.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_SalesItem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_SalesItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_SalesItem.ColumnHeadersHeight = 25;
+            this.dgv_SalesItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_SalesItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.colItemCode,
+            this.colDiscription,
+            this.ColQty,
+            this.colUnitcost,
+            this.colAmount,
+            this.colEdit,
+            this.colDelete});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_SalesItem.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_SalesItem.Location = new System.Drawing.Point(4, 5);
+            this.dgv_SalesItem.Name = "dgv_SalesItem";
+            this.dgv_SalesItem.ReadOnly = true;
+            this.dgv_SalesItem.RowHeadersVisible = false;
+            this.dgv_SalesItem.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgv_SalesItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgv_SalesItem.Size = new System.Drawing.Size(1043, 287);
+            this.dgv_SalesItem.TabIndex = 0;
+            this.dgv_SalesItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SalesItem_CellClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // colItemCode
+            // 
+            this.colItemCode.HeaderText = "Item Code";
+            this.colItemCode.Name = "colItemCode";
+            this.colItemCode.ReadOnly = true;
+            this.colItemCode.Width = 230;
+            // 
+            // colDiscription
+            // 
+            this.colDiscription.HeaderText = "Description";
+            this.colDiscription.Name = "colDiscription";
+            this.colDiscription.ReadOnly = true;
+            this.colDiscription.Width = 274;
+            // 
+            // ColQty
+            // 
+            this.ColQty.HeaderText = "Qty";
+            this.ColQty.Name = "ColQty";
+            this.ColQty.ReadOnly = true;
+            this.ColQty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColQty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColQty.Width = 150;
+            // 
+            // colUnitcost
+            // 
+            this.colUnitcost.HeaderText = "Unit Cost";
+            this.colUnitcost.Name = "colUnitcost";
+            this.colUnitcost.ReadOnly = true;
+            this.colUnitcost.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colUnitcost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colUnitcost.Width = 170;
+            // 
+            // colAmount
+            // 
+            this.colAmount.HeaderText = "Amount";
+            this.colAmount.Name = "colAmount";
+            this.colAmount.ReadOnly = true;
+            this.colAmount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colAmount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colAmount.Width = 170;
+            // 
+            // colEdit
+            // 
+            this.colEdit.HeaderText = "";
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Width = 27;
+            // 
+            // colDelete
+            // 
+            this.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDelete.HeaderText = "";
+            this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -666,51 +785,6 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Item Code";
             // 
-            // dgv_SalesItem
-            // 
-            this.dgv_SalesItem.AllowUserToAddRows = false;
-            this.dgv_SalesItem.AllowUserToDeleteRows = false;
-            this.dgv_SalesItem.AllowUserToResizeColumns = false;
-            this.dgv_SalesItem.AllowUserToResizeRows = false;
-            this.dgv_SalesItem.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_SalesItem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_SalesItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_SalesItem.ColumnHeadersHeight = 25;
-            this.dgv_SalesItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv_SalesItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.colItemCode,
-            this.colDiscription,
-            this.ColQty,
-            this.colUnitcost,
-            this.colAmount,
-            this.colEdit,
-            this.colDelete});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_SalesItem.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_SalesItem.Location = new System.Drawing.Point(4, 5);
-            this.dgv_SalesItem.Name = "dgv_SalesItem";
-            this.dgv_SalesItem.ReadOnly = true;
-            this.dgv_SalesItem.RowHeadersVisible = false;
-            this.dgv_SalesItem.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgv_SalesItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv_SalesItem.Size = new System.Drawing.Size(1043, 287);
-            this.dgv_SalesItem.TabIndex = 0;
-            this.dgv_SalesItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SalesItem_CellClick);
-            // 
             // Txt_TotalAmount
             // 
             this.Txt_TotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -765,79 +839,6 @@
             this.label47.TabIndex = 318;
             this.label47.Text = "Total Items";
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.dgv_SalesItem);
-            this.panel2.Location = new System.Drawing.Point(3, 69);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1048, 295);
-            this.panel2.TabIndex = 2;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // colItemCode
-            // 
-            this.colItemCode.HeaderText = "Item Code";
-            this.colItemCode.Name = "colItemCode";
-            this.colItemCode.ReadOnly = true;
-            this.colItemCode.Width = 230;
-            // 
-            // colDiscription
-            // 
-            this.colDiscription.HeaderText = "Description";
-            this.colDiscription.Name = "colDiscription";
-            this.colDiscription.ReadOnly = true;
-            this.colDiscription.Width = 274;
-            // 
-            // ColQty
-            // 
-            this.ColQty.HeaderText = "Qty";
-            this.ColQty.Name = "ColQty";
-            this.ColQty.ReadOnly = true;
-            this.ColQty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColQty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColQty.Width = 150;
-            // 
-            // colUnitcost
-            // 
-            this.colUnitcost.HeaderText = "Unit Cost";
-            this.colUnitcost.Name = "colUnitcost";
-            this.colUnitcost.ReadOnly = true;
-            this.colUnitcost.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colUnitcost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colUnitcost.Width = 170;
-            // 
-            // colAmount
-            // 
-            this.colAmount.HeaderText = "Amount";
-            this.colAmount.Name = "colAmount";
-            this.colAmount.ReadOnly = true;
-            this.colAmount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colAmount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colAmount.Width = 170;
-            // 
-            // colEdit
-            // 
-            this.colEdit.HeaderText = "";
-            this.colEdit.Name = "colEdit";
-            this.colEdit.ReadOnly = true;
-            this.colEdit.Width = 27;
-            // 
-            // colDelete
-            // 
-            this.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDelete.HeaderText = "";
-            this.colDelete.Name = "colDelete";
-            this.colDelete.ReadOnly = true;
-            // 
             // SalesOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -863,10 +864,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_SalesItem)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_SalesItem)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
