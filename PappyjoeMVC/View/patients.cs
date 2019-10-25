@@ -2137,10 +2137,14 @@ namespace PappyjoeMVC.View
                         DGV_Patients.Rows.Add(dt_pre_main.Rows[j]["pt_id"].ToString(), String.Format("{0:dddd, MMMM d, yyyy}", Convert.ToDateTime(dt_pre_main.Rows[j]["date"].ToString())), "", "", "");
                         DGV_Patients.Rows[i].Cells[1].Style.Font = new System.Drawing.Font("Segoe UI", 7, FontStyle.Bold);
                         DGV_Patients.Rows[i].Cells[1].Style.ForeColor = Color.DarkGreen;
-                        DGV_Patients.Rows[i].Cells[2].Style.Font = new System.Drawing.Font("Segoe UI", 8, FontStyle.Bold);
+                        DGV_Patients.Rows[i].Cells[2].Style.Font = new System.Drawing.Font("Segoe UI", 7, FontStyle.Bold);
+                        DGV_Patients.Rows[i].Cells[2].Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                         DGV_Patients.Rows[i].Cells[2].Style.ForeColor = Color.DarkGreen;
                         DGV_Patients.Rows[i].Cells[1].Style.BackColor = Color.Gainsboro;
                         DGV_Patients.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
+                        DGV_Patients.Rows[i].Cells[3].Style.Font = new System.Drawing.Font("Segoe UI", 7, FontStyle.Bold);
+                        DGV_Patients.Rows[i].Cells[3].Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                        DGV_Patients.Rows[i].Cells[3].Style.ForeColor = Color.DarkGreen;
                         DGV_Patients.Rows[i].Cells[3].Style.BackColor = Color.Gainsboro;
                         DGV_Patients.Rows[i].Cells[4].Style.BackColor = Color.Gainsboro;
                         DGV_Patients.Rows[i].Height = 35;
@@ -2148,10 +2152,10 @@ namespace PappyjoeMVC.View
                         if (rs_patients.Rows.Count > 0)
                         {
                             if (rs_patients.Rows[0]["pt_name"].ToString() != "")
-                            { DGV_Patients.Rows[i].Cells[2].Value = "PATIENT NAME :  " + rs_patients.Rows[0]["pt_name"].ToString(); }
+                            { DGV_Patients.Rows[i].Cells[2].Value = "PATIENT :  " + rs_patients.Rows[0]["pt_name"].ToString(); }
                             if (rs_patients.Rows[0]["pt_id"].ToString() != "")
                             {
-                                DGV_Patients.Rows[i].Cells[2].Value = DGV_Patients.Rows[i].Cells[2].Value + "\r\nPATIENT ID :  " + rs_patients.Rows[0]["pt_id"].ToString();
+                                DGV_Patients.Rows[i].Cells[3].Value = DGV_Patients.Rows[i].Cells[3].Value + "PATIENT ID :  " + rs_patients.Rows[0]["pt_id"].ToString();
                             }
                         }
                         i = i + 1;

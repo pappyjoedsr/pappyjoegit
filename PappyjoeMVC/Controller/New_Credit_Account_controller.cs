@@ -15,12 +15,12 @@ namespace PappyjoeMVC.Controller
         {
             DataTable str = _model.Submit(_accountname);
             return str;
-        }
+        } 
 
         public int submit_data(string _accountname, string _ledger)
         {
             int i = _model.submit_data(_accountname, _ledger);
             return i;
-        }
+        } 
     }
 }

@@ -431,7 +431,7 @@ namespace PappyjoeMVC.View
                     if (!string.IsNullOrWhiteSpace(txttemp.Text))
                     {
                         this.cntrl.Tempname_save(txttemp.Text);
-                        int id = this.cntrl.Get_Maxid();
+                        string id = this.cntrl.Get_Maxid();
                         DataTable test = this.cntrl.Get_test_byId(Convert.ToInt32(cmbTesttemp.SelectedValue));
                         DataTable Normavalue = this.cntrl.Normavalue(Convert.ToInt32(test.Rows[0][0].ToString()));
                         for (int r = 0; r < dgvtempitem.Rows.Count; r++)
@@ -445,7 +445,7 @@ namespace PappyjoeMVC.View
                             {
                                 norm = dgvtempitem.Rows[r].Cells[10].Value.ToString();
                             }
-                            this.cntrl.Insert_mediTemplate(id, Convert.ToInt32(dgvtempitem.Rows[r].Cells[7].Value.ToString()), Convert.ToInt32(dgvtempitem.Rows[r].Cells[8].Value.ToString()), dgvtempitem.Rows[r].Cells[4].Value, norm);
+                            this.cntrl.Insert_mediTemplate(Convert.ToInt32(id), Convert.ToInt32(dgvtempitem.Rows[r].Cells[7].Value.ToString()), Convert.ToInt32(dgvtempitem.Rows[r].Cells[8].Value.ToString()), dgvtempitem.Rows[r].Cells[4].Value, norm);
                         }
                         MessageBox.Show("Successfully Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dgvtempitem.Rows.Clear();
@@ -487,15 +487,31 @@ namespace PappyjoeMVC.View
         {
             try
             {
+                //string test_name = "";\ 
+                DataTable testname = new DataTable();
+                DataTable Unitname = new DataTable();
+                string NormavalueM = "";
+                string NormavalueF = "";
+                //DataTable test = new DataTable();
+                DataTable Normavalue = new DataTable();
                 DataTable Maintest = this.cntrl.TempAddItem_mainTest(cmbmaintesttemp.SelectedValue.ToString());
                 DataTable testtype = this.cntrl.TempAddItem_testtype(cmbtesttypetmp.SelectedValue.ToString());
-                DataTable testname = this.cntrl.TempAddItem_testname(cmbTesttemp.SelectedValue.ToString());
-                DataTable Unitname = this.cntrl.TempAddItem_unitname(cmbTesttemp.SelectedValue.ToString());
+                if (cmbTesttemp.Text.ToString() != "")
+                {
+                    testname = this.cntrl.TempAddItem_testname(cmbTesttemp.SelectedValue.ToString());
+                }
+                if (cmbTesttemp.Text.ToString() != "")
+                {
+                    Unitname = this.cntrl.TempAddItem_unitname(cmbTesttemp.SelectedValue.ToString());
+                }
                 DataTable test = this.cntrl.TempAddItem_test(Convert.ToInt32(cmbTesttemp.SelectedValue));
-                string NormavalueM = this.cntrl.TempAddItem_normM(Convert.ToInt32(test.Rows[0][0].ToString()));
-                string NormavalueF = this.cntrl.TempAddItem_normF(Convert.ToInt32(test.Rows[0][0].ToString()));
-                DataTable Normavalue = this.cntrl.TempAddItem_normal(Convert.ToInt32(test.Rows[0][0].ToString()));
 
+                if (test.Rows.Count > 0)
+                {
+                    NormavalueM = this.cntrl.TempAddItem_normM(Convert.ToInt32(test.Rows[0][0].ToString()));
+                    NormavalueF = this.cntrl.TempAddItem_normF(Convert.ToInt32(test.Rows[0][0].ToString()));
+                    Normavalue = this.cntrl.TempAddItem_normal(Convert.ToInt32(test.Rows[0][0].ToString()));
+                }
                 if (grid_data_id != 0)
                 {
                     for (int Ro = 0; Ro < dgvtempitem.Rows.Count; Ro++)
@@ -504,35 +520,53 @@ namespace PappyjoeMVC.View
                         {
                             dgvtempitem.Rows[Ro].Cells[0].Value = "";
                             dgvtempitem.Rows[Ro].Cells[1].Value = Maintest.Rows[0][1].ToString();
-                            dgvtempitem.Rows[Ro].Cells[2].Value = testname.Rows[0][1].ToString();
+                            if (testname.Rows.Count > 0)
+                            {
+                                dgvtempitem.Rows[Ro].Cells[2].Value = testname.Rows[0][1].ToString();
+                                dgvtempitem.Rows[Ro].Cells[8].Value = testname.Rows[0][0].ToString();
+                            }
                             dgvtempitem.Rows[Ro].Cells[3].Value = testtype.Rows[0][1].ToString();
                             dgvtempitem.Rows[Ro].Cells[4].Value = Unitname.Rows[0][0].ToString();
                             dgvtempitem.Rows[Ro].Cells[5].Value = NormavalueM;
                             dgvtempitem.Rows[Ro].Cells[6].Value = NormavalueF;
                             dgvtempitem.Rows[Ro].Cells[7].Value = Maintest.Rows[0][0].ToString();
-                            dgvtempitem.Rows[Ro].Cells[8].Value = testname.Rows[0][0].ToString();
                             dgvtempitem.Rows[Ro].Cells[9].Value = testtype.Rows[0][0].ToString();
                             dgvtempitem.Rows[Ro].Cells[10].Value = Normavalue.Rows[0][0].ToString();
                         }
                     }
                 }
+                if (btnadditems.Text== "ADD NEW")
+                {
+                    
+                    //else
+                    {
+                        dgvtempitem.Rows.Add("", Maintest.Rows[0][1].ToString(), testname.Rows.Count > 0 ? testname.Rows[0][1].ToString() : "", testtype.Rows[0][1].ToString(), Unitname.Rows.Count > 0 ? Unitname.Rows[0][0].ToString() : "", NormavalueM, NormavalueF, Maintest.Rows[0][0].ToString(), testname.Rows.Count > 0 ? testname.Rows[0][0].ToString() : "", testtype.Rows[0][0].ToString(), Normavalue.Rows.Count > 0 ? Normavalue.Rows[0][0].ToString() : "");
+                        grid_id = grid_id + 1;
+                    }
+                }
                 else
                 {
-                    dgvtempitem.Rows.Add("", Maintest.Rows[0][1].ToString(), testname.Rows[0][1].ToString(), testtype.Rows[0][1].ToString(), Unitname.Rows.Count > 0 ? Unitname.Rows[0][0].ToString() : "", NormavalueM, NormavalueF, Maintest.Rows[0][0].ToString(), testname.Rows[0][0].ToString(), testtype.Rows[0][0].ToString(), Normavalue.Rows[0][0].ToString());
-                    grid_id = grid_id + 1;
+                    dgvtempitem.Rows[indexRow].Cells[0].Value = "";
+                    dgvtempitem.Rows[indexRow].Cells[1].Value = cmbmaintesttemp.Text.ToString();
+                    if (testname.Rows.Count > 0)
+                    {
+                        dgvtempitem.Rows[indexRow].Cells[2].Value = testname.Rows[0][1].ToString();
+                        dgvtempitem.Rows[indexRow].Cells[8].Value = testname.Rows[0][0].ToString();
+                    }
+                    dgvtempitem.Rows[indexRow].Cells[3].Value = cmbtesttypetmp.Text.ToString();
+                    dgvtempitem.Rows[indexRow].Cells[4].Value = Unitname.Rows[0][0].ToString();
+                    dgvtempitem.Rows[indexRow].Cells[5].Value = NormavalueM;
+                    dgvtempitem.Rows[indexRow].Cells[6].Value = NormavalueF;
+                    dgvtempitem.Rows[indexRow].Cells[7].Value = Maintest.Rows[0][0].ToString();
+                    dgvtempitem.Rows[indexRow].Cells[9].Value = testtype.Rows[0][0].ToString();
+                    dgvtempitem.Rows[indexRow].Cells[10].Value = Normavalue.Rows[0][0].ToString();
+                    btnadditems.Text = "ADD NEW";
+
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void dgvtempitem_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            using (SolidBrush b = new SolidBrush(dgvtempitem.RowHeadersDefaultCellStyle.ForeColor))
-            {
-                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
             }
         }
 
@@ -574,7 +608,7 @@ namespace PappyjoeMVC.View
                         {
                             if (Convert.ToInt32(MAIN_TEST) > 0)
                             {
-                                MessageBox.Show("Cannot Delete", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Cannot Delete, this LabType already used in another part", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 txtId.Clear();
                                 txtMainTest.Clear();
                             }
@@ -630,7 +664,6 @@ namespace PappyjoeMVC.View
                     DataGridViewRow row = dtgTestType.Rows[indexRow];
                     txtTtypeid.Text = dtgTestType.Rows[indexRow].Cells[0].Value.ToString();
                     txtTestType.Text = dtgTestType.Rows[indexRow].Cells[2].Value.ToString();
-
                     if (e.ColumnIndex == 3)
                     {
                         DataTable TEST_TYPE = this.cntrl.Testtype_byID(Convert.ToInt32(txtTtypeid.Text));
@@ -652,7 +685,7 @@ namespace PappyjoeMVC.View
                         {
                             if (Convert.ToInt32(MAIN_TEST) > 0)
                             {
-                                MessageBox.Show("Cannot Delete", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Cannot Delete, this LabType already used in another part ", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 txtTestType.Text = "";
                                 txtTtypeid.Text = "";
                             }
@@ -717,7 +750,7 @@ namespace PappyjoeMVC.View
                         {
                             if (Convert.ToInt32(Unitcheck) > 0)
                             {
-                                MessageBox.Show("Cannot Delete", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Cannot Delete, this unit is already used in another part", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 txtunitid.Text = "";
                                 txtUnitadd.Text = "";
                             }
@@ -807,7 +840,7 @@ namespace PappyjoeMVC.View
                         {
                             if (Convert.ToInt32(Testcheck) > 0)
                             {
-                                MessageBox.Show("Cannot Delete", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Cannot Delete, this LabType already used in another part", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 txttestid.Text = "";
                                 txtName.Text = "";
                                 txtNVMale.Text = "";
@@ -893,6 +926,7 @@ namespace PappyjoeMVC.View
                         dgvTesttemplate.DataSource = TEMPLATE_View;
                     }
                 }
+                btnadditems.Text = "ADD NEW";
             }
             catch (Exception ex)
             {
@@ -1034,7 +1068,7 @@ namespace PappyjoeMVC.View
                     {
                         norm = dgvtempitem.Rows[r].Cells[10].Value.ToString();
                     }
-                    this.cntrl.Insert_mediTemplate(Convert.ToInt32(Convert.ToInt32(txtId.Text)), Convert.ToInt32(dgvtempitem.Rows[r].Cells[7].Value.ToString()), Convert.ToInt32(dgvtempitem.Rows[r].Cells[8].Value.ToString()), dgvtempitem.Rows[r].Cells[4].Value, norm);
+                    this.cntrl.Insert_mediTemplate(Convert.ToInt32(Convert.ToInt32(txtId.Text)), Convert.ToInt32(dgvtempitem.Rows[r].Cells[7].Value.ToString()), Convert.ToInt32(dgvtempitem.Rows[r].Cells[8].Value.ToString()), dgvtempitem.Rows[r].Cells[4].Value.ToString(), norm.ToString());
                 }
                 txtId.Clear();
                 txttemp.Clear();
@@ -1064,6 +1098,30 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvtempitem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indexRow = e.RowIndex;
+            if (indexRow!=-1)
+            {
+                cmbmaintesttemp.Text = dgvtempitem.Rows[indexRow].Cells[1].Value.ToString();
+                cmbtesttypetmp.Text = dgvtempitem.Rows[indexRow].Cells[3].Value.ToString();
+                cmbTesttemp.Text = dgvtempitem.Rows[indexRow].Cells[2].Value.ToString();
+                btnadditems.Text = "Update";
+            }
+            if (e.ColumnIndex==12)
+            {
+                DialogResult res= MessageBox.Show("Are you sure you want to delete?", "Delete confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                if (res==DialogResult.No)
+                {
+                }
+                else
+                {
+                    int row = dgvtempitem.CurrentCell.RowIndex;
+                    dgvtempitem.Rows.RemoveAt(row);
+                }
             }
         }
     }

@@ -102,9 +102,9 @@ namespace PappyjoeMVC.Controller
             int i = _model.TempName_save(txttemp);
             return i;
         }
-        public int Get_Maxid()
+        public string Get_Maxid()
         {
-            int dt = _model.select_Maxid();
+            string dt = _model.select_Maxid();
             return dt;
         }
         public DataTable Get_test_byId(int cmbTesttemp)
