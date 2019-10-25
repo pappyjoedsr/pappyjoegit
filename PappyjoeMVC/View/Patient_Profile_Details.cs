@@ -23,6 +23,7 @@ namespace PappyjoeMVC.View
 
         private void patient_profile_details_Load(object sender, EventArgs e)
         {
+            //this.Size = Screen.PrimaryScreen.WorkingArea.Size;//to set to the screen size
             if (doctor_id != "1")
             {
                 string id;

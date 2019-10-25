@@ -404,7 +404,7 @@
             this.panel2.Controls.Add(this.linkLabel_Name);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(193, 39);
+            this.panel2.Location = new System.Drawing.Point(193, 42);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(414, 46);
             this.panel2.TabIndex = 263;
@@ -522,9 +522,6 @@
             // 
             // panelmain
             // 
-            this.panelmain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelmain.BackColor = System.Drawing.Color.White;
             this.panelmain.Controls.Add(this.panel6);
             this.panelmain.Controls.Add(this.panel11);
@@ -532,7 +529,7 @@
             this.panelmain.Controls.Add(this.label41);
             this.panelmain.Controls.Add(this.Lab_Msg);
             this.panelmain.Controls.Add(this.btn_Add);
-            this.panelmain.Location = new System.Drawing.Point(193, 92);
+            this.panelmain.Location = new System.Drawing.Point(193, 91);
             this.panelmain.Name = "panelmain";
             this.panelmain.Size = new System.Drawing.Size(1159, 600);
             this.panelmain.TabIndex = 256;
@@ -619,7 +616,7 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label41.Location = new System.Drawing.Point(10, 6);
+            this.label41.Location = new System.Drawing.Point(10, 9);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(130, 21);
             this.label41.TabIndex = 275;
