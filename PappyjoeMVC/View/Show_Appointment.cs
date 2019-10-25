@@ -499,6 +499,16 @@ namespace PappyjoeMVC.View
 
         }
 
+        private void toolStripButton13_Click(object sender, EventArgs e)
+        {
+            var form2 = new Consultation();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Login();
