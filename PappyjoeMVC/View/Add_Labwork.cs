@@ -610,11 +610,7 @@ namespace PappyjoeMVC.View
         }
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string k = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
-            string p = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
-            string q = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
-            DataTable dt = this.ctrlr.testrslt(q);
-            testrslt(dt);
+            
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -628,6 +624,15 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.ShowDialog();
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string k = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string p = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string q = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
+            DataTable dt = this.ctrlr.testrslt(q);
+            testrslt(dt);
         }
 
         private void listBox1_MouseClick(object sender, MouseEventArgs e)
