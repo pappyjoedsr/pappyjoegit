@@ -234,21 +234,19 @@ namespace PappyjoeMVC.View
             dgvPurchase.EnableHeadersVisualStyles = false;
             dgvPurchase.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPurchase.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvPurchase.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvPurchase.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvPurchase.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvPurchase.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
-            dgvPurchase.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvPurchase.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvPurchase.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvPurchase.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvPurchase.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvPurchase.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPurchase.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvPurchase.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dgvPurchase.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvPurchase.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvPurchase.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvPurchase.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvPurchase.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvPurchase.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvPurchase.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             foreach (DataGridViewColumn cl in dgvPurchase.Columns)
             {
                 cl.SortMode = DataGridViewColumnSortMode.NotSortable;
-                cl.Width = 120;
             }
         }
         private void BTNClose_Click(object sender, EventArgs e)
@@ -263,7 +261,6 @@ namespace PappyjoeMVC.View
         }
         public void load()
         {
-            //
             fdate = dptMonthly_From.Value.ToString("yyyy-MM-dd");
             tdate = dptMonthly_To.Value.ToString("yyyy-MM-dd");
             total_pur = 0; cost1 = 0; grandtotal1 = 0;                                                                    
@@ -281,13 +278,14 @@ namespace PappyjoeMVC.View
                     {
                         slno = i + 1;
                         dgvPurchase.Rows.Add();
-                        dgvPurchase.Rows[i].Cells["SLNO"].Value = slno.ToString();
+                        dgvPurchase.Rows[i].Cells["sl"].Value = slno.ToString();
                         dgvPurchase.Rows[i].Cells["PurchNumber"].Value = dt.Rows[i]["PurchNumber"].ToString();
                         dgvPurchase.Rows[i].Cells["PurchDate"].Value = Convert.ToDateTime(dt.Rows[i]["PurchDate"].ToString()).ToString("dd-MM-yyyy");
                         dgvPurchase.Rows[i].Cells["Sup_name"].Value = dt.Rows[i]["Supplier_Name"].ToString();
+                        dgvPurchase.Rows[i].Cells["unt"].Value = dt.Rows[i]["Unit"].ToString();
                         dgvPurchase.Rows[i].Cells["TotalAmount"].Value = dt.Rows[i]["TotalAmount"].ToString();
                         dgvPurchase.Rows[i].Cells["DiscAmount"].Value = dt.Rows[i]["DiscAmount"].ToString();
-                        dgvPurchase.Rows[i].Cells["GrandTotal"].Value = dt.Rows[i]["GrandTotal"].ToString();
+                        dgvPurchase.Rows[i].Cells["grandtotl"].Value = dt.Rows[i]["GrandTotal"].ToString();
                         cost = Convert.ToDecimal(dt.Rows[i]["TotalAmount"].ToString());
                         cost1 = cost1 + cost;
                         grandtotal = Convert.ToDecimal(dt.Rows[i]["GrandTotal"].ToString());

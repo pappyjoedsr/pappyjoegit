@@ -110,9 +110,9 @@
             this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label41.Location = new System.Drawing.Point(12, 12);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(98, 21);
+            this.label41.Size = new System.Drawing.Size(68, 21);
             this.label41.TabIndex = 266;
-            this.label41.Text = " View Result";
+            this.label41.Text = " RESULT";
             // 
             // Column6
             // 
@@ -277,7 +277,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewImageColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.Label label41;
+        public System.Windows.Forms.Label label41;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

@@ -90,7 +90,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(1147, 55);
+            this.label2.Location = new System.Drawing.Point(1157, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 17);
             this.label2.TabIndex = 175;
@@ -101,7 +101,7 @@
             this.Txtgrandtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Txtgrandtotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txtgrandtotal.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txtgrandtotal.Location = new System.Drawing.Point(1241, 52);
+            this.Txtgrandtotal.Location = new System.Drawing.Point(1262, 56);
             this.Txtgrandtotal.Name = "Txtgrandtotal";
             this.Txtgrandtotal.ReadOnly = true;
             this.Txtgrandtotal.Size = new System.Drawing.Size(96, 25);
@@ -113,7 +113,7 @@
             this.TxttotalPaid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TxttotalPaid.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxttotalPaid.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.TxttotalPaid.Location = new System.Drawing.Point(1241, 29);
+            this.TxttotalPaid.Location = new System.Drawing.Point(1262, 31);
             this.TxttotalPaid.Name = "TxttotalPaid";
             this.TxttotalPaid.ReadOnly = true;
             this.TxttotalPaid.Size = new System.Drawing.Size(96, 22);
@@ -126,7 +126,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(1167, 31);
+            this.label1.Location = new System.Drawing.Point(1176, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 17);
             this.label1.TabIndex = 171;
@@ -169,7 +169,7 @@
             this.Txt_totalInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_totalInvoice.Font = new System.Drawing.Font("Segoe UI Light", 8.25F);
             this.Txt_totalInvoice.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txt_totalInvoice.Location = new System.Drawing.Point(1241, 6);
+            this.Txt_totalInvoice.Location = new System.Drawing.Point(1262, 6);
             this.Txt_totalInvoice.Name = "Txt_totalInvoice";
             this.Txt_totalInvoice.ReadOnly = true;
             this.Txt_totalInvoice.Size = new System.Drawing.Size(96, 22);
@@ -194,7 +194,7 @@
             this.lblinvoices.AutoSize = true;
             this.lblinvoices.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblinvoices.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblinvoices.Location = new System.Drawing.Point(1148, 9);
+            this.lblinvoices.Location = new System.Drawing.Point(1162, 11);
             this.lblinvoices.Name = "lblinvoices";
             this.lblinvoices.Size = new System.Drawing.Size(84, 17);
             this.lblinvoices.TabIndex = 0;
@@ -202,7 +202,6 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.Btn_Show);
             this.panel1.Controls.Add(this.label2);
@@ -215,7 +214,7 @@
             this.panel1.Controls.Add(this.Txt_totalInvoice);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lblinvoices);
-            this.panel1.Location = new System.Drawing.Point(1, 46);
+            this.panel1.Location = new System.Drawing.Point(0, 56);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1369, 87);
             this.panel1.TabIndex = 189;
@@ -228,7 +227,7 @@
             this.BtnExport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExport.ForeColor = System.Drawing.Color.White;
             this.BtnExport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnExport.Location = new System.Drawing.Point(1057, 5);
+            this.BtnExport.Location = new System.Drawing.Point(1057, 11);
             this.BtnExport.Name = "BtnExport";
             this.BtnExport.Size = new System.Drawing.Size(120, 30);
             this.BtnExport.TabIndex = 299;
@@ -243,7 +242,7 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(3, 9);
+            this.label8.Location = new System.Drawing.Point(10, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(181, 21);
             this.label8.TabIndex = 295;
@@ -258,7 +257,7 @@
             this.btnprint.ForeColor = System.Drawing.Color.White;
             this.btnprint.Image = ((System.Drawing.Image)(resources.GetObject("btnprint.Image")));
             this.btnprint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnprint.Location = new System.Drawing.Point(1179, 5);
+            this.btnprint.Location = new System.Drawing.Point(1179, 11);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(91, 30);
             this.btnprint.TabIndex = 165;
@@ -274,7 +273,7 @@
             this.BTNClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNClose.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNClose.ForeColor = System.Drawing.Color.White;
-            this.BTNClose.Location = new System.Drawing.Point(1272, 5);
+            this.BTNClose.Location = new System.Drawing.Point(1272, 10);
             this.BTNClose.Name = "BTNClose";
             this.BTNClose.Size = new System.Drawing.Size(91, 30);
             this.BTNClose.TabIndex = 177;
@@ -284,15 +283,14 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
             this.panel3.Controls.Add(this.BtnExport);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.btnprint);
             this.panel3.Controls.Add(this.BTNClose);
-            this.panel3.Location = new System.Drawing.Point(1, 1);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1369, 45);
+            this.panel3.Size = new System.Drawing.Size(1369, 56);
             this.panel3.TabIndex = 188;
             // 
             // panel4
@@ -300,7 +298,7 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
-            this.panel4.Location = new System.Drawing.Point(1, 42);
+            this.panel4.Location = new System.Drawing.Point(1, 55);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1384, 1);
             this.panel4.TabIndex = 191;
@@ -310,7 +308,7 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.Controls.Add(this.Lab_Msg);
             this.panel2.Controls.Add(this.dgv_Return);
-            this.panel2.Location = new System.Drawing.Point(0, 135);
+            this.panel2.Location = new System.Drawing.Point(0, 143);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1370, 437);
             this.panel2.TabIndex = 192;
