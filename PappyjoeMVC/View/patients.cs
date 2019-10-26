@@ -1667,6 +1667,7 @@ namespace PappyjoeMVC.View
             {
                 if (grgroup.Rows.Count > 0)
                 {
+
                     AllPatient_Flag = false;
                     Recently_Visited_Flag = false;
                     RecentalyAdded_flag = false;
