@@ -522,6 +522,8 @@
             // 
             // panelmain
             // 
+            this.panelmain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelmain.BackColor = System.Drawing.Color.White;
             this.panelmain.Controls.Add(this.panel6);
             this.panelmain.Controls.Add(this.panel11);
