@@ -233,6 +233,7 @@ namespace PappyjoeMVC.View
                     Lab_AmountPaid.Visible = true;
                     Lab_DueAftrPaymnt.Visible = true;
                     LabAmountPaid.Visible = true;
+                    LabAmountPaid.Text = "Amount Received:";
                     LabDueAftrPayment.Visible = true;
                     dateTimePickerepo1.Visible = true;
                     from.Visible = true;
@@ -512,23 +513,23 @@ namespace PappyjoeMVC.View
                     Grvreports.Columns[2].HeaderText = "RECEIPT NO";
                     Grvreports.Columns[3].HeaderText = "INVOICE NO";
                     Grvreports.Columns[4].HeaderText = "TREATMENT";
-                    Grvreports.Columns[5].HeaderText = "AMOUNT PAID";
+                    Grvreports.Columns[5].HeaderText = "AMOUNT RECEIVED";
                     Grvreports.Columns[6].HeaderText = "PAYMENT DATE";
                     Grvreports.Columns[7].HeaderText = "DUE AFTER PAYMENT";
                     Grvreports.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                    Grvreports.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    Grvreports.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     Grvreports.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     Grvreports.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                    Grvreports.Columns[0].Width = 150;
-                    Grvreports.Columns[3].Width = 125;
-                    Grvreports.Columns[1].Width = 110;
+                    Grvreports.Columns[0].Width = 100;
+                    Grvreports.Columns[3].Width = 135;
+                    Grvreports.Columns[1].Width = 100;
                     Grvreports.Columns[2].Width = 125;
                     Grvreports.Columns[4].Width = 129;//130
-                    Grvreports.Columns[5].Width = 100;
-                    Grvreports.Columns[6].Width = 150;
-                    Grvreports.Columns[7].Width = 150;
+                    Grvreports.Columns[5].Width = 150;
+                    Grvreports.Columns[6].Width = 120;
+                    Grvreports.Columns[7].Width = 140;
                     Grvreports.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                    Grvreports.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    Grvreports.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     Grvreports.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     Grvreports.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                     if (select_dr_id != "0")
@@ -1931,8 +1932,6 @@ namespace PappyjoeMVC.View
             var form2 = new Consultation();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
             form2.ShowDialog();
         }
 

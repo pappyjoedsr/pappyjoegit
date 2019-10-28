@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Day_Wise_Receipt));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lab_tax = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.Lab_Discount = new System.Windows.Forms.Label();
@@ -425,7 +425,7 @@
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(325, 210);
+            this.Lab_Msg.Location = new System.Drawing.Point(289, 438);
             this.Lab_Msg.Name = "Lab_Msg";
             this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
             this.Lab_Msg.TabIndex = 277;
@@ -437,19 +437,17 @@
             this.DGV_Receipt.AllowUserToDeleteRows = false;
             this.DGV_Receipt.AllowUserToResizeColumns = false;
             this.DGV_Receipt.AllowUserToResizeRows = false;
-            this.DGV_Receipt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_Receipt.BackgroundColor = System.Drawing.Color.White;
             this.DGV_Receipt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV_Receipt.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DGV_Receipt.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Receipt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Receipt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Receipt.ColumnHeadersHeight = 28;
             this.DGV_Receipt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DGV_Receipt.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -468,30 +466,28 @@
             this.ColAmountPaid,
             this.ColTotalDue});
             this.DGV_Receipt.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_Receipt.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_Receipt.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DGV_Receipt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGV_Receipt.GridColor = System.Drawing.Color.Gainsboro;
-            this.DGV_Receipt.Location = new System.Drawing.Point(-3, 3);
+            this.DGV_Receipt.Location = new System.Drawing.Point(0, 0);
             this.DGV_Receipt.Name = "DGV_Receipt";
             this.DGV_Receipt.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGV_Receipt.RowHeadersVisible = false;
             this.DGV_Receipt.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DGV_Receipt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_Receipt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_Receipt.Size = new System.Drawing.Size(1367, 467);
+            this.DGV_Receipt.Size = new System.Drawing.Size(1364, 578);
             this.DGV_Receipt.TabIndex = 5;
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.Lab_Due);
             this.panel4.Controls.Add(this.Lab_Paid);
             this.panel4.Controls.Add(this.Lab_tax);
@@ -504,7 +500,7 @@
             this.panel4.Controls.Add(this.Lab_TotalIncome);
             this.panel4.Controls.Add(this.Lab_Msg);
             this.panel4.Controls.Add(this.DGV_Receipt);
-            this.panel4.Location = new System.Drawing.Point(3, 162);
+            this.panel4.Location = new System.Drawing.Point(0, 168);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1364, 578);
             this.panel4.TabIndex = 106;
@@ -519,7 +515,7 @@
             // 
             this.ColPtName.HeaderText = "PATIENT ";
             this.ColPtName.Name = "ColPtName";
-            this.ColPtName.Width = 158;
+            this.ColPtName.Width = 150;
             // 
             // ColInv
             // 
@@ -590,7 +586,6 @@
             // 
             this.ColTotalDue.HeaderText = "AMOUNT DUE";
             this.ColTotalDue.Name = "ColTotalDue";
-            this.ColTotalDue.Width = 95;
             // 
             // Day_Wise_Receipt
             // 

@@ -47,17 +47,18 @@
             this.BTNClose = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.GrandTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiscAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sup_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurchDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurchNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SLNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.dgvPurchase = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sup_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiscAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grandtotl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchase)).BeginInit();
             this.panel2.SuspendLayout();
@@ -72,7 +73,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(1156, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 171;
             this.label2.Text = "Total Amount";
             // 
@@ -133,7 +134,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(1174, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "Total Cost";
             // 
@@ -168,7 +169,7 @@
             this.lblinvoices.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblinvoices.Location = new System.Drawing.Point(1151, 10);
             this.lblinvoices.Name = "lblinvoices";
-            this.lblinvoices.Size = new System.Drawing.Size(81, 13);
+            this.lblinvoices.Size = new System.Drawing.Size(80, 13);
             this.lblinvoices.TabIndex = 0;
             this.lblinvoices.Text = "Total Purchase";
             // 
@@ -286,62 +287,6 @@
             this.panel3.Size = new System.Drawing.Size(1374, 52);
             this.panel3.TabIndex = 194;
             // 
-            // GrandTotal
-            // 
-            this.GrandTotal.FillWeight = 102.6831F;
-            this.GrandTotal.HeaderText = "GRAND TOTAL";
-            this.GrandTotal.Name = "GrandTotal";
-            this.GrandTotal.ReadOnly = true;
-            // 
-            // DiscAmount
-            // 
-            this.DiscAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DiscAmount.FillWeight = 102.6831F;
-            this.DiscAmount.HeaderText = "DISCOUNT";
-            this.DiscAmount.Name = "DiscAmount";
-            this.DiscAmount.ReadOnly = true;
-            // 
-            // TotalAmount
-            // 
-            this.TotalAmount.FillWeight = 102.6831F;
-            this.TotalAmount.HeaderText = "TOTAL AMOUNT";
-            this.TotalAmount.Name = "TotalAmount";
-            this.TotalAmount.ReadOnly = true;
-            this.TotalAmount.Width = 115;
-            // 
-            // Sup_name
-            // 
-            this.Sup_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Sup_name.FillWeight = 102.6831F;
-            this.Sup_name.HeaderText = "SUPPLIER NAME";
-            this.Sup_name.Name = "Sup_name";
-            this.Sup_name.ReadOnly = true;
-            // 
-            // PurchDate
-            // 
-            this.PurchDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PurchDate.FillWeight = 102.6831F;
-            this.PurchDate.HeaderText = "PURCHASE DATE";
-            this.PurchDate.Name = "PurchDate";
-            this.PurchDate.ReadOnly = true;
-            // 
-            // PurchNumber
-            // 
-            this.PurchNumber.FillWeight = 102.6831F;
-            this.PurchNumber.HeaderText = "PURCHASE NO";
-            this.PurchNumber.Name = "PurchNumber";
-            this.PurchNumber.ReadOnly = true;
-            this.PurchNumber.Width = 149;
-            // 
-            // SLNO
-            // 
-            this.SLNO.FillWeight = 81.21827F;
-            this.SLNO.HeaderText = "SLNO";
-            this.SLNO.Name = "SLNO";
-            this.SLNO.ReadOnly = true;
-            this.SLNO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.SLNO.Width = 95;
-            // 
             // Lab_Msg
             // 
             this.Lab_Msg.AutoSize = true;
@@ -368,14 +313,14 @@
             this.dgvPurchase.ColumnHeadersHeight = 25;
             this.dgvPurchase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPurchase.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SLNO,
+            this.sl,
             this.PurchNumber,
             this.PurchDate,
             this.Sup_name,
+            this.unt,
             this.TotalAmount,
             this.DiscAmount,
-            this.GrandTotal});
-            this.dgvPurchase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grandtotl});
             this.dgvPurchase.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvPurchase.Location = new System.Drawing.Point(0, 0);
             this.dgvPurchase.Name = "dgvPurchase";
@@ -421,6 +366,70 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1374, 88);
             this.panel1.TabIndex = 193;
+            // 
+            // sl
+            // 
+            this.sl.FillWeight = 81.21827F;
+            this.sl.HeaderText = "SL NO";
+            this.sl.Name = "sl";
+            this.sl.ReadOnly = true;
+            this.sl.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.sl.Width = 95;
+            // 
+            // PurchNumber
+            // 
+            this.PurchNumber.FillWeight = 102.6831F;
+            this.PurchNumber.HeaderText = "PURCHASE NO";
+            this.PurchNumber.Name = "PurchNumber";
+            this.PurchNumber.ReadOnly = true;
+            this.PurchNumber.Width = 149;
+            // 
+            // PurchDate
+            // 
+            this.PurchDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PurchDate.FillWeight = 102.6831F;
+            this.PurchDate.HeaderText = "PURCHASE DATE";
+            this.PurchDate.Name = "PurchDate";
+            this.PurchDate.ReadOnly = true;
+            // 
+            // Sup_name
+            // 
+            this.Sup_name.FillWeight = 102.6831F;
+            this.Sup_name.HeaderText = "SUPPLIER NAME";
+            this.Sup_name.Name = "Sup_name";
+            this.Sup_name.ReadOnly = true;
+            this.Sup_name.Width = 247;
+            // 
+            // unt
+            // 
+            this.unt.HeaderText = "UNIT";
+            this.unt.Name = "unt";
+            this.unt.ReadOnly = true;
+            this.unt.Width = 180;
+            // 
+            // TotalAmount
+            // 
+            this.TotalAmount.FillWeight = 102.6831F;
+            this.TotalAmount.HeaderText = "TOTAL AMOUNT";
+            this.TotalAmount.Name = "TotalAmount";
+            this.TotalAmount.ReadOnly = true;
+            this.TotalAmount.Width = 125;
+            // 
+            // DiscAmount
+            // 
+            this.DiscAmount.FillWeight = 102.6831F;
+            this.DiscAmount.HeaderText = "DISCOUNT";
+            this.DiscAmount.Name = "DiscAmount";
+            this.DiscAmount.ReadOnly = true;
+            this.DiscAmount.Width = 200;
+            // 
+            // grandtotl
+            // 
+            this.grandtotl.FillWeight = 102.6831F;
+            this.grandtotl.HeaderText = "GRAND TOTAL";
+            this.grandtotl.Name = "grandtotl";
+            this.grandtotl.ReadOnly = true;
+            this.grandtotl.Width = 130;
             // 
             // Purchase_Report
             // 
@@ -469,16 +478,17 @@
         private System.Windows.Forms.Button BTNClose;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GrandTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiscAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sup_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PurchDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PurchNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SLNO;
         private System.Windows.Forms.Label Lab_Msg;
         private System.Windows.Forms.DataGridView dgvPurchase;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sup_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiscAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grandtotl;
     }
 }

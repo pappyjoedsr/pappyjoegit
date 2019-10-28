@@ -156,7 +156,7 @@
             this.checkBoxReview.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.checkBoxReview.Location = new System.Drawing.Point(339, 231);
             this.checkBoxReview.Name = "checkBoxReview";
-            this.checkBoxReview.Size = new System.Drawing.Size(118, 19);
+            this.checkBoxReview.Size = new System.Drawing.Size(117, 19);
             this.checkBoxReview.TabIndex = 405;
             this.checkBoxReview.Text = "Next Review Date";
             this.checkBoxReview.UseVisualStyleBackColor = true;

@@ -85,7 +85,8 @@
             // 
             this.btnupdate.BackColor = System.Drawing.Color.LimeGreen;
             this.btnupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnupdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnupdate.ForeColor = System.Drawing.Color.White;
             this.btnupdate.Location = new System.Drawing.Point(498, 286);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(87, 30);
@@ -159,7 +160,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(31, 286);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 15);
+            this.label8.Size = new System.Drawing.Size(47, 15);
             this.label8.TabIndex = 28;
             this.label8.Text = "STATUS";
             // 
@@ -186,7 +187,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(287, 28);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 15);
+            this.label10.Size = new System.Drawing.Size(54, 15);
             this.label10.TabIndex = 24;
             this.label10.Text = "DOCTOR";
             // 
@@ -204,7 +205,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(14, 155);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 15);
+            this.label3.Size = new System.Drawing.Size(54, 15);
             this.label3.TabIndex = 23;
             this.label3.Text = "DOCTOR";
             this.label3.Visible = false;
@@ -214,7 +215,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(287, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 15);
+            this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 22;
             this.label2.Text = "PATIENT";
             // 
@@ -260,7 +261,7 @@
             this.MinimizeBox = false;
             this.Name = "ChangeStatus";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Change Status";
+            this.Text = "Change  Status";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

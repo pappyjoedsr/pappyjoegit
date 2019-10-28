@@ -18,7 +18,6 @@ namespace PappyjoeMVC.View
         public int k, Dexist = 0;
         Connection db = new Connection();
         LabWorks_controller ctrlr = new LabWorks_controller();
-        public string headng = "";
         public static string strphone = "";
         public string name = "", result = "", units = "", text = "", smsName = "", smsPass = "";
         public string addr = "", loc = "", gen = "", patient_id = "", age = "", address = "", sexage = "", Apppath = "", doctor_id = "", typ = "", n = "", workiddental = "", workname = "", strPatientName = "", mob_number = "", path = "", contact_no = "", logo_name = "", clinicn = "", strclinicname = "", strStreet = "", stremail = "", strwebsite = "";
@@ -177,8 +176,6 @@ namespace PappyjoeMVC.View
             var form2 = new Consultation();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
             form2.ShowDialog();
         }
 
@@ -256,8 +253,7 @@ namespace PappyjoeMVC.View
         }
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
-            headng="Enter Results";
-            var form = new PappyjoeMVC.View.LabResultEntry(headng);
+            var form = new PappyjoeMVC.View.LabResultEntry();
             form.patient_id = patient_id;
             form.doctor_id = doctor_id;
             form.workid = workiddental;
@@ -450,10 +446,11 @@ namespace PappyjoeMVC.View
                 {
                     if (dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[5].Value.ToString() == "Medical")
                     {
-                        headng = "View Results";
-                        var form2 = new PappyjoeMVC.View.LabResultEntry(headng);
+                        var form2 = new LabResultEntry();
                         form2.patient_id = patient_id;
                         form2.doctor_id = doctor_id;
+                        form2.Text = "Result View";
+                        form2.label41.Text = " RESULT VIEW";
                         string workid = dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[2].Value.ToString();
                         form2.workid = workid;
                         form2.flag = "1";
