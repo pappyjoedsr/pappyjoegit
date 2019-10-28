@@ -117,7 +117,7 @@ namespace PappyjoeMVC.Controller
             DataTable dt = _model.Normavalue(test);
             return dt;
         }
-        public int Insert_mediTemplate(int Id, int MainTestId, int TestId, object Units, string NormalValue)
+        public int Insert_mediTemplate(int Id, int MainTestId, string TestId, object Units, string NormalValue)
         {
             int i = _model.Insert_mediTemplate(Id, MainTestId, TestId, Units, NormalValue);
             return i;
