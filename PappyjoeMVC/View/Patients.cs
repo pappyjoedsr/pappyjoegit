@@ -1698,7 +1698,6 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Source, "Patient Not Found..", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
-
         private void labelprofile_Click(object sender, EventArgs e)
         {
             try
