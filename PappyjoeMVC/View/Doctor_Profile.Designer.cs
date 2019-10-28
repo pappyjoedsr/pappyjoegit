@@ -537,7 +537,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(180, 23);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(180, 46);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // panel_edit_dr
@@ -978,7 +978,7 @@
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(142, 6);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(20, 15);
+            this.label25.Size = new System.Drawing.Size(19, 15);
             this.label25.TabIndex = 4;
             this.label25.Text = "To";
             // 
@@ -1430,9 +1430,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(233, 73);
+            this.label5.Location = new System.Drawing.Point(230, 71);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 15);
+            this.label5.Size = new System.Drawing.Size(94, 15);
             this.label5.TabIndex = 27;
             this.label5.Text = "years experience";
             // 
@@ -1528,7 +1528,7 @@
             // radio_female
             // 
             this.radio_female.AutoSize = true;
-            this.radio_female.Location = new System.Drawing.Point(247, 42);
+            this.radio_female.Location = new System.Drawing.Point(235, 42);
             this.radio_female.Name = "radio_female";
             this.radio_female.Size = new System.Drawing.Size(63, 19);
             this.radio_female.TabIndex = 24;
@@ -1623,7 +1623,7 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_reg.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_reg.Location = new System.Drawing.Point(131, 556);
@@ -1700,7 +1700,7 @@
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_awards.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_awards.Location = new System.Drawing.Point(131, 406);
@@ -1781,7 +1781,7 @@
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_experience.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView_experience.Location = new System.Drawing.Point(131, 333);
@@ -1887,7 +1887,7 @@
             dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle13.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_education.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridView_education.Location = new System.Drawing.Point(131, 261);
@@ -1989,7 +1989,7 @@
             dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle17.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_member.DefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridView_member.Location = new System.Drawing.Point(131, 480);
@@ -2051,7 +2051,7 @@
             dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle20.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_specialization.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridView_specialization.Location = new System.Drawing.Point(131, 189);
@@ -2070,7 +2070,7 @@
             dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridView_specialization.RowsDefaultCellStyle = dataGridViewCellStyle22;
-            this.dataGridView_specialization.Size = new System.Drawing.Size(689, 63);
+            this.dataGridView_specialization.Size = new System.Drawing.Size(698, 63);
             this.dataGridView_specialization.TabIndex = 5;
             this.dataGridView_specialization.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_specialization_CellClick);
             // 
@@ -2127,7 +2127,7 @@
             dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle24.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_services.DefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridView_services.Location = new System.Drawing.Point(131, 117);
@@ -2363,7 +2363,7 @@
             this.panel_clinicaldetails.Controls.Add(this.text_clinic_special);
             this.panel_clinicaldetails.Controls.Add(this.dataGridView_clinic_special);
             this.panel_clinicaldetails.Controls.Add(this.button_clinic_specialdelete);
-            this.panel_clinicaldetails.Location = new System.Drawing.Point(4, 732);
+            this.panel_clinicaldetails.Location = new System.Drawing.Point(0, 730);
             this.panel_clinicaldetails.Name = "panel_clinicaldetails";
             this.panel_clinicaldetails.Size = new System.Drawing.Size(1358, 700);
             this.panel_clinicaldetails.TabIndex = 32;

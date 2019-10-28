@@ -820,7 +820,6 @@ namespace PappyjoeMVC.View
                                 cmbUnit.SelectedIndex = intunit;
                             }
                         }
-
                         btnSavetest.Text = "UPDATE";
                         btntestcancel.Show();
                     }
@@ -885,7 +884,7 @@ namespace PappyjoeMVC.View
                     btnsavetmp.Hide();
                     btnedit.Show();
                     btnclose.Location = new Point(875, 24);
-                    indexRow = e.RowIndex; // get the selected Row Index
+                    indexRow = e.RowIndex;
                     DataGridViewRow row = dgvtemplateadd.Rows[indexRow];
                     row.Cells[0].Value.ToString();
                     txtId.Text = dgvtemplateadd.Rows[indexRow].Cells[0].Value.ToString();
@@ -962,8 +961,6 @@ namespace PappyjoeMVC.View
                     cmbTesttemp.DataSource = tbtesttemp;
                     cmbTesttemp.DisplayMember = "Name";
                     cmbTesttemp.ValueMember = "id";
-
-
                 }
                 else
                 {
@@ -981,14 +978,11 @@ namespace PappyjoeMVC.View
         {
             if (rdbNvyes.Checked == true)
             {
-
                 this.dgvtempitem.Columns[5].Visible = true;
                 this.dgvtempitem.Columns[6].Visible = true;
-
             }
             else
             {
-
                 this.dgvtempitem.Columns[5].Visible = false;
                 this.dgvtempitem.Columns[6].Visible = false;
             }
