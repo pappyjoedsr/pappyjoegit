@@ -489,7 +489,7 @@ namespace PappyjoeMVC.View
             {
                 if (cmbTesttemp.Text=="")
                 {
-                    MessageBox.Show("Please add test against selected test type", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please add TEST against selected TEST TYPE", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
