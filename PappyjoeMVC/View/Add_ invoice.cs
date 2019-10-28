@@ -161,6 +161,11 @@ namespace PappyjoeMVC.View
                 panel3.Show();
                 panel6.Show();
             }
+            DGV_Invoice.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DGV_Invoice.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DGV_Invoice.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            DGV_Invoice.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DGV_Invoice.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
         public void SetController(Add_Invoice_controller controller)
         {

@@ -143,7 +143,7 @@ namespace PappyjoeMVC.View
                 lab_LongMsg.Show();
                 lab_LongMsg.Location = new Point(350, 350);
                 lab_7.Location= new Point(4,5);
-                lab_7.Text = " Zero Patient(s)";
+                lab_7.Text = " 0 Patient(s)";
                 lab_Displaying.Visible = false;
             }
         }
@@ -411,7 +411,7 @@ namespace PappyjoeMVC.View
                     lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
                     lab_7.Location = new Point(4, 5);
-                    lab_7.Text = " Zero Patient(s)";
+                    lab_7.Text = " 0 Patient(s)";
                     lab_Displaying.Visible = false;
                 }
             }
@@ -664,7 +664,7 @@ namespace PappyjoeMVC.View
                     lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
                     lab_7.Location = new Point(4, 5);
-                    lab_7.Text = " Zero Patient(s)";
+                    lab_7.Text = " 0 Patient(s)";
                     lab_Displaying.Visible = false;
                 }
             }
@@ -834,7 +834,7 @@ namespace PappyjoeMVC.View
                     lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
                     lab_7.Location = new Point(4, 5);
-                    lab_7.Text = " Zero Patient(s)";
+                    lab_7.Text = " 0 Patient(s)";
                     lab_Displaying.Visible = false;
                 }
             }
@@ -977,7 +977,7 @@ namespace PappyjoeMVC.View
                     lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
                     lab_7.Location = new Point(4, 5);
-                    lab_7.Text = " Zero Patient(s)";
+                    lab_7.Text = " 0 Patient(s)";
                     lab_Displaying.Visible = false;
                 }
             }
@@ -1040,8 +1040,6 @@ namespace PappyjoeMVC.View
                 left_button_click = 6;
                 check_visiblecontrolls();
                 panl_DisplayingPatient.Visible = true;
-                lab_7.Visible = false;
-                lab_Displaying.Visible = false;
                 ClearAll_grid2_Properties();
                 DGV_Patients.ColumnCount = 10;
                 DGV_Patients.Columns[0].Width = 100;
@@ -1082,6 +1080,8 @@ namespace PappyjoeMVC.View
                 int i = 0;
                 if (dt_invoice_main.Rows.Count > 0)
                 {
+                    lab_7.Location = new Point(73, 7);
+                    lab_7.Text = dt_invoice_main.Rows.Count.ToString() + " Patient(s)";
                     lab_LongMsg.Hide(); string patientName = "", Pt_id = "";
                     lab_LongMsg.Location = new Point(350, 350);
                     for (int j = 0; j < dt_invoice_main.Rows.Count; j++)
@@ -1304,7 +1304,7 @@ namespace PappyjoeMVC.View
                     lab_LongMsg.Location = new Point(350, 350);
                     lab_7.Visible = true;
                     lab_7.Location = new Point(4, 5);
-                    lab_7.Text = " Zero Patient(s)";
+                    lab_7.Text = " 0 Patient(s)";
                     lab_Displaying.Visible = false;
                 }
             }
@@ -1410,6 +1410,8 @@ namespace PappyjoeMVC.View
                 }
                 if (Payment.Rows.Count >0)
                 {
+                    lab_7.Location = new Point(73, 7);
+                    lab_7.Text = Payment.Rows.Count.ToString() + " Patient(s)";
                     lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
                 }
@@ -1419,7 +1421,7 @@ namespace PappyjoeMVC.View
                     lab_LongMsg.Location = new Point(350, 350);
                     lab_7.Visible = true;
                     lab_7.Location = new Point(4, 5);
-                    lab_7.Text = " Zero Patient(s)";
+                    lab_7.Text = "0 Patient(s)";
                     lab_Displaying.Visible = false;
                 }
             }
@@ -1462,6 +1464,7 @@ namespace PappyjoeMVC.View
                     Create_Datagrid(dtb);
                     Design_Datagrid();
                 }
+                grgroup.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -1477,7 +1480,7 @@ namespace PappyjoeMVC.View
             btn_Birthday.BackColor = Color.Gainsboro;
             bt_cancelled_appointment.BackColor = Color.Gainsboro;
             btnPaymentDue.BackColor = Color.Gainsboro;
-
+            grgroup.ClearSelection();
         }
 
         private void btn_RecentelyVisited_Click(object sender, EventArgs e)
@@ -2226,7 +2229,7 @@ namespace PappyjoeMVC.View
                     lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
                     lab_7.Location = new Point(4, 5);
-                    lab_7.Text = " Zero Patient(s)";
+                    lab_7.Text = " 0 Patient(s)";
                     lab_Displaying.Visible = false;
                 }
             }
@@ -2524,7 +2527,7 @@ namespace PappyjoeMVC.View
                     lab_LongMsg.Location = new Point(350, 350);
                     lab_7.Visible = true;
                     lab_7.Location = new Point(4, 5);
-                    lab_7.Text = " Zero Patient(s)";
+                    lab_7.Text = "0 Patient(s)";
                     lab_Displaying.Visible = false;
                 }
                 lab_LongMsg.Hide();
