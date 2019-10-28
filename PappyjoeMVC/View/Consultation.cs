@@ -30,7 +30,7 @@ namespace PappyjoeMVC.View
         }
 
         public Consultation(string text, string id)
-        {
+        { 
             InitializeComponent();
             ptname = text;
             newptid = id;
@@ -38,11 +38,7 @@ namespace PappyjoeMVC.View
 
         private void Consultation_Load(object sender, EventArgs e)
         {
-            DataTable dtb_prescription = this.cntrl.Load_temlate();// db.table("select * from tbl_templates_main order by id");
-            // cmb_prescription_temp.DataSource = dtb_prescription;
-            //cmb_prescription_temp.ValueMember = "id";
-            //cmb_prescription_temp.DisplayMember = "templates";
-            //cmb_prescription_temp.Items.Insert(0, "-Select-");
+            DataTable dtb_prescription = this.cntrl.Load_temlate();
             cmb_prescription_temp.DisplayMember = "Text";
             cmb_prescription_temp.ValueMember = "Value";
             cmb_prescription_temp.Items.Add(new { Text = "-Select-", Value = 0 });
@@ -55,14 +51,14 @@ namespace PappyjoeMVC.View
                 }
             }
             cmb_prescription_temp.SelectedIndex = 0;
-            DataTable dt = this.cntrl.Load_doctor();// db.table("select DISTINCT id,doctor_name from tbl_doctor  where login_type='doctor' or login_type='admin' order by doctor_name");
+            DataTable dt = this.cntrl.Load_doctor();
             if (dt.Rows.Count > 0)
             {
                 cmbdoctor.DataSource = dt;
                 cmbdoctor.DisplayMember = "doctor_name";
                 cmbdoctor.ValueMember = "id";
 
-                DataTable dt_doctor = this.cntrl.Load_dctrname(doctor_id);// db.table("select id,doctor_name from tbl_doctor  where id='" + doctor_id + "'");
+                DataTable dt_doctor = this.cntrl.Load_dctrname(doctor_id);
                 if (dt_doctor.Rows.Count > 0)
                 {
 
@@ -85,16 +81,24 @@ namespace PappyjoeMVC.View
                     lbPatient.Show();
                     lbPatient.Location = new Point(txt_Pt_search.Location.X, 27);
                     DataTable dtdr = this.cntrl.search_patient(txt_Pt_search.Text);// db.table("select pt_id,pt_name from tbl_patient where pt_name like '%" + txt_Pt_search.Text + "%'  ");
-                    lbPatient.DataSource = dtdr;
-                    lbPatient.DisplayMember = "pt_name";
-                    lbPatient.ValueMember = "pt_id";
+                    if(dtdr.Rows.Count>0)
+                    {
+                        lbPatient.DataSource = dtdr;
+                        lbPatient.DisplayMember = "pt_name";
+                        lbPatient.ValueMember = "id";
+                    }
+                    else
+                    {
+                        lbPatient.Hide();
+                    }
+                    
                 }
                 else
                 {
                     DataTable dtdr = this.cntrl.search_patient(txt_Pt_search.Text); //db.table("select pt_id,pt_name from tbl_patient where pt_name like '%" + txt_Pt_search.Text + "%'  ");
                     lbPatient.DataSource = dtdr;
                     lbPatient.DisplayMember = "pt_name";
-                    lbPatient.ValueMember = "pt_id";
+                    lbPatient.ValueMember = "id";
                 }
             }
         }
@@ -176,8 +180,7 @@ namespace PappyjoeMVC.View
             {
                 if (txtPatientID.Text != "" && txt_procedure.Text != "")
                 {
-                    int presid = 0;
-                    //prescription
+                     //prescription
                     //prescription_check();
                     int d_id = Convert.ToInt32(cmbdoctor.SelectedValue.ToString());
                     string pres_id = cmb_prescription_temp.SelectedItem.GetType().GetProperty("Value").GetValue(cmb_prescription_temp.SelectedItem, null).ToString();
@@ -206,8 +209,6 @@ namespace PappyjoeMVC.View
                           //  db.table("insert into tbl_prescription (pres_id,pt_id,dr_name,dr_id,date,drug_name,strength,strength_gr,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,status,drug_id) values('" + presid + "','" + patient_id + "','" + cmbdoctor.Text + "','" + d_id + "','" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "','" + dt_prs.Rows[i]["drug_name"].ToString() + "','" + dt_prs.Rows[i]["strength"].ToString() + "','" + dt_prs.Rows[i]["strength_gr"].ToString() + "','','" + dt_prs.Rows[i]["duration_period"].ToString() + "','" + dt_prs.Rows[i]["morning"].ToString() + "','" + dt_prs.Rows[i]["noon"].ToString() + "','" + dt_prs.Rows[i]["night"].ToString() + "','" + dt_prs.Rows[i]["food"].ToString() + "','" + dt_prs.Rows[i]["add_instruction"].ToString() + "','" + dt_prs.Rows[i]["drug_type"].ToString() + "'," + dt_prs.Rows[i]["status"].ToString() + ",'" + dt_prs.Rows[i]["drug_id"].ToString() + "')");
                         }
                     }
-
-
                     //completed id
                      this.cntrl.save_completedid(patient_id);// db.execute("insert into tbl_completed_id (completed_date,patient_id,review) values('" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "','" + patient_id + "','NO')");
                     string  dt_CMain = this.cntrl.max_completedid();// db.table("select MAX(id) from tbl_completed_id");

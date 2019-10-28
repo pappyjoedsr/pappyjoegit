@@ -113,7 +113,7 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.Controls.Add(this.Lab_Msg);
             this.panel2.Controls.Add(this.Dgv_Order);
-            this.panel2.Location = new System.Drawing.Point(0, 97);
+            this.panel2.Location = new System.Drawing.Point(0, 108);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1370, 421);
             this.panel2.TabIndex = 188;
@@ -124,7 +124,7 @@
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(427, 239);
+            this.Lab_Msg.Location = new System.Drawing.Point(366, 239);
             this.Lab_Msg.Name = "Lab_Msg";
             this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
             this.Lab_Msg.TabIndex = 281;
@@ -164,6 +164,7 @@
             this.Dgv_Order.Size = new System.Drawing.Size(1370, 421);
             this.Dgv_Order.TabIndex = 2;
             this.Dgv_Order.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Order_CellClick);
+            this.Dgv_Order.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Order_CellContentClick);
             this.Dgv_Order.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Order_CellDoubleClick);
             // 
             // SLNO
@@ -242,7 +243,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(277, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 15);
+            this.label5.Size = new System.Drawing.Size(20, 15);
             this.label5.TabIndex = 170;
             this.label5.Text = "To";
             // 
@@ -251,7 +252,7 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
-            this.panel4.Location = new System.Drawing.Point(0, 39);
+            this.panel4.Location = new System.Drawing.Point(0, 54);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1384, 1);
             this.panel4.TabIndex = 189;
@@ -267,7 +268,7 @@
             this.panel1.Controls.Add(this.Txt_totalInvoice);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lblinvoices);
-            this.panel1.Location = new System.Drawing.Point(0, 46);
+            this.panel1.Location = new System.Drawing.Point(0, 56);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1370, 52);
             this.panel1.TabIndex = 187;
@@ -280,7 +281,7 @@
             this.lblinvoices.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblinvoices.Location = new System.Drawing.Point(1165, 16);
             this.lblinvoices.Name = "lblinvoices";
-            this.lblinvoices.Size = new System.Drawing.Size(65, 15);
+            this.lblinvoices.Size = new System.Drawing.Size(66, 15);
             this.lblinvoices.TabIndex = 0;
             this.lblinvoices.Text = "Total Order";
             // 
@@ -292,7 +293,7 @@
             this.BtnExport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExport.ForeColor = System.Drawing.Color.White;
             this.BtnExport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnExport.Location = new System.Drawing.Point(1060, 6);
+            this.BtnExport.Location = new System.Drawing.Point(1060, 9);
             this.BtnExport.Name = "BtnExport";
             this.BtnExport.Size = new System.Drawing.Size(120, 30);
             this.BtnExport.TabIndex = 298;
@@ -322,7 +323,7 @@
             this.btnprint.ForeColor = System.Drawing.Color.White;
             this.btnprint.Image = ((System.Drawing.Image)(resources.GetObject("btnprint.Image")));
             this.btnprint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnprint.Location = new System.Drawing.Point(1181, 6);
+            this.btnprint.Location = new System.Drawing.Point(1181, 9);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(91, 30);
             this.btnprint.TabIndex = 165;
@@ -338,7 +339,7 @@
             this.BTNClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNClose.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNClose.ForeColor = System.Drawing.Color.White;
-            this.BTNClose.Location = new System.Drawing.Point(1274, 6);
+            this.BTNClose.Location = new System.Drawing.Point(1274, 9);
             this.BTNClose.Name = "BTNClose";
             this.BTNClose.Size = new System.Drawing.Size(91, 30);
             this.BTNClose.TabIndex = 177;
@@ -348,16 +349,15 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
             this.panel3.Controls.Add(this.BtnExport);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.btnprint);
             this.panel3.Controls.Add(this.BTNClose);
-            this.panel3.Location = new System.Drawing.Point(0, 2);
+            this.panel3.Location = new System.Drawing.Point(0, 1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1370, 43);
+            this.panel3.Size = new System.Drawing.Size(1370, 61);
             this.panel3.TabIndex = 186;
             // 
             // Sales_Order_Report

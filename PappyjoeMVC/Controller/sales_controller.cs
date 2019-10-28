@@ -88,6 +88,11 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.salesOrder_master(invnum_order);
             return dtb;
         }
+        public DataTable get_doctor(string doctor_id)
+        {
+            DataTable dtb = _model.get_doctor(doctor_id);
+            return dtb;
+        }
         public DataTable order_itemsDtails(int invnum_order)
         {
             DataTable dtb = _model.order_itemsDtails(invnum_order);

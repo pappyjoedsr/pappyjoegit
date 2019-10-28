@@ -38,6 +38,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales));
             this.panel1 = new System.Windows.Forms.Panel();
             this.BTN_CLEAR = new System.Windows.Forms.Button();
@@ -160,6 +161,14 @@
             this.label43 = new System.Windows.Forms.Label();
             this.rad_CreditSale = new System.Windows.Forms.RadioButton();
             this.rad_CashSale = new System.Windows.Forms.RadioButton();
+            this.pnlprescription = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dgrid_prescription = new System.Windows.Forms.DataGridView();
+            this.colDrug = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Colduration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coldirection = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colremarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -169,6 +178,8 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SalesItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_BatchSale)).BeginInit();
+            this.pnlprescription.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_prescription)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -730,7 +741,7 @@
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.presgrid.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.presgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.presgrid.Size = new System.Drawing.Size(108, 540);
+            this.presgrid.Size = new System.Drawing.Size(108, 453);
             this.presgrid.TabIndex = 314;
             this.presgrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.presgrid_CellClick);
             // 
@@ -1369,10 +1380,10 @@
             this.prddate,
             this.expdate,
             this.unit});
-            this.dgv_BatchSale.Location = new System.Drawing.Point(5, 535);
+            this.dgv_BatchSale.Location = new System.Drawing.Point(1004, 531);
             this.dgv_BatchSale.Name = "dgv_BatchSale";
             this.dgv_BatchSale.RowHeadersVisible = false;
-            this.dgv_BatchSale.Size = new System.Drawing.Size(439, 122);
+            this.dgv_BatchSale.Size = new System.Drawing.Size(200, 122);
             this.dgv_BatchSale.TabIndex = 314;
             this.dgv_BatchSale.Visible = false;
             // 
@@ -1473,7 +1484,7 @@
             this.label44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label44.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label44.Location = new System.Drawing.Point(719, 620);
+            this.label44.Location = new System.Drawing.Point(720, 620);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(111, 27);
             this.label44.TabIndex = 323;
@@ -1484,7 +1495,7 @@
             this.label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label45.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label45.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label45.Location = new System.Drawing.Point(719, 566);
+            this.label45.Location = new System.Drawing.Point(720, 566);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(140, 22);
             this.label45.TabIndex = 325;
@@ -1496,7 +1507,7 @@
             this.txt_Discount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_Discount.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Discount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_Discount.Location = new System.Drawing.Point(811, 592);
+            this.txt_Discount.Location = new System.Drawing.Point(812, 592);
             this.txt_Discount.MaxLength = 8;
             this.txt_Discount.Name = "txt_Discount";
             this.txt_Discount.Size = new System.Drawing.Size(49, 22);
@@ -1513,7 +1524,7 @@
             this.label46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label46.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label46.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label46.Location = new System.Drawing.Point(718, 591);
+            this.label46.Location = new System.Drawing.Point(719, 591);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(88, 22);
             this.label46.TabIndex = 328;
@@ -1554,7 +1565,7 @@
             this.label47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label47.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label47.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label47.Location = new System.Drawing.Point(719, 539);
+            this.label47.Location = new System.Drawing.Point(720, 539);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(141, 22);
             this.label47.TabIndex = 330;
@@ -1565,7 +1576,7 @@
             this.label40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label40.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label40.Location = new System.Drawing.Point(455, 539);
+            this.label40.Location = new System.Drawing.Point(472, 539);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(136, 22);
             this.label40.TabIndex = 315;
@@ -1578,7 +1589,7 @@
             this.txt_TotalCost.Enabled = false;
             this.txt_TotalCost.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TotalCost.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_TotalCost.Location = new System.Drawing.Point(597, 539);
+            this.txt_TotalCost.Location = new System.Drawing.Point(614, 539);
             this.txt_TotalCost.MaxLength = 8;
             this.txt_TotalCost.Name = "txt_TotalCost";
             this.txt_TotalCost.Size = new System.Drawing.Size(100, 22);
@@ -1593,7 +1604,7 @@
             this.Txt_TotalIGST.Enabled = false;
             this.Txt_TotalIGST.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_TotalIGST.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Txt_TotalIGST.Location = new System.Drawing.Point(597, 565);
+            this.Txt_TotalIGST.Location = new System.Drawing.Point(614, 565);
             this.Txt_TotalIGST.MaxLength = 8;
             this.Txt_TotalIGST.Name = "Txt_TotalIGST";
             this.Txt_TotalIGST.Size = new System.Drawing.Size(100, 22);
@@ -1606,7 +1617,7 @@
             this.label41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label41.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label41.Location = new System.Drawing.Point(455, 567);
+            this.label41.Location = new System.Drawing.Point(472, 567);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(136, 22);
             this.label41.TabIndex = 317;
@@ -1619,7 +1630,7 @@
             this.txt_CGST.Enabled = false;
             this.txt_CGST.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CGST.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_CGST.Location = new System.Drawing.Point(597, 592);
+            this.txt_CGST.Location = new System.Drawing.Point(614, 592);
             this.txt_CGST.MaxLength = 8;
             this.txt_CGST.Name = "txt_CGST";
             this.txt_CGST.Size = new System.Drawing.Size(100, 22);
@@ -1632,7 +1643,7 @@
             this.label42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label42.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label42.Location = new System.Drawing.Point(455, 593);
+            this.label42.Location = new System.Drawing.Point(472, 593);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(136, 22);
             this.label42.TabIndex = 319;
@@ -1645,7 +1656,7 @@
             this.txt_SGST.Enabled = false;
             this.txt_SGST.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SGST.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_SGST.Location = new System.Drawing.Point(597, 618);
+            this.txt_SGST.Location = new System.Drawing.Point(614, 618);
             this.txt_SGST.MaxLength = 8;
             this.txt_SGST.Name = "txt_SGST";
             this.txt_SGST.Size = new System.Drawing.Size(100, 22);
@@ -1658,7 +1669,7 @@
             this.label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label43.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label43.Location = new System.Drawing.Point(455, 619);
+            this.label43.Location = new System.Drawing.Point(472, 619);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(136, 22);
             this.label43.TabIndex = 321;
@@ -1668,7 +1679,7 @@
             // 
             this.rad_CreditSale.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.rad_CreditSale.AutoSize = true;
-            this.rad_CreditSale.Location = new System.Drawing.Point(378, 630);
+            this.rad_CreditSale.Location = new System.Drawing.Point(370, 532);
             this.rad_CreditSale.Name = "rad_CreditSale";
             this.rad_CreditSale.Size = new System.Drawing.Size(76, 17);
             this.rad_CreditSale.TabIndex = 333;
@@ -1681,7 +1692,7 @@
             this.rad_CashSale.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.rad_CashSale.AutoSize = true;
             this.rad_CashSale.Checked = true;
-            this.rad_CashSale.Location = new System.Drawing.Point(299, 629);
+            this.rad_CashSale.Location = new System.Drawing.Point(291, 531);
             this.rad_CashSale.Name = "rad_CashSale";
             this.rad_CashSale.Size = new System.Drawing.Size(73, 17);
             this.rad_CashSale.TabIndex = 332;
@@ -1690,12 +1701,94 @@
             this.rad_CashSale.UseVisualStyleBackColor = true;
             this.rad_CashSale.Visible = false;
             // 
+            // pnlprescription
+            // 
+            this.pnlprescription.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlprescription.Controls.Add(this.label21);
+            this.pnlprescription.Controls.Add(this.label20);
+            this.pnlprescription.Controls.Add(this.dgrid_prescription);
+            this.pnlprescription.Location = new System.Drawing.Point(0, 530);
+            this.pnlprescription.Name = "pnlprescription";
+            this.pnlprescription.Size = new System.Drawing.Size(473, 113);
+            this.pnlprescription.TabIndex = 334;
+            this.pnlprescription.Visible = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label21.Location = new System.Drawing.Point(413, 3);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(46, 17);
+            this.label21.TabIndex = 303;
+            this.label21.Text = "Status";
+            this.label21.Visible = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label20.Location = new System.Drawing.Point(4, 3);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(124, 17);
+            this.label20.TabIndex = 301;
+            this.label20.Text = "Prescription Details";
+            // 
+            // dgrid_prescription
+            // 
+            this.dgrid_prescription.AllowUserToAddRows = false;
+            this.dgrid_prescription.AllowUserToDeleteRows = false;
+            this.dgrid_prescription.AllowUserToResizeColumns = false;
+            this.dgrid_prescription.AllowUserToResizeRows = false;
+            this.dgrid_prescription.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgrid_prescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgrid_prescription.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colDrug,
+            this.Colduration,
+            this.coldirection,
+            this.colremarks});
+            this.dgrid_prescription.GridColor = System.Drawing.Color.White;
+            this.dgrid_prescription.Location = new System.Drawing.Point(6, 23);
+            this.dgrid_prescription.Name = "dgrid_prescription";
+            this.dgrid_prescription.RowHeadersVisible = false;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgrid_prescription.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgrid_prescription.Size = new System.Drawing.Size(460, 86);
+            this.dgrid_prescription.TabIndex = 302;
+            // 
+            // colDrug
+            // 
+            this.colDrug.HeaderText = "Drug";
+            this.colDrug.Name = "colDrug";
+            // 
+            // Colduration
+            // 
+            this.Colduration.HeaderText = "Duration";
+            this.Colduration.Name = "Colduration";
+            this.Colduration.Width = 50;
+            // 
+            // coldirection
+            // 
+            this.coldirection.HeaderText = "Direction";
+            this.coldirection.Name = "coldirection";
+            this.coldirection.Width = 70;
+            // 
+            // colremarks
+            // 
+            this.colremarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colremarks.HeaderText = "Remarks";
+            this.colremarks.Name = "colremarks";
+            // 
             // Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1276, 651);
+            this.Controls.Add(this.pnlprescription);
             this.Controls.Add(this.presgrid);
             this.Controls.Add(this.rad_CreditSale);
             this.Controls.Add(this.label14);
@@ -1742,6 +1835,9 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SalesItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_BatchSale)).EndInit();
+            this.pnlprescription.ResumeLayout(false);
+            this.pnlprescription.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_prescription)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1870,5 +1966,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
         private System.Windows.Forms.DataGridViewImageColumn colEdit;
         private System.Windows.Forms.DataGridViewImageColumn colDelete;
+        private System.Windows.Forms.Panel pnlprescription;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DataGridView dgrid_prescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDrug;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Colduration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coldirection;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colremarks;
     }
 }

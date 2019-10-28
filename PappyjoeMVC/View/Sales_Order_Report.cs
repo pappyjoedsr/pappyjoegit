@@ -19,6 +19,12 @@ namespace PappyjoeMVC.View
         }
         Sales_Order_Report_controller ctrlr=new Sales_Order_Report_controller();
         public string dateFrom = "", dateTo = "",checkStr = "",PathName = "",strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "";
+
+        private void Dgv_Order_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void BTNClose_Click(object sender, EventArgs e)
         {
             var form2 = new Sales_Order_Report();

@@ -27,17 +27,17 @@ namespace PappyjoeMVC.Model
         }
         public string selectid(string mtest)
         {
-            string dt = db.scalar("SELECt id from Lab_Medi_TemplateMain WHERE TemplateName='" + mtest + "'");
+            string dt = db.scalar("SELECT A.id FROM tbl_Lab_Medi_MainTest A INNER JOIN Lab_Medi_Template B ON A.id = B.MainTestId inner join Lab_Medi_TemplateMain C on C.id = B.id where A.Main_Test = '" + mtest + "'");
             return dt;
         }
         public int inslabmain(string patid,string dr_id, string wrkname, string wrkid, string dte, string duedate, string rcvdate)
         {
-            int i = db.execute("INSERT into tbl_lab_main(pt_id,dr_id,work_name,work_id,labname,lab_id,date,duedate,recievedate,status,type,trackingstatus)VALUES('" + Convert.ToInt32(patid) + "','" + Convert.ToInt32(dr_id) + "','" +wrkname + "','" + wrkid + "','','0','" + Convert.ToDateTime(dte).ToString("yyyy-MM-dd") + "','" + Convert.ToDateTime(duedate).ToString("yyyy-MM-dd") + "','" + Convert.ToDateTime(rcvdate).ToString("yyyy-MM-dd") + "','','Medical','Active')");
+            int i = db.execute("INSERT into tbl_lab_main(pt_id,dr_id,work_name,work_id,labname,lab_id,date,duedate,recievedate,status,type,trackingstatus)VALUES('" + Convert.ToInt32(patid) + "','" + Convert.ToInt32(dr_id) + "','" +wrkname + "','" + wrkid + "','','0','" + Convert.ToDateTime(dte).ToString("yyyy-MM-dd") + "','" + Convert.ToDateTime(duedate).ToString("yyyy-MM-dd") + "','" + Convert.ToDateTime(rcvdate).ToString("yyyy-MM-dd") + "','','Medical',' ')");
             return i;
         }
         public int inslabmain2(string patid, string dr_id, string work_name, string work_id, string date)
         {
-            int j = db.execute("INSERT into tbl_lab_main(pt_id, dr_id, work_name, work_id, type, date,trackingstatus)values('" + Convert.ToInt32(patid) + "', '" + Convert.ToInt32(dr_id) + "', '" + work_name + "', '" + work_id + "', 'Dental', '" + Convert.ToDateTime(date).ToString("yyyy-MM-dd") + "','null')");
+            int j = db.execute("INSERT into tbl_lab_main(pt_id, dr_id, work_name, work_id, type, date,trackingstatus)values('" + Convert.ToInt32(patid) + "', '" + Convert.ToInt32(dr_id) + "', '" + work_name + "', '" + work_id + "', 'Dental', '" + Convert.ToDateTime(date).ToString("yyyy-MM-dd") + "','not null')");
             return j;
         }
         public int insdentlab(string resultmain, string work_name, string work_type, string aloytype, string shade, string patid, string toothnumber)

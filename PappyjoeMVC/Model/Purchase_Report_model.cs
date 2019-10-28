@@ -13,7 +13,7 @@ namespace PappyjoeMVC.Model
         //purchase report
         public DataTable purchdtls(string frmdte,string todte)
         {
-            DataTable dt = db.table("select tbl_purchase.PurchNumber,tbl_purchase.PurchDate,tbl_Supplier.Supplier_Name,tbl_purchase.TotalAmount,tbl_purchase.DiscAmount,tbl_purchase.GrandTotal from tbl_purchase inner join tbl_Supplier on tbl_Supplier.Supplier_Code=tbl_purchase.Sup_Code where tbl_purchase.PurchDate between '" +  frmdte + "' and '" + todte + "'");
+            DataTable dt = db.table("select tbl_purchase.PurchNumber,tbl_purchase.PurchDate,tbl_Supplier.Supplier_Name,tbl_purchit.Unit,tbl_purchase.TotalAmount,tbl_purchase.DiscAmount,tbl_purchase.GrandTotal from tbl_purchit inner join tbl_purchase on tbl_purchit.PurchNumber=tbl_purchase.PurchNumber  inner join tbl_Supplier on tbl_Supplier.Supplier_Code=tbl_purchase.Sup_Code where tbl_purchase.PurchDate between '"+frmdte+"' and '"+todte+"'");
             return dt;
         }
         //purchase item report

@@ -1667,6 +1667,7 @@ namespace PappyjoeMVC.View
             {
                 if (grgroup.Rows.Count > 0)
                 {
+
                     AllPatient_Flag = false;
                     Recently_Visited_Flag = false;
                     RecentalyAdded_flag = false;
@@ -1697,7 +1698,6 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Source, "Patient Not Found..", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
-
         private void labelprofile_Click(object sender, EventArgs e)
         {
             try
@@ -2390,8 +2390,6 @@ namespace PappyjoeMVC.View
             var form2 = new Consultation();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
             form2.ShowDialog();
         }
 

@@ -177,6 +177,11 @@ namespace PappyjoeMVC.Model
             DataTable data_from_sales_igst = db.table("select Invdate,  FORMAT(SUM(Qty * Rate),2) total ,igst from tbl_saleit where InvNumber='" + dt + "'and igst<>0 GROUP BY IGST order by IGST");
             return data_from_sales_igst;
         }
+        public DataTable get_doctor(string doctor_id)
+        {
+            System.Data.DataTable tb_doctor = db.table("select id,doctor_name from tbl_doctor where (login_type='doctor' or login_type='admin') and activate_login='yes'and  id='" + doctor_id + "'");
+            return tb_doctor;
+        }
     } 
 }
  
