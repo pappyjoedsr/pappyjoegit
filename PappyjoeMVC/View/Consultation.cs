@@ -180,7 +180,8 @@ namespace PappyjoeMVC.View
             {
                 if (txtPatientID.Text != "" && txt_procedure.Text != "")
                 {
-                     //prescription
+                    int presid = 0;
+                    //prescription
                     //prescription_check();
                     int d_id = Convert.ToInt32(cmbdoctor.SelectedValue.ToString());
                     string pres_id = cmb_prescription_temp.SelectedItem.GetType().GetProperty("Value").GetValue(cmb_prescription_temp.SelectedItem, null).ToString();

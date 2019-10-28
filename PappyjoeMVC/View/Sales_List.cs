@@ -135,6 +135,7 @@ namespace PappyjoeMVC.View
 
         private void dgv_sales_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+           
             if (e.RowIndex >= 0)
             {
                 PappyjoeMVC.Model.Connection.MyGlobals.global_Flag = true;
@@ -142,10 +143,16 @@ namespace PappyjoeMVC.View
                 int rowindex = dgv_sales.CurrentRow.Index;
                 if (dgv_sales.CurrentCell.OwningColumn.Name == "colInvNum")
                 {
-                    var form2 = new PappyjoeMVC.View.Sales(invnum);
+                    var form2 = new Sales(invnum);
+                    form2.ShowDialog();
+                }
+                else if (dgv_sales.CurrentCell.OwningColumn.Name == "colmore")
+                {
+                    var form2 = new Sales(invnum);
                     form2.ShowDialog();
                 }
             }
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

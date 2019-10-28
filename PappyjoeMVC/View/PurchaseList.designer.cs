@@ -44,17 +44,18 @@
             this.DTP_From = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.colPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPurchDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPurNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colslNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.dgv_Purchase = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.colslNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPurNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPurchDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colmore = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Purchase)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -216,49 +217,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Date From";
             // 
-            // colPayment
-            // 
-            this.colPayment.HeaderText = "Payment Method";
-            this.colPayment.Name = "colPayment";
-            this.colPayment.ReadOnly = true;
-            this.colPayment.Visible = false;
-            // 
-            // colTotalAmount
-            // 
-            this.colTotalAmount.HeaderText = "Total Amount";
-            this.colTotalAmount.Name = "colTotalAmount";
-            this.colTotalAmount.ReadOnly = true;
-            // 
-            // colName
-            // 
-            this.colName.HeaderText = "Supplier Name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // SupplierId
-            // 
-            this.SupplierId.HeaderText = "Supplier Id";
-            this.SupplierId.Name = "SupplierId";
-            this.SupplierId.ReadOnly = true;
-            // 
-            // colPurchDate
-            // 
-            this.colPurchDate.HeaderText = "Purchase Date";
-            this.colPurchDate.Name = "colPurchDate";
-            this.colPurchDate.ReadOnly = true;
-            // 
-            // colPurNum
-            // 
-            this.colPurNum.HeaderText = "Purchase Number";
-            this.colPurNum.Name = "colPurNum";
-            this.colPurNum.ReadOnly = true;
-            // 
-            // colslNo
-            // 
-            this.colslNo.HeaderText = "SlNo";
-            this.colslNo.Name = "colslNo";
-            this.colslNo.ReadOnly = true;
-            // 
             // Lab_Msg
             // 
             this.Lab_Msg.AutoSize = true;
@@ -292,7 +250,8 @@
             this.SupplierId,
             this.colName,
             this.colTotalAmount,
-            this.colPayment});
+            this.colPayment,
+            this.colmore});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -321,6 +280,7 @@
             this.dgv_Purchase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Purchase.Size = new System.Drawing.Size(960, 464);
             this.dgv_Purchase.TabIndex = 0;
+            this.dgv_Purchase.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Purchase_CellClick);
             this.dgv_Purchase.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgv_Purchase_MouseDoubleClick);
             // 
             // panel2
@@ -357,6 +317,63 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(967, 87);
             this.panel1.TabIndex = 4;
+            // 
+            // colslNo
+            // 
+            this.colslNo.FillWeight = 87.59729F;
+            this.colslNo.HeaderText = "SlNo";
+            this.colslNo.Name = "colslNo";
+            this.colslNo.ReadOnly = true;
+            // 
+            // colPurNum
+            // 
+            this.colPurNum.FillWeight = 87.59729F;
+            this.colPurNum.HeaderText = "Purchase Number";
+            this.colPurNum.Name = "colPurNum";
+            this.colPurNum.ReadOnly = true;
+            // 
+            // colPurchDate
+            // 
+            this.colPurchDate.FillWeight = 87.59729F;
+            this.colPurchDate.HeaderText = "Purchase Date";
+            this.colPurchDate.Name = "colPurchDate";
+            this.colPurchDate.ReadOnly = true;
+            // 
+            // SupplierId
+            // 
+            this.SupplierId.FillWeight = 87.59729F;
+            this.SupplierId.HeaderText = "Supplier Id";
+            this.SupplierId.Name = "SupplierId";
+            this.SupplierId.ReadOnly = true;
+            // 
+            // colName
+            // 
+            this.colName.FillWeight = 87.59729F;
+            this.colName.HeaderText = "Supplier Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colTotalAmount
+            // 
+            this.colTotalAmount.FillWeight = 87.59729F;
+            this.colTotalAmount.HeaderText = "Total Amount";
+            this.colTotalAmount.Name = "colTotalAmount";
+            this.colTotalAmount.ReadOnly = true;
+            // 
+            // colPayment
+            // 
+            this.colPayment.HeaderText = "Payment Method";
+            this.colPayment.Name = "colPayment";
+            this.colPayment.ReadOnly = true;
+            this.colPayment.Visible = false;
+            // 
+            // colmore
+            // 
+            this.colmore.FillWeight = 20F;
+            this.colmore.HeaderText = "";
+            this.colmore.Image = global::PappyjoeMVC.Properties.Resources.lab_icon;
+            this.colmore.Name = "colmore";
+            this.colmore.ReadOnly = true;
             // 
             // PurchaseList
             // 
@@ -395,16 +412,17 @@
         private System.Windows.Forms.DateTimePicker DTP_From;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPayment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPurchDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPurNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colslNo;
         private System.Windows.Forms.Label Lab_Msg;
         private System.Windows.Forms.DataGridView dgv_Purchase;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colslNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPurNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPurchDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPayment;
+        private System.Windows.Forms.DataGridViewImageColumn colmore;
     }
 }

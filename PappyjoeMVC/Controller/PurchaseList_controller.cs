@@ -36,5 +36,6 @@ namespace PappyjoeMVC.Controller
             DataTable d = _model.dt(fromdate,todate);
             return d;
         }
+       
     }
 }

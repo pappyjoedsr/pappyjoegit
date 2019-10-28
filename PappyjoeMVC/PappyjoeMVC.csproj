@@ -1588,5 +1588,8 @@
   <ItemGroup>
     <None Include="Resources\card_small.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lab_icon.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

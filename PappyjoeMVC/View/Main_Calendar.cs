@@ -528,6 +528,7 @@ namespace PappyjoeMVC.View
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripBfatstrack = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
@@ -605,7 +606,6 @@ namespace PappyjoeMVC.View
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.OptionsPane.SuspendLayout();
             this.panel3.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -1292,6 +1292,18 @@ namespace PappyjoeMVC.View
             this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
             this.toolStripButton2.Text = "Calendar";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton10.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(89, 37);
+            this.toolStripButton10.Text = "Consultation";
+            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
             // 
             // toolStripButton3
             // 
@@ -2213,18 +2225,6 @@ namespace PappyjoeMVC.View
             this.panel5.Size = new System.Drawing.Size(250, 118);
             this.panel5.TabIndex = 9;
             this.panel5.Visible = false;
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton10.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(89, 37);
-            this.toolStripButton10.Text = "Consultation";
-            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
             // 
             // Main_Calendar
             // 
@@ -3944,14 +3944,14 @@ namespace PappyjoeMVC.View
                     {
                         DateTime Timeonly = DateTime.Now;
                         dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Style.BackColor = Color.FromArgb(0, 0, 255);
-                        dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value = "Checked Out";
+                        dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value = "Check Out";
                         this.cntrl.update_appointment_status_engaged(Convert.ToString(Timeonly.ToString("hh:mm tt")), dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[0].Value.ToString());// int j = db.execute("update tbl_appointment set status='Engage',engaged='" + Convert.ToString(Timeonly.ToString("hh:mm tt")) + "' where id='" + dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'");
                         long_sub = Convert.ToInt64(label8.Text);
                         long_add = Convert.ToInt64(label9.Text);
                         label8.Text = Convert.ToString(long_sub - 1);
                         label9.Text = Convert.ToString(long_add + 1);
                     }
-                    else if (dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value.ToString() == "Checked Out")
+                    else if (dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value.ToString() == "Check Out")
                     {
                         DateTime Timeonly = DateTime.Now;
                         dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Style.BackColor = Color.FromArgb(0, 0, 255);

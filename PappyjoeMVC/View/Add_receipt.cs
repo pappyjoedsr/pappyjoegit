@@ -98,7 +98,7 @@ namespace PappyjoeMVC.View
                     label_availeble_advance.Text = string.Format("{0:C}", 0);
                     Lab_advance_Available.Text = string.Format("{0:C}", 0);
                 }
-                decimal d = 0;
+                decimal d = 0; 
                 d = total - advance;
                 lab_due_after_advance.Text = string.Format("{0:C}", decimal.Parse(d.ToString())); ;
                 txt_pay_from_advance.Text = string.Format("{0:C}", 0);
@@ -112,7 +112,10 @@ namespace PappyjoeMVC.View
                     btn_PayPreService.Text = "SAVE ADVANCE";
                     Btn_payonetime.Visible = false;
                     DataTable dtb = this.cntrl.Get_invoice_details(patient_id);
-                    LoadGrid_status0(dtb);  
+                    LoadGrid_status0(dtb);
+                    DGV_Invoice.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    DGV_Invoice.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    DGV_Invoice.Columns[2].Visible = false;
                     foreach (DataGridViewColumn cl in DGV_Invoice.Columns)
                     {
                         cl.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -192,7 +195,22 @@ namespace PappyjoeMVC.View
                         }
                         p++;
                     }
+                    DGV_Invoice.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    DGV_Invoice.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    DGV_Invoice.Columns[2].Visible = false;
+                    foreach (DataGridViewColumn cl in DGV_Invoice.Columns)
+                    {
+                        cl.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    }
+                    foreach (DataGridViewColumn cl in DGV_MainGrid.Columns)
+                    {
+                        cl.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    }
                 }
+                DGV_MainGrid.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_MainGrid.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_MainGrid.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_MainGrid.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             }
             catch
             {

@@ -104,5 +104,10 @@ namespace PappyjoeMVC.Model
             DataTable dt = db.table("select p.PurchNumber,p.PurchDate,p.Sup_Code,s.Supplier_Name,p.GrandTotal,p.PurchType,s.Address1 from tbl_PURCHASE as p inner join tbl_Supplier as s on p.Sup_Code = s.Supplier_Code  where  PurchDate between '" + fromdate + "' and '" + todate + "'");
             return dt;
         }
+        //public DataTable purchase_data(string purchno)
+        //{
+        //    DataTable data_from_purchase = db.table("select id,PurchDate,Item_Code,Desccription,Packing,Unit,Qty,FreeQty,Rate,Amount,GST,IGST from tbl_PURCHIT where PurchNumber='" + purchno + "'");
+        //    return data_from_purchase;
+        //}
     }
 }

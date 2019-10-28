@@ -243,6 +243,16 @@ namespace PappyjoeMVC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lab_icon {
+            get {
+                object obj = ResourceManager.GetObject("lab_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap no_image_icon_6 {
             get {
                 object obj = ResourceManager.GetObject("no-image-icon-6", resourceCulture);

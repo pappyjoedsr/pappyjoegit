@@ -478,5 +478,21 @@ namespace PappyjoeMVC.View
                 }
             }
         }
+        private void dgv_Purchase_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                PappyjoeMVC.Model.Connection.MyGlobals.global_Flag = true;
+                if (dgv_Purchase.CurrentCell.OwningColumn.Name == "colmore")
+                {
+                    DataTable data_from_Pur_Master=this.cntrl.data_from_Pur_Master(dgv_Purchase.CurrentRow.Cells["colPurNum"].Value);
+                    DataTable data_from_purchase = this.cntrl.data_from_purchase(dgv_Purchase.CurrentRow.Cells["colPurNum"].Value.ToString());
+                    var form2 = new Purchase(data_from_Pur_Master, data_from_purchase);
+                    form2.ShowDialog();
+                }
+
+
+            }
+        }
     }
 }

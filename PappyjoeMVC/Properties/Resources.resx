@@ -121,6 +121,9 @@
   <data name="pedo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pedo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="no-image-icon-61" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\no-image-icon-6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="no-image-icon-6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\no-image-icon-6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,8 +157,8 @@
   <data name="TickRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TickRed.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appnotfilled" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appnotfilled.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="card_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\card_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upload1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upload2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +196,8 @@
   <data name="Print-icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Print-icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="no-image-icon-61" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\no-image-icon-6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="appnotfilled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appnotfilled.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SP" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,7 +205,7 @@
   <data name="pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pdf1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="card_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\card_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lab_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lab_icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
