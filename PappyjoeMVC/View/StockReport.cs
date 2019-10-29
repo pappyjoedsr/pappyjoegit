@@ -917,6 +917,12 @@ namespace PappyjoeMVC.View
                 this.Hide();
                 form2.ShowDialog();
         }
+
+        private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
         private void btn_purOrder_Click(object sender, EventArgs e)
         {
             backColor_Change();
