@@ -141,6 +141,7 @@ namespace PappyjoeMVC.Model
             DataTable dt_review = db.table("SELECT id FROM tbl_review where  pt_id='" + patient_id + "' and fix_datetime='" + DateTime.Now.ToString("yyyy-MM-dd") + "' and review_datetime='" + reviewdate + "' ORDER BY id");
             return dt_review;
         }
+        
         public DataTable get_total_payment(string ptid)
         {
             DataTable pay = db.table("select total_payment from tbl_invoices where pt_id='" + ptid + "'");

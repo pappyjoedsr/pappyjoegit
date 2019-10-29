@@ -941,7 +941,7 @@
             this.dotMatricToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.dotMatricToolStripMenuItem.Text = "Dot matrix Print";
             this.dotMatricToolStripMenuItem.Visible = false;
-            this.dotMatricToolStripMenuItem.Click += new System.EventHandler(this.dotMatricToolStripMenuItem_Click);
+
             // 
             // sentSMSToolStripMenuItem
             // 

@@ -1292,7 +1292,6 @@ namespace PappyjoeMVC.View
         private void btnCancel_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Clinical_Findings();
-            //Clinical_Findings_controller cn = new Clinical_Findings_controller(form2);
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
@@ -1409,7 +1408,6 @@ namespace PappyjoeMVC.View
                                     }
                                 }
                                 var form2 = new PappyjoeMVC.View.Clinical_Findings();
-                                //Clinical_Findings_controller cn = new Clinical_Findings_controller(form2);
                                 form2.doctor_id = doctor_id;
                                 form2.patient_id = patient_id;
                                 form2.Closed += (sender1, args) => this.Close();
@@ -1490,7 +1488,6 @@ namespace PappyjoeMVC.View
                         }
 
                         var form2 = new PappyjoeMVC.View.Clinical_Findings();
-                        //Clinical_Findings_controller vn = new Clinical_Findings_controller(form2);
                         form2.patient_id = patient_id;
                         form2.doctor_id = doctor_id;
                         form2.Closed += (sender1, args) => this.Close();

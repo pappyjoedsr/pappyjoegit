@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(consultation_new_patient));
             this.panel_newpatient = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPatientId = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.radfemail = new System.Windows.Forms.RadioButton();
             this.radmail = new System.Windows.Forms.RadioButton();
             this.txtmobile = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtpatname = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel_newpatient.SuspendLayout();
@@ -45,19 +45,30 @@
             // panel_newpatient
             // 
             this.panel_newpatient.BackColor = System.Drawing.Color.White;
+            this.panel_newpatient.Controls.Add(this.label11);
             this.panel_newpatient.Controls.Add(this.label1);
             this.panel_newpatient.Controls.Add(this.txtPatientId);
-            this.panel_newpatient.Controls.Add(this.btnSave);
+            this.panel_newpatient.Controls.Add(this.button1);
             this.panel_newpatient.Controls.Add(this.radfemail);
             this.panel_newpatient.Controls.Add(this.radmail);
             this.panel_newpatient.Controls.Add(this.txtmobile);
-            this.panel_newpatient.Controls.Add(this.label11);
             this.panel_newpatient.Controls.Add(this.txtpatname);
             this.panel_newpatient.Controls.Add(this.label10);
             this.panel_newpatient.Location = new System.Drawing.Point(1, 2);
             this.panel_newpatient.Name = "panel_newpatient";
             this.panel_newpatient.Size = new System.Drawing.Size(347, 139);
             this.panel_newpatient.TabIndex = 314;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(6, 71);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(101, 17);
+            this.label11.TabIndex = 307;
+            this.label11.Text = "Mobile Number";
             // 
             // label1
             // 
@@ -80,24 +91,25 @@
             this.txtPatientId.Size = new System.Drawing.Size(193, 22);
             this.txtPatientId.TabIndex = 313;
             // 
-            // btnSave
+            // button1
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(259, 106);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(85, 30);
-            this.btnSave.TabIndex = 311;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.LimeGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(259, 106);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 30);
+            this.button1.TabIndex = 311;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // radfemail
             // 
             this.radfemail.AutoSize = true;
+            this.radfemail.Checked = true;
             this.radfemail.Location = new System.Drawing.Point(173, 93);
             this.radfemail.Name = "radfemail";
             this.radfemail.Size = new System.Drawing.Size(59, 17);
@@ -113,7 +125,6 @@
             this.radmail.Name = "radmail";
             this.radmail.Size = new System.Drawing.Size(48, 17);
             this.radmail.TabIndex = 309;
-            this.radmail.TabStop = true;
             this.radmail.Text = "Male";
             this.radmail.UseVisualStyleBackColor = true;
             // 
@@ -125,17 +136,7 @@
             this.txtmobile.Name = "txtmobile";
             this.txtmobile.Size = new System.Drawing.Size(193, 22);
             this.txtmobile.TabIndex = 308;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label11.Location = new System.Drawing.Point(6, 68);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(101, 17);
-            this.label11.TabIndex = 307;
-            this.label11.Text = "Mobile Number";
+            this.txtmobile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmobile_KeyPress);
             // 
             // txtpatname
             // 
@@ -150,7 +151,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label10.ForeColor = System.Drawing.Color.Red;
             this.label10.Location = new System.Drawing.Point(6, 14);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(86, 17);
@@ -178,13 +179,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel_newpatient;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPatientId;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RadioButton radfemail;
         private System.Windows.Forms.RadioButton radmail;
         private System.Windows.Forms.TextBox txtmobile;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtpatname;
         private System.Windows.Forms.Label label10;
     }

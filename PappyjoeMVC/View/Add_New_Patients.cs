@@ -977,7 +977,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
             }
         }

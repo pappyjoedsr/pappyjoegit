@@ -1728,7 +1728,7 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("</body>");
                 sWrite.WriteLine("</html>");
                 sWrite.Close();
-                System.Diagnostics.Process.Start(Apppath + "\\Purcahse.html");
+                System.Diagnostics.Process.Start(Apppath + "\\Purchase.html");
             }
             catch (Exception ex)
             {

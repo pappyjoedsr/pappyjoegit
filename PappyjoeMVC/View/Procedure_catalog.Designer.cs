@@ -272,6 +272,7 @@
             this.buttonclear.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.buttonclear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonclear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonclear.ForeColor = System.Drawing.Color.White;
             this.buttonclear.Location = new System.Drawing.Point(284, 259);
             this.buttonclear.Name = "buttonclear";
