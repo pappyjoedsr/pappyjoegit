@@ -7,7 +7,7 @@ namespace PappyjoeMVC.Model
         Connection db = new Connection();
         public DataTable Get_all_Patients()
         {
-            DataTable sqlstr = db.table("select  id as Pid,pt_id As 'Patient Id'  ,pt_name  as 'Patient Name',gender as Gender,age as Age , primary_mobile_number  as   Mobile,street_address as 'Street Address',locality  as Locality,Visited,Opticket as 'File NO' from tbl_patient  where Profile_Status='Active' order by id desc ");
+            DataTable sqlstr = db.table("select  id as Pid,pt_id As 'Id'  ,pt_name  as 'Patient Name',gender as Gender,age as Age , primary_mobile_number  as   Mobile,street_address as 'Street Address',locality  as Locality,DATE_FORMAT(date,'%d-%m-%y') as DATE,Opticket as 'File NO' from tbl_patient  where Profile_Status='Active' order by id desc ");
             return sqlstr; //= "SELECT id as Pid,pt_id as Id, pt_name as Name, gender as Gender,age as Age, primary_mobile_number as  Mobile,street_address as 'Street Address',Visited,Opticket FROM tbl_patient where Profile_Status='Active'  ORDER BY id DESC";
         }
 

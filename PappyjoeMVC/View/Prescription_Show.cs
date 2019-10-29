@@ -51,6 +51,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
+                this.Size = Screen.PrimaryScreen.WorkingArea.Size;//to set to the screen size
                 //Rasmi privilege checking
                 if (doctor_id != "1")
                 {
