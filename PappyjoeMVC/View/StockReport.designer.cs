@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -617,14 +617,12 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.btnReport);
-            this.panel1.Location = new System.Drawing.Point(171, 50);
+            this.panel1.Location = new System.Drawing.Point(171, 44);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1136, 40);
+            this.panel1.Size = new System.Drawing.Size(1198, 40);
             this.panel1.TabIndex = 1;
             // 
             // button5
@@ -634,7 +632,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(616, 3);
+            this.button5.Location = new System.Drawing.Point(678, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(89, 27);
             this.button5.TabIndex = 293;
@@ -660,7 +658,7 @@
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnReport.ForeColor = System.Drawing.Color.White;
-            this.btnReport.Location = new System.Drawing.Point(1040, 4);
+            this.btnReport.Location = new System.Drawing.Point(1102, 4);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(92, 30);
             this.btnReport.TabIndex = 275;
@@ -677,8 +675,6 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.Chk_Minimum);
             this.panel3.Controls.Add(this.Chk_Suplier);
             this.panel3.Controls.Add(this.Cmb_Suplier);
@@ -688,7 +684,7 @@
             this.panel3.Controls.Add(this.btn_Refresh);
             this.panel3.Location = new System.Drawing.Point(173, 92);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1136, 51);
+            this.panel3.Size = new System.Drawing.Size(1198, 51);
             this.panel3.TabIndex = 282;
             // 
             // Chk_Minimum
@@ -775,7 +771,7 @@
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(938, 14);
+            this.btn_Refresh.Location = new System.Drawing.Point(1000, 14);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(89, 30);
             this.btn_Refresh.TabIndex = 274;
@@ -816,14 +812,14 @@
             this.DGV_Stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV_Stock.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DGV_Stock.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DGV_Stock.ColumnHeadersHeight = 25;
             this.DGV_Stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DGV_Stock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -832,14 +828,14 @@
             this.item_name,
             this.clunit,
             this.qty});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_Stock.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_Stock.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGV_Stock.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGV_Stock.GridColor = System.Drawing.Color.DimGray;
             this.DGV_Stock.Location = new System.Drawing.Point(0, 0);
@@ -892,7 +888,7 @@
             this.panel_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_main.Location = new System.Drawing.Point(171, 51);
+            this.panel_main.Location = new System.Drawing.Point(171, 190);
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(1145, 641);
             this.panel_main.TabIndex = 281;
@@ -900,16 +896,16 @@
             // listpatientsearch
             // 
             this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
-            this.listpatientsearch.ItemHeight = 21;
-            this.listpatientsearch.Location = new System.Drawing.Point(942, 37);
+            this.listpatientsearch.ItemHeight = 20;
+            this.listpatientsearch.Location = new System.Drawing.Point(954, 42);
             this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(250, 84);
-            this.listpatientsearch.TabIndex = 300;
+            this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
+            this.listpatientsearch.TabIndex = 284;
             this.listpatientsearch.Visible = false;
-            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick_1);
+            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
             // 
             // StockReport
             // 
@@ -922,10 +918,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StockReport";
@@ -1008,8 +1004,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clunit;
         private System.Windows.Forms.DataGridViewTextBoxColumn qty;
         private System.Windows.Forms.Panel panel_main;
+        private System.Windows.Forms.ListBox listpatientsearch;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
-        private System.Windows.Forms.ListBox listpatientsearch;
     }
 }

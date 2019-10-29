@@ -1717,6 +1717,7 @@ namespace PappyjoeMVC.View
                     lab_LongMsg.Hide();
                     DataTable dtb=  this.cntrl.Get_all_Patients();
                     Create_Datagrid(dtb);
+                    Design_Datagrid();
                 }
                 else
                 {
@@ -1727,6 +1728,7 @@ namespace PappyjoeMVC.View
                     panl_DisplayingPatient.Visible = true;
                   DataTable dtb=  this.cntrl.Get_all_Patients();
                     Create_Datagrid(dtb);
+                    Design_Datagrid();
                 }
             }
             catch (Exception ex)
@@ -2573,13 +2575,13 @@ namespace PappyjoeMVC.View
             if (DGV_Patients.Columns.Count > 0)
             {
                 DGV_Patients.Columns[0].Width = 0;
-                DGV_Patients.Columns[1].Width = 100;
+                DGV_Patients.Columns[1].Width = 45;
                 DGV_Patients.Columns[2].Width = 200;
-                DGV_Patients.Columns[3].Width = 69;
+                DGV_Patients.Columns[3].Width = 60;
                 DGV_Patients.Columns[4].Width = 40;
-                DGV_Patients.Columns[5].Width = 130;
-                DGV_Patients.Columns[6].Width = 180;
-                DGV_Patients.Columns[7].Width = 160;
+                DGV_Patients.Columns[5].Width = 80;
+                DGV_Patients.Columns[6].Width = 140;
+                DGV_Patients.Columns[7].Width = 140;
                 DGV_Patients.Columns[8].Width = 100;
             }
             DGV_Patients.EnableHeadersVisualStyles = false;

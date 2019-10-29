@@ -303,6 +303,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
+                this.Size = Screen.PrimaryScreen.WorkingArea.Size;//to set to the screen size
                 toolStripButton4.BackColor = Color.SkyBlue;
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
                 listpatientsearch.Hide();
