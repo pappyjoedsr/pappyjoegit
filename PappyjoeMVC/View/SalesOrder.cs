@@ -732,7 +732,7 @@ namespace PappyjoeMVC.View
             sWrite.WriteLine("<td align='left'  width='200'><FONT COLOR=black FACE='Geneva,  Sego UI' SIZE=3>Description</font></td>");
             sWrite.WriteLine("<td align='right'  width='65'><FONT COLOR=black FACE='Geneva,  Sego UI' SIZE=3>Quantity</font></td>");
             sWrite.WriteLine("<td align='right'  width='82'><FONT COLOR=black FACE='Geneva,  Sego UI' SIZE=3>Cost</font></td>");
-            sWrite.WriteLine("<td align='right'  width='82'><FONT COLOR=black FACE='Geneva,  Sego UI' SIZE=3>TotalAmount</font></td>");
+            sWrite.WriteLine("<td align='right'  width='82'><FONT COLOR=black FACE='Geneva,  Sego UI' SIZE=3>Total Amount</font></td>");
             sWrite.WriteLine("</tr>");
             sWrite.WriteLine("<tr><td align='left' colspan=5><hr/></td></tr>");
             for (int i = 0; i < dgv_SalesItem.Rows.Count; i++)

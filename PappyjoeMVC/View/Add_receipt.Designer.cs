@@ -169,7 +169,7 @@
             this.toolStrip2.Size = new System.Drawing.Size(1362, 40);
             this.toolStrip2.TabIndex = 67;
             this.toolStrip2.Text = "toolStrip2";
-            this.toolStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip2_ItemClicked);
+            //this.toolStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip2_ItemClicked);
             // 
             // toolStripButton1
             // 
@@ -182,13 +182,13 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(103, 37);
             this.toolStripButton1.Text = "Pappyjoe Clinic";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            //this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
-            this.toolStripSeparator1.Click += new System.EventHandler(this.toolStripSeparator1_Click);
+            //this.toolStripSeparator1.Click += new System.EventHandler(this.toolStripSeparator1_Click);
             // 
             // toolStripButton2
             // 
@@ -225,7 +225,7 @@
             this.toolStripBAttachment.Size = new System.Drawing.Size(72, 37);
             this.toolStripBAttachment.Text = "Fast Track";
             this.toolStripBAttachment.Visible = false;
-            this.toolStripBAttachment.Click += new System.EventHandler(this.toolStripBAttachment_Click);
+            //this.toolStripBAttachment.Click += new System.EventHandler(this.toolStripBAttachment_Click);
             // 
             // toolStripButton3
             // 
@@ -286,7 +286,7 @@
             this.toolStripButton11.Size = new System.Drawing.Size(62, 37);
             this.toolStripButton11.Text = "Consent";
             this.toolStripButton11.Visible = false;
-            this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
+            //this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
             // 
             // toolStripButton10
             // 
@@ -338,7 +338,7 @@
             this.toolStripButton8.Size = new System.Drawing.Size(33, 37);
             this.toolStripButton8.Text = "toolStripButton8";
             this.toolStripButton8.ToolTipText = "Settings";
-            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
+            //this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
             // 
             // settingsToolStripMenuItem
             // 
@@ -361,7 +361,7 @@
             this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
-            this.toolStripSeparator2.Click += new System.EventHandler(this.toolStripSeparator2_Click);
+            //this.toolStripSeparator2.Click += new System.EventHandler(this.toolStripSeparator2_Click);
             // 
             // toolStripButton9
             // 
@@ -374,7 +374,7 @@
             this.toolStripButton9.Size = new System.Drawing.Size(29, 37);
             this.toolStripButton9.Text = "toolStripButton9";
             this.toolStripButton9.ToolTipText = "Pappyjoe Version 16.2";
-            this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
+            //this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
             // 
             // toolStripDropDownButton1
             // 
@@ -408,7 +408,7 @@
             this.toolStripTextDoctor.ReadOnly = true;
             this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
             this.toolStripTextDoctor.Text = "doctorname";
-            this.toolStripTextDoctor.Click += new System.EventHandler(this.toolStripTextDoctor_Click);
+            //this.toolStripTextDoctor.Click += new System.EventHandler(this.toolStripTextDoctor_Click);
             // 
             // panel3
             // 
@@ -429,7 +429,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1017, 80);
             this.panel3.TabIndex = 80;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            //this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // pictureBox1
             // 
@@ -440,7 +440,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 63;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            //this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Lab_TotalPayable
             // 
@@ -451,7 +451,7 @@
             this.Lab_TotalPayable.Name = "Lab_TotalPayable";
             this.Lab_TotalPayable.Size = new System.Drawing.Size(0, 17);
             this.Lab_TotalPayable.TabIndex = 9;
-            this.Lab_TotalPayable.Click += new System.EventHandler(this.Lab_TotalPayable_Click);
+            //this.Lab_TotalPayable.Click += new System.EventHandler(this.Lab_TotalPayable_Click);
             // 
             // Lnk_Id
             // 
@@ -476,7 +476,7 @@
             this.label24.Size = new System.Drawing.Size(79, 13);
             this.label24.TabIndex = 14;
             this.label24.Text = "Total Payable :";
-            this.label24.Click += new System.EventHandler(this.label24_Click);
+            //this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
             // Lab_AvailableAdvanc
             // 
@@ -487,7 +487,7 @@
             this.Lab_AvailableAdvanc.Size = new System.Drawing.Size(105, 13);
             this.Lab_AvailableAdvanc.TabIndex = 14;
             this.Lab_AvailableAdvanc.Text = "Available Advance :";
-            this.Lab_AvailableAdvanc.Click += new System.EventHandler(this.Lab_AvailableAdvanc_Click);
+            //this.Lab_AvailableAdvanc.Click += new System.EventHandler(this.Lab_AvailableAdvanc_Click);
             // 
             // Lnk_Name
             // 
@@ -512,7 +512,7 @@
             this.Lab_advance_Available.Size = new System.Drawing.Size(13, 13);
             this.Lab_advance_Available.TabIndex = 14;
             this.Lab_advance_Available.Text = "0";
-            this.Lab_advance_Available.Click += new System.EventHandler(this.Lab_advance_Available_Click);
+            //this.Lab_advance_Available.Click += new System.EventHandler(this.Lab_advance_Available_Click);
             // 
             // Lab_Age
             // 
@@ -524,7 +524,7 @@
             this.Lab_Age.TabIndex = 57;
             this.Lab_Age.Text = "label22";
             this.Lab_Age.Visible = false;
-            this.Lab_Age.Click += new System.EventHandler(this.Lab_Age_Click);
+            //this.Lab_Age.Click += new System.EventHandler(this.Lab_Age_Click);
             // 
             // label8
             // 
@@ -535,7 +535,7 @@
             this.label8.TabIndex = 62;
             this.label8.Text = "Gender :";
             this.label8.Visible = false;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            //this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // Lab_Gender
             // 
@@ -547,7 +547,7 @@
             this.Lab_Gender.TabIndex = 58;
             this.Lab_Gender.Text = "label23";
             this.Lab_Gender.Visible = false;
-            this.Lab_Gender.Click += new System.EventHandler(this.Lab_Gender_Click);
+            //this.Lab_Gender.Click += new System.EventHandler(this.Lab_Gender_Click);
             // 
             // label22
             // 
@@ -558,7 +558,7 @@
             this.label22.TabIndex = 61;
             this.label22.Text = "Age :";
             this.label22.Visible = false;
-            this.label22.Click += new System.EventHandler(this.label22_Click);
+            //this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // label21
             // 
@@ -569,7 +569,7 @@
             this.label21.Size = new System.Drawing.Size(81, 13);
             this.label21.TabIndex = 60;
             this.label21.Text = "Patient Name :";
-            this.label21.Click += new System.EventHandler(this.label21_Click);
+            //this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // label12
             // 
@@ -580,7 +580,7 @@
             this.label12.Size = new System.Drawing.Size(60, 13);
             this.label12.TabIndex = 59;
             this.label12.Text = "Patient ID:";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+            //this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // panel_main
             // 
@@ -603,7 +603,7 @@
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(1361, 624);
             this.panel_main.TabIndex = 81;
-            this.panel_main.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_main_Paint);
+            //this.panel_main.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_main_Paint);
             // 
             // panel2
             // 
@@ -614,7 +614,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1, 577);
             this.panel2.TabIndex = 79;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            //this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel1
             // 
@@ -647,7 +647,7 @@
             this.panel1.Size = new System.Drawing.Size(889, 216);
             this.panel1.TabIndex = 78;
             this.panel1.Visible = false;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -660,7 +660,7 @@
             this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 80;
             this.label1.Text = "Mode of Payment";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Lab_DDNumber
             // 
@@ -673,7 +673,7 @@
             this.Lab_DDNumber.Size = new System.Drawing.Size(67, 13);
             this.Lab_DDNumber.TabIndex = 79;
             this.Lab_DDNumber.Text = "DD Number";
-            this.Lab_DDNumber.Click += new System.EventHandler(this.Lab_DDNumber_Click);
+            //this.Lab_DDNumber.Click += new System.EventHandler(this.Lab_DDNumber_Click);
             // 
             // Lab_Last4Digit
             // 
@@ -686,7 +686,7 @@
             this.Lab_Last4Digit.Size = new System.Drawing.Size(71, 13);
             this.Lab_Last4Digit.TabIndex = 5;
             this.Lab_Last4Digit.Text = "Last 4 digits ";
-            this.Lab_Last4Digit.Click += new System.EventHandler(this.Lab_Last4Digit_Click);
+            //this.Lab_Last4Digit.Click += new System.EventHandler(this.Lab_Last4Digit_Click);
             // 
             // label7
             // 
@@ -698,7 +698,7 @@
             this.label7.Size = new System.Drawing.Size(69, 13);
             this.label7.TabIndex = 16;
             this.label7.Text = "Recieved on";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            //this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // Btn_payonetime
             // 
@@ -724,7 +724,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(191, 22);
             this.dateTimePicker1.TabIndex = 17;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            //this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label5
             // 
@@ -736,7 +736,7 @@
             this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Total Payable";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            //this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // Lab_Numbr
             // 
@@ -749,7 +749,7 @@
             this.Lab_Numbr.Size = new System.Drawing.Size(48, 13);
             this.Lab_Numbr.TabIndex = 8;
             this.Lab_Numbr.Text = "Number";
-            this.Lab_Numbr.Click += new System.EventHandler(this.Lab_Numbr_Click);
+            //this.Lab_Numbr.Click += new System.EventHandler(this.Lab_Numbr_Click);
             // 
             // txt_BankNAme
             // 
@@ -760,7 +760,7 @@
             this.txt_BankNAme.Name = "txt_BankNAme";
             this.txt_BankNAme.Size = new System.Drawing.Size(170, 22);
             this.txt_BankNAme.TabIndex = 5;
-            this.txt_BankNAme.TextChanged += new System.EventHandler(this.txt_BankNAme_TextChanged);
+            //this.txt_BankNAme.TextChanged += new System.EventHandler(this.txt_BankNAme_TextChanged);
             // 
             // label10
             // 
@@ -772,7 +772,7 @@
             this.label10.Size = new System.Drawing.Size(102, 13);
             this.label10.TabIndex = 5;
             this.label10.Text = "Due After Advance";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+            //this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label_availeble_advance
             // 
@@ -785,7 +785,7 @@
             this.label_availeble_advance.Size = new System.Drawing.Size(0, 17);
             this.label_availeble_advance.TabIndex = 2;
             this.label_availeble_advance.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.label_availeble_advance.Click += new System.EventHandler(this.label_availeble_advance_Click);
+            //this.label_availeble_advance.Click += new System.EventHandler(this.label_availeble_advance_Click);
             // 
             // Lab_CardNo
             // 
@@ -798,7 +798,7 @@
             this.Lab_CardNo.Size = new System.Drawing.Size(105, 13);
             this.Lab_CardNo.TabIndex = 4;
             this.Lab_CardNo.Text = "Enter card number ";
-            this.Lab_CardNo.Click += new System.EventHandler(this.Lab_CardNo_Click);
+            //this.Lab_CardNo.Click += new System.EventHandler(this.Lab_CardNo_Click);
             // 
             // txt_pay_from_advance
             // 
@@ -811,7 +811,7 @@
             this.txt_pay_from_advance.TabIndex = 16;
             this.txt_pay_from_advance.Text = "0.00";
             this.txt_pay_from_advance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.txt_pay_from_advance.Click += new System.EventHandler(this.txt_pay_from_advance_Click);
+            //this.txt_pay_from_advance.Click += new System.EventHandler(this.txt_pay_from_advance_Click);
             // 
             // lab_due_after_advance
             // 
@@ -824,7 +824,7 @@
             this.lab_due_after_advance.TabIndex = 7;
             this.lab_due_after_advance.Text = "0.00";
             this.lab_due_after_advance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lab_due_after_advance.Click += new System.EventHandler(this.lab_due_after_advance_Click);
+            //this.lab_due_after_advance.Click += new System.EventHandler(this.lab_due_after_advance_Click);
             // 
             // txt_4Digit
             // 
@@ -836,7 +836,7 @@
             this.txt_4Digit.Name = "txt_4Digit";
             this.txt_4Digit.Size = new System.Drawing.Size(60, 22);
             this.txt_4Digit.TabIndex = 6;
-            this.txt_4Digit.TextChanged += new System.EventHandler(this.txt_4Digit_TextChanged);
+            //this.txt_4Digit.TextChanged += new System.EventHandler(this.txt_4Digit_TextChanged);
             this.txt_4Digit.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_4Digit_KeyUp);
             // 
             // lab_total_payable
@@ -850,7 +850,7 @@
             this.lab_total_payable.TabIndex = 3;
             this.lab_total_payable.Text = "0.00";
             this.lab_total_payable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lab_total_payable.Click += new System.EventHandler(this.lab_total_payable_Click);
+            //this.lab_total_payable.Click += new System.EventHandler(this.lab_total_payable_Click);
             // 
             // label6
             // 
@@ -862,7 +862,7 @@
             this.label6.Size = new System.Drawing.Size(98, 13);
             this.label6.TabIndex = 1;
             this.label6.Text = "Available advance";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            //this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // Cmb_ModeOfPaymnt
             // 
@@ -900,7 +900,7 @@
             this.label9.Size = new System.Drawing.Size(99, 13);
             this.label9.TabIndex = 4;
             this.label9.Text = "Pay From Advance";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            //this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // txt_Number
             // 
@@ -911,7 +911,7 @@
             this.txt_Number.Name = "txt_Number";
             this.txt_Number.Size = new System.Drawing.Size(170, 22);
             this.txt_Number.TabIndex = 6;
-            this.txt_Number.TextChanged += new System.EventHandler(this.txt_Number_TextChanged);
+            //this.txt_Number.TextChanged += new System.EventHandler(this.txt_Number_TextChanged);
             // 
             // Bank
             // 
@@ -923,7 +923,7 @@
             this.Bank.Size = new System.Drawing.Size(33, 13);
             this.Bank.TabIndex = 7;
             this.Bank.Text = "Bank";
-            this.Bank.Click += new System.EventHandler(this.Bank_Click);
+            //this.Bank.Click += new System.EventHandler(this.Bank_Click);
             // 
             // panel_advanced_payment
             // 
@@ -938,7 +938,7 @@
             this.panel_advanced_payment.Name = "panel_advanced_payment";
             this.panel_advanced_payment.Size = new System.Drawing.Size(627, 133);
             this.panel_advanced_payment.TabIndex = 10;
-            this.panel_advanced_payment.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_advanced_payment_Paint);
+            //this.panel_advanced_payment.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_advanced_payment_Paint);
             // 
             // label18
             // 
@@ -950,7 +950,7 @@
             this.label18.Size = new System.Drawing.Size(296, 15);
             this.label18.TabIndex = 18;
             this.label18.Text = "Please Click \' INVOICE \' on Right side for New Payment";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
+            //this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label17
             // 
@@ -962,7 +962,7 @@
             this.label17.Size = new System.Drawing.Size(166, 25);
             this.label17.TabIndex = 17;
             this.label17.Text = "Advance Payment";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
+            //this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // txt_PayNow
             // 
@@ -972,7 +972,7 @@
             this.txt_PayNow.Name = "txt_PayNow";
             this.txt_PayNow.Size = new System.Drawing.Size(203, 25);
             this.txt_PayNow.TabIndex = 15;
-            this.txt_PayNow.TextChanged += new System.EventHandler(this.txt_PayNow_TextChanged);
+            //this.txt_PayNow.TextChanged += new System.EventHandler(this.txt_PayNow_TextChanged);
             this.txt_PayNow.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_PayNow_KeyPress);
             // 
             // label25
@@ -983,7 +983,7 @@
             this.label25.Size = new System.Drawing.Size(51, 13);
             this.label25.TabIndex = 15;
             this.label25.Text = "Pay Now";
-            this.label25.Click += new System.EventHandler(this.label25_Click);
+            //this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
             // Lab_ThiswillAdva_MSg
             // 
@@ -994,7 +994,7 @@
             this.Lab_ThiswillAdva_MSg.Size = new System.Drawing.Size(178, 13);
             this.Lab_ThiswillAdva_MSg.TabIndex = 3;
             this.Lab_ThiswillAdva_MSg.Text = "This will be an advanced Payment";
-            this.Lab_ThiswillAdva_MSg.Click += new System.EventHandler(this.Lab_ThiswillAdva_MSg_Click);
+            //this.Lab_ThiswillAdva_MSg.Click += new System.EventHandler(this.Lab_ThiswillAdva_MSg_Click);
             // 
             // label13
             // 
@@ -1006,7 +1006,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(1360, 1);
             this.label13.TabIndex = 77;
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            //this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // DGV_Invoice
             // 
@@ -1053,7 +1053,7 @@
             this.DGV_Invoice.Size = new System.Drawing.Size(464, 573);
             this.DGV_Invoice.TabIndex = 10;
             this.DGV_Invoice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Invoice_CellClick);
-            this.DGV_Invoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Invoice_CellContentClick);
+            //this.DGV_Invoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Invoice_CellContentClick);
             // 
             // Column7
             // 
@@ -1241,7 +1241,7 @@
             this.txt_ReceiptNo.ReadOnly = true;
             this.txt_ReceiptNo.Size = new System.Drawing.Size(207, 22);
             this.txt_ReceiptNo.TabIndex = 15;
-            this.txt_ReceiptNo.TextChanged += new System.EventHandler(this.txt_ReceiptNo_TextChanged);
+            //this.txt_ReceiptNo.TextChanged += new System.EventHandler(this.txt_ReceiptNo_TextChanged);
             // 
             // label28
             // 
@@ -1252,7 +1252,7 @@
             this.label28.Size = new System.Drawing.Size(66, 13);
             this.label28.TabIndex = 0;
             this.label28.Text = "Receipt No:";
-            this.label28.Click += new System.EventHandler(this.label28_Click);
+            //this.label28.Click += new System.EventHandler(this.label28_Click);
             // 
             // btn_PayPreService
             // 
@@ -1299,7 +1299,7 @@
             this.listpatientsearch.TabIndex = 82;
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
-            this.listpatientsearch.SelectedIndexChanged += new System.EventHandler(this.listpatientsearch_SelectedIndexChanged);
+            //this.listpatientsearch.SelectedIndexChanged += new System.EventHandler(this.listpatientsearch_SelectedIndexChanged);
             // 
             // Add_Receipt
             // 

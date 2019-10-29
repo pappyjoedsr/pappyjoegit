@@ -195,9 +195,13 @@ namespace PappyjoeMVC.View
                             }
                             else
                             {
+                                //stock = Convert.ToDecimal(dtb.Rows[i]["qty"].ToString());
+                                //item_rate1 = stock * Convert.ToDecimal(dtunit.Rows[0]["purch_rate"].ToString());
+                                //item_rate2 = stock * Convert.ToDecimal(dtunit.Rows[0]["purch_rate2"].ToString());
                                 if (Convert.ToDecimal(dtb.Rows[i]["qty"].ToString()) < Convert.ToDecimal(dtb_Min.Rows[0][0].ToString()))
                                 { 
                                     stock = Convert.ToDecimal(dtb.Rows[i]["qty"].ToString());
+                                    item_rate1 = stock * Convert.ToDecimal(dtunit.Rows[0]["purch_rate"].ToString());
                                     current_Stock = dtunit.Rows[0]["Unit1"].ToString() + " " + "=" + " " + Math.Floor(stock) + " Value:" + item_rate1.ToString("#.##");
                                     DGV_Stock.Rows.Add(num, dtb.Rows[i]["item_code"].ToString(), dtunit.Rows[0]["item_name"].ToString(), dtunit.Rows[0]["Unit1"].ToString(),current_Stock);
                                     DGV_Stock.Rows[i].DefaultCellStyle.ForeColor = Color.Red;
@@ -205,6 +209,7 @@ namespace PappyjoeMVC.View
                                 else
                                 {
                                     stock = Convert.ToDecimal(dtb.Rows[i]["qty"].ToString());
+                                    item_rate1 = stock * Convert.ToDecimal(dtunit.Rows[0]["purch_rate"].ToString());
                                     current_Stock = dtunit.Rows[0]["Unit1"].ToString() + " " + "=" + " " + Math.Floor(stock) + " Value:" + item_rate1.ToString("#.##");
                                     DGV_Stock.Rows.Add(num, dtb.Rows[i]["item_code"].ToString(), dtunit.Rows[0]["item_name"].ToString(), dtunit.Rows[0]["Unit1"].ToString(),current_Stock);
                                 }
@@ -728,24 +733,16 @@ namespace PappyjoeMVC.View
                 {
                     listpatientsearch.Visible = true;
                 }
-                listpatientsearch.Location = new Point(toolStripTextBox1.Width + 763, 30);
+                listpatientsearch.Location = new Point(toolStripTextBox1.Width + 763, 32);
             }
             else
             {
                 listpatientsearch.Visible = false;
             }
+
         }
 
-        private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
-        {
-            var form2 = new Patient_Profile_Details();
-            form2.doctor_id = doctor_id;
-            form2.patient_id = listpatientsearch.SelectedValue.ToString();
-            listpatientsearch.Visible = false;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.ShowDialog();
-        }
+       
 
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
@@ -761,7 +758,6 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Add_New_Patients();
                     form2.doctor_id = doctor_id;
-                    //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
@@ -771,7 +767,6 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new Add_New_Patients();
                 form2.doctor_id = doctor_id;
-                //Add_New_patient_controller controller = new Add_New_patient_controller(form2);
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
@@ -913,7 +908,16 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
         }
-
+        private void listpatientsearch_MouseClick_1(object sender, MouseEventArgs e)
+        {
+                var form2 = new Patient_Profile_Details();
+                form2.doctor_id = doctor_id;
+                form2.patient_id = listpatientsearch.SelectedValue.ToString();
+                listpatientsearch.Visible = false;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.ShowDialog();
+        }
         private void btn_purOrder_Click(object sender, EventArgs e)
         {
             backColor_Change();

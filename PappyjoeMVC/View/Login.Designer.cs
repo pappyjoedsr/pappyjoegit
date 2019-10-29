@@ -99,11 +99,11 @@
             // 
             this.Lab_version.AutoSize = true;
             this.Lab_version.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Lab_version.Location = new System.Drawing.Point(318, 104);
+            this.Lab_version.Location = new System.Drawing.Point(311, 104);
             this.Lab_version.Name = "Lab_version";
-            this.Lab_version.Size = new System.Drawing.Size(69, 13);
+            this.Lab_version.Size = new System.Drawing.Size(75, 13);
             this.Lab_version.TabIndex = 11;
-            this.Lab_version.Text = "Version 19.5";
+            this.Lab_version.Text = "Version 19.10";
             // 
             // Lab_InvalidLogin
             // 

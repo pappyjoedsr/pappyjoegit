@@ -73,11 +73,11 @@ namespace PappyjoeMVC.Model
         public void update_review(string date, int j_Review)
         {
             db.execute("UPDATE tbl_completed_id SET review='YES',Review_date='" + date + "' WHERE id='" + j_Review + "'");
-        }
+        } 
         public void update_review_No(string date, int j_Review)
         {
             db.execute("UPDATE tbl_completed_id SET review='NO' ,Review_date='" + date + "'  WHERE id='" + j_Review + "'");
-        }
+        }//"UPDATE tbl_completed_id SET review='NO' ,Review_date='" + dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm") + "'  WHERE id='" + j1 + "'");
         public DataTable get_completed_id_date(string patient_id)
         {
             DataTable dt_pt_main = db.table("SELECT id,completed_date FROM tbl_completed_id where patient_id='" + patient_id + "' ORDER BY completed_date DESC");

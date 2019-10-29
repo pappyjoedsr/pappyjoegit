@@ -12,12 +12,12 @@ namespace PappyjoeMVC.Model
         Connection db = new Connection();
         public DataTable search_patient(string search)
         {
-            DataTable dtdr = db.table("select pt_id,pt_name from tbl_patient where pt_name like '%" + search + "%'  ");
+            DataTable dtdr = db.table("select id,pt_name from tbl_patient where pt_name like '%" + search + "%'  ");
             return dtdr;
         }
         public DataTable patient_details(string value)
         {
-            DataTable patient = db.table("select id, pt_name,pt_id from tbl_patient where pt_id='" + value + "'");
+            DataTable patient = db.table("select id, pt_name,pt_id from tbl_patient where id='" + value + "'");
             return patient;
         }
         public DataTable search_procedure(string search)

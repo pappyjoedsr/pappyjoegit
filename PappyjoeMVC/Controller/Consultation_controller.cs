@@ -218,5 +218,10 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = model.get_patient_details(newptid);
             return dtb;
         }
+        public DataTable get_inventoryid(string id)
+        {
+            DataTable dtb = pmodel.get_inventoryid(id);
+            return dtb;
+        }
     }
 }

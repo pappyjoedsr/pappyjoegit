@@ -32,8 +32,6 @@ namespace PappyjoeMVC.View
         {
             try
             {
-
-
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
                 toolStripButton1.Text = this.cntrl.Load_CompanyName();
                 string docnam = this.cntrl.Get_DoctorName(doctor_id);
