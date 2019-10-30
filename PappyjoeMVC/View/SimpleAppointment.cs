@@ -1296,6 +1296,11 @@ namespace PappyjoeMVC.View
             this.Close();
         }
 
+        private void panl_Treatment_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btn_ClearAll_Click(object sender, EventArgs e)
         {
             btnAddNewPatient.Visible = false;

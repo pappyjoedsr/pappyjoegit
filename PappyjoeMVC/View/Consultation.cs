@@ -31,7 +31,7 @@ namespace PappyjoeMVC.View
             {
                 string value = lbPatient.SelectedValue.ToString();
                 DataTable patient = new DataTable();
-                patient = this.cntrl.patient_details(value);// db.table("select id, pt_name,pt_id from tbl_patient where id='" + value + "'");
+                patient = this.cntrl.patient_details(value);
                 if (patient.Rows.Count > 0)
                 {
                     txt_Pt_search.Text = patient.Rows[0]["pt_name"].ToString();
@@ -67,14 +67,14 @@ namespace PappyjoeMVC.View
             {
 
                 lst_procedure.Location = new Point(txt_procedure.Location.X, 171);
-                DataTable dtdr = this.cntrl.search_procedure(txt_procedure.Text);// db.table("select id,name from tbl_addproceduresettings where name like '%" + txt_procedure.Text + "%'  ");
+                DataTable dtdr = this.cntrl.search_procedure(txt_procedure.Text);
                 lst_procedure.DataSource = dtdr;
                 lst_procedure.DisplayMember = "name";
                 lst_procedure.ValueMember = "id";
             }
             else
             {
-                DataTable dtdr = this.cntrl.search_procedure(txt_procedure.Text);// db.table("select id,name from tbl_addproceduresettings where name like '%" + txt_procedure.Text + "%'  ");
+                DataTable dtdr = this.cntrl.search_procedure(txt_procedure.Text);
                 lst_procedure.DataSource = dtdr;
                 lst_procedure.DisplayMember = "name";
                 lst_procedure.ValueMember = "id";
@@ -93,7 +93,7 @@ namespace PappyjoeMVC.View
             {
                 string value = lst_procedure.SelectedValue.ToString();
                 DataTable procedure = new DataTable();
-                procedure = this.cntrl.procedure_details(value); // db.table("select id,name,cost from tbl_addproceduresettings where  id='" + value + "'");
+                procedure = this.cntrl.procedure_details(value); 
                 if (procedure.Rows.Count > 0)
                 {
                     txt_procedure.Text = procedure.Rows[0]["name"].ToString();
@@ -114,17 +114,15 @@ namespace PappyjoeMVC.View
                 if (txtPatientID.Text != "" && txt_procedure.Text != "")
                 {
                     int presid = 0;
-                    //prescription
-                    //prescription_check();
                     int d_id = Convert.ToInt32(cmbdoctor.SelectedValue.ToString());
                     string pres_id = cmb_prescription_temp.SelectedItem.GetType().GetProperty("Value").GetValue(cmb_prescription_temp.SelectedItem, null).ToString();
-                    DataTable dtb_prescription = this.cntrl.get_tempid(pres_id);// db.table("select * from tbl_templates_main where id='" + pres_id + "'");
+                    DataTable dtb_prescription = this.cntrl.get_tempid(pres_id);
                     if (dtb_prescription.Rows.Count > 0)
                     {
-                        DataTable dt_prs = this.cntrl.get_templateid(dtb_prescription.Rows[0]["id"].ToString());// db.table("select * from tbl_template where temp_id='" + dtb_prescription.Rows[0]["id"].ToString() + "'");
+                        DataTable dt_prs = this.cntrl.get_templateid(dtb_prescription.Rows[0]["id"].ToString());
                         prescription_check(dt_prs);
-                        this.cntrl.save_prescriptionMain(patient_id, d_id, Prescription_bill_status, txt_remarks.Text);// db.execute("insert into tbl_prescription_main (pt_id,dr_id,date,pay_status,notes) values('" + patient_id + "','" + d_id + "','" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "','" + Prescription_bill_status + "','" + txt_remarks.Text + "')");
-                        string dt = this.cntrl.max_presid();// db.table("select MAX(id) from tbl_prescription_main");
+                        this.cntrl.save_prescriptionMain(patient_id, d_id, Prescription_bill_status, txt_remarks.Text);
+                        string dt = this.cntrl.max_presid();
                         if (Convert.ToInt32(dt) > 0)
                         {
                             presid = Int32.Parse(dt);
@@ -137,17 +135,12 @@ namespace PappyjoeMVC.View
 
                         for (int i = 0; i < dt_prs.Rows.Count; i++)
                         {
-                            //if (dataGridView_drugnew[13, i].Value.ToString() != "")
-                            //{ strstatus = dataGridView_drugnew[13, i].Value.ToString(); }
                             this.cntrl.save_prescription(presid, patient_id, cmbdoctor.Text, d_id.ToString(), dt_prs.Rows[i]["drug_name"].ToString(), dt_prs.Rows[i]["strength"].ToString(), dt_prs.Rows[i]["strength_gr"].ToString(), dt_prs.Rows[i]["duration_period"].ToString(), dt_prs.Rows[i]["morning"].ToString(), dt_prs.Rows[i]["noon"].ToString(), dt_prs.Rows[i]["night"].ToString(), dt_prs.Rows[i]["food"].ToString(), dt_prs.Rows[i]["add_instruction"].ToString(), dt_prs.Rows[i]["drug_type"].ToString(), dt_prs.Rows[i]["status"].ToString(), dt_prs.Rows[i]["drug_id"].ToString());
-                            //db.table("insert into tbl_prescription (pres_id,pt_id,dr_name,dr_id,date,drug_name,strength,strength_gr,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,status,drug_id) values('" + presid + "','" + patient_id + "','" + cmbdoctor.Text + "','" + d_id + "','" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "','" + dt_prs.Rows[i]["drug_name"].ToString() + "','" + dt_prs.Rows[i]["strength"].ToString() + "','" + dt_prs.Rows[i]["strength_gr"].ToString() + "','','" + dt_prs.Rows[i]["duration_period"].ToString() + "','" + dt_prs.Rows[i]["morning"].ToString() + "','" + dt_prs.Rows[i]["noon"].ToString() + "','" + dt_prs.Rows[i]["night"].ToString() + "','" + dt_prs.Rows[i]["food"].ToString() + "','" + dt_prs.Rows[i]["add_instruction"].ToString() + "','" + dt_prs.Rows[i]["drug_type"].ToString() + "'," + dt_prs.Rows[i]["status"].ToString() + ",'" + dt_prs.Rows[i]["drug_id"].ToString() + "')");
                         }
                     }
-
-
                     //completed id
-                    this.cntrl.save_completedid(patient_id);// db.execute("insert into tbl_completed_id (completed_date,patient_id,review) values('" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "','" + patient_id + "','NO')");
-                    string dt_CMain = this.cntrl.max_completedid();// db.table("select MAX(id) from tbl_completed_id");
+                    this.cntrl.save_completedid(patient_id);
+                    string dt_CMain = this.cntrl.max_completedid();
                     int completed_id, j1 = 0;
                     try
                     {
@@ -167,15 +160,13 @@ namespace PappyjoeMVC.View
                         completed_id = 0;
                     }
                     j1 = completed_id;
-                    this.cntrl.save_completed_details(j1, patient_id, lst_procedure.SelectedValue.ToString(), txt_procedure.Text, txt_cost.Text, txt_cost.Text, txt_instruction.Text, cmbdoctor.SelectedValue.ToString());// db.execute("insert into tbl_completed_procedures (plan_main_id,pt_id,procedure_id,procedure_name,quantity,cost,discount_type,discount,total,discount_inrs,note,status,date,dr_id,completed_id,tooth) values('" + j1 + "','" + patient_id + "','" + lst_procedure.SelectedValue.ToString() + "','" + txt_procedure.Text + "','1','" + txt_cost.Text + "','INR','0','" + txt_cost.Text + "','0','" + txt_instruction.Text + "','0','" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "','" + cmbdoctor.SelectedValue.ToString() + "','0','')");
-
-                    string dt_Compl_proce = this.cntrl.max_completeProcedure();// db.table("select MAX(id) from tbl_completed_procedures");
+                    this.cntrl.save_completed_details(j1, patient_id, lst_procedure.SelectedValue.ToString(), txt_procedure.Text, txt_cost.Text, txt_cost.Text, txt_instruction.Text, cmbdoctor.SelectedValue.ToString());
+                    string dt_Compl_proce = this.cntrl.max_completeProcedure();
                     long completed_procedures_id = 0;
                     try
                     {
                         if (Int32.Parse(dt_Compl_proce) == 0)
                         {
-
                             completed_procedures_id = 1;
                         }
                         else
@@ -185,41 +176,37 @@ namespace PappyjoeMVC.View
                     }
                     catch
                     {
-
                         completed_procedures_id = 1;
                     }
-
                     //ReviewDate
                     if (checkBoxReview.Checked == true)
                     {
-                        this.cntrl.update_review(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), j1);// db.execute("UPDATE tbl_completed_id SET review='YES',Review_date='" + dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm") + "' WHERE id='" + j1 + "'");
+                        this.cntrl.update_review(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), j1);
 
-                        this.cntrl.update_prescription_review(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), presid);// db.execute("UPDATE tbl_prescription_main SET review='YES',Review_date='" + dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm") + "' WHERE id='" + presid + "'");
+                        this.cntrl.update_prescription_review(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), presid);
 
-                        DataTable dt_review = this.cntrl.get_reviewId(patient_id, dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"));// db.table("SELECT id FROM tbl_review where  pt_id='" + patient_id + "' and fix_datetime='" + DateTime.Now.ToString("yyyy-MM-dd") + "' and review_datetime='" + dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm") + "' ORDER BY id");
+                        DataTable dt_review = this.cntrl.get_reviewId(patient_id, dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"));
                         if (dt_review.Rows.Count == 0)
                         {
-                            this.cntrl.save_review(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), patient_id);// db.execute("insert into  tbl_review(fix_datetime,review_datetime,pt_id,status) values('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm") + "','" + patient_id + "','YES')");
+                            this.cntrl.save_review(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), patient_id);
                         }
                     }
                     else
                     {
-                        this.cntrl.update_review_No(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), j1);// db.execute("UPDATE tbl_completed_id SET review='NO' ,Review_date='" + dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm") + "'  WHERE id='" + j1 + "'");
-
-                        this.cntrl.update_prescription_review_NO(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), presid);// db.execute("UPDATE tbl_prescription_main SET review='NO',Review_date='" + dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm") + "'  WHERE id='" + presid + "'");
+                        this.cntrl.update_review_No(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), j1);
+                        this.cntrl.update_prescription_review_NO(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), presid);
                     }
                     string invoice = "";
                     DataTable invNo = null;
-                    invNo = this.cntrl.Get_invoice_prefix();// db.table("select invoice_prefix,invoice_number from tbl_invoice_automaticid where invoive_automation='Yes' ");
+                    invNo = this.cntrl.Get_invoice_prefix();
                     if (invNo.Rows.Count > 0)
                     {
                         invoice = invNo.Rows[0]["invoice_prefix"].ToString() + invNo.Rows[0]["invoice_number"].ToString();
                     }
-
                     decimal totalcost = 0;
                     totalcost = Convert.ToDecimal(txt_cost.Text) * 1;
-                    this.cntrl.save_invoice_main(patient_id, txt_Pt_search.Text, invoice);//  db.execute("insert into tbl_invoices_main (date,pt_id,pt_name,invoice,status,type) values('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + patient_id + "','" + txt_Pt_search.Text + "','" + invoice + "','0','service')");
-                    string dt1 = this.cntrl.get_invoiceMain_maxid();// db.table("select MAX(id) from tbl_invoices_main");
+                    this.cntrl.save_invoice_main(patient_id, txt_Pt_search.Text, invoice);
+                    string dt1 = this.cntrl.get_invoiceMain_maxid();
                     long Invoice_main_id = 0;
                     try
                     {
@@ -238,17 +225,14 @@ namespace PappyjoeMVC.View
 
                         Invoice_main_id = 1;
                     }
-                    this.cntrl.save_invoice_details(invoice, txt_Pt_search.Text, patient_id, lst_procedure.SelectedValue.ToString(), txt_procedure.Text, txt_cost.Text, txt_cost.Text, cmbdoctor.SelectedValue.ToString(), Invoice_main_id, completed_procedures_id);//  db.execute("insert into tbl_invoices(invoice_no,pt_name,pt_id,service_id,services,unit,cost,discount,discount_type,total,date,total_cost,total_discount,dr_id,discountin_rs,total_payment,invoice_main_id,tax_inrs,tax,total_tax,grant_total,plan_id,completed_id,notes) values('" + invoice + "','" + txt_Pt_search.Text + "','" + patient_id + "','" + lst_procedure.SelectedValue.ToString() + "','" + txt_procedure.Text + "','1','" + txt_cost.Text + "','0','INR','" + txt_cost.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','100','','" + cmbdoctor.SelectedValue.ToString() + "','','100','" + Invoice_main_id + "','0','NA','0','100','0','" + completed_procedures_id + "','')");
-
-                    string invoauto = this.cntrl.get_invoicenumber();// db.table("select invoice_number from tbl_invoice_automaticid");
+                    this.cntrl.save_invoice_details(invoice, txt_Pt_search.Text, patient_id, lst_procedure.SelectedValue.ToString(), txt_procedure.Text, txt_cost.Text, txt_cost.Text, cmbdoctor.SelectedValue.ToString(), Invoice_main_id, completed_procedures_id);
+                    string invoauto = this.cntrl.get_invoicenumber();
                     int invoautoup = int.Parse(invoauto) + 1;
-                    this.cntrl.update_invnumber(invoautoup);// db.execute("update tbl_invoice_automaticid set invoice_number='" + invoautoup + "'");
+                    this.cntrl.update_invnumber(invoautoup);
                     //payment
-                    DataTable rec_receipt = this.cntrl.receipt_number();// db.table("select receipt_number,receipt_prefix from tbl_receipt_automationid where receipt_automation='Yes'");
+                    DataTable rec_receipt = this.cntrl.receipt_number();
                     receipt = rec_receipt.Rows[0]["receipt_prefix"].ToString() + rec_receipt.Rows[0]["receipt_number"].ToString();
-
-
-                    DataTable cmd22 = this.cntrl.Get_Advance(patient_id);// db.table("select advance from tbl_payment where pt_id='" + patient_id + "'");
+                    DataTable cmd22 = this.cntrl.Get_Advance(patient_id);
                     decimal advance = 0;
                     if (cmd22.Rows.Count > 0)
                     {
@@ -269,12 +253,9 @@ namespace PappyjoeMVC.View
                             advance = decimal.Parse(cmd22.Rows[0]["advance"].ToString());
                         }
                     }
-
-                    this.cntrl.save_receipt(receipt, advance, txt_cost.Text, invoice, txt_procedure.Text, patient_id, cmbdoctor.SelectedValue.ToString(), txt_cost.Text, txt_Pt_search.Text, Invoice_main_id);// db.execute("insert into tbl_payment(receipt_no,advance,amount_paid,invoice_no,procedure_name,pt_id,payment_date,dr_id,total,cost,pt_name,mode_of_payment,payment_due)values('" + receipt + "','"+ advance +"','" + txt_cost.Text + "','" + invoice + "','" + txt_procedure.Text + "','" + patient_id + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + cmbdoctor.SelectedValue.ToString() + "','" + txt_cost.Text + "','" + txt_cost.Text + "','" + txt_Pt_search.Text + "','Cash','" + Invoice_main_id + "')");
-                    //}
-                    string rec = this.cntrl.receipt_autoid();// db.table("select receipt_number from tbl_receipt_automationid");
+                    this.cntrl.save_receipt(receipt, advance, txt_cost.Text, invoice, txt_procedure.Text, patient_id, cmbdoctor.SelectedValue.ToString(), txt_cost.Text, txt_Pt_search.Text, Invoice_main_id);                    string rec = this.cntrl.receipt_autoid();
                     int receip = int.Parse(rec) + 1;
-                    this.cntrl.update_receiptAutoid(receip);// db.execute("update tbl_receipt_automationid set receipt_number='" + receip + "'");
+                    this.cntrl.update_receiptAutoid(receip);
                     DialogResult print_yesno = System.Windows.Forms.DialogResult.No;
                     print_yesno = MessageBox.Show("Data saved successfully... Do you want a print..??", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (print_yesno == System.Windows.Forms.DialogResult.Yes)
@@ -313,8 +294,8 @@ namespace PappyjoeMVC.View
             try
             {
 
-                System.Data.DataTable dtp = this.cntrl.get_company_details();// db.table("select * from tbl_practice_details");
-                System.Data.DataTable dt1 = this.cntrl.Get_Patient_Details(patient_id);// db.table("select * from tbl_patient where id='" + patient_id + "'");
+                System.Data.DataTable dtp = this.cntrl.get_company_details();
+                System.Data.DataTable dt1 = this.cntrl.Get_Patient_Details(patient_id);
                 string clinicn = "";
                 string Clinic = "";
                 clinicn = dtp.Rows[0][1].ToString();
@@ -326,7 +307,7 @@ namespace PappyjoeMVC.View
                 string str_pincode = "";
                 string str_email = "";
                 string str_website = "";
-                string doctor = this.cntrl.Get_DoctorName(doctor_id.ToString());// db.table("select doctor_name from tbl_doctor where id= '" + doctor_id.ToString() + "'");
+                string doctor = this.cntrl.Get_DoctorName(doctor_id.ToString());
                 if (doctor != "")
                 {
                     doctorName = doctor;
@@ -346,7 +327,7 @@ namespace PappyjoeMVC.View
                 string header1 = "";
                 string header2 = "";
                 string header3 = "";
-                System.Data.DataTable print = this.cntrl.get_receipt_print_setting();// db.table("select header,left_text,right_text,fullwidth_context,left_sign,right_sign,include_header,include_logo from  tbl_receipt_printsettings");
+                System.Data.DataTable print = this.cntrl.get_receipt_print_setting();
                 if (print.Rows.Count > 0)
                 {
                     header1 = print.Rows[0]["header"].ToString();
@@ -361,7 +342,7 @@ namespace PappyjoeMVC.View
 
                 payment_date = DateTime.Now.Date.ToString("yyyy-MM-dd");
                 string Apppath = System.IO.Directory.GetCurrentDirectory();
-                StreamWriter sWrite = new StreamWriter(Apppath + "\\p.html");
+                StreamWriter sWrite = new StreamWriter(Apppath + "\\consultation.html");
                 sWrite.WriteLine("<html>");
                 sWrite.WriteLine("<head>");
                 sWrite.WriteLine("</head>");
@@ -376,7 +357,7 @@ namespace PappyjoeMVC.View
                         {
                             string curFile = this.cntrl.server() + "\\Pappyjoe_utilities\\Logo\\" + logo_name;
 
-                            if (System.IO.File.Exists(curFile))// if (File.Exists(Appath + "\\" + logo_name))
+                            if (System.IO.File.Exists(curFile))
                             {
                                 sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                                 sWrite.WriteLine("<tr>");
@@ -405,9 +386,7 @@ namespace PappyjoeMVC.View
                             sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
                             sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;&nbsp;" + header2 + "</font></td></tr>");
                             sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" + header3 + "</font></td></tr>");
-
                             sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
-
                             sWrite.WriteLine("</table>");
                         }
                     }
@@ -418,9 +397,7 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
                         sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;&nbsp;" + header2 + "</font></td></tr>");
                         sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" + header3 + "</font></td></tr>");
-
                         sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
-
                         sWrite.WriteLine("</table>");
                     }
                 }
@@ -432,10 +409,8 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3></font></td></tr>");
                     sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td></tr>");
                     sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
-
                     sWrite.WriteLine("</table>");
                 }
-
                 string sexage = "";
                 int Dexist = 0;
                 string address = "";
@@ -501,7 +476,6 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>" + address + " </font></td>");
                     sWrite.WriteLine(" </tr>");
                 }
-
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>" + dt1.Rows[0]["primary_mobile_number"].ToString() + " </font></td>");
                 sWrite.WriteLine(" </tr>");
@@ -513,9 +487,7 @@ namespace PappyjoeMVC.View
                 }
                 sWrite.WriteLine("<tr><td colspan=2><hr></td></tr>");
                 sWrite.WriteLine("</table>");
-                //string strsql = "";
-                //    strsql = "select * from tbl_payment where payment_date='" + payment_date + "' and pt_id='" + patient_id + "' and receipt_no='" + receipt + "'";
-                System.Data.DataTable dt_cf = this.cntrl.get_payment_details(payment_date, patient_id, receipt);// db.table(strsql);
+                System.Data.DataTable dt_cf = this.cntrl.get_payment_details(payment_date, patient_id, receipt);
                 var dateTimeNow = DateTime.Now;
                 var tdate = dateTimeNow.ToShortDateString();
                 if (dt_cf.Rows.Count > 0)
@@ -529,7 +501,6 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td><FONT COLOR=black FACE='Geneva, Arial' SIZE=5>Payment</FONT></td>");
                     sWrite.WriteLine("<td width=450px></td>");
-
                     {
                         sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2> <FONT COLOR=black>Date : </FONT>" + Convert.ToDateTime(tdate).ToString("dd MMM yyyy") + "</font></td>");
                     }
@@ -543,10 +514,7 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<td width='259' align='left' bgcolor='#dcdcdc'><FONT COLOR=black FACE='Geneva, Arial' SIZE=3>Procedure Name</font></td>");
                     sWrite.WriteLine("<td width='99' align='right' bgcolor='#dcdcdc'><FONT COLOR=black FACE='Geneva, Arial' SIZE=3>Amount Paid</font></td>");
                     sWrite.WriteLine("</tr>");
-                    //strsql = "";
-                    //strsql = "select receipt_no,amount_paid,invoice_no,procedure_name,payment_date from tbl_payment where payment_date='" + payment_date + "' and pt_id='" + patient_id + "' and receipt_no='" + receipt + "' order by payment_date";
-
-                    System.Data.DataTable dt_payment = this.cntrl.get_receipt_details(payment_date, patient_id, receipt);// db.table(strsql);
+                    System.Data.DataTable dt_payment = this.cntrl.get_receipt_details(payment_date, patient_id, receipt);
                     decimal total = 0;
                     for (int i = 0; i < dt_payment.Rows.Count; i++)
                     {
@@ -582,12 +550,11 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("<td align='center' height='22'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + strfooter3 + "</font></td>");
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("</table>");
-
                 sWrite.WriteLine("<script>window.print();</script>");
                 sWrite.WriteLine("</body>");
                 sWrite.WriteLine("</html>");
                 sWrite.Close();
-                System.Diagnostics.Process.Start(Apppath + "\\p.html");
+                System.Diagnostics.Process.Start(Apppath + "\\consultation.html");
             }
             catch (Exception ex)
             {
@@ -597,7 +564,7 @@ namespace PappyjoeMVC.View
         public void Consultation_load()
         {
             DataTable procedure = new DataTable();
-            procedure = this.cntrl.get_procedure();// db.table("select id,name,cost from tbl_addproceduresettings where  LOWER(name)='consultation'");
+            procedure = this.cntrl.get_procedure();
             if (procedure.Rows.Count > 0)
             {
                 txt_procedure.Text = procedure.Rows[0]["name"].ToString();
@@ -605,7 +572,7 @@ namespace PappyjoeMVC.View
                 lst_procedure.Visible = false;
             }
         }
-        public void prescription_check(DataTable dtb)//aswini
+        public void prescription_check(DataTable dtb)
         {
             try
             {
@@ -614,7 +581,7 @@ namespace PappyjoeMVC.View
                     int count = dtb.Rows.Count;
                     for (int i = 0; i < count; i++)
                     {
-                        DataTable dt4 = this.cntrl.get_inventoryid(dtb.Rows[i]["drug_id"].ToString());// db.table("select id,inventory_id from tbl_adddrug where id='" + dtb.Rows[i]["drug_id"].ToString() + "' and inventory_id<>0 ORDER BY id DESC");
+                        DataTable dt4 = this.cntrl.get_inventoryid(dtb.Rows[i]["drug_id"].ToString());
                         if (dt4.Rows.Count > 0)
                         {
                             Prescription_bill_status = "Yes";
@@ -637,12 +604,11 @@ namespace PappyjoeMVC.View
             if (newptid != "")
             {
                 flag = true;
-                DataTable dtb = this.cntrl.get_patient_details(newptid);// db.table("select id,pt_id,pt_name from tbl_patient where id='"+ newptid + "'");
+                DataTable dtb = this.cntrl.get_patient_details(newptid);
                 txtPatientID.Text = dtb.Rows[0]["pt_id"].ToString();
                 txt_Pt_search.Text = dtb.Rows[0]["pt_name"].ToString();
                 patient_id = dtb.Rows[0]["id"].ToString();
             }
-            //form2.Closed += (sender1, args) => this.Close();
             flag = false;
         }
 
@@ -782,7 +748,7 @@ namespace PappyjoeMVC.View
                 {
                     string value = lbPatient.SelectedValue.ToString();
                     DataTable patient = new DataTable();
-                    patient = this.cntrl.get_patient_details(value);// db.table("select id, pt_name,pt_id from tbl_patient where id='" + value + "'");
+                    patient = this.cntrl.get_patient_details(value);
                     if (patient.Rows.Count > 0)
                     {
                         txt_Pt_search.Text = patient.Rows[0]["pt_name"].ToString();
@@ -803,7 +769,7 @@ namespace PappyjoeMVC.View
                 {
                     string value = lbPatient.SelectedValue.ToString();
                     DataTable patient = new DataTable();
-                    patient = this.cntrl.get_patient_details(value);// db.table("select id, pt_name,pt_id from tbl_patient where id='" + value + "'");
+                    patient = this.cntrl.get_patient_details(value);
                     if (patient.Rows.Count > 0)
                     {
                         txt_Pt_search.Text = patient.Rows[0]["pt_name"].ToString();
@@ -829,7 +795,7 @@ namespace PappyjoeMVC.View
                 {
                     string value = lst_procedure.SelectedValue.ToString();
                     DataTable procedure = new DataTable();
-                    procedure = this.cntrl.procedure_details(value);// db.table("select id,name,cost from tbl_addproceduresettings where  id='" + value + "'");
+                    procedure = this.cntrl.procedure_details(value);
                     if (procedure.Rows.Count > 0)
                     {
                         txt_procedure.Text = procedure.Rows[0]["name"].ToString();
@@ -849,7 +815,7 @@ namespace PappyjoeMVC.View
                 {
                     string value = lst_procedure.SelectedValue.ToString();
                     DataTable procedure = new DataTable();
-                    procedure = this.cntrl.procedure_details(value);// db.table("select id,name,cost from tbl_addproceduresettings where  id='" + value + "'");
+                    procedure = this.cntrl.procedure_details(value);
                     if (procedure.Rows.Count > 0)
                     {
                         txt_procedure.Text = procedure.Rows[0]["name"].ToString();
@@ -866,16 +832,15 @@ namespace PappyjoeMVC.View
             {
                 if (txt_Pt_search.Text != "")
                 {
-                    // lbPatient.Show();
                     lbPatient.Location = new Point(txt_Pt_search.Location.X, 49);
-                    DataTable dtdr = this.cntrl.search_patient(txt_Pt_search.Text);// db.table("select id,pt_name from tbl_patient where pt_name like '%" + txt_Pt_search.Text + "%'  ");
+                    DataTable dtdr = this.cntrl.search_patient(txt_Pt_search.Text);
                     lbPatient.DataSource = dtdr;
                     lbPatient.DisplayMember = "pt_name";
                     lbPatient.ValueMember = "id";
                 }
                 else
                 {
-                    DataTable dtdr = this.cntrl.search_patient(txt_Pt_search.Text);// db.table("select id,pt_name from tbl_patient where pt_name like '%" + txt_Pt_search.Text + "%'  ");
+                    DataTable dtdr = this.cntrl.search_patient(txt_Pt_search.Text);
                     lbPatient.DataSource = dtdr;
                     lbPatient.DisplayMember = "pt_name";
                     lbPatient.ValueMember = "id";
@@ -903,11 +868,7 @@ namespace PappyjoeMVC.View
         }
         private void Consultation_Load(object sender, EventArgs e)
         {
-            DataTable dtb_prescription = this.cntrl.Load_temlate();// db.table("select * from tbl_templates_main order by id");
-                                                                   // cmb_prescription_temp.DataSource = dtb_prescription;
-                                                                   //cmb_prescription_temp.ValueMember = "id";
-                                                                   //cmb_prescription_temp.DisplayMember = "templates";
-                                                                   //cmb_prescription_temp.Items.Insert(0, "-Select-");
+            DataTable dtb_prescription = this.cntrl.Load_temlate();
             cmb_prescription_temp.DisplayMember = "Text";
             cmb_prescription_temp.ValueMember = "Value";
             cmb_prescription_temp.Items.Add(new { Text = "-Select-", Value = 0 });
@@ -921,14 +882,14 @@ namespace PappyjoeMVC.View
             }
             cmb_prescription_temp.SelectedIndex = 0;
 
-            DataTable dt = this.cntrl.Load_doctor();// db.table("select DISTINCT id,doctor_name from tbl_doctor  where login_type='doctor' or login_type='admin' order by doctor_name");
+            DataTable dt = this.cntrl.Load_doctor();
             if (dt.Rows.Count > 0)
             {
                 cmbdoctor.DataSource = dt;
                 cmbdoctor.DisplayMember = "doctor_name";
                 cmbdoctor.ValueMember = "id";
 
-                DataTable dt_doctor = this.cntrl.Load_dctrname(doctor_id);// db.table("select id,doctor_name from tbl_doctor  where id='" + doctor_id + "'");
+                DataTable dt_doctor = this.cntrl.Load_dctrname(doctor_id);
                 if (dt_doctor.Rows.Count > 0)
                 {
 

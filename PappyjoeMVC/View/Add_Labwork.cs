@@ -273,22 +273,22 @@ namespace PappyjoeMVC.View
             if (TTP_SearchText.Text != "")
             {
                 DataTable dtdr = this.ctrlr.Patient_search(TTP_SearchText.Text);
-                listpatientsearch.DataSource = dtdr;
-                listpatientsearch.DisplayMember = "patient";
-                listpatientsearch.ValueMember = "id";
-                if (listpatientsearch.Items.Count == 0)
+                listBox1.DataSource = dtdr;
+                listBox1.DisplayMember = "patient";
+                listBox1.ValueMember = "id";
+                if (listBox1.Items.Count == 0)
                 {
-                    listpatientsearch.Visible = false;
+                    listBox1.Visible = false;
                 }
                 else
                 {
-                    listpatientsearch.Visible = true;
+                    listBox1.Visible = true;
                 }
-                listpatientsearch.Location = new Point(toolStrip1.Width - 350, 32);
+                listBox1.Location = new Point(toolStrip1.Width - 350, 32);
             }
             else
             {
-                listpatientsearch.Visible = false;
+                listBox1.Visible = false;
             }
         }
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
@@ -639,8 +639,8 @@ namespace PappyjoeMVC.View
         {
             var form2 = new Patient_Profile_Details();
             form2.doctor_id = doctor_id;
-            form2.patient_id = listpatientsearch.SelectedValue.ToString();
-            listpatientsearch.Visible = false;
+            form2.patient_id = listBox1.SelectedValue.ToString();
+            listBox1.Visible = false;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();

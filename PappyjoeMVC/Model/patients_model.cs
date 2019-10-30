@@ -194,5 +194,20 @@ namespace PappyjoeMVC.Model
             string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='INVENTORY' and Permission='A'");
             return id;
         }
+        public DataTable sms_details()
+        {
+            DataTable sms = db.table("select smsName,smsPass,emailName,emailPass from tbl_SmsEmailConfig");
+            return sms;
+        }
+        public DataTable doctor_details()
+        {
+            DataTable str_sql =db.table( "SELECT id,doctor_name,mobile_number,email_id FROM tbl_doctor   where activate_login='yes'");
+            return str_sql;
+        }
+        public DataTable get_reminder_sms_details(DateTime startDateTime, DateTime startDateTime1,string dr_id)
+        {
+            DataTable sqlstring =db.table( "SELECT id,pt_name,start_datetime,plan_New_procedure ,status,EHR_status,start_datetime FROM tbl_appointment where start_datetime between  '" + Convert.ToDateTime(startDateTime).ToString("yyyy-MM-dd HH:mm") + "' AND '" + Convert.ToDateTime(startDateTime1).ToString("yyyy-MM-dd HH:mm") + "' AND dr_id='" + dr_id + "' ORDER BY start_datetime");
+            return sqlstring;
+        }
     }
 }

@@ -4071,7 +4071,7 @@ namespace PappyjoeMVC.View
                 {
                     panel5.Visible = true;
                 }
-                panel5.Location = new Point(toolStrip1.Width - 350, 32);
+                panel5.Location = new Point(toolStrip1.Width - 365, 32);
             }
             else
             {
