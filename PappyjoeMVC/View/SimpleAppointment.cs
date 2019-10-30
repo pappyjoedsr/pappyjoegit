@@ -1131,7 +1131,6 @@ namespace PappyjoeMVC.View
             }
             else
             {
-
                 if (Convert.ToDouble(lab_Total.Text.Trim()) >= 0)
                 {
                     dgv_treatment.Rows.Add(Lab_TreatId.Text, procedure_item.Text, NMUP_Unit.Text, Lab_Cost.Text, txt_Discount.Text, CMB_Discount.Text, discounttotal, Cmb_tax.Text, taxrstotal, lab_Total.Text, PappyjoeMVC.Properties.Resources.deleteicon);
@@ -1145,21 +1144,18 @@ namespace PappyjoeMVC.View
                     Lab_DisInrs.Text = String.Format("{0:C0}", Grand_Discount);
                     Lab_TotalTax.Text = String.Format("{0:C0}", Total_tax);
                     panl_Treatment.Visible = false;
-
                     txt_Discount.Clear();
                     CMB_Discount.Text = "";
                     Cmb_tax.Text = "";
                     txt_Discount.Hide();
                     CMB_Discount.Hide();
                     Cmb_tax.Hide();
-
                     lab_AddDiscount.Show();
                     lab_AddTax.Show();
                     NMUP_Unit.Text = "1";
                     CMB_Discount.Text = "INR";
                     txt_Discount.Text = "0";
                     Cmb_tax.Text = "NA";
-
                 }
                 else
                 {

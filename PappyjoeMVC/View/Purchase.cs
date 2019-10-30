@@ -1868,8 +1868,8 @@ namespace PappyjoeMVC.View
                             dgvItemData.Rows[i].Cells["gst"].Value = "0";
                             dgvItemData.Rows[i].Cells["igst"].Value = "0";
                             dgvItemData.Rows[i].Cells["free"].Value = "0";
-                            dgvItemData.Rows[i].Cells["Unit_Cost"].Value =  dt.Rows[i]["UnitCost"].ToString();
-                            dgvItemData.Rows[i].Cells["Amount"].Value = "0.00";// dt.Rows[i]["Amount"].ToString();
+                            dgvItemData.Rows[i].Cells["Unit_Cost"].Value = dt.Rows[i]["UnitCost"].ToString();
+                            dgvItemData.Rows[i].Cells["Amount"].Value = "0.00";
                             dgvItemData.Rows[i].Cells["amt"].Value = dt.Rows[i]["Amount"].ToString();
                             total = Convert.ToDecimal(dt.Rows[i]["Amount"].ToString());
                             total1 = total1 + total;
