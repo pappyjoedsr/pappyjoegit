@@ -114,6 +114,7 @@ namespace PappyjoeMVC.View
 
         private void frmstockReport_Load(object sender, EventArgs e)
         {
+            listpatientsearch.BringToFront();
             panel_main.Hide(); Lab_Msg.Visible = false;
             btn_Stock.BackColor = Color.SteelBlue;
             toolStripButton5.BackColor = Color.SkyBlue;

@@ -1719,8 +1719,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1370, 749);
-            this.Controls.Add(this.panel14);
             this.Controls.Add(this.listpatientsearch);
+            this.Controls.Add(this.panel14);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel12);
