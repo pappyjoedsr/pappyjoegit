@@ -355,9 +355,8 @@ namespace PappyjoeMVC.View
                     {
                         if (logo != null || logo_name != "")
                         {
-                            string curFile = this.cntrl.server() + "\\Pappyjoe_utilities\\Logo\\" + logo_name;
-
-                            if (System.IO.File.Exists(curFile))
+                            string curFile = this.cntrl.server() + "\\Pappyjoe_utilities\\Logo\\" ;
+                            if (System.IO.File.Exists(curFile+ logo_name))
                             {
                                 sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                                 sWrite.WriteLine("<tr>");
