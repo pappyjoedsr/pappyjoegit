@@ -46,8 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.dgv_Purchase = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.colslNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPurNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPurchDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +54,8 @@
             this.colTotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colmore = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Purchase)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -283,41 +283,6 @@
             this.dgv_Purchase.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Purchase_CellClick);
             this.dgv_Purchase.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgv_Purchase_MouseDoubleClick);
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.Lab_Msg);
-            this.panel2.Controls.Add(this.dgv_Purchase);
-            this.panel2.Location = new System.Drawing.Point(2, 96);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(960, 464);
-            this.panel2.TabIndex = 5;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnexport);
-            this.panel1.Controls.Add(this.BtnShow);
-            this.panel1.Controls.Add(this.btn_Refresh);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.label41);
-            this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.btnPayment);
-            this.panel1.Controls.Add(this.rad_Credit);
-            this.panel1.Controls.Add(this.rad_Cash);
-            this.panel1.Controls.Add(this.DTP_To);
-            this.panel1.Controls.Add(this.DTP_From);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(1, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(967, 87);
-            this.panel1.TabIndex = 4;
-            // 
             // colslNo
             // 
             this.colslNo.FillWeight = 87.59729F;
@@ -374,6 +339,41 @@
             this.colmore.Image = global::PappyjoeMVC.Properties.Resources.lab_icon;
             this.colmore.Name = "colmore";
             this.colmore.ReadOnly = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.Lab_Msg);
+            this.panel2.Controls.Add(this.dgv_Purchase);
+            this.panel2.Location = new System.Drawing.Point(2, 96);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(960, 464);
+            this.panel2.TabIndex = 5;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnexport);
+            this.panel1.Controls.Add(this.BtnShow);
+            this.panel1.Controls.Add(this.btn_Refresh);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.label41);
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.btnPayment);
+            this.panel1.Controls.Add(this.rad_Credit);
+            this.panel1.Controls.Add(this.rad_Cash);
+            this.panel1.Controls.Add(this.DTP_To);
+            this.panel1.Controls.Add(this.DTP_From);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(1, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(967, 87);
+            this.panel1.TabIndex = 4;
             // 
             // PurchaseList
             // 

@@ -639,7 +639,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SimpleAppointment_Template";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Simple Appointment Template";
+            this.Text = "Fast Track Template";
             this.Load += new System.EventHandler(this.SimpleAppointment_Template_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

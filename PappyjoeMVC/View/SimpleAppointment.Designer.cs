@@ -412,7 +412,7 @@
             this.Panl_Prescrption.Controls.Add(this.label39);
             this.Panl_Prescrption.Controls.Add(this.label40);
             this.Panl_Prescrption.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Panl_Prescrption.Location = new System.Drawing.Point(1, 572);
+            this.Panl_Prescrption.Location = new System.Drawing.Point(1, 571);
             this.Panl_Prescrption.Name = "Panl_Prescrption";
             this.Panl_Prescrption.Size = new System.Drawing.Size(796, 124);
             this.Panl_Prescrption.TabIndex = 363;
@@ -703,9 +703,9 @@
             this.groupBox6.Controls.Add(this.label30);
             this.groupBox6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.groupBox6.Location = new System.Drawing.Point(796, 146);
+            this.groupBox6.Location = new System.Drawing.Point(805, 146);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(337, 272);
+            this.groupBox6.Size = new System.Drawing.Size(331, 272);
             this.groupBox6.TabIndex = 400;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Clinical Findings";
@@ -744,7 +744,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_fillNotes.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_fillNotes.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgv_fillNotes.Location = new System.Drawing.Point(10, 216);
+            this.dgv_fillNotes.Location = new System.Drawing.Point(6, 216);
             this.dgv_fillNotes.Name = "dgv_fillNotes";
             this.dgv_fillNotes.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -802,7 +802,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dhv_fillDiagnosis.DefaultCellStyle = dataGridViewCellStyle4;
             this.dhv_fillDiagnosis.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dhv_fillDiagnosis.Location = new System.Drawing.Point(10, 130);
+            this.dhv_fillDiagnosis.Location = new System.Drawing.Point(6, 130);
             this.dhv_fillDiagnosis.Name = "dhv_fillDiagnosis";
             this.dhv_fillDiagnosis.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -886,7 +886,7 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_fillComplaints.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_fillComplaints.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgv_fillComplaints.Location = new System.Drawing.Point(10, 45);
+            this.dgv_fillComplaints.Location = new System.Drawing.Point(7, 44);
             this.dgv_fillComplaints.Name = "dgv_fillComplaints";
             this.dgv_fillComplaints.ReadOnly = true;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -927,7 +927,7 @@
             this.panel25.BackColor = System.Drawing.Color.DarkGray;
             this.panel25.Location = new System.Drawing.Point(0, 185);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(320, 1);
+            this.panel25.Size = new System.Drawing.Size(330, 1);
             this.panel25.TabIndex = 401;
             // 
             // panel24
@@ -935,7 +935,7 @@
             this.panel24.BackColor = System.Drawing.Color.DarkGray;
             this.panel24.Location = new System.Drawing.Point(1, 100);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(320, 1);
+            this.panel24.Size = new System.Drawing.Size(330, 1);
             this.panel24.TabIndex = 400;
             // 
             // label32
@@ -1308,9 +1308,9 @@
             this.groupBox8.Controls.Add(this.label33);
             this.groupBox8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.groupBox8.Location = new System.Drawing.Point(795, 425);
+            this.groupBox8.Location = new System.Drawing.Point(801, 425);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(338, 136);
+            this.groupBox8.Size = new System.Drawing.Size(335, 136);
             this.groupBox8.TabIndex = 403;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Treatment";
@@ -1416,9 +1416,9 @@
             this.groupBox7.Controls.Add(this.linkLabel1);
             this.groupBox7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.groupBox7.Location = new System.Drawing.Point(794, 578);
+            this.groupBox7.Location = new System.Drawing.Point(803, 576);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(339, 116);
+            this.groupBox7.Size = new System.Drawing.Size(334, 116);
             this.groupBox7.TabIndex = 401;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Prescription";
@@ -1505,7 +1505,7 @@
             dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_fillPrescription.DefaultCellStyle = dataGridViewCellStyle25;
             this.dgv_fillPrescription.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgv_fillPrescription.Location = new System.Drawing.Point(10, 60);
+            this.dgv_fillPrescription.Location = new System.Drawing.Point(6, 60);
             this.dgv_fillPrescription.Name = "dgv_fillPrescription";
             this.dgv_fillPrescription.ReadOnly = true;
             dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1624,7 +1624,7 @@
             // 
             this.panel23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel23.BackColor = System.Drawing.Color.DimGray;
-            this.panel23.Location = new System.Drawing.Point(802, 637);
+            this.panel23.Location = new System.Drawing.Point(799, 564);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(1, 134);
             this.panel23.TabIndex = 402;
@@ -1644,19 +1644,17 @@
             // 
             this.panel22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel22.BackColor = System.Drawing.Color.DimGray;
-            this.panel22.Location = new System.Drawing.Point(802, 488);
+            this.panel22.Location = new System.Drawing.Point(799, 417);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(1, 150);
+            this.panel22.Size = new System.Drawing.Size(1, 147);
             this.panel22.TabIndex = 401;
             // 
             // panel21
             // 
-            this.panel21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel21.BackColor = System.Drawing.Color.DimGray;
-            this.panel21.Location = new System.Drawing.Point(802, 142);
+            this.panel21.Location = new System.Drawing.Point(799, 141);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(1, 350);
+            this.panel21.Size = new System.Drawing.Size(1, 278);
             this.panel21.TabIndex = 399;
             // 
             // btn_Close
@@ -1692,7 +1690,7 @@
             this.panel4.BackColor = System.Drawing.Color.DimGray;
             this.panel4.Location = new System.Drawing.Point(-1, 567);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1138, 1);
+            this.panel4.Size = new System.Drawing.Size(1140, 1);
             this.panel4.TabIndex = 348;
             // 
             // btn_Add
@@ -1927,6 +1925,7 @@
             this.panl_Treatment.Size = new System.Drawing.Size(793, 116);
             this.panl_Treatment.TabIndex = 401;
             this.panl_Treatment.Visible = false;
+            this.panl_Treatment.Paint += new System.Windows.Forms.PaintEventHandler(this.panl_Treatment_Paint);
             // 
             // Lab_Cost
             // 
@@ -3076,7 +3075,7 @@
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SimpleAppointment";
-            this.Text = "Simple Appointment";
+            this.Text = "Fast Track Window";
             this.Load += new System.EventHandler(this.SimpleAppointment_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

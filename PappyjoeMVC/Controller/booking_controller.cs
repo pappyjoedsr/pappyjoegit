@@ -105,7 +105,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable clinicdetails()
         {
-            DataTable dtb = addmodel.clinicdetails();
+            DataTable dtb = cmodel.clinicdetails();
             return dtb;
         }
         public DataTable Get_Patient_Details(string id)

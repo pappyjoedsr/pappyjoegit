@@ -1019,7 +1019,7 @@ namespace PappyjoeMVC.View
                     {
                         listpatientsearch.Visible = true;
                     }
-                    listpatientsearch.Location = new System.Drawing.Point(toolStrip1.Width - 352, 32);
+                    listpatientsearch.Location = new System.Drawing.Point(toolStrip1.Width - 365, 32);
                     listpatientsearch.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
                 }
                 else

@@ -13,6 +13,11 @@ namespace PappyjoeMVC.Model
             clinicn = name.Replace("¤", "'");
             return clinicn;
         }
+        public DataTable clinicdetails()
+        {
+            DataTable dtb = db.table("select name,locality,contact_no from tbl_practice_details");
+            return dtb;
+        }
         public DataTable Get_CompanyNAme()
         {
             DataTable clinicname = db.table("select name,id,path from tbl_practice_details");

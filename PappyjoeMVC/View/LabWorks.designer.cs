@@ -975,7 +975,6 @@
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.labelallpatient);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblLabWork);
@@ -986,6 +985,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dataGridView1_treatment_paln);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LabWorks";

@@ -3,6 +3,7 @@ using PappyjoeMVC.Model;
 using System;
 using System.Data;
 using System.Drawing;
+using System.Net.Mail;
 using System.Windows.Forms;
 namespace PappyjoeMVC.View
 {
@@ -167,6 +168,8 @@ namespace PappyjoeMVC.View
             labelinvoice.ForeColor = Color.DimGray;
             LabVitalSign.BackColor = Color.White;
             LabVitalSign.ForeColor = Color.DimGray;
+            labelremaindersms.BackColor = Color.White;
+            labelremaindersms.ForeColor = Color.DimGray;
         }
 
         private void butt_Go_Click(object sender, EventArgs e)
@@ -1996,7 +1999,8 @@ namespace PappyjoeMVC.View
                 {
                     listpatientsearch.Visible = true;
                 }
-                listpatientsearch.Location = new Point(toolStripTextBox1.Width = 1014, 39);
+                listpatientsearch.Location = new Point(toolStripTextBox1.Width + 750, 32);
+                //listpatientsearch.Location = new Point(toolStripTextBox1.Width = 1014, 39);
             }
             else
             {
@@ -2396,6 +2400,112 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.ShowDialog();
+        }
+
+        private void labelremaindersms_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                b_normal();
+                labelremaindersms.BackColor = Color.DodgerBlue;
+                labelremaindersms.ForeColor = Color.White;
+                string clinic = "", locality = "", contact_no = "";
+
+                System.Data.DataTable clinicname = this.cntrl.clinicdetails();// db.table("select name,locality,contact_no from tbl_practice_details");
+                if (clinicname.Rows.Count > 0)
+                {
+                    string clinicn = "";
+                    clinicn = clinicname.Rows[0][0].ToString();
+                    clinic = clinicn.Replace("¤", "'");
+                    locality = clinicname.Rows[0][1].ToString();
+                    contact_no = clinicname.Rows[0][2].ToString();
+                }
+
+                string text = "";
+                string smsName = "", smsPass = "", emailName = "", emailPass = "";
+                DataTable sms = this.cntrl.sms_details();// db.table("select smsName,smsPass,emailName,emailPass from tbl_SmsEmailConfig");
+                if (sms.Rows.Count > 0)
+                {
+                    smsName = sms.Rows[0]["smsName"].ToString();
+                    smsPass = sms.Rows[0]["smsPass"].ToString();
+                    emailName = sms.Rows[0]["emailName"].ToString();
+                    emailPass = sms.Rows[0]["emailPass"].ToString();
+                }
+
+
+
+                string str_sql = "", sqlstring = "";
+                DateTime dtNow = new DateTime(DateTime.Now.Ticks);
+                DateTime startDateTime = Convert.ToDateTime(DateTime.Today.ToString("d") + " 00:01:00 AM");
+                DateTime startDateTime1 = Convert.ToDateTime(DateTime.Today.ToString("d") + " 11:59:00 PM");
+                //str_sql = "SELECT id,doctor_name,mobile_number,email_id FROM tbl_doctor   where activate_login='yes'";
+                DataTable dt_dr = this.cntrl.doctor_details();// db.table(str_sql + " ORDER BY id");
+                startDateTime = startDateTime.AddDays(1);
+                startDateTime1 = startDateTime1.AddDays(1);
+                if (dt_dr.Rows.Count > 0)
+                {
+
+                    for (int j = 0; j < dt_dr.Rows.Count; j++)
+                    {
+                        //sqlstring = "SELECT id,pt_name,start_datetime,plan_New_procedure ,status,EHR_status,start_datetime FROM tbl_appointment where start_datetime between  '" + Convert.ToDateTime(startDateTime).ToString("yyyy-MM-dd HH:mm") + "' AND '" + Convert.ToDateTime(startDateTime1).ToString("yyyy-MM-dd HH:mm") + "' AND dr_id='" + dt_dr.Rows[j]["id"].ToString() + "' ORDER BY start_datetime";
+
+                        DataTable dt_app = this.cntrl.get_reminder_sms_details(startDateTime, startDateTime1, dt_dr.Rows[j]["id"].ToString());// db.table(sqlstring);
+                        long long_app_count = 0;
+                        string mob_number = "91" + dt_dr.Rows[j]["mobile_number"].ToString();
+                        string email = dt_dr.Rows[j]["email_id"].ToString();
+                        string text_email = "";
+                        if (dt_app.Rows.Count > 0)
+                        {
+
+                            for (int i = 0; i < dt_app.Rows.Count; i++)
+                            {
+                                long_app_count += 1;
+                                text_email = text_email + "<tr><td></td><td style='border: 1px solid #dddddd;'>" + (i + 1) + "</td><td style='border: 1px solid #dddddd;' >" + dt_app.Rows[i]["pt_name"].ToString() + "</td><td style='border: 1px solid #dddddd;'>Not Provided </td><td style='border: 1px solid #dddddd;'>" + Convert.ToDateTime(dt_app.Rows[i]["start_datetime"].ToString()).ToString("dd MMM, HH:mm") + "</td></tr>";
+                            }
+
+                            if (long_app_count > 0)
+                            {
+                                SMS_model send_sms_class = new SMS_model();
+                                text = "Good Morning Dr. " + dt_dr.Rows[j]["doctor_name"].ToString() + ", You have " + long_app_count + " Appointment[s] today at " + clinic;
+                                send_sms_class.SendSMS(smsName, smsPass, mob_number, text, "DRTOMS", dt_dr.Rows[j]["id"].ToString(), startDateTime.ToString("dd/MM/yyyy") + " 08:00:00 am", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+
+                                if (emailName != "" && emailPass != "")
+                                {
+
+                                    try
+                                    {
+                                        string sr1 = "<table align='center' style='width:700px;border: 1px solid ;border-collapse: collapse; background: #EAEAEA; height:500px'><tr><td  align='left' height='27'><FONT  color='#666666'  face='Arial' SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Appointment Reminder @ " + clinic + "</font></td></tr><tr><td  align='left' height='400px'><table  height='423' align='center' style='width:600px; background: #FFFFFF; height:400px'><tr><td  align='left' height='6px'><FONT  color='#000000'  face='Arial' SIZE=6>" + clinic + "</font></td></tr><tr><td  align='left' height='1px' bgcolor='#666666'></td></tr><tr><td  align='left' height='62' valign='bottom'><FONT  color='#000000'  face='Arial' SIZE=3>Good morning <b>Dr." + dt_dr.Rows[j]["doctor_name"].ToString() + "</b> </font></td></tr> <tr><td align='left' height='197' valign='top'><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You have " + long_app_count + " appointment(s) today at " + clinic + ".<br /><br /> Details of appointments : <table style='width:600px;border: 1px solid #dddddd ;border-collapse: collapse; background: #EAEAEA; '> <tbody><tr ><FONT  face='Arial' ><td width='31' height='31' valign='bottom' align='left' style='border: 1px solid #dddddd;'>No.</td><td width='219' height='31' valign='bottom' align='left' style='border: 1px solid #dddddd;'>  Patient Name</td> <td width='219' valign='bottom' style='border: 1px solid #dddddd;'>Patient Contact </td> <td width='95' height='31' valign='bottom' align='left' style='border: 1px solid #dddddd;'>Timing</td>  </FONT></tr>" + text_email + "</tbody></table><tr><td height='25'> For any queries, contact us at : " + contact_no + "</td>  </tr><tr><td  align='left' height='1px' bgcolor='#666666'></td></tr> <tr><td height='25'  align='right' valign='bottom'>Powered by&nbsp;&nbsp; </td></tr> <tr><td height='81'  align='right' valign='top'><img src='http://pappyjoe.com/assets/images/pappyjoe-logo.PNG' alt='pappyjoe official logo'>&nbsp;&nbsp;</td></tr></table></td></tr></table>";
+
+                                        MailMessage message = new MailMessage();
+                                        message.From = new MailAddress(email);
+                                        message.To.Add(email);
+                                        message.BodyEncoding = System.Text.Encoding.GetEncoding(1252); //bijeesh
+                                        message.IsBodyHtml = true; //bijeesh
+                                        SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                                        message.Subject = long_app_count + " appointment(s) scheduled for Today (" + startDateTime.ToString("dd MMM yyyy") + ") @ " + clinic;
+                                        message.Body = sr1.ToString();
+                                        smtp.Port = 587;
+                                        smtp.Host = "smtp.gmail.com";
+                                        smtp.EnableSsl = true;
+                                        smtp.UseDefaultCredentials = false;
+                                        smtp.Credentials = new System.Net.NetworkCredential(emailName, emailPass);
+                                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                                        smtp.Send(message);
+                                    }
+                                    catch
+                                    {
+                                    }
+
+                                }
+                            }
+
+                        }
+                    }
+                    MessageBox.Show("Reminder sms saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                }
+
+            }
+            catch { MessageBox.Show("Please check email/sms configurations", "Failed", MessageBoxButtons.OK, MessageBoxIcon.None); }
         }
 
         private void txt_Search_Click(object sender, EventArgs e)

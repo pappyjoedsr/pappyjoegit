@@ -59,10 +59,10 @@ namespace PappyjoeMVC.Model
         //    DataTable dt = db.table("select smsName,smsPass from tbl_SmsEmailConfig");
         //    return dt;
         //}
-        public DataTable clinicdetails()
-        {
-            DataTable dtb = db.table("select name,locality,contact_no from tbl_practice_details");
-            return dtb;
-        }
+        //public DataTable clinicdetails()
+        //{
+        //    DataTable dtb = db.table("select name,locality,contact_no from tbl_practice_details");
+        //    return dtb;
+        //}
     }
 }
