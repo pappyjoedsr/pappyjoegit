@@ -451,6 +451,7 @@ namespace PappyjoeMVC.View
                 else
                 {
                     Lab_Msg.Show();
+                    Lab_Msg.Location = new Point(272, 246);
                 }
                 Lab_TotalCost.Text = Convert.ToDecimal(fullTotalCost - (fullTotaldiscount + fullTotaltax)).ToString("#0.00");
                 Lab_DueAftrPaymnt.Text = Convert.ToDecimal(fullTotalDue).ToString("#0.00");
@@ -1649,7 +1650,7 @@ namespace PappyjoeMVC.View
                 {
                     listpatientsearch.Visible = true;
                 }
-                listpatientsearch.Location = new Point(toolStripTextBox1.Width + 750, 32);
+                listpatientsearch.Location = new Point(toolStrip1.Width - 360, 37);
                 //listpatientsearch.Location = new Point(toolStripTextBox1.Width = 1014, 39);
             }
             else

@@ -298,6 +298,7 @@ namespace PappyjoeMVC.View
                 }
                 else{
                     Lab_Msg.Visible = true;
+                    Lab_Msg.Location = new Point(272, 246);
                     dgvPurchase.Rows.Clear();
                     Txt_totalPurchase.Text = "0";
                     Txttotalcost.Text = "0.00";

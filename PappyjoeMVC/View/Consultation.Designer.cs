@@ -71,9 +71,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
-            this.panel3.Location = new System.Drawing.Point(7, 49);
+            this.panel3.Location = new System.Drawing.Point(0, 49);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(769, 1);
+            this.panel3.Size = new System.Drawing.Size(795, 1);
             this.panel3.TabIndex = 308;
             // 
             // lbPatient

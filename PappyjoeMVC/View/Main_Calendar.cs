@@ -439,7 +439,7 @@ namespace PappyjoeMVC.View
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Calendar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.sbStatusBar = new System.Windows.Forms.StatusBar();
             this.contextMenu = new System.Windows.Forms.ContextMenu();
             this.mnuContextNewEvent = new System.Windows.Forms.MenuItem();
@@ -1883,8 +1883,8 @@ namespace PappyjoeMVC.View
             this.dataGridViewdoctor.Location = new System.Drawing.Point(5, 50);
             this.dataGridViewdoctor.Name = "dataGridViewdoctor";
             this.dataGridViewdoctor.ReadOnly = true;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.dataGridViewdoctor.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.dataGridViewdoctor.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewdoctor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridViewdoctor.Size = new System.Drawing.Size(183, 309);
             this.dataGridViewdoctor.TabIndex = 1;
@@ -2225,6 +2225,7 @@ namespace PappyjoeMVC.View
             this.panel5.Size = new System.Drawing.Size(250, 118);
             this.panel5.TabIndex = 9;
             this.panel5.Visible = false;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // Main_Calendar
             // 
@@ -4071,7 +4072,7 @@ namespace PappyjoeMVC.View
                 {
                     panel5.Visible = true;
                 }
-                panel5.Location = new Point(toolStrip1.Width - 365, 32);
+                panel5.Location = new Point(toolStrip1.Width - 350,32);
             }
             else
             {
@@ -4218,6 +4219,11 @@ namespace PappyjoeMVC.View
             var form2 = new Consultation();
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void toolStripBfatstrack_Click(object sender, EventArgs e)

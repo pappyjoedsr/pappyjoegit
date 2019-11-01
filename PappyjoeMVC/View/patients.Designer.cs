@@ -58,6 +58,8 @@
             this.labelallpatient = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel_Sidebar = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelremaindersms = new System.Windows.Forms.Label();
             this.LabVitalSign = new System.Windows.Forms.Label();
             this.labelinvoice = new System.Windows.Forms.Label();
             this.labelpayment = new System.Windows.Forms.Label();
@@ -101,8 +103,6 @@
             this.DGV_Patients = new System.Windows.Forms.DataGridView();
             this.lab_LongMsg = new System.Windows.Forms.Label();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.labelremaindersms = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.panel_titile.SuspendLayout();
             this.panel_Sidebar.SuspendLayout();
@@ -427,6 +427,31 @@
             this.panel_Sidebar.Name = "panel_Sidebar";
             this.panel_Sidebar.Size = new System.Drawing.Size(197, 552);
             this.panel_Sidebar.TabIndex = 61;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label5.Location = new System.Drawing.Point(5, 405);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(187, 13);
+            this.label5.TabIndex = 56;
+            this.label5.Text = "APPOINTMENT SMS";
+            // 
+            // labelremaindersms
+            // 
+            this.labelremaindersms.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelremaindersms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelremaindersms.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelremaindersms.ForeColor = System.Drawing.Color.DimGray;
+            this.labelremaindersms.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelremaindersms.Location = new System.Drawing.Point(17, 420);
+            this.labelremaindersms.Name = "labelremaindersms";
+            this.labelremaindersms.Size = new System.Drawing.Size(173, 32);
+            this.labelremaindersms.TabIndex = 55;
+            this.labelremaindersms.Text = "Reminder sms for doctors";
+            this.labelremaindersms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelremaindersms.Click += new System.EventHandler(this.labelremaindersms_Click);
             // 
             // LabVitalSign
             // 
@@ -1086,6 +1111,7 @@
             // 
             // listpatientsearch
             // 
+            this.listpatientsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -1097,31 +1123,7 @@
             this.listpatientsearch.TabIndex = 274;
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label5.Location = new System.Drawing.Point(5, 405);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(187, 13);
-            this.label5.TabIndex = 56;
-            this.label5.Text = "APPOINTMENT SMS";
-            // 
-            // labelremaindersms
-            // 
-            this.labelremaindersms.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelremaindersms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelremaindersms.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelremaindersms.ForeColor = System.Drawing.Color.DimGray;
-            this.labelremaindersms.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelremaindersms.Location = new System.Drawing.Point(17, 420);
-            this.labelremaindersms.Name = "labelremaindersms";
-            this.labelremaindersms.Size = new System.Drawing.Size(173, 32);
-            this.labelremaindersms.TabIndex = 55;
-            this.labelremaindersms.Text = "Reminder sms for doctors";
-            this.labelremaindersms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelremaindersms.Click += new System.EventHandler(this.labelremaindersms_Click);
+            this.listpatientsearch.SelectedIndexChanged += new System.EventHandler(this.listpatientsearch_SelectedIndexChanged);
             // 
             // Patients
             // 
@@ -1134,9 +1136,9 @@
             this.Controls.Add(this.panelmain);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel_Sidebar);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel_titile);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.panel5);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Patients";

@@ -210,12 +210,11 @@
             // 
             // lblNoRecord
             // 
-            this.lblNoRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNoRecord.AutoSize = true;
             this.lblNoRecord.BackColor = System.Drawing.Color.Wheat;
             this.lblNoRecord.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoRecord.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblNoRecord.Location = new System.Drawing.Point(232, 221);
+            this.lblNoRecord.Location = new System.Drawing.Point(194, 216);
             this.lblNoRecord.Name = "lblNoRecord";
             this.lblNoRecord.Size = new System.Drawing.Size(506, 25);
             this.lblNoRecord.TabIndex = 249;

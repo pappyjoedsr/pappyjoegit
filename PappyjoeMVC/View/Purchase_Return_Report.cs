@@ -277,6 +277,7 @@ namespace PappyjoeMVC.View
                     txtTotalItem.Text = "0";
                     txttotalAmount.Text = "0.00";
                     Lab_Msg.Visible = true;
+                    Lab_Msg.Location = new Point(272, 246);
                 }
             }
             catch(Exception ex)

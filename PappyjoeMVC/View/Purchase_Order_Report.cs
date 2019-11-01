@@ -251,6 +251,7 @@ namespace PappyjoeMVC.View
                 txtTotalItem.Text = "0.00";
                 dgvPurchase.Rows.Clear();
                 Lab_Msg.Visible = true;
+                Lab_Msg.Location = new Point(272, 246);
             }
         }
         public void load()

@@ -110,12 +110,14 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.Lab_Msg);
             this.panel2.Controls.Add(this.Dgv_Order);
-            this.panel2.Location = new System.Drawing.Point(0, 108);
+            this.panel2.Location = new System.Drawing.Point(3, 106);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1370, 421);
+            this.panel2.Size = new System.Drawing.Size(1367, 518);
             this.panel2.TabIndex = 188;
             // 
             // Lab_Msg
@@ -124,7 +126,7 @@
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(366, 239);
+            this.Lab_Msg.Location = new System.Drawing.Point(272, 246);
             this.Lab_Msg.Name = "Lab_Msg";
             this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
             this.Lab_Msg.TabIndex = 281;
@@ -161,7 +163,7 @@
             this.Dgv_Order.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Dgv_Order.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Dgv_Order.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_Order.Size = new System.Drawing.Size(1370, 421);
+            this.Dgv_Order.Size = new System.Drawing.Size(1367, 518);
             this.Dgv_Order.TabIndex = 2;
             this.Dgv_Order.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Order_CellClick);
             this.Dgv_Order.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Order_CellContentClick);
@@ -243,7 +245,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(277, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 15);
+            this.label5.Size = new System.Drawing.Size(19, 15);
             this.label5.TabIndex = 170;
             this.label5.Text = "To";
             // 
@@ -259,7 +261,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.Btn_Show);
             this.panel1.Controls.Add(this.dptMonthly_From);
@@ -268,7 +271,7 @@
             this.panel1.Controls.Add(this.Txt_totalInvoice);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lblinvoices);
-            this.panel1.Location = new System.Drawing.Point(0, 56);
+            this.panel1.Location = new System.Drawing.Point(0, 52);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1370, 52);
             this.panel1.TabIndex = 187;
@@ -281,7 +284,7 @@
             this.lblinvoices.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblinvoices.Location = new System.Drawing.Point(1165, 16);
             this.lblinvoices.Name = "lblinvoices";
-            this.lblinvoices.Size = new System.Drawing.Size(66, 15);
+            this.lblinvoices.Size = new System.Drawing.Size(65, 15);
             this.lblinvoices.TabIndex = 0;
             this.lblinvoices.Text = "Total Order";
             // 
@@ -349,15 +352,17 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
             this.panel3.Controls.Add(this.BtnExport);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.btnprint);
             this.panel3.Controls.Add(this.BTNClose);
-            this.panel3.Location = new System.Drawing.Point(0, 1);
+            this.panel3.Location = new System.Drawing.Point(0, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1370, 61);
+            this.panel3.Size = new System.Drawing.Size(1370, 49);
             this.panel3.TabIndex = 186;
             // 
             // Sales_Order_Report

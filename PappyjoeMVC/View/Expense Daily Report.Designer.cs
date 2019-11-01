@@ -199,8 +199,7 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.Dgv_ChartExpanse);
             this.panel4.Location = new System.Drawing.Point(1146, 143);
@@ -214,20 +213,19 @@
             this.Dgv_ChartExpanse.AllowUserToDeleteRows = false;
             this.Dgv_ChartExpanse.AllowUserToResizeColumns = false;
             this.Dgv_ChartExpanse.AllowUserToResizeRows = false;
-            this.Dgv_ChartExpanse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Dgv_ChartExpanse.BackgroundColor = System.Drawing.Color.White;
             this.Dgv_ChartExpanse.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_ChartExpanse.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Dgv_ChartExpanse.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.Dgv_ChartExpanse.ColumnHeadersHeight = 28;
             this.Dgv_ChartExpanse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Dgv_ChartExpanse.Location = new System.Drawing.Point(2, 1);
+            this.Dgv_ChartExpanse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Dgv_ChartExpanse.Location = new System.Drawing.Point(0, 0);
             this.Dgv_ChartExpanse.Name = "Dgv_ChartExpanse";
             this.Dgv_ChartExpanse.RowHeadersVisible = false;
             this.Dgv_ChartExpanse.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Dgv_ChartExpanse.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_ChartExpanse.Size = new System.Drawing.Size(244, 558);
+            this.Dgv_ChartExpanse.Size = new System.Drawing.Size(219, 565);
             this.Dgv_ChartExpanse.TabIndex = 0;
             this.Dgv_ChartExpanse.DataSourceChanged += new System.EventHandler(this.Dgv_ChartExpanse_DataSourceChanged);
             // 
@@ -425,6 +423,9 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.LightGray;
             this.panel3.Controls.Add(this.Lab_Msg);
             this.panel3.Controls.Add(this.Dgv_Expanse);

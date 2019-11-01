@@ -150,7 +150,7 @@ namespace PappyjoeMVC.View
                     {
                         DataTable dt_group = this.cntrl.dt_group(dtb_grid.Rows[i]["id"].ToString());
                         dataGridViewappoinmentpatientgroup.Rows.Add();
-                        dataGridViewappoinmentpatientgroup.Rows[i].Cells["Sino"].Value = k;
+                        //dataGridViewappoinmentpatientgroup.Rows[i].Cells["Sino"].Value = k;
                         dataGridViewappoinmentpatientgroup.Rows[i].Cells["pt_id"].Value = dtb_grid.Rows[i]["pt_id"].ToString();
                         dataGridViewappoinmentpatientgroup.Rows[i].Cells["pt_name"].Value = dtb_grid.Rows[i]["pt_name"].ToString();
                         dataGridViewappoinmentpatientgroup.Rows[i].Cells["book_datetime"].Value = Convert.ToDateTime(dtb_grid.Rows[i]["book_datetime"].ToString()).ToString("MM/dd/yyyy");
