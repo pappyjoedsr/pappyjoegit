@@ -100,6 +100,7 @@ namespace PappyjoeMVC.View
                 lab_LongMsg.Hide();
                 lab_LongMsg.Location = new Point(350, 350);
                 lab_7.Location = new Point(73, 7);
+                lab_Displaying.Visible = true;
                 lab_7.Text = dt_pt5.Rows.Count.ToString() + " Patient(s)";
                 for (int j = 0; j < dt_pt5.Rows.Count; j++)
                 {
@@ -1413,6 +1414,7 @@ namespace PappyjoeMVC.View
                 }
                 if (Payment.Rows.Count >0)
                 {
+                    lab_Displaying.Visible = true; lab_7.Visible = true;
                     lab_7.Location = new Point(73, 7);
                     lab_7.Text = Payment.Rows.Count.ToString() + " Patient(s)";
                     lab_LongMsg.Show();
@@ -1999,7 +2001,8 @@ namespace PappyjoeMVC.View
                 {
                     listpatientsearch.Visible = true;
                 }
-                listpatientsearch.Location = new Point(toolStripTextBox1.Width + 750, 32);
+                listpatientsearch.Location = new Point(toolStrip1.Width - 360, 37);
+                //listpatientsearch.Location = new Point(toolStripTextBox1.Width + 750, 32);
                 //listpatientsearch.Location = new Point(toolStripTextBox1.Width = 1014, 39);
             }
             else
@@ -2508,6 +2511,11 @@ namespace PappyjoeMVC.View
             catch { MessageBox.Show("Please check email/sms configurations", "Failed", MessageBoxButtons.OK, MessageBoxIcon.None); }
         }
 
+        private void listpatientsearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void txt_Search_Click(object sender, EventArgs e)
         {
             txt_Search.Text = "";
@@ -2676,7 +2684,7 @@ namespace PappyjoeMVC.View
                 lab_LongMsg.Location = new Point(350, 350);
                 lab_7.Visible = true;
                 lab_7.Location = new Point(4, 5);
-                lab_7.Text = " Zero Patient(s)";
+                lab_7.Text = " 0 Patient(s)";
                 lab_Displaying.Visible = false;
             }
         }
@@ -2684,7 +2692,7 @@ namespace PappyjoeMVC.View
         {
             if (DGV_Patients.Columns.Count > 0)
             {
-                DGV_Patients.Columns[0].Width = 0;
+                DGV_Patients.Columns[0].Width = 1;
                 DGV_Patients.Columns[1].Width = 45;
                 DGV_Patients.Columns[2].Width = 200;
                 DGV_Patients.Columns[3].Width = 60;
