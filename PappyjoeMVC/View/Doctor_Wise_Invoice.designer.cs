@@ -198,15 +198,16 @@
             // 
             // lblNoRecord
             // 
-            this.lblNoRecord.AutoSize = true;
+            this.lblNoRecord.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNoRecord.BackColor = System.Drawing.Color.Wheat;
             this.lblNoRecord.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoRecord.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblNoRecord.Location = new System.Drawing.Point(415, 266);
+            this.lblNoRecord.Location = new System.Drawing.Point(213, 275);
             this.lblNoRecord.Name = "lblNoRecord";
-            this.lblNoRecord.Size = new System.Drawing.Size(466, 25);
+            this.lblNoRecord.Size = new System.Drawing.Size(492, 25);
             this.lblNoRecord.TabIndex = 119;
             this.lblNoRecord.Text = "No Records Found. Please change Date and try again !";
+            this.lblNoRecord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -542,7 +543,6 @@
             this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthlyReports)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

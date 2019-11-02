@@ -28,6 +28,8 @@ namespace PappyjoeMVC.View
         {
             try
             {
+                this.Location = new Point(0, 0);
+                this.Size = Screen.PrimaryScreen.WorkingArea.Size;
                 cmb_flag = true;
                 cmb_doctor.Items.Add("All Doctor");
                 cmb_doctor.ValueMember = "0";
@@ -156,6 +158,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                     Lab_Total.Text = "0";
                     Lab_Discount.Text = "0.00";
@@ -218,9 +222,14 @@ namespace PappyjoeMVC.View
             if (Chk_RemoveAmountDue.Checked)
             {
                 DGV_Receipt.Columns["ColTotalDue"].Visible = false;
+                DGV_Receipt.Columns["ColAmountPaid"].Width =190;
+                DGV_Receipt.Columns["ColTotalIncome"].Width = 130;
             }
             else
-            { DGV_Receipt.Columns["ColTotalDue"].Visible = true; }
+            { DGV_Receipt.Columns["ColTotalDue"].Visible = true;
+                DGV_Receipt.Columns["ColAmountPaid"].Width = 120;
+                DGV_Receipt.Columns["ColTotalIncome"].Width = 100;
+            }
         }
        
         private void btnprint_Click(object sender, EventArgs e)

@@ -26,6 +26,8 @@ namespace PappyjoeMVC.View
             {
                 if (invMain.Rows.Count == 0)
                 {
+                    int x = (panel3.Size.Width - label_empty.Size.Width) / 2;
+                    label_empty.Location = new Point(x, label_empty.Location.Y);
                     label_empty.Show();
                 }
                 else
@@ -69,6 +71,8 @@ namespace PappyjoeMVC.View
             {
                 if (invMain.Rows.Count == 0)
                 {
+                    int x = (panel3.Size.Width - label_empty.Size.Width) / 2;
+                    label_empty.Location = new Point(x, label_empty.Location.Y);
                     label_empty.Show();
                 }
                 else
@@ -250,6 +254,8 @@ namespace PappyjoeMVC.View
                 }
                 if (Grvsummary.Rows.Count == 0)
                 {
+                    int x = (panel3.Size.Width - label_empty.Size.Width) / 2;
+                    label_empty.Location = new Point(x, label_empty.Location.Y);
                     label_empty.Show();
                     lbltotal1.Text = "00.00";
                     lbltotal2.Text = "00.00";

@@ -49,6 +49,8 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
+                        int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Show();
                     }
                 }
@@ -94,6 +96,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
             }

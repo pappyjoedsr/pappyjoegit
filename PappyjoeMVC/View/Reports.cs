@@ -450,8 +450,10 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
-                    Lab_Msg.Location = new Point(272, 246);
+                    //Lab_Msg.Location = new Point(272, 246);
                 }
                 Lab_TotalCost.Text = Convert.ToDecimal(fullTotalCost - (fullTotaldiscount + fullTotaltax)).ToString("#0.00");
                 Lab_DueAftrPaymnt.Text = Convert.ToDecimal(fullTotalDue).ToString("#0.00");
@@ -563,6 +565,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 Lab_AmountPaid.Show();
@@ -625,6 +629,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 panelappointments.Visible = true;
@@ -676,11 +682,15 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
+                        int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Show();
                     }
                 }
                 else
                 {
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 panelpatients.Location = new System.Drawing.Point(20, 30);
@@ -725,6 +735,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 paneltreatments.Visible = true;
@@ -782,6 +794,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 foreach (DataGridViewRow dr in Grvreports.Rows)
@@ -855,6 +869,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
             }
@@ -1934,6 +1950,17 @@ namespace PappyjoeMVC.View
             var form2 = new Consultation();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
+            form2.ShowDialog();
+        }
+
+        private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
+        {
+            var form2 = new Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = listpatientsearch.SelectedValue.ToString();
+            listpatientsearch.Visible = false;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
             form2.ShowDialog();
         }
 

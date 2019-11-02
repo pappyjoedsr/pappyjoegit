@@ -68,9 +68,6 @@
             this.Lab_Due = new System.Windows.Forms.Label();
             this.label_empty = new System.Windows.Forms.Label();
             this.DgvReceiptReceivedPerMonth = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Patient_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoice_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,6 +82,9 @@
             this.income = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount_paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount_due = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReceiptReceivedPerMonth)).BeginInit();
@@ -433,15 +433,16 @@
             // 
             // label_empty
             // 
-            this.label_empty.AutoSize = true;
+            this.label_empty.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_empty.BackColor = System.Drawing.Color.Wheat;
             this.label_empty.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_empty.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label_empty.Location = new System.Drawing.Point(330, 223);
+            this.label_empty.Location = new System.Drawing.Point(188, 237);
             this.label_empty.Name = "label_empty";
-            this.label_empty.Size = new System.Drawing.Size(504, 25);
+            this.label_empty.Size = new System.Drawing.Size(538, 25);
             this.label_empty.TabIndex = 97;
             this.label_empty.Text = "No Records Found. Please change the date and try again !..";
+            this.label_empty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DgvReceiptReceivedPerMonth
             // 
@@ -451,7 +452,8 @@
             this.DgvReceiptReceivedPerMonth.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.DgvReceiptReceivedPerMonth.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DgvReceiptReceivedPerMonth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.DgvReceiptReceivedPerMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvReceiptReceivedPerMonth.BackgroundColor = System.Drawing.Color.White;
             this.DgvReceiptReceivedPerMonth.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -494,50 +496,8 @@
             this.DgvReceiptReceivedPerMonth.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DgvReceiptReceivedPerMonth.RowHeadersVisible = false;
             this.DgvReceiptReceivedPerMonth.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvReceiptReceivedPerMonth.Size = new System.Drawing.Size(1358, 477);
+            this.DgvReceiptReceivedPerMonth.Size = new System.Drawing.Size(1365, 477);
             this.DgvReceiptReceivedPerMonth.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.label_empty);
-            this.panel3.Controls.Add(this.DgvReceiptReceivedPerMonth);
-            this.panel3.Location = new System.Drawing.Point(0, 164);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1371, 459);
-            this.panel3.TabIndex = 258;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Location = new System.Drawing.Point(3, 650);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1365, 97);
-            this.panel2.TabIndex = 298;
-            // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Controls.Add(this.Lab_totalExpense);
-            this.panel5.Controls.Add(this.Lab_Paid);
-            this.panel5.Controls.Add(this.Lab_tax);
-            this.panel5.Controls.Add(this.Lab_Amount);
-            this.panel5.Controls.Add(this.Lab_Due);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.Lab_TotalIncome);
-            this.panel5.Controls.Add(this.Lab_Discount);
-            this.panel5.Location = new System.Drawing.Point(868, 5);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(494, 59);
-            this.panel5.TabIndex = 119;
             // 
             // slno
             // 
@@ -547,33 +507,33 @@
             // 
             // Patient_name
             // 
+            this.Patient_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Patient_name.HeaderText = "PATIENT";
             this.Patient_name.Name = "Patient_name";
-            this.Patient_name.Width = 160;
             // 
             // invoice_no
             // 
+            this.invoice_no.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.invoice_no.HeaderText = "INVOICE";
             this.invoice_no.Name = "invoice_no";
-            this.invoice_no.Width = 70;
             // 
             // recept_No
             // 
+            this.recept_No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.recept_No.HeaderText = "RECEIPT";
             this.recept_No.Name = "recept_No";
-            this.recept_No.Width = 70;
             // 
             // doctor_name
             // 
+            this.doctor_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.doctor_name.HeaderText = "DOCTOR ";
             this.doctor_name.Name = "doctor_name";
-            this.doctor_name.Width = 130;
             // 
             // procedure_name
             // 
+            this.procedure_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.procedure_name.HeaderText = "PROCEDURE";
             this.procedure_name.Name = "procedure_name";
-            this.procedure_name.Width = 180;
             // 
             // Payment_date
             // 
@@ -585,9 +545,9 @@
             // 
             // mode_of_payment
             // 
+            this.mode_of_payment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.mode_of_payment.HeaderText = "MODE OF PAYMENT";
             this.mode_of_payment.Name = "mode_of_payment";
-            this.mode_of_payment.Width = 119;
             // 
             // cost
             // 
@@ -630,11 +590,53 @@
             // 
             // amount_due
             // 
-            this.amount_due.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.amount_due.DefaultCellStyle = dataGridViewCellStyle9;
             this.amount_due.HeaderText = "AMOUNT DUE";
             this.amount_due.Name = "amount_due";
+            this.amount_due.Width = 84;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.label_empty);
+            this.panel3.Controls.Add(this.DgvReceiptReceivedPerMonth);
+            this.panel3.Location = new System.Drawing.Point(0, 164);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1368, 459);
+            this.panel3.TabIndex = 258;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Location = new System.Drawing.Point(3, 650);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1365, 97);
+            this.panel2.TabIndex = 298;
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.Lab_totalExpense);
+            this.panel5.Controls.Add(this.Lab_Paid);
+            this.panel5.Controls.Add(this.Lab_tax);
+            this.panel5.Controls.Add(this.Lab_Amount);
+            this.panel5.Controls.Add(this.Lab_Due);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.Lab_TotalIncome);
+            this.panel5.Controls.Add(this.Lab_Discount);
+            this.panel5.Location = new System.Drawing.Point(868, 5);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(494, 59);
+            this.panel5.TabIndex = 119;
             // 
             // Month_Wise_Receipt
             // 
@@ -657,7 +659,6 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReceiptReceivedPerMonth)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();

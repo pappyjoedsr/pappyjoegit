@@ -744,22 +744,23 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.Label_NORecordFound);
             this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Location = new System.Drawing.Point(196, 132);
+            this.panel3.Location = new System.Drawing.Point(195, 137);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1158, 595);
+            this.panel3.Size = new System.Drawing.Size(1167, 601);
             this.panel3.TabIndex = 285;
             // 
             // Label_NORecordFound
             // 
-            this.Label_NORecordFound.AutoSize = true;
+            this.Label_NORecordFound.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Label_NORecordFound.BackColor = System.Drawing.Color.Wheat;
             this.Label_NORecordFound.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_NORecordFound.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Label_NORecordFound.Location = new System.Drawing.Point(134, 177);
+            this.Label_NORecordFound.Location = new System.Drawing.Point(130, 219);
             this.Label_NORecordFound.Name = "Label_NORecordFound";
             this.Label_NORecordFound.Size = new System.Drawing.Size(653, 25);
             this.Label_NORecordFound.TabIndex = 266;
             this.Label_NORecordFound.Text = "No Records Found. Please Click \' ADD \' button on Top Right To Add New One";
+            this.Label_NORecordFound.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Label_NORecordFound.Visible = false;
             // 
             // dataGridView1
@@ -809,7 +810,7 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1147, 584);
+            this.dataGridView1.Size = new System.Drawing.Size(1156, 590);
             this.dataGridView1.TabIndex = 262;
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
@@ -987,7 +988,6 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);

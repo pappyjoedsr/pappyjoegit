@@ -210,15 +210,16 @@
             // 
             // lblNoRecord
             // 
-            this.lblNoRecord.AutoSize = true;
+            this.lblNoRecord.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNoRecord.BackColor = System.Drawing.Color.Wheat;
             this.lblNoRecord.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoRecord.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblNoRecord.Location = new System.Drawing.Point(194, 216);
+            this.lblNoRecord.Location = new System.Drawing.Point(175, 226);
             this.lblNoRecord.Name = "lblNoRecord";
-            this.lblNoRecord.Size = new System.Drawing.Size(506, 25);
+            this.lblNoRecord.Size = new System.Drawing.Size(525, 25);
             this.lblNoRecord.TabIndex = 249;
             this.lblNoRecord.Text = "No Records Found. Please change the Date and try again !..";
+            this.lblNoRecord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblNoRecord.VisibleChanged += new System.EventHandler(this.lblNoRecord_VisibleChanged);
             // 
             // dgvDailyNewPatient
@@ -506,7 +507,6 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDailyNewPatient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDailyNewPatients)).EndInit();
             this.panel3.ResumeLayout(false);

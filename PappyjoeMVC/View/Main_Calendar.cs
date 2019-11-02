@@ -439,7 +439,7 @@ namespace PappyjoeMVC.View
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Calendar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.sbStatusBar = new System.Windows.Forms.StatusBar();
             this.contextMenu = new System.Windows.Forms.ContextMenu();
             this.mnuContextNewEvent = new System.Windows.Forms.MenuItem();
@@ -1883,8 +1883,8 @@ namespace PappyjoeMVC.View
             this.dataGridViewdoctor.Location = new System.Drawing.Point(5, 50);
             this.dataGridViewdoctor.Name = "dataGridViewdoctor";
             this.dataGridViewdoctor.ReadOnly = true;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.dataGridViewdoctor.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.dataGridViewdoctor.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewdoctor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridViewdoctor.Size = new System.Drawing.Size(183, 309);
             this.dataGridViewdoctor.TabIndex = 1;

@@ -125,7 +125,10 @@ namespace PappyjoeMVC.View
                     }
                 }
                 else
-                { lblNoRecord.Show(); }
+                {
+                    int x = (panel2.Size.Width - lblNoRecord.Size.Width) / 2;
+                    lblNoRecord.Location = new Point(x, lblNoRecord.Location.Y);
+                    lblNoRecord.Show(); }
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }
@@ -154,7 +157,10 @@ namespace PappyjoeMVC.View
                         dgvMonthlyReports.Rows[i].Cells[8].Style.ForeColor = Color.Red;
                     }
                 }
-                else { lblNoRecord.Show(); }
+                else {
+                    int x = (panel2.Size.Width - lblNoRecord.Size.Width) / 2;
+                    lblNoRecord.Location = new Point(x, lblNoRecord.Location.Y);
+                    lblNoRecord.Show(); }
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }

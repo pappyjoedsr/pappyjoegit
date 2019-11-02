@@ -60,6 +60,16 @@ namespace PappyjoeMVC.View
                 Grvpatientfirstappoint.DataSource = this.cntrl.FirstAppointment(doctor_id, d1, d2);
                 this.Grvpatientfirstappoint.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 this.Grvpatientfirstappoint.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                if (Grvpatientfirstappoint.Rows.Count == 0)
+                {
+                    int x = (panel3.Size.Width - label_empty.Size.Width) / 2;
+                    label_empty.Location = new Point(x, label_empty.Location.Y);
+                    label_empty.Show();
+                }
+                else
+                {
+                    label_empty.Hide();
+                }
             }
             catch (Exception ex)
             {
@@ -201,6 +211,8 @@ namespace PappyjoeMVC.View
                 this.Grvpatientfirstappoint.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvpatientfirstappoint.Rows.Count == 0)
                 {
+                    int x = (panel3.Size.Width - label_empty.Size.Width) / 2;
+                    label_empty.Location = new Point(x, label_empty.Location.Y);
                     label_empty.Show();
                 }
                 else

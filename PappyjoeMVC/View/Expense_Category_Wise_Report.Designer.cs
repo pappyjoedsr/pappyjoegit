@@ -363,15 +363,16 @@
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(309, 219);
+            this.Lab_Msg.Location = new System.Drawing.Point(237, 239);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(555, 25);
             this.Lab_Msg.TabIndex = 278;
             this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // Dgv_Expanse
@@ -380,6 +381,7 @@
             this.Dgv_Expanse.AllowUserToDeleteRows = false;
             this.Dgv_Expanse.AllowUserToResizeColumns = false;
             this.Dgv_Expanse.AllowUserToResizeRows = false;
+            this.Dgv_Expanse.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Dgv_Expanse.BackgroundColor = System.Drawing.Color.White;
             this.Dgv_Expanse.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_Expanse.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -394,7 +396,6 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Dgv_Expanse.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Dgv_Expanse.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Dgv_Expanse.GridColor = System.Drawing.Color.Gainsboro;
             this.Dgv_Expanse.Location = new System.Drawing.Point(0, 0);
             this.Dgv_Expanse.Name = "Dgv_Expanse";
@@ -477,7 +478,6 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Expanse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_EXpanse)).EndInit();
             this.panel4.ResumeLayout(false);

@@ -92,9 +92,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             panel4.Controls.Add(this.label_empty);
             panel4.Controls.Add(this.Grvappointforeachdoctor);
-            panel4.Location = new System.Drawing.Point(1134, 151);
+            panel4.Location = new System.Drawing.Point(1135, 151);
             panel4.Name = "panel4";
-            panel4.Size = new System.Drawing.Size(223, 544);
+            panel4.Size = new System.Drawing.Size(226, 544);
             panel4.TabIndex = 106;
             // 
             // label_empty
@@ -121,8 +121,7 @@
             this.Grvappointforeachdoctor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grvappointforeachdoctor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Grvappointforeachdoctor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.Grvappointforeachdoctor.ColumnHeadersHeight = 28;
-            this.Grvappointforeachdoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Grvappointforeachdoctor.ColumnHeadersHeight = 30;
             this.Grvappointforeachdoctor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Grvappointforeachdoctor.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.Grvappointforeachdoctor.GridColor = System.Drawing.Color.White;
@@ -130,7 +129,7 @@
             this.Grvappointforeachdoctor.Name = "Grvappointforeachdoctor";
             this.Grvappointforeachdoctor.RowHeadersVisible = false;
             this.Grvappointforeachdoctor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grvappointforeachdoctor.Size = new System.Drawing.Size(223, 544);
+            this.Grvappointforeachdoctor.Size = new System.Drawing.Size(226, 544);
             this.Grvappointforeachdoctor.TabIndex = 0;
             this.Grvappointforeachdoctor.DataSourceChanged += new System.EventHandler(this.Grvappointforeachdoctor_DataSourceChanged);
             // 
@@ -168,22 +167,23 @@
             this.panel2.Controls.Add(this.Lab_Msg);
             this.panel2.Controls.Add(this.dataGridVieweachdoctorappoinmt);
             this.panel2.Controls.Add(this.chartappointeachdoctor);
-            this.panel2.Location = new System.Drawing.Point(4, 152);
+            this.panel2.Location = new System.Drawing.Point(3, 151);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1129, 544);
+            this.panel2.Size = new System.Drawing.Size(1126, 544);
             this.panel2.TabIndex = 104;
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(208, 190);
+            this.Lab_Msg.Location = new System.Drawing.Point(296, 269);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(563, 25);
             this.Lab_Msg.TabIndex = 277;
             this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // dataGridVieweachdoctorappoinmt
@@ -197,9 +197,6 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridVieweachdoctorappoinmt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridVieweachdoctorappoinmt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridVieweachdoctorappoinmt.BackgroundColor = System.Drawing.Color.White;
             this.dataGridVieweachdoctorappoinmt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridVieweachdoctorappoinmt.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -228,6 +225,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridVieweachdoctorappoinmt.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridVieweachdoctorappoinmt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridVieweachdoctorappoinmt.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridVieweachdoctorappoinmt.GridColor = System.Drawing.Color.Gainsboro;
             this.dataGridVieweachdoctorappoinmt.Location = new System.Drawing.Point(0, 0);
@@ -246,7 +244,7 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
             this.dataGridVieweachdoctorappoinmt.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridVieweachdoctorappoinmt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridVieweachdoctorappoinmt.Size = new System.Drawing.Size(1129, 544);
+            this.dataGridVieweachdoctorappoinmt.Size = new System.Drawing.Size(1126, 544);
             this.dataGridVieweachdoctorappoinmt.TabIndex = 0;
             // 
             // slno
@@ -268,19 +266,19 @@
             // 
             // patientname
             // 
+            this.patientname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.patientname.DataPropertyName = "pt_name";
             this.patientname.HeaderText = "PATIENT NAME";
             this.patientname.Name = "patientname";
             this.patientname.ReadOnly = true;
-            this.patientname.Width = 125;
             // 
             // Email
             // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Email.DataPropertyName = "email_address";
             this.Email.HeaderText = "EMAIL ID";
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
-            this.Email.Width = 150;
             // 
             // Mobile
             // 
@@ -292,6 +290,7 @@
             // 
             // doctor
             // 
+            this.doctor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.doctor.DataPropertyName = "doctor_name";
             this.doctor.HeaderText = "DOCTOR NAME";
             this.doctor.Name = "doctor";
@@ -306,14 +305,15 @@
             // 
             // Startdate
             // 
+            this.Startdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Startdate.DataPropertyName = "start_datetime";
             this.Startdate.HeaderText = "APPOINTMENT DATE";
             this.Startdate.Name = "Startdate";
             this.Startdate.ReadOnly = true;
-            this.Startdate.Width = 135;
             // 
             // duration
             // 
+            this.duration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.duration.DataPropertyName = "duration";
             this.duration.HeaderText = "DURATION (MINS)";
             this.duration.Name = "duration";
@@ -364,7 +364,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Appointment (s)";
             this.chartappointeachdoctor.Series.Add(series1);
-            this.chartappointeachdoctor.Size = new System.Drawing.Size(1129, 544);
+            this.chartappointeachdoctor.Size = new System.Drawing.Size(1126, 544);
             this.chartappointeachdoctor.TabIndex = 9;
             this.chartappointeachdoctor.Text = "chart1";
             // 
@@ -596,7 +596,6 @@
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grvappointforeachdoctor)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridVieweachdoctorappoinmt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartappointeachdoctor)).EndInit();
             this.panel5.ResumeLayout(false);

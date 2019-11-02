@@ -67,6 +67,8 @@ namespace PappyjoeMVC.View
                 }
                 if (Grvmonthlyappointcount.Rows.Count < 1)
                 {
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else

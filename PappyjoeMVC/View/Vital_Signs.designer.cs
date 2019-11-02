@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vital_Signs));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Lab_Msg = new System.Windows.Forms.Label();
@@ -107,22 +107,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.Lab_Msg);
             this.panel1.Controls.Add(this.dataGridView_invoice);
-            this.panel1.Location = new System.Drawing.Point(195, 140);
+            this.panel1.Location = new System.Drawing.Point(195, 137);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1285, 652);
+            this.panel1.Size = new System.Drawing.Size(1167, 601);
             this.panel1.TabIndex = 290;
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(134, 177);
+            this.Lab_Msg.Location = new System.Drawing.Point(130, 219);
             this.Lab_Msg.Name = "Lab_Msg";
             this.Lab_Msg.Size = new System.Drawing.Size(653, 25);
             this.Lab_Msg.TabIndex = 277;
             this.Lab_Msg.Text = "No Records Found. Please Click \' ADD \' button on Top Right To Add New One";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // dataGridView_invoice
@@ -131,39 +132,39 @@
             this.dataGridView_invoice.AllowUserToDeleteRows = false;
             this.dataGridView_invoice.AllowUserToResizeColumns = false;
             this.dataGridView_invoice.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridView_invoice.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dataGridView_invoice.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_invoice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView_invoice.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_invoice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_invoice.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_invoice.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_invoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_invoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_invoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_invoice.ColumnHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_invoice.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView_invoice.Location = new System.Drawing.Point(0, 1);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_invoice.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView_invoice.Location = new System.Drawing.Point(3, 1);
             this.dataGridView_invoice.Name = "dataGridView_invoice";
             this.dataGridView_invoice.ReadOnly = true;
             this.dataGridView_invoice.RowHeadersVisible = false;
             this.dataGridView_invoice.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_invoice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_invoice.Size = new System.Drawing.Size(1159, 490);
+            this.dataGridView_invoice.Size = new System.Drawing.Size(1156, 439);
             this.dataGridView_invoice.TabIndex = 276;
             this.dataGridView_invoice.Visible = false;
             // 
@@ -351,7 +352,7 @@
             this.pan_Sidebar.Controls.Add(this.lab_Accounts);
             this.pan_Sidebar.Controls.Add(this.lab_EMR);
             this.pan_Sidebar.Controls.Add(this.lab_SPatient);
-            this.pan_Sidebar.Location = new System.Drawing.Point(1, 94);
+            this.pan_Sidebar.Location = new System.Drawing.Point(3, 93);
             this.pan_Sidebar.Name = "pan_Sidebar";
             this.pan_Sidebar.Size = new System.Drawing.Size(187, 631);
             this.pan_Sidebar.TabIndex = 284;
@@ -450,7 +451,7 @@
             this.labelallpatient.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.labelallpatient.Image = global::PappyjoeMVC.Properties.Resources.SP;
             this.labelallpatient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelallpatient.Location = new System.Drawing.Point(5, 4);
+            this.labelallpatient.Location = new System.Drawing.Point(2, 3);
             this.labelallpatient.Name = "labelallpatient";
             this.labelallpatient.Size = new System.Drawing.Size(106, 38);
             this.labelallpatient.TabIndex = 47;
@@ -878,7 +879,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Vital_Signs_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_invoice)).EndInit();
             this.pan_Sidebar.ResumeLayout(false);
             this.pan_Title.ResumeLayout(false);

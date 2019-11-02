@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Daily_Invoice_Report));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_show = new System.Windows.Forms.Button();
             this.btnEXPORT = new System.Windows.Forms.Button();
@@ -175,15 +175,16 @@
             // 
             // label_empty
             // 
-            this.label_empty.AutoSize = true;
+            this.label_empty.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_empty.BackColor = System.Drawing.Color.Wheat;
             this.label_empty.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_empty.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label_empty.Location = new System.Drawing.Point(334, 175);
+            this.label_empty.Location = new System.Drawing.Point(200, 225);
             this.label_empty.Name = "label_empty";
-            this.label_empty.Size = new System.Drawing.Size(466, 25);
+            this.label_empty.Size = new System.Drawing.Size(483, 25);
             this.label_empty.TabIndex = 89;
             this.label_empty.Text = "No Records Found. Please change Date and try again !";
+            this.label_empty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Grvsummary
             // 
@@ -191,22 +192,22 @@
             this.Grvsummary.AllowUserToDeleteRows = false;
             this.Grvsummary.AllowUserToResizeColumns = false;
             this.Grvsummary.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.Grvsummary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.Grvsummary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Grvsummary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Grvsummary.BackgroundColor = System.Drawing.Color.White;
             this.Grvsummary.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grvsummary.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Grvsummary.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grvsummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grvsummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Grvsummary.ColumnHeadersHeight = 28;
             this.Grvsummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Grvsummary.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -224,8 +225,8 @@
             this.Grvsummary.ReadOnly = true;
             this.Grvsummary.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.Grvsummary.RowHeadersVisible = false;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.Grvsummary.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.Grvsummary.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.Grvsummary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grvsummary.Size = new System.Drawing.Size(1349, 515);
             this.Grvsummary.TabIndex = 0;
@@ -653,7 +654,6 @@
             this.Load += new System.EventHandler(this.Daily_Invoice_Report_Load);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grvsummary)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

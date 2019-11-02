@@ -99,13 +99,15 @@ namespace PappyjoeMVC.View
                 string doctor = combodoctors.Text;
                 string date1 = dateTimePickerdailynewpatient1.Value.ToString("yyyy-MM-dd");
                 string date2 = dateTimePickerdailynewpatient2.Value.ToString("yyyy-MM-dd");
-                Grvdailynewpatient.DataSource  = this.cntrl.Dailynewpatient(date1, date2, doctor);// this.cntrl.DailyNewPatient(date1, date2, doctor);
+                Grvdailynewpatient.DataSource  = this.cntrl.Dailynewpatient(date1, date2, doctor);
                 Grvdailynewpatient.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 Grvdailynewpatient.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 Grvdailynewpatient.EnableHeadersVisualStyles = false;
                 Grvdailynewpatient.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
                 if (Grvdailynewpatient.Rows.Count == 1)
                 {
+                    int x = (panel5.Size.Width - lblNoRecord.Size.Width) / 2;
+                    lblNoRecord.Location = new Point(x, lblNoRecord.Location.Y);
                     lblNoRecord.Show();
                 }
                 else
@@ -167,6 +169,8 @@ namespace PappyjoeMVC.View
                 }
                 if (Grvdailynewpatient.Rows.Count == 1)
                 {
+                    int x = (panel5.Size.Width - lblNoRecord.Size.Width) / 2;
+                    lblNoRecord.Location = new Point(x, lblNoRecord.Location.Y);
                     lblNoRecord.Show();
                 }
                 else
@@ -231,6 +235,8 @@ namespace PappyjoeMVC.View
                 }
                 if (Grvdailynewpatient.Rows.Count == 1)
                 {
+                    int x = (panel5.Size.Width - lblNoRecord.Size.Width) / 2;
+                    lblNoRecord.Location = new Point(x, lblNoRecord.Location.Y);
                     lblNoRecord.Show();
                 }
                 else
@@ -309,6 +315,8 @@ namespace PappyjoeMVC.View
                 this.Grvdailynewpatient.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvdailynewpatient.Rows.Count == 1)
                 {
+                    int x = (panel5.Size.Width - lblNoRecord.Size.Width) / 2;
+                    lblNoRecord.Location = new Point(x, lblNoRecord.Location.Y);
                     lblNoRecord.Show();
                 }
                 else

@@ -347,13 +347,15 @@ namespace PappyjoeMVC.View
                 }
                 if (dgv_invoice.Rows.Count <= 0)
                 {
+                    int x = (panel6.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
-                    Lab_Msg.Location = new System.Drawing.Point(165, 165);
+                    //Lab_Msg.Location = new System.Drawing.Point(165, 165);
                 }
                 else
                 {
                     Lab_Msg.Hide();
-                    Lab_Msg.Location = new System.Drawing.Point(165, 165);
+                    //Lab_Msg.Location = new System.Drawing.Point(165, 165);
                 }
                 btn_ADD.Show();
             }

@@ -175,13 +175,13 @@ namespace PappyjoeMVC.View
                 }
                 if (dgv_treatment_paln.Rows.Count <= 0)
                 {
+                    int x = (panel7.Size.Width - lab_Msg.Size.Width) / 2;
+                    lab_Msg.Location = new Point(x, lab_Msg.Location.Y);
                     lab_Msg.Show();
-                    lab_Msg.Location = new System.Drawing.Point(165, 165);
                 }
                 else
                 {
                     lab_Msg.Hide();
-                    lab_Msg.Location = new System.Drawing.Point(165, 165);
                 }
             }
             catch (Exception ex)

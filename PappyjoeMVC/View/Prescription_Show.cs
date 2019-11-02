@@ -1789,6 +1789,8 @@ namespace PappyjoeMVC.View
             }
             if (dataGridView1.Rows.Count <= 0)
             {
+                int x = (panel3.Size.Width - Label_NORecordFound.Size.Width) / 2;
+                Label_NORecordFound.Location = new Point(x, Label_NORecordFound.Location.Y);
                 Label_NORecordFound.Show();
                 dataGridView1.Hide();
             }

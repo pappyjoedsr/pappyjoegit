@@ -157,20 +157,21 @@
             this.panel3.Controls.Add(this.dgvItemData);
             this.panel3.Location = new System.Drawing.Point(0, 93);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(889, 471);
+            this.panel3.Size = new System.Drawing.Size(915, 471);
             this.panel3.TabIndex = 275;
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(142, 212);
+            this.Lab_Msg.Location = new System.Drawing.Point(155, 212);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(561, 25);
             this.Lab_Msg.TabIndex = 279;
             this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // dgvItemData
@@ -223,7 +224,7 @@
             this.dgvItemData.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvItemData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvItemData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItemData.Size = new System.Drawing.Size(889, 471);
+            this.dgvItemData.Size = new System.Drawing.Size(915, 471);
             this.dgvItemData.TabIndex = 271;
             this.dgvItemData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemData_CellClick);
             this.dgvItemData.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvItemData_CellMouseDoubleClick);
@@ -400,7 +401,6 @@
             this.Text = "Purchase Order List";
             this.Load += new System.EventHandler(this.Purchase_order_list_Load);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemData)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

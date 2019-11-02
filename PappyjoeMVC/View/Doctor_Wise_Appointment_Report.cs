@@ -65,6 +65,8 @@ namespace PappyjoeMVC.View
                 }
                 if (Grvappointforeachdoctor.Rows.Count < 1)
                 {
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -121,6 +123,8 @@ namespace PappyjoeMVC.View
                     fillGrid();
                     if (dataGridVieweachdoctorappoinmt.Rows.Count < 1)
                     {
+                        int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Show();
                     }
                     else
@@ -204,6 +208,9 @@ namespace PappyjoeMVC.View
                 dataGridVieweachdoctorappoinmt.Show();
                 if (dataGridVieweachdoctorappoinmt.Rows.Count < 1)
                 {
+                    
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -217,6 +224,8 @@ namespace PappyjoeMVC.View
                 chartappointeachdoctor.Show();
                 if (Grvappointforeachdoctor.Rows.Count < 1)
                 {
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -250,6 +259,8 @@ namespace PappyjoeMVC.View
                 chartappointeachdoctor.Hide();
                 if (dataGridVieweachdoctorappoinmt.Rows.Count < 1)
                 {
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else

@@ -72,6 +72,8 @@ namespace PappyjoeMVC.View
                 {
                     dgvVisitingHistory.DataSource = null;
                     label2.Text = "0";
+                    int x = (panel1.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 var dateFrom = dateTimePickerdailyappointcount1.Value.ToShortDateString();
@@ -118,6 +120,8 @@ namespace PappyjoeMVC.View
                         else
                         {
                             dgvVisitingHistory.DataSource = null;
+                            int x = (panel1.Size.Width - Lab_Msg.Size.Width) / 2;
+                            Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                             Lab_Msg.Show();
                             label2.Text = "0";
                         }
@@ -136,6 +140,8 @@ namespace PappyjoeMVC.View
                         else
                         {
                             dgvVisitingHistory.DataSource = null;
+                            int x = (panel1.Size.Width - Lab_Msg.Size.Width) / 2;
+                            Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                             Lab_Msg.Show();
                             label2.Text = "0";
                         }

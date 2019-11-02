@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LabWorks));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.lblLabWork = new System.Windows.Forms.Label();
             this.linkLabel_Name = new System.Windows.Forms.LinkLabel();
@@ -100,12 +100,14 @@
             this.printtoolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.addLabOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendSMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_treatment_paln)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -128,7 +130,7 @@
             this.lblLabWork.AutoSize = true;
             this.lblLabWork.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLabWork.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblLabWork.Location = new System.Drawing.Point(200, 92);
+            this.lblLabWork.Location = new System.Drawing.Point(200, 89);
             this.lblLabWork.Name = "lblLabWork";
             this.lblLabWork.Size = new System.Drawing.Size(90, 21);
             this.lblLabWork.TabIndex = 279;
@@ -467,16 +469,17 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BackColor = System.Drawing.Color.Wheat;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(498, 340);
+            this.label1.Location = new System.Drawing.Point(130, 219);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(750, 25);
             this.label1.TabIndex = 284;
             this.label1.Text = "No Records Found. Please Click \' ADD LAB WORK \' button on Top Right To Add New On" +
     "e";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Visible = false;
             // 
             // label10
@@ -489,13 +492,14 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(193, 127);
+            this.label10.Location = new System.Drawing.Point(624, 53);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(1170, 24);
+            this.label10.Size = new System.Drawing.Size(142, 24);
             this.label10.TabIndex = 283;
             this.label10.Text = "DATE               WORK NAME                    WORK TYPE         STATUS         " +
     "   SHOW DETAILS                 ";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label10.Visible = false;
             // 
             // dataGridView1_treatment_paln
             // 
@@ -511,14 +515,14 @@
             this.dataGridView1_treatment_paln.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1_treatment_paln.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.dataGridView1_treatment_paln.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1_treatment_paln.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1_treatment_paln.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1_treatment_paln.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1_treatment_paln.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -528,22 +532,22 @@
             this.Status,
             this.ShowDetails,
             this.img});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1_treatment_paln.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1_treatment_paln.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1_treatment_paln.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1_treatment_paln.Location = new System.Drawing.Point(196, 127);
+            this.dataGridView1_treatment_paln.Location = new System.Drawing.Point(5, 3);
             this.dataGridView1_treatment_paln.Name = "dataGridView1_treatment_paln";
             this.dataGridView1_treatment_paln.ReadOnly = true;
             this.dataGridView1_treatment_paln.RowHeadersVisible = false;
             this.dataGridView1_treatment_paln.RowTemplate.Height = 30;
             this.dataGridView1_treatment_paln.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1_treatment_paln.Size = new System.Drawing.Size(1167, 593);
+            this.dataGridView1_treatment_paln.Size = new System.Drawing.Size(1106, 545);
             this.dataGridView1_treatment_paln.TabIndex = 281;
             this.dataGridView1_treatment_paln.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_treatment_paln_CellContentClick);
             // 
@@ -899,7 +903,7 @@
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.DarkGray;
-            this.panel8.Location = new System.Drawing.Point(196, 127);
+            this.panel8.Location = new System.Drawing.Point(194, 128);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1311, 1);
             this.panel8.TabIndex = 293;
@@ -966,12 +970,22 @@
             this.sendSMSToolStripMenuItem.Text = "Send SMS";
             this.sendSMSToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.dataGridView1_treatment_paln);
+            this.panel4.Location = new System.Drawing.Point(195, 137);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1167, 601);
+            this.panel4.TabIndex = 294;
+            // 
             // LabWorks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel1);
@@ -981,9 +995,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dataGridView1_treatment_paln);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -1001,6 +1013,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1076,5 +1089,6 @@
         private System.Windows.Forms.ToolStripMenuItem addLabOrderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sendSMSToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.Panel panel4;
     }
 }

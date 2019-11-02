@@ -53,12 +53,14 @@ namespace PappyjoeMVC.View
                     }
                 }
                 comboBoxdoctor.SelectedIndex = 0;
-                combo_flag = false;
+                combo_flag = false; 
                 fill_grid();
                 this.Grvdailytreatment.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 this.Grvdailytreatment.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvdailytreatment.Rows.Count < 1)
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -206,6 +208,8 @@ namespace PappyjoeMVC.View
             this.Grvdailytreatment.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             if (Grvdailytreatment.Rows.Count < 1)
             {
+                int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Show();
             }
             else
@@ -293,6 +297,8 @@ namespace PappyjoeMVC.View
             chartdailytreatment.Size = new Size(1306, 378);
             if (Grvdailytreatment.Rows.Count < 1)
             {
+                int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Show();
             }
             else
@@ -573,6 +579,8 @@ namespace PappyjoeMVC.View
                         this.Grvdailytreatment.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         if (Grvdailytreatment.Rows.Count < 1)
                         {
+                            int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                            Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                             Lab_Msg.Show();
                         }
                         else

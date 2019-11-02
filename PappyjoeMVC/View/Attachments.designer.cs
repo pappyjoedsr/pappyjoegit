@@ -330,15 +330,16 @@
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(134, 177);
+            this.Lab_Msg.Location = new System.Drawing.Point(130, 219);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(653, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(678, 25);
             this.Lab_Msg.TabIndex = 275;
-            this.Lab_Msg.Text = "No Records Found. Please Click \' ADD \' button on Top Right To Add New One";
+            this.Lab_Msg.Text = "No Records Found. Please Click \' ADD \' button on Top Right To Add New One        " +
+    "   ";
             this.Lab_Msg.Visible = false;
             // 
             // labelprescription
@@ -1175,7 +1176,6 @@
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Category)).EndInit();
             this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Attachment)).EndInit();
             this.panel1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);

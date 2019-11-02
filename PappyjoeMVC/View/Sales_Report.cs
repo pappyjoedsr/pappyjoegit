@@ -117,6 +117,8 @@ namespace PappyjoeMVC.View
                 Lab_Msg.Visible = false;
             }
             else {
+                int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Visible = true;
                 Lab_Msg.Location = new Point(272, 246);
                 DGV_SALES.Rows.Clear();
