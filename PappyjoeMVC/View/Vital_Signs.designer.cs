@@ -352,7 +352,7 @@
             this.pan_Sidebar.Controls.Add(this.lab_Accounts);
             this.pan_Sidebar.Controls.Add(this.lab_EMR);
             this.pan_Sidebar.Controls.Add(this.lab_SPatient);
-            this.pan_Sidebar.Location = new System.Drawing.Point(2, 89);
+            this.pan_Sidebar.Location = new System.Drawing.Point(2, 93);
             this.pan_Sidebar.Name = "pan_Sidebar";
             this.pan_Sidebar.Size = new System.Drawing.Size(187, 613);
             this.pan_Sidebar.TabIndex = 284;
