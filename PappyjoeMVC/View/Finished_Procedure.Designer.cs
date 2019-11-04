@@ -777,7 +777,7 @@
             this.lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lab_Msg.Location = new System.Drawing.Point(131, 235);
+            this.lab_Msg.Location = new System.Drawing.Point(131, 232);
             this.lab_Msg.Name = "lab_Msg";
             this.lab_Msg.Size = new System.Drawing.Size(677, 25);
             this.lab_Msg.TabIndex = 267;
@@ -824,7 +824,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_treatment_paln.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_treatment_paln.Location = new System.Drawing.Point(4, 1);
+            this.dgv_treatment_paln.Location = new System.Drawing.Point(0, 7);
             this.dgv_treatment_paln.Name = "dgv_treatment_paln";
             this.dgv_treatment_paln.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

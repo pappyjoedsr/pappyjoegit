@@ -384,7 +384,7 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.DarkGray;
-            this.panel5.Location = new System.Drawing.Point(-1, 89);
+            this.panel5.Location = new System.Drawing.Point(-1, 86);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1386, 1);
             this.panel5.TabIndex = 239;
@@ -408,9 +408,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(2, 93);
+            this.panel1.Location = new System.Drawing.Point(2, 89);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(187, 646);
+            this.panel1.Size = new System.Drawing.Size(187, 575);
             this.panel1.TabIndex = 238;
             // 
             // labl_Lab
@@ -712,7 +712,7 @@
             this.panel7.BackColor = System.Drawing.Color.DarkGray;
             this.panel7.Location = new System.Drawing.Point(191, 88);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1, 700);
+            this.panel7.Size = new System.Drawing.Size(1, 662);
             this.panel7.TabIndex = 261;
             // 
             // panel4
@@ -722,7 +722,7 @@
             this.panel4.Controls.Add(this.label41);
             this.panel4.Controls.Add(this.btn_ADD);
             this.panel4.Controls.Add(this.btn_paySelectedInvoice);
-            this.panel4.Location = new System.Drawing.Point(193, 93);
+            this.panel4.Location = new System.Drawing.Point(193, 90);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1167, 37);
             this.panel4.TabIndex = 263;
@@ -773,7 +773,7 @@
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.DarkGray;
-            this.panel8.Location = new System.Drawing.Point(191, 133);
+            this.panel8.Location = new System.Drawing.Point(191, 130);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1176, 1);
             this.panel8.TabIndex = 262;
@@ -785,9 +785,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.Lab_Msg);
             this.panel6.Controls.Add(this.dgv_invoice);
-            this.panel6.Location = new System.Drawing.Point(195, 136);
+            this.panel6.Location = new System.Drawing.Point(195, 133);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1167, 603);
+            this.panel6.Size = new System.Drawing.Size(1167, 563);
             this.panel6.TabIndex = 264;
             // 
             // Lab_Msg
@@ -796,7 +796,7 @@
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(130, 219);
+            this.Lab_Msg.Location = new System.Drawing.Point(131, 232);
             this.Lab_Msg.Name = "Lab_Msg";
             this.Lab_Msg.Size = new System.Drawing.Size(677, 25);
             this.Lab_Msg.TabIndex = 257;
@@ -858,7 +858,7 @@
             this.dgv_invoice.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_invoice.RowHeadersVisible = false;
             this.dgv_invoice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv_invoice.Size = new System.Drawing.Size(973, 583);
+            this.dgv_invoice.Size = new System.Drawing.Size(973, 543);
             this.dgv_invoice.TabIndex = 241;
             this.dgv_invoice.Visible = false;
             this.dgv_invoice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_invoice_CellClick);
@@ -1009,7 +1009,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.ClientSize = new System.Drawing.Size(1362, 703);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel6);

@@ -1880,6 +1880,7 @@ namespace PappyjoeMVC.View
                 }
                 if (Pur_List_flag == true)
                 {
+                    flagSup = true;
                     dtpPurchDate.Enabled = false;
                     Btn_itemCode.Enabled = false;
                     txtDescription.Enabled = false;
@@ -1914,6 +1915,7 @@ namespace PappyjoeMVC.View
                         txt_Discount.Text = data_from_Pur_Master1.Rows[0]["DiscAmount"].ToString();
                         string pur_type = data_from_Pur_Master1.Rows[0]["PurchType"].ToString();
                     }
+                    flagSup = false;
                     if (data_from_purchase1.Rows.Count > 0)
                     {
                         int totalitem = 0;
