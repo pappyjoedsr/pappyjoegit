@@ -77,6 +77,8 @@ namespace PappyjoeMVC.View
                 Grvmonthnewpatient.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                 if (Grvmonthnewpatient.Rows.Count == 1)
                 {
+                    int x = (panel4.Size.Width - lblNoRecord.Size.Width) / 2;
+                    lblNoRecord.Location = new Point(x, lblNoRecord.Location.Y);
                     lblNoRecord.Show();
                 }
                 else
@@ -141,6 +143,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    int x = (panel4.Size.Width - lblNoRecord.Size.Width) / 2;
+                    lblNoRecord.Location = new Point(x, lblNoRecord.Location.Y);
                     lblNoRecord.Show();
                 }
 

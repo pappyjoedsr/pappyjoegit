@@ -45,6 +45,19 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.dataGridVieweachdoctorappoinmt = new System.Windows.Forms.DataGridView();
+            this.slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ptid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookeddate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Startdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Schedule = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.waiting = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Engaged = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Checkout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chartappointeachdoctor = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -62,19 +75,6 @@
             this.Lab_Doctorname = new System.Windows.Forms.Label();
             this.Lab_Total = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ptid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patientname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookeddate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Startdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Schedule = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.waiting = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Engaged = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Checkout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             panel4 = new System.Windows.Forms.Panel();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grvappointforeachdoctor)).BeginInit();
@@ -92,9 +92,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             panel4.Controls.Add(this.label_empty);
             panel4.Controls.Add(this.Grvappointforeachdoctor);
-            panel4.Location = new System.Drawing.Point(1134, 151);
+            panel4.Location = new System.Drawing.Point(1135, 151);
             panel4.Name = "panel4";
-            panel4.Size = new System.Drawing.Size(223, 544);
+            panel4.Size = new System.Drawing.Size(226, 544);
             panel4.TabIndex = 106;
             // 
             // label_empty
@@ -121,8 +121,7 @@
             this.Grvappointforeachdoctor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grvappointforeachdoctor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Grvappointforeachdoctor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.Grvappointforeachdoctor.ColumnHeadersHeight = 28;
-            this.Grvappointforeachdoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Grvappointforeachdoctor.ColumnHeadersHeight = 30;
             this.Grvappointforeachdoctor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Grvappointforeachdoctor.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.Grvappointforeachdoctor.GridColor = System.Drawing.Color.White;
@@ -130,7 +129,7 @@
             this.Grvappointforeachdoctor.Name = "Grvappointforeachdoctor";
             this.Grvappointforeachdoctor.RowHeadersVisible = false;
             this.Grvappointforeachdoctor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grvappointforeachdoctor.Size = new System.Drawing.Size(223, 544);
+            this.Grvappointforeachdoctor.Size = new System.Drawing.Size(226, 544);
             this.Grvappointforeachdoctor.TabIndex = 0;
             this.Grvappointforeachdoctor.DataSourceChanged += new System.EventHandler(this.Grvappointforeachdoctor_DataSourceChanged);
             // 
@@ -168,22 +167,23 @@
             this.panel2.Controls.Add(this.Lab_Msg);
             this.panel2.Controls.Add(this.dataGridVieweachdoctorappoinmt);
             this.panel2.Controls.Add(this.chartappointeachdoctor);
-            this.panel2.Location = new System.Drawing.Point(4, 152);
+            this.panel2.Location = new System.Drawing.Point(3, 151);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1129, 544);
+            this.panel2.Size = new System.Drawing.Size(1126, 544);
             this.panel2.TabIndex = 104;
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(208, 190);
+            this.Lab_Msg.Location = new System.Drawing.Point(296, 269);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(563, 25);
             this.Lab_Msg.TabIndex = 277;
             this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // dataGridVieweachdoctorappoinmt
@@ -244,8 +244,108 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
             this.dataGridVieweachdoctorappoinmt.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridVieweachdoctorappoinmt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridVieweachdoctorappoinmt.Size = new System.Drawing.Size(1129, 544);
+            this.dataGridVieweachdoctorappoinmt.Size = new System.Drawing.Size(1126, 544);
             this.dataGridVieweachdoctorappoinmt.TabIndex = 0;
+            // 
+            // slno
+            // 
+            this.slno.DataPropertyName = "Sino";
+            this.slno.HeaderText = "Sl No";
+            this.slno.Name = "slno";
+            this.slno.ReadOnly = true;
+            this.slno.Visible = false;
+            this.slno.Width = 85;
+            // 
+            // ptid
+            // 
+            this.ptid.DataPropertyName = "pt_id";
+            this.ptid.HeaderText = "PATIENT ID";
+            this.ptid.Name = "ptid";
+            this.ptid.ReadOnly = true;
+            this.ptid.Width = 60;
+            // 
+            // patientname
+            // 
+            this.patientname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.patientname.DataPropertyName = "pt_name";
+            this.patientname.HeaderText = "PATIENT NAME";
+            this.patientname.Name = "patientname";
+            this.patientname.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Email.DataPropertyName = "email_address";
+            this.Email.HeaderText = "EMAIL ID";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Mobile
+            // 
+            this.Mobile.DataPropertyName = "primary_mobile_number";
+            this.Mobile.HeaderText = "MOBILE ";
+            this.Mobile.Name = "Mobile";
+            this.Mobile.ReadOnly = true;
+            this.Mobile.Width = 80;
+            // 
+            // doctor
+            // 
+            this.doctor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.doctor.DataPropertyName = "doctor_name";
+            this.doctor.HeaderText = "DOCTOR NAME";
+            this.doctor.Name = "doctor";
+            this.doctor.ReadOnly = true;
+            // 
+            // bookeddate
+            // 
+            this.bookeddate.DataPropertyName = "book_datetime";
+            this.bookeddate.HeaderText = "BOOKED DATE";
+            this.bookeddate.Name = "bookeddate";
+            this.bookeddate.ReadOnly = true;
+            // 
+            // Startdate
+            // 
+            this.Startdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Startdate.DataPropertyName = "start_datetime";
+            this.Startdate.HeaderText = "APPOINTMENT DATE";
+            this.Startdate.Name = "Startdate";
+            this.Startdate.ReadOnly = true;
+            // 
+            // duration
+            // 
+            this.duration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.duration.DataPropertyName = "duration";
+            this.duration.HeaderText = "DURATION (MINS)";
+            this.duration.Name = "duration";
+            this.duration.ReadOnly = true;
+            // 
+            // Schedule
+            // 
+            this.Schedule.DataPropertyName = "schedule";
+            this.Schedule.HeaderText = "SHEDULE";
+            this.Schedule.Name = "Schedule";
+            this.Schedule.ReadOnly = true;
+            // 
+            // waiting
+            // 
+            this.waiting.DataPropertyName = "waiting";
+            this.waiting.HeaderText = "WAITING";
+            this.waiting.Name = "waiting";
+            this.waiting.ReadOnly = true;
+            // 
+            // Engaged
+            // 
+            this.Engaged.DataPropertyName = "engaged";
+            this.Engaged.HeaderText = "ENGAGED";
+            this.Engaged.Name = "Engaged";
+            this.Engaged.ReadOnly = true;
+            // 
+            // Checkout
+            // 
+            this.Checkout.DataPropertyName = "checkout";
+            this.Checkout.HeaderText = "CHECK OUT";
+            this.Checkout.Name = "Checkout";
+            this.Checkout.ReadOnly = true;
             // 
             // chartappointeachdoctor
             // 
@@ -264,7 +364,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Appointment (s)";
             this.chartappointeachdoctor.Series.Add(series1);
-            this.chartappointeachdoctor.Size = new System.Drawing.Size(1129, 544);
+            this.chartappointeachdoctor.Size = new System.Drawing.Size(1126, 544);
             this.chartappointeachdoctor.TabIndex = 9;
             this.chartappointeachdoctor.Text = "chart1";
             // 
@@ -478,104 +578,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Total Appointments : ";
             // 
-            // slno
-            // 
-            this.slno.DataPropertyName = "Sino";
-            this.slno.HeaderText = "Sl No";
-            this.slno.Name = "slno";
-            this.slno.ReadOnly = true;
-            this.slno.Visible = false;
-            this.slno.Width = 85;
-            // 
-            // ptid
-            // 
-            this.ptid.DataPropertyName = "pt_id";
-            this.ptid.HeaderText = "PATIENT ID";
-            this.ptid.Name = "ptid";
-            this.ptid.ReadOnly = true;
-            this.ptid.Width = 60;
-            // 
-            // patientname
-            // 
-            this.patientname.DataPropertyName = "pt_name";
-            this.patientname.HeaderText = "PATIENT NAME";
-            this.patientname.Name = "patientname";
-            this.patientname.ReadOnly = true;
-            this.patientname.Width = 125;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "email_address";
-            this.Email.HeaderText = "EMAIL ID";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 150;
-            // 
-            // Mobile
-            // 
-            this.Mobile.DataPropertyName = "primary_mobile_number";
-            this.Mobile.HeaderText = "MOBILE ";
-            this.Mobile.Name = "Mobile";
-            this.Mobile.ReadOnly = true;
-            this.Mobile.Width = 80;
-            // 
-            // doctor
-            // 
-            this.doctor.DataPropertyName = "doctor_name";
-            this.doctor.HeaderText = "DOCTOR NAME";
-            this.doctor.Name = "doctor";
-            this.doctor.ReadOnly = true;
-            // 
-            // bookeddate
-            // 
-            this.bookeddate.DataPropertyName = "book_datetime";
-            this.bookeddate.HeaderText = "BOOKED DATE";
-            this.bookeddate.Name = "bookeddate";
-            this.bookeddate.ReadOnly = true;
-            // 
-            // Startdate
-            // 
-            this.Startdate.DataPropertyName = "start_datetime";
-            this.Startdate.HeaderText = "APPOINTMENT DATE";
-            this.Startdate.Name = "Startdate";
-            this.Startdate.ReadOnly = true;
-            this.Startdate.Width = 135;
-            // 
-            // duration
-            // 
-            this.duration.DataPropertyName = "duration";
-            this.duration.HeaderText = "DURATION (MINS)";
-            this.duration.Name = "duration";
-            this.duration.ReadOnly = true;
-            // 
-            // Schedule
-            // 
-            this.Schedule.DataPropertyName = "schedule";
-            this.Schedule.HeaderText = "SHEDULE";
-            this.Schedule.Name = "Schedule";
-            this.Schedule.ReadOnly = true;
-            // 
-            // waiting
-            // 
-            this.waiting.DataPropertyName = "waiting";
-            this.waiting.HeaderText = "WAITING";
-            this.waiting.Name = "waiting";
-            this.waiting.ReadOnly = true;
-            // 
-            // Engaged
-            // 
-            this.Engaged.DataPropertyName = "engaged";
-            this.Engaged.HeaderText = "ENGAGED";
-            this.Engaged.Name = "Engaged";
-            this.Engaged.ReadOnly = true;
-            // 
-            // Checkout
-            // 
-            this.Checkout.DataPropertyName = "checkout";
-            this.Checkout.HeaderText = "CHECK OUT";
-            this.Checkout.Name = "Checkout";
-            this.Checkout.ReadOnly = true;
-            // 
             // Doctor_Wise_Appointment_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -594,7 +596,6 @@
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grvappointforeachdoctor)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridVieweachdoctorappoinmt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartappointeachdoctor)).EndInit();
             this.panel5.ResumeLayout(false);

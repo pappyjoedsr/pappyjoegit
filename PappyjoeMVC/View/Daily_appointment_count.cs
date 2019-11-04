@@ -47,9 +47,12 @@ namespace PappyjoeMVC.View
                 lAB_TOTAL.Visible = true;
                 lAB_TOTAL.Text = 0.ToString();
                 fillgrid();
-                if (Grvdailyappointcount.Rows.Count < 1)
+                if (dataGridViewDailyappoinment.Rows.Count < 1)
                 {
                     Lab_Msg.Show();
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
+                   
                 }
                 else
                 {
@@ -290,6 +293,9 @@ namespace PappyjoeMVC.View
                 if (dataGridViewDailyappoinment.Rows.Count < 1)
                 {
                     Lab_Msg.Show();
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
+                   
                 }
                 else
                 {
@@ -302,6 +308,9 @@ namespace PappyjoeMVC.View
                 if (Grvdailyappointcount.Rows.Count < 1)
                 {
                     Lab_Msg.Show();
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
+                   
                 }
                 else
                 {
@@ -404,8 +413,10 @@ namespace PappyjoeMVC.View
             dataGridViewDailyappoinment.Show();
             fillgrid();
             lAB_TOTAL.Visible = true;
-            if (Grvdailyappointcount.Rows.Count < 1)
+            if (dataGridViewDailyappoinment.Rows.Count < 1)
             {
+                int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Show();
             }
             else
@@ -433,6 +444,8 @@ namespace PappyjoeMVC.View
                     fillgrid();
                     if (dataGridViewDailyappoinment.Rows.Count < 1)
                     {
+                        int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Show();
                     }
                     else

@@ -125,16 +125,16 @@
             // 
             // lblNoRecord
             // 
-            this.lblNoRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNoRecord.AutoSize = true;
+            this.lblNoRecord.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNoRecord.BackColor = System.Drawing.Color.Wheat;
             this.lblNoRecord.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoRecord.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblNoRecord.Location = new System.Drawing.Point(252, 223);
             this.lblNoRecord.Name = "lblNoRecord";
-            this.lblNoRecord.Size = new System.Drawing.Size(506, 25);
+            this.lblNoRecord.Size = new System.Drawing.Size(526, 25);
             this.lblNoRecord.TabIndex = 250;
             this.lblNoRecord.Text = "No Records Found. Please change the Date and try again !..";
+            this.lblNoRecord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridmonthlypatient
             // 
@@ -520,7 +520,6 @@
             this.Load += new System.EventHandler(this.Monthly_new_patients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridmonthlypatient)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartmonthnewpatient)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Grvmonthnewpatient)).EndInit();

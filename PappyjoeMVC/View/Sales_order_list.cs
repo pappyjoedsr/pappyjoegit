@@ -59,7 +59,12 @@ namespace PappyjoeMVC.View
                         Fill_dgvSale(dtb);
                     }
                     else
+                    {
+                        int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Visible = true;
+                    }
+                      
                 }
                 dgv_sales.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
                 dgv_sales.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -179,7 +184,11 @@ namespace PappyjoeMVC.View
                 Fill_dgvSale(dtb);
             }
             else
+            {
+                int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Visible = true;
+            }
         }
 
         private void Btn_Show_Click(object sender, EventArgs e)
@@ -205,6 +214,8 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
+                        int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Visible = true;
                     }
                 }

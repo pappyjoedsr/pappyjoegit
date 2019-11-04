@@ -696,6 +696,15 @@ namespace PappyjoeMVC.View
                 }
                 DataTable dt = this.ctrlr.Getdata(patient_id);
                 Getdata(dt);
+                dataGridView1_treatment_paln.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
+                dataGridView1_treatment_paln.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dataGridView1_treatment_paln.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 10, FontStyle.Regular);
+                dataGridView1_treatment_paln.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dataGridView1_treatment_paln.EnableHeadersVisualStyles = false;
+                foreach (DataGridViewColumn cl in dataGridView1_treatment_paln.Columns)
+                {
+                    cl.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
                 dataGridView1_treatment_paln.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dataGridView1_treatment_paln.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dataGridView1_treatment_paln.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -776,13 +785,15 @@ namespace PappyjoeMVC.View
                 dataGridView1_treatment_paln.DataSource = tbShade;
                 if (dataGridView1_treatment_paln.Rows.Count <= 0)
                 {
+                    int x = (panel4.Size.Width - label1.Size.Width) / 2;
+                    label1.Location = new Point(x, label1.Location.Y);
                     label1.Show();
-                    label1.Location = new System.Drawing.Point(350, 350);
+                    //label1.Location = new System.Drawing.Point(350, 350);
                 }
                 else
                 {
                     label1.Hide();
-                    label1.Location = new System.Drawing.Point(350, 350);
+                    //label1.Location = new System.Drawing.Point(350, 350);
                 }
             }
             catch (Exception ex)

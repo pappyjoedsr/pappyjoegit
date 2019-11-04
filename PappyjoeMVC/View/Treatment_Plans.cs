@@ -193,16 +193,19 @@ namespace PappyjoeMVC.View
                         dataGridView1_treatment_paln.Rows[i].Cells[8].Value = PappyjoeMVC.Properties.Resources.blank;
                         i = i + 1;
                     }
-                    if (dataGridView1_treatment_paln.Rows.Count <= 0)
-                    {
-                        lab_NoRecordFound_AlertMsg.Show();
-                        lab_NoRecordFound_AlertMsg.Location = new System.Drawing.Point(165, 165);
-                    }
-                    else
-                    {
-                        lab_NoRecordFound_AlertMsg.Hide();
-                        lab_NoRecordFound_AlertMsg.Location = new System.Drawing.Point(165, 165);
-                    }
+                   
+                }
+                if (dataGridView1_treatment_paln.Rows.Count <= 0)
+                {
+                    int x = (panel3.Size.Width - lab_NoRecordFound_AlertMsg.Size.Width) / 2;
+                    lab_NoRecordFound_AlertMsg.Location = new Point(x, lab_NoRecordFound_AlertMsg.Location.Y);
+                    lab_NoRecordFound_AlertMsg.Show();
+                    //lab_NoRecordFound_AlertMsg.Location = new System.Drawing.Point(165, 165);
+                }
+                else
+                {
+                    lab_NoRecordFound_AlertMsg.Hide();
+                    //lab_NoRecordFound_AlertMsg.Location = new System.Drawing.Point(165, 165);
                 }
             }
             catch (Exception ex)

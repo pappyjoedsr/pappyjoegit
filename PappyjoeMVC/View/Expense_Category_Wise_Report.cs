@@ -59,7 +59,7 @@ namespace PappyjoeMVC.View
             Cmb_Ledger.Items.Add("All Ledger");
             Cmb_Ledger.ValueMember = "0";
             Cmb_Ledger.DisplayMember = "All Ledger";
-            System.Data.DataTable Ledger = this.cntrl.load_ledger();// db.table("select distinct id,Group_Name from tbl_ledger_Group ");
+            System.Data.DataTable Ledger = this.cntrl.load_ledger();
             if (doctor_rs.Rows.Count > 0)
             {
                 for (int i = 0; i < Ledger.Rows.Count; i++)
@@ -70,9 +70,10 @@ namespace PappyjoeMVC.View
                 }
             }
             Cmb_Ledger.SelectedIndex = 0;
-            //fill_grid();
             if (Dgv_ChartExpanse.Rows.Count < 1)
             {
+                int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Show();
             }
             else
@@ -225,6 +226,8 @@ namespace PappyjoeMVC.View
             fill_grid();
             if (Dgv_ChartExpanse.Rows.Count < 1)
             {
+                int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Show();
             }
             else
@@ -254,6 +257,8 @@ namespace PappyjoeMVC.View
             fill_grid();
             if (Dgv_ChartExpanse.Rows.Count < 1)
             {
+                int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Show();
             }
             else
@@ -279,6 +284,8 @@ namespace PappyjoeMVC.View
             {
                 if (Dgv_ChartExpanse.Rows.Count < 1)
                 {
+                    int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -310,6 +317,8 @@ namespace PappyjoeMVC.View
                 Lab_Total.Text = row.ToString();
                 if (Dgv_ChartExpanse.Rows.Count < 1)
                 {
+                    int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -571,6 +580,8 @@ namespace PappyjoeMVC.View
             fill_grid();
             if (Dgv_ChartExpanse.Rows.Count < 1)
             {
+                int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Show();
             }
             else
@@ -591,6 +602,8 @@ namespace PappyjoeMVC.View
             fill_grid();
             if (Dgv_ChartExpanse.Rows.Count < 1)
             {
+                int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Show();
             }
             else

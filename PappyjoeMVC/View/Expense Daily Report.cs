@@ -65,6 +65,8 @@ namespace PappyjoeMVC.View
             fill_grid();
             if (Dgv_ChartExpanse.Rows.Count < 1)
             {
+                int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Show();
             }
             else
@@ -138,6 +140,8 @@ namespace PappyjoeMVC.View
             fill_grid();
             if (Dgv_ChartExpanse.Rows.Count < 1)
             {
+                int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Show();
             }
             else
@@ -211,6 +215,8 @@ namespace PappyjoeMVC.View
                 GridStyle();
                 if (Dgv_ChartExpanse.Rows.Count < 1)
                 {
+                    int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -380,6 +386,8 @@ namespace PappyjoeMVC.View
             GridStyle();
             if (Dgv_ChartExpanse.Rows.Count < 1)
             {
+                int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Show();
             }
             else
@@ -418,6 +426,8 @@ namespace PappyjoeMVC.View
             {
                 if (Dgv_ChartExpanse.Rows.Count < 1)
                 {
+                    int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -462,6 +472,8 @@ namespace PappyjoeMVC.View
                 DateTime date = new DateTime(now.Year, now.Month, 1);
                 if (Dgv_ChartExpanse.Rows.Count < 1)
                 {
+                    int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else

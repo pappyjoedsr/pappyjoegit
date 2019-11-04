@@ -153,7 +153,9 @@
             // 
             // panel9
             // 
-            this.panel9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.Controls.Add(this.label7);
             this.panel9.Controls.Add(this.label3);
             this.panel9.Controls.Add(this.label4);
@@ -856,6 +858,7 @@
             // 
             // panel11
             // 
+            this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel11.Controls.Add(this.btnSavePatient);
             this.panel11.Controls.Add(this.btnCancel);
             this.panel11.Controls.Add(this.btnDelete);

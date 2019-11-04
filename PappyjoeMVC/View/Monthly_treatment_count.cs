@@ -61,6 +61,8 @@ namespace PappyjoeMVC.View
                 this.Grvmonthtreatment.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvmonthtreatment.Rows.Count == 0)
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -148,6 +150,8 @@ namespace PappyjoeMVC.View
                 this.Grvmonthtreatment.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvmonthtreatment.Rows.Count == 0)
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -365,6 +369,8 @@ namespace PappyjoeMVC.View
                 this.Grvmonthtreatment.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvmonthtreatment.Rows.Count == 0)
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -417,6 +423,8 @@ namespace PappyjoeMVC.View
                 this.Grvmonthtreatment.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvmonthtreatment.Rows.Count == 0)
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -467,6 +475,8 @@ namespace PappyjoeMVC.View
                     this.Grvmonthtreatment.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     if (Grvmonthtreatment.Rows.Count == 0)
                     {
+                        int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Show();
                     }
                     else

@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Appointment_for_each_patient_group));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_ViewGrid = new System.Windows.Forms.Button();
             this.btn_ViewChart = new System.Windows.Forms.Button();
             this.cmbptgrp = new System.Windows.Forms.ComboBox();
@@ -231,22 +231,23 @@
             this.panel2.Controls.Add(this.Lab_Msg);
             this.panel2.Controls.Add(this.dataGridViewappoinmentpatientgroup);
             this.panel2.Controls.Add(this.chartappointeachpatientgroup);
-            this.panel2.Location = new System.Drawing.Point(4, 138);
+            this.panel2.Location = new System.Drawing.Point(4, 137);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1162, 548);
+            this.panel2.Size = new System.Drawing.Size(1165, 548);
             this.panel2.TabIndex = 98;
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(268, 265);
+            this.Lab_Msg.Location = new System.Drawing.Point(256, 269);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(597, 25);
             this.Lab_Msg.TabIndex = 276;
-            this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..          ";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // dataGridViewappoinmentpatientgroup
@@ -255,20 +256,20 @@
             this.dataGridViewappoinmentpatientgroup.AllowUserToDeleteRows = false;
             this.dataGridViewappoinmentpatientgroup.AllowUserToResizeColumns = false;
             this.dataGridViewappoinmentpatientgroup.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
-            this.dataGridViewappoinmentpatientgroup.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
+            this.dataGridViewappoinmentpatientgroup.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewappoinmentpatientgroup.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewappoinmentpatientgroup.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewappoinmentpatientgroup.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewappoinmentpatientgroup.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewappoinmentpatientgroup.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewappoinmentpatientgroup.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewappoinmentpatientgroup.ColumnHeadersHeight = 30;
             this.dataGridViewappoinmentpatientgroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewappoinmentpatientgroup.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -293,52 +294,53 @@
             this.dataGridViewappoinmentpatientgroup.Name = "dataGridViewappoinmentpatientgroup";
             this.dataGridViewappoinmentpatientgroup.ReadOnly = true;
             this.dataGridViewappoinmentpatientgroup.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewappoinmentpatientgroup.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewappoinmentpatientgroup.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewappoinmentpatientgroup.RowHeadersVisible = false;
             this.dataGridViewappoinmentpatientgroup.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewappoinmentpatientgroup.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewappoinmentpatientgroup.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewappoinmentpatientgroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewappoinmentpatientgroup.Size = new System.Drawing.Size(1162, 548);
+            this.dataGridViewappoinmentpatientgroup.Size = new System.Drawing.Size(1165, 548);
             this.dataGridViewappoinmentpatientgroup.TabIndex = 0;
             // 
             // Sino
             // 
             this.Sino.DataPropertyName = "Sino";
-            this.Sino.HeaderText = "Sl No";
+            this.Sino.HeaderText = "";
             this.Sino.Name = "Sino";
             this.Sino.ReadOnly = true;
             this.Sino.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Sino.Visible = false;
-            this.Sino.Width = 5;
+            this.Sino.Width = 29;
             // 
             // pt_id
             // 
             this.pt_id.DataPropertyName = "pt_id";
-            this.pt_id.HeaderText = "PATIENT ID";
+            this.pt_id.HeaderText = " ID";
             this.pt_id.Name = "pt_id";
             this.pt_id.ReadOnly = true;
-            this.pt_id.Width = 60;
+            this.pt_id.Width = 50;
             // 
             // pt_name
             // 
+            this.pt_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.pt_name.DataPropertyName = "pt_name";
             this.pt_name.HeaderText = "PATIENT NAME";
             this.pt_name.Name = "pt_name";
             this.pt_name.ReadOnly = true;
-            this.pt_name.Width = 150;
             // 
             // group_id
             // 
+            this.group_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.group_id.DataPropertyName = "group_id";
             this.group_id.HeaderText = "PATIENT GROUP";
             this.group_id.Name = "group_id";
@@ -350,6 +352,7 @@
             this.doctor_name.HeaderText = "DOCTOR";
             this.doctor_name.Name = "doctor_name";
             this.doctor_name.ReadOnly = true;
+            this.doctor_name.Width = 115;
             // 
             // primary_mobile_number
             // 
@@ -369,35 +372,35 @@
             // 
             // start_datetime
             // 
+            this.start_datetime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.start_datetime.DataPropertyName = "start_datetime";
             this.start_datetime.HeaderText = "APPOINTMENT DATE";
             this.start_datetime.Name = "start_datetime";
             this.start_datetime.ReadOnly = true;
-            this.start_datetime.Width = 120;
             // 
             // booked_by
             // 
+            this.booked_by.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.booked_by.DataPropertyName = "booked_by";
             this.booked_by.HeaderText = "BOOKED  BY";
             this.booked_by.Name = "booked_by";
             this.booked_by.ReadOnly = true;
-            this.booked_by.Width = 80;
             // 
             // duration
             // 
+            this.duration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.duration.DataPropertyName = "duration";
             this.duration.HeaderText = "DURATION (MINS)";
             this.duration.Name = "duration";
             this.duration.ReadOnly = true;
-            this.duration.Width = 80;
             // 
             // email_address
             // 
+            this.email_address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.email_address.DataPropertyName = "email_address";
             this.email_address.HeaderText = "EMAIL";
             this.email_address.Name = "email_address";
             this.email_address.ReadOnly = true;
-            this.email_address.Width = 130;
             // 
             // note
             // 
@@ -410,19 +413,19 @@
             // chartappointeachpatientgroup
             // 
             this.chartappointeachpatientgroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea1.Name = "ChartArea1";
-            this.chartappointeachpatientgroup.ChartAreas.Add(chartArea1);
+            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            chartArea2.Name = "ChartArea1";
+            this.chartappointeachpatientgroup.ChartAreas.Add(chartArea2);
             this.chartappointeachpatientgroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartappointeachpatientgroup.Legends.Add(legend1);
+            legend2.Name = "Legend1";
+            this.chartappointeachpatientgroup.Legends.Add(legend2);
             this.chartappointeachpatientgroup.Location = new System.Drawing.Point(0, 0);
             this.chartappointeachpatientgroup.Name = "chartappointeachpatientgroup";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Appointment (s)";
-            this.chartappointeachpatientgroup.Series.Add(series1);
-            this.chartappointeachpatientgroup.Size = new System.Drawing.Size(1162, 548);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Appointment (s)";
+            this.chartappointeachpatientgroup.Series.Add(series2);
+            this.chartappointeachpatientgroup.Size = new System.Drawing.Size(1165, 548);
             this.chartappointeachpatientgroup.TabIndex = 9;
             this.chartappointeachpatientgroup.Text = "chart1";
             // 
@@ -443,9 +446,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.Grvappointeachgroup);
             this.panel3.Controls.Add(this.label_empty);
-            this.panel3.Location = new System.Drawing.Point(1168, 138);
+            this.panel3.Location = new System.Drawing.Point(1169, 137);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(202, 548);
+            this.panel3.Size = new System.Drawing.Size(193, 548);
             this.panel3.TabIndex = 100;
             // 
             // Grvappointeachgroup
@@ -454,33 +457,32 @@
             this.Grvappointeachgroup.AllowUserToDeleteRows = false;
             this.Grvappointeachgroup.AllowUserToResizeColumns = false;
             this.Grvappointeachgroup.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.Grvappointeachgroup.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            this.Grvappointeachgroup.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.Grvappointeachgroup.BackgroundColor = System.Drawing.Color.White;
             this.Grvappointeachgroup.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grvappointeachgroup.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Grvappointeachgroup.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.Grvappointeachgroup.ColumnHeadersHeight = 28;
-            this.Grvappointeachgroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Grvappointeachgroup.ColumnHeadersHeight = 30;
             this.Grvappointeachgroup.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GROUP,
             this.APPOINTMENT});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grvappointeachgroup.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grvappointeachgroup.DefaultCellStyle = dataGridViewCellStyle12;
             this.Grvappointeachgroup.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.Grvappointeachgroup.Location = new System.Drawing.Point(2, 0);
+            this.Grvappointeachgroup.Location = new System.Drawing.Point(6, 0);
             this.Grvappointeachgroup.Name = "Grvappointeachgroup";
             this.Grvappointeachgroup.RowHeadersVisible = false;
             this.Grvappointeachgroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grvappointeachgroup.Size = new System.Drawing.Size(194, 548);
+            this.Grvappointeachgroup.Size = new System.Drawing.Size(196, 548);
             this.Grvappointeachgroup.TabIndex = 0;
             // 
             // GROUP
@@ -608,7 +610,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewappoinmentpatientgroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartappointeachpatientgroup)).EndInit();
             this.panel3.ResumeLayout(false);

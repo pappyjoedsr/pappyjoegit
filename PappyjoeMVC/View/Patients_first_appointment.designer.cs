@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patients_First_Appointment));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -165,15 +165,16 @@
             // 
             // label_empty
             // 
-            this.label_empty.AutoSize = true;
+            this.label_empty.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_empty.BackColor = System.Drawing.Color.Wheat;
             this.label_empty.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_empty.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label_empty.Location = new System.Drawing.Point(273, 204);
             this.label_empty.Name = "label_empty";
-            this.label_empty.Size = new System.Drawing.Size(506, 25);
+            this.label_empty.Size = new System.Drawing.Size(533, 25);
             this.label_empty.TabIndex = 97;
             this.label_empty.Text = "No Records Found. Please change the Date and try again !..";
+            this.label_empty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_empty.VisibleChanged += new System.EventHandler(this.label_empty_VisibleChanged);
             // 
             // Grvpatientfirstappoint
@@ -182,8 +183,8 @@
             this.Grvpatientfirstappoint.AllowUserToDeleteRows = false;
             this.Grvpatientfirstappoint.AllowUserToResizeColumns = false;
             this.Grvpatientfirstappoint.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.Grvpatientfirstappoint.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.Grvpatientfirstappoint.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.Grvpatientfirstappoint.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -311,7 +312,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grvpatientfirstappoint)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

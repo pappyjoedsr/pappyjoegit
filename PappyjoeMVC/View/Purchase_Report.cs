@@ -296,7 +296,10 @@ namespace PappyjoeMVC.View
                     Txttotalcost.Text = cost1.ToString();
                     txtGrandTotal.Text = grandtotal1.ToString();
                 }
-                else{
+                else
+                {
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Visible = true;
                     dgvPurchase.Rows.Clear();
                     Txt_totalPurchase.Text = "0";

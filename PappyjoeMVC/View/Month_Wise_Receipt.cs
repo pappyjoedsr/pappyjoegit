@@ -66,6 +66,8 @@ namespace PappyjoeMVC.View
         {
             if (dtp.Rows.Count == 0)
             {
+                int x = (panel3.Size.Width - label_empty.Size.Width) / 2;
+                label_empty.Location = new Point(x, label_empty.Location.Y);
                 label_empty.Show();
                 label4.Text = "0";
                 Lab_Discount.Text = "0.00";

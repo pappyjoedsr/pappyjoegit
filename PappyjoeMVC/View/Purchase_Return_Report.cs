@@ -276,6 +276,8 @@ namespace PappyjoeMVC.View
                     dgvPurchase.Rows.Clear();
                     txtTotalItem.Text = "0";
                     txttotalAmount.Text = "0.00";
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Visible = true;
                 }
             }

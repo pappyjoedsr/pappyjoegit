@@ -7,8 +7,8 @@ namespace PappyjoeMVC.Model
         Connection db = new Connection();
         public DataTable Get_all_Patients()
         {
-            DataTable sqlstr = db.table("select  id as Pid,pt_id As 'Id'  ,pt_name  as 'Patient Name',gender as Gender,age as Age , primary_mobile_number  as   Mobile,street_address as 'Street Address',locality  as Locality,DATE_FORMAT(date,'%d-%m-%y') as DATE,Opticket as 'File NO' from tbl_patient  where Profile_Status='Active' order by id desc ");
-            return sqlstr; //= "SELECT id as Pid,pt_id as Id, pt_name as Name, gender as Gender,age as Age, primary_mobile_number as  Mobile,street_address as 'Street Address',Visited,Opticket FROM tbl_patient where Profile_Status='Active'  ORDER BY id DESC";
+            DataTable sqlstr = db.table("select  id as Pid,pt_id As 'Id'  ,pt_name  as 'Patient Name',gender as Gender,age as Age , primary_mobile_number  as   Mobile,street_address as 'Street Address',locality  as Locality,DATE_FORMAT(Visited,'%d/%m/%y') as Visited,Opticket as 'File NO' from tbl_patient  where Profile_Status='Active' order by id desc ");
+            return sqlstr; 
         }
 
         public DataTable group()
@@ -114,79 +114,79 @@ namespace PappyjoeMVC.Model
         }
         public DataTable recently_visited(DateTime d, DateTime todate)
         {
-            DataTable dtb = db.table("SELECT  DISTINCT A.id AS Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d.ToString("yyyy-MM-dd HH:mm") + "' and '" + todate.ToString("yyyy-MM-dd HH:mm") + "' and A.status<>'CANCELLED' and A.status <>'scheduled' ");
+            DataTable dtb = db.table("SELECT  DISTINCT A.id AS Pid,P.pt_id as 'Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d.ToString("yyyy-MM-dd HH:mm") + "' and '" + todate.ToString("yyyy-MM-dd HH:mm") + "' and A.status<>'CANCELLED' and A.status <>'scheduled' ");
             return dtb;
         }
         public DataTable Recently_added(string d, string todate)
         {
-            DataTable dtb = db.table("SELECT  id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,Opticket as 'File No' FROM  tbl_patient  where Visited between '" + d + "' and '" + todate + "' and tbl_patient.Profile_Status='Active' order by tbl_patient.Date DESC limit 20");
+            DataTable dtb = db.table("SELECT  id as Pid,pt_id as 'Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,Opticket as 'File No' FROM  tbl_patient  where Visited between '" + d + "' and '" + todate + "' and tbl_patient.Profile_Status='Active' order by tbl_patient.Date DESC limit 20");
             return dtb;
         }
         public DataTable upcomming_appointments(DateTime startDateTime)
         {
-            DataTable dtb = db.table("SELECT  DISTINCT A.pt_id AS Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on A.pt_id=P.ID WHERE  start_datetime >=  '" + startDateTime.ToString("yyyy-MM-dd") + "' and p.Profile_Status='Active' and  status !='Cancelled'");//  order by id desc";
+            DataTable dtb = db.table("SELECT  DISTINCT A.pt_id AS Pid,P.pt_id as 'Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on A.pt_id=P.ID WHERE  start_datetime >=  '" + startDateTime.ToString("yyyy-MM-dd") + "' and p.Profile_Status='Active' and  status !='Cancelled'");//  order by id desc";
             return dtb;
         }
         public DataTable birthday()
         {
-            DataTable dtb = db.table("select id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,Opticket as 'File No' from tbl_patient where MONTH(date_of_birth) ='" + DateTime.Now.Month + "' and DAY(date_of_birth)> '" + DateTime.Now.Day + "'  and date_of_birth !='" + "" + "' and tbl_patient.Profile_Status='Active' order by date_of_birth ASC");
+            DataTable dtb = db.table("select id as Pid,pt_id as 'Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,Opticket as 'File No' from tbl_patient where MONTH(date_of_birth) ='" + DateTime.Now.Month + "' and DAY(date_of_birth)> '" + DateTime.Now.Day + "'  and date_of_birth !='" + "" + "' and tbl_patient.Profile_Status='Active' order by date_of_birth ASC");
             return dtb;
         }
         public DataTable cancelled_appointment()
         {
-            DataTable dtb = db.table("select p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age,p.primary_mobile_number as Mobile,p.street_address as 'Street Address',p.locality as Locality,p.Opticket as 'File No' from  tbl_appointment A left join tbl_patient P on A.pt_id=P.id  where status='Cancelled' order by p.id");
+            DataTable dtb = db.table("select p.id as Pid,P.pt_id as 'Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age,p.primary_mobile_number as Mobile,p.street_address as 'Street Address',p.locality as Locality,p.Opticket as 'File No' from  tbl_appointment A left join tbl_patient P on A.pt_id=P.id  where status='Cancelled' order by p.id");
             return dtb;
         }
         public DataTable innactive_patients()
         {
-            DataTable dtb = db.table(" SELECT P.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM tbl_patient P where  Profile_Status ='Cancelled' ORDER BY P.id DESC");            //}
+            DataTable dtb = db.table(" SELECT P.id as Pid,P.pt_id as 'Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM tbl_patient P where  Profile_Status ='Cancelled' ORDER BY P.id DESC");            //}
             return dtb;
         }
         public DataTable patients_wit_group(string id4)
         {
-            DataTable dtb = db.table(" SELECT P.id AS Pid,P.pt_id AS 'Patient Id',pt_name AS 'Patient Name', gender AS Gender,age AS Age, primary_mobile_number AS  Mobile,street_address AS 'Street Address',locality AS Locality,Opticket as 'File No' FROM tbl_patient P inner join tbl_pt_group G on P.id = G.pt_id where G.group_id='" + id4 + "' and Profile_Status='Active' ORDER BY P.id DESC");
+            DataTable dtb = db.table(" SELECT P.id AS Pid,P.pt_id AS 'Id',pt_name AS 'Patient Name', gender AS Gender,age AS Age, primary_mobile_number AS  Mobile,street_address AS 'Street Address',locality AS Locality,Opticket as 'File No' FROM tbl_patient P inner join tbl_pt_group G on P.id = G.pt_id where G.group_id='" + id4 + "' and Profile_Status='Active' ORDER BY P.id DESC");
             return dtb;
         }
 
 
         public DataTable allpatient_search(string name)
         {
-            DataTable dtb = db.table("SELECT id Pid, pt_id 'Patient Id',pt_name 'Patient Name', gender Gender,age Age, primary_mobile_number Mobile,street_address 'Street Address',locality Locality,Visited, Opticket as 'File No' FROM tbl_patient where (pt_id like '%" + name + "%' or pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') and  Profile_Status='Active' ORDER BY id DESC");
+            DataTable dtb = db.table("SELECT id Pid, pt_id 'Id',pt_name 'Patient Name', gender Gender,age Age, primary_mobile_number Mobile,street_address 'Street Address',locality Locality,Visited, Opticket as 'File No' FROM tbl_patient where (pt_id like '%" + name + "%' or pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') and  Profile_Status='Active' ORDER BY id DESC");
             return dtb;
         }
         public DataTable recently_visited_search(DateTime d, DateTime todate, string name)
         {
-            DataTable dtb = db.table("SELECT  DISTINCT A.id AS Pid,P.pt_id 'Patient Id',P.pt_name 'Patient Name', P.gender Gender,P.age Age,P. primary_mobile_number Mobile ,P.street_address 'Street Address',P.locality Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d + "' and '" + todate + "' and A.status<>'CANCELLED' and A.status <>'scheduled' and (P.pt_id like '%" + name + "%' or P.pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') ");
+            DataTable dtb = db.table("SELECT  DISTINCT A.id AS Pid,P.pt_id 'Id',P.pt_name 'Patient Name', P.gender Gender,P.age Age,P. primary_mobile_number Mobile ,P.street_address 'Street Address',P.locality Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d + "' and '" + todate + "' and A.status<>'CANCELLED' and A.status <>'scheduled' and (P.pt_id like '%" + name + "%' or P.pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') ");
             return dtb;
         }
         public DataTable recently_added_search(string d, string todate, string name)
         {
-            DataTable dtb = db.table("SELECT  id Pid, pt_id 'Patient Id',pt_name 'Patient Name', gender Gender,age Age, primary_mobile_number Mobile,street_address 'Street Address',locality Locality, Opticket as 'File No' FROM  tbl_patient where Visited between '" + d + "' and '" + todate + "' and tbl_patient.Profile_Status='Active' and (pt_id like '%" + name + "%' or pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') ORDER BY id DESC limit 30");
+            DataTable dtb = db.table("SELECT  id Pid, pt_id 'Id',pt_name 'Patient Name', gender Gender,age Age, primary_mobile_number Mobile,street_address 'Street Address',locality Locality, Opticket as 'File No' FROM  tbl_patient where Visited between '" + d + "' and '" + todate + "' and tbl_patient.Profile_Status='Active' and (pt_id like '%" + name + "%' or pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') ORDER BY id DESC limit 30");
             return dtb;
         }
         public DataTable upcomming_appointments_search(DateTime startDateTime, string name)
         {
-            DataTable dtb = db.table("SELECT  DISTINCT P.id AS Pid, P.pt_id AS 'Patient Id', P.pt_name as 'Patient Name', P.gender as Gender, P.age as Age, P.primary_mobile_number as Mobile, P.street_address as 'Street Address', P.locality as Locality, P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on A.pt_id = P.ID WHERE(A.pt_id like '%" + name + "%' or P.pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') and start_datetime >= '" + startDateTime.ToString("yyyy-MM-dd") + "' and p.Profile_Status = 'Active'");
+            DataTable dtb = db.table("SELECT  DISTINCT P.id AS Pid, P.pt_id AS 'Id', P.pt_name as 'Patient Name', P.gender as Gender, P.age as Age, P.primary_mobile_number as Mobile, P.street_address as 'Street Address', P.locality as Locality, P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on A.pt_id = P.ID WHERE(A.pt_id like '%" + name + "%' or P.pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') and start_datetime >= '" + startDateTime.ToString("yyyy-MM-dd") + "' and p.Profile_Status = 'Active'");
             return dtb;
         }
         public DataTable birthday_search(string name)
         {
-            DataTable dtb = db.table("select id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as Gender,age as Age, primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as 'Locality',Opticket as 'File No' from tbl_patient where  tbl_patient.Profile_Status='Active' and (pt_id like '%" + name + "%' or pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') and MONTH(date_of_birth) ='" + DateTime.Now.Month + "' and DAY(date_of_birth)> '" + DateTime.Now.Day + "'  and date_of_birth !='" + "" + "'  order by date_of_birth ASC");
+            DataTable dtb = db.table("select id as Pid,pt_id as 'Id',pt_name as 'Patient Name', gender as Gender,age as Age, primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as 'Locality',Opticket as 'File No' from tbl_patient where  tbl_patient.Profile_Status='Active' and (pt_id like '%" + name + "%' or pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') and MONTH(date_of_birth) ='" + DateTime.Now.Month + "' and DAY(date_of_birth)> '" + DateTime.Now.Day + "'  and date_of_birth !='" + "" + "'  order by date_of_birth ASC");
             return dtb;
         }
         public DataTable cancelled_appointmnt_search(string name)
         {
-            DataTable dtb = db.table("select p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age,p.primary_mobile_number as Mobile,p.street_address as 'Street Address',p.locality as Locality,p.Opticket as 'File No' from tbl_appointment A left join tbl_patient P on A.pt_id=P.id  where status='Cancelled' and (A.pt_id like '%" + name + "%' or A.pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') order by p.id DESC");
+            DataTable dtb = db.table("select p.id as Pid,P.pt_id as 'Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age,p.primary_mobile_number as Mobile,p.street_address as 'Street Address',p.locality as Locality,p.Opticket as 'File No' from tbl_appointment A left join tbl_patient P on A.pt_id=P.id  where status='Cancelled' and (A.pt_id like '%" + name + "%' or A.pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') order by p.id DESC");
             return dtb;
         }
         public DataTable innactive_patients_search(string name)
         {
-            DataTable dtb = db.table("select id as Pid,pt_id as 'Patient Id',pt_name as 'Patient Name', gender as Gender,age as Age, primary_mobile_number as Mobile,street_address   as 'Street Address',locality as Locality,Opticket as 'File No' from tbl_patient where  tbl_patient.Profile_Status='Cancelled' and (pt_id like '%" + name + "%' or pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%')order by id DESC");
+            DataTable dtb = db.table("select id as Pid,pt_id as 'Id',pt_name as 'Patient Name', gender as Gender,age as Age, primary_mobile_number as Mobile,street_address   as 'Street Address',locality as Locality,Opticket as 'File No' from tbl_patient where  tbl_patient.Profile_Status='Cancelled' and (pt_id like '%" + name + "%' or pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%')order by id DESC");
             return dtb;
         }
         public DataTable patients_wit_group_search(string id4, string name)
         {
-            DataTable dtb = db.table(" SELECT p.id as Pid,P.pt_id as 'Patient Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age ,p.primary_mobile_number as Mobile,p.street_address as Street Address,p.locality as Locality,p.Opticket as 'File No' FROM tbl_patient P inner join tbl_pt_group G on P.id = G.pt_id where G.group_id='" + id4 + "' and Profile_Status='Active' and (P.pt_id like '%" + name + "%' or P.pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') ORDER BY P.id DESC");
+            DataTable dtb = db.table(" SELECT p.id as Pid,P.pt_id as 'Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age ,p.primary_mobile_number as Mobile,p.street_address as Street Address,p.locality as Locality,p.Opticket as 'File No' FROM tbl_patient P inner join tbl_pt_group G on P.id = G.pt_id where G.group_id='" + id4 + "' and Profile_Status='Active' and (P.pt_id like '%" + name + "%' or P.pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') ORDER BY P.id DESC");
             return dtb;
         }
         public string inventry_prevlage(string doctor_id)

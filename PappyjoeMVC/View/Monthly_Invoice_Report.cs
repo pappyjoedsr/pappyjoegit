@@ -139,7 +139,10 @@ namespace PappyjoeMVC.View
                     }
                 }
                 else
-                {  lblNoRecord.Show(); }
+                {
+                    int x = (panel3.Size.Width - lblNoRecord.Size.Width) / 2;
+                    lblNoRecord.Location = new Point(x, lblNoRecord.Location.Y);
+                    lblNoRecord.Show(); }
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error); }

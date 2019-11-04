@@ -199,8 +199,7 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.Dgv_ChartExpanse);
             this.panel4.Location = new System.Drawing.Point(1146, 143);
@@ -214,20 +213,19 @@
             this.Dgv_ChartExpanse.AllowUserToDeleteRows = false;
             this.Dgv_ChartExpanse.AllowUserToResizeColumns = false;
             this.Dgv_ChartExpanse.AllowUserToResizeRows = false;
-            this.Dgv_ChartExpanse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Dgv_ChartExpanse.BackgroundColor = System.Drawing.Color.White;
             this.Dgv_ChartExpanse.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_ChartExpanse.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Dgv_ChartExpanse.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.Dgv_ChartExpanse.ColumnHeadersHeight = 28;
             this.Dgv_ChartExpanse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Dgv_ChartExpanse.Location = new System.Drawing.Point(2, 1);
+            this.Dgv_ChartExpanse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Dgv_ChartExpanse.Location = new System.Drawing.Point(0, 0);
             this.Dgv_ChartExpanse.Name = "Dgv_ChartExpanse";
             this.Dgv_ChartExpanse.RowHeadersVisible = false;
             this.Dgv_ChartExpanse.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Dgv_ChartExpanse.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_ChartExpanse.Size = new System.Drawing.Size(244, 558);
+            this.Dgv_ChartExpanse.Size = new System.Drawing.Size(219, 565);
             this.Dgv_ChartExpanse.TabIndex = 0;
             this.Dgv_ChartExpanse.DataSourceChanged += new System.EventHandler(this.Dgv_ChartExpanse_DataSourceChanged);
             // 
@@ -425,6 +423,9 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.LightGray;
             this.panel3.Controls.Add(this.Lab_Msg);
             this.panel3.Controls.Add(this.Dgv_Expanse);
@@ -436,15 +437,16 @@
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(268, 181);
+            this.Lab_Msg.Location = new System.Drawing.Point(196, 204);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(562, 25);
             this.Lab_Msg.TabIndex = 277;
             this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // Dgv_Expanse
@@ -573,7 +575,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Expanse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_EXpanse)).EndInit();
             this.ResumeLayout(false);

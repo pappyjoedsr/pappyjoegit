@@ -117,9 +117,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.label8);
             this.panel6.Controls.Add(this.btn_Add);
-            this.panel6.Location = new System.Drawing.Point(193, 87);
+            this.panel6.Location = new System.Drawing.Point(193, 88);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1169, 37);
+            this.panel6.Size = new System.Drawing.Size(1166, 40);
             this.panel6.TabIndex = 261;
             // 
             // label8
@@ -141,7 +141,7 @@
             this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Add.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.ForeColor = System.Drawing.Color.White;
-            this.btn_Add.Location = new System.Drawing.Point(1090, 4);
+            this.btn_Add.Location = new System.Drawing.Point(1087, 4);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 30);
             this.btn_Add.TabIndex = 1;
@@ -524,7 +524,7 @@
             this.panel1.Controls.Add(this.Lab_Patient);
             this.panel1.Location = new System.Drawing.Point(2, 89);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(187, 647);
+            this.panel1.Size = new System.Drawing.Size(187, 613);
             this.panel1.TabIndex = 266;
             // 
             // labl_Lab
@@ -767,22 +767,23 @@
             // 
             this.panel9.Controls.Add(this.Lab_Msg);
             this.panel9.Controls.Add(this.Dgv_payment);
-            this.panel9.Location = new System.Drawing.Point(194, 130);
+            this.panel9.Location = new System.Drawing.Point(194, 133);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1161, 606);
+            this.panel9.Size = new System.Drawing.Size(1167, 601);
             this.panel9.TabIndex = 270;
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(134, 177);
+            this.Lab_Msg.Location = new System.Drawing.Point(131, 232);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(653, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(675, 25);
             this.Lab_Msg.TabIndex = 256;
             this.Lab_Msg.Text = "No Records Found. Please Click \' ADD \' button on Top Right To Add New One";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Dgv_payment
             // 
@@ -823,13 +824,13 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Dgv_payment.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Dgv_payment.Location = new System.Drawing.Point(4, 3);
+            this.Dgv_payment.Location = new System.Drawing.Point(4, 9);
             this.Dgv_payment.Name = "Dgv_payment";
             this.Dgv_payment.ReadOnly = true;
             this.Dgv_payment.RowHeadersVisible = false;
             this.Dgv_payment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Dgv_payment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.Dgv_payment.Size = new System.Drawing.Size(1150, 592);
+            this.Dgv_payment.Size = new System.Drawing.Size(1150, 587);
             this.Dgv_payment.TabIndex = 258;
             this.Dgv_payment.Visible = false;
             this.Dgv_payment.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Dgv_payment_MouseClick);
@@ -877,7 +878,7 @@
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.DarkGray;
-            this.panel8.Location = new System.Drawing.Point(190, 126);
+            this.panel8.Location = new System.Drawing.Point(190, 130);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1176, 1);
             this.panel8.TabIndex = 269;
@@ -978,7 +979,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_payment)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);

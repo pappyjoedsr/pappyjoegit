@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Treatment_Plans));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -105,13 +105,17 @@
             this.BtnAdd = new System.Windows.Forms.Button();
             this.labelallpatient = new System.Windows.Forms.Label();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_treatment_paln)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -140,7 +144,7 @@
             this.toolStripTextDoctor});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1364, 40);
+            this.toolStrip1.Size = new System.Drawing.Size(1362, 40);
             this.toolStrip1.TabIndex = 40;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -383,7 +387,7 @@
             this.panel5.BackColor = System.Drawing.Color.DarkGray;
             this.panel5.Location = new System.Drawing.Point(-11, 86);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1386, 1);
+            this.panel5.Size = new System.Drawing.Size(1384, 1);
             this.panel5.TabIndex = 52;
             // 
             // panel2
@@ -459,7 +463,7 @@
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel9.BackColor = System.Drawing.Color.DarkGray;
-            this.panel9.Location = new System.Drawing.Point(195, 86);
+            this.panel9.Location = new System.Drawing.Point(0, 48);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1, 676);
             this.panel9.TabIndex = 243;
@@ -467,7 +471,8 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.DarkGray;
-            this.panel7.Location = new System.Drawing.Point(195, 38);
+            this.panel7.Controls.Add(this.panel9);
+            this.panel7.Location = new System.Drawing.Point(191, 38);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1, 49);
             this.panel7.TabIndex = 242;
@@ -491,7 +496,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(2, 89);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(187, 644);
+            this.panel1.Size = new System.Drawing.Size(187, 613);
             this.panel1.TabIndex = 244;
             // 
             // labl_Lab
@@ -712,7 +717,7 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label41.Location = new System.Drawing.Point(198, 100);
+            this.label41.Location = new System.Drawing.Point(6, 9);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(144, 21);
             this.label41.TabIndex = 257;
@@ -723,9 +728,9 @@
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.DarkGray;
-            this.panel8.Location = new System.Drawing.Point(195, 129);
+            this.panel8.Location = new System.Drawing.Point(191, 132);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1186, 1);
+            this.panel8.Size = new System.Drawing.Size(1184, 1);
             this.panel8.TabIndex = 258;
             // 
             // BtnMarkAsFinished
@@ -736,7 +741,7 @@
             this.BtnMarkAsFinished.Enabled = false;
             this.BtnMarkAsFinished.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMarkAsFinished.ForeColor = System.Drawing.Color.White;
-            this.BtnMarkAsFinished.Location = new System.Drawing.Point(1165, 97);
+            this.BtnMarkAsFinished.Location = new System.Drawing.Point(964, 4);
             this.BtnMarkAsFinished.Name = "BtnMarkAsFinished";
             this.BtnMarkAsFinished.Size = new System.Drawing.Size(118, 29);
             this.BtnMarkAsFinished.TabIndex = 260;
@@ -751,22 +756,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.lab_NoRecordFound_AlertMsg);
             this.panel3.Controls.Add(this.dataGridView1_treatment_paln);
-            this.panel3.Location = new System.Drawing.Point(199, 132);
+            this.panel3.Location = new System.Drawing.Point(194, 136);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1146, 602);
+            this.panel3.Size = new System.Drawing.Size(1167, 601);
             this.panel3.TabIndex = 270;
             // 
             // lab_NoRecordFound_AlertMsg
             // 
-            this.lab_NoRecordFound_AlertMsg.AutoSize = true;
+            this.lab_NoRecordFound_AlertMsg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lab_NoRecordFound_AlertMsg.BackColor = System.Drawing.Color.Wheat;
             this.lab_NoRecordFound_AlertMsg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_NoRecordFound_AlertMsg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lab_NoRecordFound_AlertMsg.Location = new System.Drawing.Point(134, 177);
+            this.lab_NoRecordFound_AlertMsg.Location = new System.Drawing.Point(131, 232);
             this.lab_NoRecordFound_AlertMsg.Name = "lab_NoRecordFound_AlertMsg";
-            this.lab_NoRecordFound_AlertMsg.Size = new System.Drawing.Size(653, 25);
+            this.lab_NoRecordFound_AlertMsg.Size = new System.Drawing.Size(676, 25);
             this.lab_NoRecordFound_AlertMsg.TabIndex = 268;
             this.lab_NoRecordFound_AlertMsg.Text = "No Records Found. Please Click \' ADD \' button on Top Right To Add New One";
+            this.lab_NoRecordFound_AlertMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lab_NoRecordFound_AlertMsg.Visible = false;
             // 
             // dataGridView1_treatment_paln
@@ -775,19 +781,20 @@
             this.dataGridView1_treatment_paln.AllowUserToDeleteRows = false;
             this.dataGridView1_treatment_paln.AllowUserToResizeColumns = false;
             this.dataGridView1_treatment_paln.AllowUserToResizeRows = false;
-            this.dataGridView1_treatment_paln.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView1_treatment_paln.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1_treatment_paln.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1_treatment_paln.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1_treatment_paln.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1_treatment_paln.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1_treatment_paln.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1_treatment_paln.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1_treatment_paln.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.listimage,
@@ -798,28 +805,28 @@
             this.note,
             this.status,
             this.img});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1_treatment_paln.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView1_treatment_paln.Location = new System.Drawing.Point(3, 4);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1_treatment_paln.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1_treatment_paln.Location = new System.Drawing.Point(3, 9);
             this.dataGridView1_treatment_paln.Name = "dataGridView1_treatment_paln";
             this.dataGridView1_treatment_paln.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1_treatment_paln.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1_treatment_paln.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1_treatment_paln.RowHeadersVisible = false;
             this.dataGridView1_treatment_paln.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1_treatment_paln.Size = new System.Drawing.Size(1139, 594);
+            this.dataGridView1_treatment_paln.Size = new System.Drawing.Size(1160, 593);
             this.dataGridView1_treatment_paln.TabIndex = 0;
             this.dataGridView1_treatment_paln.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_treatment_paln_CellClick);
             this.dataGridView1_treatment_paln.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_treatment_paln_MouseClick);
@@ -948,7 +955,7 @@
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdd.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.BtnAdd.ForeColor = System.Drawing.Color.White;
-            this.BtnAdd.Location = new System.Drawing.Point(1286, 97);
+            this.BtnAdd.Location = new System.Drawing.Point(1085, 4);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(75, 29);
             this.BtnAdd.TabIndex = 259;
@@ -986,25 +993,43 @@
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Gray;
+            this.panel4.Location = new System.Drawing.Point(191, 85);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1, 657);
+            this.panel4.TabIndex = 269;
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Controls.Add(this.label41);
+            this.panel6.Controls.Add(this.BtnAdd);
+            this.panel6.Controls.Add(this.BtnMarkAsFinished);
+            this.panel6.Location = new System.Drawing.Point(194, 89);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1165, 40);
+            this.panel6.TabIndex = 300;
+            // 
             // Treatment_Plans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1364, 743);
+            this.ClientSize = new System.Drawing.Size(1362, 703);
             this.Controls.Add(this.listpatientsearch);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.label41);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.labelallpatient);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.BtnMarkAsFinished);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Treatment_Plans";
@@ -1016,13 +1041,14 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel7.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_treatment_paln)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1100,5 +1126,7 @@
         private System.Windows.Forms.ToolStripMenuItem dotMatrixToolStripMenuItem;
         private System.Windows.Forms.ListBox listpatientsearch;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel6;
     }
 }

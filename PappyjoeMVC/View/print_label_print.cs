@@ -42,18 +42,18 @@ namespace PappyjoeMVC.View
                 {
                     if (c == 0)
                     {
-                        Dgv_Print.Rows.Add("Patient Id #:" + dt_pt.Rows[j][1].ToString() + "\r\n" + dt_pt.Rows[j][2].ToString() + "\r\n" + dt_pt.Rows[j][6].ToString() + "\r\n" + "Admission #:" + Convert.ToDateTime(dt_pt.Rows[j][7].ToString()).ToString("MM/dd/yyyy") + "\r\nFile Number :" + dt_pt.Rows[j][8].ToString() + "\r\nPhone :" + dt_pt.Rows[j][5].ToString());
+                        Dgv_Print.Rows.Add("Patient Id #:" + dt_pt.Rows[j][1].ToString() + "\r\n" + dt_pt.Rows[j][2].ToString() + "\r\n" + dt_pt.Rows[j][6].ToString() + "\r\n" + "Admission #:" +dt_pt.Rows[j][7].ToString() + "\r\nFile Number :" + dt_pt.Rows[j][8].ToString() + "\r\nPhone :" + dt_pt.Rows[j][5].ToString());
                         Dgv_Print.Rows[R].Height = 150;
                         c = 1;
                     }
                     else if (c == 1)
                     {
-                        Dgv_Print.Rows[R].Cells[1].Value = "Patient Id #:" + dt_pt.Rows[j][1].ToString() + "\r\n" + dt_pt.Rows[j][2].ToString() + "\r\n" + dt_pt.Rows[j][6].ToString() + "\r\n" + "Admission #:" + Convert.ToDateTime(dt_pt.Rows[j][7].ToString()).ToString("MM/dd/yyyy") + "\r\nFile Number :" + dt_pt.Rows[j][8].ToString() + "\r\nPhone :" + dt_pt.Rows[j][5].ToString();
+                        Dgv_Print.Rows[R].Cells[1].Value = "Patient Id #:" + dt_pt.Rows[j][1].ToString() + "\r\n" + dt_pt.Rows[j][2].ToString() + "\r\n" + dt_pt.Rows[j][6].ToString() + "\r\n" + "Admission #:" + dt_pt.Rows[j][7].ToString() + "\r\nFile Number :" + dt_pt.Rows[j][8].ToString() + "\r\nPhone :" + dt_pt.Rows[j][5].ToString();
                         c = 2;
                     }
                     else if (c == 2)
                     {
-                        Dgv_Print.Rows[R].Cells[2].Value = "Patient Id #:" + dt_pt.Rows[j][1].ToString() + "\r\n" + dt_pt.Rows[j][2].ToString() + "\r\n" + dt_pt.Rows[j][6].ToString() + "\r\n" + "Admission #:" + Convert.ToDateTime(dt_pt.Rows[j][7].ToString()).ToString("MM/dd/yyyy") + "\r\nFile Number :" + dt_pt.Rows[j][8].ToString() + "\r\nPhone :" + dt_pt.Rows[j][5].ToString();
+                        Dgv_Print.Rows[R].Cells[2].Value = "Patient Id #:" + dt_pt.Rows[j][1].ToString() + "\r\n" + dt_pt.Rows[j][2].ToString() + "\r\n" + dt_pt.Rows[j][6].ToString() + "\r\n" + "Admission #:" + dt_pt.Rows[j][7].ToString() + "\r\nFile Number :" + dt_pt.Rows[j][8].ToString() + "\r\nPhone :" + dt_pt.Rows[j][5].ToString();
                         R = R + 1;
                         c = 0;
                     }

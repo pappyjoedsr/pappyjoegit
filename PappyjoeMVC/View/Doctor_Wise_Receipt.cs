@@ -101,6 +101,8 @@ namespace PappyjoeMVC.View
                 Lab_Amount.Text = "0.00";
                 Lab_Paid.Text = "0.00";
                 Lab_Due.Text = "0.00";
+                int x = (panel3.Size.Width - label_empty.Size.Width) / 2;
+                label_empty.Location = new Point(x, label_empty.Location.Y);
                 label_empty.Show();
             }
             else
@@ -148,11 +150,6 @@ namespace PappyjoeMVC.View
                         Totalamount = Totalamount + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["income"].Value);
                         Totalpaid = Totalpaid + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_paid"].Value);
                         Totaldue = Totaldue + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_due"].Value);
-                        //Totaltax = Totaltax + tax;
-                        //Totaldiscount = Totaldiscount + discount;
-                        //Totalamount = Totalamount + amount;
-                        //Totalpaid = Totalpaid + paid;
-                        //Totaldue = Totaldue + due;
                     }
                     Lab_Discount.Text = Convert.ToDecimal(Totaldiscount).ToString("#0.00");
                     Lab_tax.Text = Convert.ToDecimal(Totaltax).ToString("#0.00");

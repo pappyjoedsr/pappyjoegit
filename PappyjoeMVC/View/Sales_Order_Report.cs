@@ -207,7 +207,10 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Visible = true;
+                    //Lab_Msg.Location = new Point(272, 246);
                     Dgv_Order.Rows.Clear();
                     Txt_totalInvoice.Text = "0.00";
                 }

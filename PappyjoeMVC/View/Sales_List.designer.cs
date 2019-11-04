@@ -43,10 +43,6 @@
             this.DTP_To = new System.Windows.Forms.DateTimePicker();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.dgv_sales = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.DTP_From = new System.Windows.Forms.DateTimePicker();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Refresh = new System.Windows.Forms.Button();
             this.colslNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInvNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colinvDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +52,10 @@
             this.colTotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colmore = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.DTP_From = new System.Windows.Forms.DateTimePicker();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Refresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sales)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -185,15 +185,16 @@
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Lab_Msg.Location = new System.Drawing.Point(151, 212);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(563, 25);
             this.Lab_Msg.TabIndex = 278;
             this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // dgv_sales
@@ -247,62 +248,6 @@
             this.dgv_sales.Size = new System.Drawing.Size(875, 468);
             this.dgv_sales.TabIndex = 0;
             this.dgv_sales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sales_CellClick);
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.Lab_Msg);
-            this.panel2.Controls.Add(this.dgv_sales);
-            this.panel2.Location = new System.Drawing.Point(3, 94);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(875, 468);
-            this.panel2.TabIndex = 3;
-            // 
-            // DTP_From
-            // 
-            this.DTP_From.Location = new System.Drawing.Point(86, 52);
-            this.DTP_From.Name = "DTP_From";
-            this.DTP_From.Size = new System.Drawing.Size(200, 20);
-            this.DTP_From.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnexport);
-            this.panel1.Controls.Add(this.BtnShow);
-            this.panel1.Controls.Add(this.btn_Refresh);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label41);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.rad_Credit);
-            this.panel1.Controls.Add(this.rad_Cash);
-            this.panel1.Controls.Add(this.DTP_To);
-            this.panel1.Controls.Add(this.DTP_From);
-            this.panel1.Location = new System.Drawing.Point(1, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(898, 90);
-            this.panel1.TabIndex = 2;
-            // 
-            // btn_Refresh
-            // 
-            this.btn_Refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Refresh.BackColor = System.Drawing.Color.LimeGreen;
-            this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(804, 47);
-            this.btn_Refresh.Name = "btn_Refresh";
-            this.btn_Refresh.Size = new System.Drawing.Size(74, 30);
-            this.btn_Refresh.TabIndex = 296;
-            this.btn_Refresh.Text = "Refresh";
-            this.btn_Refresh.UseVisualStyleBackColor = false;
-            this.btn_Refresh.Visible = false;
             // 
             // colslNo
             // 
@@ -371,6 +316,62 @@
             this.colmore.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colmore.Width = 20;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.Lab_Msg);
+            this.panel2.Controls.Add(this.dgv_sales);
+            this.panel2.Location = new System.Drawing.Point(3, 94);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(875, 468);
+            this.panel2.TabIndex = 3;
+            // 
+            // DTP_From
+            // 
+            this.DTP_From.Location = new System.Drawing.Point(86, 52);
+            this.DTP_From.Name = "DTP_From";
+            this.DTP_From.Size = new System.Drawing.Size(200, 20);
+            this.DTP_From.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnexport);
+            this.panel1.Controls.Add(this.BtnShow);
+            this.panel1.Controls.Add(this.btn_Refresh);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label41);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.rad_Credit);
+            this.panel1.Controls.Add(this.rad_Cash);
+            this.panel1.Controls.Add(this.DTP_To);
+            this.panel1.Controls.Add(this.DTP_From);
+            this.panel1.Location = new System.Drawing.Point(1, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(898, 90);
+            this.panel1.TabIndex = 2;
+            // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Refresh.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btn_Refresh.ForeColor = System.Drawing.Color.White;
+            this.btn_Refresh.Location = new System.Drawing.Point(804, 47);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(74, 30);
+            this.btn_Refresh.TabIndex = 296;
+            this.btn_Refresh.Text = "Refresh";
+            this.btn_Refresh.UseVisualStyleBackColor = false;
+            this.btn_Refresh.Visible = false;
+            // 
             // Sales_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,7 +386,6 @@
             this.Load += new System.EventHandler(this.Sales_List_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sales)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

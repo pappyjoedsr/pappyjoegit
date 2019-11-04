@@ -131,6 +131,19 @@ namespace PappyjoeMVC.View
             {
                 FillAttachmentGrid(dt);
             }
+            else
+            {
+                if (Dgv_Attachment.Rows.Count <= 0)
+                {
+                    Lab_Msg.Show();
+                    Lab_Msg.Location = new System.Drawing.Point(134, 177);
+                }
+                else
+                {
+                    Lab_Msg.Hide();
+                    Lab_Msg.Location = new System.Drawing.Point(134, 177);
+                }
+            }
         }
         public void getattachment2(DataTable dt)
         {
@@ -141,6 +154,8 @@ namespace PappyjoeMVC.View
             }
             else
             {
+                int x = (panel7.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Visible = true;
             }
         }
@@ -214,16 +229,6 @@ namespace PappyjoeMVC.View
             }
             else
             {
-                if (Dgv_Attachment.Rows.Count <= 0)
-                {
-                    Lab_Msg.Show();
-                    Lab_Msg.Location = new System.Drawing.Point(134, 177);
-                }
-                else
-                {
-                    Lab_Msg.Hide();
-                    Lab_Msg.Location = new System.Drawing.Point(134, 177);
-                }
             }
         }
 

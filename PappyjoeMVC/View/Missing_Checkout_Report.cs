@@ -72,6 +72,8 @@ namespace PappyjoeMVC.View
                     else
                     {
                         label2.Text = "0";
+                        int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Show();
                     }
                 }
@@ -88,6 +90,8 @@ namespace PappyjoeMVC.View
                     else
                     {
                         label2.Text = "0";
+                        int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Show();
                     }
                 }
@@ -364,6 +368,8 @@ namespace PappyjoeMVC.View
                     }
                     if (dgvMissingCheckout.Rows.Count < 1)
                     {
+                        int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Show();
                     }
                     else

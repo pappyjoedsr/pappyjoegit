@@ -262,12 +262,15 @@ namespace PappyjoeMVC.View
                     {
                         printhtml();
                     }
+                    flag = true;
                     txt_Pt_search.Text = "";
+                    txt_Pt_search.Text = "Search by Patient  and  Name";
                     txt_procedure.Text = "";
                     txt_remarks.Text = "";
                     txtPatientID.Text = "";
                     txt_cost.Text = "";
                     txt_instruction.Text = "";
+                    flag = false;
                     Consultation_load();
                 }
                 else
@@ -372,7 +375,7 @@ namespace PappyjoeMVC.View
                                 sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                                 sWrite.WriteLine("<tr>");
                                 sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
-                                sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;&nbsp;" + header2 + "</font></td></tr>");
+                                sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;&nbsp;" + header2 + "</font></td></tr>"); 
                                 sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" + header3 + "</font></td></tr>");
                                 sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
                                 sWrite.WriteLine("</table>");

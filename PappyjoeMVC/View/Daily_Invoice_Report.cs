@@ -26,6 +26,8 @@ namespace PappyjoeMVC.View
             {
                 if (invMain.Rows.Count == 0)
                 {
+                    int x = (panel3.Size.Width - label_empty.Size.Width) / 2;
+                    label_empty.Location = new Point(x, label_empty.Location.Y);
                     label_empty.Show();
                 }
                 else
@@ -69,6 +71,8 @@ namespace PappyjoeMVC.View
             {
                 if (invMain.Rows.Count == 0)
                 {
+                    int x = (panel3.Size.Width - label_empty.Size.Width) / 2;
+                    label_empty.Location = new Point(x, label_empty.Location.Y);
                     label_empty.Show();
                 }
                 else
@@ -223,12 +227,12 @@ namespace PappyjoeMVC.View
                     drid = combodoctors.SelectedItem.ToString();
                     select_dr_id = this.ctrlr.Get_DoctorId(drid);
                 }
-                Grvsummary.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                Grvsummary.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                Grvsummary.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                Grvsummary.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                Grvsummary.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                Grvsummary.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                Grvsummary.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                Grvsummary.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                Grvsummary.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                Grvsummary.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                Grvsummary.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                Grvsummary.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 foreach (DataGridViewColumn cl in Grvsummary.Columns)
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -250,6 +254,8 @@ namespace PappyjoeMVC.View
                 }
                 if (Grvsummary.Rows.Count == 0)
                 {
+                    int x = (panel3.Size.Width - label_empty.Size.Width) / 2;
+                    label_empty.Location = new Point(x, label_empty.Location.Y);
                     label_empty.Show();
                     lbltotal1.Text = "00.00";
                     lbltotal2.Text = "00.00";

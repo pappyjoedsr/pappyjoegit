@@ -49,8 +49,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.dgvPurchase = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PurchNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PurchDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +57,8 @@
             this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiscAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grandtotl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchase)).BeginInit();
             this.panel2.SuspendLayout();
@@ -73,7 +73,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(1156, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 171;
             this.label2.Text = "Total Amount";
             // 
@@ -134,7 +134,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(1174, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "Total Cost";
             // 
@@ -169,7 +169,7 @@
             this.lblinvoices.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblinvoices.Location = new System.Drawing.Point(1151, 10);
             this.lblinvoices.Name = "lblinvoices";
-            this.lblinvoices.Size = new System.Drawing.Size(80, 13);
+            this.lblinvoices.Size = new System.Drawing.Size(81, 13);
             this.lblinvoices.TabIndex = 0;
             this.lblinvoices.Text = "Total Purchase";
             // 
@@ -289,15 +289,16 @@
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(390, 203);
+            this.Lab_Msg.Location = new System.Drawing.Point(191, 211);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(568, 25);
             this.Lab_Msg.TabIndex = 280;
             this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // dgvPurchase
@@ -321,6 +322,7 @@
             this.TotalAmount,
             this.DiscAmount,
             this.grandtotl});
+            this.dgvPurchase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPurchase.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvPurchase.Location = new System.Drawing.Point(0, 0);
             this.dgvPurchase.Name = "dgvPurchase";
@@ -330,42 +332,9 @@
             this.dgvPurchase.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPurchase.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPurchase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPurchase.Size = new System.Drawing.Size(1374, 612);
+            this.dgvPurchase.Size = new System.Drawing.Size(1371, 604);
             this.dgvPurchase.TabIndex = 1;
             this.dgvPurchase.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchase_CellDoubleClick);
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.Lab_Msg);
-            this.panel2.Controls.Add(this.dgvPurchase);
-            this.panel2.Location = new System.Drawing.Point(-2, 137);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1374, 612);
-            this.panel2.TabIndex = 195;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtGrandTotal);
-            this.panel1.Controls.Add(this.dptMonthly_From);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.Txttotalcost);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dptMonthly_To);
-            this.panel1.Controls.Add(this.Txt_totalPurchase);
-            this.panel1.Controls.Add(this.lblinvoices);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(-2, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1374, 88);
-            this.panel1.TabIndex = 193;
             // 
             // sl
             // 
@@ -431,6 +400,39 @@
             this.grandtotl.ReadOnly = true;
             this.grandtotl.Width = 130;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.Lab_Msg);
+            this.panel2.Controls.Add(this.dgvPurchase);
+            this.panel2.Location = new System.Drawing.Point(-2, 137);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1371, 604);
+            this.panel2.TabIndex = 195;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtGrandTotal);
+            this.panel1.Controls.Add(this.dptMonthly_From);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.Txttotalcost);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.dptMonthly_To);
+            this.panel1.Controls.Add(this.Txt_totalPurchase);
+            this.panel1.Controls.Add(this.lblinvoices);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Location = new System.Drawing.Point(-2, 50);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1374, 88);
+            this.panel1.TabIndex = 193;
+            // 
             // Purchase_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,7 +453,6 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchase)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

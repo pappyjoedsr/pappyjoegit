@@ -67,6 +67,8 @@ namespace PappyjoeMVC.View
                 this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvtreatmenteachdoctor.Rows.Count < 1)
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -183,6 +185,8 @@ namespace PappyjoeMVC.View
                         this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         if (Grvtreatmenteachdoctor.Rows.Count < 1)
                         {
+                            int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                            Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                             Lab_Msg.Show();
                         }
                         else
@@ -208,6 +212,8 @@ namespace PappyjoeMVC.View
                         this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         if (Grvtreatmenteachdoctor.Rows.Count < 1)
                         {
+                            int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                            Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                             Lab_Msg.Show();
                         }
                         else
@@ -238,6 +244,8 @@ namespace PappyjoeMVC.View
                         this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         if (Grvtreatmenteachdoctor.Rows.Count < 1)
                         {
+                            int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                            Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                             Lab_Msg.Show();
                         }
                         else
@@ -263,6 +271,8 @@ namespace PappyjoeMVC.View
                         this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         if (Grvtreatmenteachdoctor.Rows.Count < 1)
                         {
+                            int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                            Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                             Lab_Msg.Show();
                         }
                         else
@@ -455,6 +465,8 @@ namespace PappyjoeMVC.View
                     this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     if (Grvtreatmenteachdoctor.Rows.Count < 1)
                     {
+                        int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Show();
                     }
                     else
@@ -506,6 +518,8 @@ namespace PappyjoeMVC.View
                 this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvtreatmenteachdoctor.Rows.Count < 1)
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -569,6 +583,8 @@ namespace PappyjoeMVC.View
                 this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvtreatmenteachdoctor.Rows.Count < 1)
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else

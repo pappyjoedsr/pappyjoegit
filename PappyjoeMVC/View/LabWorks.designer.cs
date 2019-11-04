@@ -65,13 +65,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1_treatment_paln = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name_Work = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ShowDetails = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.img = new System.Windows.Forms.DataGridViewImageColumn();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -100,12 +93,23 @@
             this.printtoolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.addLabOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendSMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name_Work = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ShowDetails = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.img = new System.Windows.Forms.DataGridViewImageColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_treatment_paln)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -115,7 +119,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1241, 89);
+            this.button1.Location = new System.Drawing.Point(1046, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 30);
             this.button1.TabIndex = 280;
@@ -128,7 +132,7 @@
             this.lblLabWork.AutoSize = true;
             this.lblLabWork.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLabWork.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblLabWork.Location = new System.Drawing.Point(200, 92);
+            this.lblLabWork.Location = new System.Drawing.Point(27, 9);
             this.lblLabWork.Name = "lblLabWork";
             this.lblLabWork.Size = new System.Drawing.Size(90, 21);
             this.lblLabWork.TabIndex = 279;
@@ -450,7 +454,7 @@
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel6.BackColor = System.Drawing.Color.DarkGray;
-            this.panel6.Location = new System.Drawing.Point(193, 38);
+            this.panel6.Location = new System.Drawing.Point(191, 38);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1, 717);
             this.panel6.TabIndex = 286;
@@ -467,16 +471,17 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BackColor = System.Drawing.Color.Wheat;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(498, 340);
+            this.label1.Location = new System.Drawing.Point(131, 232);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(750, 25);
             this.label1.TabIndex = 284;
             this.label1.Text = "No Records Found. Please Click \' ADD LAB WORK \' button on Top Right To Add New On" +
     "e";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Visible = false;
             // 
             // label10
@@ -489,13 +494,14 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(193, 127);
+            this.label10.Location = new System.Drawing.Point(624, 53);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(1170, 24);
+            this.label10.Size = new System.Drawing.Size(142, 24);
             this.label10.TabIndex = 283;
             this.label10.Text = "DATE               WORK NAME                    WORK TYPE         STATUS         " +
     "   SHOW DETAILS                 ";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label10.Visible = false;
             // 
             // dataGridView1_treatment_paln
             // 
@@ -537,77 +543,15 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1_treatment_paln.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1_treatment_paln.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1_treatment_paln.Location = new System.Drawing.Point(196, 127);
+            this.dataGridView1_treatment_paln.Location = new System.Drawing.Point(4, 3);
             this.dataGridView1_treatment_paln.Name = "dataGridView1_treatment_paln";
             this.dataGridView1_treatment_paln.ReadOnly = true;
             this.dataGridView1_treatment_paln.RowHeadersVisible = false;
             this.dataGridView1_treatment_paln.RowTemplate.Height = 30;
             this.dataGridView1_treatment_paln.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1_treatment_paln.Size = new System.Drawing.Size(1167, 593);
+            this.dataGridView1_treatment_paln.Size = new System.Drawing.Size(1151, 601);
             this.dataGridView1_treatment_paln.TabIndex = 281;
             this.dataGridView1_treatment_paln.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_treatment_paln_CellContentClick);
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Work ID";
-            this.Id.HeaderText = "Work ID";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Id.Visible = false;
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "date";
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Name_Work
-            // 
-            this.Name_Work.DataPropertyName = "Work Name";
-            this.Name_Work.HeaderText = "Work Name";
-            this.Name_Work.Name = "Name_Work";
-            this.Name_Work.ReadOnly = true;
-            this.Name_Work.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Name_Work.Width = 250;
-            // 
-            // Type
-            // 
-            this.Type.DataPropertyName = "Work Type";
-            this.Type.HeaderText = "Work Type";
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
-            this.Type.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            this.Status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Status.Width = 150;
-            // 
-            // ShowDetails
-            // 
-            this.ShowDetails.HeaderText = "Show Details";
-            this.ShowDetails.Name = "ShowDetails";
-            this.ShowDetails.ReadOnly = true;
-            this.ShowDetails.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ShowDetails.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ShowDetails.Text = "Show details";
-            this.ShowDetails.UseColumnTextForLinkValue = true;
-            this.ShowDetails.Width = 200;
-            // 
-            // img
-            // 
-            this.img.HeaderText = "";
-            this.img.Image = global::PappyjoeMVC.Properties.Resources.Bill;
-            this.img.Name = "img";
-            this.img.ReadOnly = true;
-            this.img.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // listpatientsearch
             // 
@@ -630,7 +574,7 @@
             this.panel2.Controls.Add(this.linkLabel_Name);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(195, 39);
+            this.panel2.Location = new System.Drawing.Point(195, 41);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(371, 42);
             this.panel2.TabIndex = 278;
@@ -650,7 +594,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
-            this.panel3.Location = new System.Drawing.Point(0, 83);
+            this.panel3.Location = new System.Drawing.Point(0, 86);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1386, 1);
             this.panel3.TabIndex = 291;
@@ -675,9 +619,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(0, 87);
+            this.panel1.Location = new System.Drawing.Point(2, 89);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(191, 746);
+            this.panel1.Size = new System.Drawing.Size(187, 613);
             this.panel1.TabIndex = 292;
             // 
             // labl_Lab
@@ -899,7 +843,7 @@
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.DarkGray;
-            this.panel8.Location = new System.Drawing.Point(196, 127);
+            this.panel8.Location = new System.Drawing.Point(192, 134);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1311, 1);
             this.panel8.TabIndex = 293;
@@ -920,7 +864,7 @@
             this.labelallpatient.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.labelallpatient.Image = global::PappyjoeMVC.Properties.Resources.SP;
             this.labelallpatient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelallpatient.Location = new System.Drawing.Point(3, 42);
+            this.labelallpatient.Location = new System.Drawing.Point(3, 44);
             this.labelallpatient.Name = "labelallpatient";
             this.labelallpatient.Size = new System.Drawing.Size(106, 38);
             this.labelallpatient.TabIndex = 290;
@@ -966,24 +910,106 @@
             this.sendSMSToolStripMenuItem.Text = "Send SMS";
             this.sendSMSToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.dataGridView1_treatment_paln);
+            this.panel4.Location = new System.Drawing.Point(195, 137);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1167, 601);
+            this.panel4.TabIndex = 294;
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.Controls.Add(this.lblLabWork);
+            this.panel7.Controls.Add(this.button1);
+            this.panel7.Location = new System.Drawing.Point(195, 91);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1166, 40);
+            this.panel7.TabIndex = 295;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Work ID";
+            this.Id.HeaderText = "Work ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Id.Visible = false;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "date";
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Date.Width = 150;
+            // 
+            // Name_Work
+            // 
+            this.Name_Work.DataPropertyName = "Work Name";
+            this.Name_Work.HeaderText = "Work Name";
+            this.Name_Work.Name = "Name_Work";
+            this.Name_Work.ReadOnly = true;
+            this.Name_Work.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Name_Work.Width = 250;
+            // 
+            // Type
+            // 
+            this.Type.DataPropertyName = "Work Type";
+            this.Type.HeaderText = "Work Type";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            this.Type.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Type.Width = 150;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Status.Width = 150;
+            // 
+            // ShowDetails
+            // 
+            this.ShowDetails.HeaderText = "Show Details";
+            this.ShowDetails.Name = "ShowDetails";
+            this.ShowDetails.ReadOnly = true;
+            this.ShowDetails.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ShowDetails.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ShowDetails.Text = "Show details";
+            this.ShowDetails.UseColumnTextForLinkValue = true;
+            this.ShowDetails.Width = 200;
+            // 
+            // img
+            // 
+            this.img.HeaderText = "";
+            this.img.Image = global::PappyjoeMVC.Properties.Resources.Bill;
+            this.img.Name = "img";
+            this.img.ReadOnly = true;
+            this.img.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // LabWorks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelallpatient);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.lblLabWork);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dataGridView1_treatment_paln);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -1001,8 +1027,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1063,6 +1091,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem printtoolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem addLabOrderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sendSMSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name_Work;
@@ -1070,11 +1106,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewLinkColumn ShowDetails;
         private System.Windows.Forms.DataGridViewImageColumn img;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem printtoolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem addLabOrderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sendSMSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton toolStripButton13;
     }
 }

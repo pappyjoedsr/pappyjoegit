@@ -817,7 +817,7 @@
             this.panel7.Controls.Add(this.BtnCaseSheet);
             this.panel7.Controls.Add(this.BtnConsent);
             this.panel7.Controls.Add(this.BTNCunsultation);
-            this.panel7.Location = new System.Drawing.Point(199, 93);
+            this.panel7.Location = new System.Drawing.Point(197, 93);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(896, 36);
             this.panel7.TabIndex = 292;
@@ -997,7 +997,7 @@
             this.panel12.Controls.Add(this.labPatientId);
             this.panel12.Controls.Add(this.txtDob);
             this.panel12.Controls.Add(this.lab_PatientName);
-            this.panel12.Location = new System.Drawing.Point(197, 140);
+            this.panel12.Location = new System.Drawing.Point(197, 137);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(898, 609);
             this.panel12.TabIndex = 295;
@@ -1556,7 +1556,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gridgroups.DefaultCellStyle = dataGridViewCellStyle1;
-            this.gridgroups.Location = new System.Drawing.Point(6, 61);
+            this.gridgroups.Location = new System.Drawing.Point(10, 52);
             this.gridgroups.Name = "gridgroups";
             this.gridgroups.ReadOnly = true;
             this.gridgroups.RowHeadersVisible = false;
@@ -1579,7 +1579,7 @@
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label34.Location = new System.Drawing.Point(12, 13);
+            this.label34.Location = new System.Drawing.Point(7, 13);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(73, 25);
             this.label34.TabIndex = 239;
@@ -1593,7 +1593,7 @@
             this.panel10.Controls.Add(this.label24);
             this.panel10.Location = new System.Drawing.Point(1102, 141);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(263, 278);
+            this.panel10.Size = new System.Drawing.Size(268, 278);
             this.panel10.TabIndex = 296;
             // 
             // grmedical
@@ -1626,7 +1626,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grmedical.DefaultCellStyle = dataGridViewCellStyle4;
             this.grmedical.GridColor = System.Drawing.Color.White;
-            this.grmedical.Location = new System.Drawing.Point(3, 54);
+            this.grmedical.Location = new System.Drawing.Point(10, 52);
             this.grmedical.Name = "grmedical";
             this.grmedical.ReadOnly = true;
             this.grmedical.RowHeadersVisible = false;
@@ -1650,7 +1650,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label24.Location = new System.Drawing.Point(12, 14);
+            this.label24.Location = new System.Drawing.Point(7, 14);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(143, 25);
             this.label24.TabIndex = 237;
@@ -1658,6 +1658,7 @@
             // 
             // listpatientsearch
             // 
+            this.listpatientsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;

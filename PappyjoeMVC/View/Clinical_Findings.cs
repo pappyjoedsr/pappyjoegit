@@ -445,6 +445,8 @@ namespace PappyjoeMVC.View
                 }
                 if (dataGridView1.Rows.Count <= 0)
                 {
+                    int x = (panel3.Size.Width - Lbl_NoRecordFound_Alert.Size.Width) / 2;
+                    Lbl_NoRecordFound_Alert.Location = new Point(x, Lbl_NoRecordFound_Alert.Location.Y);
                     Lbl_NoRecordFound_Alert.Show();
                 }
                 else
@@ -474,7 +476,6 @@ namespace PappyjoeMVC.View
                     else
                     {
                         var form2 = new Add_Clinical_Notes();
-                        //ClinicalNotesAdd_controller cnt = new ClinicalNotesAdd_controller(form2);
                         form2.doctor_id = doctor_id;
                         form2.patient_id = patient_id;
                         form2.Closed += (sender1, args) => this.Close();
@@ -485,7 +486,6 @@ namespace PappyjoeMVC.View
                 else
                 {
                     var form2 = new Add_Clinical_Notes();
-                    //ClinicalNotesAdd_controller cnt = new ClinicalNotesAdd_controller(form2);
                     form2.doctor_id = doctor_id;
                     form2.patient_id = patient_id;
                     form2.Closed += (sender1, args) => this.Close();

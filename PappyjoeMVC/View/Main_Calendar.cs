@@ -2225,6 +2225,7 @@ namespace PappyjoeMVC.View
             this.panel5.Size = new System.Drawing.Size(250, 118);
             this.panel5.TabIndex = 9;
             this.panel5.Visible = false;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // Main_Calendar
             // 
@@ -4071,7 +4072,7 @@ namespace PappyjoeMVC.View
                 {
                     panel5.Visible = true;
                 }
-                panel5.Location = new Point(toolStrip1.Width - 365, 32);
+                panel5.Location = new Point(toolStrip1.Width - 350,32);
             }
             else
             {
@@ -4218,6 +4219,11 @@ namespace PappyjoeMVC.View
             var form2 = new Consultation();
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void toolStripBfatstrack_Click(object sender, EventArgs e)
