@@ -61,7 +61,6 @@ namespace PappyjoeMVC.View
                 {
                     series.Points.Clear();
                 }
-                //Select d = new Select();
                 Grvtreatmenteachdoctor.DataSource = this.cntrl.DoctoreachtreatmentLoad(date1, date2);
                 this.Grvtreatmenteachdoctor.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -145,8 +144,6 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                //DateTime d1 = DateTime.Parse(dateTimePickertreateachdoctor1.Value.ToString("MM/dd/yyyy"));
-                //DateTime d2 = DateTime.Parse(dateTimePickertreateachdoctor2.Value.ToString("MM/dd/yyyy"));
                 string date1 = dateTimePickertreateachdoctor1.Value.ToString("yyyy-MM-dd");
                 string date2 = dateTimePickertreateachdoctor2.Value.ToString("yyyy-MM-dd");
                 if (Convert.ToDateTime(date1).Date > Convert.ToDateTime(date2).Date)
@@ -450,7 +447,7 @@ namespace PappyjoeMVC.View
                         bind_grid(dt1);
                         int count = dt1.Rows.Count;
                         label4.Text = count.ToString();
-                        Grvtreatmenteachdoctor.DataSource = this.cntrl.Doctoreachtreatment(date1, date2, Selected_drid.ToString());//Doctoreachtreatmentgrid
+                        Grvtreatmenteachdoctor.DataSource = this.cntrl.Doctoreachtreatment(date1, date2, Selected_drid.ToString());
                     }
                     else if (combodoctors.SelectedIndex == 0)
                     {

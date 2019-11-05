@@ -31,7 +31,6 @@ namespace PappyjoeMVC.View
             sup_name1 = sup_name;
             sup_id1 = sup_id;
         }
-
         private void Purchase_Return_ItemList_Load(object sender, EventArgs e)
         {
             DataTable dt = this.cntrl.Load_Items(pur_no1);
@@ -51,7 +50,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void dgvItemList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvItemList.Rows.Count > 0)
@@ -72,7 +70,6 @@ namespace PappyjoeMVC.View
                 this.Hide();
             }
         }
-
         private void txt_Search_TextChanged(object sender, EventArgs e)
         {
             if (txt_Search.Text != "")

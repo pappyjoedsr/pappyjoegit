@@ -206,13 +206,15 @@ namespace PappyjoeMVC.View
             }
             if (DGV_Transaction.Rows.Count <= 1)
             {
+                int x = (panel9.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Show();
-                Lab_Msg.Location = new System.Drawing.Point(350, 165);
+                //Lab_Msg.Location = new System.Drawing.Point(350, 165);
             }
             else
             {
                 Lab_Msg.Hide();
-                Lab_Msg.Location = new System.Drawing.Point(350, 165);
+                //Lab_Msg.Location = new System.Drawing.Point(350, 165);
             }
         }
         public void SetController(Ledger_controller controller)

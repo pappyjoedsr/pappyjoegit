@@ -883,7 +883,7 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public int itemcheck_Batchgrid()//aswini
+        public int itemcheck_Batchgrid()
         {
             int affected = 0;
             for (int i = 0; i < dgv_BatchSale.Rows.Count; i++)
@@ -914,7 +914,7 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-        public void fill_Updategrid()//asini
+        public void fill_Updategrid()
         {
             int rowindex = dgv_BatchSale.Rows.Count;
             for (int j = 0; j < dtFor_CurrentStockUpdate.Rows.Count; j++)
@@ -944,7 +944,7 @@ namespace PappyjoeMVC.View
                 rowindex++;
             }
         }
-        public void update_Grid()//aswini
+        public void update_Grid()
         {
             DataTable dt_Update = new DataTable();
             dt_Update.Columns.Clear();
@@ -1268,7 +1268,7 @@ namespace PappyjoeMVC.View
                             Load_orderitems(dtb1);
                         }
                     }
-                    System.Data.DataTable tb_doctor = this.cntrl.get_doctor(doctor_id);// db.table("select id,doctor_name from tbl_doctor where (login_type='doctor' or login_type='admin') and activate_login='yes'and  id='" + doctor_id + "'");
+                    System.Data.DataTable tb_doctor = this.cntrl.get_doctor(doctor_id);
                     if (tb_doctor.Rows.Count > 0)
                     {
                         txtBdoctor.Text = tb_doctor.Rows[0]["doctor_name"].ToString();
@@ -1280,7 +1280,7 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public void clear_All_Data()//aswini
+        public void clear_All_Data()
         {
             dtpDocumentDate.Text = DateTime.Now.ToString();
             txtBdoctor.Text = "";
@@ -1374,7 +1374,7 @@ namespace PappyjoeMVC.View
                     txt_PhoneNo.Text = dtb_master.Rows[0]["phone1"].ToString();
                 }
                 DataTable dtb_sales = this.cntrl.sales_items_details(invnum_Edit);
-                decimal gstAmount = 0, igstAmount = 0;//TotalGst = 0;
+                decimal gstAmount = 0, igstAmount = 0;
                 decimal TotalAmount = 0, DisAmount = 0, TotalCost = 0, ToatalGST = 0, TotalIGST = 0;
                 int qty = 0;
                 for (int i = 0; i < dtb_sales.Rows.Count; i++)
@@ -1518,7 +1518,6 @@ namespace PappyjoeMVC.View
             {
                 txt_OrderNo.Text = dtb_orderMaster.Rows[0]["OrderNo"].ToString();
                 DTP_OrderDate.Text = dtb_orderMaster.Rows[0]["OrderDate"].ToString();
-                //txtBdoctor.Text = dtb_orderMaster.Rows[0]["Prescribedby"].ToString();
                 txtPatient.Text = dtb_orderMaster.Rows[0]["CustomerName"].ToString();
                 txtPatientID.Text = dtb_orderMaster.Rows[0]["Cus_Id"].ToString();
                 txt_Street.Text = dtb_orderMaster.Rows[0]["Address1"].ToString();
@@ -1735,7 +1734,7 @@ namespace PappyjoeMVC.View
                                         if (dtb.Rows.Count > 0)
                                         {
                                             itemId = dt_drug_inv_Details.Rows[0]["inventory_id"].ToString();
-                                            txt_ItemCode.Text = dtb.Rows[0]["id"].ToString();//dtb.Rows[0]["item_code"].ToString();
+                                            txt_ItemCode.Text = dtb.Rows[0]["id"].ToString();
                                             txt_Discription.Text = dtb.Rows[0]["item_name"].ToString();
                                             txt_UnitCost.Text = dtb.Rows[0]["Sales_Rate_Max"].ToString();
                                             txt_GST.Text = dtb.Rows[0]["GST"].ToString();
@@ -1761,7 +1760,6 @@ namespace PappyjoeMVC.View
                                                 TotalAmount_Calculation();
                                                 dgv_SalesItem.Rows.Add(txt_ItemCode.Text, dtb.Rows[0]["item_code"].ToString(), txt_Discription.Text, txt_Packing.Text, cmb_Unit.Text, txt_GST.Text, txt_IGST.Text, txt_Qty.Text, txt_Free.Text, txt_UnitCost.Text, txt_Amount.Text, PappyjoeMVC.Properties.Resources.editicon, PappyjoeMVC.Properties.Resources.deleteicon);
                                                 clear_itemdetails();
-                                               //Total Calculation
                                                 Decimal TotalGst = 0;
                                                 Decimal Total_Igst = 0; 
                                                 int Totalqty = 0;
@@ -1818,8 +1816,8 @@ namespace PappyjoeMVC.View
                                 }
                             }
                         }
-                    }// Prescription Details End
-                } // Grid Count >0
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -2014,7 +2012,6 @@ namespace PappyjoeMVC.View
                             sWrite.WriteLine("</tr>");
                         }
                     }
-
                     sWrite.WriteLine("</table>");
                 }
                 sWrite.WriteLine("</td>");
@@ -2068,12 +2065,9 @@ namespace PappyjoeMVC.View
             clear_itemdetails();
             clear_All_Data();
         }
-
         private void txt_Discount_TextAlignChanged(object sender, EventArgs e)
         {
-
         }
-
         private void txt_Discount_Leave(object sender, EventArgs e)
         {
             if (txt_Discount.Text == "")
@@ -2081,7 +2075,6 @@ namespace PappyjoeMVC.View
                 txt_Discount.Text = "0";
             }
         }
-
         private void txt_Discount_Click(object sender, EventArgs e)
         {
             if (txt_Discount.Text == "0")
@@ -2089,7 +2082,6 @@ namespace PappyjoeMVC.View
                 txt_Discount.Text = "";
             }
         }
-
         private void txt_Discount_KeyUp(object sender, KeyEventArgs e)
         {
             decimal totaldis = 0, totalamount = 0, totaldisper = 0;
@@ -2111,7 +2103,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         public void call_Item_Batch(string item_Code, decimal qty, string unit)
         {
             dtFor_CurrentStockUpdate_Bill.Columns.Clear();
@@ -2174,8 +2165,8 @@ namespace PappyjoeMVC.View
                             Remaning_qty = Remaning_qty - stk_value;
                         }
                     }
-                }//Batch checking
-            }//stock checking
+                }
+            }
         }
         public void Fiil_BatchSale_Grid_Prescription_bill()
         {

@@ -350,12 +350,10 @@ namespace PappyjoeMVC.View
                     int x = (panel6.Size.Width - Lab_Msg.Size.Width) / 2;
                     Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
-                    //Lab_Msg.Location = new System.Drawing.Point(165, 165);
                 }
                 else
                 {
                     Lab_Msg.Hide();
-                    //Lab_Msg.Location = new System.Drawing.Point(165, 165);
                 }
                 btn_ADD.Show();
             }
@@ -1130,9 +1128,6 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.status = 1;
-            //form2.Closed += (sender1, args) => this.Close();
-            //this.Hide();
-            //form2.ShowDialog();
             int i = 0; int j = 0;
             while (i < dgv_invoice.Rows.Count)
             {
@@ -1317,8 +1312,6 @@ namespace PappyjoeMVC.View
                     listpatientsearch.Visible = true;
                 }
                 listpatientsearch.Location = new Point(toolStrip2.Width - 360, 37);
-                //listpatientsearch.Location = new Point(toolStripTextBox1.Width + 750, 32);
-                //listpatientsearch.Location = new Point(toolStripTextBox1.Width = 1015, 39);
             }
             else
             {

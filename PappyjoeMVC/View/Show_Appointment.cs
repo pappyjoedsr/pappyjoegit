@@ -57,7 +57,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                this.Size = Screen.PrimaryScreen.WorkingArea.Size;//to set to the screen size
+                this.Size = Screen.PrimaryScreen.WorkingArea.Size;
                 string doctr_id = this.ctrlr.privilege_A(doctor_id);
                 if (int.Parse(doctr_id) > 0)
                 {

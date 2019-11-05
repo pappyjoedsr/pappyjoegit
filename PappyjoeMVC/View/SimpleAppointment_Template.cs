@@ -14,7 +14,7 @@ namespace PappyjoeMVC.View
     public partial class SimpleAppointment_Template : Form
     {
         public bool flag_Template = false;
-        string id1, drid, prescription_id = "", drug_type = "", buttoncaption = "", food1 = "", drug_type1 = "", id_temp = "", drug_id = "";
+        string  prescription_id = "",  food1 = "", drug_type1 = "", id_temp = "", drug_id = "";
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -27,9 +27,9 @@ namespace PappyjoeMVC.View
             if (txt_tempName.Text != "" && count >= 1)
             {
                 string Pt_name = "";
-                this.cntrl.save_template(txt_tempName.Text);// db.execute("insert into tbl_templates_main(templates) values('" + txt_tempName.Text + "')");
-                string dt = this.cntrl.get_templateid(txt_tempName.Text);// db.table("select id from tbl_templates_main where templates='" + txt_tempName.Text + "'");
-                string dt_patient = this.cntrl.get_patientname(ptid.ToString());// db.table("select Pt_name from tbl_patient where id='" + ptid + "'");
+                this.cntrl.save_template(txt_tempName.Text);
+                string dt = this.cntrl.get_templateid(txt_tempName.Text);
+                string dt_patient = this.cntrl.get_patientname(ptid.ToString());
                 if (dt_patient!="0")
                 {
                     Pt_name = dt_patient;
@@ -39,10 +39,7 @@ namespace PappyjoeMVC.View
                 for (int i = 0; i < count; i++)
                 {
                     this.cntrl.save_template(dt , ptid.ToString() , Pt_name , cmbDoctor.SelectedValue.ToString() , cmbDoctor.Text , dateTimePicker1.Value.ToString("yyyy-MM-dd") , dataGridView_templatenew[0, i].Value.ToString() , dataGridView_templatenew[1, i].Value.ToString() , dataGridView_templatenew[2, i].Value.ToString() , dataGridView_templatenew[3, i].Value.ToString() ,dataGridView_templatenew[5, i].Value.ToString() ,dataGridView_templatenew[6, i].Value.ToString(), dataGridView_templatenew[7, i].Value.ToString() ,dataGridView_templatenew[8, i].Value.ToString() , dataGridView_templatenew[9, i].Value.ToString() ,dataGridView_templatenew[11, i].Value.ToString() , dataGridView_templatenew[10, i].Value.ToString() , prescription_id , dataGridView_templatenew[4, i].Value.ToString() ,"1");
-                  // db.execute("insert into tbl_template (temp_id,pt_id,pt_name,dr_id,dr_name,date,drug_name,strength,strength_gr,duration,morning,noon,night,food,add_instruction,drug_type,drug_id,pres_id,duration_period,status) values('" + dt.Rows[0][0].ToString() + "','" + ptid + "','" + Pt_name + "','" + cmbDoctor.SelectedValue.ToString() + "','" + cmbDoctor.Text + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + dataGridView_templatenew[0, i].Value.ToString() + "','" + dataGridView_templatenew[1, i].Value.ToString() + "','" + dataGridView_templatenew[2, i].Value.ToString() + "','" + dataGridView_templatenew[3, i].Value.ToString() + "','" + dataGridView_templatenew[5, i].Value.ToString() + "','" + dataGridView_templatenew[6, i].Value.ToString() + "','" + dataGridView_templatenew[7, i].Value.ToString() + "','" + dataGridView_templatenew[8, i].Value.ToString() + "','" + dataGridView_templatenew[9, i].Value.ToString() + "','" + dataGridView_templatenew[11, i].Value.ToString() + "','" + dataGridView_templatenew[10, i].Value.ToString() + "','" + prescription_id + "','" + dataGridView_templatenew[4, i].Value.ToString() + "','1')");
                 }
-                //savebut.Text = buttoncaption;
-                //templatebutton_Click(sender, e);
                 MessageBox.Show("Template added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clear_template();
             }
@@ -102,21 +99,20 @@ namespace PappyjoeMVC.View
 
         private void SimpleAppointment_Template_Load(object sender, EventArgs e)
         {
-            DataTable dt_prescription = dt_prescription = this.cntrl.get_drug_name();// db.table("select id,name from tbl_adddrug");
+            DataTable dt_prescription = dt_prescription = this.cntrl.get_drug_name();
             if (dt_prescription.Rows.Count > 0)
             {
                 cmbPriscriptionTemplate.DataSource = dt_prescription;
                 cmbPriscriptionTemplate.ValueMember = "id";
                 cmbPriscriptionTemplate.DisplayMember = "name";
             }
-            DataTable dt_doctor = this.cntrl.get_all_doctorname();//db.table("select id,doctor_name from tbl_doctor where (login_type='admin'or login_type='doctor' )and activate_login='Yes'");
+            DataTable dt_doctor = this.cntrl.get_all_doctorname();
             if (dt_doctor.Rows.Count > 0)
             {
                 cmbDoctor.DataSource = dt_doctor;
                 cmbDoctor.ValueMember = "id";
                 cmbDoctor.DisplayMember = "doctor_name";
             }
-            //cmbDoctor.SelectedValue = drid;
             flag_Template = true;
         }
 
@@ -126,15 +122,13 @@ namespace PappyjoeMVC.View
             {
                 if (cmbPriscriptionTemplate.SelectedIndex >= 0)
                 {
-                    //drugnametext.Text = cmbPriscriptionTemplate.Text;
                     string id_temp = cmbPriscriptionTemplate.SelectedValue.ToString();
                     if (id_temp != "")
                     {
-                        //id1 = presdruggrid.Rows[r].Cells[0].Value.ToString();
-                        DataTable dt = this.cntrl.ge_drug(id_temp);// db.table("select name,strength,strength_gr,type,instructions,id from tbl_adddrug where id ='" + id_temp + "'");
+                        DataTable dt = this.cntrl.ge_drug(id_temp);
                         if (dt.Rows.Count > 0)
                         {
-                            drugnametext.Text = cmbPriscriptionTemplate.Text;// dt.Rows[0]["name"].ToString();
+                            drugnametext.Text = cmbPriscriptionTemplate.Text;
                             txtStrengthno.Text = dt.Rows[0]["strength_gr"].ToString();
                             strengthcombo.Text = dt.Rows[0]["strength"].ToString();
                             drug_type1 = dt.Rows[0][3].ToString();

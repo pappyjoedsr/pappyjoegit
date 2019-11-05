@@ -40,7 +40,6 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-
         private void Reports_Load(object sender, EventArgs e)
         {
             try
@@ -181,7 +180,6 @@ namespace PappyjoeMVC.View
                 form2.ShowDialog();
             }
         }
-
         private void comborepcategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -386,14 +384,14 @@ namespace PappyjoeMVC.View
                                     invNo = invoice.Rows[0]["invoice_no"].ToString();
                                     PtName = invoice.Rows[0]["pt_name"].ToString();
                                     date = DateTime.Parse(invoice.Rows[0]["date"].ToString()).ToString("dd/MM/yyyy");
-                                    fullTotalCost = fullTotalCost + totalCost; // total cost for label
-                                    fullTotalDue = fullTotalDue + totalDue;  // total due for label
+                                    fullTotalCost = fullTotalCost + totalCost;
+                                    fullTotalDue = fullTotalDue + totalDue;
                                     fullTotaldiscount = fullTotaldiscount + totalDiscount;
                                     fullTotaltax = fullTotaltax + totalTax;
-                                    Grvreports.Rows.Add(PtName, invoice.Rows[0]["doctor_name"].ToString(), invNo, date, Convert.ToDecimal(((totalCost + totalTax) - totalDiscount)).ToString("#0.00"), totalDue);  // adding
+                                    Grvreports.Rows.Add(PtName, invoice.Rows[0]["doctor_name"].ToString(), invNo, date, Convert.ToDecimal(((totalCost + totalTax) - totalDiscount)).ToString("#0.00"), totalDue); 
                                     jj++;
                                 }
-                                else // Drug Invoice with doctor
+                                else
                                 {
                                     string dr_found = "0";
                                     if (invMain.Rows[j]["type"].ToString() == "drug")
@@ -414,11 +412,11 @@ namespace PappyjoeMVC.View
                                             invNo = invoice.Rows[0]["invoice_no"].ToString();
                                             PtName = invoice.Rows[0]["pt_name"].ToString();
                                             date = DateTime.Parse(invoice.Rows[0]["date"].ToString()).ToString("dd/MM/yyyy");
-                                            fullTotalCost = fullTotalCost + totalCost; // total cost for label
-                                            fullTotalDue = fullTotalDue + totalDue;  // total due for label
+                                            fullTotalCost = fullTotalCost + totalCost;
+                                            fullTotalDue = fullTotalDue + totalDue; 
                                             fullTotaldiscount = fullTotaldiscount + totalDiscount;
                                             fullTotaltax = fullTotaltax + totalTax;
-                                            Grvreports.Rows.Add(PtName, invoice.Rows[0]["doctor_name"].ToString(), invNo, date, Convert.ToDecimal(((totalCost + totalTax) - totalDiscount)).ToString("#0.00"), totalDue);  // adding
+                                            Grvreports.Rows.Add(PtName, invoice.Rows[0]["doctor_name"].ToString(), invNo, date, Convert.ToDecimal(((totalCost + totalTax) - totalDiscount)).ToString("#0.00"), totalDue); 
                                             jj++;
                                         }
                                     }
@@ -436,11 +434,11 @@ namespace PappyjoeMVC.View
                                 invNo = invoice.Rows[0]["invoice_no"].ToString();
                                 PtName = invoice.Rows[0]["pt_name"].ToString();
                                 date = DateTime.Parse(invoice.Rows[0]["date"].ToString()).ToString("dd/MM/yyyy");
-                                fullTotalCost = fullTotalCost + totalCost; // total cost for label
-                                fullTotalDue = fullTotalDue + totalDue;  // total due for label
+                                fullTotalCost = fullTotalCost + totalCost; 
+                                fullTotalDue = fullTotalDue + totalDue; 
                                 fullTotaldiscount = fullTotaldiscount + totalDiscount;
                                 fullTotaltax = fullTotaltax + totalTax;
-                                Grvreports.Rows.Add(PtName, invoice.Rows[0]["doctor_name"].ToString(), invNo, date, Convert.ToDecimal(((totalCost + totalTax) - totalDiscount)).ToString("#0.00"), totalDue);  // adding
+                                Grvreports.Rows.Add(PtName, invoice.Rows[0]["doctor_name"].ToString(), invNo, date, Convert.ToDecimal(((totalCost + totalTax) - totalDiscount)).ToString("#0.00"), totalDue); 
                                 jj++;
                             }
                         }
@@ -453,7 +451,6 @@ namespace PappyjoeMVC.View
                     int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
                     Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
-                    //Lab_Msg.Location = new Point(272, 246);
                 }
                 Lab_TotalCost.Text = Convert.ToDecimal(fullTotalCost - (fullTotaldiscount + fullTotaltax)).ToString("#0.00");
                 Lab_DueAftrPaymnt.Text = Convert.ToDecimal(fullTotalDue).ToString("#0.00");
@@ -475,7 +472,6 @@ namespace PappyjoeMVC.View
                     dr.Cells[2].Style.Font = new System.Drawing.Font("Sego UI", 8, FontStyle.Regular);
                     dr.Cells[5].Style.Font = new System.Drawing.Font("Sego UI", 8, FontStyle.Bold);
                     dr.Cells[4].Style.Font = new System.Drawing.Font("Sego UI", 8, FontStyle.Bold);
-
                 }
             }
             catch (Exception ex)
@@ -500,7 +496,7 @@ namespace PappyjoeMVC.View
                             totalDiscount = totalDiscount + decimal.Parse(invoice.Rows[i]["discountin_rs"].ToString());
                             totalTax = totalTax + decimal.Parse(invoice.Rows[i]["Tax_inrs"].ToString());
                         }
-                        fullTotalCost = fullTotalCost + (totalCost - (totalDiscount + totalTax)); // total cost for label
+                        fullTotalCost = fullTotalCost + (totalCost - (totalDiscount + totalTax)); 
                         j++;
                     }
                 }
@@ -527,7 +523,7 @@ namespace PappyjoeMVC.View
                     Grvreports.Columns[3].Width = 135;
                     Grvreports.Columns[1].Width = 100;
                     Grvreports.Columns[2].Width = 125;
-                    Grvreports.Columns[4].Width = 129;//130
+                    Grvreports.Columns[4].Width = 129;
                     Grvreports.Columns[5].Width = 150;
                     Grvreports.Columns[6].Width = 120;
                     Grvreports.Columns[7].Width = 140;
@@ -557,10 +553,9 @@ namespace PappyjoeMVC.View
                             decimal amount_paid = decimal.Parse(dt.Rows[g]["AMOUNT PAID"].ToString());
                             string discount = dt.Rows[g]["DUE AFTER PAYMENT"].ToString();
                             totaltax = totaltax + amount_paid;
-                            totaldiscount = totaldiscount + Convert.ToDecimal(discount); // amount balance
+                            totaldiscount = totaldiscount + Convert.ToDecimal(discount);
                         }
                     }
-
                     Grvreports.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
                 else
@@ -571,9 +566,9 @@ namespace PappyjoeMVC.View
                 }
                 Lab_AmountPaid.Show();
                 LabAmountPaid.Show();
-                Lab_TotalCost.Text = Convert.ToDecimal(fullTotalCost).ToString("#0.00"); // total amount
-                Lab_AmountPaid.Text = Convert.ToDecimal(totaltax).ToString("#0.00"); // amount paid
-                Lab_DueAftrPaymnt.Text = Convert.ToDecimal(fullTotalCost - totaltax).ToString("#0.00"); // amount balance
+                Lab_TotalCost.Text = Convert.ToDecimal(fullTotalCost).ToString("#0.00");
+                Lab_AmountPaid.Text = Convert.ToDecimal(totaltax).ToString("#0.00"); 
+                Lab_DueAftrPaymnt.Text = Convert.ToDecimal(fullTotalCost - totaltax).ToString("#0.00"); 
             }
             catch (Exception ex)
             {
@@ -625,7 +620,6 @@ namespace PappyjoeMVC.View
                         }
                         this.Grvreports.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     }
-
                 }
                 else
                 {
@@ -860,7 +854,6 @@ namespace PappyjoeMVC.View
                             num = num + 1;
                         }
                     }
-                    //Lab_Msg.Show();
                     this.Grvreports.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     this.Grvreports.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     this.Grvreports.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -1276,7 +1269,6 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("<tr>");
                         sWrite.WriteLine("<th colspan=6> <center><FONT COLOR=black FACE='Segoe UI' SIZE=4>  <b> TREATMENT REPORT</b> </font></center></th>");
                         sWrite.WriteLine("</tr>");
-                        //}
                         sWrite.WriteLine("<tr>");
                         sWrite.WriteLine("<td colspan=6 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <br><b> " + strclinicname + "</b> </font></td>");
                         sWrite.WriteLine("</tr>");
@@ -1644,7 +1636,6 @@ namespace PappyjoeMVC.View
                 form2.ShowDialog();
             }
         }
-
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
             toolStripTextBox1.Clear();
@@ -1667,50 +1658,42 @@ namespace PappyjoeMVC.View
                     listpatientsearch.Visible = true;
                 }
                 listpatientsearch.Location = new Point(toolStrip1.Width - 360, 37);
-                //listpatientsearch.Location = new Point(toolStripTextBox1.Width = 1014, 39);
             }
             else
             {
                 listpatientsearch.Visible = false;
             }
         }
-
         private void lblappointmenteachpatientgroup_Click(object sender, EventArgs e)
         {
             Appointment_for_each_patient_group d = new Appointment_for_each_patient_group();
             d.ShowDialog();
         }
-
         private void lblappointmenteachdoctor_Click(object sender, EventArgs e)
         {
             Doctor_Wise_Appointment_Report v = new Doctor_Wise_Appointment_Report();
             v.ShowDialog();
         }
-
         private void lblmonthappointmentcount_Click(object sender, EventArgs e)
         {
             Monthly_Appointment_Count c = new Monthly_Appointment_Count();
             c.ShowDialog();
         }
-
         private void lbldailyappointcount_Click(object sender, EventArgs e)
         {
             Daily_Appointment_Count d = new Daily_Appointment_Count();
             d.ShowDialog();
         }
-
         private void lblMissingCheckoutReports_Click(object sender, EventArgs e)
         {
             Missing_Checkout_Report m = new Missing_Checkout_Report();
             m.ShowDialog();
         }
-
         private void lblVisitingHistory_Click(object sender, EventArgs e)
         {
             Visiting_History v = new Visiting_History();
             v.ShowDialog();
         }
-
         private void lbldailynewpatient_Click(object sender, EventArgs e)
         {
             Daily_New_Patients d = new Daily_New_Patients();
@@ -1923,7 +1906,6 @@ namespace PappyjoeMVC.View
         private void Lab_ExpanseCategory_Click(object sender, EventArgs e)
         {
             Expense_Category_Wise_Report d = new Expense_Category_Wise_Report();
-            //d.doctor_id = doctor_id;
             d.ShowDialog();
         }
 

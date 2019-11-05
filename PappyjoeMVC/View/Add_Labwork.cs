@@ -82,13 +82,13 @@ namespace PappyjoeMVC.View
                 else
                 {
                     radioButton2.Checked = false;
-                    pnlDental.Show();
-                    pnlMedlab.Show();
+                    pnlDental.Hide();
+                    //pnlMedlab.Show();
                     pnlMedlab.Visible = true;
                     pnlMedlab.Location = new Point(5, 10);
-                    c.Show();
+                    //c.Show();
                     c.Visible = true;
-                    c.Location = new Point(1015, 141);
+                    c.Location = new Point(1016, 141);
                     DataTable tbshade = this.ctrlr.Lab_Medi_TemplateMain();
                     dataGridView2.DataSource = tbshade;
                     checkvalue = "1";
@@ -108,13 +108,13 @@ namespace PappyjoeMVC.View
                 if (radioButton1.Checked == true)
                 {
                     radioButton2.Checked = false;
-                    pnlDental.Show();
+                    //pnlDental.Show();
                     pnlMedlab.Show();
                     pnlMedlab.Visible = true;
-                    pnlMedlab.Location = new Point(5, 10);
+                    pnlMedlab.Location = new Point(3, 137);
                     c.Show();
                     c.Visible = true;
-                    c.Location = new Point(1015, 141);
+                    c.Location = new Point(1016, 141);
                     DataTable tbshade = this.ctrlr.Lab_Medi_TemplateMain();
                     dataGridView2.DataSource = tbshade;
                     checkvalue = "1";
@@ -722,7 +722,7 @@ namespace PappyjoeMVC.View
                 pnladddental.Hide();
                 c.Hide();
                 panel13.Visible = true;
-                panel13.Location = new Point(4, 600);
+                //panel13.Location = new Point(4, 678);
                 DataTable rs_patients = this.ctrlr.Get_Patient_Details(patient_id);
                 if (rs_patients.Rows[0]["pt_name"].ToString() != "")
                 {

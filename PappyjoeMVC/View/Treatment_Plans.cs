@@ -200,12 +200,10 @@ namespace PappyjoeMVC.View
                     int x = (panel3.Size.Width - lab_NoRecordFound_AlertMsg.Size.Width) / 2;
                     lab_NoRecordFound_AlertMsg.Location = new Point(x, lab_NoRecordFound_AlertMsg.Location.Y);
                     lab_NoRecordFound_AlertMsg.Show();
-                    //lab_NoRecordFound_AlertMsg.Location = new System.Drawing.Point(165, 165);
                 }
                 else
                 {
                     lab_NoRecordFound_AlertMsg.Hide();
-                    //lab_NoRecordFound_AlertMsg.Location = new System.Drawing.Point(165, 165);
                 }
             }
             catch (Exception ex)

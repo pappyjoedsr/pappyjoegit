@@ -454,7 +454,7 @@ namespace PappyjoeMVC.View
                 txtAmount.Text = amt.ToString("##.00");
             }
         }
-        public void calculatonsss()//aswini
+        public void calculatonsss()
         {
             if (txt_qty.Text != "" && txtUnitCost.Text != "")
             {
@@ -671,13 +671,9 @@ namespace PappyjoeMVC.View
             {
             }
         }
-
         private void txtSupplierName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        public void clear()
+        { }
+       public void clear()
         {
             cmbUnit.Items.Clear();
             txt_Itemcode.Text = "";

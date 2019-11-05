@@ -195,9 +195,6 @@ namespace PappyjoeMVC.View
                             }
                             else
                             {
-                                //stock = Convert.ToDecimal(dtb.Rows[i]["qty"].ToString());
-                                //item_rate1 = stock * Convert.ToDecimal(dtunit.Rows[0]["purch_rate"].ToString());
-                                //item_rate2 = stock * Convert.ToDecimal(dtunit.Rows[0]["purch_rate2"].ToString());
                                 if (Convert.ToDecimal(dtb.Rows[i]["qty"].ToString()) < Convert.ToDecimal(dtb_Min.Rows[0][0].ToString()))
                                 { 
                                     stock = Convert.ToDecimal(dtb.Rows[i]["qty"].ToString());
@@ -733,7 +730,6 @@ namespace PappyjoeMVC.View
                 {
                     listpatientsearch.Visible = true;
                 }
-                //listpatientsearch.Location = new Point(toolStripTextBox1.Width + 750, 32);
                 listpatientsearch.Location = new Point(toolStrip1.Width - 360, 37);
             }
             else
