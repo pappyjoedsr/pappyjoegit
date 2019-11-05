@@ -287,7 +287,7 @@
             this.labelappointment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelappointment.ForeColor = System.Drawing.Color.White;
             this.labelappointment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelappointment.Location = new System.Drawing.Point(7, 58);
+            this.labelappointment.Location = new System.Drawing.Point(18, 58);
             this.labelappointment.Name = "labelappointment";
             this.labelappointment.Size = new System.Drawing.Size(166, 32);
             this.labelappointment.TabIndex = 40;

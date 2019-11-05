@@ -47,14 +47,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.linkLabel_Name = new System.Windows.Forms.LinkLabel();
             this.linkLabel_id = new System.Windows.Forms.LinkLabel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnladddental = new System.Windows.Forms.Panel();
             this.dgvdentalwork = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WorkType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Work = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.chkdentallab = new System.Windows.Forms.RadioButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -197,6 +195,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnladddental.SuspendLayout();
@@ -284,16 +283,6 @@
             this.linkLabel_id.TabStop = true;
             this.linkLabel_id.Text = "linkLabel1";
             // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel6.Location = new System.Drawing.Point(1004, 134);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1, 612);
-            this.panel6.TabIndex = 313;
-            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "Remove";
@@ -303,15 +292,15 @@
             // 
             // pnladddental
             // 
-            this.pnladddental.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnladddental.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnladddental.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pnladddental.Controls.Add(this.dgvdentalwork);
-            this.pnladddental.Controls.Add(this.textBox4);
             this.pnladddental.Controls.Add(this.label12);
-            this.pnladddental.Location = new System.Drawing.Point(1019, 138);
+            this.pnladddental.Location = new System.Drawing.Point(1023, 137);
             this.pnladddental.Name = "pnladddental";
-            this.pnladddental.Size = new System.Drawing.Size(325, 456);
+            this.pnladddental.Size = new System.Drawing.Size(336, 582);
             this.pnladddental.TabIndex = 309;
             // 
             // dgvdentalwork
@@ -319,8 +308,9 @@
             this.dgvdentalwork.AllowUserToAddRows = false;
             this.dgvdentalwork.AllowUserToDeleteRows = false;
             this.dgvdentalwork.AllowUserToResizeRows = false;
-            this.dgvdentalwork.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvdentalwork.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvdentalwork.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvdentalwork.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvdentalwork.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -347,7 +337,7 @@
             dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvdentalwork.DefaultCellStyle = dataGridViewCellStyle26;
             this.dgvdentalwork.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvdentalwork.Location = new System.Drawing.Point(4, 63);
+            this.dgvdentalwork.Location = new System.Drawing.Point(4, 56);
             this.dgvdentalwork.Name = "dgvdentalwork";
             this.dgvdentalwork.ReadOnly = true;
             dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -364,9 +354,9 @@
             this.dgvdentalwork.RowsDefaultCellStyle = dataGridViewCellStyle28;
             this.dgvdentalwork.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvdentalwork.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvdentalwork.Size = new System.Drawing.Size(319, 372);
+            this.dgvdentalwork.Size = new System.Drawing.Size(328, 540);
             this.dgvdentalwork.TabIndex = 22;
-            this.dgvdentalwork.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdentalwork_CellContentClick);
+            this.dgvdentalwork.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdentalwork_CellClick);
             // 
             // id
             // 
@@ -395,26 +385,14 @@
             this.Work.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Work.Width = 325;
             // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.textBox4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.textBox4.Location = new System.Drawing.Point(23, 23);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(268, 22);
-            this.textBox4.TabIndex = 24;
-            this.textBox4.Text = "search";
-            this.textBox4.Visible = false;
-            this.textBox4.Click += new System.EventHandler(this.textBox4_Click);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label12.Location = new System.Drawing.Point(20, 6);
+            this.label12.Location = new System.Drawing.Point(8, 19);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(126, 13);
+            this.label12.Size = new System.Drawing.Size(134, 15);
             this.label12.TabIndex = 23;
             this.label12.Text = "DENTAL LAB WORK LIST";
             // 
@@ -451,7 +429,7 @@
             // 
             this.settingsToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1435669277_gear_basic_blue_small_;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -459,7 +437,7 @@
             // 
             this.logOuntToolStripMenuItem.Image = global::PappyjoeMVC.Properties.Resources._1429953040_Log_Out;
             this.logOuntToolStripMenuItem.Name = "logOuntToolStripMenuItem";
-            this.logOuntToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.logOuntToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logOuntToolStripMenuItem.Text = "Logout";
             this.logOuntToolStripMenuItem.Click += new System.EventHandler(this.logOuntToolStripMenuItem_Click);
             // 
@@ -773,7 +751,7 @@
             this.panel7.Controls.Add(this.pictureBox2);
             this.panel7.Controls.Add(this.linkLabel1);
             this.panel7.Controls.Add(this.linkLabel2);
-            this.panel7.Location = new System.Drawing.Point(2, 42);
+            this.panel7.Location = new System.Drawing.Point(2, 43);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(371, 42);
             this.panel7.TabIndex = 314;
@@ -849,7 +827,6 @@
             this.listBox1.TabIndex = 315;
             this.listBox1.Visible = false;
             this.listBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseClick);
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // panel8
             // 
@@ -896,7 +873,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label18.Location = new System.Drawing.Point(-1, 95);
+            this.label18.Location = new System.Drawing.Point(12, 101);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(90, 21);
             this.label18.TabIndex = 317;
@@ -907,7 +884,7 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.radioButton1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.radioButton1.Location = new System.Drawing.Point(311, 100);
+            this.radioButton1.Location = new System.Drawing.Point(316, 111);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(117, 17);
             this.radioButton1.TabIndex = 320;
@@ -921,7 +898,7 @@
             this.radioButton2.Checked = true;
             this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.radioButton2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.radioButton2.Location = new System.Drawing.Point(200, 100);
+            this.radioButton2.Location = new System.Drawing.Point(200, 111);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(111, 17);
             this.radioButton2.TabIndex = 321;
@@ -958,9 +935,9 @@
             this.pnlDental.Controls.Add(this.label2);
             this.pnlDental.Controls.Add(this.label1);
             this.pnlDental.Controls.Add(this.txtworkname);
-            this.pnlDental.Location = new System.Drawing.Point(3, 137);
+            this.pnlDental.Location = new System.Drawing.Point(1, 137);
             this.pnlDental.Name = "pnlDental";
-            this.pnlDental.Size = new System.Drawing.Size(1010, 530);
+            this.pnlDental.Size = new System.Drawing.Size(1010, 512);
             this.pnlDental.TabIndex = 323;
             // 
             // panel4
@@ -1803,9 +1780,9 @@
             this.pnlMedlab.Controls.Add(this.label14);
             this.pnlMedlab.Controls.Add(this.txtname);
             this.pnlMedlab.Controls.Add(this.label9);
-            this.pnlMedlab.Location = new System.Drawing.Point(1011, 597);
+            this.pnlMedlab.Location = new System.Drawing.Point(346, 682);
             this.pnlMedlab.Name = "pnlMedlab";
-            this.pnlMedlab.Size = new System.Drawing.Size(1002, 260);
+            this.pnlMedlab.Size = new System.Drawing.Size(1010, 512);
             this.pnlMedlab.TabIndex = 250;
             // 
             // combolab
@@ -1854,7 +1831,7 @@
             dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle30;
             this.dataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 58);
+            this.dataGridView3.Location = new System.Drawing.Point(4, 51);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1868,8 +1845,9 @@
             this.dataGridView3.RowHeadersVisible = false;
             dataGridViewCellStyle32.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle32;
+            this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(1007, 261);
+            this.dataGridView3.Size = new System.Drawing.Size(1003, 458);
             this.dataGridView3.TabIndex = 0;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
@@ -1907,15 +1885,16 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column5.Width = 110;
             // 
             // Column8
             // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column8.DataPropertyName = "Normal Value";
             this.Column8.HeaderText = "Normal Value";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column8.Width = 140;
             // 
             // Column4
             // 
@@ -1965,7 +1944,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(572, 19);
+            this.button1.Location = new System.Drawing.Point(502, 16);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button1.Size = new System.Drawing.Size(57, 24);
@@ -1976,7 +1955,7 @@
             // 
             // txttype
             // 
-            this.txttype.Location = new System.Drawing.Point(392, 19);
+            this.txttype.Location = new System.Drawing.Point(307, 17);
             this.txttype.Name = "txttype";
             this.txttype.Size = new System.Drawing.Size(164, 20);
             this.txttype.TabIndex = 4;
@@ -2015,7 +1994,8 @@
             // 
             // c
             // 
-            this.c.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.c.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.c.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.c.Controls.Add(this.dataGridView2);
@@ -2024,9 +2004,9 @@
             this.c.Controls.Add(this.label11);
             this.c.Controls.Add(this.cmbtest);
             this.c.Controls.Add(this.label16);
-            this.c.Location = new System.Drawing.Point(1020, 140);
+            this.c.Location = new System.Drawing.Point(1022, 137);
             this.c.Name = "c";
-            this.c.Size = new System.Drawing.Size(324, 455);
+            this.c.Size = new System.Drawing.Size(336, 582);
             this.c.TabIndex = 294;
             // 
             // dataGridView2
@@ -2035,8 +2015,9 @@
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AllowUserToResizeColumns = false;
             this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -2062,7 +2043,7 @@
             dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle34;
             this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView2.Location = new System.Drawing.Point(2, 39);
+            this.dataGridView2.Location = new System.Drawing.Point(4, 56);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -2079,10 +2060,9 @@
             this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle36;
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(319, 413);
+            this.dataGridView2.Size = new System.Drawing.Size(328, 540);
             this.dataGridView2.TabIndex = 26;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // Column6
             // 
@@ -2127,11 +2107,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label11.Location = new System.Drawing.Point(20, 6);
+            this.label11.Location = new System.Drawing.Point(8, 19);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(124, 13);
+            this.label11.Size = new System.Drawing.Size(132, 15);
             this.label11.TabIndex = 23;
             this.label11.Text = "MEDICAL LAB TEST LIST";
             // 
@@ -2150,7 +2130,7 @@
             this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(8, 49);
+            this.label16.Location = new System.Drawing.Point(8, 68);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(32, 17);
             this.label16.TabIndex = 14;
@@ -2166,9 +2146,9 @@
             this.panel13.Controls.Add(this.label7);
             this.panel13.Controls.Add(this.label6);
             this.panel13.Controls.Add(this.comboBox6);
-            this.panel13.Location = new System.Drawing.Point(1, 667);
+            this.panel13.Location = new System.Drawing.Point(1, 654);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(1009, 79);
+            this.panel13.Size = new System.Drawing.Size(1012, 73);
             this.panel13.TabIndex = 324;
             // 
             // dateTimePicker1
@@ -2216,16 +2196,27 @@
             this.comboBox6.Size = new System.Drawing.Size(205, 21);
             this.comboBox6.TabIndex = 1;
             // 
+            // panel10
+            // 
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel10.BackColor = System.Drawing.Color.Gray;
+            this.panel10.Location = new System.Drawing.Point(1016, 135);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1, 612);
+            this.panel10.TabIndex = 250;
+            // 
             // Add_Labwork
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1362, 749);
+            this.ClientSize = new System.Drawing.Size(1362, 731);
             this.Controls.Add(this.pnlMedlab);
+            this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel13);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.c);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
@@ -2234,7 +2225,6 @@
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.pnladddental);
             this.Controls.Add(this.chkdentallab);
             this.Controls.Add(this.label41);
@@ -2289,14 +2279,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel linkLabel_Name;
         private System.Windows.Forms.LinkLabel linkLabel_id;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Panel pnladddental;
         private System.Windows.Forms.DataGridView dgvdentalwork;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn WorkType;
         private System.Windows.Forms.DataGridViewTextBoxColumn Work;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RadioButton chkdentallab;
         private System.Windows.Forms.ToolStripDropDownButton toolStripButton8;
@@ -2432,12 +2420,13 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbtest;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewImageColumn Column4;
-        private System.Windows.Forms.ToolStripButton toolStripButton13;
     }
 }
