@@ -259,10 +259,10 @@ namespace PappyjoeMVC.View
 
         private void txtGst_KeyUp(object sender, KeyEventArgs e)
         {
-            if (txtGst.Text == "" || txtGst.Text == ".")
-            {
-                txtGst.Text = "0.0";
-            }
+            //if (txtGst.Text == "" || txtGst.Text == ".")
+            //{
+            //    txtGst.Text = "0.0";
+            //}
         }
 
         private void txtGst_Leave(object sender, EventArgs e)
@@ -1608,11 +1608,13 @@ namespace PappyjoeMVC.View
                 {
                     if (Pur_order_no1 > 0)
                     {
+                        flagSup = true;
                         decimal total = 0;
                         decimal total1 = 0;
                         DataTable dt = this.cntrl.load_purchase_order_details(Pur_order_no1);
                         txtSupplierName.Text = dt.Rows[0]["Supplier_Name"].ToString();
                         txt_SupplierId.Text = dt.Rows[0]["Suppleir_id"].ToString();
+                        flagSup = false;
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
                             dgvItemData.Rows.Add();

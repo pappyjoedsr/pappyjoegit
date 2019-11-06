@@ -1657,7 +1657,6 @@ namespace PappyjoeMVC.View
                 ClearAll_grid2_Properties();
                 SetPatient_SearchControlls();
                 txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
-                //string sqlstr = "";
                 DataTable dtb=  this.cntrl.innactive_patients();
                 Create_Datagrid(dtb);
                 Design_Datagrid();

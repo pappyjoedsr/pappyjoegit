@@ -114,37 +114,37 @@ namespace PappyjoeMVC.Model
         }
         public DataTable recently_visited(DateTime d, DateTime todate)
         {
-            DataTable dtb = db.table("SELECT  DISTINCT A.id AS Pid,P.pt_id as 'Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d.ToString("yyyy-MM-dd HH:mm") + "' and '" + todate.ToString("yyyy-MM-dd HH:mm") + "' and A.status<>'CANCELLED' and A.status <>'scheduled' ");
+            DataTable dtb = db.table("SELECT  DISTINCT A.id AS Pid,P.pt_id as 'Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,DATE_FORMAT(Visited,'%d/%m/%y') as Visited,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on  A.pt_id=P.ID  where start_datetime between '" + d.ToString("yyyy-MM-dd HH:mm") + "' and '" + todate.ToString("yyyy-MM-dd HH:mm") + "' and A.status<>'CANCELLED' and A.status <>'scheduled' ");
             return dtb;
         }
         public DataTable Recently_added(string d, string todate)
         {
-            DataTable dtb = db.table("SELECT  id as Pid,pt_id as 'Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,Opticket as 'File No' FROM  tbl_patient  where Visited between '" + d + "' and '" + todate + "' and tbl_patient.Profile_Status='Active' order by tbl_patient.Date DESC limit 20");
+            DataTable dtb = db.table("SELECT  id as Pid,pt_id as 'Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,DATE_FORMAT(Visited,'%d/%m/%y') as Visited,Opticket as 'File No' FROM  tbl_patient  where Visited between '" + d + "' and '" + todate + "' and tbl_patient.Profile_Status='Active' order by tbl_patient.Date DESC limit 20");
             return dtb;
         }
         public DataTable upcomming_appointments(DateTime startDateTime)
         {
-            DataTable dtb = db.table("SELECT  DISTINCT A.pt_id AS Pid,P.pt_id as 'Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on A.pt_id=P.ID WHERE  start_datetime >=  '" + startDateTime.ToString("yyyy-MM-dd") + "' and p.Profile_Status='Active' and  status !='Cancelled'");//  order by id desc";
+            DataTable dtb = db.table("SELECT  DISTINCT A.pt_id AS Pid,P.pt_id as 'Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,DATE_FORMAT(Visited,'%d/%m/%y') as Visited,P.Opticket as 'File No' FROM  tbl_appointment A LEFT JOIN tbl_patient P on A.pt_id=P.ID WHERE  start_datetime >=  '" + startDateTime.ToString("yyyy-MM-dd") + "' and p.Profile_Status='Active' and  status !='Cancelled'");//  order by id desc";
             return dtb;
         }
         public DataTable birthday()
         {
-            DataTable dtb = db.table("select id as Pid,pt_id as 'Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,Opticket as 'File No' from tbl_patient where MONTH(date_of_birth) ='" + DateTime.Now.Month + "' and DAY(date_of_birth)> '" + DateTime.Now.Day + "'  and date_of_birth !='" + "" + "' and tbl_patient.Profile_Status='Active' order by date_of_birth ASC");
+            DataTable dtb = db.table("select id as Pid,pt_id as 'Id',pt_name as 'Patient Name', gender as 'Gender',age as 'Age', primary_mobile_number as 'Mobile',street_address as 'Street Address',locality as Locality,DATE_FORMAT(Visited,'%d/%m/%y') as Visited,Opticket as 'File No' from tbl_patient where MONTH(date_of_birth) ='" + DateTime.Now.Month + "' and DAY(date_of_birth)> '" + DateTime.Now.Day + "'  and date_of_birth !='" + "" + "' and tbl_patient.Profile_Status='Active' order by date_of_birth ASC");
             return dtb;
         }
         public DataTable cancelled_appointment()
         {
-            DataTable dtb = db.table("select p.id as Pid,P.pt_id as 'Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age,p.primary_mobile_number as Mobile,p.street_address as 'Street Address',p.locality as Locality,p.Opticket as 'File No' from  tbl_appointment A left join tbl_patient P on A.pt_id=P.id  where status='Cancelled' order by p.id");
+            DataTable dtb = db.table("select p.id as Pid,P.pt_id as 'Id',P.pt_name as 'Patient Name',P.gender as Gender,P.age as Age,p.primary_mobile_number as Mobile,p.street_address as 'Street Address',p.locality as Locality,DATE_FORMAT(Visited,'%d/%m/%y') as Visited,p.Opticket as 'File No' from  tbl_appointment A left join tbl_patient P on A.pt_id=P.id  where status='Cancelled' order by p.id");
             return dtb;
         }
         public DataTable innactive_patients()
         {
-            DataTable dtb = db.table(" SELECT P.id as Pid,P.pt_id as 'Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,P.Opticket as 'File No' FROM tbl_patient P where  Profile_Status ='Cancelled' ORDER BY P.id DESC");            //}
+            DataTable dtb = db.table(" SELECT P.id as Pid,P.pt_id as 'Id',P.pt_name as 'Patient Name', P.gender as Gender,P.age as Age,P. primary_mobile_number as Mobile,P.street_address as 'Street Address',P.locality as Locality,DATE_FORMAT(Visited,'%d/%m/%y') as Visited,P.Opticket as 'File No' FROM tbl_patient P where  Profile_Status ='Cancelled' ORDER BY P.id DESC");            //}
             return dtb;
         }
         public DataTable patients_wit_group(string id4)
         {
-            DataTable dtb = db.table(" SELECT P.id AS Pid,P.pt_id AS 'Id',pt_name AS 'Patient Name', gender AS Gender,age AS Age, primary_mobile_number AS  Mobile,street_address AS 'Street Address',locality AS Locality,Opticket as 'File No' FROM tbl_patient P inner join tbl_pt_group G on P.id = G.pt_id where G.group_id='" + id4 + "' and Profile_Status='Active' ORDER BY P.id DESC");
+            DataTable dtb = db.table(" SELECT P.id AS Pid,P.pt_id AS 'Id',pt_name AS 'Patient Name', gender AS Gender,age AS Age, primary_mobile_number AS  Mobile,street_address AS 'Street Address',locality AS Locality,DATE_FORMAT(Visited,'%d/%m/%y') as Visited,Opticket as 'File No' FROM tbl_patient P inner join tbl_pt_group G on P.id = G.pt_id where G.group_id='" + id4 + "' and Profile_Status='Active' ORDER BY P.id DESC");
             return dtb;
         }
 

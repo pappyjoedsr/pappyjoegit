@@ -113,7 +113,7 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label41.Location = new System.Drawing.Point(9, 12);
+            this.label41.Location = new System.Drawing.Point(8, 12);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(154, 21);
             this.label41.TabIndex = 289;
@@ -158,7 +158,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(698, 6);
+            this.btnCancel.Location = new System.Drawing.Point(797, 7);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(89, 27);
             this.btnCancel.TabIndex = 207;

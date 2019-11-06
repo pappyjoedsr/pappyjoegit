@@ -99,7 +99,7 @@
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(814, 50);
+            this.btn_Refresh.Location = new System.Drawing.Point(813, 50);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(74, 30);
             this.btn_Refresh.TabIndex = 295;
@@ -135,7 +135,7 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label41.Location = new System.Drawing.Point(9, 13);
+            this.label41.Location = new System.Drawing.Point(8, 12);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(145, 21);
             this.label41.TabIndex = 290;
@@ -148,7 +148,7 @@
             this.btn_Sales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Sales.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Sales.ForeColor = System.Drawing.Color.White;
-            this.btn_Sales.Location = new System.Drawing.Point(889, 50);
+            this.btn_Sales.Location = new System.Drawing.Point(888, 50);
             this.btn_Sales.Name = "btn_Sales";
             this.btn_Sales.Size = new System.Drawing.Size(72, 30);
             this.btn_Sales.TabIndex = 210;
@@ -163,7 +163,7 @@
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
             this.panel3.Location = new System.Drawing.Point(0, 41);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(967, 1);
+            this.panel3.Size = new System.Drawing.Size(966, 1);
             this.panel3.TabIndex = 209;
             // 
             // btnCancel
@@ -173,7 +173,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(866, 7);
+            this.btnCancel.Location = new System.Drawing.Point(865, 7);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(89, 27);
             this.btnCancel.TabIndex = 207;
@@ -341,7 +341,7 @@
             this.panel1.Controls.Add(this.DTP_From);
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(965, 87);
+            this.panel1.Size = new System.Drawing.Size(964, 87);
             this.panel1.TabIndex = 3;
             // 
             // Sales_order_list
