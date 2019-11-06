@@ -19,13 +19,7 @@ namespace PappyjoeMVC.View
         private string form_name;
         bool ermsg = false, flagbatchError = false, flagdateError = false;
         int flag = 0;
-        //private string text1;
-        //private string text2;
-        //private DataTable editgrid;
-        //private int qty;
         string Itemcode = "", purNo = "";
-        //private string item_id;
-
         public Purchase_Batch()
         {
             InitializeComponent();
@@ -42,7 +36,6 @@ namespace PappyjoeMVC.View
             purNo = text;
             editflag = true;
         }
-
         public Purchase_Batch(string text1, int qty, string text2, string item_id, string text)
         {
             InitializeComponent();
@@ -108,7 +101,6 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void dgvPurchaseBatch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -116,7 +108,6 @@ namespace PappyjoeMVC.View
                 e.Handled = true;
             }
         }
-
         private void dgvPurchaseBatch_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             e.Control.KeyPress -= new KeyPressEventHandler(dgvPurchaseBatch_KeyPress);
@@ -129,7 +120,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void dtpExp_CloseUp(object sender, EventArgs e)
         {
             dtpExp.Visible = false;
@@ -175,7 +165,6 @@ namespace PappyjoeMVC.View
                 dtp.CloseUp += new EventHandler(dtp_CloseUp);
                 dtp.TextChanged += new EventHandler(dtp_ValueChanged);
                 dtp.Visible = true;
-
             }
             if (e.ColumnIndex == 4 && e.RowIndex > -1)
             {
@@ -191,12 +180,10 @@ namespace PappyjoeMVC.View
                 dtpExp.Visible = true;
             }
         }
-
         private void dtp_CloseUp(object sender, EventArgs e)
         {
             dtp.Visible = false;
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             try

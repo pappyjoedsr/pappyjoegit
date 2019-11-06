@@ -58,7 +58,7 @@ namespace PappyjoeMVC.View
                 if (doctor_id != "1")
                 {
                     string id;
-                    id = this.cntrl.check_add_privillege(doctor_id);// db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='PMT' and Permission='A'");
+                    id = this.cntrl.check_add_privillege(doctor_id);
                     if (int.Parse(id) > 0)
                     {
                         btn_Add.Enabled = false;
@@ -68,9 +68,8 @@ namespace PappyjoeMVC.View
                         btn_Add.Enabled = true;
                     }
                 }
-                //Privilege ends
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-                System.Data.DataTable clinicname = this.cntrl.Get_CompanyNAme();// db.table("select name,path from tbl_practice_details");
+                System.Data.DataTable clinicname = this.cntrl.Get_CompanyNAme();
                 if (clinicname.Rows.Count > 0)
                 {
                     string clinicn = "";
@@ -84,13 +83,12 @@ namespace PappyjoeMVC.View
                     try
                     {
                         path = clinicname.Rows[0]["path"].ToString();
-                        //logo = System.Drawing.Image.FromFile(db.server() + path);
                         if (path != "")
                         {
                             if (File.Exists(db.server() + path))
                             {
                                 logo_name = "";
-                                logo_name = path;//.Substring(8, path.Length - 8);
+                                logo_name = path;
                                 string Apppath = System.IO.Directory.GetCurrentDirectory();
                                 if (!File.Exists(Apppath + "\\" + logo_name))
                                 {
@@ -105,24 +103,18 @@ namespace PappyjoeMVC.View
                     }
                     catch (Exception ex)
                     {
-
                     }
                 }
                 Dgv_payment.Location = new System.Drawing.Point(10, 10);
                 Dgv_payment.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom);
                 listpatientsearch.Hide();
-                System.Data.DataTable pay = this.cntrl.get_total_payment(patient_id);// db.table("select total_payment from tbl_invoices where pt_id='" + patient_id + "'");
+                System.Data.DataTable pay = this.cntrl.get_total_payment(patient_id);
                 if (pay.Rows.Count > 0)
                 {
                     Lab_Due.Text = pay.Rows[0]["total_payment"].ToString() + " due";
                 }
                 Dgv_payment.Rows.Clear();
-                //try
-                //{
-                //    pictureBox1.Image = Pappyjoe.Properties.Resources.nophoto;
-                //}
-                //catch { }
-                System.Data.DataTable pat = this.cntrl.Get_pat_iDName(patient_id);// db.table("select pt_name,pt_id from tbl_patient where id='" + patient_id + "'");
+                System.Data.DataTable pat = this.cntrl.Get_pat_iDName(patient_id);
                 linkLabel_id.Text = pat.Rows[0]["pt_id"].ToString();
                 linkLabel_Name.Text = pat.Rows[0]["pt_name"].ToString();
                 Dgv_payment.ColumnCount = 6;
@@ -140,7 +132,7 @@ namespace PappyjoeMVC.View
                 Dgv_payment.Columns[3].Width = 250;
                 Dgv_payment.Columns[5].Width = 20;
                 int j = 0;
-                System.Data.DataTable Payment = this.cntrl.get_paymentDate(patient_id);// db.table("select  distinct(payment_date) from tbl_payment where pt_id='" + patient_id + "'AND payment_date!='' order by payment_date desc");
+                System.Data.DataTable Payment = this.cntrl.get_paymentDate(patient_id);
                 for (int i = 0; i < Payment.Rows.Count; i++)
                 {
                     int l = 0;
@@ -164,7 +156,7 @@ namespace PappyjoeMVC.View
                     Dgv_payment.Rows[j].Cells[3].Style.BackColor = Color.DarkGray;
                     Dgv_payment.Rows[j].Cells[5].Value = PappyjoeMVC.Properties.Resources.blank;
                     string receipt = "";
-                    System.Data.DataTable Payments = this.cntrl.payment_details(Convert.ToDateTime (Payment.Rows[i]["payment_date"].ToString()).ToString("yyyy-MM-dd"), patient_id);// db.table("select receipt_no,amount_paid,invoice_no,procedure_name from tbl_payment where payment_date='" + Convert.ToDateTime(Payment.Rows[i]["payment_date"].ToString()).ToString("yyyy-MM-dd") + "' and pt_id='" + patient_id + "'");
+                    System.Data.DataTable Payments = this.cntrl.payment_details(Convert.ToDateTime (Payment.Rows[i]["payment_date"].ToString()).ToString("yyyy-MM-dd"), patient_id);
                     for (int k = 0; k < Payments.Rows.Count; k++)
                     {
                         if (l >= 1)
@@ -230,14 +222,12 @@ namespace PappyjoeMVC.View
                     int x = (panel9.Size.Width - Lab_Msg.Size.Width) / 2;
                     Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
-                    //Lab_Msg.Location = new System/*.*/Drawing.Point(165, 165);
                 }
                 else
                 {
                     Lab_Msg.Hide();
-                    Lab_Msg.Location = new System.Drawing.Point(165, 165);
+                    //Lab_Msg.Location = new System.Drawing.Point(165, 165);
                 }
-                //btn_Add.Show();
                 Dgv_payment.Show();
             }
             catch (Exception ex)
@@ -245,12 +235,11 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void printToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
             {
-                System.Data.DataTable print = this.cntrl.get_printSettings();// db.table("select * from tbl_receipt_printsettings");
+                System.Data.DataTable print = this.cntrl.get_printSettings();
                 if (print.Rows.Count > 0)
                 {
                     combo_topmargin = print.Rows[0][4].ToString();
@@ -299,8 +288,8 @@ namespace PappyjoeMVC.View
             try
             {
 
-                System.Data.DataTable dtp = this.cntrl.get_company_details();// db.table("select * from tbl_practice_details");
-                System.Data.DataTable dt1 = this.cntrl.Get_Patient_Details(patient_id);// db.table("select * from tbl_patient where id='" + patient_id + "'");
+                System.Data.DataTable dtp = this.cntrl.get_company_details();
+                System.Data.DataTable dt1 = this.cntrl.Get_Patient_Details(patient_id);
                 string clinicn = "";
                 string Clinic = "";
                 clinicn = dtp.Rows[0][1].ToString();
@@ -312,7 +301,7 @@ namespace PappyjoeMVC.View
                 string str_pincode = "";
                 string str_email = "";
                 string str_website = "";
-                string doctor = this.cntrl.Get_DoctorName(doctor_id);// db.table("select doctor_name from tbl_doctor where id= '" + doctor_id.ToString() + "'");
+                string doctor = this.cntrl.Get_DoctorName(doctor_id);
                 if (doctor!="")
                 {
                     doctorName = doctor;
@@ -329,7 +318,7 @@ namespace PappyjoeMVC.View
                 string header1 = "";
                 string header2 = "";
                 string header3 = "";
-                System.Data.DataTable print = this.cntrl.receipt_printSettings();// db.table("select header,left_text,right_text,fullwidth_context,left_sign,right_sign from  tbl_receipt_printsettings");
+                System.Data.DataTable print = this.cntrl.receipt_printSettings();
                 if (print.Rows.Count > 0)
                 {
                     header1 = print.Rows[0]["header"].ToString();
@@ -339,9 +328,6 @@ namespace PappyjoeMVC.View
                     strfooter2 = print.Rows[0]["left_sign"].ToString();
                     strfooter3 = print.Rows[0]["right_sign"].ToString();
                 }
-
-
-
                 string Apppath = System.IO.Directory.GetCurrentDirectory();
                 StreamWriter sWrite = new StreamWriter(Apppath + "\\p.html");
                 sWrite.WriteLine("<html>");
@@ -349,8 +335,6 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("</head>");
                 sWrite.WriteLine("<body >");
                 sWrite.WriteLine("<br>");
-
-
                 if (includeheader == "1")
                 {
                     if (includelogo == "1")
@@ -571,7 +555,6 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<tr><td align='right' colspan=5><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>(<i>" + NumWordsWrapper(double.Parse(total.ToString())) + "</i>)</fount> </td></tr>");
                     sWrite.WriteLine("</table>");
                 }
-                //footer
                 sWrite.WriteLine("<table align='center'   style='width:700px;border: 1px ;border-collapse: collapse;' >");
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td align='center' height='22'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + strfooter1 + "</font></td>");
@@ -591,10 +574,8 @@ namespace PappyjoeMVC.View
             }
             catch (Exception ex)
             {
-
             }
         }
-
         private void Dgv_payment_MouseClick(object sender, MouseEventArgs e)
         {
             int currentMouseOverRow = Dgv_payment.HitTest(e.X, e.Y).RowIndex;
@@ -612,7 +593,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void Lab_AllPatients_Click(object sender, EventArgs e)
         {
             var form2 = new Patients();
@@ -621,7 +601,6 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.ShowDialog();
         }
-
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             var form2 = new Communication();
@@ -659,7 +638,6 @@ namespace PappyjoeMVC.View
                 form2.ShowDialog();
             }
         }
-
         private void Lab_Appointment_Click(object sender, EventArgs e)
         {
             var form2 = new Show_Appointment();
@@ -669,7 +647,6 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.ShowDialog();
         }
-
         private void Lab_Profile_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
@@ -1019,7 +996,6 @@ namespace PappyjoeMVC.View
             }
             return words;
         }
-
         static String NumWords(double n)
         {
             string[] numbersArr = new string[] { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };

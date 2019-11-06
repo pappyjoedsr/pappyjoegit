@@ -135,13 +135,15 @@ namespace PappyjoeMVC.View
             {
                 if (Dgv_Attachment.Rows.Count <= 0)
                 {
+                    int x = (panel7.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
-                    Lab_Msg.Location = new System.Drawing.Point(134, 177);
+                    //Lab_Msg.Location = new System.Drawing.Point(134, 177);
                 }
                 else
                 {
                     Lab_Msg.Hide();
-                    Lab_Msg.Location = new System.Drawing.Point(134, 177);
+                    //Lab_Msg.Location = new System.Drawing.Point(134, 177);
                 }
             }
         }
@@ -268,6 +270,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    int x = (panel7.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg1.Visible = true;
                 }
             }

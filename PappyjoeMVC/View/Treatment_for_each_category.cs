@@ -27,7 +27,6 @@ namespace PappyjoeMVC.View
             {
                 this.gridoncategory.RowPostPaint += new DataGridViewRowPostPaintEventHandler(gridoncategory_RowPostPaint);
                 Lab_Msg.Hide();
-                //Select s = new Select();
                 this.Grvtreatmenteachcat.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False;
                 charttreatmenteachcategory.Titles.Add("Treatment For Each Category");
                 dateTimePickertreatmenteachcat1.MaxDate = DateTime.Now;
@@ -41,7 +40,6 @@ namespace PappyjoeMVC.View
                 comboboxcategory.ValueMember = "0";
                 comboboxcategory.DisplayMember = "All Procedure";
                 System.Data.DataTable dt = this.cntrl.addproset();
-                //db.table("select DISTINCT id,name from tbl_addproceduresettings order by name");
                 if (dt.Rows.Count > 0)
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
@@ -61,7 +59,7 @@ namespace PappyjoeMVC.View
                 {
                     series.Points.Clear();
                 }
-                Grvtreatmenteachcat.DataSource = this.cntrl.TreatmenteachcatLoad(date1, date2);// s.Treatmenteachcat(date1, date2);
+                Grvtreatmenteachcat.DataSource = this.cntrl.TreatmenteachcatLoad(date1, date2);
                 this.Grvtreatmenteachcat.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 this.Grvtreatmenteachcat.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvtreatmenteachcat.Rows.Count < 1)
@@ -155,7 +153,6 @@ namespace PappyjoeMVC.View
                     else
                     {
                         string drid = comboboxcategory.SelectedItem.ToString();
-                        //string query = "SELECT id from tbl_addproceduresettings where name='" + drid + "'";
                         System.Data.DataTable dt = this.cntrl.prosetDocId(drid);
                         if (dt.Rows.Count > 0)
                         {
@@ -165,7 +162,6 @@ namespace PappyjoeMVC.View
                     if (comboboxcategory.SelectedIndex > 0)
                     {
                         System.Data.DataTable griddailytrreatmenttable = this.cntrl.drgDailytreatmentTB(Convert.ToInt32(select_dr_id.ToString().Trim()), date1, date2);
-                        //griddailytrreatmenttable = db.table("SELECT  DATE_FORMAT(A.date,'%d-%m-%Y') as date,A.procedure_name,B.doctor_name FROM tbl_completed_procedures A INNER JOIN tbl_doctor B ON A.dr_id=B.id inner join tbl_patient P on p.id=A.pt_id WHERE A.procedure_id='" + Convert.ToInt32(select_dr_id.ToString().Trim()) + "'and A.date between '" + date1 + "' and '" + date2 + "' and P.Profile_Status !='Cancelled' "); //WHERE date between '" + date1 + "' and '" + date2 + "'
                         bind_grid(griddailytrreatmenttable);
                         label4.Text = 0.ToString();
                         int count = gridoncategory.Rows.Count;
@@ -174,7 +170,6 @@ namespace PappyjoeMVC.View
                         {
                             series.Points.Clear();
                         }
-                        //Select s = new Select();
                         Grvtreatmenteachcat.DataSource = this.cntrl.Treatmenteachcat(date1, date2, Selected_drid);
                         this.Grvtreatmenteachcat.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         this.Grvtreatmenteachcat.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -192,7 +187,6 @@ namespace PappyjoeMVC.View
                     else
                     {
                         System.Data.DataTable griddailytrreatmenttable = this.cntrl.GridDLYTTMNTtb(date1, date2);
-                        //griddailytrreatmenttable = db.table("SELECT  DATE_FORMAT(A.date,'%d-%m-%Y') as date,A.procedure_name,B.doctor_name FROM tbl_completed_procedures A INNER JOIN tbl_doctor B ON A.dr_id=B.id inner join tbl_patient P on p.id=A.pt_id where A.date between '" + date1 + "' and '" + date2 + "' and P.Profile_Status !='Cancelled' "); //WHERE date between '" + date1 + "' and '" + date2 + "'
                         bind_grid(griddailytrreatmenttable);
                         label4.Text = 0.ToString();
                         int count = gridoncategory.Rows.Count;
@@ -201,7 +195,6 @@ namespace PappyjoeMVC.View
                         {
                             series.Points.Clear();
                         }
-                        //Select s = new Select();
                         Grvtreatmenteachcat.DataSource = this.cntrl.TreatmenteachcatLoad(date1, date2);
                         this.Grvtreatmenteachcat.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         this.Grvtreatmenteachcat.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -222,8 +215,6 @@ namespace PappyjoeMVC.View
                     gridoncategory.Show();
                     comboboxcategory.Show();
                     charttreatmenteachcategory.Hide();
-                    //gridoncategory.Location = new Point(45, 51);
-                    //gridoncategory.Size = new Size(1312, 308);
                 }
                 else
                 {
@@ -231,7 +222,6 @@ namespace PappyjoeMVC.View
                     gridoncategory.Hide();
                     comboboxcategory.Show();
                     charttreatmenteachcategory.Location = new Point(45, 51);
-                    //charttreatmenteachcategory.Size = new Size(1312, 308);
                 }
             }
             catch (Exception ex)
@@ -250,8 +240,7 @@ namespace PappyjoeMVC.View
                     { }
                     else
                     {
-                        drid = comboboxcategory.SelectedItem.ToString();// SelectedValue.ToString();
-                        //string query  "SELECT id from tbl_addproceduresettings where name='" + drid + "'";
+                        drid = comboboxcategory.SelectedItem.ToString();
                         System.Data.DataTable dt = this.cntrl.prosetDocId(drid);
                         if (dt.Rows.Count > 0)
                         {
@@ -281,7 +270,6 @@ namespace PappyjoeMVC.View
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
                         System.Data.DataTable dtp = this.cntrl.practceDetls();
-                        // db.table("select name,contact_no,street_address,email,website  from tbl_practice_details");
                         if (dtp.Rows.Count > 0)
                         {
                             clinicn = dtp.Rows[0]["name"].ToString();
@@ -360,17 +348,6 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("</html>");
                     sWrite.Close();
                     System.Diagnostics.Process.Start(Apppath + "\\Category.html");
-
-                    //    sWrite.WriteLine("<tr>");
-                    //    sWrite.WriteLine("<td align=right colspan=6><FONT COLOR=black FACE='Segoe UI' SIZE=3 ><br><br><b> </b>&nbsp;&nbsp;  </font> </td> ");
-                    //    sWrite.WriteLine("</tr>");
-                    //    sWrite.WriteLine("</table>");
-                    //    sWrite.WriteLine("</div>");
-                    //    sWrite.WriteLine("<script>window.print();</script>");
-                    //    sWrite.WriteLine("</body>");
-                    //    sWrite.WriteLine("</html>");
-                    //    sWrite.Close();
-                    //System.Diagnostics.Process.Start(Apppath + "\\Category.html");
                 }
                 else
                 {
@@ -394,7 +371,6 @@ namespace PappyjoeMVC.View
                 {
                     series.Points.Clear();
                 }
-                //Select s = new Select();
                 string date1 = dateTimePickertreatmenteachcat1.Value.ToString("yyyy-MM-dd");
                 string date2 = dateTimePickertreatmenteachcat2.Value.ToString("yyyy-MM-dd");
                 if (comboboxcategory.SelectedIndex == 0)
@@ -431,15 +407,12 @@ namespace PappyjoeMVC.View
                 gridoncategory.Show();
                 comboboxcategory.Show();
                 charttreatmenteachcategory.Hide();
-                //gridoncategory.Location = new Point(45, 51);
-                //gridoncategory.Size = new Size(1312, 308);
                 label4.Text = 0.ToString();
                 label4.Visible = true;
                 foreach (var series in charttreatmenteachcategory.Series)
                 {
                     series.Points.Clear();
                 }
-                //Select s = new Select();
                 string date1 = dateTimePickertreatmenteachcat1.Value.ToString("yyyy-MM-dd ");
                 string date2 = dateTimePickertreatmenteachcat2.Value.ToString("yyyy-MM-dd ");
                 if (comboboxcategory.SelectedIndex == -1)
@@ -447,7 +420,6 @@ namespace PappyjoeMVC.View
                 else
                 {
                     string drid = comboboxcategory.SelectedItem.ToString();
-                    //string query = "SELECT id from tbl_addproceduresettings where name='" + drid + "'";
                     System.Data.DataTable dt = this.cntrl.prosetDocId(drid);
                     if (dt.Rows.Count > 0)
                     {
@@ -500,18 +472,16 @@ namespace PappyjoeMVC.View
                     }
                     drctid = comboboxcategory.SelectedItem.ToString();
                     gridoncategory.DataSource = null;
-                    //string query = "select DISTINCT id from tbl_addproceduresettings where name='" + drctid + "'";
                     string date1 = dateTimePickertreatmenteachcat1.Value.ToString("yyyy-MM-dd");
                     string date2 = dateTimePickertreatmenteachcat2.Value.ToString("yyyy-MM-dd");
-                    System.Data.DataTable dt = this.cntrl.docId(drctid);// db.table(query);
-                    //Select s = new Select();
+                    System.Data.DataTable dt = this.cntrl.docId(drctid);
                     if (dt.Rows.Count > 0)
                     {
                         Selected_drid = dt.Rows[0][0].ToString();
                     }
                     if (comboboxcategory.SelectedIndex == 0)
                     {
-                        DataTable dt1 = this.cntrl.ProPat(date1, date2);// db.table("SELECT  DATE_FORMAT(A.date,'%d-%m-%Y') as date,A.procedure_name,B.doctor_name FROM tbl_completed_procedures A INNER JOIN tbl_doctor B ON A.dr_id=B.id inner join tbl_patient P on p.id=A.pt_id WHERE  A.date between '" + date1 + "' and '" + date2 + "' and P.Profile_Status !='Cancelled' ");
+                        DataTable dt1 = this.cntrl.ProPat(date1, date2);
                         gridoncategory.AutoGenerateColumns = false;
                         bind_grid(dt1);
                         int count = dt1.Rows.Count;
@@ -520,7 +490,7 @@ namespace PappyjoeMVC.View
                     }
                     else if (comboboxcategory.SelectedIndex > 0)
                     {
-                        DataTable dt1 = this.cntrl.Propat2(Convert.ToInt32(Selected_drid.ToString().Trim()), date1, date2); //db.table("SELECT DATE_FORMAT(A.date,'%d-%m-%Y') as date,A.procedure_name,B.doctor_name FROM tbl_completed_procedures A INNER JOIN tbl_doctor B ON A.dr_id=B.id inner join tbl_patient P on p.id=A.pt_id WHERE A.procedure_id='" + Convert.ToInt32(Selected_drid.ToString().Trim()) + "'and A.date between '" + date1 + "' and '" + date2 + "' and P.Profile_Status !='Cancelled'"); //WHERE date between '" + date1 + "' and '" + date2 + "'
+                        DataTable dt1 = this.cntrl.Propat2(Convert.ToInt32(Selected_drid.ToString().Trim()), date1, date2);
                         gridoncategory.AutoGenerateColumns = false;
                         bind_grid(dt1);
                         int count = dt1.Rows.Count;

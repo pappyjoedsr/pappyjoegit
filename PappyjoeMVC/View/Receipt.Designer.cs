@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receipt));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_Add = new System.Windows.Forms.Button();
@@ -117,7 +117,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.label8);
             this.panel6.Controls.Add(this.btn_Add);
-            this.panel6.Location = new System.Drawing.Point(193, 88);
+            this.panel6.Location = new System.Drawing.Point(194, 88);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1166, 40);
             this.panel6.TabIndex = 261;
@@ -760,14 +760,14 @@
             this.panel7.BackColor = System.Drawing.Color.DarkGray;
             this.panel7.Location = new System.Drawing.Point(190, 82);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1, 654);
+            this.panel7.Size = new System.Drawing.Size(1, 616);
             this.panel7.TabIndex = 268;
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.Lab_Msg);
             this.panel9.Controls.Add(this.Dgv_payment);
-            this.panel9.Location = new System.Drawing.Point(194, 133);
+            this.panel9.Location = new System.Drawing.Point(195, 137);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1167, 601);
             this.panel9.TabIndex = 270;
@@ -780,7 +780,7 @@
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Lab_Msg.Location = new System.Drawing.Point(131, 232);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(675, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(677, 25);
             this.Lab_Msg.TabIndex = 256;
             this.Lab_Msg.Text = "No Records Found. Please Click \' ADD \' button on Top Right To Add New One";
             this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -791,22 +791,22 @@
             this.Dgv_payment.AllowUserToDeleteRows = false;
             this.Dgv_payment.AllowUserToResizeColumns = false;
             this.Dgv_payment.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.Dgv_payment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.Dgv_payment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.Dgv_payment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.Dgv_payment.BackgroundColor = System.Drawing.Color.White;
             this.Dgv_payment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_payment.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Dgv_payment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_payment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_payment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.Dgv_payment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_payment.ColumnHeadersVisible = false;
             this.Dgv_payment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -816,21 +816,21 @@
             this.Column4,
             this.Column6,
             this.Column5});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Dgv_payment.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Dgv_payment.Location = new System.Drawing.Point(4, 9);
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Dgv_payment.DefaultCellStyle = dataGridViewCellStyle12;
+            this.Dgv_payment.Location = new System.Drawing.Point(0, 7);
             this.Dgv_payment.Name = "Dgv_payment";
             this.Dgv_payment.ReadOnly = true;
             this.Dgv_payment.RowHeadersVisible = false;
             this.Dgv_payment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Dgv_payment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.Dgv_payment.Size = new System.Drawing.Size(1150, 587);
+            this.Dgv_payment.Size = new System.Drawing.Size(1150, 585);
             this.Dgv_payment.TabIndex = 258;
             this.Dgv_payment.Visible = false;
             this.Dgv_payment.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Dgv_payment_MouseClick);
@@ -951,7 +951,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.ClientSize = new System.Drawing.Size(1362, 703);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.Lab_Due);
             this.Controls.Add(this.panel9);

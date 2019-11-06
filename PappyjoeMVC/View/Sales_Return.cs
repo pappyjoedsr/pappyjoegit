@@ -41,14 +41,14 @@ namespace PappyjoeMVC.View
             {
                 if (txt_InvoiceNum.Text != "")
                 {
-                    DataTable dtdr = this.cntrl.get_all_invnumbr(txt_InvoiceNum.Text);// db.table("select InvNumber from tbl_SALES where InvNumber like '" + txt_InvoiceNum.Text + "%'");
+                    DataTable dtdr = this.cntrl.get_all_invnumbr(txt_InvoiceNum.Text);
                     lstInvNo.DataSource = dtdr;
                     lstInvNo.DisplayMember = "InvNumber";
                     lstInvNo.ValueMember = "InvNumber";
                     if (e.KeyCode == Keys.Enter && lstInvNo.Items.Count > 0)
                     {
                         var value = lstInvNo.GetItemText(lstInvNo.SelectedValue);
-                        System.Data.DataTable inv = this.cntrl.get_all_invnumbr(value); //db.table("select InvNumber from tbl_SALES where InvNumber='" + value + "'");
+                        System.Data.DataTable inv = this.cntrl.get_all_invnumbr(value);
                         if (inv.Rows.Count > 0)
                         {
                             txt_InvoiceNum.Text = inv.Rows[0]["InvNumber"].ToString();
@@ -77,7 +77,6 @@ namespace PappyjoeMVC.View
             }
             flagSup = false;
         }
-
         private void lstInvNo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -101,7 +100,6 @@ namespace PappyjoeMVC.View
                 indicee++;
             }
         }
-
         private void lstInvNo_MouseClick(object sender, MouseEventArgs e)
         {
             if (lstInvNo.SelectedItems.Count > 0)
@@ -134,7 +132,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void btn_item_Choose_Click(object sender, EventArgs e)
         {
             if (txt_InvoiceNum.Text != "")
@@ -300,7 +297,6 @@ namespace PappyjoeMVC.View
                 TotalAmount_Calculation();
             }
         }
-
         private void txt_GST_TextChanged(object sender, EventArgs e)
         {
             if (txt_GST.Text != "")
@@ -371,7 +367,6 @@ namespace PappyjoeMVC.View
                 txt_Amount.Text = TotalAmount.ToString("##.00");
             }
         }
-
         private void txt_Qty_KeyUp(object sender, KeyEventArgs e)
         {
             if (txt_UnitCost.Text != "")
@@ -379,7 +374,6 @@ namespace PappyjoeMVC.View
                 TotalAmount_Calculation();
             }
         }
-
         private void txt_Qty_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
@@ -391,7 +385,6 @@ namespace PappyjoeMVC.View
             string b = a.TrimStart('0');
             txt_Qty.Text = b;
         }
-
         private void txt_Qty_Click(object sender, EventArgs e)
         {
             if (txt_Qty.Text == "0")
@@ -399,7 +392,6 @@ namespace PappyjoeMVC.View
                 txt_Qty.Text = "";
             }
         }
-
         private void txt_IGST_TextChanged(object sender, EventArgs e)
         {
             if (txt_IGST.Text != "")
@@ -414,12 +406,10 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void btn_save_Click(object sender, EventArgs e)
         {
             try
             {
-
                 if (dgv_SalesItem.Rows.Count > 0)
                 {
                     int i = 0, j = 0;
@@ -701,13 +691,11 @@ namespace PappyjoeMVC.View
             {
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             clear_itemdetails();
             clear_Alldetails();
         }
-
         private void dgv_SalesItem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && dgv_SalesItem.Rows.Count > 0)
@@ -735,7 +723,6 @@ namespace PappyjoeMVC.View
                                 igstAmount = ((Convert.ToDecimal(dgv_SalesItem.CurrentRow.Cells["ColQty"].Value.ToString()) * Convert.ToDecimal(dgv_SalesItem.CurrentRow.Cells["colUnitcost"].Value.ToString())) * Convert.ToDecimal(dgv_SalesItem.CurrentRow.Cells["colIGST"].Value.ToString())) / 100;
                                 IGST = Convert.ToDecimal(Txt_TotalIGST.Text) - igstAmount;
                                 Txt_TotalIGST.Text = Convert.ToDecimal(IGST).ToString("##0.00");
-
                             }
                         }
                         if (txt_TotalCost.Text != "")
@@ -809,7 +796,6 @@ namespace PappyjoeMVC.View
                 dgv_BatchSale.Rows.Clear();
             }
         }
-
         private void btn_AddtoGrid_Click(object sender, EventArgs e)
         {
             Decimal TotalGst = 0; decimal gstAmount = 0; decimal igstAmount = 0;
@@ -947,7 +933,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void Sales_Return_Load(object sender, EventArgs e)
         {
             DTP_OrderDate.Format = DateTimePickerFormat.Short;

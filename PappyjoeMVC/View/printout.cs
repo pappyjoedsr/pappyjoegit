@@ -51,7 +51,6 @@ namespace PappyjoeMVC.View
                 {
                     switch (combo_paper_size.SelectedItem.ToString())
                     {
-                        //constructor "name", inch, inch
                         case "A3":
                             paperSize = new PaperSize("A3", 1170, 1650);
                             break;
@@ -110,12 +109,11 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Printer Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
-
         private void tabControl2_DrawItem(object sender, DrawItemEventArgs e)
         {
             Font TabFont;
-            Brush BackBrush = new SolidBrush(Color.Transparent); //Set background color
-            Brush ForeBrush = new SolidBrush(Color.DarkSlateGray);//Set foreground color
+            Brush BackBrush = new SolidBrush(Color.Transparent);
+            Brush ForeBrush = new SolidBrush(Color.DarkSlateGray);
             if (e.Index == this.tabControl2.SelectedIndex)
             {
                 TabFont = new Font(e.Font, FontStyle.Italic);
@@ -131,7 +129,6 @@ namespace PappyjoeMVC.View
             Rectangle r = e.Bounds;
             r = new Rectangle(r.X, r.Y + 3, r.Width, r.Height - 3);
             e.Graphics.DrawString(TabName, TabFont, ForeBrush, r, sf);
-            //Dispose objects
             sf.Dispose();
             if (e.Index == this.tabControl2.SelectedIndex)
             {
@@ -144,7 +141,6 @@ namespace PappyjoeMVC.View
                 ForeBrush.Dispose();
             }
         }
-
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
             Brush BackBrush = new SolidBrush(Color.Transparent);
@@ -156,7 +152,6 @@ namespace PappyjoeMVC.View
             paddedBounds.Offset(1, yOffset);
             TextRenderer.DrawText(e.Graphics, page.Text, Font, paddedBounds, page.ForeColor);
         }
-
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             try
@@ -200,7 +195,7 @@ namespace PappyjoeMVC.View
                     {
                         e.Graphics.DrawString(text_right_text.Text, printFont, Brushes.Gray, xx, 120);
                     }
-                }//header
+                }
                 if (combo_paper_size.Text == "A5")
                 {
                     Graphics g = e.Graphics;
@@ -505,7 +500,6 @@ namespace PappyjoeMVC.View
                         e.Graphics.DrawString(rich_leftsign.Text, printFont, Brushes.Gray, 400 - (txtDataWidth2 / 2), 1085 - topmargin1);
                         e.Graphics.DrawString(rich_rightsign.Text, printFont, Brushes.Gray, 400 - (txtDataWidth3 / 2), 1100 - topmargin1);
                     }
-
                 }
                 else if (combo_paper_size.Text == "A3")
                 {
@@ -667,7 +661,6 @@ namespace PappyjoeMVC.View
             {
             }
         }
-     
         private void tabControl1_TabIndexChanged(object sender, EventArgs e)
         {
             if(tabControl1.TabIndex==0)
@@ -689,7 +682,6 @@ namespace PappyjoeMVC.View
                 receipr_flag = true;
             }
         }
-
         private void btn_saveinvoice_Click(object sender, EventArgs e)
         {
            try
@@ -805,14 +797,12 @@ namespace PappyjoeMVC.View
                     int update = this.cntrl.update_invoicePrint(combo_paper_size1.Text, orientation, color, combo_topmargin1.Text, combo_leftmargin1.Text, combo_bottommargin1.Text, combo_rightmargin1.Text, includeheader, header, lefttext, righttext, includelogo, logotype, patientdetails, medhistory, patientno, address, phone, email, bloodgroup, genderdob, combo_footer_topmargin1.Text, rich_fullwidth1.Text, rich_leftsign1.Text, rich_rightsign1.Text, Doctor);
                     MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btn_invoicepreview_Click(object sender, EventArgs e)
         {
             try
@@ -835,7 +825,6 @@ namespace PappyjoeMVC.View
                 {
                     switch (combo_paper_size1.SelectedItem.ToString())
                     {
-                        //constructor "name", inch, inch
                         case "A3":
                             paperSize = new PaperSize("A3", 1170, 1650);
                             break;
@@ -886,7 +875,6 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void printDocument_invoice_PrintPage(object sender, PrintPageEventArgs e)
         {
             try
@@ -932,7 +920,6 @@ namespace PappyjoeMVC.View
                     {
                         e.Graphics.DrawString(text_right_text1.Text, printFont, Brushes.Gray, xx, 120);
                     }
-
                 }
                 if (combo_paper_size1.Text == "A5")
                 {
@@ -950,7 +937,6 @@ namespace PappyjoeMVC.View
                                 {
                                     e.Graphics.DrawString("Male", printFont1, Brushes.Black, 300, yy);
                                 }
-                               
                             }
                         }
                         yy = yy + 22;
@@ -1305,8 +1291,7 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
+        } 
         private void btn_receiptprint_Click(object sender, EventArgs e)
         {
             try

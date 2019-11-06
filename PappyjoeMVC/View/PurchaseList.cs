@@ -72,9 +72,7 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
-
         private void frmPurchaseList_Load(object sender, EventArgs e)
         {
             try
@@ -119,7 +117,6 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void rad_Cash_CheckedChanged(object sender, EventArgs e)
         {
             if (rad_Cash.Checked == true)
@@ -135,7 +132,6 @@ namespace PappyjoeMVC.View
             }
             load();
         }
-
         private void rad_Credit_CheckedChanged(object sender, EventArgs e)
         {
             if (rad_Credit.Checked == true)
@@ -165,7 +161,6 @@ namespace PappyjoeMVC.View
             var form2 = new PappyjoeMVC.View.Purchase(data_from_Pur_Master, data_from_purchase);
             form2.ShowDialog();
         }
-
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             load();
@@ -177,7 +172,6 @@ namespace PappyjoeMVC.View
             PappyjoeMVC.Model.Connection.MyGlobals.Date_To = DTP_To.Value.ToString("yyyy-MM-dd");
             load();
         }
-
         private void btnexport_Click(object sender, EventArgs e)
         {
             string PathName = "";

@@ -18,7 +18,6 @@ namespace PappyjoeMVC.View
         string date_From;
         string date_To;
         bool flag_from_inventory = false;
-
         public Sales_order_list()
         {
             InitializeComponent();
@@ -28,7 +27,6 @@ namespace PappyjoeMVC.View
             InitializeComponent();
             Form_Name = FormName;
         }
-
         public Sales_order_list(string date1, string date2)
         {
             InitializeComponent();
@@ -36,7 +34,6 @@ namespace PappyjoeMVC.View
             date_To = date2;
             flag_from_inventory = true;
         }
-
         private void Sales_order_list_Load(object sender, EventArgs e)
         {
             try
@@ -154,12 +151,10 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btn_Sales_Click(object sender, EventArgs e)
         {
             if (dgv_sales.Rows.Count > 0)
@@ -173,7 +168,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             Lab_Msg.Visible = false;
@@ -190,7 +184,6 @@ namespace PappyjoeMVC.View
                 Lab_Msg.Visible = true;
             }
         }
-
         private void Btn_Show_Click(object sender, EventArgs e)
         {
             try

@@ -115,7 +115,7 @@ namespace PappyjoeMVC.View
                             Grand_Discount = Grand_Discount + Convert.ToDecimal(dgv_treatment.Rows[i].Cells["_Dis_inrs"].Value.ToString());
                             Total_tax = Total_tax + Convert.ToDecimal(dgv_treatment.Rows[i].Cells["Total_tax"].Value.ToString());
                         }
-                        Lab_GrandTotal.Text = String.Format("{0:C0}", grandTotal);//.ToString("#0.00");
+                        Lab_GrandTotal.Text = String.Format("{0:C0}", grandTotal);
                         Lab_DisInrs.Text = String.Format("{0:C0}", Grand_Discount);
                         Lab_TotalTax.Text = String.Format("{0:C0}", Total_tax);
                     }
@@ -196,7 +196,7 @@ namespace PappyjoeMVC.View
                 { str_chief = "yes"; }
             }
             // Chief Complaint
-            if (str_chief == "yes") // Checking 
+            if (str_chief == "yes") 
             {
                 EHR_status = "YES";
                 int drid = Convert.ToInt32(Cmb_Doctor.SelectedValue);
@@ -251,7 +251,6 @@ namespace PappyjoeMVC.View
             string strPriscription = "";
             if (dgv_prescrptn.Rows.Count > 0)
             {
-
                 prescription_check();// Check Inventory Item
                 int d_id = Convert.ToInt32(Cmb_Doctor.SelectedValue);
                 this.cntrl.save_prescriptionmain(patient_id, d_id.ToString(), dpStartTimeDate.Value.ToString("yyyy-MM-dd"), Prescription_bill_status,"");
@@ -264,18 +263,14 @@ namespace PappyjoeMVC.View
                 {
                     presid = 1;
                 }
-
-
                 EHR_status = "YES";
                 EHR_Pre = presid.ToString(); // Appointment 
                 for (int i = 0; i < dgv_prescrptn.Rows.Count; i++)
                 {
                     DataTable dt_drugid = new DataTable();
                     this.cntrl.save_prescription(presid , patient_id , Cmb_Doctor.Text , d_id.ToString() , dpStartTimeDate.Value.ToString("yyyy-MM-dd") , dgv_prescrptn.Rows[i].Cells["Prescription"].Value.ToString() , dgv_prescrptn.Rows[i].Cells["Unit"].Value.ToString(), dgv_prescrptn.Rows[i].Cells["Strength"].Value.ToString() , dgv_prescrptn.Rows[i].Cells["Duration_"].Value.ToString() , dgv_prescrptn.Rows[i].Cells["_Period"].Value.ToString() , dgv_prescrptn.Rows[i].Cells["Mornin"].Value.ToString() , dgv_prescrptn.Rows[i].Cells["_Noon"].Value.ToString(), dgv_prescrptn.Rows[i].Cells["_Night"].Value.ToString() , dgv_prescrptn.Rows[i].Cells["_Food"].Value.ToString() , dgv_prescrptn.Rows[i].Cells["_Instruction"].Value.ToString() , dgv_prescrptn.Rows[i].Cells["_Drugtype"].Value.ToString() , strstatus , dgv_prescrptn.Rows[i].Cells["id"].Value.ToString());
-
                     strPriscription = strPriscription + "(" + (i + 1) + ")" + dgv_prescrptn.Rows[i].Cells["_Drugtype"].Value.ToString() + " " + dgv_prescrptn.Rows[i].Cells["Prescription"].Value.ToString() + dgv_prescrptn.Rows[i].Cells["Strength"].Value.ToString() + dgv_prescrptn.Rows[i].Cells["Unit"].Value.ToString() + "/" + dgv_prescrptn.Rows[i].Cells["Mornin"].Value.ToString() + "-" + dgv_prescrptn.Rows[i].Cells["_Noon"].Value.ToString() + "-" + dgv_prescrptn.Rows[i].Cells["_Night"].Value.ToString() + "/" + dgv_prescrptn.Rows[i].Cells["Duration_"].Value.ToString() + dgv_prescrptn.Rows[i].Cells["_Period"].Value.ToString() + dgv_prescrptn.Rows[i].Cells["_Instruction"].Value.ToString() + ".  ";
                 }
-
                 //SMS
                 if (txt_mob.Text != "" && smsName != "" && smsPass != "")
                 {
@@ -285,7 +280,6 @@ namespace PappyjoeMVC.View
                     a.SendSMS(smsName, smsPass, number, text);
                     this.cntrl.inssms(patient_id, text);
                 }
-
             }
 
             if (dgv_treatment.Rows.Count > 0)
@@ -323,10 +317,8 @@ namespace PappyjoeMVC.View
                     j1 = 1;
                     completed_id = 0;
                 }
-
                 EHR_status = "YES";
                 EHR_treat = completed_id.ToString(); // Appointment 
-
                 j1 = completed_id;
                 for (int ii = 0; ii < dgv_treatment.Rows.Count; ii++)
                 {
@@ -348,7 +340,6 @@ namespace PappyjoeMVC.View
                     this.cntrl.update_review_No(dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm"),j1);
                 }
             }
-
             if (dgv_treatment.Rows.Count > 0)
             {
                 this.cntrl.save_invoice_main(patient_id, dt_ptiantId.Rows[0]["pt_name"].ToString(), text_billno.Text);
@@ -752,7 +743,6 @@ namespace PappyjoeMVC.View
                             procedure_item.Text = dt.Rows[0]["name"].ToString();
                             Lab_Cost.Text = dt.Rows[0]["cost"].ToString();
                             lab_Total.Text = dt.Rows[0]["cost"].ToString();
-
                             txt_Discount.Hide();
                             CMB_Discount.Hide();
                             Cmb_tax.Hide();
@@ -1140,7 +1130,7 @@ namespace PappyjoeMVC.View
                         Grand_Discount = Grand_Discount + Convert.ToDecimal(dgv_treatment.Rows[i].Cells["_Dis_inrs"].Value.ToString());
                         Total_tax = Total_tax + Convert.ToDecimal(dgv_treatment.Rows[i].Cells["Total_tax"].Value.ToString());
                     }
-                    Lab_GrandTotal.Text = String.Format("{0:C0}", grandTotal);//.ToString("#0.00");
+                    Lab_GrandTotal.Text = String.Format("{0:C0}", grandTotal);
                     Lab_DisInrs.Text = String.Format("{0:C0}", Grand_Discount);
                     Lab_TotalTax.Text = String.Format("{0:C0}", Total_tax);
                     panl_Treatment.Visible = false;
@@ -1610,8 +1600,6 @@ namespace PappyjoeMVC.View
                         }
 
                     }
-
-
                 }
                 else
                 {
@@ -1627,7 +1615,7 @@ namespace PappyjoeMVC.View
                             Grand_Discount = Grand_Discount + Convert.ToDecimal(dgv_treatment.Rows[i].Cells["_Dis_inrs"].Value.ToString());
                             Total_tax = Total_tax + Convert.ToDecimal(dgv_treatment.Rows[i].Cells["Total_tax"].Value.ToString());
                         }
-                        Lab_GrandTotal.Text = String.Format("{0:C0}", grandTotal);//.ToString("#0.00");
+                        Lab_GrandTotal.Text = String.Format("{0:C0}", grandTotal);
                         Lab_DisInrs.Text = String.Format("{0:C0}", Grand_Discount);
                         Lab_TotalTax.Text = String.Format("{0:C0}", Total_tax);
                     }
@@ -1660,7 +1648,6 @@ namespace PappyjoeMVC.View
                     smsName = sms.Rows[0]["smsName"].ToString();
                     smsPass = sms.Rows[0]["smsPass"].ToString();
                 }
-
             }
             catch(Exception ex)
             {
@@ -1790,8 +1777,6 @@ namespace PappyjoeMVC.View
         }
         public void mprintosave()
         {
-            //try
-            //{
             int c = 0, o = 0, inves = 0, d = 0, k = 0, p = 0, pa = 0, patientnotes = 0;
             string startDateTime = dpStartTimeDate.Value.ToString("dd/MM/yyyy");
             string startDateTime1 = dateTimePicker1.Value.ToString("dd/MM/yyyy");
@@ -1822,7 +1807,6 @@ namespace PappyjoeMVC.View
                     Gender = radFemale.Text;
                     str_p_as = "/" + Gender;
                 }
-
                 address = txt_Loca.Text;
                 city = txt_City.Text;
                 if (address != "")
@@ -1836,7 +1820,6 @@ namespace PappyjoeMVC.View
                 {
                     address = patient.Rows[0]["city"].ToString();
                 }
-
                 Mobile = txt_mob.Text;
                 P_id = txtPatientID.Text;
                 if (txtAge.Text != "")
