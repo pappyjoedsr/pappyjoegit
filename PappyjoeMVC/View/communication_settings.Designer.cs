@@ -51,7 +51,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline);
             this.label19.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label19.Location = new System.Drawing.Point(6, 5);
+            this.label19.Location = new System.Drawing.Point(16, 8);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(154, 25);
             this.label19.TabIndex = 125;
@@ -62,7 +62,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label25.Location = new System.Drawing.Point(161, 226);
+            this.label25.Location = new System.Drawing.Point(222, 201);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(96, 15);
             this.label25.TabIndex = 137;
@@ -74,7 +74,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label24.Location = new System.Drawing.Point(161, 89);
+            this.label24.Location = new System.Drawing.Point(222, 64);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(96, 15);
             this.label24.TabIndex = 135;
@@ -86,7 +86,7 @@
             this.buttonEmail.BackColor = System.Drawing.Color.LimeGreen;
             this.buttonEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEmail.ForeColor = System.Drawing.Color.White;
-            this.buttonEmail.Location = new System.Drawing.Point(304, 323);
+            this.buttonEmail.Location = new System.Drawing.Point(376, 298);
             this.buttonEmail.Name = "buttonEmail";
             this.buttonEmail.Size = new System.Drawing.Size(75, 30);
             this.buttonEmail.TabIndex = 139;
@@ -99,7 +99,7 @@
             this.buttonSms.BackColor = System.Drawing.Color.LimeGreen;
             this.buttonSms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSms.ForeColor = System.Drawing.Color.White;
-            this.buttonSms.Location = new System.Drawing.Point(304, 187);
+            this.buttonSms.Location = new System.Drawing.Point(376, 162);
             this.buttonSms.Name = "buttonSms";
             this.buttonSms.Size = new System.Drawing.Size(75, 29);
             this.buttonSms.TabIndex = 134;
@@ -112,7 +112,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label21.Location = new System.Drawing.Point(35, 295);
+            this.label21.Location = new System.Drawing.Point(95, 270);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(64, 17);
             this.label21.TabIndex = 127;
@@ -123,7 +123,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label20.Location = new System.Drawing.Point(35, 261);
+            this.label20.Location = new System.Drawing.Point(95, 236);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(54, 17);
             this.label20.TabIndex = 128;
@@ -134,7 +134,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label18.Location = new System.Drawing.Point(35, 159);
+            this.label18.Location = new System.Drawing.Point(95, 134);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(64, 17);
             this.label18.TabIndex = 129;
@@ -145,7 +145,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label23.Location = new System.Drawing.Point(34, 220);
+            this.label23.Location = new System.Drawing.Point(95, 195);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(111, 21);
             this.label23.TabIndex = 130;
@@ -156,7 +156,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label22.Location = new System.Drawing.Point(34, 83);
+            this.label22.Location = new System.Drawing.Point(95, 58);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(126, 21);
             this.label22.TabIndex = 131;
@@ -167,7 +167,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label17.Location = new System.Drawing.Point(35, 127);
+            this.label17.Location = new System.Drawing.Point(95, 102);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(67, 17);
             this.label17.TabIndex = 132;
@@ -175,15 +175,15 @@
             // 
             // textEmailPassword
             // 
-            this.textEmailPassword.Location = new System.Drawing.Point(108, 295);
+            this.textEmailPassword.Location = new System.Drawing.Point(182, 268);
             this.textEmailPassword.Name = "textEmailPassword";
             this.textEmailPassword.PasswordChar = '*';
-            this.textEmailPassword.Size = new System.Drawing.Size(271, 20);
+            this.textEmailPassword.Size = new System.Drawing.Size(269, 20);
             this.textEmailPassword.TabIndex = 138;
             // 
             // textSmsPassword
             // 
-            this.textSmsPassword.Location = new System.Drawing.Point(108, 159);
+            this.textSmsPassword.Location = new System.Drawing.Point(182, 132);
             this.textSmsPassword.Name = "textSmsPassword";
             this.textSmsPassword.PasswordChar = '*';
             this.textSmsPassword.Size = new System.Drawing.Size(269, 20);
@@ -191,14 +191,14 @@
             // 
             // textEmailUname
             // 
-            this.textEmailUname.Location = new System.Drawing.Point(108, 261);
+            this.textEmailUname.Location = new System.Drawing.Point(182, 234);
             this.textEmailUname.Name = "textEmailUname";
-            this.textEmailUname.Size = new System.Drawing.Size(271, 20);
+            this.textEmailUname.Size = new System.Drawing.Size(269, 20);
             this.textEmailUname.TabIndex = 136;
             // 
             // textSmsUname
             // 
-            this.textSmsUname.Location = new System.Drawing.Point(108, 127);
+            this.textSmsUname.Location = new System.Drawing.Point(182, 100);
             this.textSmsUname.Name = "textSmsUname";
             this.textSmsUname.Size = new System.Drawing.Size(269, 20);
             this.textSmsUname.TabIndex = 126;

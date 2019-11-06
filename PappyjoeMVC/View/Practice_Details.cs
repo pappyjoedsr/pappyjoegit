@@ -826,6 +826,26 @@ namespace PappyjoeMVC.View
             form2.ShowDialog();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
             var form2 = new Expense();

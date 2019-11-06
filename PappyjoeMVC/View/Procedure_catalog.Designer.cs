@@ -38,13 +38,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Procedure_Catalog));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Dgv_Procedure = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.textsearch = new System.Windows.Forms.TextBox();
             this.buttonrefresh = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -69,6 +62,13 @@
             this.lab_Pro_nameError = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Procedure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -100,7 +100,7 @@
             this.panel1.Controls.Add(this.richnotes);
             this.panel1.Controls.Add(this.lab_Pro_nameError);
             this.panel1.Controls.Add(this.label19);
-            this.panel1.Location = new System.Drawing.Point(3, 2);
+            this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1335, 652);
             this.panel1.TabIndex = 0;
@@ -169,6 +169,283 @@
             this.Dgv_Procedure.TabIndex = 149;
             this.Dgv_Procedure.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Procedure_CellClick);
             // 
+            // textsearch
+            // 
+            this.textsearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.textsearch.Location = new System.Drawing.Point(116, 323);
+            this.textsearch.Name = "textsearch";
+            this.textsearch.Size = new System.Drawing.Size(287, 20);
+            this.textsearch.TabIndex = 148;
+            this.textsearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textsearch_KeyPress);
+            this.textsearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textsearch_KeyUp);
+            // 
+            // buttonrefresh
+            // 
+            this.buttonrefresh.BackColor = System.Drawing.Color.LimeGreen;
+            this.buttonrefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonrefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonrefresh.ForeColor = System.Drawing.Color.White;
+            this.buttonrefresh.Location = new System.Drawing.Point(409, 322);
+            this.buttonrefresh.Name = "buttonrefresh";
+            this.buttonrefresh.Size = new System.Drawing.Size(75, 22);
+            this.buttonrefresh.TabIndex = 147;
+            this.buttonrefresh.Text = "Refresh";
+            this.buttonrefresh.UseVisualStyleBackColor = false;
+            this.buttonrefresh.Click += new System.EventHandler(this.buttonrefresh_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label8.Location = new System.Drawing.Point(22, 326);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(93, 15);
+            this.label8.TabIndex = 146;
+            this.label8.Text = "Search by Name";
+            // 
+            // buttonclear
+            // 
+            this.buttonclear.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonclear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonclear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonclear.ForeColor = System.Drawing.Color.White;
+            this.buttonclear.Location = new System.Drawing.Point(381, 247);
+            this.buttonclear.Name = "buttonclear";
+            this.buttonclear.Size = new System.Drawing.Size(99, 33);
+            this.buttonclear.TabIndex = 144;
+            this.buttonclear.Text = "Clear All";
+            this.buttonclear.UseVisualStyleBackColor = false;
+            this.buttonclear.Click += new System.EventHandler(this.buttonclear_Click);
+            // 
+            // buttonsave
+            // 
+            this.buttonsave.BackColor = System.Drawing.Color.LimeGreen;
+            this.buttonsave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonsave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonsave.ForeColor = System.Drawing.Color.White;
+            this.buttonsave.Location = new System.Drawing.Point(245, 247);
+            this.buttonsave.Name = "buttonsave";
+            this.buttonsave.Size = new System.Drawing.Size(130, 33);
+            this.buttonsave.TabIndex = 145;
+            this.buttonsave.Text = "Save New Procedure";
+            this.buttonsave.UseVisualStyleBackColor = false;
+            this.buttonsave.Click += new System.EventHandler(this.buttonsave_Click);
+            // 
+            // buttonSaveCategory
+            // 
+            this.buttonSaveCategory.BackColor = System.Drawing.Color.LimeGreen;
+            this.buttonSaveCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSaveCategory.ForeColor = System.Drawing.Color.White;
+            this.buttonSaveCategory.Location = new System.Drawing.Point(981, 186);
+            this.buttonSaveCategory.Name = "buttonSaveCategory";
+            this.buttonSaveCategory.Size = new System.Drawing.Size(75, 24);
+            this.buttonSaveCategory.TabIndex = 142;
+            this.buttonSaveCategory.Text = "Save";
+            this.buttonSaveCategory.UseVisualStyleBackColor = false;
+            this.buttonSaveCategory.Click += new System.EventHandler(this.buttonSaveCategory_Click);
+            // 
+            // btnAddNewCategory
+            // 
+            this.btnAddNewCategory.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnAddNewCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewCategory.ForeColor = System.Drawing.Color.White;
+            this.btnAddNewCategory.Location = new System.Drawing.Point(726, 186);
+            this.btnAddNewCategory.Name = "btnAddNewCategory";
+            this.btnAddNewCategory.Size = new System.Drawing.Size(75, 24);
+            this.btnAddNewCategory.TabIndex = 143;
+            this.btnAddNewCategory.Text = "Add New";
+            this.btnAddNewCategory.UseVisualStyleBackColor = false;
+            this.btnAddNewCategory.Click += new System.EventHandler(this.btnAddNewCategory_Click);
+            // 
+            // txt_AddCategory
+            // 
+            this.txt_AddCategory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_AddCategory.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_AddCategory.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_AddCategory.Location = new System.Drawing.Point(816, 187);
+            this.txt_AddCategory.Name = "txt_AddCategory";
+            this.txt_AddCategory.Size = new System.Drawing.Size(159, 23);
+            this.txt_AddCategory.TabIndex = 141;
+            // 
+            // comboaddunder
+            // 
+            this.comboaddunder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboaddunder.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboaddunder.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.comboaddunder.FormattingEnabled = true;
+            this.comboaddunder.Location = new System.Drawing.Point(540, 187);
+            this.comboaddunder.Name = "comboaddunder";
+            this.comboaddunder.Size = new System.Drawing.Size(173, 23);
+            this.comboaddunder.TabIndex = 140;
+            this.comboaddunder.Click += new System.EventHandler(this.comboaddunder_Click);
+            // 
+            // checkaddunder
+            // 
+            this.checkaddunder.AutoSize = true;
+            this.checkaddunder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkaddunder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkaddunder.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkaddunder.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.checkaddunder.Location = new System.Drawing.Point(429, 188);
+            this.checkaddunder.Name = "checkaddunder";
+            this.checkaddunder.Size = new System.Drawing.Size(105, 21);
+            this.checkaddunder.TabIndex = 137;
+            this.checkaddunder.Text = "Add Category";
+            this.checkaddunder.UseVisualStyleBackColor = true;
+            this.checkaddunder.CheckedChanged += new System.EventHandler(this.checkaddunder_CheckedChanged);
+            // 
+            // chk_gst
+            // 
+            this.chk_gst.AutoSize = true;
+            this.chk_gst.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chk_gst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chk_gst.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_gst.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk_gst.Location = new System.Drawing.Point(246, 188);
+            this.chk_gst.Name = "chk_gst";
+            this.chk_gst.Size = new System.Drawing.Size(47, 21);
+            this.chk_gst.TabIndex = 138;
+            this.chk_gst.Text = "GST";
+            this.chk_gst.UseVisualStyleBackColor = true;
+            // 
+            // chk_igst
+            // 
+            this.chk_igst.AutoSize = true;
+            this.chk_igst.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chk_igst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chk_igst.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_igst.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk_igst.Location = new System.Drawing.Point(246, 218);
+            this.chk_igst.Name = "chk_igst";
+            this.chk_igst.Size = new System.Drawing.Size(50, 21);
+            this.chk_igst.TabIndex = 139;
+            this.chk_igst.Text = "IGST";
+            this.chk_igst.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label1.Location = new System.Drawing.Point(114, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 17);
+            this.label1.TabIndex = 127;
+            this.label1.Text = "Procedure Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label2.Location = new System.Drawing.Point(123, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 17);
+            this.label2.TabIndex = 128;
+            this.label2.Text = "Procedure Cost";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label3.Location = new System.Drawing.Point(133, 127);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 17);
+            this.label3.TabIndex = 129;
+            this.label3.Text = "Default Notes";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(219, 100);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(11, 13);
+            this.label10.TabIndex = 135;
+            this.label10.Text = "*";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(218, 68);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(11, 13);
+            this.label9.TabIndex = 136;
+            this.label9.Text = "*";
+            // 
+            // txt_procedurename
+            // 
+            this.txt_procedurename.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_procedurename.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_procedurename.Location = new System.Drawing.Point(246, 62);
+            this.txt_procedurename.Name = "txt_procedurename";
+            this.txt_procedurename.Size = new System.Drawing.Size(257, 20);
+            this.txt_procedurename.TabIndex = 130;
+            this.txt_procedurename.TextChanged += new System.EventHandler(this.txt_procedurename_TextChanged);
+            // 
+            // txt_procedurecost
+            // 
+            this.txt_procedurecost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_procedurecost.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_procedurecost.Location = new System.Drawing.Point(246, 94);
+            this.txt_procedurecost.Name = "txt_procedurecost";
+            this.txt_procedurecost.Size = new System.Drawing.Size(257, 20);
+            this.txt_procedurecost.TabIndex = 131;
+            this.txt_procedurecost.TextChanged += new System.EventHandler(this.txt_procedurecost_TextChanged);
+            // 
+            // lab_ProCost
+            // 
+            this.lab_ProCost.AutoSize = true;
+            this.lab_ProCost.ForeColor = System.Drawing.Color.Red;
+            this.lab_ProCost.Location = new System.Drawing.Point(508, 98);
+            this.lab_ProCost.Name = "lab_ProCost";
+            this.lab_ProCost.Size = new System.Drawing.Size(77, 13);
+            this.lab_ProCost.TabIndex = 133;
+            this.lab_ProCost.Text = "Can\'t be empty";
+            this.lab_ProCost.Visible = false;
+            // 
+            // richnotes
+            // 
+            this.richnotes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richnotes.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.richnotes.Location = new System.Drawing.Point(246, 127);
+            this.richnotes.Name = "richnotes";
+            this.richnotes.Size = new System.Drawing.Size(257, 46);
+            this.richnotes.TabIndex = 132;
+            this.richnotes.Text = "";
+            // 
+            // lab_Pro_nameError
+            // 
+            this.lab_Pro_nameError.AutoSize = true;
+            this.lab_Pro_nameError.ForeColor = System.Drawing.Color.Red;
+            this.lab_Pro_nameError.Location = new System.Drawing.Point(508, 66);
+            this.lab_Pro_nameError.Name = "lab_Pro_nameError";
+            this.lab_Pro_nameError.Size = new System.Drawing.Size(77, 13);
+            this.lab_Pro_nameError.TabIndex = 134;
+            this.lab_Pro_nameError.Text = "Can\'t be empty";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label19.Location = new System.Drawing.Point(15, 7);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(169, 25);
+            this.label19.TabIndex = 126;
+            this.label19.Text = "Procedure Catalog";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "id";
@@ -228,284 +505,7 @@
             this.delete.ReadOnly = true;
             this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.delete.Width = 25;
-            // 
-            // textsearch
-            // 
-            this.textsearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.textsearch.Location = new System.Drawing.Point(116, 323);
-            this.textsearch.Name = "textsearch";
-            this.textsearch.Size = new System.Drawing.Size(287, 20);
-            this.textsearch.TabIndex = 148;
-            this.textsearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textsearch_KeyPress);
-            this.textsearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textsearch_KeyUp);
-            // 
-            // buttonrefresh
-            // 
-            this.buttonrefresh.BackColor = System.Drawing.Color.LimeGreen;
-            this.buttonrefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonrefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonrefresh.ForeColor = System.Drawing.Color.White;
-            this.buttonrefresh.Location = new System.Drawing.Point(409, 324);
-            this.buttonrefresh.Name = "buttonrefresh";
-            this.buttonrefresh.Size = new System.Drawing.Size(75, 22);
-            this.buttonrefresh.TabIndex = 147;
-            this.buttonrefresh.Text = "Refresh";
-            this.buttonrefresh.UseVisualStyleBackColor = false;
-            this.buttonrefresh.Click += new System.EventHandler(this.buttonrefresh_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label8.Location = new System.Drawing.Point(22, 326);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 15);
-            this.label8.TabIndex = 146;
-            this.label8.Text = "Search by Name";
-            // 
-            // buttonclear
-            // 
-            this.buttonclear.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.buttonclear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonclear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonclear.ForeColor = System.Drawing.Color.White;
-            this.buttonclear.Location = new System.Drawing.Point(284, 259);
-            this.buttonclear.Name = "buttonclear";
-            this.buttonclear.Size = new System.Drawing.Size(99, 33);
-            this.buttonclear.TabIndex = 144;
-            this.buttonclear.Text = "Clear All";
-            this.buttonclear.UseVisualStyleBackColor = false;
-            this.buttonclear.Click += new System.EventHandler(this.buttonclear_Click);
-            // 
-            // buttonsave
-            // 
-            this.buttonsave.BackColor = System.Drawing.Color.LimeGreen;
-            this.buttonsave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonsave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonsave.ForeColor = System.Drawing.Color.White;
-            this.buttonsave.Location = new System.Drawing.Point(148, 259);
-            this.buttonsave.Name = "buttonsave";
-            this.buttonsave.Size = new System.Drawing.Size(130, 33);
-            this.buttonsave.TabIndex = 145;
-            this.buttonsave.Text = "Save New Procedure";
-            this.buttonsave.UseVisualStyleBackColor = false;
-            this.buttonsave.Click += new System.EventHandler(this.buttonsave_Click);
-            // 
-            // buttonSaveCategory
-            // 
-            this.buttonSaveCategory.BackColor = System.Drawing.Color.LimeGreen;
-            this.buttonSaveCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSaveCategory.ForeColor = System.Drawing.Color.White;
-            this.buttonSaveCategory.Location = new System.Drawing.Point(884, 198);
-            this.buttonSaveCategory.Name = "buttonSaveCategory";
-            this.buttonSaveCategory.Size = new System.Drawing.Size(75, 24);
-            this.buttonSaveCategory.TabIndex = 142;
-            this.buttonSaveCategory.Text = "Save";
-            this.buttonSaveCategory.UseVisualStyleBackColor = false;
-            this.buttonSaveCategory.Click += new System.EventHandler(this.buttonSaveCategory_Click);
-            // 
-            // btnAddNewCategory
-            // 
-            this.btnAddNewCategory.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnAddNewCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNewCategory.ForeColor = System.Drawing.Color.White;
-            this.btnAddNewCategory.Location = new System.Drawing.Point(629, 199);
-            this.btnAddNewCategory.Name = "btnAddNewCategory";
-            this.btnAddNewCategory.Size = new System.Drawing.Size(75, 24);
-            this.btnAddNewCategory.TabIndex = 143;
-            this.btnAddNewCategory.Text = "Add New";
-            this.btnAddNewCategory.UseVisualStyleBackColor = false;
-            this.btnAddNewCategory.Click += new System.EventHandler(this.btnAddNewCategory_Click);
-            // 
-            // txt_AddCategory
-            // 
-            this.txt_AddCategory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_AddCategory.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_AddCategory.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_AddCategory.Location = new System.Drawing.Point(719, 199);
-            this.txt_AddCategory.Name = "txt_AddCategory";
-            this.txt_AddCategory.Size = new System.Drawing.Size(159, 23);
-            this.txt_AddCategory.TabIndex = 141;
-            // 
-            // comboaddunder
-            // 
-            this.comboaddunder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboaddunder.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboaddunder.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.comboaddunder.FormattingEnabled = true;
-            this.comboaddunder.Location = new System.Drawing.Point(443, 199);
-            this.comboaddunder.Name = "comboaddunder";
-            this.comboaddunder.Size = new System.Drawing.Size(173, 23);
-            this.comboaddunder.TabIndex = 140;
-            this.comboaddunder.Click += new System.EventHandler(this.comboaddunder_Click);
-            // 
-            // checkaddunder
-            // 
-            this.checkaddunder.AutoSize = true;
-            this.checkaddunder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkaddunder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkaddunder.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkaddunder.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.checkaddunder.Location = new System.Drawing.Point(332, 200);
-            this.checkaddunder.Name = "checkaddunder";
-            this.checkaddunder.Size = new System.Drawing.Size(105, 21);
-            this.checkaddunder.TabIndex = 137;
-            this.checkaddunder.Text = "Add Category";
-            this.checkaddunder.UseVisualStyleBackColor = true;
-            this.checkaddunder.CheckedChanged += new System.EventHandler(this.checkaddunder_CheckedChanged);
-            // 
-            // chk_gst
-            // 
-            this.chk_gst.AutoSize = true;
-            this.chk_gst.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chk_gst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chk_gst.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_gst.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk_gst.Location = new System.Drawing.Point(149, 200);
-            this.chk_gst.Name = "chk_gst";
-            this.chk_gst.Size = new System.Drawing.Size(47, 21);
-            this.chk_gst.TabIndex = 138;
-            this.chk_gst.Text = "GST";
-            this.chk_gst.UseVisualStyleBackColor = true;
-            // 
-            // chk_igst
-            // 
-            this.chk_igst.AutoSize = true;
-            this.chk_igst.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chk_igst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chk_igst.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_igst.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk_igst.Location = new System.Drawing.Point(149, 230);
-            this.chk_igst.Name = "chk_igst";
-            this.chk_igst.Size = new System.Drawing.Size(50, 21);
-            this.chk_igst.TabIndex = 139;
-            this.chk_igst.Text = "IGST";
-            this.chk_igst.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(21, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 17);
-            this.label1.TabIndex = 127;
-            this.label1.Text = "Procedure Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(30, 108);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 17);
-            this.label2.TabIndex = 128;
-            this.label2.Text = "Procedure Cost";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(40, 141);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 17);
-            this.label3.TabIndex = 129;
-            this.label3.Text = "Default Notes";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(126, 112);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(11, 13);
-            this.label10.TabIndex = 135;
-            this.label10.Text = "*";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(125, 80);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(11, 13);
-            this.label9.TabIndex = 136;
-            this.label9.Text = "*";
-            // 
-            // txt_procedurename
-            // 
-            this.txt_procedurename.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_procedurename.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_procedurename.Location = new System.Drawing.Point(149, 74);
-            this.txt_procedurename.Name = "txt_procedurename";
-            this.txt_procedurename.Size = new System.Drawing.Size(257, 20);
-            this.txt_procedurename.TabIndex = 130;
-            this.txt_procedurename.TextChanged += new System.EventHandler(this.txt_procedurename_TextChanged);
-            // 
-            // txt_procedurecost
-            // 
-            this.txt_procedurecost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_procedurecost.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_procedurecost.Location = new System.Drawing.Point(149, 106);
-            this.txt_procedurecost.Name = "txt_procedurecost";
-            this.txt_procedurecost.Size = new System.Drawing.Size(257, 20);
-            this.txt_procedurecost.TabIndex = 131;
-            this.txt_procedurecost.TextChanged += new System.EventHandler(this.txt_procedurecost_TextChanged);
-            // 
-            // lab_ProCost
-            // 
-            this.lab_ProCost.AutoSize = true;
-            this.lab_ProCost.ForeColor = System.Drawing.Color.Red;
-            this.lab_ProCost.Location = new System.Drawing.Point(411, 109);
-            this.lab_ProCost.Name = "lab_ProCost";
-            this.lab_ProCost.Size = new System.Drawing.Size(77, 13);
-            this.lab_ProCost.TabIndex = 133;
-            this.lab_ProCost.Text = "Can\'t be empty";
-            this.lab_ProCost.Visible = false;
-            // 
-            // richnotes
-            // 
-            this.richnotes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richnotes.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.richnotes.Location = new System.Drawing.Point(149, 139);
-            this.richnotes.Name = "richnotes";
-            this.richnotes.Size = new System.Drawing.Size(257, 46);
-            this.richnotes.TabIndex = 132;
-            this.richnotes.Text = "";
-            // 
-            // lab_Pro_nameError
-            // 
-            this.lab_Pro_nameError.AutoSize = true;
-            this.lab_Pro_nameError.ForeColor = System.Drawing.Color.Red;
-            this.lab_Pro_nameError.Location = new System.Drawing.Point(411, 77);
-            this.lab_Pro_nameError.Name = "lab_Pro_nameError";
-            this.lab_Pro_nameError.Size = new System.Drawing.Size(77, 13);
-            this.lab_Pro_nameError.TabIndex = 134;
-            this.lab_Pro_nameError.Text = "Can\'t be empty";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label19.Location = new System.Drawing.Point(21, 17);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(169, 25);
-            this.label19.TabIndex = 126;
-            this.label19.Text = "Procedure Catalog";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
+            this.delete.Width = 19;
             // 
             // Procedure_Catalog
             // 
