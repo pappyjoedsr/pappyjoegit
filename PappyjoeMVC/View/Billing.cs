@@ -132,5 +132,15 @@ namespace PappyjoeMVC.View
             text_taxvalue.Clear();
             buttonsave.Text = "Save"; 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView_Billing_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
