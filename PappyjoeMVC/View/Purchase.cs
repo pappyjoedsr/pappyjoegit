@@ -173,19 +173,19 @@ namespace PappyjoeMVC.View
                             {
                                 int qty = int.Parse(txt_qty.Text);
                                 decimal unitcost = Convert.ToDecimal(txtUnitCost.Text) / UnitMf;
-                                if (txtGst.Text != "0.0")
+                                if (txtGst.Text != "0")
                                 {
                                     gstamt = (((unitcost * qty) * gst) / 100) + (unitcost * qty);
                                     txtAmount.Text = gstamt.ToString("##.00");
                                     txtUnitCost.Text = unitcost.ToString("##.00");
                                 }
-                                else if (txtIgst.Text != "0.0")
+                                else if (txtIgst.Text != "0")
                                 {
                                     gstamt = (((unitcost * qty) * igst) / 100) + (unitcost * qty);
                                     txtAmount.Text = gstamt.ToString("##.00");
                                     txtUnitCost.Text = unitcost.ToString("##.00");
                                 }
-                                else if (txtGst.Text == "0.0" && txtIgst.Text == "0.0")
+                                else if (txtGst.Text == "0" && txtIgst.Text == "0")
                                 {
                                     txtUnitCost.Text = unitcost.ToString("##.00");
                                     amtUntchange = unitcost * qty;
@@ -199,19 +199,19 @@ namespace PappyjoeMVC.View
                                 unit = cmbUnit.Text;
                                 int qty = int.Parse(txt_qty.Text);
                                 decimal unitcost = Convert.ToDecimal(txtUnitCost.Text) * UnitMf;
-                                if (txtGst.Text != "0.0")
+                                if (txtGst.Text != "0")
                                 {
                                     gstamt = (((unitcost * qty) * gst) / 100) + (unitcost * qty);
                                     txtAmount.Text = gstamt.ToString("##.00");
                                     txtUnitCost.Text = unitcost.ToString("##.00");
                                 }
-                                else if (txtIgst.Text != "0.0")
+                                else if (txtIgst.Text != "0")
                                 {
                                     gstamt = (((unitcost * qty) * igst) / 100) + (unitcost * qty);
                                     txtAmount.Text = gstamt.ToString("##.00");
                                     txtUnitCost.Text = unitcost.ToString("##.00");
                                 }
-                                else if (txtGst.Text == "0.0" && txtIgst.Text == "0.0")
+                                else if (txtGst.Text == "0" && txtIgst.Text == "0")
                                 {
                                     txtUnitCost.Text = unitcost.ToString("##.00");
                                     amtUntchange = unitcost * qty;
@@ -241,7 +241,7 @@ namespace PappyjoeMVC.View
             {
                 e.Handled = true;
             }
-            if (txtGst.Text != "0.0")
+            if (txtGst.Text != "0")
             {
                 string a = txtGst.Text;
                 string b = a.TrimStart('0');
@@ -251,7 +251,7 @@ namespace PappyjoeMVC.View
 
         private void txtGst_Click(object sender, EventArgs e)
         {
-            if (txtGst.Text == "0.0")
+            if (txtGst.Text == "0")
             {
                 txtGst.Text = "";
             }
@@ -259,21 +259,21 @@ namespace PappyjoeMVC.View
 
         private void txtGst_KeyUp(object sender, KeyEventArgs e)
         {
-            //if (txtGst.Text == "" || txtGst.Text == ".")
-            //{
-            //    txtGst.Text = "0.0";
-            //}
+            if (txtGst.Text == "" || txtGst.Text == ".")
+            {
+                txtGst.Text = "0";
+            }
         }
 
         private void txtGst_Leave(object sender, EventArgs e)
         {
             if (txtGst.Text == "")
             {
-                txtGst.Text = "0.0";
+                txtGst.Text = "0";
             }
             else if (Convert.ToDecimal(txtGst.Text) > 0)
             {
-                txtIgst.Text = "0.0";
+                txtIgst.Text = "0";
             }
         }
 
@@ -325,7 +325,7 @@ namespace PappyjoeMVC.View
 
         private void txtIgst_Click(object sender, EventArgs e)
         {
-            if (txtIgst.Text == "0.0")
+            if (txtIgst.Text == "0")
             {
                 txtIgst.Text = "";
             }
@@ -342,7 +342,7 @@ namespace PappyjoeMVC.View
             {
                 e.Handled = true;
             }
-            if (txtIgst.Text != "0.0")
+            if (txtIgst.Text != "0")
             {
                 string a = txtIgst.Text;
                 string b = a.TrimStart('0');
@@ -354,7 +354,7 @@ namespace PappyjoeMVC.View
         {
             if (txtIgst.Text == "" || txtIgst.Text == ".")
             {
-                txtIgst.Text = "0.0";
+                txtIgst.Text = "0";
             }
         }
 
@@ -362,11 +362,11 @@ namespace PappyjoeMVC.View
         {
             if (txtIgst.Text == "")
             {
-                txtIgst.Text = "0.0";
+                txtIgst.Text = "0";
             }
             else if (Convert.ToDecimal(txtIgst.Text) > 0)
             {
-                txtGst.Text = "0.0";
+                txtGst.Text = "0";
             }
         }
 
@@ -868,8 +868,8 @@ namespace PappyjoeMVC.View
             txt_free.Text = "0";
             txtUnitCost.Text = "0.0";
             txtAmount.Text = "0.00";
-            txtGst.Text = "0.0";
-            txtIgst.Text = "0.0";
+            txtGst.Text = "0";
+            txtIgst.Text = "0";
             cmbUnit.Text = "";
         }
 
@@ -877,10 +877,8 @@ namespace PappyjoeMVC.View
         {
             txt_Itemcode.Clear();
             txtDescription.Clear();
-            txtGst.Text = "0.0";
-            txtIgst.Text = "0.0";
-            txtGst.Text = "0.0";
-            txtIgst.Text = "0.0";
+            txtGst.Text = "0";
+            txtIgst.Text = "0";
             txtPacking.Clear();
             txt_qty.Text = "0";
             txt_free.Clear();
@@ -1202,8 +1200,8 @@ namespace PappyjoeMVC.View
                             txtTotalCost.Text = "0.00";
                             txtTotal_item.Text = "0";
                             txt_TotalAmount.Text = "0.00";
-                            txtCgst.Text = "0.00";
-                            txtSgst.Text = "0.00";
+                            txtCgst.Text = "0";
+                            txtSgst.Text = "0";
                             txtIgstResult.Text = "0.00";
                             txtSupplierName.Clear();
                             txt_SupplierId.Clear();
@@ -1725,8 +1723,8 @@ namespace PappyjoeMVC.View
             txt_free.Text = "0";
             txtUnitCost.Text = "0.0";
             txtAmount.Text = "0.00";
-            txtGst.Text = "0.0";
-            txtIgst.Text = "0.0";
+            txtGst.Text = "0";
+            txtIgst.Text = "0";
             cmbUnit.Text = "";
         }  
     }

@@ -1019,7 +1019,7 @@ namespace PappyjoeMVC.View
                 clinic_combo();
                 panel_edit_dr.Visible=false;
                 panel_clinicaldetails.Visible=true;
-                panel_clinicaldetails.Location = new Point(2,42);
+                panel_clinicaldetails.Location = new Point(7,45);
                 DataTable practice = this.cntrl.get_companydetails();
                 if (practice.Rows.Count > 0)
                 {

@@ -69,7 +69,7 @@
             this.btnexport.ForeColor = System.Drawing.Color.White;
             this.btnexport.Location = new System.Drawing.Point(656, 47);
             this.btnexport.Name = "btnexport";
-            this.btnexport.Size = new System.Drawing.Size(74, 30);
+            this.btnexport.Size = new System.Drawing.Size(74, 27);
             this.btnexport.TabIndex = 302;
             this.btnexport.Text = "Export";
             this.btnexport.UseVisualStyleBackColor = false;
@@ -83,7 +83,7 @@
             this.BtnShow.ForeColor = System.Drawing.Color.White;
             this.BtnShow.Location = new System.Drawing.Point(580, 47);
             this.BtnShow.Name = "BtnShow";
-            this.BtnShow.Size = new System.Drawing.Size(74, 30);
+            this.BtnShow.Size = new System.Drawing.Size(74, 27);
             this.BtnShow.TabIndex = 297;
             this.BtnShow.Text = "Show";
             this.BtnShow.UseVisualStyleBackColor = false;
@@ -141,7 +141,7 @@
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(804, 6);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(74, 30);
+            this.btnCancel.Size = new System.Drawing.Size(74, 27);
             this.btnCancel.TabIndex = 207;
             this.btnCancel.Text = "CLOSE";
             this.btnCancel.UseVisualStyleBackColor = false;

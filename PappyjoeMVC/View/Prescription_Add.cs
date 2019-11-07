@@ -900,6 +900,7 @@ namespace PappyjoeMVC.View
 
         private void PrescriptionAdd_Load(object sender, EventArgs e)
         {
+
             try
             {
                 toolStripButton18.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;

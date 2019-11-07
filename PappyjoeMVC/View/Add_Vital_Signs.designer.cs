@@ -80,7 +80,6 @@
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextDoctor = new System.Windows.Forms.ToolStripTextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelallpatient = new System.Windows.Forms.Label();
             this.btn_Close = new System.Windows.Forms.Button();
@@ -705,21 +704,14 @@
             this.toolStripTextDoctor.Size = new System.Drawing.Size(250, 23);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel3.Location = new System.Drawing.Point(193, 40);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1, 48);
-            this.panel3.TabIndex = 302;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.labelallpatient);
-            this.panel1.Location = new System.Drawing.Point(3, 42);
+            this.panel1.Location = new System.Drawing.Point(687, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(143, 45);
+            this.panel1.Size = new System.Drawing.Size(39, 20);
             this.panel1.TabIndex = 301;
+            this.panel1.Visible = false;
             // 
             // labelallpatient
             // 
@@ -788,7 +780,7 @@
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
             this.listpatientsearch.ItemHeight = 20;
-            this.listpatientsearch.Location = new System.Drawing.Point(882, 42);
+            this.listpatientsearch.Location = new System.Drawing.Point(870, 42);
             this.listpatientsearch.Name = "listpatientsearch";
             this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
             this.listpatientsearch.TabIndex = 295;
@@ -813,7 +805,7 @@
             this.panel2.Controls.Add(this.linkLabel_Name);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(197, 43);
+            this.panel2.Location = new System.Drawing.Point(2, 43);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(414, 42);
             this.panel2.TabIndex = 296;
@@ -861,7 +853,6 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.btn_Add);
@@ -942,7 +933,6 @@
         private System.Windows.Forms.ToolStripButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextDoctor;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelallpatient;
         private System.Windows.Forms.Button btn_Close;

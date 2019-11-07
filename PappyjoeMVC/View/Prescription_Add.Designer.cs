@@ -173,7 +173,6 @@
             this.cmbDoctor = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.drugspanel = new System.Windows.Forms.Panel();
             this.dateTimeReview = new System.Windows.Forms.DateTimePicker();
@@ -479,7 +478,7 @@
             this.panel8.Controls.Add(this.label24);
             this.panel8.Controls.Add(this.linkLabel_Name);
             this.panel8.Controls.Add(this.linkLabel_id);
-            this.panel8.Location = new System.Drawing.Point(153, 41);
+            this.panel8.Location = new System.Drawing.Point(1, 41);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(482, 49);
             this.panel8.TabIndex = 277;
@@ -550,12 +549,13 @@
             this.label14.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label14.Image = ((System.Drawing.Image)(resources.GetObject("label14.Image")));
             this.label14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label14.Location = new System.Drawing.Point(5, 48);
+            this.label14.Location = new System.Drawing.Point(671, 60);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(106, 38);
+            this.label14.Size = new System.Drawing.Size(59, 23);
             this.label14.TabIndex = 276;
             this.label14.Text = "All Patients";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label14.Visible = false;
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // panel5
@@ -1738,14 +1738,6 @@
             this.label26.Size = new System.Drawing.Size(991, 77);
             this.label26.TabIndex = 75;
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.DarkGray;
-            this.panel7.Location = new System.Drawing.Point(146, 39);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1, 53);
-            this.panel7.TabIndex = 287;
-            // 
             // listpatientsearch
             // 
             this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -2065,7 +2057,6 @@
             this.Controls.Add(this.templatepanel1);
             this.Controls.Add(this.panel_adddrug);
             this.Controls.Add(this.drugspanel);
-            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.BtnCancel);
@@ -2242,7 +2233,6 @@
         private System.Windows.Forms.ComboBox cmbDoctor;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.ListBox listpatientsearch;
         private System.Windows.Forms.Panel drugspanel;
         private System.Windows.Forms.DateTimePicker dateTimeReview;

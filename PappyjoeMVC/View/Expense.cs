@@ -54,7 +54,8 @@ namespace PappyjoeMVC.View
                 panel1.Hide();
                 panel6.Show();
                 grp_Debit.Visible = true;
-                grp_Debit.Width = 1070;
+                grp_Debit.Width = 1065;
+                grp_Debit.Location = new Point(10, 10);
                 grpb_Credit.Visible = false;
                 Lab_Debits.BackColor = Color.DodgerBlue;
                 Lab_Debits.ForeColor = Color.White;
@@ -74,7 +75,7 @@ namespace PappyjoeMVC.View
                 panel6.Show();
                 grp_Debit.Visible = false;
                 grpb_Credit.Visible = true;
-                grpb_Credit.Width = 1070;
+                grpb_Credit.Width = 1065;
                 grpb_Credit.Location = new Point(10, 10);
                 panel1.Hide();
                 lab_Credits.BackColor = Color.DodgerBlue;

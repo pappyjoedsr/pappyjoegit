@@ -445,7 +445,7 @@
             this.txtGst.Name = "txtGst";
             this.txtGst.Size = new System.Drawing.Size(70, 20);
             this.txtGst.TabIndex = 5;
-            this.txtGst.Text = "0.0";
+            this.txtGst.Text = "0";
             this.txtGst.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtGst.Click += new System.EventHandler(this.txtGst_Click);
             this.txtGst.TextChanged += new System.EventHandler(this.txtGst_TextChanged);
@@ -472,7 +472,7 @@
             this.txtIgst.Name = "txtIgst";
             this.txtIgst.Size = new System.Drawing.Size(69, 20);
             this.txtIgst.TabIndex = 6;
-            this.txtIgst.Text = "0.0";
+            this.txtIgst.Text = "0";
             this.txtIgst.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtIgst.Click += new System.EventHandler(this.txtIgst_Click);
             this.txtIgst.TextChanged += new System.EventHandler(this.txtIgst_TextChanged);

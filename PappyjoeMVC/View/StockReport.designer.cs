@@ -93,6 +93,7 @@
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_main = new System.Windows.Forms.Panel();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -890,7 +891,7 @@
             this.panel_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_main.Location = new System.Drawing.Point(171, 46);
+            this.panel_main.Location = new System.Drawing.Point(171, 43);
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(1145, 641);
             this.panel_main.TabIndex = 281;
@@ -910,14 +911,23 @@
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick_1);
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Gray;
+            this.panel7.Location = new System.Drawing.Point(170, 87);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1147, 1);
+            this.panel7.TabIndex = 275;
+            // 
             // StockReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1308, 694);
-            this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.panel_main);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -1010,5 +1020,6 @@
         private System.Windows.Forms.ListBox listpatientsearch;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.Panel panel7;
     }
 }

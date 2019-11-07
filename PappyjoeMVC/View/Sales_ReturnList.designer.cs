@@ -101,7 +101,7 @@
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
             this.btn_Refresh.Location = new System.Drawing.Point(811, 51);
             this.btn_Refresh.Name = "btn_Refresh";
-            this.btn_Refresh.Size = new System.Drawing.Size(71, 30);
+            this.btn_Refresh.Size = new System.Drawing.Size(71, 25);
             this.btn_Refresh.TabIndex = 290;
             this.btn_Refresh.Text = "Refresh";
             this.btn_Refresh.UseVisualStyleBackColor = false;
@@ -158,9 +158,9 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(797, 7);
+            this.btnCancel.Location = new System.Drawing.Point(803, 8);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(89, 27);
+            this.btnCancel.Size = new System.Drawing.Size(85, 27);
             this.btnCancel.TabIndex = 207;
             this.btnCancel.Text = "Close";
             this.btnCancel.UseVisualStyleBackColor = false;
