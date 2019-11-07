@@ -705,7 +705,7 @@ namespace PappyjoeMVC.View
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
-                dataGridView1_treatment_paln.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView1_treatment_paln.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 dataGridView1_treatment_paln.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dataGridView1_treatment_paln.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dataGridView1_treatment_paln.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -720,7 +720,7 @@ namespace PappyjoeMVC.View
                 foreach (DataGridViewColumn cl in dataGridView1_treatment_paln.Columns)
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;
-                    cl.Width = 120;
+                    //cl.Width = 120;
                 }
             }
             catch (Exception ex)

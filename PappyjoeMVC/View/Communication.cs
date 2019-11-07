@@ -175,6 +175,7 @@ namespace PappyjoeMVC.View
                         if (flag == false)
                         {
                             MessageBox.Show("choose the Template and Patient", "Incorrect", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
                         }
                     }
                     MessageBox.Show("Messages will be sent to entered numbers", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -830,7 +831,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    int x = (DGV_transactional.Size.Width - lab_Msg.Size.Width) / 2;
+                    int x = (panel2.Size.Width - lab_Msg.Size.Width) / 2;
                     lab_Msg.Location = new Point(x, Lab_Tabpg2MSG.Location.Y);
                     lab_Msg.Visible = true;
                 }
@@ -937,7 +938,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    int x = (DGV_upcoming_followups.Size.Width - Lab_Tabpg2MSG.Size.Width) / 2;
+                    int x = (panel2.Size.Width - Lab_Tabpg2MSG.Size.Width) / 2;
                     Lab_Tabpg2MSG.Location = new Point(x, Lab_Tabpg2MSG.Location.Y);
                     Lab_Tabpg2MSG.Visible = true;
                 }
@@ -973,7 +974,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    int x = (DGV_upcoming_followups.Size.Width - Lab_Tabpg2MSG.Size.Width) / 2;
+                    int x = (panel2.Size.Width - Lab_Tabpg2MSG.Size.Width) / 2;
                     Lab_Tabpg2MSG.Location = new Point(x, Lab_Tabpg2MSG.Location.Y);
                     Lab_Tabpg2MSG.Visible = true;
                 }
@@ -1544,6 +1545,11 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)

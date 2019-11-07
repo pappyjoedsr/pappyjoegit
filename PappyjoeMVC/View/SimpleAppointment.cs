@@ -351,7 +351,7 @@ namespace PappyjoeMVC.View
                 }
                 string invoauto = this.cntrl.get_invoicenumber();
                 int invoautoup = int.Parse(invoauto) + 1;
-                this.cntrl.update_invnumber(invoauto);
+                this.cntrl.update_invnumber(invoautoup.ToString());
                 DataTable receipt = this.cntrl.receipt_number();
                 string receiptNo = receipt.Rows[0]["receipt_prefix"].ToString() + receipt.Rows[0]["receipt_number"].ToString();
                 for (int i = 0; i < dgv_treatment.Rows.Count; i++)
@@ -1184,6 +1184,7 @@ namespace PappyjoeMVC.View
                         {
 
                             {
+                                dgv_prescrptn.Rows.Clear();
                                 for (int i = 0; i < dt_template.Rows.Count; i++)
                                 {
                                     dgv_prescrptn.Rows.Add(dt_template.Rows[i]["drug_id"].ToString(), dt_template.Rows[i]["drug_name"].ToString(), dt_template.Rows[i]["strength"].ToString(), dt_template.Rows[i]["strength_gr"].ToString(), dt_template.Rows[i]["duration"].ToString(), dt_template.Rows[i]["duration_period"].ToString(), dt_template.Rows[i]["morning"].ToString(), dt_template.Rows[i]["noon"].ToString(), dt_template.Rows[i]["night"].ToString(), dt_template.Rows[i]["food"].ToString(), dt_template.Rows[i]["add_instruction"].ToString(), dt_template.Rows[i]["drug_type"].ToString(), PappyjoeMVC.Properties.Resources.deleteicon);
@@ -1285,6 +1286,14 @@ namespace PappyjoeMVC.View
         private void panl_Treatment_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txt_Discount_Click(object sender, EventArgs e)
+        {
+            if (txt_Discount.Text == "0")
+            {
+                txt_Discount.Text = "";
+            }
         }
 
         private void btn_ClearAll_Click(object sender, EventArgs e)

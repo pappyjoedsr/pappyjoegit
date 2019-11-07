@@ -215,6 +215,7 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show("Check your network connection..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         int rowindex;

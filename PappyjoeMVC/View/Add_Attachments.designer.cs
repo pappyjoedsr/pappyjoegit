@@ -115,7 +115,7 @@
             this.Cmb_category1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category1.FormattingEnabled = true;
-            this.Cmb_category1.Location = new System.Drawing.Point(153, 273);
+            this.Cmb_category1.Location = new System.Drawing.Point(156, 276);
             this.Cmb_category1.Name = "Cmb_category1";
             this.Cmb_category1.Size = new System.Drawing.Size(150, 21);
             this.Cmb_category1.TabIndex = 1;
@@ -126,7 +126,7 @@
             this.Cmb_category4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category4.FormattingEnabled = true;
-            this.Cmb_category4.Location = new System.Drawing.Point(1001, 275);
+            this.Cmb_category4.Location = new System.Drawing.Point(1001, 276);
             this.Cmb_category4.Name = "Cmb_category4";
             this.Cmb_category4.Size = new System.Drawing.Size(150, 21);
             this.Cmb_category4.TabIndex = 269;
@@ -137,7 +137,7 @@
             this.Cmb_category3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category3.FormattingEnabled = true;
-            this.Cmb_category3.Location = new System.Drawing.Point(713, 274);
+            this.Cmb_category3.Location = new System.Drawing.Point(713, 276);
             this.Cmb_category3.Name = "Cmb_category3";
             this.Cmb_category3.Size = new System.Drawing.Size(150, 21);
             this.Cmb_category3.TabIndex = 271;
@@ -148,7 +148,7 @@
             this.Cmb_category8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category8.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category8.FormattingEnabled = true;
-            this.Cmb_category8.Location = new System.Drawing.Point(1001, 510);
+            this.Cmb_category8.Location = new System.Drawing.Point(1001, 508);
             this.Cmb_category8.Name = "Cmb_category8";
             this.Cmb_category8.Size = new System.Drawing.Size(150, 21);
             this.Cmb_category8.TabIndex = 268;
@@ -158,14 +158,14 @@
             this.Cmb_category2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category2.FormattingEnabled = true;
-            this.Cmb_category2.Location = new System.Drawing.Point(431, 273);
+            this.Cmb_category2.Location = new System.Drawing.Point(431, 274);
             this.Cmb_category2.Name = "Cmb_category2";
             this.Cmb_category2.Size = new System.Drawing.Size(150, 21);
             this.Cmb_category2.TabIndex = 273;
             // 
             // txt_path8
             // 
-            this.txt_path8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_path8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_path8.Location = new System.Drawing.Point(1001, 509);
             this.txt_path8.Multiline = true;
             this.txt_path8.Name = "txt_path8";
@@ -178,14 +178,14 @@
             this.Cmb_category7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category7.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category7.FormattingEnabled = true;
-            this.Cmb_category7.Location = new System.Drawing.Point(713, 509);
+            this.Cmb_category7.Location = new System.Drawing.Point(713, 511);
             this.Cmb_category7.Name = "Cmb_category7";
             this.Cmb_category7.Size = new System.Drawing.Size(150, 21);
             this.Cmb_category7.TabIndex = 270;
             // 
             // txt_path4
             // 
-            this.txt_path4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_path4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_path4.Location = new System.Drawing.Point(1001, 276);
             this.txt_path4.Multiline = true;
             this.txt_path4.Name = "txt_path4";
@@ -198,7 +198,7 @@
             this.Cmb_category6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category6.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category6.FormattingEnabled = true;
-            this.Cmb_category6.Location = new System.Drawing.Point(434, 510);
+            this.Cmb_category6.Location = new System.Drawing.Point(434, 511);
             this.Cmb_category6.Name = "Cmb_category6";
             this.Cmb_category6.Size = new System.Drawing.Size(150, 21);
             this.Cmb_category6.TabIndex = 272;
@@ -209,14 +209,14 @@
             this.Cmb_category5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_category5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Cmb_category5.FormattingEnabled = true;
-            this.Cmb_category5.Location = new System.Drawing.Point(155, 509);
+            this.Cmb_category5.Location = new System.Drawing.Point(155, 511);
             this.Cmb_category5.Name = "Cmb_category5";
             this.Cmb_category5.Size = new System.Drawing.Size(150, 21);
             this.Cmb_category5.TabIndex = 274;
             // 
             // txt_path7
             // 
-            this.txt_path7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_path7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_path7.Location = new System.Drawing.Point(713, 511);
             this.txt_path7.Multiline = true;
             this.txt_path7.Name = "txt_path7";
@@ -225,7 +225,7 @@
             // 
             // txt_path3
             // 
-            this.txt_path3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_path3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_path3.Location = new System.Drawing.Point(713, 275);
             this.txt_path3.Multiline = true;
             this.txt_path3.Name = "txt_path3";
@@ -234,8 +234,7 @@
             // 
             // txt_Path1
             // 
-            this.txt_Path1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_Path1.Location = new System.Drawing.Point(153, 274);
+            this.txt_Path1.Location = new System.Drawing.Point(156, 276);
             this.txt_Path1.Multiline = true;
             this.txt_Path1.Name = "txt_Path1";
             this.txt_Path1.Size = new System.Drawing.Size(150, 20);
@@ -243,7 +242,6 @@
             // 
             // txt_path5
             // 
-            this.txt_path5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_path5.Location = new System.Drawing.Point(155, 510);
             this.txt_path5.Multiline = true;
             this.txt_path5.Name = "txt_path5";
@@ -252,7 +250,6 @@
             // 
             // txt_path6
             // 
-            this.txt_path6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_path6.Location = new System.Drawing.Point(434, 510);
             this.txt_path6.Multiline = true;
             this.txt_path6.Name = "txt_path6";
@@ -261,7 +258,6 @@
             // 
             // txt_Path2
             // 
-            this.txt_Path2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_Path2.Location = new System.Drawing.Point(431, 274);
             this.txt_Path2.Multiline = true;
             this.txt_Path2.Name = "txt_Path2";
@@ -285,8 +281,6 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.Controls.Add(this.Cmb_category1);
             this.panel1.Controls.Add(this.Cmb_category4);
             this.panel1.Controls.Add(this.Cmb_category3);
@@ -329,7 +323,7 @@
             this.PB_1.BackColor = System.Drawing.Color.Gainsboro;
             this.PB_1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PB_1.Image = global::PappyjoeMVC.Properties.Resources.upload;
-            this.PB_1.Location = new System.Drawing.Point(163, 101);
+            this.PB_1.Location = new System.Drawing.Point(156, 101);
             this.PB_1.Name = "PB_1";
             this.PB_1.Size = new System.Drawing.Size(150, 150);
             this.PB_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -346,7 +340,7 @@
             this.btn_Delete4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete4.ForeColor = System.Drawing.Color.White;
             this.btn_Delete4.Image = ((System.Drawing.Image)(resources.GetObject("btn_Delete4.Image")));
-            this.btn_Delete4.Location = new System.Drawing.Point(1163, 101);
+            this.btn_Delete4.Location = new System.Drawing.Point(1165, 101);
             this.btn_Delete4.Name = "btn_Delete4";
             this.btn_Delete4.Size = new System.Drawing.Size(36, 32);
             this.btn_Delete4.TabIndex = 265;
@@ -360,7 +354,7 @@
             this.btn_Delete8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete8.ForeColor = System.Drawing.Color.White;
             this.btn_Delete8.Image = ((System.Drawing.Image)(resources.GetObject("btn_Delete8.Image")));
-            this.btn_Delete8.Location = new System.Drawing.Point(1148, 338);
+            this.btn_Delete8.Location = new System.Drawing.Point(1165, 338);
             this.btn_Delete8.Name = "btn_Delete8";
             this.btn_Delete8.Size = new System.Drawing.Size(36, 32);
             this.btn_Delete8.TabIndex = 265;
@@ -373,7 +367,7 @@
             this.Pb_5.BackColor = System.Drawing.Color.Gainsboro;
             this.Pb_5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Pb_5.Image = global::PappyjoeMVC.Properties.Resources.upload;
-            this.Pb_5.Location = new System.Drawing.Point(155, 338);
+            this.Pb_5.Location = new System.Drawing.Point(156, 338);
             this.Pb_5.Name = "Pb_5";
             this.Pb_5.Size = new System.Drawing.Size(150, 150);
             this.Pb_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -419,7 +413,7 @@
             this.PB_4.BackColor = System.Drawing.Color.Gainsboro;
             this.PB_4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PB_4.Image = global::PappyjoeMVC.Properties.Resources.upload1;
-            this.PB_4.Location = new System.Drawing.Point(992, 101);
+            this.PB_4.Location = new System.Drawing.Point(1001, 101);
             this.PB_4.Name = "PB_4";
             this.PB_4.Size = new System.Drawing.Size(150, 150);
             this.PB_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -436,7 +430,7 @@
             this.btn_Delete5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete5.ForeColor = System.Drawing.Color.White;
             this.btn_Delete5.Image = ((System.Drawing.Image)(resources.GetObject("btn_Delete5.Image")));
-            this.btn_Delete5.Location = new System.Drawing.Point(302, 338);
+            this.btn_Delete5.Location = new System.Drawing.Point(312, 338);
             this.btn_Delete5.Name = "btn_Delete5";
             this.btn_Delete5.Size = new System.Drawing.Size(36, 32);
             this.btn_Delete5.TabIndex = 265;
@@ -462,7 +456,7 @@
             this.Pb_2.BackColor = System.Drawing.Color.Gainsboro;
             this.Pb_2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Pb_2.Image = global::PappyjoeMVC.Properties.Resources.upload;
-            this.Pb_2.Location = new System.Drawing.Point(441, 101);
+            this.Pb_2.Location = new System.Drawing.Point(431, 101);
             this.Pb_2.Name = "Pb_2";
             this.Pb_2.Size = new System.Drawing.Size(150, 150);
             this.Pb_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -479,7 +473,7 @@
             this.btn_Delete7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete7.ForeColor = System.Drawing.Color.White;
             this.btn_Delete7.Image = ((System.Drawing.Image)(resources.GetObject("btn_Delete7.Image")));
-            this.btn_Delete7.Location = new System.Drawing.Point(858, 338);
+            this.btn_Delete7.Location = new System.Drawing.Point(869, 338);
             this.btn_Delete7.Name = "btn_Delete7";
             this.btn_Delete7.Size = new System.Drawing.Size(36, 32);
             this.btn_Delete7.TabIndex = 265;
@@ -509,7 +503,7 @@
             this.btn_Delete6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete6.ForeColor = System.Drawing.Color.White;
             this.btn_Delete6.Image = ((System.Drawing.Image)(resources.GetObject("btn_Delete6.Image")));
-            this.btn_Delete6.Location = new System.Drawing.Point(581, 338);
+            this.btn_Delete6.Location = new System.Drawing.Point(590, 338);
             this.btn_Delete6.Name = "btn_Delete6";
             this.btn_Delete6.Size = new System.Drawing.Size(36, 32);
             this.btn_Delete6.TabIndex = 265;
@@ -537,7 +531,7 @@
             this.Pb_3.BackColor = System.Drawing.Color.Gainsboro;
             this.Pb_3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Pb_3.Image = global::PappyjoeMVC.Properties.Resources.upload;
-            this.Pb_3.Location = new System.Drawing.Point(702, 101);
+            this.Pb_3.Location = new System.Drawing.Point(713, 101);
             this.Pb_3.Name = "Pb_3";
             this.Pb_3.Size = new System.Drawing.Size(150, 150);
             this.Pb_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

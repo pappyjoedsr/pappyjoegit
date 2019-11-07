@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LabWorks));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.lblLabWork = new System.Windows.Forms.Label();
             this.linkLabel_Name = new System.Windows.Forms.LinkLabel();
@@ -65,13 +65,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1_treatment_paln = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name_Work = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ShowDetails = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.img = new System.Windows.Forms.DataGridViewImageColumn();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -102,6 +95,13 @@
             this.sendSMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name_Work = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ShowDetails = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.img = new System.Windows.Forms.DataGridViewImageColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_treatment_paln)).BeginInit();
             this.panel2.SuspendLayout();
@@ -509,22 +509,19 @@
             this.dataGridView1_treatment_paln.AllowUserToDeleteRows = false;
             this.dataGridView1_treatment_paln.AllowUserToResizeColumns = false;
             this.dataGridView1_treatment_paln.AllowUserToResizeRows = false;
-            this.dataGridView1_treatment_paln.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1_treatment_paln.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1_treatment_paln.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1_treatment_paln.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1_treatment_paln.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.dataGridView1_treatment_paln.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1_treatment_paln.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1_treatment_paln.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1_treatment_paln.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1_treatment_paln.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -534,88 +531,25 @@
             this.Status,
             this.ShowDetails,
             this.img});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1_treatment_paln.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1_treatment_paln.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1_treatment_paln.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1_treatment_paln.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1_treatment_paln.Location = new System.Drawing.Point(4, 3);
+            this.dataGridView1_treatment_paln.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1_treatment_paln.Name = "dataGridView1_treatment_paln";
             this.dataGridView1_treatment_paln.ReadOnly = true;
             this.dataGridView1_treatment_paln.RowHeadersVisible = false;
             this.dataGridView1_treatment_paln.RowTemplate.Height = 30;
             this.dataGridView1_treatment_paln.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1_treatment_paln.Size = new System.Drawing.Size(1151, 601);
+            this.dataGridView1_treatment_paln.Size = new System.Drawing.Size(1167, 601);
             this.dataGridView1_treatment_paln.TabIndex = 281;
             this.dataGridView1_treatment_paln.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_treatment_paln_CellContentClick);
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Work ID";
-            this.Id.HeaderText = "Work ID";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Id.Visible = false;
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "date";
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Date.Width = 150;
-            // 
-            // Name_Work
-            // 
-            this.Name_Work.DataPropertyName = "Work Name";
-            this.Name_Work.HeaderText = "Work Name";
-            this.Name_Work.Name = "Name_Work";
-            this.Name_Work.ReadOnly = true;
-            this.Name_Work.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Name_Work.Width = 250;
-            // 
-            // Type
-            // 
-            this.Type.DataPropertyName = "Work Type";
-            this.Type.HeaderText = "Work Type";
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
-            this.Type.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Type.Width = 150;
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            this.Status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Status.Width = 150;
-            // 
-            // ShowDetails
-            // 
-            this.ShowDetails.HeaderText = "Show Details";
-            this.ShowDetails.Name = "ShowDetails";
-            this.ShowDetails.ReadOnly = true;
-            this.ShowDetails.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ShowDetails.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ShowDetails.Text = "Show details";
-            this.ShowDetails.UseColumnTextForLinkValue = true;
-            this.ShowDetails.Width = 200;
-            // 
-            // img
-            // 
-            this.img.HeaderText = "";
-            this.img.Image = global::PappyjoeMVC.Properties.Resources.Bill;
-            this.img.Name = "img";
-            this.img.ReadOnly = true;
-            this.img.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // listpatientsearch
             // 
@@ -978,7 +912,7 @@
             // 
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.dataGridView1_treatment_paln);
-            this.panel4.Location = new System.Drawing.Point(195, 137);
+            this.panel4.Location = new System.Drawing.Point(193, 137);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1167, 601);
             this.panel4.TabIndex = 294;
@@ -993,6 +927,71 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1166, 40);
             this.panel7.TabIndex = 295;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Work ID";
+            this.Id.HeaderText = "Work ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Id.Visible = false;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "date";
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Date.Width = 150;
+            // 
+            // Name_Work
+            // 
+            this.Name_Work.DataPropertyName = "Work Name";
+            this.Name_Work.HeaderText = "Work Name";
+            this.Name_Work.Name = "Name_Work";
+            this.Name_Work.ReadOnly = true;
+            this.Name_Work.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Name_Work.Width = 250;
+            // 
+            // Type
+            // 
+            this.Type.DataPropertyName = "Work Type";
+            this.Type.HeaderText = "Work Type";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            this.Type.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Type.Width = 150;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Status.Width = 259;
+            // 
+            // ShowDetails
+            // 
+            this.ShowDetails.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ShowDetails.HeaderText = "Show Details";
+            this.ShowDetails.Name = "ShowDetails";
+            this.ShowDetails.ReadOnly = true;
+            this.ShowDetails.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ShowDetails.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ShowDetails.Text = "Show details";
+            this.ShowDetails.UseColumnTextForLinkValue = true;
+            // 
+            // img
+            // 
+            this.img.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.img.HeaderText = "";
+            this.img.Image = global::PappyjoeMVC.Properties.Resources.Bill;
+            this.img.Name = "img";
+            this.img.ReadOnly = true;
+            this.img.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // LabWorks
             // 

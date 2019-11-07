@@ -196,6 +196,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnladddental.SuspendLayout();
@@ -211,6 +212,7 @@
             this.c.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel13.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -292,8 +294,7 @@
             // 
             // pnladddental
             // 
-            this.pnladddental.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnladddental.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnladddental.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pnladddental.Controls.Add(this.dgvdentalwork);
@@ -308,7 +309,8 @@
             this.dgvdentalwork.AllowUserToAddRows = false;
             this.dgvdentalwork.AllowUserToDeleteRows = false;
             this.dgvdentalwork.AllowUserToResizeRows = false;
-            this.dgvdentalwork.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvdentalwork.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvdentalwork.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvdentalwork.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1769,8 +1771,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlMedlab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnlMedlab.Controls.Add(this.panel6);
             this.pnlMedlab.Controls.Add(this.combolab);
-            this.pnlMedlab.Controls.Add(this.dataGridView3);
             this.pnlMedlab.Controls.Add(this.label8);
             this.pnlMedlab.Controls.Add(this.labeltesttype);
             this.pnlMedlab.Controls.Add(this.labelmaintest);
@@ -1779,7 +1781,7 @@
             this.pnlMedlab.Controls.Add(this.label14);
             this.pnlMedlab.Controls.Add(this.txtname);
             this.pnlMedlab.Controls.Add(this.label9);
-            this.pnlMedlab.Location = new System.Drawing.Point(346, 684);
+            this.pnlMedlab.Location = new System.Drawing.Point(48, 478);
             this.pnlMedlab.Name = "pnlMedlab";
             this.pnlMedlab.Size = new System.Drawing.Size(1010, 512);
             this.pnlMedlab.TabIndex = 250;
@@ -1799,9 +1801,6 @@
             this.dataGridView3.AllowUserToDeleteRows = false;
             this.dataGridView3.AllowUserToResizeColumns = false;
             this.dataGridView3.AllowUserToResizeRows = false;
-            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -1829,8 +1828,9 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView3.Location = new System.Drawing.Point(4, 51);
+            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1846,7 +1846,7 @@
             this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(1003, 458);
+            this.dataGridView3.Size = new System.Drawing.Size(1005, 455);
             this.dataGridView3.TabIndex = 0;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
@@ -2107,7 +2107,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label11.Location = new System.Drawing.Point(8, 19);
+            this.label11.Location = new System.Drawing.Point(14, 19);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(132, 15);
             this.label11.TabIndex = 23;
@@ -2204,6 +2204,17 @@
             this.panel10.Size = new System.Drawing.Size(1, 612);
             this.panel10.TabIndex = 250;
             // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Controls.Add(this.dataGridView3);
+            this.panel6.Location = new System.Drawing.Point(4, 54);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1005, 455);
+            this.panel6.TabIndex = 25;
+            // 
             // Add_Labwork
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2265,6 +2276,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2426,5 +2438,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewImageColumn Column4;
+        private System.Windows.Forms.Panel panel6;
     }
 }
