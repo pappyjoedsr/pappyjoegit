@@ -36,14 +36,6 @@
             this.cmblabtype = new System.Windows.Forms.ComboBox();
             this.lbltype = new System.Windows.Forms.Label();
             this.dgvLabs = new System.Windows.Forms.DataGridView();
-            this.ids = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Labtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Executivename = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EDT = new System.Windows.Forms.DataGridViewImageColumn();
-            this.DELE = new System.Windows.Forms.DataGridViewImageColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -58,14 +50,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtwork = new System.Windows.Forms.TextBox();
             this.dgvdentalwork = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tooth_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.work_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.work_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aloytpe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ed = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dl = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtalloy = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -86,6 +70,22 @@
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tooth_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.work_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.work_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aloytpe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ed = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dl = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ids = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Labtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Executivename = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EDT = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DELE = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnllab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLabs)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -176,7 +176,7 @@
             this.DELE});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
@@ -190,59 +190,6 @@
             this.dgvLabs.Size = new System.Drawing.Size(821, 386);
             this.dgvLabs.TabIndex = 25;
             this.dgvLabs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLabs_CellContentClick);
-            // 
-            // ids
-            // 
-            this.ids.DataPropertyName = "id";
-            this.ids.HeaderText = "id";
-            this.ids.Name = "ids";
-            // 
-            // labname
-            // 
-            this.labname.DataPropertyName = "labname";
-            this.labname.HeaderText = "Lab Name";
-            this.labname.Name = "labname";
-            this.labname.Width = 125;
-            // 
-            // Labtype
-            // 
-            this.Labtype.DataPropertyName = "labtype";
-            this.Labtype.HeaderText = "Lab Type";
-            this.Labtype.Name = "Labtype";
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "address1";
-            this.Address.HeaderText = "Address";
-            this.Address.Name = "Address";
-            this.Address.Width = 125;
-            // 
-            // Phone
-            // 
-            this.Phone.DataPropertyName = "phone";
-            this.Phone.HeaderText = "Phone ";
-            this.Phone.Name = "Phone";
-            // 
-            // Executivename
-            // 
-            this.Executivename.DataPropertyName = "executivename";
-            this.Executivename.HeaderText = "Executive Name";
-            this.Executivename.Name = "Executivename";
-            this.Executivename.Width = 150;
-            // 
-            // EDT
-            // 
-            this.EDT.HeaderText = "";
-            this.EDT.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.EDT.Name = "EDT";
-            this.EDT.Width = 50;
-            // 
-            // DELE
-            // 
-            this.DELE.HeaderText = "";
-            this.DELE.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.DELE.Name = "DELE";
-            this.DELE.Width = 50;
             // 
             // label9
             // 
@@ -441,68 +388,6 @@
             this.dgvdentalwork.Size = new System.Drawing.Size(721, 386);
             this.dgvdentalwork.TabIndex = 30;
             this.dgvdentalwork.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdentalwork_CellContentClick);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // tooth_number
-            // 
-            this.tooth_number.DataPropertyName = "tooth_number";
-            this.tooth_number.HeaderText = "Tooth Number";
-            this.tooth_number.Name = "tooth_number";
-            this.tooth_number.ReadOnly = true;
-            this.tooth_number.Visible = false;
-            this.tooth_number.Width = 200;
-            // 
-            // work_name
-            // 
-            this.work_name.DataPropertyName = "work_name";
-            this.work_name.HeaderText = "Work Name";
-            this.work_name.Name = "work_name";
-            this.work_name.ReadOnly = true;
-            this.work_name.Width = 200;
-            // 
-            // work_type
-            // 
-            this.work_type.DataPropertyName = "work_type";
-            this.work_type.HeaderText = "Work type";
-            this.work_type.Name = "work_type";
-            this.work_type.ReadOnly = true;
-            // 
-            // shade
-            // 
-            this.shade.DataPropertyName = "shade";
-            this.shade.HeaderText = "Shade";
-            this.shade.Name = "shade";
-            this.shade.ReadOnly = true;
-            // 
-            // aloytpe
-            // 
-            this.aloytpe.DataPropertyName = "aloytype";
-            this.aloytpe.HeaderText = "Alloy type";
-            this.aloytpe.Name = "aloytpe";
-            this.aloytpe.ReadOnly = true;
-            // 
-            // ed
-            // 
-            this.ed.HeaderText = "";
-            this.ed.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.ed.Name = "ed";
-            this.ed.ReadOnly = true;
-            this.ed.Width = 50;
-            // 
-            // dl
-            // 
-            this.dl.HeaderText = "";
-            this.dl.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.dl.Name = "dl";
-            this.dl.ReadOnly = true;
-            this.dl.Width = 50;
             // 
             // btnCancel
             // 
@@ -708,6 +593,123 @@
             this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
             this.dataGridViewImageColumn4.Width = 50;
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // tooth_number
+            // 
+            this.tooth_number.DataPropertyName = "tooth_number";
+            this.tooth_number.HeaderText = "Tooth Number";
+            this.tooth_number.Name = "tooth_number";
+            this.tooth_number.ReadOnly = true;
+            this.tooth_number.Visible = false;
+            this.tooth_number.Width = 200;
+            // 
+            // work_name
+            // 
+            this.work_name.DataPropertyName = "work_name";
+            this.work_name.HeaderText = "Work Name";
+            this.work_name.Name = "work_name";
+            this.work_name.ReadOnly = true;
+            this.work_name.Width = 200;
+            // 
+            // work_type
+            // 
+            this.work_type.DataPropertyName = "work_type";
+            this.work_type.HeaderText = "Work type";
+            this.work_type.Name = "work_type";
+            this.work_type.ReadOnly = true;
+            // 
+            // shade
+            // 
+            this.shade.DataPropertyName = "shade";
+            this.shade.HeaderText = "Shade";
+            this.shade.Name = "shade";
+            this.shade.ReadOnly = true;
+            // 
+            // aloytpe
+            // 
+            this.aloytpe.DataPropertyName = "aloytype";
+            this.aloytpe.HeaderText = "Alloy type";
+            this.aloytpe.Name = "aloytpe";
+            this.aloytpe.ReadOnly = true;
+            // 
+            // ed
+            // 
+            this.ed.HeaderText = "";
+            this.ed.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.ed.Name = "ed";
+            this.ed.ReadOnly = true;
+            this.ed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ed.Width = 19;
+            // 
+            // dl
+            // 
+            this.dl.HeaderText = "";
+            this.dl.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.dl.Name = "dl";
+            this.dl.ReadOnly = true;
+            this.dl.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dl.Width = 19;
+            // 
+            // ids
+            // 
+            this.ids.DataPropertyName = "id";
+            this.ids.HeaderText = "Id";
+            this.ids.Name = "ids";
+            // 
+            // labname
+            // 
+            this.labname.DataPropertyName = "labname";
+            this.labname.HeaderText = "Lab Name";
+            this.labname.Name = "labname";
+            this.labname.Width = 125;
+            // 
+            // Labtype
+            // 
+            this.Labtype.DataPropertyName = "labtype";
+            this.Labtype.HeaderText = "Lab Type";
+            this.Labtype.Name = "Labtype";
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "address1";
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            this.Address.Width = 125;
+            // 
+            // Phone
+            // 
+            this.Phone.DataPropertyName = "phone";
+            this.Phone.HeaderText = "Phone ";
+            this.Phone.Name = "Phone";
+            // 
+            // Executivename
+            // 
+            this.Executivename.DataPropertyName = "executivename";
+            this.Executivename.HeaderText = "Executive Name";
+            this.Executivename.Name = "Executivename";
+            this.Executivename.Width = 150;
+            // 
+            // EDT
+            // 
+            this.EDT.HeaderText = "";
+            this.EDT.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.EDT.Name = "EDT";
+            this.EDT.Width = 19;
+            // 
+            // DELE
+            // 
+            this.DELE.HeaderText = "";
+            this.DELE.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.DELE.Name = "DELE";
+            this.DELE.Width = 19;
+            // 
             // LabDental
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -771,14 +773,10 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TabPage tplab;
         private System.Windows.Forms.TabControl tpDenatl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ids;
-        private System.Windows.Forms.DataGridViewTextBoxColumn labname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Labtype;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Executivename;
-        private System.Windows.Forms.DataGridViewImageColumn EDT;
-        private System.Windows.Forms.DataGridViewImageColumn DELE;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn tooth_number;
         private System.Windows.Forms.DataGridViewTextBoxColumn work_name;
@@ -787,9 +785,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn aloytpe;
         private System.Windows.Forms.DataGridViewImageColumn ed;
         private System.Windows.Forms.DataGridViewImageColumn dl;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ids;
+        private System.Windows.Forms.DataGridViewTextBoxColumn labname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Labtype;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Executivename;
+        private System.Windows.Forms.DataGridViewImageColumn EDT;
+        private System.Windows.Forms.DataGridViewImageColumn DELE;
     }
 }

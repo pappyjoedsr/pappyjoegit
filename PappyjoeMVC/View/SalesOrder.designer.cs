@@ -417,7 +417,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
-            this.panel3.Location = new System.Drawing.Point(-2, 40);
+            this.panel3.Location = new System.Drawing.Point(-41, 43);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1051, 1);
             this.panel3.TabIndex = 294;

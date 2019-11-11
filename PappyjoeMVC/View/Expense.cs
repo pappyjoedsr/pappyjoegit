@@ -54,7 +54,7 @@ namespace PappyjoeMVC.View
                 panel1.Hide();
                 panel6.Show();
                 grp_Debit.Visible = true;
-                grp_Debit.Width = 1065;
+                grp_Debit.Width = 1060;
                 grp_Debit.Location = new Point(10, 10);
                 grpb_Credit.Visible = false;
                 Lab_Debits.BackColor = Color.DodgerBlue;
@@ -75,7 +75,7 @@ namespace PappyjoeMVC.View
                 panel6.Show();
                 grp_Debit.Visible = false;
                 grpb_Credit.Visible = true;
-                grpb_Credit.Width = 1065;
+                grpb_Credit.Width = 1060;
                 grpb_Credit.Location = new Point(10, 10);
                 panel1.Hide();
                 lab_Credits.BackColor = Color.DodgerBlue;
@@ -103,7 +103,7 @@ namespace PappyjoeMVC.View
             {
                 dgv_credit.RowCount = 0;
                 int row = 0;
-                dgv_credit.Width = 1050;
+                dgv_credit.Width = 1047;
                 dgv_credit.Height = 330;
                 foreach (DataRow dr in dtb.Rows)
                 {
@@ -474,7 +474,7 @@ namespace PappyjoeMVC.View
             {
                 Dgv_Debit.RowCount = 0;
                 int row = 0;
-                Dgv_Debit.Width = 1050;
+                Dgv_Debit.Width = 1047;
                 Dgv_Debit.Height = 330;
                 foreach (DataRow dr in dtb.Rows)
                 {

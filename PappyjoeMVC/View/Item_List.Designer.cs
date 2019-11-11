@@ -72,14 +72,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_AddNewItem = new System.Windows.Forms.Button();
             this.Dgv_Product = new System.Windows.Forms.DataGridView();
+            this.panel_main = new System.Windows.Forms.Panel();
+            this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Colid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Colname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColDelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel_main = new System.Windows.Forms.Panel();
-            this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.toolStrip1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -640,6 +640,30 @@
             this.Dgv_Product.TabIndex = 2;
             this.Dgv_Product.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Product_CellClick);
             // 
+            // panel_main
+            // 
+            this.panel_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_main.Location = new System.Drawing.Point(189, 44);
+            this.panel_main.Name = "panel_main";
+            this.panel_main.Size = new System.Drawing.Size(1026, 515);
+            this.panel_main.TabIndex = 74;
+            // 
+            // listpatientsearch
+            // 
+            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.listpatientsearch.FormattingEnabled = true;
+            this.listpatientsearch.ItemHeight = 21;
+            this.listpatientsearch.Location = new System.Drawing.Point(878, 47);
+            this.listpatientsearch.Name = "listpatientsearch";
+            this.listpatientsearch.Size = new System.Drawing.Size(250, 84);
+            this.listpatientsearch.TabIndex = 299;
+            this.listpatientsearch.Visible = false;
+            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
+            // 
             // id
             // 
             this.id.HeaderText = "Id";
@@ -674,38 +698,14 @@
             this.ColEdit.HeaderText = "";
             this.ColEdit.Name = "ColEdit";
             this.ColEdit.ReadOnly = true;
-            this.ColEdit.Width = 27;
+            this.ColEdit.Width = 19;
             // 
             // ColDelete
             // 
             this.ColDelete.HeaderText = "";
             this.ColDelete.Name = "ColDelete";
             this.ColDelete.ReadOnly = true;
-            this.ColDelete.Width = 26;
-            // 
-            // panel_main
-            // 
-            this.panel_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_main.Location = new System.Drawing.Point(189, 98);
-            this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(1026, 515);
-            this.panel_main.TabIndex = 74;
-            // 
-            // listpatientsearch
-            // 
-            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.listpatientsearch.FormattingEnabled = true;
-            this.listpatientsearch.ItemHeight = 21;
-            this.listpatientsearch.Location = new System.Drawing.Point(878, 47);
-            this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(250, 84);
-            this.listpatientsearch.TabIndex = 299;
-            this.listpatientsearch.Visible = false;
-            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
+            this.ColDelete.Width = 19;
             // 
             // Item_List
             // 
@@ -783,15 +783,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_AddNewItem;
         private System.Windows.Forms.DataGridView Dgv_Product;
+        private System.Windows.Forms.ListBox listpatientsearch;
+        private System.Windows.Forms.ToolStripButton toolStripButton11;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.ToolStripButton toolStripButton14;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Colid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Colname;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
         private System.Windows.Forms.DataGridViewImageColumn ColEdit;
         private System.Windows.Forms.DataGridViewImageColumn ColDelete;
-        private System.Windows.Forms.ListBox listpatientsearch;
-        private System.Windows.Forms.ToolStripButton toolStripButton11;
-        private System.Windows.Forms.ToolStripButton toolStripButton13;
-        private System.Windows.Forms.ToolStripButton toolStripButton14;
     }
 }

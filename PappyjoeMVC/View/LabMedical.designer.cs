@@ -48,10 +48,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LabMedical));
             this.btncaclty = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -59,11 +59,6 @@
             this.txtunitid = new System.Windows.Forms.TextBox();
             this.txtUnitadd = new System.Windows.Forms.TextBox();
             this.dgvUnit = new System.Windows.Forms.DataGridView();
-            this.unitid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Uslno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitedit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dltunit = new System.Windows.Forms.DataGridViewImageColumn();
             this.tpUnit = new System.Windows.Forms.TabPage();
             this.btnSaveunit = new System.Windows.Forms.Button();
             this.lblUnitadd = new System.Windows.Forms.Label();
@@ -72,32 +67,18 @@
             this.txtTtypeid = new System.Windows.Forms.TextBox();
             this.txtTestType = new System.Windows.Forms.TextBox();
             this.dtgTestType = new System.Windows.Forms.DataGridView();
-            this.testtypeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tySlno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.testtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tyedit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnTesttype_save = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.testslno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Deletetest = new System.Windows.Forms.DataGridViewImageColumn();
-            this.testid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.testName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.btntestcancel = new System.Windows.Forms.Button();
             this.txttestid = new System.Windows.Forms.TextBox();
             this.txtNVFemale = new System.Windows.Forms.TextBox();
             this.txtNVMale = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NVMale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSavetest = new System.Windows.Forms.Button();
             this.cmbTesttype = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dlttest = new System.Windows.Forms.DataGridViewImageColumn();
-            this.NVFemale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbUnit = new System.Windows.Forms.ComboBox();
-            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnsave = new System.Windows.Forms.Button();
             this.lblMainTestName = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -108,11 +89,6 @@
             this.txtMtid = new System.Windows.Forms.TextBox();
             this.txtMainTest = new System.Windows.Forms.TextBox();
             this.dgvLabMaster = new System.Windows.Forms.DataGridView();
-            this.Slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mtid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maintest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editmtest = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cldelet = new System.Windows.Forms.DataGridViewImageColumn();
             this.tpTest = new System.Windows.Forms.TabPage();
             this.lblNVMale = new System.Windows.Forms.Label();
             this.lblTesttype = new System.Windows.Forms.Label();
@@ -123,19 +99,6 @@
             this.pnl2 = new System.Windows.Forms.Panel();
             this.btnedit = new System.Windows.Forms.Button();
             this.dgvtempitem = new System.Windows.Forms.DataGridView();
-            this.idtmpitm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maintsttemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.test = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.testtypetmpitm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unittmpitm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.normalvaluemale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.normalvaluefemale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mtidtmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tyid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tnid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noval = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edittempitem = new System.Windows.Forms.DataGridViewImageColumn();
-            this.deltempitem = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnadditems = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -152,17 +115,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvTesttemplate = new System.Windows.Forms.DataGridView();
-            this.idtmpadd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slnotn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tnslno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tnMaintest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tntesttype = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tnTest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tnUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tnNormalvaluem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tnNVF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempedit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tempdlt = new System.Windows.Forms.DataGridViewImageColumn();
             this.cmbmaintesttemp = new System.Windows.Forms.ComboBox();
             this.lblmaintest = new System.Windows.Forms.Label();
             this.pnlAddtemplate = new System.Windows.Forms.Panel();
@@ -171,11 +123,6 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnNewtmp = new System.Windows.Forms.Button();
             this.dgvtemplateadd = new System.Windows.Forms.DataGridView();
-            this.idd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ttpslno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ttpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edittmp = new System.Windows.Forms.DataGridViewImageColumn();
-            this.deletetmp = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -188,6 +135,59 @@
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn12 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn11 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mtid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maintest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editmtest = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cldelet = new System.Windows.Forms.DataGridViewImageColumn();
+            this.testtypeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tySlno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tyedit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.unitid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Uslno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitedit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dltunit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.testid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testslno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NVMale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NVFemale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dlttest = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Deletetest = new System.Windows.Forms.DataGridViewImageColumn();
+            this.idd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ttpslno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ttpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edittmp = new System.Windows.Forms.DataGridViewImageColumn();
+            this.deletetmp = new System.Windows.Forms.DataGridViewImageColumn();
+            this.idtmpitm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maintsttemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.test = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testtypetmpitm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unittmpitm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.normalvaluemale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.normalvaluefemale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mtidtmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tyid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tnid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noval = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edittempitem = new System.Windows.Forms.DataGridViewImageColumn();
+            this.deltempitem = new System.Windows.Forms.DataGridViewImageColumn();
+            this.idtmpadd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slnotn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tnslno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tnMaintest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tntesttype = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tnTest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tnUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tnNormalvaluem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tnNVF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempedit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.tempdlt = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnit)).BeginInit();
             this.tpUnit.SuspendLayout();
             this.tpTestType.SuspendLayout();
@@ -320,51 +320,6 @@
             this.dgvUnit.TabIndex = 3;
             this.dgvUnit.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUnit_CellClick);
             this.dgvUnit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUnit_CellContentClick);
-            // 
-            // unitid
-            // 
-            this.unitid.DataPropertyName = "id";
-            this.unitid.HeaderText = "ID";
-            this.unitid.Name = "unitid";
-            this.unitid.ReadOnly = true;
-            this.unitid.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Uslno
-            // 
-            this.Uslno.DataPropertyName = "SlNo";
-            this.Uslno.HeaderText = "Sl.No";
-            this.Uslno.Name = "Uslno";
-            this.Uslno.ReadOnly = true;
-            this.Uslno.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Uslno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // unitname
-            // 
-            this.unitname.DataPropertyName = "Unit";
-            this.unitname.HeaderText = "Unit";
-            this.unitname.Name = "unitname";
-            this.unitname.ReadOnly = true;
-            this.unitname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.unitname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.unitname.Width = 200;
-            // 
-            // unitedit
-            // 
-            this.unitedit.HeaderText = "";
-            this.unitedit.Name = "unitedit";
-            this.unitedit.ReadOnly = true;
-            this.unitedit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.unitedit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.unitedit.Width = 50;
-            // 
-            // dltunit
-            // 
-            this.dltunit.HeaderText = "";
-            this.dltunit.Name = "dltunit";
-            this.dltunit.ReadOnly = true;
-            this.dltunit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dltunit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dltunit.Width = 50;
             // 
             // tpUnit
             // 
@@ -514,51 +469,6 @@
             this.dtgTestType.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgTestType_CellClick);
             this.dtgTestType.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgTestType_CellContentClick);
             // 
-            // testtypeId
-            // 
-            this.testtypeId.DataPropertyName = "id";
-            this.testtypeId.HeaderText = "ID";
-            this.testtypeId.Name = "testtypeId";
-            this.testtypeId.ReadOnly = true;
-            this.testtypeId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // tySlno
-            // 
-            this.tySlno.DataPropertyName = "SlNo";
-            this.tySlno.HeaderText = "Sl.No";
-            this.tySlno.Name = "tySlno";
-            this.tySlno.ReadOnly = true;
-            this.tySlno.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.tySlno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // testtype
-            // 
-            this.testtype.DataPropertyName = "Test Type";
-            this.testtype.HeaderText = "Test Type";
-            this.testtype.Name = "testtype";
-            this.testtype.ReadOnly = true;
-            this.testtype.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.testtype.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.testtype.Width = 200;
-            // 
-            // tyedit
-            // 
-            this.tyedit.HeaderText = "";
-            this.tyedit.Name = "tyedit";
-            this.tyedit.ReadOnly = true;
-            this.tyedit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.tyedit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.tyedit.Width = 50;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Delete.Width = 50;
-            // 
             // btnTesttype_save
             // 
             this.btnTesttype_save.BackColor = System.Drawing.Color.LimeGreen;
@@ -582,43 +492,6 @@
             this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Test Type";
-            // 
-            // testslno
-            // 
-            this.testslno.DataPropertyName = "Slno";
-            this.testslno.HeaderText = "Sl.No";
-            this.testslno.Name = "testslno";
-            this.testslno.ReadOnly = true;
-            this.testslno.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.testslno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.testslno.Width = 50;
-            // 
-            // Deletetest
-            // 
-            this.Deletetest.HeaderText = "";
-            this.Deletetest.Name = "Deletetest";
-            this.Deletetest.ReadOnly = true;
-            this.Deletetest.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Deletetest.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Deletetest.Width = 50;
-            // 
-            // testid
-            // 
-            this.testid.DataPropertyName = "id";
-            this.testid.HeaderText = "ID";
-            this.testid.Name = "testid";
-            this.testid.ReadOnly = true;
-            this.testid.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // testName
-            // 
-            this.testName.DataPropertyName = "test";
-            this.testName.HeaderText = "Test Name";
-            this.testName.Name = "testName";
-            this.testName.ReadOnly = true;
-            this.testName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.testName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.testName.Width = 200;
             // 
             // label10
             // 
@@ -677,26 +550,6 @@
             this.txtName.Size = new System.Drawing.Size(193, 20);
             this.txtName.TabIndex = 6;
             // 
-            // Type
-            // 
-            this.Type.DataPropertyName = "Test_Type";
-            this.Type.HeaderText = "Test Type";
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
-            this.Type.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Type.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Type.Width = 150;
-            // 
-            // NVMale
-            // 
-            this.NVMale.DataPropertyName = "NormalValueM";
-            this.NVMale.HeaderText = "Normal Value (M)";
-            this.NVMale.Name = "NVMale";
-            this.NVMale.ReadOnly = true;
-            this.NVMale.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.NVMale.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.NVMale.Width = 150;
-            // 
             // btnSavetest
             // 
             this.btnSavetest.BackColor = System.Drawing.Color.LimeGreen;
@@ -734,25 +587,6 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Unit";
             // 
-            // dlttest
-            // 
-            this.dlttest.HeaderText = "";
-            this.dlttest.Name = "dlttest";
-            this.dlttest.ReadOnly = true;
-            this.dlttest.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dlttest.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dlttest.Width = 50;
-            // 
-            // NVFemale
-            // 
-            this.NVFemale.DataPropertyName = "NormalValueF";
-            this.NVFemale.HeaderText = "Normal Value (F)";
-            this.NVFemale.Name = "NVFemale";
-            this.NVFemale.ReadOnly = true;
-            this.NVFemale.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.NVFemale.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.NVFemale.Width = 200;
-            // 
             // cmbUnit
             // 
             this.cmbUnit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -763,15 +597,6 @@
             this.cmbUnit.Name = "cmbUnit";
             this.cmbUnit.Size = new System.Drawing.Size(121, 21);
             this.cmbUnit.TabIndex = 9;
-            // 
-            // Unit
-            // 
-            this.Unit.DataPropertyName = "Unit";
-            this.Unit.HeaderText = "Unit";
-            this.Unit.Name = "Unit";
-            this.Unit.ReadOnly = true;
-            this.Unit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Unit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // btnsave
             // 
@@ -954,51 +779,6 @@
             this.dgvLabMaster.TabIndex = 1;
             this.dgvLabMaster.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLabMaster_CellClick);
             this.dgvLabMaster.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLabMaster_CellContentClick);
-            // 
-            // Slno
-            // 
-            this.Slno.DataPropertyName = "SlNo";
-            this.Slno.HeaderText = "Sl.No";
-            this.Slno.Name = "Slno";
-            this.Slno.ReadOnly = true;
-            this.Slno.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Slno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // mtid
-            // 
-            this.mtid.DataPropertyName = "id";
-            this.mtid.HeaderText = "id";
-            this.mtid.Name = "mtid";
-            this.mtid.ReadOnly = true;
-            this.mtid.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // maintest
-            // 
-            this.maintest.DataPropertyName = "Main Test";
-            this.maintest.HeaderText = "Main Test";
-            this.maintest.Name = "maintest";
-            this.maintest.ReadOnly = true;
-            this.maintest.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.maintest.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.maintest.Width = 200;
-            // 
-            // editmtest
-            // 
-            this.editmtest.HeaderText = "";
-            this.editmtest.Name = "editmtest";
-            this.editmtest.ReadOnly = true;
-            this.editmtest.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.editmtest.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.editmtest.Width = 50;
-            // 
-            // cldelet
-            // 
-            this.cldelet.HeaderText = "";
-            this.cldelet.Name = "cldelet";
-            this.cldelet.ReadOnly = true;
-            this.cldelet.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cldelet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.cldelet.Width = 50;
             // 
             // tpTest
             // 
@@ -1238,111 +1018,6 @@
             this.dgvtempitem.TabIndex = 33;
             this.dgvtempitem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtempitem_CellContentClick);
             // 
-            // idtmpitm
-            // 
-            this.idtmpitm.HeaderText = "SlNo";
-            this.idtmpitm.Name = "idtmpitm";
-            this.idtmpitm.ReadOnly = true;
-            this.idtmpitm.Visible = false;
-            // 
-            // maintsttemp
-            // 
-            this.maintsttemp.HeaderText = "Main Test";
-            this.maintsttemp.Name = "maintsttemp";
-            this.maintsttemp.ReadOnly = true;
-            this.maintsttemp.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.maintsttemp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // test
-            // 
-            this.test.HeaderText = "Test";
-            this.test.Name = "test";
-            this.test.ReadOnly = true;
-            this.test.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.test.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // testtypetmpitm
-            // 
-            this.testtypetmpitm.HeaderText = "Test Type";
-            this.testtypetmpitm.Name = "testtypetmpitm";
-            this.testtypetmpitm.ReadOnly = true;
-            this.testtypetmpitm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.testtypetmpitm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Unittmpitm
-            // 
-            this.Unittmpitm.HeaderText = "Unit";
-            this.Unittmpitm.Name = "Unittmpitm";
-            this.Unittmpitm.ReadOnly = true;
-            this.Unittmpitm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Unittmpitm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // normalvaluemale
-            // 
-            this.normalvaluemale.HeaderText = "Normal Value (M)";
-            this.normalvaluemale.Name = "normalvaluemale";
-            this.normalvaluemale.ReadOnly = true;
-            this.normalvaluemale.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.normalvaluemale.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.normalvaluemale.Width = 125;
-            // 
-            // normalvaluefemale
-            // 
-            this.normalvaluefemale.HeaderText = "Normal Value (F)";
-            this.normalvaluefemale.Name = "normalvaluefemale";
-            this.normalvaluefemale.ReadOnly = true;
-            this.normalvaluefemale.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.normalvaluefemale.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.normalvaluefemale.Width = 125;
-            // 
-            // mtidtmp
-            // 
-            this.mtidtmp.HeaderText = "mt";
-            this.mtidtmp.Name = "mtidtmp";
-            this.mtidtmp.ReadOnly = true;
-            this.mtidtmp.Visible = false;
-            // 
-            // tyid
-            // 
-            this.tyid.HeaderText = "tyid";
-            this.tyid.Name = "tyid";
-            this.tyid.ReadOnly = true;
-            this.tyid.Visible = false;
-            // 
-            // tnid
-            // 
-            this.tnid.HeaderText = "tnid";
-            this.tnid.Name = "tnid";
-            this.tnid.ReadOnly = true;
-            this.tnid.Visible = false;
-            // 
-            // noval
-            // 
-            this.noval.HeaderText = "Novalue";
-            this.noval.Name = "noval";
-            this.noval.ReadOnly = true;
-            this.noval.Visible = false;
-            // 
-            // edittempitem
-            // 
-            this.edittempitem.HeaderText = "";
-            this.edittempitem.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.edittempitem.Name = "edittempitem";
-            this.edittempitem.ReadOnly = true;
-            this.edittempitem.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.edittempitem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.edittempitem.Width = 50;
-            // 
-            // deltempitem
-            // 
-            this.deltempitem.HeaderText = "";
-            this.deltempitem.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.deltempitem.Name = "deltempitem";
-            this.deltempitem.ReadOnly = true;
-            this.deltempitem.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.deltempitem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.deltempitem.Width = 50;
-            // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -1559,99 +1234,6 @@
             this.dgvTesttemplate.TabIndex = 21;
             this.dgvTesttemplate.Visible = false;
             // 
-            // idtmpadd
-            // 
-            this.idtmpadd.DataPropertyName = "id";
-            this.idtmpadd.HeaderText = "Id";
-            this.idtmpadd.Name = "idtmpadd";
-            this.idtmpadd.ReadOnly = true;
-            // 
-            // slnotn
-            // 
-            this.slnotn.DataPropertyName = "SlNo";
-            this.slnotn.HeaderText = "SlNo";
-            this.slnotn.Name = "slnotn";
-            this.slnotn.ReadOnly = true;
-            this.slnotn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.slnotn.Width = 80;
-            // 
-            // tnslno
-            // 
-            this.tnslno.DataPropertyName = "templatemain_id";
-            this.tnslno.HeaderText = "TEMPLATE ID";
-            this.tnslno.Name = "tnslno";
-            this.tnslno.ReadOnly = true;
-            this.tnslno.Width = 120;
-            // 
-            // tnMaintest
-            // 
-            this.tnMaintest.DataPropertyName = "Main_test";
-            this.tnMaintest.HeaderText = "MAIN TEST";
-            this.tnMaintest.Name = "tnMaintest";
-            this.tnMaintest.ReadOnly = true;
-            this.tnMaintest.Width = 150;
-            // 
-            // tntesttype
-            // 
-            this.tntesttype.DataPropertyName = "Test_types";
-            this.tntesttype.HeaderText = "TEST TYPE";
-            this.tntesttype.Name = "tntesttype";
-            this.tntesttype.ReadOnly = true;
-            this.tntesttype.Width = 150;
-            // 
-            // tnTest
-            // 
-            this.tnTest.DataPropertyName = "test";
-            this.tnTest.HeaderText = "TEST";
-            this.tnTest.Name = "tnTest";
-            this.tnTest.ReadOnly = true;
-            this.tnTest.Width = 110;
-            // 
-            // tnUnit
-            // 
-            this.tnUnit.DataPropertyName = "Unit";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tnUnit.DefaultCellStyle = dataGridViewCellStyle20;
-            this.tnUnit.HeaderText = "UNIT";
-            this.tnUnit.Name = "tnUnit";
-            this.tnUnit.ReadOnly = true;
-            // 
-            // tnNormalvaluem
-            // 
-            this.tnNormalvaluem.DataPropertyName = "NormalValueM";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tnNormalvaluem.DefaultCellStyle = dataGridViewCellStyle21;
-            this.tnNormalvaluem.HeaderText = "NORMAL VALUE(M)";
-            this.tnNormalvaluem.Name = "tnNormalvaluem";
-            this.tnNormalvaluem.ReadOnly = true;
-            this.tnNormalvaluem.Width = 140;
-            // 
-            // tnNVF
-            // 
-            this.tnNVF.DataPropertyName = "NormalValueF";
-            this.tnNVF.HeaderText = "NORMAL VALUE(F)";
-            this.tnNVF.Name = "tnNVF";
-            this.tnNVF.ReadOnly = true;
-            this.tnNVF.Width = 140;
-            // 
-            // tempedit
-            // 
-            this.tempedit.HeaderText = "";
-            this.tempedit.Name = "tempedit";
-            this.tempedit.ReadOnly = true;
-            this.tempedit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.tempedit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.tempedit.Width = 50;
-            // 
-            // tempdlt
-            // 
-            this.tempdlt.HeaderText = "";
-            this.tempdlt.Name = "tempdlt";
-            this.tempdlt.ReadOnly = true;
-            this.tempdlt.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.tempdlt.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.tempdlt.Width = 50;
-            // 
             // cmbmaintesttemp
             // 
             this.cmbmaintesttemp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1770,51 +1352,6 @@
             this.dgvtemplateadd.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtemplateadd_CellClick);
             this.dgvtemplateadd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtemplateadd_CellContentClick);
             // 
-            // idd
-            // 
-            this.idd.DataPropertyName = "id";
-            this.idd.HeaderText = "Id";
-            this.idd.Name = "idd";
-            this.idd.ReadOnly = true;
-            this.idd.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // ttpslno
-            // 
-            this.ttpslno.DataPropertyName = "SlNo";
-            this.ttpslno.HeaderText = "Sl.No";
-            this.ttpslno.Name = "ttpslno";
-            this.ttpslno.ReadOnly = true;
-            this.ttpslno.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ttpslno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // ttpName
-            // 
-            this.ttpName.DataPropertyName = "TemplateName";
-            this.ttpName.HeaderText = "Template Name";
-            this.ttpName.Name = "ttpName";
-            this.ttpName.ReadOnly = true;
-            this.ttpName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ttpName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ttpName.Width = 200;
-            // 
-            // edittmp
-            // 
-            this.edittmp.HeaderText = "";
-            this.edittmp.Name = "edittmp";
-            this.edittmp.ReadOnly = true;
-            this.edittmp.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.edittmp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.edittmp.Width = 50;
-            // 
-            // deletetmp
-            // 
-            this.deletetmp.HeaderText = "";
-            this.deletetmp.Name = "deletetmp";
-            this.deletetmp.ReadOnly = true;
-            this.deletetmp.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.deletetmp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.deletetmp.Width = 50;
-            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "";
@@ -1911,6 +1448,469 @@
             this.dataGridViewImageColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn11.Width = 50;
             // 
+            // Slno
+            // 
+            this.Slno.DataPropertyName = "SlNo";
+            this.Slno.HeaderText = "Sl.No";
+            this.Slno.Name = "Slno";
+            this.Slno.ReadOnly = true;
+            this.Slno.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Slno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // mtid
+            // 
+            this.mtid.DataPropertyName = "id";
+            this.mtid.HeaderText = "id";
+            this.mtid.Name = "mtid";
+            this.mtid.ReadOnly = true;
+            this.mtid.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // maintest
+            // 
+            this.maintest.DataPropertyName = "Main Test";
+            this.maintest.HeaderText = "Main Test";
+            this.maintest.Name = "maintest";
+            this.maintest.ReadOnly = true;
+            this.maintest.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.maintest.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.maintest.Width = 200;
+            // 
+            // editmtest
+            // 
+            this.editmtest.HeaderText = "";
+            this.editmtest.Name = "editmtest";
+            this.editmtest.ReadOnly = true;
+            this.editmtest.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.editmtest.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.editmtest.Width = 19;
+            // 
+            // cldelet
+            // 
+            this.cldelet.HeaderText = "";
+            this.cldelet.Name = "cldelet";
+            this.cldelet.ReadOnly = true;
+            this.cldelet.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cldelet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.cldelet.Width = 19;
+            // 
+            // testtypeId
+            // 
+            this.testtypeId.DataPropertyName = "id";
+            this.testtypeId.HeaderText = "ID";
+            this.testtypeId.Name = "testtypeId";
+            this.testtypeId.ReadOnly = true;
+            this.testtypeId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // tySlno
+            // 
+            this.tySlno.DataPropertyName = "SlNo";
+            this.tySlno.HeaderText = "Sl.No";
+            this.tySlno.Name = "tySlno";
+            this.tySlno.ReadOnly = true;
+            this.tySlno.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.tySlno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // testtype
+            // 
+            this.testtype.DataPropertyName = "Test Type";
+            this.testtype.HeaderText = "Test Type";
+            this.testtype.Name = "testtype";
+            this.testtype.ReadOnly = true;
+            this.testtype.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.testtype.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.testtype.Width = 200;
+            // 
+            // tyedit
+            // 
+            this.tyedit.HeaderText = "";
+            this.tyedit.Name = "tyedit";
+            this.tyedit.ReadOnly = true;
+            this.tyedit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.tyedit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.tyedit.Width = 19;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Delete.Width = 19;
+            // 
+            // unitid
+            // 
+            this.unitid.DataPropertyName = "id";
+            this.unitid.HeaderText = "ID";
+            this.unitid.Name = "unitid";
+            this.unitid.ReadOnly = true;
+            this.unitid.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Uslno
+            // 
+            this.Uslno.DataPropertyName = "SlNo";
+            this.Uslno.HeaderText = "Sl.No";
+            this.Uslno.Name = "Uslno";
+            this.Uslno.ReadOnly = true;
+            this.Uslno.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Uslno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // unitname
+            // 
+            this.unitname.DataPropertyName = "Unit";
+            this.unitname.HeaderText = "Unit";
+            this.unitname.Name = "unitname";
+            this.unitname.ReadOnly = true;
+            this.unitname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.unitname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.unitname.Width = 200;
+            // 
+            // unitedit
+            // 
+            this.unitedit.HeaderText = "";
+            this.unitedit.Name = "unitedit";
+            this.unitedit.ReadOnly = true;
+            this.unitedit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.unitedit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.unitedit.Width = 19;
+            // 
+            // dltunit
+            // 
+            this.dltunit.HeaderText = "";
+            this.dltunit.Name = "dltunit";
+            this.dltunit.ReadOnly = true;
+            this.dltunit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dltunit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dltunit.Width = 19;
+            // 
+            // testid
+            // 
+            this.testid.DataPropertyName = "id";
+            this.testid.HeaderText = "ID";
+            this.testid.Name = "testid";
+            this.testid.ReadOnly = true;
+            this.testid.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // testslno
+            // 
+            this.testslno.DataPropertyName = "Slno";
+            this.testslno.HeaderText = "Sl.No";
+            this.testslno.Name = "testslno";
+            this.testslno.ReadOnly = true;
+            this.testslno.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.testslno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.testslno.Width = 50;
+            // 
+            // testName
+            // 
+            this.testName.DataPropertyName = "test";
+            this.testName.HeaderText = "Test Name";
+            this.testName.Name = "testName";
+            this.testName.ReadOnly = true;
+            this.testName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.testName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.testName.Width = 200;
+            // 
+            // Type
+            // 
+            this.Type.DataPropertyName = "Test_Type";
+            this.Type.HeaderText = "Test Type";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            this.Type.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Type.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Type.Width = 150;
+            // 
+            // NVMale
+            // 
+            this.NVMale.DataPropertyName = "NormalValueM";
+            this.NVMale.HeaderText = "Normal Value (M)";
+            this.NVMale.Name = "NVMale";
+            this.NVMale.ReadOnly = true;
+            this.NVMale.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.NVMale.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.NVMale.Width = 150;
+            // 
+            // NVFemale
+            // 
+            this.NVFemale.DataPropertyName = "NormalValueF";
+            this.NVFemale.HeaderText = "Normal Value (F)";
+            this.NVFemale.Name = "NVFemale";
+            this.NVFemale.ReadOnly = true;
+            this.NVFemale.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.NVFemale.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.NVFemale.Width = 200;
+            // 
+            // Unit
+            // 
+            this.Unit.DataPropertyName = "Unit";
+            this.Unit.HeaderText = "Unit";
+            this.Unit.Name = "Unit";
+            this.Unit.ReadOnly = true;
+            this.Unit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Unit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dlttest
+            // 
+            this.dlttest.HeaderText = "";
+            this.dlttest.Name = "dlttest";
+            this.dlttest.ReadOnly = true;
+            this.dlttest.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dlttest.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dlttest.Width = 19;
+            // 
+            // Deletetest
+            // 
+            this.Deletetest.HeaderText = "";
+            this.Deletetest.Name = "Deletetest";
+            this.Deletetest.ReadOnly = true;
+            this.Deletetest.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Deletetest.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Deletetest.Width = 19;
+            // 
+            // idd
+            // 
+            this.idd.DataPropertyName = "id";
+            this.idd.HeaderText = "Id";
+            this.idd.Name = "idd";
+            this.idd.ReadOnly = true;
+            this.idd.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // ttpslno
+            // 
+            this.ttpslno.DataPropertyName = "SlNo";
+            this.ttpslno.HeaderText = "Sl.No";
+            this.ttpslno.Name = "ttpslno";
+            this.ttpslno.ReadOnly = true;
+            this.ttpslno.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ttpslno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // ttpName
+            // 
+            this.ttpName.DataPropertyName = "TemplateName";
+            this.ttpName.HeaderText = "Template Name";
+            this.ttpName.Name = "ttpName";
+            this.ttpName.ReadOnly = true;
+            this.ttpName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ttpName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ttpName.Width = 200;
+            // 
+            // edittmp
+            // 
+            this.edittmp.HeaderText = "";
+            this.edittmp.Name = "edittmp";
+            this.edittmp.ReadOnly = true;
+            this.edittmp.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.edittmp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.edittmp.Width = 19;
+            // 
+            // deletetmp
+            // 
+            this.deletetmp.HeaderText = "";
+            this.deletetmp.Name = "deletetmp";
+            this.deletetmp.ReadOnly = true;
+            this.deletetmp.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.deletetmp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.deletetmp.Width = 19;
+            // 
+            // idtmpitm
+            // 
+            this.idtmpitm.HeaderText = "SlNo";
+            this.idtmpitm.Name = "idtmpitm";
+            this.idtmpitm.ReadOnly = true;
+            this.idtmpitm.Visible = false;
+            // 
+            // maintsttemp
+            // 
+            this.maintsttemp.HeaderText = "Main Test";
+            this.maintsttemp.Name = "maintsttemp";
+            this.maintsttemp.ReadOnly = true;
+            this.maintsttemp.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.maintsttemp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // test
+            // 
+            this.test.HeaderText = "Test";
+            this.test.Name = "test";
+            this.test.ReadOnly = true;
+            this.test.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.test.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // testtypetmpitm
+            // 
+            this.testtypetmpitm.HeaderText = "Test Type";
+            this.testtypetmpitm.Name = "testtypetmpitm";
+            this.testtypetmpitm.ReadOnly = true;
+            this.testtypetmpitm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.testtypetmpitm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Unittmpitm
+            // 
+            this.Unittmpitm.HeaderText = "Unit";
+            this.Unittmpitm.Name = "Unittmpitm";
+            this.Unittmpitm.ReadOnly = true;
+            this.Unittmpitm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Unittmpitm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // normalvaluemale
+            // 
+            this.normalvaluemale.HeaderText = "Normal Value (M)";
+            this.normalvaluemale.Name = "normalvaluemale";
+            this.normalvaluemale.ReadOnly = true;
+            this.normalvaluemale.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.normalvaluemale.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.normalvaluemale.Width = 125;
+            // 
+            // normalvaluefemale
+            // 
+            this.normalvaluefemale.HeaderText = "Normal Value (F)";
+            this.normalvaluefemale.Name = "normalvaluefemale";
+            this.normalvaluefemale.ReadOnly = true;
+            this.normalvaluefemale.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.normalvaluefemale.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.normalvaluefemale.Width = 125;
+            // 
+            // mtidtmp
+            // 
+            this.mtidtmp.HeaderText = "mt";
+            this.mtidtmp.Name = "mtidtmp";
+            this.mtidtmp.ReadOnly = true;
+            this.mtidtmp.Visible = false;
+            // 
+            // tyid
+            // 
+            this.tyid.HeaderText = "tyid";
+            this.tyid.Name = "tyid";
+            this.tyid.ReadOnly = true;
+            this.tyid.Visible = false;
+            // 
+            // tnid
+            // 
+            this.tnid.HeaderText = "tnid";
+            this.tnid.Name = "tnid";
+            this.tnid.ReadOnly = true;
+            this.tnid.Visible = false;
+            // 
+            // noval
+            // 
+            this.noval.HeaderText = "Novalue";
+            this.noval.Name = "noval";
+            this.noval.ReadOnly = true;
+            this.noval.Visible = false;
+            // 
+            // edittempitem
+            // 
+            this.edittempitem.HeaderText = "";
+            this.edittempitem.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.edittempitem.Name = "edittempitem";
+            this.edittempitem.ReadOnly = true;
+            this.edittempitem.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.edittempitem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.edittempitem.Width = 19;
+            // 
+            // deltempitem
+            // 
+            this.deltempitem.HeaderText = "";
+            this.deltempitem.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.deltempitem.Name = "deltempitem";
+            this.deltempitem.ReadOnly = true;
+            this.deltempitem.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.deltempitem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.deltempitem.Width = 19;
+            // 
+            // idtmpadd
+            // 
+            this.idtmpadd.DataPropertyName = "id";
+            this.idtmpadd.HeaderText = "Id";
+            this.idtmpadd.Name = "idtmpadd";
+            this.idtmpadd.ReadOnly = true;
+            // 
+            // slnotn
+            // 
+            this.slnotn.DataPropertyName = "SlNo";
+            this.slnotn.HeaderText = "SlNo";
+            this.slnotn.Name = "slnotn";
+            this.slnotn.ReadOnly = true;
+            this.slnotn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.slnotn.Width = 80;
+            // 
+            // tnslno
+            // 
+            this.tnslno.DataPropertyName = "templatemain_id";
+            this.tnslno.HeaderText = "TEMPLATE ID";
+            this.tnslno.Name = "tnslno";
+            this.tnslno.ReadOnly = true;
+            this.tnslno.Width = 120;
+            // 
+            // tnMaintest
+            // 
+            this.tnMaintest.DataPropertyName = "Main_test";
+            this.tnMaintest.HeaderText = "MAIN TEST";
+            this.tnMaintest.Name = "tnMaintest";
+            this.tnMaintest.ReadOnly = true;
+            this.tnMaintest.Width = 150;
+            // 
+            // tntesttype
+            // 
+            this.tntesttype.DataPropertyName = "Test_types";
+            this.tntesttype.HeaderText = "TEST TYPE";
+            this.tntesttype.Name = "tntesttype";
+            this.tntesttype.ReadOnly = true;
+            this.tntesttype.Width = 150;
+            // 
+            // tnTest
+            // 
+            this.tnTest.DataPropertyName = "test";
+            this.tnTest.HeaderText = "TEST";
+            this.tnTest.Name = "tnTest";
+            this.tnTest.ReadOnly = true;
+            this.tnTest.Width = 110;
+            // 
+            // tnUnit
+            // 
+            this.tnUnit.DataPropertyName = "Unit";
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tnUnit.DefaultCellStyle = dataGridViewCellStyle20;
+            this.tnUnit.HeaderText = "UNIT";
+            this.tnUnit.Name = "tnUnit";
+            this.tnUnit.ReadOnly = true;
+            // 
+            // tnNormalvaluem
+            // 
+            this.tnNormalvaluem.DataPropertyName = "NormalValueM";
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tnNormalvaluem.DefaultCellStyle = dataGridViewCellStyle21;
+            this.tnNormalvaluem.HeaderText = "NORMAL VALUE(M)";
+            this.tnNormalvaluem.Name = "tnNormalvaluem";
+            this.tnNormalvaluem.ReadOnly = true;
+            this.tnNormalvaluem.Width = 140;
+            // 
+            // tnNVF
+            // 
+            this.tnNVF.DataPropertyName = "NormalValueF";
+            this.tnNVF.HeaderText = "NORMAL VALUE(F)";
+            this.tnNVF.Name = "tnNVF";
+            this.tnNVF.ReadOnly = true;
+            this.tnNVF.Width = 140;
+            // 
+            // tempedit
+            // 
+            this.tempedit.HeaderText = "";
+            this.tempedit.Name = "tempedit";
+            this.tempedit.ReadOnly = true;
+            this.tempedit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.tempedit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.tempedit.Width = 19;
+            // 
+            // tempdlt
+            // 
+            this.tempdlt.HeaderText = "";
+            this.tempdlt.Name = "tempdlt";
+            this.tempdlt.ReadOnly = true;
+            this.tempdlt.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.tempdlt.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.tempdlt.Width = 19;
+            // 
             // LabMedical
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1960,11 +1960,6 @@
         private System.Windows.Forms.TextBox txtunitid;
         private System.Windows.Forms.TextBox txtUnitadd;
         private System.Windows.Forms.DataGridView dgvUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Uslno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitname;
-        private System.Windows.Forms.DataGridViewImageColumn unitedit;
-        private System.Windows.Forms.DataGridViewImageColumn dltunit;
         private System.Windows.Forms.TabPage tpUnit;
         private System.Windows.Forms.Button btnSaveunit;
         private System.Windows.Forms.Label lblUnitadd;
@@ -1973,32 +1968,18 @@
         private System.Windows.Forms.TextBox txtTtypeid;
         private System.Windows.Forms.TextBox txtTestType;
         private System.Windows.Forms.DataGridView dtgTestType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn testtypeId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tySlno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn testtype;
-        private System.Windows.Forms.DataGridViewImageColumn tyedit;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Button btnTesttype_save;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn testslno;
-        private System.Windows.Forms.DataGridViewImageColumn Deletetest;
-        private System.Windows.Forms.DataGridViewTextBoxColumn testid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn testName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btntestcancel;
         private System.Windows.Forms.TextBox txttestid;
         private System.Windows.Forms.TextBox txtNVFemale;
         private System.Windows.Forms.TextBox txtNVMale;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NVMale;
         private System.Windows.Forms.Button btnSavetest;
         private System.Windows.Forms.ComboBox cmbTesttype;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridViewImageColumn dlttest;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NVFemale;
         private System.Windows.Forms.ComboBox cmbUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
         private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.Label lblMainTestName;
         private System.Windows.Forms.Label label19;
@@ -2009,11 +1990,6 @@
         private System.Windows.Forms.TextBox txtMtid;
         private System.Windows.Forms.TextBox txtMainTest;
         private System.Windows.Forms.DataGridView dgvLabMaster;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Slno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mtid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maintest;
-        private System.Windows.Forms.DataGridViewImageColumn editmtest;
-        private System.Windows.Forms.DataGridViewImageColumn cldelet;
         private System.Windows.Forms.TabPage tpTest;
         private System.Windows.Forms.Label lblNVMale;
         private System.Windows.Forms.Label lblTesttype;
@@ -2040,17 +2016,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvTesttemplate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idtmpadd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slnotn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tnslno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tnMaintest;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tntesttype;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tnTest;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tnUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tnNormalvaluem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tnNVF;
-        private System.Windows.Forms.DataGridViewImageColumn tempedit;
-        private System.Windows.Forms.DataGridViewImageColumn tempdlt;
         private System.Windows.Forms.ComboBox cmbmaintesttemp;
         private System.Windows.Forms.Label lblmaintest;
         private System.Windows.Forms.Panel pnlAddtemplate;
@@ -2059,11 +2024,6 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnNewtmp;
         private System.Windows.Forms.DataGridView dgvtemplateadd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ttpslno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ttpName;
-        private System.Windows.Forms.DataGridViewImageColumn edittmp;
-        private System.Windows.Forms.DataGridViewImageColumn deletetmp;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
@@ -2076,6 +2036,30 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn12;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Slno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mtid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maintest;
+        private System.Windows.Forms.DataGridViewImageColumn editmtest;
+        private System.Windows.Forms.DataGridViewImageColumn cldelet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Uslno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitname;
+        private System.Windows.Forms.DataGridViewImageColumn unitedit;
+        private System.Windows.Forms.DataGridViewImageColumn dltunit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn testtypeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tySlno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn testtype;
+        private System.Windows.Forms.DataGridViewImageColumn tyedit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn testid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn testslno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn testName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NVMale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NVFemale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
+        private System.Windows.Forms.DataGridViewImageColumn dlttest;
+        private System.Windows.Forms.DataGridViewImageColumn Deletetest;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtmpitm;
         private System.Windows.Forms.DataGridViewTextBoxColumn maintsttemp;
         private System.Windows.Forms.DataGridViewTextBoxColumn test;
@@ -2089,5 +2073,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn noval;
         private System.Windows.Forms.DataGridViewImageColumn edittempitem;
         private System.Windows.Forms.DataGridViewImageColumn deltempitem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtmpadd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slnotn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tnslno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tnMaintest;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tntesttype;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tnTest;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tnUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tnNormalvaluem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tnNVF;
+        private System.Windows.Forms.DataGridViewImageColumn tempedit;
+        private System.Windows.Forms.DataGridViewImageColumn tempdlt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ttpslno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ttpName;
+        private System.Windows.Forms.DataGridViewImageColumn edittmp;
+        private System.Windows.Forms.DataGridViewImageColumn deletetmp;
     }
 }

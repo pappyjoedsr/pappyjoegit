@@ -249,9 +249,9 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(7, 161);
+            this.groupBox1.Location = new System.Drawing.Point(15, 161);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1092, 102);
+            this.groupBox1.Size = new System.Drawing.Size(1084, 102);
             this.groupBox1.TabIndex = 266;
             this.groupBox1.TabStop = false;
             // 
@@ -271,7 +271,7 @@
             this.txtClear.BackColor = System.Drawing.Color.Tomato;
             this.txtClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtClear.ForeColor = System.Drawing.Color.White;
-            this.txtClear.Location = new System.Drawing.Point(1013, 38);
+            this.txtClear.Location = new System.Drawing.Point(1005, 38);
             this.txtClear.Name = "txtClear";
             this.txtClear.Size = new System.Drawing.Size(68, 27);
             this.txtClear.TabIndex = 214;
@@ -348,7 +348,7 @@
             this.Btn_Add.BackColor = System.Drawing.Color.LimeGreen;
             this.Btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Add.ForeColor = System.Drawing.Color.White;
-            this.Btn_Add.Location = new System.Drawing.Point(946, 38);
+            this.Btn_Add.Location = new System.Drawing.Point(938, 38);
             this.Btn_Add.Name = "Btn_Add";
             this.Btn_Add.Size = new System.Drawing.Size(68, 27);
             this.Btn_Add.TabIndex = 18;
@@ -547,7 +547,7 @@
             this.panel5.Controls.Add(this.label22);
             this.panel5.Controls.Add(this.txtTotal_item);
             this.panel5.Controls.Add(this.txtTotalCost);
-            this.panel5.Location = new System.Drawing.Point(475, 492);
+            this.panel5.Location = new System.Drawing.Point(478, 492);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(627, 153);
             this.panel5.TabIndex = 277;
@@ -643,7 +643,7 @@
             this.txt_TotalAmount.BackColor = System.Drawing.Color.White;
             this.txt_TotalAmount.Enabled = false;
             this.txt_TotalAmount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_TotalAmount.Location = new System.Drawing.Point(479, 41);
+            this.txt_TotalAmount.Location = new System.Drawing.Point(481, 41);
             this.txt_TotalAmount.MaxLength = 8;
             this.txt_TotalAmount.Name = "txt_TotalAmount";
             this.txt_TotalAmount.ReadOnly = true;
@@ -679,7 +679,7 @@
             this.txtTotal_item.BackColor = System.Drawing.Color.White;
             this.txtTotal_item.Enabled = false;
             this.txtTotal_item.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtTotal_item.Location = new System.Drawing.Point(479, 12);
+            this.txtTotal_item.Location = new System.Drawing.Point(481, 12);
             this.txtTotal_item.MaxLength = 8;
             this.txtTotal_item.Name = "txtTotal_item";
             this.txtTotal_item.ReadOnly = true;
@@ -894,9 +894,9 @@
             this.panel2.Controls.Add(this.gbDocumentDetails);
             this.panel2.Controls.Add(this.gbTaxDetails);
             this.panel2.Controls.Add(this.btn_Save);
-            this.panel2.Location = new System.Drawing.Point(0, 2);
+            this.panel2.Location = new System.Drawing.Point(1, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1095, 148);
+            this.panel2.Size = new System.Drawing.Size(1099, 148);
             this.panel2.TabIndex = 274;
             // 
             // btnPrint
@@ -906,7 +906,7 @@
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(883, 7);
+            this.btnPrint.Location = new System.Drawing.Point(887, 7);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(99, 30);
             this.btnPrint.TabIndex = 293;
@@ -931,9 +931,9 @@
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.DarkGray;
-            this.panel6.Location = new System.Drawing.Point(-10, 39);
+            this.panel6.Location = new System.Drawing.Point(-205, 41);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1304, 1);
+            this.panel6.Size = new System.Drawing.Size(1308, 1);
             this.panel6.TabIndex = 274;
             // 
             // gbDocumentDetails
@@ -1016,7 +1016,7 @@
             this.gbTaxDetails.Controls.Add(this.label3);
             this.gbTaxDetails.Controls.Add(this.txt_SupplierId);
             this.gbTaxDetails.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.gbTaxDetails.Location = new System.Drawing.Point(730, 47);
+            this.gbTaxDetails.Location = new System.Drawing.Point(743, 47);
             this.gbTaxDetails.Name = "gbTaxDetails";
             this.gbTaxDetails.Size = new System.Drawing.Size(353, 94);
             this.gbTaxDetails.TabIndex = 204;
@@ -1092,7 +1092,7 @@
             this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Save.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Save.ForeColor = System.Drawing.Color.White;
-            this.btn_Save.Location = new System.Drawing.Point(986, 7);
+            this.btn_Save.Location = new System.Drawing.Point(997, 7);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(99, 30);
             this.btn_Save.TabIndex = 273;

@@ -527,7 +527,7 @@
             this.colEdit.ReadOnly = true;
             this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colEdit.Width = 27;
+            this.colEdit.Width = 19;
             // 
             // ColDelete
             // 
@@ -536,7 +536,7 @@
             this.ColDelete.ReadOnly = true;
             this.ColDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ColDelete.Width = 27;
+            this.ColDelete.Width = 19;
             // 
             // Supplier
             // 

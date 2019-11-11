@@ -38,6 +38,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvItemData = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Item_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit_Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Del = new System.Windows.Forms.DataGridViewImageColumn();
             this.label22 = new System.Windows.Forms.Label();
             this.txtTotalAmount = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -75,14 +83,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit_Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemEdit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Del = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemData)).BeginInit();
@@ -151,7 +151,6 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvItemData.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvItemData.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvItemData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvItemData.Location = new System.Drawing.Point(0, 0);
             this.dgvItemData.Name = "dgvItemData";
@@ -170,6 +169,74 @@
             this.dgvItemData.Size = new System.Drawing.Size(1047, 259);
             this.dgvItemData.TabIndex = 270;
             this.dgvItemData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemData_CellClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // Item_Id
+            // 
+            this.Item_Id.HeaderText = "Item Id";
+            this.Item_Id.Name = "Item_Id";
+            this.Item_Id.ReadOnly = true;
+            this.Item_Id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // description
+            // 
+            this.description.HeaderText = "Description";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            this.description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.description.Width = 300;
+            // 
+            // col_qty
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.col_qty.DefaultCellStyle = dataGridViewCellStyle2;
+            this.col_qty.HeaderText = "Qty";
+            this.col_qty.Name = "col_qty";
+            this.col_qty.ReadOnly = true;
+            this.col_qty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.col_qty.Width = 150;
+            // 
+            // Unit_Cost
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Unit_Cost.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Unit_Cost.HeaderText = "Unit Cost";
+            this.Unit_Cost.Name = "Unit_Cost";
+            this.Unit_Cost.ReadOnly = true;
+            this.Unit_Cost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Unit_Cost.Width = 150;
+            // 
+            // Amount
+            // 
+            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Amount.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            this.Amount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ItemEdit
+            // 
+            this.ItemEdit.HeaderText = "Edit";
+            this.ItemEdit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.ItemEdit.Name = "ItemEdit";
+            this.ItemEdit.ReadOnly = true;
+            this.ItemEdit.Width = 50;
+            // 
+            // Del
+            // 
+            this.Del.HeaderText = "Del";
+            this.Del.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.Del.Name = "Del";
+            this.Del.ReadOnly = true;
+            this.Del.Width = 50;
             // 
             // label22
             // 
@@ -190,7 +257,7 @@
             this.txtTotalAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalAmount.Enabled = false;
             this.txtTotalAmount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtTotalAmount.Location = new System.Drawing.Point(934, 302);
+            this.txtTotalAmount.Location = new System.Drawing.Point(936, 302);
             this.txtTotalAmount.MaxLength = 8;
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.ReadOnly = true;
@@ -219,7 +286,7 @@
             this.txtTotal_item.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotal_item.Enabled = false;
             this.txtTotal_item.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtTotal_item.Location = new System.Drawing.Point(934, 276);
+            this.txtTotal_item.Location = new System.Drawing.Point(936, 276);
             this.txtTotal_item.MaxLength = 8;
             this.txtTotal_item.Name = "txtTotal_item";
             this.txtTotal_item.ReadOnly = true;
@@ -325,7 +392,7 @@
             this.lstbox_Supplier.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstbox_Supplier.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lstbox_Supplier.FormattingEnabled = true;
-            this.lstbox_Supplier.Location = new System.Drawing.Point(850, 87);
+            this.lstbox_Supplier.Location = new System.Drawing.Point(851, 87);
             this.lstbox_Supplier.Name = "lstbox_Supplier";
             this.lstbox_Supplier.Size = new System.Drawing.Size(196, 82);
             this.lstbox_Supplier.TabIndex = 208;
@@ -349,9 +416,9 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
-            this.panel4.Location = new System.Drawing.Point(-9, 39);
+            this.panel4.Location = new System.Drawing.Point(-16, 43);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1059, 1);
+            this.panel4.Size = new System.Drawing.Size(1063, 1);
             this.panel4.TabIndex = 294;
             // 
             // lblSupplierCode
@@ -384,7 +451,7 @@
             this.txtSupplierName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSupplierName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSupplierName.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtSupplierName.Location = new System.Drawing.Point(849, 63);
+            this.txtSupplierName.Location = new System.Drawing.Point(851, 63);
             this.txtSupplierName.Name = "txtSupplierName";
             this.txtSupplierName.Size = new System.Drawing.Size(196, 22);
             this.txtSupplierName.TabIndex = 0;
@@ -410,7 +477,7 @@
             this.txt_SupplierId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_SupplierId.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SupplierId.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_SupplierId.Location = new System.Drawing.Point(849, 93);
+            this.txt_SupplierId.Location = new System.Drawing.Point(851, 93);
             this.txt_SupplierId.Name = "txt_SupplierId";
             this.txt_SupplierId.ReadOnly = true;
             this.txt_SupplierId.Size = new System.Drawing.Size(196, 22);
@@ -438,7 +505,7 @@
             this.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSave.ForeColor = System.Drawing.Color.White;
-            this.BtnSave.Location = new System.Drawing.Point(960, 5);
+            this.BtnSave.Location = new System.Drawing.Point(962, 5);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(85, 30);
             this.BtnSave.TabIndex = 271;
@@ -666,74 +733,6 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Visible = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // Item_Id
-            // 
-            this.Item_Id.HeaderText = "Item Id";
-            this.Item_Id.Name = "Item_Id";
-            this.Item_Id.ReadOnly = true;
-            this.Item_Id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // description
-            // 
-            this.description.HeaderText = "Description";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            this.description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.description.Width = 300;
-            // 
-            // col_qty
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.col_qty.DefaultCellStyle = dataGridViewCellStyle2;
-            this.col_qty.HeaderText = "Qty";
-            this.col_qty.Name = "col_qty";
-            this.col_qty.ReadOnly = true;
-            this.col_qty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.col_qty.Width = 150;
-            // 
-            // Unit_Cost
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Unit_Cost.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Unit_Cost.HeaderText = "Unit Cost";
-            this.Unit_Cost.Name = "Unit_Cost";
-            this.Unit_Cost.ReadOnly = true;
-            this.Unit_Cost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Unit_Cost.Width = 150;
-            // 
-            // Amount
-            // 
-            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Amount.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
-            this.Amount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ItemEdit
-            // 
-            this.ItemEdit.HeaderText = "Edit";
-            this.ItemEdit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.ItemEdit.Name = "ItemEdit";
-            this.ItemEdit.ReadOnly = true;
-            this.ItemEdit.Width = 50;
-            // 
-            // Del
-            // 
-            this.Del.HeaderText = "Del";
-            this.Del.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.Del.Name = "Del";
-            this.Del.ReadOnly = true;
-            this.Del.Width = 50;
             // 
             // PurchaseOrder
             // 

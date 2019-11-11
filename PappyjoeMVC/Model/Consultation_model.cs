@@ -123,11 +123,10 @@ namespace PappyjoeMVC.Model
             DataTable dtb= db.table("select header,left_text,right_text,fullwidth_context,left_sign,right_sign,include_header,include_logo from  tbl_receipt_printsettings");
             return dtb;
         }
-
         // consultation new patient
         public int save_patient(string pt_name,string pt_id,string gender,string primary_mobile_number)
         {
-          int i=  db.execute("insert into tbl_patient (pt_name,pt_id,gender,primary_mobile_number,Visited,Profile_Status)values('" + pt_name + "','" + pt_id + "','" + gender + "','" + primary_mobile_number + "','"+ DateTime.Now.Date.ToString("yyyy/MM/dd")+"','Active')");
+          int i=  db.execute("insert into tbl_patient (pt_name,pt_id,gender,primary_mobile_number,Visited,date,Profile_Status)values('" + pt_name + "','" + pt_id + "','" + gender + "','" + primary_mobile_number + "','"+ DateTime.Now.Date.ToString("yyyy/MM/dd")+ "','" + DateTime.Now.Date.ToString("yyyy/MM/dd") + "','Active')");
             return i;
         }
         public string patient_maxid()
