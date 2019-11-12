@@ -562,7 +562,7 @@
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.DarkGray;
-            this.panel8.Location = new System.Drawing.Point(189, 132);
+            this.panel8.Location = new System.Drawing.Point(188, 132);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1186, 1);
             this.panel8.TabIndex = 288;

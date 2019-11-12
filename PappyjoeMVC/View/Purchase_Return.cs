@@ -673,7 +673,13 @@ namespace PappyjoeMVC.View
         }
         private void txtSupplierName_TextChanged(object sender, EventArgs e)
         { }
-       public void clear()
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void clear()
         {
             cmbUnit.Items.Clear();
             txt_Itemcode.Text = "";

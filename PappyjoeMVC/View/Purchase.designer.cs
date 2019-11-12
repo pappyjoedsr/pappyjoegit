@@ -37,7 +37,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Purchase));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.txtinvoiceno = new System.Windows.Forms.TextBox();
             this.dtpPurchDate = new System.Windows.Forms.DateTimePicker();
@@ -46,14 +45,15 @@
             this.lblDocumentNumber = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.lblDocumentDate = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.gbDocumentDetails = new System.Windows.Forms.GroupBox();
             this.lblSupplierCode = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
             this.txtSupplierName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_Save = new System.Windows.Forms.Button();
             this.txt_SupplierId = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -157,16 +157,6 @@
             this.panel2.Size = new System.Drawing.Size(1101, 123);
             this.panel2.TabIndex = 276;
             // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.DarkGray;
-            this.panel5.Location = new System.Drawing.Point(-76, 43);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1175, 1);
-            this.panel5.TabIndex = 295;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -262,17 +252,6 @@
             this.lblDocumentDate.Text = "Purchase Date";
             this.lblDocumentDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label18.Location = new System.Drawing.Point(5, 7);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(90, 21);
-            this.label18.TabIndex = 292;
-            this.label18.Text = "PURCHASE";
-            // 
             // gbDocumentDetails
             // 
             this.gbDocumentDetails.BackColor = System.Drawing.Color.White;
@@ -293,21 +272,6 @@
             this.lblSupplierCode.Size = new System.Drawing.Size(66, 17);
             this.lblSupplierCode.TabIndex = 201;
             this.lblSupplierCode.Text = "Supplier Id";
-            // 
-            // btnClear
-            // 
-            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClear.BackColor = System.Drawing.Color.Tomato;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(928, 3);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(85, 30);
-            this.btnClear.TabIndex = 274;
-            this.btnClear.Text = "CLEAR";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtSupplierName
             // 
@@ -334,6 +298,54 @@
             this.label3.TabIndex = 206;
             this.label3.Text = "Supplier Name";
             // 
+            // txt_SupplierId
+            // 
+            this.txt_SupplierId.BackColor = System.Drawing.Color.White;
+            this.txt_SupplierId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_SupplierId.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SupplierId.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txt_SupplierId.Location = new System.Drawing.Point(902, 41);
+            this.txt_SupplierId.Name = "txt_SupplierId";
+            this.txt_SupplierId.ReadOnly = true;
+            this.txt_SupplierId.Size = new System.Drawing.Size(196, 22);
+            this.txt_SupplierId.TabIndex = 207;
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.BackColor = System.Drawing.Color.DarkGray;
+            this.panel5.Location = new System.Drawing.Point(-76, 43);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1175, 1);
+            this.panel5.TabIndex = 295;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label18.Location = new System.Drawing.Point(4, 6);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(90, 21);
+            this.label18.TabIndex = 292;
+            this.label18.Text = "PURCHASE";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.BackColor = System.Drawing.Color.Tomato;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(928, 3);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(85, 30);
+            this.btnClear.TabIndex = 274;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // btn_Save
             // 
             this.btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -348,18 +360,6 @@
             this.btn_Save.Text = "SAVE";
             this.btn_Save.UseVisualStyleBackColor = false;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
-            // 
-            // txt_SupplierId
-            // 
-            this.txt_SupplierId.BackColor = System.Drawing.Color.White;
-            this.txt_SupplierId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_SupplierId.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SupplierId.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txt_SupplierId.Location = new System.Drawing.Point(902, 41);
-            this.txt_SupplierId.Name = "txt_SupplierId";
-            this.txt_SupplierId.ReadOnly = true;
-            this.txt_SupplierId.Size = new System.Drawing.Size(196, 22);
-            this.txt_SupplierId.TabIndex = 207;
             // 
             // btnPrint
             // 
@@ -1257,7 +1257,7 @@
             this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.label18);
-            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Location = new System.Drawing.Point(2, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1101, 35);
             this.panel1.TabIndex = 279;

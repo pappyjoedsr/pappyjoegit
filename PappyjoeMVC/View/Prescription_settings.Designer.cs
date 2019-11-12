@@ -416,7 +416,7 @@
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView_prescription.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_prescription.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_prescription.Size = new System.Drawing.Size(794, 371);
+            this.dataGridView_prescription.Size = new System.Drawing.Size(816, 371);
             this.dataGridView_prescription.TabIndex = 144;
             this.dataGridView_prescription.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_prescription_CellClick);
             // 

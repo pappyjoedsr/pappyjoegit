@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add__invoice));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -181,6 +181,15 @@
             this.txt_TotalCost = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.DGV_Invoice = new System.Windows.Forms.DataGridView();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.txt_SearchProcedure = new System.Windows.Forms.TextBox();
+            this.DGV_Procedure = new System.Windows.Forms.DataGridView();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.list = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.planid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.service_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -199,15 +208,6 @@
             this.complete_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.i_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.img = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.txt_SearchProcedure = new System.Windows.Forms.TextBox();
-            this.DGV_Procedure = new System.Windows.Forms.DataGridView();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.list = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.planid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Img)).BeginInit();
@@ -1988,14 +1988,14 @@
             this.DGV_Invoice.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DGV_Invoice.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DGV_Invoice.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle37.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Invoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Invoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Invoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Invoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.service_id,
@@ -2019,20 +2019,137 @@
             this.DGV_Invoice.Location = new System.Drawing.Point(2, 323);
             this.DGV_Invoice.Name = "DGV_Invoice";
             this.DGV_Invoice.ReadOnly = true;
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Invoice.RowHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Invoice.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DGV_Invoice.RowHeadersVisible = false;
             this.DGV_Invoice.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_Invoice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Invoice.Size = new System.Drawing.Size(933, 308);
             this.DGV_Invoice.TabIndex = 261;
             this.DGV_Invoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Invoice_CellContentClick);
+            // 
+            // panel8
+            // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel8.Controls.Add(this.txt_SearchProcedure);
+            this.panel8.Controls.Add(this.DGV_Procedure);
+            this.panel8.Location = new System.Drawing.Point(942, 142);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(417, 593);
+            this.panel8.TabIndex = 265;
+            // 
+            // txt_SearchProcedure
+            // 
+            this.txt_SearchProcedure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_SearchProcedure.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SearchProcedure.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_SearchProcedure.Location = new System.Drawing.Point(5, 10);
+            this.txt_SearchProcedure.Name = "txt_SearchProcedure";
+            this.txt_SearchProcedure.Size = new System.Drawing.Size(401, 23);
+            this.txt_SearchProcedure.TabIndex = 20;
+            this.txt_SearchProcedure.Text = "search in procedure";
+            this.txt_SearchProcedure.Click += new System.EventHandler(this.txt_SearchProcedure_Click);
+            this.txt_SearchProcedure.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_SearchProcedure_KeyUp);
+            // 
+            // DGV_Procedure
+            // 
+            this.DGV_Procedure.AllowUserToAddRows = false;
+            this.DGV_Procedure.AllowUserToDeleteRows = false;
+            this.DGV_Procedure.AllowUserToResizeColumns = false;
+            this.DGV_Procedure.AllowUserToResizeRows = false;
+            this.DGV_Procedure.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DGV_Procedure.BackgroundColor = System.Drawing.Color.White;
+            this.DGV_Procedure.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.DGV_Procedure.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Procedure.ColumnHeadersVisible = false;
+            this.DGV_Procedure.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column17,
+            this.Column1,
+            this.list,
+            this.Column2,
+            this.planid,
+            this.C_id});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_Procedure.DefaultCellStyle = dataGridViewCellStyle11;
+            this.DGV_Procedure.Location = new System.Drawing.Point(2, 38);
+            this.DGV_Procedure.Name = "DGV_Procedure";
+            this.DGV_Procedure.ReadOnly = true;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Procedure.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.DGV_Procedure.RowHeadersVisible = false;
+            this.DGV_Procedure.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_Procedure.Size = new System.Drawing.Size(413, 550);
+            this.DGV_Procedure.TabIndex = 6;
+            this.DGV_Procedure.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Procedure_CellClick);
+            // 
+            // Column17
+            // 
+            this.Column17.DataPropertyName = "id";
+            this.Column17.HeaderText = "id";
+            this.Column17.Name = "Column17";
+            this.Column17.ReadOnly = true;
+            this.Column17.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "name";
+            this.Column1.HeaderText = "Services";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // list
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.list.DefaultCellStyle = dataGridViewCellStyle9;
+            this.list.HeaderText = "list";
+            this.list.Name = "list";
+            this.list.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "cost";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Column2.HeaderText = "Cost";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // planid
+            // 
+            this.planid.HeaderText = "planid";
+            this.planid.Name = "planid";
+            this.planid.ReadOnly = true;
+            this.planid.Visible = false;
+            // 
+            // C_id
+            // 
+            this.C_id.HeaderText = "C_id";
+            this.C_id.Name = "C_id";
+            this.C_id.ReadOnly = true;
+            this.C_id.Visible = false;
             // 
             // service_id
             // 
@@ -2043,35 +2160,35 @@
             // 
             // Column5
             // 
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle38;
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column5.HeaderText = "SERVICE";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 212;
             // 
             // Column7
             // 
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle39;
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column7.HeaderText = "COST";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            this.Column7.Width = 95;
             // 
             // Column6
             // 
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle40;
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column6.HeaderText = "UNIT";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 102;
             // 
             // Column8
             // 
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column8.HeaderText = "DISCOUNT";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
@@ -2085,16 +2202,16 @@
             // 
             // Column13
             // 
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column13.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column13.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column13.HeaderText = "TAX";
             this.Column13.Name = "Column13";
             this.Column13.ReadOnly = true;
             // 
             // Column14
             // 
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column14.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column14.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column14.HeaderText = "TOTAL";
             this.Column14.Name = "Column14";
             this.Column14.ReadOnly = true;
@@ -2166,123 +2283,6 @@
             this.img.Name = "img";
             this.img.ReadOnly = true;
             this.img.Width = 20;
-            // 
-            // panel8
-            // 
-            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel8.Controls.Add(this.txt_SearchProcedure);
-            this.panel8.Controls.Add(this.DGV_Procedure);
-            this.panel8.Location = new System.Drawing.Point(942, 142);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(417, 593);
-            this.panel8.TabIndex = 265;
-            // 
-            // txt_SearchProcedure
-            // 
-            this.txt_SearchProcedure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_SearchProcedure.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SearchProcedure.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_SearchProcedure.Location = new System.Drawing.Point(5, 10);
-            this.txt_SearchProcedure.Name = "txt_SearchProcedure";
-            this.txt_SearchProcedure.Size = new System.Drawing.Size(401, 23);
-            this.txt_SearchProcedure.TabIndex = 20;
-            this.txt_SearchProcedure.Text = "search in procedure";
-            this.txt_SearchProcedure.Click += new System.EventHandler(this.txt_SearchProcedure_Click);
-            this.txt_SearchProcedure.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_SearchProcedure_KeyUp);
-            // 
-            // DGV_Procedure
-            // 
-            this.DGV_Procedure.AllowUserToAddRows = false;
-            this.DGV_Procedure.AllowUserToDeleteRows = false;
-            this.DGV_Procedure.AllowUserToResizeColumns = false;
-            this.DGV_Procedure.AllowUserToResizeRows = false;
-            this.DGV_Procedure.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DGV_Procedure.BackgroundColor = System.Drawing.Color.White;
-            this.DGV_Procedure.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.DGV_Procedure.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Procedure.ColumnHeadersVisible = false;
-            this.DGV_Procedure.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column17,
-            this.Column1,
-            this.list,
-            this.Column2,
-            this.planid,
-            this.C_id});
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_Procedure.DefaultCellStyle = dataGridViewCellStyle47;
-            this.DGV_Procedure.Location = new System.Drawing.Point(2, 38);
-            this.DGV_Procedure.Name = "DGV_Procedure";
-            this.DGV_Procedure.ReadOnly = true;
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Procedure.RowHeadersDefaultCellStyle = dataGridViewCellStyle48;
-            this.DGV_Procedure.RowHeadersVisible = false;
-            this.DGV_Procedure.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_Procedure.Size = new System.Drawing.Size(413, 550);
-            this.DGV_Procedure.TabIndex = 6;
-            this.DGV_Procedure.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Procedure_CellClick);
-            // 
-            // Column17
-            // 
-            this.Column17.DataPropertyName = "id";
-            this.Column17.HeaderText = "id";
-            this.Column17.Name = "Column17";
-            this.Column17.ReadOnly = true;
-            this.Column17.Visible = false;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.DataPropertyName = "name";
-            this.Column1.HeaderText = "Services";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // list
-            // 
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.list.DefaultCellStyle = dataGridViewCellStyle45;
-            this.list.HeaderText = "list";
-            this.list.Name = "list";
-            this.list.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "cost";
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle46;
-            this.Column2.HeaderText = "Cost";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // planid
-            // 
-            this.planid.HeaderText = "planid";
-            this.planid.Name = "planid";
-            this.planid.ReadOnly = true;
-            this.planid.Visible = false;
-            // 
-            // C_id
-            // 
-            this.C_id.HeaderText = "C_id";
-            this.C_id.Name = "C_id";
-            this.C_id.ReadOnly = true;
-            this.C_id.Visible = false;
             // 
             // Add__invoice
             // 
@@ -2472,6 +2472,18 @@
         private System.Windows.Forms.Label txt_TotalCost;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.DataGridView DGV_Invoice;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox txt_SearchProcedure;
+        private System.Windows.Forms.DataGridView DGV_Procedure;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn list;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn planid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C_id;
+        private System.Windows.Forms.ListBox listpatientsearch;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
         private System.Windows.Forms.DataGridViewTextBoxColumn service_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
@@ -2490,17 +2502,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn complete_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn i_date;
         private System.Windows.Forms.DataGridViewImageColumn img;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox txt_SearchProcedure;
-        private System.Windows.Forms.DataGridView DGV_Procedure;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn list;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn planid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C_id;
-        private System.Windows.Forms.ListBox listpatientsearch;
-        private System.Windows.Forms.ToolStripButton toolStripButton12;
-        private System.Windows.Forms.ToolStripButton toolStripButton13;
     }
 }

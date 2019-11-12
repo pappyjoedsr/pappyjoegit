@@ -56,9 +56,11 @@
             this.colmore = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Purchase)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnexport
@@ -67,7 +69,7 @@
             this.btnexport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnexport.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnexport.ForeColor = System.Drawing.Color.White;
-            this.btnexport.Location = new System.Drawing.Point(640, 48);
+            this.btnexport.Location = new System.Drawing.Point(640, 7);
             this.btnexport.Name = "btnexport";
             this.btnexport.Size = new System.Drawing.Size(74, 30);
             this.btnexport.TabIndex = 301;
@@ -81,7 +83,7 @@
             this.BtnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnShow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.BtnShow.ForeColor = System.Drawing.Color.White;
-            this.BtnShow.Location = new System.Drawing.Point(567, 48);
+            this.BtnShow.Location = new System.Drawing.Point(567, 7);
             this.BtnShow.Name = "BtnShow";
             this.BtnShow.Size = new System.Drawing.Size(74, 30);
             this.BtnShow.TabIndex = 300;
@@ -96,7 +98,7 @@
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(885, 48);
+            this.btn_Refresh.Location = new System.Drawing.Point(885, 7);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(74, 30);
             this.btn_Refresh.TabIndex = 299;
@@ -110,7 +112,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
-            this.panel3.Location = new System.Drawing.Point(0, 33);
+            this.panel3.Location = new System.Drawing.Point(-2, 43);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(979, 1);
             this.panel3.TabIndex = 211;
@@ -120,7 +122,7 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label41.Location = new System.Drawing.Point(7, 7);
+            this.label41.Location = new System.Drawing.Point(4, 6);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(125, 21);
             this.label41.TabIndex = 291;
@@ -132,7 +134,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(828, 3);
+            this.btnCancel.Location = new System.Drawing.Point(874, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(85, 30);
             this.btnCancel.TabIndex = 207;
@@ -147,7 +149,7 @@
             this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPayment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayment.ForeColor = System.Drawing.Color.White;
-            this.btnPayment.Location = new System.Drawing.Point(737, 3);
+            this.btnPayment.Location = new System.Drawing.Point(783, 5);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.Size = new System.Drawing.Size(85, 30);
             this.btnPayment.TabIndex = 206;
@@ -158,7 +160,7 @@
             // rad_Credit
             // 
             this.rad_Credit.AutoSize = true;
-            this.rad_Credit.Location = new System.Drawing.Point(803, 55);
+            this.rad_Credit.Location = new System.Drawing.Point(803, 14);
             this.rad_Credit.Name = "rad_Credit";
             this.rad_Credit.Size = new System.Drawing.Size(76, 17);
             this.rad_Credit.TabIndex = 205;
@@ -171,7 +173,7 @@
             // 
             this.rad_Cash.AutoSize = true;
             this.rad_Cash.Checked = true;
-            this.rad_Cash.Location = new System.Drawing.Point(727, 55);
+            this.rad_Cash.Location = new System.Drawing.Point(727, 14);
             this.rad_Cash.Name = "rad_Cash";
             this.rad_Cash.Size = new System.Drawing.Size(73, 17);
             this.rad_Cash.TabIndex = 204;
@@ -183,14 +185,14 @@
             // 
             // DTP_To
             // 
-            this.DTP_To.Location = new System.Drawing.Point(363, 53);
+            this.DTP_To.Location = new System.Drawing.Point(363, 12);
             this.DTP_To.Name = "DTP_To";
             this.DTP_To.Size = new System.Drawing.Size(200, 20);
             this.DTP_To.TabIndex = 3;
             // 
             // DTP_From
             // 
-            this.DTP_From.Location = new System.Drawing.Point(85, 53);
+            this.DTP_From.Location = new System.Drawing.Point(85, 12);
             this.DTP_From.Name = "DTP_From";
             this.DTP_From.Size = new System.Drawing.Size(200, 20);
             this.DTP_From.TabIndex = 2;
@@ -200,7 +202,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(304, 55);
+            this.label2.Location = new System.Drawing.Point(304, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 17);
             this.label2.TabIndex = 1;
@@ -211,7 +213,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(8, 55);
+            this.label1.Location = new System.Drawing.Point(8, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 17);
             this.label1.TabIndex = 0;
@@ -223,7 +225,7 @@
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(142, 212);
+            this.Lab_Msg.Location = new System.Drawing.Point(142, 216);
             this.Lab_Msg.Name = "Lab_Msg";
             this.Lab_Msg.Size = new System.Drawing.Size(571, 25);
             this.Lab_Msg.TabIndex = 278;
@@ -279,7 +281,7 @@
             this.dgv_Purchase.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_Purchase.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgv_Purchase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Purchase.Size = new System.Drawing.Size(960, 464);
+            this.dgv_Purchase.Size = new System.Drawing.Size(966, 465);
             this.dgv_Purchase.TabIndex = 0;
             this.dgv_Purchase.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Purchase_CellClick);
             this.dgv_Purchase.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgv_Purchase_MouseDoubleClick);
@@ -348,9 +350,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.Lab_Msg);
             this.panel2.Controls.Add(this.dgv_Purchase);
-            this.panel2.Location = new System.Drawing.Point(2, 96);
+            this.panel2.Location = new System.Drawing.Point(2, 99);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(960, 464);
+            this.panel2.Size = new System.Drawing.Size(966, 465);
             this.panel2.TabIndex = 5;
             // 
             // panel1
@@ -361,20 +363,29 @@
             this.panel1.Controls.Add(this.btnexport);
             this.panel1.Controls.Add(this.BtnShow);
             this.panel1.Controls.Add(this.btn_Refresh);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.label41);
-            this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.btnPayment);
             this.panel1.Controls.Add(this.rad_Credit);
             this.panel1.Controls.Add(this.rad_Cash);
             this.panel1.Controls.Add(this.DTP_To);
             this.panel1.Controls.Add(this.DTP_From);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(1, 4);
+            this.panel1.Location = new System.Drawing.Point(1, 49);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(967, 87);
+            this.panel1.Size = new System.Drawing.Size(967, 48);
             this.panel1.TabIndex = 4;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel4.Controls.Add(this.label41);
+            this.panel4.Controls.Add(this.btnCancel);
+            this.panel4.Controls.Add(this.btnPayment);
+            this.panel4.Location = new System.Drawing.Point(2, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(966, 38);
+            this.panel4.TabIndex = 276;
             // 
             // PurchaseList
             // 
@@ -382,8 +393,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(968, 564);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PurchaseList";
@@ -393,6 +406,8 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -424,5 +439,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPayment;
         private System.Windows.Forms.DataGridViewImageColumn colmore;
+        private System.Windows.Forms.Panel panel4;
     }
 }
