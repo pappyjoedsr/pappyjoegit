@@ -212,6 +212,7 @@ namespace PappyjoeMVC.View
                     DataTable dtb= this.cntrl.get_procedureName(txt_procedurename.Text);
                     GetProcedureName(dtb);
                     DataTable dt = this.cntrl.FormLoad();
+                    FormLoad(dt);
                 }
             }
         }

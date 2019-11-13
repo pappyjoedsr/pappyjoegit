@@ -46,7 +46,7 @@ namespace PappyjoeMVC.View
                 printDocument1.DefaultPageSettings.Margins.Top = topmargin;
                 printDocument1.DefaultPageSettings.Margins.Left = leftmargin + 20;
                 printDocument1.DefaultPageSettings.Margins.Bottom = bottommargin;
-                printDocument1.DefaultPageSettings.Margins.Right = rightmargin;
+                printDocument1.DefaultPageSettings.Margins.Right = rightmargin+20;
                 if (combo_paper_size.SelectedIndex != -1)
                 {
                     switch (combo_paper_size.SelectedItem.ToString())

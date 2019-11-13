@@ -125,7 +125,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Patient_search(string _Patientid)
         {
-            DataTable dtdr = db.table("select id, CONCAT(pt_name, ',', age, ',', gender) as patient from tbl_patient where (pt_name like '" + _Patientid + "%'   or pt_id like '%" + _Patientid + "%' or primary_mobile_number like '%" + _Patientid + "%') and Profile_Status = 'Active'");
+            DataTable dtdr = db.table("select id, CONCAT(pt_name, ',', age, ',', gender) as patient from tbl_patient where (pt_name like '%" + _Patientid + "%'   or pt_id like '%" + _Patientid + "%' or primary_mobile_number like '%" + _Patientid + "%') and Profile_Status = 'Active'");
             return dtdr;
         }
         public string permission_for_settings(string doctor_id)

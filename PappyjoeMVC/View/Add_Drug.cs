@@ -138,7 +138,10 @@ namespace PappyjoeMVC.View
             DataTable dt_item_code = this.cntrl.max_itemid();
             if (dt_item_code.Rows.Count > 0)
             {
-                item_id = Convert.ToDouble(dt_item_code.Rows[0][0].ToString());
+                if(dt_item_code.Rows[0][0].ToString()!="")
+                {
+                    item_id = Convert.ToDouble(dt_item_code.Rows[0][0].ToString());
+                }
             }
             txt_ItemCode.Text = "ITEM" + (item_id + 1);
         }
@@ -172,7 +175,7 @@ namespace PappyjoeMVC.View
                 cmb_Unit1.ValueMember = "id";
                 cmb_Unit1.SelectedIndex = 0;
             }
-            DataTable dt_Units2 = this.cntrl.fill_unit();
+            DataTable dt_Units2 = this.cntrl.fill_unit(); 
             if (dt_Units2.Rows.Count > 0)
             {
                 cmb_unit2.DataSource = dt_Units2;

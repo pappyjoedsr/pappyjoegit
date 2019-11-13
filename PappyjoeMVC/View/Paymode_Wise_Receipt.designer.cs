@@ -165,7 +165,16 @@
             "Cash",
             "Cheque",
             "Card",
-            "Demand Draft"});
+            "Demand Draft",
+            "PayTM",
+            "Tez",
+            "UPI",
+            "NEFT/RTGS/IMPS",
+            "Netbanking",
+            "Wallets",
+            "CCAvenue",
+            "PayPal ",
+            "Other"});
             this.Cmb_Modeofpayment.Location = new System.Drawing.Point(1206, 20);
             this.Cmb_Modeofpayment.Name = "Cmb_Modeofpayment";
             this.Cmb_Modeofpayment.Size = new System.Drawing.Size(149, 21);
@@ -279,7 +288,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(3, 16);
+            this.label6.Location = new System.Drawing.Point(3, 5);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(318, 40);
             this.label6.TabIndex = 0;
@@ -591,7 +600,7 @@
             this.panel1.Controls.Add(this.DTP_From);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1369, 121);
+            this.panel1.Size = new System.Drawing.Size(1369, 98);
             this.panel1.TabIndex = 104;
             // 
             // panel4

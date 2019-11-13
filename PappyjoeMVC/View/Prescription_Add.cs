@@ -869,7 +869,7 @@ namespace PappyjoeMVC.View
                         drug_type = dt.Rows[0][3].ToString();
                         richTxtInsrtuction.Hide();
                         richTxtInsrtuction.Text = "";
-                        richTxtInsrtuction.Text = dt.Rows[0]["instructions"].ToString();
+                        //richTxtInsrtuction.Text = dt.Rows[0]["instructions"].ToString();
                     }
                 }
                 else
