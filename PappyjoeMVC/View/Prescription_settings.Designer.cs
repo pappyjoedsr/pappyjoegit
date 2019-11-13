@@ -84,7 +84,7 @@
             this.button_addunit.FlatAppearance.BorderSize = 0;
             this.button_addunit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_addunit.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.button_addunit.Location = new System.Drawing.Point(284, 128);
+            this.button_addunit.Location = new System.Drawing.Point(284, 126);
             this.button_addunit.Name = "button_addunit";
             this.button_addunit.Size = new System.Drawing.Size(83, 23);
             this.button_addunit.TabIndex = 127;
@@ -96,7 +96,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.ForeColor = System.Drawing.Color.Red;
-            this.label39.Location = new System.Drawing.Point(286, 84);
+            this.label39.Location = new System.Drawing.Point(286, 81);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(86, 13);
             this.label39.TabIndex = 136;
@@ -109,7 +109,7 @@
             this.txtitemname.BackColor = System.Drawing.Color.White;
             this.txtitemname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtitemname.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtitemname.Location = new System.Drawing.Point(111, 51);
+            this.txtitemname.Location = new System.Drawing.Point(111, 50);
             this.txtitemname.Name = "txtitemname";
             this.txtitemname.Size = new System.Drawing.Size(164, 22);
             this.txtitemname.TabIndex = 1;
@@ -120,7 +120,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(12, 9);
+            this.label4.Location = new System.Drawing.Point(16, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 25);
             this.label4.TabIndex = 143;
@@ -131,7 +131,7 @@
             this.text_strength.BackColor = System.Drawing.Color.White;
             this.text_strength.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_strength.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_strength.Location = new System.Drawing.Point(110, 129);
+            this.text_strength.Location = new System.Drawing.Point(110, 126);
             this.text_strength.Name = "text_strength";
             this.text_strength.Size = new System.Drawing.Size(77, 22);
             this.text_strength.TabIndex = 12;
@@ -141,7 +141,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label19.Location = new System.Drawing.Point(60, 92);
+            this.label19.Location = new System.Drawing.Point(60, 91);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(35, 17);
             this.label19.TabIndex = 132;
@@ -152,7 +152,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label22.Location = new System.Drawing.Point(38, 126);
+            this.label22.Location = new System.Drawing.Point(38, 129);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(57, 17);
             this.label22.TabIndex = 133;
@@ -165,7 +165,7 @@
             this.combo_unit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_unit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combo_unit.FormattingEnabled = true;
-            this.combo_unit.Location = new System.Drawing.Point(196, 128);
+            this.combo_unit.Location = new System.Drawing.Point(196, 126);
             this.combo_unit.Name = "combo_unit";
             this.combo_unit.Size = new System.Drawing.Size(81, 23);
             this.combo_unit.TabIndex = 135;
@@ -185,7 +185,7 @@
             // 
             this.rich_instruction.BackColor = System.Drawing.Color.White;
             this.rich_instruction.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rich_instruction.Location = new System.Drawing.Point(111, 170);
+            this.rich_instruction.Location = new System.Drawing.Point(111, 161);
             this.rich_instruction.Name = "rich_instruction";
             this.rich_instruction.Size = new System.Drawing.Size(164, 28);
             this.rich_instruction.TabIndex = 128;
@@ -197,7 +197,7 @@
             this.button_cancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_cancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_cancel.Location = new System.Drawing.Point(213, 203);
+            this.button_cancel.Location = new System.Drawing.Point(212, 203);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(63, 25);
             this.button_cancel.TabIndex = 130;
@@ -210,7 +210,7 @@
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel2.Location = new System.Drawing.Point(377, 98);
+            this.linkLabel2.Location = new System.Drawing.Point(377, 93);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(33, 13);
             this.linkLabel2.TabIndex = 137;
@@ -237,7 +237,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.ForeColor = System.Drawing.Color.Red;
-            this.label30.Location = new System.Drawing.Point(291, 54);
+            this.label30.Location = new System.Drawing.Point(291, 55);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(121, 13);
             this.label30.TabIndex = 142;
@@ -248,7 +248,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(92, 94);
+            this.label2.Location = new System.Drawing.Point(92, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(14, 18);
             this.label2.TabIndex = 140;
@@ -261,7 +261,7 @@
             this.combotype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combotype.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combotype.FormattingEnabled = true;
-            this.combotype.Location = new System.Drawing.Point(111, 89);
+            this.combotype.Location = new System.Drawing.Point(111, 88);
             this.combotype.Name = "combotype";
             this.combotype.Size = new System.Drawing.Size(164, 23);
             this.combotype.TabIndex = 123;
@@ -282,7 +282,7 @@
             // 
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel3.Location = new System.Drawing.Point(377, 136);
+            this.linkLabel3.Location = new System.Drawing.Point(377, 131);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(33, 13);
             this.linkLabel3.TabIndex = 138;
@@ -319,7 +319,7 @@
             this.button_addtype.FlatAppearance.BorderSize = 0;
             this.button_addtype.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_addtype.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.button_addtype.Location = new System.Drawing.Point(284, 93);
+            this.button_addtype.Location = new System.Drawing.Point(284, 88);
             this.button_addtype.Name = "button_addtype";
             this.button_addtype.Size = new System.Drawing.Size(88, 23);
             this.button_addtype.TabIndex = 124;
@@ -400,7 +400,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_prescription.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView_prescription.Location = new System.Drawing.Point(110, 283);
+            this.dataGridView_prescription.Location = new System.Drawing.Point(111, 283);
             this.dataGridView_prescription.MultiSelect = false;
             this.dataGridView_prescription.Name = "dataGridView_prescription";
             this.dataGridView_prescription.ReadOnly = true;
@@ -531,7 +531,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.ForeColor = System.Drawing.Color.Red;
-            this.label34.Location = new System.Drawing.Point(503, 57);
+            this.label34.Location = new System.Drawing.Point(503, 55);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(86, 13);
             this.label34.TabIndex = 151;

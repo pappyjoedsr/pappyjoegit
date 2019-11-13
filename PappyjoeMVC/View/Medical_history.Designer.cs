@@ -37,6 +37,10 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.Dgv_medhist = new System.Windows.Forms.DataGridView();
+            this.mid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.button_add = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,20 +54,16 @@
             this.textBox_group = new System.Windows.Forms.TextBox();
             this.button_group = new System.Windows.Forms.Button();
             this.dataGridView_group = new System.Windows.Forms.DataGridView();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.mid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.medicl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.gid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gsl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Medgroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gedit = new System.Windows.Forms.DataGridViewImageColumn();
             this.gdelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_medhist)).BeginInit();
@@ -76,7 +76,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline);
-            this.label2.Location = new System.Drawing.Point(25, 5);
+            this.label2.Location = new System.Drawing.Point(16, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(143, 25);
             this.label2.TabIndex = 3;
@@ -162,6 +162,39 @@
             this.Dgv_medhist.Size = new System.Drawing.Size(386, 346);
             this.Dgv_medhist.TabIndex = 4;
             this.Dgv_medhist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_medhist_CellClick);
+            // 
+            // mid
+            // 
+            this.mid.DataPropertyName = "id";
+            this.mid.HeaderText = "Id";
+            this.mid.Name = "mid";
+            this.mid.ReadOnly = true;
+            this.mid.Visible = false;
+            // 
+            // medicl
+            // 
+            this.medicl.DataPropertyName = "name";
+            this.medicl.HeaderText = "Medical History";
+            this.medicl.Name = "medicl";
+            this.medicl.ReadOnly = true;
+            this.medicl.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.medicl.Width = 313;
+            // 
+            // edit
+            // 
+            this.edit.HeaderText = "";
+            this.edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            this.edit.Width = 19;
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "";
+            this.delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Width = 19;
             // 
             // label8
             // 
@@ -256,7 +289,7 @@
             this.btn_Cancelgroup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Cancelgroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancelgroup.ForeColor = System.Drawing.Color.White;
-            this.btn_Cancelgroup.Location = new System.Drawing.Point(182, 53);
+            this.btn_Cancelgroup.Location = new System.Drawing.Point(199, 53);
             this.btn_Cancelgroup.Name = "btn_Cancelgroup";
             this.btn_Cancelgroup.Size = new System.Drawing.Size(75, 28);
             this.btn_Cancelgroup.TabIndex = 280;
@@ -271,7 +304,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(20, 25);
+            this.label5.Location = new System.Drawing.Point(51, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 17);
             this.label5.TabIndex = 276;
@@ -280,7 +313,7 @@
             // textBox_group
             // 
             this.textBox_group.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.textBox_group.Location = new System.Drawing.Point(99, 22);
+            this.textBox_group.Location = new System.Drawing.Point(116, 22);
             this.textBox_group.Name = "textBox_group";
             this.textBox_group.Size = new System.Drawing.Size(329, 22);
             this.textBox_group.TabIndex = 275;
@@ -291,7 +324,7 @@
             this.button_group.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_group.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_group.ForeColor = System.Drawing.Color.White;
-            this.button_group.Location = new System.Drawing.Point(99, 53);
+            this.button_group.Location = new System.Drawing.Point(116, 53);
             this.button_group.Name = "button_group";
             this.button_group.Size = new System.Drawing.Size(75, 28);
             this.button_group.TabIndex = 80;
@@ -325,7 +358,7 @@
             this.Medgroup,
             this.gedit,
             this.gdelete});
-            this.dataGridView_group.Location = new System.Drawing.Point(99, 128);
+            this.dataGridView_group.Location = new System.Drawing.Point(116, 128);
             this.dataGridView_group.Name = "dataGridView_group";
             this.dataGridView_group.ReadOnly = true;
             this.dataGridView_group.RowHeadersVisible = false;
@@ -334,73 +367,6 @@
             this.dataGridView_group.Size = new System.Drawing.Size(298, 294);
             this.dataGridView_group.TabIndex = 271;
             this.dataGridView_group.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_group_CellClick);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 23;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 27;
-            // 
-            // dataGridViewImageColumn3
-            // 
-            this.dataGridViewImageColumn3.HeaderText = "";
-            this.dataGridViewImageColumn3.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
-            this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn3.Width = 35;
-            // 
-            // dataGridViewImageColumn4
-            // 
-            this.dataGridViewImageColumn4.HeaderText = "";
-            this.dataGridViewImageColumn4.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
-            this.dataGridViewImageColumn4.Width = 35;
-            // 
-            // mid
-            // 
-            this.mid.DataPropertyName = "id";
-            this.mid.HeaderText = "Id";
-            this.mid.Name = "mid";
-            this.mid.ReadOnly = true;
-            this.mid.Visible = false;
-            // 
-            // medicl
-            // 
-            this.medicl.DataPropertyName = "name";
-            this.medicl.HeaderText = "Medical History";
-            this.medicl.Name = "medicl";
-            this.medicl.ReadOnly = true;
-            this.medicl.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.medicl.Width = 313;
-            // 
-            // edit
-            // 
-            this.edit.HeaderText = "";
-            this.edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.edit.Name = "edit";
-            this.edit.ReadOnly = true;
-            this.edit.Width = 19;
-            // 
-            // delete
-            // 
-            this.delete.HeaderText = "";
-            this.delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Width = 19;
             // 
             // gid
             // 
@@ -441,6 +407,40 @@
             this.gdelete.Name = "gdelete";
             this.gdelete.ReadOnly = true;
             this.gdelete.Width = 19;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 23;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 27;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.HeaderText = "";
+            this.dataGridViewImageColumn3.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn3.Width = 35;
+            // 
+            // dataGridViewImageColumn4
+            // 
+            this.dataGridViewImageColumn4.HeaderText = "";
+            this.dataGridViewImageColumn4.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
+            this.dataGridViewImageColumn4.Width = 35;
             // 
             // Medical_History
             // 

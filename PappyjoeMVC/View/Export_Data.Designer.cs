@@ -119,7 +119,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline);
             this.label19.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label19.Location = new System.Drawing.Point(24, 9);
+            this.label19.Location = new System.Drawing.Point(16, 8);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(66, 25);
             this.label19.TabIndex = 126;
@@ -131,7 +131,7 @@
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(582, 105);
+            this.label6.Location = new System.Drawing.Point(582, 106);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 17);
             this.label6.TabIndex = 163;
@@ -142,7 +142,7 @@
             this.cmbDoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDoctor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDoctor.FormattingEnabled = true;
-            this.cmbDoctor.Location = new System.Drawing.Point(639, 102);
+            this.cmbDoctor.Location = new System.Drawing.Point(639, 103);
             this.cmbDoctor.Name = "cmbDoctor";
             this.cmbDoctor.Size = new System.Drawing.Size(184, 23);
             this.cmbDoctor.TabIndex = 162;
@@ -171,14 +171,14 @@
             // 
             // dtpTo
             // 
-            this.dtpTo.Location = new System.Drawing.Point(344, 103);
+            this.dtpTo.Location = new System.Drawing.Point(344, 104);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(200, 20);
             this.dtpTo.TabIndex = 159;
             // 
             // dtpFrom
             // 
-            this.dtpFrom.Location = new System.Drawing.Point(86, 103);
+            this.dtpFrom.Location = new System.Drawing.Point(86, 104);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(200, 20);
             this.dtpFrom.TabIndex = 158;
