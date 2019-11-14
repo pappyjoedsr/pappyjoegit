@@ -1067,12 +1067,12 @@ namespace PappyjoeMVC.View
                 {
                     int newQty = 0;
                     int qty = 0;
-                    int mf = 0;
+                    int mf = 0;string expdate = "";
                     DataTable dtunit2 = new DataTable();
                     check();
                     if (flagcheck == true)
                     {
-                        if (txt_SupplierId.Text != "")
+                        if (txt_SupplierId.Text != "") 
                         {
                             string IsExpDate = "";
                             DataTable dt = new DataTable();
@@ -1113,10 +1113,12 @@ namespace PappyjoeMVC.View
                                     if (dgvGridData.Rows[l].Cells["Exp_Date"].Value.ToString() != "" && dgvGridData.Rows[l].Cells["Exp_Date"].Value.ToString() != null)
                                     {
                                         IsExpDate = "Yes";
+                                        expdate = Convert.ToDateTime(dgvGridData.Rows[l].Cells["Exp_Date"].Value.ToString()).ToString("yyyy-MM-dd");
                                     }
                                     else
                                     {
                                         IsExpDate = "NO";
+                                        expdate = "";
                                     }
                                     dt = this.cntrl.Get_unites(dgvGridData.Rows[l].Cells["tempItem_code"].Value.ToString());
                                     if (dt.Rows.Count > 0)
@@ -1147,7 +1149,7 @@ namespace PappyjoeMVC.View
                                     {
                                         newQty = Convert.ToInt32(dgvGridData.Rows[l].Cells["col_temp_qty"].Value.ToString());
                                     }
-                                    a = this.cntrl.save_batchNumber(dgvGridData.Rows[l].Cells["tempItem_code"].Value.ToString(), dgvGridData.Rows[l].Cells["Branch_No"].Value.ToString(), newQty, unit2Is, dt.Rows[0]["UnitMF"].ToString(), txtPurchInvNumber.Text, Convert.ToDateTime(dgvGridData.Rows[l].Cells["Prd_Date"].Value.ToString()).ToString("yyyy-MM-dd"),dgvGridData.Rows[l].Cells["Exp_Date"].Value.ToString(), dgvGridData.Rows[l].Cells["period"].Value.ToString(), txt_SupplierId.Text, dtpPurchDate.Value.ToString("yyyy-MM-dd"), IsExpDate);
+                                    a = this.cntrl.save_batchNumber(dgvGridData.Rows[l].Cells["tempItem_code"].Value.ToString(), dgvGridData.Rows[l].Cells["Branch_No"].Value.ToString(), newQty, unit2Is, dt.Rows[0]["UnitMF"].ToString(), txtPurchInvNumber.Text, Convert.ToDateTime(dgvGridData.Rows[l].Cells["Prd_Date"].Value.ToString()).ToString("yyyy-MM-dd"), expdate, dgvGridData.Rows[l].Cells["period"].Value.ToString(), txt_SupplierId.Text, dtpPurchDate.Value.ToString("yyyy-MM-dd"), IsExpDate);
                                     if (a > 0)
                                     {
                                         batch_entry = this.cntrl.get_maxEntryNo();
@@ -1170,7 +1172,7 @@ namespace PappyjoeMVC.View
                                                 tempqty = Convert.ToDecimal(dgvGridData.Rows[l].Cells["col_temp_qty"].Value.ToString());
                                             }
 
-                                            this.cntrl.save_batchpurchase(txtPurchInvNumber.Text, dtpPurchDate.Value.ToString("yyyy-MM-dd"), txt_SupplierId.Text, dgvGridData.Rows[l].Cells["tempItem_code"].Value.ToString(), dgvGridData.Rows[l].Cells["Branch_No"].Value.ToString(), tempqty, unit2Is, dt.Rows[0]["UnitMF"].ToString(), Convert.ToDateTime(dgvGridData.Rows[l].Cells["Prd_Date"].Value.ToString()).ToString("yyyy-MM-dd"),dgvGridData.Rows[l].Cells["Exp_Date"].Value.ToString(), IsExpDate, batch_entry.Rows[0][0].ToString());
+                                            this.cntrl.save_batchpurchase(txtPurchInvNumber.Text, dtpPurchDate.Value.ToString("yyyy-MM-dd"), txt_SupplierId.Text, dgvGridData.Rows[l].Cells["tempItem_code"].Value.ToString(), dgvGridData.Rows[l].Cells["Branch_No"].Value.ToString(), tempqty, unit2Is, dt.Rows[0]["UnitMF"].ToString(), Convert.ToDateTime(dgvGridData.Rows[l].Cells["Prd_Date"].Value.ToString()).ToString("yyyy-MM-dd"), expdate, IsExpDate, batch_entry.Rows[0][0].ToString());
                                         }
                                     }
                                 }

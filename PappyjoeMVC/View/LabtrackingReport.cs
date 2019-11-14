@@ -241,7 +241,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                DataTable dtdr = this.ctrlr.Patient_search(patient_id);
+                DataTable dtdr = this.ctrlr.Patient_search(toolStripTextBox1.Text);
                 if (toolStripTextBox1.Text != "")
                 {
                     listpatientsearch.DataSource = dtdr;

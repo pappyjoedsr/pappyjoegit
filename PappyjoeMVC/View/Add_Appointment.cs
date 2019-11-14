@@ -123,6 +123,18 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.ShowDialog();
         }
+
+        private void listpatientsearch_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            var form2 = new Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = listpatientsearch.SelectedValue.ToString();
+            listpatientsearch.Visible = false;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
             try
@@ -218,7 +230,7 @@ namespace PappyjoeMVC.View
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
             var form2 = new Patient_Profile_Details();
-            form2.doctor_id = doctor_id;
+            form2.doctor_id = doctor_id; 
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
             form2.Closed += (sender1, args) => this.Close();
@@ -587,10 +599,10 @@ namespace PappyjoeMVC.View
                                         text = "You have an appointment on " + dpStartTimeDate.Value.ToShortDateString() + " " + cmbStartTime.Text + " With " + patient_name + " for " + compoprocedure.Text + " at " + clinicn + "," + contact_no;
                                         string smsdctr3=this.ctrlr.SendSMS(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT1.ToString("dd/MM/yyyy") + before_time, DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
                                     }
-                                }
+                                } 
                             }
                         }//Doctor SMS End
-                        if (checkBox2.Checked)
+                        if (checkBox2.Checked) 
                         {
                             DataTable email=this.ctrlr.send_email();
                             send_email(email);
