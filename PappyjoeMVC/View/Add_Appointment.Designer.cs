@@ -82,7 +82,6 @@
             this.linkLabel_Name = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelallpatient = new System.Windows.Forms.Label();
-            this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.btn_Close = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
             this.label41 = new System.Windows.Forms.Label();
@@ -90,6 +89,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabel_id = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.panel6.SuspendLayout();
             this.label26.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -734,21 +734,6 @@
             this.labelallpatient.Visible = false;
             this.labelallpatient.Click += new System.EventHandler(this.labelallpatient_Click);
             // 
-            // listpatientsearch
-            // 
-            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.listpatientsearch.FormattingEnabled = true;
-            this.listpatientsearch.ItemHeight = 20;
-            this.listpatientsearch.Location = new System.Drawing.Point(1015, 40);
-            this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
-            this.listpatientsearch.TabIndex = 295;
-            this.listpatientsearch.Visible = false;
-            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
-            // 
             // btn_Close
             // 
             this.btn_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -834,6 +819,20 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 72;
             this.pictureBox1.TabStop = false;
+            // 
+            // listpatientsearch
+            // 
+            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.listpatientsearch.FormattingEnabled = true;
+            this.listpatientsearch.ItemHeight = 20;
+            this.listpatientsearch.Location = new System.Drawing.Point(993, 40);
+            this.listpatientsearch.Name = "listpatientsearch";
+            this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
+            this.listpatientsearch.TabIndex = 312;
+            this.listpatientsearch.Visible = false;
+            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick_1);
             // 
             // Add_Appointment
             // 
@@ -927,7 +926,6 @@
         private System.Windows.Forms.LinkLabel linkLabel_Name;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelallpatient;
-        private System.Windows.Forms.ListBox listpatientsearch;
         private System.Windows.Forms.Button btn_Close;
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.Label label41;
@@ -937,5 +935,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.ListBox listpatientsearch;
     }
 }
