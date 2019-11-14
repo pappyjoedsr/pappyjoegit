@@ -172,7 +172,6 @@ namespace PappyjoeMVC.View
                         form2.Closed += (sender1, args) => this.Close();
                         this.Close();
                     }
-
                 }
                 else
                     this.Close();
@@ -230,7 +229,6 @@ namespace PappyjoeMVC.View
                         form2.Closed += (sender1, args) => this.Close();
                         this.Close();
                     }
-
                 }
                 else
                     this.Close();
@@ -242,3 +240,4 @@ namespace PappyjoeMVC.View
         }
     }
 }
+ 

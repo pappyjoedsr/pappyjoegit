@@ -76,7 +76,7 @@ namespace PappyjoeMVC
                     foreach (IPAddress ip4 in addresslist.Where(ip => ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork))
                     {
                         Microsoft.Win32.RegistryKey pappyjoeRegistryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("pappyjoe");
-                        pappyjoeRegistryKey.SetValue("IP", ip4.ToString());
+                        pappyjoeRegistryKey.SetValue("IP",ip4.ToString());
                     }
                 }
             }

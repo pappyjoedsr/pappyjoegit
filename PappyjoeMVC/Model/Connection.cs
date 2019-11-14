@@ -113,11 +113,22 @@ namespace PappyjoeMVC.Model
         public int execute(string s)
         {
             int i = 0;
-            if (this.OpenConnection() == true)
+            try
             {
-                MySqlCommand cmd = new MySqlCommand(s, con);
-                i = cmd.ExecuteNonQuery();
-                this.CloseConnection();
+                if (this.OpenConnection() == true)
+                {
+                    MySqlCommand cmd = new MySqlCommand(s, con);
+                    i = cmd.ExecuteNonQuery();
+                    this.CloseConnection();
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                con.Close();
             }
             return i;
         }
@@ -133,7 +144,10 @@ namespace PappyjoeMVC.Model
                 this.CloseConnection();
             }
             catch (Exception ex) { r = "0"; con.Close(); }
-            con.Close();
+            finally
+            {
+                con.Close();
+            }
             return r;
         }
         public DataTable table(string s)
@@ -153,6 +167,10 @@ namespace PappyjoeMVC.Model
             {
                 MessageBox.Show(ex.Message, "Server Not Found", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                con.Close();
             }
             return dt;
         }
