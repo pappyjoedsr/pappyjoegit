@@ -114,7 +114,7 @@ namespace PappyjoeMVC.View
                 {
                     ptcheck = "No";
                 }
-                if (cmd == "")
+                if (cmd == "0")
                 {
                     int i = this.cntrl.save_patientid(text_number.Text, text_prefix.Text, ptcheck);
                     if (i > 0)
