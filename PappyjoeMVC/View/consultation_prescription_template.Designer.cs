@@ -1,4 +1,4 @@
-﻿namespace PappyjoeMVC.View
+﻿namespace Pappyjoe
 {
     partial class consultation_prescription_template
     {
@@ -31,119 +31,46 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(consultation_prescription_template));
-            this.button2 = new System.Windows.Forms.Button();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instruction = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.food = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.neight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.morning = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strengthgr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strength = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drgname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView_templatenew = new System.Windows.Forms.DataGridView();
-            this.PERIOD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LAb_Drugname = new System.Windows.Forms.Label();
             this.txt_tempName = new System.Windows.Forms.TextBox();
+            this.LAb_Drugname = new System.Windows.Forms.Label();
+            this.dataGridView_templatenew = new System.Windows.Forms.DataGridView();
+            this.drgname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.strength = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.strengthgr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PERIOD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.morning = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.neight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.food = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instruction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_templatenew)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // txt_tempName
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.Tomato;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(859, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 27);
-            this.button2.TabIndex = 335;
-            this.button2.Text = "CLOSE";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.txt_tempName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tempName.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_tempName.Location = new System.Drawing.Point(108, 6);
+            this.txt_tempName.Name = "txt_tempName";
+            this.txt_tempName.Size = new System.Drawing.Size(212, 22);
+            this.txt_tempName.TabIndex = 329;
             // 
-            // type
+            // LAb_Drugname
             // 
-            this.type.HeaderText = "type";
-            this.type.Name = "type";
-            this.type.ReadOnly = true;
-            this.type.Visible = false;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // instruction
-            // 
-            this.instruction.HeaderText = "INSTRUCTIONS";
-            this.instruction.Name = "instruction";
-            this.instruction.ReadOnly = true;
-            this.instruction.Width = 150;
-            // 
-            // food
-            // 
-            this.food.HeaderText = "FOOD";
-            this.food.Name = "food";
-            this.food.ReadOnly = true;
-            // 
-            // neight
-            // 
-            this.neight.HeaderText = "NIGHT";
-            this.neight.Name = "neight";
-            this.neight.ReadOnly = true;
-            // 
-            // noon
-            // 
-            this.noon.HeaderText = "NOON";
-            this.noon.Name = "noon";
-            this.noon.ReadOnly = true;
-            // 
-            // status1
-            // 
-            this.status1.HeaderText = "status1";
-            this.status1.Name = "status1";
-            this.status1.ReadOnly = true;
-            // 
-            // morning
-            // 
-            this.morning.HeaderText = "MORNING";
-            this.morning.Name = "morning";
-            this.morning.ReadOnly = true;
-            // 
-            // duration
-            // 
-            this.duration.HeaderText = "DURATION";
-            this.duration.Name = "duration";
-            this.duration.ReadOnly = true;
-            // 
-            // strengthgr
-            // 
-            this.strengthgr.HeaderText = "STRENGTH GR";
-            this.strengthgr.Name = "strengthgr";
-            this.strengthgr.ReadOnly = true;
-            this.strengthgr.Visible = false;
-            this.strengthgr.Width = 30;
-            // 
-            // strength
-            // 
-            this.strength.HeaderText = "STRENGTH";
-            this.strength.Name = "strength";
-            this.strength.ReadOnly = true;
-            // 
-            // drgname
-            // 
-            this.drgname.HeaderText = "DRUG NAME";
-            this.drgname.Name = "drgname";
-            this.drgname.ReadOnly = true;
-            this.drgname.Width = 180;
+            this.LAb_Drugname.AutoSize = true;
+            this.LAb_Drugname.BackColor = System.Drawing.SystemColors.Control;
+            this.LAb_Drugname.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LAb_Drugname.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.LAb_Drugname.Location = new System.Drawing.Point(12, 9);
+            this.LAb_Drugname.Name = "LAb_Drugname";
+            this.LAb_Drugname.Size = new System.Drawing.Size(92, 15);
+            this.LAb_Drugname.TabIndex = 328;
+            this.LAb_Drugname.Text = "Template Name";
             // 
             // dataGridView_templatenew
             // 
@@ -193,7 +120,34 @@
             this.dataGridView_templatenew.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_templatenew.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_templatenew.Size = new System.Drawing.Size(932, 176);
-            this.dataGridView_templatenew.TabIndex = 334;
+            this.dataGridView_templatenew.TabIndex = 330;
+            // 
+            // drgname
+            // 
+            this.drgname.HeaderText = "DRUG NAME";
+            this.drgname.Name = "drgname";
+            this.drgname.ReadOnly = true;
+            this.drgname.Width = 180;
+            // 
+            // strength
+            // 
+            this.strength.HeaderText = "STRENGTH";
+            this.strength.Name = "strength";
+            this.strength.ReadOnly = true;
+            // 
+            // strengthgr
+            // 
+            this.strengthgr.HeaderText = "STRENGTH GR";
+            this.strengthgr.Name = "strengthgr";
+            this.strengthgr.ReadOnly = true;
+            this.strengthgr.Visible = false;
+            this.strengthgr.Width = 30;
+            // 
+            // duration
+            // 
+            this.duration.HeaderText = "DURATION";
+            this.duration.Name = "duration";
+            this.duration.ReadOnly = true;
             // 
             // PERIOD
             // 
@@ -203,26 +157,72 @@
             this.PERIOD.Visible = false;
             this.PERIOD.Width = 50;
             // 
-            // LAb_Drugname
+            // morning
             // 
-            this.LAb_Drugname.AutoSize = true;
-            this.LAb_Drugname.BackColor = System.Drawing.SystemColors.Control;
-            this.LAb_Drugname.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LAb_Drugname.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.LAb_Drugname.Location = new System.Drawing.Point(12, 6);
-            this.LAb_Drugname.Name = "LAb_Drugname";
-            this.LAb_Drugname.Size = new System.Drawing.Size(91, 15);
-            this.LAb_Drugname.TabIndex = 332;
-            this.LAb_Drugname.Text = "Template Name";
+            this.morning.HeaderText = "MORNING";
+            this.morning.Name = "morning";
+            this.morning.ReadOnly = true;
             // 
-            // txt_tempName
+            // noon
             // 
-            this.txt_tempName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tempName.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_tempName.Location = new System.Drawing.Point(108, 3);
-            this.txt_tempName.Name = "txt_tempName";
-            this.txt_tempName.Size = new System.Drawing.Size(212, 22);
-            this.txt_tempName.TabIndex = 333;
+            this.noon.HeaderText = "NOON";
+            this.noon.Name = "noon";
+            this.noon.ReadOnly = true;
+            // 
+            // neight
+            // 
+            this.neight.HeaderText = "NIGHT";
+            this.neight.Name = "neight";
+            this.neight.ReadOnly = true;
+            // 
+            // food
+            // 
+            this.food.HeaderText = "FOOD";
+            this.food.Name = "food";
+            this.food.ReadOnly = true;
+            // 
+            // instruction
+            // 
+            this.instruction.HeaderText = "INSTRUCTIONS";
+            this.instruction.Name = "instruction";
+            this.instruction.ReadOnly = true;
+            this.instruction.Width = 150;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // type
+            // 
+            this.type.HeaderText = "type";
+            this.type.Name = "type";
+            this.type.ReadOnly = true;
+            this.type.Visible = false;
+            // 
+            // status1
+            // 
+            this.status1.HeaderText = "status1";
+            this.status1.Name = "status1";
+            this.status1.ReadOnly = true;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.Tomato;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(859, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(73, 27);
+            this.button2.TabIndex = 331;
+            this.button2.Text = "CLOSE";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // consultation_prescription_template
             // 
@@ -232,9 +232,12 @@
             this.ClientSize = new System.Drawing.Size(932, 224);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView_templatenew);
-            this.Controls.Add(this.LAb_Drugname);
             this.Controls.Add(this.txt_tempName);
+            this.Controls.Add(this.LAb_Drugname);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "consultation_prescription_template";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Prescription Template";
@@ -247,22 +250,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn instruction;
-        private System.Windows.Forms.DataGridViewTextBoxColumn food;
-        private System.Windows.Forms.DataGridViewTextBoxColumn neight;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn morning;
-        private System.Windows.Forms.DataGridViewTextBoxColumn duration;
-        private System.Windows.Forms.DataGridViewTextBoxColumn strengthgr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn strength;
-        private System.Windows.Forms.DataGridViewTextBoxColumn drgname;
-        private System.Windows.Forms.DataGridView dataGridView_templatenew;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PERIOD;
-        private System.Windows.Forms.Label LAb_Drugname;
         private System.Windows.Forms.TextBox txt_tempName;
+        private System.Windows.Forms.Label LAb_Drugname;
+        private System.Windows.Forms.DataGridView dataGridView_templatenew;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drgname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn strength;
+        private System.Windows.Forms.DataGridViewTextBoxColumn strengthgr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PERIOD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn morning;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn neight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn food;
+        private System.Windows.Forms.DataGridViewTextBoxColumn instruction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status1;
     }
 }
