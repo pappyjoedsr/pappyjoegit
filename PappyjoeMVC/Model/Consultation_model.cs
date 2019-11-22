@@ -15,10 +15,35 @@ namespace PappyjoeMVC.Model
             DataTable dtdr = db.table("select id,pt_name from tbl_patient where pt_name like '%" + search + "%'  ");
             return dtdr;
         }
+        public DataTable srch_patient(string ptname,string mobno)
+        {
+            DataTable dtdr = db.table("select id,pt_name from tbl_patient where pt_name like '%" + ptname + "%'  or primary_mobile_number like '%" + mobno + "%'");
+            return dtdr;
+        }
+        public DataTable get_tmplates()
+        {
+            DataTable dt2 = db.table("select id,templates from tbl_templates_main ORDER BY id DESC");
+            return dt2;
+        }
         public DataTable patient_details(string value)
         {
             DataTable patient = db.table("select id, pt_name,pt_id from tbl_patient where id='" + value + "'");
             return patient;
+        }
+        public DataTable get_prescriptn()
+        {
+            DataTable dt_prescription = db.table("select id,CONCAT(name,' ', type ) as name, CONCAT(strength_gr ,' ' , strength ) as type,inventory_id from tbl_adddrug ORDER BY id DESC limit 30");
+            return dt_prescription;
+        }
+        public DataTable get_prescriptnwthname(string pescrptn)
+        {
+            DataTable dt_prescription = db.table("select id,CONCAT(name,' ', type ) as name, CONCAT(strength_gr ,' ' , strength ) as type,inventory_id from tbl_adddrug where name like '%" + pescrptn + "%'  ORDER BY id DESC Limit 30");
+            return dt_prescription;
+        }
+        public DataTable get_unit()
+        {
+            DataTable unt = db.table("select * from tbl_unit");
+            return unt;
         }
         public DataTable search_procedure(string search)
         {
@@ -82,6 +107,11 @@ namespace PappyjoeMVC.Model
         {
             db.execute("insert into tbl_completed_id (completed_date,patient_id,review) values('" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "','" + patient_id + "','NO')");
         }
+        public DataTable get_invoice_data()
+        {
+            DataTable dtb = db.table("select invoice_prefix,invoice_number from tbl_invoice_automaticid where invoive_automation='Yes' ");
+            return dtb;
+        }
         public string max_completedid()
         {
             string dt_CMain = db.scalar("select MAX(id) from tbl_completed_id");
@@ -104,7 +134,7 @@ namespace PappyjoeMVC.Model
         {
             db.execute("insert into tbl_invoices(invoice_no,pt_name,pt_id,service_id,services,unit,cost,discount,discount_type,total,date,total_cost,total_discount,dr_id,discountin_rs,total_payment,invoice_main_id,tax_inrs,tax,total_tax,grant_total,plan_id,completed_id,notes) values('" + invoice + "','" + pt_name + "','" + patient_id + "','" + service_id + "','" + services + "','1','" + cost + "','0','INR','" + total + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','100','','" + dr_id + "','','100','" + Invoice_main_id + "','0','NA','0','100','0','" +completed_procedures_id + "','')");
         }
-        public void save_receipt(string receipt,decimal advance,string amount_paid,string invoice,string procedure_name, string patient_id,string dr_id,string total,string pt_name,long Invoice_main_id)
+        public void save_receipt(string receipt,decimal advance,string amount_paid,string invoice,string procedure_name, string patient_id,string dr_id,string total,string cost,string pt_name,long Invoice_main_id)
         {
             db.execute("insert into tbl_payment(receipt_no,advance,amount_paid,invoice_no,procedure_name,pt_id,payment_date,dr_id,total,cost,pt_name,mode_of_payment,payment_due)values('" + receipt + "','" + advance + "','" + amount_paid + "','" + invoice + "','" + procedure_name + "','" + patient_id + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + dr_id + "','" + total + "','" + total + "','" + pt_name + "','Cash','" + Invoice_main_id + "')");
         }
@@ -141,8 +171,28 @@ namespace PappyjoeMVC.Model
         }
         public DataTable get_patient_details(string newptid)
         {
-            DataTable dtb = db.table("select id,pt_id,pt_name from tbl_patient where id='" + newptid + "'");
+            DataTable dtb = db.table("select id,pt_id,pt_name,primary_mobile_number from tbl_patient where id='" + newptid + "'");
             return dtb;
+        }
+        public DataTable patient_data(string newptid)
+        {
+            DataTable dtb = db.table("select pt_id,pt_name,gender,age,street_address,locality,city,pincode,primary_mobile_number,email_address from tbl_patient where id='" + newptid + "'");
+            return dtb;
+        }
+        public DataTable get_practicedtls()
+        {
+            DataTable dt = db.table("select name,street_address,locality,pincode,contact_no,email,website from tbl_practice_details");
+            return dt;
+        }
+        public DataTable pt_details(string ptid)
+        {
+            DataTable dt = db.table("select id,pt_id,pt_name,doctorname,primary_mobile_number from tbl_patient where id='" + ptid + "'"); ;
+            return dt;
+        }
+        public DataTable drug_dtls(string id)
+        {
+            DataTable dt = db.table("select name,strength,strength_gr,type,instructions from tbl_adddrug where id ='" + id + "'");
+            return dt;
         }
     }
 }

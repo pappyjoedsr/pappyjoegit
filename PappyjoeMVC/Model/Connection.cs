@@ -208,7 +208,7 @@ namespace PappyjoeMVC.Model
         {
             public static string globalPath = "Null";
             public static string loginType = "";
-            public static string Doctor_id = "";
+            public static string Doctor_id = "";  
             public static string Staff_id = "";
             public static decimal PaidAmount = 0;
             public static string Date_To = "";
