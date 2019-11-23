@@ -1647,7 +1647,7 @@ namespace PappyjoeMVC.View
                     dataGridView_drugnew.Visible = true;
                     int r = e.RowIndex;
                     string idtemp = dataGridView2.Rows[r].Cells[0].Value.ToString();
-                    DataTable dt = this.ctrlr.get_template(idtemp + "'");
+                    DataTable dt = this.ctrlr.get_template(idtemp);
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
 

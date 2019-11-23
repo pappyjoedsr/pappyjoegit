@@ -1,4 +1,4 @@
-﻿namespace Pappyjoe
+﻿namespace PappyjoeMVC.View
 {
     partial class consultation_new_patient
     {
@@ -39,25 +39,25 @@
             this.radfemail = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.panel_newpatient = new System.Windows.Forms.Panel();
+            this.lblmore = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPatientId = new System.Windows.Forms.TextBox();
             this.pnlmore = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txtxAge = new System.Windows.Forms.TextBox();
+            this.grmedical = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.ddldoctor = new System.Windows.Forms.ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txtFileNo = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.txtLocality = new System.Windows.Forms.TextBox();
             this.txtxStreet = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.txtFileNo = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.ddldoctor = new System.Windows.Forms.ComboBox();
-            this.lblmore = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.grmedical = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtxAge = new System.Windows.Forms.TextBox();
             this.panel_newpatient.SuspendLayout();
             this.pnlmore.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grmedical)).BeginInit();
@@ -158,6 +158,20 @@
             this.panel_newpatient.Size = new System.Drawing.Size(347, 116);
             this.panel_newpatient.TabIndex = 313;
             // 
+            // lblmore
+            // 
+            this.lblmore.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblmore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblmore.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmore.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lblmore.Location = new System.Drawing.Point(10, 88);
+            this.lblmore.Name = "lblmore";
+            this.lblmore.Size = new System.Drawing.Size(58, 20);
+            this.lblmore.TabIndex = 315;
+            this.lblmore.Text = "+ More";
+            this.lblmore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblmore.Click += new System.EventHandler(this.lblmore_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -202,26 +216,97 @@
             this.pnlmore.TabIndex = 314;
             this.pnlmore.Visible = false;
             // 
-            // label23
+            // grmedical
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label23.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label23.Location = new System.Drawing.Point(6, 14);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(31, 17);
-            this.label23.TabIndex = 295;
-            this.label23.Text = "Age";
+            this.grmedical.AllowUserToAddRows = false;
+            this.grmedical.AllowUserToDeleteRows = false;
+            this.grmedical.AllowUserToResizeColumns = false;
+            this.grmedical.AllowUserToResizeRows = false;
+            this.grmedical.BackgroundColor = System.Drawing.Color.White;
+            this.grmedical.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.grmedical.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.grmedical.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grmedical.ColumnHeadersVisible = false;
+            this.grmedical.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.grmedical.GridColor = System.Drawing.Color.White;
+            this.grmedical.Location = new System.Drawing.Point(5, 216);
+            this.grmedical.Name = "grmedical";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grmedical.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.grmedical.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grmedical.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.grmedical.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grmedical.Size = new System.Drawing.Size(336, 203);
+            this.grmedical.TabIndex = 307;
             // 
-            // txtxAge
+            // Column1
             // 
-            this.txtxAge.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.txtxAge.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtxAge.Location = new System.Drawing.Point(113, 14);
-            this.txtxAge.Name = "txtxAge";
-            this.txtxAge.Size = new System.Drawing.Size(55, 22);
-            this.txtxAge.TabIndex = 294;
-            this.txtxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtxAge_KeyPress);
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "name";
+            this.Column1.HeaderText = "Medical History";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label32.Location = new System.Drawing.Point(4, 192);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(118, 21);
+            this.label32.TabIndex = 306;
+            this.label32.Text = "Medical History";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label12.Location = new System.Drawing.Point(6, 160);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(87, 17);
+            this.label12.TabIndex = 305;
+            this.label12.Text = "Doctor Name";
+            // 
+            // ddldoctor
+            // 
+            this.ddldoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddldoctor.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ddldoctor.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.ddldoctor.FormattingEnabled = true;
+            this.ddldoctor.Location = new System.Drawing.Point(113, 159);
+            this.ddldoctor.Name = "ddldoctor";
+            this.ddldoctor.Size = new System.Drawing.Size(207, 21);
+            this.ddldoctor.TabIndex = 304;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label31.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label31.Location = new System.Drawing.Point(6, 133);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(49, 17);
+            this.label31.TabIndex = 303;
+            this.label31.Text = "File No";
+            // 
+            // txtFileNo
+            // 
+            this.txtFileNo.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.txtFileNo.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtFileNo.Location = new System.Drawing.Point(113, 129);
+            this.txtFileNo.Name = "txtFileNo";
+            this.txtFileNo.Size = new System.Drawing.Size(207, 22);
+            this.txtFileNo.TabIndex = 302;
             // 
             // label21
             // 
@@ -283,118 +368,33 @@
             this.txtxStreet.Size = new System.Drawing.Size(207, 22);
             this.txtxStreet.TabIndex = 296;
             // 
-            // label31
+            // label23
             // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label31.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label31.Location = new System.Drawing.Point(6, 133);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(49, 17);
-            this.label31.TabIndex = 303;
-            this.label31.Text = "File No";
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label23.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label23.Location = new System.Drawing.Point(6, 14);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(31, 17);
+            this.label23.TabIndex = 295;
+            this.label23.Text = "Age";
             // 
-            // txtFileNo
+            // txtxAge
             // 
-            this.txtFileNo.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.txtFileNo.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtFileNo.Location = new System.Drawing.Point(113, 129);
-            this.txtFileNo.Name = "txtFileNo";
-            this.txtFileNo.Size = new System.Drawing.Size(207, 22);
-            this.txtFileNo.TabIndex = 302;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label12.Location = new System.Drawing.Point(6, 160);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(87, 17);
-            this.label12.TabIndex = 305;
-            this.label12.Text = "Doctor Name";
-            // 
-            // ddldoctor
-            // 
-            this.ddldoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ddldoctor.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ddldoctor.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.ddldoctor.FormattingEnabled = true;
-            this.ddldoctor.Location = new System.Drawing.Point(113, 159);
-            this.ddldoctor.Name = "ddldoctor";
-            this.ddldoctor.Size = new System.Drawing.Size(207, 21);
-            this.ddldoctor.TabIndex = 304;
-            // 
-            // lblmore
-            // 
-            this.lblmore.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblmore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblmore.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmore.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblmore.Location = new System.Drawing.Point(10, 88);
-            this.lblmore.Name = "lblmore";
-            this.lblmore.Size = new System.Drawing.Size(58, 20);
-            this.lblmore.TabIndex = 315;
-            this.lblmore.Text = "+ More";
-            this.lblmore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblmore.Click += new System.EventHandler(this.lblmore_Click);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label32.Location = new System.Drawing.Point(4, 192);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(118, 21);
-            this.label32.TabIndex = 306;
-            this.label32.Text = "Medical History";
-            // 
-            // grmedical
-            // 
-            this.grmedical.AllowUserToAddRows = false;
-            this.grmedical.AllowUserToDeleteRows = false;
-            this.grmedical.AllowUserToResizeColumns = false;
-            this.grmedical.AllowUserToResizeRows = false;
-            this.grmedical.BackgroundColor = System.Drawing.Color.White;
-            this.grmedical.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.grmedical.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.grmedical.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grmedical.ColumnHeadersVisible = false;
-            this.grmedical.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            this.grmedical.GridColor = System.Drawing.Color.White;
-            this.grmedical.Location = new System.Drawing.Point(5, 216);
-            this.grmedical.Name = "grmedical";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grmedical.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.grmedical.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grmedical.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.grmedical.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grmedical.Size = new System.Drawing.Size(336, 199);
-            this.grmedical.TabIndex = 307;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.DataPropertyName = "name";
-            this.Column1.HeaderText = "Medical History";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.txtxAge.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.txtxAge.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtxAge.Location = new System.Drawing.Point(113, 14);
+            this.txtxAge.Name = "txtxAge";
+            this.txtxAge.Size = new System.Drawing.Size(55, 22);
+            this.txtxAge.TabIndex = 294;
+            this.txtxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtxAge_KeyPress);
             // 
             // consultation_new_patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(349, 168);
+            this.ClientSize = new System.Drawing.Size(349, 157);
             this.Controls.Add(this.pnlmore);
             this.Controls.Add(this.panel_newpatient);
             this.Controls.Add(this.button1);

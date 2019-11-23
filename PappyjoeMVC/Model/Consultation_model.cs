@@ -172,7 +172,7 @@ namespace PappyjoeMVC.Model
         }
         public int save_patient_else(string txtpatname, string txtPatientId, string gender, string txtmobile, string txtxAge, string txtxStreet, string txtLocality, string txtCity, string txtFileNo, string ddldoctor)
         {
-            int sqlstring = db.execute("insert into tbl_patient (pt_name,pt_id,gender,primary_mobile_number,Profile_Status,age,street_address,locality,city,Opticket,doctorname,Visited,date)values('" + txtpatname + "','" + txtPatientId + "','" + gender + "','" + txtmobile + "','Active','" + txtxAge + "','" + txtxStreet + "','" + txtLocality + "','" + txtCity + "','" + txtFileNo + "','" + ddldoctor + "','" + DateTime.Now.Date.ToString("yyyy/MM/dd") + "','" + DateTime.Now.Date.ToString("yyyy/MM/dd") + "',)");
+            int sqlstring = db.execute("insert into tbl_patient (pt_name,pt_id,gender,primary_mobile_number,Profile_Status,age,street_address,locality,city,Opticket,doctorname,Visited,date)values('" + txtpatname + "','" + txtPatientId + "','" + gender + "','" + txtmobile + "','Active','" + txtxAge + "','" + txtxStreet + "','" + txtLocality + "','" + txtCity + "','" + txtFileNo + "','" + ddldoctor + "','" + DateTime.Now.Date.ToString("yyyy/MM/dd") + "','" + DateTime.Now.Date.ToString("yyyy/MM/dd") + "')");
             return sqlstring;
         }
         public DataTable select_patnt_num()
