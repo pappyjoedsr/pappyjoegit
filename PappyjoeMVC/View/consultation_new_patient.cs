@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Net; // For SMS
 using System.IO;// For SMS streaming
 using PappyjoeMVC.Controller;
-namespace Pappyjoe
+namespace PappyjoeMVC.View
 {
     public partial class consultation_new_patient : Form
     {
