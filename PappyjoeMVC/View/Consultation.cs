@@ -1645,6 +1645,7 @@ namespace PappyjoeMVC.View
                 {
                     drugspanel.Visible = false;
                     dataGridView_drugnew.Visible = true;
+                    dataGridView_drugnew.Rows.Clear();
                     int r = e.RowIndex;
                     string idtemp = dataGridView2.Rows[r].Cells[0].Value.ToString();
                     DataTable dt = this.ctrlr.get_template(idtemp);
