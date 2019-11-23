@@ -17,7 +17,6 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        //connection db = new connection();
         string contact_no = "";
         string str_Clinic = "";
         string id = "";
@@ -54,31 +53,28 @@ namespace PappyjoeMVC.View
                 {
                     gender = radfemail.Text;
                 }
-                //string sqlstring = "";
                 int i;
                 if (lblmore.Text=="+ More")
                 {
-                    i = this.cntrl.save_patient(txtpatname.Text , txtPatientId.Text ,  gender ,  txtmobile.Text);//"insert into tbl_patient (pt_name,pt_id,gender,primary_mobile_number,Profile_Status)values('" + txtpatname.Text + "','" + txtPatientId.Text + "','" + gender + "','" + txtmobile.Text + "','Active')";
+                    i = this.cntrl.save_patient(txtpatname.Text , txtPatientId.Text ,  gender ,  txtmobile.Text);
                 }
                 else
                 {
                     i = this.cntrl.save_patient_else(txtpatname.Text, txtPatientId.Text, gender, txtmobile.Text, txtxAge.Text, txtxStreet.Text, txtLocality.Text, txtCity.Text, txtFileNo.Text, ddldoctor.Text);
-                    //"insert into tbl_patient (pt_name,pt_id,gender,primary_mobile_number,Profile_Status,age,street_address,locality,city,Opticket,doctorname)values('" + txtpatname.Text + "','" + txtPatientId.Text + "','" + gender + "','" + txtmobile.Text + "','Active','" + txtxAge.Text + "','" + txtxStreet.Text + "','" + txtLocality.Text + "','" + txtCity.Text + "','" + txtFileNo.Text + "','" + ddldoctor.Text + "')";
                 }
-                // = db.execute(sqlstring);
                
                 if (i > 0)
                 {
-                    DataTable pid = this.cntrl.patient_maxid();//db.table("SELECT MAX(id) from tbl_patient");
+                    DataTable pid = this.cntrl.patient_maxid();
                     id = pid.Rows[0][0].ToString();
-                    DataTable cmd = this.cntrl.select_patnt_num();//db.table("select patient_number from tbl_patient_automaticid where patient_automation='Yes'");
+                    DataTable cmd = this.cntrl.select_patnt_num();
                     if (cmd.Rows.Count > 0)
                     {
                         int n = 0;
                         n = int.Parse(cmd.Rows[0]["patient_number"].ToString()) + 1;
                         if (n != 0)
                         {
-                            this.cntrl.update_autoId(n);//db.execute("update tbl_patient_automaticid set patient_number='" + n + "'");
+                            this.cntrl.update_autoId(n);
                         }
                     }
 
@@ -89,7 +85,7 @@ namespace PappyjoeMVC.View
                         {
                             if (Convert.ToBoolean(grmedical.Rows[count].Cells[0].Value) == true)
                             {
-                                int med = this.cntrl.med_hist(id, grmedical.Rows[count].Cells[1].Value.ToString());//db.execute("insert into tbl_pt_medhistory (pt_id,med_id) values('" + id + "','" + grmedical.Rows[count].Cells[1].Value.ToString() + "')");
+                                int med = this.cntrl.med_hist(id, grmedical.Rows[count].Cells[1].Value.ToString());
                             }
                         }
                     }
@@ -125,7 +121,7 @@ namespace PappyjoeMVC.View
             radfemail.Checked = true;
             loadptid();
             string clinicn = "";
-            DataTable clinicname = this.cntrl.get_practice_details();//db.table("select name,contact_no from tbl_practice_details");
+            DataTable clinicname = this.cntrl.get_practice_details();
             if (clinicname.Rows.Count > 0)
             {
                 clinicn = clinicname.Rows[0][0].ToString();
@@ -133,7 +129,7 @@ namespace PappyjoeMVC.View
                 contact_no = clinicname.Rows[0][1].ToString();
             }
             doctornamebind();
-            DataTable dt = this.cntrl.name_medhistory();//db.table("SELECT name FROM tbl_medhistory order by name");
+            DataTable dt = this.cntrl.name_medhistory();
             grmedical.DataSource = dt;
             DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn()
             {
@@ -146,7 +142,7 @@ namespace PappyjoeMVC.View
         }
         public void loadptid()
         {
-            DataTable auto = this.cntrl.autom_id();//db.table("select * from tbl_patient_automaticid ");
+            DataTable auto = this.cntrl.autom_id();
             if (auto.Rows.Count > 0)
             {
                 if (auto.Rows[0]["patient_automation"].ToString() == "Yes")
@@ -176,7 +172,7 @@ namespace PappyjoeMVC.View
                 if (doctor_id != "0")
                 {
                     int dr_index = 0;
-                    DataTable dt = this.cntrl.Load_doctor();//db.table("select DISTINCT id,doctor_name from tbl_doctor  where login_type='doctor' or login_type='admin' order by doctor_name");
+                    DataTable dt = this.cntrl.Load_doctor();
                     if (dt.Rows.Count > 0)
                     {
                         ddldoctor.DataSource = dt;
@@ -194,7 +190,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    DataTable dt = this.cntrl.doc_info();//db.table("select DISTINCT id,doctor_name from tbl_doctor  where login_type='doctor' or login_type='admin'");
+                    DataTable dt = this.cntrl.doc_info();
                     if (dt.Rows.Count > 0)
                     {
                         ddldoctor.DataSource = dt;

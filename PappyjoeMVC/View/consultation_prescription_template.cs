@@ -13,7 +13,6 @@ namespace Pappyjoe
     {
         public string pres_id = "";
         Consultation_prescription_template_controller cntrl = new Consultation_prescription_template_controller();
-        //Connection db = new connection();
         public consultation_prescription_template()
         {
             InitializeComponent();
@@ -21,11 +20,11 @@ namespace Pappyjoe
 
         private void consultation_prescription_template_Load(object sender, EventArgs e)
         {
-            DataTable dtb_prescription = this.cntrl.get_tempid(pres_id);//db.table("select * from tbl_templates_main where id='"+ pres_id + "'");
+            DataTable dtb_prescription = this.cntrl.get_tempid(pres_id);
             if(dtb_prescription.Rows.Count>0)
             {
                 txt_tempName.Text = dtb_prescription.Rows[0]["templates"].ToString();
-                DataTable dt = this.cntrl.get_templateid(pres_id);//db.table("select * from tbl_template where temp_id='" + pres_id + "'");
+                DataTable dt = this.cntrl.get_templateid(pres_id);
                 dataGridView_templatenew.Rows.Clear();
                 if (dt.Rows.Count>0)
                 {
