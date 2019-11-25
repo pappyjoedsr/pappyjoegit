@@ -2507,5 +2507,10 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.ShowDialog();
         }
+
+        private void toolStripBAttachment_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
