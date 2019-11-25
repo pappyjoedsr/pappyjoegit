@@ -1,4 +1,4 @@
-﻿namespace PappyjoeMVC.View
+﻿namespace Pappyjoe
 {
     partial class Consultation
     {
