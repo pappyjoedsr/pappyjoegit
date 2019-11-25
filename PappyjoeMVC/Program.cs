@@ -19,7 +19,7 @@ namespace PappyjoeMVC
         /// </summary>
         [STAThread] 
         static void Main()
-       {
+                                                                                         {
             String strWindowsState = "";
             RegistryKey regKeyAppRoot = Registry.CurrentUser.CreateSubKey("pappyjoe");
             try
