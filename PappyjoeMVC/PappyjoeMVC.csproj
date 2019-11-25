@@ -418,7 +418,7 @@
     <Compile Include="View\Consultation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Consultation.Designer.cs">
+    <Compile Include="View\Consultation.designer.cs">
       <DependentUpon>Consultation.cs</DependentUpon>
     </Compile>
     <Compile Include="View\consultation_new_patient.cs">
