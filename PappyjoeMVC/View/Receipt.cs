@@ -75,6 +75,7 @@ namespace PappyjoeMVC.View
                     string clinicn = "";
                     clinicn = clinicname.Rows[0][0].ToString();
                     toolStripButton1.Text = clinicn.Replace("¤", "'");
+                    path = clinicname.Rows[0]["path"].ToString();
                     string docnam = this.cntrl.Get_DoctorName(doctor_id);
                     if (docnam != "")
                     {
@@ -82,17 +83,18 @@ namespace PappyjoeMVC.View
                     }
                     try
                     {
-                        path = clinicname.Rows[0]["path"].ToString();
                         if (path != "")
                         {
-                            if (File.Exists(db.server() + path))
+                            string curFile = this.cntrl.server() + "\\Pappyjoe_utilities\\Logo\\" + path;
+
+                            if (File.Exists(curFile))
                             {
-                                logo_name = "";
+                                //logo_name = "";
                                 logo_name = path;
                                 string Apppath = System.IO.Directory.GetCurrentDirectory();
                                 if (!File.Exists(Apppath + "\\" + logo_name))
                                 {
-                                    System.IO.File.Copy(db.server() + path, Apppath + "\\" + logo_name);
+                                    System.IO.File.Copy(curFile, Apppath + "\\" + logo_name);
                                 }
                             }
                             else
@@ -100,6 +102,24 @@ namespace PappyjoeMVC.View
                                 logo_name = "";
                             }
                         }
+
+                        //if (path != "")
+                        //{
+                        //    if (File.Exists(db.server() + path))
+                        //    {
+                        //        logo_name = "";
+                        //        logo_name = path;
+                        //        string Apppath = System.IO.Directory.GetCurrentDirectory();
+                        //        if (!File.Exists(Apppath + "\\" + logo_name))
+                        //        {
+                        //            System.IO.File.Copy(db.server() + path, Apppath + "\\" + logo_name);
+                        //        }
+                        //    }
+                        //    else
+                        //    {
+                        //        logo_name = "";
+                        //    }
+                        //}
                     }
                     catch (Exception ex)
                     {
@@ -239,31 +259,8 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                System.Data.DataTable print = this.cntrl.get_printSettings();
-                if (print.Rows.Count > 0)
-                {
-                    combo_topmargin = print.Rows[0][4].ToString();
-                    combo_leftmargin = print.Rows[0][5].ToString();
-                    combo_bottommargin = print.Rows[0][6].ToString();
-                    combo_rightmargin = print.Rows[0][7].ToString();
-                    combo_paper_size = print.Rows[0][1].ToString();
-                    combo_footer_topmargin = print.Rows[0][22].ToString();
-                    rich_fullwidth = print.Rows[0][23].ToString();
-                    rich_leftsign = print.Rows[0][24].ToString();
-                    rich_rightsign = print.Rows[0][25].ToString();
 
-                    patient_details = print.Rows[0][14].ToString();
-                    med = print.Rows[0][15].ToString();
-                    patient = print.Rows[0][16].ToString();
-                    address = print.Rows[0][17].ToString();
-                    phone = print.Rows[0][18].ToString();
-                    blood = print.Rows[0][20].ToString();
-                    gender = print.Rows[0][21].ToString();
-                    orientation = print.Rows[0][2].ToString();
-                    includeheader = print.Rows[0]["include_header"].ToString();
-                    includelogo = print.Rows[0]["include_logo"].ToString();
-                }
-
+                print_setting();
                 printall = "NO";
                 print_html();
             }
@@ -272,7 +269,33 @@ namespace PappyjoeMVC.View
                 MessageBox.Show("Printing Error..", "Print error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
+        public void print_setting()
+        {
+            System.Data.DataTable print = this.cntrl.get_printSettings();
+            if (print.Rows.Count > 0)
+            {
+                combo_topmargin = print.Rows[0][4].ToString();
+                combo_leftmargin = print.Rows[0][5].ToString();
+                combo_bottommargin = print.Rows[0][6].ToString();
+                combo_rightmargin = print.Rows[0][7].ToString();
+                combo_paper_size = print.Rows[0][1].ToString();
+                combo_footer_topmargin = print.Rows[0][22].ToString();
+                rich_fullwidth = print.Rows[0][23].ToString();
+                rich_leftsign = print.Rows[0][24].ToString();
+                rich_rightsign = print.Rows[0][25].ToString();
 
+                patient_details = print.Rows[0][14].ToString();
+                med = print.Rows[0][15].ToString();
+                patient = print.Rows[0][16].ToString();
+                address = print.Rows[0][17].ToString();
+                phone = print.Rows[0][18].ToString();
+                blood = print.Rows[0][20].ToString();
+                gender = print.Rows[0][21].ToString();
+                orientation = print.Rows[0][2].ToString();
+                includeheader = print.Rows[0]["include_header"].ToString();
+                includelogo = print.Rows[0]["include_logo"].ToString();
+            }
+        }
         private void btn_Add_Click(object sender, EventArgs e)
         {
             var form2 = new Add_Receipt();
@@ -896,6 +919,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
+                print_setting();
                 printall = "YES";
                 print_html();
             }

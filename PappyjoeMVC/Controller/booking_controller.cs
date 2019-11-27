@@ -108,6 +108,11 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = cmodel.clinicdetails();
             return dtb;
         }
+        public DataTable smsdetails()
+        {
+            DataTable dtb = cmodel.smsdetails();
+            return dtb;
+        }
         public DataTable Get_Patient_Details(string id)
         {
             DataTable dtb = cmodel.Get_Patient_Details(id);

@@ -496,8 +496,6 @@ namespace PappyjoeMVC.View
                     str_website = dtp.Rows[0]["website"].ToString();
                     logo_name = dtp.Rows[0]["path"].ToString();
                 }
-
-
                 string strfooter1 = "";
                 string strfooter2 = "";
                 string strfooter3 = "";
@@ -516,7 +514,6 @@ namespace PappyjoeMVC.View
                     includeheader = print.Rows[0]["include_header"].ToString();
                     includelogo = print.Rows[0]["include_logo"].ToString();
                 }
-
                 payment_date = DateTime.Now.Date.ToString("yyyy-MM-dd");
                 string Apppath = System.IO.Directory.GetCurrentDirectory();
                 StreamWriter sWrite = new StreamWriter(Apppath + "\\p.html");
@@ -525,7 +522,6 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("</head>");
                 sWrite.WriteLine("<body >");
                 sWrite.WriteLine("<br>");
-
                 if (includeheader == "1")
                 {
                     if (includelogo == "1")

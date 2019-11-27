@@ -299,7 +299,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                string neworold = "0"; DataTable dtpSearch = new DataTable();
+                 string neworold = "0"; DataTable dtpSearch = new DataTable();
                 DataTable dtb = this.cntrl.patient_details(txt_p_name.Text);
                 Appointment_for_newPAtient(dtb);
                 if (cmbStartTime.SelectedIndex <= cmbEndTime.SelectedIndex)
@@ -419,7 +419,12 @@ namespace PappyjoeMVC.View
                             {
                                 string text = "";
                                 string smsName = "", smsPass = "";
-                                DataTable sms = this.cntrl.clinicdetails();
+                                DataTable sms = this.cntrl.smsdetails();
+                                if(sms.Rows.Count>0)
+                                {
+                                    smsName = sms.Rows[0]["smsName"].ToString();
+                                    smsPass = sms.Rows[0]["smsPass"].ToString();
+                                }
                                 SMS_model a = new SMS_model();
                                 DataTable pat = this.cntrl.Get_Patient_Details(patient_id);
                                 DataTable smsreminder = this.cntrl.Get_reminderSmS();
@@ -488,7 +493,6 @@ namespace PappyjoeMVC.View
                                     {
                                         if (dpStartTimeDate.Value > DateTime.Now.Date)
                                         {
-
                                             text = "You have an appointment on " + dpStartTimeDate.Value.ToShortDateString() + " " + cmbStartTime.Text + " With " + txt_p_name.Text + " for " + compoprocedure.Text + " at " + clinic + "," + contact_no;
                                             a.SendSMS(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT.ToString("dd/MM/yyyy") + before_time, DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
                                         }
@@ -506,7 +510,6 @@ namespace PappyjoeMVC.View
                                 if (sr.Rows.Count > 0)
                                 {
                                     email = sr.Rows[0]["email_address"].ToString();
-
                                     DataTable sms = this.cntrl.send_email();
                                     if (sms.Rows.Count > 0)
                                     {
@@ -537,7 +540,7 @@ namespace PappyjoeMVC.View
                                         }
                                     }
                                 }
-                            }
+                            } 
                             if (checkBox4.Checked) // Doctor Email
                             {
                                 string emailName = "", emailPass = "";
