@@ -1997,7 +1997,7 @@ namespace PappyjoeMVC.View
                     for (int ii = 0; ii < dgv_SalesItem.Rows.Count; ii++)
                     {
 
-                        if (Convert.ToInt16(dgv_SalesItem.Rows[ii].Cells["ColGST"].Value.ToString()) > 0)
+                        if (Convert.ToInt32(dgv_SalesItem.Rows[ii].Cells["ColGST"].Value.ToString()) > 0)
                         {
                             gstRatetotal = Convert.ToDouble(dgv_SalesItem.Rows[ii].Cells["colUnitcost"].Value.ToString()) * Convert.ToDouble(dgv_SalesItem.Rows[ii].Cells["ColQty"].Value.ToString());
                             gesttotal = ((Convert.ToDouble(gstRatetotal) * Convert.ToDouble(dgv_SalesItem.Rows[ii].Cells["ColGST"].Value.ToString())) / 100) / 2;

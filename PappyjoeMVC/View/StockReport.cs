@@ -921,6 +921,103 @@ namespace PappyjoeMVC.View
 
         }
 
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            print();
+        }
+        public void print()
+        {
+            string today = DateTime.Now.ToString("d/M/yyyy");
+            string message = "Did you want Header on Print?";
+            string caption = "Verification";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show(message, caption, buttons);
+            string clinicn = "";
+            string strclinicname = "";
+            string strStreet = "";
+            string stremail = "";
+            string strwebsite = "";
+            string strphone = "";
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                System.Data.DataTable dtp = this.cntrl.Get_practiceDlNumber();// db.table("select name,contact_no,street_address,email,website from tbl_practice_details");
+                if (dtp.Rows.Count > 0)
+                {
+                    clinicn = dtp.Rows[0]["name"].ToString();
+                    strclinicname = clinicn.Replace("¤", "'");
+                    strphone = dtp.Rows[0]["contact_no"].ToString();
+                    strStreet = dtp.Rows[0]["street_address"].ToString();
+                    stremail = dtp.Rows[0]["email"].ToString();
+                    strwebsite = dtp.Rows[0]["website"].ToString();
+                }
+            }
+            string Apppath = System.IO.Directory.GetCurrentDirectory();
+            System.IO.StreamWriter sWrite = new System.IO.StreamWriter(Apppath + "\\StockReport.html");
+            sWrite.WriteLine("<html>");
+            sWrite.WriteLine("<head>");
+            sWrite.WriteLine("<style>");
+            sWrite.WriteLine("table { border-collapse: collapse;}");
+            sWrite.WriteLine("p.big {line-height: 400%;}");
+            sWrite.WriteLine("</style>");
+            sWrite.WriteLine("</head>");
+            sWrite.WriteLine("<body >");
+            sWrite.WriteLine("<div>");
+            sWrite.WriteLine("<table align=center width=900 >");
+            sWrite.WriteLine("<tr>");
+            if (Chk_Minimum.Checked)
+            {
+                sWrite.WriteLine("<td colspan=5 align='center'><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b>MINIMUM STOCK REPORT</b> </font></td");
+            }
+            else
+                sWrite.WriteLine("<td colspan=5 align='center' ><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b>STOCK REPORT</b> </font></td");
+            sWrite.WriteLine("</tr>");
+            sWrite.WriteLine("<tr>");
+            sWrite.WriteLine("<td colspan=5 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3>   " + strclinicname + "</font></b></td>");
+            sWrite.WriteLine("</tr>");
+            sWrite.WriteLine("<tr>");
+            sWrite.WriteLine("<td colspan=5 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3>   " + strStreet + "</font></b></td>");
+            sWrite.WriteLine("</tr>");
+            sWrite.WriteLine("<tr>");
+            sWrite.WriteLine("<td colspan=5 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3> " + strphone + "</font></b></td>");
+            sWrite.WriteLine("</tr>");
+            sWrite.WriteLine("<tr>");
+            sWrite.WriteLine("<td colspan=5 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2>Printed Date:" + " " + today + "" + "</font></center></td>");
+            if (Chk_Suplier.Checked)
+            {
+                string suplier = Cmb_Suplier.Text;
+                sWrite.WriteLine("<td><align=right FONT COLOR=black FACE='Segoe UI' SIZE=2>Suplier Name :" + suplier + "</font></td>");
+            }
+            sWrite.WriteLine("</tr>");
+            if (DGV_Stock.Rows.Count > 0)
+            {
+                sWrite.WriteLine("<tr>");
+                sWrite.WriteLine("    <td align='center' width='10%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >Sl No.</font></th>");
+                sWrite.WriteLine("    <td align='center' width='20%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>Item Code</font></th>");
+                sWrite.WriteLine("    <td align='center' width='35%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI'SIZE=3>Item Name</font></th>");
+                sWrite.WriteLine("    <td align='center' width='13%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Purchase Unit</font></th>");
+                sWrite.WriteLine("    <td align='center' width='25%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>Stock</font></th>");
+                sWrite.WriteLine("</tr>");
+                for (int c = 0; c < DGV_Stock.Rows.Count; c++)
+                {
+                    sWrite.WriteLine("<tr>");
+                    sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Stock.Rows[c].Cells["SLNO"].Value.ToString() + "</font></th>");
+                    sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Stock.Rows[c].Cells["item_code"].Value.ToString() + "</font></th>");
+                    sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Stock.Rows[c].Cells["item_name"].Value.ToString() + "</font></th>");
+                    sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Stock.Rows[c].Cells["clunit"].Value.ToString() + "</font></th>");
+                    sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI'' SIZE=2>" + DGV_Stock.Rows[c].Cells["qty"].Value.ToString() + "</font></th>");
+                }
+                sWrite.WriteLine("</tr >");
+                sWrite.WriteLine("</table>");
+                sWrite.WriteLine("</div>");
+                sWrite.WriteLine("<script>window.print();</script>");
+                sWrite.WriteLine("</body>");
+                sWrite.WriteLine("</html>");
+                sWrite.Close();
+                System.Diagnostics.Process.Start(Apppath + "\\StockReport.html");
+            }
+        }
+
         private void btn_purOrder_Click(object sender, EventArgs e)
         {
             backColor_Change();
