@@ -49,5 +49,10 @@ namespace PappyjoeMVC.Model
             DataTable dtb = db.table("select Item_Code as id, (select item_code from tbl_items where id=B.Item_Code) as item_code,sum(qty) qty  from tbl_BatchNumber B where Sup_Code='" + Sup_Code + "' group by B.Item_Code ");
             return dtb;
         }
+        public DataTable get_company_details()
+        {
+           DataTable dtp = db.table("select name,contact_no,street_address,email,website from tbl_practice_details");
+            return dtp;
+        }
     }
 }
