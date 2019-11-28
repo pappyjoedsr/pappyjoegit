@@ -2438,7 +2438,7 @@ namespace PappyjoeMVC.View
 
                 string str_sql = "", sqlstring = "";
                 DateTime dtNow = new DateTime(DateTime.Now.Ticks);
-                DateTime startDateTime = Convert.ToDateTime(DateTime.Today.ToString("d") + " 00:01:00 AM");
+                DateTime startDateTime = Convert.ToDateTime(DateTime.Today.ToString("d") + " 01:01:00 AM");
                 DateTime startDateTime1 = Convert.ToDateTime(DateTime.Today.ToString("d") + " 11:59:00 PM");
                 //str_sql = "SELECT id,doctor_name,mobile_number,email_id FROM tbl_doctor   where activate_login='yes'";
                 DataTable dt_dr = this.cntrl.doctor_details();// db.table(str_sql + " ORDER BY id");
@@ -2469,7 +2469,7 @@ namespace PappyjoeMVC.View
                             {
                                 SMS_model send_sms_class = new SMS_model();
                                 text = "Good Morning Dr. " + dt_dr.Rows[j]["doctor_name"].ToString() + ", You have " + long_app_count + " Appointment[s] today at " + clinic;
-                                send_sms_class.SendSMS(smsName, smsPass, mob_number, text, "DRTOMS", dt_dr.Rows[j]["id"].ToString(), startDateTime.ToString("dd/MM/yyyy") + " 08:00:00 am", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+                                send_sms_class.SendSMS(smsName, smsPass, mob_number, text, "DRTOMS", dt_dr.Rows[j]["id"].ToString(), startDateTime.ToString("dd/MM/yyyy") , DateTime.Now.ToString("dd/MM/yyyy"));
 
                                 if (emailName != "" && emailPass != "")
                                 {
