@@ -259,7 +259,6 @@ namespace PappyjoeMVC.View
         {
             try
             {
-
                 print_setting();
                 printall = "NO";
                 print_html();

@@ -41,6 +41,11 @@ namespace PappyjoeMVC.Controller
             string dtb = cmodel.Get_DoctorName(doctor_id);
             return dtb;
         }
+        public string server()
+        {
+            string server = db.server();
+            return server;
+        }
         public DataTable Get_pat_iDName(string patient_id)
         {
             DataTable dtb = cmodel.Get_pat_iDName(patient_id);

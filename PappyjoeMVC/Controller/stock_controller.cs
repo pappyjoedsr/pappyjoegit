@@ -17,6 +17,11 @@ namespace PappyjoeMVC.Controller
             string clinicname = cmodel.Load_CompanyName();
             return clinicname;
         }
+        public DataTable Get_practiceDlNumber()
+        {
+            DataTable dt = cmodel.Get_practiceDlNumber();
+            return dt;
+        }
         public string Get_DoctorName(string doctor_id)
         {
             string dtb = cmodel.Get_DoctorName(doctor_id);
@@ -75,6 +80,11 @@ namespace PappyjoeMVC.Controller
         public string permission_for_settings(string doctor_id)
         {
             string dtb = cmodel.permission_for_settings(doctor_id);
+            return dtb;
+        }
+        public DataTable get_company_details()
+        {
+            DataTable dtb = cmodel.get_company_details();
             return dtb;
         }
     }
