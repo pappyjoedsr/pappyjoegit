@@ -896,7 +896,7 @@
             this.panel_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_main.Location = new System.Drawing.Point(173, 47);
+            this.panel_main.Location = new System.Drawing.Point(173, 42);
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(1137, 641);
             this.panel_main.TabIndex = 281;

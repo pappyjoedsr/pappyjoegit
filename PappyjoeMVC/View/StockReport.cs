@@ -916,11 +916,6 @@ namespace PappyjoeMVC.View
                 form2.ShowDialog();
         }
 
-        private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
-        {
-
-        }
-
         private void btnReport_Click(object sender, EventArgs e)
         {
             print();
@@ -941,7 +936,7 @@ namespace PappyjoeMVC.View
             string strphone = "";
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
-                System.Data.DataTable dtp = this.cntrl.Get_practiceDlNumber();// db.table("select name,contact_no,street_address,email,website from tbl_practice_details");
+                System.Data.DataTable dtp = this.cntrl.get_company_details();// db.table("select name,contact_no,street_address,email,website from tbl_practice_details");
                 if (dtp.Rows.Count > 0)
                 {
                     clinicn = dtp.Rows[0]["name"].ToString();
@@ -1017,7 +1012,6 @@ namespace PappyjoeMVC.View
                 System.Diagnostics.Process.Start(Apppath + "\\StockReport.html");
             }
         }
-
         private void btn_purOrder_Click(object sender, EventArgs e)
         {
             backColor_Change();

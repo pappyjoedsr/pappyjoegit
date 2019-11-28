@@ -82,5 +82,10 @@ namespace PappyjoeMVC.Controller
             string dtb = cmodel.permission_for_settings(doctor_id);
             return dtb;
         }
+        public DataTable get_company_details()
+        {
+            DataTable dtb = cmodel.get_company_details();
+            return dtb;
+        }
     }
 }
