@@ -53,7 +53,7 @@ namespace PappyjoeMVC.View
                 {
                     // add
                     string privid;
-                    privid = this.cntrl.add_privillege(doctor_id);
+                    privid = this.cntrl.add_privillege(doctor_id);                                                  
                     if (int.Parse(privid) > 0)
                     {
                         BtnAdd.Enabled = false;
@@ -69,7 +69,7 @@ namespace PappyjoeMVC.View
                         editToolStripMenuItem1.Enabled = false;
                     }
                     else
-                    {
+                    {                                           
                         editToolStripMenuItem1.Enabled = true;
                     }
                     //Delete

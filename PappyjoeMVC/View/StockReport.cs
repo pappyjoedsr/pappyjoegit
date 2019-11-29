@@ -978,6 +978,7 @@ namespace PappyjoeMVC.View
             sWrite.WriteLine("</tr>");
             sWrite.WriteLine("<tr>");
             sWrite.WriteLine("<td colspan=5 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2>Printed Date:" + " " + today + "" + "</font></center></td>");
+            sWrite.WriteLine("</tr >");
             if (Chk_Suplier.Checked)
             {
                 string suplier = Cmb_Suplier.Text;
@@ -1012,6 +1013,12 @@ namespace PappyjoeMVC.View
                 System.Diagnostics.Process.Start(Apppath + "\\StockReport.html");
             }
         }
+
+        private void panel_main_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        
         private void btn_purOrder_Click(object sender, EventArgs e)
         {
             backColor_Change();
