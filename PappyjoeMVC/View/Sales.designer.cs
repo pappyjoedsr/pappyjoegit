@@ -1383,7 +1383,7 @@
             this.dgv_BatchSale.Location = new System.Drawing.Point(1004, 531);
             this.dgv_BatchSale.Name = "dgv_BatchSale";
             this.dgv_BatchSale.RowHeadersVisible = false;
-            this.dgv_BatchSale.Size = new System.Drawing.Size(200, 122);
+            this.dgv_BatchSale.Size = new System.Drawing.Size(260, 122);
             this.dgv_BatchSale.TabIndex = 314;
             this.dgv_BatchSale.Visible = false;
             // 
@@ -1707,7 +1707,7 @@
             this.pnlprescription.Controls.Add(this.label21);
             this.pnlprescription.Controls.Add(this.label20);
             this.pnlprescription.Controls.Add(this.dgrid_prescription);
-            this.pnlprescription.Location = new System.Drawing.Point(0, 530);
+            this.pnlprescription.Location = new System.Drawing.Point(-4, 528);
             this.pnlprescription.Name = "pnlprescription";
             this.pnlprescription.Size = new System.Drawing.Size(473, 113);
             this.pnlprescription.TabIndex = 334;
