@@ -61,7 +61,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable get_batchsale(int invnum_Edit)
         {
-            DataTable dtb_BatchSale = db.table("select * from tbl_BatchSale where InvNumber='" + invnum_Edit + "'");
+            DataTable dtb_BatchSale = db.table("select InvNumber,InvDate,s.Item_Code,s.BatchNumber,s.Qty,s.IsExpDate,BatchEntry,PrdDate,ExpDate from tbl_BatchSale s inner join tbl_batchnumber b on b.BatchNumber=s.BatchNumber where InvNumber='" + invnum_Edit + "'");
             return dtb_BatchSale;
         }
         public DataTable load_prescription()

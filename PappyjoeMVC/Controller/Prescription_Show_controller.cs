@@ -36,6 +36,11 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = cmodel.Get_CompanyNAme();
             return dtb;
         }
+        public string server()
+        {
+            string server = db.server();
+            return server;
+        }
         public string Get_DoctorName(string doctor_id)
         {
             string dtb = cmodel.Get_DoctorName(doctor_id);

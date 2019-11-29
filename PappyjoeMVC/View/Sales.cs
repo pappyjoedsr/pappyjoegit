@@ -1456,7 +1456,7 @@ namespace PappyjoeMVC.View
                     dgv_BatchSale.Rows.Clear();
                     for (int i = 0; i < dtb_BatchSale.Rows.Count; i++)
                     {
-                        dgv_BatchSale.Rows.Add(dtb_BatchSale.Rows[i]["InvNumber"].ToString(), dtb_BatchSale.Rows[i]["InvDate"].ToString(), dtb_BatchSale.Rows[i]["Item_Code"].ToString(), dtb_BatchSale.Rows[i]["BatchNumber"].ToString(), dtb_BatchSale.Rows[i]["Qty"].ToString(), dtb_BatchSale.Rows[i]["IsExpDate"].ToString(), dtb_BatchSale.Rows[i]["BatchEntry"].ToString());
+                        dgv_BatchSale.Rows.Add(dtb_BatchSale.Rows[i]["InvNumber"].ToString(), dtb_BatchSale.Rows[i]["InvDate"].ToString(), dtb_BatchSale.Rows[i]["Item_Code"].ToString(), dtb_BatchSale.Rows[i]["BatchNumber"].ToString(), dtb_BatchSale.Rows[i]["Qty"].ToString(),"","", dtb_BatchSale.Rows[i]["IsExpDate"].ToString(), dtb_BatchSale.Rows[i]["BatchEntry"].ToString(), dtb_BatchSale.Rows[i]["prddate"].ToString(),dtb_BatchSale.Rows[i]["expdate"].ToString());
                     }
                 }
             }

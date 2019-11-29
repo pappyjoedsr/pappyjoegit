@@ -100,14 +100,16 @@ namespace PappyjoeMVC.View
                     }
                     if (path != "")
                     {
-                        if (File.Exists(db.server() + path))
+                        string curFile = this.cntrl.server() + "\\Pappyjoe_utilities\\Logo\\" + path;
+
+                        if (File.Exists(curFile))
                         {
                             logo_name = "";
                             logo_name = path;
                             string Apppath = System.IO.Directory.GetCurrentDirectory();
                             if (!File.Exists(Apppath + "\\" + logo_name))
                             {
-                                System.IO.File.Copy(db.server() + path, Apppath + "\\" + logo_name);
+                                System.IO.File.Copy(curFile, Apppath + "\\" + logo_name);
                             }
                         }
                         else
@@ -115,6 +117,23 @@ namespace PappyjoeMVC.View
                             logo_name = "";
                         }
                     }
+                    //if (path != "")
+                    //{
+                    //    if (File.Exists(db.server() + path))
+                    //    {
+                    //        logo_name = "";
+                    //        logo_name = path;
+                    //        string Apppath = System.IO.Directory.GetCurrentDirectory();
+                    //        if (!File.Exists(Apppath + "\\" + logo_name))
+                    //        {
+                    //            System.IO.File.Copy(db.server() + path, Apppath + "\\" + logo_name);
+                    //        }
+                    //    }
+                    //    else
+                    //    {
+                    //        logo_name = "";
+                    //    }
+                    //}
                 }
                 listpatientsearch.Hide();
                 System.Data.DataTable pat = this.cntrl.Get_pat_iDName(patient_id);
@@ -937,7 +956,6 @@ namespace PappyjoeMVC.View
                         MessageBox.Show("Please Add EmailId for Selected patient");
                     }
                 }
-
                 //...end
             }
             catch (Exception ex)
@@ -986,7 +1004,6 @@ namespace PappyjoeMVC.View
                 string str_pincode = "";
                 string str_email = "";
                 string str_website = "";
-
                 System.Data.DataTable dtp = this.cntrl.Get_practiceDlNumber();
                 if (dtp.Rows.Count > 0)
                 {
@@ -999,7 +1016,6 @@ namespace PappyjoeMVC.View
                     str_email = dtp.Rows[0]["email"].ToString();
                     str_website = dtp.Rows[0]["website"].ToString();
                 }
-
                 string strfooter1 = "";
                 string strfooter2 = "";
                 string strfooter3 = "";
@@ -1021,7 +1037,7 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("<html>");
                 sWrite.WriteLine("<head>");
                 sWrite.WriteLine("</head>");
-                sWrite.WriteLine("<body >");
+                sWrite.WriteLine("<body>");
                 sWrite.WriteLine("<br>");
                 if (includeheader == "1")
                 {
@@ -1202,13 +1218,13 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("</table>");
                 }
-                sWrite.WriteLine("<table align='center'   style='width:700px;border: 1px ;border-collapse: collapse;' >");
+                sWrite.WriteLine("<table align='center'style='width:700px;border: 1px ;border-collapse: collapse;' >");
                 sWrite.WriteLine("<tr >");
                 sWrite.WriteLine("<td align='left' width='35px' height='30'><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Sl.</font></td>");
-                sWrite.WriteLine("<td align='left' width='221px' ><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Drug Name</font></td>");
+                sWrite.WriteLine("<td align='left' width='180px' ><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Drug Name</font></td>");
                 sWrite.WriteLine("<td align='center' width='105px' ><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Strength </font></td>");
-                sWrite.WriteLine("<td align='center' width='114px' colspan='3' ><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Frequency</font></td>");
-                sWrite.WriteLine("<td align='left' width='99px'><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Instructions</font></td>");
+                sWrite.WriteLine("<td align='center' width='120px' colspan='3' ><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Frequency</font></td>");
+                sWrite.WriteLine("<td align='left' width='130px'><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Instructions</font></td>");
                 sWrite.WriteLine("</tr>");
                 System.Data.DataTable dt_prescription = db.table("SELECT drug_name,strength,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,strength_gr,status FROM tbl_prescription WHERE pres_id='" + prescription_id + "' ORDER BY id");
                 if (dt_prescription.Rows.Count > 0)
@@ -1244,7 +1260,6 @@ namespace PappyjoeMVC.View
                             sWrite.WriteLine("<td align='center' height='7' valign='bottom'  width='50px'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1>&nbsp;Night </font></td>");
                             sWrite.WriteLine("</tr>");
                         }
-
                         sWrite.WriteLine("<tr>");
                         if (dt_prescription.Rows[k]["add_instruction"].ToString() != "")
                         {
@@ -1275,7 +1290,6 @@ namespace PappyjoeMVC.View
                             sWrite.WriteLine("<td align='left' height='20' colspan='7' valign='top' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1.5>&nbsp;" + dt_prescription.Rows[k]["add_instruction"].ToString() + " </font></td>");
                             sWrite.WriteLine("</tr>");
                         }
-
                     } // Presription Sub(Drug Details) Record Count
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td align='left' height='30' colspan='8'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + strNote.ToString() + " </font></td>");

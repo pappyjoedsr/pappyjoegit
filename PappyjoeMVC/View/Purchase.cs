@@ -1483,12 +1483,13 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("</body>");
                 sWrite.WriteLine("</html>");
                 sWrite.Close();
-                System.Diagnostics.Process.Start(Apppath + "\\Purchase.html");
+                System.Diagnostics.Process.Start(Apppath + "\\Purcahse.html");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void txtDic_KeyPress(object sender, KeyPressEventArgs e)
