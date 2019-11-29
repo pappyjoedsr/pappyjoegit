@@ -306,7 +306,6 @@ namespace PappyjoeMVC.View
         }
         private void print_html()
         {
-
             try
             {
 
@@ -333,7 +332,7 @@ namespace PappyjoeMVC.View
                     str_pincode = dtp.Rows[0]["pincode"].ToString();
                     str_email = dtp.Rows[0]["email"].ToString();
                     str_website = dtp.Rows[0]["website"].ToString();
-                }
+                }//
                 string strfooter1 = "";
                 string strfooter2 = "";
                 string strfooter3 = "";

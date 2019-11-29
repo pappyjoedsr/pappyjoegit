@@ -3,11 +3,33 @@ using PappyjoeMVC.Model;
 using System;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 namespace PappyjoeMVC.View
 {
     public partial class StockReport : Form
     {
+        string combo_topmargin = "";
+        string combo_leftmargin = "";
+        string combo_bottommargin = "";
+        string combo_rightmargin = "";
+        string combo_paper_size = "";
+        string combo_footer_topmargin = "";
+        string rich_fullwidth = "";
+        string rich_leftsign = "";
+        string rich_rightsign = "";
+        string patient_details = "";
+        string med = "";
+        string patient = "";
+        string address = "";
+        string phone = "";
+        string blood = "";
+        string gender = "";
+        string logo_name = "";
+        string orientation = "",path="";
+        string includeheader = "0";
+        string includelogo = "0";
+        System.Drawing.Image logo = null;
         stock_controller cntrl = new stock_controller();
         public string doctor_id = "";
         Purchase purchase = new Purchase();
@@ -119,11 +141,43 @@ namespace PappyjoeMVC.View
             btn_Stock.BackColor = Color.SteelBlue;
             toolStripButton5.BackColor = Color.SkyBlue;
             toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-            toolStripButton1.Text = this.cntrl.Load_CompanyName();
-            string docnam = this.cntrl.Get_DoctorName(doctor_id);
-            if (docnam != "")
+            System.Data.DataTable clinicname = this.cntrl.Get_CompanyNAme();
+            if (clinicname.Rows.Count > 0)
             {
-                toolStripldoc.Text = "Logged In As : " + docnam;
+                string clinicn = "";
+                clinicn = clinicname.Rows[0][0].ToString();
+                toolStripButton1.Text = clinicn.Replace("¤", "'");
+                path = clinicname.Rows[0]["path"].ToString();
+                string docnam = this.cntrl.Get_DoctorName(doctor_id);
+                if (docnam != "")
+                {
+                    toolStripldoc.Text = "Logged In As : " + docnam;
+                }
+            }
+            try
+            {
+                if (path != "")
+                {
+                    string curFile = this.cntrl.server() + "\\Pappyjoe_utilities\\Logo\\" + path;
+
+                    if (File.Exists(curFile))
+                    {
+                        //logo_name = "";
+                        logo_name = path;
+                        string Apppath = System.IO.Directory.GetCurrentDirectory();
+                        if (!File.Exists(Apppath + "\\" + logo_name))
+                        {
+                            System.IO.File.Copy(curFile, Apppath + "\\" + logo_name);
+                        }
+                    }
+                    else
+                    {
+                        logo_name = "";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
             }
             DataTable dt_supplier = this.cntrl.LoadSupplier();
             Load_Supplier(dt_supplier);
@@ -918,102 +972,222 @@ namespace PappyjoeMVC.View
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            print();
+            try
+            {
+                print_setting();
+                print();
+            }
+            catch
+            {
+                MessageBox.Show("Printing Error..", "Print error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+        public void print_setting()
+        {
+            System.Data.DataTable print = this.cntrl.get_printSettings();
+            if (print.Rows.Count > 0)
+            {
+                combo_topmargin = print.Rows[0][4].ToString();
+                combo_leftmargin = print.Rows[0][5].ToString();
+                combo_bottommargin = print.Rows[0][6].ToString();
+                combo_rightmargin = print.Rows[0][7].ToString();
+                combo_paper_size = print.Rows[0][1].ToString();
+                combo_footer_topmargin = print.Rows[0][22].ToString();
+                rich_fullwidth = print.Rows[0][23].ToString();
+                rich_leftsign = print.Rows[0][24].ToString();
+                rich_rightsign = print.Rows[0][25].ToString();
+
+                patient_details = print.Rows[0][14].ToString();
+                med = print.Rows[0][15].ToString();
+                patient = print.Rows[0][16].ToString();
+                address = print.Rows[0][17].ToString();
+                phone = print.Rows[0][18].ToString();
+                blood = print.Rows[0][20].ToString();
+                gender = print.Rows[0][21].ToString();
+                orientation = print.Rows[0][2].ToString();
+                includeheader = print.Rows[0]["include_header"].ToString();
+                includelogo = print.Rows[0]["include_logo"].ToString();
+            }
         }
         public void print()
         {
-            string today = DateTime.Now.ToString("d/M/yyyy");
-            string message = "Did you want Header on Print?";
-            string caption = "Verification";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
-            result = MessageBox.Show(message, caption, buttons);
-            string clinicn = "";
-            string strclinicname = "";
-            string strStreet = "";
-            string stremail = "";
-            string strwebsite = "";
-            string strphone = "";
-            if (result == System.Windows.Forms.DialogResult.Yes)
+            try
             {
-                System.Data.DataTable dtp = this.cntrl.get_company_details();// db.table("select name,contact_no,street_address,email,website from tbl_practice_details");
-                if (dtp.Rows.Count > 0)
+
+                System.Data.DataTable dtp = this.cntrl.get_company_details();
+                string clinicn = "";
+                string Clinic = "";
+                clinicn = dtp.Rows[0][1].ToString();
+                Clinic = clinicn.Replace("¤", "'");
+                string doctorName = "";
+                string streetaddress = "";
+                string str_locality = "";
+                string contact_no = "";
+                string str_pincode = "";
+                string str_email = "";
+                string str_website = "";
+                string doctor = this.cntrl.Get_DoctorName(doctor_id);
+                if (doctor != "")
                 {
-                    clinicn = dtp.Rows[0]["name"].ToString();
-                    strclinicname = clinicn.Replace("¤", "'");
-                    strphone = dtp.Rows[0]["contact_no"].ToString();
-                    strStreet = dtp.Rows[0]["street_address"].ToString();
-                    stremail = dtp.Rows[0]["email"].ToString();
-                    strwebsite = dtp.Rows[0]["website"].ToString();
+                    doctorName = doctor;
+                    streetaddress = dtp.Rows[0]["street_address"].ToString();
+                    contact_no = dtp.Rows[0]["contact_no"].ToString();
+                    str_locality = dtp.Rows[0]["locality"].ToString();
+                    str_pincode = dtp.Rows[0]["pincode"].ToString();
+                    str_email = dtp.Rows[0]["email"].ToString();
+                    str_website = dtp.Rows[0]["website"].ToString();
+                }//
+                string strfooter1 = "";
+                string strfooter2 = "";
+                string strfooter3 = "";
+                string header1 = "";
+                string header2 = "";
+                string header3 = "";
+                System.Data.DataTable print = this.cntrl.receipt_printSettings();
+                if (print.Rows.Count > 0)
+                {
+                    header1 = print.Rows[0]["header"].ToString();
+                    header2 = print.Rows[0]["left_text"].ToString();
+                    header3 = print.Rows[0]["right_text"].ToString();
+                    strfooter1 = print.Rows[0]["fullwidth_context"].ToString();
+                    strfooter2 = print.Rows[0]["left_sign"].ToString();
+                    strfooter3 = print.Rows[0]["right_sign"].ToString();
                 }
-            }
-            string Apppath = System.IO.Directory.GetCurrentDirectory();
-            System.IO.StreamWriter sWrite = new System.IO.StreamWriter(Apppath + "\\StockReport.html");
-            sWrite.WriteLine("<html>");
-            sWrite.WriteLine("<head>");
-            sWrite.WriteLine("<style>");
-            sWrite.WriteLine("table { border-collapse: collapse;}");
-            sWrite.WriteLine("p.big {line-height: 400%;}");
-            sWrite.WriteLine("</style>");
-            sWrite.WriteLine("</head>");
-            sWrite.WriteLine("<body >");
-            sWrite.WriteLine("<div>");
-            sWrite.WriteLine("<table align=center width=900 >");
-            sWrite.WriteLine("<tr>");
-            if (Chk_Minimum.Checked)
-            {
-                sWrite.WriteLine("<td colspan=5 align='center'><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b>MINIMUM STOCK REPORT</b> </font></td");
-            }
-            else
-                sWrite.WriteLine("<td colspan=5 align='center' ><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b>STOCK REPORT</b> </font></td");
-            sWrite.WriteLine("</tr>");
-            sWrite.WriteLine("<tr>");
-            sWrite.WriteLine("<td colspan=5 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3>   " + strclinicname + "</font></b></td>");
-            sWrite.WriteLine("</tr>");
-            sWrite.WriteLine("<tr>");
-            sWrite.WriteLine("<td colspan=5 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3>   " + strStreet + "</font></b></td>");
-            sWrite.WriteLine("</tr>");
-            sWrite.WriteLine("<tr>");
-            sWrite.WriteLine("<td colspan=5 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3> " + strphone + "</font></b></td>");
-            sWrite.WriteLine("</tr>");
-            sWrite.WriteLine("<tr>");
-            sWrite.WriteLine("<td colspan=5 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2>Printed Date:" + " " + today + "" + "</font></center></td>");
-            sWrite.WriteLine("</tr >");
-            if (Chk_Suplier.Checked)
-            {
-                string suplier = Cmb_Suplier.Text;
-                sWrite.WriteLine("<td><align=right FONT COLOR=black FACE='Segoe UI' SIZE=2>Suplier Name :" + suplier + "</font></td>");
-            }
-            sWrite.WriteLine("</tr>");
-            if (DGV_Stock.Rows.Count > 0)
-            {
-                sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("    <td align='center' width='10%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >Sl No.</font></th>");
-                sWrite.WriteLine("    <td align='center' width='20%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>Item Code</font></th>");
-                sWrite.WriteLine("    <td align='center' width='35%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI'SIZE=3>Item Name</font></th>");
-                sWrite.WriteLine("    <td align='center' width='13%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Purchase Unit</font></th>");
-                sWrite.WriteLine("    <td align='center' width='25%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>Stock</font></th>");
-                sWrite.WriteLine("</tr>");
-                for (int c = 0; c < DGV_Stock.Rows.Count; c++)
+                string Apppath = System.IO.Directory.GetCurrentDirectory();
+                StreamWriter sWrite = new StreamWriter(Apppath + "\\p.html");
+                sWrite.WriteLine("<html>");
+                sWrite.WriteLine("<head>");
+                sWrite.WriteLine("</head>");
+                sWrite.WriteLine("<body >");
+                sWrite.WriteLine("<br>");//style='width:100px;height:100px;'
+                if (includeheader == "1")
                 {
+                    if (includelogo == "1")
+                    {
+                        if (logo != null || logo_name != "")
+                        {
+                            string Appath = System.IO.Directory.GetCurrentDirectory();
+                            if (File.Exists(Appath + "\\" + logo_name))
+                            {
+                                sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
+                                sWrite.WriteLine("<th align='center' colspan=8><FONT COLOR=black FACE='Segoe UI' SIZE=5><b>Stock Report<b></FONT></th>");
+                                sWrite.WriteLine("<br>");
+                                sWrite.WriteLine("<br>");
+                                sWrite.WriteLine("<tr>");
+                                //sWrite.WriteLine("<td width='90px' height='75px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "'width='85' height='93'  ></td>  ");
+                                sWrite.WriteLine("<td width='588' align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5><b>&nbsp;" + header1 + "</b></font></td></tr>");
+                                sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;" + header2 + "</b></font></td></tr>");
+                                sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;" + header3 + "</b></font></td></tr>");
+                                sWrite.WriteLine("</table>");
+                            }
+                            else
+                            {
+                                sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
+                                sWrite.WriteLine("<tr>");
+                                sWrite.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
+                                sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;" + header2 + "</font></td></tr>");
+                                sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + header3 + "</font></td></tr>");
+
+                                sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
+
+                                sWrite.WriteLine("</table>");
+                            }
+                        }
+                        else
+                        {
+                            sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
+                            sWrite.WriteLine("<tr>");
+                            sWrite.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
+                            sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;" + header2 + "</font></td></tr>");
+                            sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + header3 + "</font></td></tr>");
+
+                            sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
+
+                            sWrite.WriteLine("</table>");
+                        }
+                    }
+                    else
+                    {
+                        sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
+                        sWrite.WriteLine("<tr>");
+                        sWrite.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
+                        sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;" + header2 + "</font></td></tr>");
+                        sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + header3 + "</font></td></tr>");
+                        sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
+                        sWrite.WriteLine("</table>");
+                    }
+                }
+                else
+                {
+                    sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Stock.Rows[c].Cells["SLNO"].Value.ToString() + "</font></th>");
-                    sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Stock.Rows[c].Cells["item_code"].Value.ToString() + "</font></th>");
-                    sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Stock.Rows[c].Cells["item_name"].Value.ToString() + "</font></th>");
-                    sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Stock.Rows[c].Cells["clunit"].Value.ToString() + "</font></th>");
-                    sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI'' SIZE=2>" + DGV_Stock.Rows[c].Cells["qty"].Value.ToString() + "</font></th>");
+                    sWrite.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5></font></td></tr>");
+                    sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3></font></td></tr>");
+                    sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td></tr>");
+                    sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
+                    sWrite.WriteLine("</table>");
                 }
-                sWrite.WriteLine("</tr >");
+                sWrite.WriteLine("<table align='center'   style='width:700px;border: 1px ;border-collapse: collapse;' >");
+                sWrite.WriteLine("<tr>");
+               
+                sWrite.WriteLine("<td width=450px></td>");
+                if (Chk_Suplier.Checked)
+                {
+                    string suplier = Cmb_Suplier.Text;
+                    sWrite.WriteLine("<td><align=right FONT COLOR=black FACE='Segoe UI' SIZE=2>Suplier Name :" + suplier + "</font></td>");
+                }
+                sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("</table>");
-                sWrite.WriteLine("</div>");
-                sWrite.WriteLine("<script>window.print();</script>");
-                sWrite.WriteLine("</body>");
-                sWrite.WriteLine("</html>");
-                sWrite.Close();
-                System.Diagnostics.Process.Start(Apppath + "\\StockReport.html");
+                sWrite.WriteLine("<br>");
+                sWrite.WriteLine("<table   align='center' style='width:700px;border: 1px ;border-collapse: collapse;' >");
+                sWrite.WriteLine("<tr>");
+                sWrite.WriteLine("<td width='40' height='30' align='left' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Sl No.</b></font></td>");
+                sWrite.WriteLine("<td width='165' align='left' style='border:1px solid #000;background-color:#999999' height='30'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Item Code</b></font></td>");
+                sWrite.WriteLine("<td width='165' align='left' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Item Name</b></font></td>");
+                sWrite.WriteLine("<td width='165' align='left' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Purchase Unit</b></font></td>");
+                sWrite.WriteLine("<td width='165' align='right' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Stock</b></font></td>");
+                sWrite.WriteLine("</tr>");
+                sWrite.WriteLine("</table>");
+                sWrite.WriteLine("<table   align='center' style='width:700px;border: 1px ;border-collapse: collapse;' >");
+                sWrite.WriteLine("<tr>");
+                for (int c = 0; c < DGV_Stock.Rows.Count; c++)
+                    {
+                    sWrite.WriteLine("<tr>");
+                    sWrite.WriteLine("<td align='left' width='40 height='30' style='border:1px solid #000'><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_Stock.Rows[c].Cells["SLNO"].Value.ToString() + "</font></td>");
+                    sWrite.WriteLine("<td align='left' width='165' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + DGV_Stock.Rows[c].Cells["item_code"].Value.ToString() + " </font></td>");
+                    sWrite.WriteLine("<td align='left' width='165' style='border:1px solid #000'><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + DGV_Stock.Rows[c].Cells["item_name"].Value.ToString() + "</font></td>");
+                    sWrite.WriteLine("<td align='left' width='165' style='border:1px solid #000'><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + DGV_Stock.Rows[c].Cells["clunit"].Value.ToString() + "</font></td>");
+                    sWrite.WriteLine("<td align='right'   width='165' style='border:1px solid #000'><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + DGV_Stock.Rows[c].Cells["qty"].Value.ToString() + " </font></td>");
+                    sWrite.WriteLine("</tr>");
+                    }
+                sWrite.WriteLine("</table>");
+                sWrite.WriteLine("<br>");
+                    sWrite.WriteLine("<br>");
+                sWrite.WriteLine("<br>");
+                sWrite.WriteLine("<br>");
+                sWrite.WriteLine("<br>");
+                sWrite.WriteLine("<br>");
+                sWrite.WriteLine("<table align='center'   style='width:700px;border: 1px ;border-collapse: collapse;' >");
+                    sWrite.WriteLine("<tr>");
+                    sWrite.WriteLine("<td align='center' height='22'  ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + strfooter1 + "</font></td>");
+                    sWrite.WriteLine("</tr>");
+                    sWrite.WriteLine("<tr>");
+                    sWrite.WriteLine("<td align='center' height='22'  ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + strfooter2 + "</font></td>");
+                    sWrite.WriteLine("</tr>");
+                    sWrite.WriteLine("<tr>");
+                    sWrite.WriteLine("<td align='center' height='22'  ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + strfooter3 + "</font></td>");
+                    sWrite.WriteLine("</tr>");
+                    sWrite.WriteLine("</table>");
+                    sWrite.WriteLine("<script>window.print();</script>");
+                    sWrite.WriteLine("</body>");
+                    sWrite.WriteLine("</html>");
+                    sWrite.Close();
+                    System.Diagnostics.Process.Start(Apppath + "\\p.html");
+            }
+            catch (Exception ex)
+            {
             }
         }
-
         private void panel_main_Paint(object sender, PaintEventArgs e)
         {
 
