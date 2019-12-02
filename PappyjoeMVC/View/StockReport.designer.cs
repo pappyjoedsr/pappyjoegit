@@ -383,7 +383,7 @@
             this.panel5.Controls.Add(this.btnSales);
             this.panel5.Location = new System.Drawing.Point(0, 42);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(165, 654);
+            this.panel5.Size = new System.Drawing.Size(165, 650);
             this.panel5.TabIndex = 146;
             // 
             // btn_Stock
