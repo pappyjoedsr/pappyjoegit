@@ -11,11 +11,17 @@ namespace PappyjoeMVC.Controller
     {
         Common_model cmodel = new Common_model();
         Connection db = new Connection();
+        Receipt_Model Model = new Receipt_Model();
         StockItem_model model = new StockItem_model();
         public string Load_CompanyName()
         {
             string clinicname = cmodel.Load_CompanyName();
             return clinicname;
+        }
+        public DataTable get_printSettings()
+        {
+            DataTable print = Model.get_printSettings();
+            return print;
         }
         public DataTable Get_practiceDlNumber()
         {
@@ -86,6 +92,21 @@ namespace PappyjoeMVC.Controller
         {
             DataTable dtb = cmodel.get_company_details();
             return dtb;
+        }
+        public DataTable Get_CompanyNAme()
+        {
+            DataTable dtb = cmodel.Get_CompanyNAme();
+            return dtb;
+        }
+        public DataTable receipt_printSettings()
+        {
+            DataTable print = Model.receipt_printSettings();
+            return print;
+        }
+        public string server()
+        {
+            string server = db.server();
+            return server;
         }
     }
 }
