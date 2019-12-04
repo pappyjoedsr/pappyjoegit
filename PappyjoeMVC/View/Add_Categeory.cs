@@ -13,6 +13,10 @@ namespace PappyjoeMVC.View
     public partial class Add_Categeory : Form
     {
         Add_Category_controller cntrl=new Add_Category_controller(); string Id;
+        public Add_Categeory()
+        {
+            InitializeComponent();
+        }
         private void frmAddCategeory_Load(object sender, EventArgs e)
         {
             clear();

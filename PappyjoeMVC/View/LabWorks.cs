@@ -250,7 +250,7 @@ namespace PappyjoeMVC.View
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
             DataTable sm = this.ctrlr.smsinfo();
-            smsinfo(sm);
+            smsinfo(sm);     
         }
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
