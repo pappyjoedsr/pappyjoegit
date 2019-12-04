@@ -228,7 +228,7 @@ namespace PappyjoeMVC.View
                                 txtamountincome.Text = dgv_credit.Rows[rw].Cells["col_amount"].Value.ToString();
                                 textBoxnameofincome.Text = dgv_credit.Rows[rw].Cells["col_ledger"].Value.ToString();
                                 textBoxdescincome.Text = dgv_credit.Rows[rw].Cells["col_descrptn"].Value.ToString();
-                                dateTimePickerincome.Value = Convert.ToDateTime(dgv_credit.Rows[rw].Cells["col_date"].Value.ToString());
+                                dateTimePickerincome.Text = Convert.ToDateTime(dgv_credit.Rows[rw].Cells["col_date"].Value.ToString()).ToString("dd/MM/yyyy");
                                 btn_Creditcancel.Visible = true;
                                 btnincomesubmit.Text = "Update";
                             }
@@ -542,7 +542,7 @@ namespace PappyjoeMVC.View
                                 textBox_add_template.Text = Dgv_Debit.Rows[rw].Cells["colDescrpt"].Value.ToString();
                                 DateTime dt;
                                 dt = Convert.ToDateTime(Dgv_Debit.Rows[rw].Cells["colDate"].Value.ToString());
-                                dateTimePickerdate.Value = dt;
+                                dateTimePickerdate.Text = dt.ToString("dd/MM/yyyy");
                                 btnsubmit.Text = "Update";
                                 btn_DebitCancel.Visible = true;
                                 Lnk_AddNew.Visible = false;
