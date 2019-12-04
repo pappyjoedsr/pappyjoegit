@@ -67,6 +67,8 @@
             this.Supplier_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Lab_InvalidNumber = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.gbContactDetails.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).BeginInit();
@@ -94,6 +96,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbContactDetails.AutoSize = true;
             this.gbContactDetails.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbContactDetails.Controls.Add(this.label5);
+            this.gbContactDetails.Controls.Add(this.Lab_InvalidNumber);
             this.gbContactDetails.Controls.Add(this.txtAddress1);
             this.gbContactDetails.Controls.Add(this.txtContactPerson);
             this.gbContactDetails.Controls.Add(this.txtaddress2);
@@ -236,11 +240,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhone.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.txtPhone.Location = new System.Drawing.Point(432, 109);
-            this.txtPhone.MaxLength = 50;
+            this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(211, 25);
             this.txtPhone.TabIndex = 8;
             this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
+            this.txtPhone.Leave += new System.EventHandler(this.txtPhone_Leave);
             // 
             // txtOB
             // 
@@ -341,11 +346,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtphone2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.txtphone2.Location = new System.Drawing.Point(432, 137);
-            this.txtphone2.MaxLength = 50;
+            this.txtphone2.MaxLength = 10;
             this.txtphone2.Name = "txtphone2";
             this.txtphone2.Size = new System.Drawing.Size(211, 25);
             this.txtphone2.TabIndex = 9;
             this.txtphone2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtphone2_KeyPress);
+            this.txtphone2.Leave += new System.EventHandler(this.txtphone2_Leave);
             // 
             // txtSupplierName
             // 
@@ -538,6 +544,28 @@
             this.ColDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColDelete.Width = 19;
             // 
+            // Lab_InvalidNumber
+            // 
+            this.Lab_InvalidNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lab_InvalidNumber.ForeColor = System.Drawing.Color.Red;
+            this.Lab_InvalidNumber.Location = new System.Drawing.Point(649, 116);
+            this.Lab_InvalidNumber.Name = "Lab_InvalidNumber";
+            this.Lab_InvalidNumber.Size = new System.Drawing.Size(103, 23);
+            this.Lab_InvalidNumber.TabIndex = 200;
+            this.Lab_InvalidNumber.Text = "Invalid number";
+            this.Lab_InvalidNumber.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(649, 142);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 23);
+            this.label5.TabIndex = 201;
+            this.label5.Text = "Invalid number";
+            this.label5.Visible = false;
+            // 
             // Supplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -600,5 +628,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Supplier_Name;
         private System.Windows.Forms.DataGridViewImageColumn colEdit;
         private System.Windows.Forms.DataGridViewImageColumn ColDelete;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Lab_InvalidNumber;
     }
 }

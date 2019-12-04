@@ -133,14 +133,15 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<div>");
                     sWrite.WriteLine("<table align=center width=900>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td align = 'center' colspan=3><FONT COLOR=black FACE='Segoe UI' SIZE=4>  <br><b>PATIENT FIRST APPOINMENT</b> </font></td");
+                    sWrite.WriteLine("<td align = 'center' colspan=3><FONT COLOR=black FACE='Segoe UI' SIZE=5>  <br><b>PATIENT FIRST APPOINMENT</b> </font></td");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=3><b><FONT COLOR=black FACE='Segoe UI' SIZE=3> " + strclinicname + "</font></b></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td colspan=3><b><FONT COLOR=black FACE='Segoe UI' SIZE=2>   " + strphone + "</font></b></td>");
+                    sWrite.WriteLine("<td colspan=3><b><FONT COLOR=black FACE='Segoe UI' SIZE=3>   " + strphone + "</font></b></td>");
                     sWrite.WriteLine("</tr>");
+                    sWrite.WriteLine("<tr><td colspan=9><hr></td></tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=3><FONT COLOR=black FACE='Segoe UI' SIZE=2><b> From :</b> " + dateTimePickerfirstappoint1.Value.ToString("dd-MM-yyyy") + " </font></td> ");
                     sWrite.WriteLine("</tr>");
@@ -153,16 +154,16 @@ namespace PappyjoeMVC.View
                     if (Grvpatientfirstappoint.Rows.Count > 0)
                     {
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("    <td align='center' width='10%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=2 >&nbsp;Sl.No.</font></th>");
-                        sWrite.WriteLine("    <td align='center' width='60%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=2 >&nbsp;Patient Name</font></th>");
-                        sWrite.WriteLine("    <td align='center' width='30%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=2> &nbsp;Booking Date</font></th>");
+                        sWrite.WriteLine("    <td align='left' width='10%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=2 >&nbsp;<b>Slno.</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='60%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=2 >&nbsp;<b>Patient Name</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='30%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=2> &nbsp;<b>Booking Date</b></font></th>");
                         sWrite.WriteLine("</tr>");
                         for (int j = 0; j < Grvpatientfirstappoint.Rows.Count; j++)
                         {
                             sWrite.WriteLine("<tr>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; &nbsp;" + (j + 1) + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; &nbsp;" + Grvpatientfirstappoint.Rows[j].Cells[0].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='center' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; &nbsp;" + Convert.ToDateTime(Grvpatientfirstappoint.Rows[j].Cells[1].Value.ToString()).ToString("dd-MM-yyyy") + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + (j + 1) + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; " + Grvpatientfirstappoint.Rows[j].Cells[0].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='center' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + Convert.ToDateTime(Grvpatientfirstappoint.Rows[j].Cells[1].Value.ToString()).ToString("dd-MM-yyyy") + "</font></th>");
                             sWrite.WriteLine("</tr>");
                         }
                         sWrite.WriteLine("</table>");
