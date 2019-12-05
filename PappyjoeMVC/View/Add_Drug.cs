@@ -917,7 +917,7 @@ namespace PappyjoeMVC.View
                             this.cntrl.update_inventryid(Item_Id.ToString());
                         }
 
-                        MessageBox.Show("Item updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }
