@@ -147,7 +147,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable patient_details(string patient_id)
         {
-            System.Data.DataTable dt1 = db.table("select pt_id,pt_name,gender,age,street_address,city,primary_mobile_number,locality,email_address,pincode from tbl_patient where id='" + patient_id + "'");
+            System.Data.DataTable dt1 = db.table("select pt_id,pt_name,gender,age,street_address,city,primary_mobile_number,locality,email_address,pincode,doctorname from tbl_patient where id='" + patient_id + "'");
             return dt1;
         }
         public DataTable patient_prescptn(string prescription_id, string patient_id)
