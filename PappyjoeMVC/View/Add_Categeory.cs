@@ -88,7 +88,6 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-           
         }
 
         private void btnOK_Click(object sender, EventArgs e)
