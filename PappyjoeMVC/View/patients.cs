@@ -143,7 +143,7 @@ namespace PappyjoeMVC.View
             else
             {
                 lab_LongMsg.Show();
-                lab_LongMsg.Location = new Point(350, 350);
+                lab_LongMsg.Location = new Point(91, 177);
                 lab_7.Location= new Point(4,5);
                 lab_7.Text = " 0 Patient(s)";
                 lab_Displaying.Visible = false;
@@ -412,8 +412,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    lab_LongMsg.Show();
-                    lab_LongMsg.Location = new Point(350, 350);
+                    lab_LongMsg.Visible=true;
+                    lab_LongMsg.Location = new Point(91, 177);
                     lab_7.Location = new Point(4, 5);
                     lab_7.Text = " 0 Patient(s)";
                     lab_Displaying.Visible = false;
@@ -666,7 +666,7 @@ namespace PappyjoeMVC.View
                 else
                 {
                     lab_LongMsg.Show();
-                    lab_LongMsg.Location = new Point(350, 350);
+                    lab_LongMsg.Location = new Point(91, 177);
                     lab_7.Location = new Point(4, 5);
                     lab_7.Text = " 0 Patient(s)";
                     lab_Displaying.Visible = false;
@@ -836,7 +836,7 @@ namespace PappyjoeMVC.View
                 else
                 {
                     lab_LongMsg.Show();
-                    lab_LongMsg.Location = new Point(350, 350);
+                    lab_LongMsg.Location = new Point(91, 177);
                     lab_7.Location = new Point(4, 5);
                     lab_7.Text = " 0 Patient(s)";
                     lab_Displaying.Visible = false;
@@ -979,7 +979,7 @@ namespace PappyjoeMVC.View
                 else
                 {
                     lab_LongMsg.Show();
-                    lab_LongMsg.Location = new Point(350, 350);
+                    lab_LongMsg.Location = new Point(91, 177);
                     lab_7.Location = new Point(4, 5);
                     lab_7.Text = " 0 Patient(s)";
                     lab_Displaying.Visible = false;
@@ -1305,7 +1305,7 @@ namespace PappyjoeMVC.View
                 else
                 {
                     lab_LongMsg.Show();
-                    lab_LongMsg.Location = new Point(350, 350);
+                    lab_LongMsg.Location = new Point(91, 177);
                     lab_7.Visible = true;
                     lab_7.Location = new Point(4, 5);
                     lab_7.Text = " 0 Patient(s)";
@@ -1418,12 +1418,12 @@ namespace PappyjoeMVC.View
                     lab_7.Location = new Point(73, 7);
                     lab_7.Text = Payment.Rows.Count.ToString() + " Patient(s)";
                     lab_LongMsg.Show();
-                    lab_LongMsg.Location = new Point(350, 350);
+                    lab_LongMsg.Location = new Point(91, 177);
                 }
                 else
                 {
                     lab_LongMsg.Show();
-                    lab_LongMsg.Location = new Point(350, 350);
+                    lab_LongMsg.Location = new Point(91, 177);
                     lab_7.Visible = true;
                     lab_7.Location = new Point(4, 5);
                     lab_7.Text = "0 Patient(s)";
@@ -2235,7 +2235,7 @@ namespace PappyjoeMVC.View
                 else
                 {
                     lab_LongMsg.Show();
-                    lab_LongMsg.Location = new Point(350, 350);
+                    lab_LongMsg.Location = new Point(91, 177);
                     lab_7.Location = new Point(4, 5);
                     lab_7.Text = " 0 Patient(s)";
                     lab_Displaying.Visible = false;
@@ -2680,7 +2680,7 @@ namespace PappyjoeMVC.View
             else
             {
                 lab_LongMsg.Show();
-                lab_LongMsg.Location = new Point(350, 350);
+                lab_LongMsg.Location = new Point(91, 177);
                 lab_7.Visible = true;
                 lab_7.Location = new Point(4, 5);
                 lab_7.Text = " 0 Patient(s)";

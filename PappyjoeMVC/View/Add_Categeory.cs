@@ -12,11 +12,12 @@ namespace PappyjoeMVC.View
 {
     public partial class Add_Categeory : Form
     {
-        Add_Category_controller cntrl=new Add_Category_controller(); string Id;
         public Add_Categeory()
         {
             InitializeComponent();
         }
+        Add_Category_controller cntrl=new Add_Category_controller(); string Id;
+       
         private void frmAddCategeory_Load(object sender, EventArgs e)
         {
             clear();
@@ -87,7 +88,6 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-           
         }
 
         private void btnOK_Click(object sender, EventArgs e)
