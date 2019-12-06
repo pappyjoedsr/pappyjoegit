@@ -214,11 +214,11 @@ namespace PappyjoeMVC.View
                         string Appath = System.IO.Directory.GetCurrentDirectory();
                         sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td width='100' height='75px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "' style='width:100px;height:100px;></td>  ");
-                        sWrite.WriteLine("<td width='200' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5><b>&nbsp;" + str_name.ToString() + "</b></font></td></tr>");
-                        sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;&nbsp;" + str_street_address.ToString() + "</b></font></td></tr>");
-                        sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;&nbsp;" + str_contact_no.ToString() + "</b></font></td></tr>");
-                        sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
+                        sWrite.WriteLine("<td width='30px' height='50px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "' style='width:70px;height:70px;></td>  ");
+                        sWrite.WriteLine("<td width='870px' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=4><b>&nbsp;" + str_name.ToString() + "</font> <br><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + str_street_address.ToString() + "<br>&nbsp;" + str_contact_no.ToString() + " </b></td></tr>");
+                        //sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;&nbsp;" + str_street_address.ToString() + "</b></font></td></tr>");
+                        //sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;&nbsp;" + str_contact_no.ToString() + "</b></font></td></tr>");
+                        //sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
                         sWrite.WriteLine("</table>");
                     }
                     else
@@ -240,6 +240,9 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<tr><th align='left'><FONT COLOR=black FACE='Geneva, segoe UI' SIZE=3></font></th></tr>");
                     sWrite.WriteLine("</table>");
                 }
+                sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
+                sWrite.WriteLine("<tr><td align='left'  ><hr/></td></tr>");
+                sWrite.WriteLine("</table>");
                 if (checkBoxcasesheet.Checked)
                 {
                     sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");

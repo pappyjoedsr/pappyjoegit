@@ -40,7 +40,7 @@ namespace PappyjoeMVC.View
         private void LabResultEntry_Load(object sender, EventArgs e)
         {
             try
-            {
+            {  
                 DataTable dt = this.ctrlr.LoadResult(patient_id, workid);
                 dataGridView1.DataSource = dt;
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
