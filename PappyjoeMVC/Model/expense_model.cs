@@ -12,7 +12,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Fill_dgv_credit()
         {
-            DataTable dtb = db.table("select id,expense_type,description,nameofperson,amountincome, date from tbl_expense where Type='Income' order by id");
+            DataTable dtb = db.table("select id,expense_type,description,nameofperson,amountincome, DATE_FORMAT(date, '%d/%m/%Y')as date from tbl_expense where Type='Income' order by id");
             return dtb;
         }
         public int submit_credit(string datevisitedincome, string comboBoxincomacc, string textBoxdescincome, string textBoxnameofincome, string txtamountincome)
@@ -47,7 +47,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable fill_dgv_debit()
         {
-            DataTable dtb = db.table("select id,expense_type,description,amount,nameofperson,date from tbl_expense where Type='Expense' order by id");
+            DataTable dtb = db.table("select id,expense_type,description,amount,nameofperson, DATE_FORMAT(date, '%d/%m/%Y')as date from tbl_expense where Type='Expense' order by id");
             return dtb;
         }
         public int Update_dgv_credit(int Incom_ID, string datevisitedincome, string comboBoxincomacc, string textBoxdescincome, string txtamountincome, string textBoxnameofincome)
