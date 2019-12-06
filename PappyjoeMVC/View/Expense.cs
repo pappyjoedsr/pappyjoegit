@@ -2,13 +2,17 @@
 using System;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
     public partial class Expense : Form
     {
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        public DateTime Date { get; set; }
         Expense_controller cntrl = new Expense_controller();
         public string doctor_id = "";
         public int Incom_ID = 0;
@@ -42,7 +46,7 @@ namespace PappyjoeMVC.View
             btn_normal();
             panel6.Hide();
             panel1.Show();
-            Lab_reports.BackColor = Color.DodgerBlue;
+            Lab_reports.BackColor = Color.DodgerBlue; 
             Lab_reports.ForeColor = Color.White;
         }
 
@@ -71,6 +75,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB"); //dd/MM/yyyy
                 btn_normal();
                 panel6.Show();
                 grp_Debit.Visible = false;
@@ -113,7 +118,7 @@ namespace PappyjoeMVC.View
                     dgv_credit.Rows[row].Cells["col_amount"].Value = Convert.ToDecimal(dr["amountincome"].ToString()).ToString("#0.00");
                     dgv_credit.Rows[row].Cells["col_ledger"].Value = dr["nameofperson"].ToString();
                     dgv_credit.Rows[row].Cells["col_name"].Value = dr["expense_type"].ToString();
-                    dgv_credit.Rows[row].Cells["col_date"].Value = Convert.ToDateTime(dr["date"].ToString()).ToString("dd/MM/yyyy");
+                    dgv_credit.Rows[row].Cells["col_date"].Value = dr["date"].ToString();
                     row++;
                 }
                 AddSLNO();
@@ -228,7 +233,8 @@ namespace PappyjoeMVC.View
                                 txtamountincome.Text = dgv_credit.Rows[rw].Cells["col_amount"].Value.ToString();
                                 textBoxnameofincome.Text = dgv_credit.Rows[rw].Cells["col_ledger"].Value.ToString();
                                 textBoxdescincome.Text = dgv_credit.Rows[rw].Cells["col_descrptn"].Value.ToString();
-                                dateTimePickerincome.Text = Convert.ToDateTime(dgv_credit.Rows[rw].Cells["col_date"].Value.ToString()).ToString("dd/MM/yyyy");
+                                DateTime dt =  Convert.ToDateTime( dgv_credit.Rows[rw].Cells["col_date"].Value.ToString());
+                                dateTimePickerincome.Text =dt.ToString();
                                 btn_Creditcancel.Visible = true;
                                 btnincomesubmit.Text = "Update";
                             }
@@ -484,7 +490,7 @@ namespace PappyjoeMVC.View
                     Dgv_Debit.Rows[row].Cells["colAmount"].Value = Convert.ToDecimal(dr["amount"].ToString()).ToString("#0.00");
                     Dgv_Debit.Rows[row].Cells["colLedgr"].Value = dr["nameofperson"].ToString();
                     Dgv_Debit.Rows[row].Cells["colName"].Value = dr["expense_type"].ToString();
-                    Dgv_Debit.Rows[row].Cells["colDate"].Value = Convert.ToDateTime(dr["date"].ToString()).ToString("dd/MM/yyyy");
+                    Dgv_Debit.Rows[row].Cells["colDate"].Value = dr["date"].ToString();
                     row++;
                 }
                 PutSLNO();
@@ -541,8 +547,8 @@ namespace PappyjoeMVC.View
                                 textperson.Text = Dgv_Debit.Rows[rw].Cells["colLedgr"].Value.ToString();
                                 textBox_add_template.Text = Dgv_Debit.Rows[rw].Cells["colDescrpt"].Value.ToString();
                                 DateTime dt;
-                                dt = Convert.ToDateTime(Dgv_Debit.Rows[rw].Cells["colDate"].Value.ToString());
-                                dateTimePickerdate.Text = dt.ToString("dd/MM/yyyy");
+                                dt = Convert.ToDateTime( Dgv_Debit.Rows[rw].Cells["colDate"].Value.ToString());
+                                dateTimePickerdate.Text= dt.ToString("dd/MM/yyyy");
                                 btnsubmit.Text = "Update";
                                 btn_DebitCancel.Visible = true;
                                 Lnk_AddNew.Visible = false;
@@ -1116,6 +1122,12 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private class DisplayFormatAttribute : Attribute
+        {
+            public bool ApplyFormatInEditMode { get; set; }
+            public string DataFormatString { get; set; }
         }
     }
 }
