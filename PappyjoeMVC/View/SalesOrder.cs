@@ -723,7 +723,7 @@ namespace PappyjoeMVC.View
             sWrite.WriteLine("</tr>");
             sWrite.WriteLine("<tr>");
             sWrite.WriteLine("<td  colspan=4  a lign='left' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> Date  :" + DateTime.Now.ToString("dd-MM-yyyy") + " </font></td>");
-            sWrite.WriteLine("<td colspan=4  align='right' ><b><FONT COLOR=black FACE='Segoe UI' SIZE=2>Invoice No:" + txtDocumentNumber.Text + " </font></td>");
+            sWrite.WriteLine("<td colspan=4  align='right' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>Invoice No:" + txtDocumentNumber.Text + " </font></td>");
             sWrite.WriteLine("</tr>");
             sWrite.WriteLine("<tr><td align='left' colspan=5><hr/></td></tr>");
             sWrite.WriteLine("<tr>");

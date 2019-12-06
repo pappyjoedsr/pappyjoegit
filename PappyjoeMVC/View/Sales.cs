@@ -1915,16 +1915,16 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("<tr><td colspan=8 align='left'><hr/></td></tr>");
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2>Drug License:" + str_druglicenseno + "</font></left></td>");
-                sWrite.WriteLine("<td colspan=7 align='right'>  <FONT COLOR=black FACE='Segoe UI'   SIZE=2>Tax No:" + str_taxno + " </font></right></td>");
+                sWrite.WriteLine("<td colspan=7 align='right'>  <FONT COLOR=black FACE='Segoe UI'   SIZE=2>Tax No:&nbsp;" + str_taxno + " &nbsp;</font></right></td>");
                 sWrite.WriteLine("</tr>");
                 //sWrite.WriteLine("<br>");
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2> Sold To : &nbsp" + txtPatient.Text + "</font></left></td>");
-                sWrite.WriteLine("<td colspan=7 align='right'><FONT COLOR=black FACE='Segoe UI'   SIZE=2>Invoice No:" + txtDocumentNumber.Text + " </font></right></td>");
+                sWrite.WriteLine("<td colspan=7 align='right'><FONT COLOR=black FACE='Segoe UI'   SIZE=2>Invoice No:&nbsp;" + txtDocumentNumber.Text + "&nbsp; </font></right></td>");
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI'   SIZE=2> Prescribed by : &nbspDr." + txtBdoctor.Text + "</font></left></td>");
-                sWrite.WriteLine("<td colspan=7 align='right'><FONT COLOR=black FACE='Segoe UI'   SIZE=2> Date  :" + DateTime.Now.ToString("MM-dd-yyyy") + " </font></right></td>");
+                sWrite.WriteLine("<td colspan=7 align='right'><FONT COLOR=black FACE='Segoe UI'   SIZE=2> Date :&nbsp; " + DateTime.Now.ToString("MM-dd-yyyy") + "&nbsp; </font></right></td>");
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("<tr><td colspan=8><hr/></td></tr>");
                 sWrite.WriteLine("<tr>");
@@ -1992,7 +1992,7 @@ namespace PappyjoeMVC.View
                 {
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td align='right'  colspan=7 ><FONT COLOR=black FACE='Segoe UI' SIZE=2> Total IGST :</font></td>");
-                    sWrite.WriteLine("<td align='right'  colspan=8 ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp" + Txt_TotalIGST.Text + " </font></td>");
+                    sWrite.WriteLine("<td align='right'  colspan=8 ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + Txt_TotalIGST.Text + " </font></td>");
                     sWrite.WriteLine("</tr>");
                 }
                 sWrite.WriteLine("<tr>");
