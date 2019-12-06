@@ -25,7 +25,7 @@ namespace PappyjoeMVC.Model
         //purchase order report
         public DataTable purchorder(string frmdte, string todte)
         {
-            DataTable dt = db.table("select M.Pur_order_no, M.Purch_order_date,S.Supplier_Name from tbl_Purchase_order_master M inner join tbl_Supplier S on  S.Supplier_Code= M.Suppleir_id where Purch_order_date between '" + frmdte + "' and '" + todte+ "'");
+            DataTable dt = db.table("select M.Pur_order_no, M.Purch_order_date,S.Supplier_Name from tbl_Purchase_order_master M inner join tbl_Supplier S on  S.Supplier_Code= M.Supplier_id where Purch_order_date between '" + frmdte + "' and '" + todte+ "'");
             return dt;
         }
         //purchase order item report
