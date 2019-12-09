@@ -518,7 +518,7 @@
             this.label4.Size = new System.Drawing.Size(94, 17);
             this.label4.TabIndex = 106;
             this.label4.Text = "Street Address";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            //this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -530,7 +530,7 @@
             this.label3.Size = new System.Drawing.Size(87, 17);
             this.label3.TabIndex = 105;
             this.label3.Text = "Specialization";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            //this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label10
             // 
@@ -608,7 +608,7 @@
             this.label2.Size = new System.Drawing.Size(53, 17);
             this.label2.TabIndex = 109;
             this.label2.Text = " Tagline";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            //this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label15
             // 
@@ -640,7 +640,7 @@
             this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 110;
             this.label1.Text = "Clinic Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btn_Save
             // 

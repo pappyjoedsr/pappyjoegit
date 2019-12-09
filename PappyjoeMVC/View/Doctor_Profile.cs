@@ -124,6 +124,7 @@ namespace PappyjoeMVC.View
             Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "1";
             frm.ShowDialog(this);
+            frm.Dispose();
         }
 
         private void button_add_special_Click(object sender, EventArgs e)
@@ -131,6 +132,7 @@ namespace PappyjoeMVC.View
             Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "6";
             frm.ShowDialog(this);
+            frm.Dispose();
         }
 
         private void button_education_adddegree_Click(object sender, EventArgs e)
@@ -138,6 +140,7 @@ namespace PappyjoeMVC.View
             Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "2";
             frm.ShowDialog(this);
+            frm.Dispose();
         }
 
         private void button_education_add_college_Click(object sender, EventArgs e)
@@ -145,6 +148,7 @@ namespace PappyjoeMVC.View
             Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "3";
             frm.ShowDialog(this);
+            frm.Dispose();
         }
 
         private void button_add_membership_Click(object sender, EventArgs e)
@@ -152,6 +156,7 @@ namespace PappyjoeMVC.View
             Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "4";
             frm.ShowDialog(this);
+            frm.Dispose();
         }
 
         private void button_reg_add_Click(object sender, EventArgs e)
@@ -159,6 +164,7 @@ namespace PappyjoeMVC.View
             Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "5";
             frm.ShowDialog(this);
+            frm.Dispose();
         }
 
         private void button_save_service_Click(object sender, EventArgs e)
@@ -1069,6 +1075,7 @@ namespace PappyjoeMVC.View
             Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "1";
             frm.ShowDialog(this);
+            frm.Dispose();
         }
 
         private void button_clinic_specialaddnew_Click(object sender, EventArgs e)
@@ -1076,6 +1083,7 @@ namespace PappyjoeMVC.View
             Doctors_Practice_Details frm = new Doctors_Practice_Details();
             frm.frameid = "6";
             frm.ShowDialog(this);
+            frm.Dispose();
         }
 
         private void combo_clinic_service_Click(object sender, EventArgs e)
@@ -1300,7 +1308,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
@@ -1310,7 +1318,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e)
@@ -1319,7 +1327,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton10_Click(object sender, EventArgs e)
@@ -1327,6 +1335,7 @@ namespace PappyjoeMVC.View
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripButton7_Click(object sender, EventArgs e)
@@ -1337,7 +1346,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -1377,7 +1386,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton12_Click(object sender, EventArgs e)
@@ -1387,7 +1396,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton9_Click(object sender, EventArgs e)
@@ -1406,7 +1415,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
                 else
                 {
@@ -1419,7 +1428,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -1428,7 +1437,7 @@ namespace PappyjoeMVC.View
             var form2 = new Login();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
@@ -1446,7 +1455,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             else
@@ -1455,7 +1464,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -1479,7 +1488,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             else
@@ -1488,7 +1497,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -1498,6 +1507,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
@@ -1508,7 +1518,7 @@ namespace PappyjoeMVC.View
             listpatientsearch.Visible = false;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
     }
 }

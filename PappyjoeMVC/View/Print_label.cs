@@ -124,6 +124,7 @@ namespace PappyjoeMVC.View
                 Print_Label_Print objfrmPrint = new Print_Label_Print();
                 objfrmPrint.dt_Load = dt_Return;
                 objfrmPrint.ShowDialog();
+                objfrmPrint.Dispose();
             }
             else
             {

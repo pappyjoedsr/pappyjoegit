@@ -393,7 +393,6 @@ namespace PappyjoeMVC.View
                             {
                                 app_id = Convert.ToInt32(dt_a.Rows[dt_a.Rows.Count - 1][0].ToString());
                             }
-
                             EditingEvent.Subject = patient_name;
                             EditingEvent.Location = Convert.ToString(cmbStartTime.GetItemText(cmbStartTime.SelectedItem)) + "-" + Convert.ToString(cmbEndTime.GetItemText(cmbEndTime.SelectedItem));
                             EditingEvent.Body = Convert.ToString(app_id);

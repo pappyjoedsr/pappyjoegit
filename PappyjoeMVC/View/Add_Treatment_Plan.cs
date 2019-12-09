@@ -1383,7 +1383,7 @@ namespace PappyjoeMVC.View
                     form2.patient_id = patient_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
                 else
                 {
@@ -1411,7 +1411,7 @@ namespace PappyjoeMVC.View
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
             a.patient_id = linkLabel_id.Text.ToString();
-            a.ShowDialog();
+            a.Show();
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
@@ -1451,7 +1451,7 @@ namespace PappyjoeMVC.View
             listpatientsearch.Visible = false;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
@@ -1470,7 +1470,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             else
@@ -1479,7 +1479,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -1495,7 +1495,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
                 else
                 {
@@ -1508,7 +1508,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -1526,14 +1526,14 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void linkLabel_Name_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Patient_Profile_Edit a = new Patient_Profile_Edit();
             a.patient_id = linkLabel_id.Text.ToString();
-            a.ShowDialog();
+            a.Show();
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -1542,7 +1542,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
@@ -1552,7 +1552,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e)
@@ -1561,7 +1561,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton10_Click(object sender, EventArgs e)
@@ -1569,6 +1569,7 @@ namespace PappyjoeMVC.View
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripButton7_Click(object sender, EventArgs e)
@@ -1579,7 +1580,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -1589,7 +1590,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton12_Click(object sender, EventArgs e)
@@ -1599,7 +1600,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
@@ -1617,7 +1618,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             else
@@ -1626,7 +1627,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -1664,7 +1665,7 @@ namespace PappyjoeMVC.View
             var form2 = new PappyjoeMVC.View.Login();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton13_Click(object sender, EventArgs e)
@@ -1673,6 +1674,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
     }
 }
