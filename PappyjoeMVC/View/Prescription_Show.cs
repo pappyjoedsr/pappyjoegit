@@ -1386,15 +1386,15 @@ namespace PappyjoeMVC.View
                         int right3 = int.Parse(b3[1]);
                         night = Convert.ToString(int.Parse(b3[0]));
                         if (right3 != 0) { night = night + "." + Convert.ToString(int.Parse(b3[1])); }
-                        strPriscription = strPriscription + " [" + dt_prescription.Rows[p]["drug_type"].ToString() + "]" + dt_prescription.Rows[p]["drug_name"].ToString() + "" + dt_prescription.Rows[p]["strength"].ToString() + " " + dt_prescription.Rows[p]["strength_gr"].ToString() + "/Duration " + morning + "-" + noon + "-" + night + "/ for " + dt_prescription.Rows[p]["duration_unit"].ToString() + " " + dt_prescription.Rows[p]["duration_period"].ToString() + "-" + dt_prescription.Rows[p]["add_instruction"].ToString() + "_____________________________";
+                        strPriscription = strPriscription + " [" + dt_prescription.Rows[p]["drug_type"].ToString() + "]" +"  "+ dt_prescription.Rows[p]["drug_name"].ToString() + "  " + dt_prescription.Rows[p]["strength"].ToString() + "  " + dt_prescription.Rows[p]["strength_gr"].ToString() + "Duration " + morning + "," + noon + "," + night + " for " + dt_prescription.Rows[p]["duration_unit"].ToString() + "  " + dt_prescription.Rows[p]["duration_period"].ToString() + "  " + dt_prescription.Rows[p]["add_instruction"].ToString() + "________________________";
                         p++;
                     }
                     //end prescription msg
-                    text = "Dear " + pat.Rows[0]["pt_name"].ToString() + ", Prescription. Drug Name:" + strPriscription + "Regards With " + clinic + "," + contact_no;
+                    text = "Dear " + pat.Rows[0]["pt_name"].ToString() + ","+"                      "+"    "+"Prescription. Drug Name:" + strPriscription +"             "+ "Regards With " + clinic + "," + contact_no;
                     string number = "91" + pat.Rows[0]["primary_mobile_number"].ToString();
                     a.SendSMS(smsName, smsPass, number, text);
                     this.cntrl.savecommunication(patient_id, text);
-                    MessageBox.Show("The Prescription Details Containing  Message Sent Successfully to " + pat.Rows[0]["pt_name"].ToString());
+                    MessageBox.Show("The Prescription Details Containing  Message Sent Successfully to " + pat.Rows[0]["pt_name"].ToString(),"Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

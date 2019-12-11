@@ -80,6 +80,7 @@ namespace PappyjoeMVC.View
                     {
                         var form2 = new PappyjoeMVC.View.Practice_Details();
                         form2.doctor_id = doctor_id;
+                        this.Hide();
                         form2.ShowDialog();
                     }
                     else
@@ -91,6 +92,7 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new PappyjoeMVC.View.Practice_Details();
                     form2.doctor_id = doctor_id;
+                    this.Hide();
                     form2.ShowDialog();
                 }
             }
@@ -150,6 +152,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
+            this.Hide();
             form2.Show();
         }
 

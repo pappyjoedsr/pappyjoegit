@@ -1283,6 +1283,9 @@
     <EmbeddedResource Include="View\Network_Computer.resx">
       <DependentUpon>Network_Computer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\OpenRecurringItem.resx">
+      <DependentUpon>OpenRecurringItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Purchase.resx">
       <DependentUpon>Purchase.cs</DependentUpon>
     </EmbeddedResource>
