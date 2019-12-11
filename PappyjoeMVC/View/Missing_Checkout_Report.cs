@@ -177,10 +177,10 @@ namespace PappyjoeMVC.View
                     {
                         sWrite.WriteLine("<tr>");
                         sWrite.WriteLine("    <td align='left' width='55' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >&nbsp; <b>Sl.</b></font></th>");
-                        sWrite.WriteLine("    <td align='left' width='130'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >&nbsp;<b>Patient Id</b></font></th>");
-                        sWrite.WriteLine("    <td align='left' width='160'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b>Patient Name</b></font></th>");
-                        sWrite.WriteLine("    <td align='left' width='135'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b>Booked Date</b></font></th>");
-                        sWrite.WriteLine("    <td align='left' width='140'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Appointment Date</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='137'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >&nbsp;<b>Patient Id</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='150'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b>Patient Name</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='118'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b>Booked Date</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='150'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Appointment Date</b></font></th>");
                         sWrite.WriteLine("    <td align='left' width='140'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Duration</b></font></th>");
                         sWrite.WriteLine("    <td align='left' width='140'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Booked By</b></font></th>");
                         sWrite.WriteLine("</tr>");

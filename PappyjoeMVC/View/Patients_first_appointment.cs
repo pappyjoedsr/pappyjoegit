@@ -163,7 +163,7 @@ namespace PappyjoeMVC.View
                             sWrite.WriteLine("<tr>");
                             sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + (j + 1) + "</font></th>");
                             sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; " + Grvpatientfirstappoint.Rows[j].Cells[0].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='center' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + Convert.ToDateTime(Grvpatientfirstappoint.Rows[j].Cells[1].Value.ToString()).ToString("dd-MM-yyyy") + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + Convert.ToDateTime(Grvpatientfirstappoint.Rows[j].Cells[1].Value.ToString()).ToString("dd-MM-yyyy") + "</font></th>");
                             sWrite.WriteLine("</tr>");
                         }
                         sWrite.WriteLine("</table>");

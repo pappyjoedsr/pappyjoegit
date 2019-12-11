@@ -1073,7 +1073,7 @@
             this.colQuantity,
             this.colReturnQty,
             this.currentStock});
-            this.dgv_BatchSale.Location = new System.Drawing.Point(3, 538);
+            this.dgv_BatchSale.Location = new System.Drawing.Point(3, 527);
             this.dgv_BatchSale.Name = "dgv_BatchSale";
             this.dgv_BatchSale.RowHeadersVisible = false;
             this.dgv_BatchSale.Size = new System.Drawing.Size(509, 103);

@@ -83,7 +83,7 @@ namespace PappyjoeMVC.View
             this.Date_Picker.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("DatePicker.OcxState")));
             this.Date_Picker.Size = new System.Drawing.Size(346, 322);
             this.Date_Picker.TabIndex = 0;
-            this.Date_Picker.SelectionChanged += new System.EventHandler(this.DatePicker_SelectionChanged);
+            //this.Date_Picker.SelectionChanged += new System.EventHandler(this.DatePicker_SelectionChanged);
             // 
             // frmDatePicker
             // 
@@ -116,15 +116,15 @@ namespace PappyjoeMVC.View
             Main_Calendar.Instance.frmDatePicker = null;
 		}
 
-        private void DatePicker_SelectionChanged(object sender, EventArgs e)
-        {
+        //private void DatePicker_SelectionChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
         private void frmDatePicker_Load(object sender, EventArgs e)
         {
 
         }
 
-	}
+    }
 }

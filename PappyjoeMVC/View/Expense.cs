@@ -31,6 +31,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new New_Credit_Account();
             form2.ShowDialog();
+            form2.Dispose();
         }
         public void btn_normal()
         {
@@ -274,6 +275,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new New_Debit_Account();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void comboaccountname_Click(object sender, EventArgs e)

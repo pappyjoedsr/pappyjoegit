@@ -152,7 +152,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(961, 44);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label8
             // 
@@ -991,7 +991,7 @@
             this.lnk_view_template.Text = "View Template";
             this.lnk_view_template.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lnk_view_template.Visible = false;
-            this.lnk_view_template.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_view_template_LinkClicked);
+            //this.lnk_view_template.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_view_template_LinkClicked);
             // 
             // txtPatientID
             // 

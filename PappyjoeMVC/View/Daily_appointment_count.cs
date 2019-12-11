@@ -173,26 +173,26 @@ namespace PappyjoeMVC.View
                     if (dataGridViewDailyappoinment.Rows.Count > 0)
                     {
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("    <td align='center' width='50' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Sl.</b></font></td>");
-                        sWrite.WriteLine("    <td align='center' width='74' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Patient Id</b></font></td>");
-                        sWrite.WriteLine("    <td align='center' width='158' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Patient Name</b> </font></td>");
-                        sWrite.WriteLine("    <td align='center' width='132' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> <b>Doctor</b></font></td>");
-                        sWrite.WriteLine("    <td align='center' width='62' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Mobile</b></font></td>");
-                        sWrite.WriteLine("    <td align='center' width='186' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Email Id</b></font></td>");
-                        sWrite.WriteLine("    <td align='center' width='98' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> <b> Appointment Date </b></font></td>");
-                        sWrite.WriteLine("    <td align='center' width='104' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Booked By</b> </font></td>");
+                        sWrite.WriteLine("    <td align='left' width='50' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b>Slno.</b></font></td>");
+                        sWrite.WriteLine("    <td align='left' width='74' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Patient Id</b></font></td>");
+                        sWrite.WriteLine("    <td align='left' width='155' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b>Patient Name</b> </font></td>");
+                        sWrite.WriteLine("    <td align='left' width='129' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp; <b>Doctor</b></font></td>");
+                        sWrite.WriteLine("    <td align='left' width='62' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Mobile</b></font></td>");
+                        sWrite.WriteLine("    <td align='left' width='186' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Email Id</b></font></td>");
+                        sWrite.WriteLine("    <td align='left' width='140' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp; <b> Appointment Date </b></font></td>");
+                        sWrite.WriteLine("    <td align='left' width='104' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Booked By</b> </font></td>");
                         sWrite.WriteLine("</tr>");
                         for (int j = 0; j < dataGridViewDailyappoinment.Rows.Count; j++)
                         {
                             sWrite.WriteLine("<tr>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dataGridViewDailyappoinment.Rows[j].Cells["sino"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dataGridViewDailyappoinment.Rows[j].Cells["patientid"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + dataGridViewDailyappoinment.Rows[j].Cells["pt_name"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + dataGridViewDailyappoinment.Rows[j].Cells["doctors"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("    <td align='left'  style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dataGridViewDailyappoinment.Rows[j].Cells["mobile_no"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dataGridViewDailyappoinment.Rows[j].Cells["email_id"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dataGridViewDailyappoinment.Rows[j].Cells["book_datetime"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("    <td align='left'  style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dataGridViewDailyappoinment.Rows[j].Cells["booked_by"].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dataGridViewDailyappoinment.Rows[j].Cells["sino"].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dataGridViewDailyappoinment.Rows[j].Cells["patientid"].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; " + dataGridViewDailyappoinment.Rows[j].Cells["pt_name"].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; " + dataGridViewDailyappoinment.Rows[j].Cells["doctors"].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("    <td align='left'  style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dataGridViewDailyappoinment.Rows[j].Cells["mobile_no"].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dataGridViewDailyappoinment.Rows[j].Cells["email_id"].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dataGridViewDailyappoinment.Rows[j].Cells["book_datetime"].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("    <td align='left'  style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dataGridViewDailyappoinment.Rows[j].Cells["booked_by"].Value.ToString() + "</font></td>");
                             sWrite.WriteLine("</tr>");
                         }
                         sWrite.WriteLine("<tr>");
