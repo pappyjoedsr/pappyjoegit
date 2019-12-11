@@ -29,6 +29,7 @@ namespace PappyjoeMVC.View
                 int inv_num = Convert.ToInt32(DGV_SALES.CurrentRow.Cells["InvNumber"].Value.ToString());
                 var form2 = new PappyjoeMVC.View.SalesReport_Items(inv_num, dptMonthly_From.Value.ToString("MM/dd/yyyy"), dptMonthly_To.Value.ToString("MM/dd/yyyy"));
                 form2.ShowDialog();
+                form2.Dispose();
             }
         }
         private void BTNClose_Click(object sender, EventArgs e)

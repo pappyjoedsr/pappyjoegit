@@ -39,9 +39,9 @@ namespace PappyjoeMVC.View
                 DataTable dtb = this.cntrl.dt_grp();
                 if (dtb.Rows.Count > 0)
                 {
-                    cmb_group.DataSource = dtb;
                     cmb_group.ValueMember = "id";
                     cmb_group.DisplayMember = "name";
+                    cmb_group.DataSource = dtb;
                     cmb_group.SelectedIndex = 0;
                 }
             }

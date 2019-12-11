@@ -303,6 +303,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
         private void print_html()
         {
@@ -631,6 +632,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
@@ -640,6 +642,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e)
@@ -649,6 +652,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripButton10_Click(object sender, EventArgs e)
@@ -667,6 +671,7 @@ namespace PappyjoeMVC.View
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
+                form2.Dispose();
             }
         }
         private void Lab_Appointment_Click(object sender, EventArgs e)
@@ -677,6 +682,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
         private void Lab_Profile_Click(object sender, EventArgs e)
         {
@@ -686,6 +692,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void Lab_VitalSigns_Click(object sender, EventArgs e)
@@ -696,6 +703,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void Lab_Treatment_Click(object sender, EventArgs e)
@@ -706,6 +714,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void Lab_Finished_Click(object sender, EventArgs e)
@@ -716,6 +725,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void Lab_Attachmnt_Click(object sender, EventArgs e)
@@ -726,6 +736,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void Lab_Invoice_Click(object sender, EventArgs e)
@@ -736,6 +747,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void Lab_Payment_Click(object sender, EventArgs e)
@@ -746,6 +758,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
@@ -790,6 +803,7 @@ namespace PappyjoeMVC.View
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
+                    form2.Dispose();
                 }
                 else
                 {
@@ -803,6 +817,7 @@ namespace PappyjoeMVC.View
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
+                form2.Dispose();
             }
         }
 
@@ -823,6 +838,7 @@ namespace PappyjoeMVC.View
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
+                    form2.Dispose();
                 }
             }
             else
@@ -832,6 +848,7 @@ namespace PappyjoeMVC.View
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
+                form2.Dispose();
             }
         }
 
@@ -842,6 +859,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -851,6 +869,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void Lab_Ledger_Click(object sender, EventArgs e)
@@ -861,6 +880,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void Lab_Clinical_Click(object sender, EventArgs e)
@@ -871,6 +891,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void Lab_Prescription_Click(object sender, EventArgs e)
@@ -881,6 +902,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripButton12_Click(object sender, EventArgs e)
@@ -891,6 +913,7 @@ namespace PappyjoeMVC.View
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void linkLabel_Name_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -901,6 +924,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void linkLabel_id_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -911,6 +935,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void labl_Lab_Click(object sender, EventArgs e)
@@ -921,6 +946,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void printAllToolStripMenuItem_Click(object sender, EventArgs e)
@@ -953,6 +979,7 @@ namespace PappyjoeMVC.View
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
+                    form2.Dispose();
                 }
             }
             else
@@ -962,6 +989,7 @@ namespace PappyjoeMVC.View
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
+                form2.Dispose();
             }
         }
 
@@ -971,6 +999,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripButton13_Click(object sender, EventArgs e)
@@ -990,6 +1019,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         static String NumWordsWrapper(double n)

@@ -1624,9 +1624,9 @@ namespace PappyjoeMVC.View
             DataTable dtb = this.ctrlr.Patient_search(toolStripTextBox1.Text);
             if (toolStripTextBox1.Text != "")
             {
-                listpatientsearch.DataSource = dtb;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
+                listpatientsearch.DataSource = dtb;
                 if (listpatientsearch.Items.Count == 0)
                 {
                     listpatientsearch.Visible = false;

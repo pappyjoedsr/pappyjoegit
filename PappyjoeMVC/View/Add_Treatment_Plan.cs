@@ -54,9 +54,9 @@ namespace PappyjoeMVC.View
                 DataTable dt_pt = this.cntrl.Get_all_procedures();
                 fill_proceduregrid(dt_pt);
                 DataTable dtdr = this.cntrl.get_all_doctorname();
-                Cmb_Doctor.DataSource = dtdr;
                 Cmb_Doctor.DisplayMember = "doctor_name";
                 Cmb_Doctor.ValueMember = "id";
+                Cmb_Doctor.DataSource = dtdr;
                 Cmb_Doctor.SelectedIndex = 0;
                 if (doctor_id != "0")
                 {
@@ -1424,9 +1424,9 @@ namespace PappyjoeMVC.View
             if (toolStripTextBox1.Text != "")
             {
                 System.Data.DataTable dtdr =this.cntrl.Patient_search(toolStripTextBox1.Text);
-                listpatientsearch.DataSource = dtdr;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
+                listpatientsearch.DataSource = dtdr;
                 if (listpatientsearch.Items.Count == 0)
                 {
                     listpatientsearch.Visible = false;

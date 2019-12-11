@@ -636,9 +636,9 @@ namespace PappyjoeMVC.View
                 if (toolStripTextBox1.Text != "")
                 {
                     System.Data.DataTable dtdr = this.cntrl.patient_search(toolStripTextBox1.Text);
-                    listpatientsearch.DataSource = dtdr;
                     listpatientsearch.DisplayMember = "patient";
                     listpatientsearch.ValueMember = "id";
+                    listpatientsearch.DataSource = dtdr;
                     if (listpatientsearch.Items.Count == 0)
                     {
                         listpatientsearch.Visible = false;
@@ -1050,9 +1050,9 @@ namespace PappyjoeMVC.View
                     Lab_Nodue.Text = pay.Rows[0]["total_payment"].ToString() + " due";
                 }
                 DataTable dt_dr = this.cntrl.get_all_doctorname();
-                Cmb_doctor.DataSource = dt_dr;
                 Cmb_doctor.DisplayMember = "doctor_name";
                 Cmb_doctor.ValueMember = "id";
+                Cmb_doctor.DataSource = dt_dr;
                 Cmb_doctor.SelectedIndex = 0;
                 cmb_clinicalfinding.SelectedIndex = 0;
                 DataTable dt = this.cntrl.Get_patient_id_name_gender(patient_id);

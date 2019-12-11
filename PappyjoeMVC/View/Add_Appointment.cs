@@ -357,9 +357,9 @@ namespace PappyjoeMVC.View
                     int dr_index = 0;
                     if (dt.Rows.Count > 0)
                     {
-                        Cmb_doctor.DataSource = dt;
                         Cmb_doctor.DisplayMember = "doctor_name";
                         Cmb_doctor.ValueMember = "id";
+                        Cmb_doctor.DataSource = dt;
                         for (int j = 0; j < dt.Rows.Count; j++)
                         {
                             if (dt.Rows[j]["id"].ToString() == doctor_id)
@@ -374,9 +374,9 @@ namespace PappyjoeMVC.View
                 {
                     if (dt.Rows.Count > 0)
                     {
-                        Cmb_doctor.DataSource = dt;
                         Cmb_doctor.DisplayMember = "doctor_name";
                         Cmb_doctor.ValueMember = "id";
+                        Cmb_doctor.DataSource = dt;
                     }
                 }
             }
@@ -491,9 +491,9 @@ namespace PappyjoeMVC.View
                 DataTable dctrs=this.ctrlr.get_all_doctorname();
                 get_all_doctorname(dctrs);
                 DataTable procedure=this.ctrlr.get_All_procedure();
-                compoprocedure.DataSource = procedure;
                 compoprocedure.DisplayMember = "name";
                 compoprocedure.ValueMember = "id";
+                compoprocedure.DataSource = procedure;
                 DataTable apnt=this.ctrlr.dt_appointment(appointment_id);
                 dt_appointment(apnt);
             }
@@ -661,9 +661,9 @@ namespace PappyjoeMVC.View
             {
                 if (toolStripTextBox1.Text != "")
                 {
-                    listpatientsearch.DataSource = dtb;
                     listpatientsearch.DisplayMember = "patient";
                     listpatientsearch.ValueMember = "id";
+                    listpatientsearch.DataSource = dtb;
                     if (listpatientsearch.Items.Count == 0)
                     {
                         listpatientsearch.Visible = false;

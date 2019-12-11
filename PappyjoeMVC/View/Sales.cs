@@ -68,6 +68,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new ItemListForSales(FormName, txt_ItemCode.Text);
                 form2.ShowDialog();
+                form2.Dispose();
                 if (ItemCode_From_List != "")
                 {
                     if (btn_AddtoGrid.Text == "Add")
@@ -91,6 +92,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new ItemListForSales(FormName);
                 form2.ShowDialog();
+                form2.Dispose();
                 if (ItemCode_From_List != "")
                 {
                     if (btn_AddtoGrid.Text == "Add")
@@ -332,6 +334,7 @@ namespace PappyjoeMVC.View
                     FormName = "Sales";
                     var form2 = new ItemListForSales(FormName, txt_ItemCode.Text);
                     form2.ShowDialog();
+                    form2.Dispose();
                     if (ItemCode_From_List != "")
                     {
                       DataTable dtb=this.cntrl.get_itemdetails(itemId);
@@ -702,6 +705,7 @@ namespace PappyjoeMVC.View
                                     {
                                         var form2 = new Batch_Sale(item_Code, qty, unit);
                                         form2.ShowDialog();
+                                        form2.Dispose();
                                     }
                                     else
                                     {
@@ -720,6 +724,7 @@ namespace PappyjoeMVC.View
                                         {
                                             var form2 = new Batch_Sale(item_Code, qty, FrmBatchsale_edit, unit);
                                             form2.ShowDialog();
+                                            form2.Dispose();
                                         }
                                         else
                                         {
@@ -782,6 +787,7 @@ namespace PappyjoeMVC.View
                                     {
                                         var form2 = new Batch_Sale(item_Code, qty, FrmBatchsale_edit, unit);
                                         form2.ShowDialog();
+                                        form2.Dispose();
                                         if (rowindex > 0)
                                         {
                                             dgv_SalesItem.Rows[rowindex].Cells["colItemCode"].Value = txt_ItemCode.Text;
