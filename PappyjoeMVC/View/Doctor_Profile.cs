@@ -77,9 +77,9 @@ namespace PappyjoeMVC.View
                 panel_membership.Visible = false;
                 panel_register.Visible = false;
                 DataTable dt11 = this.cntrl.load_city();
-                combo_experience_city.DataSource = dt11;
                 combo_experience_city.DisplayMember = "city";
                 combo_experience_city.ValueMember = "id";
+                combo_experience_city.DataSource = dt11;
             }
             else if (cmbDrProfile.Text == "AWARDS")
             {
@@ -339,18 +339,18 @@ namespace PappyjoeMVC.View
         private void combo_service_Click(object sender, EventArgs e)
         {
             DataTable service = this.cntrl.load_serviceCombo();
-            combo_service.DataSource = service;
             combo_service.DisplayMember = "service";
             combo_service.ValueMember = "id";
+            combo_service.DataSource = service;
             combo_service.Text = "";
         }
 
         private void combo_special_Click(object sender, EventArgs e)
         {
             DataTable special = this.cntrl.load_cmbspecilization();
-            combo_special.DataSource = special;
             combo_special.DisplayMember = "name";
             combo_special.ValueMember = "id";
+            combo_special.DataSource = special;
             combo_special.Text = "";
         }
 
@@ -448,18 +448,18 @@ namespace PappyjoeMVC.View
         private void combo_education_degree_Click(object sender, EventArgs e)
         {
             DataTable degree = this.cntrl.load_degreecombo();
-            combo_education_degree.DataSource = degree;
             combo_education_degree.DisplayMember = "degree";
             combo_education_degree.ValueMember = "id";
+            combo_education_degree.DataSource = degree;
             combo_education_degree.Text = "";
         }
 
         private void combo_education_college_Click(object sender, EventArgs e)
         {
             DataTable college = this.cntrl.load_collegecombo();
-            combo_education_college.DataSource = college;
             combo_education_college.DisplayMember = "college";
             combo_education_college.ValueMember = "id";
+            combo_education_college.DataSource = college;
             combo_education_college.Text = "";
         }
         string tempId = "0";
@@ -736,9 +736,9 @@ namespace PappyjoeMVC.View
         private void combo_membership_Click(object sender, EventArgs e)
         {
             DataTable member = this.cntrl.load_membercombo();
-            combo_membership.DataSource = member;
             combo_membership.DisplayMember = "name";
             combo_membership.ValueMember = "id";
+            combo_membership.DataSource = member;
             combo_membership.Text = "";
         }
 
@@ -911,9 +911,9 @@ namespace PappyjoeMVC.View
         private void combo_reg_regcouncil_Click(object sender, EventArgs e)
         {
             DataTable reg = this.cntrl.load_councilcombo();
-            combo_reg_regcouncil.DataSource = reg;
             combo_reg_regcouncil.DisplayMember = "name";
             combo_reg_regcouncil.ValueMember = "id";
+            combo_reg_regcouncil.DataSource = reg;
             combo_reg_regcouncil.Text = "";
         }
 
@@ -1081,18 +1081,18 @@ namespace PappyjoeMVC.View
         private void combo_clinic_service_Click(object sender, EventArgs e)
         {
             DataTable service = this.cntrl.load_serviceCombo();
-            combo_clinic_service.DataSource = service;
             combo_clinic_service.DisplayMember = "service";
             combo_clinic_service.ValueMember = "id";
+            combo_clinic_service.DataSource = service;
             combo_clinic_service.Text = "";
         }
 
         private void combo_clinic_special_Click(object sender, EventArgs e)
         {
             DataTable special = this.cntrl.load_cmbspecilization();
-            combo_clinic_special.DataSource = special;
             combo_clinic_special.DisplayMember = "name";
             combo_clinic_special.ValueMember = "id";
+            combo_clinic_special.DataSource = special;
             combo_clinic_special.Text = "";
         }
         public void clinic_combo()
@@ -1351,9 +1351,9 @@ namespace PappyjoeMVC.View
             if (toolStripTextBox1.Text != "")
             {
                 DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox1.Text);
-                listpatientsearch.DataSource = dtdr;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
+                listpatientsearch.DataSource = dtdr;
                 if (listpatientsearch.Items.Count == 0)
                 {
                     listpatientsearch.Visible = false;

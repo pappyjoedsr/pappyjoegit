@@ -44,6 +44,12 @@ namespace PappyjoeMVC.View
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
+
+        private void ChangeStatus_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnupdate_Click(object sender, EventArgs e)
         {
             try

@@ -57,12 +57,12 @@ namespace PappyjoeMVC.View
         //dental rb
         public void dentallab(DataTable dt)
         {
-            cmbShade.DataSource = dt;
             cmbShade.DisplayMember = "shade";
             cmbShade.ValueMember = "id";
-            cmbAlloytype.DataSource = dt;
+            cmbShade.DataSource = dt;
             cmbAlloytype.DisplayMember = "aloytype";
             cmbAlloytype.ValueMember = "id";
+            cmbAlloytype.DataSource = dt;
             dgvdentalwork.Rows.Clear();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -105,9 +105,9 @@ namespace PappyjoeMVC.View
                     dataGridView2.DataSource = tbshade;
                     checkvalue = "1";
                     DataTable tblab = this.ctrlr.getLabdata();
-                    combolab.DataSource = tblab;
                     combolab.DisplayMember = "labname";
                     combolab.ValueMember = "id";
+                    combolab.DataSource = tblab;
                 }
             }
             catch (Exception ex)
@@ -134,9 +134,9 @@ namespace PappyjoeMVC.View
                     dataGridView2.DataSource = tbshade;
                     checkvalue = "1";
                     DataTable tblab = this.ctrlr.getLabdata();
-                    combolab.DataSource = tblab;
                     combolab.DisplayMember = "labname";
                     combolab.ValueMember = "id";
+                    combolab.DataSource = tblab;
                 }
                 else
                 {
@@ -286,9 +286,9 @@ namespace PappyjoeMVC.View
             if (TTP_SearchText.Text != "")
             {
                 DataTable dtdr = this.ctrlr.Patient_search(TTP_SearchText.Text);
-                listBox1.DataSource = dtdr;
                 listBox1.DisplayMember = "patient";
                 listBox1.ValueMember = "id";
+                listBox1.DataSource = dtdr;
                 if (listBox1.Items.Count == 0)
                 {
                     listBox1.Visible = false;
@@ -741,9 +741,9 @@ namespace PappyjoeMVC.View
                 dataGridView2.DataSource = tbshade;
                 checkvalue = "1";
                 DataTable tblab = this.ctrlr.getLabdata();
-                combolab.DataSource = tblab;
                 combolab.DisplayMember = "labname";
                 combolab.ValueMember = "id";
+                combolab.DataSource = tblab;
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }

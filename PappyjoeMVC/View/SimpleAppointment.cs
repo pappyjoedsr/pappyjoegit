@@ -527,6 +527,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new SimpleAppointment_Template(patient_id);
                 form2.ShowDialog();
+                form2.Dispose();
             }
         }
 

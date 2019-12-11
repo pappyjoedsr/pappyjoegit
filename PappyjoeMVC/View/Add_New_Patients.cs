@@ -736,9 +736,9 @@ namespace PappyjoeMVC.View
             if (toolStripTextBox1.Text != "")
             {
                 DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox1.Text);
-                listpatientsearch.DataSource = dtdr;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
+                listpatientsearch.DataSource = dtdr;
                 if (listpatientsearch.Items.Count == 0)
                 {
                     listpatientsearch.Visible = false;
@@ -952,9 +952,9 @@ namespace PappyjoeMVC.View
                     DataTable dt = this.cntrl.get_all_doctorname();
                     if (dt.Rows.Count > 0)
                     {
-                        ddldoctor.DataSource = dt;
                         ddldoctor.DisplayMember = "doctor_name";
                         ddldoctor.ValueMember = "id";
+                        ddldoctor.DataSource = dt;
                         for (int j = 0; j < dt.Rows.Count; j++)
                         {
                             if (dt.Rows[j]["id"].ToString() == doctor_id)
@@ -970,9 +970,9 @@ namespace PappyjoeMVC.View
                     DataTable dt = this.cntrl.get_all_doctorname();
                     if (dt.Rows.Count > 0)
                     {
-                        ddldoctor.DataSource = dt;
                         ddldoctor.DisplayMember = "doctor_name";
                         ddldoctor.ValueMember = "id";
+                        ddldoctor.DataSource = dt;
                         ddldoctor.SelectedIndex = 0;
                     }
                 }

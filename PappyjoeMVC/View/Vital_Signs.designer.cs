@@ -767,7 +767,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(140, 40);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(140, 23);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // pan_Heading

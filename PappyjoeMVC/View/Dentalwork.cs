@@ -25,9 +25,9 @@ namespace PappyjoeMVC.View
             try
             {
                 DataTable lab = this.ctrlr.labdata();
-                cmblabname.DataSource = lab;
                 cmblabname.DisplayMember = "labname";
                 cmblabname.ValueMember = "id";
+                cmblabname.DataSource = lab;
                 DataTable den = this.ctrlr.dentalwrk(patient_id, workid);
                 if (den.Rows.Count > 0)
                 {

@@ -30,9 +30,9 @@ namespace PappyjoeMVC.View
         {
             if (toolStripTextBox1.Text != "")
             {
-                listpatientsearch.DataSource = dtb;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
+                listpatientsearch.DataSource = dtb;
                 if (listpatientsearch.Items.Count == 0)
                 {
                     listpatientsearch.Visible = false;
@@ -54,44 +54,44 @@ namespace PappyjoeMVC.View
             {
                 if (dtcatgry.Rows.Count > 0)
                 {
-                    Cmb_category1.DataSource = dtcatgry;
                     Cmb_category1.DisplayMember = "CategoryName";
                     Cmb_category1.ValueMember = "id";
+                    Cmb_category1.DataSource = dtcatgry;
                     Cmb_category1.SelectedIndex = 0;
                     Cmb_category2.BindingContext = new BindingContext();
-                    Cmb_category2.DataSource = dtcatgry;
                     Cmb_category2.DisplayMember = "CategoryName";
                     Cmb_category2.ValueMember = "id";
+                    Cmb_category2.DataSource = dtcatgry;
                     Cmb_category2.SelectedIndex = 0;
                     Cmb_category3.BindingContext = new BindingContext();
-                    Cmb_category3.DataSource = dtcatgry;
                     Cmb_category3.DisplayMember = "CategoryName";
                     Cmb_category3.ValueMember = "id";
+                    Cmb_category3.DataSource = dtcatgry;
                     Cmb_category3.SelectedIndex = 0;
                     Cmb_category4.BindingContext = new BindingContext();
-                    Cmb_category4.DataSource = dtcatgry;
                     Cmb_category4.DisplayMember = "CategoryName";
                     Cmb_category4.ValueMember = "id";
+                    Cmb_category4.DataSource = dtcatgry;
                     Cmb_category4.SelectedIndex = 0;
                     Cmb_category5.BindingContext = new BindingContext();
-                    Cmb_category5.DataSource = dtcatgry;
                     Cmb_category5.DisplayMember = "CategoryName";
                     Cmb_category5.ValueMember = "id";
+                    Cmb_category5.DataSource = dtcatgry;
                     Cmb_category5.SelectedIndex = 0;
                     Cmb_category6.BindingContext = new BindingContext();
-                    Cmb_category6.DataSource = dtcatgry;
                     Cmb_category6.DisplayMember = "CategoryName";
                     Cmb_category6.ValueMember = "id";
+                    Cmb_category6.DataSource = dtcatgry;
                     Cmb_category6.SelectedIndex = 0;
                     Cmb_category7.BindingContext = new BindingContext();
-                    Cmb_category7.DataSource = dtcatgry;
                     Cmb_category7.DisplayMember = "CategoryName";
                     Cmb_category7.ValueMember = "id";
+                    Cmb_category7.DataSource = dtcatgry;
                     Cmb_category7.SelectedIndex = 0;
                     Cmb_category8.BindingContext = new BindingContext();
-                    Cmb_category8.DataSource = dtcatgry;
                     Cmb_category8.DisplayMember = "CategoryName";
                     Cmb_category8.ValueMember = "id";
+                    Cmb_category8.DataSource = dtcatgry;
                     Cmb_category8.SelectedIndex = 0;
                 }
             }

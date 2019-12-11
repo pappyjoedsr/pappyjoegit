@@ -142,6 +142,7 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Sales_Return_Itemlist(dtb_itemlist, txt_InvoiceNum.Text);
                     form2.ShowDialog();
+                    form2.Dispose();
                     if (ItemCode_From_List != "")
                     {
                         DataTable dtb_units = this.cntrl.itemdetails_from_items(ItemCode_From_List);

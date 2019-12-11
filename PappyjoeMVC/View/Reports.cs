@@ -169,6 +169,7 @@ namespace PappyjoeMVC.View
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
+                    form2.Dispose();
                 }
             }
             else
@@ -178,6 +179,7 @@ namespace PappyjoeMVC.View
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
+                form2.Dispose();
             }
         }
         private void comborepcategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -1604,6 +1606,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
@@ -1613,6 +1616,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
@@ -1623,6 +1627,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e)
@@ -1641,6 +1646,7 @@ namespace PappyjoeMVC.View
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
+                form2.Dispose();
             }
         }
         private void toolStripTextBox1_Click(object sender, EventArgs e)
@@ -1675,21 +1681,25 @@ namespace PappyjoeMVC.View
         {
             Appointment_for_each_patient_group d = new Appointment_for_each_patient_group();
             d.ShowDialog();
+           
         }
         private void lblappointmenteachdoctor_Click(object sender, EventArgs e)
         {
             Doctor_Wise_Appointment_Report v = new Doctor_Wise_Appointment_Report();
             v.ShowDialog();
+           
         }
         private void lblmonthappointmentcount_Click(object sender, EventArgs e)
         {
             Monthly_Appointment_Count c = new Monthly_Appointment_Count();
             c.ShowDialog();
+           
         }
         private void lbldailyappointcount_Click(object sender, EventArgs e)
         {
             Daily_Appointment_Count d = new Daily_Appointment_Count();
             d.ShowDialog();
+           
         }
         private void lblMissingCheckoutReports_Click(object sender, EventArgs e)
         {
@@ -1833,6 +1843,7 @@ namespace PappyjoeMVC.View
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
         private void toolStripButton9_Click(object sender, EventArgs e)
         {
@@ -1844,6 +1855,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
@@ -1861,6 +1873,7 @@ namespace PappyjoeMVC.View
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
+                    form2.Dispose();
                 }
             }
             else
@@ -1870,6 +1883,7 @@ namespace PappyjoeMVC.View
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
+                form2.Dispose();
             }
         }
 
@@ -1879,6 +1893,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1894,6 +1909,7 @@ namespace PappyjoeMVC.View
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.ShowDialog();
+                    form2.Dispose();
                 }
                 else
                 {
@@ -1907,6 +1923,7 @@ namespace PappyjoeMVC.View
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
                 form2.ShowDialog();
+                form2.Dispose();
             }
         }
 
@@ -1951,6 +1968,7 @@ namespace PappyjoeMVC.View
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void Chk_Type_CheckedChanged(object sender, EventArgs e)

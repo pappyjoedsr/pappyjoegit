@@ -54,9 +54,9 @@ namespace PappyjoeMVC.View
                 DataTable dt = this.cntrl.get_all_doctorname();
                 if (dt.Rows.Count > 0)
                 {
-                    Cmb_doctor.DataSource = dt;
                     Cmb_doctor.DisplayMember = "doctor_name";
                     Cmb_doctor.ValueMember = "id";
+                    Cmb_doctor.DataSource = dt;
                     if (doctor_id != "0")
                     {
                         for (int j = 0; j < dt.Rows.Count; j++)
@@ -169,9 +169,9 @@ namespace PappyjoeMVC.View
                 if (toolStripTextBox1.Text != "")
                 {
                     DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox1.Text);
-                    listpatientsearch.DataSource = dtdr;
                     listpatientsearch.DisplayMember = "patient";
                     listpatientsearch.ValueMember = "id";
+                    listpatientsearch.DataSource = dtdr;
                     if (listpatientsearch.Items.Count == 0)
                     {
                         listpatientsearch.Visible = false;

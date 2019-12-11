@@ -142,11 +142,13 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Sales(invnum);
                     form2.ShowDialog();
+                    form2.Dispose();
                 }
                 else if (dgv_sales.CurrentCell.OwningColumn.Name == "colmore")
                 {
                     var form2 = new Sales(invnum);
                     form2.ShowDialog();
+                    form2.Dispose();
                 }
             }
 

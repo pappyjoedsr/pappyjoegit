@@ -236,6 +236,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new ItemListForSales(FormName);
                 form2.ShowDialog();
+                form2.Dispose();
                 if (itemid != "")
                 {
                     txt_ItemCode.Text = ItemCode_From_List;

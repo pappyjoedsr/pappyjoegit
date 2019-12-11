@@ -64,9 +64,9 @@ namespace PappyjoeMVC.View
             DataTable dt = cmodel.get_all_doctorname();
             if (dt.Rows.Count > 0)
             {
-                Cmb_Doctor.DataSource = dt;
                 Cmb_Doctor.DisplayMember = "doctor_name";
                 Cmb_Doctor.ValueMember = "id";
+                Cmb_Doctor.DataSource = dt;
                 Cmb_Doctor.SelectedIndex = 0;
             }
             if (doctor_id != "0")
@@ -112,9 +112,9 @@ namespace PappyjoeMVC.View
             DataTable dt5 = this.cntrl.load_tax();
             if (dt5.Rows.Count > 0)
             {
-                Cmb_tax.DataSource = dt5;
                 Cmb_tax.DisplayMember = "tax_name";
                 Cmb_tax.ValueMember = "id";
+                Cmb_tax.DataSource = dt5;
                 Cmb_tax.Text = "";
             }
             DataTable dtb = this.cntrl.get_completed_procedure_details(patient_id);
@@ -2310,9 +2310,9 @@ namespace PappyjoeMVC.View
             if (TTP_SearchText.Text != "")
             {
                 DataTable dtdr = this.cntrl.Patient_search(TTP_SearchText.Text);
-                listpatientsearch.DataSource = dtdr;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
+                listpatientsearch.DataSource = dtdr;
                 if (listpatientsearch.Items.Count == 0)
                 {
                     listpatientsearch.Visible = false;

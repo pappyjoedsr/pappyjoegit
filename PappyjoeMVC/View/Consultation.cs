@@ -45,16 +45,16 @@ namespace PappyjoeMVC.View
                    // lbPatient.Show();
                     lbPatient.Location = new Point(txt_Pt_search.Location.X,49);
                     DataTable dtdr = this.ctrlr.srch_patient(txt_Pt_search.Text, txt_Pt_search.Text);
-                    lbPatient.DataSource = dtdr;
                     lbPatient.DisplayMember = "pt_name";
                     lbPatient.ValueMember = "id";
+                    lbPatient.DataSource = dtdr;
                 }
                 else
                 {
                     DataTable dtdr = this.ctrlr.search_patient(txt_Pt_search.Text);
-                    lbPatient.DataSource = dtdr;
                     lbPatient.DisplayMember = "pt_name";
                     lbPatient.ValueMember = "id";
+                    lbPatient.DataSource = dtdr;
                 }
                 if(lbPatient.Items.Count>0)
                 {
@@ -111,16 +111,16 @@ namespace PappyjoeMVC.View
                
                 lst_procedure.Location = new Point(txt_procedure.Location.X, 171);
                 DataTable dtdr = this.ctrlr.search_procedure(txt_procedure.Text);
-                lst_procedure.DataSource = dtdr;
                 lst_procedure.DisplayMember = "name";
                 lst_procedure.ValueMember = "id";
+                lst_procedure.DataSource = dtdr;
             }
             else
             {
                 DataTable dtdr = this.ctrlr.search_procedure(txt_procedure.Text);
-                lst_procedure.DataSource = dtdr;
                 lst_procedure.DisplayMember = "name";
                 lst_procedure.ValueMember = "id";
+                lst_procedure.DataSource = dtdr;
             }
             if(lst_procedure.Items.Count>0)
             {
@@ -170,10 +170,10 @@ namespace PappyjoeMVC.View
             DataTable dt = this.ctrlr.Load_doctor();
             if (dt.Rows.Count > 0)
             {
-                cmbdoctor.DataSource = dt;
                 cmbdoctor.DisplayMember = "doctor_name";
                 cmbdoctor.ValueMember = "id";
-               
+                cmbdoctor.DataSource = dt;
+
                 DataTable dt_doctor = this.ctrlr.Load_dctrname(doctor_id);
                 if (dt_doctor.Rows.Count > 0)
                 {
@@ -197,9 +197,9 @@ namespace PappyjoeMVC.View
             dt_prescription = this.ctrlr.get_prescriptn();
             fill_DrugPrescrptn(dt_prescription);
             DataTable dt1 = this.ctrlr.get_unit();
-            strengthcombo.DataSource = dt1;
             strengthcombo.DisplayMember = "name";
             strengthcombo.ValueMember = "id";
+            strengthcombo.DataSource = dt1;
             if (strengthcombo.Items.Count > 1)
             {
                 strengthcombo.SelectedIndex = 0;

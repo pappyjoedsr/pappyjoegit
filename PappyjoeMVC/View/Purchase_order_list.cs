@@ -120,6 +120,7 @@ namespace PappyjoeMVC.View
                 PappyjoeMVC.Model.Connection.MyGlobals.global_Flag = true;
                 var form2 = new PappyjoeMVC.View.Purchase(purch_id);
                 form2.ShowDialog();
+                form2.Dispose();
             }
         }
         private void dgvItemData_CellClick(object sender, DataGridViewCellEventArgs e)

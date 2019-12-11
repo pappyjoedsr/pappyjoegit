@@ -165,6 +165,7 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new PappyjoeMVC.View.Sales(invNumOrder, "Sales Order");
                     form2.ShowDialog();
+                    form2.Dispose();
                 }
             }
         }

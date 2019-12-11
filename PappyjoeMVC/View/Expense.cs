@@ -204,9 +204,9 @@ namespace PappyjoeMVC.View
             try
             {
                 DataTable dtb = this.cntrl.load_accountname();
-                comboBoxincomacc.DataSource = dtb;
-                comboBoxincomacc.DisplayMember = "name";
                 comboBoxincomacc.ValueMember = "id";
+                comboBoxincomacc.DisplayMember = "name";
+                comboBoxincomacc.DataSource = dtb;
                 Check_Value1 = 1;
             }
             catch (Exception ex)
@@ -281,9 +281,9 @@ namespace PappyjoeMVC.View
             try
             {
                 DataTable dt1 = this.cntrl.debit_accountname();
-                comboaccountname.DataSource = dt1;
                 comboaccountname.DisplayMember = "name";
                 comboaccountname.ValueMember = "id";
+                comboaccountname.DataSource = dt1;
                 Check_Value = 1;
             }
             catch (Exception ex)
@@ -432,9 +432,9 @@ namespace PappyjoeMVC.View
             try
             {
                 DataTable dt1 = this.cntrl.Bindcomboincome();
-                comboBoxincomacc.DataSource = dt1;
                 comboBoxincomacc.DisplayMember = "name";
                 comboBoxincomacc.ValueMember = "id";
+                comboBoxincomacc.DataSource = dt1;
                 Check_Value1 = 1;
                 DataTable dtb = this.cntrl.expense_search4(dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
             }
@@ -448,9 +448,9 @@ namespace PappyjoeMVC.View
             try
             {
                 DataTable dt1 = this.cntrl.databindcombo();
-                comboaccountname.DataSource = dt1;
                 comboaccountname.DisplayMember = "name";
                 comboaccountname.ValueMember = "id";
+                comboaccountname.DataSource = dt1;
                 Check_Value = 1;
                 this.cntrl.expense_search4(dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
             }
@@ -464,9 +464,9 @@ namespace PappyjoeMVC.View
             try
             {
                 DataTable dt1 = this.cntrl.databindcombo2();
-                comboSearch.DataSource = dt1;
                 comboSearch.DisplayMember = "name";
                 comboSearch.ValueMember = "id";
+                comboSearch.DataSource = dt1;
             }
             catch (Exception ex)
             {
@@ -606,9 +606,9 @@ namespace PappyjoeMVC.View
                     if (radio_income.Checked == true)
                     {
                         DataTable dt1 = this.cntrl.check_type_creditselect();
-                        comboSearch.DataSource = dt1;
                         comboSearch.DisplayMember = "name";
                         comboSearch.ValueMember = "id";
+                        comboSearch.DataSource = dt1;
                         exp_Type = "Income";
                     }
                 }
@@ -617,9 +617,9 @@ namespace PappyjoeMVC.View
                     radio_income.Enabled = false;
                     radio_expense.Enabled = false;
                     DataTable dt1 = this.cntrl.check_type_exp2();
-                    comboSearch.DataSource = dt1;
                     comboSearch.DisplayMember = "name";
                     comboSearch.ValueMember = "id";
+                    comboSearch.DataSource = dt1;
                 }
             }
             catch (Exception ex)
@@ -647,17 +647,17 @@ namespace PappyjoeMVC.View
                 if (radio_expense.Checked == true)
                 {
                     DataTable dt1 = this.cntrl.expense_checked();
-                    comboSearch.DataSource = dt1;
                     comboSearch.DisplayMember = "name";
                     comboSearch.ValueMember = "id";
+                    comboSearch.DataSource = dt1;
                     exp_Type = "Expense";
                 }
                 else
                 {
                     DataTable dt1 = this.cntrl.expense_checked();
-                    comboSearch.DataSource = dt1;
                     comboSearch.DisplayMember = "name";
                     comboSearch.ValueMember = "id";
+                    comboSearch.DataSource = dt1;
                     exp_Type = " ";
                 }
             }
@@ -674,17 +674,17 @@ namespace PappyjoeMVC.View
                 if (radio_income.Checked == true)
                 {
                     DataTable dt1 = this.cntrl.check_type_creditselect();
-                    comboSearch.DataSource = dt1;
                     comboSearch.DisplayMember = "name";
                     comboSearch.ValueMember = "id";
+                    comboSearch.DataSource = dt1;
                     exp_Type = "Income";
                 }
                 else
                 {
                     DataTable dt1 = this.cntrl.expense_checked();
-                    comboSearch.DataSource = dt1;
                     comboSearch.DisplayMember = "name";
                     comboSearch.ValueMember = "id";
+                    comboSearch.DataSource = dt1;
                     exp_Type = " ";
                 }
             }
