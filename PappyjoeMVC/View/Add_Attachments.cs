@@ -191,9 +191,9 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
-            form2.Show();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
+            form2.Show();
         }
         public void pathlength()
         {
