@@ -1407,9 +1407,9 @@ namespace PappyjoeMVC.View
                 DataTable dt_doctor = this.cntrl.get_all_doctorname();
                 if (dt_doctor.Rows.Count > 0)
                 {
-                    Cmb_Doctor.DataSource = dt_doctor;
                     Cmb_Doctor.ValueMember = "id";
                     Cmb_Doctor.DisplayMember = "doctor_name";
+                    Cmb_Doctor.DataSource = dt_doctor;
                 }
                 DataTable dt_complaint = new DataTable();
                 dt_complaint = this.cntrl.show_compl();
@@ -1423,9 +1423,9 @@ namespace PappyjoeMVC.View
                 disabledAllContrls();
                 flag = true;
                 DataTable dt = this.cntrl.Fill_unit_combo();
-                strengthcombo.DataSource = dt;
                 strengthcombo.DisplayMember = "name";
                 strengthcombo.ValueMember = "id";
+                strengthcombo.DataSource = dt;
                 if (strengthcombo.Items.Count > 1)
                 {
                     strengthcombo.SelectedIndex = 0;
@@ -1437,9 +1437,9 @@ namespace PappyjoeMVC.View
                 DataTable dt5 = this.cntrl.Fill_LoadTax();
                 if (dt5.Rows.Count > 0)
                 {
-                    Cmb_tax.DataSource = dt5;
                     Cmb_tax.DisplayMember = "tax_name";
                     Cmb_tax.ValueMember = "id";
+                    Cmb_tax.DataSource = dt5;
                     Cmb_tax.Text = "";
                 }
                 dgv_prescrptn.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8, FontStyle.Regular);

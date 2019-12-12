@@ -158,9 +158,9 @@ namespace PappyjoeMVC.View
             if (txtBdoctor.Text != "")
             {
                 DataTable dtdr = this.cntrl.GetDoctorName(txtBdoctor.Text);
-                lbIdoctor.DataSource = dtdr;
                 lbIdoctor.DisplayMember = "doctor_name";
                 lbIdoctor.ValueMember = "id";
+                lbIdoctor.DataSource = dtdr;
                 if (e.KeyCode == Keys.Enter && lbIdoctor.Items.Count > 0)
                 {
                     var value = lbIdoctor.GetItemText(lbIdoctor.SelectedValue);
@@ -276,9 +276,9 @@ namespace PappyjoeMVC.View
             {
                 lbPatient.Show();
                 lbPatient.Location = new Point(txtPatient.Location.X, 27);
-                lbPatient.DataSource = dtdr;
                 lbPatient.DisplayMember = "pt_name";
                 lbPatient.ValueMember = "pt_id";
+                lbPatient.DataSource = dtdr;
             }
             else
             {

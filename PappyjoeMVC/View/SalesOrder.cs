@@ -434,9 +434,9 @@ namespace PappyjoeMVC.View
                     lbPatient.Show();
                     lbPatient.Location = new Point(429, 37);
                     DataTable dtdr = this.cntrl.patient_keydown(txtPatient.Text);
-                    lbPatient.DataSource = dtdr;
                     lbPatient.DisplayMember = "pt_name";
                     lbPatient.ValueMember = "pt_id";
+                    lbPatient.DataSource = dtdr;
                 }
             }
             else
@@ -460,9 +460,9 @@ namespace PappyjoeMVC.View
                 dt = this.cntrl.patients(txtPatient.Text);
                 if (dt.Rows.Count > 0)
                 {
-                    lbPatient.DataSource = dt;
                     lbPatient.DisplayMember = "pt_name";
                     lbPatient.ValueMember = "pt_id";
+                    lbPatient.DataSource = dt;
                     lbPatient.Show();
                     if (txtPatient.Text == "")
                     {

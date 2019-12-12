@@ -42,9 +42,9 @@ namespace PappyjoeMVC.View
                 if (txt_InvoiceNum.Text != "")
                 {
                     DataTable dtdr = this.cntrl.get_all_invnumbr(txt_InvoiceNum.Text);
-                    lstInvNo.DataSource = dtdr;
                     lstInvNo.DisplayMember = "InvNumber";
                     lstInvNo.ValueMember = "InvNumber";
+                    lstInvNo.DataSource = dtdr;
                     if (e.KeyCode == Keys.Enter && lstInvNo.Items.Count > 0)
                     {
                         var value = lstInvNo.GetItemText(lstInvNo.SelectedValue);

@@ -308,9 +308,9 @@ namespace PappyjoeMVC.View
             cmb_country.DataSource = null;
             if (dtb.Rows.Count > 0)
             {
-                cmb_country.DataSource = dtb;
                 cmb_country.DisplayMember = "country";
                 cmb_country.ValueMember = "id";
+                cmb_country.DataSource = dtb;
             }
         }
         public void FillCityCombo(DataTable dtb)
@@ -318,9 +318,9 @@ namespace PappyjoeMVC.View
             cmb_city.DataSource = null;
             if (dtb.Rows.Count > 0)
             {
-                cmb_city.DataSource = dtb;
                 cmb_city.DisplayMember = "city";
                 cmb_city.ValueMember = "id";
+                cmb_city.DataSource = dtb;
             }
         }
         public void FillStateCombo(DataTable dtb)
@@ -328,9 +328,9 @@ namespace PappyjoeMVC.View
             cmb_state.DataSource = null;
             if (dtb.Rows.Count > 0)
             {
-                cmb_state.DataSource = dtb;
                 cmb_state.DisplayMember = "state";
                 cmb_state.ValueMember = "id";
+                cmb_state.DataSource = dtb;
             }
         }
         public void FilSpecializationCombo(DataTable dtb)
@@ -338,9 +338,9 @@ namespace PappyjoeMVC.View
             cmb_specialization.DataSource = null;
             if (dtb.Rows.Count > 0)
             {
-                cmb_specialization.DataSource = dtb;
                 cmb_specialization.DisplayMember = "name";
                 cmb_specialization.ValueMember = "id";
+                cmb_specialization.DataSource = dtb;
             }
         }
 
@@ -763,9 +763,9 @@ namespace PappyjoeMVC.View
             if (toolStripTextBox1.Text != "")
             {
                 DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox1.Text);
-                listpatientsearch.DataSource = dtdr;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
+                listpatientsearch.DataSource = dtdr;
                 if (listpatientsearch.Items.Count == 0)
                 {
                     listpatientsearch.Visible = false;

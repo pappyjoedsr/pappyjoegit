@@ -3480,9 +3480,9 @@ namespace PappyjoeMVC.View
                 var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
                 form2.doctor_id = doctor_id;
                 form2.patient_id = id1.ToString();
-                form2.Show();
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
+                form2.Show();
             }
         }
 
@@ -3495,9 +3495,10 @@ namespace PappyjoeMVC.View
                 var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
                 form2.doctor_id = doctor_id;
                 form2.patient_id = id1.ToString();
+                this.Hide();
                 form2.Show();
                 form2.Closed += (sender1, args) => this.Close();
-                this.Hide();
+                
             }
         }
 
@@ -3925,9 +3926,9 @@ namespace PappyjoeMVC.View
             {
                 panel5.Location = new Point(1000, 32);
                 DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox1.Text);
-                listpatientsearch.DataSource = dtdr;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
+                listpatientsearch.DataSource = dtdr;
                 if (listpatientsearch.Items.Count == 0)
                 {
                     panel5.Visible = false;

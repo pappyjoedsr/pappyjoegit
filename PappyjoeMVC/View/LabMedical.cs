@@ -275,32 +275,32 @@ namespace PappyjoeMVC.View
                 //strt cmb boxes
 
                 System.Data.DataTable tbTesttype = this.cntrl.fill_TestType();
-                cmbTesttype.DataSource = tbTesttype;
                 cmbTesttype.DisplayMember = "Name";
                 cmbTesttype.ValueMember = "id";
+                cmbTesttype.DataSource = tbTesttype;
 
 
                 System.Data.DataTable tbUnit = this.cntrl.fill_Unit();
-                cmbUnit.DataSource = tbUnit;
                 cmbUnit.DisplayMember = "Name";
                 cmbUnit.ValueMember = "id";
+                cmbUnit.DataSource = tbUnit;
 
 
                 System.Data.DataTable tbMaintesttemp = this.cntrl.fill_Test();
-                cmbmaintesttemp.DataSource = tbMaintesttemp;
                 cmbmaintesttemp.DisplayMember = "Main_test";
                 cmbmaintesttemp.ValueMember = "id";
+                cmbmaintesttemp.DataSource = tbMaintesttemp;
 
                 System.Data.DataTable tbtesttypetemp = this.cntrl.fill_TestType();
-                cmbtesttypetmp.DataSource = tbtesttypetemp;
                 cmbtesttypetmp.DisplayMember = "Name";
                 cmbtesttypetmp.ValueMember = "id";
+                cmbtesttypetmp.DataSource = tbtesttypetemp;
 
 
                 DataTable tbtesttemp = this.cntrl.tbtesttemp();
-                cmbTesttemp.DataSource = tbtesttemp;
                 cmbTesttemp.DisplayMember = "Name";
                 cmbTesttemp.ValueMember = "id";
+                cmbTesttemp.DataSource = tbtesttemp;
 
                 //end combo box
                 if (this.tabLabMasters.SelectedTab.Text == "Template")
@@ -970,17 +970,17 @@ namespace PappyjoeMVC.View
                     dgvtempitem.Rows.Clear();
                     txttemp.Text = "";
                     System.Data.DataTable tbMaintesttemp = this.cntrl.fill_Test();
-                    cmbmaintesttemp.DataSource = tbMaintesttemp;
                     cmbmaintesttemp.DisplayMember = "Main_test";
                     cmbmaintesttemp.ValueMember = "id";
+                    cmbmaintesttemp.DataSource = tbMaintesttemp;
                     System.Data.DataTable tbtesttypetemp = this.cntrl.fill_TestType();
-                    cmbtesttypetmp.DataSource = tbtesttypetemp;
                     cmbtesttypetmp.DisplayMember = "Name";
                     cmbtesttypetmp.ValueMember = "id";
+                    cmbtesttypetmp.DataSource = tbtesttypetemp;
                     System.Data.DataTable tbtesttemp = this.cntrl.tbtesttemp();
-                    cmbTesttemp.DataSource = tbtesttemp;
                     cmbTesttemp.DisplayMember = "Name";
                     cmbTesttemp.ValueMember = "id";
+                    cmbTesttemp.DataSource = tbtesttemp;
                 }
                 else
                 {

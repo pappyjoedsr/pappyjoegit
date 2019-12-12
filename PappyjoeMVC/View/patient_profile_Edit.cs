@@ -314,9 +314,9 @@ namespace PappyjoeMVC.View
             try
             {
                 DataTable dt_doc = this.cntrl.get_all_doctorname();
-                cmbDoctorName.DataSource = dt_doc;
                 cmbDoctorName.ValueMember = "id";
                 cmbDoctorName.DisplayMember = "doctor_name";
+                cmbDoctorName.DataSource = dt_doc;
                 DateTimePickerDob.MaxDate = DateTime.Now.Date;
                 if (doctor_id != "1")
                 {

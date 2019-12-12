@@ -311,7 +311,7 @@ namespace PappyjoeMVC.View
         {
             if (!PappyjoeMVC.Model.Connection.checkforemail(txtEmail.Text.ToString()) && txtEmail.Text != "")
             {
-                MessageBox.Show("invalid Email address/Password", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("invalid Email address...", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
             }
         }
