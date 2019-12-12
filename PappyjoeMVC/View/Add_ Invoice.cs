@@ -664,7 +664,6 @@ namespace PappyjoeMVC.View
             chk55.Checked = false; chk61.Checked = false;
             chk62.Checked = false; chk63.Checked = false;
             chk64.Checked = false; chk65.Checked = false;
-
             chk71.Checked = false; chk72.Checked = false;
             chk73.Checked = false; chk74.Checked = false;
             chk75.Checked = false; chk81.Checked = false;
@@ -2492,7 +2491,6 @@ namespace PappyjoeMVC.View
             {
                 panel4.Show();
                 lab_ShowChildteeth.Text = "Hide ChildTeeth";
-                // childteethview();
             }
             else
             {
@@ -2508,11 +2506,6 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.ShowDialog();
             form2.Dispose();
-        }
-
-        private void toolStripBAttachment_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
