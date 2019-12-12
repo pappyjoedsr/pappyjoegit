@@ -102,16 +102,16 @@ namespace PappyjoeMVC.View
             DataTable dt_prescription = dt_prescription = this.cntrl.get_drug_name();
             if (dt_prescription.Rows.Count > 0)
             {
-                cmbPriscriptionTemplate.DataSource = dt_prescription;
                 cmbPriscriptionTemplate.ValueMember = "id";
                 cmbPriscriptionTemplate.DisplayMember = "name";
+                cmbPriscriptionTemplate.DataSource = dt_prescription;
             }
             DataTable dt_doctor = this.cntrl.get_all_doctorname();
             if (dt_doctor.Rows.Count > 0)
             {
-                cmbDoctor.DataSource = dt_doctor;
                 cmbDoctor.ValueMember = "id";
                 cmbDoctor.DisplayMember = "doctor_name";
+                cmbDoctor.DataSource = dt_doctor;
             }
             flag_Template = true;
         }

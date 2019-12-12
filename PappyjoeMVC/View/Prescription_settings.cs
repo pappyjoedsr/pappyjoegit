@@ -56,18 +56,18 @@ namespace PappyjoeMVC.View
         {
             if (dtb.Rows.Count > 0)
             {
-                combotype.DataSource = dtb;
                 combotype.DisplayMember = "dr_type";
                 combotype.ValueMember = "id";
+                combotype.DataSource = dtb;
             }
         }
         public void FillUnitCombo(DataTable dtb)
         {
             if (dtb.Rows.Count > 0)
             {
-                combo_unit.DataSource = dtb;
                 combo_unit.DisplayMember = "name";
                 combo_unit.ValueMember = "id";
+                combo_unit.DataSource = dtb;
             }
         }
    

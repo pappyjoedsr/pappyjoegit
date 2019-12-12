@@ -1635,6 +1635,7 @@ namespace PappyjoeMVC.View
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripButton10_Click(object sender, EventArgs e)
@@ -1659,9 +1660,9 @@ namespace PappyjoeMVC.View
             if (toolStripTextBox1.Text != "")
             {
                 DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox1.Text);
-                listpatientsearch.DataSource = dtdr;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
+                listpatientsearch.DataSource = dtdr;
                 if (listpatientsearch.Items.Count == 0)
                 {
                     listpatientsearch.Visible = false;
@@ -1957,6 +1958,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)

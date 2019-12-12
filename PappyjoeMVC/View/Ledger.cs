@@ -707,9 +707,9 @@ namespace PappyjoeMVC.View
             if (toolStripTextBox1.Text != "")
             {
                 DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox1.Text);
-                listpatientsearch.DataSource = dtdr;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
+                listpatientsearch.DataSource = dtdr;
                 if (listpatientsearch.Items.Count == 0)
                 {
                     listpatientsearch.Visible = false;
