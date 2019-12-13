@@ -133,7 +133,6 @@ namespace PappyjoeMVC.View
             sales_order.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             sales_order.Show();
         }
-
         private void frmstockReport_Load(object sender, EventArgs e)
         {
             listpatientsearch.BringToFront();
@@ -874,7 +873,6 @@ namespace PappyjoeMVC.View
             PU_orderList.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             PU_orderList.Show();
         }
-
         private void btn_Sales_report_Click(object sender, EventArgs e)
         {
             backColor_Change();
