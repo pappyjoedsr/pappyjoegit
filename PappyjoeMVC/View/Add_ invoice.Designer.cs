@@ -303,7 +303,7 @@
             this.toolStripBAttachment.Size = new System.Drawing.Size(72, 37);
             this.toolStripBAttachment.Text = "Fast Track";
             this.toolStripBAttachment.Visible = false;
-            this.toolStripBAttachment.Click += new System.EventHandler(this.toolStripBAttachment_Click);
+            //this.toolStripBAttachment.Click += new System.EventHandler(this.toolStripBAttachment_Click);
             // 
             // toolStripButton3
             // 
