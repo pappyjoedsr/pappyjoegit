@@ -111,7 +111,7 @@
             this.txtTotalItem.Enabled = false;
             this.txtTotalItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalItem.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtTotalItem.Location = new System.Drawing.Point(1251, 16);
+            this.txtTotalItem.Location = new System.Drawing.Point(1248, 16);
             this.txtTotalItem.Name = "txtTotalItem";
             this.txtTotalItem.ReadOnly = true;
             this.txtTotalItem.Size = new System.Drawing.Size(96, 22);
@@ -124,9 +124,9 @@
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label.Location = new System.Drawing.Point(1180, 21);
+            this.label.Location = new System.Drawing.Point(1177, 21);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(56, 13);
+            this.label.Size = new System.Drawing.Size(57, 13);
             this.label.TabIndex = 0;
             this.label.Text = "Total Item";
             // 
@@ -185,7 +185,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(0, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1371, 68);
+            this.panel1.Size = new System.Drawing.Size(1368, 68);
             this.panel1.TabIndex = 195;
             // 
             // btnprint
@@ -273,15 +273,16 @@
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Lab_Msg.Location = new System.Drawing.Point(343, 219);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(561, 25);
             this.Lab_Msg.TabIndex = 279;
             this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // dgvPurchase
@@ -318,6 +319,9 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.Lab_Msg);
             this.panel2.Controls.Add(this.dgvPurchase);
             this.panel2.Location = new System.Drawing.Point(0, 125);
@@ -347,7 +351,6 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchase)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

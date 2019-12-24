@@ -175,15 +175,16 @@
             // 
             // label_empty
             // 
-            this.label_empty.AutoSize = true;
+            this.label_empty.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_empty.BackColor = System.Drawing.Color.Wheat;
             this.label_empty.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_empty.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label_empty.Location = new System.Drawing.Point(334, 175);
+            this.label_empty.Location = new System.Drawing.Point(200, 225);
             this.label_empty.Name = "label_empty";
-            this.label_empty.Size = new System.Drawing.Size(466, 25);
+            this.label_empty.Size = new System.Drawing.Size(483, 25);
             this.label_empty.TabIndex = 89;
             this.label_empty.Text = "No Records Found. Please change Date and try again !";
+            this.label_empty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Grvsummary
             // 
@@ -311,7 +312,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Location = new System.Drawing.Point(2, 586);
@@ -652,7 +654,6 @@
             this.Load += new System.EventHandler(this.Daily_Invoice_Report_Load);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grvsummary)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

@@ -14,7 +14,6 @@ namespace PappyjoeMVC.View
 {
     public partial class Purchase_Item_Report : Form
     {
-        
         int pur_id1 = 0;
         DateTime from1, to1;
         public string checkStr = "0",PathName = "";
@@ -260,6 +259,5 @@ namespace PappyjoeMVC.View
             dgvPurchase.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvPurchase.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
-       
     }
 }

@@ -116,7 +116,7 @@ namespace PappyjoeMVC.Model
             DataTable Normavalue = db.table("select (NormalValueM +',' + NormalValueF ) as Normalvalue from Lab_Medi_Test  where id = '" + test + "' ");
             return Normavalue;
         }
-        public int Insert_mediTemplate(int Id, int MainTestId, int TestId, object Units, string NormalValue)
+        public int Insert_mediTemplate(int Id, int MainTestId, string TestId, object Units, string NormalValue)
         {
             int i = db.execute("insert into Lab_Medi_Template (Id,MainTestId,TestId,Units,NormalValue)values('" + Id + "', '" + MainTestId + "','" + TestId + "','" + Units + "','" + NormalValue + "')");
             return i;

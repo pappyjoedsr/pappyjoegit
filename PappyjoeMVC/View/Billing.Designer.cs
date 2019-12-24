@@ -37,11 +37,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Billing));
             this.label19 = new System.Windows.Forms.Label();
             this.dataGridView_Billing = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.buttonclear = new System.Windows.Forms.Button();
             this.buttonsave = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,6 +44,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.text_taxvalue = new System.Windows.Forms.TextBox();
             this.text_taxname = new System.Windows.Forms.TextBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Billing)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline);
             this.label19.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label19.Location = new System.Drawing.Point(12, 15);
+            this.label19.Location = new System.Drawing.Point(16, 8);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(65, 25);
             this.label19.TabIndex = 125;
@@ -101,7 +101,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_Billing.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_Billing.GridColor = System.Drawing.Color.White;
-            this.dataGridView_Billing.Location = new System.Drawing.Point(96, 170);
+            this.dataGridView_Billing.Location = new System.Drawing.Point(99, 170);
             this.dataGridView_Billing.MultiSelect = false;
             this.dataGridView_Billing.Name = "dataGridView_Billing";
             this.dataGridView_Billing.ReadOnly = true;
@@ -122,6 +122,87 @@
             this.dataGridView_Billing.Size = new System.Drawing.Size(355, 235);
             this.dataGridView_Billing.TabIndex = 133;
             this.dataGridView_Billing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Billing_CellClick);
+            this.dataGridView_Billing.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Billing_CellContentClick);
+            // 
+            // buttonclear
+            // 
+            this.buttonclear.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonclear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonclear.ForeColor = System.Drawing.Color.White;
+            this.buttonclear.Location = new System.Drawing.Point(261, 121);
+            this.buttonclear.Name = "buttonclear";
+            this.buttonclear.Size = new System.Drawing.Size(75, 28);
+            this.buttonclear.TabIndex = 131;
+            this.buttonclear.Text = "Clear";
+            this.buttonclear.UseVisualStyleBackColor = false;
+            this.buttonclear.Click += new System.EventHandler(this.buttonclear_Click);
+            // 
+            // buttonsave
+            // 
+            this.buttonsave.BackColor = System.Drawing.Color.LimeGreen;
+            this.buttonsave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonsave.ForeColor = System.Drawing.Color.White;
+            this.buttonsave.Location = new System.Drawing.Point(180, 121);
+            this.buttonsave.Name = "buttonsave";
+            this.buttonsave.Size = new System.Drawing.Size(75, 28);
+            this.buttonsave.TabIndex = 132;
+            this.buttonsave.Text = "Save";
+            this.buttonsave.UseVisualStyleBackColor = false;
+            this.buttonsave.Click += new System.EventHandler(this.buttonsave_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label6.Location = new System.Drawing.Point(292, 90);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(21, 20);
+            this.label6.TabIndex = 128;
+            this.label6.Text = "%";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label2.Location = new System.Drawing.Point(103, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 17);
+            this.label2.TabIndex = 129;
+            this.label2.Text = "Tax Value";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label1.Location = new System.Drawing.Point(99, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 17);
+            this.label1.TabIndex = 130;
+            this.label1.Text = "Tax Name";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // text_taxvalue
+            // 
+            this.text_taxvalue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.text_taxvalue.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.text_taxvalue.Location = new System.Drawing.Point(180, 90);
+            this.text_taxvalue.Name = "text_taxvalue";
+            this.text_taxvalue.Size = new System.Drawing.Size(109, 20);
+            this.text_taxvalue.TabIndex = 127;
+            // 
+            // text_taxname
+            // 
+            this.text_taxname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.text_taxname.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.text_taxname.Location = new System.Drawing.Point(180, 62);
+            this.text_taxname.Name = "text_taxname";
+            this.text_taxname.Size = new System.Drawing.Size(357, 20);
+            this.text_taxname.TabIndex = 126;
             // 
             // id
             // 
@@ -156,7 +237,7 @@
             this.Edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
             this.Edit.Name = "Edit";
             this.Edit.ReadOnly = true;
-            this.Edit.Width = 25;
+            this.Edit.Width = 19;
             // 
             // Delete
             // 
@@ -164,86 +245,7 @@
             this.Delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
-            this.Delete.Width = 25;
-            // 
-            // buttonclear
-            // 
-            this.buttonclear.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.buttonclear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonclear.ForeColor = System.Drawing.Color.White;
-            this.buttonclear.Location = new System.Drawing.Point(177, 127);
-            this.buttonclear.Name = "buttonclear";
-            this.buttonclear.Size = new System.Drawing.Size(75, 28);
-            this.buttonclear.TabIndex = 131;
-            this.buttonclear.Text = "Clear";
-            this.buttonclear.UseVisualStyleBackColor = false;
-            this.buttonclear.Click += new System.EventHandler(this.buttonclear_Click);
-            // 
-            // buttonsave
-            // 
-            this.buttonsave.BackColor = System.Drawing.Color.LimeGreen;
-            this.buttonsave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonsave.ForeColor = System.Drawing.Color.White;
-            this.buttonsave.Location = new System.Drawing.Point(96, 127);
-            this.buttonsave.Name = "buttonsave";
-            this.buttonsave.Size = new System.Drawing.Size(75, 28);
-            this.buttonsave.TabIndex = 132;
-            this.buttonsave.Text = "Save";
-            this.buttonsave.UseVisualStyleBackColor = false;
-            this.buttonsave.Click += new System.EventHandler(this.buttonsave_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(208, 96);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(21, 20);
-            this.label6.TabIndex = 128;
-            this.label6.Text = "%";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(24, 98);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 17);
-            this.label2.TabIndex = 129;
-            this.label2.Text = "Tax Value";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(24, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
-            this.label1.TabIndex = 130;
-            this.label1.Text = "Tax Name";
-            // 
-            // text_taxvalue
-            // 
-            this.text_taxvalue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.text_taxvalue.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_taxvalue.Location = new System.Drawing.Point(96, 96);
-            this.text_taxvalue.Name = "text_taxvalue";
-            this.text_taxvalue.Size = new System.Drawing.Size(109, 20);
-            this.text_taxvalue.TabIndex = 127;
-            // 
-            // text_taxname
-            // 
-            this.text_taxname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.text_taxname.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_taxname.Location = new System.Drawing.Point(96, 68);
-            this.text_taxname.Name = "text_taxname";
-            this.text_taxname.Size = new System.Drawing.Size(357, 20);
-            this.text_taxname.TabIndex = 126;
+            this.Delete.Width = 19;
             // 
             // Billing
             // 

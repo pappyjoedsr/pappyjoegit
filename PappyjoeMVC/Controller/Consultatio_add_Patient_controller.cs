@@ -16,9 +16,9 @@ namespace PappyjoeMVC.Controller
          int i=   model.save_patient(pt_name,  pt_id,  gender,  primary_mobile_number);
             return i;
         }
-        public string patient_maxid()
+        public DataTable patient_maxid()
         {
-            string maxid = model.patient_maxid();
+            DataTable maxid = model.patient_maxid();
             return maxid;
         }
         public DataTable automaticid()
@@ -39,6 +39,46 @@ namespace PappyjoeMVC.Controller
         {
             DataTable dtb = model.get_practice_details();
             return dtb;
+        }
+        public int save_patient_else(string txtpatname, string txtPatientId, string gender, string txtmobile, string txtxAge, string txtxStreet, string txtLocality, string txtCity, string txtFileNo, string ddldoctor)
+        {
+            int i = model.save_patient_else(txtpatname, txtPatientId, gender, txtmobile, txtxAge, txtxStreet, txtLocality, txtCity, txtFileNo, ddldoctor);
+            return i; 
+        }
+        public DataTable select_patnt_num()
+        {
+            DataTable dt = model.select_patnt_num();
+            return dt;
+        }
+        public int update_autoId(int n)
+        {
+            int i = model.update_autoId(n);
+            return i;
+        }
+        public int med_hist(string id, string grmedical)
+        {
+            int i = model.med_hist(id, grmedical);
+            return i;
+        }
+        public DataTable name_medhistory()
+        {
+            DataTable dt = model.name_medhistory();
+            return dt;
+        }
+        public DataTable autom_id()
+        {
+            DataTable dt = model.autom_id();
+            return dt;
+        }
+        public DataTable Load_doctor()
+        {
+            DataTable dt = model.Load_doctor();
+            return dt;
+        }
+        public DataTable doc_info()
+        {
+            DataTable dt = model.doc_info();
+            return dt;
         }
     }
 }

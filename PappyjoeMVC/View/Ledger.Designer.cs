@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ledger));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -95,6 +95,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Lab_DebitTotal = new System.Windows.Forms.Label();
             this.Lab_BalanTotal = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.toolStrip2.SuspendLayout();
             this.Panl_PatName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -102,6 +103,7 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Transaction)).BeginInit();
             this.label40.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip2
@@ -389,7 +391,7 @@
             this.Panl_PatName.Controls.Add(this.linkLabel_Name);
             this.Panl_PatName.Controls.Add(this.label29);
             this.Panl_PatName.Controls.Add(this.label30);
-            this.Panl_PatName.Location = new System.Drawing.Point(195, 43);
+            this.Panl_PatName.Location = new System.Drawing.Point(195, 42);
             this.Panl_PatName.Name = "Panl_PatName";
             this.Panl_PatName.Size = new System.Drawing.Size(414, 42);
             this.Panl_PatName.TabIndex = 241;
@@ -471,7 +473,7 @@
             this.panel2.Controls.Add(this.label28);
             this.panel2.Location = new System.Drawing.Point(0, 93);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(187, 619);
+            this.panel2.Size = new System.Drawing.Size(187, 613);
             this.panel2.TabIndex = 242;
             // 
             // labl_Lab
@@ -695,7 +697,7 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.DarkGray;
-            this.panel5.Location = new System.Drawing.Point(0, 89);
+            this.panel5.Location = new System.Drawing.Point(0, 86);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1386, 1);
             this.panel5.TabIndex = 243;
@@ -723,7 +725,7 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label41.Location = new System.Drawing.Point(198, 99);
+            this.label41.Location = new System.Drawing.Point(49, 7);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(66, 21);
             this.label41.TabIndex = 275;
@@ -736,7 +738,7 @@
             this.btnpayreminder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnpayreminder.ForeColor = System.Drawing.Color.White;
             this.btnpayreminder.Image = ((System.Drawing.Image)(resources.GetObject("btnpayreminder.Image")));
-            this.btnpayreminder.Location = new System.Drawing.Point(1107, 92);
+            this.btnpayreminder.Location = new System.Drawing.Point(906, 3);
             this.btnpayreminder.Name = "btnpayreminder";
             this.btnpayreminder.Size = new System.Drawing.Size(167, 32);
             this.btnpayreminder.TabIndex = 277;
@@ -753,7 +755,7 @@
             this.btnprint.ForeColor = System.Drawing.Color.White;
             this.btnprint.Image = ((System.Drawing.Image)(resources.GetObject("btnprint.Image")));
             this.btnprint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnprint.Location = new System.Drawing.Point(1274, 92);
+            this.btnprint.Location = new System.Drawing.Point(1073, 3);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(86, 32);
             this.btnprint.TabIndex = 276;
@@ -767,7 +769,7 @@
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.DarkGray;
-            this.panel8.Location = new System.Drawing.Point(191, 128);
+            this.panel8.Location = new System.Drawing.Point(191, 133);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1176, 1);
             this.panel8.TabIndex = 278;
@@ -779,9 +781,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.Controls.Add(this.Lab_Msg);
             this.panel9.Controls.Add(this.DGV_Transaction);
-            this.panel9.Location = new System.Drawing.Point(196, 132);
+            this.panel9.Location = new System.Drawing.Point(196, 138);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1160, 568);
+            this.panel9.Size = new System.Drawing.Size(1167, 601);
             this.panel9.TabIndex = 279;
             // 
             // Lab_Msg
@@ -790,7 +792,7 @@
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(284, 192);
+            this.Lab_Msg.Location = new System.Drawing.Point(192, 232);
             this.Lab_Msg.Name = "Lab_Msg";
             this.Lab_Msg.Size = new System.Drawing.Size(175, 25);
             this.Lab_Msg.TabIndex = 271;
@@ -803,8 +805,8 @@
             this.DGV_Transaction.AllowUserToDeleteRows = false;
             this.DGV_Transaction.AllowUserToResizeColumns = false;
             this.DGV_Transaction.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.DGV_Transaction.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.DGV_Transaction.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGV_Transaction.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -814,30 +816,30 @@
             this.DGV_Transaction.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.DGV_Transaction.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGV_Transaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_Transaction.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_Transaction.DefaultCellStyle = dataGridViewCellStyle5;
             this.DGV_Transaction.Location = new System.Drawing.Point(7, 5);
             this.DGV_Transaction.MultiSelect = false;
             this.DGV_Transaction.Name = "DGV_Transaction";
             this.DGV_Transaction.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Transaction.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Transaction.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DGV_Transaction.RowHeadersVisible = false;
             this.DGV_Transaction.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_Transaction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_Transaction.Size = new System.Drawing.Size(1136, 558);
+            this.DGV_Transaction.Size = new System.Drawing.Size(1143, 591);
             this.DGV_Transaction.TabIndex = 0;
             // 
             // label31
@@ -862,6 +864,7 @@
             this.listpatientsearch.Name = "listpatientsearch";
             this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
             this.listpatientsearch.TabIndex = 281;
+            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
             // 
             // label40
             // 
@@ -943,27 +946,37 @@
             this.Lab_BalanTotal.Text = "label3";
             this.Lab_BalanTotal.Visible = false;
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.label41);
+            this.panel3.Controls.Add(this.btnprint);
+            this.panel3.Controls.Add(this.btnpayreminder);
+            this.panel3.Location = new System.Drawing.Point(194, 90);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1166, 40);
+            this.panel3.TabIndex = 272;
+            // 
             // Ledger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1362, 741);
-            this.Controls.Add(this.label40);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.listpatientsearch);
+            this.Controls.Add(this.label40);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.btnpayreminder);
-            this.Controls.Add(this.btnprint);
-            this.Controls.Add(this.label41);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.Panl_PatName);
             this.Controls.Add(this.labelallpatient);
             this.Controls.Add(this.toolStrip2);
+            this.Controls.Add(this.panel5);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Ledger";
@@ -981,6 +994,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Transaction)).EndInit();
             this.label40.ResumeLayout(false);
             this.label40.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1051,5 +1066,6 @@
         private System.Windows.Forms.Label Lab_DebitTotal;
         private System.Windows.Forms.Label Lab_BalanTotal;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.Panel panel3;
     }
 }

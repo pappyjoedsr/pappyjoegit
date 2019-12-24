@@ -57,7 +57,7 @@ namespace PappyjoeMVC.Model
         }
         public void save_invoice(string invoice_no, string pt_name,string pt_id,string service_id,string services,string unit,string cost, string discount,string discount_type,string total_cost,string total_discount,string dr_id,string discountin_rs, string invoice_main_id,string tax_inrs,string tax,string total_tax)
         {
-            db.execute("insert into tbl_invoices(invoice_no,pt_name,pt_id,service_id,services,unit,cost,discount,discount_type,total,date,total_cost,total_discount,dr_id,discountin_rs,total_payment,invoice_main_id,tax_inrs,tax,total_tax) values('" + invoice_no + "','" + pt_name + "','" + pt_id + "','" + service_id + "','" + services + "','" + unit + "','" + cost + "','" + discount + "','" + discount_type + "','0','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + total_cost + "','" + total_discount + "','" + dr_id + "','" + discountin_rs + "','100','" + invoice_main_id + "','" + tax_inrs + "','" + tax + "','" + total_tax + "')");
+            db.execute("insert into tbl_invoices(invoice_no,pt_name,pt_id,service_id,services,unit,cost,discount,discount_type,total,date,total_cost,total_discount,dr_id,discountin_rs,total_payment,invoice_main_id,tax_inrs,tax,total_tax) values('" + invoice_no + "','" + pt_name + "','" + pt_id + "','" + service_id + "','" + services + "','" + unit + "','" + cost + "','" + discount + "','" + discount_type + "','"+ total_cost + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + total_cost + "','" + total_discount + "','" + dr_id + "','" + discountin_rs + "','100','" + invoice_main_id + "','" + tax_inrs + "','" + tax + "','" + total_tax + "')");
         }
         public string get_invoicenumber()
         {

@@ -101,6 +101,8 @@ namespace PappyjoeMVC.View
                 Lab_Amount.Text = "0.00";
                 Lab_Paid.Text = "0.00";
                 Lab_Due.Text = "0.00";
+                int x = (panel3.Size.Width - label_empty.Size.Width) / 2;
+                label_empty.Location = new Point(x, label_empty.Location.Y);
                 label_empty.Show();
             }
             else
@@ -148,11 +150,6 @@ namespace PappyjoeMVC.View
                         Totalamount = Totalamount + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["income"].Value);
                         Totalpaid = Totalpaid + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_paid"].Value);
                         Totaldue = Totaldue + Convert.ToDecimal(DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_due"].Value);
-                        //Totaltax = Totaltax + tax;
-                        //Totaldiscount = Totaldiscount + discount;
-                        //Totalamount = Totalamount + amount;
-                        //Totalpaid = Totalpaid + paid;
-                        //Totaldue = Totaldue + due;
                     }
                     Lab_Discount.Text = Convert.ToDecimal(Totaldiscount).ToString("#0.00");
                     Lab_tax.Text = Convert.ToDecimal(Totaltax).ToString("#0.00");
@@ -246,18 +243,20 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("</head>");
                 sWrite.WriteLine("<body >");
                 sWrite.WriteLine("<div>");
-                sWrite.WriteLine("<table align=center width =900>");
+                sWrite.WriteLine("<table align=center width =1000>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td colspan=14 align='center'><FONT COLOR=black FACE='Segoe UI' SIZE=4><b>DOCTOR WISE RECEIPT </b> </font></td");
+                sWrite.WriteLine("<td colspan=14 align='center'><FONT COLOR=black FACE='Segoe UI' SIZE=5><b>DOCTOR WISE RECEIPT </b> </font></td");
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td colspan=14 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3>   " + strclinicname + "</font></b></td>");
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td colspan=14 align='left' ><b><FONT COLOR=black FACE='Segoe UI' SIZE=2>   " + strStreet + "</font></b></td>");
+                sWrite.WriteLine("<td colspan=14 align='left' ><b><FONT COLOR=black FACE='Segoe UI' SIZE=3>   " + strStreet + "</font></b></td>");
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td colspan=14 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + strphone + "</font></b></td>");
+                sWrite.WriteLine("<td colspan=14 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3> " + strphone + "</font></b></td>");
+                sWrite.WriteLine("</tr>");
+                sWrite.WriteLine("<tr><td align='left' colspan='20'><hr/></td></tr>");
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td colspan=14 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b> From:</b> " + dtp1ReceptReceivedPerDoctor1.Value.ToString("dd/MM/yyyy") + " </font></td> ");
                 sWrite.WriteLine("</tr>");
@@ -270,20 +269,20 @@ namespace PappyjoeMVC.View
                 if (DgvReceiptReceivedPerDoctor.Rows.Count > 0)
                 {
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("    <td align='center' width='4%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >Sl.</font></td>");
-                    sWrite.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>Patient</font></td>");
-                    sWrite.WriteLine("    <td align='left' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Invoice</font></td>");
-                    sWrite.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>Receipt</font></td>");
-                    sWrite.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Doctor </font></td>");
-                    sWrite.WriteLine("    <td align='left' width='11%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Procedure</font></td>");
-                    sWrite.WriteLine("    <td align='center' width='8%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Date</font></td>");
-                    sWrite.WriteLine("    <td align='center' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Mode of payment</font></td>");
-                    sWrite.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Cost</font></td>");
-                    sWrite.WriteLine("    <td align='right' width='5%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Tax</font></td>");
-                    sWrite.WriteLine("    <td align='right' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Discount</font></td>");
-                    sWrite.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Income</font></td>");
-                    sWrite.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Amount Paid</font></td>");
-                    sWrite.WriteLine("    <td align='right' width='8%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Amount Due</font></td>");
+                    sWrite.WriteLine("    <td align='left' width='4%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 ><b>&nbsp;Slno.</b></font></td>");
+                    sWrite.WriteLine("    <td align='left' width='11%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;Patient</b></font></td>");
+                    sWrite.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp; Invoice</b></font></td>");
+                    sWrite.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;Receipt</b></font></td>");
+                    sWrite.WriteLine("    <td align='left' width='8%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp; Doctor</b> </font></td>");
+                    sWrite.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp; Procedure</b></font></td>");
+                    sWrite.WriteLine("    <td align='left' width='10%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp; Date</b></font></td>");
+                    sWrite.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp; Mode of payment</b></font></td>");
+                    sWrite.WriteLine("    <td align='right' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Cost</b>&nbsp;</font></td>");
+                    sWrite.WriteLine("    <td align='right' width='5%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Tax</b>&nbsp;</font></td>");
+                    sWrite.WriteLine("    <td align='right' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Discount</b>&nbsp;</font></td>");
+                    sWrite.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> <b>Income</b>&nbsp;</font></td>");
+                    sWrite.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Amount Paid</b>&nbsp;</font></td>");
+                    sWrite.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Amount Due</b>&nbsp;</font></td>");
                     sWrite.WriteLine("</tr>");
                     int k = 1;
                         try
@@ -291,20 +290,20 @@ namespace PappyjoeMVC.View
                             for (int j = 0; j < DgvReceiptReceivedPerDoctor.Rows.Count; j++)
                             {
                                 sWrite.WriteLine("<tr>");
-                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + k + "</font></th>");
-                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["Patient_name"].Value.ToString() + "</font></td>");
-                                sWrite.WriteLine("    <td align='center' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["invoice_no"].Value.ToString() + "</font></td>");
-                                sWrite.WriteLine("    <td align='center' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["recept_No"].Value.ToString() + "</font></td>");
-                                sWrite.WriteLine("    <td align='center' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["doctor_name"].Value.ToString() + "</font></td>");
-                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["procedure_name"].Value.ToString() + qty + "</font></td>");
-                                sWrite.WriteLine("    <td align='center' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["Payment_date"].Value.ToString() + "</font></td>");
-                                sWrite.WriteLine("    <td align='center' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["mode_of_payment"].Value.ToString() + "</font></td>");
-                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["cost"].Value.ToString() + "</font></td>");
-                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["tax_inrs"].Value.ToString() + "</font></td>");
-                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["Discount_insr"].Value.ToString() + "</font></td>");
-                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["income"].Value.ToString() + "</font></td>");
-                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_paid"].Value.ToString() + "</font></td>");
-                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_due"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + k + "</font></th>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["Patient_name"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["invoice_no"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["recept_No"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["doctor_name"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["procedure_name"].Value.ToString() + qty + "</font></td>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["Payment_date"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["mode_of_payment"].Value.ToString() + "</font></td>");
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["cost"].Value.ToString() + "&nbsp;</font></td>");
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["tax_inrs"].Value.ToString() + "&nbsp;</font></td>");
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["Discount_insr"].Value.ToString() + "&nbsp;</font></td>");
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["income"].Value.ToString() + "&nbsp;</font></td>");
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_paid"].Value.ToString() + "&nbsp;</font></td>");
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DgvReceiptReceivedPerDoctor.Rows[j].Cells["amount_due"].Value.ToString() + "&nbsp;</font></td>");
                                 k = k + 1;
                                 sWrite.WriteLine("</tr>");
                             }

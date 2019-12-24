@@ -53,8 +53,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.DTP_From = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Lab_Paid = new System.Windows.Forms.Label();
-            this.Lab_Due = new System.Windows.Forms.Label();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.Dgv_Receipt = new System.Windows.Forms.DataGridView();
             this.ColSLNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,11 +72,17 @@
             this.ColTAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColamountPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTAmountDue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lab_Paid = new System.Windows.Forms.Label();
+            this.Lab_Due = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Receipt)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // Lab_Amount
@@ -88,7 +92,7 @@
             this.Lab_Amount.BackColor = System.Drawing.Color.Transparent;
             this.Lab_Amount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Amount.ForeColor = System.Drawing.Color.ForestGreen;
-            this.Lab_Amount.Location = new System.Drawing.Point(1120, 528);
+            this.Lab_Amount.Location = new System.Drawing.Point(247, 33);
             this.Lab_Amount.Name = "Lab_Amount";
             this.Lab_Amount.Size = new System.Drawing.Size(33, 17);
             this.Lab_Amount.TabIndex = 298;
@@ -101,7 +105,7 @@
             this.Lab_totalExpense.BackColor = System.Drawing.Color.Transparent;
             this.Lab_totalExpense.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_totalExpense.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_totalExpense.Location = new System.Drawing.Point(1298, 502);
+            this.Lab_totalExpense.Location = new System.Drawing.Point(425, 7);
             this.Lab_totalExpense.Name = "Lab_totalExpense";
             this.Lab_totalExpense.Size = new System.Drawing.Size(65, 17);
             this.Lab_totalExpense.TabIndex = 297;
@@ -114,7 +118,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(1074, 502);
+            this.label2.Location = new System.Drawing.Point(201, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 17);
             this.label2.TabIndex = 299;
@@ -127,7 +131,7 @@
             this.Lab_TotalIncome.BackColor = System.Drawing.Color.Transparent;
             this.Lab_TotalIncome.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_TotalIncome.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_TotalIncome.Location = new System.Drawing.Point(1192, 502);
+            this.Lab_TotalIncome.Location = new System.Drawing.Point(319, 7);
             this.Lab_TotalIncome.Name = "Lab_TotalIncome";
             this.Lab_TotalIncome.Size = new System.Drawing.Size(67, 17);
             this.Lab_TotalIncome.TabIndex = 296;
@@ -161,7 +165,16 @@
             "Cash",
             "Cheque",
             "Card",
-            "Demand Draft"});
+            "Demand Draft",
+            "PayTM",
+            "Tez",
+            "UPI",
+            "NEFT/RTGS/IMPS",
+            "Netbanking",
+            "Wallets",
+            "CCAvenue",
+            "PayPal ",
+            "Other"});
             this.Cmb_Modeofpayment.Location = new System.Drawing.Point(1206, 20);
             this.Cmb_Modeofpayment.Name = "Cmb_Modeofpayment";
             this.Cmb_Modeofpayment.Size = new System.Drawing.Size(149, 21);
@@ -235,7 +248,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(574, 15);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 13);
+            this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "TOTAL COUNT:";
             // 
@@ -275,7 +288,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(3, 16);
+            this.label6.Location = new System.Drawing.Point(3, 5);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(318, 40);
             this.label6.TabIndex = 0;
@@ -340,7 +353,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(277, 66);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(18, 13);
+            this.label4.Size = new System.Drawing.Size(19, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "To";
             // 
@@ -357,57 +370,25 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.Lab_Amount);
-            this.panel3.Controls.Add(this.Lab_totalExpense);
-            this.panel3.Controls.Add(this.Lab_TotalIncome);
-            this.panel3.Controls.Add(this.Lab_Paid);
-            this.panel3.Controls.Add(this.Lab_Due);
             this.panel3.Controls.Add(this.Lab_Msg);
             this.panel3.Controls.Add(this.Dgv_Receipt);
             this.panel3.Location = new System.Drawing.Point(0, 142);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1369, 601);
+            this.panel3.Size = new System.Drawing.Size(1369, 489);
             this.panel3.TabIndex = 106;
-            // 
-            // Lab_Paid
-            // 
-            this.Lab_Paid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Lab_Paid.AutoSize = true;
-            this.Lab_Paid.BackColor = System.Drawing.Color.Transparent;
-            this.Lab_Paid.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lab_Paid.ForeColor = System.Drawing.Color.ForestGreen;
-            this.Lab_Paid.Location = new System.Drawing.Point(1213, 528);
-            this.Lab_Paid.Name = "Lab_Paid";
-            this.Lab_Paid.Size = new System.Drawing.Size(33, 17);
-            this.Lab_Paid.TabIndex = 294;
-            this.Lab_Paid.Text = "0.00";
-            // 
-            // Lab_Due
-            // 
-            this.Lab_Due.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Lab_Due.AutoSize = true;
-            this.Lab_Due.BackColor = System.Drawing.Color.Transparent;
-            this.Lab_Due.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lab_Due.ForeColor = System.Drawing.Color.Red;
-            this.Lab_Due.Location = new System.Drawing.Point(1317, 528);
-            this.Lab_Due.Name = "Lab_Due";
-            this.Lab_Due.Size = new System.Drawing.Size(33, 17);
-            this.Lab_Due.TabIndex = 295;
-            this.Lab_Due.Text = "0.00";
-            this.Lab_Due.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Lab_Msg.Location = new System.Drawing.Point(311, 202);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(555, 25);
             this.Lab_Msg.TabIndex = 277;
             this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // Dgv_Receipt
@@ -416,9 +397,6 @@
             this.Dgv_Receipt.AllowUserToDeleteRows = false;
             this.Dgv_Receipt.AllowUserToResizeColumns = false;
             this.Dgv_Receipt.AllowUserToResizeRows = false;
-            this.Dgv_Receipt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Dgv_Receipt.BackgroundColor = System.Drawing.Color.White;
             this.Dgv_Receipt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_Receipt.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -443,6 +421,7 @@
             this.ColTAmount,
             this.ColamountPaid,
             this.colTAmountDue});
+            this.Dgv_Receipt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Dgv_Receipt.Location = new System.Drawing.Point(0, 0);
             this.Dgv_Receipt.Name = "Dgv_Receipt";
             this.Dgv_Receipt.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -458,7 +437,7 @@
             this.Dgv_Receipt.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Dgv_Receipt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Dgv_Receipt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_Receipt.Size = new System.Drawing.Size(1366, 466);
+            this.Dgv_Receipt.Size = new System.Drawing.Size(1369, 489);
             this.Dgv_Receipt.TabIndex = 0;
             // 
             // ColSLNo
@@ -578,6 +557,33 @@
             this.colTAmountDue.Name = "colTAmountDue";
             this.colTAmountDue.Width = 80;
             // 
+            // Lab_Paid
+            // 
+            this.Lab_Paid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lab_Paid.AutoSize = true;
+            this.Lab_Paid.BackColor = System.Drawing.Color.Transparent;
+            this.Lab_Paid.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lab_Paid.ForeColor = System.Drawing.Color.ForestGreen;
+            this.Lab_Paid.Location = new System.Drawing.Point(340, 33);
+            this.Lab_Paid.Name = "Lab_Paid";
+            this.Lab_Paid.Size = new System.Drawing.Size(33, 17);
+            this.Lab_Paid.TabIndex = 294;
+            this.Lab_Paid.Text = "0.00";
+            // 
+            // Lab_Due
+            // 
+            this.Lab_Due.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lab_Due.AutoSize = true;
+            this.Lab_Due.BackColor = System.Drawing.Color.Transparent;
+            this.Lab_Due.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lab_Due.ForeColor = System.Drawing.Color.Red;
+            this.Lab_Due.Location = new System.Drawing.Point(444, 33);
+            this.Lab_Due.Name = "Lab_Due";
+            this.Lab_Due.Size = new System.Drawing.Size(33, 17);
+            this.Lab_Due.TabIndex = 295;
+            this.Lab_Due.Text = "0.00";
+            this.Lab_Due.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -594,8 +600,33 @@
             this.panel1.Controls.Add(this.DTP_From);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1369, 121);
+            this.panel1.Size = new System.Drawing.Size(1369, 98);
             this.panel1.TabIndex = 104;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Location = new System.Drawing.Point(1, 650);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1368, 97);
+            this.panel4.TabIndex = 278;
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.Lab_totalExpense);
+            this.panel5.Controls.Add(this.Lab_Due);
+            this.panel5.Controls.Add(this.Lab_Amount);
+            this.panel5.Controls.Add(this.Lab_Paid);
+            this.panel5.Controls.Add(this.Lab_TotalIncome);
+            this.panel5.Location = new System.Drawing.Point(870, 5);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(496, 58);
+            this.panel5.TabIndex = 119;
             // 
             // Paymode_Wise_Receipt
             // 
@@ -603,6 +634,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -614,10 +646,12 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Receipt)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -669,5 +703,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColamountPaid;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTAmountDue;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
     }
 }

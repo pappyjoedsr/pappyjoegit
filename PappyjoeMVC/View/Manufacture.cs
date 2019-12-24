@@ -183,7 +183,7 @@ namespace PappyjoeMVC.View
         {
             if (!PappyjoeMVC.Model.Connection.checkforemail(txt_Email.Text.ToString()) && txt_Email.Text != "")
             {
-                MessageBox.Show("Invalid Email address/Password..", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid Email address...", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_Email.Focus();
             }
         }
@@ -192,6 +192,19 @@ namespace PappyjoeMVC.View
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void txt_phone_Leave(object sender, EventArgs e)
+        {
+            if (txt_phone.TextLength != 10)
+            {
+                Lab_InvalidNumber.Visible = true;
+                return;
+            }
+            else
+            {
+                Lab_InvalidNumber.Visible = false;
             }
         }
     }

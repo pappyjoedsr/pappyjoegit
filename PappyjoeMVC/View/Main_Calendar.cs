@@ -25,7 +25,6 @@ namespace PappyjoeMVC.View
         string value1 = "something";
         string contact_no = "";
         MainCalendar_Controller cntrl = new MainCalendar_Controller();
-        //PappyjoeMVC.Model.Connection db = new PappyjoeMVC.Model.Connection();
         public CalendarEvent EditingEvent;
         private System.Windows.Forms.StatusBar sbStatusBar;
         private System.Windows.Forms.ContextMenu contextMenu;
@@ -135,7 +134,7 @@ namespace PappyjoeMVC.View
         private XtremeCalendarControl. CalendarDialogsClass objCalendraDialogsReminders;
         //Sting used to hold path to save xml data files.  This file will contain all of the event information displayed in
         //the calendar view.
-        public String ConnectionString = @"Provider=XML;Data Source=" + System.Environment.CurrentDirectory + @"..\..\..\";//ASWINI
+        public String ConnectionString = @"Provider=XML;Data Source=" + System.Environment.CurrentDirectory + @"..\..\..\";
         private System.Windows.Forms.ToolBarButton tbrPrintPageSetup;
         private System.Windows.Forms.ToolBarButton tbrPrintPreview;
         private System.Windows.Forms.ToolBarButton tbrPrint;
@@ -190,8 +189,6 @@ namespace PappyjoeMVC.View
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripButton toolStripButton9;
         private ToolStripTextBox toolStripTextBox1;
-        // SQL Server data handler
-        //private providerSQLServer m_objSQLProvider;
         private ListBox listpatientsearch;
         private Panel panel5;
         string pat_idForEdit = "0";
@@ -215,7 +212,7 @@ namespace PappyjoeMVC.View
         public bool APTAdd = false, APTEdit = false, dr_wise_apt = false;
         private ToolStripButton toolStripButton12;
         private ToolStripButton toolStripButton10;
-        int row_Val = 0; // Appointment List
+        int row_Val = 0; 
         //  Privilege check.
         public Main_Calendar()
         {
@@ -237,17 +234,15 @@ namespace PappyjoeMVC.View
             dataGridViewdoctor.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             if (doctor_id == "1")
             {
-                //DataTable dt_dr = db.table("SELECT id,doctor_name,calendar_color FROM tbl_doctor  where login_type='doctor' and activate_login='yes' ORDER BY id");
-                DataTable dt_dr = new DataTable();// string str_sql = "";
+                DataTable dt_dr = new DataTable();
                 if (dr_wise_apt == false)
                 {
-                    dt_dr = this.cntrl.get_doctr(doctor_id);//  str_sql = "SELECT id,doctor_name,calendar_color FROM tbl_doctor Where id = " + doctor_id + " and activate_login='yes'"; 
+                    dt_dr = this.cntrl.get_doctr(doctor_id); 
                 }
                 else
                 {
-                    dt_dr = this.cntrl.load_all_doctor();/// str_sql = "SELECT id,doctor_name,calendar_color FROM tbl_doctor Where (login_type='doctor' or login_type='admin') and activate_login='yes'";
+                    dt_dr = this.cntrl.load_all_doctor();
                 }
-                //DataTable dt_dr = db.table(str_sql + " ORDER BY id");
                 for (int j = 0; j < dt_dr.Rows.Count; j++)
                 {
                     dataGridViewdoctor.Rows.Add("", dt_dr.Rows[j]["doctor_name"].ToString(), dt_dr.Rows[j]["id"].ToString());
@@ -300,17 +295,15 @@ namespace PappyjoeMVC.View
             }
             else
             {
-                //DataTable dt_dr = db.table("SELECT id,doctor_name,calendar_color FROM tbl_doctor Where id = " + doctor_id + " and login_type='doctor' and activate_login='yes' ORDER BY id");
-                DataTable dt_dr = new DataTable();// string str_sql = "";
+                DataTable dt_dr = new DataTable();
                 if (dr_wise_apt == false)
                 {
-                    dt_dr = this.cntrl.get_doctr(doctor_id); //str_sql = "SELECT id,doctor_name,calendar_color FROM tbl_doctor Where id = " + doctor_id + "  and activate_login='yes'";
+                    dt_dr = this.cntrl.get_doctr(doctor_id);
                 }
                 else
                 {
-                    dt_dr = this.cntrl.load_all_doctor();// str_sql = "SELECT id,doctor_name,calendar_color FROM tbl_doctor Where (login_type='doctor' or login_type='admin') and  activate_login='yes'";
+                    dt_dr = this.cntrl.load_all_doctor();
                 }
-                //DataTable dt_dr = db.table(str_sql + " ORDER BY id");
                 for (int j = 0; j < dt_dr.Rows.Count; j++)
                 {
                     dataGridViewdoctor.Rows.Add("", dt_dr.Rows[j]["doctor_name"].ToString(), dt_dr.Rows[j]["id"].ToString());
@@ -2225,6 +2218,7 @@ namespace PappyjoeMVC.View
             this.panel5.Size = new System.Drawing.Size(250, 118);
             this.panel5.TabIndex = 9;
             this.panel5.Visible = false;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // Main_Calendar
             // 
@@ -2350,7 +2344,7 @@ namespace PappyjoeMVC.View
             }
         }
 
-        private void mnuDatePicker_Click(object sender, System.EventArgs e)//vendathathkond thalkalathek ozhivakkiyath
+        private void mnuDatePicker_Click(object sender, System.EventArgs e)
         {
             if (mnuDatePicker.Checked == true)
             {
@@ -2435,12 +2429,11 @@ namespace PappyjoeMVC.View
             wndCalendarControl.Populate();
         }
 
-        private void frmMain_Load(object sender, System.EventArgs e)//aswini
+        private void frmMain_Load(object sender, System.EventArgs e)
         {
             toolStripButton2.BackColor = Color.SkyBlue;
             toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-            //string i;
-            string i = this.cntrl.appoinmt_permission(doctor_id);// db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='APT' and Permission='AP'");
+            string i = this.cntrl.appoinmt_permission(doctor_id);
             if (int.Parse(i) > 0)
             {
                 dr_wise_apt = false;
@@ -2452,36 +2445,27 @@ namespace PappyjoeMVC.View
                 listAppointment("0");
             }
             AddTestEvents(true);
-            //listAppointment(doctor_id.ToString());
-            //listAppointment("0");
-
             gridbinddoctors();
             string a = PappyjoeMVC.Model.Connection.MyGlobals.loginType;
             try
             {
-                string docnam = this.cntrl.Get_DoctorName(doctor_id);// db.table("select doctor_name from tbl_doctor Where id='" + doctor_id + "'");
+                string docnam = this.cntrl.Get_DoctorName(doctor_id);
                 if (docnam!="")
                 {
                     toolStripldoc.Text = "Logged In As : " + docnam;
                 }
                 string clinic = this.cntrl.Load_CompanyName();
                 toolStripButton1.Text = clinic;
-                string contactnumber = this.cntrl.contactnumber();// DataTable clinicname = db.table("select name,contact_no from tbl_practice_details");
+                string contactnumber = this.cntrl.contactnumber();
                 if (contactnumber!="")
                 {
-                    //string clinicn = "";
-                    //clinicn = clinicname.Rows[0][0].ToString();
-                    //toolStripButton1.Text = clinicn.Replace("¤", "'");
+                   
                     contact_no = contactnumber;
 
                 }
                 mnuEnableReminders_Click(this, new System.EventArgs());
                 string strslot = "";
-                //DataTable tb_slot = db.table("select slot from tbl_practice_timings");
-                //if (tb_slot.Rows.Count > 0)
-                //{
-                    strslot = this.cntrl.get_slot();// tb_slot.Rows[0][0].ToString();
-                //}
+                    strslot = this.cntrl.get_slot();
                 if (strslot.Trim() == "5")
                 {
                     CheckTimeScaleItems(NewTimeScale.FiveMin);
@@ -2528,7 +2512,7 @@ namespace PappyjoeMVC.View
                 //For Privilege check.
                 if (doctor_id != "1")
                 {
-                    string id = this.cntrl.permission_for_add(doctor_id);// db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='APT' and Permission='A'");
+                    string id = this.cntrl.permission_for_add(doctor_id);
                     if (int.Parse(id) > 0)
                     {
                         APTAdd = false;
@@ -2537,7 +2521,7 @@ namespace PappyjoeMVC.View
                     {
                         APTAdd = true;
                     }
-                    id = this.cntrl.permission_for_edit(doctor_id);// db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='APT' and Permission='E'");
+                    id = this.cntrl.permission_for_edit(doctor_id);
                     if (int.Parse(id) > 0)
                     {
                         button2.Visible = false;
@@ -2548,7 +2532,7 @@ namespace PappyjoeMVC.View
                         button2.Visible = true;
                         APTEdit = true;
                     }
-                    id = this.cntrl.permission_for_delete(doctor_id);// db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='APT' and Permission='D'");
+                    id = this.cntrl.permission_for_delete(doctor_id);
                     if (int.Parse(id) > 0)
                     {
                         button1.Visible = false;
@@ -2653,73 +2637,12 @@ namespace PappyjoeMVC.View
 
         private void mnuFileOpen_Click(object sender, System.EventArgs e)
         {
-            //frmOpenDataProvider frmOpenDP = new frmOpenDataProvider();
-            //System.Windows.Forms.DialogResult nDlgRes = frmOpenDP.ShowDialog(this);
-            //if (nDlgRes != System.Windows.Forms.DialogResult.OK)
-            //{
-            //    return;
-            //}
-            //int eDPType = frmOpenDP.GetDataProviderType();
-            //Boolean bOpened = false;
-            //m_objSQLProvider = null;
-            //if (eDPType == (int)DataProviderTypeCustom.dpSQLServer)
-            //{
-            //    bOpened = OpenSQLServerDataProvider(frmOpenDP.GetConnectionString());
-            //}
-            //else
-            //{
-            //    bOpened = OpenBuiltInDataProvider(frmOpenDP.GetConnectionString(), eDPType);
-            //}
-            //if (!bOpened)
-            //{
-            //    wndCalendarControl.SetDataProvider("");
-            //    wndCalendarControl.DataProvider.Open();
-            //}
-            //wndCalendarControl.Populate();
-            //UpdateDatePicker();
-            //this.Text = " " + GetDPTitle(eDPType);
+            
         }
 
-        //private String GetDPTitle(int eDPType)
-        //{
-        //    if (eDPType == (int)DataProviderType.dpMemory)
-        //    {
-        //        return "[Memory Data Provider]: " + wndCalendarControl.DataProvider.DataSource;
-        //    }
-        //    else if (eDPType == (int)DataProviderType.dpDB)
-        //    {
-        //        return "[DB (Access) Data Provider]: " + wndCalendarControl.DataProvider.DataSource;
-        //    }
-        //    else if (eDPType == (int)DataProviderType.dpMAPI)
-        //    {
-        //        return "[MAPI Data Provider]. ";
-        //    }
-        //    else if (eDPType == (int)DataProviderTypeCustom.dpSQLServer)
-        //    {
-        //        return "[SQL Server custom Data Provider]: " + m_objSQLProvider.GetConnectionString();
-        //    }
-        //    return "";
-        //}
-
+       
         private Boolean OpenSQLServerDataProvider(String strConnectionString)
         {
-            //try
-            //{
-            //    m_objSQLProvider = new providerSQLServer(wndCalendarControl);
-            //    m_objSQLProvider.Open(strConnectionString);
-            //    if (wndCalendarControl.DataProvider != null && wndCalendarControl.DataProvider.IsOpen)
-            //    {
-            //        wndCalendarControl.DataProvider.Close();
-            //    }
-            //    wndCalendarControl.SetDataProvider("Provider=Custom;");
-            //    wndCalendarControl.DataProvider.Open();
-            //    wndCalendarControl.DataProvider.CacheMode = CalendarDataProviderCacheMode.xtpCalendarDPCacheModeOnRepeat;
-            //    return true;
-            //}
-            //catch (Exception ex)
-            //{
-            //    System.Windows.Forms.MessageBox.Show("Cannot connect to server. \n Error: \n " + ex.Message, "Error !", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
             return false;
         }
 
@@ -2736,11 +2659,6 @@ namespace PappyjoeMVC.View
             {
                 return true;
             }
-            //if (eDPType == (int)DataProviderType.dpMAPI)
-            //{
-            //    System.Windows.Forms.MessageBox.Show("Cannot open MAPI data provider.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    return false;
-            //}
             System.Windows.Forms.DialogResult nDlgRes = System.Windows.Forms.MessageBox.Show(
                 "Cannot open specified data source. \nWould You like to recreate it?",
                 "Calendar Control",
@@ -3029,20 +2947,6 @@ namespace PappyjoeMVC.View
 
         private void WorkWeekDayCheck_Click(object sender, System.EventArgs e)
         {
-            //CalendarWeekDay WeekMask = 0;
-            //WeekMask = (chkSunday.Checked ? (WeekMask | CalendarWeekDay.xtpCalendarDaySunday) : WeekMask);
-            //WeekMask = (chkMonday.Checked ? (WeekMask | CalendarWeekDay.xtpCalendarDayMonday) : WeekMask);
-            //WeekMask = (chkTuesday.Checked ? (WeekMask | CalendarWeekDay.xtpCalendarDayTuesday) : WeekMask);
-            //WeekMask = (chkWednesday.Checked ? (WeekMask | CalendarWeekDay.xtpCalendarDayWednesday) : WeekMask);
-            //WeekMask = (chkThursday.Checked ? (WeekMask | CalendarWeekDay.xtpCalendarDayThursday) : WeekMask);
-            //WeekMask = (chkFriday.Checked ? (WeekMask | CalendarWeekDay.xtpCalendarDayFriday) : WeekMask);
-            //WeekMask = (chkSaturday.Checked ? (WeekMask | CalendarWeekDay.xtpCalendarDaySaturday) : WeekMask);
-            //wndCalendarControl.Options.WorkWeekMask = WeekMask;
-            //wndCalendarControl.Populate();
-            //if (frmDatePicker != null)
-            //{
-            //    frmDatePicker.Instance.DatePicker.FirstDayOfWeek = cmbFirstDayOfWeek.SelectedIndex + 1;
-            //}
         }
 
         private void cmbFirstDayOfWeek_SelectedIndexChanged(object sender, System.EventArgs e)
@@ -3082,7 +2986,7 @@ namespace PappyjoeMVC.View
             wndCalendarControl.Populate();
         }
 
-        private void AddTestEvents(Boolean bCreateDefaultProvider)//ASWINI
+        private void AddTestEvents(Boolean bCreateDefaultProvider)
         {
             CalendarDataProvider pCalendarData = wndCalendarControl.DataProvider;
             if (bCreateDefaultProvider)
@@ -3099,25 +3003,22 @@ namespace PappyjoeMVC.View
             // Normal Event 1
             CalendarEvent ptrEvent = pCalendarData.CreateEvent();
             int mints;
-            DataTable dt = new DataTable();// db.table(strSql.ToString()); //string strSql = "";
-            /////Rasmi privilege checking
+            DataTable dt = new DataTable();
             if (doctor_id == "1")
             {
-               dt= this.cntrl.all_dctr_appointment();// strSql = "SELECT id,start_datetime,duration,pt_id,pt_name,dr_id,status FROM tbl_appointment  ORDER BY id";
+               dt= this.cntrl.all_dctr_appointment();
             }
             else
             {
                 if (dr_wise_apt == false)
                 {
-                    dt = this.cntrl.get_dctr_wise_appointment(doctor_id);//  strSql = "SELECT id,start_datetime,duration,pt_id,pt_name,dr_id,status FROM tbl_appointment where  dr_id=" + doctor_id + " ORDER BY id";
+                    dt = this.cntrl.get_dctr_wise_appointment(doctor_id);
                 }
                 else
                 {
-                    dt = this.cntrl.all_dctr_appointment();// strSql = "SELECT id,start_datetime,duration,pt_id,pt_name,dr_id,status FROM tbl_appointment  ORDER BY id";
+                    dt = this.cntrl.all_dctr_appointment();
                 }
             }
-
-            //DataTable dt = db.table(strSql.ToString());
             for (int j = 0; j < dt.Rows.Count; j++)
             {
                 ptrEvent.StartTime = Convert.ToDateTime(dt.Rows[j]["start_datetime"].ToString());
@@ -3127,7 +3028,7 @@ namespace PappyjoeMVC.View
                 ptrEvent.Subject = dt.Rows[j]["pt_name"].ToString();
                 ptrEvent.Location = dtNow.ToString("t") + "-" + dtNow.AddMinutes(mints).ToString("t");
                 ptrEvent.BusyStatus = CalendarEventBusyStatus.xtpCalendarBusyStatusBusy;
-                string drt = this.cntrl.get_calendar_color(dt.Rows[j]["dr_id"].ToString());// db.table("SELECT calendar_color FROM tbl_doctor where id=" + dt.Rows[j]["dr_id"].ToString() + " ORDER BY id");
+                string drt = this.cntrl.get_calendar_color(dt.Rows[j]["dr_id"].ToString());
                 if (drt!="")
                 {
                     ptrEvent.Label =  Convert.ToInt32(drt);
@@ -3155,7 +3056,7 @@ namespace PappyjoeMVC.View
             if (doctor_id != "1")
             {
                 string id;
-                id = this.cntrl.permission_for_add(doctor_id);// db.scalar("select id from tbl_User_Privilege where UserID = " + doctor_id + " and Category='APT' and Permission='A'");
+                id = this.cntrl.permission_for_add(doctor_id);
                 if (int.Parse(id) > 0)
                 {
                     MessageBox.Show("You have no privilages to do this. Contact your administrator to change status", "No Privilage", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -3166,6 +3067,7 @@ namespace PappyjoeMVC.View
                     AppointmentBooking.doctor_id = doctor_id;
                     AppointmentBooking.CreateNewEvent();
                     AppointmentBooking.ShowDialog(this);
+                    AppointmentBooking.Dispose();
                 }
             }
             else
@@ -3174,12 +3076,12 @@ namespace PappyjoeMVC.View
                 AppointmentBooking.doctor_id = doctor_id;
                 AppointmentBooking.CreateNewEvent();
                 AppointmentBooking.ShowDialog(this);
+                AppointmentBooking.Dispose();
             }
         }
 
         private void mnuContextEditEvent_Click(object sender, System.EventArgs e)
         {
-            // AppointmentBooking = new PappyjoeMVC.View.AppointmentBooking();
            AppointmentBooking bk = new  AppointmentBooking();
             if (pat_idForEdit != "0")
             {
@@ -3188,6 +3090,7 @@ namespace PappyjoeMVC.View
                     frmOpenRecurringItem = new OpenRecurringItem();
                     frmOpenRecurringItem.SetInformationLabel(ContextEvent.Subject);
                     frmOpenRecurringItem.ShowDialog(this);
+                    frmOpenRecurringItem.Dispose();
                     if (frmOpenRecurringItem.OpenRecurringItemAnswer == -1)
                     {
                         AppointmentBooking = null;
@@ -3208,6 +3111,7 @@ namespace PappyjoeMVC.View
                 }
                 bk.ModifyEvent(ContextEvent);
                 bk.ShowDialog(this);
+                bk.Dispose();
             }
         } 
 
@@ -3226,6 +3130,7 @@ namespace PappyjoeMVC.View
                     frmOpenRecurringItem = new OpenRecurringItem();
                     frmOpenRecurringItem.SetForDelete(ContextEvent.Subject);
                     frmOpenRecurringItem.ShowDialog(this);
+                    frmOpenRecurringItem.Dispose();
                     if (frmOpenRecurringItem.OpenRecurringItemAnswer == -1)
                     {
                         ContextEvent = null;
@@ -3240,30 +3145,7 @@ namespace PappyjoeMVC.View
                 if (!bDeleted)
                 {
                     wndCalendarControl.DataProvider.DeleteEvent(ContextEvent);
-                    this.cntrl.delete_appointment(ContextEvent.Body);// int i = db.execute("delete from tbl_appointment where id='" + ContextEvent.Body + "'");
-                    // Delete 
-                    //string smsName = "", smsPass = "";
-                    //DataTable sms = db.table("select smsName,smsPass from tbl_SmsEmailConfig");
-                    //if (sms.Rows.Count > 0)
-                    //{
-                    //    smsName = sms.Rows[0]["smsName"].ToString();
-                    //    smsPass = sms.Rows[0]["smsPass"].ToString();
-
-                    //    DataTable tl_appoitment = db.table("select pt_id,mobile_no,plan_new_procedure,pt_name from tbl_appointment where id='" + ContextEvent.Body + "'");
-                    //    if (tl_appoitment.Rows.Count > 0)
-                    //    {
-                    //        SMSCAPI a = new SMSCAPI();
-                    //        DataTable pat = db.table("select * from tbl_patient where id='" + tl_appoitment.Rows[0]["pt_id"].ToString() + "'");
-                    //        if (pat.Rows.Count > 0)
-                    //        {
-                    //            string number = "91" + tl_appoitment.Rows[0]["mobile_no"].ToString();
-                    //            string text = "Dear " + tl_appoitment.Rows[0]["pt_name"].ToString() + " " + ", Your appointment for " + tl_appoitment.Rows[0]["plan_new_procedure"].ToString() + " has been removed..  Regards " + toolStripButton1.Text;
-                    //            a.SendSMS(smsName, smsPass, number, text);
-                    //            db.execute("insert into tbl_pt_sms_communication (pt_id,send_datetime,type,message_status,message) values('" + tl_appoitment.Rows[0]["pt_id"].ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd hh:mm") + "','patient','sent',Dear " + tl_appoitment.Rows[0]["pt_name"].ToString() + " " + " Your appointment for " + tl_appoitment.Rows[0]["plan_new_procedure"].ToString() + " has been removed..  Regards " + toolStripButton1.Text + "')");
-                    //        }
-                    //    }
-                    //}
-
+                    this.cntrl.delete_appointment(ContextEvent.Body);
                     listAppointment("0");
                 }
                 wndCalendarControl.Populate();
@@ -3286,6 +3168,7 @@ namespace PappyjoeMVC.View
                     frmOpenRecurringItem = new OpenRecurringItem();
                     frmOpenRecurringItem.SetForDelete(ContextEvent.Subject);
                     frmOpenRecurringItem.ShowDialog(this);
+                    frmOpenRecurringItem.Dispose();
                     if (frmOpenRecurringItem.OpenRecurringItemAnswer == -1)
                     {
                         ContextEvent = null;
@@ -3300,26 +3183,26 @@ namespace PappyjoeMVC.View
                 if (!bDeleted)
                 {
                     wndCalendarControl.DataProvider.DeleteEvent(ContextEvent);
-                    this.cntrl.update_appointment_status(ContextEvent.Body);// db.execute("update tbl_appointment set status='CANCELLED'  where id='" + ContextEvent.Body + "'");
+                    this.cntrl.update_appointment_status(ContextEvent.Body);
 
                     string smsName = "", smsPass = "";
-                    DataTable sms = this.cntrl.get_sms_details();// db.table("select smsName,smsPass from tbl_SmsEmailConfig");
+                    DataTable sms = this.cntrl.get_sms_details();
                     if (sms.Rows.Count > 0)
                     {
                         smsName = sms.Rows[0]["smsName"].ToString();
                         smsPass = sms.Rows[0]["smsPass"].ToString();
 
-                        DataTable tl_appoitment = this.cntrl.get_patient_details(ContextEvent.Body);// db.table("select pt_id,mobile_no,plan_new_procedure,pt_name from tbl_appointment where id='" + ContextEvent.Body + "'");
+                        DataTable tl_appoitment = this.cntrl.get_patient_details(ContextEvent.Body);
                         if (tl_appoitment.Rows.Count > 0)
                         {
                             SMS_model a = new SMS_model();
-                            DataTable pat = this.cntrl.Get_Patient_Details(tl_appoitment.Rows[0]["pt_id"].ToString());// db.table("select * from tbl_patient where id='" + tl_appoitment.Rows[0]["pt_id"].ToString() + "'");
+                            DataTable pat = this.cntrl.Get_Patient_Details(tl_appoitment.Rows[0]["pt_id"].ToString());
                             if (pat.Rows.Count > 0)
                             {
                                 string number = "91" + tl_appoitment.Rows[0]["mobile_no"].ToString();
                                 string text = "Dear " + tl_appoitment.Rows[0]["pt_name"].ToString() + " " + ", Your appointment for " + tl_appoitment.Rows[0]["plan_new_procedure"].ToString() + " has been cancelled..  Regards " + toolStripButton1.Text + "," + contact_no;
                                 a.SendSMS(smsName, smsPass, number, text);
-                                this.cntrl.insert_sms(tl_appoitment.Rows[0]["pt_id"].ToString(), tl_appoitment.Rows[0]["pt_name"].ToString(), tl_appoitment.Rows[0]["plan_new_procedure"].ToString(), toolStripButton1.Text);//  db.execute("insert into tbl_pt_sms_communication (pt_id,send_datetime,type,message_status,message) values('" + tl_appoitment.Rows[0]["pt_id"].ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd hh:mm") + "','patient','sent','Dear " + tl_appoitment.Rows[0]["pt_name"].ToString() + " " + " Your appointment for " + tl_appoitment.Rows[0]["plan_new_procedure"].ToString() + " has been cancelled..  Regards " + toolStripButton1.Text + "')"); pt_id,  message,  pt_name,  procedure, doctor);
+                                this.cntrl.insert_sms(tl_appoitment.Rows[0]["pt_id"].ToString(), tl_appoitment.Rows[0]["pt_name"].ToString(), tl_appoitment.Rows[0]["plan_new_procedure"].ToString(), toolStripButton1.Text);
                             }
                         }
                     }
@@ -3413,7 +3296,6 @@ namespace PappyjoeMVC.View
 
         private void labweek_Click(object sender, EventArgs e)
         {
-            //mnuCalendarWorkWeekView_Click(this, new System.EventArgs());
             mnuCalendarWeekView_Click(this, new System.EventArgs());
         }
 
@@ -3440,9 +3322,6 @@ namespace PappyjoeMVC.View
                 {
                     System.Diagnostics.Debug.WriteLine("Right-Clicked On: " + HitTest.ViewEvent.Event.Subject);
                     ContextEvent = HitTest.ViewEvent.Event;
-                    //contextMenu.MenuItems[0].Visible = false;
-                    //contextMenu.Show(this, MousePosition);
-                    //contextMenu.MenuItems[0].Visible = true;
                 }
                 else if (HitTest.HitCode == CalendarHitTestCode.xtpCalendarHitTestDayViewTimeScale)
                 {
@@ -3451,11 +3330,6 @@ namespace PappyjoeMVC.View
                 }
                 else if (HitTest.HitCode != CalendarHitTestCode.xtpCalendarHitTestUnknown)
                 {
-                    //contextMenu.MenuItems[1].Visible = false;
-                    //contextMenu.MenuItems[2].Visible = false;
-                    //contextMenu.Show(this, MousePosition);
-                    //contextMenu.MenuItems[1].Visible = true;
-                    //contextMenu.MenuItems[2].Visible = true;
                 }
             }
             else
@@ -3483,7 +3357,7 @@ namespace PappyjoeMVC.View
                         panel4.Visible = true;
                         value1 = HitTest.ViewEvent.Event.Subject;
                         ContextEvent = HitTest.ViewEvent.Event; //Bijeesh
-                        DataTable dt = this.cntrl.get_appointment_details(HitTest.ViewEvent.Event.Body);// db.table("SELECT id,start_datetime,duration,pt_id,pt_name,dr_id,booked_by,plan_new_procedure,note FROM tbl_appointment where id=" + HitTest.ViewEvent.Event.Body + " ORDER BY id");
+                        DataTable dt = this.cntrl.get_appointment_details(HitTest.ViewEvent.Event.Body);
                         if (dt.Rows.Count > 0)
                         {
                             pat_idForEdit = dt.Rows[0][3].ToString();
@@ -3508,7 +3382,7 @@ namespace PappyjoeMVC.View
                             {
                                 lblnote.Text = "";
                             }
-                            DataTable pt = this.cntrl.patient_details(dt.Rows[0][3].ToString());// db.table("SELECT pt_id,primary_mobile_number FROM tbl_patient where id=" + dt.Rows[0][3].ToString() + " ORDER BY id");
+                            DataTable pt = this.cntrl.patient_details(dt.Rows[0][3].ToString());
                             if (pt.Rows.Count > 0)
                             {
                                 lab_p_add.Text = "Patient ID: " + pt.Rows[0][0].ToString() + "\r\nMobile  No: " + pt.Rows[0][1].ToString();
@@ -3518,7 +3392,7 @@ namespace PappyjoeMVC.View
                             {
                                 lab_p_add.Text = "";
                             }
-                            string drt = this.cntrl.Get_DoctorName(dt.Rows[0][5].ToString());// db.table("SELECT doctor_name FROM tbl_doctor where id=" + dt.Rows[0][5].ToString() + " ORDER BY id");
+                            string drt = this.cntrl.Get_DoctorName(dt.Rows[0][5].ToString());
                             if (drt!="")
                             {
                                 lab_dr_name.Text = "With Dr." + drt;
@@ -3535,9 +3409,7 @@ namespace PappyjoeMVC.View
                         panel4.Visible = true;
                         value1 = HitTest.ViewEvent.Event.Subject;
                         ContextEvent = HitTest.ViewEvent.Event; //Bijeesh
-                        //DataTable dt = db.table("SELECT id,start_datetime,duration,pt_id,pt_name,dr_id,booked_by,plan_new_procedure,note FROM tbl_appointment where id=" + HitTest.ViewEvent.Event.Body + " AND dr_id=" + doctor_id + " ORDER BY id");
-                          DataTable dt = this.cntrl.get_appointment_details(HitTest.ViewEvent.Event.Body);// db.table("SELECT id,start_datetime,duration,pt_id,pt_name,dr_id,booked_by,plan_new_procedure,note FROM tbl_appointment where id=" + HitTest.ViewEvent.Event.Body + " ORDER BY id");
-
+                          DataTable dt = this.cntrl.get_appointment_details(HitTest.ViewEvent.Event.Body);
                         if (dt.Rows.Count > 0)
                         {
                             pat_idForEdit = dt.Rows[0][3].ToString();
@@ -3562,7 +3434,7 @@ namespace PappyjoeMVC.View
                             {
                                 lblnote.Text = "";
                             }
-                            DataTable pt = this.cntrl.patient_details(dt.Rows[0][3].ToString());// db.table("SELECT pt_id,primary_mobile_number FROM tbl_patient where id=" + dt.Rows[0][3].ToString() + " ORDER BY id");
+                            DataTable pt = this.cntrl.patient_details(dt.Rows[0][3].ToString());
                             if (pt.Rows.Count > 0)
                             {
                                 lab_p_add.Text = "Patient ID: " + pt.Rows[0][0].ToString() + "\r\nMobile  No: " + pt.Rows[0][1].ToString();
@@ -3572,7 +3444,7 @@ namespace PappyjoeMVC.View
                             {
                                 lab_p_add.Text = "";
                             }
-                            string drt = this.cntrl.Get_DoctorName(dt.Rows[0][5].ToString());// db.table("SELECT doctor_name FROM tbl_doctor where id=" + dt.Rows[0][5].ToString() + " ORDER BY id");
+                            string drt = this.cntrl.Get_DoctorName(dt.Rows[0][5].ToString());
                             if (drt!="")
                             {
                                 lab_dr_name.Text = "With Dr." + drt;
@@ -3585,7 +3457,6 @@ namespace PappyjoeMVC.View
             {
                 panel4.Visible = false;
             }
-
         }
 
         private void lab_p_add_MouseLeave(object sender, EventArgs e)
@@ -3609,9 +3480,9 @@ namespace PappyjoeMVC.View
                 var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
                 form2.doctor_id = doctor_id;
                 form2.patient_id = id1.ToString();
-                form2.Show();
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
+                form2.Show();
             }
         }
 
@@ -3624,9 +3495,10 @@ namespace PappyjoeMVC.View
                 var form2 = new PappyjoeMVC.View.Patient_Profile_Details();
                 form2.doctor_id = doctor_id;
                 form2.patient_id = id1.ToString();
+                this.Hide();
                 form2.Show();
                 form2.Closed += (sender1, args) => this.Close();
-                this.Hide();
+                
             }
         }
 
@@ -3654,7 +3526,7 @@ namespace PappyjoeMVC.View
                     CalendarEvent ptrEvent = pCalendarData.CreateEvent();
                     int mints;
                     listAppointment(dataGridViewdoctor.Rows[dataGridViewdoctor.CurrentCell.RowIndex].Cells[2].Value.ToString());
-                    DataTable dt = this.cntrl.get_dctr_wise_appointment(dataGridViewdoctor.Rows[dataGridViewdoctor.CurrentCell.RowIndex].Cells[2].Value.ToString());// db.table("SELECT id,start_datetime,duration,pt_id,pt_name,dr_id FROM tbl_appointment where dr_id=" + dataGridViewdoctor.Rows[dataGridViewdoctor.CurrentCell.RowIndex].Cells[2].Value.ToString() + " ORDER BY id");
+                    DataTable dt = this.cntrl.get_dctr_wise_appointment(dataGridViewdoctor.Rows[dataGridViewdoctor.CurrentCell.RowIndex].Cells[2].Value.ToString());
                     for (int j = 0; j < dt.Rows.Count; j++)
                     {
                         ptrEvent.StartTime = Convert.ToDateTime(dt.Rows[j]["start_datetime"].ToString());
@@ -3664,7 +3536,7 @@ namespace PappyjoeMVC.View
                         ptrEvent.Subject = dt.Rows[j]["pt_name"].ToString();
                         ptrEvent.Location = dtNow.ToString("t") + "-" + dtNow.AddMinutes(mints).ToString("t");
                         ptrEvent.BusyStatus = CalendarEventBusyStatus.xtpCalendarBusyStatusBusy;
-                        string drt = this.cntrl.get_calendar_color(dt.Rows[j]["dr_id"].ToString());// db.table("SELECT calendar_color FROM tbl_doctor where id=" + dt.Rows[j]["dr_id"].ToString() + " ORDER BY id");
+                        string drt = this.cntrl.get_calendar_color(dt.Rows[j]["dr_id"].ToString());
                         if (drt!="")
                         {
                             ptrEvent.Label = Convert.ToInt32(drt);
@@ -3691,8 +3563,7 @@ namespace PappyjoeMVC.View
                     CalendarEvent ptrEvent = pCalendarData.CreateEvent();
                     int mints;
                     listAppointment(dataGridViewdoctor.Rows[dataGridViewdoctor.CurrentCell.RowIndex].Cells[2].Value.ToString());
-                    //DataTable dt = db.table("SELECT id,start_datetime,duration,pt_id,pt_name,dr_id FROM tbl_appointment where dr_id=" + doctor_id + " AND dr_id =" + doctor_id + " ORDER BY id");
-                    DataTable dt = this.cntrl.get_dctr_wise_appointment(dataGridViewdoctor.Rows[dataGridViewdoctor.CurrentCell.RowIndex].Cells[2].Value.ToString());// db.table("SELECT id,start_datetime,duration,pt_id,pt_name,dr_id FROM tbl_appointment where dr_id=" + dataGridViewdoctor.Rows[dataGridViewdoctor.CurrentCell.RowIndex].Cells[2].Value.ToString() + " ORDER BY id");
+                    DataTable dt = this.cntrl.get_dctr_wise_appointment(dataGridViewdoctor.Rows[dataGridViewdoctor.CurrentCell.RowIndex].Cells[2].Value.ToString());
                     for (int j = 0; j < dt.Rows.Count; j++)
                     {
                         ptrEvent.StartTime = Convert.ToDateTime(dt.Rows[j]["start_datetime"].ToString());
@@ -3702,7 +3573,7 @@ namespace PappyjoeMVC.View
                         ptrEvent.Subject = dt.Rows[j]["pt_name"].ToString();
                         ptrEvent.Location = dtNow.ToString("t") + "-" + dtNow.AddMinutes(mints).ToString("t");
                         ptrEvent.BusyStatus = CalendarEventBusyStatus.xtpCalendarBusyStatusBusy;
-                        string drt = this.cntrl.get_calendar_color(dt.Rows[j]["dr_id"].ToString());// db.table("SELECT calendar_color FROM tbl_doctor where id=" + dt.Rows[j]["dr_id"].ToString() + " ORDER BY id");
+                        string drt = this.cntrl.get_calendar_color(dt.Rows[j]["dr_id"].ToString());
                         if (drt!="")
                         {
                             ptrEvent.Label = Convert.ToInt32(drt);
@@ -3732,7 +3603,7 @@ namespace PappyjoeMVC.View
                 CalendarEvent ptrEvent = pCalendarData.CreateEvent();
                 int mints;
                 listAppointment("0");
-                DataTable dt = this.cntrl.all_dctr_appointment();// db.table("SELECT id,start_datetime,duration,pt_id,pt_name,dr_id FROM tbl_appointment ORDER BY id");
+                DataTable dt = this.cntrl.all_dctr_appointment();
                 for (int j = 0; j < dt.Rows.Count; j++)
                 {
                     ptrEvent.StartTime = Convert.ToDateTime(dt.Rows[j]["start_datetime"].ToString());
@@ -3765,8 +3636,7 @@ namespace PappyjoeMVC.View
                 CalendarEvent ptrEvent = pCalendarData.CreateEvent();
                 int mints;
                 listAppointment("0");
-                DataTable dt = this.cntrl.all_dctr_appointment(); //db.table("SELECT id,start_datetime,duration,pt_id,pt_name,dr_id FROM tbl_appointment ORDER BY id");
-                //DataTable dt = db.table("SELECT id,start_datetime,duration,pt_id,pt_name,dr_id FROM tbl_appointment where status='scheduled' and dr_id="+doctor_id+" ORDER BY id");
+                DataTable dt = this.cntrl.all_dctr_appointment();
                 for (int j = 0; j < dt.Rows.Count; j++)
                 {
                     ptrEvent.StartTime = Convert.ToDateTime(dt.Rows[j]["start_datetime"].ToString());
@@ -3793,7 +3663,7 @@ namespace PappyjoeMVC.View
             }
         }
 
-        public void listAppointment(string doctor_id)//ASWINI
+        public void listAppointment(string doctor_id)
         {
             dataGridViewAppointment.RowCount = 0;
             dataGridViewAppointment.ColumnCount = 4;
@@ -3815,16 +3685,15 @@ namespace PappyjoeMVC.View
             DateTime dtNow = new DateTime(DateTime.Now.Ticks);
             DateTime startDateTime = Convert.ToDateTime(DateTime.Today.ToString("d") + " 00:01:00 AM");
             DateTime startDateTime1 = Convert.ToDateTime(DateTime.Today.ToString("d") + " 11:59:00 PM");
-            DataTable dt_dr = new DataTable();// db.table(sqlstring); //string sqlstring = "";
+            DataTable dt_dr = new DataTable();
             if (doctor_id.ToString() == "0")
             {
-              dt_dr=  this.cntrl.admin_appointments(Convert.ToDateTime(startDateTime), Convert.ToDateTime(startDateTime1));// sqlstring = "SELECT id,pt_name,start_datetime,plan_New_procedure ,status,EHR_status FROM tbl_appointment where start_datetime between  '" + Convert.ToDateTime(startDateTime).ToString("yyyy-MM-dd HH:mm") + "' AND '" + Convert.ToDateTime(startDateTime1).ToString("yyyy-MM-dd HH:mm") + "' ORDER BY start_datetime";
+              dt_dr=  this.cntrl.admin_appointments(Convert.ToDateTime(startDateTime), Convert.ToDateTime(startDateTime1));
             }
             else
             {
-                dt_dr = this.cntrl.doctor_appointments(Convert.ToDateTime(startDateTime), Convert.ToDateTime(startDateTime1), doctor_id);// sqlstring = "SELECT id,pt_name,start_datetime,plan_New_procedure ,status,EHR_status FROM tbl_appointment where start_datetime between  '" + Convert.ToDateTime(startDateTime).ToString("yyyy-MM-dd HH:mm") + "' AND '" + Convert.ToDateTime(startDateTime1).ToString("yyyy-MM-dd HH:mm") + "' AND dr_id='" + doctor_id + "' ORDER BY start_datetime";
+                dt_dr = this.cntrl.doctor_appointments(Convert.ToDateTime(startDateTime), Convert.ToDateTime(startDateTime1), doctor_id);
             }
-            //DataTable dt_dr = db.table(sqlstring);
             dataGridViewAppointment.DefaultCellStyle.SelectionBackColor = Color.Empty;
             dataGridViewAppointment.DefaultCellStyle.SelectionForeColor = Color.Black;
             dataGridViewAppointment.DefaultCellStyle.Font = new Font("Segoe UI", 9);
@@ -3832,7 +3701,6 @@ namespace PappyjoeMVC.View
             long long_waiting = 0;
             long long_engage = 0;
             long long_checkout = 0;
-            //MessageBox.Show(sqlstring.ToString());
             for (int j = 0; j < dt_dr.Rows.Count; j++)
             {
                 dtNow = Convert.ToDateTime(dt_dr.Rows[j]["start_datetime"].ToString());
@@ -3864,7 +3732,7 @@ namespace PappyjoeMVC.View
                 }
                 else if (dt_dr.Rows[j]["status"].ToString() == "Checked Out")
                 {
-                    dataGridViewAppointment.Rows[j].Cells[3].Style.BackColor = Color.FromArgb(119, 119, 119); //Color.FromArgb(0, 0, 255);
+                    dataGridViewAppointment.Rows[j].Cells[3].Style.BackColor = Color.FromArgb(119, 119, 119); 
                     dataGridViewAppointment.Rows[j].Cells[3].Value = " ";
                     long_checkout += 1;
                 }
@@ -3909,14 +3777,11 @@ namespace PappyjoeMVC.View
                 else
                 {
                     HitTest.ViewEvent.Event.Location = Convert.ToDateTime(HitTest.ViewEvent.Event.StartTime.ToString("t")) + "-" + Convert.ToDateTime(HitTest.ViewEvent.Event.EndTime.ToString("t"));
-                     this.cntrl.update_appointment_statrdatetime(HitTest.ViewEvent.Event.StartTime.ToString(), totalTime.ToString(), HitTest.ViewEvent.Event.Body);// db.execute("update tbl_appointment set start_datetime='" + Convert.ToDateTime(HitTest.ViewEvent.Event.StartTime.ToString()).ToString("yyyy-MM-dd HH:mm") + "',duration='" + totalTime + "' where id='" + HitTest.ViewEvent.Event.Body + "'");
+                     this.cntrl.update_appointment_statrdatetime(HitTest.ViewEvent.Event.StartTime.ToString(), totalTime.ToString(), HitTest.ViewEvent.Event.Body);
                     listAppointment("0");
                 }
-                //HitTest.ViewEvent.Event.Location = Convert.ToDateTime(HitTest.ViewEvent.Event.StartTime.ToString("t")) + "-" + Convert.ToDateTime(HitTest.ViewEvent.Event.EndTime.ToString("t"));
-                //int j = db.execute("update tbl_appointment set start_datetime='" + HitTest.ViewEvent.Event.StartTime.ToString() + "',duration='" + totalTime + "' where id='" + HitTest.ViewEvent.Event.Body + "'");
-                //listAppointment("0");
             }
-            catch { }
+            catch(Exception ex) { }
         }
 
         private void dataGridViewAppointment_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -3933,7 +3798,7 @@ namespace PappyjoeMVC.View
                         DateTime Timeonly = DateTime.Now;
                         dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Style.BackColor = Color.FromArgb(34, 139, 34);
                         dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value = "Engage";
-                         this.cntrl.update_appointment_status_checkin(Convert.ToString(Timeonly.ToString("hh:mm tt")), dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[0].Value.ToString());// db.execute("update tbl_appointment set status='Check in',schedule='" + Convert.ToString(Timeonly.ToString("hh:mm tt")) + "',waiting='" + Convert.ToString(Timeonly.ToString("hh:mm tt")) + "' where id='" + dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'");
+                         this.cntrl.update_appointment_status_checkin(Convert.ToString(Timeonly.ToString("hh:mm tt")), dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[0].Value.ToString());
                         combodoctors.Focus();
                         long_sub = Convert.ToInt64(label7.Text);
                         long_add = Convert.ToInt64(label8.Text);
@@ -3944,14 +3809,14 @@ namespace PappyjoeMVC.View
                     {
                         DateTime Timeonly = DateTime.Now;
                         dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Style.BackColor = Color.FromArgb(0, 0, 255);
-                        dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value = "Checked Out";
-                        this.cntrl.update_appointment_status_engaged(Convert.ToString(Timeonly.ToString("hh:mm tt")), dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[0].Value.ToString());// int j = db.execute("update tbl_appointment set status='Engage',engaged='" + Convert.ToString(Timeonly.ToString("hh:mm tt")) + "' where id='" + dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'");
+                        dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value = "Check Out";
+                        this.cntrl.update_appointment_status_engaged(Convert.ToString(Timeonly.ToString("hh:mm tt")), dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[0].Value.ToString());
                         long_sub = Convert.ToInt64(label8.Text);
                         long_add = Convert.ToInt64(label9.Text);
                         label8.Text = Convert.ToString(long_sub - 1);
                         label9.Text = Convert.ToString(long_add + 1);
                     }
-                    else if (dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value.ToString() == "Checked Out")
+                    else if (dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Value.ToString() == "Check Out")
                     {
                         DateTime Timeonly = DateTime.Now;
                         dataGridViewAppointment.Rows[dataGridViewAppointment.CurrentCell.RowIndex].Cells[3].Style.BackColor = Color.FromArgb(0, 0, 255);
@@ -3982,6 +3847,7 @@ namespace PappyjoeMVC.View
                         form2.strApp_id = id1;
                         form2.Appointment_list += childForm_VitalSignChanged; 
                         form2.ShowDialog(this);
+                        form2.Dispose();
                     }
                 }
             }
@@ -3993,7 +3859,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
@@ -4011,7 +3877,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             else
@@ -4020,7 +3886,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -4030,7 +3896,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
@@ -4039,7 +3905,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton7_Click(object sender, EventArgs e)
@@ -4050,7 +3916,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -4060,9 +3926,9 @@ namespace PappyjoeMVC.View
             {
                 panel5.Location = new Point(1000, 32);
                 DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox1.Text);
-                listpatientsearch.DataSource = dtdr;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
+                listpatientsearch.DataSource = dtdr;
                 if (listpatientsearch.Items.Count == 0)
                 {
                     panel5.Visible = false;
@@ -4071,7 +3937,7 @@ namespace PappyjoeMVC.View
                 {
                     panel5.Visible = true;
                 }
-                panel5.Location = new Point(toolStrip1.Width - 350, 32);
+                panel5.Location = new Point(toolStrip1.Width - 350,32);
             }
             else
             {
@@ -4087,7 +3953,7 @@ namespace PappyjoeMVC.View
             listpatientsearch.Visible = false;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
@@ -4101,22 +3967,12 @@ namespace PappyjoeMVC.View
             if (pat_idForEdit != "0")
             {
                 var form2 = new Add_Clinical_Notes();
-                //ClinicalNotesAdd_controller cnt = new ClinicalNotesAdd_controller(form2);
                 form2.doctor_id = doctor_id;
                 form2.patient_id = pat_idForEdit;
-                //form2.ptid = pat_idForEdit;
-                //clinic_flag = true;
                 form2.caledr_edit_flag = true;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
-
-                //var form2 = new ClinicalNotes_Add();
-                //form2.doctor_id = doctor_id;
-                //form2.ptid = pat_idForEdit;
-                //form2.Closed += (sender1, args) => this.Close();
-                //this.Hide();
-                //form2.show();
+                form2.Show();
             }
         }
 
@@ -4136,7 +3992,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             else
@@ -4145,7 +4001,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -4161,7 +4017,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
                 else
                 {
@@ -4174,7 +4030,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -4183,7 +4039,7 @@ namespace PappyjoeMVC.View
             var form2 = new Login();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolstripincomeandexpence_Click(object sender, EventArgs e)
         {
@@ -4191,6 +4047,7 @@ namespace PappyjoeMVC.View
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripButton9_Click(object sender, EventArgs e)
@@ -4210,7 +4067,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton10_Click(object sender, EventArgs e)
@@ -4218,6 +4075,12 @@ namespace PappyjoeMVC.View
             var form2 = new Consultation();
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
+            form2.Dispose();
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void toolStripBfatstrack_Click(object sender, EventArgs e)
@@ -4230,7 +4093,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         void childForm_VitalSignChanged(string newVitalsign)

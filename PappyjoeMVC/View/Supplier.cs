@@ -311,9 +311,44 @@ namespace PappyjoeMVC.View
         {
             if (!PappyjoeMVC.Model.Connection.checkforemail(txtEmail.Text.ToString()) && txtEmail.Text != "")
             {
-                MessageBox.Show("invalid Email address/Password", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("invalid Email address...", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
             }
+        }
+
+        private void txtPhone_Leave(object sender, EventArgs e)
+        {
+            if (txtPhone.TextLength != 10)
+            {
+                Lab_InvalidNumber.Visible = true;
+                return;
+            }
+            else
+            {
+                Lab_InvalidNumber.Visible = false;
+            }
+        }
+
+        private void txtphone2_Leave(object sender, EventArgs e)
+        {
+            
+            if(txtphone2.Text!="")
+            {
+                if (txtphone2.TextLength != 10)
+                {
+                    label5.Visible = true;
+                    return;
+                }
+                else
+                {
+                    label5.Visible = false;
+                }
+            }
+            else
+            {
+                label5.Visible = false;
+            }
+            
         }
     }
 }

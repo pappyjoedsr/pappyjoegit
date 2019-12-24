@@ -1,4 +1,4 @@
-﻿namespace PappyjoeMVC.View
+﻿namespace Pappyjoe
 {
     partial class consultation_prescription_template
     {
@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(consultation_prescription_template));
-            this.button2 = new System.Windows.Forms.Button();
             this.txt_tempName = new System.Windows.Forms.TextBox();
             this.LAb_Drugname = new System.Windows.Forms.Label();
             this.dataGridView_templatenew = new System.Windows.Forms.DataGridView();
@@ -48,44 +47,29 @@
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_templatenew)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.Tomato;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(609, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 27);
-            this.button2.TabIndex = 334;
-            this.button2.Text = "CLOSE";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txt_tempName
             // 
             this.txt_tempName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tempName.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_tempName.Location = new System.Drawing.Point(102, 5);
+            this.txt_tempName.Location = new System.Drawing.Point(108, 6);
             this.txt_tempName.Name = "txt_tempName";
             this.txt_tempName.Size = new System.Drawing.Size(212, 22);
-            this.txt_tempName.TabIndex = 333;
+            this.txt_tempName.TabIndex = 329;
             // 
             // LAb_Drugname
             // 
             this.LAb_Drugname.AutoSize = true;
-            this.LAb_Drugname.BackColor = System.Drawing.Color.White;
+            this.LAb_Drugname.BackColor = System.Drawing.SystemColors.Control;
             this.LAb_Drugname.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LAb_Drugname.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.LAb_Drugname.Location = new System.Drawing.Point(6, 8);
+            this.LAb_Drugname.Location = new System.Drawing.Point(12, 9);
             this.LAb_Drugname.Name = "LAb_Drugname";
-            this.LAb_Drugname.Size = new System.Drawing.Size(91, 15);
-            this.LAb_Drugname.TabIndex = 332;
+            this.LAb_Drugname.Size = new System.Drawing.Size(92, 15);
+            this.LAb_Drugname.TabIndex = 328;
             this.LAb_Drugname.Text = "Template Name";
             // 
             // dataGridView_templatenew
@@ -135,8 +119,8 @@
             this.dataGridView_templatenew.RowHeadersVisible = false;
             this.dataGridView_templatenew.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_templatenew.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_templatenew.Size = new System.Drawing.Size(744, 176);
-            this.dataGridView_templatenew.TabIndex = 335;
+            this.dataGridView_templatenew.Size = new System.Drawing.Size(932, 176);
+            this.dataGridView_templatenew.TabIndex = 330;
             // 
             // drgname
             // 
@@ -224,20 +208,39 @@
             this.status1.Name = "status1";
             this.status1.ReadOnly = true;
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.Tomato;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(859, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(73, 27);
+            this.button2.TabIndex = 331;
+            this.button2.Text = "CLOSE";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // consultation_prescription_template
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(744, 224);
-            this.Controls.Add(this.dataGridView_templatenew);
+            this.ClientSize = new System.Drawing.Size(932, 224);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.dataGridView_templatenew);
             this.Controls.Add(this.txt_tempName);
             this.Controls.Add(this.LAb_Drugname);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "consultation_prescription_template";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " Prescription Template";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Prescription Template";
             this.Load += new System.EventHandler(this.consultation_prescription_template_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_templatenew)).EndInit();
             this.ResumeLayout(false);
@@ -247,10 +250,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txt_tempName;
         private System.Windows.Forms.Label LAb_Drugname;
         private System.Windows.Forms.DataGridView dataGridView_templatenew;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn drgname;
         private System.Windows.Forms.DataGridViewTextBoxColumn strength;
         private System.Windows.Forms.DataGridViewTextBoxColumn strengthgr;

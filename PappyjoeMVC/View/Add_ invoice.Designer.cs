@@ -73,8 +73,8 @@
             this.lab_due = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.treatmentplanl = new System.Windows.Forms.Label();
-            this.btn_SaveInvoice = new System.Windows.Forms.Button();
             this.btn_MainCancel = new System.Windows.Forms.Button();
+            this.btn_SaveInvoice = new System.Windows.Forms.Button();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -230,8 +230,8 @@
             this.toolStripSeparator1,
             this.toolStripButton2,
             this.toolStripButton13,
-            this.toolStripBAttachment,
             this.toolStripButton3,
+            this.toolStripBAttachment,
             this.toolStripButton4,
             this.toolStripButton5,
             this.toolStripButton6,
@@ -303,6 +303,7 @@
             this.toolStripBAttachment.Size = new System.Drawing.Size(72, 37);
             this.toolStripBAttachment.Text = "Fast Track";
             this.toolStripBAttachment.Visible = false;
+            //this.toolStripBAttachment.Click += new System.EventHandler(this.toolStripBAttachment_Click);
             // 
             // toolStripButton3
             // 
@@ -581,8 +582,8 @@
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.Controls.Add(this.treatmentplanl);
-            this.panel9.Controls.Add(this.btn_SaveInvoice);
             this.panel9.Controls.Add(this.btn_MainCancel);
+            this.panel9.Controls.Add(this.btn_SaveInvoice);
             this.panel9.Location = new System.Drawing.Point(1, 96);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1360, 40);
@@ -599,20 +600,6 @@
             this.treatmentplanl.TabIndex = 44;
             this.treatmentplanl.Text = "INVOICES";
             // 
-            // btn_SaveInvoice
-            // 
-            this.btn_SaveInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SaveInvoice.BackColor = System.Drawing.Color.LimeGreen;
-            this.btn_SaveInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_SaveInvoice.ForeColor = System.Drawing.Color.White;
-            this.btn_SaveInvoice.Location = new System.Drawing.Point(1150, 6);
-            this.btn_SaveInvoice.Name = "btn_SaveInvoice";
-            this.btn_SaveInvoice.Size = new System.Drawing.Size(109, 30);
-            this.btn_SaveInvoice.TabIndex = 46;
-            this.btn_SaveInvoice.Text = "SAVE INVOICE";
-            this.btn_SaveInvoice.UseVisualStyleBackColor = false;
-            this.btn_SaveInvoice.Click += new System.EventHandler(this.btn_SaveInvoice_Click);
-            // 
             // btn_MainCancel
             // 
             this.btn_MainCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -626,6 +613,20 @@
             this.btn_MainCancel.Text = "CANCEL";
             this.btn_MainCancel.UseVisualStyleBackColor = false;
             this.btn_MainCancel.Click += new System.EventHandler(this.btn_MainCancel_Click);
+            // 
+            // btn_SaveInvoice
+            // 
+            this.btn_SaveInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_SaveInvoice.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_SaveInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SaveInvoice.ForeColor = System.Drawing.Color.White;
+            this.btn_SaveInvoice.Location = new System.Drawing.Point(1150, 6);
+            this.btn_SaveInvoice.Name = "btn_SaveInvoice";
+            this.btn_SaveInvoice.Size = new System.Drawing.Size(109, 30);
+            this.btn_SaveInvoice.TabIndex = 46;
+            this.btn_SaveInvoice.Text = "SAVE INVOICE";
+            this.btn_SaveInvoice.UseVisualStyleBackColor = false;
+            this.btn_SaveInvoice.Click += new System.EventHandler(this.btn_SaveInvoice_Click);
             // 
             // listpatientsearch
             // 
@@ -706,7 +707,7 @@
             this.panel1.Controls.Add(this.CHk_FullMouth);
             this.panel1.Controls.Add(this.Chk_MultiplyCost);
             this.panel1.Controls.Add(this.btn_Done);
-            this.panel1.Location = new System.Drawing.Point(282, 277);
+            this.panel1.Location = new System.Drawing.Point(166, 320);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(644, 293);
             this.panel1.TabIndex = 262;
@@ -1595,7 +1596,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(7, 155);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 43;
             this.label2.Text = "By doctor";
             // 
@@ -1736,7 +1737,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label7.Location = new System.Drawing.Point(586, 37);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 13);
+            this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 20;
             this.label7.Text = "TAX (INR)";
             // 
@@ -1748,7 +1749,7 @@
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label6.Location = new System.Drawing.Point(430, 37);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 13);
+            this.label6.Size = new System.Drawing.Size(86, 13);
             this.label6.TabIndex = 19;
             this.label6.Text = "DISCOUNT(INR)";
             // 
@@ -1771,7 +1772,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(211, 37);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 18;
             this.label5.Text = "COST(INR)";
             // 
@@ -1783,7 +1784,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(326, 37);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 17;
             this.label4.Text = "UNIT";
             // 
@@ -1900,7 +1901,7 @@
             this.label24.ForeColor = System.Drawing.Color.LimeGreen;
             this.label24.Location = new System.Drawing.Point(657, 39);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(77, 13);
+            this.label24.Size = new System.Drawing.Size(80, 13);
             this.label24.TabIndex = 7;
             this.label24.Text = "GRANT TOTAL ";
             // 
@@ -1924,7 +1925,7 @@
             this.label25.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label25.Location = new System.Drawing.Point(372, 39);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(59, 13);
+            this.label25.Size = new System.Drawing.Size(62, 13);
             this.label25.TabIndex = 6;
             this.label25.Text = "TOTAL TAX ";
             // 
@@ -1948,7 +1949,7 @@
             this.label26.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label26.Location = new System.Drawing.Point(176, 39);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(93, 13);
+            this.label26.Size = new System.Drawing.Size(96, 13);
             this.label26.TabIndex = 5;
             this.label26.Text = "TOTAL DISCOUNT";
             // 
@@ -1972,7 +1973,7 @@
             this.label27.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label27.Location = new System.Drawing.Point(31, 39);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(66, 13);
+            this.label27.Size = new System.Drawing.Size(69, 13);
             this.label27.TabIndex = 4;
             this.label27.Text = "TOTAL COST";
             // 
@@ -2043,30 +2044,30 @@
             // 
             // Column5
             // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column5.HeaderText = "SERVICE";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 212;
             // 
             // Column7
             // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.Column7.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column7.HeaderText = "COST";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            this.Column7.Width = 95;
             // 
             // Column6
             // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column6.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column6.HeaderText = "UNIT";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 102;
             // 
             // Column8
             // 
@@ -2290,19 +2291,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.DGV_Invoice);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.lab_due);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.DGV_Invoice);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add__invoice";
@@ -2472,6 +2473,18 @@
         private System.Windows.Forms.Label txt_TotalCost;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.DataGridView DGV_Invoice;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox txt_SearchProcedure;
+        private System.Windows.Forms.DataGridView DGV_Procedure;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn list;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn planid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C_id;
+        private System.Windows.Forms.ListBox listpatientsearch;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
         private System.Windows.Forms.DataGridViewTextBoxColumn service_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
@@ -2490,17 +2503,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn complete_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn i_date;
         private System.Windows.Forms.DataGridViewImageColumn img;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox txt_SearchProcedure;
-        private System.Windows.Forms.DataGridView DGV_Procedure;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn list;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn planid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C_id;
-        private System.Windows.Forms.ListBox listpatientsearch;
-        private System.Windows.Forms.ToolStripButton toolStripButton12;
-        private System.Windows.Forms.ToolStripButton toolStripButton13;
     }
 }

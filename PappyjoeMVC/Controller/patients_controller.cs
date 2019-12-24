@@ -219,5 +219,25 @@ namespace PappyjoeMVC.Controller
             string id = _model.inventry_prevlage(doctor_id);
             return id;
         }
+        public DataTable clinicdetails()
+        {
+            DataTable dtb = cmodel.clinicdetails();
+            return dtb;
+        }
+        public DataTable sms_details()
+        {
+            DataTable dtb = _model.sms_details();
+            return dtb;
+        }
+        public DataTable doctor_details()
+        {
+            DataTable dtb = _model.doctor_details();
+            return dtb;
+        }
+        public DataTable get_reminder_sms_details(DateTime startDateTime, DateTime startDateTime1, string dr_id)
+        {
+            DataTable dtb = _model.get_reminder_sms_details(startDateTime, startDateTime1, dr_id);
+            return dtb;
+        }
     }
 }

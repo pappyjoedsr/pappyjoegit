@@ -43,11 +43,6 @@
             this.tabPage_Complaint = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView_comp = new System.Windows.Forms.DataGridView();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.text_comp_search = new System.Windows.Forms.TextBox();
             this.button_comp_refresh = new System.Windows.Forms.Button();
             this.button_comp_save = new System.Windows.Forms.Button();
@@ -60,21 +55,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView_observation = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coledit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.coldelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.text_observ_search = new System.Windows.Forms.TextBox();
             this.button_save_observations = new System.Windows.Forms.Button();
             this.text_observation = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView_diag = new System.Windows.Forms.DataGridView();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dia_Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Dia_Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.button_refresh = new System.Windows.Forms.Button();
             this.button_Save = new System.Windows.Forms.Button();
             this.text_diagnosis_search = new System.Windows.Forms.TextBox();
@@ -84,11 +69,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView_invest = new System.Windows.Forms.DataGridView();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Inv_Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Inv_Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.button_inves_refresh = new System.Windows.Forms.Button();
             this.button_inves_save = new System.Windows.Forms.Button();
             this.text_investigation_search = new System.Windows.Forms.TextBox();
@@ -98,10 +78,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dataGridView_notes = new System.Windows.Forms.DataGridView();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.No_Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.No_Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.button_notes_refresh = new System.Windows.Forms.Button();
             this.button_notes_save = new System.Windows.Forms.Button();
             this.text_notes_search = new System.Windows.Forms.TextBox();
@@ -123,6 +99,30 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coledit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.coldelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dia_Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Dia_Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Inv_Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Inv_Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.No_Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.No_Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage_Complaint.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_comp)).BeginInit();
@@ -181,7 +181,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(439, 26);
+            this.label6.Location = new System.Drawing.Point(439, 27);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 13);
             this.label6.TabIndex = 12;
@@ -212,7 +212,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_comp.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView_comp.Location = new System.Drawing.Point(96, 125);
+            this.dataGridView_comp.Location = new System.Drawing.Point(96, 122);
             this.dataGridView_comp.Name = "dataGridView_comp";
             this.dataGridView_comp.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -234,46 +234,6 @@
             this.dataGridView_comp.TabIndex = 5;
             this.dataGridView_comp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_comp_CellClick);
             // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "id";
-            this.Column4.HeaderText = "Id";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Visible = false;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.DataPropertyName = "name";
-            this.Column5.HeaderText = "Complaints";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "display_status";
-            this.Column6.HeaderText = "Display Status";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "";
-            this.Edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 25;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "";
-            this.Delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 25;
-            // 
             // text_comp_search
             // 
             this.text_comp_search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -290,7 +250,7 @@
             this.button_comp_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_comp_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_comp_refresh.ForeColor = System.Drawing.Color.White;
-            this.button_comp_refresh.Location = new System.Drawing.Point(177, 53);
+            this.button_comp_refresh.Location = new System.Drawing.Point(175, 53);
             this.button_comp_refresh.Name = "button_comp_refresh";
             this.button_comp_refresh.Size = new System.Drawing.Size(75, 28);
             this.button_comp_refresh.TabIndex = 3;
@@ -365,7 +325,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(442, 26);
+            this.label3.Location = new System.Drawing.Point(439, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 11;
@@ -377,7 +337,7 @@
             this.button_observations_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_observations_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_observations_refresh.ForeColor = System.Drawing.Color.White;
-            this.button_observations_refresh.Location = new System.Drawing.Point(179, 53);
+            this.button_observations_refresh.Location = new System.Drawing.Point(175, 53);
             this.button_observations_refresh.Name = "button_observations_refresh";
             this.button_observations_refresh.Size = new System.Drawing.Size(75, 28);
             this.button_observations_refresh.TabIndex = 10;
@@ -424,7 +384,7 @@
             this.coledit,
             this.coldelete,
             this.Column3});
-            this.dataGridView_observation.Location = new System.Drawing.Point(99, 122);
+            this.dataGridView_observation.Location = new System.Drawing.Point(96, 122);
             this.dataGridView_observation.MultiSelect = false;
             this.dataGridView_observation.Name = "dataGridView_observation";
             this.dataGridView_observation.ReadOnly = true;
@@ -443,46 +403,6 @@
             this.dataGridView_observation.Size = new System.Drawing.Size(552, 372);
             this.dataGridView_observation.TabIndex = 12;
             this.dataGridView_observation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_observation_CellClick);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "id";
-            this.Column1.HeaderText = "id";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "observations";
-            this.Column2.HeaderText = "Observation Name";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // coledit
-            // 
-            this.coledit.HeaderText = "";
-            this.coledit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.coledit.Name = "coledit";
-            this.coledit.ReadOnly = true;
-            this.coledit.Width = 25;
-            // 
-            // coldelete
-            // 
-            this.coldelete.HeaderText = "";
-            this.coldelete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.coldelete.Name = "coldelete";
-            this.coldelete.ReadOnly = true;
-            this.coldelete.Width = 25;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "display_status";
-            this.Column3.HeaderText = "Display Status";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Visible = false;
             // 
             // text_observ_search
             // 
@@ -570,51 +490,13 @@
             this.dataGridView_diag.TabIndex = 19;
             this.dataGridView_diag.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_diag_CellClick);
             // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "id";
-            this.Column7.HeaderText = "Id";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Visible = false;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column8.DataPropertyName = "diagnosis";
-            this.Column8.HeaderText = "Diagnosis";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "display_status";
-            this.Column9.HeaderText = "Display Status";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Visible = false;
-            // 
-            // Dia_Edit
-            // 
-            this.Dia_Edit.HeaderText = "";
-            this.Dia_Edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.Dia_Edit.Name = "Dia_Edit";
-            this.Dia_Edit.Width = 25;
-            // 
-            // Dia_Delete
-            // 
-            this.Dia_Delete.HeaderText = "";
-            this.Dia_Delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.Dia_Delete.Name = "Dia_Delete";
-            this.Dia_Delete.Width = 25;
-            // 
             // button_refresh
             // 
             this.button_refresh.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_refresh.ForeColor = System.Drawing.Color.White;
-            this.button_refresh.Location = new System.Drawing.Point(172, 53);
+            this.button_refresh.Location = new System.Drawing.Point(175, 53);
             this.button_refresh.Name = "button_refresh";
             this.button_refresh.Size = new System.Drawing.Size(75, 28);
             this.button_refresh.TabIndex = 17;
@@ -652,7 +534,7 @@
             this.text_diagnosis.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.text_diagnosis.Location = new System.Drawing.Point(96, 22);
             this.text_diagnosis.Name = "text_diagnosis";
-            this.text_diagnosis.Size = new System.Drawing.Size(330, 22);
+            this.text_diagnosis.Size = new System.Drawing.Size(331, 22);
             this.text_diagnosis.TabIndex = 15;
             // 
             // label8
@@ -670,11 +552,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(434, 26);
+            this.label9.Location = new System.Drawing.Point(439, 27);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 13);
+            this.label9.Size = new System.Drawing.Size(83, 13);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Can\'t be Empty";
+            this.label9.Text = "Can\'t Be Empty";
             // 
             // label7
             // 
@@ -722,7 +604,7 @@
             this.Column12,
             this.Inv_Edit,
             this.Inv_Delete});
-            this.dataGridView_invest.Location = new System.Drawing.Point(98, 122);
+            this.dataGridView_invest.Location = new System.Drawing.Point(96, 122);
             this.dataGridView_invest.Name = "dataGridView_invest";
             this.dataGridView_invest.ReadOnly = true;
             this.dataGridView_invest.RowHeadersVisible = false;
@@ -734,53 +616,13 @@
             this.dataGridView_invest.TabIndex = 26;
             this.dataGridView_invest.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_invest_CellClick);
             // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "id";
-            this.Column10.HeaderText = "Id";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Visible = false;
-            // 
-            // Column11
-            // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column11.DataPropertyName = "investigation";
-            this.Column11.HeaderText = "Investigation";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.DataPropertyName = "display_status";
-            this.Column12.HeaderText = "display_status";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Visible = false;
-            // 
-            // Inv_Edit
-            // 
-            this.Inv_Edit.HeaderText = "";
-            this.Inv_Edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.Inv_Edit.Name = "Inv_Edit";
-            this.Inv_Edit.ReadOnly = true;
-            this.Inv_Edit.Width = 25;
-            // 
-            // Inv_Delete
-            // 
-            this.Inv_Delete.HeaderText = "";
-            this.Inv_Delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.Inv_Delete.Name = "Inv_Delete";
-            this.Inv_Delete.ReadOnly = true;
-            this.Inv_Delete.Width = 25;
-            // 
             // button_inves_refresh
             // 
             this.button_inves_refresh.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button_inves_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_inves_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_inves_refresh.ForeColor = System.Drawing.Color.White;
-            this.button_inves_refresh.Location = new System.Drawing.Point(179, 53);
+            this.button_inves_refresh.Location = new System.Drawing.Point(175, 53);
             this.button_inves_refresh.Name = "button_inves_refresh";
             this.button_inves_refresh.Size = new System.Drawing.Size(75, 28);
             this.button_inves_refresh.TabIndex = 24;
@@ -806,7 +648,7 @@
             // 
             this.text_investigation_search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_investigation_search.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_investigation_search.Location = new System.Drawing.Point(98, 92);
+            this.text_investigation_search.Location = new System.Drawing.Point(96, 92);
             this.text_investigation_search.Name = "text_investigation_search";
             this.text_investigation_search.Size = new System.Drawing.Size(331, 22);
             this.text_investigation_search.TabIndex = 25;
@@ -818,7 +660,7 @@
             this.text_investigation.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.text_investigation.Location = new System.Drawing.Point(96, 22);
             this.text_investigation.Name = "text_investigation";
-            this.text_investigation.Size = new System.Drawing.Size(330, 22);
+            this.text_investigation.Size = new System.Drawing.Size(331, 22);
             this.text_investigation.TabIndex = 22;
             // 
             // label10
@@ -836,11 +678,11 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(441, 26);
+            this.label11.Location = new System.Drawing.Point(439, 27);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 13);
+            this.label11.Size = new System.Drawing.Size(83, 13);
             this.label11.TabIndex = 4;
-            this.label11.Text = "Can\'t be Empty";
+            this.label11.Text = "Can\'t Be Empty";
             // 
             // label12
             // 
@@ -887,7 +729,7 @@
             this.Column14,
             this.No_Edit,
             this.No_Delete});
-            this.dataGridView_notes.Location = new System.Drawing.Point(85, 122);
+            this.dataGridView_notes.Location = new System.Drawing.Point(96, 122);
             this.dataGridView_notes.Name = "dataGridView_notes";
             this.dataGridView_notes.ReadOnly = true;
             this.dataGridView_notes.RowHeadersVisible = false;
@@ -899,45 +741,13 @@
             this.dataGridView_notes.TabIndex = 33;
             this.dataGridView_notes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_notes_CellClick);
             // 
-            // Column13
-            // 
-            this.Column13.DataPropertyName = "id";
-            this.Column13.HeaderText = "id";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Visible = false;
-            // 
-            // Column14
-            // 
-            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column14.DataPropertyName = "notes";
-            this.Column14.HeaderText = "Notes";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            // 
-            // No_Edit
-            // 
-            this.No_Edit.HeaderText = "";
-            this.No_Edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.No_Edit.Name = "No_Edit";
-            this.No_Edit.ReadOnly = true;
-            this.No_Edit.Width = 25;
-            // 
-            // No_Delete
-            // 
-            this.No_Delete.HeaderText = "";
-            this.No_Delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.No_Delete.Name = "No_Delete";
-            this.No_Delete.ReadOnly = true;
-            this.No_Delete.Width = 25;
-            // 
             // button_notes_refresh
             // 
             this.button_notes_refresh.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button_notes_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_notes_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_notes_refresh.ForeColor = System.Drawing.Color.White;
-            this.button_notes_refresh.Location = new System.Drawing.Point(174, 53);
+            this.button_notes_refresh.Location = new System.Drawing.Point(175, 53);
             this.button_notes_refresh.Name = "button_notes_refresh";
             this.button_notes_refresh.Size = new System.Drawing.Size(75, 28);
             this.button_notes_refresh.TabIndex = 31;
@@ -983,7 +793,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label13.Location = new System.Drawing.Point(30, 95);
+            this.label13.Location = new System.Drawing.Point(41, 95);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(47, 17);
             this.label13.TabIndex = 11;
@@ -1043,7 +853,7 @@
             this.dataGridView_filelabel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-            this.dataGridView_filelabel.Location = new System.Drawing.Point(85, 122);
+            this.dataGridView_filelabel.Location = new System.Drawing.Point(96, 122);
             this.dataGridView_filelabel.Name = "dataGridView_filelabel";
             this.dataGridView_filelabel.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1084,7 +894,7 @@
             this.button_file_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_file_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_file_refresh.ForeColor = System.Drawing.Color.White;
-            this.button_file_refresh.Location = new System.Drawing.Point(166, 53);
+            this.button_file_refresh.Location = new System.Drawing.Point(175, 53);
             this.button_file_refresh.Name = "button_file_refresh";
             this.button_file_refresh.Size = new System.Drawing.Size(75, 28);
             this.button_file_refresh.TabIndex = 25;
@@ -1097,7 +907,7 @@
             this.button_file_delete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_file_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_file_delete.ForeColor = System.Drawing.Color.White;
-            this.button_file_delete.Location = new System.Drawing.Point(643, 122);
+            this.button_file_delete.Location = new System.Drawing.Point(651, 122);
             this.button_file_delete.Name = "button_file_delete";
             this.button_file_delete.Size = new System.Drawing.Size(60, 25);
             this.button_file_delete.TabIndex = 26;
@@ -1110,7 +920,7 @@
             this.button_file_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_file_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_file_save.ForeColor = System.Drawing.Color.White;
-            this.button_file_save.Location = new System.Drawing.Point(85, 53);
+            this.button_file_save.Location = new System.Drawing.Point(96, 53);
             this.button_file_save.Name = "button_file_save";
             this.button_file_save.Size = new System.Drawing.Size(75, 28);
             this.button_file_save.TabIndex = 27;
@@ -1120,7 +930,7 @@
             // text_label_search
             // 
             this.text_label_search.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_label_search.Location = new System.Drawing.Point(85, 92);
+            this.text_label_search.Location = new System.Drawing.Point(96, 92);
             this.text_label_search.Name = "text_label_search";
             this.text_label_search.Size = new System.Drawing.Size(330, 22);
             this.text_label_search.TabIndex = 24;
@@ -1128,7 +938,7 @@
             // text_label
             // 
             this.text_label.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_label.Location = new System.Drawing.Point(85, 22);
+            this.text_label.Location = new System.Drawing.Point(96, 22);
             this.text_label.Name = "text_label";
             this.text_label.Size = new System.Drawing.Size(330, 22);
             this.text_label.TabIndex = 23;
@@ -1138,7 +948,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label16.Location = new System.Drawing.Point(27, 95);
+            this.label16.Location = new System.Drawing.Point(41, 95);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(47, 17);
             this.label16.TabIndex = 20;
@@ -1148,7 +958,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(428, 26);
+            this.label17.Location = new System.Drawing.Point(431, 26);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(84, 13);
             this.label17.TabIndex = 21;
@@ -1170,7 +980,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline);
             this.label19.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label19.Location = new System.Drawing.Point(12, 9);
+            this.label19.Location = new System.Drawing.Point(16, 8);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(50, 25);
             this.label19.TabIndex = 124;
@@ -1179,6 +989,196 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "id";
+            this.Column1.HeaderText = "id";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "observations";
+            this.Column2.HeaderText = "Observation Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // coledit
+            // 
+            this.coledit.HeaderText = "";
+            this.coledit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.coledit.Name = "coledit";
+            this.coledit.ReadOnly = true;
+            this.coledit.Width = 19;
+            // 
+            // coldelete
+            // 
+            this.coldelete.HeaderText = "";
+            this.coldelete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.coldelete.Name = "coldelete";
+            this.coldelete.ReadOnly = true;
+            this.coldelete.Width = 19;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "display_status";
+            this.Column3.HeaderText = "Display Status";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "id";
+            this.Column4.HeaderText = "Id";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "name";
+            this.Column5.HeaderText = "Complaints";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "display_status";
+            this.Column6.HeaderText = "Display Status";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "";
+            this.Edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 19;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 19;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "id";
+            this.Column7.HeaderText = "Id";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Visible = false;
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column8.DataPropertyName = "diagnosis";
+            this.Column8.HeaderText = "Diagnosis";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "display_status";
+            this.Column9.HeaderText = "Display Status";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Visible = false;
+            // 
+            // Dia_Edit
+            // 
+            this.Dia_Edit.HeaderText = "";
+            this.Dia_Edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.Dia_Edit.Name = "Dia_Edit";
+            this.Dia_Edit.Width = 19;
+            // 
+            // Dia_Delete
+            // 
+            this.Dia_Delete.HeaderText = "";
+            this.Dia_Delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.Dia_Delete.Name = "Dia_Delete";
+            this.Dia_Delete.Width = 19;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "id";
+            this.Column10.HeaderText = "Id";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Visible = false;
+            // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column11.DataPropertyName = "investigation";
+            this.Column11.HeaderText = "Investigation";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "display_status";
+            this.Column12.HeaderText = "display_status";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            this.Column12.Visible = false;
+            // 
+            // Inv_Edit
+            // 
+            this.Inv_Edit.HeaderText = "";
+            this.Inv_Edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.Inv_Edit.Name = "Inv_Edit";
+            this.Inv_Edit.ReadOnly = true;
+            this.Inv_Edit.Width = 19;
+            // 
+            // Inv_Delete
+            // 
+            this.Inv_Delete.HeaderText = "";
+            this.Inv_Delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.Inv_Delete.Name = "Inv_Delete";
+            this.Inv_Delete.ReadOnly = true;
+            this.Inv_Delete.Width = 19;
+            // 
+            // Column13
+            // 
+            this.Column13.DataPropertyName = "id";
+            this.Column13.HeaderText = "id";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            this.Column13.Visible = false;
+            // 
+            // Column14
+            // 
+            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column14.DataPropertyName = "notes";
+            this.Column14.HeaderText = "Notes";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            // 
+            // No_Edit
+            // 
+            this.No_Edit.HeaderText = "";
+            this.No_Edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.No_Edit.Name = "No_Edit";
+            this.No_Edit.ReadOnly = true;
+            this.No_Edit.Width = 19;
+            // 
+            // No_Delete
+            // 
+            this.No_Delete.HeaderText = "";
+            this.No_Delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.No_Delete.Name = "No_Delete";
+            this.No_Delete.ReadOnly = true;
+            this.No_Delete.Width = 19;
             // 
             // EMR_Settings
             // 
@@ -1279,16 +1279,17 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewImageColumn Edit;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewImageColumn coledit;
         private System.Windows.Forms.DataGridViewImageColumn coldelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
@@ -1303,6 +1304,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewImageColumn No_Edit;
         private System.Windows.Forms.DataGridViewImageColumn No_Delete;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

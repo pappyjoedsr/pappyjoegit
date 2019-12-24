@@ -27,10 +27,8 @@ namespace PappyjoeMVC.View
         public static string Pur_order_Print;
         public static int purchOrderNo;
         public static int rowindex;
-
         private void Purchase_order_list_Load(object sender, EventArgs e)
         {
-
             {
                 if (flag_fromm_inventory == true)
                 {
@@ -49,6 +47,8 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
+                        int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Show();
                     }
                 }
@@ -94,6 +94,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
             }
@@ -111,7 +113,6 @@ namespace PappyjoeMVC.View
         {
             this.Close();
         }
-
         private void btnPurchase_Click(object sender, EventArgs e)
         {
             if (purch_id > 0)
@@ -119,9 +120,9 @@ namespace PappyjoeMVC.View
                 PappyjoeMVC.Model.Connection.MyGlobals.global_Flag = true;
                 var form2 = new PappyjoeMVC.View.Purchase(purch_id);
                 form2.ShowDialog();
+                form2.Dispose();
             }
         }
-
         private void dgvItemData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -153,7 +154,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             load();

@@ -138,7 +138,10 @@ namespace PappyjoeMVC.View
             DataTable dt_item_code = this.cntrl.max_itemid();
             if (dt_item_code.Rows.Count > 0)
             {
-                item_id = Convert.ToDouble(dt_item_code.Rows[0][0].ToString());
+                if(dt_item_code.Rows[0][0].ToString()!="")
+                {
+                    item_id = Convert.ToDouble(dt_item_code.Rows[0][0].ToString());
+                }
             }
             txt_ItemCode.Text = "ITEM" + (item_id + 1);
         }
@@ -151,43 +154,43 @@ namespace PappyjoeMVC.View
             DataTable dt_Category = this.cntrl.fill_category();
             if (dt_Category.Rows.Count > 0)
             {
-                Cmb_Category.DataSource = dt_Category;
                 Cmb_Category.DisplayMember = "Name";
                 Cmb_Category.ValueMember = "id";
+                Cmb_Category.DataSource = dt_Category;
                 Cmb_Category.SelectedIndex = 0;
             }
             DataTable dt_Manufacture = this.cntrl.fill_manufacture();
             if (dt_Manufacture.Rows.Count > 0)
             {
-                Cmb_Manufacture.DataSource = dt_Manufacture;
                 Cmb_Manufacture.DisplayMember = "manufacturer";
                 Cmb_Manufacture.ValueMember = "id";
+                Cmb_Manufacture.DataSource = dt_Manufacture;
                 Cmb_Manufacture.SelectedIndex = 0;
             }
             DataTable dt_Units = this.cntrl.fill_unit();
             if (dt_Units.Rows.Count > 0)
             {
-                cmb_Unit1.DataSource = dt_Units;
                 cmb_Unit1.DisplayMember = "Name";
                 cmb_Unit1.ValueMember = "id";
+                cmb_Unit1.DataSource = dt_Units;
                 cmb_Unit1.SelectedIndex = 0;
             }
-            DataTable dt_Units2 = this.cntrl.fill_unit();
+            DataTable dt_Units2 = this.cntrl.fill_unit(); 
             if (dt_Units2.Rows.Count > 0)
             {
-                cmb_unit2.DataSource = dt_Units2;
                 cmb_unit2.DisplayMember = "Name";
                 cmb_unit2.ValueMember = "id";
+                cmb_unit2.DataSource = dt_Units2;
                 cmb_unit2.SelectedIndex = 0;
             }
             DataTable dt1 = this.cntrl.fill_unit();
-            cmbstrength.DataSource = dt1;
             cmbstrength.DisplayMember = "name";
             cmbstrength.ValueMember = "id";
+            cmbstrength.DataSource = dt1;
             DataTable dt2 = this.cntrl.fill_drugtype();
-            cmbdrugtype.DataSource = dt2;
             cmbdrugtype.DisplayMember = "dr_type";
             cmbdrugtype.ValueMember = "id";
+            cmbdrugtype.DataSource = dt2;
         }
         public void inVisible_Controls()
         {
@@ -351,9 +354,9 @@ namespace PappyjoeMVC.View
             DataTable dt_Category = this.cntrl.fill_category();
             if (dt_Category.Rows.Count > 0)
             {
-                Cmb_Category.DataSource = dt_Category;
                 Cmb_Category.DisplayMember = "Name";
                 Cmb_Category.ValueMember = "id";
+                Cmb_Category.DataSource = dt_Category;
                 Cmb_Category.SelectedIndex = 0;
             }
         }
@@ -914,7 +917,7 @@ namespace PappyjoeMVC.View
                             this.cntrl.update_inventryid(Item_Id.ToString());
                         }
 
-                        MessageBox.Show("Item updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }

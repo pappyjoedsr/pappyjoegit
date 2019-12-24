@@ -30,7 +30,7 @@ namespace PappyjoeMVC.View
                 {
                     Gridpatient.Rows.Add();
                     Gridpatient.Rows[row].Cells["colid"].Value = dr["Pid"].ToString();
-                    Gridpatient.Rows[row].Cells["collId"].Value = dr["Patient Id"].ToString();
+                    Gridpatient.Rows[row].Cells["collId"].Value = dr["Id"].ToString();
                     Gridpatient.Rows[row].Cells["colName"].Value = dr["Patient Name"].ToString();
                     Gridpatient.Rows[row].Cells["colgender"].Value = dr["Gender"].ToString();
                     Gridpatient.Rows[row].Cells["colAge"].Value = dr["Age"].ToString();
@@ -124,6 +124,7 @@ namespace PappyjoeMVC.View
                 Print_Label_Print objfrmPrint = new Print_Label_Print();
                 objfrmPrint.dt_Load = dt_Return;
                 objfrmPrint.ShowDialog();
+                objfrmPrint.Dispose();
             }
             else
             {
@@ -151,7 +152,7 @@ namespace PappyjoeMVC.View
                 {
                     Gridpatient.Rows.Add();
                     Gridpatient.Rows[row].Cells["colid"].Value = dr["Pid"].ToString();
-                    Gridpatient.Rows[row].Cells["collId"].Value = dr["Patient Id"].ToString();
+                    Gridpatient.Rows[row].Cells["collId"].Value = dr["Id"].ToString();
                     Gridpatient.Rows[row].Cells["colName"].Value = dr["Patient Name"].ToString();
                     Gridpatient.Rows[row].Cells["colgender"].Value = dr["Gender"].ToString();
                     Gridpatient.Rows[row].Cells["colAge"].Value = dr["Age"].ToString();

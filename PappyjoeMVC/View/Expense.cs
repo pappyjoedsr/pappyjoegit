@@ -2,13 +2,17 @@
 using System;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
     public partial class Expense : Form
     {
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        public DateTime Date { get; set; }
         Expense_controller cntrl = new Expense_controller();
         public string doctor_id = "";
         public int Incom_ID = 0;
@@ -27,6 +31,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new New_Credit_Account();
             form2.ShowDialog();
+            form2.Dispose();
         }
         public void btn_normal()
         {
@@ -42,7 +47,7 @@ namespace PappyjoeMVC.View
             btn_normal();
             panel6.Hide();
             panel1.Show();
-            Lab_reports.BackColor = Color.DodgerBlue;
+            Lab_reports.BackColor = Color.DodgerBlue; 
             Lab_reports.ForeColor = Color.White;
         }
 
@@ -54,7 +59,8 @@ namespace PappyjoeMVC.View
                 panel1.Hide();
                 panel6.Show();
                 grp_Debit.Visible = true;
-                grp_Debit.Width = 1070;
+                grp_Debit.Width = 1060;
+                grp_Debit.Location = new Point(10, 10);
                 grpb_Credit.Visible = false;
                 Lab_Debits.BackColor = Color.DodgerBlue;
                 Lab_Debits.ForeColor = Color.White;
@@ -70,11 +76,12 @@ namespace PappyjoeMVC.View
         {
             try
             {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB"); //dd/MM/yyyy
                 btn_normal();
                 panel6.Show();
                 grp_Debit.Visible = false;
                 grpb_Credit.Visible = true;
-                grpb_Credit.Width = 1070;
+                grpb_Credit.Width = 1060;
                 grpb_Credit.Location = new Point(10, 10);
                 panel1.Hide();
                 lab_Credits.BackColor = Color.DodgerBlue;
@@ -102,7 +109,7 @@ namespace PappyjoeMVC.View
             {
                 dgv_credit.RowCount = 0;
                 int row = 0;
-                dgv_credit.Width = 1050;
+                dgv_credit.Width = 1047;
                 dgv_credit.Height = 330;
                 foreach (DataRow dr in dtb.Rows)
                 {
@@ -112,7 +119,7 @@ namespace PappyjoeMVC.View
                     dgv_credit.Rows[row].Cells["col_amount"].Value = Convert.ToDecimal(dr["amountincome"].ToString()).ToString("#0.00");
                     dgv_credit.Rows[row].Cells["col_ledger"].Value = dr["nameofperson"].ToString();
                     dgv_credit.Rows[row].Cells["col_name"].Value = dr["expense_type"].ToString();
-                    dgv_credit.Rows[row].Cells["col_date"].Value = Convert.ToDateTime(dr["date"].ToString()).ToString("dd/MM/yyyy");
+                    dgv_credit.Rows[row].Cells["col_date"].Value = dr["date"].ToString();
                     row++;
                 }
                 AddSLNO();
@@ -198,9 +205,9 @@ namespace PappyjoeMVC.View
             try
             {
                 DataTable dtb = this.cntrl.load_accountname();
-                comboBoxincomacc.DataSource = dtb;
-                comboBoxincomacc.DisplayMember = "name";
                 comboBoxincomacc.ValueMember = "id";
+                comboBoxincomacc.DisplayMember = "name";
+                comboBoxincomacc.DataSource = dtb;
                 Check_Value1 = 1;
             }
             catch (Exception ex)
@@ -227,7 +234,8 @@ namespace PappyjoeMVC.View
                                 txtamountincome.Text = dgv_credit.Rows[rw].Cells["col_amount"].Value.ToString();
                                 textBoxnameofincome.Text = dgv_credit.Rows[rw].Cells["col_ledger"].Value.ToString();
                                 textBoxdescincome.Text = dgv_credit.Rows[rw].Cells["col_descrptn"].Value.ToString();
-                                dateTimePickerincome.Value = Convert.ToDateTime(dgv_credit.Rows[rw].Cells["col_date"].Value.ToString());
+                                DateTime dt =  Convert.ToDateTime( dgv_credit.Rows[rw].Cells["col_date"].Value.ToString());
+                                dateTimePickerincome.Text =dt.ToString();
                                 btn_Creditcancel.Visible = true;
                                 btnincomesubmit.Text = "Update";
                             }
@@ -267,6 +275,7 @@ namespace PappyjoeMVC.View
         {
             var form2 = new New_Debit_Account();
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void comboaccountname_Click(object sender, EventArgs e)
@@ -274,9 +283,9 @@ namespace PappyjoeMVC.View
             try
             {
                 DataTable dt1 = this.cntrl.debit_accountname();
-                comboaccountname.DataSource = dt1;
                 comboaccountname.DisplayMember = "name";
                 comboaccountname.ValueMember = "id";
+                comboaccountname.DataSource = dt1;
                 Check_Value = 1;
             }
             catch (Exception ex)
@@ -425,9 +434,9 @@ namespace PappyjoeMVC.View
             try
             {
                 DataTable dt1 = this.cntrl.Bindcomboincome();
-                comboBoxincomacc.DataSource = dt1;
                 comboBoxincomacc.DisplayMember = "name";
                 comboBoxincomacc.ValueMember = "id";
+                comboBoxincomacc.DataSource = dt1;
                 Check_Value1 = 1;
                 DataTable dtb = this.cntrl.expense_search4(dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
             }
@@ -441,9 +450,9 @@ namespace PappyjoeMVC.View
             try
             {
                 DataTable dt1 = this.cntrl.databindcombo();
-                comboaccountname.DataSource = dt1;
                 comboaccountname.DisplayMember = "name";
                 comboaccountname.ValueMember = "id";
+                comboaccountname.DataSource = dt1;
                 Check_Value = 1;
                 this.cntrl.expense_search4(dateTimeEntrydate.Value.ToString("yyyy-MM-dd"), dateTimePickertodate.Value.ToString("yyyy-MM-dd"));
             }
@@ -457,9 +466,9 @@ namespace PappyjoeMVC.View
             try
             {
                 DataTable dt1 = this.cntrl.databindcombo2();
-                comboSearch.DataSource = dt1;
                 comboSearch.DisplayMember = "name";
                 comboSearch.ValueMember = "id";
+                comboSearch.DataSource = dt1;
             }
             catch (Exception ex)
             {
@@ -473,7 +482,7 @@ namespace PappyjoeMVC.View
             {
                 Dgv_Debit.RowCount = 0;
                 int row = 0;
-                Dgv_Debit.Width = 1050;
+                Dgv_Debit.Width = 1047;
                 Dgv_Debit.Height = 330;
                 foreach (DataRow dr in dtb.Rows)
                 {
@@ -483,7 +492,7 @@ namespace PappyjoeMVC.View
                     Dgv_Debit.Rows[row].Cells["colAmount"].Value = Convert.ToDecimal(dr["amount"].ToString()).ToString("#0.00");
                     Dgv_Debit.Rows[row].Cells["colLedgr"].Value = dr["nameofperson"].ToString();
                     Dgv_Debit.Rows[row].Cells["colName"].Value = dr["expense_type"].ToString();
-                    Dgv_Debit.Rows[row].Cells["colDate"].Value = Convert.ToDateTime(dr["date"].ToString()).ToString("dd/MM/yyyy");
+                    Dgv_Debit.Rows[row].Cells["colDate"].Value = dr["date"].ToString();
                     row++;
                 }
                 PutSLNO();
@@ -540,8 +549,8 @@ namespace PappyjoeMVC.View
                                 textperson.Text = Dgv_Debit.Rows[rw].Cells["colLedgr"].Value.ToString();
                                 textBox_add_template.Text = Dgv_Debit.Rows[rw].Cells["colDescrpt"].Value.ToString();
                                 DateTime dt;
-                                dt = Convert.ToDateTime(Dgv_Debit.Rows[rw].Cells["colDate"].Value.ToString());
-                                dateTimePickerdate.Value = dt;
+                                dt = Convert.ToDateTime( Dgv_Debit.Rows[rw].Cells["colDate"].Value.ToString());
+                                dateTimePickerdate.Text= dt.ToString("dd/MM/yyyy");
                                 btnsubmit.Text = "Update";
                                 btn_DebitCancel.Visible = true;
                                 Lnk_AddNew.Visible = false;
@@ -599,9 +608,9 @@ namespace PappyjoeMVC.View
                     if (radio_income.Checked == true)
                     {
                         DataTable dt1 = this.cntrl.check_type_creditselect();
-                        comboSearch.DataSource = dt1;
                         comboSearch.DisplayMember = "name";
                         comboSearch.ValueMember = "id";
+                        comboSearch.DataSource = dt1;
                         exp_Type = "Income";
                     }
                 }
@@ -610,9 +619,9 @@ namespace PappyjoeMVC.View
                     radio_income.Enabled = false;
                     radio_expense.Enabled = false;
                     DataTable dt1 = this.cntrl.check_type_exp2();
-                    comboSearch.DataSource = dt1;
                     comboSearch.DisplayMember = "name";
                     comboSearch.ValueMember = "id";
+                    comboSearch.DataSource = dt1;
                 }
             }
             catch (Exception ex)
@@ -640,17 +649,17 @@ namespace PappyjoeMVC.View
                 if (radio_expense.Checked == true)
                 {
                     DataTable dt1 = this.cntrl.expense_checked();
-                    comboSearch.DataSource = dt1;
                     comboSearch.DisplayMember = "name";
                     comboSearch.ValueMember = "id";
+                    comboSearch.DataSource = dt1;
                     exp_Type = "Expense";
                 }
                 else
                 {
                     DataTable dt1 = this.cntrl.expense_checked();
-                    comboSearch.DataSource = dt1;
                     comboSearch.DisplayMember = "name";
                     comboSearch.ValueMember = "id";
+                    comboSearch.DataSource = dt1;
                     exp_Type = " ";
                 }
             }
@@ -667,17 +676,17 @@ namespace PappyjoeMVC.View
                 if (radio_income.Checked == true)
                 {
                     DataTable dt1 = this.cntrl.check_type_creditselect();
-                    comboSearch.DataSource = dt1;
                     comboSearch.DisplayMember = "name";
                     comboSearch.ValueMember = "id";
+                    comboSearch.DataSource = dt1;
                     exp_Type = "Income";
                 }
                 else
                 {
                     DataTable dt1 = this.cntrl.expense_checked();
-                    comboSearch.DataSource = dt1;
                     comboSearch.DisplayMember = "name";
                     comboSearch.ValueMember = "id";
+                    comboSearch.DataSource = dt1;
                     exp_Type = " ";
                 }
             }
@@ -1115,6 +1124,12 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private class DisplayFormatAttribute : Attribute
+        {
+            public bool ApplyFormatInEditMode { get; set; }
+            public string DataFormatString { get; set; }
         }
     }
 }

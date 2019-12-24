@@ -60,9 +60,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemData)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnShow
@@ -71,7 +73,7 @@
             this.BtnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnShow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.BtnShow.ForeColor = System.Drawing.Color.White;
-            this.BtnShow.Location = new System.Drawing.Point(505, 53);
+            this.BtnShow.Location = new System.Drawing.Point(505, 8);
             this.BtnShow.Name = "BtnShow";
             this.BtnShow.Size = new System.Drawing.Size(67, 28);
             this.BtnShow.TabIndex = 301;
@@ -86,7 +88,7 @@
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(741, 51);
+            this.btn_Refresh.Location = new System.Drawing.Point(741, 6);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(74, 30);
             this.btn_Refresh.TabIndex = 298;
@@ -100,7 +102,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
-            this.panel2.Location = new System.Drawing.Point(-1, 40);
+            this.panel2.Location = new System.Drawing.Point(0, 43);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(916, 1);
             this.panel2.TabIndex = 280;
@@ -111,7 +113,7 @@
             this.btnPurchase.BackColor = System.Drawing.Color.LimeGreen;
             this.btnPurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPurchase.ForeColor = System.Drawing.Color.White;
-            this.btnPurchase.Location = new System.Drawing.Point(816, 51);
+            this.btnPurchase.Location = new System.Drawing.Point(816, 6);
             this.btnPurchase.Name = "btnPurchase";
             this.btnPurchase.Size = new System.Drawing.Size(75, 30);
             this.btnPurchase.TabIndex = 279;
@@ -125,7 +127,7 @@
             this.BtnClose.BackColor = System.Drawing.Color.Tomato;
             this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClose.ForeColor = System.Drawing.Color.White;
-            this.BtnClose.Location = new System.Drawing.Point(738, 6);
+            this.BtnClose.Location = new System.Drawing.Point(761, 2);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(75, 30);
             this.BtnClose.TabIndex = 278;
@@ -140,7 +142,7 @@
             this.BtnOk.BackColor = System.Drawing.Color.LimeGreen;
             this.BtnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnOk.ForeColor = System.Drawing.Color.White;
-            this.BtnOk.Location = new System.Drawing.Point(814, 6);
+            this.BtnOk.Location = new System.Drawing.Point(837, 2);
             this.BtnOk.Name = "BtnOk";
             this.BtnOk.Size = new System.Drawing.Size(75, 30);
             this.BtnOk.TabIndex = 277;
@@ -155,22 +157,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.Lab_Msg);
             this.panel3.Controls.Add(this.dgvItemData);
-            this.panel3.Location = new System.Drawing.Point(0, 93);
+            this.panel3.Location = new System.Drawing.Point(0, 92);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(889, 471);
+            this.panel3.Size = new System.Drawing.Size(915, 471);
             this.panel3.TabIndex = 275;
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(142, 212);
+            this.Lab_Msg.Location = new System.Drawing.Point(155, 212);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(561, 25);
             this.Lab_Msg.TabIndex = 279;
             this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // dgvItemData
@@ -223,7 +226,7 @@
             this.dgvItemData.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvItemData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvItemData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItemData.Size = new System.Drawing.Size(889, 471);
+            this.dgvItemData.Size = new System.Drawing.Size(915, 471);
             this.dgvItemData.TabIndex = 271;
             this.dgvItemData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemData_CellClick);
             this.dgvItemData.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvItemData_CellMouseDoubleClick);
@@ -312,7 +315,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(270, 59);
+            this.label3.Location = new System.Drawing.Point(270, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 17);
             this.label3.TabIndex = 276;
@@ -323,7 +326,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(10, 59);
+            this.label2.Location = new System.Drawing.Point(10, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 17);
             this.label2.TabIndex = 275;
@@ -331,14 +334,14 @@
             // 
             // dtpFrom
             // 
-            this.dtpFrom.Location = new System.Drawing.Point(56, 57);
+            this.dtpFrom.Location = new System.Drawing.Point(56, 12);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(196, 20);
             this.dtpFrom.TabIndex = 273;
             // 
             // dtpTo
             // 
-            this.dtpTo.Location = new System.Drawing.Point(299, 57);
+            this.dtpTo.Location = new System.Drawing.Point(299, 12);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(200, 20);
             this.dtpTo.TabIndex = 274;
@@ -354,7 +357,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(7, 7);
+            this.label1.Location = new System.Drawing.Point(4, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 21);
             this.label1.TabIndex = 272;
@@ -372,19 +375,25 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.BtnShow);
             this.panel1.Controls.Add(this.btn_Refresh);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnPurchase);
-            this.panel1.Controls.Add(this.BtnClose);
-            this.panel1.Controls.Add(this.BtnOk);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dtpTo);
             this.panel1.Controls.Add(this.dtpFrom);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 47);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 92);
+            this.panel1.Size = new System.Drawing.Size(915, 44);
             this.panel1.TabIndex = 274;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.BtnOk);
+            this.panel5.Controls.Add(this.BtnClose);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Location = new System.Drawing.Point(2, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(915, 35);
+            this.panel5.TabIndex = 281;
             // 
             // Purchase_order_list
             // 
@@ -392,7 +401,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(915, 564);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -400,10 +411,11 @@
             this.Text = "Purchase Order List";
             this.Load += new System.EventHandler(this.Purchase_order_list_Load);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemData)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -435,5 +447,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn purId;
         private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn del;
+        private System.Windows.Forms.Panel panel5;
     }
 }

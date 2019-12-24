@@ -60,8 +60,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripBAttachment = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBAttachment = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
@@ -81,7 +82,6 @@
             this.linkLabel_Name = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelallpatient = new System.Windows.Forms.Label();
-            this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.btn_Close = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
             this.label41 = new System.Windows.Forms.Label();
@@ -89,7 +89,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabel_id = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
+            this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.panel6.SuspendLayout();
             this.label26.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -482,6 +482,18 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
             // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton2.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
+            this.toolStripButton2.Text = "Calendar";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
             // toolStripBAttachment
             // 
             this.toolStripBAttachment.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -494,17 +506,17 @@
             this.toolStripBAttachment.Text = "Fast Track";
             this.toolStripBAttachment.Visible = false;
             // 
-            // toolStripButton2
+            // toolStripButton13
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton2.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(65, 37);
-            this.toolStripButton2.Text = "Calendar";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.toolStripButton13.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
+            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton13.Name = "toolStripButton13";
+            this.toolStripButton13.Size = new System.Drawing.Size(89, 37);
+            this.toolStripButton13.Text = "Consultation";
+            this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
             // 
             // toolStripButton3
             // 
@@ -722,21 +734,6 @@
             this.labelallpatient.Visible = false;
             this.labelallpatient.Click += new System.EventHandler(this.labelallpatient_Click);
             // 
-            // listpatientsearch
-            // 
-            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.listpatientsearch.FormattingEnabled = true;
-            this.listpatientsearch.ItemHeight = 20;
-            this.listpatientsearch.Location = new System.Drawing.Point(1015, 40);
-            this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
-            this.listpatientsearch.TabIndex = 295;
-            this.listpatientsearch.Visible = false;
-            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
-            // 
             // btn_Close
             // 
             this.btn_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -823,17 +820,19 @@
             this.pictureBox1.TabIndex = 72;
             this.pictureBox1.TabStop = false;
             // 
-            // toolStripButton13
+            // listpatientsearch
             // 
-            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.toolStripButton13.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
-            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton13.Name = "toolStripButton13";
-            this.toolStripButton13.Size = new System.Drawing.Size(89, 37);
-            this.toolStripButton13.Text = "Consultation";
-            this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
+            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.listpatientsearch.FormattingEnabled = true;
+            this.listpatientsearch.ItemHeight = 20;
+            this.listpatientsearch.Location = new System.Drawing.Point(993, 40);
+            this.listpatientsearch.Name = "listpatientsearch";
+            this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
+            this.listpatientsearch.TabIndex = 312;
+            this.listpatientsearch.Visible = false;
+            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick_1);
             // 
             // Add_Appointment
             // 
@@ -843,7 +842,6 @@
             this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Close);
@@ -851,6 +849,7 @@
             this.Controls.Add(this.label41);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel5);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_Appointment";
@@ -927,7 +926,6 @@
         private System.Windows.Forms.LinkLabel linkLabel_Name;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelallpatient;
-        private System.Windows.Forms.ListBox listpatientsearch;
         private System.Windows.Forms.Button btn_Close;
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.Label label41;
@@ -937,5 +935,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.ListBox listpatientsearch;
     }
 }

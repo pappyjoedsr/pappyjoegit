@@ -62,6 +62,8 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
+                        int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Visible = true;
                     }
                 }
@@ -70,9 +72,7 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
-
         private void frmPurchaseList_Load(object sender, EventArgs e)
         {
             try
@@ -117,7 +117,6 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void rad_Cash_CheckedChanged(object sender, EventArgs e)
         {
             if (rad_Cash.Checked == true)
@@ -133,7 +132,6 @@ namespace PappyjoeMVC.View
             }
             load();
         }
-
         private void rad_Credit_CheckedChanged(object sender, EventArgs e)
         {
             if (rad_Credit.Checked == true)
@@ -163,7 +161,6 @@ namespace PappyjoeMVC.View
             var form2 = new PappyjoeMVC.View.Purchase(data_from_Pur_Master, data_from_purchase);
             form2.ShowDialog();
         }
-
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             load();
@@ -175,7 +172,6 @@ namespace PappyjoeMVC.View
             PappyjoeMVC.Model.Connection.MyGlobals.Date_To = DTP_To.Value.ToString("yyyy-MM-dd");
             load();
         }
-
         private void btnexport_Click(object sender, EventArgs e)
         {
             string PathName = "";
@@ -474,7 +470,23 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Visible = true;
+                }
+            }
+        }
+        private void dgv_Purchase_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                PappyjoeMVC.Model.Connection.MyGlobals.global_Flag = true;
+                if (dgv_Purchase.CurrentCell.OwningColumn.Name == "colmore")
+                {
+                    DataTable data_from_Pur_Master=this.cntrl.data_from_Pur_Master(dgv_Purchase.CurrentRow.Cells["colPurNum"].Value);
+                    DataTable data_from_purchase = this.cntrl.data_from_purchase(dgv_Purchase.CurrentRow.Cells["colPurNum"].Value.ToString());
+                    var form2 = new Purchase(data_from_Pur_Master, data_from_purchase);
+                    form2.ShowDialog();
                 }
             }
         }

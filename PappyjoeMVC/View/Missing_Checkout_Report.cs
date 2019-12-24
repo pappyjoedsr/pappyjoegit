@@ -72,6 +72,8 @@ namespace PappyjoeMVC.View
                     else
                     {
                         label2.Text = "0";
+                        int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Show();
                     }
                 }
@@ -88,6 +90,8 @@ namespace PappyjoeMVC.View
                     else
                     {
                         label2.Text = "0";
+                        int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Show();
                     }
                 }
@@ -145,19 +149,20 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<col >");
                     sWrite.WriteLine("<tr>");
                     if (cmbCondition.Text == "Checked Out")
-                        sWrite.WriteLine("<td colspan=7 align=center><FONT COLOR=black FACE='Segoe UI' SIZE=4 > <b>PATIENT CHECK OUT REPORT" + "  </b> </font></center></td>");
+                        sWrite.WriteLine("<td colspan=7 align=center><FONT COLOR=black FACE='Segoe UI' SIZE=5> <b>PATIENT CHECK OUT REPORT" + "  </b> </font></center></td>");
                     else
-                        sWrite.WriteLine("<td colspan=7 align=center><FONT COLOR=black FACE='Segoe UI' SIZE=4 > <b> PATIENT CHECK OUT REPORT " + "  </b> </font></center></td>");
+                        sWrite.WriteLine("<td colspan=7 align=center><FONT COLOR=black FACE='Segoe UI' SIZE=5> <b> PATIENT CHECK OUT REPORT " + "  </b> </font></center></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=7 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=3> <b> " + strclinicname + "</b> </font></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td colspan=7 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  <b> " + strStreet + "</b> </font></center></td>");
+                    sWrite.WriteLine("<td colspan=7 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b> " + strStreet + "</b> </font></center></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td colspan=7 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  <b> " + strphone + "</b> </font></center></td>");
+                    sWrite.WriteLine("<td colspan=7 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b> " + strphone + "</b> </font></center></td>");
                     sWrite.WriteLine("</tr>");
+                    sWrite.WriteLine("<tr><td colspan=7><hr></td></tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=7 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  " + "<b> From:</b>" + dateTimePickerdailyappointcount1.Value.ToString("dd/MM/yyyy") + "</font></center></td>");
                     sWrite.WriteLine("</tr>");
@@ -171,24 +176,24 @@ namespace PappyjoeMVC.View
                     if (dgvMissingCheckout.Rows.Count > 0)
                     {
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("    <td align='center' width='54' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=2 > <b>Sl.</b></font></th>");
-                        sWrite.WriteLine("    <td align='center' width='81' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=2 ><b>Patient Id</b></font></th>");
-                        sWrite.WriteLine("    <td align='center' width='271' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>Patient Name</b></font></th>");
-                        sWrite.WriteLine("    <td align='center' width='106' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>Booked Date</b></font></th>");
-                        sWrite.WriteLine("    <td align='center' width='113' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b> Appointment Date</b></font></th>");
-                        sWrite.WriteLine("    <td align='center' width='78' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b> Duration</b></font></th>");
-                        sWrite.WriteLine("    <td align='center' width='165' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b> Booked By</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='55' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >&nbsp; <b>Sl.</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='137'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >&nbsp;<b>Patient Id</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='150'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b>Patient Name</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='118'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b>Booked Date</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='150'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Appointment Date</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='140'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Duration</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='140'style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Booked By</b></font></th>");
                         sWrite.WriteLine("</tr>");
                         while (c < dgvMissingCheckout.Rows.Count)
                         {
                             sWrite.WriteLine("<tr>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + k + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgvMissingCheckout.Rows[c].Cells["patient_id"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgvMissingCheckout.Rows[c].Cells["pt_name"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + dgvMissingCheckout.Rows[c].Cells["book_datetime"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + dgvMissingCheckout.Rows[c].Cells["start_datetime"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='center' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + dgvMissingCheckout.Rows[c].Cells["duration"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + dgvMissingCheckout.Rows[c].Cells["booked_by"].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + k + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dgvMissingCheckout.Rows[c].Cells["patient_id"].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dgvMissingCheckout.Rows[c].Cells["pt_name"].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; " + dgvMissingCheckout.Rows[c].Cells["book_datetime"].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; " + dgvMissingCheckout.Rows[c].Cells["start_datetime"].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; " + dgvMissingCheckout.Rows[c].Cells["duration"].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; " + dgvMissingCheckout.Rows[c].Cells["booked_by"].Value.ToString() + "</font></th>");
                             sWrite.WriteLine("</tr>");
                             k = k + 1;
                             c++;
@@ -198,7 +203,7 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("</tr>");
                     }
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td align=right colspan=6><FONT COLOR=black FACE='Geneva, segoe UI' SIZE=3 ><br><br><b> </b>&nbsp;&nbsp;  </font> </td> ");
+                    sWrite.WriteLine("<td align=right colspan=6><FONT COLOR=black FACE='Geneva, segoe UI' SIZE=3 ><br><br><b> </b>&nbsp;&nbsp;</font> </td> ");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("</table>");
                     sWrite.WriteLine("</div>");
@@ -364,6 +369,8 @@ namespace PappyjoeMVC.View
                     }
                     if (dgvMissingCheckout.Rows.Count < 1)
                     {
+                        int x = (panel3.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Show();
                     }
                     else

@@ -23,230 +23,6 @@ namespace PappyjoeMVC.View
         bool purchOrder_flag = false;
         bool flag_save = false;
         bool flagcheck = false;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public string form_name;
         public static int freeQty;
         bool Pur_List_flag = false;
@@ -289,12 +65,6 @@ namespace PappyjoeMVC.View
             data_from_purchase1 = data_from_purchase;
             Pur_List_flag = true;
         }
-
-        public void setcontroller(purchase_controller controller)
-        {
-            cntrl = controller;
-        }
-
         private void Btn_itemCode_Click(object sender, EventArgs e)
         {
             try
@@ -403,19 +173,19 @@ namespace PappyjoeMVC.View
                             {
                                 int qty = int.Parse(txt_qty.Text);
                                 decimal unitcost = Convert.ToDecimal(txtUnitCost.Text) / UnitMf;
-                                if (txtGst.Text != "0.0")
+                                if (txtGst.Text != "0")
                                 {
                                     gstamt = (((unitcost * qty) * gst) / 100) + (unitcost * qty);
                                     txtAmount.Text = gstamt.ToString("##.00");
                                     txtUnitCost.Text = unitcost.ToString("##.00");
                                 }
-                                else if (txtIgst.Text != "0.0")
+                                else if (txtIgst.Text != "0")
                                 {
                                     gstamt = (((unitcost * qty) * igst) / 100) + (unitcost * qty);
                                     txtAmount.Text = gstamt.ToString("##.00");
                                     txtUnitCost.Text = unitcost.ToString("##.00");
                                 }
-                                else if (txtGst.Text == "0.0" && txtIgst.Text == "0.0")
+                                else if (txtGst.Text == "0" && txtIgst.Text == "0")
                                 {
                                     txtUnitCost.Text = unitcost.ToString("##.00");
                                     amtUntchange = unitcost * qty;
@@ -429,19 +199,19 @@ namespace PappyjoeMVC.View
                                 unit = cmbUnit.Text;
                                 int qty = int.Parse(txt_qty.Text);
                                 decimal unitcost = Convert.ToDecimal(txtUnitCost.Text) * UnitMf;
-                                if (txtGst.Text != "0.0")
+                                if (txtGst.Text != "0")
                                 {
                                     gstamt = (((unitcost * qty) * gst) / 100) + (unitcost * qty);
                                     txtAmount.Text = gstamt.ToString("##.00");
                                     txtUnitCost.Text = unitcost.ToString("##.00");
                                 }
-                                else if (txtIgst.Text != "0.0")
+                                else if (txtIgst.Text != "0")
                                 {
                                     gstamt = (((unitcost * qty) * igst) / 100) + (unitcost * qty);
                                     txtAmount.Text = gstamt.ToString("##.00");
                                     txtUnitCost.Text = unitcost.ToString("##.00");
                                 }
-                                else if (txtGst.Text == "0.0" && txtIgst.Text == "0.0")
+                                else if (txtGst.Text == "0" && txtIgst.Text == "0")
                                 {
                                     txtUnitCost.Text = unitcost.ToString("##.00");
                                     amtUntchange = unitcost * qty;
@@ -471,7 +241,7 @@ namespace PappyjoeMVC.View
             {
                 e.Handled = true;
             }
-            if (txtGst.Text != "0.0")
+            if (txtGst.Text != "0")
             {
                 string a = txtGst.Text;
                 string b = a.TrimStart('0');
@@ -481,7 +251,7 @@ namespace PappyjoeMVC.View
 
         private void txtGst_Click(object sender, EventArgs e)
         {
-            if (txtGst.Text == "0.0")
+            if (txtGst.Text == "0")
             {
                 txtGst.Text = "";
             }
@@ -491,7 +261,7 @@ namespace PappyjoeMVC.View
         {
             if (txtGst.Text == "" || txtGst.Text == ".")
             {
-                txtGst.Text = "0.0";
+                txtGst.Text = "0";
             }
         }
 
@@ -499,11 +269,11 @@ namespace PappyjoeMVC.View
         {
             if (txtGst.Text == "")
             {
-                txtGst.Text = "0.0";
+                txtGst.Text = "0";
             }
             else if (Convert.ToDecimal(txtGst.Text) > 0)
             {
-                txtIgst.Text = "0.0";
+                txtIgst.Text = "0";
             }
         }
 
@@ -515,7 +285,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                if (txtGst.Text.Trim() != "" && txtIgst.Text.Trim() != "" && txtGst.Text != "." && txtIgst.Text != ".")//aswini
+                if (txtGst.Text.Trim() != "" && txtIgst.Text.Trim() != "" && txtGst.Text != "." && txtIgst.Text != ".")
                 {
                     if (txt_qty.Text != "" && txtUnitCost.Text != "")
                     {
@@ -555,7 +325,7 @@ namespace PappyjoeMVC.View
 
         private void txtIgst_Click(object sender, EventArgs e)
         {
-            if (txtIgst.Text == "0.0")
+            if (txtIgst.Text == "0")
             {
                 txtIgst.Text = "";
             }
@@ -572,7 +342,7 @@ namespace PappyjoeMVC.View
             {
                 e.Handled = true;
             }
-            if (txtIgst.Text != "0.0")
+            if (txtIgst.Text != "0")
             {
                 string a = txtIgst.Text;
                 string b = a.TrimStart('0');
@@ -584,7 +354,7 @@ namespace PappyjoeMVC.View
         {
             if (txtIgst.Text == "" || txtIgst.Text == ".")
             {
-                txtIgst.Text = "0.0";
+                txtIgst.Text = "0";
             }
         }
 
@@ -592,11 +362,11 @@ namespace PappyjoeMVC.View
         {
             if (txtIgst.Text == "")
             {
-                txtIgst.Text = "0.0";
+                txtIgst.Text = "0";
             }
             else if (Convert.ToDecimal(txtIgst.Text) > 0)
             {
-                txtGst.Text = "0.0";
+                txtGst.Text = "0";
             }
         }
 
@@ -704,9 +474,9 @@ namespace PappyjoeMVC.View
 
         public void Load_Suplier(DataTable dt)
         {
-            lstbox_Supplier.DataSource = dt;
             lstbox_Supplier.DisplayMember = "Supplier_Name";
             lstbox_Supplier.ValueMember = "Supplier_Code";
+            lstbox_Supplier.DataSource = dt;
             lstbox_Supplier.Show();
         }
 
@@ -885,11 +655,9 @@ namespace PappyjoeMVC.View
                             if (dgvItemData.Rows.Count == 1)
                             {
                                 dgvGridData.Rows.Clear(); fill_Updategrid();
-                                //dgvGridData.Rows.Add(Item_id, dt_forBatch.Rows[0]["Branch_No"].ToString(), cmbUnit.Text, txt_qty.Text, dt_forBatch.Rows[0]["Prd_Date"].ToString(), dt_forBatch.Rows[0]["Exp_Date"].ToString(), dt_forBatch.Rows[0]["prd"].ToString());
                             }
                             else
                             {
-                                //dgvGridData.Rows.Add(Item_id, dt_forBatch.Rows[0]["Branch_No"].ToString(), cmbUnit.Text, txt_qty.Text, dt_forBatch.Rows[0]["Prd_Date"].ToString(), dt_forBatch.Rows[0]["Exp_Date"].ToString(), dt_forBatch.Rows[0]["prd"].ToString());
                                 update_Grid(); fill_Updategrid();
                             }
                         }
@@ -1100,8 +868,8 @@ namespace PappyjoeMVC.View
             txt_free.Text = "0";
             txtUnitCost.Text = "0.0";
             txtAmount.Text = "0.00";
-            txtGst.Text = "0.0";
-            txtIgst.Text = "0.0";
+            txtGst.Text = "0";
+            txtIgst.Text = "0";
             cmbUnit.Text = "";
         }
 
@@ -1109,10 +877,8 @@ namespace PappyjoeMVC.View
         {
             txt_Itemcode.Clear();
             txtDescription.Clear();
-            txtGst.Text = "0.0";
-            txtIgst.Text = "0.0";
-            txtGst.Text = "0.0";
-            txtIgst.Text = "0.0";
+            txtGst.Text = "0";
+            txtIgst.Text = "0";
             txtPacking.Clear();
             txt_qty.Text = "0";
             txt_free.Clear();
@@ -1144,7 +910,6 @@ namespace PappyjoeMVC.View
                             {
                                 txt_Itemcode.Text = dgvItemData.Rows[Rowindex].Cells["itemid"].Value.ToString();
                                 txtDescription.Text = dgvItemData.Rows[Rowindex].Cells["description"].Value.ToString();
-                                //txtPacking.Text = dgvItemData.Rows[Rowindex].Cells["Packing"].Value.ToString();
                                 txt_qty.Text = dgvItemData.Rows[Rowindex].Cells["col_qty"].Value.ToString();
                                 txt_free.Text = dgvItemData.Rows[Rowindex].Cells["free"].Value.ToString();
                                 txtUnitCost.Text = dgvItemData.Rows[Rowindex].Cells["Unit_Cost"].Value.ToString();
@@ -1302,12 +1067,12 @@ namespace PappyjoeMVC.View
                 {
                     int newQty = 0;
                     int qty = 0;
-                    int mf = 0;
+                    int mf = 0;string expdate = "";
                     DataTable dtunit2 = new DataTable();
                     check();
                     if (flagcheck == true)
                     {
-                        if (txt_SupplierId.Text != "")
+                        if (txt_SupplierId.Text != "") 
                         {
                             string IsExpDate = "";
                             DataTable dt = new DataTable();
@@ -1348,10 +1113,12 @@ namespace PappyjoeMVC.View
                                     if (dgvGridData.Rows[l].Cells["Exp_Date"].Value.ToString() != "" && dgvGridData.Rows[l].Cells["Exp_Date"].Value.ToString() != null)
                                     {
                                         IsExpDate = "Yes";
+                                        expdate = Convert.ToDateTime(dgvGridData.Rows[l].Cells["Exp_Date"].Value.ToString()).ToString("yyyy-MM-dd");
                                     }
                                     else
                                     {
                                         IsExpDate = "NO";
+                                        expdate = "";
                                     }
                                     dt = this.cntrl.Get_unites(dgvGridData.Rows[l].Cells["tempItem_code"].Value.ToString());
                                     if (dt.Rows.Count > 0)
@@ -1382,7 +1149,7 @@ namespace PappyjoeMVC.View
                                     {
                                         newQty = Convert.ToInt32(dgvGridData.Rows[l].Cells["col_temp_qty"].Value.ToString());
                                     }
-                                    a = this.cntrl.save_batchNumber(dgvGridData.Rows[l].Cells["tempItem_code"].Value.ToString(), dgvGridData.Rows[l].Cells["Branch_No"].Value.ToString(), newQty, unit2Is, dt.Rows[0]["UnitMF"].ToString(), txtPurchInvNumber.Text, Convert.ToDateTime(dgvGridData.Rows[l].Cells["Prd_Date"].Value.ToString()).ToString("yyyy-MM-dd"),dgvGridData.Rows[l].Cells["Exp_Date"].Value.ToString(), dgvGridData.Rows[l].Cells["period"].Value.ToString(), txt_SupplierId.Text, dtpPurchDate.Value.ToString("yyyy-MM-dd"), IsExpDate);
+                                    a = this.cntrl.save_batchNumber(dgvGridData.Rows[l].Cells["tempItem_code"].Value.ToString(), dgvGridData.Rows[l].Cells["Branch_No"].Value.ToString(), newQty, unit2Is, dt.Rows[0]["UnitMF"].ToString(), txtPurchInvNumber.Text, Convert.ToDateTime(dgvGridData.Rows[l].Cells["Prd_Date"].Value.ToString()).ToString("yyyy-MM-dd"), expdate, dgvGridData.Rows[l].Cells["period"].Value.ToString(), txt_SupplierId.Text, dtpPurchDate.Value.ToString("yyyy-MM-dd"), IsExpDate);
                                     if (a > 0)
                                     {
                                         batch_entry = this.cntrl.get_maxEntryNo();
@@ -1405,7 +1172,7 @@ namespace PappyjoeMVC.View
                                                 tempqty = Convert.ToDecimal(dgvGridData.Rows[l].Cells["col_temp_qty"].Value.ToString());
                                             }
 
-                                            this.cntrl.save_batchpurchase(txtPurchInvNumber.Text, dtpPurchDate.Value.ToString("yyyy-MM-dd"), txt_SupplierId.Text, dgvGridData.Rows[l].Cells["tempItem_code"].Value.ToString(), dgvGridData.Rows[l].Cells["Branch_No"].Value.ToString(), tempqty, unit2Is, dt.Rows[0]["UnitMF"].ToString(), Convert.ToDateTime(dgvGridData.Rows[l].Cells["Prd_Date"].Value.ToString()).ToString("yyyy-MM-dd"),dgvGridData.Rows[l].Cells["Exp_Date"].Value.ToString(), IsExpDate, batch_entry.Rows[0][0].ToString());
+                                            this.cntrl.save_batchpurchase(txtPurchInvNumber.Text, dtpPurchDate.Value.ToString("yyyy-MM-dd"), txt_SupplierId.Text, dgvGridData.Rows[l].Cells["tempItem_code"].Value.ToString(), dgvGridData.Rows[l].Cells["Branch_No"].Value.ToString(), tempqty, unit2Is, dt.Rows[0]["UnitMF"].ToString(), Convert.ToDateTime(dgvGridData.Rows[l].Cells["Prd_Date"].Value.ToString()).ToString("yyyy-MM-dd"), expdate, IsExpDate, batch_entry.Rows[0][0].ToString());
                                         }
                                     }
                                 }
@@ -1435,8 +1202,8 @@ namespace PappyjoeMVC.View
                             txtTotalCost.Text = "0.00";
                             txtTotal_item.Text = "0";
                             txt_TotalAmount.Text = "0.00";
-                            txtCgst.Text = "0.00";
-                            txtSgst.Text = "0.00";
+                            txtCgst.Text = "0";
+                            txtSgst.Text = "0";
                             txtIgstResult.Text = "0.00";
                             txtSupplierName.Clear();
                             txt_SupplierId.Clear();
@@ -1477,15 +1244,12 @@ namespace PappyjoeMVC.View
                             value1 = Convert.ToDecimal(dtb_cost.Rows[0]["Sales_Rate"].ToString()) - Convert.ToDecimal(dtb_cost.Rows[0]["Purch_Rate"].ToString());
                             value2 = (value1 / Convert.ToDecimal(dtb_cost.Rows[0]["Purch_Rate"].ToString())) * 100;
                             percen_SalesRate = Convert.ToDecimal(value2).ToString("#0.00");
-                            ////SalesMin
                             value1 = Convert.ToDecimal(dtb_cost.Rows[0]["Sales_Rate_min"].ToString()) - Convert.ToDecimal(dtb_cost.Rows[0]["Purch_Rate"].ToString());
                             value2 = (value1 / Convert.ToDecimal(dtb_cost.Rows[0]["Purch_Rate"].ToString())) * 100;
                             percen_SalesMin = Convert.ToDecimal(value2).ToString("#0.00");
-                            ///Max
                             value1 = Convert.ToDecimal(dtb_cost.Rows[0]["Sales_Rate_Max"].ToString()) - Convert.ToDecimal(dtb_cost.Rows[0]["Purch_Rate"].ToString());
                             value2 = (value1 / Convert.ToDecimal(dtb_cost.Rows[0]["Purch_Rate"].ToString())) * 100;
                             percen_SalesMax = Convert.ToDecimal(value2).ToString("#0.00");
-                            ///////////
                             if (dtb_cost.Rows[0]["Unit1"].ToString() == dgvItemData.Rows[i].Cells["note"].Value.ToString())
                             {
                                 Sales1 = (Convert.ToDecimal(unitcost) * Convert.ToDecimal(percen_SalesRate)) / 100;
@@ -1495,15 +1259,12 @@ namespace PappyjoeMVC.View
                                 SalesMax = (Convert.ToDecimal(unitcost) * Convert.ToDecimal(percen_SalesMax)) / 100;
                                 SalesMax_ = Convert.ToDecimal(unitcost) + SalesMax;
                                 costbase1 = Convert.ToDecimal(dgvItemData.Rows[i].Cells["col_qty"].Value.ToString());
-                                ////unit2
                                 if (Convert.ToDecimal(dtb_cost.Rows[0]["UnitMF"].ToString()) > 0)
                                 {
                                     purchaserate2 = Convert.ToDecimal(unitcost) / Convert.ToDecimal(dtb_cost.Rows[0]["UnitMF"].ToString());
-                                    //unit2 percntage
                                     value1 = Convert.ToDecimal(dtb_cost.Rows[0]["Sales_Rate2"].ToString()) - Convert.ToDecimal(dtb_cost.Rows[0]["Purch_Rate2"].ToString());
                                     value2 = (value1 / Convert.ToDecimal(dtb_cost.Rows[0]["Purch_Rate2"].ToString())) * 100;
                                     percen_SalesRate1 = Convert.ToDecimal(value2).ToString("#0.00");
-                                    //Salesmin1
                                     value1 = Convert.ToDecimal(dtb_cost.Rows[0]["Sales_Rate_min2"].ToString()) - Convert.ToDecimal(dtb_cost.Rows[0]["Purch_Rate2"].ToString());
                                     value2 = (value1 / Convert.ToDecimal(dtb_cost.Rows[0]["Purch_Rate2"].ToString())) * 100;
                                     percen_SalesMin1 = Convert.ToDecimal(value2).ToString("#0.00");
@@ -1521,7 +1282,6 @@ namespace PappyjoeMVC.View
                             }
                             else if (dtb_cost.Rows[0]["Unit2"].ToString() == dgvItemData.Rows[i].Cells["note"].Value.ToString())
                             {
-                                //unit2 percentaege calculation
                                 value1 = Convert.ToDecimal(dtb_cost.Rows[0]["Sales_Rate2"].ToString()) - Convert.ToDecimal(dtb_cost.Rows[0]["Purch_Rate2"].ToString());
                                 value2 = (value1 / Convert.ToDecimal(dtb_cost.Rows[0]["Purch_Rate2"].ToString())) * 100;
                                 percen_SalesRate1 = Convert.ToDecimal(value2).ToString("#0.00");
@@ -1531,14 +1291,12 @@ namespace PappyjoeMVC.View
                                 value1 = Convert.ToDecimal(dtb_cost.Rows[0]["Sales_Rate_Max2"].ToString()) - Convert.ToDecimal(dtb_cost.Rows[0]["Purch_Rate2"].ToString());
                                 value2 = (value1 / Convert.ToDecimal(dtb_cost.Rows[0]["Purch_Rate2"].ToString())) * 100;
                                 percen_SalesMax1 = Convert.ToDecimal(value2).ToString("#0.00");
-                                //unit2
                                 Sales2 = (Convert.ToDecimal(unitcost) * Convert.ToDecimal(percen_SalesRate1)) / 100;
                                 Sales2_ = Convert.ToDecimal(unitcost) + Sales2;
                                 SalesMin1 = (Convert.ToDecimal(unitcost) * Convert.ToDecimal(percen_SalesMin1)) / 100;
                                 SalesMin1_ = Convert.ToDecimal(unitcost) + SalesMin1;
                                 SalesMax1 = (Convert.ToDecimal(unitcost) * Convert.ToDecimal(percen_SalesMax1)) / 100;
                                 SalesMax1_ = Convert.ToDecimal(unitcost) + SalesMax1;
-                                //unit1
                                 purchaserate2 = Convert.ToDecimal(unitcost) * Convert.ToDecimal(dtb_cost.Rows[0]["UnitMF"].ToString());
                                 Sales1 = (Convert.ToDecimal(purchaserate2) * Convert.ToDecimal(percen_SalesRate)) / 100;
                                 Sales1_ = Convert.ToDecimal(purchaserate2) + Sales1;
@@ -1551,9 +1309,7 @@ namespace PappyjoeMVC.View
                             }
                         }
                         else
-                        {
-
-                        }
+                        {}
                     }
                 }
             }
@@ -1596,7 +1352,6 @@ namespace PappyjoeMVC.View
                 txtPurchInvNumber.Text = incrValue.ToString();
             }
         }
-
         private void print()
         {
             string message = "Do you want Header on Print?";
@@ -1734,6 +1489,7 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void txtDic_KeyPress(object sender, KeyPressEventArgs e)
@@ -1853,11 +1609,13 @@ namespace PappyjoeMVC.View
                 {
                     if (Pur_order_no1 > 0)
                     {
+                        flagSup = true;
                         decimal total = 0;
                         decimal total1 = 0;
                         DataTable dt = this.cntrl.load_purchase_order_details(Pur_order_no1);
                         txtSupplierName.Text = dt.Rows[0]["Supplier_Name"].ToString();
                         txt_SupplierId.Text = dt.Rows[0]["Suppleir_id"].ToString();
+                        flagSup = false;
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
                             dgvItemData.Rows.Add();
@@ -1868,8 +1626,8 @@ namespace PappyjoeMVC.View
                             dgvItemData.Rows[i].Cells["gst"].Value = "0";
                             dgvItemData.Rows[i].Cells["igst"].Value = "0";
                             dgvItemData.Rows[i].Cells["free"].Value = "0";
-                            dgvItemData.Rows[i].Cells["Unit_Cost"].Value =  dt.Rows[i]["UnitCost"].ToString();
-                            dgvItemData.Rows[i].Cells["Amount"].Value = "0.00";// dt.Rows[i]["Amount"].ToString();
+                            dgvItemData.Rows[i].Cells["Unit_Cost"].Value = dt.Rows[i]["UnitCost"].ToString();
+                            dgvItemData.Rows[i].Cells["Amount"].Value = "0.00";
                             dgvItemData.Rows[i].Cells["amt"].Value = dt.Rows[i]["Amount"].ToString();
                             total = Convert.ToDecimal(dt.Rows[i]["Amount"].ToString());
                             total1 = total1 + total;
@@ -1880,6 +1638,7 @@ namespace PappyjoeMVC.View
                 }
                 if (Pur_List_flag == true)
                 {
+                    flagSup = true;
                     dtpPurchDate.Enabled = false;
                     Btn_itemCode.Enabled = false;
                     txtDescription.Enabled = false;
@@ -1914,6 +1673,7 @@ namespace PappyjoeMVC.View
                         txt_Discount.Text = data_from_Pur_Master1.Rows[0]["DiscAmount"].ToString();
                         string pur_type = data_from_Pur_Master1.Rows[0]["PurchType"].ToString();
                     }
+                    flagSup = false;
                     if (data_from_purchase1.Rows.Count > 0)
                     {
                         int totalitem = 0;
@@ -1966,8 +1726,8 @@ namespace PappyjoeMVC.View
             txt_free.Text = "0";
             txtUnitCost.Text = "0.0";
             txtAmount.Text = "0.00";
-            txtGst.Text = "0.0";
-            txtIgst.Text = "0.0";
+            txtGst.Text = "0";
+            txtIgst.Text = "0";
             cmbUnit.Text = "";
         }  
     }

@@ -61,6 +61,8 @@ namespace PappyjoeMVC.View
                 this.Grvmonthtreatment.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvmonthtreatment.Rows.Count == 0)
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -148,6 +150,8 @@ namespace PappyjoeMVC.View
                 this.Grvmonthtreatment.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvmonthtreatment.Rows.Count == 0)
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -211,14 +215,7 @@ namespace PappyjoeMVC.View
             {
                 if (gridmonthlytreatment.Rows.Count > 0)
                 {
-                    //DataTable tbl = gridmonthlytreatment.DataSource as DataTable;
-                    //DataTable tbl1 = Grvmonthtreatment.DataSource as DataTable;
-                    //string frdate = dateTimePickermontreatment1.Value.Day.ToString();
-                    //string frmonth = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dateTimePickermontreatment1.Value.Month);
-                    //string fryear = dateTimePickermontreatment1.Value.Year.ToString();
-                    //string todate = dateTimePickermontreatment2.Value.Day.ToString();
-                    //string tomonth = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dateTimePickermontreatment2.Value.Month);
-                    //string toyear = dateTimePickermontreatment2.Value.Year.ToString();
+                  
                     string today = DateTime.Now.ToString("d/M/yyyy");
                     string message = "Did you want Header on Print?";
                     string caption = "Verification";
@@ -259,17 +256,18 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<table align=center  width=900>");
                     sWrite.WriteLine("<col>"); ;
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<th colspan=8> <center><FONT COLOR=black FACE='Segoe UI' SIZE=4>  <b> MONTHLY TREATMENT REPORT </b> </font></center></th>");
+                    sWrite.WriteLine("<th colspan=8> <center><FONT COLOR=black FACE='Segoe UI' SIZE=5>  <b> MONTHLY TREATMENT REPORT </b> </font></center></th>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <br><b> " + strclinicname + "</b> </font></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  <b> " + strStreet + "</b> </font></left></td>");
+                    sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b> " + strStreet + "</b> </font></left></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  <b> " + strphone + "</b> </font></left></td>");
+                    sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b> " + strphone + "</b> </font></left></td>");
                     sWrite.WriteLine("</tr>");
+                    sWrite.WriteLine("<tr><td colspan=8><hr></td></tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  " + "<b>From :</b>" + " " + dateTimePickermontreatment1.Value.ToString("dd/MM/yyyy") + " </font></center></td>");
                     sWrite.WriteLine("</tr>");
@@ -282,26 +280,22 @@ namespace PappyjoeMVC.View
                     if (gridmonthlytreatment.Rows.Count > 0)
                     {
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >Sl.</font></th>");
-                        sWrite.WriteLine("    <td align='left' width='14%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI'' SIZE=3>Date</font></th>");
-                        sWrite.WriteLine("    <td align='left' width='30%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Services</font></th>");
-                        sWrite.WriteLine("    <td align='left' width='16%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>Doctor</font></th>");
+                        sWrite.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >&nbsp;<b>Slno.</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='14%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI'' SIZE=3>&nbsp;<b>Date</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='30%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Services</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='16%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b>Doctor</b></font></th>");
                         sWrite.WriteLine("</tr>");
                         int k = 1;
                         for (int i = 0; i < gridmonthlytreatment.Rows.Count; i++)
                         {
                             sWrite.WriteLine("<tr>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + k + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + gridmonthlytreatment.Rows[i].Cells[1].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + gridmonthlytreatment.Rows[i].Cells[2].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + gridmonthlytreatment.Rows[i].Cells[3].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + k + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + gridmonthlytreatment.Rows[i].Cells[1].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + gridmonthlytreatment.Rows[i].Cells[2].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + gridmonthlytreatment.Rows[i].Cells[3].Value.ToString() + "</font></th>");
                             sWrite.WriteLine("</tr>");
                             k = k + 1;
                         }
-                        //sWrite.WriteLine("</td>");
-                        //sWrite.WriteLine("</tr >");
-                        //sWrite.WriteLine("</font> </p></td>");
-                        //sWrite.WriteLine("</tr>");
                         sWrite.WriteLine("<tr>");
                         sWrite.WriteLine("<td align=right colspan=6><FONT COLOR=black FACE='Segoe UI' SIZE=3 ><br><br><b> </b>&nbsp;&nbsp;  </font> </td> ");
                         sWrite.WriteLine("</tr>");
@@ -365,6 +359,8 @@ namespace PappyjoeMVC.View
                 this.Grvmonthtreatment.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvmonthtreatment.Rows.Count == 0)
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -417,6 +413,8 @@ namespace PappyjoeMVC.View
                 this.Grvmonthtreatment.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvmonthtreatment.Rows.Count == 0)
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -467,6 +465,8 @@ namespace PappyjoeMVC.View
                     this.Grvmonthtreatment.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     if (Grvmonthtreatment.Rows.Count == 0)
                     {
+                        int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Show();
                     }
                     else

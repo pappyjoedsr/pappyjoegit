@@ -501,6 +501,7 @@ namespace PappyjoeMVC.View
             var dlg = new Medical_Certificate();
             dlg.patient_id = patient_id;
             dlg.ShowDialog();
+            dlg.Dispose();
         }
 
         private void BtnConsent_Click(object sender, EventArgs e)
@@ -509,6 +510,7 @@ namespace PappyjoeMVC.View
             dlg.patient_id = patient_id;
             dlg.doctor_id = doctor_id;
             dlg.ShowDialog();
+            dlg.Dispose();
         }
 
         private void BtnCaseSheet_Click(object sender, EventArgs e)
@@ -517,6 +519,7 @@ namespace PappyjoeMVC.View
             dlg.patient_id = patient_id;
             dlg.doctor_id = doctor_id;
             dlg.ShowDialog();
+            dlg.Dispose();
         }
 
         private void editpatient_Click(object sender, EventArgs e)
@@ -526,7 +529,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labeltreatment_Click(object sender, EventArgs e)
@@ -536,7 +539,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labelfinished_Click(object sender, EventArgs e)
@@ -546,7 +549,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labelattachment_Click(object sender, EventArgs e)
@@ -556,7 +559,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void label44_Click(object sender, EventArgs e)
@@ -566,7 +569,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton10_Click(object sender, EventArgs e)
@@ -575,7 +578,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labelinvoice_Click(object sender, EventArgs e)
@@ -585,7 +588,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void labelappointment_Click(object sender, EventArgs e)
         {
@@ -594,7 +597,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void labelprofile_Click(object sender, EventArgs e)
         {
@@ -603,7 +606,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labelpayment_Click(object sender, EventArgs e)
@@ -613,7 +616,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
@@ -626,9 +629,9 @@ namespace PappyjoeMVC.View
             if (toolStripTextBox1.Text != "")
             {
                 System.Data.DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox1.Text);
-                listpatientsearch.DataSource = dtdr;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
+                listpatientsearch.DataSource = dtdr;
                 if (listpatientsearch.Items.Count == 0)
                 {
                     listpatientsearch.Visible = false;
@@ -637,7 +640,8 @@ namespace PappyjoeMVC.View
                 {
                     listpatientsearch.Visible = true;
                 }
-                listpatientsearch.Location = new Point(toolStrip1.Width - 350, 40);
+                listpatientsearch.Location = new Point(toolStrip1.Width - 360, 37);
+                //listpatientsearch.Location = new Point(toolStripTextBox1.Width + 750, 32);
             }
             else
             {
@@ -661,7 +665,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             else
@@ -670,7 +674,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -686,7 +690,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
                 else
                 {
@@ -699,7 +703,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -711,7 +715,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -720,6 +724,7 @@ namespace PappyjoeMVC.View
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
@@ -729,7 +734,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -738,7 +743,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labelallpatient_Click(object sender, EventArgs e)
@@ -747,7 +752,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
@@ -758,7 +763,7 @@ namespace PappyjoeMVC.View
             listpatientsearch.Visible = false;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labelclinical_Click(object sender, EventArgs e)
@@ -779,7 +784,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void labl_Lab_Click(object sender, EventArgs e)
         {
@@ -788,7 +793,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
@@ -796,7 +801,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -805,7 +810,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton12_Click(object sender, EventArgs e)
@@ -815,7 +820,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -823,7 +828,7 @@ namespace PappyjoeMVC.View
             var form2 = new PappyjoeMVC.View.Login();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void BtnCard_Click(object sender, EventArgs e)
@@ -852,7 +857,7 @@ namespace PappyjoeMVC.View
                 printdocument.PrintPage += print_Patient_Card_PrintPage;
                 printdocument.Print();
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Please check your printer...!!", "Print Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -863,18 +868,23 @@ namespace PappyjoeMVC.View
             int yy = 2;
             string sexage = "";
             int Dexist = 0;
-            System.Data.DataTable dt1 = this.cntrl.Get_Patient_details(patient_id);// db.table("select * from tbl_patient where id='" + patient_id + "'");
+            System.Data.DataTable dt1 = this.cntrl.Get_Patient_details(patient_id);
             if (dt1.Rows.Count > 0)
             {
                 e.Graphics.DrawImage(pictureBox_Logo.Image, 10, yy);
                 yy = yy + 160;
                 e.Graphics.DrawImage(pictureBox_barcode.Image, 80, yy);
-                using (System.Drawing.Font printFont = new System.Drawing.Font("Arial", 15.0f))
+                using (System.Drawing.Font printFont = new System.Drawing.Font("Segoe UI", 15.0f))
                 {
                     yy = yy + 30;
                     e.Graphics.DrawString(dt1.Rows[0]["pt_name"].ToString(), printFont, Brushes.Black, 10, yy);
                 }
-                using (System.Drawing.Font printFont1 = new System.Drawing.Font("Arial", 10.0f, FontStyle.Bold))
+                using (System.Drawing.Font printFont2 = new System.Drawing.Font("Segoe UI", 15.0f))
+                {
+                    //yy = yy + 20;
+                    e.Graphics.DrawString(dt1.Rows[0]["pt_Id"].ToString(), printFont2, Brushes.Black, 80, yy);
+                }
+                using (System.Drawing.Font printFont1 = new System.Drawing.Font("Segoe UI", 10.0f, FontStyle.Bold))
                 {
                     if (dt1.Rows[0]["gender"].ToString() != "")
                     {
@@ -885,7 +895,7 @@ namespace PappyjoeMVC.View
                     {
                         if (Dexist == 1)
                         {
-                            sexage = sexage + "Age:" + dt1.Rows[0]["age"].ToString() + " Y";
+                            sexage = sexage +"  "+ "Age:" + dt1.Rows[0]["age"].ToString() + " Y";
                         }
                         else
                         {
@@ -894,18 +904,24 @@ namespace PappyjoeMVC.View
                     }
                     yy = yy + 40;
                     e.Graphics.DrawString("Reg.Dt :" + Convert.ToDateTime(dt1.Rows[0]["date"].ToString()).ToString("dd/MM/yyyy") + "        " + sexage, printFont1, Brushes.Black, 10, yy);
-                    yy = yy + 20;
-                    e.Graphics.DrawString(dt1.Rows[0]["Street_address"].ToString(), printFont1, Brushes.Black, 10, yy);
-                    yy = yy + 20;
-                    e.Graphics.DrawString(dt1.Rows[0]["locality"].ToString(), printFont1, Brushes.Black, 10, yy);
-                    yy = yy + 20;
-                    e.Graphics.DrawString("Ph :" + dt1.Rows[0]["primary_mobile_number"].ToString(), printFont1, Brushes.Black, 10, yy);
+                  
+                    if(dt1.Rows[0]["Street_address"].ToString()!="")
+                    {
+                        yy = yy + 20;
+                        e.Graphics.DrawString(dt1.Rows[0]["Street_address"].ToString(), printFont1, Brushes.Black, 10, yy);
+                    }
+                   else if(dt1.Rows[0]["locality"].ToString()!="")
+                    {
+                        yy = yy + 20;
+                        e.Graphics.DrawString(dt1.Rows[0]["locality"].ToString(), printFont1, Brushes.Black, 10, yy);
+                    }
+                    else if(dt1.Rows[0]["primary_mobile_number"].ToString()!="")
+                    {
+                        yy = yy + 20;
+                        e.Graphics.DrawString("Ph :" + dt1.Rows[0]["primary_mobile_number"].ToString(), printFont1, Brushes.Black, 10, yy);
+                    }
                 }
-                using (System.Drawing.Font printFont2 = new System.Drawing.Font("Arial", 15.0f))
-                {
-                    yy = yy + 20;
-                    e.Graphics.DrawString(dt1.Rows[0]["pt_Id"].ToString(), printFont2, Brushes.Black, 80, yy);
-                }
+                
             }
         }
 
@@ -923,7 +939,7 @@ namespace PappyjoeMVC.View
             int w = e.MarginBounds.Width / 2;
             int x = e.MarginBounds.Left;
             int y = e.MarginBounds.Top;
-            Font printFont = new Font("Arial", 10);
+            Font printFont = new Font("Segoe UI", 10);
             string tabDataText = toolStripButton1.Text;
             var tabDataForeColor = Color.Blue;
             var txtDataWidth = e.Graphics.MeasureString(tabDataText, printFont).Width;
@@ -940,92 +956,92 @@ namespace PappyjoeMVC.View
             e.HasMorePages = false;
             int iLeftMargin = e.MarginBounds.Left;
             string date = System.DateTime.Now.ToShortDateString();
-            e.Graphics.DrawString("Patient Registration Form", new Font("Arial", 16, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 200, 75);
+            e.Graphics.DrawString("Patient Registration Form", new Font("Segoe UI", 16, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 200, 75);
             string underLine = "--------------------------------------------";
-            e.Graphics.DrawString(underLine, new Font("Arial", 14, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 200, 95);
-            e.Graphics.DrawString("Printed By:", new Font("Arial", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 1, 130);
-            e.Graphics.DrawString("Admin", new Font("Arial", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 75, 130);
-            e.Graphics.DrawString("Date:", new Font("Arial", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 150, 130);
-            e.Graphics.DrawString(date, new Font("Arial", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 195, 130);
-            e.Graphics.DrawString("No: " + patient_id, new Font("Arial", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 370, 130);
-            e.Graphics.DrawString("Personal Details", new Font("Arial", 12, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 10, 160);
+            e.Graphics.DrawString(underLine, new Font("Segoe UI", 14, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 200, 95);
+            e.Graphics.DrawString("Printed By:", new Font("Segoe UI", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 1, 130);
+            e.Graphics.DrawString("Admin", new Font("Segoe UI", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 75, 130);
+            e.Graphics.DrawString("Date:", new Font("Segoe UI", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 150, 130);
+            e.Graphics.DrawString(date, new Font("Segoe UI", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 195, 130);
+            e.Graphics.DrawString("No: " + patient_id, new Font("Segoe UI", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 370, 130);
+            e.Graphics.DrawString("Personal Details", new Font("Segoe UI", 12, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 10, 160);
 
             int xyy = 190;
             if (txtPatientName.Visible == true)
             {
-                e.Graphics.DrawString(this.lab_PatientName.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtPatientName.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.lab_PatientName.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtPatientName.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
             if (txtPatientId.Visible == true)
             {
-                e.Graphics.DrawString(this.labPatientId.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtPatientId.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.labPatientId.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtPatientId.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
             if (txtAdhaarId.Visible == true)
             {
-                e.Graphics.DrawString(this.labAdhaarId.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtAdhaarId.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.labAdhaarId.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtAdhaarId.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
             if (txtGender.Visible == true)
             {
-                e.Graphics.DrawString(this.labGender.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtGender.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.labGender.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtGender.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
             if (txtDob.Visible == true)
             {
-                e.Graphics.DrawString(this.labDob.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtDob.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.labDob.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtDob.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
             if (txtRefferedBy.Visible == true)
             {
-                e.Graphics.DrawString(this.labRefferedBy.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtRefferedBy.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.labRefferedBy.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtRefferedBy.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
             if (txtBloodGroup.Visible == true)
             {
-                e.Graphics.DrawString(this.labAdhaarId.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtAdhaarId.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.labAdhaarId.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtAdhaarId.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 txtBloodGroup.Hide();
                 labBloodGroup.Hide();
                 xyy = xyy + 30;
             }
             if (txtAccompainedBy.Visible == true)
             {
-                e.Graphics.DrawString(this.labAccompainedBy.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtAccompainedBy.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.labAccompainedBy.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtAccompainedBy.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
             if (txtPrimaryMobNo.Visible == true)
             {
-                e.Graphics.DrawString(this.labPrimaryMobileNumber.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtPrimaryMobNo.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.labPrimaryMobileNumber.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtPrimaryMobNo.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
 
                 xyy = xyy + 30;
             }
             if (txtSecondaryMobNo.Visible == true)
             {
-                e.Graphics.DrawString(this.labSecondaryMobileNumbr.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtSecondaryMobNo.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.labSecondaryMobileNumbr.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtSecondaryMobNo.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
 
                 xyy = xyy + 30;
             }
             if (txtLandLineNo.Visible == true)
             {
-                e.Graphics.DrawString(this.labLandLineNo.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtLandLineNo.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.labLandLineNo.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtLandLineNo.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
 
                 xyy = xyy + 30;
             }
             if (txtEmailAddress.Visible == true)
             {
-                e.Graphics.DrawString(this.labEmailAddress.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtEmailAddress.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.labEmailAddress.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtEmailAddress.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
             if (txtStreetAddress.Visible == true)
@@ -1037,62 +1053,62 @@ namespace PappyjoeMVC.View
             }
             if (txtLocality.Visible == true)
             {
-                e.Graphics.DrawString(this.labLocality.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtLocality.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.labLocality.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtLocality.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
             if (txtCity.Visible == true)
             {
-                e.Graphics.DrawString(this.labCity.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtCity.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.labCity.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtCity.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
             if (txtPinCode.Visible == true)
             {
-                e.Graphics.DrawString(this.labPinCode.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtPinCode.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.labPinCode.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtPinCode.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
 
             if (txtopticket.Visible == true)
             {
-                e.Graphics.DrawString(this.lblopti.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtopticket.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.lblopti.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtopticket.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
             if (txtAge.Visible == true)
             {
-                e.Graphics.DrawString(this.labAge.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtAge.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.labAge.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtAge.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
             if (txtvisiteddate.Visible == true)
             {
-                e.Graphics.DrawString(this.LabDateOfAdm.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtvisiteddate.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.LabDateOfAdm.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtvisiteddate.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
             if (txtDoctor.Visible == true)
             {
-                e.Graphics.DrawString(this.LabDoctorName.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtDoctor.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.LabDoctorName.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtDoctor.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
             if (txtOccupation.Visible == true)
             {
-                e.Graphics.DrawString(this.LabOccupation.Text, new Font("Arial", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
-                e.Graphics.DrawString(this.txtOccupation.Text, new Font("Arial", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                e.Graphics.DrawString(this.LabOccupation.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtOccupation.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
                 xyy = xyy + 30;
             }
 
             if (grmedical.Rows.Count > 0)
             {
                 xyy = xyy + 60;
-                e.Graphics.DrawString("Medical History", new Font("Arial", 12, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 10, xyy);
+                e.Graphics.DrawString("Medical History", new Font("Segoe UI", 12, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 10, xyy);
                 xyy = xyy + 30;
                 for (int j = 0; j < grmedical.Rows.Count; j++)
                 {
-                    e.Graphics.DrawString(grmedical.Rows[j].Cells[0].Value.ToString(), new Font("Arial", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                    e.Graphics.DrawString(grmedical.Rows[j].Cells[0].Value.ToString(), new Font("Segoe UI", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
                     xyy = xyy + 20;
                 }
             }
@@ -1105,6 +1121,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void labelprescription_Click(object sender, EventArgs e)
@@ -1114,7 +1131,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
     }
 }

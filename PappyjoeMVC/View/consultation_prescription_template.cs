@@ -5,10 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PappyjoeMVC.Controller;
-namespace PappyjoeMVC.View
+namespace Pappyjoe
 {
     public partial class consultation_prescription_template : Form
     {
@@ -21,15 +20,16 @@ namespace PappyjoeMVC.View
 
         private void consultation_prescription_template_Load(object sender, EventArgs e)
         {
-            DataTable dtb_prescription = this.cntrl.get_tempid(pres_id);// db.table("select * from tbl_templates_main where id='" + pres_id + "'");
-            if (dtb_prescription.Rows.Count > 0)
+            DataTable dtb_prescription = this.cntrl.get_tempid(pres_id);
+            if(dtb_prescription.Rows.Count>0)
             {
                 txt_tempName.Text = dtb_prescription.Rows[0]["templates"].ToString();
-                DataTable dt = this.cntrl.get_templateid(pres_id);// db.table("select * from tbl_template where temp_id='" + pres_id + "'");
+                DataTable dt = this.cntrl.get_templateid(pres_id);
                 dataGridView_templatenew.Rows.Clear();
-                if (dt.Rows.Count > 0)
+                if (dt.Rows.Count>0)
                 {
-                    for (int i = 0; i < dt.Rows.Count; i++)
+                   
+                    for (int i=0;i<dt.Rows.Count;i++)
                     {
                         dataGridView_templatenew.Rows.Add();
                         dataGridView_templatenew.Rows[i].Cells["drgname"].Value = dt.Rows[i]["drug_name"].ToString();
@@ -42,7 +42,6 @@ namespace PappyjoeMVC.View
                         dataGridView_templatenew.Rows[i].Cells["food"].Value = dt.Rows[i]["food"].ToString();
                         dataGridView_templatenew.Rows[i].Cells["instruction"].Value = dt.Rows[i]["add_instruction"].ToString();
                         dataGridView_templatenew.Rows[i].Cells["type"].Value = dt.Rows[i]["drug_type"].ToString();
-
                     }
                 }
 

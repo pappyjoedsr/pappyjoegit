@@ -31,7 +31,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
@@ -39,7 +39,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
@@ -56,7 +56,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             else
@@ -65,7 +65,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
         private void toolStripButton6_Click(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
@@ -84,7 +84,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
         private void toolStripButton12_Click(object sender, EventArgs e)
@@ -94,7 +94,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void linkLabel_Name_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -104,7 +104,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void linkLabel_id_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -114,7 +114,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripButton13_Click(object sender, EventArgs e)
         {
@@ -122,7 +122,20 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
+
+        private void listpatientsearch_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            var form2 = new Patient_Profile_Details();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = listpatientsearch.SelectedValue.ToString();
+            listpatientsearch.Visible = false;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.Show();
+        }
+
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
             try
@@ -138,7 +151,7 @@ namespace PappyjoeMVC.View
                         form2.doctor_id = doctor_id;
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
-                        form2.ShowDialog(); ;
+                        form2.Show(); ;
                     }
                     else
                     {
@@ -151,7 +164,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             catch (Exception ex)
@@ -163,7 +176,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripButton11_Click(object sender, EventArgs e)
         {
@@ -173,6 +186,7 @@ namespace PappyjoeMVC.View
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -189,7 +203,7 @@ namespace PappyjoeMVC.View
                         form2.doctor_id = doctor_id;
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
-                        form2.ShowDialog();
+                        form2.Show();
                     }
                     else
                     {
@@ -202,7 +216,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             catch (Exception ex)
@@ -213,17 +227,17 @@ namespace PappyjoeMVC.View
             var form2 = new PappyjoeMVC.View.Login();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
             var form2 = new Patient_Profile_Details();
-            form2.doctor_id = doctor_id;
+            form2.doctor_id = doctor_id; 
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void labelallpatient_Click(object sender, EventArgs e)
         {
@@ -231,7 +245,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void InitializeControls()
         {
@@ -253,7 +267,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void cmbStartTime_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -343,9 +357,9 @@ namespace PappyjoeMVC.View
                     int dr_index = 0;
                     if (dt.Rows.Count > 0)
                     {
-                        Cmb_doctor.DataSource = dt;
                         Cmb_doctor.DisplayMember = "doctor_name";
                         Cmb_doctor.ValueMember = "id";
+                        Cmb_doctor.DataSource = dt;
                         for (int j = 0; j < dt.Rows.Count; j++)
                         {
                             if (dt.Rows[j]["id"].ToString() == doctor_id)
@@ -360,9 +374,9 @@ namespace PappyjoeMVC.View
                 {
                     if (dt.Rows.Count > 0)
                     {
-                        Cmb_doctor.DataSource = dt;
                         Cmb_doctor.DisplayMember = "doctor_name";
                         Cmb_doctor.ValueMember = "id";
+                        Cmb_doctor.DataSource = dt;
                     }
                 }
             }
@@ -477,9 +491,9 @@ namespace PappyjoeMVC.View
                 DataTable dctrs=this.ctrlr.get_all_doctorname();
                 get_all_doctorname(dctrs);
                 DataTable procedure=this.ctrlr.get_All_procedure();
-                compoprocedure.DataSource = procedure;
                 compoprocedure.DisplayMember = "name";
                 compoprocedure.ValueMember = "id";
+                compoprocedure.DataSource = procedure;
                 DataTable apnt=this.ctrlr.dt_appointment(appointment_id);
                 dt_appointment(apnt);
             }
@@ -494,10 +508,10 @@ namespace PappyjoeMVC.View
                 emailPass = email.Rows[0]["emailPass"].ToString();
                 try
                 {
-                    string sr1 = "<table align='center' style='width:700px;border: 1px solid ;border-collapse: collapse; background: #EAEAEA; height:500px'><tr><td  align='left' height='27'><FONT  color='#666666'  face='Arial' SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Appointment Reminder:" + dpStartTimeDate.Value.ToString("ddd, dd MMM yyyy") + ' ' + cmbStartTime.Text + " @ " + clinicn + "</font></td></tr><tr><td  align='left' height='400px'><table  height='423' align='center' style='width:600px; background: #FFFFFF; height:400px'><tr><td  align='left' height='6px'><FONT  color='#000000'  face='Arial' SIZE=6>" + clinicn + "</font></td></tr><tr><td  align='left' height='1px' bgcolor='#666666'></td></tr><tr><td  align='left' height='62' valign='bottom'><FONT  color='#000000'  face='Arial' SIZE=3>Good morning <b>" + label21.Text + "</b></font></td></tr> <tr><td align='left' height='197' valign='top'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Just to remind you about your appointment at " + clinicn + ".<table><tbody><tr><td width='188' height='31' valign='bottom' align='right'>WHEN :</td><td width='30' height='31' valign='bottom' align='right'></td><td width='358' valign='bottom'> <strong>" + dpStartTimeDate.Value.ToString("ddd, dd MMM yyyy") + ' ' + cmbStartTime.Text + "</strong></td>  </tr><tr><td height='76' valign='top'  align='right'>WHERE :</td><td width='30' height='31' valign='bottom' align='right'></td><td  valign='top'>" + locality + "</td></tr></tbody></table> For any queries, contact us at : " + contact_no + "</td>  </tr><tr><td  align='left' height='1px' bgcolor='#666666'></td></tr> <tr><td height='25'  align='right' valign='bottom'>Powered by&nbsp;&nbsp; </td></tr> <tr><td height='81'  align='right' valign='top'><img src='http://pappyjoe.com/assets/images/pappyjoe-logo.PNG' alt='pappyjoe official logo'>&nbsp;&nbsp;</td></tr></table></td></tr></table>";
+                    string sr1 = "<table align='center'  style='width:700px;border: 1px solid ;border-collapse: collapse; background: #EAEAEA; height:500px'><tr><td  align='left' height='27'><FONT  color='#666666'  face='Arial' SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Appointment Reminder:" + dpStartTimeDate.Value.ToString("ddd, dd MMM yyyy") + ' ' + cmbStartTime.Text + " @ " + clinicn + "</font></td></tr><tr><td  align='left' height='400px'><table  height='423' align='center' style='width:600px; background: #FFFFFF; height:400px'><tr><td  align='left' height='6px'><FONT  color='#000000'  face='Arial' SIZE=6>" + clinicn + "</font></td></tr><tr><td  align='left' height='1px' bgcolor='#666666'></td></tr><tr><td  align='left' height='62' valign='bottom'><FONT  color='#000000'  face='Arial' SIZE=3>Good morning <b>" + label21.Text + "</b></font></td></tr> <tr><td align='left' height='197' valign='top'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Just to remind you about your appointment at " + clinicn + ".<table><tbody><tr><td width='188' height='31' valign='bottom' align='right'>WHEN :</td><td width='30' height='31' valign='bottom' align='right'></td><td width='358' valign='bottom'> <strong>" + dpStartTimeDate.Value.ToString("ddd, dd MMM yyyy") + ' ' + cmbStartTime.Text + "</strong></td>  </tr><tr><td height='76' valign='top'  align='right'>WHERE :</td><td width='30' height='31' valign='bottom' align='right'></td><td  valign='top'>" + locality + "</td></tr></tbody></table> For any queries, contact us at : " + contact_no + "</td>  </tr><tr><td  align='left' height='1px' bgcolor='#666666'></td></tr> <tr><td height='25'  align='right' valign='bottom'>Powered by&nbsp;&nbsp; </td></tr> <tr><td height='81'  align='right' valign='top'><img src='http://pappyjoe.com/assets/images/pappyjoe-logo.PNG' alt='pappyjoe official logo'>&nbsp;&nbsp;</td></tr></table></td></tr></table>";
                     MailMessage message = new MailMessage();
                     message.From = new MailAddress(p_email);
-                    message.To.Add(p_email);
+                    message.To.Add(p_email);   
                     message.BodyEncoding = System.Text.Encoding.GetEncoding(1252);
                     message.IsBodyHtml = true;
                     SmtpClient smtp = new SmtpClient("smtp.gmail.com");
@@ -587,10 +601,10 @@ namespace PappyjoeMVC.View
                                         text = "You have an appointment on " + dpStartTimeDate.Value.ToShortDateString() + " " + cmbStartTime.Text + " With " + patient_name + " for " + compoprocedure.Text + " at " + clinicn + "," + contact_no;
                                         string smsdctr3=this.ctrlr.SendSMS(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT1.ToString("dd/MM/yyyy") + before_time, DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
                                     }
-                                }
+                                } 
                             }
                         }//Doctor SMS End
-                        if (checkBox2.Checked)
+                        if (checkBox2.Checked) 
                         {
                             DataTable email=this.ctrlr.send_email();
                             send_email(email);
@@ -610,7 +624,7 @@ namespace PappyjoeMVC.View
                             form2.doctor_id = doctor_id;
                             form2.Closed += (sender1, args) => this.Close();
                             this.Hide();
-                            form2.ShowDialog();
+                            form2.Show();
                         }
                         else
                         {
@@ -647,9 +661,9 @@ namespace PappyjoeMVC.View
             {
                 if (toolStripTextBox1.Text != "")
                 {
-                    listpatientsearch.DataSource = dtb;
                     listpatientsearch.DisplayMember = "patient";
                     listpatientsearch.ValueMember = "id";
+                    listpatientsearch.DataSource = dtb;
                     if (listpatientsearch.Items.Count == 0)
                     {
                         listpatientsearch.Visible = false;
@@ -658,7 +672,7 @@ namespace PappyjoeMVC.View
                     {
                         listpatientsearch.Visible = true;
                     }
-                    listpatientsearch.Location = new Point(toolStrip1.Width - 350, 32);
+                    listpatientsearch.Location = new Point(toolStrip1.Width - 365, 32);
                 }
                 else
                 {

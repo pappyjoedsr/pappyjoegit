@@ -191,7 +191,7 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.btnReport);
-            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Location = new System.Drawing.Point(2, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(982, 35);
             this.panel1.TabIndex = 275;
@@ -216,7 +216,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label8.Location = new System.Drawing.Point(6, 8);
+            this.label8.Location = new System.Drawing.Point(4, 6);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 21);
             this.label8.TabIndex = 291;
@@ -258,7 +258,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panel3.Location = new System.Drawing.Point(-41, 41);
+            this.panel3.Location = new System.Drawing.Point(-41, 43);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1360, 1);
             this.panel3.TabIndex = 277;
@@ -1383,7 +1383,7 @@
             this.dgv_BatchSale.Location = new System.Drawing.Point(1004, 531);
             this.dgv_BatchSale.Name = "dgv_BatchSale";
             this.dgv_BatchSale.RowHeadersVisible = false;
-            this.dgv_BatchSale.Size = new System.Drawing.Size(200, 122);
+            this.dgv_BatchSale.Size = new System.Drawing.Size(260, 122);
             this.dgv_BatchSale.TabIndex = 314;
             this.dgv_BatchSale.Visible = false;
             // 
@@ -1707,7 +1707,7 @@
             this.pnlprescription.Controls.Add(this.label21);
             this.pnlprescription.Controls.Add(this.label20);
             this.pnlprescription.Controls.Add(this.dgrid_prescription);
-            this.pnlprescription.Location = new System.Drawing.Point(0, 530);
+            this.pnlprescription.Location = new System.Drawing.Point(-4, 528);
             this.pnlprescription.Name = "pnlprescription";
             this.pnlprescription.Size = new System.Drawing.Size(473, 113);
             this.pnlprescription.TabIndex = 334;

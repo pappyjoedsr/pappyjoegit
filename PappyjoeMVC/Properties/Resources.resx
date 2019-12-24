@@ -154,6 +154,9 @@
   <data name="TickRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TickRed.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="card_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\card_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="appnotfilled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\appnotfilled.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,8 +172,8 @@
   <data name="editicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editicon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="nophoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nophoto1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lab_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lab_icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Bill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bill.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -180,6 +183,9 @@
   </data>
   <data name="billed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\billed.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nophoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nophoto1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="appfilled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\appfilled.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,7 +208,7 @@
   <data name="pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pdf1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="card_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\card_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Pappy ion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pappy ion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

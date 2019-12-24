@@ -41,14 +41,14 @@ namespace PappyjoeMVC.View
             {
                 if (txt_InvoiceNum.Text != "")
                 {
-                    DataTable dtdr = this.cntrl.get_all_invnumbr(txt_InvoiceNum.Text);// db.table("select InvNumber from tbl_SALES where InvNumber like '" + txt_InvoiceNum.Text + "%'");
-                    lstInvNo.DataSource = dtdr;
+                    DataTable dtdr = this.cntrl.get_all_invnumbr(txt_InvoiceNum.Text);
                     lstInvNo.DisplayMember = "InvNumber";
                     lstInvNo.ValueMember = "InvNumber";
+                    lstInvNo.DataSource = dtdr;
                     if (e.KeyCode == Keys.Enter && lstInvNo.Items.Count > 0)
                     {
                         var value = lstInvNo.GetItemText(lstInvNo.SelectedValue);
-                        System.Data.DataTable inv = this.cntrl.get_all_invnumbr(value); //db.table("select InvNumber from tbl_SALES where InvNumber='" + value + "'");
+                        System.Data.DataTable inv = this.cntrl.get_all_invnumbr(value);
                         if (inv.Rows.Count > 0)
                         {
                             txt_InvoiceNum.Text = inv.Rows[0]["InvNumber"].ToString();
@@ -77,7 +77,6 @@ namespace PappyjoeMVC.View
             }
             flagSup = false;
         }
-
         private void lstInvNo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -101,7 +100,6 @@ namespace PappyjoeMVC.View
                 indicee++;
             }
         }
-
         private void lstInvNo_MouseClick(object sender, MouseEventArgs e)
         {
             if (lstInvNo.SelectedItems.Count > 0)
@@ -134,7 +132,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void btn_item_Choose_Click(object sender, EventArgs e)
         {
             if (txt_InvoiceNum.Text != "")
@@ -145,6 +142,7 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Sales_Return_Itemlist(dtb_itemlist, txt_InvoiceNum.Text);
                     form2.ShowDialog();
+                    form2.Dispose();
                     if (ItemCode_From_List != "")
                     {
                         DataTable dtb_units = this.cntrl.itemdetails_from_items(ItemCode_From_List);
@@ -300,7 +298,6 @@ namespace PappyjoeMVC.View
                 TotalAmount_Calculation();
             }
         }
-
         private void txt_GST_TextChanged(object sender, EventArgs e)
         {
             if (txt_GST.Text != "")
@@ -371,7 +368,6 @@ namespace PappyjoeMVC.View
                 txt_Amount.Text = TotalAmount.ToString("##.00");
             }
         }
-
         private void txt_Qty_KeyUp(object sender, KeyEventArgs e)
         {
             if (txt_UnitCost.Text != "")
@@ -379,7 +375,6 @@ namespace PappyjoeMVC.View
                 TotalAmount_Calculation();
             }
         }
-
         private void txt_Qty_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
@@ -391,7 +386,6 @@ namespace PappyjoeMVC.View
             string b = a.TrimStart('0');
             txt_Qty.Text = b;
         }
-
         private void txt_Qty_Click(object sender, EventArgs e)
         {
             if (txt_Qty.Text == "0")
@@ -399,7 +393,6 @@ namespace PappyjoeMVC.View
                 txt_Qty.Text = "";
             }
         }
-
         private void txt_IGST_TextChanged(object sender, EventArgs e)
         {
             if (txt_IGST.Text != "")
@@ -414,12 +407,10 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void btn_save_Click(object sender, EventArgs e)
         {
             try
             {
-
                 if (dgv_SalesItem.Rows.Count > 0)
                 {
                     int i = 0, j = 0;
@@ -605,41 +596,42 @@ namespace PappyjoeMVC.View
             sWrite.WriteLine("</head>");
             sWrite.WriteLine("<body >");
             sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
-            sWrite.WriteLine("<tr><th align='center'><FONT COLOR=black FACE='Geneva, Arial' SIZE=4>Return Bill</font></th></tr>");
+            sWrite.WriteLine("<tr><th align='center'><FONT COLOR=black FACE='Segoe UI' SIZE=5>RETURN BILL</font></th></tr>");
             sWrite.WriteLine("</table>");
             sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
             sWrite.WriteLine("<tr>");
-            sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=3> <b>" + strclinicname + "</b> </font></td>");
+            sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Segoe UI' SIZE=4> <b>" + strclinicname + "</b> </font></td>");
             sWrite.WriteLine(" </tr>");
             sWrite.WriteLine("<tr>");
-            sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=3> <b>" + strphone + "</b> </font></td>");
+            sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> <b>" + strphone + "</b> </font></td>");
             sWrite.WriteLine(" </tr>");
             sWrite.WriteLine("<tr>");
-            sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=3> <b>" + DlNumber + " </b></font></td>");
+            sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> <b>" + DlNumber + " </b></font></td>");
             sWrite.WriteLine(" </tr>");
             sWrite.WriteLine("<tr>");
-            sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=3> <b>" + DlNumber2 + " </b></font></td>");
+            sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> <b>" + DlNumber2 + " </b></font></td>");
             sWrite.WriteLine(" </tr>");
             sWrite.WriteLine("<tr>");
-            sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=3> <b>" + website + "</b> </font></td>");
+            sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> <b>" + website + "</b> </font></td>");
             sWrite.WriteLine(" </tr>");
+            sWrite.WriteLine("<tr><td  align='left' colspan='2'><hr/></td></tr>");
             sWrite.WriteLine("<tr>");
-            sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2> <b>Invoice Number :</b>&nbsp" + txt_InvoiceNum.Text + "</font></td>");
-            sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2><b> Return No:</b>" + txt_InvoiceNum.Text + " </font></td>");
+            sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> Invoice Number :&nbsp" + txt_InvoiceNum.Text + "</font></td>");
+            sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> Return No:" + txt_InvoiceNum.Text + " </font></td>");
             sWrite.WriteLine("</tr>");
             sWrite.WriteLine("<tr>");
-            sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2> <b>Invoice Date : </b>&nbsp" + dtp_invDate.Text + "</font></td>");
-            sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2> <b>Date :</b>" + DateTime.Now.ToString("MM-dd-yyyy") + " </font></td>");
+            sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> Invoice Date : &nbsp;" + dtp_invDate.Text + "</font></td>");
+            sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>Date :" + DateTime.Now.ToString("MM-dd-yyyy") + " </font></td>");
             sWrite.WriteLine("</tr>");
             sWrite.WriteLine("</table>");
             sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
             sWrite.WriteLine("<tr><td></td></tr>");
             sWrite.WriteLine("<tr><td colspan=4><hr/></td></tr>");
             sWrite.WriteLine("<tr>");
-            sWrite.WriteLine("<td align='left'  width='150'><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2>Item Code</font></td>");
-            sWrite.WriteLine("<td align='right'  width='65'><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2>Quantity</font></td>");
-            sWrite.WriteLine("<td align='right'  width='82'><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2>Cost</font></td>");
-            sWrite.WriteLine("<td align='right'  width='82'><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2>TotalAmount</font></td>");
+            sWrite.WriteLine("<td align='left'  width='150'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>Item Code</b></font></td>");
+            sWrite.WriteLine("<td align='right'  width='65'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>Quantity</b></font></td>");
+            sWrite.WriteLine("<td align='right'  width='82'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>Cost </b></font></td>");
+            sWrite.WriteLine("<td align='right'  width='82'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>TotalAmount</b></font></td>");
             sWrite.WriteLine("</tr>");
             sWrite.WriteLine("<tr><td align='left' colspan=4><hr/></td></tr>");
             if (dgv_SalesItem.Rows.Count > 0)
@@ -647,39 +639,39 @@ namespace PappyjoeMVC.View
                 for (int i = 0; i < dgv_SalesItem.Rows.Count; i++)
                 {
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td align='left'><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2>" + dgv_SalesItem.Rows[i].Cells["colItemCode"].Value.ToString() + "</font></td>");
-                    sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2>" + dgv_SalesItem.Rows[i].Cells["ColQty"].Value.ToString() + "</font></td>");
-                    sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2>" + Convert.ToDecimal(dgv_SalesItem.Rows[i].Cells["colUnitcost"].Value.ToString()).ToString("##0.00") + "</font></td>");
-                    sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2>" + Convert.ToDecimal(dgv_SalesItem.Rows[i].Cells["colAmount"].Value.ToString()).ToString("##0.00") + "</font></td>");
+                    sWrite.WriteLine("<td align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgv_SalesItem.Rows[i].Cells["colItemCode"].Value.ToString() + "</font></td>");
+                    sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgv_SalesItem.Rows[i].Cells["ColQty"].Value.ToString() + "</font></td>");
+                    sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + Convert.ToDecimal(dgv_SalesItem.Rows[i].Cells["colUnitcost"].Value.ToString()).ToString("##0.00") + "</font></td>");
+                    sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + Convert.ToDecimal(dgv_SalesItem.Rows[i].Cells["colAmount"].Value.ToString()).ToString("##0.00") + "</font></td>");
                     sWrite.WriteLine("</tr>");
                 }
             }
             sWrite.WriteLine("<tr><td align='left'  colspan=4><hr/></td></tr>");
             sWrite.WriteLine("<tr>");
-            sWrite.WriteLine("<td align='right'  colspan=3 ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2> Total Items :</font></td>");
-            sWrite.WriteLine("<td align='right'  colspan=4 ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=3> &nbsp " + txt_totalItems.Text + " </font></td>");
+            sWrite.WriteLine("<td align='right'  colspan=3 ><FONT COLOR=black FACE='Segoe UI' SIZE=2> Total Items :</font></td>");
+            sWrite.WriteLine("<td align='right'  colspan=4 ><FONT COLOR=black FACE='Segoe UI' SIZE=3> &nbsp " + txt_totalItems.Text + " </font></td>");
             sWrite.WriteLine("</tr>");
             if (txt_CGST.Text != "")
             {
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td align='right'  colspan=3 ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2> CGST :</font></td>");
-                sWrite.WriteLine("<td align='right'  colspan=4 ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=3>&nbsp" + txt_CGST.Text + " </font></td>");
+                sWrite.WriteLine("<td align='right'  colspan=3 ><FONT COLOR=black FACE='Segoe UI' SIZE=2> CGST :</font></td>");
+                sWrite.WriteLine("<td align='right'  colspan=4 ><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp" + txt_CGST.Text + " </font></td>");
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td align='right'  colspan=3 ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2> SGST :  </font></td>");
-                sWrite.WriteLine("<td align='right'  colspan=4 ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=3>&nbsp " + txt_SGST.Text + " </font></td>");
+                sWrite.WriteLine("<td align='right'  colspan=3 ><FONT COLOR=black FACE='Segoe UI' SIZE=2> SGST :  </font></td>");
+                sWrite.WriteLine("<td align='right'  colspan=4 ><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp " + txt_SGST.Text + " </font></td>");
                 sWrite.WriteLine("</tr>");
             }
             else if (Txt_TotalIGST.Text != "")
             {
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td align='right'  colspan=3 ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=2> Total IGST :</font></td>");
-                sWrite.WriteLine("<td align='right'  colspan=4 ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=3>&nbsp" + Txt_TotalIGST.Text + " </font></td>");
+                sWrite.WriteLine("<td align='right'  colspan=3 ><FONT COLOR=black FACE='Segoe UI' SIZE=2> Total IGST :</font></td>");
+                sWrite.WriteLine("<td align='right'  colspan=4 ><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp" + Txt_TotalIGST.Text + " </font></td>");
                 sWrite.WriteLine("</tr>");
             }
             sWrite.WriteLine("<tr>");
-            sWrite.WriteLine("<td align='right'  colspan=3 ><FONT COLOR=black FACE='Geneva, Sego UI' 2>Grand Total : </font></td>");
-            sWrite.WriteLine("<td align='right'  colspan=4 ><FONT COLOR=black FACE='Geneva, Sego UI' SIZE=3>&nbsp " + String.Format("{0:C}", decimal.Parse(txt_GrandTotal.Text)) + " </font></td>");
+            sWrite.WriteLine("<td align='right'  colspan=3 ><FONT COLOR=black FACE='Segoe UI' 2><b>Grand Total :</b> </font></td>");
+            sWrite.WriteLine("<td align='right'  colspan=4 ><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp<b> " + String.Format("{0:C}", decimal.Parse(txt_GrandTotal.Text)) + "</b> </font></td>");
             sWrite.WriteLine("</tr>");
             sWrite.WriteLine("</table>");
             sWrite.WriteLine("<script>window.print();</script>");
@@ -701,13 +693,11 @@ namespace PappyjoeMVC.View
             {
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             clear_itemdetails();
             clear_Alldetails();
         }
-
         private void dgv_SalesItem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && dgv_SalesItem.Rows.Count > 0)
@@ -735,7 +725,6 @@ namespace PappyjoeMVC.View
                                 igstAmount = ((Convert.ToDecimal(dgv_SalesItem.CurrentRow.Cells["ColQty"].Value.ToString()) * Convert.ToDecimal(dgv_SalesItem.CurrentRow.Cells["colUnitcost"].Value.ToString())) * Convert.ToDecimal(dgv_SalesItem.CurrentRow.Cells["colIGST"].Value.ToString())) / 100;
                                 IGST = Convert.ToDecimal(Txt_TotalIGST.Text) - igstAmount;
                                 Txt_TotalIGST.Text = Convert.ToDecimal(IGST).ToString("##0.00");
-
                             }
                         }
                         if (txt_TotalCost.Text != "")
@@ -809,7 +798,6 @@ namespace PappyjoeMVC.View
                 dgv_BatchSale.Rows.Clear();
             }
         }
-
         private void btn_AddtoGrid_Click(object sender, EventArgs e)
         {
             Decimal TotalGst = 0; decimal gstAmount = 0; decimal igstAmount = 0;
@@ -947,7 +935,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void Sales_Return_Load(object sender, EventArgs e)
         {
             DTP_OrderDate.Format = DateTimePickerFormat.Short;

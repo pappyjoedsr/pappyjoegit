@@ -93,6 +93,16 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.get_doctor(doctor_id);
             return dtb;
         }
+        public DataTable Get_CompanyNAme()
+        {
+            DataTable dtb = cmodel.Get_CompanyNAme();
+            return dtb;
+        }
+        public string server()
+        {
+            string server = db.server();
+            return server;
+        }
         public DataTable order_itemsDtails(int invnum_order)
         {
             DataTable dtb = _model.order_itemsDtails(invnum_order);

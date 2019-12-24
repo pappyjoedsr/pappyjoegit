@@ -61,12 +61,13 @@ namespace PappyjoeMVC.View
                 {
                     series.Points.Clear();
                 }
-                //Select d = new Select();
                 Grvtreatmenteachdoctor.DataSource = this.cntrl.DoctoreachtreatmentLoad(date1, date2);
                 this.Grvtreatmenteachdoctor.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvtreatmenteachdoctor.Rows.Count < 1)
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -143,8 +144,6 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                //DateTime d1 = DateTime.Parse(dateTimePickertreateachdoctor1.Value.ToString("MM/dd/yyyy"));
-                //DateTime d2 = DateTime.Parse(dateTimePickertreateachdoctor2.Value.ToString("MM/dd/yyyy"));
                 string date1 = dateTimePickertreateachdoctor1.Value.ToString("yyyy-MM-dd");
                 string date2 = dateTimePickertreateachdoctor2.Value.ToString("yyyy-MM-dd");
                 if (Convert.ToDateTime(date1).Date > Convert.ToDateTime(date2).Date)
@@ -183,6 +182,8 @@ namespace PappyjoeMVC.View
                         this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         if (Grvtreatmenteachdoctor.Rows.Count < 1)
                         {
+                            int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                            Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                             Lab_Msg.Show();
                         }
                         else
@@ -208,6 +209,8 @@ namespace PappyjoeMVC.View
                         this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         if (Grvtreatmenteachdoctor.Rows.Count < 1)
                         {
+                            int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                            Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                             Lab_Msg.Show();
                         }
                         else
@@ -238,6 +241,8 @@ namespace PappyjoeMVC.View
                         this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         if (Grvtreatmenteachdoctor.Rows.Count < 1)
                         {
+                            int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                            Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                             Lab_Msg.Show();
                         }
                         else
@@ -263,6 +268,8 @@ namespace PappyjoeMVC.View
                         this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         if (Grvtreatmenteachdoctor.Rows.Count < 1)
                         {
+                            int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                            Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                             Lab_Msg.Show();
                         }
                         else
@@ -348,43 +355,45 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<table align=center  width=900>");
                     sWrite.WriteLine("<col>"); ;
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<th colspan=8> <center><FONT COLOR=black FACE='Segoe UI' SIZE=4>  <b> TREATMENT FOR EACH DOCTOR </b> </font></center></th>");
+                    sWrite.WriteLine("<th colspan=8> <center><FONT COLOR=black FACE='Segoe UI' SIZE=5>  <b> TREATMENT FOR EACH DOCTOR </b> </font></center></th>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <br><b> " + strclinicname + "</b> </font></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  <b> " + strStreet + "</b> </font></left></td>");
+                    sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b> " + strStreet + "</b> </font></left></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  <b> " + strphone + "</b> </font></left></td>");
+                    sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b> " + strphone + "</b> </font></left></td>");
                     sWrite.WriteLine("</tr>");
+                    sWrite.WriteLine("<tr><td colspan=8><hr></td></tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  " + "<b>From :</b>" + " " + dateTimePickertreateachdoctor1.Value.ToString("dd/MM/yyyy") + " </font></center></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  " + "<b>To :</b>" + "   " + dateTimePickertreateachdoctor2.Value.ToString("dd/MM/yyyy") + "</font></center></td>");
                     sWrite.WriteLine("</tr>");
-                    sWrite.WriteLine("<tr>");
+                    sWrite.WriteLine("<tr>"); 
                     sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  " + "<b>Printed Date:</b>" + "" + DateTime.Now.ToString("dd/MM/yyyy") + " </font></center></td>");
                     sWrite.WriteLine("</tr>");
                     if (gridtreatmentondoctors.Rows.Count > 0)
                     {
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td align='left' width='6%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='segoe UI' SIZE=3 >SlNo</font></td>");
-                        sWrite.WriteLine("<td align='left' width='20%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='segoe UI' SIZE=3>Date</font></td>");
-                        sWrite.WriteLine("<td align='left' width='56%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='segoe UI' SIZE=3>Services</font></td>");
-                        sWrite.WriteLine("<td align='left' width='56%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='segoe UI' SIZE=3>Doctor</font></td>");
+                        sWrite.WriteLine("<td align='left' width='6%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='segoe UI' SIZE=3 >&nbsp;<b>Slno.</b></font></td>");
+                        sWrite.WriteLine("<td align='left' width='20%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='segoe UI' SIZE=3>&nbsp;<b>Date</b></font></td>");
+                        sWrite.WriteLine("<td align='left' width='56%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='segoe UI' SIZE=3>&nbsp;<b>Services</b></font></td>");
+                        sWrite.WriteLine("<td align='left' width='56%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='segoe UI' SIZE=3>&nbsp;<b>Doctor</b></font></td>");
                         sWrite.WriteLine("</tr>");
                         int k = 1;
                         for (int i = 0; i < gridtreatmentondoctors.Rows.Count; i++)
                         {
                             sWrite.WriteLine("<tr>");
-                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='segoe UI' SIZE=2>" + k + "</font></th>");
-                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='segoe UI' SIZE=2>" + gridtreatmentondoctors.Rows[i].Cells[1].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='segoe UI' SIZE=2>" + gridtreatmentondoctors.Rows[i].Cells[2].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='segoe UI' SIZE=2>" + gridtreatmentondoctors.Rows[i].Cells[3].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='segoe UI' SIZE=2>&nbsp;" + k + "</font></th>");
+                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='segoe UI' SIZE=2>&nbsp;" + gridtreatmentondoctors.Rows[i].Cells[1].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='segoe UI' SIZE=2>&nbsp;" + gridtreatmentondoctors.Rows[i].Cells[2].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("<td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='segoe UI' SIZE=2>&nbsp;" + gridtreatmentondoctors.Rows[i].Cells[3].Value.ToString() + "</font></td>");
                             sWrite.WriteLine("</tr>");
+                            k = k + 1;
                         }
                         sWrite.WriteLine("<tr>");
                         sWrite.WriteLine("<td align=right colspan=6><FONT COLOR=black FACE='Segoe UI' SIZE=3 ><br><br><b> </b>&nbsp;&nbsp;  </font> </td> ");
@@ -440,7 +449,7 @@ namespace PappyjoeMVC.View
                         bind_grid(dt1);
                         int count = dt1.Rows.Count;
                         label4.Text = count.ToString();
-                        Grvtreatmenteachdoctor.DataSource = this.cntrl.Doctoreachtreatment(date1, date2, Selected_drid.ToString());//Doctoreachtreatmentgrid
+                        Grvtreatmenteachdoctor.DataSource = this.cntrl.Doctoreachtreatment(date1, date2, Selected_drid.ToString());
                     }
                     else if (combodoctors.SelectedIndex == 0)
                     {
@@ -455,6 +464,8 @@ namespace PappyjoeMVC.View
                     this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     if (Grvtreatmenteachdoctor.Rows.Count < 1)
                     {
+                        int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Show();
                     }
                     else
@@ -506,6 +517,8 @@ namespace PappyjoeMVC.View
                 this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvtreatmenteachdoctor.Rows.Count < 1)
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else
@@ -569,6 +582,8 @@ namespace PappyjoeMVC.View
                 this.Grvtreatmenteachdoctor.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvtreatmenteachdoctor.Rows.Count < 1)
                 {
+                    int x = (panel4.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 else

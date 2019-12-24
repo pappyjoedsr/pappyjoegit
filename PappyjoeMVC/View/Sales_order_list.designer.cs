@@ -54,9 +54,11 @@
             this.colInvNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sales)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // delete
@@ -83,7 +85,7 @@
             this.Btn_Show.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Show.ForeColor = System.Drawing.Color.White;
             this.Btn_Show.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_Show.Location = new System.Drawing.Point(583, 54);
+            this.Btn_Show.Location = new System.Drawing.Point(583, 10);
             this.Btn_Show.Name = "Btn_Show";
             this.Btn_Show.Size = new System.Drawing.Size(65, 22);
             this.Btn_Show.TabIndex = 302;
@@ -99,7 +101,7 @@
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(814, 50);
+            this.btn_Refresh.Location = new System.Drawing.Point(813, 6);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(74, 30);
             this.btn_Refresh.TabIndex = 295;
@@ -113,7 +115,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label8.Location = new System.Drawing.Point(7, 57);
+            this.label8.Location = new System.Drawing.Point(7, 13);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 17);
             this.label8.TabIndex = 294;
@@ -124,7 +126,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(305, 57);
+            this.label3.Location = new System.Drawing.Point(305, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 17);
             this.label3.TabIndex = 293;
@@ -135,7 +137,7 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label41.Location = new System.Drawing.Point(9, 13);
+            this.label41.Location = new System.Drawing.Point(4, 6);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(145, 21);
             this.label41.TabIndex = 290;
@@ -148,7 +150,7 @@
             this.btn_Sales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Sales.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Sales.ForeColor = System.Drawing.Color.White;
-            this.btn_Sales.Location = new System.Drawing.Point(889, 50);
+            this.btn_Sales.Location = new System.Drawing.Point(888, 6);
             this.btn_Sales.Name = "btn_Sales";
             this.btn_Sales.Size = new System.Drawing.Size(72, 30);
             this.btn_Sales.TabIndex = 210;
@@ -161,9 +163,9 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
-            this.panel3.Location = new System.Drawing.Point(0, 41);
+            this.panel3.Location = new System.Drawing.Point(-1, 43);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(967, 1);
+            this.panel3.Size = new System.Drawing.Size(969, 1);
             this.panel3.TabIndex = 209;
             // 
             // btnCancel
@@ -173,7 +175,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(866, 7);
+            this.btnCancel.Location = new System.Drawing.Point(844, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(89, 27);
             this.btnCancel.TabIndex = 207;
@@ -184,7 +186,7 @@
             // 
             // DTP_To
             // 
-            this.DTP_To.Location = new System.Drawing.Point(367, 55);
+            this.DTP_To.Location = new System.Drawing.Point(367, 11);
             this.DTP_To.Name = "DTP_To";
             this.DTP_To.Size = new System.Drawing.Size(200, 20);
             this.DTP_To.TabIndex = 3;
@@ -226,7 +228,7 @@
             // 
             // DTP_From
             // 
-            this.DTP_From.Location = new System.Drawing.Point(84, 55);
+            this.DTP_From.Location = new System.Drawing.Point(84, 11);
             this.DTP_From.Name = "DTP_From";
             this.DTP_From.Size = new System.Drawing.Size(200, 20);
             this.DTP_From.TabIndex = 2;
@@ -240,15 +242,16 @@
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Lab_Msg.Location = new System.Drawing.Point(142, 212);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(563, 25);
             this.Lab_Msg.TabIndex = 278;
             this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // panel2
@@ -332,16 +335,22 @@
             this.panel1.Controls.Add(this.btn_Refresh);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label41);
             this.panel1.Controls.Add(this.btn_Sales);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.DTP_To);
             this.panel1.Controls.Add(this.DTP_From);
-            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Location = new System.Drawing.Point(1, 45);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(965, 87);
+            this.panel1.Size = new System.Drawing.Size(964, 43);
             this.panel1.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label41);
+            this.panel4.Controls.Add(this.btnCancel);
+            this.panel4.Location = new System.Drawing.Point(2, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(964, 35);
+            this.panel4.TabIndex = 279;
             // 
             // Sales_order_list
             // 
@@ -349,7 +358,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(968, 564);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -357,10 +368,11 @@
             this.Text = "Sales Order List";
             this.Load += new System.EventHandler(this.Sales_order_list_Load);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sales)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -391,5 +403,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colInvNum;
         private System.Windows.Forms.DataGridViewImageColumn colEdit;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel4;
     }
 }

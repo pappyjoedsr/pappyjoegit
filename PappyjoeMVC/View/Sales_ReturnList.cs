@@ -20,6 +20,7 @@ namespace PappyjoeMVC.View
 
         private void Sales_ReturnList_Load(object sender, EventArgs e)
         {
+
             Lab_Msg.Visible = false;
             DateTime date = DateTime.Now.Date;
             DataTable dtb = new DataTable();
@@ -29,7 +30,11 @@ namespace PappyjoeMVC.View
                 grid_fill(dtb);
             }
             else
+            {
+                int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Visible = true;
+            }
             dgv_sales.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             dgv_sales.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv_sales.EnableHeadersVisualStyles = false;
@@ -80,6 +85,7 @@ namespace PappyjoeMVC.View
                     {
                         var form2 = new Sales_Return(Ret_no);
                         form2.ShowDialog();
+                        form2.Dispose();
                     }
                 }
             }
@@ -100,7 +106,11 @@ namespace PappyjoeMVC.View
                 grid_fill(dtb);
             }
             else
+            {
+                int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Visible = true;
+            }
         }
 
         private void Btn_Show_Click(object sender, EventArgs e)
@@ -122,6 +132,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Visible = true;
                 }
             }

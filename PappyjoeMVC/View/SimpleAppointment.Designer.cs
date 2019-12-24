@@ -74,6 +74,29 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimpleAppointment));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panl_Treatment = new System.Windows.Forms.Panel();
+            this.Lab_Cost = new System.Windows.Forms.TextBox();
+            this.Lab_TotalTax = new System.Windows.Forms.Label();
+            this.Lab_DisInrs = new System.Windows.Forms.Label();
+            this.Lab_TreatId = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.NMUP_Unit = new System.Windows.Forms.TextBox();
+            this.lab_AddDiscount = new System.Windows.Forms.Label();
+            this.lab_AddTax = new System.Windows.Forms.Label();
+            this.text_billno = new System.Windows.Forms.TextBox();
+            this.Cmb_tax = new System.Windows.Forms.ComboBox();
+            this.CMB_Discount = new System.Windows.Forms.ComboBox();
+            this.btn_TreatmentAdd = new System.Windows.Forms.Button();
+            this.txt_Discount = new System.Windows.Forms.TextBox();
+            this.lab_Total = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.procedure_item = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.lab_BillNo = new System.Windows.Forms.Label();
             this.dpStartTimeDate = new System.Windows.Forms.DateTimePicker();
             this.btn_ClearAll = new System.Windows.Forms.Button();
             this.Panl_Prescrption = new System.Windows.Forms.Panel();
@@ -186,29 +209,6 @@
             this._Drugtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.panl_Treatment = new System.Windows.Forms.Panel();
-            this.Lab_Cost = new System.Windows.Forms.TextBox();
-            this.Lab_TotalTax = new System.Windows.Forms.Label();
-            this.Lab_DisInrs = new System.Windows.Forms.Label();
-            this.Lab_TreatId = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.NMUP_Unit = new System.Windows.Forms.TextBox();
-            this.lab_AddDiscount = new System.Windows.Forms.Label();
-            this.lab_AddTax = new System.Windows.Forms.Label();
-            this.text_billno = new System.Windows.Forms.TextBox();
-            this.Cmb_tax = new System.Windows.Forms.ComboBox();
-            this.CMB_Discount = new System.Windows.Forms.ComboBox();
-            this.btn_TreatmentAdd = new System.Windows.Forms.Button();
-            this.txt_Discount = new System.Windows.Forms.TextBox();
-            this.lab_Total = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.procedure_item = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.lab_BillNo = new System.Windows.Forms.Label();
             this.Lab_GrandTotal = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.dgv_treatment = new System.Windows.Forms.DataGridView();
@@ -290,6 +290,7 @@
             this.drugtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            this.panl_Treatment.SuspendLayout();
             this.Panl_Prescrption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
@@ -311,7 +312,6 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_prescrptn)).BeginInit();
             this.groupBox5.SuspendLayout();
-            this.panl_Treatment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_treatment)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -325,6 +325,7 @@
             this.panel1.AutoScroll = true;
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.panl_Treatment);
             this.panel1.Controls.Add(this.dpStartTimeDate);
             this.panel1.Controls.Add(this.btn_ClearAll);
             this.panel1.Controls.Add(this.Panl_Prescrption);
@@ -357,6 +358,316 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1140, 779);
             this.panel1.TabIndex = 1;
+            // 
+            // panl_Treatment
+            // 
+            this.panl_Treatment.BackColor = System.Drawing.Color.Gainsboro;
+            this.panl_Treatment.Controls.Add(this.Lab_Cost);
+            this.panl_Treatment.Controls.Add(this.Lab_TotalTax);
+            this.panl_Treatment.Controls.Add(this.Lab_DisInrs);
+            this.panl_Treatment.Controls.Add(this.Lab_TreatId);
+            this.panl_Treatment.Controls.Add(this.button3);
+            this.panl_Treatment.Controls.Add(this.NMUP_Unit);
+            this.panl_Treatment.Controls.Add(this.lab_AddDiscount);
+            this.panl_Treatment.Controls.Add(this.lab_AddTax);
+            this.panl_Treatment.Controls.Add(this.text_billno);
+            this.panl_Treatment.Controls.Add(this.Cmb_tax);
+            this.panl_Treatment.Controls.Add(this.CMB_Discount);
+            this.panl_Treatment.Controls.Add(this.btn_TreatmentAdd);
+            this.panl_Treatment.Controls.Add(this.txt_Discount);
+            this.panl_Treatment.Controls.Add(this.lab_Total);
+            this.panl_Treatment.Controls.Add(this.label36);
+            this.panl_Treatment.Controls.Add(this.label37);
+            this.panl_Treatment.Controls.Add(this.label38);
+            this.panl_Treatment.Controls.Add(this.label44);
+            this.panl_Treatment.Controls.Add(this.label45);
+            this.panl_Treatment.Controls.Add(this.procedure_item);
+            this.panl_Treatment.Controls.Add(this.label46);
+            this.panl_Treatment.Controls.Add(this.lab_BillNo);
+            this.panl_Treatment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panl_Treatment.Location = new System.Drawing.Point(14, 443);
+            this.panl_Treatment.Name = "panl_Treatment";
+            this.panl_Treatment.Size = new System.Drawing.Size(778, 121);
+            this.panl_Treatment.TabIndex = 401;
+            this.panl_Treatment.Visible = false;
+            this.panl_Treatment.Paint += new System.Windows.Forms.PaintEventHandler(this.panl_Treatment_Paint);
+            // 
+            // Lab_Cost
+            // 
+            this.Lab_Cost.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Lab_Cost.Location = new System.Drawing.Point(215, 70);
+            this.Lab_Cost.Name = "Lab_Cost";
+            this.Lab_Cost.Size = new System.Drawing.Size(58, 21);
+            this.Lab_Cost.TabIndex = 275;
+            this.Lab_Cost.Text = "0";
+            this.Lab_Cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Lab_Cost.TextChanged += new System.EventHandler(this.Lab_Cost_TextChanged);
+            this.Lab_Cost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Lab_Cost_KeyPress);
+            // 
+            // Lab_TotalTax
+            // 
+            this.Lab_TotalTax.AutoSize = true;
+            this.Lab_TotalTax.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lab_TotalTax.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Lab_TotalTax.Location = new System.Drawing.Point(319, 13);
+            this.Lab_TotalTax.Name = "Lab_TotalTax";
+            this.Lab_TotalTax.Size = new System.Drawing.Size(13, 13);
+            this.Lab_TotalTax.TabIndex = 274;
+            this.Lab_TotalTax.Text = "0";
+            this.Lab_TotalTax.Visible = false;
+            // 
+            // Lab_DisInrs
+            // 
+            this.Lab_DisInrs.AutoSize = true;
+            this.Lab_DisInrs.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lab_DisInrs.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Lab_DisInrs.Location = new System.Drawing.Point(299, 12);
+            this.Lab_DisInrs.Name = "Lab_DisInrs";
+            this.Lab_DisInrs.Size = new System.Drawing.Size(13, 13);
+            this.Lab_DisInrs.TabIndex = 273;
+            this.Lab_DisInrs.Text = "0";
+            this.Lab_DisInrs.Visible = false;
+            // 
+            // Lab_TreatId
+            // 
+            this.Lab_TreatId.AutoSize = true;
+            this.Lab_TreatId.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lab_TreatId.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Lab_TreatId.Location = new System.Drawing.Point(279, 12);
+            this.Lab_TreatId.Name = "Lab_TreatId";
+            this.Lab_TreatId.Size = new System.Drawing.Size(13, 13);
+            this.Lab_TreatId.TabIndex = 272;
+            this.Lab_TreatId.Text = "0";
+            this.Lab_TreatId.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Tomato;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(643, 9);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(64, 24);
+            this.button3.TabIndex = 271;
+            this.button3.Text = "Cancel";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // NMUP_Unit
+            // 
+            this.NMUP_Unit.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NMUP_Unit.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NMUP_Unit.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.NMUP_Unit.Location = new System.Drawing.Point(286, 70);
+            this.NMUP_Unit.Name = "NMUP_Unit";
+            this.NMUP_Unit.Size = new System.Drawing.Size(63, 20);
+            this.NMUP_Unit.TabIndex = 270;
+            this.NMUP_Unit.Text = "1";
+            this.NMUP_Unit.TextChanged += new System.EventHandler(this.NMUP_Unit_TextChanged);
+            this.NMUP_Unit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NMUP_Unit_KeyPress);
+            // 
+            // lab_AddDiscount
+            // 
+            this.lab_AddDiscount.AutoSize = true;
+            this.lab_AddDiscount.BackColor = System.Drawing.Color.Gainsboro;
+            this.lab_AddDiscount.ForeColor = System.Drawing.Color.Blue;
+            this.lab_AddDiscount.Location = new System.Drawing.Point(394, 83);
+            this.lab_AddDiscount.Name = "lab_AddDiscount";
+            this.lab_AddDiscount.Size = new System.Drawing.Size(77, 15);
+            this.lab_AddDiscount.TabIndex = 264;
+            this.lab_AddDiscount.Text = "add discount";
+            this.lab_AddDiscount.Click += new System.EventHandler(this.lab_AddDiscount_Click);
+            // 
+            // lab_AddTax
+            // 
+            this.lab_AddTax.AutoSize = true;
+            this.lab_AddTax.BackColor = System.Drawing.Color.Gainsboro;
+            this.lab_AddTax.ForeColor = System.Drawing.Color.Blue;
+            this.lab_AddTax.Location = new System.Drawing.Point(548, 74);
+            this.lab_AddTax.Name = "lab_AddTax";
+            this.lab_AddTax.Size = new System.Drawing.Size(47, 15);
+            this.lab_AddTax.TabIndex = 267;
+            this.lab_AddTax.Text = "add tax";
+            this.lab_AddTax.Click += new System.EventHandler(this.lab_AddTax_Click);
+            // 
+            // text_billno
+            // 
+            this.text_billno.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.text_billno.Location = new System.Drawing.Point(96, 4);
+            this.text_billno.Name = "text_billno";
+            this.text_billno.ReadOnly = true;
+            this.text_billno.Size = new System.Drawing.Size(140, 21);
+            this.text_billno.TabIndex = 269;
+            this.text_billno.Text = "INV";
+            // 
+            // Cmb_tax
+            // 
+            this.Cmb_tax.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Cmb_tax.FormattingEnabled = true;
+            this.Cmb_tax.Location = new System.Drawing.Point(544, 70);
+            this.Cmb_tax.Name = "Cmb_tax";
+            this.Cmb_tax.Size = new System.Drawing.Size(126, 23);
+            this.Cmb_tax.TabIndex = 268;
+            this.Cmb_tax.Text = "NA";
+            this.Cmb_tax.Visible = false;
+            this.Cmb_tax.SelectedIndexChanged += new System.EventHandler(this.Cmb_tax_SelectedIndexChanged);
+            this.Cmb_tax.SelectionChangeCommitted += new System.EventHandler(this.Cmb_tax_SelectionChangeCommitted);
+            this.Cmb_tax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_tax_KeyPress);
+            // 
+            // CMB_Discount
+            // 
+            this.CMB_Discount.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.CMB_Discount.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.CMB_Discount.FormattingEnabled = true;
+            this.CMB_Discount.Items.AddRange(new object[] {
+            "%",
+            "INR"});
+            this.CMB_Discount.Location = new System.Drawing.Point(457, 70);
+            this.CMB_Discount.Name = "CMB_Discount";
+            this.CMB_Discount.Size = new System.Drawing.Size(54, 23);
+            this.CMB_Discount.TabIndex = 266;
+            this.CMB_Discount.Text = "INR";
+            this.CMB_Discount.Visible = false;
+            this.CMB_Discount.SelectedIndexChanged += new System.EventHandler(this.CMB_Discount_SelectedIndexChanged);
+            // 
+            // btn_TreatmentAdd
+            // 
+            this.btn_TreatmentAdd.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_TreatmentAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_TreatmentAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_TreatmentAdd.ForeColor = System.Drawing.Color.White;
+            this.btn_TreatmentAdd.Location = new System.Drawing.Point(713, 9);
+            this.btn_TreatmentAdd.Name = "btn_TreatmentAdd";
+            this.btn_TreatmentAdd.Size = new System.Drawing.Size(64, 24);
+            this.btn_TreatmentAdd.TabIndex = 254;
+            this.btn_TreatmentAdd.Text = "Add";
+            this.btn_TreatmentAdd.UseVisualStyleBackColor = false;
+            this.btn_TreatmentAdd.Click += new System.EventHandler(this.btn_TreatmentAdd_Click);
+            // 
+            // txt_Discount
+            // 
+            this.txt_Discount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Discount.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.txt_Discount.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_Discount.Location = new System.Drawing.Point(392, 72);
+            this.txt_Discount.Name = "txt_Discount";
+            this.txt_Discount.Size = new System.Drawing.Size(60, 20);
+            this.txt_Discount.TabIndex = 265;
+            this.txt_Discount.Text = "0";
+            this.txt_Discount.WordWrap = false;
+            this.txt_Discount.Click += new System.EventHandler(this.txt_Discount_Click);
+            this.txt_Discount.TextChanged += new System.EventHandler(this.txt_Discount_TextChanged);
+            this.txt_Discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Discount_KeyPress);
+            // 
+            // lab_Total
+            // 
+            this.lab_Total.AutoSize = true;
+            this.lab_Total.BackColor = System.Drawing.Color.Transparent;
+            this.lab_Total.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_Total.ForeColor = System.Drawing.Color.Red;
+            this.lab_Total.Location = new System.Drawing.Point(692, 69);
+            this.lab_Total.Name = "lab_Total";
+            this.lab_Total.Size = new System.Drawing.Size(15, 17);
+            this.lab_Total.TabIndex = 262;
+            this.lab_Total.Text = "0";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.Color.Transparent;
+            this.label36.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label36.Location = new System.Drawing.Point(692, 42);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(40, 13);
+            this.label36.TabIndex = 263;
+            this.label36.Text = "TOTAL";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.Transparent;
+            this.label37.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label37.Location = new System.Drawing.Point(548, 42);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(29, 13);
+            this.label37.TabIndex = 261;
+            this.label37.Text = "TAX ";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.BackColor = System.Drawing.Color.Transparent;
+            this.label38.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label38.Location = new System.Drawing.Point(392, 42);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(61, 13);
+            this.label38.TabIndex = 260;
+            this.label38.Text = "DISCOUNT";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.BackColor = System.Drawing.Color.Transparent;
+            this.label44.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label44.Location = new System.Drawing.Point(219, 42);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(34, 13);
+            this.label44.TabIndex = 258;
+            this.label44.Text = "COST";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.BackColor = System.Drawing.Color.Transparent;
+            this.label45.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label45.Location = new System.Drawing.Point(291, 42);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(32, 13);
+            this.label45.TabIndex = 257;
+            this.label45.Text = "UNIT";
+            // 
+            // procedure_item
+            // 
+            this.procedure_item.AutoSize = true;
+            this.procedure_item.BackColor = System.Drawing.Color.Transparent;
+            this.procedure_item.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.procedure_item.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.procedure_item.Location = new System.Drawing.Point(18, 70);
+            this.procedure_item.Name = "procedure_item";
+            this.procedure_item.Size = new System.Drawing.Size(166, 17);
+            this.procedure_item.TabIndex = 255;
+            this.procedure_item.Text = "PRODUCTS AND SERVICES";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.BackColor = System.Drawing.Color.Transparent;
+            this.label46.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label46.Location = new System.Drawing.Point(18, 42);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(76, 13);
+            this.label46.TabIndex = 256;
+            this.label46.Text = "PROCEDURES";
+            // 
+            // lab_BillNo
+            // 
+            this.lab_BillNo.AutoSize = true;
+            this.lab_BillNo.BackColor = System.Drawing.Color.Transparent;
+            this.lab_BillNo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_BillNo.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lab_BillNo.Location = new System.Drawing.Point(17, 11);
+            this.lab_BillNo.Name = "lab_BillNo";
+            this.lab_BillNo.Size = new System.Drawing.Size(69, 13);
+            this.lab_BillNo.TabIndex = 253;
+            this.lab_BillNo.Text = "Bill Number";
             // 
             // dpStartTimeDate
             // 
@@ -412,7 +723,7 @@
             this.Panl_Prescrption.Controls.Add(this.label39);
             this.Panl_Prescrption.Controls.Add(this.label40);
             this.Panl_Prescrption.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Panl_Prescrption.Location = new System.Drawing.Point(1, 572);
+            this.Panl_Prescrption.Location = new System.Drawing.Point(1, 571);
             this.Panl_Prescrption.Name = "Panl_Prescrption";
             this.Panl_Prescrption.Size = new System.Drawing.Size(796, 124);
             this.Panl_Prescrption.TabIndex = 363;
@@ -703,9 +1014,9 @@
             this.groupBox6.Controls.Add(this.label30);
             this.groupBox6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.groupBox6.Location = new System.Drawing.Point(796, 146);
+            this.groupBox6.Location = new System.Drawing.Point(805, 146);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(337, 272);
+            this.groupBox6.Size = new System.Drawing.Size(331, 272);
             this.groupBox6.TabIndex = 400;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Clinical Findings";
@@ -744,7 +1055,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_fillNotes.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_fillNotes.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgv_fillNotes.Location = new System.Drawing.Point(10, 216);
+            this.dgv_fillNotes.Location = new System.Drawing.Point(6, 216);
             this.dgv_fillNotes.Name = "dgv_fillNotes";
             this.dgv_fillNotes.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -802,7 +1113,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dhv_fillDiagnosis.DefaultCellStyle = dataGridViewCellStyle4;
             this.dhv_fillDiagnosis.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dhv_fillDiagnosis.Location = new System.Drawing.Point(10, 130);
+            this.dhv_fillDiagnosis.Location = new System.Drawing.Point(6, 130);
             this.dhv_fillDiagnosis.Name = "dhv_fillDiagnosis";
             this.dhv_fillDiagnosis.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -886,7 +1197,7 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_fillComplaints.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_fillComplaints.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgv_fillComplaints.Location = new System.Drawing.Point(10, 45);
+            this.dgv_fillComplaints.Location = new System.Drawing.Point(7, 44);
             this.dgv_fillComplaints.Name = "dgv_fillComplaints";
             this.dgv_fillComplaints.ReadOnly = true;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -927,7 +1238,7 @@
             this.panel25.BackColor = System.Drawing.Color.DarkGray;
             this.panel25.Location = new System.Drawing.Point(0, 185);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(320, 1);
+            this.panel25.Size = new System.Drawing.Size(330, 1);
             this.panel25.TabIndex = 401;
             // 
             // panel24
@@ -935,7 +1246,7 @@
             this.panel24.BackColor = System.Drawing.Color.DarkGray;
             this.panel24.Location = new System.Drawing.Point(1, 100);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(320, 1);
+            this.panel24.Size = new System.Drawing.Size(330, 1);
             this.panel24.TabIndex = 400;
             // 
             // label32
@@ -1308,9 +1619,9 @@
             this.groupBox8.Controls.Add(this.label33);
             this.groupBox8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.groupBox8.Location = new System.Drawing.Point(795, 425);
+            this.groupBox8.Location = new System.Drawing.Point(801, 425);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(338, 136);
+            this.groupBox8.Size = new System.Drawing.Size(335, 136);
             this.groupBox8.TabIndex = 403;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Treatment";
@@ -1416,9 +1727,9 @@
             this.groupBox7.Controls.Add(this.linkLabel1);
             this.groupBox7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.groupBox7.Location = new System.Drawing.Point(794, 578);
+            this.groupBox7.Location = new System.Drawing.Point(803, 576);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(339, 116);
+            this.groupBox7.Size = new System.Drawing.Size(334, 116);
             this.groupBox7.TabIndex = 401;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Prescription";
@@ -1505,7 +1816,7 @@
             dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_fillPrescription.DefaultCellStyle = dataGridViewCellStyle25;
             this.dgv_fillPrescription.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgv_fillPrescription.Location = new System.Drawing.Point(10, 60);
+            this.dgv_fillPrescription.Location = new System.Drawing.Point(6, 60);
             this.dgv_fillPrescription.Name = "dgv_fillPrescription";
             this.dgv_fillPrescription.ReadOnly = true;
             dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1624,7 +1935,7 @@
             // 
             this.panel23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel23.BackColor = System.Drawing.Color.DimGray;
-            this.panel23.Location = new System.Drawing.Point(802, 637);
+            this.panel23.Location = new System.Drawing.Point(799, 564);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(1, 134);
             this.panel23.TabIndex = 402;
@@ -1644,19 +1955,17 @@
             // 
             this.panel22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel22.BackColor = System.Drawing.Color.DimGray;
-            this.panel22.Location = new System.Drawing.Point(802, 488);
+            this.panel22.Location = new System.Drawing.Point(799, 417);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(1, 150);
+            this.panel22.Size = new System.Drawing.Size(1, 147);
             this.panel22.TabIndex = 401;
             // 
             // panel21
             // 
-            this.panel21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel21.BackColor = System.Drawing.Color.DimGray;
-            this.panel21.Location = new System.Drawing.Point(802, 142);
+            this.panel21.Location = new System.Drawing.Point(799, 141);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(1, 350);
+            this.panel21.Size = new System.Drawing.Size(1, 278);
             this.panel21.TabIndex = 399;
             // 
             // btn_Close
@@ -1692,7 +2001,7 @@
             this.panel4.BackColor = System.Drawing.Color.DimGray;
             this.panel4.Location = new System.Drawing.Point(-1, 567);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1138, 1);
+            this.panel4.Size = new System.Drawing.Size(1140, 1);
             this.panel4.TabIndex = 348;
             // 
             // btn_Add
@@ -1883,7 +2192,6 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.panl_Treatment);
             this.groupBox5.Controls.Add(this.Lab_GrandTotal);
             this.groupBox5.Controls.Add(this.label25);
             this.groupBox5.Controls.Add(this.dgv_treatment);
@@ -1895,314 +2203,6 @@
             this.groupBox5.TabIndex = 350;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "TREATMENT";
-            // 
-            // panl_Treatment
-            // 
-            this.panl_Treatment.BackColor = System.Drawing.Color.Gainsboro;
-            this.panl_Treatment.Controls.Add(this.Lab_Cost);
-            this.panl_Treatment.Controls.Add(this.Lab_TotalTax);
-            this.panl_Treatment.Controls.Add(this.Lab_DisInrs);
-            this.panl_Treatment.Controls.Add(this.Lab_TreatId);
-            this.panl_Treatment.Controls.Add(this.button3);
-            this.panl_Treatment.Controls.Add(this.NMUP_Unit);
-            this.panl_Treatment.Controls.Add(this.lab_AddDiscount);
-            this.panl_Treatment.Controls.Add(this.lab_AddTax);
-            this.panl_Treatment.Controls.Add(this.text_billno);
-            this.panl_Treatment.Controls.Add(this.Cmb_tax);
-            this.panl_Treatment.Controls.Add(this.CMB_Discount);
-            this.panl_Treatment.Controls.Add(this.btn_TreatmentAdd);
-            this.panl_Treatment.Controls.Add(this.txt_Discount);
-            this.panl_Treatment.Controls.Add(this.lab_Total);
-            this.panl_Treatment.Controls.Add(this.label36);
-            this.panl_Treatment.Controls.Add(this.label37);
-            this.panl_Treatment.Controls.Add(this.label38);
-            this.panl_Treatment.Controls.Add(this.label44);
-            this.panl_Treatment.Controls.Add(this.label45);
-            this.panl_Treatment.Controls.Add(this.procedure_item);
-            this.panl_Treatment.Controls.Add(this.label46);
-            this.panl_Treatment.Controls.Add(this.lab_BillNo);
-            this.panl_Treatment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panl_Treatment.Location = new System.Drawing.Point(-6, 15);
-            this.panl_Treatment.Name = "panl_Treatment";
-            this.panl_Treatment.Size = new System.Drawing.Size(793, 116);
-            this.panl_Treatment.TabIndex = 401;
-            this.panl_Treatment.Visible = false;
-            // 
-            // Lab_Cost
-            // 
-            this.Lab_Cost.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Cost.Location = new System.Drawing.Point(215, 70);
-            this.Lab_Cost.Name = "Lab_Cost";
-            this.Lab_Cost.Size = new System.Drawing.Size(58, 21);
-            this.Lab_Cost.TabIndex = 275;
-            this.Lab_Cost.Text = "0";
-            this.Lab_Cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Lab_Cost.TextChanged += new System.EventHandler(this.Lab_Cost_TextChanged);
-            this.Lab_Cost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Lab_Cost_KeyPress);
-            // 
-            // Lab_TotalTax
-            // 
-            this.Lab_TotalTax.AutoSize = true;
-            this.Lab_TotalTax.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lab_TotalTax.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_TotalTax.Location = new System.Drawing.Point(319, 13);
-            this.Lab_TotalTax.Name = "Lab_TotalTax";
-            this.Lab_TotalTax.Size = new System.Drawing.Size(13, 13);
-            this.Lab_TotalTax.TabIndex = 274;
-            this.Lab_TotalTax.Text = "0";
-            this.Lab_TotalTax.Visible = false;
-            // 
-            // Lab_DisInrs
-            // 
-            this.Lab_DisInrs.AutoSize = true;
-            this.Lab_DisInrs.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lab_DisInrs.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_DisInrs.Location = new System.Drawing.Point(299, 12);
-            this.Lab_DisInrs.Name = "Lab_DisInrs";
-            this.Lab_DisInrs.Size = new System.Drawing.Size(13, 13);
-            this.Lab_DisInrs.TabIndex = 273;
-            this.Lab_DisInrs.Text = "0";
-            this.Lab_DisInrs.Visible = false;
-            // 
-            // Lab_TreatId
-            // 
-            this.Lab_TreatId.AutoSize = true;
-            this.Lab_TreatId.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lab_TreatId.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_TreatId.Location = new System.Drawing.Point(279, 12);
-            this.Lab_TreatId.Name = "Lab_TreatId";
-            this.Lab_TreatId.Size = new System.Drawing.Size(13, 13);
-            this.Lab_TreatId.TabIndex = 272;
-            this.Lab_TreatId.Text = "0";
-            this.Lab_TreatId.Visible = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Tomato;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(643, 9);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(64, 24);
-            this.button3.TabIndex = 271;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // NMUP_Unit
-            // 
-            this.NMUP_Unit.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NMUP_Unit.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NMUP_Unit.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.NMUP_Unit.Location = new System.Drawing.Point(286, 70);
-            this.NMUP_Unit.Name = "NMUP_Unit";
-            this.NMUP_Unit.Size = new System.Drawing.Size(63, 20);
-            this.NMUP_Unit.TabIndex = 270;
-            this.NMUP_Unit.Text = "1";
-            this.NMUP_Unit.TextChanged += new System.EventHandler(this.NMUP_Unit_TextChanged);
-            this.NMUP_Unit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NMUP_Unit_KeyPress);
-            // 
-            // lab_AddDiscount
-            // 
-            this.lab_AddDiscount.AutoSize = true;
-            this.lab_AddDiscount.BackColor = System.Drawing.Color.Gainsboro;
-            this.lab_AddDiscount.ForeColor = System.Drawing.Color.Blue;
-            this.lab_AddDiscount.Location = new System.Drawing.Point(394, 83);
-            this.lab_AddDiscount.Name = "lab_AddDiscount";
-            this.lab_AddDiscount.Size = new System.Drawing.Size(77, 15);
-            this.lab_AddDiscount.TabIndex = 264;
-            this.lab_AddDiscount.Text = "add discount";
-            this.lab_AddDiscount.Click += new System.EventHandler(this.lab_AddDiscount_Click);
-            // 
-            // lab_AddTax
-            // 
-            this.lab_AddTax.AutoSize = true;
-            this.lab_AddTax.BackColor = System.Drawing.Color.Gainsboro;
-            this.lab_AddTax.ForeColor = System.Drawing.Color.Blue;
-            this.lab_AddTax.Location = new System.Drawing.Point(548, 74);
-            this.lab_AddTax.Name = "lab_AddTax";
-            this.lab_AddTax.Size = new System.Drawing.Size(47, 15);
-            this.lab_AddTax.TabIndex = 267;
-            this.lab_AddTax.Text = "add tax";
-            this.lab_AddTax.Click += new System.EventHandler(this.lab_AddTax_Click);
-            // 
-            // text_billno
-            // 
-            this.text_billno.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_billno.Location = new System.Drawing.Point(96, 4);
-            this.text_billno.Name = "text_billno";
-            this.text_billno.ReadOnly = true;
-            this.text_billno.Size = new System.Drawing.Size(140, 21);
-            this.text_billno.TabIndex = 269;
-            this.text_billno.Text = "INV";
-            // 
-            // Cmb_tax
-            // 
-            this.Cmb_tax.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Cmb_tax.FormattingEnabled = true;
-            this.Cmb_tax.Location = new System.Drawing.Point(544, 70);
-            this.Cmb_tax.Name = "Cmb_tax";
-            this.Cmb_tax.Size = new System.Drawing.Size(126, 23);
-            this.Cmb_tax.TabIndex = 268;
-            this.Cmb_tax.Text = "NA";
-            this.Cmb_tax.Visible = false;
-            this.Cmb_tax.SelectedIndexChanged += new System.EventHandler(this.Cmb_tax_SelectedIndexChanged);
-            this.Cmb_tax.SelectionChangeCommitted += new System.EventHandler(this.Cmb_tax_SelectionChangeCommitted);
-            this.Cmb_tax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_tax_KeyPress);
-            // 
-            // CMB_Discount
-            // 
-            this.CMB_Discount.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.CMB_Discount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.CMB_Discount.FormattingEnabled = true;
-            this.CMB_Discount.Items.AddRange(new object[] {
-            "%",
-            "INR"});
-            this.CMB_Discount.Location = new System.Drawing.Point(457, 70);
-            this.CMB_Discount.Name = "CMB_Discount";
-            this.CMB_Discount.Size = new System.Drawing.Size(54, 23);
-            this.CMB_Discount.TabIndex = 266;
-            this.CMB_Discount.Text = "INR";
-            this.CMB_Discount.Visible = false;
-            this.CMB_Discount.SelectedIndexChanged += new System.EventHandler(this.CMB_Discount_SelectedIndexChanged);
-            // 
-            // btn_TreatmentAdd
-            // 
-            this.btn_TreatmentAdd.BackColor = System.Drawing.Color.LimeGreen;
-            this.btn_TreatmentAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_TreatmentAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_TreatmentAdd.ForeColor = System.Drawing.Color.White;
-            this.btn_TreatmentAdd.Location = new System.Drawing.Point(713, 9);
-            this.btn_TreatmentAdd.Name = "btn_TreatmentAdd";
-            this.btn_TreatmentAdd.Size = new System.Drawing.Size(64, 24);
-            this.btn_TreatmentAdd.TabIndex = 254;
-            this.btn_TreatmentAdd.Text = "Add";
-            this.btn_TreatmentAdd.UseVisualStyleBackColor = false;
-            this.btn_TreatmentAdd.Click += new System.EventHandler(this.btn_TreatmentAdd_Click);
-            // 
-            // txt_Discount
-            // 
-            this.txt_Discount.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Discount.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.txt_Discount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_Discount.Location = new System.Drawing.Point(392, 72);
-            this.txt_Discount.Name = "txt_Discount";
-            this.txt_Discount.Size = new System.Drawing.Size(60, 20);
-            this.txt_Discount.TabIndex = 265;
-            this.txt_Discount.Text = "0";
-            this.txt_Discount.WordWrap = false;
-            this.txt_Discount.TextChanged += new System.EventHandler(this.txt_Discount_TextChanged);
-            this.txt_Discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Discount_KeyPress);
-            // 
-            // lab_Total
-            // 
-            this.lab_Total.AutoSize = true;
-            this.lab_Total.BackColor = System.Drawing.Color.Transparent;
-            this.lab_Total.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lab_Total.ForeColor = System.Drawing.Color.Red;
-            this.lab_Total.Location = new System.Drawing.Point(692, 69);
-            this.lab_Total.Name = "lab_Total";
-            this.lab_Total.Size = new System.Drawing.Size(15, 17);
-            this.lab_Total.TabIndex = 262;
-            this.lab_Total.Text = "0";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.Color.Transparent;
-            this.label36.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label36.Location = new System.Drawing.Point(692, 42);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(40, 13);
-            this.label36.TabIndex = 263;
-            this.label36.Text = "TOTAL";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.Transparent;
-            this.label37.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label37.Location = new System.Drawing.Point(548, 42);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(29, 13);
-            this.label37.TabIndex = 261;
-            this.label37.Text = "TAX ";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.Color.Transparent;
-            this.label38.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label38.Location = new System.Drawing.Point(392, 42);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(61, 13);
-            this.label38.TabIndex = 260;
-            this.label38.Text = "DISCOUNT";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.BackColor = System.Drawing.Color.Transparent;
-            this.label44.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label44.Location = new System.Drawing.Point(219, 42);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(34, 13);
-            this.label44.TabIndex = 258;
-            this.label44.Text = "COST";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.BackColor = System.Drawing.Color.Transparent;
-            this.label45.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label45.Location = new System.Drawing.Point(291, 42);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(32, 13);
-            this.label45.TabIndex = 257;
-            this.label45.Text = "UNIT";
-            // 
-            // procedure_item
-            // 
-            this.procedure_item.AutoSize = true;
-            this.procedure_item.BackColor = System.Drawing.Color.Transparent;
-            this.procedure_item.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.procedure_item.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.procedure_item.Location = new System.Drawing.Point(18, 70);
-            this.procedure_item.Name = "procedure_item";
-            this.procedure_item.Size = new System.Drawing.Size(166, 17);
-            this.procedure_item.TabIndex = 255;
-            this.procedure_item.Text = "PRODUCTS AND SERVICES";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.BackColor = System.Drawing.Color.Transparent;
-            this.label46.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label46.Location = new System.Drawing.Point(18, 42);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(76, 13);
-            this.label46.TabIndex = 256;
-            this.label46.Text = "PROCEDURES";
-            // 
-            // lab_BillNo
-            // 
-            this.lab_BillNo.AutoSize = true;
-            this.lab_BillNo.BackColor = System.Drawing.Color.Transparent;
-            this.lab_BillNo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lab_BillNo.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lab_BillNo.Location = new System.Drawing.Point(17, 11);
-            this.lab_BillNo.Name = "lab_BillNo";
-            this.lab_BillNo.Size = new System.Drawing.Size(69, 13);
-            this.lab_BillNo.TabIndex = 253;
-            this.lab_BillNo.Text = "Bill Number";
             // 
             // Lab_GrandTotal
             // 
@@ -3076,10 +3076,12 @@
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SimpleAppointment";
-            this.Text = "Simple Appointment";
+            this.Text = "Fast Track Window";
             this.Load += new System.EventHandler(this.SimpleAppointment_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panl_Treatment.ResumeLayout(false);
+            this.panl_Treatment.PerformLayout();
             this.Panl_Prescrption.ResumeLayout(false);
             this.Panl_Prescrption.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
@@ -3107,8 +3109,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_prescrptn)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.panl_Treatment.ResumeLayout(false);
-            this.panl_Treatment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_treatment)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

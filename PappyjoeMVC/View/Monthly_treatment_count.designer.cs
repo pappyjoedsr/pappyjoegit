@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monthly_Treatment_Count));
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -87,15 +87,16 @@
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Lab_Msg.Location = new System.Drawing.Point(274, 188);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(572, 25);
             this.Lab_Msg.TabIndex = 279;
             this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // gridmonthlytreatment
@@ -122,8 +123,8 @@
             this.gridmonthlytreatment.Location = new System.Drawing.Point(0, 0);
             this.gridmonthlytreatment.Name = "gridmonthlytreatment";
             this.gridmonthlytreatment.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
-            this.gridmonthlytreatment.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
+            this.gridmonthlytreatment.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.gridmonthlytreatment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridmonthlytreatment.Size = new System.Drawing.Size(1065, 556);
             this.gridmonthlytreatment.TabIndex = 0;
@@ -160,18 +161,18 @@
             // chartmonthtreatment
             // 
             this.chartmonthtreatment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea1.Name = "ChartArea1";
-            this.chartmonthtreatment.ChartAreas.Add(chartArea1);
+            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            chartArea2.Name = "ChartArea1";
+            this.chartmonthtreatment.ChartAreas.Add(chartArea2);
             this.chartmonthtreatment.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartmonthtreatment.Legends.Add(legend1);
+            legend2.Name = "Legend1";
+            this.chartmonthtreatment.Legends.Add(legend2);
             this.chartmonthtreatment.Location = new System.Drawing.Point(0, 0);
             this.chartmonthtreatment.Name = "chartmonthtreatment";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Treatment Count";
-            this.chartmonthtreatment.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Treatment Count";
+            this.chartmonthtreatment.Series.Add(series2);
             this.chartmonthtreatment.Size = new System.Drawing.Size(1065, 556);
             this.chartmonthtreatment.TabIndex = 7;
             this.chartmonthtreatment.Text = "chart1";
@@ -231,8 +232,8 @@
             this.Grvmonthtreatment.AllowUserToDeleteRows = false;
             this.Grvmonthtreatment.AllowUserToResizeColumns = false;
             this.Grvmonthtreatment.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Grvmonthtreatment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Grvmonthtreatment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.Grvmonthtreatment.BackgroundColor = System.Drawing.Color.White;
             this.Grvmonthtreatment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grvmonthtreatment.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -460,7 +461,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Monthly_treatment_count_Load);
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridmonthlytreatment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartmonthtreatment)).EndInit();
             this.panel3.ResumeLayout(false);

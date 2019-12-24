@@ -173,7 +173,6 @@
             this.cmbDoctor = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.drugspanel = new System.Windows.Forms.Panel();
             this.dateTimeReview = new System.Windows.Forms.DateTimePicker();
@@ -479,7 +478,7 @@
             this.panel8.Controls.Add(this.label24);
             this.panel8.Controls.Add(this.linkLabel_Name);
             this.panel8.Controls.Add(this.linkLabel_id);
-            this.panel8.Location = new System.Drawing.Point(153, 41);
+            this.panel8.Location = new System.Drawing.Point(1, 41);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(482, 49);
             this.panel8.TabIndex = 277;
@@ -550,12 +549,13 @@
             this.label14.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label14.Image = ((System.Drawing.Image)(resources.GetObject("label14.Image")));
             this.label14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label14.Location = new System.Drawing.Point(5, 48);
+            this.label14.Location = new System.Drawing.Point(671, 60);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(106, 38);
+            this.label14.Size = new System.Drawing.Size(59, 23);
             this.label14.TabIndex = 276;
             this.label14.Text = "All Patients";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label14.Visible = false;
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // panel5
@@ -1413,10 +1413,10 @@
             // 
             // Column11
             // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column11.HeaderText = "DRUG NAME";
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
-            this.Column11.Width = 180;
             // 
             // Column12
             // 
@@ -1439,6 +1439,7 @@
             // 
             // Column13
             // 
+            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.Column13.DefaultCellStyle = dataGridViewCellStyle11;
             this.Column13.HeaderText = "DURATION";
@@ -1487,10 +1488,10 @@
             // 
             // Column20
             // 
+            this.Column20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column20.HeaderText = "INSTRUCTION";
             this.Column20.Name = "Column20";
             this.Column20.ReadOnly = true;
-            this.Column20.Width = 150;
             // 
             // Column10
             // 
@@ -1737,14 +1738,6 @@
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(991, 77);
             this.label26.TabIndex = 75;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.DarkGray;
-            this.panel7.Location = new System.Drawing.Point(146, 39);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1, 53);
-            this.panel7.TabIndex = 287;
             // 
             // listpatientsearch
             // 
@@ -2061,22 +2054,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1342, 695);
+            this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.templatepanel1);
             this.Controls.Add(this.panel_adddrug);
             this.Controls.Add(this.drugspanel);
-            this.Controls.Add(this.listpatientsearch);
-            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.BtnCancel);
-            this.Controls.Add(this.savebut);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.toolStrip2);
+            this.Controls.Add(this.savebut);
+            this.Controls.Add(this.panel5);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Prescription_Add";
             this.Text = "Prescription Add";
@@ -2206,20 +2198,6 @@
         private System.Windows.Forms.TextBox searchtext2;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.DataGridView dataGridView_drugnew;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column39;
-        private System.Windows.Forms.DataGridViewImageColumn img;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridView dataGridView_templatenew;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
@@ -2242,7 +2220,6 @@
         private System.Windows.Forms.ComboBox cmbDoctor;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.ListBox listpatientsearch;
         private System.Windows.Forms.Panel drugspanel;
         private System.Windows.Forms.DateTimePicker dateTimeReview;
@@ -2271,5 +2248,19 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column39;
+        private System.Windows.Forms.DataGridViewImageColumn img;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }

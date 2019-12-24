@@ -173,7 +173,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label8.Location = new System.Drawing.Point(13, 7);
+            this.label8.Location = new System.Drawing.Point(4, 6);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(119, 21);
             this.label8.TabIndex = 293;
@@ -215,7 +215,7 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.DarkGray;
-            this.panel5.Location = new System.Drawing.Point(-1, 42);
+            this.panel5.Location = new System.Drawing.Point(-41, 43);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1178, 1);
             this.panel5.TabIndex = 284;
@@ -1073,7 +1073,7 @@
             this.colQuantity,
             this.colReturnQty,
             this.currentStock});
-            this.dgv_BatchSale.Location = new System.Drawing.Point(3, 538);
+            this.dgv_BatchSale.Location = new System.Drawing.Point(3, 527);
             this.dgv_BatchSale.Name = "dgv_BatchSale";
             this.dgv_BatchSale.RowHeadersVisible = false;
             this.dgv_BatchSale.Size = new System.Drawing.Size(509, 103);

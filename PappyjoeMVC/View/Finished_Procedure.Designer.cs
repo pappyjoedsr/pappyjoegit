@@ -766,22 +766,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.Controls.Add(this.lab_Msg);
             this.panel7.Controls.Add(this.dgv_treatment_paln);
-            this.panel7.Location = new System.Drawing.Point(194, 134);
+            this.panel7.Location = new System.Drawing.Point(195, 137);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1165, 568);
+            this.panel7.Size = new System.Drawing.Size(1167, 601);
             this.panel7.TabIndex = 271;
             // 
             // lab_Msg
             // 
-            this.lab_Msg.AutoSize = true;
+            this.lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lab_Msg.Location = new System.Drawing.Point(134, 177);
+            this.lab_Msg.Location = new System.Drawing.Point(131, 232);
             this.lab_Msg.Name = "lab_Msg";
-            this.lab_Msg.Size = new System.Drawing.Size(653, 25);
+            this.lab_Msg.Size = new System.Drawing.Size(677, 25);
             this.lab_Msg.TabIndex = 267;
             this.lab_Msg.Text = "No Records Found. Please Click \' ADD \' button on Top Right To Add New One";
+            this.lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lab_Msg.Visible = false;
             // 
             // dgv_treatment_paln
@@ -823,7 +824,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_treatment_paln.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_treatment_paln.Location = new System.Drawing.Point(4, 1);
+            this.dgv_treatment_paln.Location = new System.Drawing.Point(0, 7);
             this.dgv_treatment_paln.Name = "dgv_treatment_paln";
             this.dgv_treatment_paln.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -836,7 +837,7 @@
             this.dgv_treatment_paln.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_treatment_paln.RowHeadersVisible = false;
             this.dgv_treatment_paln.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv_treatment_paln.Size = new System.Drawing.Size(1150, 552);
+            this.dgv_treatment_paln.Size = new System.Drawing.Size(1150, 585);
             this.dgv_treatment_paln.TabIndex = 247;
             this.dgv_treatment_paln.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_treatment_paln_CellClick);
             this.dgv_treatment_paln.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgv_treatment_paln_MouseClick);
@@ -954,6 +955,7 @@
             // 
             // listpatientsearch
             // 
+            this.listpatientsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -979,10 +981,10 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.labelallpatient);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.panel5);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Finished_Procedure";
@@ -998,7 +1000,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_treatment_paln)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);

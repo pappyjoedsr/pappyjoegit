@@ -10,7 +10,6 @@ namespace PappyjoeMVC.View
     public partial class Procedure_Catalog : Form
     {
         Procedure_Catalog_controller cntrl=new Procedure_Catalog_controller();
-        //string idd = null;
         int refresh;
         public Procedure_Catalog()
         {
@@ -104,19 +103,16 @@ namespace PappyjoeMVC.View
                 Dgv_Procedure.Rows[dict[items[0]]].Cells[5].Value += "";
             }
         }
-
         private void txt_procedurename_TextChanged(object sender, EventArgs e)
         {
             lab_Pro_nameError.Hide();
             errorProvider1.Dispose();
         }
-
         private void txt_procedurecost_TextChanged(object sender, EventArgs e)
         {
             lab_ProCost.Hide();
             errorProvider1.Dispose();
         }
-
         private void checkaddunder_CheckedChanged(object sender, EventArgs e)
         {
             if (checkaddunder.Checked == true)
@@ -139,13 +135,12 @@ namespace PappyjoeMVC.View
         {
             if (dt.Rows.Count > 0)
             {
-                comboaddunder.DataSource = dt;
                 comboaddunder.DisplayMember = "name";
                 comboaddunder.ValueMember = "id";
+                comboaddunder.DataSource = dt;
                 comboaddunder.SelectedIndex = -1;
             }
         }
-
         private void comboaddunder_Click(object sender, EventArgs e)
         {
             DataTable dtb = this.cntrl.get_procedure_category_value();
@@ -168,7 +163,6 @@ namespace PappyjoeMVC.View
                 buttonSaveCategory.Hide();
             }
         }
-
         private void buttonSaveCategory_Click(object sender, EventArgs e)
         {
             if (txt_AddCategory.Text != "")
@@ -217,9 +211,8 @@ namespace PappyjoeMVC.View
                 {
                     DataTable dtb= this.cntrl.get_procedureName(txt_procedurename.Text);
                     GetProcedureName(dtb);
-                    //Dgv_Procedure.Rows.Clear();
                     DataTable dt = this.cntrl.FormLoad();
-                    //FormLoad(dt);
+                    FormLoad(dt);
                 }
             }
         }
@@ -261,7 +254,6 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
         private void buttonclear_Click(object sender, EventArgs e)
         {
@@ -276,7 +268,6 @@ namespace PappyjoeMVC.View
             checkaddunder.Checked = false;
             buttonsave.Text = "Save New Procedure";
         }
-
         private void buttonrefresh_Click(object sender, EventArgs e)
         {
             if (refresh == 0)
@@ -310,18 +301,15 @@ namespace PappyjoeMVC.View
                     {
                         abc = id + "," + taxname;
                     }
-                    //string abc = id + "," + taxname;
                     string abc1 = id + "," + procedurename;
                     string abc2 = id + "," + cost;
                     string abc3 = id + "," + category;
                     string abc4 = id + "," + notes;
-
                     string[] items = abc.Split(',');
                     string[] items1 = abc1.Split(',');
                     string[] items2 = abc2.Split(',');
                     string[] items3 = abc3.Split(',');
                     string[] items4 = abc4.Split(',');
-
                     if (dict.ContainsKey(items[0]))
                     {
                         if (Dgv_Procedure.Rows[dict[items[0]]].Cells[3].Value != null)
@@ -389,13 +377,11 @@ namespace PappyjoeMVC.View
                 string abc2 = id + "," + cost;
                 string abc3 = id + "," + category;
                 string abc4 = id + "," + notes;
-
                 string[] items = abc.Split(',');
                 string[] items1 = abc1.Split(',');
                 string[] items2 = abc2.Split(',');
                 string[] items3 = abc3.Split(',');
                 string[] items4 = abc4.Split(',');
-
                 if (dict.ContainsKey(items[0]))
                 {
                     if (Dgv_Procedure.Rows[dict[items[0]]].Cells[3].Value != null)
@@ -443,8 +429,6 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-                 
+        }      
     }
 }

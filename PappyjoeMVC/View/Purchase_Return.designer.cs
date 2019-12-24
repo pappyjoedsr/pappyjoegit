@@ -36,7 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Purchase_Return));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.dgvGridData = new System.Windows.Forms.DataGridView();
             this.tempItem_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Branch_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,7 +99,6 @@
             this.Unit_Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Del = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPrint = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -119,7 +117,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_SupplierId = new System.Windows.Forms.TextBox();
             this.btn_Save = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.panel7 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGridData)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -128,21 +126,8 @@
             this.panel2.SuspendLayout();
             this.gbDocumentDetails.SuspendLayout();
             this.gbTaxDetails.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dgvGridData);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1186, 653);
-            this.panel1.TabIndex = 260;
             // 
             // dgvGridData
             // 
@@ -159,10 +144,10 @@
             this.Prd_Date,
             this.Exp_Date,
             this.UpdateQty});
-            this.dgvGridData.Location = new System.Drawing.Point(3, 517);
+            this.dgvGridData.Location = new System.Drawing.Point(5, 258);
             this.dgvGridData.Name = "dgvGridData";
             this.dgvGridData.RowHeadersVisible = false;
-            this.dgvGridData.Size = new System.Drawing.Size(351, 132);
+            this.dgvGridData.Size = new System.Drawing.Size(391, 121);
             this.dgvGridData.TabIndex = 267;
             this.dgvGridData.Visible = false;
             // 
@@ -221,8 +206,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.txtGst);
             this.groupBox1.Controls.Add(this.txtClear);
@@ -249,9 +232,10 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(7, 161);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(0, 117);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1092, 102);
+            this.groupBox1.Size = new System.Drawing.Size(1174, 102);
             this.groupBox1.TabIndex = 266;
             this.groupBox1.TabStop = false;
             // 
@@ -271,7 +255,7 @@
             this.txtClear.BackColor = System.Drawing.Color.Tomato;
             this.txtClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtClear.ForeColor = System.Drawing.Color.White;
-            this.txtClear.Location = new System.Drawing.Point(1013, 38);
+            this.txtClear.Location = new System.Drawing.Point(1029, 38);
             this.txtClear.Name = "txtClear";
             this.txtClear.Size = new System.Drawing.Size(68, 27);
             this.txtClear.TabIndex = 214;
@@ -348,7 +332,7 @@
             this.Btn_Add.BackColor = System.Drawing.Color.LimeGreen;
             this.Btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Add.ForeColor = System.Drawing.Color.White;
-            this.Btn_Add.Location = new System.Drawing.Point(946, 38);
+            this.Btn_Add.Location = new System.Drawing.Point(962, 38);
             this.Btn_Add.Name = "Btn_Add";
             this.Btn_Add.Size = new System.Drawing.Size(68, 27);
             this.Btn_Add.TabIndex = 18;
@@ -547,9 +531,9 @@
             this.panel5.Controls.Add(this.label22);
             this.panel5.Controls.Add(this.txtTotal_item);
             this.panel5.Controls.Add(this.txtTotalCost);
-            this.panel5.Location = new System.Drawing.Point(475, 492);
+            this.panel5.Location = new System.Drawing.Point(539, 240);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(627, 153);
+            this.panel5.Size = new System.Drawing.Size(631, 142);
             this.panel5.TabIndex = 277;
             // 
             // label17
@@ -643,7 +627,7 @@
             this.txt_TotalAmount.BackColor = System.Drawing.Color.White;
             this.txt_TotalAmount.Enabled = false;
             this.txt_TotalAmount.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_TotalAmount.Location = new System.Drawing.Point(479, 41);
+            this.txt_TotalAmount.Location = new System.Drawing.Point(1027, 41);
             this.txt_TotalAmount.MaxLength = 8;
             this.txt_TotalAmount.Name = "txt_TotalAmount";
             this.txt_TotalAmount.ReadOnly = true;
@@ -679,7 +663,7 @@
             this.txtTotal_item.BackColor = System.Drawing.Color.White;
             this.txtTotal_item.Enabled = false;
             this.txtTotal_item.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtTotal_item.Location = new System.Drawing.Point(479, 12);
+            this.txtTotal_item.Location = new System.Drawing.Point(1027, 12);
             this.txtTotal_item.MaxLength = 8;
             this.txtTotal_item.Name = "txtTotal_item";
             this.txtTotal_item.ReadOnly = true;
@@ -706,10 +690,12 @@
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.dgvGridData);
             this.panel4.Controls.Add(this.dgvItemData);
-            this.panel4.Location = new System.Drawing.Point(3, 271);
+            this.panel4.Location = new System.Drawing.Point(0, 268);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1099, 215);
+            this.panel4.Size = new System.Drawing.Size(1175, 384);
             this.panel4.TabIndex = 276;
             // 
             // dgvItemData
@@ -752,7 +738,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvItemData.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvItemData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvItemData.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvItemData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvItemData.GridColor = System.Drawing.Color.LightGray;
             this.dgvItemData.Location = new System.Drawing.Point(0, 0);
@@ -769,7 +755,7 @@
             this.dgvItemData.RowHeadersVisible = false;
             this.dgvItemData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvItemData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvItemData.Size = new System.Drawing.Size(1099, 215);
+            this.dgvItemData.Size = new System.Drawing.Size(1175, 228);
             this.dgvItemData.TabIndex = 248;
             this.dgvItemData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemData_CellClick);
             // 
@@ -876,27 +862,15 @@
             this.Del.ReadOnly = true;
             this.Del.Width = 50;
             // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Location = new System.Drawing.Point(2, 151);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1100, 115);
-            this.panel3.TabIndex = 275;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.btnPrint);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.gbDocumentDetails);
             this.panel2.Controls.Add(this.gbTaxDetails);
-            this.panel2.Controls.Add(this.btn_Save);
-            this.panel2.Location = new System.Drawing.Point(0, 2);
+            this.panel2.Location = new System.Drawing.Point(1, 47);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1095, 148);
+            this.panel2.Size = new System.Drawing.Size(1174, 219);
             this.panel2.TabIndex = 274;
             // 
             // btnPrint
@@ -906,7 +880,7 @@
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(883, 7);
+            this.btnPrint.Location = new System.Drawing.Point(962, 4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(99, 30);
             this.btnPrint.TabIndex = 293;
@@ -920,20 +894,21 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(8, 8);
+            this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 21);
             this.label1.TabIndex = 292;
             this.label1.Text = "PURCHASE RETURN";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.DarkGray;
-            this.panel6.Location = new System.Drawing.Point(-10, 39);
+            this.panel6.Location = new System.Drawing.Point(-23, 43);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1304, 1);
+            this.panel6.Size = new System.Drawing.Size(1363, 1);
             this.panel6.TabIndex = 274;
             // 
             // gbDocumentDetails
@@ -945,7 +920,7 @@
             this.gbDocumentDetails.Controls.Add(this.lblDocumentNumber);
             this.gbDocumentDetails.Controls.Add(this.lblDocumentDate);
             this.gbDocumentDetails.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.gbDocumentDetails.Location = new System.Drawing.Point(9, 43);
+            this.gbDocumentDetails.Location = new System.Drawing.Point(9, 3);
             this.gbDocumentDetails.Name = "gbDocumentDetails";
             this.gbDocumentDetails.Size = new System.Drawing.Size(388, 102);
             this.gbDocumentDetails.TabIndex = 79;
@@ -1016,7 +991,7 @@
             this.gbTaxDetails.Controls.Add(this.label3);
             this.gbTaxDetails.Controls.Add(this.txt_SupplierId);
             this.gbTaxDetails.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.gbTaxDetails.Location = new System.Drawing.Point(730, 47);
+            this.gbTaxDetails.Location = new System.Drawing.Point(818, 7);
             this.gbTaxDetails.Name = "gbTaxDetails";
             this.gbTaxDetails.Size = new System.Drawing.Size(353, 94);
             this.gbTaxDetails.TabIndex = 204;
@@ -1092,7 +1067,7 @@
             this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Save.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Save.ForeColor = System.Drawing.Color.White;
-            this.btn_Save.Location = new System.Drawing.Point(986, 7);
+            this.btn_Save.Location = new System.Drawing.Point(1072, 4);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(99, 30);
             this.btn_Save.TabIndex = 273;
@@ -1100,19 +1075,34 @@
             this.btn_Save.UseVisualStyleBackColor = false;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel7.Controls.Add(this.label1);
+            this.panel7.Controls.Add(this.btnPrint);
+            this.panel7.Controls.Add(this.btn_Save);
+            this.panel7.Location = new System.Drawing.Point(3, 1);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1172, 35);
+            this.panel7.TabIndex = 278;
+            // 
             // Purchase_Return
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1186, 653);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1179, 653);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel7);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Purchase_Return";
             this.Text = "Purchase Return";
             this.Load += new System.EventHandler(this.FrmPurchase_Return_Load);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGridData)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1121,18 +1111,17 @@
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemData)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.gbDocumentDetails.ResumeLayout(false);
             this.gbDocumentDetails.PerformLayout();
             this.gbTaxDetails.ResumeLayout(false);
             this.gbTaxDetails.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvGridData;
         private System.Windows.Forms.DataGridViewTextBoxColumn tempItem_code;
         private System.Windows.Forms.DataGridViewTextBoxColumn Branch_No;
@@ -1184,7 +1173,6 @@
         private System.Windows.Forms.TextBox txtTotalCost;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dgvItemData;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Label label1;
@@ -1215,5 +1203,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Unit_Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.DataGridViewImageColumn Del;
+        private System.Windows.Forms.Panel panel7;
     }
 }

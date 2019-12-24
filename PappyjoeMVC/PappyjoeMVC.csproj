@@ -135,6 +135,7 @@
     <Compile Include="Controller\Monthly_New_Patients_controller.cs" />
     <Compile Include="Controller\Monthly_Treatment_Count_controller.cs" />
     <Compile Include="Controller\Month_Wise_Receipt_controller.cs" />
+    <Compile Include="Controller\NetworkBrowser_controller.cs" />
     <Compile Include="Controller\New_Credit_Account_controller.cs" />
     <Compile Include="Controller\New_Debit_Account_controller.cs" />
     <Compile Include="Controller\Patients_controller.cs" />
@@ -242,6 +243,7 @@
     <Compile Include="Model\MainCalendar_Model.cs" />
     <Compile Include="Model\Manufacture_model.cs" />
     <Compile Include="Model\Medical_history_model.cs" />
+    <Compile Include="Model\NetworkBrowser_model.cs" />
     <Compile Include="Model\NewAccount_model.cs" />
     <Compile Include="Model\NewDebitAccount_model.cs" />
     <Compile Include="Model\Patients_model.cs" />
@@ -427,7 +429,7 @@
     <Compile Include="View\Consultation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Consultation.Designer.cs">
+    <Compile Include="View\Consultation.designer.cs">
       <DependentUpon>Consultation.cs</DependentUpon>
     </Compile>
     <Compile Include="View\consultation_new_patient.cs">
@@ -645,6 +647,12 @@
     </Compile>
     <Compile Include="View\Monthly_Treatment_Count.designer.cs">
       <DependentUpon>Monthly_Treatment_Count.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Network_Computer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Network_Computer.Designer.cs">
+      <DependentUpon>Network_Computer.cs</DependentUpon>
     </Compile>
     <Compile Include="View\OpenRecurringItem.cs">
       <SubType>Form</SubType>
@@ -1286,6 +1294,12 @@
     <EmbeddedResource Include="View\Monthly_Treatment_Count.resx">
       <DependentUpon>Monthly_Treatment_Count.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Network_Computer.resx">
+      <DependentUpon>Network_Computer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OpenRecurringItem.resx">
+      <DependentUpon>OpenRecurringItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Purchase.resx">
       <DependentUpon>Purchase.cs</DependentUpon>
     </EmbeddedResource>
@@ -1601,6 +1615,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\card_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lab_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pappy ion.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,6 +13,11 @@ namespace PappyjoeMVC.Model
             clinicn = name.Replace("¤", "'");
             return clinicn;
         }
+        public DataTable clinicdetails()
+        {
+            DataTable dtb = db.table("select name,locality,contact_no from tbl_practice_details");
+            return dtb;
+        }
         public DataTable Get_CompanyNAme()
         {
             DataTable clinicname = db.table("select name,id,path from tbl_practice_details");
@@ -120,7 +125,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Patient_search(string _Patientid)
         {
-            DataTable dtdr = db.table("select id, CONCAT(pt_name, ',', age, ',', gender) as patient from tbl_patient where (pt_name like '" + _Patientid + "%'   or pt_id like '%" + _Patientid + "%' or primary_mobile_number like '%" + _Patientid + "%') and Profile_Status = 'Active'");
+            DataTable dtdr = db.table("select id, CONCAT(pt_name, ',', age, ',', gender) as patient from tbl_patient where (pt_name like '%" + _Patientid + "%'   or pt_id like '%" + _Patientid + "%' or primary_mobile_number like '%" + _Patientid + "%') and Profile_Status = 'Active'");
             return dtdr;
         }
         public string permission_for_settings(string doctor_id)
@@ -141,6 +146,7 @@ namespace PappyjoeMVC.Model
             DataTable dt_review = db.table("SELECT id FROM tbl_review where  pt_id='" + patient_id + "' and fix_datetime='" + DateTime.Now.ToString("yyyy-MM-dd") + "' and review_datetime='" + reviewdate + "' ORDER BY id");
             return dt_review;
         }
+        
         public DataTable get_total_payment(string ptid)
         {
             DataTable pay = db.table("select total_payment from tbl_invoices where pt_id='" + ptid + "'");

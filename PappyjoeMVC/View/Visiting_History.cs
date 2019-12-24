@@ -72,6 +72,8 @@ namespace PappyjoeMVC.View
                 {
                     dgvVisitingHistory.DataSource = null;
                     label2.Text = "0";
+                    int x = (panel1.Size.Width - Lab_Msg.Size.Width) / 2;
+                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Show();
                 }
                 var dateFrom = dateTimePickerdailyappointcount1.Value.ToShortDateString();
@@ -118,6 +120,8 @@ namespace PappyjoeMVC.View
                         else
                         {
                             dgvVisitingHistory.DataSource = null;
+                            int x = (panel1.Size.Width - Lab_Msg.Size.Width) / 2;
+                            Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                             Lab_Msg.Show();
                             label2.Text = "0";
                         }
@@ -136,6 +140,8 @@ namespace PappyjoeMVC.View
                         else
                         {
                             dgvVisitingHistory.DataSource = null;
+                            int x = (panel1.Size.Width - Lab_Msg.Size.Width) / 2;
+                            Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                             Lab_Msg.Show();
                             label2.Text = "0";
                         }
@@ -194,24 +200,25 @@ namespace PappyjoeMVC.View
                     if (comboBoxdoctor.SelectedIndex > 0)
                     {
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td colspan=10 align=center><FONT COLOR=black FACE='Segoe UI' SIZE=4 > <b> VISITING HISTORY OF Dr." + comboBoxdoctor.Text + "" + "  </b> </font></center></td>");
+                        sWrite.WriteLine("<td colspan=10 align=center><FONT COLOR=black FACE='Segoe UI' SIZE=5 > <b> VISITING HISTORY OF Dr." + comboBoxdoctor.Text + "" + "  </b> </font></center></td>");
                         sWrite.WriteLine("</tr>");
                     }
                     else
                     {
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td colspan=10 align=center><FONT COLOR=black FACE='Segoe UI' SIZE=4 > <b> VISITING HISTORY OF ALL DOCTOR " + "  </b> </font></center></td>");
+                        sWrite.WriteLine("<td colspan=10 align=center><FONT COLOR=black FACE='Segoe UI' SIZE=5 > <b> VISITING HISTORY OF ALL DOCTOR " + "  </b> </font></center></td>");
                         sWrite.WriteLine("</tr>");
                     }
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=10><left><FONT COLOR=black FACE='Segoe UI' SIZE=3> <b> " + strclinicname + "</b> </font></left></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td colspan=9 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  <b> " + strStreet + "</b> </font></center></td>");
+                    sWrite.WriteLine("<td colspan=10 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b> " + strStreet + "</b> </font></center></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td colspan=9 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  <b> " + strphone + "</b> </font></center></td>");
+                    sWrite.WriteLine("<td colspan=10 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b> " + strphone + "</b> </font></center></td>");
                     sWrite.WriteLine("</tr>");
+                    sWrite.WriteLine("<tr><td colspan=10><hr></td></tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=10 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  " + " <b>From : </b>" + " " + dateTimePickerdailyappointcount1.Value.ToString("dd/MM/yyy") + " </font></center></td>");
                     sWrite.WriteLine("</tr>");
@@ -224,31 +231,27 @@ namespace PappyjoeMVC.View
                     if (dgvVisitingHistory.Rows.Count > 0)
                     {
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("    <td align='center' width='52' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 > <b>Sl.</b></font></th>");
-                        sWrite.WriteLine("    <td align='center' width='69' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 ><b>Patient Id</b></font></th>");
-                        sWrite.WriteLine("    <td align='center' width='184' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Patient Name</b></font></th>");
-                        sWrite.WriteLine("    <td align='center' width='76' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> <b>Booked On </b></font></th>");
-                        sWrite.WriteLine("    <td align='center' width='128' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Appointment Date</b></font></th>");
-                        sWrite.WriteLine("    <td align='center' width='124' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Booked By</b></font></th>");
-                        sWrite.WriteLine("    <td align='center' width='59' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Duration (Mins)</b></font></th>");
-                        sWrite.WriteLine("    <td align='center' width='65' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> <b>Schedule</b></font></th>");
-                        sWrite.WriteLine("    <td align='center' width='48' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> <b>Waiting</b></font></th>");
-                        sWrite.WriteLine("    <td align='center' width='51' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> <b>Checkout</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='55' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >&nbsp; <b>Slno.</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='90' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >&nbsp;<b>Patient Id</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='125' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b>Patient Name</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='130' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp; <b>Booked On </b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='150' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b>Appointment Date</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='110' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Booked By</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='110' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp; <b>Status</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='130' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Duration(Mins)</b></font></th>");
                         sWrite.WriteLine("</tr>");
                         int k = 1;
                         while (c < dgvVisitingHistory.Rows.Count)
                         {
                             sWrite.WriteLine("<tr>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + k + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgvVisitingHistory.Rows[c].Cells["patient_id"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgvVisitingHistory.Rows[c].Cells["pt_name"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgvVisitingHistory.Rows[c].Cells["book_datetime"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgvVisitingHistory.Rows[c].Cells["start_datetime"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + dgvVisitingHistory.Rows[c].Cells["booked_by"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + dgvVisitingHistory.Rows[c].Cells["duration"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + dgvVisitingHistory.Rows[c].Cells["schedule"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + dgvVisitingHistory.Rows[c].Cells["waiting"].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + dgvVisitingHistory.Rows[c].Cells["checkout"].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + k + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dgvVisitingHistory.Rows[c].Cells["patient_id"].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dgvVisitingHistory.Rows[c].Cells["pt_name"].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dgvVisitingHistory.Rows[c].Cells["book_datetime"].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dgvVisitingHistory.Rows[c].Cells["start_datetime"].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; " + dgvVisitingHistory.Rows[c].Cells["booked_by"].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; " + dgvVisitingHistory.Rows[c].Cells["status"].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; " + dgvVisitingHistory.Rows[c].Cells["duration"].Value.ToString() + "</font></th>");
                             sWrite.WriteLine("</tr>");
                             k = k + 1;
                             c++;

@@ -172,7 +172,6 @@ namespace PappyjoeMVC.View
                         form2.Closed += (sender1, args) => this.Close();
                         this.Close();
                     }
-
                 }
                 else
                     this.Close();
@@ -197,7 +196,8 @@ namespace PappyjoeMVC.View
                         if (isbatch == "True")
                         {
                             var form2 = new ItemBatchDetails(itemcode);
-                            form2.Show();
+                            form2.ShowDialog();
+                            form2.Dispose();
                         }
                         else
                         {
@@ -230,7 +230,6 @@ namespace PappyjoeMVC.View
                         form2.Closed += (sender1, args) => this.Close();
                         this.Close();
                     }
-
                 }
                 else
                     this.Close();
@@ -242,3 +241,4 @@ namespace PappyjoeMVC.View
         }
     }
 }
+ 

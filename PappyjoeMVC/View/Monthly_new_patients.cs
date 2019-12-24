@@ -77,6 +77,8 @@ namespace PappyjoeMVC.View
                 Grvmonthnewpatient.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                 if (Grvmonthnewpatient.Rows.Count == 1)
                 {
+                    int x = (panel4.Size.Width - lblNoRecord.Size.Width) / 2;
+                    lblNoRecord.Location = new Point(x, lblNoRecord.Location.Y);
                     lblNoRecord.Show();
                 }
                 else
@@ -141,6 +143,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
+                    int x = (panel4.Size.Width - lblNoRecord.Size.Width) / 2;
+                    lblNoRecord.Location = new Point(x, lblNoRecord.Location.Y);
                     lblNoRecord.Show();
                 }
 
@@ -377,17 +381,18 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<table align=center width=900>");
                     sWrite.WriteLine("<col>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<th colspan=7> <center><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=4>  <b>MONTHLY NEW PATIENT</b> </font></center></th>");
+                    sWrite.WriteLine("<th colspan=7> <center><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=5>  <b>MONTHLY NEW PATIENT</b> </font></center></th>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<th colspan=7 align='left'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3>  <b> " + strclinicname + "</b> </font></th>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<th colspan=7 align='left'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>  <b> " + strStreet + "</b> </font></th>");
+                    sWrite.WriteLine("<th colspan=7 align='left'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3>  <b> " + strStreet + "</b> </font></th>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<th colspan=7 align='left'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>  <b> " + strphone + "</b> </font></th>");
+                    sWrite.WriteLine("<th colspan=7 align='left'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3>  <b> " + strphone + "</b> </font></th>");
                     sWrite.WriteLine("</tr>");
+                    sWrite.WriteLine("<tr><td colspan=7><hr></td></tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2> <b>From  : </b> " + dateTimePickermonthnewpatient1.Value.ToString("dd/MM/yyyy") + " </font></td>");
                     sWrite.WriteLine("</tr>");
@@ -400,25 +405,25 @@ namespace PappyjoeMVC.View
                     if (dataGridmonthlypatient.Rows.Count > 0)
                     {
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("    <td align='center' width='6%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3 >Sl.</font></td>");
+                        sWrite.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3 >&nbsp;<b>Slno.</b></font></td>");
 
-                        sWrite.WriteLine("    <td align='center' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3> Patient Id</font></td>");
-                        sWrite.WriteLine("    <td align='center' width='24%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3>Patient Name</font></td>");
-                        sWrite.WriteLine("    <td align='center' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3> Date</font></td>");
-                        sWrite.WriteLine("    <td align='center' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3> Mobile</font></td>");
-                        sWrite.WriteLine("    <td align='center' width='24%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3> Email</font></td>");
-                        sWrite.WriteLine("    <td align='center' width='19%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3> Doctor</font></td>");
+                        sWrite.WriteLine("    <td align='left' width='13%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3>&nbsp;<b> Patient Id</b></font></td>");
+                        sWrite.WriteLine("    <td align='left' width='13%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3>&nbsp;<b>Patient Name</b></font></td>");
+                        sWrite.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3>&nbsp;<b> Date</b></font></td>");
+                        sWrite.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3>&nbsp;<b> Mobile</b></font></td>");
+                        sWrite.WriteLine("    <td align='left' width='13%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3>&nbsp;<b> Email</b></font></td>");
+                        sWrite.WriteLine("    <td align='left' width='19%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=3>&nbsp;<b> Doctor</b></font></td>");
                         sWrite.WriteLine("</tr>");
                         while (c < dataGridmonthlypatient.Rows.Count)
                         {
                             sWrite.WriteLine("<tr>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>" + dataGridmonthlypatient.Rows[c].Cells[0].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>" + dataGridmonthlypatient.Rows[c].Cells[1].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>" + dataGridmonthlypatient.Rows[c].Cells[2].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>" + dataGridmonthlypatient.Rows[c].Cells[3].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>" + dataGridmonthlypatient.Rows[c].Cells[4].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>" + dataGridmonthlypatient.Rows[c].Cells[5].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>" + dataGridmonthlypatient.Rows[c].Cells[6].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + dataGridmonthlypatient.Rows[c].Cells[0].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + dataGridmonthlypatient.Rows[c].Cells[1].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + dataGridmonthlypatient.Rows[c].Cells[2].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + dataGridmonthlypatient.Rows[c].Cells[3].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + dataGridmonthlypatient.Rows[c].Cells[4].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + dataGridmonthlypatient.Rows[c].Cells[5].Value.ToString() + "</font></td>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + dataGridmonthlypatient.Rows[c].Cells[6].Value.ToString() + "</font></td>");
                             sWrite.WriteLine("</tr>");
                             c++;
                         }

@@ -46,13 +46,6 @@
             this.button__manage_addoctor = new System.Windows.Forms.Button();
             this.btn_Refresh = new System.Windows.Forms.Button();
             this.dataGridView_Staff = new System.Windows.Forms.DataGridView();
-            this.S_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Doctor_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mobile_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activated_Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -320,6 +313,13 @@
             this.btnAssignPrivilege = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.S_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Doctor_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mobile_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activated_Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -361,7 +361,7 @@
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline);
             this.label55.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label55.Location = new System.Drawing.Point(7, 13);
+            this.label55.Location = new System.Drawing.Point(16, 8);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(121, 25);
             this.label55.TabIndex = 2;
@@ -378,7 +378,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl1.Location = new System.Drawing.Point(9, 68);
+            this.tabControl1.Location = new System.Drawing.Point(16, 68);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1133, 620);
@@ -445,7 +445,7 @@
             this.panel_manage.Controls.Add(this.button__manage_addoctor);
             this.panel_manage.Controls.Add(this.btn_Refresh);
             this.panel_manage.Controls.Add(this.dataGridView_Staff);
-            this.panel_manage.Location = new System.Drawing.Point(3, 1);
+            this.panel_manage.Location = new System.Drawing.Point(3, 4);
             this.panel_manage.Name = "panel_manage";
             this.panel_manage.Size = new System.Drawing.Size(1081, 567);
             this.panel_manage.TabIndex = 47;
@@ -515,7 +515,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_Staff.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView_Staff.Location = new System.Drawing.Point(22, 11);
+            this.dataGridView_Staff.Location = new System.Drawing.Point(3, 3);
             this.dataGridView_Staff.Name = "dataGridView_Staff";
             this.dataGridView_Staff.ReadOnly = true;
             this.dataGridView_Staff.RowHeadersVisible = false;
@@ -524,69 +524,12 @@
             this.dataGridView_Staff.TabIndex = 0;
             this.dataGridView_Staff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Staff_CellClick);
             // 
-            // S_ID
-            // 
-            this.S_ID.DataPropertyName = "id";
-            this.S_ID.HeaderText = "Id";
-            this.S_ID.Name = "S_ID";
-            this.S_ID.ReadOnly = true;
-            this.S_ID.Visible = false;
-            // 
-            // Doctor_Name
-            // 
-            this.Doctor_Name.DataPropertyName = "doctor_name";
-            this.Doctor_Name.HeaderText = "Doctor Name";
-            this.Doctor_Name.Name = "Doctor_Name";
-            this.Doctor_Name.ReadOnly = true;
-            this.Doctor_Name.Width = 200;
-            // 
-            // Mobile_Number
-            // 
-            this.Mobile_Number.DataPropertyName = "mobile_number";
-            this.Mobile_Number.HeaderText = "Mobile Number";
-            this.Mobile_Number.Name = "Mobile_Number";
-            this.Mobile_Number.ReadOnly = true;
-            this.Mobile_Number.Width = 200;
-            // 
-            // Role
-            // 
-            this.Role.DataPropertyName = "login_type";
-            this.Role.HeaderText = "Role";
-            this.Role.Name = "Role";
-            this.Role.ReadOnly = true;
-            this.Role.Width = 200;
-            // 
-            // Activated_Login
-            // 
-            this.Activated_Login.DataPropertyName = "activate_login";
-            this.Activated_Login.HeaderText = "Activated Login";
-            this.Activated_Login.Name = "Activated_Login";
-            this.Activated_Login.ReadOnly = true;
-            this.Activated_Login.Width = 125;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "";
-            this.Edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 25;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "";
-            this.Delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Visible = false;
-            this.Delete.Width = 70;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(241, 180);
+            this.label13.Location = new System.Drawing.Point(241, 175);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(14, 18);
             this.label13.TabIndex = 314;
@@ -597,7 +540,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(241, 266);
+            this.label12.Location = new System.Drawing.Point(241, 257);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(14, 18);
             this.label12.TabIndex = 313;
@@ -608,7 +551,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(241, 390);
+            this.label11.Location = new System.Drawing.Point(241, 380);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(14, 18);
             this.label11.TabIndex = 312;
@@ -619,7 +562,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(240, 137);
+            this.label9.Location = new System.Drawing.Point(240, 134);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(14, 18);
             this.label9.TabIndex = 311;
@@ -630,7 +573,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(241, 96);
+            this.label8.Location = new System.Drawing.Point(241, 93);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(14, 18);
             this.label8.TabIndex = 310;
@@ -641,7 +584,7 @@
             this.labPasword.AutoSize = true;
             this.labPasword.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labPasword.ForeColor = System.Drawing.Color.Red;
-            this.labPasword.Location = new System.Drawing.Point(690, 181);
+            this.labPasword.Location = new System.Drawing.Point(690, 178);
             this.labPasword.Name = "labPasword";
             this.labPasword.Size = new System.Drawing.Size(84, 13);
             this.labPasword.TabIndex = 100;
@@ -665,7 +608,7 @@
             this.cmbStaffType.Items.AddRange(new object[] {
             "DOCTOR ",
             "STAFF"});
-            this.cmbStaffType.Location = new System.Drawing.Point(269, 94);
+            this.cmbStaffType.Location = new System.Drawing.Point(269, 92);
             this.cmbStaffType.Name = "cmbStaffType";
             this.cmbStaffType.Size = new System.Drawing.Size(139, 21);
             this.cmbStaffType.TabIndex = 51;
@@ -677,7 +620,7 @@
             // 
             this.text_mobile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_mobile.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_mobile.Location = new System.Drawing.Point(270, 222);
+            this.text_mobile.Location = new System.Drawing.Point(270, 215);
             this.text_mobile.MaxLength = 10;
             this.text_mobile.Name = "text_mobile";
             this.text_mobile.Size = new System.Drawing.Size(138, 20);
@@ -689,7 +632,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline);
-            this.label1.Location = new System.Drawing.Point(20, 19);
+            this.label1.Location = new System.Drawing.Point(16, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 25);
             this.label1.TabIndex = 32;
@@ -708,7 +651,7 @@
             this.panel_color.Controls.Add(this.label56);
             this.panel_color.Controls.Add(this.label58);
             this.panel_color.Controls.Add(this.label57);
-            this.panel_color.Location = new System.Drawing.Point(357, 293);
+            this.panel_color.Location = new System.Drawing.Point(357, 290);
             this.panel_color.Name = "panel_color";
             this.panel_color.Size = new System.Drawing.Size(173, 77);
             this.panel_color.TabIndex = 49;
@@ -861,7 +804,7 @@
             this.label_doctor_error.AutoSize = true;
             this.label_doctor_error.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_doctor_error.ForeColor = System.Drawing.Color.Red;
-            this.label_doctor_error.Location = new System.Drawing.Point(424, 140);
+            this.label_doctor_error.Location = new System.Drawing.Point(424, 137);
             this.label_doctor_error.Name = "label_doctor_error";
             this.label_doctor_error.Size = new System.Drawing.Size(84, 13);
             this.label_doctor_error.TabIndex = 33;
@@ -872,7 +815,7 @@
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(271, 344);
+            this.button1.Location = new System.Drawing.Point(271, 337);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 23);
             this.button1.TabIndex = 50;
@@ -884,7 +827,7 @@
             this.label_email_error.AutoSize = true;
             this.label_email_error.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_email_error.ForeColor = System.Drawing.Color.Red;
-            this.label_email_error.Location = new System.Drawing.Point(424, 266);
+            this.label_email_error.Location = new System.Drawing.Point(424, 260);
             this.label_email_error.Name = "label_email_error";
             this.label_email_error.Size = new System.Drawing.Size(223, 13);
             this.label_email_error.TabIndex = 34;
@@ -894,7 +837,7 @@
             // 
             this.choosecolor.AutoSize = true;
             this.choosecolor.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.choosecolor.Location = new System.Drawing.Point(316, 348);
+            this.choosecolor.Location = new System.Drawing.Point(316, 342);
             this.choosecolor.Name = "choosecolor";
             this.choosecolor.Size = new System.Drawing.Size(35, 13);
             this.choosecolor.TabIndex = 48;
@@ -905,7 +848,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(151, 222);
+            this.label3.Location = new System.Drawing.Point(151, 219);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 13);
             this.label3.TabIndex = 36;
@@ -915,7 +858,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(202, 136);
+            this.label2.Location = new System.Drawing.Point(202, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 35;
@@ -925,7 +868,7 @@
             // 
             this.text_reg_no.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_reg_no.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_reg_no.Location = new System.Drawing.Point(270, 304);
+            this.text_reg_no.Location = new System.Drawing.Point(270, 297);
             this.text_reg_no.Name = "text_reg_no";
             this.text_reg_no.Size = new System.Drawing.Size(138, 20);
             this.text_reg_no.TabIndex = 5;
@@ -944,7 +887,7 @@
             // 
             this.text_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_email.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_email.Location = new System.Drawing.Point(270, 264);
+            this.text_email.Location = new System.Drawing.Point(270, 256);
             this.text_email.Name = "text_email";
             this.text_email.Size = new System.Drawing.Size(138, 20);
             this.text_email.TabIndex = 4;
@@ -955,7 +898,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(134, 265);
+            this.label4.Location = new System.Drawing.Point(134, 260);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 13);
             this.label4.TabIndex = 29;
@@ -965,7 +908,7 @@
             // 
             this.label68.AutoSize = true;
             this.label68.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.Location = new System.Drawing.Point(424, 180);
+            this.label68.Location = new System.Drawing.Point(424, 178);
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(100, 13);
             this.label68.TabIndex = 35;
@@ -975,7 +918,7 @@
             // 
             this.text_PassConfrim.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_PassConfrim.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_PassConfrim.Location = new System.Drawing.Point(538, 179);
+            this.text_PassConfrim.Location = new System.Drawing.Point(538, 174);
             this.text_PassConfrim.Name = "text_PassConfrim";
             this.text_PassConfrim.PasswordChar = '*';
             this.text_PassConfrim.Size = new System.Drawing.Size(138, 20);
@@ -986,7 +929,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(124, 306);
+            this.label5.Location = new System.Drawing.Point(124, 301);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 13);
             this.label5.TabIndex = 31;
@@ -996,7 +939,7 @@
             // 
             this.text_password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_password.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_password.Location = new System.Drawing.Point(270, 178);
+            this.text_password.Location = new System.Drawing.Point(270, 174);
             this.text_password.Name = "text_password";
             this.text_password.PasswordChar = '*';
             this.text_password.Size = new System.Drawing.Size(138, 20);
@@ -1007,7 +950,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(147, 347);
+            this.label6.Location = new System.Drawing.Point(147, 342);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 13);
             this.label6.TabIndex = 27;
@@ -1017,7 +960,7 @@
             // 
             this.text_doctorname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_doctorname.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_doctorname.Location = new System.Drawing.Point(270, 136);
+            this.text_doctorname.Location = new System.Drawing.Point(270, 133);
             this.text_doctorname.Name = "text_doctorname";
             this.text_doctorname.Size = new System.Drawing.Size(138, 20);
             this.text_doctorname.TabIndex = 0;
@@ -1028,7 +971,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(161, 388);
+            this.label7.Location = new System.Drawing.Point(161, 383);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 30;
@@ -1038,7 +981,7 @@
             // 
             this.radio_login_yes.AutoSize = true;
             this.radio_login_yes.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radio_login_yes.Location = new System.Drawing.Point(270, 391);
+            this.radio_login_yes.Location = new System.Drawing.Point(270, 381);
             this.radio_login_yes.Name = "radio_login_yes";
             this.radio_login_yes.Size = new System.Drawing.Size(40, 17);
             this.radio_login_yes.TabIndex = 6;
@@ -1053,7 +996,7 @@
             this.button_closedoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_closedoctor.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_closedoctor.ForeColor = System.Drawing.Color.White;
-            this.button_closedoctor.Location = new System.Drawing.Point(970, 11);
+            this.button_closedoctor.Location = new System.Drawing.Point(970, 10);
             this.button_closedoctor.Name = "button_closedoctor";
             this.button_closedoctor.Size = new System.Drawing.Size(99, 33);
             this.button_closedoctor.TabIndex = 38;
@@ -1065,7 +1008,7 @@
             // 
             this.radio_login_no.AutoSize = true;
             this.radio_login_no.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radio_login_no.Location = new System.Drawing.Point(344, 392);
+            this.radio_login_no.Location = new System.Drawing.Point(344, 381);
             this.radio_login_no.Name = "radio_login_no";
             this.radio_login_no.Size = new System.Drawing.Size(40, 17);
             this.radio_login_no.TabIndex = 7;
@@ -1081,7 +1024,7 @@
             this.button_savedoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_savedoctor.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_savedoctor.ForeColor = System.Drawing.Color.White;
-            this.button_savedoctor.Location = new System.Drawing.Point(865, 12);
+            this.button_savedoctor.Location = new System.Drawing.Point(865, 10);
             this.button_savedoctor.Name = "button_savedoctor";
             this.button_savedoctor.Size = new System.Drawing.Size(99, 33);
             this.button_savedoctor.TabIndex = 8;
@@ -1093,7 +1036,7 @@
             // 
             this.Lab_InvalidNumber.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_InvalidNumber.ForeColor = System.Drawing.Color.Red;
-            this.Lab_InvalidNumber.Location = new System.Drawing.Point(424, 223);
+            this.Lab_InvalidNumber.Location = new System.Drawing.Point(424, 214);
             this.Lab_InvalidNumber.Name = "Lab_InvalidNumber";
             this.Lab_InvalidNumber.Size = new System.Drawing.Size(101, 23);
             this.Lab_InvalidNumber.TabIndex = 98;
@@ -1105,7 +1048,7 @@
             this.lab_Activation.AutoSize = true;
             this.lab_Activation.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_Activation.ForeColor = System.Drawing.Color.Red;
-            this.lab_Activation.Location = new System.Drawing.Point(424, 396);
+            this.lab_Activation.Location = new System.Drawing.Point(424, 383);
             this.lab_Activation.Name = "lab_Activation";
             this.lab_Activation.Size = new System.Drawing.Size(118, 13);
             this.lab_Activation.TabIndex = 315;
@@ -1182,7 +1125,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_notification.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_notification.GridColor = System.Drawing.Color.White;
-            this.dataGridView_notification.Location = new System.Drawing.Point(13, 18);
+            this.dataGridView_notification.Location = new System.Drawing.Point(10, 11);
             this.dataGridView_notification.Name = "dataGridView_notification";
             this.dataGridView_notification.RowHeadersVisible = false;
             this.dataGridView_notification.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -4722,6 +4665,63 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // S_ID
+            // 
+            this.S_ID.DataPropertyName = "id";
+            this.S_ID.HeaderText = "Id";
+            this.S_ID.Name = "S_ID";
+            this.S_ID.ReadOnly = true;
+            this.S_ID.Visible = false;
+            // 
+            // Doctor_Name
+            // 
+            this.Doctor_Name.DataPropertyName = "doctor_name";
+            this.Doctor_Name.HeaderText = "Doctor Name";
+            this.Doctor_Name.Name = "Doctor_Name";
+            this.Doctor_Name.ReadOnly = true;
+            this.Doctor_Name.Width = 200;
+            // 
+            // Mobile_Number
+            // 
+            this.Mobile_Number.DataPropertyName = "mobile_number";
+            this.Mobile_Number.HeaderText = "Mobile Number";
+            this.Mobile_Number.Name = "Mobile_Number";
+            this.Mobile_Number.ReadOnly = true;
+            this.Mobile_Number.Width = 200;
+            // 
+            // Role
+            // 
+            this.Role.DataPropertyName = "login_type";
+            this.Role.HeaderText = "Role";
+            this.Role.Name = "Role";
+            this.Role.ReadOnly = true;
+            this.Role.Width = 200;
+            // 
+            // Activated_Login
+            // 
+            this.Activated_Login.DataPropertyName = "activate_login";
+            this.Activated_Login.HeaderText = "Activated Login";
+            this.Activated_Login.Name = "Activated_Login";
+            this.Activated_Login.ReadOnly = true;
+            this.Activated_Login.Width = 125;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "";
+            this.Edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 19;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Visible = false;
+            this.Delete.Width = 70;
+            // 
             // Practice_Staff_Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5071,6 +5071,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usertype;
         private System.Windows.Forms.Button btnAssignPrivilege;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button button__manage_addoctor;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridViewTextBoxColumn S_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Doctor_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mobile_Number;
@@ -5078,7 +5080,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Activated_Login;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private System.Windows.Forms.Button button__manage_addoctor;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

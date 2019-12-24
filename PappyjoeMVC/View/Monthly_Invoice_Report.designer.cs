@@ -164,16 +164,16 @@
             // 
             // lblNoRecord
             // 
-            this.lblNoRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNoRecord.AutoSize = true;
+            this.lblNoRecord.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNoRecord.BackColor = System.Drawing.Color.Wheat;
             this.lblNoRecord.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoRecord.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblNoRecord.Location = new System.Drawing.Point(350, 203);
             this.lblNoRecord.Name = "lblNoRecord";
-            this.lblNoRecord.Size = new System.Drawing.Size(506, 25);
+            this.lblNoRecord.Size = new System.Drawing.Size(527, 25);
             this.lblNoRecord.TabIndex = 251;
             this.lblNoRecord.Text = "No Records Found. Please change the Date and try again !..";
+            this.lblNoRecord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
@@ -360,7 +360,8 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Location = new System.Drawing.Point(0, 628);
@@ -370,7 +371,7 @@
             // 
             // panel5
             // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.label5);
@@ -588,7 +589,6 @@
             this.Load += new System.EventHandler(this.Monthly_Invoice_Report_Load);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthlyReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.panel2.ResumeLayout(false);

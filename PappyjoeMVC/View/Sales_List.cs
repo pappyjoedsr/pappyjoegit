@@ -28,7 +28,6 @@ namespace PappyjoeMVC.View
             dateFrom = date2;
             flag_fromInventory = true;
         }
-
         private void Sales_List_Load(object sender, EventArgs e)
         {
             try
@@ -46,7 +45,6 @@ namespace PappyjoeMVC.View
                     DataTable dtb = this.cntrl.invDetailsbyDate(DateTime.Now.ToString("yyyy-MM-dd"));
                     Fill_dgvSale(dtb);
                 }
-
                 dgv_sales.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
                 dgv_sales.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                 dgv_sales.EnableHeadersVisualStyles = false;
@@ -94,10 +92,11 @@ namespace PappyjoeMVC.View
             }
             else
             {
+                int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Visible = true;
             }
         }
-
         private void rad_Cash_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -114,7 +113,6 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void rad_Credit_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -132,9 +130,9 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void dgv_sales_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+           
             if (e.RowIndex >= 0)
             {
                 PappyjoeMVC.Model.Connection.MyGlobals.global_Flag = true;
@@ -142,17 +140,23 @@ namespace PappyjoeMVC.View
                 int rowindex = dgv_sales.CurrentRow.Index;
                 if (dgv_sales.CurrentCell.OwningColumn.Name == "colInvNum")
                 {
-                    var form2 = new PappyjoeMVC.View.Sales(invnum);
+                    var form2 = new Sales(invnum);
                     form2.ShowDialog();
+                    form2.Dispose();
+                }
+                else if (dgv_sales.CurrentCell.OwningColumn.Name == "colmore")
+                {
+                    var form2 = new Sales(invnum);
+                    form2.ShowDialog();
+                    form2.Dispose();
                 }
             }
-        }
 
+        }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void BtnShow_Click(object sender, EventArgs e)
         {
             try
@@ -177,7 +181,6 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnexport_Click(object sender, EventArgs e)
         {
             try
@@ -522,7 +525,7 @@ namespace PappyjoeMVC.View
                             ExcelApp.Quit();
                             MessageBox.Show("Successfully Exported to Excel", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                    }// if record found
+                    }
                     else
                     {
                         Lab_Msg.Visible = true;

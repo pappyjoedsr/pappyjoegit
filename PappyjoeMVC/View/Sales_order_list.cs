@@ -18,7 +18,6 @@ namespace PappyjoeMVC.View
         string date_From;
         string date_To;
         bool flag_from_inventory = false;
-
         public Sales_order_list()
         {
             InitializeComponent();
@@ -28,7 +27,6 @@ namespace PappyjoeMVC.View
             InitializeComponent();
             Form_Name = FormName;
         }
-
         public Sales_order_list(string date1, string date2)
         {
             InitializeComponent();
@@ -36,7 +34,6 @@ namespace PappyjoeMVC.View
             date_To = date2;
             flag_from_inventory = true;
         }
-
         private void Sales_order_list_Load(object sender, EventArgs e)
         {
             try
@@ -59,7 +56,12 @@ namespace PappyjoeMVC.View
                         Fill_dgvSale(dtb);
                     }
                     else
+                    {
+                        int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Visible = true;
+                    }
+                      
                 }
                 dgv_sales.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
                 dgv_sales.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -149,12 +151,10 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btn_Sales_Click(object sender, EventArgs e)
         {
             if (dgv_sales.Rows.Count > 0)
@@ -165,10 +165,10 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new PappyjoeMVC.View.Sales(invNumOrder, "Sales Order");
                     form2.ShowDialog();
+                    form2.Dispose();
                 }
             }
         }
-
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             Lab_Msg.Visible = false;
@@ -179,9 +179,12 @@ namespace PappyjoeMVC.View
                 Fill_dgvSale(dtb);
             }
             else
+            {
+                int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                 Lab_Msg.Visible = true;
+            }
         }
-
         private void Btn_Show_Click(object sender, EventArgs e)
         {
             try
@@ -205,6 +208,8 @@ namespace PappyjoeMVC.View
                     }
                     else
                     {
+                        int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
+                        Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Visible = true;
                     }
                 }

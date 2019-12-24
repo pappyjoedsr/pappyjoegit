@@ -99,13 +99,15 @@ namespace PappyjoeMVC.View
                 string doctor = combodoctors.Text;
                 string date1 = dateTimePickerdailynewpatient1.Value.ToString("yyyy-MM-dd");
                 string date2 = dateTimePickerdailynewpatient2.Value.ToString("yyyy-MM-dd");
-                Grvdailynewpatient.DataSource  = this.cntrl.Dailynewpatient(date1, date2, doctor);// this.cntrl.DailyNewPatient(date1, date2, doctor);
+                Grvdailynewpatient.DataSource  = this.cntrl.Dailynewpatient(date1, date2, doctor);
                 Grvdailynewpatient.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 Grvdailynewpatient.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 Grvdailynewpatient.EnableHeadersVisualStyles = false;
                 Grvdailynewpatient.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
                 if (Grvdailynewpatient.Rows.Count == 1)
                 {
+                    int x = (panel5.Size.Width - lblNoRecord.Size.Width) / 2;
+                    lblNoRecord.Location = new Point(x, lblNoRecord.Location.Y);
                     lblNoRecord.Show();
                 }
                 else
@@ -167,6 +169,8 @@ namespace PappyjoeMVC.View
                 }
                 if (Grvdailynewpatient.Rows.Count == 1)
                 {
+                    int x = (panel5.Size.Width - lblNoRecord.Size.Width) / 2;
+                    lblNoRecord.Location = new Point(x, lblNoRecord.Location.Y);
                     lblNoRecord.Show();
                 }
                 else
@@ -231,6 +235,8 @@ namespace PappyjoeMVC.View
                 }
                 if (Grvdailynewpatient.Rows.Count == 1)
                 {
+                    int x = (panel5.Size.Width - lblNoRecord.Size.Width) / 2;
+                    lblNoRecord.Location = new Point(x, lblNoRecord.Location.Y);
                     lblNoRecord.Show();
                 }
                 else
@@ -309,6 +315,8 @@ namespace PappyjoeMVC.View
                 this.Grvdailynewpatient.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 if (Grvdailynewpatient.Rows.Count == 1)
                 {
+                    int x = (panel5.Size.Width - lblNoRecord.Size.Width) / 2;
+                    lblNoRecord.Location = new Point(x, lblNoRecord.Location.Y);
                     lblNoRecord.Show();
                 }
                 else
@@ -413,7 +421,7 @@ namespace PappyjoeMVC.View
 
         private void btnprint_Click(object sender, EventArgs e)
         {
-            try
+             try
             { 
                 if (flag == 1)
                 {
@@ -461,15 +469,16 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<div>");
                     sWrite.WriteLine("<table align=center width =900>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<th colspan=7> <center><FONT COLOR=black FACE='Segoe UI' SIZE=4>  <b>DAILY NEW PATIENT</b> </font></center></th>");
+                    sWrite.WriteLine("<th colspan=7> <center><FONT COLOR=black FACE='Segoe UI' SIZE=5>  <b>DAILY NEW PATIENT</b> </font></center></th>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<th colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b> " + strclinicname + "</b> </font></th>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<th colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2>  <b> " + strphone + "</b> </font></th>");
+                    sWrite.WriteLine("<th colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b> " + strphone + "</b> </font></th>");
                     sWrite.WriteLine("</tr>");
-                    sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2> <b>From :</b>  " + dateTimePickerdailynewpatient1.Value.ToString("dd/MM/yyyy") + " </font></td>");
+                    sWrite.WriteLine("<tr><td colspan=7><hr></td></tr>");
+                    sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=3> <b>From :</b>  " + dateTimePickerdailynewpatient1.Value.ToString("dd/MM/yyyy") + " </font></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2> <b>To :</b>  " + dateTimePickerdailynewpatient2.Value.ToString("dd/MM/yyyy") + " </font></td>");
@@ -480,24 +489,24 @@ namespace PappyjoeMVC.View
                     if (dgvDailyNewPatient.Rows.Count > 0)
                     {
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >Sl</font></th>");
-                        sWrite.WriteLine("    <td align='center' width='13%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Date</font></th>");
-                        sWrite.WriteLine("    <td align='left' width='13%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Patient Id</font></th>");
-                        sWrite.WriteLine("    <td align='left' width='16%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Patient Name</font></th>");
-                        sWrite.WriteLine("    <td align='left' width='12%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Mobile</font></th>");
-                        sWrite.WriteLine("    <td align='left' width='23%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Email</font></th>");
-                        sWrite.WriteLine("    <td align='left' width='17%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> Doctor</font></th>");
+                        sWrite.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >&nbsp;<b>Slno.</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='13%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Date</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='13%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Patient Id</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='16%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Patient Name</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='12%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Mobile</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='23%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> &nbsp;<b>Email</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='17%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> &nbsp;<b>Doctor</b></font></th>");
                         sWrite.WriteLine("</tr>");
                         while (c < dgvDailyNewPatient.Rows.Count)
                         {
                             sWrite.WriteLine("<tr>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgvDailyNewPatient.Rows[c].Cells[0].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='center' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + dgvDailyNewPatient.Rows[c].Cells[1].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + dgvDailyNewPatient.Rows[c].Cells[2].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgvDailyNewPatient.Rows[c].Cells[3].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + dgvDailyNewPatient.Rows[c].Cells[4].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgvDailyNewPatient.Rows[c].Cells[5].Value.ToString() + "</font></th>");
-                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> " + dgvDailyNewPatient.Rows[c].Cells[6].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dgvDailyNewPatient.Rows[c].Cells[0].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; " + dgvDailyNewPatient.Rows[c].Cells[1].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; " + dgvDailyNewPatient.Rows[c].Cells[2].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dgvDailyNewPatient.Rows[c].Cells[3].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; " + dgvDailyNewPatient.Rows[c].Cells[4].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dgvDailyNewPatient.Rows[c].Cells[5].Value.ToString() + "</font></th>");
+                            sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; " + dgvDailyNewPatient.Rows[c].Cells[6].Value.ToString() + "</font></th>");
                             sWrite.WriteLine("</tr>");
                             c++;
                         }

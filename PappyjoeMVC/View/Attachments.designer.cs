@@ -242,9 +242,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.label41);
             this.panel3.Controls.Add(this.button1);
-            this.panel3.Location = new System.Drawing.Point(188, 92);
+            this.panel3.Location = new System.Drawing.Point(192, 90);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1182, 39);
+            this.panel3.Size = new System.Drawing.Size(1166, 40);
             this.panel3.TabIndex = 289;
             // 
             // label41
@@ -265,7 +265,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1102, 5);
+            this.button1.Location = new System.Drawing.Point(1086, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 30);
             this.button1.TabIndex = 269;
@@ -278,9 +278,9 @@
             this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.BackColor = System.Drawing.Color.DarkGray;
-            this.panel10.Location = new System.Drawing.Point(1093, 133);
+            this.panel10.Location = new System.Drawing.Point(1085, 133);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1, 607);
+            this.panel10.Size = new System.Drawing.Size(1, 569);
             this.panel10.TabIndex = 290;
             // 
             // labelledger
@@ -330,15 +330,16 @@
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(134, 177);
+            this.Lab_Msg.Location = new System.Drawing.Point(131, 232);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(653, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(678, 25);
             this.Lab_Msg.TabIndex = 275;
-            this.Lab_Msg.Text = "No Records Found. Please Click \' ADD \' button on Top Right To Add New One";
+            this.Lab_Msg.Text = "No Records Found. Please Click \' ADD \' button on Top Right To Add New One        " +
+    "   ";
             this.Lab_Msg.Visible = false;
             // 
             // labelprescription
@@ -369,9 +370,9 @@
             this.panel9.Controls.Add(this.btn_CategoryAdd);
             this.panel9.Controls.Add(this.txt_Category);
             this.panel9.Controls.Add(this.lab_Category);
-            this.panel9.Location = new System.Drawing.Point(1098, 137);
+            this.panel9.Location = new System.Drawing.Point(1090, 137);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(263, 599);
+            this.panel9.Size = new System.Drawing.Size(268, 561);
             this.panel9.TabIndex = 292;
             // 
             // Lab_Msg1
@@ -561,7 +562,7 @@
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.DarkGray;
-            this.panel8.Location = new System.Drawing.Point(186, 133);
+            this.panel8.Location = new System.Drawing.Point(188, 132);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1186, 1);
             this.panel8.TabIndex = 288;
@@ -573,7 +574,7 @@
             this.panel6.BackColor = System.Drawing.Color.DarkGray;
             this.panel6.Location = new System.Drawing.Point(185, 87);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1, 653);
+            this.panel6.Size = new System.Drawing.Size(1, 615);
             this.panel6.TabIndex = 287;
             // 
             // panel7
@@ -583,9 +584,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.Controls.Add(this.Lab_Msg);
             this.panel7.Controls.Add(this.Dgv_Attachment);
-            this.panel7.Location = new System.Drawing.Point(186, 137);
+            this.panel7.Location = new System.Drawing.Point(191, 135);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(903, 598);
+            this.panel7.Size = new System.Drawing.Size(895, 560);
             this.panel7.TabIndex = 291;
             // 
             // Dgv_Attachment
@@ -621,13 +622,13 @@
             this.Column5,
             this.Column6,
             this.photo});
-            this.Dgv_Attachment.Location = new System.Drawing.Point(7, 5);
+            this.Dgv_Attachment.Location = new System.Drawing.Point(5, 5);
             this.Dgv_Attachment.Name = "Dgv_Attachment";
             this.Dgv_Attachment.ReadOnly = true;
             this.Dgv_Attachment.RowHeadersVisible = false;
             this.Dgv_Attachment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Dgv_Attachment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.Dgv_Attachment.Size = new System.Drawing.Size(895, 598);
+            this.Dgv_Attachment.Size = new System.Drawing.Size(887, 560);
             this.Dgv_Attachment.TabIndex = 267;
             this.Dgv_Attachment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Attachment_CellClick);
             // 
@@ -665,9 +666,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(1, 92);
+            this.panel1.Location = new System.Drawing.Point(2, 89);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(187, 619);
+            this.panel1.Size = new System.Drawing.Size(187, 613);
             this.panel1.TabIndex = 286;
             // 
             // labeltreatment
@@ -799,7 +800,7 @@
             this.toolStripTextDoctor});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1370, 40);
+            this.toolStrip1.Size = new System.Drawing.Size(1362, 40);
             this.toolStrip1.TabIndex = 279;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -1019,20 +1020,20 @@
             this.panel5.BackColor = System.Drawing.Color.DarkGray;
             this.panel5.Location = new System.Drawing.Point(-8, 87);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1386, 1);
+            this.panel5.Size = new System.Drawing.Size(1378, 1);
             this.panel5.TabIndex = 280;
             // 
             // listpatientsearch
             // 
             this.listpatientsearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
-            this.listpatientsearch.ItemHeight = 17;
-            this.listpatientsearch.Location = new System.Drawing.Point(1020, 42);
+            this.listpatientsearch.ItemHeight = 20;
+            this.listpatientsearch.Location = new System.Drawing.Point(1002, 23);
             this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(250, 87);
+            this.listpatientsearch.Size = new System.Drawing.Size(243, 80);
             this.listpatientsearch.TabIndex = 285;
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
@@ -1147,7 +1148,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 741);
+            this.ClientSize = new System.Drawing.Size(1362, 703);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel10);
@@ -1175,7 +1176,6 @@
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Category)).EndInit();
             this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Attachment)).EndInit();
             this.panel1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);

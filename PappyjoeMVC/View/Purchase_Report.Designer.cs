@@ -47,15 +47,16 @@
             this.BTNClose = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.GrandTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiscAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sup_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurchDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurchNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SLNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.dgvPurchase = new System.Windows.Forms.DataGridView();
+            this.sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sup_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiscAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grandtotl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
@@ -72,7 +73,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(1156, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 171;
             this.label2.Text = "Total Amount";
             // 
@@ -94,7 +95,7 @@
             this.dptMonthly_From.CalendarFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dptMonthly_From.CalendarMonthBackground = System.Drawing.Color.Gainsboro;
             this.dptMonthly_From.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dptMonthly_From.Location = new System.Drawing.Point(58, 6);
+            this.dptMonthly_From.Location = new System.Drawing.Point(58, 12);
             this.dptMonthly_From.Name = "dptMonthly_From";
             this.dptMonthly_From.Size = new System.Drawing.Size(201, 22);
             this.dptMonthly_From.TabIndex = 167;
@@ -106,7 +107,7 @@
             this.label6.BackColor = System.Drawing.Color.Gainsboro;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(14, 10);
+            this.label6.Location = new System.Drawing.Point(14, 15);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 17);
             this.label6.TabIndex = 169;
@@ -131,9 +132,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(1156, 35);
+            this.label1.Location = new System.Drawing.Point(1174, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "Total Cost";
             // 
@@ -142,7 +143,7 @@
             this.dptMonthly_To.CalendarFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dptMonthly_To.CalendarMonthBackground = System.Drawing.Color.Gainsboro;
             this.dptMonthly_To.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dptMonthly_To.Location = new System.Drawing.Point(57, 38);
+            this.dptMonthly_To.Location = new System.Drawing.Point(57, 42);
             this.dptMonthly_To.Name = "dptMonthly_To";
             this.dptMonthly_To.Size = new System.Drawing.Size(201, 22);
             this.dptMonthly_To.TabIndex = 168;
@@ -166,9 +167,9 @@
             this.lblinvoices.AutoSize = true;
             this.lblinvoices.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblinvoices.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblinvoices.Location = new System.Drawing.Point(1156, 10);
+            this.lblinvoices.Location = new System.Drawing.Point(1151, 10);
             this.lblinvoices.Name = "lblinvoices";
-            this.lblinvoices.Size = new System.Drawing.Size(80, 13);
+            this.lblinvoices.Size = new System.Drawing.Size(81, 13);
             this.lblinvoices.TabIndex = 0;
             this.lblinvoices.Text = "Total Purchase";
             // 
@@ -178,7 +179,7 @@
             this.label5.BackColor = System.Drawing.Color.Gainsboro;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(26, 39);
+            this.label5.Location = new System.Drawing.Point(26, 45);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(22, 17);
             this.label5.TabIndex = 170;
@@ -187,7 +188,7 @@
             // BtnExport
             // 
             this.BtnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnExport.BackColor = System.Drawing.Color.LimeGreen;
+            this.BtnExport.BackColor = System.Drawing.Color.DodgerBlue;
             this.BtnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExport.ForeColor = System.Drawing.Color.White;
@@ -216,7 +217,7 @@
             // btnprint
             // 
             this.btnprint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnprint.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnprint.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnprint.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnprint.ForeColor = System.Drawing.Color.White;
@@ -238,7 +239,7 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(264, 40);
+            this.button1.Location = new System.Drawing.Point(264, 42);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(58, 22);
             this.button1.TabIndex = 300;
@@ -286,73 +287,18 @@
             this.panel3.Size = new System.Drawing.Size(1374, 52);
             this.panel3.TabIndex = 194;
             // 
-            // GrandTotal
-            // 
-            this.GrandTotal.FillWeight = 102.6831F;
-            this.GrandTotal.HeaderText = "GRAND TOTAL";
-            this.GrandTotal.Name = "GrandTotal";
-            this.GrandTotal.ReadOnly = true;
-            // 
-            // DiscAmount
-            // 
-            this.DiscAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DiscAmount.FillWeight = 102.6831F;
-            this.DiscAmount.HeaderText = "DISCOUNT";
-            this.DiscAmount.Name = "DiscAmount";
-            this.DiscAmount.ReadOnly = true;
-            // 
-            // TotalAmount
-            // 
-            this.TotalAmount.FillWeight = 102.6831F;
-            this.TotalAmount.HeaderText = "TOTAL AMOUNT";
-            this.TotalAmount.Name = "TotalAmount";
-            this.TotalAmount.ReadOnly = true;
-            this.TotalAmount.Width = 115;
-            // 
-            // Sup_name
-            // 
-            this.Sup_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Sup_name.FillWeight = 102.6831F;
-            this.Sup_name.HeaderText = "SUPPLIER NAME";
-            this.Sup_name.Name = "Sup_name";
-            this.Sup_name.ReadOnly = true;
-            // 
-            // PurchDate
-            // 
-            this.PurchDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PurchDate.FillWeight = 102.6831F;
-            this.PurchDate.HeaderText = "PURCHASE DATE";
-            this.PurchDate.Name = "PurchDate";
-            this.PurchDate.ReadOnly = true;
-            // 
-            // PurchNumber
-            // 
-            this.PurchNumber.FillWeight = 102.6831F;
-            this.PurchNumber.HeaderText = "PURCHASE NO";
-            this.PurchNumber.Name = "PurchNumber";
-            this.PurchNumber.ReadOnly = true;
-            this.PurchNumber.Width = 149;
-            // 
-            // SLNO
-            // 
-            this.SLNO.FillWeight = 81.21827F;
-            this.SLNO.HeaderText = "SLNO";
-            this.SLNO.Name = "SLNO";
-            this.SLNO.ReadOnly = true;
-            this.SLNO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.SLNO.Width = 95;
-            // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(390, 203);
+            this.Lab_Msg.Location = new System.Drawing.Point(191, 211);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(568, 25);
             this.Lab_Msg.TabIndex = 280;
             this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // dgvPurchase
@@ -361,7 +307,6 @@
             this.dgvPurchase.AllowUserToDeleteRows = false;
             this.dgvPurchase.AllowUserToResizeColumns = false;
             this.dgvPurchase.AllowUserToResizeRows = false;
-            this.dgvPurchase.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvPurchase.BackgroundColor = System.Drawing.Color.White;
             this.dgvPurchase.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPurchase.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -369,13 +314,15 @@
             this.dgvPurchase.ColumnHeadersHeight = 25;
             this.dgvPurchase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPurchase.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SLNO,
+            this.sl,
             this.PurchNumber,
             this.PurchDate,
             this.Sup_name,
+            this.unt,
             this.TotalAmount,
             this.DiscAmount,
-            this.GrandTotal});
+            this.grandtotl});
+            this.dgvPurchase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPurchase.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvPurchase.Location = new System.Drawing.Point(0, 0);
             this.dgvPurchase.Name = "dgvPurchase";
@@ -385,9 +332,73 @@
             this.dgvPurchase.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPurchase.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPurchase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPurchase.Size = new System.Drawing.Size(1371, 780);
+            this.dgvPurchase.Size = new System.Drawing.Size(1371, 604);
             this.dgvPurchase.TabIndex = 1;
             this.dgvPurchase.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchase_CellDoubleClick);
+            // 
+            // sl
+            // 
+            this.sl.FillWeight = 81.21827F;
+            this.sl.HeaderText = "SL NO";
+            this.sl.Name = "sl";
+            this.sl.ReadOnly = true;
+            this.sl.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.sl.Width = 95;
+            // 
+            // PurchNumber
+            // 
+            this.PurchNumber.FillWeight = 102.6831F;
+            this.PurchNumber.HeaderText = "PURCHASE NO";
+            this.PurchNumber.Name = "PurchNumber";
+            this.PurchNumber.ReadOnly = true;
+            this.PurchNumber.Width = 149;
+            // 
+            // PurchDate
+            // 
+            this.PurchDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PurchDate.FillWeight = 102.6831F;
+            this.PurchDate.HeaderText = "PURCHASE DATE";
+            this.PurchDate.Name = "PurchDate";
+            this.PurchDate.ReadOnly = true;
+            // 
+            // Sup_name
+            // 
+            this.Sup_name.FillWeight = 102.6831F;
+            this.Sup_name.HeaderText = "SUPPLIER NAME";
+            this.Sup_name.Name = "Sup_name";
+            this.Sup_name.ReadOnly = true;
+            this.Sup_name.Width = 247;
+            // 
+            // unt
+            // 
+            this.unt.HeaderText = "UNIT";
+            this.unt.Name = "unt";
+            this.unt.ReadOnly = true;
+            this.unt.Width = 180;
+            // 
+            // TotalAmount
+            // 
+            this.TotalAmount.FillWeight = 102.6831F;
+            this.TotalAmount.HeaderText = "TOTAL AMOUNT";
+            this.TotalAmount.Name = "TotalAmount";
+            this.TotalAmount.ReadOnly = true;
+            this.TotalAmount.Width = 125;
+            // 
+            // DiscAmount
+            // 
+            this.DiscAmount.FillWeight = 102.6831F;
+            this.DiscAmount.HeaderText = "DISCOUNT";
+            this.DiscAmount.Name = "DiscAmount";
+            this.DiscAmount.ReadOnly = true;
+            this.DiscAmount.Width = 200;
+            // 
+            // grandtotl
+            // 
+            this.grandtotl.FillWeight = 102.6831F;
+            this.grandtotl.HeaderText = "GRAND TOTAL";
+            this.grandtotl.Name = "grandtotl";
+            this.grandtotl.ReadOnly = true;
+            this.grandtotl.Width = 130;
             // 
             // panel2
             // 
@@ -398,7 +409,7 @@
             this.panel2.Controls.Add(this.dgvPurchase);
             this.panel2.Location = new System.Drawing.Point(-2, 137);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1374, 612);
+            this.panel2.Size = new System.Drawing.Size(1371, 604);
             this.panel2.TabIndex = 195;
             // 
             // panel1
@@ -432,15 +443,16 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Purchase_Report";
-            this.Text = "Purchase_Report";
+            this.Text = "Purchase Report";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Purchase_Report_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchase)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -467,16 +479,17 @@
         private System.Windows.Forms.Button BTNClose;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GrandTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiscAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sup_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PurchDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PurchNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SLNO;
         private System.Windows.Forms.Label Lab_Msg;
         private System.Windows.Forms.DataGridView dgvPurchase;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sup_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiscAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grandtotl;
     }
 }

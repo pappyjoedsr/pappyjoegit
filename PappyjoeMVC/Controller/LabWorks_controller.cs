@@ -13,6 +13,7 @@ namespace PappyjoeMVC.Controller
         SMS_model s = new SMS_model();
         Common_model cmdl = new Common_model();
         LabWorks_model mdl = new LabWorks_model();
+        Prescription_model _model = new Prescription_model();
         Daily_Invoice_Report_model dm = new Daily_Invoice_Report_model();
         Connection db = new Connection();
         public DataTable Get_Patient_Details(string patid)
@@ -20,10 +21,30 @@ namespace PappyjoeMVC.Controller
             DataTable dt = cmdl.Get_Patient_Details(patid);
             return dt;
         }
+        public DataTable Get_practiceDlNumber()
+        {
+            DataTable dtb = cmdl.Get_practiceDlNumber();
+            return dtb;
+        }
+        public DataTable patient_details(string patient_id)
+        {
+            System.Data.DataTable dt1 = _model.patient_details(patient_id);
+            return dt1;
+        }
         public DataTable tbmain(string patid,string workid)
         {
             DataTable dt = mdl.tbmain(patid,workid);
             return dt;
+        }
+        public DataTable printsettings()
+        {
+            DataTable print = _model.printsettings();
+            return print;
+        }
+        public DataTable printsettings_details()
+        {
+            DataTable print = _model.printsettings_details();
+            return print;
         }
         public string SendSMS(string User, string password, string Mobile_Number, string Message)
         {

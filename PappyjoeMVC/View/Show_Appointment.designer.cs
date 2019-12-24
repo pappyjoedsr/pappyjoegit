@@ -62,6 +62,7 @@
             this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panelmain = new System.Windows.Forms.Panel();
+            this.Lab_Msg = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -69,7 +70,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label41 = new System.Windows.Forms.Label();
-            this.Lab_Msg = new System.Windows.Forms.Label();
             this.btn_Add = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -287,7 +287,7 @@
             this.labelappointment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelappointment.ForeColor = System.Drawing.Color.White;
             this.labelappointment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelappointment.Location = new System.Drawing.Point(7, 58);
+            this.labelappointment.Location = new System.Drawing.Point(18, 58);
             this.labelappointment.Name = "labelappointment";
             this.labelappointment.Size = new System.Drawing.Size(166, 32);
             this.labelappointment.TabIndex = 40;
@@ -377,7 +377,7 @@
             this.labelallpatient.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.labelallpatient.Image = global::PappyjoeMVC.Properties.Resources.SP;
             this.labelallpatient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelallpatient.Location = new System.Drawing.Point(11, 43);
+            this.labelallpatient.Location = new System.Drawing.Point(2, 42);
             this.labelallpatient.Name = "labelallpatient";
             this.labelallpatient.Size = new System.Drawing.Size(109, 38);
             this.labelallpatient.TabIndex = 258;
@@ -404,7 +404,7 @@
             this.panel2.Controls.Add(this.linkLabel_Name);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(193, 42);
+            this.panel2.Location = new System.Drawing.Point(197, 42);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(414, 46);
             this.panel2.TabIndex = 263;
@@ -472,9 +472,9 @@
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
             this.listpatientsearch.ItemHeight = 20;
-            this.listpatientsearch.Location = new System.Drawing.Point(1005, 39);
+            this.listpatientsearch.Location = new System.Drawing.Point(985, 39);
             this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(229, 80);
+            this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
             this.listpatientsearch.TabIndex = 265;
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
@@ -522,18 +522,33 @@
             // 
             // panelmain
             // 
+            this.panelmain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelmain.BackColor = System.Drawing.Color.White;
+            this.panelmain.Controls.Add(this.Lab_Msg);
             this.panelmain.Controls.Add(this.panel6);
             this.panelmain.Controls.Add(this.panel11);
             this.panelmain.Controls.Add(this.panel3);
             this.panelmain.Controls.Add(this.label41);
-            this.panelmain.Controls.Add(this.Lab_Msg);
             this.panelmain.Controls.Add(this.btn_Add);
-            this.panelmain.Location = new System.Drawing.Point(193, 91);
+            this.panelmain.Location = new System.Drawing.Point(194, 91);
             this.panelmain.Name = "panelmain";
             this.panelmain.Size = new System.Drawing.Size(1159, 600);
             this.panelmain.TabIndex = 256;
             this.panelmain.Visible = false;
+            // 
+            // Lab_Msg
+            // 
+            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
+            this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Lab_Msg.Location = new System.Drawing.Point(150, 233);
+            this.Lab_Msg.Name = "Lab_Msg";
+            this.Lab_Msg.Size = new System.Drawing.Size(653, 25);
+            this.Lab_Msg.TabIndex = 269;
+            this.Lab_Msg.Text = "No Records Found. Please Click \' ADD \' button on Top Right To Add New One\r\n";
+            this.Lab_Msg.Visible = false;
             // 
             // panel6
             // 
@@ -554,7 +569,7 @@
             this.panel11.Controls.Add(this.radioButton3);
             this.panel11.Controls.Add(this.radioButton4);
             this.panel11.Controls.Add(this.label16);
-            this.panel11.Location = new System.Drawing.Point(-1, 41);
+            this.panel11.Location = new System.Drawing.Point(1, 40);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(1161, 31);
             this.panel11.TabIndex = 58;
@@ -621,19 +636,6 @@
             this.label41.Size = new System.Drawing.Size(130, 21);
             this.label41.TabIndex = 275;
             this.label41.Text = "APPOINTMENTS";
-            // 
-            // Lab_Msg
-            // 
-            this.Lab_Msg.AutoSize = true;
-            this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
-            this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(150, 233);
-            this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(653, 25);
-            this.Lab_Msg.TabIndex = 269;
-            this.Lab_Msg.Text = "No Records Found. Please Click \' ADD \' button on Top Right To Add New One\r\n";
-            this.Lab_Msg.Visible = false;
             // 
             // btn_Add
             // 
@@ -921,7 +923,7 @@
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.DarkGray;
-            this.panel8.Location = new System.Drawing.Point(0, 88);
+            this.panel8.Location = new System.Drawing.Point(0, 89);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1375, 1);
             this.panel8.TabIndex = 267;
@@ -933,7 +935,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1351, 699);
             this.Controls.Add(this.listpatientsearch);
-            this.Controls.Add(this.panel8);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel7);
@@ -943,6 +944,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelmain);
+            this.Controls.Add(this.panel8);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Show_Appointment";

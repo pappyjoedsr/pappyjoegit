@@ -537,7 +537,7 @@
             this.toolStripTextDoctor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTextDoctor.Name = "toolStripTextDoctor";
             this.toolStripTextDoctor.ReadOnly = true;
-            this.toolStripTextDoctor.Size = new System.Drawing.Size(180, 23);
+            this.toolStripTextDoctor.Size = new System.Drawing.Size(180, 46);
             this.toolStripTextDoctor.Text = "doctorname";
             // 
             // panel_edit_dr
@@ -646,7 +646,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1250, 5);
+            this.button2.Location = new System.Drawing.Point(1250, 36);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 35);
             this.button2.TabIndex = 27;
@@ -701,7 +701,7 @@
             this.panel_register.Controls.Add(this.text_reg_number);
             this.panel_register.Controls.Add(this.combo_reg_year);
             this.panel_register.Controls.Add(this.combo_reg_regcouncil);
-            this.panel_register.Location = new System.Drawing.Point(4, 432);
+            this.panel_register.Location = new System.Drawing.Point(4, 428);
             this.panel_register.Name = "panel_register";
             this.panel_register.Size = new System.Drawing.Size(481, 56);
             this.panel_register.TabIndex = 45;
@@ -745,7 +745,7 @@
             this.button_reg_save.ForeColor = System.Drawing.Color.White;
             this.button_reg_save.Location = new System.Drawing.Point(402, 26);
             this.button_reg_save.Name = "button_reg_save";
-            this.button_reg_save.Size = new System.Drawing.Size(72, 22);
+            this.button_reg_save.Size = new System.Drawing.Size(72, 24);
             this.button_reg_save.TabIndex = 9;
             this.button_reg_save.Text = "Update";
             this.button_reg_save.UseVisualStyleBackColor = false;
@@ -759,7 +759,7 @@
             this.button_reg_add.ForeColor = System.Drawing.Color.White;
             this.button_reg_add.Location = new System.Drawing.Point(315, 26);
             this.button_reg_add.Name = "button_reg_add";
-            this.button_reg_add.Size = new System.Drawing.Size(72, 22);
+            this.button_reg_add.Size = new System.Drawing.Size(72, 24);
             this.button_reg_add.TabIndex = 9;
             this.button_reg_add.Text = "Add new";
             this.button_reg_add.UseVisualStyleBackColor = false;
@@ -805,7 +805,7 @@
             this.panel_recognition.Controls.Add(this.label30);
             this.panel_recognition.Controls.Add(this.button_save_awards);
             this.panel_recognition.Controls.Add(this.combo_award_year);
-            this.panel_recognition.Location = new System.Drawing.Point(4, 298);
+            this.panel_recognition.Location = new System.Drawing.Point(4, 288);
             this.panel_recognition.Name = "panel_recognition";
             this.panel_recognition.Size = new System.Drawing.Size(481, 56);
             this.panel_recognition.TabIndex = 43;
@@ -848,7 +848,7 @@
             this.button_save_awards.ForeColor = System.Drawing.Color.White;
             this.button_save_awards.Location = new System.Drawing.Point(402, 15);
             this.button_save_awards.Name = "button_save_awards";
-            this.button_save_awards.Size = new System.Drawing.Size(72, 23);
+            this.button_save_awards.Size = new System.Drawing.Size(72, 24);
             this.button_save_awards.TabIndex = 9;
             this.button_save_awards.Text = "Update";
             this.button_save_awards.UseVisualStyleBackColor = false;
@@ -873,7 +873,7 @@
             this.panel_membership.Controls.Add(this.label31);
             this.panel_membership.Controls.Add(this.combo_membership);
             this.panel_membership.Controls.Add(this.button_save_membership);
-            this.panel_membership.Location = new System.Drawing.Point(4, 367);
+            this.panel_membership.Location = new System.Drawing.Point(4, 358);
             this.panel_membership.Name = "panel_membership";
             this.panel_membership.Size = new System.Drawing.Size(481, 56);
             this.panel_membership.TabIndex = 44;
@@ -887,7 +887,7 @@
             this.button_add_membership.ForeColor = System.Drawing.Color.White;
             this.button_add_membership.Location = new System.Drawing.Point(315, 14);
             this.button_add_membership.Name = "button_add_membership";
-            this.button_add_membership.Size = new System.Drawing.Size(72, 22);
+            this.button_add_membership.Size = new System.Drawing.Size(72, 24);
             this.button_add_membership.TabIndex = 9;
             this.button_add_membership.Text = "Add new";
             this.button_add_membership.UseVisualStyleBackColor = false;
@@ -923,7 +923,7 @@
             this.button_save_membership.ForeColor = System.Drawing.Color.White;
             this.button_save_membership.Location = new System.Drawing.Point(402, 14);
             this.button_save_membership.Name = "button_save_membership";
-            this.button_save_membership.Size = new System.Drawing.Size(72, 22);
+            this.button_save_membership.Size = new System.Drawing.Size(72, 24);
             this.button_save_membership.TabIndex = 9;
             this.button_save_membership.Text = "Update";
             this.button_save_membership.UseVisualStyleBackColor = false;
@@ -945,7 +945,7 @@
             this.panel_experience.Controls.Add(this.text_experience_company);
             this.panel_experience.Controls.Add(this.label18);
             this.panel_experience.Controls.Add(this.combo_experience_city);
-            this.panel_experience.Location = new System.Drawing.Point(4, 209);
+            this.panel_experience.Location = new System.Drawing.Point(4, 207);
             this.panel_experience.Name = "panel_experience";
             this.panel_experience.Size = new System.Drawing.Size(482, 67);
             this.panel_experience.TabIndex = 42;
@@ -978,7 +978,7 @@
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(142, 6);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(20, 15);
+            this.label25.Size = new System.Drawing.Size(19, 15);
             this.label25.TabIndex = 4;
             this.label25.Text = "To";
             // 
@@ -1020,7 +1020,7 @@
             this.button_experience_save.ForeColor = System.Drawing.Color.White;
             this.button_experience_save.Location = new System.Drawing.Point(402, 6);
             this.button_experience_save.Name = "button_experience_save";
-            this.button_experience_save.Size = new System.Drawing.Size(72, 22);
+            this.button_experience_save.Size = new System.Drawing.Size(72, 24);
             this.button_experience_save.TabIndex = 9;
             this.button_experience_save.Text = "Update";
             this.button_experience_save.UseVisualStyleBackColor = false;
@@ -1101,7 +1101,7 @@
             this.panel_education.Controls.Add(this.combo_education_year);
             this.panel_education.Controls.Add(this.button_save_education);
             this.panel_education.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.panel_education.Location = new System.Drawing.Point(4, 124);
+            this.panel_education.Location = new System.Drawing.Point(4, 126);
             this.panel_education.Name = "panel_education";
             this.panel_education.Size = new System.Drawing.Size(482, 67);
             this.panel_education.TabIndex = 41;
@@ -1157,7 +1157,7 @@
             this.button_education_add_college.ForeColor = System.Drawing.Color.White;
             this.button_education_add_college.Location = new System.Drawing.Point(224, 38);
             this.button_education_add_college.Name = "button_education_add_college";
-            this.button_education_add_college.Size = new System.Drawing.Size(72, 22);
+            this.button_education_add_college.Size = new System.Drawing.Size(72, 24);
             this.button_education_add_college.TabIndex = 34;
             this.button_education_add_college.Text = "Add new";
             this.button_education_add_college.UseVisualStyleBackColor = false;
@@ -1171,7 +1171,7 @@
             this.button_education_adddegree.ForeColor = System.Drawing.Color.White;
             this.button_education_adddegree.Location = new System.Drawing.Point(66, 38);
             this.button_education_adddegree.Name = "button_education_adddegree";
-            this.button_education_adddegree.Size = new System.Drawing.Size(72, 22);
+            this.button_education_adddegree.Size = new System.Drawing.Size(72, 24);
             this.button_education_adddegree.TabIndex = 35;
             this.button_education_adddegree.Text = "Add new";
             this.button_education_adddegree.UseVisualStyleBackColor = false;
@@ -1208,7 +1208,7 @@
             this.button_save_education.ForeColor = System.Drawing.Color.White;
             this.button_save_education.Location = new System.Drawing.Point(402, 11);
             this.button_save_education.Name = "button_save_education";
-            this.button_save_education.Size = new System.Drawing.Size(72, 22);
+            this.button_save_education.Size = new System.Drawing.Size(72, 24);
             this.button_save_education.TabIndex = 36;
             this.button_save_education.Text = "Update";
             this.button_save_education.UseVisualStyleBackColor = false;
@@ -1222,7 +1222,7 @@
             this.panel_specialization.Controls.Add(this.label8);
             this.panel_specialization.Controls.Add(this.button_save_special);
             this.panel_specialization.Controls.Add(this.button_add_special);
-            this.panel_specialization.Location = new System.Drawing.Point(4, 70);
+            this.panel_specialization.Location = new System.Drawing.Point(4, 69);
             this.panel_specialization.Name = "panel_specialization";
             this.panel_specialization.Size = new System.Drawing.Size(483, 43);
             this.panel_specialization.TabIndex = 40;
@@ -1258,7 +1258,7 @@
             this.button_save_special.ForeColor = System.Drawing.Color.White;
             this.button_save_special.Location = new System.Drawing.Point(402, 10);
             this.button_save_special.Name = "button_save_special";
-            this.button_save_special.Size = new System.Drawing.Size(72, 22);
+            this.button_save_special.Size = new System.Drawing.Size(72, 24);
             this.button_save_special.TabIndex = 9;
             this.button_save_special.Text = "Update";
             this.button_save_special.UseVisualStyleBackColor = false;
@@ -1272,7 +1272,7 @@
             this.button_add_special.ForeColor = System.Drawing.Color.White;
             this.button_add_special.Location = new System.Drawing.Point(315, 10);
             this.button_add_special.Name = "button_add_special";
-            this.button_add_special.Size = new System.Drawing.Size(72, 22);
+            this.button_add_special.Size = new System.Drawing.Size(72, 24);
             this.button_add_special.TabIndex = 9;
             this.button_add_special.Text = "Add new";
             this.button_add_special.UseVisualStyleBackColor = false;
@@ -1300,7 +1300,7 @@
             this.button_add_service.ForeColor = System.Drawing.Color.White;
             this.button_add_service.Location = new System.Drawing.Point(315, 12);
             this.button_add_service.Name = "button_add_service";
-            this.button_add_service.Size = new System.Drawing.Size(72, 22);
+            this.button_add_service.Size = new System.Drawing.Size(72, 24);
             this.button_add_service.TabIndex = 9;
             this.button_add_service.Text = "Add new";
             this.button_add_service.UseVisualStyleBackColor = false;
@@ -1336,7 +1336,7 @@
             this.button_save_service.ForeColor = System.Drawing.Color.White;
             this.button_save_service.Location = new System.Drawing.Point(402, 12);
             this.button_save_service.Name = "button_save_service";
-            this.button_save_service.Size = new System.Drawing.Size(72, 22);
+            this.button_save_service.Size = new System.Drawing.Size(72, 24);
             this.button_save_service.TabIndex = 9;
             this.button_save_service.Text = "Update";
             this.button_save_service.UseVisualStyleBackColor = false;
@@ -1430,9 +1430,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(233, 73);
+            this.label5.Location = new System.Drawing.Point(230, 71);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 15);
+            this.label5.Size = new System.Drawing.Size(94, 15);
             this.label5.TabIndex = 27;
             this.label5.Text = "years experience";
             // 
@@ -1528,7 +1528,7 @@
             // radio_female
             // 
             this.radio_female.AutoSize = true;
-            this.radio_female.Location = new System.Drawing.Point(247, 42);
+            this.radio_female.Location = new System.Drawing.Point(235, 42);
             this.radio_female.Name = "radio_female";
             this.radio_female.Size = new System.Drawing.Size(63, 19);
             this.radio_female.TabIndex = 24;
@@ -1592,7 +1592,7 @@
             this.button_GoToClinic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_GoToClinic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_GoToClinic.ForeColor = System.Drawing.Color.White;
-            this.button_GoToClinic.Location = new System.Drawing.Point(1250, 38);
+            this.button_GoToClinic.Location = new System.Drawing.Point(1250, 3);
             this.button_GoToClinic.Name = "button_GoToClinic";
             this.button_GoToClinic.Size = new System.Drawing.Size(110, 35);
             this.button_GoToClinic.TabIndex = 9;
@@ -1623,10 +1623,10 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_reg.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView_reg.Location = new System.Drawing.Point(131, 556);
+            this.dataGridView_reg.Location = new System.Drawing.Point(131, 552);
             this.dataGridView_reg.Name = "dataGridView_reg";
             this.dataGridView_reg.ReadOnly = true;
             this.dataGridView_reg.RowHeadersVisible = false;
@@ -1635,7 +1635,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridView_reg.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_reg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_reg.Size = new System.Drawing.Size(689, 63);
+            this.dataGridView_reg.Size = new System.Drawing.Size(694, 63);
             this.dataGridView_reg.TabIndex = 5;
             this.dataGridView_reg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_reg_CellClick);
             // 
@@ -1700,10 +1700,10 @@
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_awards.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView_awards.Location = new System.Drawing.Point(131, 406);
+            this.dataGridView_awards.Location = new System.Drawing.Point(131, 409);
             this.dataGridView_awards.Name = "dataGridView_awards";
             this.dataGridView_awards.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1720,7 +1720,7 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridView_awards.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView_awards.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_awards.Size = new System.Drawing.Size(694, 60);
+            this.dataGridView_awards.Size = new System.Drawing.Size(694, 63);
             this.dataGridView_awards.TabIndex = 5;
             this.dataGridView_awards.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_awards_CellClick);
             // 
@@ -1781,10 +1781,10 @@
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_experience.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView_experience.Location = new System.Drawing.Point(131, 333);
+            this.dataGridView_experience.Location = new System.Drawing.Point(131, 336);
             this.dataGridView_experience.Name = "dataGridView_experience";
             this.dataGridView_experience.ReadOnly = true;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1801,7 +1801,7 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridView_experience.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView_experience.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_experience.Size = new System.Drawing.Size(689, 63);
+            this.dataGridView_experience.Size = new System.Drawing.Size(694, 63);
             this.dataGridView_experience.TabIndex = 5;
             this.dataGridView_experience.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_experience_CellClick);
             // 
@@ -1887,10 +1887,10 @@
             dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle13.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_education.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridView_education.Location = new System.Drawing.Point(131, 261);
+            this.dataGridView_education.Location = new System.Drawing.Point(131, 263);
             this.dataGridView_education.Name = "dataGridView_education";
             this.dataGridView_education.ReadOnly = true;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1907,7 +1907,7 @@
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridView_education.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView_education.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_education.Size = new System.Drawing.Size(689, 63);
+            this.dataGridView_education.Size = new System.Drawing.Size(694, 63);
             this.dataGridView_education.TabIndex = 5;
             this.dataGridView_education.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_education_CellClick);
             // 
@@ -1989,10 +1989,10 @@
             dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle17.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_member.DefaultCellStyle = dataGridViewCellStyle17;
-            this.dataGridView_member.Location = new System.Drawing.Point(131, 480);
+            this.dataGridView_member.Location = new System.Drawing.Point(131, 479);
             this.dataGridView_member.Name = "dataGridView_member";
             this.dataGridView_member.ReadOnly = true;
             this.dataGridView_member.RowHeadersVisible = false;
@@ -2000,7 +2000,7 @@
             dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridView_member.RowsDefaultCellStyle = dataGridViewCellStyle18;
-            this.dataGridView_member.Size = new System.Drawing.Size(689, 63);
+            this.dataGridView_member.Size = new System.Drawing.Size(694, 63);
             this.dataGridView_member.TabIndex = 5;
             this.dataGridView_member.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_member_CellClick);
             // 
@@ -2051,10 +2051,10 @@
             dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle20.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_specialization.DefaultCellStyle = dataGridViewCellStyle20;
-            this.dataGridView_specialization.Location = new System.Drawing.Point(131, 189);
+            this.dataGridView_specialization.Location = new System.Drawing.Point(131, 190);
             this.dataGridView_specialization.Name = "dataGridView_specialization";
             this.dataGridView_specialization.ReadOnly = true;
             dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -2070,7 +2070,7 @@
             dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridView_specialization.RowsDefaultCellStyle = dataGridViewCellStyle22;
-            this.dataGridView_specialization.Size = new System.Drawing.Size(689, 63);
+            this.dataGridView_specialization.Size = new System.Drawing.Size(694, 63);
             this.dataGridView_specialization.TabIndex = 5;
             this.dataGridView_specialization.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_specialization_CellClick);
             // 
@@ -2127,7 +2127,7 @@
             dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle24.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_services.DefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridView_services.Location = new System.Drawing.Point(131, 117);
@@ -2143,7 +2143,7 @@
             this.dataGridView_services.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridView_services.RowHeadersVisible = false;
             this.dataGridView_services.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_services.Size = new System.Drawing.Size(689, 63);
+            this.dataGridView_services.Size = new System.Drawing.Size(694, 63);
             this.dataGridView_services.TabIndex = 5;
             this.dataGridView_services.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_services_CellClick);
             // 
@@ -2184,7 +2184,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label16.Location = new System.Drawing.Point(25, 560);
+            this.label16.Location = new System.Drawing.Point(17, 563);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(94, 17);
             this.label16.TabIndex = 4;
@@ -2195,7 +2195,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label15.Location = new System.Drawing.Point(32, 492);
+            this.label15.Location = new System.Drawing.Point(17, 491);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(94, 17);
             this.label15.TabIndex = 4;
@@ -2206,7 +2206,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label14.Location = new System.Drawing.Point(62, 418);
+            this.label14.Location = new System.Drawing.Point(53, 419);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 17);
             this.label14.TabIndex = 4;
@@ -2217,7 +2217,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label13.Location = new System.Drawing.Point(40, 344);
+            this.label13.Location = new System.Drawing.Point(31, 347);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(80, 17);
             this.label13.TabIndex = 4;
@@ -2228,7 +2228,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label12.Location = new System.Drawing.Point(41, 296);
+            this.label12.Location = new System.Drawing.Point(33, 275);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(78, 17);
             this.label12.TabIndex = 4;
@@ -2239,7 +2239,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label11.Location = new System.Drawing.Point(8, 207);
+            this.label11.Location = new System.Drawing.Point(10, 203);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(101, 17);
             this.label11.TabIndex = 4;
@@ -2294,7 +2294,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label17.Location = new System.Drawing.Point(61, 128);
+            this.label17.Location = new System.Drawing.Point(48, 131);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(63, 17);
             this.label17.TabIndex = 2;
@@ -2363,7 +2363,7 @@
             this.panel_clinicaldetails.Controls.Add(this.text_clinic_special);
             this.panel_clinicaldetails.Controls.Add(this.dataGridView_clinic_special);
             this.panel_clinicaldetails.Controls.Add(this.button_clinic_specialdelete);
-            this.panel_clinicaldetails.Location = new System.Drawing.Point(4, 732);
+            this.panel_clinicaldetails.Location = new System.Drawing.Point(0, 730);
             this.panel_clinicaldetails.Name = "panel_clinicaldetails";
             this.panel_clinicaldetails.Size = new System.Drawing.Size(1358, 700);
             this.panel_clinicaldetails.TabIndex = 32;
@@ -2375,7 +2375,7 @@
             this.Btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Close.ForeColor = System.Drawing.Color.White;
-            this.Btn_Close.Location = new System.Drawing.Point(1232, 5);
+            this.Btn_Close.Location = new System.Drawing.Point(1245, 5);
             this.Btn_Close.Name = "Btn_Close";
             this.Btn_Close.Size = new System.Drawing.Size(111, 35);
             this.Btn_Close.TabIndex = 27;

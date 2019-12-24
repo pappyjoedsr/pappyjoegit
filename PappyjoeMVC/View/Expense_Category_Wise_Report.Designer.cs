@@ -358,20 +358,21 @@
             this.panel3.Controls.Add(this.chart_EXpanse);
             this.panel3.Location = new System.Drawing.Point(3, 148);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1138, 536);
+            this.panel3.Size = new System.Drawing.Size(1134, 507);
             this.panel3.TabIndex = 136;
             // 
             // Lab_Msg
             // 
-            this.Lab_Msg.AutoSize = true;
+            this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lab_Msg.Location = new System.Drawing.Point(309, 219);
+            this.Lab_Msg.Location = new System.Drawing.Point(235, 224);
             this.Lab_Msg.Name = "Lab_Msg";
-            this.Lab_Msg.Size = new System.Drawing.Size(542, 25);
+            this.Lab_Msg.Size = new System.Drawing.Size(555, 25);
             this.Lab_Msg.TabIndex = 278;
             this.Lab_Msg.Text = "No Records Found. Please change the date and then try again!..";
+            this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
             // Dgv_Expanse
@@ -401,7 +402,7 @@
             this.Dgv_Expanse.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.Dgv_Expanse.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Dgv_Expanse.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_Expanse.Size = new System.Drawing.Size(1138, 536);
+            this.Dgv_Expanse.Size = new System.Drawing.Size(1134, 507);
             this.Dgv_Expanse.TabIndex = 3;
             // 
             // chart_EXpanse
@@ -419,7 +420,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Expense Count";
             this.chart_EXpanse.Series.Add(series1);
-            this.chart_EXpanse.Size = new System.Drawing.Size(1138, 536);
+            this.chart_EXpanse.Size = new System.Drawing.Size(1134, 507);
             this.chart_EXpanse.TabIndex = 2;
             this.chart_EXpanse.Text = "chart1";
             // 
@@ -477,7 +478,6 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Expanse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_EXpanse)).EndInit();
             this.panel4.ResumeLayout(false);

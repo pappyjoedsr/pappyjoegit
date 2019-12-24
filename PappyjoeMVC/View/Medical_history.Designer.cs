@@ -76,7 +76,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline);
-            this.label2.Location = new System.Drawing.Point(25, 5);
+            this.label2.Location = new System.Drawing.Point(16, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(143, 25);
             this.label2.TabIndex = 3;
@@ -186,7 +186,7 @@
             this.edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
             this.edit.Name = "edit";
             this.edit.ReadOnly = true;
-            this.edit.Width = 23;
+            this.edit.Width = 19;
             // 
             // delete
             // 
@@ -194,7 +194,7 @@
             this.delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
             this.delete.Name = "delete";
             this.delete.ReadOnly = true;
-            this.delete.Width = 27;
+            this.delete.Width = 19;
             // 
             // label8
             // 
@@ -289,7 +289,7 @@
             this.btn_Cancelgroup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Cancelgroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancelgroup.ForeColor = System.Drawing.Color.White;
-            this.btn_Cancelgroup.Location = new System.Drawing.Point(182, 53);
+            this.btn_Cancelgroup.Location = new System.Drawing.Point(199, 53);
             this.btn_Cancelgroup.Name = "btn_Cancelgroup";
             this.btn_Cancelgroup.Size = new System.Drawing.Size(75, 28);
             this.btn_Cancelgroup.TabIndex = 280;
@@ -304,7 +304,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(20, 25);
+            this.label5.Location = new System.Drawing.Point(51, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 17);
             this.label5.TabIndex = 276;
@@ -313,7 +313,7 @@
             // textBox_group
             // 
             this.textBox_group.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.textBox_group.Location = new System.Drawing.Point(99, 22);
+            this.textBox_group.Location = new System.Drawing.Point(116, 22);
             this.textBox_group.Name = "textBox_group";
             this.textBox_group.Size = new System.Drawing.Size(329, 22);
             this.textBox_group.TabIndex = 275;
@@ -324,7 +324,7 @@
             this.button_group.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_group.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_group.ForeColor = System.Drawing.Color.White;
-            this.button_group.Location = new System.Drawing.Point(99, 53);
+            this.button_group.Location = new System.Drawing.Point(116, 53);
             this.button_group.Name = "button_group";
             this.button_group.Size = new System.Drawing.Size(75, 28);
             this.button_group.TabIndex = 80;
@@ -358,7 +358,7 @@
             this.Medgroup,
             this.gedit,
             this.gdelete});
-            this.dataGridView_group.Location = new System.Drawing.Point(99, 128);
+            this.dataGridView_group.Location = new System.Drawing.Point(116, 128);
             this.dataGridView_group.Name = "dataGridView_group";
             this.dataGridView_group.ReadOnly = true;
             this.dataGridView_group.RowHeadersVisible = false;
@@ -398,7 +398,7 @@
             this.gedit.ReadOnly = true;
             this.gedit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.gedit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.gedit.Width = 35;
+            this.gedit.Width = 19;
             // 
             // gdelete
             // 
@@ -406,7 +406,7 @@
             this.gdelete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
             this.gdelete.Name = "gdelete";
             this.gdelete.ReadOnly = true;
-            this.gdelete.Width = 35;
+            this.gdelete.Width = 19;
             // 
             // errorProvider1
             // 
@@ -489,6 +489,10 @@
         private System.Windows.Forms.Button button_group;
         private System.Windows.Forms.DataGridView dataGridView_group;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn mid;
         private System.Windows.Forms.DataGridViewTextBoxColumn medicl;
         private System.Windows.Forms.DataGridViewImageColumn edit;
@@ -498,9 +502,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Medgroup;
         private System.Windows.Forms.DataGridViewImageColumn gedit;
         private System.Windows.Forms.DataGridViewImageColumn gdelete;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
     }
 }

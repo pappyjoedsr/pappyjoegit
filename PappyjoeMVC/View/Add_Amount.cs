@@ -50,6 +50,11 @@ namespace PappyjoeMVC.View
             {
                 e.Handled = true;
             }
+            else if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                btn_OK.PerformClick();
+            }
         }
     }
 }

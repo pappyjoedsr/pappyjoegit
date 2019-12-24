@@ -99,21 +99,21 @@ namespace PappyjoeMVC.View
                 if (int.Parse(i) > 0)
                 {
                     DataTable dt = this.cntrl.doctor_name(doctor_id);
-                    combodoctor.DataSource = dt;
                     combodoctor.DisplayMember = "doctor_name";
                     combodoctor.ValueMember = "id";
+                    combodoctor.DataSource = dt;
                 }
                 else
                 {
                     DataTable dt = this.cntrl.get_all_doctorname();
-                    combodoctor.DataSource = dt;
                     combodoctor.DisplayMember = "doctor_name";
                     combodoctor.ValueMember = "id";
+                    combodoctor.DataSource = dt;
                 }
                 DataTable dt1 = this.cntrl.get_All_proceure();
-                compoprocedure.DataSource = dt1;
                 compoprocedure.DisplayMember = "name";
                 compoprocedure.ValueMember = "id";
+                compoprocedure.DataSource = dt1;
                 combocategory.SelectedIndex = 0;
                 if (combodoctor.Items.Count > 0)
                 {
@@ -160,9 +160,9 @@ namespace PappyjoeMVC.View
         {
             label14.Visible = false;
             DataTable dt = this.cntrl.search_patient(txt_p_name.Text);
-            list_p_details.DataSource = dt;
             list_p_details.DisplayMember = "pt_name";
             list_p_details.ValueMember = "id";
+            list_p_details.DataSource = dt;
             list_p_details.Location = new Point(146, 39);
             list_p_details.Show();
             patient_id = "0";
@@ -188,9 +188,9 @@ namespace PappyjoeMVC.View
             label14.Visible = false;
             patient_id = "0";
             DataTable dt = this.cntrl.search_ptid(txt_p_id.Text);
-            list_p_details.DataSource = dt;
             list_p_details.DisplayMember = "pt_name";
             list_p_details.ValueMember = "id";
+            list_p_details.DataSource = dt;
             list_p_details.Location = new Point(146, 71);
             list_p_details.Show();
             if (e.KeyCode == Keys.Down && list_p_details.Items.Count > 0)
@@ -245,9 +245,9 @@ namespace PappyjoeMVC.View
             label14.Visible = false;
             patient_id = "0";
             DataTable dt = this.cntrl.search_ptid(txt_p_mobile.Text);
-            list_p_details.DataSource = dt;
             list_p_details.DisplayMember = "pt_name";
             list_p_details.ValueMember = "id";
+            list_p_details.DataSource = dt;
             list_p_details.Location = new Point(146, 109);
             list_p_details.Show();
             if (e.KeyCode == Keys.Down && list_p_details.Items.Count > 0)
@@ -299,7 +299,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                string neworold = "0"; DataTable dtpSearch = new DataTable();
+                 string neworold = "0"; DataTable dtpSearch = new DataTable();
                 DataTable dtb = this.cntrl.patient_details(txt_p_name.Text);
                 Appointment_for_newPAtient(dtb);
                 if (cmbStartTime.SelectedIndex <= cmbEndTime.SelectedIndex)
@@ -393,7 +393,6 @@ namespace PappyjoeMVC.View
                             {
                                 app_id = Convert.ToInt32(dt_a.Rows[dt_a.Rows.Count - 1][0].ToString());
                             }
-
                             EditingEvent.Subject = patient_name;
                             EditingEvent.Location = Convert.ToString(cmbStartTime.GetItemText(cmbStartTime.SelectedItem)) + "-" + Convert.ToString(cmbEndTime.GetItemText(cmbEndTime.SelectedItem));
                             EditingEvent.Body = Convert.ToString(app_id);
@@ -419,7 +418,12 @@ namespace PappyjoeMVC.View
                             {
                                 string text = "";
                                 string smsName = "", smsPass = "";
-                                DataTable sms = this.cntrl.clinicdetails();
+                                DataTable sms = this.cntrl.smsdetails();
+                                if(sms.Rows.Count>0)
+                                {
+                                    smsName = sms.Rows[0]["smsName"].ToString();
+                                    smsPass = sms.Rows[0]["smsPass"].ToString();
+                                }
                                 SMS_model a = new SMS_model();
                                 DataTable pat = this.cntrl.Get_Patient_Details(patient_id);
                                 DataTable smsreminder = this.cntrl.Get_reminderSmS();
@@ -488,7 +492,6 @@ namespace PappyjoeMVC.View
                                     {
                                         if (dpStartTimeDate.Value > DateTime.Now.Date)
                                         {
-
                                             text = "You have an appointment on " + dpStartTimeDate.Value.ToShortDateString() + " " + cmbStartTime.Text + " With " + txt_p_name.Text + " for " + compoprocedure.Text + " at " + clinic + "," + contact_no;
                                             a.SendSMS(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT.ToString("dd/MM/yyyy") + before_time, DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
                                         }
@@ -506,7 +509,6 @@ namespace PappyjoeMVC.View
                                 if (sr.Rows.Count > 0)
                                 {
                                     email = sr.Rows[0]["email_address"].ToString();
-
                                     DataTable sms = this.cntrl.send_email();
                                     if (sms.Rows.Count > 0)
                                     {
@@ -537,7 +539,7 @@ namespace PappyjoeMVC.View
                                         }
                                     }
                                 }
-                            }
+                            } 
                             if (checkBox4.Checked) // Doctor Email
                             {
                                 string emailName = "", emailPass = "";

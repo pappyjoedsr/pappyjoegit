@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patients));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
@@ -58,6 +58,8 @@
             this.labelallpatient = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel_Sidebar = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelremaindersms = new System.Windows.Forms.Label();
             this.LabVitalSign = new System.Windows.Forms.Label();
             this.labelinvoice = new System.Windows.Forms.Label();
             this.labelpayment = new System.Windows.Forms.Label();
@@ -172,18 +174,6 @@
             this.toolStripButton2.Text = "Calendar";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // toolStripButton12
-            // 
-            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton12.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(72, 37);
-            this.toolStripButton12.Text = "Fast Track";
-            this.toolStripButton12.Visible = false;
-            // 
             // toolStripButton13
             // 
             this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -195,6 +185,18 @@
             this.toolStripButton13.Size = new System.Drawing.Size(89, 37);
             this.toolStripButton13.Text = "Consultation";
             this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton12.ForeColor = System.Drawing.Color.White;
+            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(72, 37);
+            this.toolStripButton12.Text = "Fast Track";
+            this.toolStripButton12.Visible = false;
             // 
             // toolStripButton3
             // 
@@ -373,7 +375,7 @@
             this.panel_titile.Controls.Add(this.labelallpatient);
             this.panel_titile.Location = new System.Drawing.Point(2, 41);
             this.panel_titile.Name = "panel_titile";
-            this.panel_titile.Size = new System.Drawing.Size(1044, 45);
+            this.panel_titile.Size = new System.Drawing.Size(950, 45);
             this.panel_titile.TabIndex = 59;
             this.panel_titile.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_titile_Paint);
             // 
@@ -407,6 +409,8 @@
             // 
             this.panel_Sidebar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel_Sidebar.Controls.Add(this.label5);
+            this.panel_Sidebar.Controls.Add(this.labelremaindersms);
             this.panel_Sidebar.Controls.Add(this.LabVitalSign);
             this.panel_Sidebar.Controls.Add(this.labelinvoice);
             this.panel_Sidebar.Controls.Add(this.labelpayment);
@@ -423,6 +427,31 @@
             this.panel_Sidebar.Name = "panel_Sidebar";
             this.panel_Sidebar.Size = new System.Drawing.Size(197, 552);
             this.panel_Sidebar.TabIndex = 61;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label5.Location = new System.Drawing.Point(5, 405);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(187, 13);
+            this.label5.TabIndex = 56;
+            this.label5.Text = "APPOINTMENT SMS";
+            // 
+            // labelremaindersms
+            // 
+            this.labelremaindersms.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelremaindersms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelremaindersms.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelremaindersms.ForeColor = System.Drawing.Color.DimGray;
+            this.labelremaindersms.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelremaindersms.Location = new System.Drawing.Point(17, 420);
+            this.labelremaindersms.Name = "labelremaindersms";
+            this.labelremaindersms.Size = new System.Drawing.Size(173, 32);
+            this.labelremaindersms.TabIndex = 55;
+            this.labelremaindersms.Text = "Reminder sms for doctors";
+            this.labelremaindersms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelremaindersms.Click += new System.EventHandler(this.labelremaindersms_Click);
             // 
             // LabVitalSign
             // 
@@ -834,20 +863,20 @@
             this.grgroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grgroup.ColumnHeadersVisible = false;
             this.grgroup.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grgroup.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grgroup.DefaultCellStyle = dataGridViewCellStyle7;
             this.grgroup.Location = new System.Drawing.Point(10, 356);
             this.grgroup.Name = "grgroup";
             this.grgroup.ReadOnly = true;
             this.grgroup.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grgroup.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grgroup.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.grgroup.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.grgroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grgroup.Size = new System.Drawing.Size(248, 154);
@@ -1020,6 +1049,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panl_grid.BackColor = System.Drawing.Color.White;
+            this.panl_grid.Controls.Add(this.lab_LongMsg);
             this.panl_grid.Controls.Add(this.DGV_Patients);
             this.panl_grid.Location = new System.Drawing.Point(5, 90);
             this.panl_grid.Name = "panl_grid";
@@ -1039,27 +1069,27 @@
             this.DGV_Patients.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DGV_Patients.ColumnHeadersHeight = 25;
             this.DGV_Patients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Patients.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Patients.DefaultCellStyle = dataGridViewCellStyle5;
             this.DGV_Patients.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGV_Patients.GridColor = System.Drawing.Color.White;
             this.DGV_Patients.Location = new System.Drawing.Point(0, 0);
             this.DGV_Patients.Name = "DGV_Patients";
             this.DGV_Patients.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Patients.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Patients.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DGV_Patients.RowHeadersVisible = false;
             this.DGV_Patients.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DGV_Patients.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -1069,19 +1099,21 @@
             // 
             // lab_LongMsg
             // 
-            this.lab_LongMsg.AutoSize = true;
+            this.lab_LongMsg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lab_LongMsg.BackColor = System.Drawing.Color.Wheat;
             this.lab_LongMsg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_LongMsg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lab_LongMsg.Location = new System.Drawing.Point(4, 675);
+            this.lab_LongMsg.Location = new System.Drawing.Point(91, 177);
             this.lab_LongMsg.Name = "lab_LongMsg";
-            this.lab_LongMsg.Size = new System.Drawing.Size(650, 25);
+            this.lab_LongMsg.Size = new System.Drawing.Size(676, 25);
             this.lab_LongMsg.TabIndex = 53;
             this.lab_LongMsg.Text = "No Records Found. Please Change The Date Range From Top And Try Again..";
+            this.lab_LongMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lab_LongMsg.Visible = false;
             // 
             // listpatientsearch
             // 
+            this.listpatientsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -1093,6 +1125,7 @@
             this.listpatientsearch.TabIndex = 274;
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
+            this.listpatientsearch.SelectedIndexChanged += new System.EventHandler(this.listpatientsearch_SelectedIndexChanged);
             // 
             // Patients
             // 
@@ -1101,13 +1134,12 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1328, 702);
             this.Controls.Add(this.listpatientsearch);
-            this.Controls.Add(this.lab_LongMsg);
             this.Controls.Add(this.panelmain);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel_Sidebar);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel_titile);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.panel5);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Patients";
@@ -1130,7 +1162,6 @@
             this.panl_grid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Patients)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1204,5 +1235,7 @@
         private System.Windows.Forms.ListBox listpatientsearch;
         private System.Windows.Forms.ToolStripButton toolStripButton11;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelremaindersms;
     }
 }

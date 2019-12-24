@@ -119,7 +119,6 @@ namespace PappyjoeMVC.View
                             }
                             if (path != "")
                             {
-
                                 try
                                 {
                                 if (File.Exists(@"\\" + this.cntrl.getserver() + "\\Pappyjoe_utilities\\patient_image\\" + patient_id))
@@ -137,7 +136,7 @@ namespace PappyjoeMVC.View
                             form2.patient_id = patient_id;
                             form2.Closed += (sender1, args) => this.Close();
                             this.Hide();
-                            form2.ShowDialog();
+                            form2.Show();
                         }
                         else
                         {
@@ -197,7 +196,7 @@ namespace PappyjoeMVC.View
                         form2.doctor_id = doctor_id;
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
-                        form2.ShowDialog();
+                        form2.Show();
                     }
                 }
             }
@@ -286,7 +285,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void cmbBloodGroup_KeyPress(object sender, KeyPressEventArgs e)
@@ -315,9 +314,9 @@ namespace PappyjoeMVC.View
             try
             {
                 DataTable dt_doc = this.cntrl.get_all_doctorname();
-                cmbDoctorName.DataSource = dt_doc;
                 cmbDoctorName.ValueMember = "id";
                 cmbDoctorName.DisplayMember = "doctor_name";
+                cmbDoctorName.DataSource = dt_doc;
                 DateTimePickerDob.MaxDate = DateTime.Now.Date;
                 if (doctor_id != "1")
                 {
@@ -393,10 +392,10 @@ namespace PappyjoeMVC.View
                     grmedical.Rows[j].Cells[0].Style.BackColor = Color.FromArgb(62, 165, 195);
                     grmedical.Rows[j].Cells[1].Style.BackColor = Color.FromArgb(62, 165, 195);
                 }
-                DataTable dt35 = this.cntrl.Get_medicalname();// db.table("select name from tbl_medhistory order by name");
+                DataTable dt35 = this.cntrl.Get_medicalname();
                 for (int j = 0; j < dt35.Rows.Count; j++)
                 {
-                    string mht = this.cntrl.patient_medical(patient_id, dt35.Rows[j][0].ToString());// db.table("select med_id from tbl_pt_medhistory where pt_id='" + idd + "' and med_id='" + dt35.Rows[j][0].ToString() + "'");
+                    string mht = this.cntrl.patient_medical(patient_id, dt35.Rows[j][0].ToString());
                     if (mht=="0")
                     {
                         grmedical.Rows.Add(dt35.Rows[j][0].ToString());
@@ -409,7 +408,7 @@ namespace PappyjoeMVC.View
                 gridgroups.Columns.Add(checkgroup);
                 checkgroup.Width = 100;
                 checkgroup.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DataTable group = this.cntrl.get_groupid(patient_id);// db.table("select group_id from tbl_pt_group where pt_id='" + idd + "'");
+                DataTable group = this.cntrl.get_groupid(patient_id);
                 for (int j = 0; j < group.Rows.Count; j++)
                 {
                     gridgroups.Rows.Add(group.Rows[j][0].ToString());
@@ -417,20 +416,15 @@ namespace PappyjoeMVC.View
                     gridgroups.Rows[j].Cells[0].Style.BackColor = Color.FromArgb(62, 165, 195);
                     gridgroups.Rows[j].Cells[1].Style.BackColor = Color.FromArgb(62, 165, 195);
                 }
-                DataTable dt9 = this.cntrl.groupname();// db.table("Select name from tbl_group");
+                DataTable dt9 = this.cntrl.groupname();
                 for (int j = 0; j < dt9.Rows.Count; j++)
                 {
-                    string gt = this.cntrl.patient_group(patient_id, dt9.Rows[j][0].ToString());// db.table("select group_id from tbl_pt_group where pt_id='" + idd + "' and group_id='" + dt9.Rows[j][0].ToString() + "'");
+                    string gt = this.cntrl.patient_group(patient_id, dt9.Rows[j][0].ToString());
                     if (gt == "0")
                     {
                         gridgroups.Rows.Add(dt9.Rows[j][0].ToString());
                     }
                 }
-
-
-
-                //this.cntrl.get_medicalId(patient_id);
-                //this.cntrl.get_groupid(patient_id);
                 DataTable dt7 = this.cntrl.Get_Patient_Details(patient_id);
                 txtPatientName.Text = dt7.Rows[0]["pt_name"].ToString();
                 txtPatientId.Text = dt7.Rows[0]["pt_id"].ToString();

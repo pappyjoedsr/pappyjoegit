@@ -27,7 +27,6 @@ namespace PappyjoeMVC.View
             itemcode = item_code;
             Itemid = item_id;
         }
-
         public PurchaseOrder(int purch_id)
         {
             InitializeComponent();
@@ -117,9 +116,9 @@ namespace PappyjoeMVC.View
             if (flagSup == false)
             {
                 DataTable dt = this.cntrl.Load_supplier_details(txtSupplierName.Text);
-                lstbox_Supplier.DataSource = dt;
                 lstbox_Supplier.DisplayMember = "Supplier_Name";
                 lstbox_Supplier.ValueMember = "Supplier_Code";
+                lstbox_Supplier.DataSource = dt;
                 lstbox_Supplier.Show();
                 if (txtSupplierName.Text == "")
                 {
@@ -133,9 +132,9 @@ namespace PappyjoeMVC.View
         private void txtSupplierName_Click(object sender, EventArgs e)
         {
             DataTable dt = this.cntrl.Load_all_supplier();
-            lstbox_Supplier.DataSource = dt;
             lstbox_Supplier.DisplayMember = "Supplier_Name";
             lstbox_Supplier.ValueMember = "Supplier_Code";
+            lstbox_Supplier.DataSource = dt;
             lstbox_Supplier.Show();
         }
 
@@ -156,7 +155,6 @@ namespace PappyjoeMVC.View
             txt_Itemcode.Text = itemcode;
             DataTable dtb = this.cntrl.get_itemname(Itemid);
             Load_discription(dtb);
-            //string dt_max = this.cntrl.max_purNo(Itemid);
             check_purchaseRate();
         }
         private void txt_Itemcode_KeyUp(object sender, KeyEventArgs e)
@@ -173,7 +171,6 @@ namespace PappyjoeMVC.View
                     {
                         DataTable dtb = this.cntrl.get_itemname(Itemid);
                         Load_discription(dtb);
-                       //string dt_max= this.cntrl.max_purNo(Itemid);
                         check_purchaseRate();
                     }
                 }
@@ -189,8 +186,6 @@ namespace PappyjoeMVC.View
         }
         public void check_purchaseRate()
         {
-            //if (Convert.ToInt32(dt_PurNum)>0)
-            //{
                 string dt_Cost = this.cntrl.purchit_details( Itemid);
                 if (dt_Cost != "" && dt_Cost != "0")
                 {
@@ -204,8 +199,6 @@ namespace PappyjoeMVC.View
                         return;
                     }
                 }
-
-            //}
         }
         private void txt_qty_Click(object sender, EventArgs e)
         {
@@ -220,7 +213,6 @@ namespace PappyjoeMVC.View
             string b = a.TrimStart('0');
             txt_qty.Text = b;
         }
-
         private void txt_qty_Leave(object sender, EventArgs e)
         {
             if (txt_qty.Text == "")
@@ -228,7 +220,6 @@ namespace PappyjoeMVC.View
                 txt_qty.Text = "0";
             }
         }
-
         private void txt_qty_KeyUp(object sender, KeyEventArgs e)
         {
             if (txt_qty.Text == "")

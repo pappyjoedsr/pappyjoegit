@@ -287,9 +287,9 @@
             this.btn_Export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Export.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Export.ForeColor = System.Drawing.Color.White;
-            this.btn_Export.Location = new System.Drawing.Point(904, 4);
+            this.btn_Export.Location = new System.Drawing.Point(904, 6);
             this.btn_Export.Name = "btn_Export";
-            this.btn_Export.Size = new System.Drawing.Size(111, 31);
+            this.btn_Export.Size = new System.Drawing.Size(111, 30);
             this.btn_Export.TabIndex = 301;
             this.btn_Export.Text = "EXPORT TO EXCEL";
             this.btn_Export.UseVisualStyleBackColor = false;
@@ -316,9 +316,9 @@
             this.btnprint.ForeColor = System.Drawing.Color.White;
             this.btnprint.Image = ((System.Drawing.Image)(resources.GetObject("btnprint.Image")));
             this.btnprint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnprint.Location = new System.Drawing.Point(1016, 4);
+            this.btnprint.Location = new System.Drawing.Point(1016, 6);
             this.btnprint.Name = "btnprint";
-            this.btnprint.Size = new System.Drawing.Size(91, 31);
+            this.btnprint.Size = new System.Drawing.Size(91, 30);
             this.btnprint.TabIndex = 178;
             this.btnprint.Text = "PRINT";
             this.btnprint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -332,9 +332,9 @@
             this.BTNClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNClose.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNClose.ForeColor = System.Drawing.Color.White;
-            this.BTNClose.Location = new System.Drawing.Point(1108, 4);
+            this.BTNClose.Location = new System.Drawing.Point(1108, 6);
             this.BTNClose.Name = "BTNClose";
-            this.BTNClose.Size = new System.Drawing.Size(91, 31);
+            this.BTNClose.Size = new System.Drawing.Size(91, 30);
             this.BTNClose.TabIndex = 179;
             this.BTNClose.Text = "CLOSE";
             this.BTNClose.UseVisualStyleBackColor = false;

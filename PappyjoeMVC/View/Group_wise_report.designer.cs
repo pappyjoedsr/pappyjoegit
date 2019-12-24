@@ -280,15 +280,16 @@
             // 
             // label_empty
             // 
-            this.label_empty.AutoSize = true;
+            this.label_empty.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_empty.BackColor = System.Drawing.Color.Wheat;
             this.label_empty.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_empty.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label_empty.Location = new System.Drawing.Point(276, 243);
+            this.label_empty.Location = new System.Drawing.Point(186, 215);
             this.label_empty.Name = "label_empty";
-            this.label_empty.Size = new System.Drawing.Size(496, 25);
+            this.label_empty.Size = new System.Drawing.Size(516, 25);
             this.label_empty.TabIndex = 97;
             this.label_empty.Text = "No Records Found. Please change the date and try again !";
+            this.label_empty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 

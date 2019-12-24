@@ -70,11 +70,11 @@
             this.btn_purOrder = new System.Windows.Forms.Button();
             this.btnSales = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Chk_Minimum = new System.Windows.Forms.CheckBox();
             this.Chk_Suplier = new System.Windows.Forms.CheckBox();
@@ -93,8 +93,10 @@
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_main = new System.Windows.Forms.Panel();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -381,7 +383,7 @@
             this.panel5.Controls.Add(this.btnSales);
             this.panel5.Location = new System.Drawing.Point(0, 42);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(165, 654);
+            this.panel5.Size = new System.Drawing.Size(165, 650);
             this.panel5.TabIndex = 146;
             // 
             // btn_Stock
@@ -610,10 +612,19 @@
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel6.BackColor = System.Drawing.Color.DarkGray;
+            this.panel6.Controls.Add(this.panel4);
             this.panel6.Location = new System.Drawing.Point(170, 37);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1, 705);
             this.panel6.TabIndex = 280;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DarkGray;
+            this.panel4.Location = new System.Drawing.Point(0, 48);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1203, 1);
+            this.panel4.TabIndex = 281;
             // 
             // panel1
             // 
@@ -624,7 +635,7 @@
             this.panel1.Controls.Add(this.btnReport);
             this.panel1.Location = new System.Drawing.Point(171, 44);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1136, 40);
+            this.panel1.Size = new System.Drawing.Size(1198, 40);
             this.panel1.TabIndex = 1;
             // 
             // button5
@@ -634,7 +645,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(616, 3);
+            this.button5.Location = new System.Drawing.Point(678, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(89, 27);
             this.button5.TabIndex = 293;
@@ -660,20 +671,13 @@
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnReport.ForeColor = System.Drawing.Color.White;
-            this.btnReport.Location = new System.Drawing.Point(1040, 4);
+            this.btnReport.Location = new System.Drawing.Point(1038, 4);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(92, 30);
             this.btnReport.TabIndex = 275;
             this.btnReport.Text = "PRINT";
             this.btnReport.UseVisualStyleBackColor = false;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.DarkGray;
-            this.panel4.Location = new System.Drawing.Point(170, 87);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1203, 1);
-            this.panel4.TabIndex = 281;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // panel3
             // 
@@ -688,7 +692,7 @@
             this.panel3.Controls.Add(this.btn_Refresh);
             this.panel3.Location = new System.Drawing.Point(173, 92);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1136, 51);
+            this.panel3.Size = new System.Drawing.Size(1198, 51);
             this.panel3.TabIndex = 282;
             // 
             // Chk_Minimum
@@ -775,7 +779,7 @@
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(938, 14);
+            this.btn_Refresh.Location = new System.Drawing.Point(1000, 14);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(89, 30);
             this.btn_Refresh.TabIndex = 274;
@@ -892,24 +896,36 @@
             this.panel_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_main.Location = new System.Drawing.Point(171, 45);
+            this.panel_main.Location = new System.Drawing.Point(173, 46);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(1145, 641);
+            this.panel_main.Size = new System.Drawing.Size(1137, 641);
             this.panel_main.TabIndex = 281;
+            this.panel_main.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_main_Paint);
             // 
             // listpatientsearch
             // 
+            this.listpatientsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
             this.listpatientsearch.ItemHeight = 20;
-            this.listpatientsearch.Location = new System.Drawing.Point(954, 42);
+            this.listpatientsearch.Location = new System.Drawing.Point(942, 33);
             this.listpatientsearch.Name = "listpatientsearch";
             this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
             this.listpatientsearch.TabIndex = 284;
             this.listpatientsearch.Visible = false;
-            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
+            this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick_1);
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.BackColor = System.Drawing.Color.Gray;
+            this.panel7.Location = new System.Drawing.Point(170, 87);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1147, 1);
+            this.panel7.TabIndex = 275;
             // 
             // StockReport
             // 
@@ -919,13 +935,13 @@
             this.ClientSize = new System.Drawing.Size(1308, 694);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.panel_main);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StockReport";
@@ -936,6 +952,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1011,5 +1028,6 @@
         private System.Windows.Forms.ListBox listpatientsearch;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.Panel panel7;
     }
 }
