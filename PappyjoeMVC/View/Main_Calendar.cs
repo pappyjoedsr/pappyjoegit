@@ -2177,7 +2177,7 @@ namespace PappyjoeMVC.View
             this.label11.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label11.Location = new System.Drawing.Point(7, 77);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 13);
+            this.label11.Size = new System.Drawing.Size(60, 13);
             this.label11.TabIndex = 3;
             this.label11.Text = "Booked By";
             // 

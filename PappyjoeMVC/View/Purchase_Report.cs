@@ -12,14 +12,13 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Purchase_Report : Form
+    public partial class Purchase_Report : Form,Purchase_Report_interface
     {
-        
+        Purchase_Report_controller ctrlr;
         public static int pur_id = 0;
         public static DateTime from, to;
         int total_pur = 0, slno = 0, c = 0;
         decimal cost = 0, cost1 = 0, grandtotal = 0, grandtotal1 = 0;
-        Purchase_Report_controller ctrlr=new Purchase_Report_controller();
         public string fdate="", tdate="",strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "", checkStr = "0", PathName = "";
         private void dgvPurchase_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -29,8 +28,8 @@ namespace PappyjoeMVC.View
                 from = dptMonthly_From.Value;
                 to = dptMonthly_To.Value;
                 pur_id = Convert.ToInt32(dgvPurchase.Rows[rowindex].Cells["PurchNumber"].Value.ToString());
-                var form = new PappyjoeMVC.View.Purchase_Item_Report(pur_id, from, to);
-                form.ShowDialog();
+                //var form = new PappyjoeMVC.View.Purchase_Item_Report(pur_id, from, to);
+                //form.ShowDialog();
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -101,7 +100,7 @@ namespace PappyjoeMVC.View
                                     ExcelApp.Cells[i + 6, j + 1].Font.Size = 8;
                                 }
                             }
-                            catch{}
+                            catch(Exception ex){}
                         }
                         ExcelApp.ActiveWorkbook.SaveAs(PathName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
                         ExcelApp.ActiveWorkbook.Saved = true;
@@ -127,16 +126,7 @@ namespace PappyjoeMVC.View
                     result = MessageBox.Show(message, caption, buttons);
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        DataTable dtp=this.ctrlr.practicedetails();
-                            if (dtp.Rows.Count > 0)
-                            {
-                                clinicn = dtp.Rows[0]["name"].ToString();
-                                strclinicname = clinicn.Replace("¤", "'");
-                                strphone = dtp.Rows[0]["contact_no"].ToString();
-                                strStreet = dtp.Rows[0]["street_address"].ToString();
-                                stremail = dtp.Rows[0]["email"].ToString();
-                                strwebsite = dtp.Rows[0]["website"].ToString();
-                            }
+                        this.ctrlr.practicedetails();
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
                     StreamWriter sWrite = new StreamWriter(Apppath + "\\PurchaseReport.html");
@@ -227,31 +217,33 @@ namespace PappyjoeMVC.View
         }
         private void Purchase_Report_Load(object sender, EventArgs e)
         {
-            dptMonthly_From.Value = DateTime.Now.Date;
             load();
             dgvPurchase.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             dgvPurchase.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvPurchase.EnableHeadersVisualStyles = false;
             dgvPurchase.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPurchase.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvPurchase.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPurchase.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPurchase.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvPurchase.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvPurchase.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvPurchase.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
+            dgvPurchase.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dgvPurchase.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPurchase.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvPurchase.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvPurchase.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dgvPurchase.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPurchase.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvPurchase.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvPurchase.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             foreach (DataGridViewColumn cl in dgvPurchase.Columns)
             {
                 cl.SortMode = DataGridViewColumnSortMode.NotSortable;
+                cl.Width = 120;
             }
         }
         private void BTNClose_Click(object sender, EventArgs e)
         {
-            var form2 = new Purchase_Report();
+            var form2 = new PappyjoeMVC.View.Purchase_Report();
+            Purchase_Report_controller controller = new Purchase_Report_controller(form2);
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
         }
@@ -259,15 +251,18 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
+        public void setController(Purchase_Report_controller controller)
+        {
+            ctrlr = controller;
+        }
         public void load()
         {
             fdate = dptMonthly_From.Value.ToString("yyyy-MM-dd");
             tdate = dptMonthly_To.Value.ToString("yyyy-MM-dd");
-            total_pur = 0; cost1 = 0; grandtotal1 = 0;                                                                    
+            total_pur = 0; cost1 = 0; grandtotal1 = 0;
             Lab_Msg.Visible = false;
             dgvPurchase.Rows.Clear();
-            DataTable dt=this.ctrlr.purchdtls(fdate,tdate);
-            purchdtls(dt);
+            this.ctrlr.purchdtls(fdate,tdate);
         }
         public void purchdtls(DataTable dt)
         {
@@ -278,14 +273,13 @@ namespace PappyjoeMVC.View
                     {
                         slno = i + 1;
                         dgvPurchase.Rows.Add();
-                        dgvPurchase.Rows[i].Cells["sl"].Value = slno.ToString();
+                        dgvPurchase.Rows[i].Cells["SLNO"].Value = slno.ToString();
                         dgvPurchase.Rows[i].Cells["PurchNumber"].Value = dt.Rows[i]["PurchNumber"].ToString();
                         dgvPurchase.Rows[i].Cells["PurchDate"].Value = Convert.ToDateTime(dt.Rows[i]["PurchDate"].ToString()).ToString("dd-MM-yyyy");
                         dgvPurchase.Rows[i].Cells["Sup_name"].Value = dt.Rows[i]["Supplier_Name"].ToString();
-                        dgvPurchase.Rows[i].Cells["unt"].Value = dt.Rows[i]["Unit"].ToString();
                         dgvPurchase.Rows[i].Cells["TotalAmount"].Value = dt.Rows[i]["TotalAmount"].ToString();
                         dgvPurchase.Rows[i].Cells["DiscAmount"].Value = dt.Rows[i]["DiscAmount"].ToString();
-                        dgvPurchase.Rows[i].Cells["grandtotl"].Value = dt.Rows[i]["GrandTotal"].ToString();
+                        dgvPurchase.Rows[i].Cells["GrandTotal"].Value = dt.Rows[i]["GrandTotal"].ToString();
                         cost = Convert.ToDecimal(dt.Rows[i]["TotalAmount"].ToString());
                         cost1 = cost1 + cost;
                         grandtotal = Convert.ToDecimal(dt.Rows[i]["GrandTotal"].ToString());
@@ -307,6 +301,16 @@ namespace PappyjoeMVC.View
             catch(Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-        
+        public void practicedetails(DataTable dtp)
+        {
+            if (dtp.Rows.Count > 0) {
+                clinicn = dtp.Rows[0]["name"].ToString();
+                strclinicname = clinicn.Replace("¤", "'");
+                strphone = dtp.Rows[0]["contact_no"].ToString();
+                strStreet = dtp.Rows[0]["street_address"].ToString();
+                stremail = dtp.Rows[0]["email"].ToString();
+                strwebsite = dtp.Rows[0]["website"].ToString();
+            }
+        }
     }
 }
