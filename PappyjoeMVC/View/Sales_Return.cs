@@ -221,7 +221,6 @@ namespace PappyjoeMVC.View
                                             }
                                         }
                                         else
-
                                         {
                                             txt_Qty.Text = Convert.ToInt32(Convert.ToDecimal(dtb.Rows[0]["Qty"].ToString()) - Convert.ToDecimal(dtb_Return)).ToString();
                                             qty_ = Convert.ToDecimal(txt_Qty.Text);
@@ -825,12 +824,10 @@ namespace PappyjoeMVC.View
                 MessageBox.Show("Return quantity should be an integer value", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
             string dt = this.cntrl.sum_qty_from_sales(txt_InvoiceNum.Text, txt_ItemCode.Text);
             DataTable dt_Items = this.cntrl.Get_unites(ItemCode_From_List);
             if (Convert.ToDecimal(txt_Qty.Text) > 0)
             {
-
                 decimal qty = 0;
                 if (Convert.ToDecimal(txt_Free.Text) > 0)
                 {

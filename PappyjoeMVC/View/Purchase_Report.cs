@@ -280,7 +280,7 @@ namespace PappyjoeMVC.View
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        slno = i + 1;
+                        slno = i + 1; 
                         dgvPurchase.Rows.Add();
                         dgvPurchase.Rows[i].Cells["sl"].Value = slno.ToString();
                         dgvPurchase.Rows[i].Cells["PurchNumber"].Value = dt.Rows[i]["PurchNumber"].ToString();

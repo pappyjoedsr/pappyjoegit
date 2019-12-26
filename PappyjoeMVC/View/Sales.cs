@@ -1923,7 +1923,6 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2>Drug License:" + str_druglicenseno + "</font></left></td>");
                 sWrite.WriteLine("<td colspan=7 align='right'>  <FONT COLOR=black FACE='Segoe UI'   SIZE=2>Tax No:&nbsp;" + str_taxno + " &nbsp;</font></right></td>");
                 sWrite.WriteLine("</tr>");
-                //sWrite.WriteLine("<br>");
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2> Sold To : &nbsp" + txtPatient.Text + "</font></left></td>");
                 sWrite.WriteLine("<td colspan=7 align='right'><FONT COLOR=black FACE='Segoe UI'   SIZE=2>Invoice No:&nbsp;" + txtDocumentNumber.Text + "&nbsp; </font></right></td>");
@@ -2024,7 +2023,6 @@ namespace PappyjoeMVC.View
                     double gesttotal = 0;
                     for (int ii = 0; ii < dgv_SalesItem.Rows.Count; ii++)
                     {
-
                         if (Convert.ToDouble(dgv_SalesItem.Rows[ii].Cells["ColGST"].Value.ToString()) > 0)
                         {
                             gstRatetotal = Convert.ToDouble(dgv_SalesItem.Rows[ii].Cells["colUnitcost"].Value.ToString()) * Convert.ToDouble(dgv_SalesItem.Rows[ii].Cells["ColQty"].Value.ToString());

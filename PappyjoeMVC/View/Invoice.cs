@@ -620,11 +620,11 @@ namespace PappyjoeMVC.View
                                 SmtpClient smtp = new SmtpClient("smtp.gmail.com");
                                 message.Subject = "Pappyjoe Invoice";
                                 message.Body = StrContent.ToString();
+                                smtp.UseDefaultCredentials = false;
                                 message.IsBodyHtml = true;
                                 smtp.Port = 587;
                                 smtp.Host = "smtp.gmail.com";
                                 smtp.EnableSsl = true;
-                                smtp.UseDefaultCredentials = false;
                                 smtp.Credentials = new System.Net.NetworkCredential(emailName, emailPass);
                                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                                 message.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
