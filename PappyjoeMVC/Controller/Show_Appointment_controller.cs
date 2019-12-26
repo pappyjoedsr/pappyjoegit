@@ -59,6 +59,9 @@ namespace PappyjoeMVC.Controller
             int j = mdl.delete();
             return j;
         }
+
+        
+
         public string doctr_privillage_for_addnewPatient(string doctor_id)
         {
             string dtb = cmdl.doctr_privillage_for_addnewPatient(doctor_id);
@@ -68,6 +71,6 @@ namespace PappyjoeMVC.Controller
         {
             string dtb = cmdl.permission_for_settings(doctor_id);
             return dtb;
-        }
+
     }
 }
