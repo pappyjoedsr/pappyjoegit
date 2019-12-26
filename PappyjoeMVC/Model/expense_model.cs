@@ -10,6 +10,7 @@ namespace PappyjoeMVC.Model
             DataTable dtb = db.table("select * from tbl_expense_type where Expense_type='Cr'");
             return dtb;
         }
+
         public DataTable Fill_dgv_credit()
         {
             DataTable dtb = db.table("select id,expense_type,description,nameofperson,amountincome, DATE_FORMAT(date, '%d/%m/%Y')as date from tbl_expense where Type='Income' order by id");
