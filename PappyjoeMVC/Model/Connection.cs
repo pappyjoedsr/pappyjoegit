@@ -177,45 +177,45 @@ namespace PappyjoeMVC.Model
             }
             return dt;
         }
-        public void backupdb(string file)
-        {
-            try
-            {
-                if (this.OpenConnection() == true)
-                {
-                    MySqlCommand cmd = new MySqlCommand();
-                    MySqlBackup mb = new MySqlBackup(cmd);
-                    cmd.Connection = con;
-                    mb.ExportToFile(file);
-                    this.CloseConnection();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-        public void restoredb(string file)
-        {
-            try
-            {
-                database = "mydb";
-                string connectionString = "SERVER=" + serve + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-                con = new MySqlConnection(connectionString);
-                if (this.OpenConnection() == true)
-                {
-                    MySqlCommand cmd = new MySqlCommand();
-                    MySqlBackup mb = new MySqlBackup(cmd);
-                    cmd.Connection = con;
-                    mb.ImportFromFile(file);
-                    this.CloseConnection();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
+        //public void backupdb(string file)
+        //{
+        //    try
+        //    {
+        //        if (this.OpenConnection() == true)
+        //        {
+        //            MySqlCommand cmd = new MySqlCommand();
+        //            MySqlBackup mb = new MySqlBackup(cmd);
+        //            cmd.Connection = con;
+        //            mb.ExportToFile(file);
+        //            this.CloseConnection();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //}
+        //public void restoredb(string file)
+        //{
+        //    try
+        //    {
+        //        database = "mydb";
+        //        string connectionString = "SERVER=" + serve + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+        //        con = new MySqlConnection(connectionString);
+        //        if (this.OpenConnection() == true)
+        //        {
+        //            MySqlCommand cmd = new MySqlCommand();
+        //            MySqlBackup mb = new MySqlBackup(cmd);
+        //            cmd.Connection = con;
+        //            mb.ImportFromFile(file);
+        //            this.CloseConnection();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //}
         public static bool checkforemail(string email)
         {
             bool isvalid = false;
