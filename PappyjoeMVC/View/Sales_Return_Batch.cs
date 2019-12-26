@@ -72,7 +72,6 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-
             calc();
             dgv_batchSale.Columns["colbatchNo"].ReadOnly = true;
             dgv_batchSale.Columns["ColQty"].ReadOnly = true;

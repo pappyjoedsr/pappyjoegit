@@ -1,5 +1,10 @@
 ﻿using PappyjoeMVC.Model;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace PappyjoeMVC.Controller
 {
@@ -8,30 +13,12 @@ namespace PappyjoeMVC.Controller
         Show_Appointment_model mdl = new Show_Appointment_model();
         Common_model cmdl = new Common_model();
         Add_Appointment_model am = new Add_Appointment_model();
+        
         public string privilege_A(string doctor_id)
         {
-            string e = mdl.privilege_A(doctor_id);
+            string e= mdl.privilege_A(doctor_id);
             return e;
-        }
-        public string privilge_for_inventory(string doctor_id)
-        {
-            string s = cmdl.privilge_for_inventory(doctor_id);
-            return s;
-        }
-        public string doctr_privillage_for_addnewPatient(string doctor_id)
-        {
-            string e = cmdl.doctr_privillage_for_addnewPatient(doctor_id);
-            return e;
-        }
-        public string settingsprivilage(string doctrid)
-        {
-            string b = mdl.settingsprivilage(doctrid);
-            return b;
-        }
-        public DataTable Get_Patient_Details(string patientid)
-        {
-            DataTable dt = cmdl.Get_Patient_Details(patientid);
-            return dt;
+           
         }
         public string privilege_D(string doctor_id)
         {
@@ -43,30 +30,44 @@ namespace PappyjoeMVC.Controller
             string e = mdl.privilege_E(doctor_id);
             return e;
         }
-        public DataTable Get_CompanyNAme()
+        public void Get_CompanyNAme()
         {
             DataTable dt = cmdl.Get_CompanyNAme();
-            return dt;
         }
-        public string Get_DoctorName(string id)
+        public void Get_DoctorName(string id)
         {
             string dt = cmdl.Get_DoctorName(id);
-            return dt;
         }
-        public DataTable show(string patid)
+        public void show(string patid)
         {
             DataTable dt = mdl.show(patid);
-            return dt;
         }
-        public DataTable Patient_search(string txtbox)
+        public string getdays(string patid)
+        {
+            string dt = am.getdays(patid);
+            return dt;
+           
+        }
+        public void Patient_search(string txtbox)
         {
             DataTable dt = cmdl.Patient_search(txtbox);
-            return dt;
+            intr.Patient_search(dt);
         }
-        public int delete(string apntid)
+        public int delete()
         {
-            int j = mdl.delete(apntid);
+            mdl.apid = intr.apid;
+            int j = mdl.delete();
             return j;
+        }
+        public string doctr_privillage_for_addnewPatient(string doctor_id)
+        {
+            string dtb = cmdl.doctr_privillage_for_addnewPatient(doctor_id);
+            return dtb;
+        }
+        public string permission_for_settings(string doctor_id)
+        {
+            string dtb = cmdl.permission_for_settings(doctor_id);
+            return dtb;
         }
     }
 }
