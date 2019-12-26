@@ -527,7 +527,7 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<th align='left' width='350px' bgcolor=gray><FONT COLOR=black FACE='Geneva, Arial' SIZE=2><b>&nbsp;TREATMENT & PRODUCTS</b> </font></th>");
                     sWrite.WriteLine("<th align='right' width='100px' bgcolor=gray><FONT COLOR=black FACE='Geneva, Arial' SIZE=2><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COST</b> </font></th>");
-                    sWrite.WriteLine("<th align='right' width='150px' bgcolor=gray><FONT COLOR=black FACE='Geneva, Arial' SIZE=2><b>&nbsp;DISCOUND</b> </font></th>");
+                    sWrite.WriteLine("<th align='right' width='150px' bgcolor=gray><FONT COLOR=black FACE='Geneva, Arial' SIZE=2><b>&nbsp;DISCOUNT</b> </font></th>");
                     sWrite.WriteLine("<th align='right' width='150px' bgcolor=gray><FONT COLOR=black FACE='Geneva, Arial' SIZE=2><b>&nbsp;&nbsp;TAX</b> </font></th>");
                     sWrite.WriteLine("<th align='right' width='200px' bgcolor=gray><FONT COLOR=black FACE='Geneva, Arial' SIZE=2><b>&nbsp;&nbsp;AMOUNT DUE</b> </font></th>");
                     sWrite.WriteLine("</tr>");
@@ -621,10 +621,10 @@ namespace PappyjoeMVC.View
                                 message.Subject = "Pappyjoe Invoice";
                                 message.Body = StrContent.ToString();
                                 message.IsBodyHtml = true;
+                                smtp.UseDefaultCredentials = false;
+                                smtp.EnableSsl= true;
                                 smtp.Port = 587;
                                 smtp.Host = "smtp.gmail.com";
-                                smtp.EnableSsl = true;
-                                smtp.UseDefaultCredentials = false;
                                 smtp.Credentials = new System.Net.NetworkCredential(emailName, emailPass);
                                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                                 message.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
