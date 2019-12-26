@@ -89,7 +89,6 @@ namespace PappyjoeMVC.View
 
                             if (File.Exists(curFile))
                             {
-                                //logo_name = "";
                                 logo_name = path;
                                 string Apppath = System.IO.Directory.GetCurrentDirectory();
                                 if (!File.Exists(Apppath + "\\" + logo_name))
@@ -102,24 +101,6 @@ namespace PappyjoeMVC.View
                                 logo_name = "";
                             }
                         }
-
-                        //if (path != "")
-                        //{
-                        //    if (File.Exists(db.server() + path))
-                        //    {
-                        //        logo_name = "";
-                        //        logo_name = path;
-                        //        string Apppath = System.IO.Directory.GetCurrentDirectory();
-                        //        if (!File.Exists(Apppath + "\\" + logo_name))
-                        //        {
-                        //            System.IO.File.Copy(db.server() + path, Apppath + "\\" + logo_name);
-                        //        }
-                        //    }
-                        //    else
-                        //    {
-                        //        logo_name = "";
-                        //    }
-                        //}
                     }
                     catch (Exception ex)
                     {

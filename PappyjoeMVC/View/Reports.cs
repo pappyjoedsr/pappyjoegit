@@ -1846,9 +1846,7 @@ namespace PappyjoeMVC.View
             form2.ShowDialog();
             form2.Dispose();
         }
-        private void toolStripButton9_Click(object sender, EventArgs e)
-        {
-        }
+      
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             var form2 = new Main_Calendar();

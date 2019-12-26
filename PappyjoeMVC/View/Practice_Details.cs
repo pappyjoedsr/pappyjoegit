@@ -34,6 +34,7 @@ namespace PappyjoeMVC.View
         Export_Data exprt = new Export_Data();
         LabMedical labmedical = new LabMedical();
         LabDental dental = new LabDental();
+        Backup_and_Restore bckres = new Backup_and_Restore();
         private void btnaddstate_Click(object sender, EventArgs e)
         {
             if (cmb_country.Items.Count > 0)
@@ -830,6 +831,20 @@ namespace PappyjoeMVC.View
             form2.ShowDialog();
             form2.Dispose();
         }
+
+        private void backuprestore_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Dispose();
+            backColor_change();
+            button_importexport.BackColor = Color.SteelBlue;
+            form_hide();
+            bckres.TopLevel = false;
+            bckres.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            panel_main.Controls.Add(bckres);
+            bckres.Show();
+        }
+
+
 
         //private void label1_Click(object sender, EventArgs e)
         //{

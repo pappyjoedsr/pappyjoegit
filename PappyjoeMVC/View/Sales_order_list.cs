@@ -61,7 +61,6 @@ namespace PappyjoeMVC.View
                         Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
                         Lab_Msg.Visible = true;
                     }
-                      
                 }
                 dgv_sales.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
                 dgv_sales.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -113,7 +112,6 @@ namespace PappyjoeMVC.View
 
         private void dgv_sales_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             {
                 if (e.RowIndex >= 0)
                 {

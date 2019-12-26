@@ -17,13 +17,25 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
+        public static string filepath ="";
         Backup_and_Restore_controller ctrlr = new Backup_and_Restore_controller();
         private void button1_Click(object sender, EventArgs e)
         {
             if(saveFileDialog1.ShowDialog()==DialogResult.OK)
             {
-                this.ctrlr.backupdb(saveFileDialog1.OpenFile().ToString());
+                filepath = saveFileDialog1.FileName;
+                this.ctrlr.backupdb(filepath);
             }
+            MessageBox.Show("backup complete");
+        }
+        private void Backup_and_Restore_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.ctrlr.restoredb(filepath);
         }
     }
 }
