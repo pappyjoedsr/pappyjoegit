@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
-    public partial class Purchase_Report : Form
+    public partial class Purchase_Report : Form,Purchase_Report_interface
     {
         Purchase_Report_controller ctrlr;
         public static int pur_id = 0;
