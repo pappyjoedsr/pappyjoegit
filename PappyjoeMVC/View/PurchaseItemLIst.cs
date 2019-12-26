@@ -153,6 +153,11 @@ namespace PappyjoeMVC.View
             }
         }
 
+        private void dgvItemList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void dgvItemList_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

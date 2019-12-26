@@ -135,9 +135,9 @@ namespace PappyjoeMVC.View
         {
             if (dt.Rows.Count > 0)
             {
-                comboaddunder.DataSource = dt;
                 comboaddunder.DisplayMember = "name";
                 comboaddunder.ValueMember = "id";
+                comboaddunder.DataSource = dt;
                 comboaddunder.SelectedIndex = -1;
             }
         }

@@ -175,9 +175,9 @@ namespace PappyjoeMVC.View
                     DataTable dt = this.cntrl.Load_doctor();
                     if (dt.Rows.Count > 0)
                     {
-                        ddldoctor.DataSource = dt;
                         ddldoctor.DisplayMember = "doctor_name";
                         ddldoctor.ValueMember = "id";
+                        ddldoctor.DataSource = dt;
                         for (int j = 0; j < dt.Rows.Count; j++)
                         {
                             if (dt.Rows[j]["id"].ToString() == doctor_id)
@@ -193,9 +193,9 @@ namespace PappyjoeMVC.View
                     DataTable dt = this.cntrl.doc_info();
                     if (dt.Rows.Count > 0)
                     {
-                        ddldoctor.DataSource = dt;
                         ddldoctor.DisplayMember = "doctor_name";
                         ddldoctor.ValueMember = "id";
+                        ddldoctor.DataSource = dt;
                         ddldoctor.SelectedIndex = 0;
                     }
                 }

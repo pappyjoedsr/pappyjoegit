@@ -116,9 +116,9 @@ namespace PappyjoeMVC.View
             if (flagSup == false)
             {
                 DataTable dt = this.cntrl.Load_supplier_details(txtSupplierName.Text);
-                lstbox_Supplier.DataSource = dt;
                 lstbox_Supplier.DisplayMember = "Supplier_Name";
                 lstbox_Supplier.ValueMember = "Supplier_Code";
+                lstbox_Supplier.DataSource = dt;
                 lstbox_Supplier.Show();
                 if (txtSupplierName.Text == "")
                 {
@@ -132,9 +132,9 @@ namespace PappyjoeMVC.View
         private void txtSupplierName_Click(object sender, EventArgs e)
         {
             DataTable dt = this.cntrl.Load_all_supplier();
-            lstbox_Supplier.DataSource = dt;
             lstbox_Supplier.DisplayMember = "Supplier_Name";
             lstbox_Supplier.ValueMember = "Supplier_Code";
+            lstbox_Supplier.DataSource = dt;
             lstbox_Supplier.Show();
         }
 

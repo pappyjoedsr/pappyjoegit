@@ -50,6 +50,7 @@ namespace PappyjoeMVC.View
                         form.doctor_id = doctor_id;
                         form.workid = workid;
                         form.ShowDialog();
+                        form.Dispose();
                     }
                 }
             }

@@ -486,7 +486,7 @@ namespace PappyjoeMVC.View
                         //Prescription_Show_controller controller = new Prescription_Show_controller(form2);
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
-                        form2.ShowDialog();
+                        form2.Show();
                     }
                     else
                     {
@@ -520,7 +520,7 @@ namespace PappyjoeMVC.View
                             //Prescription_Show_controller controller = new Prescription_Show_controller(form2);
                             form2.Closed += (sender1, args) => this.Close();
                             this.Hide();
-                            form2.ShowDialog();
+                            form2.Show();
                         }
                         else
                         {
@@ -591,7 +591,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton12_Click(object sender, EventArgs e)
@@ -600,7 +600,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton13_Click(object sender, EventArgs e)
@@ -610,7 +610,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton15_Click(object sender, EventArgs e)
@@ -619,7 +619,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton16_Click(object sender, EventArgs e)
@@ -627,6 +627,7 @@ namespace PappyjoeMVC.View
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripButton17_Click(object sender, EventArgs e)
@@ -637,7 +638,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -651,9 +652,9 @@ namespace PappyjoeMVC.View
             if (toolStripTextBox2.Text != "")
             {
                 DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox2.Text);
-                listpatientsearch.DataSource = dtdr;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
+                listpatientsearch.DataSource = dtdr;
                 if (listpatientsearch.Items.Count == 0)
                 {
                     listpatientsearch.Visible = false;
@@ -678,7 +679,7 @@ namespace PappyjoeMVC.View
             listpatientsearch.Visible = false;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -693,7 +694,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
                 else
                 {
@@ -706,7 +707,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -726,7 +727,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             else
@@ -735,7 +736,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -746,7 +747,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void linkLabel_id_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -756,7 +757,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = linkLabel_id.Text;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -770,7 +771,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -780,7 +781,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton14_Click(object sender, EventArgs e)
@@ -798,7 +799,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             else
@@ -807,7 +808,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -817,7 +818,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
@@ -825,7 +826,7 @@ namespace PappyjoeMVC.View
             var form2 = new PappyjoeMVC.View.Login();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -834,6 +835,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void searchtext2_Click(object sender, EventArgs e)
@@ -930,32 +932,32 @@ namespace PappyjoeMVC.View
                     toolStripTextDoctor.Text = "Logged In As : " + docnam;
                 }
                 DataTable dt3 = this.cntrl.get_all_doctorname();
-                cmbDoctor.DataSource = dt3;
                 cmbDoctor.DisplayMember = "doctor_name";
                 cmbDoctor.ValueMember = "id";
+                cmbDoctor.DataSource = dt3;
                 if (cmbDoctor.Items.Count > 1)
                 {
                     cmbDoctor.SelectedIndex = 0;
                 }
                 DataTable dt = this.cntrl.Fill_unit_combo();
-                strengthcombo.DataSource = dt;
                 strengthcombo.DisplayMember = "name";
                 strengthcombo.ValueMember = "id";
+                strengthcombo.DataSource = dt;
                 if (strengthcombo.Items.Count > 1)
                 {
                     strengthcombo.SelectedIndex = 0;
                 }
-                cmbStrungthTemp.DataSource = dt;
                 cmbStrungthTemp.DisplayMember = "name";
                 cmbStrungthTemp.ValueMember = "id";
+                cmbStrungthTemp.DataSource = dt;
                 if (cmbStrungthTemp.Items.Count > 1)
                 {
                     cmbStrungthTemp.SelectedIndex = 0;
                 }
                 DataTable RsDrugType = this.cntrl.fill_type_combo();  
-                drugtypecombo.DataSource = RsDrugType;
                 drugtypecombo.DisplayMember = "dr_type";
                 drugtypecombo.ValueMember = "id";
+                drugtypecombo.DataSource = RsDrugType;
                 if (drugtypecombo.Items.Count > 1)
                 {
                     drugtypecombo.SelectedIndex = 0;
@@ -1062,9 +1064,9 @@ namespace PappyjoeMVC.View
                     DataTable dt1 = this.cntrl.get_all_doctorname();
                     if (dt.Rows.Count > 0)
                     {
-                        cmbDoctor.DataSource = dt1;
                         cmbDoctor.DisplayMember = "doctor_name";
                         cmbDoctor.ValueMember = "id";
+                        cmbDoctor.DataSource = dt1;
                         for (int j = 0; j < dt1.Rows.Count; j++)
                         {
                             if (dt1.Rows[j]["id"].ToString() == doctor_id)
@@ -1080,9 +1082,9 @@ namespace PappyjoeMVC.View
                     DataTable dt1 = this.cntrl.get_all_doctorname();
                     if (dt1.Rows.Count > 0)
                     {
-                        cmbDoctor.DataSource = dt1;
                         cmbDoctor.DisplayMember = "doctor_name";
                         cmbDoctor.ValueMember = "id";
+                        cmbDoctor.DataSource = dt1;
                     }
                 }
             }

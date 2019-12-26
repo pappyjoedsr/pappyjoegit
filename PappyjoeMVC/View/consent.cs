@@ -34,9 +34,9 @@ namespace PappyjoeMVC.View
         public void Bindpatientname()
         {
             DataTable dt3 = mdl.Get_Patient_Details(patient_id);
-            comboBoxpatientname.DataSource = dt3;
             comboBoxpatientname.DisplayMember = "pt_name";
             comboBoxpatientname.ValueMember = "id";
+            comboBoxpatientname.DataSource = dt3;
             if (dt3.Rows.Count > 0)
             {
                 PId = dt3.Rows[0]["pt_id"].ToString();
@@ -47,16 +47,16 @@ namespace PappyjoeMVC.View
         public void Binddoctorname()
         {
             DataTable dt3 = mdl.get_all_doctorname();
-            comboBoxdrname.DataSource = dt3;
             comboBoxdrname.DisplayMember = "doctor_name";
             comboBoxdrname.ValueMember = "id";
+            comboBoxdrname.DataSource = dt3;
         }
         public void Bindtreatmantpaln()
         {
             DataTable dt3 = mdl.get_All_proceure();
-            comboBoxprocedur.DataSource = dt3;
             comboBoxprocedur.DisplayMember = "name";
             comboBoxprocedur.ValueMember = "id";
+            comboBoxprocedur.DataSource = dt3;
         }
 
         private void comboBoxdrname_SelectedIndexChanged(object sender, EventArgs e)

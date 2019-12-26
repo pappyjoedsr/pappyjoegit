@@ -1,14 +1,9 @@
-﻿using System;
+﻿using PappyjoeMVC.Controller;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Windows.Forms;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.IO;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.View;
+using System.Windows.Forms;
 
 namespace PappyjoeMVC.View
 {
@@ -25,9 +20,9 @@ namespace PappyjoeMVC.View
             ptname = text;
             newptid = id;
         }
-        Consultation_controller ctrlr=new Consultation_controller();
+        Consultation_controller ctrlr = new Consultation_controller();
         public string doctor_id = "", patient_id = "";
-        public static string newptid="",ptname="";
+        public static string newptid = "", ptname = "";
         string Prescription_bill_status = "No";
         private string id;
         string includeheader = "0";
@@ -38,12 +33,12 @@ namespace PappyjoeMVC.View
         string id1, drug_type = "";
         private void txt_Pt_search_TextChanged(object sender, EventArgs e)
         {
-            if(flag==false)
+            if (flag == false)
             {
                 if (txt_Pt_search.Text != "")
                 {
-                   // lbPatient.Show();
-                    lbPatient.Location = new Point(txt_Pt_search.Location.X,49);
+                    // lbPatient.Show();
+                    lbPatient.Location = new Point(txt_Pt_search.Location.X, 49);
                     DataTable dtdr = this.ctrlr.srch_patient(txt_Pt_search.Text, txt_Pt_search.Text);
                     lbPatient.DataSource = dtdr;
                     lbPatient.DisplayMember = "pt_name";
@@ -56,7 +51,7 @@ namespace PappyjoeMVC.View
                     lbPatient.DisplayMember = "pt_name";
                     lbPatient.ValueMember = "id";
                 }
-                if(lbPatient.Items.Count>0)
+                if (lbPatient.Items.Count > 0)
                 {
                     lbPatient.Show();
                 }
@@ -79,7 +74,7 @@ namespace PappyjoeMVC.View
                     txt_Pt_search.Text = patient.Rows[0]["pt_name"].ToString();
                     txtPatientID.Text = patient.Rows[0]["pt_id"].ToString();
                     patient_id = patient.Rows[0]["id"].ToString();
-                    patient_mobile = patient.Rows[0]["primary_mobile_number"].ToString(); 
+                    patient_mobile = patient.Rows[0]["primary_mobile_number"].ToString();
                     lbPatient.Visible = false;
                 }
                 else
@@ -108,7 +103,7 @@ namespace PappyjoeMVC.View
         {
             if (txt_procedure.Text != "")
             {
-               
+
                 lst_procedure.Location = new Point(txt_procedure.Location.X, 171);
                 DataTable dtdr = this.ctrlr.search_procedure(txt_procedure.Text);
                 lst_procedure.DataSource = dtdr;
@@ -122,7 +117,7 @@ namespace PappyjoeMVC.View
                 lst_procedure.DisplayMember = "name";
                 lst_procedure.ValueMember = "id";
             }
-            if(lst_procedure.Items.Count>0)
+            if (lst_procedure.Items.Count > 0)
             {
                 lst_procedure.Visible = true;
             }
@@ -152,36 +147,21 @@ namespace PappyjoeMVC.View
 
         private void Consultation_Load(object sender, EventArgs e)
         {
-
-            //DataTable dtb_prescription = db.table("select * from tbl_templates_main order by id");
-            //cmb_prescription_temp.DisplayMember = "Text";
-            //cmb_prescription_temp.ValueMember = "Value";
-            //cmb_prescription_temp.Items.Add(new { Text = "-Select-", Value = 0 });
-            //if (dtb_prescription.Rows.Count > 0)
-            //{
-            //    for (int r = 0; r < dtb_prescription.Rows.Count; r++)
-            //    {
-            //        int id = (int)Convert.ToInt16(dtb_prescription.Rows[r]["id"].ToString());
-            //       cmb_prescription_temp.Items.Add(new { Text = dtb_prescription.Rows[r]["templates"].ToString(), Value = id });
-            //    }
-            //}
-            //cmb_prescription_temp.SelectedIndex = 0;
-
             DataTable dt = this.ctrlr.Load_doctor();
             if (dt.Rows.Count > 0)
             {
                 cmbdoctor.DataSource = dt;
                 cmbdoctor.DisplayMember = "doctor_name";
                 cmbdoctor.ValueMember = "id";
-               
+
                 DataTable dt_doctor = this.ctrlr.Load_dctrname(doctor_id);
                 if (dt_doctor.Rows.Count > 0)
                 {
-                    
+
                     int int_doctor = cmbdoctor.FindStringExact(dt_doctor.Rows[0]["doctor_name"].ToString());
                     if (int_doctor >= 0)
                     {
-                        cmbdoctor.SelectedIndex =int_doctor;
+                        cmbdoctor.SelectedIndex = int_doctor;
                     }
                 }
             }
@@ -204,12 +184,9 @@ namespace PappyjoeMVC.View
             {
                 strengthcombo.SelectedIndex = 0;
             }
-           
             cmbDuration.SelectedIndex = 0;
-
             DataTable dt2 = this.ctrlr.get_tmplates();
             dataGridView2.DataSource = dt2;
-            
         }
 
         private void btnReport_Click(object sender, EventArgs e)
@@ -218,33 +195,25 @@ namespace PappyjoeMVC.View
             {
                 if (txtPatientID.Text != "" && txt_procedure.Text != "")
                 {
-                    if(dataGridView_drugnew.Rows.Count==0)
+                    if (dataGridView_drugnew.Rows.Count == 0)
                     {
                         DialogResult yesno = MessageBox.Show("You missed to Click on 'Add' button under prescription. Please click 'Add' button to proceed..Or Do you want to save without prescription..??", "Prescription Not Added", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (yesno == DialogResult.No)
-                    { return; }
+                        if (yesno == DialogResult.No)
+                        { return; }
                     }
                     int presid = 0;
-
-                    //DataTable dt = db.table("select name,cost,notes from tbl_addproceduresettings where id ='" + id + "'");
-                    //servicetext.Text = dt.Rows[0][0].ToString();
                     if (lst_procedure.SelectedIndex < 0)
                     {
                         MessageBox.Show("Precedure not found.. please enter the procedure name.... ", "Procedure Not Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-
-                    //prescription
-                    //prescription_check();
                     int d_id = Convert.ToInt32(cmbdoctor.SelectedValue.ToString());
-
-
                     if (dataGridView_drugnew.Rows.Count > 0)
                     {
                         prescription_check();// Check Inventory Item
                         this.ctrlr.save_prescriptionMain(patient_id, d_id, Prescription_bill_status, txt_remarks.Text);
                         string dt = this.ctrlr.max_presid();
-                        if (dt!="")
+                        if (dt != "")
                         {
                             presid = Int32.Parse(dt);
                         }
@@ -261,38 +230,7 @@ namespace PappyjoeMVC.View
 
                             this.ctrlr.save_prescription(presid, patient_id, cmbdoctor.Text, d_id.ToString(), dataGridView_drugnew[0, i].Value.ToString(), dataGridView_drugnew[1, i].Value.ToString(), dataGridView_drugnew[2, i].Value.ToString(), dataGridView_drugnew[3, i].Value.ToString(), dataGridView_drugnew[4, i].Value.ToString(), dataGridView_drugnew[5, i].Value.ToString(), dataGridView_drugnew[6, i].Value.ToString(), dataGridView_drugnew[7, i].Value.ToString(), dataGridView_drugnew[8, i].Value.ToString(), dataGridView_drugnew[9, i].Value.ToString(), strstatus, dataGridView_drugnew[10, i].Value.ToString());
                         }
-
                     }
-
-                    //string pres_id = cmb_prescription_temp.SelectedItem.GetType().GetProperty("Value").GetValue(cmb_prescription_temp.SelectedItem, null).ToString();
-                    //DataTable dtb_prescription = db.table("select * from tbl_templates_main where id='" + pres_id + "'");
-                    //if (dtb_prescription.Rows.Count > 0)
-                    //{
-                    //    DataTable dt_prs = db.table("select * from tbl_template where temp_id='" + dtb_prescription.Rows[0]["id"].ToString() + "'");
-                    //    prescription_check(dt_prs);
-
-                    //    db.execute("insert into tbl_prescription_main (pt_id,dr_id,date,pay_status,notes) values('" + patient_id + "','" + d_id + "','" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "','" + Prescription_bill_status + "','" + txt_remarks.Text + "')");
-                    //    DataTable dt = db.table("select MAX(id) from tbl_prescription_main");
-                    //    if (dt.Rows.Count > 0)
-                    //    {
-                    //        presid = Int32.Parse(dt.Rows[0][0].ToString());
-                    //    }
-                    //    else
-                    //    {
-                    //        presid = 1;
-                    //    }
-
-
-                    //    for (int i = 0; i < dt_prs.Rows.Count; i++)
-                    //    {
-                    //        //if (dataGridView_drugnew[13, i].Value.ToString() != "")
-                    //        //{ strstatus = dataGridView_drugnew[13, i].Value.ToString(); }
-
-                    //        db.table("insert into tbl_prescription (pres_id,pt_id,dr_name,dr_id,date,drug_name,strength,strength_gr,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,status,drug_id) values('" + presid + "','" + patient_id + "','" + cmbdoctor.Text + "','" + d_id + "','" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "','" + dt_prs.Rows[i]["drug_name"].ToString() + "','" + dt_prs.Rows[i]["strength"].ToString() + "','" + dt_prs.Rows[i]["strength_gr"].ToString() + "','','" + dt_prs.Rows[i]["duration_period"].ToString() + "','" + dt_prs.Rows[i]["morning"].ToString() + "','" + dt_prs.Rows[i]["noon"].ToString() + "','" + dt_prs.Rows[i]["night"].ToString() + "','" + dt_prs.Rows[i]["food"].ToString() + "','" + dt_prs.Rows[i]["add_instruction"].ToString() + "','" + dt_prs.Rows[i]["drug_type"].ToString() + "'," + dt_prs.Rows[i]["status"].ToString() + ",'" + dt_prs.Rows[i]["drug_id"].ToString() + "')");
-                    //    }
-                    //}
-
-
                     //completed id
                     this.ctrlr.save_completedid(patient_id);
                     string dt_CMain = this.ctrlr.max_completedid();
@@ -315,14 +253,14 @@ namespace PappyjoeMVC.View
                         completed_id = 0;
                     }
                     j1 = completed_id;
-                    this.ctrlr.save_completed_details(j1 ,patient_id , lst_procedure.SelectedValue.ToString() , txt_procedure.Text , txt_cost.Text,txt_cost.Text,txt_instruction.Text,cmbdoctor.SelectedValue.ToString());
+                    this.ctrlr.save_completed_details(j1, patient_id, lst_procedure.SelectedValue.ToString(), txt_procedure.Text, txt_cost.Text, txt_cost.Text, txt_instruction.Text, cmbdoctor.SelectedValue.ToString());
                     string dt_Compl_proce = this.ctrlr.max_completeProcedure();
                     long completed_procedures_id = 0;
                     try
                     {
-                        if (dt_Compl_proce =="")
+                        if (dt_Compl_proce == "")
                         {
-                           
+
                             completed_procedures_id = 1;
                         }
                         else
@@ -332,48 +270,42 @@ namespace PappyjoeMVC.View
                     }
                     catch
                     {
-                       
+
                         completed_procedures_id = 1;
                     }
-
                     //ReviewDate
                     if (checkBoxReview.Checked == true)
                     {
-                        this.ctrlr.update_review(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"),j1);
-
-                        this.ctrlr.update_prescription_review(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"),presid);
-
-                        DataTable dt_review =this.ctrlr.get_reviewId(patient_id,dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"));
+                        this.ctrlr.update_review(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), j1);
+                        this.ctrlr.update_prescription_review(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), presid);
+                        DataTable dt_review = this.ctrlr.get_reviewId(patient_id, dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"));
                         if (dt_review.Rows.Count == 0)
                         {
-                           this.ctrlr.save_review(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"),patient_id);
+                            this.ctrlr.save_review(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), patient_id);
                         }
-                        this.ctrlr.save_appointment(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm") , patient_id ,txt_Pt_search.Text ,cmbdoctor.SelectedValue.ToString(),patient_mobile ,cmbdoctor.Text.ToString());
+                        this.ctrlr.save_appointment(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), patient_id, txt_Pt_search.Text, cmbdoctor.SelectedValue.ToString(), patient_mobile, cmbdoctor.Text.ToString());
                     }
                     else
                     {
-                        this.ctrlr.update_prescription_review_NO(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"),j1);
-
-                        this.ctrlr.update_prescription_review_NO(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"),presid);
+                        this.ctrlr.update_prescription_review_NO(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), j1);
+                        this.ctrlr.update_prescription_review_NO(dtp_nextreview.Value.ToString("yyyy-MM-dd HH:mm"), presid);
                     }
                     string invoice = "";
                     DataTable invNo = null;
-                    invNo =this.ctrlr.get_invoice_data();
+                    invNo = this.ctrlr.get_invoice_data();
                     if (invNo.Rows.Count > 0)
                     {
                         invoice = invNo.Rows[0]["invoice_prefix"].ToString() + invNo.Rows[0]["invoice_number"].ToString();
                     }
-
                     decimal totalcost = 0;
                     totalcost = Convert.ToDecimal(txt_cost.Text) * 1;
-                    this.ctrlr.save_invoice_main(patient_id, txt_Pt_search.Text,invoice);
-                    string dt1 = this.ctrlr.get_invoiceMain_maxid(); 
+                    this.ctrlr.save_invoice_main(patient_id, txt_Pt_search.Text, invoice);
+                    string dt1 = this.ctrlr.get_invoiceMain_maxid();
                     long Invoice_main_id = 0;
                     try
                     {
-                        if (dt1 =="")
+                        if (dt1 == "")
                         {
-
                             Invoice_main_id = 1;
                         }
                         else
@@ -386,16 +318,13 @@ namespace PappyjoeMVC.View
 
                         Invoice_main_id = 1;
                     }
-                    this.ctrlr.save_invoice_details(invoice,txt_Pt_search.Text,patient_id,lst_procedure.SelectedValue.ToString(),txt_procedure.Text,txt_cost.Text,txt_cost.Text, cmbdoctor.SelectedValue.ToString(),Invoice_main_id ,completed_procedures_id);
-
+                    this.ctrlr.save_invoice_details(invoice, txt_Pt_search.Text, patient_id, lst_procedure.SelectedValue.ToString(), txt_procedure.Text, txt_cost.Text, txt_cost.Text, cmbdoctor.SelectedValue.ToString(), Invoice_main_id, completed_procedures_id);
                     string invoauto = this.ctrlr.get_invoicenumber();
                     int invoautoup = int.Parse(invoauto) + 1;
                     this.ctrlr.update_invnumber(invoautoup);
-
                     //payment
-                    DataTable rec_receipt = this.ctrlr.receipt_number(); 
+                    DataTable rec_receipt = this.ctrlr.receipt_number();
                     receipt = rec_receipt.Rows[0]["receipt_prefix"].ToString() + rec_receipt.Rows[0]["receipt_number"].ToString();
-                   
                     DataTable cmd22 = this.ctrlr.Get_Advance(patient_id);
                     decimal advance = 0;
                     if (cmd22.Rows.Count > 0)
@@ -417,20 +346,16 @@ namespace PappyjoeMVC.View
                             advance = decimal.Parse(cmd22.Rows[0]["advance"].ToString());
                         }
                     }
-                    
-
-
-                    this.ctrlr.save_receipt(receipt,advance,txt_cost.Text, invoice, txt_procedure.Text , patient_id , cmbdoctor.SelectedValue.ToString() , txt_cost.Text,txt_cost.Text, txt_Pt_search.Text, Invoice_main_id);
-                    //}
+                    this.ctrlr.save_receipt(receipt, advance, txt_cost.Text, invoice, txt_procedure.Text, patient_id, cmbdoctor.SelectedValue.ToString(), txt_cost.Text, txt_cost.Text, txt_Pt_search.Text, Invoice_main_id);
                     string rec = this.ctrlr.receipt_autoid();
                     int receip = int.Parse(rec) + 1;
                     this.ctrlr.update_receiptAutoid(receip);
                     DialogResult print_yesno = System.Windows.Forms.DialogResult.No;
                     print_yesno = MessageBox.Show("Data saved successfully... Do you want a print..??", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (print_yesno== System.Windows.Forms.DialogResult.Yes)
+                    if (print_yesno == System.Windows.Forms.DialogResult.Yes)
                     {
                         printhtml();
-                        if (chkprescription.Checked == true && presid>0)
+                        if (chkprescription.Checked == true && presid > 0)
                         {
                             printprescriptionhtml(presid);
                         }
@@ -460,7 +385,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Data Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -485,7 +410,7 @@ namespace PappyjoeMVC.View
                 string str_email = "";
                 string str_website = "";
                 string doctor = this.ctrlr.Get_DoctorName(doctor_id.ToString());
-                if (doctor!="")
+                if (doctor != "")
                 {
                     doctorName = doctor;
                     streetaddress = dtp.Rows[0]["street_address"].ToString();
@@ -534,7 +459,7 @@ namespace PappyjoeMVC.View
                             {
                                 sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                                 sWrite.WriteLine("<tr>");
-                                sWrite.WriteLine("<td width='100' height='75px' align='left' rowspan='3'><img src='" + curFile +  "' width='77' height='78' style='width:100px;height:100px;'></td>  ");
+                                sWrite.WriteLine("<td width='100' height='75px' align='left' rowspan='3'><img src='" + curFile + "' width='77' height='78' style='width:100px;height:100px;'></td>  ");
                                 sWrite.WriteLine("<td width='588' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
                                 sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;&nbsp;" + header2 + "</font></td></tr>");
                                 sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" + header3 + "</font></td></tr>");
@@ -559,9 +484,7 @@ namespace PappyjoeMVC.View
                             sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
                             sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;&nbsp;" + header2 + "</font></td></tr>");
                             sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" + header3 + "</font></td></tr>");
-
                             sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
-
                             sWrite.WriteLine("</table>");
                         }
                     }
@@ -572,9 +495,7 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
                         sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;&nbsp;" + header2 + "</font></td></tr>");
                         sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" + header3 + "</font></td></tr>");
-
                         sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
-
                         sWrite.WriteLine("</table>");
                     }
                 }
@@ -586,10 +507,8 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3></font></td></tr>");
                     sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td></tr>");
                     sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
-
                     sWrite.WriteLine("</table>");
                 }
-
                 string sexage = "";
                 int Dexist = 0;
                 string address = "";
@@ -655,7 +574,7 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>" + address + " </font></td>");
                     sWrite.WriteLine(" </tr>");
                 }
-              
+
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>" + dt1.Rows[0]["primary_mobile_number"].ToString() + " </font></td>");
                 sWrite.WriteLine(" </tr>");
@@ -682,10 +601,7 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td><FONT COLOR=black FACE='Geneva, Arial' SIZE=5>Payment</FONT></td>");
                     sWrite.WriteLine("<td width=450px></td>");
-                  
-                    {
-                        sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2> <FONT COLOR=black>Date : </FONT>" + Convert.ToDateTime(tdate).ToString("dd MMM yyyy") + "</font></td>");
-                    }
+                    sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2> <FONT COLOR=black>Date : </FONT>" + Convert.ToDateTime(tdate).ToString("dd MMM yyyy") + "</font></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("</table>");
                     sWrite.WriteLine("<table   align='center' style='width:700px;border: 1px ;border-collapse: collapse;' >");
@@ -732,7 +648,6 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("<td align='center' height='22'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + strfooter3 + "</font></td>");
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("</table>");
-
                 sWrite.WriteLine("<script>window.print();</script>");
                 sWrite.WriteLine("</body>");
                 sWrite.WriteLine("</html>");
@@ -838,7 +753,6 @@ namespace PappyjoeMVC.View
             sWrite.WriteLine("</head>");
             sWrite.WriteLine("<body >");
             sWrite.WriteLine("<br>");
-
             if (includeheader == "1")
             {
                 if (includelogo == "1")
@@ -986,7 +900,7 @@ namespace PappyjoeMVC.View
                 }
                 sWrite.WriteLine("<tr><td colspan=2><hr></td></tr>");
                 string doctorname = "";
-                System.Data.DataTable dt_cf =this.ctrlr.table_details(Prescription_id.ToString() ,patient_id );
+                System.Data.DataTable dt_cf = this.ctrlr.table_details(Prescription_id.ToString(), patient_id);
                 if (dt_cf.Rows.Count > 0)
                 {
                     doctorname = Convert.ToString(dt_cf.Rows[0]["doctor_name"].ToString());
@@ -1021,7 +935,6 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("</table>");
             }
-
             sWrite.WriteLine("<table align='center'   style='width:700px;border: 1px ;border-collapse: collapse;' >");
             sWrite.WriteLine("<tr >");
             sWrite.WriteLine("<td align='left' width='35px' height='30'><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Sl.</font></td>");
@@ -1134,7 +1047,7 @@ namespace PappyjoeMVC.View
             }
         }
 
-         public void prescription_check()
+        public void prescription_check()
         {
             try
             {
@@ -1158,67 +1071,44 @@ namespace PappyjoeMVC.View
             }
         }
 
-        //public void prescription_check(DataTable dtb)//aswini
-        //{
-        //    try
-        //    {
-        //        if (dtb.Rows.Count > 0)
-        //        {
-        //            int count = dtb.Rows.Count;
-        //            for (int i = 0; i < count; i++)
-        //            {
-        //                DataTable dt4 = db.table("select id,inventory_id from tbl_adddrug where id='" + dtb.Rows[i]["drug_id"].ToString() + "' and inventory_id<>0 ORDER BY id DESC");
-        //                if (dt4.Rows.Count > 0)
-        //                {
-        //                    Prescription_bill_status = "Yes";
-        //                    return;
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
         private void label5_Click(object sender, EventArgs e)
         {
             lbPatient.Visible = false;
             var form2 = new consultation_new_patient();
             form2.ShowDialog();
-            if(newptid!="")
+            form2.Dispose();
+            if (newptid != "")
             {
                 flag = true;
                 DataTable dtb = this.ctrlr.pt_details(newptid);
                 txtPatientID.Text = dtb.Rows[0]["pt_id"].ToString();
-                txt_Pt_search.Text= dtb.Rows[0]["pt_name"].ToString();
+                txt_Pt_search.Text = dtb.Rows[0]["pt_name"].ToString();
                 patient_id = dtb.Rows[0]["id"].ToString();
-                patient_mobile = dtb.Rows[0]["primary_mobile_number"].ToString();  
+                patient_mobile = dtb.Rows[0]["primary_mobile_number"].ToString();
                 string str_doctorname = dtb.Rows[0]["doctorname"].ToString();
                 int listindex = cmbdoctor.FindStringExact(str_doctorname);
-                if(listindex>0)
+                if (listindex > 0)
                 {
                     cmbdoctor.SelectedIndex = listindex;
                 }
             }
-            //form2.Closed += (sender1, args) => this.Close();
             flag = false;
         }
 
-        private void lnk_view_template_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            //string pres_id = cmb_prescription_temp.SelectedItem.GetType().GetProperty("Value").GetValue(cmb_prescription_temp.SelectedItem, null).ToString();
-            //if (pres_id == "0")
-            //{
-            //    MessageBox.Show("No selected Prescription Template..", "Template Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //else
-            //{
-            //    var form2 = new Pappyjoe.consultation_prescription_template();
-            //    form2.pres_id = pres_id;
-            //    form2.ShowDialog();
-            //}
-        }
+        //private void lnk_view_template_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        //{
+        //    //string pres_id = cmb_prescription_temp.SelectedItem.GetType().GetProperty("Value").GetValue(cmb_prescription_temp.SelectedItem, null).ToString();
+        //    //if (pres_id == "0")
+        //    //{
+        //    //    MessageBox.Show("No selected Prescription Template..", "Template Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    //}
+        //    //else
+        //    //{
+        //    //    var form2 = new Pappyjoe.consultation_prescription_template();
+        //    //    form2.pres_id = pres_id;
+        //    //    form2.ShowDialog();
+        //    //}
+        //}
 
         private void label5_MouseHover(object sender, EventArgs e)
         {
@@ -1271,7 +1161,7 @@ namespace PappyjoeMVC.View
         {
             string[] numbersArr = new string[] { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
             string[] tensArr = new string[] { "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninty" };
-                       string[] suffixesArr = new string[] { "lakhs", "Crore", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion", "octillion", "nonillion", "decillion", "undecillion", "duodecillion", "tredecillion", "Quattuordecillion", "Quindecillion", "Sexdecillion", "Septdecillion", "Octodecillion", "Novemdecillion", "Vigintillion" };
+            string[] suffixesArr = new string[] { "lakhs", "Crore", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion", "octillion", "nonillion", "decillion", "undecillion", "duodecillion", "tredecillion", "Quattuordecillion", "Quindecillion", "Sexdecillion", "Septdecillion", "Octodecillion", "Novemdecillion", "Vigintillion" };
             string words = "";
             bool tens = false;
             if (n < 0)
@@ -1336,23 +1226,23 @@ namespace PappyjoeMVC.View
                 lbPatient.Focus();
             }
             else if (e.KeyCode == Keys.Enter && lbPatient.Items.Count > 0)
-             {
-                 if (lbPatient.SelectedItems.Count > 0)
-                 {
-                     string value = lbPatient.SelectedValue.ToString();
-                     DataTable patient = new DataTable();
-                     patient = this.ctrlr.get_patient_details(value);
-                     if (patient.Rows.Count > 0)
-                     {
-                         txt_Pt_search.Text = patient.Rows[0]["pt_name"].ToString();
-                         txtPatientID.Text = patient.Rows[0]["pt_id"].ToString();
-                         patient_id = patient.Rows[0]["id"].ToString();
-                         patient_mobile = patient.Rows[0]["primary_mobile_number"].ToString();  
-                         lbPatient.Visible = false;
-                         txt_Pt_search.Focus();
-                     }
-                 }
-             }
+            {
+                if (lbPatient.SelectedItems.Count > 0)
+                {
+                    string value = lbPatient.SelectedValue.ToString();
+                    DataTable patient = new DataTable();
+                    patient = this.ctrlr.get_patient_details(value);
+                    if (patient.Rows.Count > 0)
+                    {
+                        txt_Pt_search.Text = patient.Rows[0]["pt_name"].ToString();
+                        txtPatientID.Text = patient.Rows[0]["pt_id"].ToString();
+                        patient_id = patient.Rows[0]["id"].ToString();
+                        patient_mobile = patient.Rows[0]["primary_mobile_number"].ToString();
+                        lbPatient.Visible = false;
+                        txt_Pt_search.Focus();
+                    }
+                }
+            }
         }
 
         private void lbPatient_KeyUp(object sender, KeyEventArgs e)
@@ -1369,7 +1259,7 @@ namespace PappyjoeMVC.View
                         txt_Pt_search.Text = patient.Rows[0]["pt_name"].ToString();
                         txtPatientID.Text = patient.Rows[0]["pt_id"].ToString();
                         patient_id = patient.Rows[0]["id"].ToString();
-                        patient_mobile = patient.Rows[0]["primary_mobile_number"].ToString(); 
+                        patient_mobile = patient.Rows[0]["primary_mobile_number"].ToString();
                         lbPatient.Visible = false;
                         txt_Pt_search.Focus();
                     }
@@ -1383,23 +1273,23 @@ namespace PappyjoeMVC.View
             {
                 lst_procedure.Focus();
             }
-             else if (e.KeyCode == Keys.Enter && lst_procedure.Items.Count > 0)
-             {
+            else if (e.KeyCode == Keys.Enter && lst_procedure.Items.Count > 0)
+            {
 
-                 if (lst_procedure.SelectedItems.Count > 0)
-                 {
-                     string value = lst_procedure.SelectedValue.ToString();
-                     DataTable procedure = new DataTable();
-                     procedure = this.ctrlr.procedure_details(value);
-                     if (procedure.Rows.Count > 0)
-                     {
-                         txt_procedure.Text = procedure.Rows[0]["name"].ToString();
-                         txt_cost.Text = procedure.Rows[0]["cost"].ToString();
-                         lst_procedure.Visible = false;
-                     }
+                if (lst_procedure.SelectedItems.Count > 0)
+                {
+                    string value = lst_procedure.SelectedValue.ToString();
+                    DataTable procedure = new DataTable();
+                    procedure = this.ctrlr.procedure_details(value);
+                    if (procedure.Rows.Count > 0)
+                    {
+                        txt_procedure.Text = procedure.Rows[0]["name"].ToString();
+                        txt_cost.Text = procedure.Rows[0]["cost"].ToString();
+                        lst_procedure.Visible = false;
+                    }
 
-                 }
-             }
+                }
+            }
         }
 
         private void lst_procedure_KeyUp(object sender, KeyEventArgs e)
@@ -1421,11 +1311,11 @@ namespace PappyjoeMVC.View
             }
         }
 
-        private void cmb_prescription_temp_MouseClick(object sender, MouseEventArgs e)
-        {
-           
-              
-        }
+        //private void cmb_prescription_temp_MouseClick(object sender, MouseEventArgs e)
+        //{
+
+
+        //}
 
         private void txt_remarks_MouseClick(object sender, MouseEventArgs e)
         {
@@ -1446,15 +1336,8 @@ namespace PappyjoeMVC.View
         }
         public void fill_DrugPrescrptn(DataTable dt4)
         {
-          
+
             string strstock = "";
-            //presdruggrid.Columns.Add("id", "xt");
-            //presdruggrid.Columns.Add("drug", "xt");
-            //presdruggrid.Columns.Add("stock", "xt");
-            //presdruggrid.Columns[0].Visible = false;
-            //presdruggrid.Columns[1].Width = 200;
-            //presdruggrid.Columns[2].Width = 150;
-            //presdruggrid.Columns[3].Visible = false;
             for (int j = 0; j < dt4.Rows.Count; j++)
                 presdruggrid.Columns[4].Visible = false;
             for (int j = 0; j < dt4.Rows.Count; j++)
@@ -1466,7 +1349,6 @@ namespace PappyjoeMVC.View
                 else
                 {
                     strstock = "(Not sold)";
-                   
                     DataTable dtstock = this.ctrlr.drug_instock(dt4.Rows[j]["inventory_id"].ToString());
                     if (dtstock.Rows.Count > 0)
                     {
@@ -1487,19 +1369,19 @@ namespace PappyjoeMVC.View
                 else if (strstock == "(Out-of-stock)")
                 { presdruggrid.Rows[j].Cells[2].Style.ForeColor = Color.Blue; }
                 presdruggrid.Rows[j].Cells[2].Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            }   
+            }
         }
 
         private void txt_Prescrptn_TextChanged(object sender, EventArgs e)
         {
             if (txt_Prescrptn.Text != "")
             {
-                DataTable dtb =this.ctrlr.get_prescriptnwthname(txt_Prescrptn.Text);
+                DataTable dtb = this.ctrlr.get_prescriptnwthname(txt_Prescrptn.Text);
                 if (dtb.Rows.Count > 0)
                 {
                     presdruggrid.Rows.Clear();
                     fill_DrugPrescrptn(dtb);
-                    
+
                 }
                 else
                 {
@@ -1567,10 +1449,6 @@ namespace PappyjoeMVC.View
                 {
                     string dur = "";
                     string food = "";
-                    //if (numericUpDownMorning.Value > 0 && numericUpDownNoon.Value > 0 && numericUpDownNight.Value > 0 && numericUpDownDuration.Value >0)
-                    //{
-                    //    if (radioButtonBfrFood.Checked || radioButtonAftrFood.Checked)
-                    //    {
                     food = "";
                     if (radioButtonBfrFood.Checked)
                     {
@@ -1613,12 +1491,11 @@ namespace PappyjoeMVC.View
                     radioButtonBfrFood.Checked = false;
                     dataGridView_drugnew.Visible = true;
                     drugspanel.Visible = false;
-
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -1627,15 +1504,9 @@ namespace PappyjoeMVC.View
             drugspanel.Visible = false;
             dataGridView_drugnew.Visible = true;
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dataGridView2.Rows.Count>0 && e.RowIndex>=0)
+            if (dataGridView2.Rows.Count > 0 && e.RowIndex >= 0)
             {
                 try
                 {
@@ -1647,7 +1518,6 @@ namespace PappyjoeMVC.View
                     DataTable dt = this.ctrlr.get_template(idtemp);
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
-
                         dataGridView_drugnew.Rows.Add(dt.Rows[i]["drug_name"].ToString(), dt.Rows[i]["strength"].ToString(), dt.Rows[i]["strength_gr"].ToString(), dt.Rows[i]["duration"].ToString(), dt.Rows[i]["duration_period"].ToString(), dt.Rows[i]["morning"].ToString(), dt.Rows[i]["noon"].ToString(), dt.Rows[i]["night"].ToString(), dt.Rows[i]["food"].ToString(), dt.Rows[i]["add_instruction"].ToString(), dt.Rows[i]["drug_id"].ToString(), dt.Rows[i]["drug_type"].ToString());
                         dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Cells[12].Value = PappyjoeMVC.Properties.Resources.deleteicon;
                         dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Height = 30;

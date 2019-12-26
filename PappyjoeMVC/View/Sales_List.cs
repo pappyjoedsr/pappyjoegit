@@ -142,11 +142,13 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new Sales(invnum);
                     form2.ShowDialog();
+                    form2.Dispose();
                 }
                 else if (dgv_sales.CurrentCell.OwningColumn.Name == "colmore")
                 {
                     var form2 = new Sales(invnum);
                     form2.ShowDialog();
+                    form2.Dispose();
                 }
             }
 
@@ -237,7 +239,6 @@ namespace PappyjoeMVC.View
                             ExcelApp.Cells[4, 2].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
                             ExcelApp.Cells[3, 2].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
                             ExcelApp.Cells[2, 2].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
-
                             for (int i = 0; i < strarray.Length; i++)
                             {
                                 ExcelApp.Range[ExcelApp.Cells[5, i + 1], ExcelApp.Cells[6, i + 1]].Merge();
@@ -267,7 +268,6 @@ namespace PappyjoeMVC.View
                             ExcelApp.Range[ExcelApp.Cells[5, 7], ExcelApp.Cells[5, 8]].Borders.Color = Color.FromArgb(0, 0, 0);
                             ExcelApp.Cells[5, 7].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
                             ExcelApp.Cells[5, 7].VerticalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-
                             ExcelApp.Cells[6, 7] = "Rate%";
                             ExcelApp.Cells[6, 7].ColumnWidth = 8;
                             ExcelApp.Cells[6, 7].EntireRow.Font.Bold = true;
@@ -280,7 +280,6 @@ namespace PappyjoeMVC.View
                             ExcelApp.Cells[6, 7].Borders.Color = Color.FromArgb(0, 0, 0);
                             ExcelApp.Cells[6, 7].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
                             ExcelApp.Cells[6, 7].VerticalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-
                             ExcelApp.Cells[6, 8] = "Amount";
                             ExcelApp.Cells[6, 8].ColumnWidth = 10;
                             ExcelApp.Cells[6, 8].EntireRow.Font.Bold = true;
@@ -293,7 +292,6 @@ namespace PappyjoeMVC.View
                             ExcelApp.Cells[6, 8].Borders.Color = Color.FromArgb(0, 0, 0);
                             ExcelApp.Cells[6, 8].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
                             ExcelApp.Cells[6, 8].VerticalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-
                             ExcelApp.Range[ExcelApp.Cells[5, 9], ExcelApp.Cells[5, 10]].Merge();
                             ExcelApp.Cells[5, 9] = "SGST";
                             ExcelApp.Cells[5, 9].ColumnWidth = 18;
@@ -307,7 +305,6 @@ namespace PappyjoeMVC.View
                             ExcelApp.Range[ExcelApp.Cells[5, 9], ExcelApp.Cells[5, 10]].Borders.Color = Color.FromArgb(0, 0, 0);
                             ExcelApp.Cells[5, 9].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
                             ExcelApp.Cells[5, 9].VerticalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-
                             ExcelApp.Cells[6, 9] = "Rate%";
                             ExcelApp.Cells[6, 9].ColumnWidth = 8;
                             ExcelApp.Cells[6, 9].EntireRow.Font.Bold = true;
@@ -320,7 +317,6 @@ namespace PappyjoeMVC.View
                             ExcelApp.Cells[6, 9].Borders.Color = Color.FromArgb(0, 0, 0);
                             ExcelApp.Cells[6, 9].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
                             ExcelApp.Cells[6, 9].VerticalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-
                             ExcelApp.Cells[6, 10] = "Amount";
                             ExcelApp.Cells[6, 10].ColumnWidth = 10;
                             ExcelApp.Cells[6, 10].EntireRow.Font.Bold = true;
@@ -333,7 +329,6 @@ namespace PappyjoeMVC.View
                             ExcelApp.Cells[6, 10].Borders.Color = Color.FromArgb(0, 0, 0);
                             ExcelApp.Cells[6, 10].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
                             ExcelApp.Cells[6, 10].VerticalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-
                             ExcelApp.Range[ExcelApp.Cells[5, 11], ExcelApp.Cells[5, 12]].Merge();
                             ExcelApp.Cells[5, 11] = "IGST";
                             ExcelApp.Cells[5, 11].ColumnWidth = 18;
@@ -347,7 +342,6 @@ namespace PappyjoeMVC.View
                             ExcelApp.Range[ExcelApp.Cells[5, 11], ExcelApp.Cells[5, 12]].Borders.Color = Color.FromArgb(0, 0, 0);
                             ExcelApp.Cells[5, 11].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
                             ExcelApp.Cells[5, 11].VerticalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-
                             ExcelApp.Cells[6, 11] = "Rate%";
                             ExcelApp.Cells[6, 11].ColumnWidth = 8;
                             ExcelApp.Cells[6, 11].EntireRow.Font.Bold = true;
@@ -360,7 +354,6 @@ namespace PappyjoeMVC.View
                             ExcelApp.Cells[6, 11].Borders.Color = Color.FromArgb(0, 0, 0);
                             ExcelApp.Cells[6, 11].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
                             ExcelApp.Cells[6, 11].VerticalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-
                             ExcelApp.Cells[6, 12] = "Amount";
                             ExcelApp.Cells[6, 12].ColumnWidth = 10;
                             ExcelApp.Cells[6, 12].EntireRow.Font.Bold = true;
@@ -373,7 +366,6 @@ namespace PappyjoeMVC.View
                             ExcelApp.Cells[6, 12].Borders.Color = Color.FromArgb(0, 0, 0);
                             ExcelApp.Cells[6, 12].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
                             ExcelApp.Cells[6, 12].VerticalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-
                             ExcelApp.Range[ExcelApp.Cells[5, 13], ExcelApp.Cells[6, 13]].Merge();
                             ExcelApp.Cells[5, 13] = "Net Amount";
                             ExcelApp.Cells[5, 13].ColumnWidth = 18;
@@ -388,7 +380,6 @@ namespace PappyjoeMVC.View
                             ExcelApp.Cells[6, 13].Borders.Color = Color.FromArgb(0, 0, 0);
                             ExcelApp.Cells[6, 13].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
                             ExcelApp.Cells[6, 13].VerticalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-
                             int num = 1;
                             int row = 7;
                             int gstrow = 0;
@@ -515,8 +506,7 @@ namespace PappyjoeMVC.View
                             ExcelApp.Cells[row, 8] = total_gst;
                             ExcelApp.Cells[row, 10] = total_gst;
                             ExcelApp.Cells[row, 12] = total_igst;
-                            ExcelApp.Cells[row, 13] = total_net;    
-
+                            ExcelApp.Cells[row, 13] = total_net; 
                             Lab_Msg.Visible = false;
                             ExcelApp.ActiveWorkbook.SaveAs(PathName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
                             ExcelApp.ActiveWorkbook.Saved = true;

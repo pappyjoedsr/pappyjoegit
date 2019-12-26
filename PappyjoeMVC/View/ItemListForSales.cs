@@ -196,7 +196,8 @@ namespace PappyjoeMVC.View
                         if (isbatch == "True")
                         {
                             var form2 = new ItemBatchDetails(itemcode);
-                            form2.Show();
+                            form2.ShowDialog();
+                            form2.Dispose();
                         }
                         else
                         {

@@ -16,9 +16,9 @@ namespace PappyjoeMVC.View
             try
             {
                 DataTable dtb = this.cntrl.load_credit_combo();
-                cmbLedger.DataSource = dtb;
                 cmbLedger.DisplayMember = "Group_Name";
                 cmbLedger.ValueMember = "Id";
+                cmbLedger.DataSource = dtb;
             }
             catch (Exception ex)
             {

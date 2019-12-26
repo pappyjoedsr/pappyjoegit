@@ -30,9 +30,9 @@ namespace PappyjoeMVC.View
         {
             if (toolStripTextBox1.Text != "")
             {
-                listpatientsearch.DataSource = dtb;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
+                listpatientsearch.DataSource = dtb;
                 if (listpatientsearch.Items.Count == 0)
                 {
                     listpatientsearch.Visible = false;
@@ -54,44 +54,44 @@ namespace PappyjoeMVC.View
             {
                 if (dtcatgry.Rows.Count > 0)
                 {
-                    Cmb_category1.DataSource = dtcatgry;
                     Cmb_category1.DisplayMember = "CategoryName";
                     Cmb_category1.ValueMember = "id";
+                    Cmb_category1.DataSource = dtcatgry;
                     Cmb_category1.SelectedIndex = 0;
                     Cmb_category2.BindingContext = new BindingContext();
-                    Cmb_category2.DataSource = dtcatgry;
                     Cmb_category2.DisplayMember = "CategoryName";
                     Cmb_category2.ValueMember = "id";
+                    Cmb_category2.DataSource = dtcatgry;
                     Cmb_category2.SelectedIndex = 0;
                     Cmb_category3.BindingContext = new BindingContext();
-                    Cmb_category3.DataSource = dtcatgry;
                     Cmb_category3.DisplayMember = "CategoryName";
                     Cmb_category3.ValueMember = "id";
+                    Cmb_category3.DataSource = dtcatgry;
                     Cmb_category3.SelectedIndex = 0;
                     Cmb_category4.BindingContext = new BindingContext();
-                    Cmb_category4.DataSource = dtcatgry;
                     Cmb_category4.DisplayMember = "CategoryName";
                     Cmb_category4.ValueMember = "id";
+                    Cmb_category4.DataSource = dtcatgry;
                     Cmb_category4.SelectedIndex = 0;
                     Cmb_category5.BindingContext = new BindingContext();
-                    Cmb_category5.DataSource = dtcatgry;
                     Cmb_category5.DisplayMember = "CategoryName";
                     Cmb_category5.ValueMember = "id";
+                    Cmb_category5.DataSource = dtcatgry;
                     Cmb_category5.SelectedIndex = 0;
                     Cmb_category6.BindingContext = new BindingContext();
-                    Cmb_category6.DataSource = dtcatgry;
                     Cmb_category6.DisplayMember = "CategoryName";
                     Cmb_category6.ValueMember = "id";
+                    Cmb_category6.DataSource = dtcatgry;
                     Cmb_category6.SelectedIndex = 0;
                     Cmb_category7.BindingContext = new BindingContext();
-                    Cmb_category7.DataSource = dtcatgry;
                     Cmb_category7.DisplayMember = "CategoryName";
                     Cmb_category7.ValueMember = "id";
+                    Cmb_category7.DataSource = dtcatgry;
                     Cmb_category7.SelectedIndex = 0;
                     Cmb_category8.BindingContext = new BindingContext();
-                    Cmb_category8.DataSource = dtcatgry;
                     Cmb_category8.DisplayMember = "CategoryName";
                     Cmb_category8.ValueMember = "id";
+                    Cmb_category8.DataSource = dtcatgry;
                     Cmb_category8.SelectedIndex = 0;
                 }
             }
@@ -191,9 +191,9 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = listpatientsearch.SelectedValue.ToString();
             listpatientsearch.Visible = false;
-            form2.Show();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
+            form2.Show();
         }
         public void pathlength()
         {
@@ -604,7 +604,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
@@ -621,7 +621,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             else
@@ -630,7 +630,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
         private void toolStripButton6_Click(object sender, EventArgs e)
@@ -639,7 +639,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripButton11_Click(object sender, EventArgs e)
         {
@@ -649,6 +649,7 @@ namespace PappyjoeMVC.View
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
         private void toolStripButton12_Click(object sender, EventArgs e)
         {
@@ -657,7 +658,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
@@ -678,7 +679,7 @@ namespace PappyjoeMVC.View
                         form2.doctor_id = doctor_id;
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
-                        form2.ShowDialog(); ;
+                        form2.Show(); ;
                     }
                     else
                     {
@@ -691,7 +692,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             catch (Exception ex)
@@ -724,7 +725,7 @@ namespace PappyjoeMVC.View
                         form2.doctor_id = doctor_id;
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
-                        form2.ShowDialog();
+                        form2.Show();
                     }
                     else
                     {
@@ -737,7 +738,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             catch (Exception ex)
@@ -748,7 +749,7 @@ namespace PappyjoeMVC.View
             var form2 = new PappyjoeMVC.View.Login();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
@@ -758,7 +759,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -769,7 +770,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void linkLabel_id_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -779,7 +780,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripButton13_Click(object sender, EventArgs e)
         {
@@ -787,6 +788,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
         private void btn_Delete2_Click(object sender, EventArgs e)
         {
@@ -806,7 +808,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
@@ -814,7 +816,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void btn_Delete4_Click(object sender, EventArgs e)
         {
@@ -853,7 +855,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void btn_Save_Click(object sender, EventArgs e)
         {
@@ -944,7 +946,7 @@ namespace PappyjoeMVC.View
                     form2.patient_id = patient_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             catch (Exception ex)

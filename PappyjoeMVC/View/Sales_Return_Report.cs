@@ -27,6 +27,7 @@ namespace PappyjoeMVC.View
                 int Doc_num = Convert.ToInt32(dgv_Return.CurrentRow.Cells["RetNumber"].Value.ToString());
                 var form2 = new SalesReturnItemsReport(Doc_num, Inv_num, dptMonthly_From.Value.ToString("yyyy-MM-dd"), dptMonthly_To.Value.ToString("yyyy-MM-dd"));
                 form2.ShowDialog();
+                form2.Dispose();
             }
         }
         private void BTNClose_Click(object sender, EventArgs e)

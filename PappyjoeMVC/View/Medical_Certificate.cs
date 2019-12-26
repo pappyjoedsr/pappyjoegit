@@ -44,9 +44,9 @@ namespace PappyjoeMVC.View
             comboBox5.SelectedIndex = 0;
             comboBox7.SelectedIndex = 0;
             System.Data.DataTable dtdr = mdl.get_all_doctorname();// db.table("select DISTINCT id,doctor_name from tbl_doctor where login_type='doctor' or login_type ='admin' and activate_login='yes' order by doctor_name");
-            cmbDoctor.DataSource = dtdr;
             cmbDoctor.DisplayMember = "doctor_name";
             cmbDoctor.ValueMember = "id";
+            cmbDoctor.DataSource = dtdr;
             panel8.Width = this.Width;
             dateTimePickerTo.Value = DateTime.Today;
             fromdate();

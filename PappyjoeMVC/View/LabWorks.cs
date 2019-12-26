@@ -55,7 +55,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
         private void label44_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void labeltreatment_Click(object sender, EventArgs e)
         {
@@ -74,7 +74,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void labelfinished_Click(object sender, EventArgs e)
         {
@@ -83,7 +83,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void labelprescription_Click(object sender, EventArgs e)
         {
@@ -92,7 +92,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void labelattachment_Click(object sender, EventArgs e)
         {
@@ -102,7 +102,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void labelpayment_Click(object sender, EventArgs e)
         {
@@ -111,7 +111,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void labelledger_Click(object sender, EventArgs e)
         {
@@ -120,7 +120,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void labelprofile_Click(object sender, EventArgs e)
         {
@@ -129,7 +129,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void labelappointment_Click(object sender, EventArgs e)
         {
@@ -138,7 +138,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripButton12_Click(object sender, EventArgs e)
         {
@@ -147,7 +147,7 @@ namespace PappyjoeMVC.View
             frmAddlabwork.patient_id = patient_id;
             frmAddlabwork.Closed += (sender1, args) => this.Close();
             this.Hide();
-            frmAddlabwork.ShowDialog();
+            frmAddlabwork.Show();
         }
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -155,14 +155,14 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void logOuntToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Login();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
@@ -175,7 +175,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void linkLabel_Name_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -185,7 +185,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void linkLabel_id_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -195,7 +195,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton13_Click(object sender, EventArgs e)
@@ -204,6 +204,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
@@ -213,9 +214,9 @@ namespace PappyjoeMVC.View
                 DataTable dtdr = this.ctrlr.Patient_search(toolStripTextBox1.Text);
                 if (toolStripTextBox1.Text != "")
                 {
-                    listpatientsearch.DataSource = dtdr;
                     listpatientsearch.DisplayMember = "patient";
                     listpatientsearch.ValueMember = "id";
+                    listpatientsearch.DataSource = dtdr;
                     if (listpatientsearch.Items.Count == 0)
                     {
                         listpatientsearch.Visible = false;
@@ -243,7 +244,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
-            form2.ShowDialog();
+            form2.Show();
         }
         public void practicedetails(DataTable dtp)
         {
@@ -284,9 +285,7 @@ namespace PappyjoeMVC.View
                 orientation = print.Rows[0][2].ToString();
                 includeheader = print.Rows[0]["include_header"].ToString();
                 includelogo = print.Rows[0]["include_logo"].ToString();
-                workname = label1.Text;
-                DataTable dt = this.ctrlr.printdetails(patient_id, workname, workiddental);
-                printdetails(dt);
+                printdetails();
             }
         }
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
@@ -295,7 +294,7 @@ namespace PappyjoeMVC.View
             form.patient_id = patient_id;
             form.doctor_id = doctor_id;
             form.workid = workiddental;
-            form.ShowDialog();
+            form.Show();
         }
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
@@ -308,7 +307,7 @@ namespace PappyjoeMVC.View
             form.patient_id = patient_id;
             form.doctor_id = doctor_id;
             form.workid = workiddental;
-            form.ShowDialog();
+            form.Show();
         }
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
         {
@@ -318,7 +317,7 @@ namespace PappyjoeMVC.View
             listpatientsearch.Visible = false;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
@@ -337,7 +336,7 @@ namespace PappyjoeMVC.View
                         form2.doctor_id = doctor_id;
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
-                        form2.ShowDialog();
+                        form2.Show();
                     }
                 }
                 else
@@ -346,7 +345,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             catch (Exception ex)
@@ -405,6 +404,7 @@ namespace PappyjoeMVC.View
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
@@ -412,7 +412,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
@@ -431,7 +431,7 @@ namespace PappyjoeMVC.View
                         form2.doctor_id = doctor_id;
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
-                        form2.ShowDialog();
+                        form2.Show();
                     }
                 }
                 else
@@ -440,7 +440,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             catch (Exception ex)
@@ -453,7 +453,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
@@ -461,7 +461,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         public void seltype(string type)
         {
@@ -505,7 +505,7 @@ namespace PappyjoeMVC.View
                         string workid = dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[2].Value.ToString();
                         form2.workid = workid;
                         form2.flag = "1";
-                        form2.ShowDialog();
+                        form2.Show();
                     }
                     else if (dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[5].Value.ToString() == "Dental")
                     {
@@ -518,7 +518,7 @@ namespace PappyjoeMVC.View
                             string workid = dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[2].Value.ToString();
                             form2.workid = workid;
                             form2.flag = "1";
-                            form2.ShowDialog();
+                            form2.Show();
                         }
                         else
                         {
@@ -529,7 +529,7 @@ namespace PappyjoeMVC.View
                 if (e.ColumnIndex == 1 && e.RowIndex > -1)
                 {
                     k = e.RowIndex;
-                    label1.Text = dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    //label1.Text = dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[4].Value.ToString();
                     string type = this.ctrlr.seltype(patient_id, dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[2].Value.ToString());
                     seltype(type);
                 }
@@ -544,7 +544,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void labelclinical_Click(object sender, EventArgs e)
         {
@@ -553,7 +553,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
@@ -561,7 +561,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -570,9 +570,9 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
-        public void printdetails(DataTable tbmain)
+        public void printdetails()
         {
             try
             {
@@ -630,19 +630,19 @@ namespace PappyjoeMVC.View
                             {
                                 sWrite.WriteLine("<table align='center' style='width:900px;border: 1px ;border-collapse: collapse;'>");
                                 sWrite.WriteLine("<tr>");
-                                sWrite.WriteLine("<td width='100' height='75px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "' width='77' height='78' ></td>  ");
-                                sWrite.WriteLine("<td width='588' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5><b>&nbsp;" + header1 + "</b></font></td></tr>");
-                                sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;" + header2 + "</b></font></td></tr>");
-                                sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2><b>&nbsp;" + header3 + "</b></font></td></tr>");
-                                sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
+                                sWrite.WriteLine("<td width='30px' height='50px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "'  style='width:70px;height:70px;'></td>  ");
+                                sWrite.WriteLine("<td width='870px' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=4><b>&nbsp;" + header1 + " </font><br><FONT  COLOR=black  face='Segoe UI' SIZE=2>&nbsp;" + header2 + "<br>&nbsp;" + header3 + "  </b></font></td>");
+                                //sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;" + header2 + "</b></font></td></tr>");
+                                //sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2><b>&nbsp;" + header3 + "</b></font></td></tr>");
+                                sWrite.WriteLine("</tr>");
                                 sWrite.WriteLine("</table>");
                             }
                             else
                             {
                                 sWrite.WriteLine("<table align='center' style='width:900px;border: 1px ;border-collapse: collapse;'>");
                                 sWrite.WriteLine("<tr>");
-                                sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5><b>&nbsp;" + header1 + "</b></font></td></tr>");
-                                sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;" + header2 + "</b></font></td></tr>");
+                                sWrite.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5><b>&nbsp;" + header1 + "</b></font></td></tr>");
+                                sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;" + header2 + "</b></font></td></tr>");
                                 sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2><b>&nbsp;" + header3 + "</b></font></td></tr>");
                                 sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
                                 sWrite.WriteLine("</table>");
@@ -652,8 +652,8 @@ namespace PappyjoeMVC.View
                         {
                             sWrite.WriteLine("<table align='center' style='width:900px;border: 1px ;border-collapse: collapse;'>");
                             sWrite.WriteLine("<tr>");
-                            sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5><b>&nbsp;" + header1 + "</b></font></td></tr>");
-                            sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;" + header2 + "</b></font></td></tr>");
+                            sWrite.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5><b>&nbsp;" + header1 + "</b></font></td></tr>");
+                            sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;" + header2 + "</b></font></td></tr>");
                             sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2><b>&nbsp;" + header3 + "</b></font></td></tr>");
                             sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
                             sWrite.WriteLine("</table>");
@@ -663,8 +663,8 @@ namespace PappyjoeMVC.View
                     {
                         sWrite.WriteLine("<table align='center' style='width:900px;border: 1px ;border-collapse: collapse;'>");
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5><b>&nbsp;" + header1 + "</b></font></td></tr>");
-                        sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;" + header2 + "</b></font></td></tr>");
+                        sWrite.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5><b>&nbsp;" + header1 + "</b></font></td></tr>");
+                        sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;" + header2 + "</b></font></td></tr>");
                         sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2><b>&nbsp;" + header3 + "</b></font></td></tr>");
                         sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
                         sWrite.WriteLine("</table>");
@@ -674,12 +674,15 @@ namespace PappyjoeMVC.View
                 {
                     sWrite.WriteLine("<table align='center' style='width:900px;border: 1px ;border-collapse: collapse;'>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5></font></td></tr>");
-                    sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3></font></td></tr>");
+                    sWrite.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5></font></td></tr>");
+                    sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3></font></td></tr>");
                     sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td></tr>");
                     sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
                     sWrite.WriteLine("</table>");
                 }
+                sWrite.WriteLine("<table align='center' style='width:900px;border: 1px ;border-collapse: collapse;'>");
+                sWrite.WriteLine("<tr><td align='left'  ><hr/></td></tr>");
+                sWrite.WriteLine("</table>");
                 int Dexist = 0;
                 string sexage = "";
                 string address = "";
@@ -776,48 +779,60 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("</table>");
                 }//
+                DataTable tbmain = this.ctrlr.tbmain(patient_id, workiddental);
                     for (int i = 0; i < tbmain.Rows.Count; i++)
                     {
-                        if (workname == tbmain.Rows[i]["Main_test"].ToString())
-                        {
-                            sWrite.WriteLine("<table  align='center' width=850px>");
-                            sWrite.WriteLine("<tr>");
-                            sWrite.WriteLine("<td align='center' colspan='4'><b><Font COLOR=black FACE='Segoe UI' SIZE=4><br><u>" + tbmain.Rows[i][1].ToString() + "</u><br></font></b></td>");
-                            sWrite.WriteLine("</tr>");
-                            sWrite.WriteLine("</table>");
-                            sWrite.WriteLine("<br>");
-
-                        sWrite.WriteLine("<table align='center'style='width:900px;border: 1px ;border-collapse: collapse;' >");
-                        sWrite.WriteLine("<tr >");
+                    DataTable tbshade = this.ctrlr.tbshade(patient_id, tbmain.Rows[i][0].ToString(), workiddental);
+                    sWrite.WriteLine("<table  align='center' width=900px>");
+                    sWrite.WriteLine("<tr>");
+                    sWrite.WriteLine("<td align='left' colspan='4' ><b><Font COLOR=black FACE='Segoe UI' SIZE=4><u>" + tbmain.Rows[i][1].ToString() + "</u></font></b></td>");
+                    sWrite.WriteLine("</tr>");
+                    sWrite.WriteLine("</table>");
+                    sWrite.WriteLine("<table align='center'style='width:900px;border: 1px ;border-collapse: collapse;' >");
+                    sWrite.WriteLine("<tr >");
                         sWrite.WriteLine("<td align='left' width='200px' height='30'><FONT COLOR=black FACE=' Segoe UI' SIZE=3><b>&nbsp;TEST</b></font></td>");
                         sWrite.WriteLine("<td align='left' width='200px' ><FONT COLOR=black FACE=' Segoe UI' SIZE=3><b>&nbsp;RESULT</b></font></td>");
                         sWrite.WriteLine("<td align='left' width='200px' ><FONT COLOR=black FACE=' Segoe UI' SIZE=3><b>&nbsp;UNITS</b> </font></td>");
                         sWrite.WriteLine("<td align='left' width='300px' colspan='3' ><FONT COLOR=black FACE=' Segoe UI' SIZE=3><b>&nbsp;NORMAL VALUE</b></font></td>");
                         sWrite.WriteLine("</tr>");
-
                         sWrite.WriteLine("<table align='center' style='width:900px;border: 1px ;border-collapse: collapse;' >");
-                            sWrite.WriteLine("<tr>");
-                            sWrite.WriteLine("<td align='left' width='200px' height='30'><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + tbmain.Rows[i]["Main_test"].ToString() + " </font></b></td>");
-                            sWrite.WriteLine("<td align='left' width='200px'><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + tbmain.Rows[i]["results"].ToString() + " </font></b></td>");
-                            sWrite.WriteLine("<td align='left' width='200px'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + tbmain.Rows[i]["Units"].ToString() + " </font></b></td>");
-                            if (tbmain.Rows[i]["NormalValueM"].ToString() != "")
+                    for (int j = 0; j < tbshade.Rows.Count; j++)
+                    {
+                        sWrite.WriteLine("<tr>");
+                        if (tbmain.Rows[i][1].ToString() == tbshade.Rows[j][0].ToString())
+                        {
+                            sWrite.WriteLine("<td align='left' width='200px' height='30'><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + tbshade.Rows[j][1].ToString() + " </font></b></td>");
+                            sWrite.WriteLine("<td align='left' width='200px'><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + tbshade.Rows[j][2].ToString() + " </font></b></td>");
+                            sWrite.WriteLine("<td align='left' width='200px'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + tbshade.Rows[j][5].ToString() + " </font></b></td>");
+                            if (tbshade.Rows[j][3].ToString() != "")
                             {
-                                sWrite.WriteLine("<td align='left' width='300px' colspan='3' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; [NV: M(" + tbmain.Rows[i]["NormalValueM"].ToString() + ") F('" + tbmain.Rows[i]["NormalValueF"].ToString() + "')]</font></b></td>");
+                                sWrite.WriteLine("<td align='left' width='300px' colspan='3' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp; [NV: M(" + tbshade.Rows[j][3].ToString() + ") F('" + tbshade.Rows[j][4].ToString() + "')]</font></b></td>");
                             }
                             else
                             {
                                 sWrite.WriteLine("<td align='left' valign='top'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2> </font></b></td>");
                             }
-                            sWrite.WriteLine("</tr>");
-                            sWrite.WriteLine("</table>");
-
                         }
                     }
-                    sWrite.WriteLine("</body>");
-                    sWrite.WriteLine("</html>");
-                    sWrite.WriteLine("<script>window.print();</script>");
-                    sWrite.Close();
-                    System.Diagnostics.Process.Start(Apppath + "\\RESULT.html");
+                }
+                sWrite.WriteLine("<tr><td align='left' colspan=8><hr/></td></tr>");
+                sWrite.WriteLine("</table>");
+                sWrite.WriteLine("<table align='center'   style='width:900px;border: 1px ;border-collapse: collapse;' >");
+                sWrite.WriteLine("<tr>");
+                sWrite.WriteLine("<td align='center' height='22'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + strfooter1 + "</font></td>");
+                sWrite.WriteLine("</tr>");
+                sWrite.WriteLine("<tr>");
+                sWrite.WriteLine("<td align='center' height='22'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + strfooter2 + "</font></td>");
+                sWrite.WriteLine("</tr>");
+                sWrite.WriteLine("<tr>");
+                sWrite.WriteLine("<td align='center' height='22'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + strfooter3 + "</font></td>");
+                sWrite.WriteLine("</tr>");
+                sWrite.WriteLine("</table>");
+                sWrite.WriteLine("<script>window.print();</script>");
+                sWrite.WriteLine("</body >");
+                sWrite.WriteLine("</html>");
+                sWrite.Close();
+                System.Diagnostics.Process.Start(Apppath + "\\RESULT.html");
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
@@ -867,7 +882,6 @@ namespace PappyjoeMVC.View
                 foreach (DataGridViewColumn cl in dataGridView1_treatment_paln.Columns)
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;
-                    //cl.Width = 120;
                 }
             }
             catch (Exception ex)

@@ -207,7 +207,6 @@ namespace PappyjoeMVC.View
                 {
                         treat = int.Parse(treatment);
                 }
-
                 EHR_Clinical = treat.ToString();
                 //Diagnosis
                 if (dgv_Diagnosis.Rows.Count > 0)
@@ -221,7 +220,6 @@ namespace PappyjoeMVC.View
                         }
                     }
                 }
-
                 // Note
                 if (dgv_notes.Rows.Count > 0)
                 {
@@ -281,7 +279,6 @@ namespace PappyjoeMVC.View
                     this.cntrl.inssms(patient_id, text);
                 }
             }
-
             if (dgv_treatment.Rows.Count > 0)
             {
                 decimal totalcost2 = 0;
@@ -391,7 +388,6 @@ namespace PappyjoeMVC.View
             dgv_notes.Rows[0].Cells[2].Value = PappyjoeMVC.Properties.Resources.deleteicon;
             dgv_Complaints.Rows[0].Cells[2].Value = PappyjoeMVC.Properties.Resources.deleteicon;
             dgv_Diagnosis.Rows[0].Cells[2].Value = PappyjoeMVC.Properties.Resources.deleteicon;
-
             if (EHR_status == "YES")
             {
                 if (this.Appointment_list != null)
@@ -415,7 +411,6 @@ namespace PappyjoeMVC.View
             if (txtPatientID.Text == "" && txt_Ptname.Text != "" && txt_mob.Text != "")
             {
                 string gender = "", pid="";
-
                 DataTable auto = this.cntrl.data_from_automaticid();
                 if (auto.Rows.Count > 0)
                 {
@@ -426,7 +421,6 @@ namespace PappyjoeMVC.View
                         txtPatientID.Text = pid;
                     }
                 }
-
                 if (radMale.Checked == true)
                 {
                     gender = "Male";
@@ -527,6 +521,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new SimpleAppointment_Template(patient_id);
                 form2.ShowDialog();
+                form2.Dispose();
             }
         }
 
@@ -1283,11 +1278,6 @@ namespace PappyjoeMVC.View
             this.Close();
         }
 
-        private void panl_Treatment_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void txt_Discount_Click(object sender, EventArgs e)
         {
             if (txt_Discount.Text == "0")
@@ -1406,9 +1396,9 @@ namespace PappyjoeMVC.View
                 DataTable dt_doctor = this.cntrl.get_all_doctorname();
                 if (dt_doctor.Rows.Count > 0)
                 {
-                    Cmb_Doctor.DataSource = dt_doctor;
                     Cmb_Doctor.ValueMember = "id";
                     Cmb_Doctor.DisplayMember = "doctor_name";
+                    Cmb_Doctor.DataSource = dt_doctor;
                 }
                 DataTable dt_complaint = new DataTable();
                 dt_complaint = this.cntrl.show_compl();
@@ -1422,9 +1412,9 @@ namespace PappyjoeMVC.View
                 disabledAllContrls();
                 flag = true;
                 DataTable dt = this.cntrl.Fill_unit_combo();
-                strengthcombo.DataSource = dt;
                 strengthcombo.DisplayMember = "name";
                 strengthcombo.ValueMember = "id";
+                strengthcombo.DataSource = dt;
                 if (strengthcombo.Items.Count > 1)
                 {
                     strengthcombo.SelectedIndex = 0;
@@ -1436,9 +1426,9 @@ namespace PappyjoeMVC.View
                 DataTable dt5 = this.cntrl.Fill_LoadTax();
                 if (dt5.Rows.Count > 0)
                 {
-                    Cmb_tax.DataSource = dt5;
                     Cmb_tax.DisplayMember = "tax_name";
                     Cmb_tax.ValueMember = "id";
+                    Cmb_tax.DataSource = dt5;
                     Cmb_tax.Text = "";
                 }
                 dgv_prescrptn.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8, FontStyle.Regular);
@@ -1474,8 +1464,6 @@ namespace PappyjoeMVC.View
                 {
                     text_billno.ReadOnly = false;
                 }
-
-
                 DataTable dtb = this.cntrl.get_pt_details(patient_id);
                 if (dtb.Rows.Count > 0)
                 {
@@ -1503,8 +1491,6 @@ namespace PappyjoeMVC.View
                     }
                     EnabledAllContrls();
                 }
-
-
                 DataTable App_dtb = this.cntrl.get_EHR_details(strApp_id);
                 if (App_dtb.Rows.Count > 0)
                 {
@@ -1514,7 +1500,6 @@ namespace PappyjoeMVC.View
                     groupBox6.Enabled = false;
                     groupBox7.Enabled = false;
                     groupBox8.Enabled = false;
-
                     if (App_dtb.Rows[0]["EHR_clinicalfindings"].ToString() != "")
                     {
                         DataTable Dt_Complaint = this.cntrl.getComplaints(App_dtb.Rows[0]["EHR_clinicalfindings"].ToString());
@@ -1568,7 +1553,6 @@ namespace PappyjoeMVC.View
                             for (int i = 0; i < Dt_Treatment.Rows.Count; i++)
                             {
                                 dgv_treatment.Rows.Add(Dt_Treatment.Rows[i]["procedure_id"], Dt_Treatment.Rows[i]["procedure_name"], Dt_Treatment.Rows[i]["quantity"], Dt_Treatment.Rows[i]["cost"], Dt_Treatment.Rows[i]["discount_type"], Dt_Treatment.Rows[i]["discount"], Dt_Treatment.Rows[i]["discount_inrs"], 0, 0, Dt_Treatment.Rows[i]["total"], PappyjoeMVC.Properties.Resources.deleteicon);
-
                             }
                         }
                         for (int i = 0; i < dgv_treatment.Rows.Count; i++)
@@ -1577,10 +1561,9 @@ namespace PappyjoeMVC.View
                             Grand_Discount = Grand_Discount + Convert.ToDecimal(dgv_treatment.Rows[i].Cells["_Dis_inrs"].Value.ToString());
                             Total_tax = Total_tax + Convert.ToDecimal(dgv_treatment.Rows[i].Cells["Total_tax"].Value.ToString());
                         }
-                        Lab_GrandTotal.Text = String.Format("{0:C0}", grandTotal);//.ToString("#0.00");
+                        Lab_GrandTotal.Text = String.Format("{0:C0}", grandTotal);
                         Lab_DisInrs.Text = String.Format("{0:C0}", Grand_Discount);
                         Lab_TotalTax.Text = String.Format("{0:C0}", Total_tax);
-
                         string Dt_Review = this.cntrl.get_review_date(App_dtb.Rows[0]["EHR_treatment"].ToString());
                         if (Dt_Review!="0")
                         {
@@ -1588,13 +1571,10 @@ namespace PappyjoeMVC.View
                             dateTimePicker1.Value = Convert.ToDateTime(Dt_Review);
                         }
                     } // Treatment End
-
                     if (App_dtb.Rows[0]["EHR_invoice"].ToString() != "")
                     {
                         EHR_invoice = App_dtb.Rows[0]["EHR_invoice"].ToString();
                     }
-
-
                     if (App_dtb.Rows[0]["EHR_prescription"].ToString() != "")
                     {
                         EHR_Pre = App_dtb.Rows[0]["EHR_prescription"].ToString();
@@ -1607,7 +1587,6 @@ namespace PappyjoeMVC.View
                                 dgv_prescrptn.Rows.Add(Dt_Prescription.Rows[i]["drug_id"], Dt_Prescription.Rows[i]["drug_name"], Dt_Prescription.Rows[i]["strength_gr"] + "" + Dt_Prescription.Rows[i]["strength"], Dt_Prescription.Rows[i]["strength_gr"], Dt_Prescription.Rows[i]["duration_unit"] + "" + Dt_Prescription.Rows[i]["duration_period"], Dt_Prescription.Rows[i]["duration_period"], Dt_Prescription.Rows[i]["morning"], Dt_Prescription.Rows[i]["noon"], Dt_Prescription.Rows[i]["night"], Dt_Prescription.Rows[i]["food"], Dt_Prescription.Rows[i]["add_instruction"], Dt_Prescription.Rows[i]["drug_type"], PappyjoeMVC.Properties.Resources.deleteicon);
                             }
                         }
-
                     }
                 }
                 else
@@ -1650,7 +1629,6 @@ namespace PappyjoeMVC.View
                     clinic = clinicn.Replace("'", "¤");
                     contact_no = clinicname.Rows[0][2].ToString();
                 }
-
                 System.Data.DataTable sms = this.cntrl.smsdetails();
                 if (sms.Rows.Count > 0)
                 {

@@ -39,9 +39,9 @@ namespace PappyjoeMVC.View
                 DataTable dtb = this.cntrl.dt_grp();
                 if (dtb.Rows.Count > 0)
                 {
-                    cmb_group.DataSource = dtb;
                     cmb_group.ValueMember = "id";
                     cmb_group.DisplayMember = "name";
+                    cmb_group.DataSource = dtb;
                     cmb_group.SelectedIndex = 0;
                 }
             }
@@ -502,7 +502,7 @@ namespace PappyjoeMVC.View
                             sWrite2.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Patient Name</b></font></td>");
                             sWrite2.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Mobile No</b></font></td>");
                             sWrite2.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Email</b></font></td>");
-                            sWrite2.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Doctor></b></font></td>");
+                            sWrite2.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Doctor</b></font></td>");
                             sWrite2.WriteLine("    <td align='left' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Group</b></font></td>");
                             sWrite2.WriteLine("</tr>");
                             int k = 1;

@@ -117,23 +117,6 @@ namespace PappyjoeMVC.View
                             logo_name = "";
                         }
                     }
-                    //if (path != "")
-                    //{
-                    //    //if (File.Exists(db.server() + path))
-                    //    //{
-                    //    //    logo_name = "";
-                    //    //    logo_name = path;
-                    //    //    string Apppath = System.IO.Directory.GetCurrentDirectory();
-                    //    //    if (!File.Exists(Apppath + "\\" + logo_name))
-                    //    //    {
-                    //    //        System.IO.File.Copy(db.server() + path, Apppath + "\\" + logo_name);
-                    //    //    }
-                    //    //}
-                    //    //else
-                    //    //{
-                    //    //    logo_name = "";
-                    //    //}
-                    //}
                 }
                 listpatientsearch.Hide();
                 System.Data.DataTable pat = this.cntrl.Get_pat_iDName(patient_id);
@@ -530,7 +513,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
@@ -575,7 +558,7 @@ namespace PappyjoeMVC.View
                         form2.patient_id = patient_id;
                         form2.Closed += (sender1, args) => this.Close();
                         this.Hide();
-                        form2.ShowDialog();
+                        form2.Show();
                     }
                 }
             }
@@ -589,7 +572,7 @@ namespace PappyjoeMVC.View
                     form2.patient_id = patient_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
         }
@@ -1051,8 +1034,6 @@ namespace PappyjoeMVC.View
                                 sWrite.WriteLine("<tr>");
                                 sWrite.WriteLine("<td width='30px' height='50px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "'  style='width:70px;height:70px;'></td>  ");
                                 sWrite.WriteLine("<td width='870px' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=4><b>&nbsp;" + header1 + " </font><br><FONT  COLOR=black  face='Segoe UI' SIZE=2>&nbsp;" + header2 + "<br>&nbsp;" + header3 + "  </b></font></td>");
-                                //sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;&nbsp;" + header2 + "</b></font></td></tr>");
-                                //sWrite.WriteLine("<tr><td align='left' height='25px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2><b>&nbsp;&nbsp;" + header3 + "</b></font></td></tr>");
                                 sWrite.WriteLine("</tr>");
                                 sWrite.WriteLine("</table>");
 
@@ -1229,7 +1210,6 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("<td align='center' width='270px' colspan='3' ><FONT COLOR=black FACE=' Segoe UI' SIZE=3><b>&nbsp;Frequency</b></font></td>");
                 sWrite.WriteLine("<td align='left' height='7'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1></font></td>");
                 sWrite.WriteLine("<td align='left' width='280px'><FONT COLOR=black FACE=' Segoe UI' SIZE=3><b>&nbsp;Instructions</b></font></td>");
-                //sWrite.WriteLine("<td align='center' width='20px'><FONT COLOR=black FACE=' Segoe UI' SIZE=3><b>&nbsp;</b></font></td>");
                 sWrite.WriteLine("</tr>");
                 System.Data.DataTable dt_prescription = db.table("SELECT drug_name,strength,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,strength_gr,status FROM tbl_prescription WHERE pres_id='" + prescription_id + "' ORDER BY id");
                 if (dt_prescription.Rows.Count > 0)
@@ -1263,19 +1243,10 @@ namespace PappyjoeMVC.View
                             sWrite.WriteLine("<td align='center' height='7' valign='bottom'  width='50px'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1>&nbsp;Morning </font></td>");
                             sWrite.WriteLine("<td align='center' height='7' valign='bottom' width='50px'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1>&nbsp;Noon </font></td>");
                             sWrite.WriteLine("<td align='center' height='7' valign='bottom'  width='50px'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1>&nbsp;Night </font></td>");
-                            //sWrite.WriteLine("<td align='left' height='7'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1></font></td>");
-                            //sWrite.WriteLine("<td align='left' height='7'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1></font></td>");
                             sWrite.WriteLine("</tr>");
                         }
                         sWrite.WriteLine("<tr>");
-                        //if (dt_prescription.Rows[k]["add_instruction"].ToString() != "")
-                        //{
-                        //    sWrite.WriteLine("<td align='left' height='20' valign='top'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + Convert.ToString(k + 1) + " </font></td>");
-                        //}
-                        //else
-                        //{
-                            sWrite.WriteLine("<td align='left' height='30' valign='top'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + Convert.ToString(k + 1) + " </font></td>");
-                        //}
+                        sWrite.WriteLine("<td align='left' height='30' valign='top'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + Convert.ToString(k + 1) + " </font></td>");
                         sWrite.WriteLine("<td align='left' valign='top'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + dt_prescription.Rows[k]["drug_type"].ToString() + " " + dt_prescription.Rows[k]["drug_name"].ToString() + " </font></td>");
                         sWrite.WriteLine("<td align='center' valign='top' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + dt_prescription.Rows[k]["strength"].ToString() + " " + dt_prescription.Rows[k]["strength_gr"].ToString() + " </font></td>");
                         sWrite.WriteLine("<td align='center' valign='top' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + morning + " </font></td>");
@@ -1292,17 +1263,8 @@ namespace PappyjoeMVC.View
                         if (dt_prescription.Rows[k]["add_instruction"].ToString() != "")
                         {
                             sWrite.WriteLine("<td align='left' valign='top'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + dt_prescription.Rows[k]["add_instruction"].ToString() + " </font></td>");
-
-                            //sWrite.WriteLine("<td align='left'  valign='top'   ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1>" + dt_prescription.Rows[k]["add_instruction"].ToString() + " </font></td>");
                         }
                         sWrite.WriteLine("</tr>");
-                        //if (dt_prescription.Rows[k]["add_instruction"].ToString() != "")
-                        //{
-                        //    sWrite.WriteLine("<tr>");
-                        //    sWrite.WriteLine("<td ></td>");
-                        //    sWrite.WriteLine("<td align='left' height='20' colspan='7' valign='top' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1.5>&nbsp;" + dt_prescription.Rows[k]["add_instruction"].ToString() + " </font></td>");
-                        //    sWrite.WriteLine("</tr>");
-                        //}
                     } // Presription Sub(Drug Details) Record Count
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td align='left' height='30' colspan='8'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + strNote.ToString() + " </font></td>"); 
@@ -1336,11 +1298,19 @@ namespace PappyjoeMVC.View
 
             }
         }
+        public DataTable dt_shortname = new DataTable();
 
+        public void fill_presctn_shortname(string type)
+        {
+            if(type=="capsule")
+            {
+
+            }
+        }
         private void sentSMSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int p = 0;
-            string clinic = "";
+            string clinic = "",cname="";
             string contact_no = "";
             string text = "";
             string smsName = "", smsPass = "";
@@ -1354,7 +1324,8 @@ namespace PappyjoeMVC.View
             System.Data.DataTable clinicname = this.cntrl.Get_companynameNo();
             if (clinicname.Rows.Count > 0)
             {
-                clinic = clinicname.Rows[0][0].ToString();
+                cname = clinicname.Rows[0][0].ToString();
+                clinic = cname.Replace("¤", "'");
                 contact_no = clinicname.Rows[0][1].ToString();
             }
             SMS_model a = new SMS_model();
@@ -1368,7 +1339,7 @@ namespace PappyjoeMVC.View
                 {
                     while (p < dt_prescription.Rows.Count)
                     {
-                        string morning = "";
+                        string morning = "",shortname="",upper_string="";
                         string noon = "";
                         string night = "";
                         string a1 = dt_prescription.Rows[p]["morning"].ToString();
@@ -1386,15 +1357,48 @@ namespace PappyjoeMVC.View
                         int right3 = int.Parse(b3[1]);
                         night = Convert.ToString(int.Parse(b3[0]));
                         if (right3 != 0) { night = night + "." + Convert.ToString(int.Parse(b3[1])); }
-                        strPriscription = strPriscription + " [" + dt_prescription.Rows[p]["drug_type"].ToString() + "]" + dt_prescription.Rows[p]["drug_name"].ToString() + "" + dt_prescription.Rows[p]["strength"].ToString() + " " + dt_prescription.Rows[p]["strength_gr"].ToString() + "/Duration " + morning + "-" + noon + "-" + night + "/ for " + dt_prescription.Rows[p]["duration_unit"].ToString() + " " + dt_prescription.Rows[p]["duration_period"].ToString() + "-" + dt_prescription.Rows[p]["add_instruction"].ToString() + "_____________________________";
+                        upper_string = dt_prescription.Rows[p]["drug_type"].ToString().ToUpper();
+                        if (upper_string == "CAPSULE")
+                        {
+                            shortname = "Cap";
+                        }
+                        else if(upper_string == "SYRUP")
+                        {
+                            shortname = "SYR";
+                        }
+                        else if(upper_string == "TABLET")
+                        {
+                            shortname = "tab";
+                        }
+                        else if (upper_string == "INJECTION")
+                        {
+                            shortname = "inj";
+                        }
+                        else if (upper_string == "LOTION")
+                        {
+                            shortname = "lot";
+                        }
+                        else if (upper_string == "OINTMENT")
+                        {
+                            shortname = "ung";
+                        }
+                        else if (upper_string == "CREAM")
+                        {
+                            shortname = "crm";
+                        }
+                        else if (upper_string == "POWDER")
+                        {
+                            shortname = "pulv";
+                        }
+                        strPriscription = strPriscription + " [" + shortname + "]" + dt_prescription.Rows[p]["drug_name"].ToString() + "" + dt_prescription.Rows[p]["strength"].ToString() + " " + dt_prescription.Rows[p]["strength_gr"].ToString() + ", Duration: " + morning + "-" + noon + "-" + night + " for " + dt_prescription.Rows[p]["duration_unit"].ToString() + " " + dt_prescription.Rows[p]["duration_period"].ToString() + "-" + dt_prescription.Rows[p]["add_instruction"].ToString() + "\n\n";
                         p++;
                     }
                     //end prescription msg
-                    text = "Dear " + pat.Rows[0]["pt_name"].ToString() + ", Prescription. Drug Name:" + strPriscription + "Regards With " + clinic + "," + contact_no;
+                    text = "Dear " + pat.Rows[0]["pt_name"].ToString() + ","+"\n"+ "Prescription:"+"\n" +"\n"+"Drug Name:" + strPriscription + "Regards With " + clinic + "," + contact_no;
                     string number = "91" + pat.Rows[0]["primary_mobile_number"].ToString();
                     a.SendSMS(smsName, smsPass, number, text);
                     this.cntrl.savecommunication(patient_id, text);
-                    MessageBox.Show("The Prescription Details Containing  Message Sent Successfully to " + pat.Rows[0]["pt_name"].ToString());
+                    MessageBox.Show("The Prescription Details Containing  Message Sent Successfully to " + pat.Rows[0]["pt_name"].ToString(),"Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -1406,7 +1410,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -1415,7 +1419,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton12_Click(object sender, EventArgs e)
@@ -1424,7 +1428,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton13_Click(object sender, EventArgs e)
@@ -1434,7 +1438,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id; ;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton15_Click(object sender, EventArgs e)
@@ -1443,7 +1447,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton16_Click(object sender, EventArgs e)
@@ -1451,6 +1455,7 @@ namespace PappyjoeMVC.View
             var form2 = new Expense();
             form2.doctor_id = doctor_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         private void toolStripButton17_Click(object sender, EventArgs e)
@@ -1461,7 +1466,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
         private void labelappointment_Click(object sender, EventArgs e)
@@ -1471,7 +1476,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
         private void LabelVitalSigns_Click(object sender, EventArgs e)
         {
@@ -1480,7 +1485,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labeltreatment_Click(object sender, EventArgs e)
@@ -1490,7 +1495,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labelfinished_Click(object sender, EventArgs e)
@@ -1500,7 +1505,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labelattachment_Click(object sender, EventArgs e)
@@ -1510,7 +1515,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labelinvoice_Click(object sender, EventArgs e)
@@ -1520,7 +1525,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labelpayment_Click(object sender, EventArgs e)
@@ -1530,7 +1535,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labelledger_Click(object sender, EventArgs e)
@@ -1540,7 +1545,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labelprescription_Click(object sender, EventArgs e)
@@ -1548,9 +1553,9 @@ namespace PappyjoeMVC.View
             var form2 = new Prescription_Show();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            form2.Closed += (sender1, args) => this.Close();
+            form2.Closed += (sender1, args) => this.Close(); 
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labelclinical_Click(object sender, EventArgs e)
@@ -1560,7 +1565,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton19_Click(object sender, EventArgs e)
@@ -1579,7 +1584,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             else
@@ -1588,7 +1593,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -1604,7 +1609,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
                 else
                 {
@@ -1617,7 +1622,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -1631,9 +1636,9 @@ namespace PappyjoeMVC.View
             if (toolStripTextBox2.Text != "")
             {
                 DataTable dtdr = this.cntrl.Patient_search(toolStripTextBox2.Text);
-                listpatientsearch.DataSource = dtdr;
                 listpatientsearch.DisplayMember = "patient";
                 listpatientsearch.ValueMember = "id";
+                listpatientsearch.DataSource = dtdr;
                 if (listpatientsearch.Items.Count == 0)
                 {
                     listpatientsearch.Visible = false;
@@ -1656,7 +1661,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -1666,7 +1671,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void labl_Lab_Click(object sender, EventArgs e)
@@ -1676,7 +1681,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void linkLabel_Name_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1686,7 +1691,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void linkLabel_id_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1696,7 +1701,7 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton14_Click(object sender, EventArgs e)
@@ -1714,7 +1719,7 @@ namespace PappyjoeMVC.View
                     form2.doctor_id = doctor_id;
                     form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
-                    form2.ShowDialog();
+                    form2.Show();
                 }
             }
             else
@@ -1723,7 +1728,7 @@ namespace PappyjoeMVC.View
                 form2.doctor_id = doctor_id;
                 form2.Closed += (sender1, args) => this.Close();
                 this.Hide();
-                form2.ShowDialog();
+                form2.Show();
             }
         }
 
@@ -1732,7 +1737,7 @@ namespace PappyjoeMVC.View
             var form2 = new PappyjoeMVC.View.Login();
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
-            form2.ShowDialog();
+            form2.Show();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -1741,6 +1746,7 @@ namespace PappyjoeMVC.View
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
             form2.ShowDialog();
+            form2.Dispose();
         }
 
         public void SetController(Prescription_Show_controller controller)

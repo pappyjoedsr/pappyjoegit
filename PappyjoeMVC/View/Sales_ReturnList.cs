@@ -20,6 +20,7 @@ namespace PappyjoeMVC.View
 
         private void Sales_ReturnList_Load(object sender, EventArgs e)
         {
+
             Lab_Msg.Visible = false;
             DateTime date = DateTime.Now.Date;
             DataTable dtb = new DataTable();
@@ -84,6 +85,7 @@ namespace PappyjoeMVC.View
                     {
                         var form2 = new Sales_Return(Ret_no);
                         form2.ShowDialog();
+                        form2.Dispose();
                     }
                 }
             }

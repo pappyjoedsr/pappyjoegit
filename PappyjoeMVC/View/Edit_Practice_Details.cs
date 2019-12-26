@@ -174,9 +174,9 @@ namespace PappyjoeMVC.View
         {
             if (dtb.Rows.Count > 0)
             {
-                cmbstate.DataSource = dtb;
                 cmbstate.DisplayMember = "state";
                 cmbstate.ValueMember = "id";
+                cmbstate.DataSource = dtb;
                 cmbstate.SelectedValue = selectedValue1;
             }
             
@@ -185,9 +185,9 @@ namespace PappyjoeMVC.View
         {
             if (dtb_country.Rows.Count > 0)
             {
-                Cmb_Country.DataSource = dtb_country;
                 Cmb_Country.DisplayMember = "country";
                 Cmb_Country.ValueMember = "id";
+                Cmb_Country.DataSource = dtb_country;
                 Cmb_Country.SelectedValue = selectedValue1;
             }
         }

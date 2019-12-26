@@ -482,5 +482,10 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void dataGridViewappoinmentpatientgroup_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

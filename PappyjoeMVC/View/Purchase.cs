@@ -474,9 +474,9 @@ namespace PappyjoeMVC.View
 
         public void Load_Suplier(DataTable dt)
         {
-            lstbox_Supplier.DataSource = dt;
             lstbox_Supplier.DisplayMember = "Supplier_Name";
             lstbox_Supplier.ValueMember = "Supplier_Code";
+            lstbox_Supplier.DataSource = dt;
             lstbox_Supplier.Show();
         }
 

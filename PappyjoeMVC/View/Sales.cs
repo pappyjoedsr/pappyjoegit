@@ -68,6 +68,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new ItemListForSales(FormName, txt_ItemCode.Text);
                 form2.ShowDialog();
+                form2.Dispose();
                 if (ItemCode_From_List != "")
                 {
                     if (btn_AddtoGrid.Text == "Add")
@@ -91,6 +92,7 @@ namespace PappyjoeMVC.View
             {
                 var form2 = new ItemListForSales(FormName);
                 form2.ShowDialog();
+                form2.Dispose();
                 if (ItemCode_From_List != "")
                 {
                     if (btn_AddtoGrid.Text == "Add")
@@ -156,9 +158,9 @@ namespace PappyjoeMVC.View
             if (txtBdoctor.Text != "")
             {
                 DataTable dtdr = this.cntrl.GetDoctorName(txtBdoctor.Text);
-                lbIdoctor.DataSource = dtdr;
                 lbIdoctor.DisplayMember = "doctor_name";
                 lbIdoctor.ValueMember = "id";
+                lbIdoctor.DataSource = dtdr;
                 if (e.KeyCode == Keys.Enter && lbIdoctor.Items.Count > 0)
                 {
                     var value = lbIdoctor.GetItemText(lbIdoctor.SelectedValue);
@@ -274,9 +276,9 @@ namespace PappyjoeMVC.View
             {
                 lbPatient.Show();
                 lbPatient.Location = new Point(txtPatient.Location.X, 27);
-                lbPatient.DataSource = dtdr;
                 lbPatient.DisplayMember = "pt_name";
                 lbPatient.ValueMember = "pt_id";
+                lbPatient.DataSource = dtdr;
             }
             else
             {
@@ -332,6 +334,7 @@ namespace PappyjoeMVC.View
                     FormName = "Sales";
                     var form2 = new ItemListForSales(FormName, txt_ItemCode.Text);
                     form2.ShowDialog();
+                    form2.Dispose();
                     if (ItemCode_From_List != "")
                     {
                       DataTable dtb=this.cntrl.get_itemdetails(itemId);
@@ -702,6 +705,7 @@ namespace PappyjoeMVC.View
                                     {
                                         var form2 = new Batch_Sale(item_Code, qty, unit);
                                         form2.ShowDialog();
+                                        form2.Dispose();
                                     }
                                     else
                                     {
@@ -720,6 +724,7 @@ namespace PappyjoeMVC.View
                                         {
                                             var form2 = new Batch_Sale(item_Code, qty, FrmBatchsale_edit, unit);
                                             form2.ShowDialog();
+                                            form2.Dispose();
                                         }
                                         else
                                         {
@@ -782,6 +787,7 @@ namespace PappyjoeMVC.View
                                     {
                                         var form2 = new Batch_Sale(item_Code, qty, FrmBatchsale_edit, unit);
                                         form2.ShowDialog();
+                                        form2.Dispose();
                                         if (rowindex > 0)
                                         {
                                             dgv_SalesItem.Rows[rowindex].Cells["colItemCode"].Value = txt_ItemCode.Text;
@@ -1898,34 +1904,32 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td  colspan=8 align='left'><FONT COLOR=black FACE='Segoe UI'  SIZE=5>  <b> " + strclinicname + "</b> </font></left></td>");
+                sWrite.WriteLine("<td  colspan=8 align='left'><FONT COLOR=black FACE='Segoe UI'  SIZE=4>  <b> " + strclinicname + "</b> </font></left></td>");
                 sWrite.WriteLine(" </tr>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td colspan=8 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>" + strphone + " </b> </font></left></td>");
+                sWrite.WriteLine("<td colspan=8 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + strphone + " </b> </font></left></td>");
                 sWrite.WriteLine(" </tr>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td colspan=8 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>" + DlNumber + "</b> </font></left></td>");
+                sWrite.WriteLine("<td colspan=8 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + DlNumber + "</b> </font></left></td>");
                 sWrite.WriteLine(" </tr>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td colspan=8 align='left'><FONT COLOR=black FACE='Segoe UI'  SIZE=3><b>" + DlNumber2 + "</b> </font></left></td>");
+                sWrite.WriteLine("<td colspan=8 align='left'><FONT COLOR=black FACE='Segoe UI'  SIZE=2><b>" + DlNumber2 + "</b> </font></left></td>");
                 sWrite.WriteLine(" </tr>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td colspan=8 align='left'><FONT COLOR=black FACE='Segoe UI'   SIZE=3><b>" + website + " </b> </font></left></td>");
+                sWrite.WriteLine("<td colspan=8 align='left'><FONT COLOR=black FACE='Segoe UI'   SIZE=2><b>" + website + " </b> </font></left></td>");
                 sWrite.WriteLine(" </tr>");
-                sWrite.WriteLine("<br>");
-                sWrite.WriteLine("<br>");
+                sWrite.WriteLine("<tr><td colspan=8 align='left'><hr/></td></tr>");
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2>Drug License:" + str_druglicenseno + "</font></left></td>");
-                sWrite.WriteLine("<td colspan=7 align='right'>  <FONT COLOR=black FACE='Segoe UI'   SIZE=2>Tax No:" + str_taxno + " </font></right></td>");
+                sWrite.WriteLine("<td colspan=7 align='right'>  <FONT COLOR=black FACE='Segoe UI'   SIZE=2>Tax No:&nbsp;" + str_taxno + " &nbsp;</font></right></td>");
                 sWrite.WriteLine("</tr>");
-                //sWrite.WriteLine("<br>");
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2> Sold To : &nbsp" + txtPatient.Text + "</font></left></td>");
-                sWrite.WriteLine("<td colspan=7 align='right'><FONT COLOR=black FACE='Segoe UI'   SIZE=2>Invoice No:" + txtDocumentNumber.Text + " </font></right></td>");
+                sWrite.WriteLine("<td colspan=7 align='right'><FONT COLOR=black FACE='Segoe UI'   SIZE=2>Invoice No:&nbsp;" + txtDocumentNumber.Text + "&nbsp; </font></right></td>");
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI'   SIZE=2> Prescribed by : &nbspDr." + txtBdoctor.Text + "</font></left></td>");
-                sWrite.WriteLine("<td colspan=7 align='right'><FONT COLOR=black FACE='Segoe UI'   SIZE=2> Date  :" + DateTime.Now.ToString("MM-dd-yyyy") + " </font></right></td>");
+                sWrite.WriteLine("<td colspan=7 align='right'><FONT COLOR=black FACE='Segoe UI'   SIZE=2> Date :&nbsp; " + DateTime.Now.ToString("MM-dd-yyyy") + "&nbsp; </font></right></td>");
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("<tr><td colspan=8><hr/></td></tr>");
                 sWrite.WriteLine("<tr>");
@@ -1993,7 +1997,7 @@ namespace PappyjoeMVC.View
                 {
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td align='right'  colspan=7 ><FONT COLOR=black FACE='Segoe UI' SIZE=2> Total IGST :</font></td>");
-                    sWrite.WriteLine("<td align='right'  colspan=8 ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp" + Txt_TotalIGST.Text + " </font></td>");
+                    sWrite.WriteLine("<td align='right'  colspan=8 ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + Txt_TotalIGST.Text + " </font></td>");
                     sWrite.WriteLine("</tr>");
                 }
                 sWrite.WriteLine("<tr>");
@@ -2019,7 +2023,6 @@ namespace PappyjoeMVC.View
                     double gesttotal = 0;
                     for (int ii = 0; ii < dgv_SalesItem.Rows.Count; ii++)
                     {
-
                         if (Convert.ToDouble(dgv_SalesItem.Rows[ii].Cells["ColGST"].Value.ToString()) > 0)
                         {
                             gstRatetotal = Convert.ToDouble(dgv_SalesItem.Rows[ii].Cells["colUnitcost"].Value.ToString()) * Convert.ToDouble(dgv_SalesItem.Rows[ii].Cells["ColQty"].Value.ToString());

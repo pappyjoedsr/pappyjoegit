@@ -82,7 +82,6 @@ namespace PappyjoeMVC.View
             dataGridView_templatenew.Rows.Add(cmbPriscriptionTemplate.Text, txtStrengthno.Text, strengthcombo.Text, numericUpDownDuration.Value, cmbDuration.Text, numericUpDownMorning.Value, numericUpDownNoon.Value, numericUpDownNight.Value, food1, richTxtInsrtuction.Text, drug_id, drug_type1, PappyjoeMVC.Properties.Resources.deleteicon);
         }
 
-        //private string patient_id;
         SimpleAppointment_Template_controller cntrl = new SimpleAppointment_Template_controller();
         private int patient_id;
         int ptid;
@@ -102,16 +101,16 @@ namespace PappyjoeMVC.View
             DataTable dt_prescription = dt_prescription = this.cntrl.get_drug_name();
             if (dt_prescription.Rows.Count > 0)
             {
-                cmbPriscriptionTemplate.DataSource = dt_prescription;
                 cmbPriscriptionTemplate.ValueMember = "id";
                 cmbPriscriptionTemplate.DisplayMember = "name";
+                cmbPriscriptionTemplate.DataSource = dt_prescription;
             }
             DataTable dt_doctor = this.cntrl.get_all_doctorname();
             if (dt_doctor.Rows.Count > 0)
             {
-                cmbDoctor.DataSource = dt_doctor;
                 cmbDoctor.ValueMember = "id";
                 cmbDoctor.DisplayMember = "doctor_name";
+                cmbDoctor.DataSource = dt_doctor;
             }
             flag_Template = true;
         }
@@ -139,7 +138,6 @@ namespace PappyjoeMVC.View
                         }
                     }
                 }
-
             }
         }
         public void clear_template()

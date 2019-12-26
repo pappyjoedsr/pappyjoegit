@@ -362,7 +362,7 @@ namespace PappyjoeMVC.View
                             form2.doctor_id = DOCTORID;
                             form2.Closed += (sender1, args) => this.Close();
                             this.Hide();
-                            form2.ShowDialog();
+                            form2.Show();
                         }
                         else
                         {
