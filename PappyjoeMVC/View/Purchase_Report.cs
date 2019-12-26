@@ -247,7 +247,7 @@ namespace PappyjoeMVC.View
         private void BTNClose_Click(object sender, EventArgs e)
         {
             var form2 = new PappyjoeMVC.View.Purchase_Report();
-            Purchase_Report_controller controller = new Purchase_Report_controller(form2);
+            //Purchase_Report_controller controller = new Purchase_Report_controller(form2);
             form2.FormClosed += (sender1, args) => this.Close();
             this.Hide();
         }

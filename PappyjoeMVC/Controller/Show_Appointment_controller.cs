@@ -14,16 +14,16 @@ namespace PappyjoeMVC.Controller
         Common_model cmdl = new Common_model();
         Add_Appointment_model am = new Add_Appointment_model();
         
-        public void privilege_A(string doctor_id)
+        public string privilege_A(string doctor_id)
         {
             string e= mdl.privilege_A(doctor_id);
            
         }
-        public void privilege_D(string doctor_id)
+        public string privilege_D(string doctor_id)
         {
             string e = mdl.privilege_D(doctor_id);
         }
-        public void privilege_E(string doctor_id)
+        public string privilege_E(string doctor_id)
         {
             string e = mdl.privilege_E(doctor_id);
         }
