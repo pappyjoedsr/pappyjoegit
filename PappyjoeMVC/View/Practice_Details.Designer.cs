@@ -113,6 +113,7 @@
             this.btnLab_dental = new System.Windows.Forms.Button();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.backuprestore = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -516,7 +517,6 @@
             this.label4.Size = new System.Drawing.Size(94, 17);
             this.label4.TabIndex = 106;
             this.label4.Text = "Street Address";
-            //this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -528,7 +528,6 @@
             this.label3.Size = new System.Drawing.Size(87, 17);
             this.label3.TabIndex = 105;
             this.label3.Text = "Specialization";
-            //this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label10
             // 
@@ -606,7 +605,6 @@
             this.label2.Size = new System.Drawing.Size(53, 17);
             this.label2.TabIndex = 109;
             this.label2.Text = " Tagline";
-            //this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label15
             // 
@@ -638,7 +636,6 @@
             this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 110;
             this.label1.Text = "Clinic Name";
-            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btn_Save
             // 
@@ -1035,7 +1032,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1, 613);
+            this.button1.Location = new System.Drawing.Point(3, 613);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(192, 129);
             this.button1.TabIndex = 149;
@@ -1096,6 +1093,20 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // backuprestore
+            // 
+            this.backuprestore.BackColor = System.Drawing.Color.DodgerBlue;
+            this.backuprestore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backuprestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backuprestore.ForeColor = System.Drawing.Color.White;
+            this.backuprestore.Location = new System.Drawing.Point(2, 613);
+            this.backuprestore.Name = "backuprestore";
+            this.backuprestore.Size = new System.Drawing.Size(192, 37);
+            this.backuprestore.TabIndex = 300;
+            this.backuprestore.Text = "Backup and Restore";
+            this.backuprestore.UseVisualStyleBackColor = false;
+            this.backuprestore.Click += new System.EventHandler(this.backuprestore_Click);
+            // 
             // Practice_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1103,6 +1114,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1370, 741);
+            this.Controls.Add(this.backuprestore);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.btnLab_dental);
             this.Controls.Add(this.btnLab);
@@ -1263,5 +1275,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton12;
         private System.Windows.Forms.ListBox listpatientsearch;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.Button backuprestore;
     }
 }

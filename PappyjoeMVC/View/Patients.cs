@@ -1357,6 +1357,7 @@ namespace PappyjoeMVC.View
             {
                 int j = 0;
                 string patientName = ""; string patientId = "";
+                lab_LongMsg.Hide();
                 for (int i = 0; i < Payment.Rows.Count; i++)
                 {
                     DataTable pat = this.cntrl.Patient_details(Payment.Rows[i]["pt_id"].ToString());
@@ -1416,8 +1417,6 @@ namespace PappyjoeMVC.View
                     lab_Displaying.Visible = true; lab_7.Visible = true;
                     lab_7.Location = new Point(73, 7);
                     lab_7.Text = Payment.Rows.Count.ToString() + " Patient(s)";
-                    lab_LongMsg.Show();
-                    lab_LongMsg.Location = new Point(91, 177);
                 }
                 else
                 {

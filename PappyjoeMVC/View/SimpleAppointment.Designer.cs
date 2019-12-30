@@ -390,7 +390,7 @@
             this.panl_Treatment.Size = new System.Drawing.Size(778, 121);
             this.panl_Treatment.TabIndex = 401;
             this.panl_Treatment.Visible = false;
-            this.panl_Treatment.Paint += new System.Windows.Forms.PaintEventHandler(this.panl_Treatment_Paint);
+            //this.panl_Treatment.Paint += new System.Windows.Forms.PaintEventHandler(this.panl_Treatment_Paint);
             // 
             // Lab_Cost
             // 
