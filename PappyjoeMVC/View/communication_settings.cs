@@ -18,11 +18,6 @@ namespace PappyjoeMVC.View
             InitializeComponent();
         }
         Communication_Setting_controller cntrl=new Communication_Setting_controller();
-       
-        public void SetController(Communication_Setting_controller controller)
-        {
-            cntrl = controller;
-        }
         private void communication_settings_Load(object sender, EventArgs e)
         {
             DataTable sms =this.cntrl. getsmstabledata();

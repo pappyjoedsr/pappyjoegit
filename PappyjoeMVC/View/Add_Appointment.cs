@@ -178,9 +178,6 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.Show();
         }
-        private void toolStripButton11_Click(object sender, EventArgs e)
-        {
-        }
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
             var form2 = new Expense();

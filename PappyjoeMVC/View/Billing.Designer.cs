@@ -122,7 +122,6 @@
             this.dataGridView_Billing.Size = new System.Drawing.Size(355, 235);
             this.dataGridView_Billing.TabIndex = 133;
             this.dataGridView_Billing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Billing_CellClick);
-            this.dataGridView_Billing.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Billing_CellContentClick);
             // 
             // buttonclear
             // 
@@ -184,7 +183,6 @@
             this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 130;
             this.label1.Text = "Tax Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // text_taxvalue
             // 

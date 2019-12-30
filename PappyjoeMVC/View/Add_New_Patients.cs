@@ -231,9 +231,7 @@ namespace PappyjoeMVC.View
                                         System.IO.File.Copy(path, @"\\" + server + "\\Pappyjoe_utilities\\patient_image\\" + pat_id);
                                     }
                                 }
-                                catch
-                                {
-                                }
+                                catch{}
                             }
                             this.cntrl.SendSMS(smsName1, smsPass1, txtPMobNumber.Text, "Dear " + txtPatName.Text + " welcome to " + toolStripButton1.Text);
                             if (statusForNewPatient == 1)
@@ -347,13 +345,10 @@ namespace PappyjoeMVC.View
                         btnMED_Cancle.Visible = false;
                     }
                     else
-                    {
-                    }
+                    {}
                 }
             }
-            catch
-            {
-            }
+            catch {}
         }
 
         private void btnMED_Cancle_Click(object sender, EventArgs e)
@@ -411,14 +406,10 @@ namespace PappyjoeMVC.View
                         btn_GrpCancel.Visible = false;
                         gridgroup1.Visible = false;
                     }
-                    else
-                    {
-                    }
+                    else {}
                 }
             }
-            catch
-            {
-            }
+            catch {}
         }
 
         private void btn_GrpCancel_Click(object sender, EventArgs e)
@@ -586,8 +577,7 @@ namespace PappyjoeMVC.View
                 }
             }
             catch
-            {
-            }
+            {}
         }
 
         private void print_Click(object sender, EventArgs e)
@@ -851,11 +841,6 @@ namespace PappyjoeMVC.View
             InitializeComponent();
             SetFlag = true;
         }
-
-        public void SetController(Add_New_patient_controller controller)
-        {
-            cntrl = controller;
-        }
         private void AddNewPatients_Load(object sender, EventArgs e)
         {
             try
@@ -982,6 +967,7 @@ namespace PappyjoeMVC.View
             }
             catch(Exception ex)
             {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

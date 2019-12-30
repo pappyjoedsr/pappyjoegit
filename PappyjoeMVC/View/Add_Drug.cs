@@ -24,12 +24,6 @@ namespace PappyjoeMVC.View
             dt_ForEditItems = dtb;
             editFlag = true;
         }
-
-        public void SetController(Add_Item_controller controller)
-        {
-            cntrl = controller;
-        }
-
         private void frmAddDrug_Load(object sender, EventArgs e)
         {
             BTnClose.Visible = false;

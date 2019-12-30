@@ -42,7 +42,6 @@ namespace PappyjoeMVC.View
                 bool parseOK = Int32.TryParse(cmb_country.SelectedValue.ToString(), out selectedValue);
                 Edit_Practice_Details frm = new Edit_Practice_Details(selectedValue, cmb);
                 frm.frameid = "3";
-                //editpracticedetails_controller controller = new editpracticedetails_controller(frm);
                 frm.ShowDialog();
                 frm.Dispose();
             }
@@ -52,7 +51,6 @@ namespace PappyjoeMVC.View
         {
             Edit_Practice_Details frm = new Edit_Practice_Details();
             frm.frameid = "2";
-            //editpracticedetails_controller controller = new editpracticedetails_controller(frm);
             frm.ShowDialog();
             frm.Dispose();
         }
@@ -65,7 +63,6 @@ namespace PappyjoeMVC.View
                 bool parseOK1 = Int32.TryParse(cmb_state.SelectedValue.ToString(), out selectedValue1);
                 Edit_Practice_Details frm = new Edit_Practice_Details(selectedValue1, cmb);
                 frm.frameid = "4";
-                //editpracticedetails_controller controller = new editpracticedetails_controller(frm);
                 frm.ShowDialog();
                 frm.Dispose();
             }
@@ -75,13 +72,11 @@ namespace PappyjoeMVC.View
         {
             Edit_Practice_Details frm = new Edit_Practice_Details();
             frm.frameid = "1";
-            //editpracticedetails_controller controller = new editpracticedetails_controller(frm);
             frm.ShowDialog();
             frm.Dispose();
         }
         private void PracticeDetails_Load(object sender, EventArgs e)
         {
-            //focus = true;
             label16.Hide();
             panel_main.Visible = false;
             toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
@@ -503,7 +498,6 @@ namespace PappyjoeMVC.View
             prescription.TopLevel = false;
             panel_main.Controls.Add(prescription);
             prescription.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //prescription_setting_controller controller = new prescription_setting_controller(prescription);
             prescription.Show();
         }
 
@@ -516,7 +510,6 @@ namespace PappyjoeMVC.View
             medical.TopLevel = false;
             panel_main.Controls.Add(medical);
             medical.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //medical_history_controller controller = new medical_history_controller(medical);
             medical.Show();
         }
 
@@ -529,7 +522,6 @@ namespace PappyjoeMVC.View
             atuoid.TopLevel = false;
             panel_main.Controls.Add(atuoid);
             atuoid.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //autoid_generation_controller controller = new autoid_generation_controller(atuoid);
             atuoid.Show();
         }
 
@@ -578,7 +570,6 @@ namespace PappyjoeMVC.View
             exprt.TopLevel = false;
             exprt.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             panel_main.Controls.Add(exprt);
-            //export_controller cntroller = new export_controller(exprt);
             exprt.Show();
         }
 
@@ -698,36 +689,6 @@ namespace PappyjoeMVC.View
             dental.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             dental.Show();
         }
-        //bool focus = false;
-        private void PracticeDetails_Paint(object sender, PaintEventArgs e)
-        {
-            ////if (focus)
-            ////{ 
-            ////    txtname.BorderStyle = BorderStyle.None;
-            ////    Pen p = new Pen(Color.Gray);
-            ////    Graphics g = e.Graphics;
-            ////    //int variance = 3,Hight_Variance=6;
-            ////    g.DrawRectangle(Pens.Gray, 0, 0, Width +12 , Height + 12);
-            ////    //g.DrawRectangle(p, new Rectangle(txtname.Location.X - variance, txtname.Location.Y - Hight_Variance, txtname.Width + variance, txtname.Height + Hight_Variance));
-            ////}
-            ////else
-            ////{
-            ////    txtname.BorderStyle = BorderStyle.FixedSingle;
-            ////}
-        }
-
-        private void txtname_Enter(object sender, EventArgs e)
-        {
-            //focus = true;
-            //this.Refresh();
-        }
-
-        private void txtname_Leave(object sender, EventArgs e)
-        {
-            //focus = false;
-            //this.Refresh();
-        }
-
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             var form2 = new StockReport();
@@ -830,27 +791,6 @@ namespace PappyjoeMVC.View
             form2.ShowDialog();
             form2.Dispose();
         }
-
-        //private void label1_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void label3_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void label2_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void label4_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
             var form2 = new Expense();

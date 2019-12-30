@@ -495,12 +495,6 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.Show();
         }
-
-        private void toolStripBAttachment_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void toolStripButton13_Click(object sender, EventArgs e)
         {
             var form2 = new Consultation();

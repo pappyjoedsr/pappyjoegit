@@ -28,13 +28,7 @@ namespace PappyjoeMVC.View
                     doctor_id = "0";
                 }
                 toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-                //DataTable clinicname = this.cntrl.Get_CompanyNAme();
-                //if (clinicname.Rows.Count > 0)
-                //{
-                //string clinicn = "";
-                //clinicn = clinicname.Rows[0]["Name"].ToString();
                 toolStripButton1.Text = this.cntrl.Load_CompanyName();
-                //}
                 string docnam = this.cntrl.Get_DoctorName(doctor_id);
                 if (docnam != "")
                 {

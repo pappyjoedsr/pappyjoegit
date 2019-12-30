@@ -886,7 +886,6 @@ namespace PappyjoeMVC.View
             // 
             this.mnuFileOpen.Index = 1;
             this.mnuFileOpen.Text = "Open...";
-            this.mnuFileOpen.Click += new System.EventHandler(this.mnuFileOpen_Click);
             // 
             // mnuFileSave
             // 
@@ -2602,7 +2601,10 @@ namespace PappyjoeMVC.View
         {
             wndCalendarControl.ShowPrintPageSetup();
         }
-
+        private void mnuFileOpen_Click(object sender, System.EventArgs e)
+        {
+            wndCalendarControl.ShowPrintPageSetup();
+        }
         private void mnuFilePrintPreview_Click(object sender, System.EventArgs e)
         {
             wndCalendarControl.PrintPreview(true);
@@ -2634,13 +2636,6 @@ namespace PappyjoeMVC.View
                 wndCalendarControl.DataProvider.Save();
             }
         }
-
-        private void mnuFileOpen_Click(object sender, System.EventArgs e)
-        {
-            
-        }
-
-       
         private Boolean OpenSQLServerDataProvider(String strConnectionString)
         {
             return false;
