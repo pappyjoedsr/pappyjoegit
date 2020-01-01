@@ -23,19 +23,16 @@ namespace PappyjoeMVC.View
         {
             if(saveFileDialog1.ShowDialog()==DialogResult.OK)
             {
-                filepath = saveFileDialog1.FileName;
+                filepath = saveFileDialog1.FileName+".sql";
                 this.ctrlr.backupdb(filepath);
             }
             MessageBox.Show("backup complete");
-        }
-        private void Backup_and_Restore_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.ctrlr.restoredb(filepath);
+            MessageBox.Show("restore complete");
         }
     }
 }
