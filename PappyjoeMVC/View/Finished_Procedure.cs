@@ -374,8 +374,6 @@ namespace PappyjoeMVC.View
                     listpatientsearch.Visible = true;
                 }
                 listpatientsearch.Location = new Point(toolStrip1.Width - 360, 37);
-                //listpatientsearch.Location = new Point(toolStripTextBox1.Width + 750, 32);
-                //listpatientsearch.Location = new Point(toolStrip1.Width = 1015, 39);
             }
             else
             {
@@ -619,7 +617,6 @@ namespace PappyjoeMVC.View
             var form2 = new Prescription_Show();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
-            //Prescription_Show_controller controller = new Prescription_Show_controller(form2);
             form2.Closed += (sender1, args) => this.Close();
             this.Hide();
             form2.Show();

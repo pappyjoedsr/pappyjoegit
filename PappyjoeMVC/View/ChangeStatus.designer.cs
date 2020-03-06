@@ -262,7 +262,6 @@
             this.Name = "ChangeStatus";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Change  Status";
-            this.Load += new System.EventHandler(this.ChangeStatus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

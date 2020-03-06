@@ -19,15 +19,6 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        public void SetController(Add_Unit_controller controller)
-        {
-            cntrl = controller;
-        }
-        public string Units
-        {
-            get { return this.txt_Unitname.Text; }
-            set { txt_Unitname.Text = value; }
-        }
         private void frmAddUnits_Load(object sender, EventArgs e)
         {
             DataTable dtb= this.cntrl.Load_Data();
@@ -131,11 +122,7 @@ namespace PappyjoeMVC.View
                             LoadData(dtb);
                         }
                     }
-                    else
-                    {
-
-                    }
-                       
+                    else{}
                 }
             }
         }

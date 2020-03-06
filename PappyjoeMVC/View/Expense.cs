@@ -1074,7 +1074,6 @@ namespace PappyjoeMVC.View
                         ExcelApp.ActiveWorkbook.SaveAs(PathName, Microsoft.Office.Interop.Excel.XlFileFormat.xlXMLSpreadsheet, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange);
                         ExcelApp.ActiveWorkbook.Saved = true;
                         ExcelApp.Quit();
-                        //checkStr = "1";
                         MessageBox.Show("Successfully Exported to Excel", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 

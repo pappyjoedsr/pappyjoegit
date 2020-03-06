@@ -17,7 +17,6 @@ namespace PappyjoeMVC.View
             InitializeComponent();
         }
         Add_Category_controller cntrl=new Add_Category_controller(); string Id;
-       
         private void frmAddCategeory_Load(object sender, EventArgs e)
         {
             clear();

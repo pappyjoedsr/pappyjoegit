@@ -1094,22 +1094,6 @@ namespace PappyjoeMVC.View
             }
             flag = false;
         }
-
-        //private void lnk_view_template_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        //{
-        //    //string pres_id = cmb_prescription_temp.SelectedItem.GetType().GetProperty("Value").GetValue(cmb_prescription_temp.SelectedItem, null).ToString();
-        //    //if (pres_id == "0")
-        //    //{
-        //    //    MessageBox.Show("No selected Prescription Template..", "Template Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    //}
-        //    //else
-        //    //{
-        //    //    var form2 = new Pappyjoe.consultation_prescription_template();
-        //    //    form2.pres_id = pres_id;
-        //    //    form2.ShowDialog();
-        //    //}
-        //}
-
         private void label5_MouseHover(object sender, EventArgs e)
         {
             label5.Font = new Font(label5.Font.Name, 8, FontStyle.Underline);
@@ -1310,13 +1294,6 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-
-        //private void cmb_prescription_temp_MouseClick(object sender, MouseEventArgs e)
-        //{
-
-
-        //}
-
         private void txt_remarks_MouseClick(object sender, MouseEventArgs e)
         {
             lst_procedure.Visible = false;

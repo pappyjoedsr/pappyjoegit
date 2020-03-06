@@ -20,21 +20,6 @@ namespace PappyjoeMVC.View
         Medical_History_controller cntrl=new Medical_History_controller();
         public string id = "";
         string groupid = "0";
-        //public string medical
-        //{
-        //    get { return this.text_medhist.Text; }
-        //    set { this.text_medhist.Text = value; }
-        //}
-        //public string group
-        //{
-        //    get { return this.textBox_group.Text; }
-        //    set { this.textBox_group.Text = value; }
-        //}
-        public void SetController(Medical_History_controller controller)
-        {
-            cntrl = controller;
-        }
-
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
             TabPage page = tabControl1.TabPages[e.Index];
@@ -166,7 +151,7 @@ namespace PappyjoeMVC.View
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "Error!..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -197,9 +182,9 @@ namespace PappyjoeMVC.View
                         dataGridView_group.Rows[dataGridView_group.Rows.Count - 1].Cells[1].Value = i;
                         dataGridView_group.Rows[i - 1].Height = 25;
                     }
-                    catch
+                    catch(Exception ex)
                     {
-
+                        MessageBox.Show(ex.Message, "Error!..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -291,11 +276,6 @@ namespace PappyjoeMVC.View
             button_group.Text = "Save";
             btn_Cancelgroup.Visible = false;
             textBox_group.Text = "";
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

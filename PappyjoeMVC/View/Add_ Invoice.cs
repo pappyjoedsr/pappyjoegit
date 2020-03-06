@@ -167,10 +167,6 @@ namespace PappyjoeMVC.View
             DGV_Invoice.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             DGV_Invoice.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
-        public void SetController(Add_Invoice_controller controller)
-        {
-            cntrl = controller;
-        }
         public void Load_procedureGrid(DataTable dt_tp1)
         {
             if (dt_tp1.Rows.Count > 0)
@@ -237,7 +233,7 @@ namespace PappyjoeMVC.View
                     }
                     catch (Exception ex)
                     {
-
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -1956,7 +1952,7 @@ namespace PappyjoeMVC.View
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1997,7 +1993,7 @@ namespace PappyjoeMVC.View
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void delete_gridrow_calculation()
@@ -2496,7 +2492,6 @@ namespace PappyjoeMVC.View
             {
                 panel4.Hide();
                 lab_ShowChildteeth.Text = "Show ChildTeeth";
-                //  childteethHide();
             }
         }
         private void toolStripButton13_Click(object sender, EventArgs e)

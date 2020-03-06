@@ -456,9 +456,6 @@ namespace PappyjoeMVC.View
                         }
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
-                    //pathlength();
-                    //string paths = Application.StartupPath.Substring(0, Application.StartupPath.Length - len);
-                    //paths = Apppath;
                     if (cmb_type.Text == "Patients")
                     {
                         StreamWriter sWrite2 = new StreamWriter(Apppath + "\\GroupwisePatientReport.html");

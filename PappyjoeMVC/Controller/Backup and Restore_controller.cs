@@ -11,11 +11,11 @@ namespace PappyjoeMVC.Model
         Connection db = new Connection();
         public void backupdb(string file)
         {
-            //db.backupdb(file);
+            db.backupdb(file);
         }
         public void restoredb(string file)
         {
-            //db.restoredb(file);
+            db.restoredb(file);
         }
     }
 }
