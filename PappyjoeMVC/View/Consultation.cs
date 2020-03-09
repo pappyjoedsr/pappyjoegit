@@ -96,6 +96,8 @@ namespace PappyjoeMVC.View
         private void txt_procedure_Click(object sender, EventArgs e)
         {
             txt_procedure.Text = "";
+            txtTotal.Text = "";
+            txtQuantity.Text = "";
             lbPatient.Visible = false;
         }
 
@@ -129,11 +131,12 @@ namespace PappyjoeMVC.View
         {
             if (lst_procedure.SelectedItems.Count > 0)
             {
-                string value = lst_procedure.SelectedValue.ToString();
+                string value = lst_procedure.SelectedValue.ToString();   
                 DataTable procedure = new DataTable();
                 procedure = this.ctrlr.procedure_details(value);
                 if (procedure.Rows.Count > 0)
                 {
+                    txtID.Text= procedure.Rows[0]["id"].ToString();
                     txt_procedure.Text = procedure.Rows[0]["name"].ToString();
                     txt_cost.Text = procedure.Rows[0]["cost"].ToString();
                     lst_procedure.Visible = false;
@@ -253,7 +256,10 @@ namespace PappyjoeMVC.View
                         completed_id = 0;
                     }
                     j1 = completed_id;
-                    this.ctrlr.save_completed_details(j1, patient_id, lst_procedure.SelectedValue.ToString(), txt_procedure.Text, txt_cost.Text, txt_cost.Text, txt_instruction.Text, cmbdoctor.SelectedValue.ToString());
+                    for (int i = 0; i < dgv_treatment.Rows.Count; i++)
+                    {
+                        this.ctrlr.save_completed_details(j1, patient_id, dgv_treatment.Rows[i].Cells[0].Value.ToString(), dgv_treatment.Rows[i].Cells[1].Value.ToString(), dgv_treatment.Rows[i].Cells[3].Value.ToString(), dgv_treatment.Rows[i].Cells[4].Value.ToString(), dgv_treatment.Rows[i].Cells[5].Value.ToString(), cmbdoctor.SelectedValue.ToString());
+                    }
                     string dt_Compl_proce = this.ctrlr.max_completeProcedure();
                     long completed_procedures_id = 0;
                     try
@@ -1041,6 +1047,7 @@ namespace PappyjoeMVC.View
             procedure = this.ctrlr.get_procedure();
             if (procedure.Rows.Count > 0)
             {
+                txtID.Text = procedure.Rows[0]["id"].ToString();
                 txt_procedure.Text = procedure.Rows[0]["name"].ToString();
                 txt_cost.Text = procedure.Rows[0]["cost"].ToString();
                 lst_procedure.Visible = false;
@@ -1267,11 +1274,11 @@ namespace PappyjoeMVC.View
                     procedure = this.ctrlr.procedure_details(value);
                     if (procedure.Rows.Count > 0)
                     {
+                        txtID.Text = procedure.Rows[0]["id"].ToString();
                         txt_procedure.Text = procedure.Rows[0]["name"].ToString();
                         txt_cost.Text = procedure.Rows[0]["cost"].ToString();
                         lst_procedure.Visible = false;
                     }
-
                 }
             }
         }
@@ -1287,6 +1294,7 @@ namespace PappyjoeMVC.View
                     procedure = this.ctrlr.procedure_details(value);
                     if (procedure.Rows.Count > 0)
                     {
+                        txtID.Text = procedure.Rows[0]["id"].ToString();
                         txt_procedure.Text = procedure.Rows[0]["name"].ToString();
                         txt_cost.Text = procedure.Rows[0]["cost"].ToString();
                         lst_procedure.Visible = false;
@@ -1418,6 +1426,73 @@ namespace PappyjoeMVC.View
                 }
             }
         }
+
+        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void btn_addtrtmnt_Click(object sender, EventArgs e)
+        {
+            if (txt_procedure.Text != "" && txtQuantity.Text != "")
+            {
+                Decimal total = 0;
+                
+                dgv_treatment.Rows.Add(txtID.Text, txt_procedure.Text, txtQuantity.Text, txt_cost.Text, txtTotal.Text, txt_instruction.Text,"DEL");
+                for ( int i = 0; i < dgv_treatment.Rows.Count; i++)
+                {
+                    total = total + Convert.ToDecimal( dgv_treatment.Rows[i].Cells[4].Value.ToString());
+                }
+                lb_total.Text = total.ToString();
+                txtQuantity.Text = "";
+                txtTotal.Text = "";
+                txt_instruction.Text = "";
+                txtID.Text = "";
+            }
+        }
+
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+            Decimal quant = 0;
+            Decimal cost = 0;
+            if (txtQuantity.Text != "")
+            {
+                quant = Convert.ToDecimal(txtQuantity.Text);
+            }
+            if (txt_cost.Text != "")
+            {
+                cost= Convert.ToDecimal(txt_cost.Text);
+            }
+            txtTotal.Text = Convert.ToString(quant * cost);
+        }
+
+        private void dgv_treatment_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 5)
+            {
+                if (MessageBox.Show("Delete this Treatment.. Confirm?", "Remove Treatment", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    int row = e.RowIndex;
+                    dgv_treatment.Rows.RemoveAt(row);
+                    Decimal total = 0;
+                    //dgv_treatment.Rows.Add(txt_procedure.Text, txtQuantity.Text, txt_cost.Text, txtTotal.Text, txt_instruction.Text, "DEL");
+                    for (int i = 0; i < dgv_treatment.Rows.Count; i++)
+                    {
+                        total = total + Convert.ToDecimal(dgv_treatment.Rows[i].Cells[3].Value.ToString());
+                    }
+                    lb_total.Text = total.ToString();
+                }
+            }
+        }
+
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             try
