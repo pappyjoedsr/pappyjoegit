@@ -34,11 +34,6 @@ namespace PappyjoeMVC.View
             
 		private void InitializeDatePicker()
 		{
-			//Set Auto-size to false to force the number of rows and columns
-			//DatePicker.AutoSize = false;
-			//DatePicker.ColumnCount = 6;
-			//DatePicker.RowCount = 5;
-
 			Date_Picker.FirstDayOfWeek = Main_Calendar.Instance.cmbFirstDayOfWeek.SelectedIndex + 1;
 						
 			XtremeCalendarControl.CalendarControl pCalendarOcx = 
@@ -96,7 +91,6 @@ namespace PappyjoeMVC.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Date Picker";
             this.Closed += new System.EventHandler(this.frmDatePicker_Closed);
-            this.Load += new System.EventHandler(this.frmDatePicker_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Date_Picker)).EndInit();
             this.ResumeLayout(false);
 
@@ -109,22 +103,7 @@ namespace PappyjoeMVC.View
 			{
                 Main_Calendar.Instance.mnuDatePicker.Checked = false;
 			}
-
-            //Called automatically on DatePicker destoy
-            //DatePicker.DetachFromCalendar(); 
-
             Main_Calendar.Instance.frmDatePicker = null;
 		}
-
-        //private void DatePicker_SelectionChanged(object sender, EventArgs e)
-        //{
-
-        //}
-
-        private void frmDatePicker_Load(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

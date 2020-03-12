@@ -1416,9 +1416,7 @@ namespace PappyjoeMVC.View
                                 this.Hide();
                                 form2.Show();
                             }
-                            catch
-                            {
-                            }
+                            catch{}
                         }
                         else
                         {

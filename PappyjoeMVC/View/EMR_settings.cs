@@ -15,11 +15,6 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
-        public void SetController(EMR_controller controller)
-        {
-            cntrl = controller;
-        }
-
         private void EMR_settings_Load(object sender, EventArgs e)
         {
             tabControl1.TabPages.Remove(tabPage6);

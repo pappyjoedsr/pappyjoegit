@@ -605,9 +605,7 @@ namespace PappyjoeMVC.View
                         this.Close();
                         Main_Calendar.Instance.Activate();
                     }
-                    else
-                    {
-                    }
+                    else{ }
                 }
                 else
                 {
@@ -622,8 +620,6 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-           
         }
         public void ModifyEvent(CalendarEvent ModEvent)
         {
@@ -795,67 +791,5 @@ namespace PappyjoeMVC.View
             Main_Calendar.Instance.ContextEvent = null;
             this.Close();
         }
-        //protected override void OnLoad(EventArgs e)//not sure it is use
-        //{
-        //    base.OnLoad(e);
-
-        //    if (EditingEvent != null)
-        //    {
-        //        if (EditingEvent.RecurrenceState == CalendarEventRecurrenceState.xtpCalendarRecurrenceMaster)
-        //        {
-        //            pnlTimes.Visible = false;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        pnlTimes.Visible = true;
-        //    }
-
-        //    //-----------------------------------------------------------------
-        //    cmbReminder.Items.Add(new CalReminderMinutes(0, "0 minutes"));
-        //    cmbReminder.Items.Add(new CalReminderMinutes(1, "1 minute"));
-        //    cmbReminder.Items.Add(new CalReminderMinutes(5, "5 minutes"));
-        //    cmbReminder.Items.Add(new CalReminderMinutes(10, "10 minutes"));
-        //    cmbReminder.Items.Add(new CalReminderMinutes(15, "15 minutes"));
-        //    cmbReminder.Items.Add(new CalReminderMinutes(30, "30 minutes"));
-
-        //    cmbReminder.Items.Add(new CalReminderMinutes(60, "1 hour"));
-        //    cmbReminder.Items.Add(new CalReminderMinutes(120, "2 hour"));
-        //    cmbReminder.Items.Add(new CalReminderMinutes(180, "3 hour"));
-        //    cmbReminder.Items.Add(new CalReminderMinutes(60 * 12, "12 hour"));
-
-        //    cmbReminder.Items.Add(new CalReminderMinutes(60 * 24, "1 day"));
-        //    cmbReminder.Items.Add(new CalReminderMinutes(60 * 24 * 2, "2 days"));
-        //    cmbReminder.Items.Add(new CalReminderMinutes(60 * 24 * 3, "3 days"));
-
-        //    cmbReminder.Items.Add(new CalReminderMinutes(60 * 24 * 7, "1 week"));
-        //    cmbReminder.Items.Add(new CalReminderMinutes(60 * 24 * 7 * 2, "2 weeks"));
-
-        //    chkReminder.Checked = EditingEvent.Reminder;
-        //    chkReminder_CheckedChanged(this, new System.EventArgs());
-
-        //    Boolean bRmdExist = false;
-        //    CalReminderMinutes pRmd = null;
-        //    for (int i = 0; i < cmbReminder.Items.Count; i++)
-        //    {
-        //        pRmd = (CalReminderMinutes)cmbReminder.Items[i];
-
-        //        if (pRmd.m_nMinutes == EditingEvent.ReminderMinutesBeforeStart)
-        //        {
-        //            bRmdExist = true;
-        //            break;
-        //        }
-        //    }
-
-        //    if (!bRmdExist)
-        //    {
-        //        pRmd = new CalReminderMinutes();
-        //        pRmd.m_nMinutes = EditingEvent.ReminderMinutesBeforeStart;
-        //        pRmd.m_strMinutes = EditingEvent.ReminderMinutesBeforeStart.ToString() + " minutes";
-        //        cmbReminder.Items.Add(pRmd);
-        //    }
-
-        //    cmbReminder.SelectedItem = pRmd;
-        //}
     }
 }

@@ -200,9 +200,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            catch
-            {
-            }
+            catch { }
         }
 
         private void lblmore_Click(object sender, EventArgs e)

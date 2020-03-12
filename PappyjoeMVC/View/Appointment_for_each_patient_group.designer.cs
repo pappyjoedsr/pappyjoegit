@@ -312,7 +312,6 @@
             this.dataGridViewappoinmentpatientgroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewappoinmentpatientgroup.Size = new System.Drawing.Size(1165, 548);
             this.dataGridViewappoinmentpatientgroup.TabIndex = 0;
-            this.dataGridViewappoinmentpatientgroup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewappoinmentpatientgroup_CellContentClick);
             // 
             // Sino
             // 

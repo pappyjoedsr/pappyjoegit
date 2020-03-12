@@ -764,7 +764,6 @@ namespace PappyjoeMVC.View
                             if (rs_patients.Rows[0]["pt_name"].ToString() != "")
                             {
                                 DGV_Patients.Rows[i].Cells[2].Value = "PATIENT NAME :  " + rs_patients.Rows[0]["pt_name"].ToString();
-                                //DGV_Patients.Rows[i].Cells[3].Value = rs_patients.Rows[0]["pt_name"].ToString();
                             }
                             if (rs_patients.Rows[0]["pt_id"].ToString() != "")
                             {
@@ -2002,8 +2001,6 @@ namespace PappyjoeMVC.View
                     listpatientsearch.Visible = true;
                 }
                 listpatientsearch.Location = new Point(toolStrip1.Width - 360, 37);
-                //listpatientsearch.Location = new Point(toolStripTextBox1.Width + 750, 32);
-                //listpatientsearch.Location = new Point(toolStripTextBox1.Width = 1014, 39);
             }
             else
             {

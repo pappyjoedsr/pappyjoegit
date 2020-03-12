@@ -80,381 +80,8 @@ namespace PappyjoeMVC.View
                 {
                     linkLabel_id.Text = rs_patients.Rows[0]["pt_id"].ToString();
                 }
-                dataGridView1.ColumnCount = 5;
-                dataGridView1.RowCount = 0;
-                dataGridView1.ColumnHeadersVisible = false;
-                dataGridView1.RowHeadersVisible = false;
-                dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                string heading = "";
-                System.Data.DataTable dt_cf_main = this.cntrl.dt_cf_main(patient_id);
-                int i = 0;
-                for (int j = 0; j < dt_cf_main.Rows.Count; j++)
-                {
-                    dataGridView1.Rows.Add(dt_cf_main.Rows[j]["id"].ToString(), String.Format("{0:dddd, MMMM d, yyyy}", Convert.ToDateTime(dt_cf_main.Rows[j]["date"].ToString())), "", "", "");
-                    dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.Bill;
-                    dataGridView1.Rows[i].Cells[1].Style.Font = new System.Drawing.Font("Segoe UI", 7, FontStyle.Bold);
-                    dataGridView1.Rows[i].Cells[1].Style.ForeColor = Color.DarkGreen;
-                    dataGridView1.Rows[i].Cells[1].Style.BackColor = Color.LightGray;
-                    dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.LightGray;
-                    dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.LightGray;
-                    dataGridView1.Rows[i].Cells[4].Style.BackColor = Color.LightGray;
-                    System.Data.DataTable dt_cf_Complaints = this.cntrl.dt_cf_Complaints(dt_cf_main.Rows[j]["id"].ToString());
-                    if (dt_cf_Complaints.Rows.Count > 0)
-                    {
-                        int partLength = 90;
-                        string sentence = dt_cf_Complaints.Rows[0]["complaint_id"].ToString();
-                        string[] words = sentence.Split(' ');
-                        var parts = new Dictionary<int, string>();
-                        string part = string.Empty;
-                        int partCounter = 0;
-                        foreach (var word in words)
-                        {
-                            if (part.Length + word.Length < partLength)
-                            {
-                                part += string.IsNullOrEmpty(part) ? word : " " + word;
-                            }
-                            else
-                            {
-                                parts.Add(partCounter, part);
-                                part = word;
-                                partCounter++;
-                            }
-                        }
-                        parts.Add(partCounter, part);
-                        heading = "Complaints";
-                        foreach (var item in parts)
-                        {
-                            i = i + 1;
-                            dataGridView1.Rows.Add("0", heading, "", item.Value, "");
-                            heading = "";
-                            dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
-                            dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                        }
-                        for (int k = 1; k < dt_cf_Complaints.Rows.Count; k++)
-                        {
-                            partLength = 90;
-                            sentence = dt_cf_Complaints.Rows[k]["complaint_id"].ToString();
-                            words = sentence.Split(' ');
-                            parts = new Dictionary<int, string>();
-                            part = string.Empty;
-                            partCounter = 0;
-                            foreach (var word in words)
-                            {
-                                if (part.Length + word.Length < partLength)
-                                {
-                                    part += string.IsNullOrEmpty(part) ? word : " " + word;
-                                }
-                                else
-                                {
-                                    parts.Add(partCounter, part);
-                                    part = word;
-                                    partCounter++;
-                                }
-                            }
-                            parts.Add(partCounter, part);
-                            foreach (var item in parts)
-                            {
-                                i = i + 1;
-                                dataGridView1.Rows.Add("0", "", "", item.Value, "");
-                                dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                                dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
-                            }
-                        }
-                    }
-                    System.Data.DataTable dt_cf_observe = this.cntrl.dt_cf_observe(dt_cf_main.Rows[j]["id"].ToString());
-                    if (dt_cf_observe.Rows.Count > 0)
-                    {
-                        i = i + 1;
-                        dataGridView1.Rows.Add("0", "", "", "", "");
-                        dataGridView1.Rows[i].Height = 1;
-                        dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.Gainsboro;
-                        dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                        int partLength = 90;
-                        string sentence = dt_cf_observe.Rows[0]["observation_id"].ToString();
-                        string[] words = sentence.Split(' ');
-                        var parts = new Dictionary<int, string>();
-                        string part = string.Empty;
-                        int partCounter = 0;
-                        foreach (var word in words)
-                        {
-                            if (part.Length + word.Length < partLength)
-                            {
-                                part += string.IsNullOrEmpty(part) ? word : " " + word;
-                            }
-                            else
-                            {
-                                parts.Add(partCounter, part);
-                                part = word;
-                                partCounter++;
-                            }
-                        }
-                        parts.Add(partCounter, part);
-                        heading = "Observation";
-                        foreach (var item in parts)
-                        {
-                            i = i + 1;
-                            dataGridView1.Rows.Add("0", heading, "", item.Value, "");
-                            heading = "";
-                            dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
-                            dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                        }
-                        for (int k = 1; k < dt_cf_observe.Rows.Count; k++)
-                        {
-                            partLength = 90;
-                            sentence = dt_cf_observe.Rows[k]["observation_id"].ToString();
-                            words = sentence.Split(' ');
-                            parts = new Dictionary<int, string>();
-                            part = string.Empty;
-                            partCounter = 0;
-                            foreach (var word in words)
-                            {
-                                if (part.Length + word.Length < partLength)
-                                {
-                                    part += string.IsNullOrEmpty(part) ? word : " " + word;
-                                }
-                                else
-                                {
-                                    parts.Add(partCounter, part);
-                                    part = word;
-                                    partCounter++;
-                                }
-                            }
-                            parts.Add(partCounter, part);
-                            foreach (var item in parts)
-                            {
-                                i = i + 1;
-                                dataGridView1.Rows.Add("0", "", "", item.Value, "");
-                                dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                                dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
-                            }
-                        }
-                    }
-                    System.Data.DataTable dt_cf_investigation = this.cntrl.dt_cf_investigation(dt_cf_main.Rows[j]["id"].ToString());
-                    if (dt_cf_investigation.Rows.Count > 0)
-                    {
-                        i = i + 1;
-                        dataGridView1.Rows.Add("0", "", "", "", "");
-                        dataGridView1.Rows[i].Height = 1;
-                        dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.Gainsboro;
-                        dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                        int partLength = 90;
-                        string sentence = dt_cf_investigation.Rows[0]["investigation_id"].ToString();
-                        string[] words = sentence.Split(' ');
-                        var parts = new Dictionary<int, string>();
-                        string part = string.Empty;
-                        int partCounter = 0;
-                        foreach (var word in words)
-                        {
-                            if (part.Length + word.Length < partLength)
-                            {
-                                part += string.IsNullOrEmpty(part) ? word : " " + word;
-                            }
-                            else
-                            {
-                                parts.Add(partCounter, part);
-                                part = word;
-                                partCounter++;
-                            }
-                        }
-                        parts.Add(partCounter, part);
-                        heading = "Investigation";
-                        foreach (var item in parts)
-                        {
-                            i = i + 1;
-                            dataGridView1.Rows.Add("0", heading, "", item.Value, "");
-                            heading = "";
-                            dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
-                            dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                        }
-                        for (int k = 1; k < dt_cf_investigation.Rows.Count; k++)
-                        {
-                            partLength = 90;
-                            sentence = dt_cf_investigation.Rows[k]["investigation_id"].ToString();
-                            words = sentence.Split(' ');
-                            parts = new Dictionary<int, string>();
-                            part = string.Empty;
-                            partCounter = 0;
-                            foreach (var word in words)
-                            {
-                                if (part.Length + word.Length < partLength)
-                                {
-                                    part += string.IsNullOrEmpty(part) ? word : " " + word;
-                                }
-                                else
-                                {
-                                    parts.Add(partCounter, part);
-                                    part = word;
-                                    partCounter++;
-                                }
-                            }
-                            parts.Add(partCounter, part);
-                            foreach (var item in parts)
-                            {
-                                i = i + 1;
-                                dataGridView1.Rows.Add("0", "", "", item.Value, "");
-                                dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                                dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
-                            }
-                        }
-                    }
-                    System.Data.DataTable dt_cf_diagnosis = this.cntrl.dt_cf_diagnosis(dt_cf_main.Rows[j]["id"].ToString());
-                    if (dt_cf_diagnosis.Rows.Count > 0)
-                    {
-                        i = i + 1;
-                        dataGridView1.Rows.Add("0", "", "", "", "");
-                        dataGridView1.Rows[i].Height = 1;
-                        dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.Gainsboro;
-                        dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                        int partLength = 90;
-                        string sentence = dt_cf_diagnosis.Rows[0]["diagnosis_id"].ToString();
-                        string[] words = sentence.Split(' ');
-                        var parts = new Dictionary<int, string>();
-                        string part = string.Empty;
-                        int partCounter = 0;
-                        foreach (var word in words)
-                        {
-                            if (part.Length + word.Length < partLength)
-                            {
-                                part += string.IsNullOrEmpty(part) ? word : " " + word;
-                            }
-                            else
-                            {
-                                parts.Add(partCounter, part);
-                                part = word;
-                                partCounter++;
-                            }
-                        }
-                        parts.Add(partCounter, part);
-                        heading = "Diagnosis";
-                        foreach (var item in parts)
-                        {
-                            i = i + 1;
-                            dataGridView1.Rows.Add("0", heading, "", item.Value, "");
-                            heading = "";
-                            dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
-                            dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                        }
-                        for (int k = 1; k < dt_cf_diagnosis.Rows.Count; k++)
-                        {
-                            partLength = 90;
-                            sentence = dt_cf_diagnosis.Rows[k]["diagnosis_id"].ToString();
-                            words = sentence.Split(' ');
-                            parts = new Dictionary<int, string>();
-                            part = string.Empty;
-                            partCounter = 0;
-                            foreach (var word in words)
-                            {
-                                if (part.Length + word.Length < partLength)
-                                {
-                                    part += string.IsNullOrEmpty(part) ? word : " " + word;
-                                }
-                                else
-                                {
-                                    parts.Add(partCounter, part);
-                                    part = word;
-                                    partCounter++;
-                                }
-                            }
-                            parts.Add(partCounter, part);
-                            foreach (var item in parts)
-                            {
-                                i = i + 1;
-                                dataGridView1.Rows.Add("0", "", "", item.Value, "");
-                                dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                                dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
-                            }
-                        }
-                    }
-                    System.Data.DataTable dt_cf_note = this.cntrl.dt_cf_note(dt_cf_main.Rows[j]["id"].ToString());
-                    if (dt_cf_note.Rows.Count > 0)
-                    {
-                        i = i + 1;
-                        dataGridView1.Rows.Add("0", "", "", "", "");
-                        dataGridView1.Rows[i].Height = 1;
-                        dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.Gainsboro;
-                        dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                        int partLength = 90;
-                        string sentence = dt_cf_note.Rows[0]["note_name"].ToString();
-                        string[] words = sentence.Split(' ');
-                        var parts = new Dictionary<int, string>();
-                        string part = string.Empty;
-                        int partCounter = 0;
-                        foreach (var word in words)
-                        {
-                            if (part.Length + word.Length < partLength)
-                            {
-                                part += string.IsNullOrEmpty(part) ? word : " " + word;
-                            }
-                            else
-                            {
-                                parts.Add(partCounter, part);
-                                part = word;
-                                partCounter++;
-                            }
-                        }
-                        parts.Add(partCounter, part);
-                        heading = "Note";
-                        foreach (var item in parts)
-                        {
-                            i = i + 1;
-                            dataGridView1.Rows.Add("0", heading, "", item.Value, "");
-                            heading = "";
-                            dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
-                            dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                        }
-                        for (int k = 1; k < dt_cf_note.Rows.Count; k++)
-                        {
-                            partLength = 90;
-                            sentence = dt_cf_note.Rows[k]["note_name"].ToString();
-                            words = sentence.Split(' ');
-                            parts = new Dictionary<int, string>();
-                            part = string.Empty;
-                            partCounter = 0;
-                            foreach (var word in words)
-                            {
-                                if (part.Length + word.Length < partLength)
-                                {
-                                    part += string.IsNullOrEmpty(part) ? word : " " + word;
-                                }
-                                else
-                                {
-                                    parts.Add(partCounter, part);
-                                    part = word;
-                                    partCounter++;
-                                }
-                            }
-                            parts.Add(partCounter, part);
-                            foreach (var item in parts)
-                            {
-                                i = i + 1;
-                                dataGridView1.Rows.Add("0", "", "", item.Value, "");
-                                dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                                dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
-                            }
-                        }
-                    }
-                    i = i + 1;
-                    dataGridView1.Rows.Add("0", "Note by Dr." + dt_cf_main.Rows[j]["doctor_name"].ToString(), "", "", "");
-                    dataGridView1.Rows[i].Cells[1].Style.ForeColor = Color.Red;
-                    dataGridView1.Rows[i].Cells[1].Style.Font = new System.Drawing.Font("Segoe UI", 7, FontStyle.Bold);
-                    dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                    i = i + 1;
-                    dataGridView1.Rows.Add("0", "", "", "", "");
-                    dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
-                    i = i + 1;
-                }
-                if (dataGridView1.Rows.Count <= 0)
-                {
-                    int x = (panel3.Size.Width - Lbl_NoRecordFound_Alert.Size.Width) / 2;
-                    Lbl_NoRecordFound_Alert.Location = new Point(x, Lbl_NoRecordFound_Alert.Location.Y);
-                    Lbl_NoRecordFound_Alert.Show();
-                }
-                else
-                {
-                    Lbl_NoRecordFound_Alert.Hide();
-                }
-                BtnAdd.Show();
-                dataGridView1.Show();
+                fillgrid();
+                
             }
             catch (Exception ex)
             {
@@ -462,6 +89,384 @@ namespace PappyjoeMVC.View
             }
         }
 
+        public void fillgrid()
+        {
+            dataGridView1.ColumnCount = 5;
+            dataGridView1.RowCount = 0;
+            dataGridView1.ColumnHeadersVisible = false;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            string heading = "";
+            System.Data.DataTable dt_cf_main = this.cntrl.dt_cf_main(patient_id);
+            int i = 0;
+            for (int j = 0; j < dt_cf_main.Rows.Count; j++)
+            {
+                dataGridView1.Rows.Add(dt_cf_main.Rows[j]["id"].ToString(), String.Format("{0:dddd, MMMM d, yyyy}", Convert.ToDateTime(dt_cf_main.Rows[j]["date"].ToString())), "", "", "");
+                dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.Bill;
+                dataGridView1.Rows[i].Cells[1].Style.Font = new System.Drawing.Font("Segoe UI", 7, FontStyle.Bold);
+                dataGridView1.Rows[i].Cells[1].Style.ForeColor = Color.DarkGreen;
+                dataGridView1.Rows[i].Cells[1].Style.BackColor = Color.LightGray;
+                dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.LightGray;
+                dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.LightGray;
+                dataGridView1.Rows[i].Cells[4].Style.BackColor = Color.LightGray;
+                System.Data.DataTable dt_cf_Complaints = this.cntrl.dt_cf_Complaints(dt_cf_main.Rows[j]["id"].ToString());
+                if (dt_cf_Complaints.Rows.Count > 0)
+                {
+                    int partLength = 90;
+                    string sentence = dt_cf_Complaints.Rows[0]["complaint_id"].ToString();
+                    string[] words = sentence.Split(' ');
+                    var parts = new Dictionary<int, string>();
+                    string part = string.Empty;
+                    int partCounter = 0;
+                    foreach (var word in words)
+                    {
+                        if (part.Length + word.Length < partLength)
+                        {
+                            part += string.IsNullOrEmpty(part) ? word : " " + word;
+                        }
+                        else
+                        {
+                            parts.Add(partCounter, part);
+                            part = word;
+                            partCounter++;
+                        }
+                    }
+                    parts.Add(partCounter, part);
+                    heading = "Complaints";
+                    foreach (var item in parts)
+                    {
+                        i = i + 1;
+                        dataGridView1.Rows.Add("0", heading, "", item.Value, "");
+                        heading = "";
+                        dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
+                        dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                    }
+                    for (int k = 1; k < dt_cf_Complaints.Rows.Count; k++)
+                    {
+                        partLength = 90;
+                        sentence = dt_cf_Complaints.Rows[k]["complaint_id"].ToString();
+                        words = sentence.Split(' ');
+                        parts = new Dictionary<int, string>();
+                        part = string.Empty;
+                        partCounter = 0;
+                        foreach (var word in words)
+                        {
+                            if (part.Length + word.Length < partLength)
+                            {
+                                part += string.IsNullOrEmpty(part) ? word : " " + word;
+                            }
+                            else
+                            {
+                                parts.Add(partCounter, part);
+                                part = word;
+                                partCounter++;
+                            }
+                        }
+                        parts.Add(partCounter, part);
+                        foreach (var item in parts)
+                        {
+                            i = i + 1;
+                            dataGridView1.Rows.Add("0", "", "", item.Value, "");
+                            dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                            dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
+                        }
+                    }
+                }
+                System.Data.DataTable dt_cf_observe = this.cntrl.dt_cf_observe(dt_cf_main.Rows[j]["id"].ToString());
+                if (dt_cf_observe.Rows.Count > 0)
+                {
+                    i = i + 1;
+                    dataGridView1.Rows.Add("0", "", "", "", "");
+                    dataGridView1.Rows[i].Height = 1;
+                    dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.Gainsboro;
+                    dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                    int partLength = 90;
+                    string sentence = dt_cf_observe.Rows[0]["observation_id"].ToString();
+                    string[] words = sentence.Split(' ');
+                    var parts = new Dictionary<int, string>();
+                    string part = string.Empty;
+                    int partCounter = 0;
+                    foreach (var word in words)
+                    {
+                        if (part.Length + word.Length < partLength)
+                        {
+                            part += string.IsNullOrEmpty(part) ? word : " " + word;
+                        }
+                        else
+                        {
+                            parts.Add(partCounter, part);
+                            part = word;
+                            partCounter++;
+                        }
+                    }
+                    parts.Add(partCounter, part);
+                    heading = "Observation";
+                    foreach (var item in parts)
+                    {
+                        i = i + 1;
+                        dataGridView1.Rows.Add("0", heading, "", item.Value, "");
+                        heading = "";
+                        dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
+                        dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                    }
+                    for (int k = 1; k < dt_cf_observe.Rows.Count; k++)
+                    {
+                        partLength = 90;
+                        sentence = dt_cf_observe.Rows[k]["observation_id"].ToString();
+                        words = sentence.Split(' ');
+                        parts = new Dictionary<int, string>();
+                        part = string.Empty;
+                        partCounter = 0;
+                        foreach (var word in words)
+                        {
+                            if (part.Length + word.Length < partLength)
+                            {
+                                part += string.IsNullOrEmpty(part) ? word : " " + word;
+                            }
+                            else
+                            {
+                                parts.Add(partCounter, part);
+                                part = word;
+                                partCounter++;
+                            }
+                        }
+                        parts.Add(partCounter, part);
+                        foreach (var item in parts)
+                        {
+                            i = i + 1;
+                            dataGridView1.Rows.Add("0", "", "", item.Value, "");
+                            dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                            dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
+                        }
+                    }
+                }
+                System.Data.DataTable dt_cf_investigation = this.cntrl.dt_cf_investigation(dt_cf_main.Rows[j]["id"].ToString());
+                if (dt_cf_investigation.Rows.Count > 0)
+                {
+                    i = i + 1;
+                    dataGridView1.Rows.Add("0", "", "", "", "");
+                    dataGridView1.Rows[i].Height = 1;
+                    dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.Gainsboro;
+                    dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                    int partLength = 90;
+                    string sentence = dt_cf_investigation.Rows[0]["investigation_id"].ToString();
+                    string[] words = sentence.Split(' ');
+                    var parts = new Dictionary<int, string>();
+                    string part = string.Empty;
+                    int partCounter = 0;
+                    foreach (var word in words)
+                    {
+                        if (part.Length + word.Length < partLength)
+                        {
+                            part += string.IsNullOrEmpty(part) ? word : " " + word;
+                        }
+                        else
+                        {
+                            parts.Add(partCounter, part);
+                            part = word;
+                            partCounter++;
+                        }
+                    }
+                    parts.Add(partCounter, part);
+                    heading = "Investigation";
+                    foreach (var item in parts)
+                    {
+                        i = i + 1;
+                        dataGridView1.Rows.Add("0", heading, "", item.Value, "");
+                        heading = "";
+                        dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
+                        dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                    }
+                    for (int k = 1; k < dt_cf_investigation.Rows.Count; k++)
+                    {
+                        partLength = 90;
+                        sentence = dt_cf_investigation.Rows[k]["investigation_id"].ToString();
+                        words = sentence.Split(' ');
+                        parts = new Dictionary<int, string>();
+                        part = string.Empty;
+                        partCounter = 0;
+                        foreach (var word in words)
+                        {
+                            if (part.Length + word.Length < partLength)
+                            {
+                                part += string.IsNullOrEmpty(part) ? word : " " + word;
+                            }
+                            else
+                            {
+                                parts.Add(partCounter, part);
+                                part = word;
+                                partCounter++;
+                            }
+                        }
+                        parts.Add(partCounter, part);
+                        foreach (var item in parts)
+                        {
+                            i = i + 1;
+                            dataGridView1.Rows.Add("0", "", "", item.Value, "");
+                            dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                            dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
+                        }
+                    }
+                }
+                System.Data.DataTable dt_cf_diagnosis = this.cntrl.dt_cf_diagnosis(dt_cf_main.Rows[j]["id"].ToString());
+                if (dt_cf_diagnosis.Rows.Count > 0)
+                {
+                    i = i + 1;
+                    dataGridView1.Rows.Add("0", "", "", "", "");
+                    dataGridView1.Rows[i].Height = 1;
+                    dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.Gainsboro;
+                    dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                    int partLength = 90;
+                    string sentence = dt_cf_diagnosis.Rows[0]["diagnosis_id"].ToString();
+                    string[] words = sentence.Split(' ');
+                    var parts = new Dictionary<int, string>();
+                    string part = string.Empty;
+                    int partCounter = 0;
+                    foreach (var word in words)
+                    {
+                        if (part.Length + word.Length < partLength)
+                        {
+                            part += string.IsNullOrEmpty(part) ? word : " " + word;
+                        }
+                        else
+                        {
+                            parts.Add(partCounter, part);
+                            part = word;
+                            partCounter++;
+                        }
+                    }
+                    parts.Add(partCounter, part);
+                    heading = "Diagnosis";
+                    foreach (var item in parts)
+                    {
+                        i = i + 1;
+                        dataGridView1.Rows.Add("0", heading, "", item.Value, "");
+                        heading = "";
+                        dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
+                        dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                    }
+                    for (int k = 1; k < dt_cf_diagnosis.Rows.Count; k++)
+                    {
+                        partLength = 90;
+                        sentence = dt_cf_diagnosis.Rows[k]["diagnosis_id"].ToString();
+                        words = sentence.Split(' ');
+                        parts = new Dictionary<int, string>();
+                        part = string.Empty;
+                        partCounter = 0;
+                        foreach (var word in words)
+                        {
+                            if (part.Length + word.Length < partLength)
+                            {
+                                part += string.IsNullOrEmpty(part) ? word : " " + word;
+                            }
+                            else
+                            {
+                                parts.Add(partCounter, part);
+                                part = word;
+                                partCounter++;
+                            }
+                        }
+                        parts.Add(partCounter, part);
+                        foreach (var item in parts)
+                        {
+                            i = i + 1;
+                            dataGridView1.Rows.Add("0", "", "", item.Value, "");
+                            dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                            dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
+                        }
+                    }
+                }
+                System.Data.DataTable dt_cf_note = this.cntrl.dt_cf_note(dt_cf_main.Rows[j]["id"].ToString());
+                if (dt_cf_note.Rows.Count > 0)
+                {
+                    i = i + 1;
+                    dataGridView1.Rows.Add("0", "", "", "", "");
+                    dataGridView1.Rows[i].Height = 1;
+                    dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.Gainsboro;
+                    dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                    int partLength = 90;
+                    string sentence = dt_cf_note.Rows[0]["note_name"].ToString();
+                    string[] words = sentence.Split(' ');
+                    var parts = new Dictionary<int, string>();
+                    string part = string.Empty;
+                    int partCounter = 0;
+                    foreach (var word in words)
+                    {
+                        if (part.Length + word.Length < partLength)
+                        {
+                            part += string.IsNullOrEmpty(part) ? word : " " + word;
+                        }
+                        else
+                        {
+                            parts.Add(partCounter, part);
+                            part = word;
+                            partCounter++;
+                        }
+                    }
+                    parts.Add(partCounter, part);
+                    heading = "Note";
+                    foreach (var item in parts)
+                    {
+                        i = i + 1;
+                        dataGridView1.Rows.Add("0", heading, "", item.Value, "");
+                        heading = "";
+                        dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
+                        dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                    }
+                    for (int k = 1; k < dt_cf_note.Rows.Count; k++)
+                    {
+                        partLength = 90;
+                        sentence = dt_cf_note.Rows[k]["note_name"].ToString();
+                        words = sentence.Split(' ');
+                        parts = new Dictionary<int, string>();
+                        part = string.Empty;
+                        partCounter = 0;
+                        foreach (var word in words)
+                        {
+                            if (part.Length + word.Length < partLength)
+                            {
+                                part += string.IsNullOrEmpty(part) ? word : " " + word;
+                            }
+                            else
+                            {
+                                parts.Add(partCounter, part);
+                                part = word;
+                                partCounter++;
+                            }
+                        }
+                        parts.Add(partCounter, part);
+                        foreach (var item in parts)
+                        {
+                            i = i + 1;
+                            dataGridView1.Rows.Add("0", "", "", item.Value, "");
+                            dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                            dataGridView1.Rows[i].Cells[2].Style.BackColor = Color.Gainsboro;
+                        }
+                    }
+                }
+                i = i + 1;
+                dataGridView1.Rows.Add("0", "Note by Dr." + dt_cf_main.Rows[j]["doctor_name"].ToString(), "", "", "");
+                dataGridView1.Rows[i].Cells[1].Style.ForeColor = Color.Red;
+                dataGridView1.Rows[i].Cells[1].Style.Font = new System.Drawing.Font("Segoe UI", 7, FontStyle.Bold);
+                dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                i = i + 1;
+                dataGridView1.Rows.Add("0", "", "", "", "");
+                dataGridView1.Rows[i].Cells[4].Value = PappyjoeMVC.Properties.Resources.blank;
+                i = i + 1;
+            }
+            if (dataGridView1.Rows.Count <= 0)
+            {
+                int x = (panel3.Size.Width - Lbl_NoRecordFound_Alert.Size.Width) / 2;
+                Lbl_NoRecordFound_Alert.Location = new Point(x, Lbl_NoRecordFound_Alert.Location.Y);
+                Lbl_NoRecordFound_Alert.Show();
+            }
+            else
+            {
+                Lbl_NoRecordFound_Alert.Hide();
+            }
+            BtnAdd.Show();
+            dataGridView1.Show();
+        }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -2288,6 +2293,73 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.ShowDialog();
             form2.Dispose();
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you want copy this prescription..??", "Copy...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res==DialogResult.Yes)
+            {
+                int treat;
+                if (clinic_id!="0")
+                {
+                    DataTable dt_clncl_findings = this.cntrl.dt_cf(clinic_id);
+                    if (dt_clncl_findings.Rows.Count>0)
+                    {
+                        this.cntrl.insertInto_clinical_findings(dt_clncl_findings.Rows[0]["pt_id"].ToString(), dt_clncl_findings.Rows[0]["dr_id"].ToString(), DateTime.Now.ToString("yyyy-MM-dd")); //dateTimePicker1.Value.ToString("yyyy-MM-dd"));
+                        string treatment = this.cntrl.MaxId_clinic_findings();
+                        if (Convert.ToInt32(treatment) > 0)
+                        {
+                            treat = int.Parse(treatment);
+                        }
+                        else
+                        {
+                            treat = 1;
+                        }
+                        System.Data.DataTable dt_cf_Complaints = this.cntrl.dt_cf_Complaints(clinic_id);
+                        if (dt_cf_Complaints.Rows.Count>0)
+                        {
+                            for (int i = 0; i < dt_cf_Complaints.Rows.Count; i++)
+                            {
+                                this.cntrl.insrtto_chief_comp(treat,dt_cf_Complaints.Rows[i]["complaint_id"].ToString());
+                            }
+                        }
+                        System.Data.DataTable dt_cf_observe = this.cntrl.dt_cf_observe(clinic_id);
+                        if (dt_cf_observe.Rows.Count>0)
+                        {
+                            for (int i = 0; i < dt_cf_observe.Rows.Count; i++)
+                            {
+                                this.cntrl.insrtto_obser(treat, dt_cf_observe.Rows[i]["observation_id"].ToString());
+                            }
+                        }
+                        System.Data.DataTable dt_cf_investigation = this.cntrl.dt_cf_investigation(clinic_id);
+                        if (dt_cf_investigation.Rows.Count > 0)
+                        {
+                            for (int i = 0; i < dt_cf_investigation.Rows.Count; i++)
+                            {
+                                this.cntrl.insrtto_investi(treat, dt_cf_investigation.Rows[i]["investigation_id"].ToString());
+                            }
+                        }
+                        System.Data.DataTable dt_cf_diagnosis = this.cntrl.dt_cf_diagnosis(clinic_id);
+                        if (dt_cf_diagnosis.Rows.Count > 0)
+                        {
+                            for (int i = 0; i < dt_cf_diagnosis.Rows.Count; i++)
+                            {
+                                this.cntrl.insrtto_diagno(treat, dt_cf_diagnosis.Rows[i]["diagnosis_id"].ToString());
+                            }
+                        }
+                        System.Data.DataTable dt_cf_note = this.cntrl.dt_cf_note(clinic_id);
+                        if (dt_cf_note.Rows.Count > 0)
+                        {
+                            for (int i = 0; i < dt_cf_note.Rows.Count; i++)
+                            {
+                                this.cntrl.insrtto_note(treat, dt_cf_note.Rows[i]["note_name"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            fillgrid();
         }
     }
 }

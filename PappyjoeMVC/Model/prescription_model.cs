@@ -209,5 +209,10 @@ namespace PappyjoeMVC.Model
             string dt_patient = db.scalar("select Pt_name from tbl_patient where id='" + ptid + "'");
             return dt_patient;
         }
+        public DataTable sms_details()
+        {
+            DataTable sms = db.table("select smsName,smsPass from tbl_SmsEmailConfig");
+            return sms;
+        }
     }
 }

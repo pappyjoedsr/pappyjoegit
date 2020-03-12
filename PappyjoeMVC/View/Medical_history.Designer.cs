@@ -230,7 +230,6 @@
             this.label4.Size = new System.Drawing.Size(47, 17);
             this.label4.TabIndex = 2;
             this.label4.Text = "Search";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // text_medhist
             // 

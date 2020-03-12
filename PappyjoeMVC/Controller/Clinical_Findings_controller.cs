@@ -6,6 +6,7 @@ namespace PappyjoeMVC.Controller
     {
         Clinical_Findings_model _model = new Clinical_Findings_model();
         Common_model model = new Common_model();
+        Clinical_Notes_Add_model cmodel = new Clinical_Notes_Add_model();
         public string privilge_for_inventory(string doctor_id)
         {
             string s = model.privilge_for_inventory(doctor_id);
@@ -170,6 +171,40 @@ namespace PappyjoeMVC.Controller
         {
             DataTable dt = model.send_email();
             return dt;
+        }
+        public DataTable dt_cf(string clinic_id)
+        {
+            DataTable dt = _model.dt_cf(clinic_id);
+            return dt;
+        }
+        public void insertInto_clinical_findings(string ptid, string dt, string date)
+        {
+            cmodel.insertInto_clinical_findings(ptid, dt, date);
+        }
+        public string MaxId_clinic_findings()
+        {
+            string dt = cmodel.MaxId_clinic_findings();
+            return dt;
+        }
+        public void insrtto_chief_comp(int treat, string one)
+        {
+            cmodel.insrtto_chief_comp(treat, one);
+        }
+        public void insrtto_obser(int treat, string one)
+        {
+            cmodel.insrtto_obser(treat, one);
+        }
+        public void insrtto_investi(int treat, string one)
+        {
+            cmodel.insrtto_investi(treat, one);
+        }
+        public void insrtto_diagno(int treat, string one)
+        {
+            cmodel.insrtto_diagno(treat, one);
+        }
+        public void insrtto_note(int treat, string one)
+        {
+             cmodel.insrtto_note(treat, one);
         }
     }
 }

@@ -399,9 +399,7 @@ namespace PappyjoeMVC.View
                                     ExcelApp.Cells[i + 6, j + 1].Font.Size = 8;
                                 }
                             }
-                            catch
-                            {
-                            }
+                            catch { }
                         }
                         ExcelApp.ActiveWorkbook.SaveAs(PathName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
                         ExcelApp.ActiveWorkbook.Saved = true;

@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PappyjoeMVC.Controller;
+using PappyjoeMVC.Model;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
-using PappyjoeMVC.Controller;
+
 namespace PappyjoeMVC.View
 {
     public partial class Prescription_Add : Form
     {
-        Prescription_Add_controller cntrl=new Prescription_Add_controller();
+        Prescription_Add_controller cntrl = new Prescription_Add_controller();
         public string patient_id = "", prescription_id = "";
         public string doctor_id = "";
         string buttoncaption = "";
@@ -115,7 +114,7 @@ namespace PappyjoeMVC.View
             try
             {
                 string checkdataname = this.cntrl.check_drugname(drugnametextbox.Text);
-                if (checkdataname!="0")
+                if (checkdataname != "0")
                 {
                     MessageBox.Show("Drug " + drugnametextbox.Text + "' already exist", "Duplication Encountered", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -337,7 +336,7 @@ namespace PappyjoeMVC.View
                     radioButtonBfrFood.Checked = false;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -371,7 +370,7 @@ namespace PappyjoeMVC.View
                 radioButtonTempBfrFood.Checked = false;
                 radioButtonTempAftrFood.Checked = false;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -433,7 +432,7 @@ namespace PappyjoeMVC.View
             {
                 String d_id = "0";
                 string dr_tb = this.cntrl.Get_DoctorId(cmbDoctor.Text);
-                if (dr_tb!="")
+                if (dr_tb != "")
                 {
                     d_id = dr_tb.ToString();
                 }
@@ -442,6 +441,7 @@ namespace PappyjoeMVC.View
                     d_id = "0";
                 }
                 string strstatus = "1";
+                string text = ""; string smsName = "", smsPass = "";
                 if (savebut.Text == "SAVE PRESCRIPTION")
                 {
 
@@ -450,7 +450,7 @@ namespace PappyjoeMVC.View
                         prescription_check();
                         this.cntrl.save_prescriptionmain(patient_id, d_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), Prescription_bill_status, Txtnote.Text);
                         string dt = this.cntrl.Maxid();
-                        if (Convert.ToInt32( dt)> 0)
+                        if (Convert.ToInt32(dt) > 0)
                         {
                             presid = Int32.Parse(dt);
                         }
@@ -463,7 +463,7 @@ namespace PappyjoeMVC.View
                         {
                             if (dataGridView_drugnew[13, i].Value.ToString() != "")
                             { strstatus = dataGridView_drugnew[13, i].Value.ToString(); }
-                            this.cntrl.save_prescription(presid,patient_id, cmbDoctor.Text, d_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), dataGridView_drugnew[0, i].Value.ToString(), dataGridView_drugnew[1, i].Value.ToString(), dataGridView_drugnew[2, i].Value.ToString(), dataGridView_drugnew[3, i].Value.ToString(), dataGridView_drugnew[4, i].Value.ToString(), dataGridView_drugnew[5, i].Value.ToString(), dataGridView_drugnew[6, i].Value.ToString(), dataGridView_drugnew[7, i].Value.ToString(), dataGridView_drugnew[8, i].Value.ToString(), dataGridView_drugnew[9, i].Value.ToString(), dataGridView_drugnew[11, i].Value.ToString(), strstatus, dataGridView_drugnew[10, i].Value.ToString());
+                            this.cntrl.save_prescription(presid, patient_id, cmbDoctor.Text, d_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), dataGridView_drugnew[0, i].Value.ToString(), dataGridView_drugnew[1, i].Value.ToString(), dataGridView_drugnew[2, i].Value.ToString(), dataGridView_drugnew[3, i].Value.ToString(), dataGridView_drugnew[4, i].Value.ToString(), dataGridView_drugnew[5, i].Value.ToString(), dataGridView_drugnew[6, i].Value.ToString(), dataGridView_drugnew[7, i].Value.ToString(), dataGridView_drugnew[8, i].Value.ToString(), dataGridView_drugnew[9, i].Value.ToString(), dataGridView_drugnew[11, i].Value.ToString(), strstatus, dataGridView_drugnew[10, i].Value.ToString());
                         }
                         // Review
                         if (checkBoxReview.Checked == true)
@@ -474,6 +474,34 @@ namespace PappyjoeMVC.View
                             {
                                 this.cntrl.save_review(dateTimeReview.Value.ToString("yyyy-MM-dd HH:mm"), patient_id);
                                 this.cntrl.save_appointment(dateTimeReview.Value.ToString("yyyy-MM-dd HH:mm"), patient_id, linkLabel_Name.Text, cmbDoctor.SelectedValue.ToString(), Patient_mobile, cmbDoctor.Text.ToString());
+                            }
+                            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB");//datetime format
+                            SMS_model a = new SMS_model();
+                            string Start = dateTimeReview.Value.ToString();
+                            DateTime StartT;
+                            DateTime.TryParse(Start, out StartT);
+                            string clinic = "", contact_no = "";
+                            DataTable sms = this.cntrl.smsdetails();
+                            if (sms.Rows.Count > 0)
+                            {
+                                smsName = sms.Rows[0]["smsName"].ToString();
+                                smsPass = sms.Rows[0]["smsPass"].ToString();
+                            }
+                            DataTable pat = this.cntrl.Get_Patient_Details(patient_id);
+                            System.Data.DataTable clinicname = this.cntrl.clinicdetails();
+                            if (clinicname.Rows.Count > 0)
+                            {
+                                clinic = clinicname.Rows[0]["name"].ToString();
+                                contact_no = clinicname.Rows[0]["contact_no"].ToString();
+                            }
+                            if (dateTimeReview.Value > DateTime.Now.Date)
+                            {
+                                if (pat.Rows.Count > 0)
+                                {
+                                    string number = "91" + pat.Rows[0]["primary_mobile_number"].ToString();
+                                    text = "Dear " + pat.Rows[0]["pt_name"].ToString() + ", " + "Just a reminder that today you have an appointment at " + clinic + " on " + StartT.ToString("dd/MM/yyyy") + ".Regards  " + clinic + "," + contact_no;
+                                    a.SendSMS(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT.ToString("dd/MM/yyyy hh:mm:ss tt"), DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+                                }
                             }
                         }
                         else
@@ -502,7 +530,7 @@ namespace PappyjoeMVC.View
                     {
                         prescription_check();
                         string dt0 = this.cntrl.Get_DoctorId(cmbDoctor.Text);
-                        if (dt0!="")
+                        if (dt0 != "")
                         {
                             this.cntrl.update_prescription_main(Txtnote.Text, Prescription_bill_status, prescription_id);
                             this.cntrl.delete_prescription(prescription_id);
@@ -511,7 +539,7 @@ namespace PappyjoeMVC.View
                             {
                                 if (dataGridView_drugnew[13, i].Value.ToString() != "")
                                 { strstatus = dataGridView_drugnew[13, i].Value.ToString(); }
-                                this.cntrl.save_prescription(Convert.ToInt32( prescription_id), patient_id, cmbDoctor.Text, dt0.ToString(), dateTimePicker1.Value.ToString("yyyy-MM-dd"), dataGridView_drugnew[0, i].Value.ToString(), dataGridView_drugnew[1, i].Value.ToString(), dataGridView_drugnew[2, i].Value.ToString(), dataGridView_drugnew[3, i].Value.ToString(), dataGridView_drugnew[4, i].Value.ToString(), dataGridView_drugnew[5, i].Value.ToString(), dataGridView_drugnew[6, i].Value.ToString(), dataGridView_drugnew[7, i].Value.ToString(), dataGridView_drugnew[8, i].Value.ToString(), dataGridView_drugnew[9, i].Value.ToString(), dataGridView_drugnew[11, i].Value.ToString(), strstatus, dataGridView_drugnew[10, i].Value.ToString());
+                                this.cntrl.save_prescription(Convert.ToInt32(prescription_id), patient_id, cmbDoctor.Text, dt0.ToString(), dateTimePicker1.Value.ToString("yyyy-MM-dd"), dataGridView_drugnew[0, i].Value.ToString(), dataGridView_drugnew[1, i].Value.ToString(), dataGridView_drugnew[2, i].Value.ToString(), dataGridView_drugnew[3, i].Value.ToString(), dataGridView_drugnew[4, i].Value.ToString(), dataGridView_drugnew[5, i].Value.ToString(), dataGridView_drugnew[6, i].Value.ToString(), dataGridView_drugnew[7, i].Value.ToString(), dataGridView_drugnew[8, i].Value.ToString(), dataGridView_drugnew[9, i].Value.ToString(), dataGridView_drugnew[11, i].Value.ToString(), strstatus, dataGridView_drugnew[10, i].Value.ToString());
                             }
                             savebut.Text = "SAVE PRESCRIPTION";
                             var form2 = new Prescription_Show();
@@ -838,6 +866,36 @@ namespace PappyjoeMVC.View
             form2.Dispose();
         }
 
+        private void cb15days_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb15days.Checked)
+            {
+                cb30days.Checked = false;
+                cb90days.Checked = false;
+                dateTimeReview.Value = DateTime.Today.AddDays(15);
+            }
+        }
+
+        private void cb30days_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb30days.Checked)
+            {
+                cb15days.Checked = false;
+                cb90days.Checked = false;
+                dateTimeReview.Value = DateTime.Today.AddDays(30);
+            }
+        }
+
+        private void cb90days_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb90days.Checked)
+            {
+                cb15days.Checked = false;
+                cb30days.Checked = false;
+                dateTimeReview.Value = DateTime.Today.AddDays(90);
+            }
+        }
+
         private void searchtext2_Click(object sender, EventArgs e)
         {
             searchtext2.Clear();
@@ -917,7 +975,7 @@ namespace PappyjoeMVC.View
                 dataGridView_drugnew.Show();
                 dataGridView_templatenew.Hide();
                 drugspanel.Show();
-                drugnametext.Text = ""; 
+                drugnametext.Text = "";
                 txtDrugName.Text = "";
                 DataTable patient = this.cntrl.Get_patient_id_name_gender(patient_id);
                 if (patient.Rows.Count > 0)
@@ -954,7 +1012,7 @@ namespace PappyjoeMVC.View
                 {
                     cmbStrungthTemp.SelectedIndex = 0;
                 }
-                DataTable RsDrugType = this.cntrl.fill_type_combo();  
+                DataTable RsDrugType = this.cntrl.fill_type_combo();
                 drugtypecombo.DisplayMember = "dr_type";
                 drugtypecombo.ValueMember = "id";
                 drugtypecombo.DataSource = RsDrugType;
@@ -996,7 +1054,7 @@ namespace PappyjoeMVC.View
                             dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Height = 30;
                             img.ImageLayout = DataGridViewImageCellLayout.Normal;
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
@@ -1054,7 +1112,7 @@ namespace PappyjoeMVC.View
                     { presdruggrid.Rows[j].Cells[2].Style.ForeColor = Color.Red; }
                     else if (strstock == "(Out-of-stock)")
                     { presdruggrid.Rows[j].Cells[2].Style.ForeColor = Color.Blue; }
-                    presdruggrid.Rows[j].Cells[2].Style.Alignment = DataGridViewContentAlignment.MiddleRight; 
+                    presdruggrid.Rows[j].Cells[2].Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                 }
                 DataTable dt2 = this.cntrl.load_template();
                 dataGridView2.DataSource = dt2;

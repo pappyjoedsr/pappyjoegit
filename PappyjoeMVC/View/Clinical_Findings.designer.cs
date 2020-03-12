@@ -104,6 +104,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelallpatient = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -418,51 +419,52 @@
             this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editToolStripMenuItem1,
+            this.copyToolStripMenuItem,
             this.deleteToolStripMenuItem1,
             this.toolStripSeparator4,
             this.emailToolStripMenuItem1,
             this.printToolStripMenuItem1,
             this.dotmatrixPrintToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 120);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 164);
             // 
             // editToolStripMenuItem1
             // 
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem1.Text = "Edit";
             this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
             // deleteToolStripMenuItem1
             // 
             this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
-            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.deleteToolStripMenuItem1.Text = "Delete";
             this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(167, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
             // 
             // emailToolStripMenuItem1
             // 
             this.emailToolStripMenuItem1.Name = "emailToolStripMenuItem1";
-            this.emailToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.emailToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.emailToolStripMenuItem1.Text = "Email";
             this.emailToolStripMenuItem1.Click += new System.EventHandler(this.emailToolStripMenuItem1_Click);
             // 
             // printToolStripMenuItem1
             // 
             this.printToolStripMenuItem1.Name = "printToolStripMenuItem1";
-            this.printToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.printToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.printToolStripMenuItem1.Text = "Print";
             this.printToolStripMenuItem1.Click += new System.EventHandler(this.printToolStripMenuItem1_Click);
             // 
             // dotmatrixPrintToolStripMenuItem
             // 
             this.dotmatrixPrintToolStripMenuItem.Name = "dotmatrixPrintToolStripMenuItem";
-            this.dotmatrixPrintToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.dotmatrixPrintToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dotmatrixPrintToolStripMenuItem.Text = "Dotmatrix Print";
             this.dotmatrixPrintToolStripMenuItem.Visible = false;
             this.dotmatrixPrintToolStripMenuItem.Click += new System.EventHandler(this.dotmatrixPrintToolStripMenuItem_Click);
@@ -972,6 +974,13 @@
             this.panel6.Size = new System.Drawing.Size(1166, 37);
             this.panel6.TabIndex = 284;
             // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
             // Clinical_Findings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1081,5 +1090,6 @@
         private System.Windows.Forms.Label labelallpatient;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
     }
 }

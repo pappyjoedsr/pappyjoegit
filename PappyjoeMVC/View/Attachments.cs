@@ -229,9 +229,7 @@ namespace PappyjoeMVC.View
                     }
                 }
             }
-            else
-            {
-            }
+            else { }
         }
 
         private void btn_CategoryAdd_Click(object sender, EventArgs e)

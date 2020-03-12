@@ -506,8 +506,6 @@
             this.txtname.Size = new System.Drawing.Size(382, 20);
             this.txtname.TabIndex = 111;
             this.txtname.TextChanged += new System.EventHandler(this.txtname_TextChanged);
-            this.txtname.Enter += new System.EventHandler(this.txtname_Enter);
-            this.txtname.Leave += new System.EventHandler(this.txtname_Leave);
             // 
             // label4
             // 
@@ -1184,7 +1182,6 @@
             this.Text = "Practice Details";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PracticeDetails_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.PracticeDetails_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

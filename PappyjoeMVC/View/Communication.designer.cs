@@ -580,7 +580,6 @@
             this.DGV_Staff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Staff.Size = new System.Drawing.Size(438, 461);
             this.DGV_Staff.TabIndex = 2;
-            this.DGV_Staff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Staff_CellClick);
             this.DGV_Staff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Staff_CellContentClick);
             // 
             // label14
@@ -711,7 +710,6 @@
             this.dgv_Group.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Group.Size = new System.Drawing.Size(450, 506);
             this.dgv_Group.TabIndex = 1;
-            this.dgv_Group.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Group_CellClick);
             this.dgv_Group.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Group_CellContentClick);
             // 
             // name
@@ -1055,7 +1053,6 @@
             this.DGV_Patient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Patient.Size = new System.Drawing.Size(450, 506);
             this.DGV_Patient.TabIndex = 3;
-            this.DGV_Patient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Patient_CellClick);
             this.DGV_Patient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Patient_CellContentClick);
             // 
             // pt_id

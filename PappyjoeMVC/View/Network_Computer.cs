@@ -230,8 +230,5 @@ namespace PappyjoeMVC.View
                 return false;
             }
         }
-
-
-
     }
 }

@@ -280,13 +280,10 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                //if (Grvsummary.Rows.Count == 0)
-                //{
                     lbltotal1.Text = "00.00";
                     lbltotal2.Text = "00.00";
                     lbltotal3.Text = "00.00";
                     combodoctors_SelectedIndexChanged(sender, e);
-                //}
             }
             catch (Exception ex)
             {

@@ -632,8 +632,6 @@ namespace PappyjoeMVC.View
                                 sWrite.WriteLine("<tr>");
                                 sWrite.WriteLine("<td width='30px' height='50px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "'  style='width:70px;height:70px;'></td>  ");
                                 sWrite.WriteLine("<td width='870px' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=4><b>&nbsp;" + header1 + " </font><br><FONT  COLOR=black  face='Segoe UI' SIZE=2>&nbsp;" + header2 + "<br>&nbsp;" + header3 + "  </b></font></td>");
-                                //sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;" + header2 + "</b></font></td></tr>");
-                                //sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2><b>&nbsp;" + header3 + "</b></font></td></tr>");
                                 sWrite.WriteLine("</tr>");
                                 sWrite.WriteLine("</table>");
                             }
@@ -949,12 +947,10 @@ namespace PappyjoeMVC.View
                     int x = (panel4.Size.Width - label1.Size.Width) / 2;
                     label1.Location = new Point(x, label1.Location.Y);
                     label1.Show();
-                    //label1.Location = new System.Drawing.Point(350, 350);
                 }
                 else
                 {
                     label1.Hide();
-                    //label1.Location = new System.Drawing.Point(350, 350);
                 }
             }
             catch (Exception ex)

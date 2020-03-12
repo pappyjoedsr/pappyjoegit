@@ -50,6 +50,12 @@
             this.btnsave = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lb_total = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lst_procedure = new System.Windows.Forms.ListBox();
+            this.dgv_treatment = new System.Windows.Forms.DataGridView();
+            this.chkprescription = new System.Windows.Forms.CheckBox();
+            this.btn_addtrtmnt = new System.Windows.Forms.Button();
             this.dataGridView_drugnew = new System.Windows.Forms.DataGridView();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,7 +81,6 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lst_procedure = new System.Windows.Forms.ListBox();
             this.drugspanel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.drugnametext = new System.Windows.Forms.Label();
@@ -109,9 +114,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.checkBoxReview = new System.Windows.Forms.CheckBox();
             this.cmbdoctor = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lnk_view_template = new System.Windows.Forms.LinkLabel();
             this.txtPatientID = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.txt_cost = new System.Windows.Forms.TextBox();
             this.txt_procedure = new System.Windows.Forms.TextBox();
             this.dtp_nextreview = new System.Windows.Forms.DateTimePicker();
@@ -126,9 +136,16 @@
             this.txt_Pt_search = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.chkprescription = new System.Windows.Forms.CheckBox();
+            this.tid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Procedure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Del = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_treatment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_drugnew)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -152,7 +169,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(961, 44);
             this.panel1.TabIndex = 0;
-            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label8
             // 
@@ -199,10 +215,14 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.lst_procedure);
+            this.panel2.Controls.Add(this.lb_total);
+            this.panel2.Controls.Add(this.label20);
+            this.panel2.Controls.Add(this.dgv_treatment);
             this.panel2.Controls.Add(this.chkprescription);
+            this.panel2.Controls.Add(this.btn_addtrtmnt);
             this.panel2.Controls.Add(this.dataGridView_drugnew);
             this.panel2.Controls.Add(this.tabControl1);
-            this.panel2.Controls.Add(this.lst_procedure);
             this.panel2.Controls.Add(this.drugspanel);
             this.panel2.Controls.Add(this.lbPatient);
             this.panel2.Controls.Add(this.panel4);
@@ -213,9 +233,14 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.checkBoxReview);
             this.panel2.Controls.Add(this.cmbdoctor);
+            this.panel2.Controls.Add(this.label18);
+            this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.lnk_view_template);
             this.panel2.Controls.Add(this.txtPatientID);
+            this.panel2.Controls.Add(this.txtID);
+            this.panel2.Controls.Add(this.txtQuantity);
+            this.panel2.Controls.Add(this.txtTotal);
             this.panel2.Controls.Add(this.txt_cost);
             this.panel2.Controls.Add(this.txt_procedure);
             this.panel2.Controls.Add(this.dtp_nextreview);
@@ -234,6 +259,94 @@
             this.panel2.Size = new System.Drawing.Size(961, 571);
             this.panel2.TabIndex = 1;
             this.panel2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseClick);
+            // 
+            // lb_total
+            // 
+            this.lb_total.AutoSize = true;
+            this.lb_total.ForeColor = System.Drawing.Color.Red;
+            this.lb_total.Location = new System.Drawing.Point(463, 269);
+            this.lb_total.Name = "lb_total";
+            this.lb_total.Size = new System.Drawing.Size(0, 13);
+            this.lb_total.TabIndex = 416;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(378, 269);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(76, 13);
+            this.label20.TabIndex = 416;
+            this.label20.Text = "Total Amount :";
+            // 
+            // lst_procedure
+            // 
+            this.lst_procedure.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lst_procedure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lst_procedure.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lst_procedure.ForeColor = System.Drawing.Color.Black;
+            this.lst_procedure.FormattingEnabled = true;
+            this.lst_procedure.ItemHeight = 21;
+            this.lst_procedure.Location = new System.Drawing.Point(100, 166);
+            this.lst_procedure.Name = "lst_procedure";
+            this.lst_procedure.Size = new System.Drawing.Size(248, 107);
+            this.lst_procedure.TabIndex = 311;
+            this.lst_procedure.Visible = false;
+            this.lst_procedure.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lst_procedure_MouseClick);
+            this.lst_procedure.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lst_procedure_KeyUp);
+            // 
+            // dgv_treatment
+            // 
+            this.dgv_treatment.AllowUserToAddRows = false;
+            this.dgv_treatment.AllowUserToResizeColumns = false;
+            this.dgv_treatment.AllowUserToResizeRows = false;
+            this.dgv_treatment.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_treatment.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv_treatment.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgv_treatment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgv_treatment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_treatment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tid,
+            this.Procedure,
+            this.Quantity,
+            this.Cost,
+            this.Total,
+            this.Note,
+            this.Del});
+            this.dgv_treatment.GridColor = System.Drawing.Color.White;
+            this.dgv_treatment.Location = new System.Drawing.Point(100, 173);
+            this.dgv_treatment.Name = "dgv_treatment";
+            this.dgv_treatment.RowHeadersVisible = false;
+            this.dgv_treatment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgv_treatment.Size = new System.Drawing.Size(790, 86);
+            this.dgv_treatment.TabIndex = 415;
+            this.dgv_treatment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_treatment_CellClick);
+            // 
+            // chkprescription
+            // 
+            this.chkprescription.AutoSize = true;
+            this.chkprescription.Checked = true;
+            this.chkprescription.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkprescription.Location = new System.Drawing.Point(813, 548);
+            this.chkprescription.Name = "chkprescription";
+            this.chkprescription.Size = new System.Drawing.Size(130, 17);
+            this.chkprescription.TabIndex = 294;
+            this.chkprescription.Text = "Print With Prescription";
+            this.chkprescription.UseVisualStyleBackColor = true;
+            // 
+            // btn_addtrtmnt
+            // 
+            this.btn_addtrtmnt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_addtrtmnt.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_addtrtmnt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_addtrtmnt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addtrtmnt.ForeColor = System.Drawing.Color.White;
+            this.btn_addtrtmnt.Location = new System.Drawing.Point(910, 141);
+            this.btn_addtrtmnt.Name = "btn_addtrtmnt";
+            this.btn_addtrtmnt.Size = new System.Drawing.Size(46, 22);
+            this.btn_addtrtmnt.TabIndex = 276;
+            this.btn_addtrtmnt.Text = "Add";
+            this.btn_addtrtmnt.UseVisualStyleBackColor = false;
+            this.btn_addtrtmnt.Click += new System.EventHandler(this.btn_addtrtmnt_Click);
             // 
             // dataGridView_drugnew
             // 
@@ -558,22 +671,6 @@
             this.Column4.HeaderText = "Template";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            // 
-            // lst_procedure
-            // 
-            this.lst_procedure.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lst_procedure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lst_procedure.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lst_procedure.ForeColor = System.Drawing.Color.Black;
-            this.lst_procedure.FormattingEnabled = true;
-            this.lst_procedure.ItemHeight = 21;
-            this.lst_procedure.Location = new System.Drawing.Point(123, 171);
-            this.lst_procedure.Name = "lst_procedure";
-            this.lst_procedure.Size = new System.Drawing.Size(830, 107);
-            this.lst_procedure.TabIndex = 311;
-            this.lst_procedure.Visible = false;
-            this.lst_procedure.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lst_procedure_MouseClick);
-            this.lst_procedure.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lst_procedure_KeyUp);
             // 
             // drugspanel
             // 
@@ -939,7 +1036,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(31, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 21);
+            this.label3.Size = new System.Drawing.Size(74, 21);
             this.label3.TabIndex = 406;
             this.label3.Text = "Patient Id";
             // 
@@ -950,7 +1047,7 @@
             this.checkBoxReview.ForeColor = System.Drawing.Color.Black;
             this.checkBoxReview.Location = new System.Drawing.Point(49, 547);
             this.checkBoxReview.Name = "checkBoxReview";
-            this.checkBoxReview.Size = new System.Drawing.Size(90, 19);
+            this.checkBoxReview.Size = new System.Drawing.Size(91, 19);
             this.checkBoxReview.TabIndex = 405;
             this.checkBoxReview.Text = "Next Review";
             this.checkBoxReview.UseVisualStyleBackColor = true;
@@ -968,12 +1065,34 @@
             this.cmbdoctor.TabIndex = 314;
             this.cmbdoctor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmbdoctor_MouseClick);
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(348, 142);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(70, 21);
+            this.label18.TabIndex = 313;
+            this.label18.Text = "Quantity";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Black;
+            this.label19.Location = new System.Drawing.Point(550, 142);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(42, 21);
+            this.label19.TabIndex = 313;
+            this.label19.Text = "Total";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(65, 175);
+            this.label10.Location = new System.Drawing.Point(450, 142);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 21);
             this.label10.TabIndex = 313;
@@ -991,7 +1110,6 @@
             this.lnk_view_template.Text = "View Template";
             this.lnk_view_template.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lnk_view_template.Visible = false;
-            //this.lnk_view_template.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_view_template_LinkClicked);
             // 
             // txtPatientID
             // 
@@ -1005,22 +1123,52 @@
             this.txtPatientID.Size = new System.Drawing.Size(114, 29);
             this.txtPatientID.TabIndex = 310;
             // 
+            // txtID
+            // 
+            this.txtID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtID.Location = new System.Drawing.Point(35, 195);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(11, 29);
+            this.txtID.TabIndex = 308;
+            this.txtID.Visible = false;
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtQuantity.Location = new System.Drawing.Point(418, 138);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(32, 29);
+            this.txtQuantity.TabIndex = 308;
+            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtTotal.Location = new System.Drawing.Point(592, 138);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(72, 29);
+            this.txtTotal.TabIndex = 308;
+            // 
             // txt_cost
             // 
             this.txt_cost.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_cost.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_cost.Location = new System.Drawing.Point(121, 172);
+            this.txt_cost.Location = new System.Drawing.Point(491, 138);
             this.txt_cost.Name = "txt_cost";
-            this.txt_cost.Size = new System.Drawing.Size(106, 29);
+            this.txt_cost.Size = new System.Drawing.Size(58, 29);
             this.txt_cost.TabIndex = 308;
             // 
             // txt_procedure
             // 
             this.txt_procedure.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_procedure.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_procedure.Location = new System.Drawing.Point(121, 140);
+            this.txt_procedure.Location = new System.Drawing.Point(100, 138);
             this.txt_procedure.Name = "txt_procedure";
-            this.txt_procedure.Size = new System.Drawing.Size(832, 29);
+            this.txt_procedure.Size = new System.Drawing.Size(248, 29);
             this.txt_procedure.TabIndex = 307;
             this.txt_procedure.Text = "Search by Procedure Name";
             this.txt_procedure.Click += new System.EventHandler(this.txt_procedure_Click);
@@ -1053,10 +1201,10 @@
             // 
             this.txt_instruction.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_instruction.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_instruction.Location = new System.Drawing.Point(121, 207);
+            this.txt_instruction.Location = new System.Drawing.Point(706, 138);
             this.txt_instruction.Multiline = true;
             this.txt_instruction.Name = "txt_instruction";
-            this.txt_instruction.Size = new System.Drawing.Size(832, 41);
+            this.txt_instruction.Size = new System.Drawing.Size(202, 29);
             this.txt_instruction.TabIndex = 302;
             // 
             // txt_remarks
@@ -1075,7 +1223,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(62, 216);
+            this.label9.Location = new System.Drawing.Point(665, 142);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 21);
             this.label9.TabIndex = 297;
@@ -1110,7 +1258,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(390, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 21);
+            this.label4.Size = new System.Drawing.Size(72, 21);
             this.label4.TabIndex = 293;
             this.label4.Text = "Template";
             this.label4.Visible = false;
@@ -1120,7 +1268,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(31, 141);
+            this.label2.Location = new System.Drawing.Point(13, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 21);
             this.label2.TabIndex = 291;
@@ -1146,7 +1294,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(2, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 21);
+            this.label1.Size = new System.Drawing.Size(103, 21);
             this.label1.TabIndex = 288;
             this.label1.Text = "Patient Name";
             // 
@@ -1158,17 +1306,53 @@
             this.panel3.Size = new System.Drawing.Size(960, 1);
             this.panel3.TabIndex = 305;
             // 
-            // chkprescription
+            // tid
             // 
-            this.chkprescription.AutoSize = true;
-            this.chkprescription.Checked = true;
-            this.chkprescription.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkprescription.Location = new System.Drawing.Point(813, 548);
-            this.chkprescription.Name = "chkprescription";
-            this.chkprescription.Size = new System.Drawing.Size(130, 17);
-            this.chkprescription.TabIndex = 294;
-            this.chkprescription.Text = "Print With Prescription";
-            this.chkprescription.UseVisualStyleBackColor = true;
+            this.tid.HeaderText = "id";
+            this.tid.Name = "tid";
+            this.tid.Visible = false;
+            // 
+            // Procedure
+            // 
+            this.Procedure.FillWeight = 101.7259F;
+            this.Procedure.HeaderText = "PROCEDURE";
+            this.Procedure.Name = "Procedure";
+            this.Procedure.Width = 180;
+            // 
+            // Quantity
+            // 
+            this.Quantity.FillWeight = 101.7259F;
+            this.Quantity.HeaderText = "QUANTITY";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Width = 70;
+            // 
+            // Cost
+            // 
+            this.Cost.FillWeight = 101.7259F;
+            this.Cost.HeaderText = "COST";
+            this.Cost.Name = "Cost";
+            this.Cost.Width = 110;
+            // 
+            // Total
+            // 
+            this.Total.FillWeight = 101.7259F;
+            this.Total.HeaderText = "TOTAL";
+            this.Total.Name = "Total";
+            this.Total.Width = 130;
+            // 
+            // Note
+            // 
+            this.Note.FillWeight = 101.7259F;
+            this.Note.HeaderText = "NOTE";
+            this.Note.Name = "Note";
+            this.Note.Width = 250;
+            // 
+            // Del
+            // 
+            this.Del.FillWeight = 91.37056F;
+            this.Del.HeaderText = "";
+            this.Del.Name = "Del";
+            this.Del.Width = 30;
             // 
             // Consultation
             // 
@@ -1191,6 +1375,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_treatment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_drugnew)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1294,5 +1479,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.CheckBox chkprescription;
+        private System.Windows.Forms.DataGridView dgv_treatment;
+        private System.Windows.Forms.Button btn_addtrtmnt;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label lb_total;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Procedure;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Note;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Del;
     }
 }

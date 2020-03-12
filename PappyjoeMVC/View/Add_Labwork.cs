@@ -640,8 +640,6 @@ namespace PappyjoeMVC.View
             DataTable dt = this.ctrlr.testrslt(q);
             testrslt(dt);
         }
-
-       
         private void dgvdentalwork_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtwork_id.Text = dgvdentalwork.Rows[e.RowIndex].Cells["id"].Value.ToString();

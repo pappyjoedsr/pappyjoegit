@@ -851,19 +851,6 @@ namespace PappyjoeMVC.View
                     model.insert(richTxt_PresentIllness.Text, richTxt_LabInvestigations.Text,  richTxt_SurgicalNotes.Text, richTxt_ConditionDischarge.Text, richTxt_AdviceDischarge.Text, DtpReview.Value.ToString("MM/dd/yyyy"),  txtTime.Text, dTPToDate.Value.ToString("MM/dd/yyyy"),patient_id);//
                 }
                 sWrite.WriteLine("<table align='center'  style='width:700px;border: 1px ;border-collapse: collapse;'>");
-                //sWrite.WriteLine("<tr>");
-                //if (checkBoxreview.Checked == true)
-                //{
-                //    sWrite.WriteLine("<td align='left'  width='700px' bgcolor='#999999'><FONT COLOR=black FACE='Geneva, segoe UI' SIZE=3><b> &nbsp;NEXT REVIEW </b></font></th>");
-                //    sWrite.WriteLine("<td align='left' width:'400px' ><FONT COLOR=black FACE='Geneva, segoe UI' SIZE=3> &nbsp;" + DtpReview.Value.ToString("dd/MM/yyyy") + " " + txtTime.Text + "</font></th>");
-                //}
-                //else
-                //{
-                //    sWrite.WriteLine("<td align='left'  width='700px'><FONT COLOR=black FACE='Geneva, segoe UI' SIZE=3></font></th>");
-                //    sWrite.WriteLine("<td align='left' width:'400px' ><FONT COLOR=black FACE='Geneva, segoe UI' SIZE=3> &nbsp;</font></th>");
-                //}
-                //sWrite.WriteLine("</tr>");
-
                 if (checkBoxreview.Checked == true)
                 {
                     //sWrite.WriteLine("<table align='center'  style='width:700px;border: 1px ;border-collapse: collapse;'>");
@@ -881,13 +868,6 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<td align='left' width:'400px' ><FONT COLOR=black FACE='Geneva, segoe UI' SIZE=3> &nbsp;</font></th>");
                     sWrite.WriteLine("</tr>");
                 }
-
-
-
-                //    sWrite.WriteLine("<tr>");
-
-
-                //sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, segoe UI' SIZE=3> &nbsp; </font></th>");
                 sWrite.WriteLine("</tr>");
