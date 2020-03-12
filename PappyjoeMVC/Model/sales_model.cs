@@ -59,6 +59,11 @@ namespace PappyjoeMVC.Model
             DataTable dtb_sales = db.table("select InvNumber,Item_Code,Description,Packing,Unit,GST,IGST,Qty,FreeQty,Rate,TotalAmount from tbl_SALEIT where InvNumber='" + invnum_Edit + "'");
             return dtb_sales;
         }
+        public DataTable get_hsn(string id)
+        {
+            DataTable dtb = db.table("select id,item_name,Item_Code,HSN_Number from tbl_ITEMS where id='" + id + "'");
+            return dtb;
+        }
         public DataTable get_batchsale(int invnum_Edit)
         {
             DataTable dtb_BatchSale = db.table("select InvNumber,InvDate,s.Item_Code,s.BatchNumber,s.Qty,s.IsExpDate,BatchEntry,PrdDate,ExpDate from tbl_BatchSale s inner join tbl_batchnumber b on b.BatchNumber=s.BatchNumber where InvNumber='" + invnum_Edit + "'");
@@ -81,7 +86,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable order_itemsDtails(int invnum_order)
         {
-            DataTable dtb_order = db.table("select s.DocNumber,s.DocDate,s.ItemCode as id ,s.Discription,s.Qty,s.Cost,s.TotalAmount,i.item_code from tbl_SalesOrder s inner join tbl_ITEMS i on s.ItemCode=i.id where s.DocNumber='" + invnum_order + "'");
+            DataTable dtb_order = db.table("select s.DocNumber,s.DocDate,s.ItemCode as id ,s.Discription,s.Qty,s.Cost,s.TotalAmount,i.item_code,i.HSN_Number from tbl_SalesOrder s inner join tbl_ITEMS i on s.ItemCode=i.id where s.DocNumber='" + invnum_order + "'");
             return dtb_order;
         }
         public int Save_salesMaster(int DocNo,string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
@@ -91,6 +96,33 @@ namespace PappyjoeMVC.Model
                                "values('" + DocNo + "','" + Docdate + "','1','" + sales_ + "','" + ordeNo + "','" + Date_ + "'," +
                                "'" + doctor_ + "','" + lrno + "','" + lr_date + "','" + throuhg + "','" + ptid + "','" + ptname + "','" + street__ + "'," +
                                "'" + locality + "','" + city + "','" + phone + "','" + payMethod + "','" + totalAmnt + "','" + disount + "','1','1','1','" + Convert.ToDecimal(gst) + "','" + igst + "','" + gTotal + "')");
+            return i;
+        }
+        public int Save_salesMaster_cheque(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod,string Bank ,string Number,decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        {
+            int i = db.execute("insert into tbl_SALES(InvNumber,InvDate,Dep_Number,SalesmanCode,OrderNumber,Orderdate,Prescribedby,LRNo,LRDate,Through,cust_number,cust_name,adr1,adr2,adr3,phone1,PayMethod,Number,Bank," +
+                                  "Paid,Discount,UserName,JournalRefNo,SaleType,GST,IGST,TotalAmount)" +
+                                  "values('" + DocNo + "','" + Docdate + "','1','" + sales_ + "','" + ordeNo + "','" + Date_ + "'," +
+                                  "'" + doctor_ + "','" + lrno + "','" + lr_date + "','" + throuhg + "','" + ptid + "','" + ptname + "','" + street__ + "'," +
+                                  "'" + locality + "','" + city + "','" + phone + "','" + payMethod + "','" + Number + "','" + Bank + "','" + totalAmnt + "','" + disount + "','1','1','1','" + Convert.ToDecimal(gst) + "','" + igst + "','" + gTotal + "')");
+            return i;
+        }
+        public int Save_salesMaster_card(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, string cardnumber, string fourdigitnumber, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        {
+            int i = db.execute("insert into tbl_SALES(InvNumber,InvDate,Dep_Number,SalesmanCode,OrderNumber,Orderdate,Prescribedby,LRNo,LRDate,Through,cust_number,cust_name,adr1,adr2,adr3,phone1,PayMethod,cardnumber,fourdigitnumber," +
+                                  "Paid,Discount,UserName,JournalRefNo,SaleType,GST,IGST,TotalAmount)" +
+                                  "values('" + DocNo + "','" + Docdate + "','1','" + sales_ + "','" + ordeNo + "','" + Date_ + "'," +
+                                  "'" + doctor_ + "','" + lrno + "','" + lr_date + "','" + throuhg + "','" + ptid + "','" + ptname + "','" + street__ + "'," +
+                                  "'" + locality + "','" + city + "','" + phone + "','" + payMethod + "','" + cardnumber + "','" + fourdigitnumber + "','" + totalAmnt + "','" + disount + "','1','1','1','" + Convert.ToDecimal(gst) + "','" + igst + "','" + gTotal + "')");
+            return i;
+        }
+        public int Save_salesMaster_DD(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, string Bank, string DDnumber, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        {
+            int i = db.execute("insert into tbl_SALES(InvNumber,InvDate,Dep_Number,SalesmanCode,OrderNumber,Orderdate,Prescribedby,LRNo,LRDate,Through,cust_number,cust_name,adr1,adr2,adr3,phone1,PayMethod,Bank,DDnumber," +
+                                  "Paid,Discount,UserName,JournalRefNo,SaleType,GST,IGST,TotalAmount)" +
+                                  "values('" + DocNo + "','" + Docdate + "','1','" + sales_ + "','" + ordeNo + "','" + Date_ + "'," +
+                                  "'" + doctor_ + "','" + lrno + "','" + lr_date + "','" + throuhg + "','" + ptid + "','" + ptname + "','" + street__ + "'," +
+                                  "'" + locality + "','" + city + "','" + phone + "','" + payMethod + "','" + Bank + "','" + DDnumber + "','" + totalAmnt + "','" + disount + "','1','1','1','" + Convert.ToDecimal(gst) + "','" + igst + "','" + gTotal + "')");
             return i;
         }
         public DataTable get_costbase(string itemcode)

@@ -53,6 +53,7 @@ namespace PappyjoeMVC.View
                         Cmb_Category.SelectedValue = Convert.ToInt32(dt_ForEditItems.Rows[0]["Cat_Number"].ToString());
                     txt_Location.Text = dt_ForEditItems.Rows[0]["Location"].ToString();
                     txt_Packing.Text = dt_ForEditItems.Rows[0]["Packing"].ToString();
+                    txt_HSN.Text= dt_ForEditItems.Rows[0]["HSN_Number"].ToString(); 
                     cmb_Unit1.Text = dt_ForEditItems.Rows[0]["Unit1"].ToString();
                     if (dt_ForEditItems.Rows[0]["OneUnitOnly"].ToString() == "True")
                     {
@@ -874,7 +875,7 @@ namespace PappyjoeMVC.View
                         MessageBox.Show("The item code already exists !..", "Duplication encountered", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-                    int i = this.cntrl.Save_data(txt_ItemName.Text, txt_ItemCode.Text, Cmb_Manufacture.SelectedValue.ToString(), Cmb_Category.SelectedValue.ToString(), txt_Location.Text, txt_Packing.Text, _isbatch, txt_SalesRate.Text, txt_SalesRateMin.Text, txt_SalesRateMax.Text, txt_PurchaseRate.Text, cmb_Unit1.Text, _sUnit, UnitMF, txt_PurchRate2.Text, txt_SalesRate2.Text, txt_SalesRateMin2.Text, txt_SalesRateMax2.Text, isOneUnitOnly, txt_reorderStockQty.Text, txt_CostBase.Text, _istax, txt_minimumStockforSale.Text);
+                    int i = this.cntrl.Save_data(txt_ItemName.Text, txt_ItemCode.Text, Cmb_Manufacture.SelectedValue.ToString(), Cmb_Category.SelectedValue.ToString(),txt_HSN.Text, txt_Location.Text, txt_Packing.Text, _isbatch, txt_SalesRate.Text, txt_SalesRateMin.Text, txt_SalesRateMax.Text, txt_PurchaseRate.Text, cmb_Unit1.Text, _sUnit, UnitMF, txt_PurchRate2.Text, txt_SalesRate2.Text, txt_SalesRateMin2.Text, txt_SalesRateMax2.Text, isOneUnitOnly, txt_reorderStockQty.Text, txt_CostBase.Text, _istax, txt_minimumStockforSale.Text);
                     if (i > 0)
                     {
                         if (chkprescription.Checked == true)
@@ -922,7 +923,7 @@ namespace PappyjoeMVC.View
                     }
                 }
                 Fill_combo();
-                load_itemcode();
+                load_itemcode(); 
             }
             else
             {

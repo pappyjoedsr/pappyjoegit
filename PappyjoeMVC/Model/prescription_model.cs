@@ -22,7 +22,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable drug_instock(string id)
         {
-            DataTable dtstock = db.table("Select A.item_code,A.item_name,(select sum(Qty) from tbl_BatchNumber where item_code= A.item_code) 'Stock' from tbl_ITEMS A WHERE A.ID='" + id + "' order by item_name");
+            DataTable dtstock = db.table("Select A.item_code,A.item_name,(select sum(Qty) from tbl_BatchNumber where item_code= A.id) 'Stock' from tbl_ITEMS A WHERE A.ID='" + id + "' order by item_name");
             return dtstock;
         }
         public DataTable load_template()

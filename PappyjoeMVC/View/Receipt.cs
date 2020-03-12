@@ -112,7 +112,20 @@ namespace PappyjoeMVC.View
                 System.Data.DataTable pay = this.cntrl.get_total_payment(patient_id);
                 if (pay.Rows.Count > 0)
                 {
+                    Lab_Due.Visible = true;
                     Lab_Due.Text = pay.Rows[0]["total_payment"].ToString() + " due";
+                }
+                DataTable dtadvance = this.cntrl.Get_Advance(patient_id);
+                if (dtadvance.Rows.Count > 0)
+                {
+                    //adv_refund.Visible = true;
+                    lblAdvance.Show(); adv_refund.Visible = true;
+                    lblAdvance.Text = "Available advance: " + string.Format("{0:C}", decimal.Parse(dtadvance.Rows[0][0].ToString()));
+                }
+                else
+                {
+                    adv_refund.Visible = false;
+                    lblAdvance.Text = "Available advance: " + string.Format("{0:C}", 0);
                 }
                 Dgv_payment.Rows.Clear();
                 System.Data.DataTable pat = this.cntrl.Get_pat_iDName(patient_id);
@@ -877,7 +890,7 @@ namespace PappyjoeMVC.View
         }
 
         private void Lab_Prescription_Click(object sender, EventArgs e)
-        {
+        {     
             var form2 = new Prescription_Show();
             form2.doctor_id = doctor_id;
             form2.patient_id = patient_id;
@@ -1003,6 +1016,78 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.ShowDialog();
             form2.Dispose();
+        }
+
+        private void adv_refund_Click(object sender, EventArgs e)
+        {
+            contextMenuStrip2.Show(new System.Drawing.Point(866, 83));
+            
+        }
+
+        private void showAdvanceDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panl_advance.Visible = true;
+            DataTable dtb = this.cntrl.getall_advance(patient_id);
+            int k =1;
+            if(dtb.Rows.Count>0)
+            {
+                dgv_advance.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgv_advance.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgv_advance.Rows.Clear();
+                for (int i = 0; i < dtb.Rows.Count; i++)
+                {
+                   
+                    dgv_advance.Rows.Add(k,Convert.ToDateTime(dtb.Rows[i]["Date"].ToString()).ToString("MM/dd/yyy"),dtb.Rows[i]["PaymentMethod"].ToString(), string.Format("{0:C}", decimal.Parse(dtb.Rows[i]["Amount"].ToString())) );
+                    k++;
+                }
+            }
+        }
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            panl_advance.Visible = false;
+        }
+
+        private void refundAdvanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panl_refund.Visible = true;
+            panl_refund.Location = new Point(299, 81);
+        }
+
+        private void btn_refund_amount_Click(object sender, EventArgs e)
+        {
+            DataTable dtb = this.cntrl.gt_pt_advance(patient_id);
+            
+            if (txt_adv_refund.Text!="")
+            {
+                if(dtb.Rows.Count>0)
+                {
+                    decimal adv =Convert.ToDecimal( dtb.Rows[0][0].ToString());
+                    if(Convert.ToDecimal( txt_adv_refund.Text)<=adv)
+                    {
+                        decimal refund = 0;
+                        refund = adv - Convert.ToDecimal(txt_adv_refund.Text);
+                        this.cntrl.update_advance(refund, patient_id);
+                        this.cntrl.Save_advancetable(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), txt_adv_refund.Text, "cash", "credit");
+                        txt_adv_refund.Text = "";
+                        MessageBox.Show("Advance is refunded..","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Entered amount is greater than advance amount...","Invalid",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                }
+            }
+        }
+
+        private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void btn_refund_calcel_Click(object sender, EventArgs e)
+        {
+            panl_refund.Visible = false;
         }
 
         static String NumWordsWrapper(double n)

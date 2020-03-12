@@ -437,7 +437,8 @@ namespace PappyjoeMVC.View
             staff.Hide();
             labmedical.Hide();
             dental.Hide();
-            panel_main.Show();
+            bckres.Hide();
+            panel_main.Show(); 
         }
 
         private void button_practice_Click(object sender, EventArgs e)
