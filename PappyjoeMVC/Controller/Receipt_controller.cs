@@ -37,6 +37,29 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = cmodel.get_total_payment(ptid);
             return dtb;
         }
+        public DataTable Get_Advance(string pt_id)
+        {
+            DataTable dtb = cmodel.Get_Advance(pt_id);
+            return dtb;
+        }
+        public DataTable getall_advance(string pt_id)
+        {
+            DataTable dtb = Model.getall_advance(pt_id);
+            return dtb;
+        }
+        public void update_advance(decimal adv, string patient_id)
+        {
+            Model.update_advance(adv, patient_id);
+        }
+        public void Save_advancetable(string Pt_id, string Date, string Amount, string PaymentMethod, string Credit_Debit)
+        {
+            Model.Save_advancetable(Pt_id, Date, Amount, PaymentMethod, Credit_Debit);
+        }
+        public DataTable gt_pt_advance(string pt_id)
+        {
+            DataTable dtb = Model.gt_pt_advance(pt_id);
+            return dtb;
+        }
         public DataTable Get_pat_iDName(string patient_id)
         {
             DataTable dtb = cmodel.Get_pat_iDName(patient_id);

@@ -1065,7 +1065,7 @@ namespace PappyjoeMVC.View
                     buttoncaption = "SAVE PRESCRIPTION";
                 }
                 templatepanel1.Visible = false;
-                label34.Visible = false;
+                  label34.Visible = false;
                 label33.Visible = false;
                 drugnametextbox.Visible = false;
                 drugtypecombo.Visible = false;

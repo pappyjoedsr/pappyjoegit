@@ -63,6 +63,11 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.sales_details(invnum_Edit);
             return dtb;
         }
+        public DataTable get_hsn(string id)
+        {
+            DataTable dtb = _model.get_hsn(id);
+            return dtb;
+        }
         public DataTable sales_items_details(int invnum_Edit)
         {
             DataTable dtb = _model.sales_items_details(invnum_Edit);
@@ -107,6 +112,21 @@ namespace PappyjoeMVC.Controller
         {
             DataTable dtb = _model.order_itemsDtails(invnum_order);
             return dtb;
+        }
+        public int Save_salesMaster_cheque(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, string Bank, string Number, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        {
+            int i = _model.Save_salesMaster_cheque(DocNo, Docdate, sales_, ordeNo, Date_, doctor_, lrno, lr_date, throuhg, ptid, ptname, street__, locality, city, phone, payMethod, Bank, Number, totalAmnt, disount, gst, igst, gTotal);
+            return i;
+        }
+        public int Save_salesMaster_card(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, string cardnumber, string fourdigitnumber, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        {
+            int i = _model.Save_salesMaster_card(DocNo, Docdate, sales_, ordeNo, Date_, doctor_, lrno, lr_date, throuhg, ptid, ptname, street__, locality, city, phone, payMethod, cardnumber, fourdigitnumber, totalAmnt, disount, gst, igst, gTotal);
+            return i;
+        }
+        public int Save_salesMaster_DD(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, string Bank, string DDnumber, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        {
+            int i = _model.Save_salesMaster_DD(DocNo, Docdate, sales_, ordeNo, Date_, doctor_, lrno, lr_date, throuhg, ptid, ptname, street__, locality, city, phone, payMethod, Bank, DDnumber, totalAmnt, disount, gst, igst, gTotal);
+            return i;
         }
         public int Save_salesMaster(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
         {

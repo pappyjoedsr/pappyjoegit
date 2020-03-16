@@ -56,7 +56,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable get_item_unitmf(string Itemid)
         {
-            DataTable dt_unit1 = db.table("select Unit2,Unit1,UnitMF,OneUnitOnly from tbl_ITEMS where id='" + Itemid + "'");
+            DataTable dt_unit1 = db.table("select Unit2,Unit1,UnitMF,OneUnitOnly,HSN_Number from tbl_ITEMS where id='" + Itemid + "'");
             return dt_unit1;
         }
         //sales item list
