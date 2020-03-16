@@ -1238,7 +1238,7 @@ namespace PappyjoeMVC.View
                 if (sales_Edit == true)
                 {
                     clear_All_Data();
-                    DisabledAllControlls();
+                    //DisabledAllControlls();
                     btnReport.Visible = true;
                     if (invnum_Edit > 0)
                     {
@@ -1406,6 +1406,7 @@ namespace PappyjoeMVC.View
                 for (int i = 0; i < dtb_sales.Rows.Count; i++)
                 {
                     dgv_SalesItem.Rows.Add();
+                    dgv_SalesItem.Rows[i].Cells["id"].Value = dtb_sales.Rows[i]["InvNumber"].ToString();
                     dgv_SalesItem.Rows[i].Cells["colItemCode"].Value = dtb_sales.Rows[i]["Item_Code"].ToString();
                     dgv_SalesItem.Rows[i].Cells["colDiscription"].Value = dtb_sales.Rows[i]["Description"].ToString();
                     dgv_SalesItem.Rows[i].Cells["ColPacking"].Value = dtb_sales.Rows[i]["Packing"].ToString();

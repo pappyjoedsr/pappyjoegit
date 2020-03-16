@@ -1380,12 +1380,11 @@
             this.prddate,
             this.expdate,
             this.unit});
-            this.dgv_BatchSale.Location = new System.Drawing.Point(1004, 531);
+            this.dgv_BatchSale.Location = new System.Drawing.Point(10, 384);
             this.dgv_BatchSale.Name = "dgv_BatchSale";
             this.dgv_BatchSale.RowHeadersVisible = false;
-            this.dgv_BatchSale.Size = new System.Drawing.Size(260, 122);
+            this.dgv_BatchSale.Size = new System.Drawing.Size(926, 122);
             this.dgv_BatchSale.TabIndex = 314;
-            this.dgv_BatchSale.Visible = false;
             // 
             // ColinvNum
             // 
