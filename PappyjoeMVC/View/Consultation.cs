@@ -131,12 +131,13 @@ namespace PappyjoeMVC.View
         {
             if (lst_procedure.SelectedItems.Count > 0)
             {
-                string value = lst_procedure.SelectedValue.ToString();   
+                txtQuantity.Text = "1";
+                string value = lst_procedure.SelectedValue.ToString();
                 DataTable procedure = new DataTable();
                 procedure = this.ctrlr.procedure_details(value);
                 if (procedure.Rows.Count > 0)
                 {
-                    txtID.Text= procedure.Rows[0]["id"].ToString();
+                    txtID.Text = procedure.Rows[0]["id"].ToString();
                     txt_procedure.Text = procedure.Rows[0]["name"].ToString();
                     txt_cost.Text = procedure.Rows[0]["cost"].ToString();
                     lst_procedure.Visible = false;
@@ -145,6 +146,7 @@ namespace PappyjoeMVC.View
                 {
                     MessageBox.Show("Please choose Correct procedure....", "Data Not Found..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                total();
             }
         }
 
@@ -190,13 +192,14 @@ namespace PappyjoeMVC.View
             cmbDuration.SelectedIndex = 0;
             DataTable dt2 = this.ctrlr.get_tmplates();
             dataGridView2.DataSource = dt2;
+            txtQuantity.Text = "1";
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtPatientID.Text != "" && txt_procedure.Text != "")
+                if (txtPatientID.Text != "" && dgv_treatment.Rows.Count > 0)
                 {
                     if (dataGridView_drugnew.Rows.Count == 0)
                     {
@@ -228,10 +231,10 @@ namespace PappyjoeMVC.View
                         for (int i = 0; i < count; i++)
                         {
                             string strstatus = "";
-                            if (dataGridView_drugnew[13, i].Value.ToString() != "")
-                            { strstatus = dataGridView_drugnew[13, i].Value.ToString(); }
+                            if (dataGridView_drugnew[11, i].Value.ToString() != "")
+                            { strstatus = dataGridView_drugnew[11, i].Value.ToString(); }
 
-                            this.ctrlr.save_prescription(presid, patient_id, cmbdoctor.Text, d_id.ToString(), dataGridView_drugnew[0, i].Value.ToString(), dataGridView_drugnew[1, i].Value.ToString(), dataGridView_drugnew[2, i].Value.ToString(), dataGridView_drugnew[3, i].Value.ToString(), dataGridView_drugnew[4, i].Value.ToString(), dataGridView_drugnew[5, i].Value.ToString(), dataGridView_drugnew[6, i].Value.ToString(), dataGridView_drugnew[7, i].Value.ToString(), dataGridView_drugnew[8, i].Value.ToString(), dataGridView_drugnew[9, i].Value.ToString(), strstatus, dataGridView_drugnew[10, i].Value.ToString());
+                            this.ctrlr.save_prescription(presid, patient_id, cmbdoctor.Text, d_id.ToString(), dataGridView_drugnew[0, i].Value.ToString(), dataGridView_drugnew[1, i].Value.ToString(), dataGridView_drugnew[2, i].Value.ToString(), dataGridView_drugnew[3, i].Value.ToString(), dataGridView_drugnew[4, i].Value.ToString(), dataGridView_drugnew[5, i].Value.ToString(), dataGridView_drugnew[6, i].Value.ToString(), dataGridView_drugnew[7, i].Value.ToString(), dataGridView_drugnew[8, i].Value.ToString(), dataGridView_drugnew[9, i].Value.ToString(), dataGridView_drugnew[10, i].Value.ToString(), strstatus, dataGridView_drugnew[12, i].Value.ToString());
                         }
                     }
                     //completed id
@@ -266,7 +269,6 @@ namespace PappyjoeMVC.View
                     {
                         if (dt_Compl_proce == "")
                         {
-
                             completed_procedures_id = 1;
                         }
                         else
@@ -276,7 +278,6 @@ namespace PappyjoeMVC.View
                     }
                     catch
                     {
-
                         completed_procedures_id = 1;
                     }
                     //ReviewDate
@@ -305,7 +306,7 @@ namespace PappyjoeMVC.View
                     }
                     decimal totalcost = 0;
                     totalcost = Convert.ToDecimal(txt_cost.Text) * 1;
-                    this.ctrlr.save_invoice_main(patient_id, txt_Pt_search.Text, invoice);
+                    this.ctrlr.save_invoice_main(patient_id, txt_Pt_search.Text, invoice);///savin invoice no to invoice_main table
                     string dt1 = this.ctrlr.get_invoiceMain_maxid();
                     long Invoice_main_id = 0;
                     try
@@ -321,10 +322,12 @@ namespace PappyjoeMVC.View
                     }
                     catch
                     {
-
                         Invoice_main_id = 1;
                     }
-                    this.ctrlr.save_invoice_details(invoice, txt_Pt_search.Text, patient_id, lst_procedure.SelectedValue.ToString(), txt_procedure.Text, txt_cost.Text, txt_cost.Text, cmbdoctor.SelectedValue.ToString(), Invoice_main_id, completed_procedures_id);
+                    for (int i = 0; i < dgv_treatment.Rows.Count; i++)
+                    {
+                        this.ctrlr.save_invoice_details(invoice, txt_Pt_search.Text, patient_id, dgv_treatment.Rows[i].Cells[0].Value.ToString(), dgv_treatment.Rows[i].Cells[1].Value.ToString(), dgv_treatment.Rows[i].Cells[3].Value.ToString(), dgv_treatment.Rows[i].Cells[4].Value.ToString(), cmbdoctor.SelectedValue.ToString(), Invoice_main_id, completed_procedures_id);
+                    }
                     string invoauto = this.ctrlr.get_invoicenumber();
                     int invoautoup = int.Parse(invoauto) + 1;
                     this.ctrlr.update_invnumber(invoautoup);
@@ -352,7 +355,10 @@ namespace PappyjoeMVC.View
                             advance = decimal.Parse(cmd22.Rows[0]["advance"].ToString());
                         }
                     }
-                    this.ctrlr.save_receipt(receipt, advance, txt_cost.Text, invoice, txt_procedure.Text, patient_id, cmbdoctor.SelectedValue.ToString(), txt_cost.Text, txt_cost.Text, txt_Pt_search.Text, Invoice_main_id);
+                    for (int i = 0; i < dgv_treatment.Rows.Count; i++)
+                    {
+                        this.ctrlr.save_receipt(receipt, advance, dgv_treatment.Rows[i].Cells[4].Value.ToString(), invoice, dgv_treatment.Rows[i].Cells[1].Value.ToString(), patient_id, cmbdoctor.SelectedValue.ToString(), dgv_treatment.Rows[i].Cells[4].Value.ToString(), dgv_treatment.Rows[i].Cells[3].Value.ToString(), txt_Pt_search.Text, Invoice_main_id);
+                    }
                     string rec = this.ctrlr.receipt_autoid();
                     int receip = int.Parse(rec) + 1;
                     this.ctrlr.update_receiptAutoid(receip);
@@ -389,6 +395,11 @@ namespace PappyjoeMVC.View
                         MessageBox.Show("Procedure Details Not Found...", "Procedure Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txt_procedure.Focus();
                     }
+                    else if (dgv_treatment.Rows.Count== 0)
+                    {
+                        DialogResult di = MessageBox.Show("You missed to Click on 'Add' button under treatment. Please click 'Add' button to proceed..", "Treatment Not Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txt_procedure.Focus();
+                    }
                 }
             }
             catch (Exception ex)
@@ -401,7 +412,6 @@ namespace PappyjoeMVC.View
         {
             try
             {
-
                 System.Data.DataTable dtp = this.ctrlr.get_company_details();
                 System.Data.DataTable dt1 = this.ctrlr.Get_Patient_Details(patient_id);
                 string clinicn = "";
@@ -539,7 +549,7 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine(" <td align='left' height=25><FONT COLOR=black FACE='Geneva, Arial' SIZE=2><b>" + dt1.Rows[0]["pt_name"].ToString() + "</b><i> (" + sexage + ")</i></font></td>");
                 sWrite.WriteLine(" </tr>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>Patient Id:" + dt1.Rows[0]["pt_id"].ToString() + " </font></td>");
+                sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>Patient Id:&nbsp;" + dt1.Rows[0]["pt_id"].ToString() + " </font></td>");
                 sWrite.WriteLine(" </tr>");
                 Dexist = 0;
                 if (dt1.Rows[0]["street_address"].ToString() != "")
@@ -734,6 +744,7 @@ namespace PappyjoeMVC.View
                 contact_no = dtp.Rows[0]["contact_no"].ToString();
                 str_email = dtp.Rows[0]["email"].ToString();
                 str_website = dtp.Rows[0]["website"].ToString();
+                logo_name = dtp.Rows[0]["path"].ToString();
             }
             string strfooter1 = "";
             string strfooter2 = "";
@@ -750,6 +761,7 @@ namespace PappyjoeMVC.View
                 strfooter1 = print.Rows[0]["fullwidth_context"].ToString();
                 strfooter2 = print.Rows[0]["left_sign"].ToString();
                 strfooter3 = print.Rows[0]["right_sign"].ToString();
+                includelogo = print.Rows[0]["include_logo"].ToString();
             }
 
             string Apppath = System.IO.Directory.GetCurrentDirectory();
@@ -765,12 +777,16 @@ namespace PappyjoeMVC.View
                 {
                     if (logo != null || logo_name != "")
                     {
-                        string Appath = System.IO.Directory.GetCurrentDirectory();
-                        if (File.Exists(Appath + "\\" + logo_name))
+                        //string Appath = System.IO.Directory.GetCurrentDirectory();
+                        string curFile = this.ctrlr.server() + "\\Pappyjoe_utilities\\Logo\\" + logo_name;
+                        //if (File.Exists(Appath + "\\" + logo_name))
+                        if (System.IO.File.Exists(curFile))
                         {
                             sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                             sWrite.WriteLine("<tr>");
-                            sWrite.WriteLine("<td width='100' height='75px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "' width='77' height='78' style='width:100px;height:100px;'></td>  ");
+                            sWrite.WriteLine("<td width='100' height='75px' align='left' rowspan='3'><img src='" + curFile + "' width='77' height='78' style='width:100px;height:100px;'></td>  ");
+
+                            //sWrite.WriteLine("<td width='100' height='75px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "' width='77' height='78' style='width:100px;height:100px;'></td>  ");
                             sWrite.WriteLine("<td width='588' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
                             sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;&nbsp;" + header2 + "</font></td></tr>");
                             sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" + header3 + "</font></td></tr>");
@@ -944,10 +960,10 @@ namespace PappyjoeMVC.View
             sWrite.WriteLine("<table align='center'   style='width:700px;border: 1px ;border-collapse: collapse;' >");
             sWrite.WriteLine("<tr >");
             sWrite.WriteLine("<td align='left' width='35px' height='30'><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Sl.</font></td>");
-            sWrite.WriteLine("<td align='left' width='221px' ><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Drug Name</font></td>");
+            sWrite.WriteLine("<td align='left' width='160px' ><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Drug Name</font></td>");
             sWrite.WriteLine("<td align='center' width='105px' ><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Strength </font></td>");
-            sWrite.WriteLine("<td align='center' width='114px' colspan='3' ><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Frequency</font></td>");
-            sWrite.WriteLine("<td align='left' width='99px'><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Instructions</font></td>");
+            sWrite.WriteLine("<td align='center' width='114px' colspan='4' ><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Frequency</font></td>");
+            sWrite.WriteLine("<td align='left' width='160px'><FONT COLOR=black FACE=' Segoe UI' SIZE=3>&nbsp;Instructions</font></td>");
             sWrite.WriteLine("</tr>");
             System.Data.DataTable dt_prescription = this.ctrlr.prescription_details(Prescription_id.ToString());
             if (dt_prescription.Rows.Count > 0)
@@ -981,6 +997,7 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("<td align='center' height='7' valign='bottom'  width='50px'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1>&nbsp;Morning </font></td>");
                         sWrite.WriteLine("<td align='center' height='7'  valign='bottom' width='50px'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1>&nbsp;Noon </font></td>");
                         sWrite.WriteLine("<td align='center' height='7' valign='bottom'  width='50px'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1>&nbsp;Night </font></td>");
+                        sWrite.WriteLine("<td align='center' height='7' valign='bottom'  width='50px'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1>&nbsp;Duration </font></td>");
                         sWrite.WriteLine("</tr>");
                     }
                     sWrite.WriteLine("<tr>");
@@ -999,20 +1016,21 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<td align='center' valign='top' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + night + " </font></td>");
                     if (dt_prescription.Rows[k]["duration_unit"].ToString() == "0")
                     {
-                        sWrite.WriteLine("<td align='left'   valign='top'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1>&nbsp;" + dt_prescription.Rows[k]["food"].ToString() + " </font></td>");
+                        sWrite.WriteLine("<td align='center'   valign='top'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1>&nbsp;" + dt_prescription.Rows[k]["food"].ToString() + " </font></td>");
                     }
                     else
                     {
-                        sWrite.WriteLine("<td align='left'   valign='top'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1>&nbsp;" + dt_prescription.Rows[k]["duration_unit"].ToString() + " " + dt_prescription.Rows[k]["duration_period"].ToString() + "</br>" + dt_prescription.Rows[k]["food"].ToString() + " </font></td>");
+                        sWrite.WriteLine("<td align='center'   valign='top'><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1>&nbsp;" + dt_prescription.Rows[k]["duration_unit"].ToString() + " " + dt_prescription.Rows[k]["duration_period"].ToString() + "</br>" + dt_prescription.Rows[k]["food"].ToString() + " </font></td>");
                     }
-                    sWrite.WriteLine("</tr>");
+                    //sWrite.WriteLine("</tr>");
                     if (dt_prescription.Rows[k]["add_instruction"].ToString() != "")
                     {
-                        sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td ></td>");
+                        //sWrite.WriteLine("<tr>");
+                        //sWrite.WriteLine("<td ></td>");
                         sWrite.WriteLine("<td align='left' height='20' colspan='7' valign='top' ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=1.5>&nbsp;" + dt_prescription.Rows[k]["add_instruction"].ToString() + " </font></td>");
-                        sWrite.WriteLine("</tr>");
+                        //sWrite.WriteLine("</tr>");
                     }
+                    sWrite.WriteLine("</tr>");
                 } // Presription Sub(Drug Details) Record Count
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td align='left' height='30' colspan='8'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + strNote.ToString() + " </font></td>");
@@ -1289,6 +1307,7 @@ namespace PappyjoeMVC.View
             {
                 if (lst_procedure.SelectedItems.Count > 0)
                 {
+                    txtQuantity.Text = "1";
                     string value = lst_procedure.SelectedValue.ToString();
                     DataTable procedure = new DataTable();
                     procedure = this.ctrlr.procedure_details(value);
@@ -1445,11 +1464,11 @@ namespace PappyjoeMVC.View
             if (txt_procedure.Text != "" && txtQuantity.Text != "")
             {
                 Decimal total = 0;
-                
-                dgv_treatment.Rows.Add(txtID.Text, txt_procedure.Text, txtQuantity.Text, txt_cost.Text, txtTotal.Text, txt_instruction.Text,"DEL");
-                for ( int i = 0; i < dgv_treatment.Rows.Count; i++)
+
+                dgv_treatment.Rows.Add(txtID.Text, txt_procedure.Text, txtQuantity.Text, txt_cost.Text, txtTotal.Text, txt_instruction.Text, "DEL");
+                for (int i = 0; i < dgv_treatment.Rows.Count; i++)
                 {
-                    total = total + Convert.ToDecimal( dgv_treatment.Rows[i].Cells[4].Value.ToString());
+                    total = total + Convert.ToDecimal(dgv_treatment.Rows[i].Cells[4].Value.ToString());
                 }
                 lb_total.Text = total.ToString();
                 txtQuantity.Text = "";
@@ -1461,6 +1480,10 @@ namespace PappyjoeMVC.View
 
         private void txtQuantity_TextChanged(object sender, EventArgs e)
         {
+            total();
+        }
+        public void total()
+        {
             Decimal quant = 0;
             Decimal cost = 0;
             if (txtQuantity.Text != "")
@@ -1469,11 +1492,10 @@ namespace PappyjoeMVC.View
             }
             if (txt_cost.Text != "")
             {
-                cost= Convert.ToDecimal(txt_cost.Text);
+                cost = Convert.ToDecimal(txt_cost.Text);
             }
             txtTotal.Text = Convert.ToString(quant * cost);
         }
-
         private void dgv_treatment_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 5)
@@ -1533,11 +1555,11 @@ namespace PappyjoeMVC.View
                     Note = NoteData.Replace("'", " ");
                     dataGridView_drugnew.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     dataGridView_drugnew.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                    dataGridView_drugnew.Rows.Add(drugnametext.Text, txtStrengthno.Text, strengthcombo.Text, numericUpDownDuration.Value, dur, numericUpDownMorning.Value, numericUpDownNoon.Value, numericUpDownNight.Value, food, Note, id1, drug_type);
-                    dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Cells[12].Value = PappyjoeMVC.Properties.Resources.deleteicon;
+                    dataGridView_drugnew.Rows.Add(drugnametext.Text, txtStrengthno.Text, strengthcombo.Text, numericUpDownDuration.Value, dur, numericUpDownMorning.Value, numericUpDownNoon.Value, numericUpDownNight.Value, food, Note, drug_type, strstatus, id1);
+                    dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Cells[13].Value = PappyjoeMVC.Properties.Resources.deleteicon;
                     dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Height = 30;
                     img.ImageLayout = DataGridViewImageCellLayout.Normal;
-                    dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Cells[13].Value = strstatus;
+                    dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Cells[11].Value = strstatus;
                     richTxtInsrtuction.Text = "";
                     radioButtonAftrFood.Checked = false;
                     radioButtonBfrFood.Checked = false;

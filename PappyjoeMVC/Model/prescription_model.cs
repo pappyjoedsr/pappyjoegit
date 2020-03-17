@@ -137,7 +137,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable printsettings()
         {
-            DataTable print = db.table("select header,left_text,right_text,fullwidth_context,left_sign,right_sign from tbl_presciption_printsettings");
+            DataTable print = db.table("select header,left_text,right_text,fullwidth_context,left_sign,right_sign,include_logo from tbl_presciption_printsettings");
             return print;
         }
         public DataTable get_allprescription(string prescription_id)
