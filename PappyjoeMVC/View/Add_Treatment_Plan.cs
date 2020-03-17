@@ -1653,10 +1653,10 @@ namespace PappyjoeMVC.View
             {
                 e.Handled = false;
             }
-            else
+            else     
             {
                 e.Handled = true;
-                MessageBox.Show("Please Enter The Correct cost");
+                MessageBox.Show("Please Enter The Correct cost","Incorrect value",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -1675,6 +1675,11 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.ShowDialog();
             form2.Dispose();
+        }
+
+        private void panl_TreatmentAdd_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

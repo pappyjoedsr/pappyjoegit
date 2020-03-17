@@ -21,9 +21,9 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = cmodel.Fill_unit_combo();
             return dtb;
         }
-        public int Save_data(string _itemname, string _itemcode, string _manufacture, string _category, string _location, string _packing, string _isbatch, string _Sales1, string _SalesMin, string _SalesMax, string _Purch_Rate, string _punit, string _sUnit, int _unitmf, string _Purch_Rate2, string _Sales2, string _SalesMin1, string _SalesMax1, string _isOneUnitOnly, string _ReorderQty, string _CostBase, string _istax, string _MinimumStock)
+        public int Save_data(string _itemname, string _itemcode, string _manufacture, string _category, string HSN_Number, string _location, string _packing, string _isbatch, string _Sales1, string _SalesMin, string _SalesMax, string _Purch_Rate, string _punit, string _sUnit, int _unitmf, string _Purch_Rate2, string _Sales2, string _SalesMin1, string _SalesMax1, string _isOneUnitOnly, string _ReorderQty, string _CostBase, string _istax, string _MinimumStock)
         {
-            int i = _Model.Save_data(_itemname, _itemcode, _manufacture, _category, _location, _packing, _isbatch, _Sales1, _SalesMin, _SalesMax, _Purch_Rate, _punit, _sUnit, _unitmf, _Purch_Rate2, _Sales2, _SalesMin1, _SalesMax1, _isOneUnitOnly, _ReorderQty, _CostBase, _istax, _MinimumStock);
+            int i = _Model.Save_data(_itemname, _itemcode, _manufacture, _category, HSN_Number, _location, _packing, _isbatch, _Sales1, _SalesMin, _SalesMax, _Purch_Rate, _punit, _sUnit, _unitmf, _Purch_Rate2, _Sales2, _SalesMin1, _SalesMax1, _isOneUnitOnly, _ReorderQty, _CostBase, _istax, _MinimumStock);
             return i;
         }
 
@@ -97,7 +97,7 @@ namespace PappyjoeMVC.Controller
         {
             DataTable dtb = _Model.fill_drugtype();
             return dtb;
-        }
+        } 
         public DataTable max_itemid()
         {
             DataTable dtb = _Model.max_itemid();

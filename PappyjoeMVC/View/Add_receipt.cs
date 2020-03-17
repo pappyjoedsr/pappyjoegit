@@ -454,19 +454,35 @@ namespace PappyjoeMVC.View
                             }
                             adv = advance + abcde1;
                             this.cntrl.update_advance(adv, patient_id);
-                            txt_PayNow.Clear();
                         }
                         else
                         {
                             adv = abcde1;
                             this.cntrl.save_advance(adv, patient_id);
-                            txt_PayNow.Clear();
+                        }
+                        if (cmb_advane_type.SelectedIndex == 1)
+                        {
+                            this.cntrl.Save_advancetable_cheque(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, txt_adv_bankname.Text, txt_adv_number.Text, "Debit");
+                            
+                        }
+                        else if (cmb_advane_type.SelectedIndex == 2)
+                        {
+                            this.cntrl.Save_advancetable_card(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, txt_adv_bankname.Text, txt_adv_4digit.Text, "Debit");
+                        }
+                        else if(cmb_advane_type.SelectedIndex == 3)
+                        {
+                            this.cntrl.Save_advancetable_DD(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, txt_adv_bankname.Text, txt_adv_number.Text, "Debit");
+                        }
+                        else
+                        {
+                            this.cntrl.Save_advancetable(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, "Debit");
                         }
                         if (adv > 0)
                         {
                             label_availeble_advance.Text = string.Format("{0:C}", decimal.Parse(adv.ToString()));
                             Lab_advance_Available.Text = string.Format("{0:C}", decimal.Parse(adv.ToString()));
                         }
+                        txt_PayNow.Clear();
                         DialogResult rslt = MessageBox.Show("Advance Payment Saved...! Do you want print receipt...? ", "Print As...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (rslt == DialogResult.Yes)
                         {
@@ -523,7 +539,10 @@ namespace PappyjoeMVC.View
                         while (iii < DGV_MainGrid.Rows.Count)
                         {
                             g_Advance = Convert.ToDouble(DGV_MainGrid[3, iii].Value);
-                            g_Paid = Convert.ToDouble(DGV_MainGrid[4, iii].Value);
+                            if (g_Advance == 0)
+                                g_Paid = Convert.ToDouble(DGV_MainGrid[4, iii].Value);
+                            else
+                                g_Paid = 0;
                             g_Est = Convert.ToDouble(DGV_MainGrid[9, iii].Value);
                             if (g_Est < (g_Advance + g_Paid))
                             {
@@ -1161,19 +1180,20 @@ namespace PappyjoeMVC.View
 
         private void Cmb_ModeOfPaymnt_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Cmb_ModeOfPaymnt.SelectedIndex == 1)
+            ComboBox cbox = (ComboBox)sender;
+            if (cbox.SelectedIndex == 1)
             {
                 payment_show(true, true, true, true, false, false, false, false);
             }
-            else if (Cmb_ModeOfPaymnt.SelectedIndex == 2)
+            else if (cbox.SelectedIndex == 2)
             {
                 payment_show(true, false, false, false, true, true, true, false);
             }
-            else if (Cmb_ModeOfPaymnt.SelectedIndex == 0)
+            else if (cbox.SelectedIndex == 0)
             {
                 payment_show(false, false, false, false, false, false, false, false);
             }
-            else if (Cmb_ModeOfPaymnt.SelectedIndex == 3)
+            else if (cbox.SelectedIndex == 3)
             {
                 payment_show(true, true, true, true, false, false, false, false);
             }
@@ -1182,14 +1202,29 @@ namespace PappyjoeMVC.View
         }
         public void payment_show(Boolean BankName, Boolean Number, Boolean bank, Boolean lab_number, Boolean last4digit, Boolean cardno, Boolean t4digit, Boolean ddnumber)
         {
-            txt_BankNAme.Visible = BankName;
-            txt_Number.Visible = Number;
-            Bank.Visible = bank;
-            Lab_Numbr.Visible = lab_number;
-            Lab_Last4Digit.Visible = last4digit;
-            Lab_CardNo.Visible = cardno;
-            txt_4Digit.Visible = t4digit;
-            Lab_DDNumber.Visible = ddnumber;
+            if(panel_advanced_payment.Visible==true)
+            {
+                txt_adv_bankname.Visible = BankName;
+                txt_adv_number.Visible = Number;
+                lab_adv_bank.Visible = bank;
+                lab_adv_number.Visible = lab_number;
+                lab_adv_4digit.Visible = last4digit;
+                lab_adv_cardno.Visible = cardno;
+                txt_adv_4digit.Visible = t4digit;
+                //lab_adv_dd.Visible = ddnumber;
+            }
+            else
+            {
+                txt_BankNAme.Visible = BankName;
+                txt_Number.Visible = Number;
+                Bank.Visible = bank;
+                Lab_Numbr.Visible = lab_number;
+                Lab_Last4Digit.Visible = last4digit;
+                Lab_CardNo.Visible = cardno;
+                txt_4Digit.Visible = t4digit;
+                Lab_DDNumber.Visible = ddnumber;
+            }
+            
         }
 
         private void txt_4Digit_KeyUp(object sender, KeyEventArgs e)
@@ -1448,6 +1483,22 @@ namespace PappyjoeMVC.View
             form2.patient_id = patient_id;
             form2.ShowDialog();
             form2.Dispose();
+        }
+
+        private void lab_adv_4digit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_adv_4digit_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txt_adv_4digit.Text != "")
+            {
+                if (Convert.ToInt32(txt_adv_4digit.Text.Length) > 4)
+                {
+
+                }
+            }
         }
 
         public void Advance_paymentPrint(decimal total)

@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receipt));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_Add = new System.Windows.Forms.Button();
@@ -85,6 +85,22 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.panl_refund = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_refund_calcel = new System.Windows.Forms.Button();
+            this.btn_refund_amount = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_adv_refund = new System.Windows.Forms.TextBox();
+            this.panl_advance = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.dgv_advance = new System.Windows.Forms.DataGridView();
+            this.Slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.Dgv_payment = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,14 +117,23 @@
             this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.printAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adv_refund = new System.Windows.Forms.Button();
+            this.lblAdvance = new System.Windows.Forms.Label();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showAdvanceDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refundAdvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel6.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panl_refund.SuspendLayout();
+            this.panl_advance.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_advance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_payment)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel6
@@ -141,7 +166,7 @@
             this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Add.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.ForeColor = System.Drawing.Color.White;
-            this.btn_Add.Location = new System.Drawing.Point(1087, 4);
+            this.btn_Add.Location = new System.Drawing.Point(1088, 6);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 30);
             this.btn_Add.TabIndex = 1;
@@ -765,12 +790,197 @@
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.panl_refund);
+            this.panel9.Controls.Add(this.panl_advance);
             this.panel9.Controls.Add(this.Lab_Msg);
             this.panel9.Controls.Add(this.Dgv_payment);
             this.panel9.Location = new System.Drawing.Point(195, 137);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1167, 601);
             this.panel9.TabIndex = 270;
+            // 
+            // panl_refund
+            // 
+            this.panl_refund.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panl_refund.Controls.Add(this.panel10);
+            this.panl_refund.Controls.Add(this.label2);
+            this.panl_refund.Controls.Add(this.btn_refund_calcel);
+            this.panl_refund.Controls.Add(this.btn_refund_amount);
+            this.panl_refund.Controls.Add(this.label1);
+            this.panl_refund.Controls.Add(this.txt_adv_refund);
+            this.panl_refund.Location = new System.Drawing.Point(299, 129);
+            this.panl_refund.Name = "panl_refund";
+            this.panl_refund.Size = new System.Drawing.Size(273, 105);
+            this.panl_refund.TabIndex = 260;
+            this.panl_refund.Visible = false;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.LightGray;
+            this.panel10.Location = new System.Drawing.Point(-2, 29);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(275, 1);
+            this.panel10.TabIndex = 262;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label2.Location = new System.Drawing.Point(11, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 21);
+            this.label2.TabIndex = 246;
+            this.label2.Text = "Refund Amount";
+            // 
+            // btn_refund_calcel
+            // 
+            this.btn_refund_calcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_refund_calcel.BackColor = System.Drawing.Color.Tomato;
+            this.btn_refund_calcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_refund_calcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_refund_calcel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_refund_calcel.ForeColor = System.Drawing.Color.White;
+            this.btn_refund_calcel.Location = new System.Drawing.Point(208, 3);
+            this.btn_refund_calcel.Name = "btn_refund_calcel";
+            this.btn_refund_calcel.Size = new System.Drawing.Size(61, 23);
+            this.btn_refund_calcel.TabIndex = 89;
+            this.btn_refund_calcel.Text = "CANCEL";
+            this.btn_refund_calcel.UseVisualStyleBackColor = false;
+            this.btn_refund_calcel.Click += new System.EventHandler(this.btn_refund_calcel_Click);
+            // 
+            // btn_refund_amount
+            // 
+            this.btn_refund_amount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_refund_amount.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_refund_amount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_refund_amount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_refund_amount.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_refund_amount.ForeColor = System.Drawing.Color.White;
+            this.btn_refund_amount.Location = new System.Drawing.Point(209, 79);
+            this.btn_refund_amount.Name = "btn_refund_amount";
+            this.btn_refund_amount.Size = new System.Drawing.Size(60, 23);
+            this.btn_refund_amount.TabIndex = 88;
+            this.btn_refund_amount.Text = "Add";
+            this.btn_refund_amount.UseVisualStyleBackColor = false;
+            this.btn_refund_amount.Click += new System.EventHandler(this.btn_refund_amount_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label1.Location = new System.Drawing.Point(12, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 87;
+            this.label1.Text = "Amount";
+            // 
+            // txt_adv_refund
+            // 
+            this.txt_adv_refund.BackColor = System.Drawing.Color.White;
+            this.txt_adv_refund.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_adv_refund.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_adv_refund.Location = new System.Drawing.Point(70, 42);
+            this.txt_adv_refund.Name = "txt_adv_refund";
+            this.txt_adv_refund.Size = new System.Drawing.Size(170, 22);
+            this.txt_adv_refund.TabIndex = 86;
+            // 
+            // panl_advance
+            // 
+            this.panl_advance.BackColor = System.Drawing.Color.White;
+            this.panl_advance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panl_advance.Controls.Add(this.panel3);
+            this.panl_advance.Controls.Add(this.label3);
+            this.panl_advance.Controls.Add(this.btn_Cancel);
+            this.panl_advance.Controls.Add(this.dgv_advance);
+            this.panl_advance.Location = new System.Drawing.Point(225, 58);
+            this.panl_advance.Name = "panl_advance";
+            this.panl_advance.Size = new System.Drawing.Size(445, 311);
+            this.panl_advance.TabIndex = 259;
+            this.panl_advance.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.Location = new System.Drawing.Point(0, 39);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(444, 1);
+            this.panel3.TabIndex = 261;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label3.Location = new System.Drawing.Point(5, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 21);
+            this.label3.TabIndex = 247;
+            this.label3.Text = "Advance Details";
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Cancel.BackColor = System.Drawing.Color.Tomato;
+            this.btn_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.Color.White;
+            this.btn_Cancel.Location = new System.Drawing.Point(345, 5);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(91, 30);
+            this.btn_Cancel.TabIndex = 5;
+            this.btn_Cancel.Text = "CANCEL";
+            this.btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
+            // dgv_advance
+            // 
+            this.dgv_advance.AllowUserToAddRows = false;
+            this.dgv_advance.AllowUserToDeleteRows = false;
+            this.dgv_advance.AllowUserToResizeColumns = false;
+            this.dgv_advance.AllowUserToResizeRows = false;
+            this.dgv_advance.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_advance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_advance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Slno,
+            this.Date,
+            this.Payment,
+            this.Amount});
+            this.dgv_advance.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgv_advance.Location = new System.Drawing.Point(0, 43);
+            this.dgv_advance.Name = "dgv_advance";
+            this.dgv_advance.RowHeadersVisible = false;
+            this.dgv_advance.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgv_advance.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgv_advance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_advance.Size = new System.Drawing.Size(443, 266);
+            this.dgv_advance.TabIndex = 0;
+            // 
+            // Slno
+            // 
+            this.Slno.HeaderText = "Slno";
+            this.Slno.Name = "Slno";
+            this.Slno.Width = 80;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.Width = 110;
+            // 
+            // Payment
+            // 
+            this.Payment.HeaderText = "Payment Method";
+            this.Payment.Name = "Payment";
+            this.Payment.Width = 125;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Advance Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.Width = 150;
             // 
             // Lab_Msg
             // 
@@ -791,22 +1001,22 @@
             this.Dgv_payment.AllowUserToDeleteRows = false;
             this.Dgv_payment.AllowUserToResizeColumns = false;
             this.Dgv_payment.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.Dgv_payment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.Dgv_payment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_payment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.Dgv_payment.BackgroundColor = System.Drawing.Color.White;
             this.Dgv_payment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_payment.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Dgv_payment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_payment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_payment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_payment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_payment.ColumnHeadersVisible = false;
             this.Dgv_payment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -816,14 +1026,14 @@
             this.Column4,
             this.Column6,
             this.Column5});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Dgv_payment.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Dgv_payment.DefaultCellStyle = dataGridViewCellStyle3;
             this.Dgv_payment.Location = new System.Drawing.Point(0, 7);
             this.Dgv_payment.Name = "Dgv_payment";
             this.Dgv_payment.ReadOnly = true;
@@ -888,7 +1098,7 @@
             this.Lab_Due.AutoSize = true;
             this.Lab_Due.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lab_Due.ForeColor = System.Drawing.Color.Red;
-            this.Lab_Due.Location = new System.Drawing.Point(663, 56);
+            this.Lab_Due.Location = new System.Drawing.Point(663, 64);
             this.Lab_Due.Name = "Lab_Due";
             this.Lab_Due.Size = new System.Drawing.Size(124, 17);
             this.Lab_Due.TabIndex = 272;
@@ -946,12 +1156,67 @@
             this.printAllToolStripMenuItem.Text = "Print All ";
             this.printAllToolStripMenuItem.Click += new System.EventHandler(this.printAllToolStripMenuItem_Click);
             // 
+            // adv_refund
+            // 
+            this.adv_refund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.adv_refund.BackColor = System.Drawing.Color.LimeGreen;
+            this.adv_refund.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("adv_refund.BackgroundImage")));
+            this.adv_refund.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.adv_refund.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adv_refund.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adv_refund.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adv_refund.ForeColor = System.Drawing.Color.White;
+            this.adv_refund.Location = new System.Drawing.Point(846, 43);
+            this.adv_refund.Name = "adv_refund";
+            this.adv_refund.Size = new System.Drawing.Size(19, 16);
+            this.adv_refund.TabIndex = 273;
+            this.adv_refund.UseVisualStyleBackColor = false;
+            this.adv_refund.Visible = false;
+            this.adv_refund.Click += new System.EventHandler(this.adv_refund_Click);
+            // 
+            // lblAdvance
+            // 
+            this.lblAdvance.AutoSize = true;
+            this.lblAdvance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdvance.ForeColor = System.Drawing.Color.Red;
+            this.lblAdvance.Location = new System.Drawing.Point(663, 42);
+            this.lblAdvance.Name = "lblAdvance";
+            this.lblAdvance.Size = new System.Drawing.Size(56, 17);
+            this.lblAdvance.TabIndex = 274;
+            this.lblAdvance.Text = "advance";
+            this.lblAdvance.Visible = false;
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showAdvanceDetailsToolStripMenuItem,
+            this.refundAdvanceToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(191, 48);
+            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
+            // 
+            // showAdvanceDetailsToolStripMenuItem
+            // 
+            this.showAdvanceDetailsToolStripMenuItem.Name = "showAdvanceDetailsToolStripMenuItem";
+            this.showAdvanceDetailsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.showAdvanceDetailsToolStripMenuItem.Text = "Show Advance Details";
+            this.showAdvanceDetailsToolStripMenuItem.Click += new System.EventHandler(this.showAdvanceDetailsToolStripMenuItem_Click);
+            // 
+            // refundAdvanceToolStripMenuItem
+            // 
+            this.refundAdvanceToolStripMenuItem.Name = "refundAdvanceToolStripMenuItem";
+            this.refundAdvanceToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.refundAdvanceToolStripMenuItem.Text = "Refund Advance";
+            this.refundAdvanceToolStripMenuItem.Click += new System.EventHandler(this.refundAdvanceToolStripMenuItem_Click);
+            // 
             // Receipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1362, 703);
+            this.Controls.Add(this.lblAdvance);
+            this.Controls.Add(this.adv_refund);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.Lab_Due);
             this.Controls.Add(this.panel9);
@@ -967,6 +1232,7 @@
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Receipt";
+            this.Tag = " ";
             this.Text = "Payments";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Receipt_Load);
@@ -979,8 +1245,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
+            this.panl_refund.ResumeLayout(false);
+            this.panl_refund.PerformLayout();
+            this.panl_advance.ResumeLayout(false);
+            this.panl_advance.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_advance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_payment)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1056,5 +1328,26 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem printAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.Button adv_refund;
+        private System.Windows.Forms.Label lblAdvance;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem showAdvanceDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refundAdvanceToolStripMenuItem;
+        private System.Windows.Forms.Panel panl_advance;
+        private System.Windows.Forms.DataGridView dgv_advance;
+        private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Slno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Payment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.Panel panl_refund;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_refund_calcel;
+        private System.Windows.Forms.Button btn_refund_amount;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt_adv_refund;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label3;
     }
 }

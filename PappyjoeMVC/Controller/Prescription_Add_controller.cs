@@ -182,5 +182,25 @@ namespace PappyjoeMVC.Controller
             string dtb = cmodel.permission_for_settings(doctor_id);
             return dtb;
         }
+        public DataTable sms_details()
+        {
+            DataTable sms = _model.sms_details();
+            return sms;
+        }
+        public DataTable Get_Patient_Details(string id)
+        {
+            DataTable dtb = cmodel.Get_Patient_Details(id);
+            return dtb;
+        }
+        public DataTable clinicdetails()
+        {
+            DataTable dtb = cmodel.clinicdetails();
+            return dtb;
+        }
+        public DataTable smsdetails()
+        {
+            DataTable dtb = cmodel.smsdetails();
+            return dtb;
+        }
     }
 }

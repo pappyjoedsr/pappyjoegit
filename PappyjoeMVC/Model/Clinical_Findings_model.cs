@@ -126,5 +126,10 @@ namespace PappyjoeMVC.Model
             System.Data.DataTable dt_clinical_Findings = db.table("SELECT id , date FROM tbl_clinical_findings  where id='" + clinic_id + "' ");
             return dt_clinical_Findings;
         }
+        public DataTable dt_cf(string clinic_id)
+        {
+            DataTable dt = db.table("select * from tbl_clinical_findings where id='" + clinic_id + "'");
+            return dt;
+        }
     }
 }

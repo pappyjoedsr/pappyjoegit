@@ -681,7 +681,7 @@ namespace PappyjoeMVC.View
                                 if (dtFor_CurrentStockUpdate != null)
                                 {
                                     Fiil_BatchSale_Grid();
-                                    dgv_SalesItem.Rows.Add(itemId, txt_ItemCode.Text, txt_Discription.Text, txt_Packing.Text, cmb_Unit.Text, txt_GST.Text, txt_IGST.Text, txt_Qty.Text, txt_Free.Text, txt_UnitCost.Text, txt_Amount.Text, PappyjoeMVC.Properties.Resources.editicon, PappyjoeMVC.Properties.Resources.deleteicon);
+                                    dgv_SalesItem.Rows.Add(itemId, txt_ItemCode.Text, txt_Discription.Text, txt_Packing.Text, dt_unit1.Rows[0]["HSN_Number"].ToString(), cmb_Unit.Text, txt_GST.Text, txt_IGST.Text, txt_Qty.Text, txt_Free.Text, txt_UnitCost.Text, txt_Amount.Text, PappyjoeMVC.Properties.Resources.editicon, PappyjoeMVC.Properties.Resources.deleteicon);
                                     clear_itemdetails();
                                 }
                                 else
@@ -1238,13 +1238,13 @@ namespace PappyjoeMVC.View
                 if (sales_Edit == true)
                 {
                     clear_All_Data();
-                    DisabledAllControlls();
+                    //DisabledAllControlls();
                     btnReport.Visible = true;
                     if (invnum_Edit > 0)
                     {
                         DataTable dtb = this.cntrl.sales_details(invnum_Edit);
                         Load_masterdetails(dtb);
-                        this.cntrl.sales_items_details(invnum_Edit);
+                        //this.cntrl.sales_items_details(invnum_Edit);
                     }
                 }
                 else
@@ -1333,6 +1333,9 @@ namespace PappyjoeMVC.View
             Txt_TotalIGST.Text = "0";
             txt_SGST.Text = "0";
             txt_CGST.Text = "0";
+            txt_4Digit.Text = "";
+            txt_BankNAme.Text = "";
+            txt_Number.Text = "";
             dgv_SalesItem.Rows.Clear();
             dgv_BatchSale.Rows.Clear();
         }
@@ -1406,22 +1409,29 @@ namespace PappyjoeMVC.View
                 for (int i = 0; i < dtb_sales.Rows.Count; i++)
                 {
                     dgv_SalesItem.Rows.Add();
+                    dgv_SalesItem.Rows[i].Cells["id"].Value = dtb_sales.Rows[i]["InvNumber"].ToString();
                     dgv_SalesItem.Rows[i].Cells["colItemCode"].Value = dtb_sales.Rows[i]["Item_Code"].ToString();
+                    DataTable dtb_hsn = this.cntrl.get_hsn(dtb_sales.Rows[i]["Item_Code"].ToString());
+                    dgv_SalesItem.Rows[i].Cells["colItemCode"].Value = dtb_hsn.Rows[0]["Item_Code"].ToString();
                     dgv_SalesItem.Rows[i].Cells["colDiscription"].Value = dtb_sales.Rows[i]["Description"].ToString();
                     dgv_SalesItem.Rows[i].Cells["ColPacking"].Value = dtb_sales.Rows[i]["Packing"].ToString();
+                    dgv_SalesItem.Rows[i].Cells["hsn"].Value = dtb_hsn.Rows[0]["HSN_Number"].ToString();
                     dgv_SalesItem.Rows[i].Cells["ColUnit"].Value = dtb_sales.Rows[i]["Unit"].ToString();
                     dgv_SalesItem.Rows[i].Cells["ColQty"].Value = dtb_sales.Rows[i]["Qty"].ToString();
                     dgv_SalesItem.Rows[i].Cells["ColFree"].Value = dtb_sales.Rows[i]["FreeQty"].ToString();
-                    dgv_SalesItem.Rows[i].Cells["colUnitcost"].Value = Convert.ToDecimal(dtb_sales.Rows[i]["Rate"].ToString()).ToString("##.00");
+                    dgv_SalesItem.Rows[i].Cells["colUnitcost"].Value = Convert.ToDecimal(dtb_sales.Rows[i]["Rate"].ToString()).ToString("##.00"); 
+                    //dgv_SalesItem.Rows[i].Cells["hsn"].Value = Convert.ToDecimal(dtb_sales.Rows[i]["Rate"].ToString()).ToString("##.00");
+                   
                     if (Convert.ToInt32(dtb_sales.Rows[i]["GST"].ToString()) > 0)
                     {
+                        
                         dgv_SalesItem.Rows[i].Cells["ColGST"].Value = dtb_sales.Rows[i]["GST"].ToString();
                         gstAmount = ((Convert.ToDecimal(dtb_sales.Rows[i]["Qty"].ToString()) * Convert.ToDecimal(dtb_sales.Rows[i]["Rate"].ToString())) * Convert.ToDecimal(dtb_sales.Rows[i]["GST"].ToString())) / 100;
                         ToatalGST = ToatalGST + gstAmount;
                     }
                     else
                         dgv_SalesItem.Rows[i].Cells["ColGST"].Value = "0";
-                    if (Convert.ToInt32(dtb_sales.Rows[i]["IGST"].ToString()) > 0)
+                    if (Convert.ToInt32(dtb_sales.Rows[i]["IGST"].ToString()) > 0) 
                     {
                         dgv_SalesItem.Rows[i].Cells["colIGST"].Value = dtb_sales.Rows[i]["IGST"].ToString();
                         igstAmount = ((Convert.ToDecimal(dtb_sales.Rows[i]["Qty"].ToString()) * Convert.ToDecimal(dtb_sales.Rows[i]["Rate"].ToString())) * Convert.ToDecimal(dtb_sales.Rows[i]["GST"].ToString())) / 100;
@@ -1429,6 +1439,8 @@ namespace PappyjoeMVC.View
                     }
                     else
                         dgv_SalesItem.Rows[i].Cells["colIGST"].Value = "0";
+
+                   
                     dgv_SalesItem.Rows[i].Cells["colAmount"].Value = dtb_sales.Rows[i]["TotalAmount"].ToString();
                     TotalAmount = TotalAmount + Convert.ToDecimal(dtb_sales.Rows[i]["TotalAmount"].ToString());
                     TotalCost = TotalCost + (Convert.ToInt32(dtb_sales.Rows[i]["Qty"].ToString()) * Convert.ToDecimal(dtb_sales.Rows[i]["Rate"].ToString()));
@@ -1557,13 +1569,15 @@ namespace PappyjoeMVC.View
             if (dtb_order.Rows.Count > 0)
             {
                 for (int i = 0; i < dtb_order.Rows.Count; i++)
-                {
+                {  
                     dgv_SalesItem.Rows.Add();
+                    //DataTable dtb_hsn = this.cntrl.get_hsn(dtb_order.Rows[i]["Item_Code"].ToString());
                     dgv_SalesItem.Rows[i].Cells["id"].Value = dtb_order.Rows[i]["id"].ToString();
                     dgv_SalesItem.Rows[i].Cells["colItemCode"].Value = dtb_order.Rows[i]["item_code"].ToString();
                     dgv_SalesItem.Rows[i].Cells["colDiscription"].Value = dtb_order.Rows[i]["Discription"].ToString();
                     dgv_SalesItem.Rows[i].Cells["ColQty"].Value = dtb_order.Rows[i]["Qty"].ToString();
                     dgv_SalesItem.Rows[i].Cells["colUnitcost"].Value = dtb_order.Rows[i]["Cost"].ToString();
+                    dgv_SalesItem.Rows[i].Cells["hsn"].Value = dtb_order.Rows[i]["HSN_Number"].ToString();
                     dgv_SalesItem.Rows[i].Cells["ColPacking"].Value = "";
                     dgv_SalesItem.Rows[i].Cells["ColUnit"].Value = "";
                     dgv_SalesItem.Rows[i].Cells["ColGST"].Value = "0";
@@ -1586,7 +1600,8 @@ namespace PappyjoeMVC.View
                 }
                 else if (rad_CreditSale.Checked == true)
                 {
-                    Payment_method = "Credit Sale";
+
+                    Payment_method = Cmb_ModeOfPaymnt.Text;
                 }
                 if (string.IsNullOrWhiteSpace(txtPatient.Text))
                 {
@@ -1619,7 +1634,22 @@ namespace PappyjoeMVC.View
                 Sgst = Convert.ToDecimal(txt_SGST.Text);
                 GST = Convert.ToDecimal(Cgst + Sgst);
                 int i = 0, j = 0;
-                i = this.cntrl.Save_salesMaster(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                if(Cmb_ModeOfPaymnt.SelectedIndex==0)
+                {
+                    i = this.cntrl.Save_salesMaster_cheque(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, txt_BankNAme.Text, txt_Number.Text, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                }
+                else if(Cmb_ModeOfPaymnt.SelectedIndex==1)
+                {
+                    i = this.cntrl.Save_salesMaster_card(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, txt_BankNAme.Text,txt_4Digit.Text, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                }
+                else if(Cmb_ModeOfPaymnt.SelectedIndex==2)
+                {
+                    i = this.cntrl.Save_salesMaster_DD(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, txt_BankNAme.Text, txt_Number.Text,Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                }
+                else
+                {
+                    i = this.cntrl.Save_salesMaster(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                }
                 if (i > 0)
                 {
                     string unit2;
@@ -1668,6 +1698,9 @@ namespace PappyjoeMVC.View
                             clear_All_Data();
                             clear_itemdetails();
                             DocNumber_increment();
+                            panl_mode_payment.Visible = false;
+                            rad_CreditSale.Checked = false;
+                            rad_CashSale.Checked = true;
                         }
                     }
                     else
@@ -1931,29 +1964,30 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2>Drug License:" + str_druglicenseno + "</font></left></td>");
-                sWrite.WriteLine("<td colspan=7 align='right'>  <FONT COLOR=black FACE='Segoe UI'   SIZE=2>Tax No:&nbsp;" + str_taxno + " &nbsp;</font></right></td>");
+                sWrite.WriteLine("<td colspan=8 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2>Drug License:" + str_druglicenseno + "</font></left></td>");
+                sWrite.WriteLine("<td colspan=8 align='right'>  <FONT COLOR=black FACE='Segoe UI'   SIZE=2>Tax No:&nbsp;" + str_taxno + " &nbsp;</font></right></td>");
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2> Sold To : &nbsp" + txtPatient.Text + "</font></left></td>");
-                sWrite.WriteLine("<td colspan=7 align='right'><FONT COLOR=black FACE='Segoe UI'   SIZE=2>Invoice No:&nbsp;" + txtDocumentNumber.Text + "&nbsp; </font></right></td>");
+                sWrite.WriteLine("<td colspan=8 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2> Sold To : &nbsp" + txtPatient.Text + "</font></left></td>");
+                sWrite.WriteLine("<td colspan=8 align='right'><FONT COLOR=black FACE='Segoe UI'   SIZE=2>Invoice No:&nbsp;" + txtDocumentNumber.Text + "&nbsp; </font></right></td>");
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI'   SIZE=2> Prescribed by : &nbspDr." + txtBdoctor.Text + "</font></left></td>");
                 sWrite.WriteLine("<td colspan=5 align='right'><FONT COLOR=black FACE='Segoe UI'   SIZE=2> Date :" + DateTime.Now.ToString("MM-dd-yyyy") + "</font></right></td>");
                 sWrite.WriteLine("</tr>");
-                sWrite.WriteLine("<tr><td colspan=8><hr/></td></tr>");
+                sWrite.WriteLine("<tr><td colspan=9><hr/></td></tr>");
                 sWrite.WriteLine("<tr>");
                 sWrite.WriteLine("<td align='left'  width='62'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Sl.</b></font></td>");
                 sWrite.WriteLine("<td align='left'  width='128'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Item Code</b></font></td>");
                 sWrite.WriteLine("<td align='left'  width='190'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Description</b></font></td>");
                 sWrite.WriteLine("<td align='left'  width='153'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Batch/Expiry</b></font></td>");
+                sWrite.WriteLine("<td align='right'  width='61' ><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>HSN Number</b></font></td>");
                 sWrite.WriteLine("<td align='right'  width='61' ><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Unit</b></font></td>");
                 sWrite.WriteLine("<td align='right'  width='70'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Quantity</b></font></td>");
                 sWrite.WriteLine("<td align='right'  width='93'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Cost</b></font></td>");
                 sWrite.WriteLine("<td align='right'  width='107'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Total Amount</b></font></td>");
                 sWrite.WriteLine("</tr>");
-                sWrite.WriteLine("<tr><td align='left' colspan=8><hr/></td></tr>");
+                sWrite.WriteLine("<tr><td align='left' colspan=9><hr/></td></tr>");
                 string removecomma = "";
                 int k = 1;
                 for (int i = 0; i < dgv_SalesItem.Rows.Count; i++)
@@ -1980,6 +2014,7 @@ namespace PappyjoeMVC.View
                     if (strBatch != "")
                         removecomma = strBatch.Remove(strBatch.Length - 1);
                     sWrite.WriteLine("<td align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + removecomma + "</font></td>");
+                    sWrite.WriteLine("<td align='right'><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgv_SalesItem.Rows[i].Cells["hsn"].Value.ToString() + "</font></td>");
                     sWrite.WriteLine("<td align='right'><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgv_SalesItem.Rows[i].Cells["ColUnit"].Value.ToString() + "</font></td>");
                     sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dgv_SalesItem.Rows[i].Cells["ColQty"].Value.ToString() + "</font></td>");
                     sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + Convert.ToDecimal(dgv_SalesItem.Rows[i].Cells["colUnitcost"].Value.ToString()).ToString("##0.00") + "</font></td>");
@@ -1988,27 +2023,27 @@ namespace PappyjoeMVC.View
                     k = k + 1;
                     sWrite.WriteLine("</tr>");
                 }
-                sWrite.WriteLine("<tr><td align='left'  colspan=8><hr/></td></tr>");
+                sWrite.WriteLine("<tr><td align='left'  colspan=9><hr/></td></tr>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td align='right'  colspan=7 ><FONT COLOR=black FACE='Segoe UI' SIZE=2> Total Items :</font></td>");
-                sWrite.WriteLine("<td align='right'  colspan=8 ><FONT COLOR=black FACE='Segoe UI' SIZE=3> &nbsp " + txt_totalItems.Text + " </font></td>");
+                sWrite.WriteLine("<td align='right'  colspan=8 ><FONT COLOR=black FACE='Segoe UI' SIZE=2> Total Items :</font></td>");
+                sWrite.WriteLine("<td align='right'  colspan=9 ><FONT COLOR=black FACE='Segoe UI' SIZE=3> &nbsp " + txt_totalItems.Text + " </font></td>");
                 sWrite.WriteLine("</tr>");
                 if (txt_CGST.Text != "")
                 {
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td align='right'  colspan=7 ><FONT COLOR=black FACE='Segoe UI' SIZE=2> CGST :</font></td>");
-                    sWrite.WriteLine("<td align='right'  colspan=8 ><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp" + txt_CGST.Text + " </font></td>");
+                    sWrite.WriteLine("<td align='right'  colspan=8 ><FONT COLOR=black FACE='Segoe UI' SIZE=2> CGST :</font></td>");
+                    sWrite.WriteLine("<td align='right'  colspan=9 ><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp" + txt_CGST.Text + " </font></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td align='right'  colspan=7 ><FONT COLOR=black FACE='Segoe UI' SIZE=2> SGST :  </font></td>");
-                    sWrite.WriteLine("<td align='right'  colspan=8 ><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp " + txt_SGST.Text + " </font></td>");
+                    sWrite.WriteLine("<td align='right'  colspan=8 ><FONT COLOR=black FACE='Segoe UI' SIZE=2> SGST :  </font></td>");
+                    sWrite.WriteLine("<td align='right'  colspan=9 ><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp " + txt_SGST.Text + " </font></td>");
                     sWrite.WriteLine("</tr>");
                 }
                 else if (Txt_TotalIGST.Text != "")
                 {
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td align='right'  colspan=7 ><FONT COLOR=black FACE='Segoe UI' SIZE=2> Total IGST :</font></td>");
-                    sWrite.WriteLine("<td align='right'  colspan=8 ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + Txt_TotalIGST.Text + " </font></td>");
+                    sWrite.WriteLine("<td align='right'  colspan=8 ><FONT COLOR=black FACE='Segoe UI' SIZE=2> Total IGST :</font></td>");
+                    sWrite.WriteLine("<td align='right'  colspan=9 ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + Txt_TotalIGST.Text + " </font></td>");
                     sWrite.WriteLine("</tr>");
                 }
                 sWrite.WriteLine("<tr>");
@@ -2064,11 +2099,11 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("<td align='right'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>&nbsp " + String.Format("{0:C}", decimal.Parse(txt_GrandTotal.Text)) + "</b> </font></td>");
                 sWrite.WriteLine(" <div class='footer'>");
                 sWrite.WriteLine("</tr>");
-                sWrite.WriteLine("<tr><td align='left' colspan=8 > <FONT COLOR=black FACE='Segoe UI' SIZE=2>Pharmacist Signature</font></td></tr>");
-                sWrite.WriteLine("<tr><td align='left'  colspan=8><hr/></td></tr>");
-                sWrite.WriteLine("<tr><td align='left' colspan=8 > <FONT COLOR=black FACE='Segoe UI' SIZE=1><i>Goods once sold cannot be taken back or exchanged</i></font></td></tr>");
+                sWrite.WriteLine("<tr><td align='left' colspan=9 > <FONT COLOR=black FACE='Segoe UI' SIZE=2>Pharmacist Signature</font></td></tr>");
+                sWrite.WriteLine("<tr><td align='left'  colspan=9><hr/></td></tr>");
+                sWrite.WriteLine("<tr><td align='left' colspan=9 > <FONT COLOR=black FACE='Segoe UI' SIZE=1><i>Goods once sold cannot be taken back or exchanged</i></font></td></tr>");
                 sWrite.WriteLine("</div>");
-                sWrite.WriteLine("<tr><td align='left' colspan=8 > <FONT COLOR=black FACE='Segoe UI' SIZE=2>E&OE</font></td></tr>");
+                sWrite.WriteLine("<tr><td align='left' colspan=9 > <FONT COLOR=black FACE='Segoe UI' SIZE=2>E&OE</font></td></tr>");
                 sWrite.WriteLine("</table>");
                 sWrite.WriteLine("<script>window.print();</script>");
                 sWrite.WriteLine("</body >");
@@ -2142,6 +2177,65 @@ namespace PappyjoeMVC.View
                 }
             }
         }
+
+        private void rad_CashSale_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rad_CashSale.Checked==true)
+            {
+                rad_CreditSale.Checked = false;
+                panl_mode_payment.Visible = false;
+            }
+           
+        }
+
+        private void rad_CreditSale_CheckedChanged(object sender, EventArgs e)
+        {
+            //rad_CreditSale.Checked = true;
+            if(rad_CreditSale.Checked==true)
+            {
+                rad_CashSale.Checked = false;
+                panl_mode_payment.Visible = true;
+            }
+        }
+
+        private void Cmb_ModeOfPaymnt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Cmb_ModeOfPaymnt.SelectedIndex == 0)
+            {
+                payment_show(true, true, true, true, false, false, false);
+            }
+            else if (Cmb_ModeOfPaymnt.SelectedIndex == 1)
+            {
+                payment_show(true, false, false, false, true, true, true);
+            }
+            else if (Cmb_ModeOfPaymnt.SelectedIndex == 2)
+            {
+                payment_show(true, true, true, true, false, false, false);
+            }
+            else
+            { payment_show(false, false, false, false, false, false, false); }
+        }
+        public void payment_show(Boolean BankName, Boolean Number, Boolean bank, Boolean lab_number, Boolean last4digit, Boolean cardno, Boolean t4digit)
+        {
+                txt_BankNAme.Visible = BankName;
+                txt_Number.Visible = Number;
+                Bank.Visible = bank;
+                Lab_Numbr.Visible = lab_number;
+                Lab_Last4Digit.Visible = last4digit;
+                Lab_CardNo.Visible = cardno;
+                txt_4Digit.Visible = t4digit;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txt_4Digit.Text = "";
+            txt_BankNAme.Text = "";
+            txt_Number.Text = "";
+            panl_mode_payment.Visible = false;
+            rad_CreditSale.Checked = false;
+            rad_CashSale.Checked = true;
+        }
+
         public void call_Item_Batch(string item_Code, decimal qty, string unit)
         {
             dtFor_CurrentStockUpdate_Bill.Columns.Clear();
@@ -2182,7 +2276,7 @@ namespace PappyjoeMVC.View
                             dRow[3] = dtb.Rows[i]["PrdDate"].ToString();
                             dRow[4] = dtb.Rows[i]["ExpDate"].ToString();
                             dRow[5] = unit;
-                            dRow[6] = Remaning_qty.ToString();
+                            dRow[6] = Remaning_qty.ToString(); 
                             curent_Stock = Convert.ToDecimal(dtb.Rows[i]["Qty"].ToString()) - Convert.ToDecimal(Remaning_qty);
                             dRow[7] = curent_Stock.ToString();
                             dtFor_CurrentStockUpdate_Bill.Rows.Add(dRow);
