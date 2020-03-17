@@ -150,7 +150,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Get_companydetails()
         {
-          DataTable dtp = db.table("select name,contact_no,street_address,email,website,Dl_Number,Dl_Number2  from tbl_practice_details");
+          DataTable dtp = db.table("select name,contact_no,street_address,path,email,website,Dl_Number,Dl_Number2  from tbl_practice_details");
             return dtp;
         }
         public DataTable prescription_main(string PrescritionMain_id)

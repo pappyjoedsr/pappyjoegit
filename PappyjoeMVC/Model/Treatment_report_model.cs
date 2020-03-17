@@ -72,7 +72,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable practceDetls()
         {
-            System.Data.DataTable dtp = db.table("select name,contact_no,street_address,email,website  from tbl_practice_details");
+            System.Data.DataTable dtp = db.table("select name,contact_no,street_address,path,email,website  from tbl_practice_details");
             return dtp;
         }
         public DataTable docId(string drctid)

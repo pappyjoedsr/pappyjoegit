@@ -153,6 +153,10 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.labelallpatient = new System.Windows.Forms.Label();
+            this.labnationality = new System.Windows.Forms.Label();
+            this.txtnationality = new System.Windows.Forms.TextBox();
+            this.labpassport = new System.Windows.Forms.Label();
+            this.txtpassport = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).BeginInit();
@@ -953,6 +957,10 @@
             // 
             this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel12.Controls.Add(this.txtpassport);
+            this.panel12.Controls.Add(this.labpassport);
+            this.panel12.Controls.Add(this.txtnationality);
+            this.panel12.Controls.Add(this.labnationality);
             this.panel12.Controls.Add(this.pictureBox_PatientPhoto);
             this.panel12.Controls.Add(this.labDob);
             this.panel12.Controls.Add(this.labRefferedBy);
@@ -999,7 +1007,7 @@
             this.panel12.Controls.Add(this.lab_PatientName);
             this.panel12.Location = new System.Drawing.Point(197, 137);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(898, 609);
+            this.panel12.Size = new System.Drawing.Size(898, 612);
             this.panel12.TabIndex = 295;
             // 
             // pictureBox_PatientPhoto
@@ -1714,6 +1722,54 @@
             this.labelallpatient.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelallpatient.Click += new System.EventHandler(this.labelallpatient_Click);
             // 
+            // labnationality
+            // 
+            this.labnationality.AutoSize = true;
+            this.labnationality.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labnationality.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.labnationality.Location = new System.Drawing.Point(188, 550);
+            this.labnationality.Name = "labnationality";
+            this.labnationality.Size = new System.Drawing.Size(89, 21);
+            this.labnationality.TabIndex = 263;
+            this.labnationality.Text = "Nationality:";
+            this.labnationality.Visible = false;
+            // 
+            // txtnationality
+            // 
+            this.txtnationality.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtnationality.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnationality.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtnationality.Location = new System.Drawing.Point(299, 549);
+            this.txtnationality.Name = "txtnationality";
+            this.txtnationality.ReadOnly = true;
+            this.txtnationality.Size = new System.Drawing.Size(207, 22);
+            this.txtnationality.TabIndex = 264;
+            this.txtnationality.Visible = false;
+            // 
+            // labpassport
+            // 
+            this.labpassport.AutoSize = true;
+            this.labpassport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labpassport.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.labpassport.Location = new System.Drawing.Point(180, 580);
+            this.labpassport.Name = "labpassport";
+            this.labpassport.Size = new System.Drawing.Size(97, 21);
+            this.labpassport.TabIndex = 265;
+            this.labpassport.Text = "Passport No:";
+            this.labpassport.Visible = false;
+            // 
+            // txtpassport
+            // 
+            this.txtpassport.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtpassport.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpassport.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtpassport.Location = new System.Drawing.Point(298, 578);
+            this.txtpassport.Name = "txtpassport";
+            this.txtpassport.ReadOnly = true;
+            this.txtpassport.Size = new System.Drawing.Size(207, 22);
+            this.txtpassport.TabIndex = 266;
+            this.txtpassport.Visible = false;
+            // 
             // Patient_Profile_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1886,5 +1942,9 @@
         private System.Windows.Forms.PictureBox pictureBox_Logo;
         private System.Windows.Forms.Button btnprint;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
+        public System.Windows.Forms.TextBox txtpassport;
+        private System.Windows.Forms.Label labpassport;
+        public System.Windows.Forms.TextBox txtnationality;
+        private System.Windows.Forms.Label labnationality;
     }
 }

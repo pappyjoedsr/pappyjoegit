@@ -98,7 +98,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Patient_grvShow(string date1, string date2)
         {
-            DataTable dt = db.table("SELECT  id,pt_id as 'PATIENT ID',pt_name as 'PATIENT NAME',gender as 'GENDER',Age, primary_mobile_number as 'MOBILE',date as 'DATE',street_address FROM  tbl_patient where date between '" + date1 + "' and '" + date2 + "' and Profile_Status!='Cancelled' order by date desc");
+            DataTable dt = db.table("SELECT  id,pt_id as 'PATIENT ID',pt_name as 'PATIENT NAME',gender as 'GENDER',Age, primary_mobile_number as 'MOBILE',date as 'DATE',street_address,nationality,passport_no FROM  tbl_patient where date between '" + date1 + "' and '" + date2 + "' and Profile_Status!='Cancelled' order by date desc");
             return dt;
         }
         public DataTable EMR_invMain(string date1, string date2)

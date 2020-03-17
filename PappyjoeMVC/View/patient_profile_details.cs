@@ -333,6 +333,36 @@ namespace PappyjoeMVC.View
                         txtPinCode.Hide();
                         labPinCode.Hide();
                     }
+                    if (rs_patients.Rows[0]["nationality"].ToString() != "")
+                    {
+                        txtnationality.Text = rs_patients.Rows[0]["nationality"].ToString();
+                        txtnationality.BackColor = Color.White;
+                        YX = YX + 30;
+                        txtnationality.Location = new Point(305, YX);
+                        txtnationality.Show();
+                        labnationality.Show();
+                        labnationality.Location = new Point(200, YX);
+                    }
+                    else
+                    {
+                        txtnationality.Hide();
+                        labnationality.Hide();
+                    }
+                    if (rs_patients.Rows[0]["passport_no"].ToString() != "")
+                    {
+                        txtpassport.Text = rs_patients.Rows[0]["passport_no"].ToString();
+                        txtpassport.BackColor = Color.White;
+                        YX = YX + 30;
+                        txtpassport.Location = new Point(305, YX);
+                        txtpassport.Show();
+                        labpassport.Show();
+                        labpassport.Location = new Point(200, YX);
+                    }
+                    else
+                    {
+                        txtpassport.Hide();
+                        labpassport.Hide();
+                    }
                     YX = 50;
                     if (rs_patients.Rows[0]["Opticket"].ToString() != "")
                     {
@@ -921,6 +951,16 @@ namespace PappyjoeMVC.View
                         yy = yy + 20;
                         e.Graphics.DrawString("Ph :" + dt1.Rows[0]["primary_mobile_number"].ToString(), printFont1, Brushes.Black, 10, yy);
                     }
+                    else if (dt1.Rows[0]["nationality"].ToString() != "")
+                    {
+                        yy = yy + 20;
+                        e.Graphics.DrawString("Nationality :" + dt1.Rows[0]["nationality"].ToString(), printFont1, Brushes.Black, 10, yy);
+                    }
+                    else if (dt1.Rows[0]["passport_no"].ToString() != "")
+                    {
+                        yy = yy + 20;
+                        e.Graphics.DrawString("Passport No :" + dt1.Rows[0]["passport_no"].ToString(), printFont1, Brushes.Black, 10, yy);
+                    }
                 }
                 
             }
@@ -1065,6 +1105,18 @@ namespace PappyjoeMVC.View
                 xyy = xyy + 30;
             }
             if (txtPinCode.Visible == true)
+            {
+                e.Graphics.DrawString(this.labPinCode.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtPinCode.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtnationality.Visible == true)
+            {
+                e.Graphics.DrawString(this.labPinCode.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
+                e.Graphics.DrawString(this.txtPinCode.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);
+                xyy = xyy + 30;
+            }
+            if (txtpassport.Visible == true)
             {
                 e.Graphics.DrawString(this.labPinCode.Text, new Font("Segoe UI", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point), Brushes.Black, 25, xyy);
                 e.Graphics.DrawString(this.txtPinCode.Text, new Font("Segoe UI", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point), Brushes.Black, 230, xyy);

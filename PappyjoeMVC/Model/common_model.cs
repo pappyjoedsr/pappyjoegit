@@ -100,7 +100,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Get_practiceDlNumber()
         {
-            DataTable dtp = db.table("select name,street_address,locality,pincode,contact_no,email,website,Dl_Number,Dl_Number2 from tbl_practice_details");
+            DataTable dtp = db.table("select name,street_address,locality,pincode,contact_no,path,email,website,Dl_Number,Dl_Number2 from tbl_practice_details");
             return dtp;
         }
         public DataTable send_email()

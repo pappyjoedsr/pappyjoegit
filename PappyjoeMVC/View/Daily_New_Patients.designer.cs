@@ -50,13 +50,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblNoRecord = new System.Windows.Forms.Label();
             this.dgvDailyNewPatient = new System.Windows.Forms.DataGridView();
-            this.sl_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patient_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patient_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chartDailyNewPatients = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Grvdailynewpatient = new System.Windows.Forms.DataGridView();
@@ -68,6 +61,15 @@
             this.BtnExport = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.sl_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patient_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patient_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passport_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDailyNewPatient)).BeginInit();
@@ -253,7 +255,9 @@
             this.patient_name,
             this.mobile,
             this.email,
-            this.Doctor});
+            this.Doctor,
+            this.nationality,
+            this.passport_no});
             this.dgvDailyNewPatient.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvDailyNewPatient.Location = new System.Drawing.Point(2, 0);
             this.dgvDailyNewPatient.MultiSelect = false;
@@ -268,55 +272,6 @@
             this.dgvDailyNewPatient.Size = new System.Drawing.Size(1083, 563);
             this.dgvDailyNewPatient.TabIndex = 248;
             this.dgvDailyNewPatient.Visible = false;
-            // 
-            // sl_no
-            // 
-            this.sl_no.HeaderText = "SlNo";
-            this.sl_no.Name = "sl_no";
-            this.sl_no.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.sl_no.Width = 50;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "DATE";
-            this.date.Name = "date";
-            this.date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.date.Width = 70;
-            // 
-            // patient_id
-            // 
-            this.patient_id.HeaderText = "PATIENT ID";
-            this.patient_id.Name = "patient_id";
-            this.patient_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.patient_id.Width = 160;
-            // 
-            // patient_name
-            // 
-            this.patient_name.HeaderText = "PATIENT NAME";
-            this.patient_name.Name = "patient_name";
-            this.patient_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.patient_name.Width = 220;
-            // 
-            // mobile
-            // 
-            this.mobile.HeaderText = "MOBILE";
-            this.mobile.Name = "mobile";
-            this.mobile.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.mobile.Width = 200;
-            // 
-            // email
-            // 
-            this.email.HeaderText = "EMAIL";
-            this.email.Name = "email";
-            this.email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.email.Width = 220;
-            // 
-            // Doctor
-            // 
-            this.Doctor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Doctor.HeaderText = "DOCTOR NAME";
-            this.Doctor.Name = "Doctor";
-            this.Doctor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // chartDailyNewPatients
             // 
@@ -488,6 +443,66 @@
             this.panel1.Size = new System.Drawing.Size(1296, 71);
             this.panel1.TabIndex = 255;
             // 
+            // sl_no
+            // 
+            this.sl_no.HeaderText = "SlNo";
+            this.sl_no.Name = "sl_no";
+            this.sl_no.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.sl_no.Width = 50;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "DATE";
+            this.date.Name = "date";
+            this.date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.date.Width = 70;
+            // 
+            // patient_id
+            // 
+            this.patient_id.HeaderText = "PATIENT ID";
+            this.patient_id.Name = "patient_id";
+            this.patient_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.patient_id.Width = 120;
+            // 
+            // patient_name
+            // 
+            this.patient_name.HeaderText = "PATIENT NAME";
+            this.patient_name.Name = "patient_name";
+            this.patient_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.patient_name.Width = 195;
+            // 
+            // mobile
+            // 
+            this.mobile.HeaderText = "MOBILE";
+            this.mobile.Name = "mobile";
+            this.mobile.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.mobile.Width = 178;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "EMAIL";
+            this.email.Name = "email";
+            this.email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.email.Width = 190;
+            // 
+            // Doctor
+            // 
+            this.Doctor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Doctor.HeaderText = "DOCTOR";
+            this.Doctor.Name = "Doctor";
+            this.Doctor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // nationality
+            // 
+            this.nationality.HeaderText = "NATIONALITY";
+            this.nationality.Name = "nationality";
+            // 
+            // passport_no
+            // 
+            this.passport_no.HeaderText = "PASSPORT NO";
+            this.passport_no.Name = "passport_no";
+            this.passport_no.Width = 120;
+            // 
             // Daily_New_Patients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -534,13 +549,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lblNoRecord;
         private System.Windows.Forms.DataGridView dgvDailyNewPatient;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sl_no;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patient_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patient_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mobile;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Doctor;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDailyNewPatients;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView Grvdailynewpatient;
@@ -552,5 +560,14 @@
         private System.Windows.Forms.Button BtnExport;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sl_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patient_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patient_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mobile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Doctor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nationality;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passport_no;
     }
 }

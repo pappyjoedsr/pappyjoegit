@@ -32,10 +32,12 @@
             this.compoprocedure = new System.Windows.Forms.ComboBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radfemale = new System.Windows.Forms.RadioButton();
+            this.label17 = new System.Windows.Forms.Label();
+            this.radMale = new System.Windows.Forms.RadioButton();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.list_p_details = new System.Windows.Forms.ListBox();
             this.txt_p_email = new System.Windows.Forms.TextBox();
             this.txt_p_mobile = new System.Windows.Forms.TextBox();
             this.txt_p_id = new System.Windows.Forms.TextBox();
@@ -44,6 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.list_p_details = new System.Windows.Forms.ListBox();
             this.lab_change = new System.Windows.Forms.Label();
             this.lab_p_email = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -83,6 +86,7 @@
             this.chkPrivate = new System.Windows.Forms.CheckBox();
             this.chkReminder = new System.Windows.Forms.CheckBox();
             this.chkMeeting = new System.Windows.Forms.CheckBox();
+            this.lab_p_gndr = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -106,7 +110,7 @@
             this.buttonAdd.BackColor = System.Drawing.Color.Gray;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Location = new System.Drawing.Point(474, 77);
+            this.buttonAdd.Location = new System.Drawing.Point(487, 68);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(49, 23);
             this.buttonAdd.TabIndex = 98;
@@ -116,10 +120,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.radfemale);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.radMale);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.list_p_details);
             this.panel1.Controls.Add(this.txt_p_email);
             this.panel1.Controls.Add(this.txt_p_mobile);
             this.panel1.Controls.Add(this.txt_p_id);
@@ -129,10 +135,45 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label5);
             this.panel1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.panel1.Location = new System.Drawing.Point(8, 68);
+            this.panel1.Location = new System.Drawing.Point(16, 51);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(465, 176);
+            this.panel1.Size = new System.Drawing.Size(465, 182);
             this.panel1.TabIndex = 81;
+            // 
+            // radfemale
+            // 
+            this.radfemale.AutoSize = true;
+            this.radfemale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radfemale.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.radfemale.Location = new System.Drawing.Point(244, 69);
+            this.radfemale.Name = "radfemale";
+            this.radfemale.Size = new System.Drawing.Size(66, 21);
+            this.radfemale.TabIndex = 76;
+            this.radfemale.Text = "Female";
+            this.radfemale.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label17.Location = new System.Drawing.Point(5, 65);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(64, 21);
+            this.label17.TabIndex = 75;
+            this.label17.Text = "Gender:";
+            // 
+            // radMale
+            // 
+            this.radMale.AutoSize = true;
+            this.radMale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radMale.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.radMale.Location = new System.Drawing.Point(150, 69);
+            this.radMale.Name = "radMale";
+            this.radMale.Size = new System.Drawing.Size(54, 21);
+            this.radMale.TabIndex = 73;
+            this.radMale.Text = "Male";
+            this.radMale.UseVisualStyleBackColor = true;
             // 
             // label16
             // 
@@ -150,7 +191,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(123, 81);
+            this.label15.Location = new System.Drawing.Point(123, 99);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(17, 21);
             this.label15.TabIndex = 71;
@@ -161,34 +202,18 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(152, 102);
+            this.label14.Location = new System.Drawing.Point(150, 122);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(255, 13);
             this.label14.TabIndex = 69;
             this.label14.Text = "You must enter a value in the  Patient Name field";
             this.label14.Visible = false;
             // 
-            // list_p_details
-            // 
-            this.list_p_details.BackColor = System.Drawing.SystemColors.Menu;
-            this.list_p_details.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.list_p_details.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.list_p_details.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.list_p_details.FormattingEnabled = true;
-            this.list_p_details.ItemHeight = 17;
-            this.list_p_details.Location = new System.Drawing.Point(146, 140);
-            this.list_p_details.Name = "list_p_details";
-            this.list_p_details.Size = new System.Drawing.Size(315, 87);
-            this.list_p_details.TabIndex = 49;
-            this.list_p_details.Visible = false;
-            this.list_p_details.Click += new System.EventHandler(this.list_p_details_Click);
-            this.list_p_details.KeyUp += new System.Windows.Forms.KeyEventHandler(this.list_p_details_KeyUp);
-            // 
             // txt_p_email
             // 
             this.txt_p_email.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_p_email.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_p_email.Location = new System.Drawing.Point(146, 119);
+            this.txt_p_email.Location = new System.Drawing.Point(144, 142);
             this.txt_p_email.Name = "txt_p_email";
             this.txt_p_email.Size = new System.Drawing.Size(315, 22);
             this.txt_p_email.TabIndex = 48;
@@ -197,7 +222,7 @@
             // 
             this.txt_p_mobile.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_p_mobile.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_p_mobile.Location = new System.Drawing.Point(146, 80);
+            this.txt_p_mobile.Location = new System.Drawing.Point(145, 97);
             this.txt_p_mobile.MaxLength = 10;
             this.txt_p_mobile.Name = "txt_p_mobile";
             this.txt_p_mobile.Size = new System.Drawing.Size(315, 22);
@@ -209,7 +234,7 @@
             // 
             this.txt_p_id.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_p_id.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_p_id.Location = new System.Drawing.Point(146, 47);
+            this.txt_p_id.Location = new System.Drawing.Point(147, 37);
             this.txt_p_id.Name = "txt_p_id";
             this.txt_p_id.Size = new System.Drawing.Size(315, 22);
             this.txt_p_id.TabIndex = 46;
@@ -219,7 +244,7 @@
             // 
             this.txt_p_name.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_p_name.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_p_name.Location = new System.Drawing.Point(146, 13);
+            this.txt_p_name.Location = new System.Drawing.Point(147, 9);
             this.txt_p_name.Name = "txt_p_name";
             this.txt_p_name.Size = new System.Drawing.Size(315, 22);
             this.txt_p_name.TabIndex = 45;
@@ -229,7 +254,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 8);
+            this.label2.Location = new System.Drawing.Point(5, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 21);
             this.label2.TabIndex = 41;
@@ -239,7 +264,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 44);
+            this.label3.Location = new System.Drawing.Point(5, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 21);
             this.label3.TabIndex = 42;
@@ -249,7 +274,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(5, 80);
+            this.label4.Location = new System.Drawing.Point(5, 99);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 21);
             this.label4.TabIndex = 43;
@@ -259,11 +284,27 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 119);
+            this.label5.Location = new System.Drawing.Point(5, 137);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 21);
             this.label5.TabIndex = 44;
             this.label5.Text = "Email Address";
+            // 
+            // list_p_details
+            // 
+            this.list_p_details.BackColor = System.Drawing.SystemColors.Menu;
+            this.list_p_details.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.list_p_details.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.list_p_details.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.list_p_details.FormattingEnabled = true;
+            this.list_p_details.ItemHeight = 17;
+            this.list_p_details.Location = new System.Drawing.Point(156, 201);
+            this.list_p_details.Name = "list_p_details";
+            this.list_p_details.Size = new System.Drawing.Size(315, 87);
+            this.list_p_details.TabIndex = 49;
+            this.list_p_details.Visible = false;
+            this.list_p_details.Click += new System.EventHandler(this.list_p_details_Click);
+            this.list_p_details.KeyUp += new System.Windows.Forms.KeyEventHandler(this.list_p_details_KeyUp);
             // 
             // lab_change
             // 
@@ -285,7 +326,7 @@
             this.lab_p_email.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lab_p_email.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_p_email.ForeColor = System.Drawing.Color.Black;
-            this.lab_p_email.Location = new System.Drawing.Point(255, 133);
+            this.lab_p_email.Location = new System.Drawing.Point(255, 140);
             this.lab_p_email.Name = "lab_p_email";
             this.lab_p_email.Size = new System.Drawing.Size(216, 21);
             this.lab_p_email.TabIndex = 96;
@@ -309,7 +350,7 @@
             this.lab_p_ph.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lab_p_ph.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_p_ph.ForeColor = System.Drawing.Color.Black;
-            this.lab_p_ph.Location = new System.Drawing.Point(255, 105);
+            this.lab_p_ph.Location = new System.Drawing.Point(256, 119);
             this.lab_p_ph.Name = "lab_p_ph";
             this.lab_p_ph.Size = new System.Drawing.Size(216, 21);
             this.lab_p_ph.TabIndex = 93;
@@ -321,7 +362,7 @@
             this.lab_p_name.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lab_p_name.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_p_name.ForeColor = System.Drawing.Color.Black;
-            this.lab_p_name.Location = new System.Drawing.Point(255, 72);
+            this.lab_p_name.Location = new System.Drawing.Point(255, 70);
             this.lab_p_name.Name = "lab_p_name";
             this.lab_p_name.Size = new System.Drawing.Size(216, 24);
             this.lab_p_name.TabIndex = 94;
@@ -431,7 +472,7 @@
             this.panel2.Controls.Add(this.dpStartTimeDate);
             this.panel2.Location = new System.Drawing.Point(153, 15);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(318, 37);
+            this.panel2.Size = new System.Drawing.Size(318, 28);
             this.panel2.TabIndex = 84;
             this.panel2.Visible = false;
             // 
@@ -567,7 +608,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(12, 25);
+            this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 21);
             this.label1.TabIndex = 74;
@@ -707,15 +748,29 @@
             this.chkMeeting.Text = "Meeting";
             this.chkMeeting.UseVisualStyleBackColor = true;
             // 
+            // lab_p_gndr
+            // 
+            this.lab_p_gndr.BackColor = System.Drawing.Color.Transparent;
+            this.lab_p_gndr.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lab_p_gndr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lab_p_gndr.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_p_gndr.ForeColor = System.Drawing.Color.Black;
+            this.lab_p_gndr.Location = new System.Drawing.Point(256, 96);
+            this.lab_p_gndr.Name = "lab_p_gndr";
+            this.lab_p_gndr.Size = new System.Drawing.Size(216, 21);
+            this.lab_p_gndr.TabIndex = 108;
+            this.lab_p_gndr.Text = "male";
+            // 
             // AppointmentBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(546, 535);
+            this.ClientSize = new System.Drawing.Size(546, 543);
             this.Controls.Add(this.chkMeeting);
             this.Controls.Add(this.chkReminder);
             this.Controls.Add(this.chkPrivate);
+            this.Controls.Add(this.list_p_details);
             this.Controls.Add(this.chkAllDayEvent);
             this.Controls.Add(this.txtLocation);
             this.Controls.Add(this.txtSubject);
@@ -751,6 +806,7 @@
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.cmdCancel);
             this.Controls.Add(this.cmdOK);
+            this.Controls.Add(this.lab_p_gndr);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -825,5 +881,9 @@
         private System.Windows.Forms.CheckBox chkPrivate;
         private System.Windows.Forms.CheckBox chkReminder;
         private System.Windows.Forms.CheckBox chkMeeting;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.RadioButton radMale;
+        private System.Windows.Forms.RadioButton radfemale;
+        private System.Windows.Forms.Label lab_p_gndr;
     }
 }

@@ -584,17 +584,19 @@ namespace PappyjoeMVC.View
                 string str_pincode = "";
                 string str_email = "";
                 string str_website = "";
-                System.Data.DataTable dtp = this.ctrlr.Get_practiceDlNumber();
+                System.Data.DataTable dtp = this.ctrlr.Get_Practice_details();
                 if (dtp.Rows.Count > 0)
                 {
                     clinicn = dtp.Rows[0]["name"].ToString();
                     Clinic = clinicn.Replace("¤", "'");
                     streetaddress = dtp.Rows[0]["street_address"].ToString();
                     str_locality = dtp.Rows[0]["locality"].ToString();
-                    str_pincode = dtp.Rows[0]["pincode"].ToString();
+                    //str_pincode = dtp.Rows[0]["pincode"].ToString();
                     contact_no = dtp.Rows[0]["contact_no"].ToString();
-                    str_email = dtp.Rows[0]["email"].ToString();
-                    str_website = dtp.Rows[0]["website"].ToString();
+                    //str_email = dtp.Rows[0]["email"].ToString();
+                    //str_website = dtp.Rows[0]["website"].ToString();
+                    path= dtp.Rows[0]["path"].ToString();
+                    logo_name = path;
                 }
                 string strfooter1 = "";
                 string strfooter2 = "";

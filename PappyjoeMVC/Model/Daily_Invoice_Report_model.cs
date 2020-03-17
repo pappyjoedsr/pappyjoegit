@@ -13,7 +13,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable practicedetails()
         {
-            DataTable dt = db.table("select name,contact_no,street_address,email,website  from tbl_practice_details");
+            DataTable dt = db.table("select name,contact_no,street_address,email,website,path  from tbl_practice_details");
             return dt;
         }
         public DataTable getinvoice(string invdate)
