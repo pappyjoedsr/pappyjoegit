@@ -37,15 +37,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monthly_New_Patients));
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.emailaddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Appoinment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNoRecord = new System.Windows.Forms.Label();
             this.dataGridmonthlypatient = new System.Windows.Forms.DataGridView();
-            this.Doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.chartmonthnewpatient = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btngrid = new System.Windows.Forms.Button();
@@ -67,6 +60,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePickermonthnewpatient2 = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Appoinment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailaddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passport_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridmonthlypatient)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartmonthnewpatient)).BeginInit();
@@ -75,53 +77,6 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // emailaddress
-            // 
-            this.emailaddress.HeaderText = "EMAIL";
-            this.emailaddress.Name = "emailaddress";
-            this.emailaddress.ReadOnly = true;
-            this.emailaddress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.emailaddress.Width = 150;
-            // 
-            // Mobile
-            // 
-            this.Mobile.HeaderText = "MOBILE NO";
-            this.Mobile.Name = "Mobile";
-            this.Mobile.ReadOnly = true;
-            this.Mobile.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Appoinment
-            // 
-            this.Appoinment.HeaderText = "APPOINTMENT DATE";
-            this.Appoinment.Name = "Appoinment";
-            this.Appoinment.ReadOnly = true;
-            this.Appoinment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Appoinment.Width = 120;
-            // 
-            // patient
-            // 
-            this.patient.HeaderText = "PATIENT NAME";
-            this.patient.Name = "patient";
-            this.patient.ReadOnly = true;
-            this.patient.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.patient.Width = 250;
-            // 
-            // pt_id
-            // 
-            this.pt_id.HeaderText = "PATIENT ID";
-            this.pt_id.Name = "pt_id";
-            this.pt_id.ReadOnly = true;
-            this.pt_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // slno
-            // 
-            this.slno.HeaderText = "SL.";
-            this.slno.Name = "slno";
-            this.slno.ReadOnly = true;
-            this.slno.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.slno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.slno.Width = 70;
             // 
             // lblNoRecord
             // 
@@ -159,7 +114,9 @@
             this.Appoinment,
             this.Mobile,
             this.emailaddress,
-            this.Doctor});
+            this.Doctor,
+            this.nationality,
+            this.passport_no});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -186,14 +143,6 @@
             this.dataGridmonthlypatient.Size = new System.Drawing.Size(1076, 537);
             this.dataGridmonthlypatient.TabIndex = 109;
             this.dataGridmonthlypatient.Visible = false;
-            // 
-            // Doctor
-            // 
-            this.Doctor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Doctor.HeaderText = "DOCTOR";
-            this.Doctor.Name = "Doctor";
-            this.Doctor.ReadOnly = true;
-            this.Doctor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // panel4
             // 
@@ -504,6 +453,74 @@
             this.panel2.Size = new System.Drawing.Size(1299, 61);
             this.panel2.TabIndex = 224;
             // 
+            // slno
+            // 
+            this.slno.HeaderText = "SL.";
+            this.slno.Name = "slno";
+            this.slno.ReadOnly = true;
+            this.slno.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.slno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.slno.Width = 70;
+            // 
+            // pt_id
+            // 
+            this.pt_id.HeaderText = "PATIENT ID";
+            this.pt_id.Name = "pt_id";
+            this.pt_id.ReadOnly = true;
+            this.pt_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // patient
+            // 
+            this.patient.HeaderText = "PATIENT NAME";
+            this.patient.Name = "patient";
+            this.patient.ReadOnly = true;
+            this.patient.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.patient.Width = 180;
+            // 
+            // Appoinment
+            // 
+            this.Appoinment.HeaderText = "APPOINTMENT DATE";
+            this.Appoinment.Name = "Appoinment";
+            this.Appoinment.ReadOnly = true;
+            this.Appoinment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Appoinment.Width = 150;
+            // 
+            // Mobile
+            // 
+            this.Mobile.HeaderText = "MOBILE NO";
+            this.Mobile.Name = "Mobile";
+            this.Mobile.ReadOnly = true;
+            this.Mobile.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // emailaddress
+            // 
+            this.emailaddress.HeaderText = "EMAIL";
+            this.emailaddress.Name = "emailaddress";
+            this.emailaddress.ReadOnly = true;
+            this.emailaddress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.emailaddress.Width = 150;
+            // 
+            // Doctor
+            // 
+            this.Doctor.HeaderText = "DOCTOR";
+            this.Doctor.Name = "Doctor";
+            this.Doctor.ReadOnly = true;
+            this.Doctor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Doctor.Width = 140;
+            // 
+            // nationality
+            // 
+            this.nationality.HeaderText = "NATIONALITY";
+            this.nationality.Name = "nationality";
+            this.nationality.ReadOnly = true;
+            // 
+            // passport_no
+            // 
+            this.passport_no.HeaderText = "PASSPORT NO";
+            this.passport_no.Name = "passport_no";
+            this.passport_no.ReadOnly = true;
+            this.passport_no.Width = 200;
+            // 
             // Monthly_New_Patients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -534,15 +551,8 @@
         #endregion
 
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailaddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mobile;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Appoinment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patient;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pt_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slno;
         private System.Windows.Forms.Label lblNoRecord;
         private System.Windows.Forms.DataGridView dataGridmonthlypatient;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Doctor;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartmonthnewpatient;
         private System.Windows.Forms.Button btngrid;
@@ -564,5 +574,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePickermonthnewpatient2;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pt_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patient;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Appoinment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mobile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailaddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Doctor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nationality;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passport_no;
     }
 }

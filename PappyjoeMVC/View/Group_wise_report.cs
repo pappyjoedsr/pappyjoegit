@@ -138,7 +138,7 @@ namespace PappyjoeMVC.View
         {
             if (dtb_group.Rows.Count > 0)
             {
-                dgv_group.ColumnCount = 8;
+                dgv_group.ColumnCount = 10;
                 dgv_group.Columns[0].HeaderText = "SLNO";
                 dgv_group.Columns[1].HeaderText = "DATE";
                 dgv_group.Columns[2].HeaderText = "PATIENT ID";
@@ -146,7 +146,9 @@ namespace PappyjoeMVC.View
                 dgv_group.Columns[4].HeaderText = "MOBILE NO";
                 dgv_group.Columns[5].HeaderText = "EMAIL";
                 dgv_group.Columns[6].HeaderText = "DOCTOR";
-                dgv_group.Columns[7].HeaderText = "GROUP";
+                dgv_group.Columns[7].HeaderText = "NATIONALITY";
+                dgv_group.Columns[8].HeaderText = "PASSPORT NO";
+                dgv_group.Columns[9].HeaderText = "GROUP";
                 dgv_group.Columns[0].Width = 60;
                 dgv_group.Columns[1].Width = 105;
                 dgv_group.Columns[2].Width = 130;
@@ -155,6 +157,8 @@ namespace PappyjoeMVC.View
                 dgv_group.Columns[5].Width = 130;
                 dgv_group.Columns[6].Width = 110;
                 dgv_group.Columns[7].Width = 125;
+                dgv_group.Columns[8].Width = 130;
+                dgv_group.Columns[9].Width = 125;
                 dgv_group.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 dgv_group.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 dgv_group.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -170,8 +174,10 @@ namespace PappyjoeMVC.View
                     string mobile = dtb_group.Rows[z]["primary_mobile_number"].ToString();
                     string email = dtb_group.Rows[z]["email_address"].ToString();
                     string doctor_name = dtb_group.Rows[z]["doctorname"].ToString();
+                    string nationality = dtb_group.Rows[z]["nationality"].ToString();
+                    string passport = dtb_group.Rows[z]["passport_no"].ToString();
                     string group = dtb_group.Rows[z]["group_id"].ToString();
-                    dgv_group.Rows.Add(sl_no, date, patient_id, Patient_Name, mobile, email, doctor_name, group);
+                    dgv_group.Rows.Add(sl_no, date, patient_id, Patient_Name, mobile, email, doctor_name,nationality,passport, group);
                 }
                 dgv_group.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
@@ -441,7 +447,7 @@ namespace PappyjoeMVC.View
                     string strStreet = "";
                     string stremail = "";
                     string strwebsite = "";
-                    string strphone = "";
+                    string strphone = "",logo_name="";
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
                         System.Data.DataTable dtp = this.cntrl.Get_practiceDlNumber();
@@ -453,6 +459,7 @@ namespace PappyjoeMVC.View
                             strStreet = dtp.Rows[0]["street_address"].ToString();
                             stremail = dtp.Rows[0]["email"].ToString();
                             strwebsite = dtp.Rows[0]["website"].ToString();
+                            logo_name= dtp.Rows[0]["path"].ToString();
                         }
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
@@ -469,19 +476,37 @@ namespace PappyjoeMVC.View
                         sWrite2.WriteLine("<body >");
                         sWrite2.WriteLine("<div>");
                         sWrite2.WriteLine("<table align=center width =900>");
+                        sWrite2.WriteLine("<col >");
+                        sWrite2.WriteLine("<br>");
+                        string Appath = System.IO.Directory.GetCurrentDirectory();
+                        if (File.Exists(Appath + "\\" + logo_name))
+                        {
+                            sWrite2.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
+                            sWrite2.WriteLine("<tr>");
+                            sWrite2.WriteLine("<td width='30px' height='50px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "'style='width:70px;height:70px;' ></td>  ");
+                            sWrite2.WriteLine("<td width='870px' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=4><b>&nbsp;" + strclinicname + "</font> <br><FONT  COLOR=black  face='Segoe UI' SIZE=2>&nbsp;" + strStreet + "<br>&nbsp;" + strphone + " </b></td></tr>");
+                            sWrite2.WriteLine("</table>");
+                        }
+                        else
+                        {
+                            sWrite2.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
+                            sWrite2.WriteLine("<tr>");
+                            sWrite2.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + strclinicname + "</font></td></tr>");
+                            sWrite2.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;" + strStreet + "</font></td></tr>");
+                            sWrite2.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + strphone + "</font></td></tr>");
+
+                            sWrite2.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
+
+                            sWrite2.WriteLine("</table>");
+                        }
+                        sWrite2.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
+                        sWrite2.WriteLine("<tr><td align='left'  ><hr/></td></tr>");
+                        sWrite2.WriteLine("</table>");
                         sWrite2.WriteLine("<tr>");
-                        sWrite2.WriteLine("<td colspan=14 align='center'><FONT COLOR=black FACE='Segoe UI' SIZE=5><b>GROUP WISE PATIENTS REPORT </b> </font></td");
+                        sWrite2.WriteLine("<th colspan=11><center><b><FONT COLOR=black FACE='Segoe UI'  SIZE=3> GROUP WISE PATIENTS REPORT  </font></center></b></td>");
                         sWrite2.WriteLine("</tr>");
+                        sWrite2.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                         sWrite2.WriteLine("<tr>");
-                        sWrite2.WriteLine("<td colspan=14 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3>   " + strclinicname + "</font></b></td>");
-                        sWrite2.WriteLine("</tr>");
-                        sWrite2.WriteLine("<tr>");
-                        sWrite2.WriteLine("<td colspan=14 align='left' ><b><FONT COLOR=black FACE='Segoe UI' SIZE=3>   " + strStreet + "</font></b></td>");
-                        sWrite2.WriteLine("</tr>");
-                        sWrite2.WriteLine("<tr>");
-                        sWrite2.WriteLine("<td colspan=14 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3> " + strphone + "</font></b></td>");
-                        sWrite2.WriteLine("<tr>");
-                        sWrite2.WriteLine("<tr><td colspan=14><hr></td></tr>");
                         sWrite2.WriteLine("<td colspan=14 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b> From:</b> " + dtp1GroupReport.Value.ToString("dd/MM/yyyy") + " </font></td> ");
                         sWrite2.WriteLine("</tr>");
                         sWrite2.WriteLine("<tr>");
@@ -494,13 +519,15 @@ namespace PappyjoeMVC.View
                         {
                             sWrite2.WriteLine("<tr>");
                             sWrite2.WriteLine("    <td align='left' width='3%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >&nbsp;<b>Slno.</b></font></td>");
-                            sWrite2.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Date</b></font></td>");
-                            sWrite2.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Patient Id</b></font></td>");
-                            sWrite2.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Patient Name</b></font></td>");
-                            sWrite2.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Mobile No</b></font></td>");
-                            sWrite2.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Email</b></font></td>");
-                            sWrite2.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Doctor</b></font></td>");
-                            sWrite2.WriteLine("    <td align='left' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Group</b></font></td>");
+                            sWrite2.WriteLine("    <td align='left' width='23%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Date</b></font></td>");
+                            sWrite2.WriteLine("    <td align='left' width='20%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Patient Id</b></font></td>");
+                            sWrite2.WriteLine("    <td align='left' width='39%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Patient Name</b></font></td>");
+                            sWrite2.WriteLine("    <td align='left' width='20%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Mobile No</b></font></td>");
+                            sWrite2.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Email</b></font></td>");
+                            sWrite2.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Doctor</b></font></td>");
+                            sWrite2.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Nationality</b></font></td>");
+                            sWrite2.WriteLine("    <td align='left' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Passport</b></font></td>");
+                            sWrite2.WriteLine("    <td align='left' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Group</b></font></td>");
                             sWrite2.WriteLine("</tr>");
                             int k = 1;
                             for (int j = 0; j < dgv_group.Rows.Count; j++)
@@ -514,6 +541,8 @@ namespace PappyjoeMVC.View
                                 sWrite2.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dgv_group.Rows[j].Cells[5].Value.ToString() + "</font></td>");
                                 sWrite2.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dgv_group.Rows[j].Cells[6].Value.ToString() + "</font></td>");
                                 sWrite2.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dgv_group.Rows[j].Cells[7].Value.ToString() + "</font></td>");
+                                sWrite2.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dgv_group.Rows[j].Cells[8].Value.ToString() + "</font></td>");
+                                sWrite2.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dgv_group.Rows[j].Cells[9].Value.ToString() + "</font></td>");
                                 k = k + 1;
                                 sWrite2.WriteLine("</tr>");
                             }
@@ -542,19 +571,36 @@ namespace PappyjoeMVC.View
                         sWrite1.WriteLine("<body >");
                         sWrite1.WriteLine("<div>");
                         sWrite1.WriteLine("<table align=center width =900>");
+                        sWrite1.WriteLine("<col >");
+                        sWrite1.WriteLine("<br>");
+                        string Appath = System.IO.Directory.GetCurrentDirectory();
+                        if (File.Exists(Appath + "\\" + logo_name))
+                        {
+                            sWrite1.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
+                            sWrite1.WriteLine("<tr>");
+                            sWrite1.WriteLine("<td width='30px' height='50px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "'style='width:70px;height:70px;' ></td>  ");
+                            sWrite1.WriteLine("<td width='870px' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=4><b>&nbsp;" + strclinicname + "</font> <br><FONT  COLOR=black  face='Segoe UI' SIZE=2>&nbsp;" + strStreet + "<br>&nbsp;" + strphone + " </b></td></tr>");
+                            sWrite1.WriteLine("</table>");
+                        }
+                        else
+                        {
+                            sWrite1.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
+                            sWrite1.WriteLine("<tr>");
+                            sWrite1.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + strclinicname + "</font></td></tr>");
+                            sWrite1.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;" + strStreet + "</font></td></tr>");
+                            sWrite1.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + strphone + "</font></td></tr>");
+
+                            sWrite1.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
+
+                            sWrite1.WriteLine("</table>");
+                        }
+                        sWrite1.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
+                        sWrite1.WriteLine("<tr><td align='left'  ><hr/></td></tr>");
+                        sWrite1.WriteLine("</table>");
                         sWrite1.WriteLine("<tr>");
-                        sWrite1.WriteLine("<td colspan=14 align='center'><FONT COLOR=black FACE='Segoe UI' SIZE=5><b>GROUP WISE PROCEDURE REPORT </b> </font></td");
+                        sWrite1.WriteLine("<th colspan=11><center><b><FONT COLOR=black FACE='Segoe UI'  SIZE=3> GROUP WISE PROCEDURE REPORT  </font></center></b></td>");
                         sWrite1.WriteLine("</tr>");
-                        sWrite1.WriteLine("<tr>");
-                        sWrite1.WriteLine("<td colspan=14 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3>   " + strclinicname + "</font></b></td>");
-                        sWrite1.WriteLine("</tr>");
-                        sWrite1.WriteLine("<tr>");
-                        sWrite1.WriteLine("<td colspan=14 align='left' ><b><FONT COLOR=black FACE='Segoe UI' SIZE=3>   " + strStreet + "</font></b></td>");
-                        sWrite1.WriteLine("</tr>");
-                        sWrite1.WriteLine("<tr>");
-                        sWrite1.WriteLine("<td colspan=14 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3> " + strphone + "</font></b></td>");
-                        sWrite1.WriteLine("</tr>");
-                        sWrite1.WriteLine("<tr><td colspan=14><hr></td></tr>");
+                        sWrite1.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                         sWrite1.WriteLine("<tr>");
                         sWrite1.WriteLine("<td colspan=14 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b> From:</b> " + dtp1GroupReport.Value.ToString("dd/MM/yyyy") + " </font></td> ");
                         sWrite1.WriteLine("</tr>");
@@ -610,20 +656,37 @@ namespace PappyjoeMVC.View
                         sWrite3.WriteLine("<body >");
                         sWrite3.WriteLine("<div>");
                         sWrite3.WriteLine("<table align=center width =900>");
+                        sWrite3.WriteLine("<col >");
+                        sWrite3.WriteLine("<br>");
+                        string Appath = System.IO.Directory.GetCurrentDirectory();
+                        if (File.Exists(Appath + "\\" + logo_name))
+                        {
+                            sWrite3.WriteLine("<table align='center' style='width:800px;border: 1px ;border-collapse: collapse;'>");
+                            sWrite3.WriteLine("<tr>");
+                            sWrite3.WriteLine("<td width='30px' height='50px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "'style='width:70px;height:70px;' ></td>  ");
+                            sWrite3.WriteLine("<td width='870px' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=4><b>&nbsp;" + strclinicname + "</font> <br><FONT  COLOR=black  face='Segoe UI' SIZE=2>&nbsp;" + strStreet + "<br>&nbsp;" + strphone + " </b></td></tr>");
+                            sWrite3.WriteLine("</table>");
+                        }
+                        else
+                        {
+                            sWrite3.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
+                            sWrite3.WriteLine("<tr>");
+                            sWrite3.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + strclinicname + "</font></td></tr>");
+                            sWrite3.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;" + strStreet + "</font></td></tr>");
+                            sWrite3.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + strphone + "</font></td></tr>");
+
+                            sWrite3.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
+
+                            sWrite3.WriteLine("</table>");
+                        }
+                        sWrite3.WriteLine("<table align='center' style='width:800px;border: 1px ;border-collapse: collapse;'>");
+                        sWrite3.WriteLine("<tr><td align='left'  ><hr/></td></tr>");
+                        sWrite3.WriteLine("</table>");
                         sWrite3.WriteLine("<tr>");
-                        sWrite3.WriteLine("<td colspan=14 align='center'><FONT COLOR=black FACE='Segoe UI' SIZE=5><b>GROUP WISE INVOICE REPORT </b> </font></td");
+                        sWrite3.WriteLine("<th colspan=11><center><b><FONT COLOR=black FACE='Segoe UI'  SIZE=3> GROUP WISE INVOICE REPORT  </font></center></b></td>");
                         sWrite3.WriteLine("</tr>");
+                        sWrite3.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                         sWrite3.WriteLine("<tr>");
-                        sWrite3.WriteLine("<td colspan=14 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3>   " + strclinicname + "</font></b></td>");
-                        sWrite3.WriteLine("</tr>");
-                        sWrite3.WriteLine("<tr>");
-                        sWrite3.WriteLine("<td colspan=14 align='left' ><b><FONT COLOR=black FACE='Segoe UI' SIZE=3>   " + strStreet + "</font></b></td>");
-                        sWrite3.WriteLine("</tr>");
-                        sWrite3.WriteLine("<tr>");
-                        sWrite3.WriteLine("<td colspan=14 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3> " + strphone + "</font></b></td>");
-                        sWrite3.WriteLine("<tr>");
-                        sWrite3.WriteLine("</tr>");
-                        sWrite3.WriteLine("<tr><td colspan=14><hr></td></tr>");
                         sWrite3.WriteLine("<td colspan=14 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b> From:</b> " + dtp1GroupReport.Value.ToString("dd/MM/yyyy") + " </font></td> ");
                         sWrite3.WriteLine("</tr>");
                         sWrite3.WriteLine("<tr>");
@@ -636,17 +699,17 @@ namespace PappyjoeMVC.View
                         {
                             sWrite3.WriteLine("<tr>");
                             sWrite3.WriteLine("    <td align='left' width='3%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >&nbsp;<b>Slno.</b></font></td>");
-                            sWrite3.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b>Patient Name</font></td>");
-                            sWrite3.WriteLine("    <td align='left' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Invoice</font></td>");
-                            sWrite3.WriteLine("    <td align='left' width='11%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Procedure</font></td>");
-                            sWrite3.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Invoice Date</font></td>");
-                            sWrite3.WriteLine("    <td align='left' width='8%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Doctor </font></td>");
-                            sWrite3.WriteLine("    <td align='left' width='8%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Group</font></td>");
-                            sWrite3.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Cost</b>&nbsp;</font></td>");
-                            sWrite3.WriteLine("    <td align='right' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> <b>Discount&nbsp;</b></font></td>");
-                            sWrite3.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Amount</b>&nbsp;</font></td>");
-                            sWrite3.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Total Payment</b>&nbsp;</font></td>");
-                            sWrite3.WriteLine("    <td align='right' width='8%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Total Amount Due</b>&nbsp;</font></td>");
+                            sWrite3.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Patient Name</font></td>");
+                            sWrite3.WriteLine("    <td align='left' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Invoice</font></td>");
+                            sWrite3.WriteLine("    <td align='left' width='11%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Procedure</font></td>");
+                            sWrite3.WriteLine("    <td align='left' width='9%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Invoice Date</font></td>");
+                            sWrite3.WriteLine("    <td align='left' width='8%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Doctor </font></td>");
+                            sWrite3.WriteLine("    <td align='left' width='8%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Group</font></td>");
+                            sWrite3.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Cost</b></font></td>");
+                            sWrite3.WriteLine("    <td align='right' width='6%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> <b>Discount</b></font></td>");
+                            sWrite3.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Amount</b></font></td>");
+                            sWrite3.WriteLine("    <td align='right' width='7%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Total Payment</b></font></td>");
+                            sWrite3.WriteLine("    <td align='right' width='8%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Total Amount Due</b></font></td>");
                             sWrite3.WriteLine("</tr>");
                             int k = 1;
                             for (int j = 0; j < dgv_group.Rows.Count; j++)
@@ -706,19 +769,36 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("<body >");
                         sWrite.WriteLine("<div>");
                         sWrite.WriteLine("<table align=center width =900>");
+                        sWrite.WriteLine("<col >");
+                        sWrite.WriteLine("<br>");
+                        string Appath = System.IO.Directory.GetCurrentDirectory();
+                        if (File.Exists(Appath + "\\" + logo_name))
+                        {
+                            sWrite.WriteLine("<table align='center' style='width:800px;border: 1px ;border-collapse: collapse;'>");
+                            sWrite.WriteLine("<tr>");
+                            sWrite.WriteLine("<td width='30px' height='50px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "'style='width:70px;height:70px;' ></td>  ");
+                            sWrite.WriteLine("<td width='870px' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=4><b>&nbsp;" + strclinicname + "</font> <br><FONT  COLOR=black  face='Segoe UI' SIZE=2>&nbsp;" + strStreet + "<br>&nbsp;" + strphone + " </b></td></tr>");
+                            sWrite.WriteLine("</table>");
+                        }
+                        else
+                        {
+                            sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
+                            sWrite.WriteLine("<tr>");
+                            sWrite.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + strclinicname + "</font></td></tr>");
+                            sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;" + strStreet + "</font></td></tr>");
+                            sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + strphone + "</font></td></tr>");
+
+                            sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
+
+                            sWrite.WriteLine("</table>");
+                        }
+                        sWrite.WriteLine("<table align='center' style='width:800px;border: 1px ;border-collapse: collapse;'>");
+                        sWrite.WriteLine("<tr><td align='left'  ><hr/></td></tr>");
+                        sWrite.WriteLine("</table>");
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td colspan=14 align='center'><FONT COLOR=black FACE='Segoe UI' SIZE=5><b>GROUP WISE RECEIPT </b> </font></td");
+                        sWrite.WriteLine("<th colspan=11><center><b><FONT COLOR=black FACE='Segoe UI'  SIZE=3> GROUP WISE RECEIPT  </font></center></b></td>");
                         sWrite.WriteLine("</tr>");
-                        sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td colspan=14 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3>   " + strclinicname + "</font></b></td>");
-                        sWrite.WriteLine("</tr>");
-                        sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td colspan=14 align='left' ><b><FONT COLOR=black FACE='Segoe UI' SIZE=3>   " + strStreet + "</font></b></td>");
-                        sWrite.WriteLine("</tr>");
-                        sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td colspan=14 align='left'><b><FONT COLOR=black FACE='Segoe UI' SIZE=3> " + strphone + "</font></b></td>");
-                        sWrite.WriteLine("</tr>");
-                        sWrite.WriteLine("<tr><td colspan=14><hr></td></tr>");
+                        sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                         sWrite.WriteLine("<tr>");
                         sWrite.WriteLine("<td colspan=14 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2><b> From:</b> " + dtp1GroupReport.Value.ToString("dd/MM/yyyy") + " </font></td> ");
                         sWrite.WriteLine("</tr>");
@@ -732,20 +812,20 @@ namespace PappyjoeMVC.View
                         {
                             sWrite.WriteLine("<tr>");
                             sWrite.WriteLine("    <td align='left' width='20' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3 >&nbsp;<b>Slno</b></font></td>");
-                            sWrite.WriteLine("    <td align='left' width='90' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b>Patient</b</font></td>");
-                            sWrite.WriteLine("    <td align='left' width='60' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Invoice</b</font></td>");
-                            sWrite.WriteLine("    <td align='left' width='60' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b>Receipt</b</font></td>");
-                            sWrite.WriteLine("    <td align='left' width='60' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Procedure</b</font></td>");
-                            sWrite.WriteLine("    <td align='left' width='40' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Doctor</b </font></td>");
-                            sWrite.WriteLine("    <td align='left' width='40' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Group</b</font></td>");
-                            sWrite.WriteLine("    <td align='left' width='50' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Date</b</font></td>");
-                            sWrite.WriteLine("    <td align='left' width='90' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;<b> Mode of payment</b</font></td>");
-                            sWrite.WriteLine("    <td align='right' width='50' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Cost&nbsp;</b></font></td>");
-                            sWrite.WriteLine("    <td align='right' width='20' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Tax &nbsp;</b></font></td>");
-                            sWrite.WriteLine("    <td align='right' width='50' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Discount &nbsp; </b></font></td>");
-                            sWrite.WriteLine("    <td align='right' width='80' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> <b> Income &nbsp;</b></font></td>");
-                            sWrite.WriteLine("    <td align='right' width='90' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Amount Paid </b>&nbsp;</font></td>");
-                            sWrite.WriteLine("    <td align='right' width='100' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Amount Due </b>&nbsp;</font></td>");
+                            sWrite.WriteLine("    <td align='left' width='90' style='border:1px solid #000;background-color:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Patient</b</font></td>");
+                            sWrite.WriteLine("    <td align='left' width='60' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Invoice</b</font></td>");
+                            sWrite.WriteLine("    <td align='left' width='60' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Receipt</b</font></td>");
+                            sWrite.WriteLine("    <td align='left' width='60' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Procedure</b</font></td>");
+                            sWrite.WriteLine("    <td align='left' width='40' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Doctor</b </font></td>");
+                            sWrite.WriteLine("    <td align='left' width='40' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Group</b</font></td>");
+                            sWrite.WriteLine("    <td align='left' width='50' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Date</b</font></td>");
+                            sWrite.WriteLine("    <td align='left' width='100' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Mode of payment</b</font></td>");
+                            sWrite.WriteLine("    <td align='right' width='50' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Cost</b></font></td>");
+                            sWrite.WriteLine("    <td align='right' width='20' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Tax </b></font></td>");
+                            sWrite.WriteLine("    <td align='right' width='50' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Discount </b></font></td>");
+                            sWrite.WriteLine("    <td align='right' width='80' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> <b> Income</b></font></td>");
+                            sWrite.WriteLine("    <td align='right' width='90' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Amount Paid </b></font></td>");
+                            sWrite.WriteLine("    <td align='right' width='100' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Amount Due </b></font></td>");
                             sWrite.WriteLine("</tr>");
                             int k = 1;
                             for (int j = 0; j < dgv_group.Rows.Count; j++)

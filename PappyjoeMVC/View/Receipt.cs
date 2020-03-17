@@ -295,6 +295,7 @@ namespace PappyjoeMVC.View
                 System.Data.DataTable dt1 = this.cntrl.Get_Patient_Details(patient_id);
                 string clinicn = "";
                 string Clinic = "";
+                string path = "";
                 clinicn = dtp.Rows[0][1].ToString();
                 Clinic = clinicn.Replace("¤", "'");
                 string doctorName = "";
@@ -314,6 +315,8 @@ namespace PappyjoeMVC.View
                     str_pincode = dtp.Rows[0]["pincode"].ToString();
                     str_email = dtp.Rows[0]["email"].ToString();
                     str_website = dtp.Rows[0]["website"].ToString();
+                    path= dtp.Rows[0]["path"].ToString();
+                    logo_name = path;
                 }//
                 string strfooter1 = "";
                 string strfooter2 = "";
@@ -332,7 +335,7 @@ namespace PappyjoeMVC.View
                     strfooter3 = print.Rows[0]["right_sign"].ToString();
                 }
                 string Apppath = System.IO.Directory.GetCurrentDirectory();
-                StreamWriter sWrite = new StreamWriter(Apppath + "\\p.html");
+                StreamWriter sWrite = new StreamWriter(Apppath + "\\Receipt.html");
                 sWrite.WriteLine("<html>");
                 sWrite.WriteLine("<head>");
                 sWrite.WriteLine("</head>");
@@ -399,7 +402,7 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
                         sWrite.WriteLine("</table>");
                     }
-                }
+                }//
                 else
                 {
                     sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
@@ -583,7 +586,7 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("</body>");
                 sWrite.WriteLine("</html>");  
                 sWrite.Close();
-                System.Diagnostics.Process.Start(Apppath + "\\p.html");
+                System.Diagnostics.Process.Start(Apppath + "\\Receipt.html");
             }
             catch (Exception ex)
             {

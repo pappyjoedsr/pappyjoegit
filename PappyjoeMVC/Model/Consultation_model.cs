@@ -213,7 +213,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable get_practicedtls()
         {
-            DataTable dt = db.table("select name,street_address,locality,pincode,contact_no,email,website from tbl_practice_details");
+            DataTable dt = db.table("select name,street_address,locality,pincode,contact_no,path,email,website from tbl_practice_details");
             return dt;
         }
         public DataTable pt_details(string ptid)

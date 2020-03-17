@@ -138,7 +138,7 @@ namespace PappyjoeMVC.View
                     doctor_name = doct;
                 }
                 System.Data.DataTable patient = mdl.Get_Patient_Details(patient_id);
-                string Pname = "", Gender = "", address = "", city = "", DOA = "", age = "", Mobile = "";
+                string Pname = "", Gender = "", address = "", city = "", DOA = "", age = "", Mobile = "",Nationality="",Passport="";
                 string P_id = "";
                 if (patient.Rows.Count > 0)
                 {
@@ -159,6 +159,8 @@ namespace PappyjoeMVC.View
                     }
 
                     Mobile = patient.Rows[0]["primary_mobile_number"].ToString();
+                    Nationality= patient.Rows[0]["nationality"].ToString();
+                    Passport= patient.Rows[0]["passport_no"].ToString();
                     DOA = DateTime.Parse(patient.Rows[0]["Visited"].ToString()).ToString("dd/MM/yyyy");
                     P_id = patient.Rows[0]["pt_id"].ToString();
                     if (patient.Rows[0]["Age"].ToString() != "")
@@ -289,6 +291,12 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine(" </tr>");
                     sWrite.WriteLine(" <tr>");
                     sWrite.WriteLine("    <td align='left' ><FONT COLOR=black FACE='Geneva, segoe UI' SIZE=2>Mobile No: " + Mobile.ToString() + "</font></td>");
+                    sWrite.WriteLine(" </tr>");
+                    sWrite.WriteLine(" <tr>");
+                    sWrite.WriteLine("    <td align='left' ><FONT COLOR=black FACE='Geneva, segoe UI' SIZE=2>Nationality:" + Nationality.ToString() + "</font></td>");
+                    sWrite.WriteLine(" </tr>");
+                    sWrite.WriteLine(" <tr>");
+                    sWrite.WriteLine("    <td align='left' ><FONT COLOR=black FACE='Geneva, segoe UI' SIZE=2>Passport No:" + Passport.ToString() + "</font></td>");
                     sWrite.WriteLine(" </tr>");
                 }
                 sWrite.WriteLine("</table>");

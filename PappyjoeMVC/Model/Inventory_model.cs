@@ -51,7 +51,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable get_companydetails()
         {
-            System.Data.DataTable dtp = db.table("select name,contact_no,street_address,email,website  from tbl_practice_details");
+            System.Data.DataTable dtp = db.table("select name,contact_no,street_address,path,email,website  from tbl_practice_details");
             return dtp;
         }
         public DataTable get_item_unitmf(string Itemid)

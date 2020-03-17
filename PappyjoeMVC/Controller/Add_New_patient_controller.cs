@@ -35,9 +35,9 @@ namespace PappyjoeMVC.Controller
             return dtb;
         }
         public int Save(string _name, string _id, string _aadhar, string _gender, string _dob, string _age, string _blood, string _accompained, string _pmobile, string _smobile, string _landline, string _email, string _street, string
-       _locality, string _city, string _pincode, string _referred, string _file, string _admit, string _doctor, string _occupation)
+       _locality, string _city, string _pincode, string _referred, string _file, string _admit, string _doctor, string _occupation,string _nationality,string _passportno)
         {
-            int i = _model.Save(_name, _id, _aadhar, _gender, _dob, _age, _blood, _accompained, _pmobile, _smobile, _landline, _email, _street, _locality, _city, _pincode, _referred, _file, _admit, _doctor, _occupation);
+            int i = _model.Save(_name, _id, _aadhar, _gender, _dob, _age, _blood, _accompained, _pmobile, _smobile, _landline, _email, _street, _locality, _city, _pincode, _referred, _file, _admit, _doctor, _occupation,_nationality,_passportno);
             return i;
         }
         public string get_maxId()

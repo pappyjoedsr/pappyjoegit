@@ -161,6 +161,7 @@
             this.btnPrint.Text = "PRINT";
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Visible = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // label18
             // 

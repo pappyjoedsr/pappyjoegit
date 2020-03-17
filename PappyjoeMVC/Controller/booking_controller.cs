@@ -60,9 +60,9 @@ namespace PappyjoeMVC.Controller
             DataTable patidGeneration = _model.get_patientPrefix();
             return patidGeneration;
         }
-        public void Save_patient(string PatientName, string Patient_Id, string aadhar_id, string gender, string date_of_birth, string age, string blood_group, string family,  string primary_mobile_number, string secondary_mobile_number, string landline_number, string email_address, string street_address, string locality, string city, string pincode,  string refferedby, string Opticket, string Visited, string doctorname, string Occupation)
+        public void Save_patient(string PatientName, string Patient_Id, string aadhar_id, string gender, string date_of_birth, string age, string blood_group, string family,  string primary_mobile_number, string secondary_mobile_number, string landline_number, string email_address, string street_address, string locality, string city, string pincode,  string refferedby, string Opticket, string Visited, string doctorname, string Occupation,string nationality,string passportno)
         {
-            pmodel.Save( PatientName,  Patient_Id,  aadhar_id,  gender,  date_of_birth,  age,  blood_group,  family,    primary_mobile_number,  secondary_mobile_number,  landline_number,  email_address,  street_address,  locality,  city,  pincode,    refferedby,  Opticket,  Visited,  doctorname,  Occupation);
+            pmodel. Save( PatientName,  Patient_Id,  aadhar_id,  gender,  date_of_birth,  age,  blood_group,  family,    primary_mobile_number,  secondary_mobile_number,  landline_number,  email_address,  street_address,  locality,  city,  pincode,    refferedby,  Opticket,  Visited,  doctorname,  Occupation,nationality,passportno);
         }
         public DataTable get_max_patid()
         {

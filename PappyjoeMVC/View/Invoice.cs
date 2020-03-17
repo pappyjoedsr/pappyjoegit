@@ -761,19 +761,22 @@ namespace PappyjoeMVC.View
                 string str_website = "";
                 string str_druglicenseno = "";
                 string str_taxno = "";
-                System.Data.DataTable dtp = cmodel.Get_practiceDlNumber();
+                System.Data.DataTable dtp = cmodel.Get_Practice_details();
+                System.Data.DataTable dt = cmodel.Get_practiceDlNumber();
                 if (dtp.Rows.Count > 0)
                 {
                     clinicn = dtp.Rows[0][0].ToString();
                     Clinic = clinicn.Replace("¤", "'");
                     streetaddress = dtp.Rows[0]["street_address"].ToString();
                     str_locality = dtp.Rows[0]["locality"].ToString();
-                    str_pincode = dtp.Rows[0]["pincode"].ToString();
+                    str_pincode = dt.Rows[0]["pincode"].ToString();
                     contact_no = dtp.Rows[0]["contact_no"].ToString();
-                    str_email = dtp.Rows[0]["email"].ToString();
-                    str_website = dtp.Rows[0]["website"].ToString();
-                    str_druglicenseno = dtp.Rows[0]["Dl_Number"].ToString();
-                    str_taxno = dtp.Rows[0]["Dl_Number2"].ToString();
+                    str_email = dt.Rows[0]["email"].ToString();
+                    str_website = dt.Rows[0]["website"].ToString();
+                    str_druglicenseno = dt.Rows[0]["Dl_Number"].ToString();
+                    str_taxno = dt.Rows[0]["Dl_Number2"].ToString();
+                    path= dtp.Rows[0]["path"].ToString();
+                    logo_name = path;
                 }
                 string strfooter1 = "";
                 string strfooter2 = "";
@@ -828,7 +831,7 @@ namespace PappyjoeMVC.View
                                 sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                                 sWrite.WriteLine("<tr>");
                                 sWrite.WriteLine("<td width='30px' height='50px' align='left' rowspan='4'><img src='" + Appath + "\\" + logo_name + "' style='width:70px;height:70px;' ></td>  ");
-                                sWrite.WriteLine("<td width='870' align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=4><b>&nbsp;" + header1 + "</font> <br><FONT  COLOR=black  face='Segoe UI' SIZE=2>&nbsp;" + header2 + "<br>&nbsp;" + header3 + " <br> &nbsp;Drug License No : &nbsp;" + str_druglicenseno + "&nbsp;Tax No: " + str_taxno + "   </b></font></td></tr>");
+                                sWrite.WriteLine("<td width='870' align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=4><b>&nbsp;" + Clinic + "</font> <br><FONT  COLOR=black  face='Segoe UI' SIZE=2>&nbsp;" + streetaddress + "<br>&nbsp;" + contact_no + " <br> &nbsp;Drug License No : &nbsp;" + str_druglicenseno + "&nbsp;Tax No: " + str_taxno + "   </b></font></td></tr>");
                                 //sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;&nbsp;" + header2 + "</b></font></td></tr>");
                                 //sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;&nbsp;" + header3 + "</b></font></td></tr>");
                                 //sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;&nbsp;Drug License No : &nbsp;" + str_druglicenseno + "&nbsp;&nbsp; Tax No: " + str_taxno + "</b></font></td></tr>");
