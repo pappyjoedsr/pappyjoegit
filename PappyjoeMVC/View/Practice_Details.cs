@@ -35,6 +35,7 @@ namespace PappyjoeMVC.View
         LabMedical labmedical = new LabMedical();
         LabDental dental = new LabDental();
         Backup_and_Restore bckres = new Backup_and_Restore();
+        Prescription_Lang prescr_lang = new Prescription_Lang();
         private void btnaddstate_Click(object sender, EventArgs e)
         {
             if (cmb_country.Items.Count > 0)
@@ -420,6 +421,8 @@ namespace PappyjoeMVC.View
             button_prescription.BackColor = Color.DodgerBlue;
             btnLab.BackColor = Color.DodgerBlue;
             btnLab_dental.BackColor = Color.DodgerBlue;
+            backuprestore.BackColor= Color.DodgerBlue;
+            btnPrescriptionLang.BackColor= Color.DodgerBlue;
         }
         public void form_hide()
         {
@@ -837,7 +840,7 @@ namespace PappyjoeMVC.View
         {
             errorProvider1.Dispose();
             backColor_change();
-            button_importexport.BackColor = Color.SteelBlue;
+            backuprestore.BackColor = Color.SteelBlue;
             form_hide();
             bckres.TopLevel = false;
             bckres.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -845,27 +848,17 @@ namespace PappyjoeMVC.View
             bckres.Show();
         }
 
-
-
-        //private void label1_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void label3_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void label2_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void label4_Click(object sender, EventArgs e)
-        //{
-
-        //}
+        private void btnPrescriptionLang_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Dispose();
+            backColor_change();
+            btnPrescriptionLang.BackColor = Color.SteelBlue;
+            form_hide();
+            prescr_lang.TopLevel = false;
+            prescr_lang.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            panel_main.Controls.Add(prescr_lang);
+            prescr_lang.Show();
+        }
 
         private void toolStripButton10_Click(object sender, EventArgs e)
         {

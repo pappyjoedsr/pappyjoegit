@@ -20,12 +20,12 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Get_CompanyNAme()
         {
-            DataTable clinicname = db.table("select name,id,path from tbl_practice_details");
+            DataTable clinicname = db.table("select name,id,path,Prescription_lang  from tbl_practice_details");
             return clinicname;
         }
         public DataTable practicedetails()
         {
-            DataTable dt = db.table("select name,path,contact_no  from tbl_practice_details");
+            DataTable dt = db.table("select name,path,contact_no from tbl_practice_details");
             return dt;
         }
         public string Get_DoctorName(string doctor_id)

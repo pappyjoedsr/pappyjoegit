@@ -657,6 +657,12 @@
     <Compile Include="View\OpenRecurringItem.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\Prescription_Lang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Prescription_Lang.Designer.cs">
+      <DependentUpon>Prescription_Lang.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Purchase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1299,6 +1305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\OpenRecurringItem.resx">
       <DependentUpon>OpenRecurringItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Prescription_Lang.resx">
+      <DependentUpon>Prescription_Lang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Purchase.resx">
       <DependentUpon>Purchase.cs</DependentUpon>

@@ -87,5 +87,10 @@ namespace PappyjoeMVC.Controller
             string dtb = mdl.permission_for_settings(doctor_id);
             return dtb;
         }
+        public int presc_lang(string lang)
+        {
+            int pr = Pmdl.presc_lang(lang);
+            return pr;
+        }
     }
 }
