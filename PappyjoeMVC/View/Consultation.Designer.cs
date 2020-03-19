@@ -30,13 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,33 +37,33 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consultation));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btnsave = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lst_procedure = new System.Windows.Forms.ListBox();
             this.lb_total = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.lst_procedure = new System.Windows.Forms.ListBox();
             this.dgv_treatment = new System.Windows.Forms.DataGridView();
+            this.tid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Procedure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Del = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chkprescription = new System.Windows.Forms.CheckBox();
             this.btn_addtrtmnt = new System.Windows.Forms.Button();
             this.dataGridView_drugnew = new System.Windows.Forms.DataGridView();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.img = new System.Windows.Forms.DataGridViewImageColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.presdruggrid = new System.Windows.Forms.DataGridView();
@@ -136,13 +129,20 @@
             this.txt_Pt_search = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.tid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Procedure = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Del = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.img = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_treatment)).BeginInit();
@@ -260,6 +260,22 @@
             this.panel2.TabIndex = 1;
             this.panel2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseClick);
             // 
+            // lst_procedure
+            // 
+            this.lst_procedure.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lst_procedure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lst_procedure.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lst_procedure.ForeColor = System.Drawing.Color.Black;
+            this.lst_procedure.FormattingEnabled = true;
+            this.lst_procedure.ItemHeight = 21;
+            this.lst_procedure.Location = new System.Drawing.Point(100, 166);
+            this.lst_procedure.Name = "lst_procedure";
+            this.lst_procedure.Size = new System.Drawing.Size(248, 107);
+            this.lst_procedure.TabIndex = 311;
+            this.lst_procedure.Visible = false;
+            this.lst_procedure.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lst_procedure_MouseClick);
+            this.lst_procedure.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lst_procedure_KeyUp);
+            // 
             // lb_total
             // 
             this.lb_total.AutoSize = true;
@@ -277,22 +293,6 @@
             this.label20.Size = new System.Drawing.Size(76, 13);
             this.label20.TabIndex = 416;
             this.label20.Text = "Total Amount :";
-            // 
-            // lst_procedure
-            // 
-            this.lst_procedure.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lst_procedure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lst_procedure.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lst_procedure.ForeColor = System.Drawing.Color.Black;
-            this.lst_procedure.FormattingEnabled = true;
-            this.lst_procedure.ItemHeight = 21;
-            this.lst_procedure.Location = new System.Drawing.Point(100, 166);
-            this.lst_procedure.Name = "lst_procedure";
-            this.lst_procedure.Size = new System.Drawing.Size(248, 107);
-            this.lst_procedure.TabIndex = 311;
-            this.lst_procedure.Visible = false;
-            this.lst_procedure.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lst_procedure_MouseClick);
-            this.lst_procedure.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lst_procedure_KeyUp);
             // 
             // dgv_treatment
             // 
@@ -320,6 +320,54 @@
             this.dgv_treatment.Size = new System.Drawing.Size(790, 86);
             this.dgv_treatment.TabIndex = 415;
             this.dgv_treatment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_treatment_CellClick);
+            // 
+            // tid
+            // 
+            this.tid.HeaderText = "id";
+            this.tid.Name = "tid";
+            this.tid.Visible = false;
+            // 
+            // Procedure
+            // 
+            this.Procedure.FillWeight = 101.7259F;
+            this.Procedure.HeaderText = "PROCEDURE";
+            this.Procedure.Name = "Procedure";
+            this.Procedure.Width = 180;
+            // 
+            // Quantity
+            // 
+            this.Quantity.FillWeight = 101.7259F;
+            this.Quantity.HeaderText = "QUANTITY";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Width = 70;
+            // 
+            // Cost
+            // 
+            this.Cost.FillWeight = 101.7259F;
+            this.Cost.HeaderText = "COST";
+            this.Cost.Name = "Cost";
+            this.Cost.Width = 110;
+            // 
+            // Total
+            // 
+            this.Total.FillWeight = 101.7259F;
+            this.Total.HeaderText = "TOTAL";
+            this.Total.Name = "Total";
+            this.Total.Width = 130;
+            // 
+            // Note
+            // 
+            this.Note.FillWeight = 101.7259F;
+            this.Note.HeaderText = "NOTE";
+            this.Note.Name = "Note";
+            this.Note.Width = 250;
+            // 
+            // Del
+            // 
+            this.Del.FillWeight = 91.37056F;
+            this.Del.HeaderText = "";
+            this.Del.Name = "Del";
+            this.Del.Width = 30;
             // 
             // chkprescription
             // 
@@ -380,10 +428,10 @@
             this.Column16,
             this.Column17,
             this.Column20,
-            this.Column10,
             this.Column39,
-            this.img,
-            this.status});
+            this.status,
+            this.Column10,
+            this.img});
             this.dataGridView_drugnew.Location = new System.Drawing.Point(6, 308);
             this.dataGridView_drugnew.Name = "dataGridView_drugnew";
             this.dataGridView_drugnew.ReadOnly = true;
@@ -395,121 +443,6 @@
             this.dataGridView_drugnew.Size = new System.Drawing.Size(605, 183);
             this.dataGridView_drugnew.TabIndex = 413;
             this.dataGridView_drugnew.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_drugnew_CellClick);
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "DRUG NAME";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Width = 150;
-            // 
-            // Column12
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column12.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column12.HeaderText = "STRENGTH";
-            this.Column12.MinimumWidth = 20;
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Width = 50;
-            // 
-            // Column18
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column18.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column18.HeaderText = "";
-            this.Column18.Name = "Column18";
-            this.Column18.ReadOnly = true;
-            this.Column18.Visible = false;
-            this.Column18.Width = 30;
-            // 
-            // Column13
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column13.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column13.HeaderText = "DURATION";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Width = 50;
-            // 
-            // Column19
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column19.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column19.HeaderText = "PERIOD";
-            this.Column19.Name = "Column19";
-            this.Column19.ReadOnly = true;
-            this.Column19.Visible = false;
-            this.Column19.Width = 50;
-            // 
-            // Column14
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column14.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column14.HeaderText = "MORNING";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Width = 50;
-            // 
-            // Column15
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column15.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Column15.HeaderText = "NOON";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            this.Column15.Width = 50;
-            // 
-            // Column16
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column16.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Column16.HeaderText = "NIGHT";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            this.Column16.Width = 50;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "FOOD";
-            this.Column17.Name = "Column17";
-            this.Column17.ReadOnly = true;
-            this.Column17.Width = 70;
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "INSTRUCTION";
-            this.Column20.Name = "Column20";
-            this.Column20.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "drugid";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Visible = false;
-            // 
-            // Column39
-            // 
-            this.Column39.HeaderText = "drug type";
-            this.Column39.Name = "Column39";
-            this.Column39.ReadOnly = true;
-            this.Column39.Visible = false;
-            // 
-            // img
-            // 
-            this.img.HeaderText = "DEL";
-            this.img.Name = "img";
-            this.img.ReadOnly = true;
-            this.img.Width = 30;
-            // 
-            // status
-            // 
-            this.status.HeaderText = "status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Visible = false;
-            this.status.Width = 30;
             // 
             // tabControl1
             // 
@@ -1306,53 +1239,120 @@
             this.panel3.Size = new System.Drawing.Size(960, 1);
             this.panel3.TabIndex = 305;
             // 
-            // tid
+            // Column11
             // 
-            this.tid.HeaderText = "id";
-            this.tid.Name = "tid";
-            this.tid.Visible = false;
+            this.Column11.HeaderText = "DRUG NAME";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.Width = 150;
             // 
-            // Procedure
+            // Column12
             // 
-            this.Procedure.FillWeight = 101.7259F;
-            this.Procedure.HeaderText = "PROCEDURE";
-            this.Procedure.Name = "Procedure";
-            this.Procedure.Width = 180;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column12.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column12.HeaderText = "STRENGTH";
+            this.Column12.MinimumWidth = 20;
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            this.Column12.Width = 50;
             // 
-            // Quantity
+            // Column18
             // 
-            this.Quantity.FillWeight = 101.7259F;
-            this.Quantity.HeaderText = "QUANTITY";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 70;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column18.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column18.HeaderText = "";
+            this.Column18.Name = "Column18";
+            this.Column18.ReadOnly = true;
+            this.Column18.Visible = false;
+            this.Column18.Width = 30;
             // 
-            // Cost
+            // Column13
             // 
-            this.Cost.FillWeight = 101.7259F;
-            this.Cost.HeaderText = "COST";
-            this.Cost.Name = "Cost";
-            this.Cost.Width = 110;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column13.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column13.HeaderText = "DURATION";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            this.Column13.Width = 50;
             // 
-            // Total
+            // Column19
             // 
-            this.Total.FillWeight = 101.7259F;
-            this.Total.HeaderText = "TOTAL";
-            this.Total.Name = "Total";
-            this.Total.Width = 130;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column19.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column19.HeaderText = "PERIOD";
+            this.Column19.Name = "Column19";
+            this.Column19.ReadOnly = true;
+            this.Column19.Visible = false;
+            this.Column19.Width = 50;
             // 
-            // Note
+            // Column14
             // 
-            this.Note.FillWeight = 101.7259F;
-            this.Note.HeaderText = "NOTE";
-            this.Note.Name = "Note";
-            this.Note.Width = 250;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column14.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column14.HeaderText = "MORNING";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            this.Column14.Width = 50;
             // 
-            // Del
+            // Column15
             // 
-            this.Del.FillWeight = 91.37056F;
-            this.Del.HeaderText = "";
-            this.Del.Name = "Del";
-            this.Del.Width = 30;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column15.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Column15.HeaderText = "NOON";
+            this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
+            this.Column15.Width = 50;
+            // 
+            // Column16
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column16.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Column16.HeaderText = "NIGHT";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            this.Column16.Width = 50;
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "FOOD";
+            this.Column17.Name = "Column17";
+            this.Column17.ReadOnly = true;
+            this.Column17.Width = 70;
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "INSTRUCTION";
+            this.Column20.Name = "Column20";
+            this.Column20.ReadOnly = true;
+            // 
+            // Column39
+            // 
+            this.Column39.HeaderText = "drug type";
+            this.Column39.Name = "Column39";
+            this.Column39.ReadOnly = true;
+            this.Column39.Visible = false;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Visible = false;
+            this.status.Width = 30;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "drugid";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Visible = false;
+            // 
+            // img
+            // 
+            this.img.HeaderText = "DEL";
+            this.img.Name = "img";
+            this.img.ReadOnly = true;
+            this.img.Width = 30;
             // 
             // Consultation
             // 
@@ -1457,20 +1457,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownDuration;
         private System.Windows.Forms.TextBox txtStrengthno;
         private System.Windows.Forms.DataGridView dataGridView_drugnew;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column39;
-        private System.Windows.Forms.DataGridViewImageColumn img;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -1495,5 +1481,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn Note;
         private System.Windows.Forms.DataGridViewTextBoxColumn Del;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column39;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewImageColumn img;
     }
 }

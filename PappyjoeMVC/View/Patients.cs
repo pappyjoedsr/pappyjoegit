@@ -2001,6 +2001,7 @@ namespace PappyjoeMVC.View
                     listpatientsearch.Visible = true;
                 }
                 listpatientsearch.Location = new Point(toolStrip1.Width - 360, 37);
+                listpatientsearch.BringToFront();
             }
             else
             {

@@ -747,7 +747,7 @@
             this.btn_ProcedureClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ProcedureClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ProcedureClose.ForeColor = System.Drawing.Color.White;
-            this.btn_ProcedureClose.Location = new System.Drawing.Point(116, 53);
+            this.btn_ProcedureClose.Location = new System.Drawing.Point(113, 53);
             this.btn_ProcedureClose.Name = "btn_ProcedureClose";
             this.btn_ProcedureClose.Size = new System.Drawing.Size(70, 24);
             this.btn_ProcedureClose.TabIndex = 9;
@@ -761,7 +761,7 @@
             this.addbut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addbut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addbut.ForeColor = System.Drawing.Color.White;
-            this.addbut.Location = new System.Drawing.Point(116, 54);
+            this.addbut.Location = new System.Drawing.Point(324, 7);
             this.addbut.Name = "addbut";
             this.addbut.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.addbut.Size = new System.Drawing.Size(70, 24);
