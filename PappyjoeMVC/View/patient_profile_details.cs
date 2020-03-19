@@ -1125,6 +1125,11 @@ namespace PappyjoeMVC.View
             form2.Dispose();
         }
 
+        private void btn_convertip_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void labelprescription_Click(object sender, EventArgs e)
         {
             var form2 = new Prescription_Show();
