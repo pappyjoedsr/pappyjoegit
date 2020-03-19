@@ -60,9 +60,6 @@ namespace PappyjoeMVC.View
         }
         public void fill_Unit(DataTable dtb)
         {
-            cmbUnit.DisplayMember = "Name";
-            cmbUnit.ValueMember = "id";
-            cmbUnit.DataSource = dtb;
             dgvUnit.Rows.Clear();
             if (dtb.Rows.Count > 0)
             {
