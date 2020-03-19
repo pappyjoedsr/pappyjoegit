@@ -24,6 +24,11 @@ namespace PappyjoeMVC.Model
       "'" + _locality + "','" + _city + "','" + _pincode + "','" + Convert.ToDateTime(DateTime.Now.Date).ToString("yyyy/MM/dd") + "','id4','" + _referred + "','" + _file + "','" + Convert.ToDateTime(_admit).ToString("yyyy/MM/dd") + "','" + _doctor + "','" + _occupation + "','Active','"+_nationality+"','"+_passportno+"')");
             return i;
         }
+        public int save_log(string log_userid,string log_type,string log_descriptn,string log_stage)
+        {
+            int j = db.execute("insert into tbl_log(log_user_id,log_type,log_description,log_stage)values('" + log_userid + "','" + log_type + "','" + log_descriptn + "','" + log_stage + "')");
+            return j;
+        }
         public string get_maxId()
         {
             string rs_patient = db.scalar("SELECT MAX(Id) FROM tbl_patient");

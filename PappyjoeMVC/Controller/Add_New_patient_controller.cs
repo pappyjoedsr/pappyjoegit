@@ -40,6 +40,11 @@ namespace PappyjoeMVC.Controller
             int i = _model.Save(_name, _id, _aadhar, _gender, _dob, _age, _blood, _accompained, _pmobile, _smobile, _landline, _email, _street, _locality, _city, _pincode, _referred, _file, _admit, _doctor, _occupation,_nationality,_passportno);
             return i;
         }
+        public int save_log(string log_usrid,string log_type,string log_descriptn,string log_stage)
+        {
+            int j = _model.save_log(log_usrid, log_type, log_descriptn, log_stage);
+            return j;
+        }
         public string get_maxId()
         {
             string dtb = _model.get_maxId();

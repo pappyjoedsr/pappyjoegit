@@ -307,6 +307,8 @@ namespace PappyjoeMVC.View
             form.patient_id = patient_id;
             form.doctor_id = doctor_id;
             form.workid = workiddental;
+            form.flagup = "0";
+            form.flag = "1";
             form.Show();
         }
         private void listpatientsearch_MouseClick(object sender, MouseEventArgs e)
@@ -504,7 +506,8 @@ namespace PappyjoeMVC.View
                         form2.label41.Text = " RESULT VIEW";
                         string workid = dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[2].Value.ToString();
                         form2.workid = workid;
-                        form2.flag = "1";
+                        form2.flagup = "1";
+                        form2.flag = "0";
                         form2.Show();
                     }
                     else if (dataGridView1_treatment_paln.Rows[e.RowIndex].Cells[5].Value.ToString() == "Dental")
