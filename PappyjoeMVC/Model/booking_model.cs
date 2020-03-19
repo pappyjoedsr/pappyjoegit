@@ -33,7 +33,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Getpat_MobNamme(string patient_id)
         {
-            DataTable dt_p = db.table("select pt_name,pt_id,primary_mobile_number,email_address from tbl_patient where  id=" + patient_id + " ORDER BY id");
+            DataTable dt_p = db.table("select pt_name,pt_id,gender,primary_mobile_number,email_address from tbl_patient where  id=" + patient_id + " ORDER BY id");
             return dt_p;// intr.Fill_search_patient(dt_p);
         }
         public DataTable search_ptid(string search)

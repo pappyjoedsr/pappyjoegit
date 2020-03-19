@@ -20,12 +20,12 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Get_CompanyNAme()
         {
-            DataTable clinicname = db.table("select name,id,path from tbl_practice_details");
+            DataTable clinicname = db.table("select name,id,path,Prescription_lang  from tbl_practice_details");
             return clinicname;
         }
         public DataTable practicedetails()
         {
-            DataTable dt = db.table("select name,path,contact_no  from tbl_practice_details");
+            DataTable dt = db.table("select name,path,contact_no from tbl_practice_details");
             return dt;
         }
         public string Get_DoctorName(string doctor_id)
@@ -100,7 +100,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Get_practiceDlNumber()
         {
-            DataTable dtp = db.table("select name,street_address,locality,pincode,contact_no,email,website,Dl_Number,Dl_Number2 from tbl_practice_details");
+            DataTable dtp = db.table("select name,street_address,locality,pincode,contact_no,path,email,website,Dl_Number,Dl_Number2 from tbl_practice_details");
             return dtp;
         }
         public DataTable send_email()
@@ -125,7 +125,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Patient_search(string _Patientid)
         {
-            DataTable dtdr = db.table("select id, CONCAT(pt_name, ',', age, ',', gender) as patient from tbl_patient where (pt_name like '%" + _Patientid + "%'   or pt_id like '%" + _Patientid + "%' or primary_mobile_number like '%" + _Patientid + "%') and Profile_Status = 'Active'");
+            DataTable dtdr = db.table("select id, CONCAT(pt_name, ', ', substring(gender,1,1), ', ',primary_mobile_number) as patient from tbl_patient where (pt_name like '%" + _Patientid + "%'   or pt_id like '%" + _Patientid + "%' or primary_mobile_number like '%" + _Patientid + "%') and Profile_Status = 'Active'");
             return dtdr;
         }
         public string permission_for_settings(string doctor_id)

@@ -101,9 +101,9 @@ namespace PappyjoeMVC.Controller
             string id = model.max_presid();
             return id;
         }
-        public void save_prescription(int presid, string patient_id, string dr_name, string dr_id, string drug_name, string strength, string strength_gr, string duration_period, string morning, string noon, string night, string food, string add_instruction, string drug_type, string status, string drug_id)
+        public void save_prescription(int presid, string patient_id, string dr_name, string dr_id, string drug_name, string strength, string strength_gr,string duration_unit, string duration_period, string morning, string noon, string night, string food, string add_instruction, string drug_type, string status, string drug_id)
         {
-            model.save_prescription(presid, patient_id, dr_name, dr_id, drug_name, strength, strength_gr, duration_period, morning, noon, night, food, add_instruction, drug_type, status, drug_id);
+            model.save_prescription(presid, patient_id, dr_name, dr_id, drug_name, strength, strength_gr, duration_unit, duration_period, morning, noon, night, food, add_instruction, drug_type, status, drug_id);
         }
         public void save_completedid(string patient_id)
         {

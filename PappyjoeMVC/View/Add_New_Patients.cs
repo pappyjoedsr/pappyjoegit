@@ -102,6 +102,14 @@ namespace PappyjoeMVC.View
                     MessageBox.Show("Enter the mobile number.. !!", "Data not found.. ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                if(txtpassportno.Text!="")
+                {
+                    if (txtpassportno.TextLength != 8 && !(txtpassportno.Text).StartsWith("J"))
+                    {
+                        MessageBox.Show("Enter the passport number.. !!", "Data not found.. ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
                 if (txtPatientId.Text != "")
                 {
                     DataTable dtb = this.cntrl.get_patientid(txtPatientId.Text);
@@ -159,7 +167,8 @@ namespace PappyjoeMVC.View
                         //Addfunction();
                         string smsName1 = PappyjoeMVC.Model.GlobalVariables.smsName.ToString();
                         string smsPass1 = PappyjoeMVC.Model.GlobalVariables.smsPass.ToString();
-                        i = this.cntrl.Save(txtPatName.Text, txtPatientId.Text, txtAadhar.Text, gender,dob, txtxAge.Text, cmdBloodbroup.Text, txtAccompained.Text, txtPMobNumber.Text, txtSMobileNumber.Text, txtLandline.Text, txtEmail.Text, txtxStreet.Text, txtLocality.Text, txtCity.Text, txtPincode.Text, txtReferedby.Text, txtFileNo.Text, visited, ddldoctor.Text, txtOccupation.Text);
+                        i = this.cntrl.Save(txtPatName.Text, txtPatientId.Text, txtAadhar.Text, gender,dob, txtxAge.Text, cmdBloodbroup.Text, txtAccompained.Text, txtPMobNumber.Text, txtSMobileNumber.Text, txtLandline.Text, txtEmail.Text, txtxStreet.Text, txtLocality.Text, txtCity.Text, txtPincode.Text, txtReferedby.Text, txtFileNo.Text, visited, ddldoctor.Text, txtOccupation.Text,txtnationality.Text,txtpassportno.Text);
+                        this.cntrl.save_log(doctor_id, "patient", " ", "add");
                         DataTable cmd = this.cntrl.automaticid();
                         if (cmd.Rows.Count > 0)
                         {
@@ -823,7 +832,6 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.Show();
         }
-
         private void toolStripButton13_Click(object sender, EventArgs e)
         {
             var form2 = new Consultation();

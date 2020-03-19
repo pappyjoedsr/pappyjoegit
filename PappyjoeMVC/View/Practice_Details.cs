@@ -420,6 +420,8 @@ namespace PappyjoeMVC.View
             button_prescription.BackColor = Color.DodgerBlue;
             btnLab.BackColor = Color.DodgerBlue;
             btnLab_dental.BackColor = Color.DodgerBlue;
+            backuprestore.BackColor= Color.DodgerBlue;
+            btnPrescriptionLang.BackColor= Color.DodgerBlue;
         }
         public void form_hide()
         {
@@ -837,6 +839,29 @@ namespace PappyjoeMVC.View
             //panel_main.Controls.Add(bckres);
             //bckres.Show();
         }
+
+
+
+        //private void label1_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void label3_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void label2_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void label4_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
             var form2 = new Expense();

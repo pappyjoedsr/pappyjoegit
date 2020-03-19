@@ -340,6 +340,7 @@ namespace PappyjoeMVC.View
                 string str_pincode = "";
                 string str_email = "";
                 string str_website = "";
+                string path = "";
                 System.Data.DataTable dtp = db.table("select * from tbl_practice_details");
                 if (dtp.Rows.Count > 0)
                 {
@@ -351,6 +352,8 @@ namespace PappyjoeMVC.View
                     str_pincode = dtp.Rows[0]["pincode"].ToString();
                     str_email = dtp.Rows[0]["email"].ToString();
                     str_website = dtp.Rows[0]["website"].ToString();
+                    path= dtp.Rows[0]["path"].ToString();
+                    logo_name = path;
                 }
                 string day = DateTime.Now.DayOfWeek.ToString();
                 string date = DateTime.Now.Day.ToString();
@@ -370,15 +373,9 @@ namespace PappyjoeMVC.View
                     {
                         sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td width='85' height='100px' align='left' rowspan='7'><img src='" + Appath + "\\" + logo_name + "' width='79' height='110' style='width:100px;height:100px;'></td>  ");
-                        sWrite.WriteLine("<td width='588' align='left' height='20px'><FONT  COLOR=black  face='Arial' SIZE=5>&nbsp;" + Clinic + "</font></td></tr>");
-                        sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Arial' SIZE=3>&nbsp;" + streetaddress + "</font></td></tr>");
-                        sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + str_locality + "</font></td></tr>");
-                        sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;Pincode :" + str_pincode + "</font></td></tr>");
-                        sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Arial' SIZE=2>&nbsp;Phone No :" + contact_no + "</font></td></tr>");
-                        sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Arial' SIZE=2>&nbsp;Email :" + str_email + "</font></td></tr>");
-                        sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Arial' SIZE=2>&nbsp;Website :" + str_website + "</font></td></tr>");
-                        sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
+                        sWrite.WriteLine("<td width='30px' height='50px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "'style='width:70px;height:70px;' ></td>  ");
+                        sWrite.WriteLine("<td width='870px' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=4><b>&nbsp;" + clinicn + "</font> <br><FONT  COLOR=black  face='Segoe UI' SIZE=2>&nbsp;" + streetaddress + "<br>&nbsp;" + contact_no + " </b></td></tr>");
+                       
                         sWrite.WriteLine("</table>");
                     }
                     else
@@ -435,6 +432,7 @@ namespace PappyjoeMVC.View
                             sexage = dt1.Rows[0]["age"].ToString() + " Years";
                         }
                     }
+                    sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
                     sWrite.WriteLine(" <td align='left' height=25><FONT COLOR=black FACE='Geneva, Arial' SIZE=2><b>" + dt1.Rows[0]["pt_name"].ToString() + "</b><i> (" + sexage + ")</i></font></td>");
                     sWrite.WriteLine(" </tr>");
                     sWrite.WriteLine("<tr>");

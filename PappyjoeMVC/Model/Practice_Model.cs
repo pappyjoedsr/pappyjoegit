@@ -61,5 +61,10 @@ namespace PappyjoeMVC.Model
             DataTable dtb = db.table("select * from tbl_city where state_id='" + id + "' order by id");
             return dtb;
         }
+        public int presc_lang(string lang)
+        {
+            int i= db.execute("update tbl_practice_details set Prescription_lang='" + lang + "'");
+            return i;
+        }
     }
 }

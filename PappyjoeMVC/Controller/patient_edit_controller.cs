@@ -58,9 +58,9 @@ namespace PappyjoeMVC.Controller
             return dtb;
         }
 
-        public int update(string patname,string patId,string aadhar,string Gender,string age,string Dob,string blood,string family,string Pmob,string Smob,string Landline,string email,string street,string locality,string city,string pin,string refferedby,string opticket,string Visited,string occupation,string doctername,string pt_id)
+        public int update(string patname,string patId,string aadhar,string Gender,string age,string Dob,string blood,string family,string Pmob,string Smob,string Landline,string email,string street,string locality,string city,string pin,string refferedby,string opticket,string Visited,string occupation,string doctername, string nationality, string passport,string pt_id)
         {
-            int i = _model.update( patname,  patId,  aadhar,  Gender,  age,  Dob,  blood,  family,  Pmob,  Smob,  Landline,  email,  street,  locality,  city,  pin,  refferedby,  opticket,  Visited,  occupation,  doctername,  pt_id);
+            int i = _model.update( patname,  patId,  aadhar,  Gender,  age,  Dob,  blood,  family,  Pmob,  Smob,  Landline,  email,  street,  locality,  city,  pin,  refferedby,  opticket,  Visited,  occupation,  doctername,nationality, passport, pt_id);
             return i;
         }
         public int delete_patient(string pt_id)

@@ -40,12 +40,12 @@ namespace PappyjoeMVC.Model
         }
         public DataTable griddailytrreatmenttable(string doctor, string date1, string date2)
         {
-            DataTable griddailytrreatmenttable = db.table("select DATE_FORMAT(date, '%d-%m-%Y') AS  'date' ,pt_id,pt_name,primary_mobile_number,email_address,doctorname from tbl_patient  WHERE tbl_patient.Profile_Status='Active' and doctorname='" + doctor + "' and date  between '" + date1 + "' and '" + date2 + "' GROUP BY id,pt_id,pt_name,date,primary_mobile_number,email_address,doctorname  having COUNT(pt_id)=1 ");
+            DataTable griddailytrreatmenttable = db.table("select DATE_FORMAT(date, '%d-%m-%Y') AS  'date' ,pt_id,pt_name,primary_mobile_number,email_address,doctorname,nationality,passport_no from tbl_patient  WHERE tbl_patient.Profile_Status='Active' and doctorname='" + doctor + "' and date  between '" + date1 + "' and '" + date2 + "' GROUP BY id,pt_id,pt_name,date,primary_mobile_number,email_address,doctorname,nationality,passport_no  having COUNT(pt_id)=1 ");
             return griddailytrreatmenttable;
         }
         public DataTable griddailytrreatmenttable11(string date1, string date2)
         {
-            DataTable griddailytrreatmenttable = db.table("select DATE_FORMAT(date, '%d-%m-%Y') AS  'date',pt_id,pt_name,primary_mobile_number,email_address,doctorname from tbl_patient  WHERE tbl_patient.Profile_Status='Active' and date  between '" + date1 + "' and '" + date2 + "' GROUP BY id,pt_id,pt_name,date,primary_mobile_number,email_address,doctorname  having COUNT(pt_id)=1 ");
+            DataTable griddailytrreatmenttable = db.table("select DATE_FORMAT(date, '%d-%m-%Y') AS  'date',pt_id,pt_name,primary_mobile_number,email_address,doctorname,nationality,passport_no from tbl_patient  WHERE tbl_patient.Profile_Status='Active' and date  between '" + date1 + "' and '" + date2 + "' GROUP BY id,pt_id,pt_name,date,primary_mobile_number,email_address,doctorname,nationality,passport_no  having COUNT(pt_id)=1 ");
             return griddailytrreatmenttable;
         }
         public DataTable FirstAppointment(string dr_id, string d9, string d10)
@@ -79,12 +79,12 @@ namespace PappyjoeMVC.Model
         }
         public DataTable grdDailytrtmentTable(string doctor, string date1, string date2)
         {
-            DataTable griddailytrreatmenttable = db.table("select  DATE_FORMAT(date, '%d-%m-%Y') AS  'date',pt_id,pt_name,primary_mobile_number,email_address,doctorname from tbl_patient  WHERE Profile_Status='Active' and  doctorname='" + doctor + "' and date  between '" + date1 + "' and '" + date2 + "' GROUP BY id,pt_id,pt_name,date,primary_mobile_number,email_address,doctorname  having COUNT(pt_id)=1 ");
+            DataTable griddailytrreatmenttable = db.table("select  DATE_FORMAT(date, '%d-%m-%Y') AS  'date',pt_id,pt_name,primary_mobile_number,email_address,doctorname,nationality,passport_no from tbl_patient  WHERE Profile_Status='Active' and  doctorname='" + doctor + "' and date  between '" + date1 + "' and '" + date2 + "' GROUP BY id,pt_id,pt_name,date,primary_mobile_number,email_address,doctorname,nationality,passport_no  having COUNT(pt_id)=1 ");
             return griddailytrreatmenttable;
         }
         public DataTable grdDailyTtrtmn1TB(string date1, string date2)
         {
-            DataTable griddailytrreatmenttable = db.table("select DATE_FORMAT(date, '%d-%m-%Y') AS  'date',pt_id,pt_name,primary_mobile_number,email_address,doctorname from tbl_patient  WHERE Profile_Status='Active' and  date  between '" + date1 + "' and '" + date2 + "' GROUP BY id,pt_id,pt_name,date,primary_mobile_number,email_address,doctorname  having COUNT(pt_id)=1 ");
+            DataTable griddailytrreatmenttable = db.table("select DATE_FORMAT(date, '%d-%m-%Y') AS  'date',pt_id,pt_name,primary_mobile_number,email_address,doctorname,nationality,passport_no from tbl_patient  WHERE Profile_Status='Active' and  date  between '" + date1 + "' and '" + date2 + "' GROUP BY id,pt_id,pt_name,date,primary_mobile_number,email_address,doctorname,nationality,passport_no  having COUNT(pt_id)=1 ");
             return griddailytrreatmenttable;
         }
         public DataTable dt_grp()
@@ -94,7 +94,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable dtb_group(string cmb,string d1,string d2)
         {
-            DataTable dtb_group = db.table("select cast(date as date) AS  'date' ,a.pt_id,pt_name,primary_mobile_number,email_address,doctorname,b.group_id from tbl_patient a inner join tbl_pt_group b  on a.id=b.pt_id WHERE a.Profile_Status='Active' and b.group_id='" + cmb + "' and date  between '" + d1+ "' and '" + d2 + "' GROUP BY a.id,a.pt_id,pt_name,date,primary_mobile_number,email_address,doctorname,b.group_id");
+            DataTable dtb_group = db.table("select cast(date as date) AS  'date' ,a.pt_id,pt_name,primary_mobile_number,email_address,doctorname,nationality,passport_no,b.group_id from tbl_patient a inner join tbl_pt_group b  on a.id=b.pt_id WHERE a.Profile_Status='Active' and b.group_id='" + cmb + "' and date  between '" + d1+ "' and '" + d2 + "' GROUP BY a.id,a.pt_id,pt_name,date,primary_mobile_number,email_address,doctorname,nationality,passport_no,b.group_id");
             return dtb_group;
         }
         public DataTable dtb_procedure(string cmb,string d1,string d2)

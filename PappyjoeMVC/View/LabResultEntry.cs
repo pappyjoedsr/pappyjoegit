@@ -19,7 +19,15 @@ namespace PappyjoeMVC.View
         }
         int j;
         LabResultEntry_controller ctrlr=new LabResultEntry_controller();
-        public string patient_id = "", doctor_id = "", workid = "",flag="";
+        public string patient_id = "", doctor_id = "", workid = "",flag="",flagup="";
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                dataGridView1.Rows[i].Cells[8].Value="";
+            }
+        }
         private void btnsave_Click(object sender, EventArgs e)
         {
             try
@@ -40,19 +48,28 @@ namespace PappyjoeMVC.View
         private void LabResultEntry_Load(object sender, EventArgs e)
         {
             try
-            {  
-                DataTable dt = this.ctrlr.LoadResult(patient_id, workid);
-                dataGridView1.DataSource = dt;
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                
+                if (flagup == "1")
                 {
-                    this.dataGridView1.Columns[11].Visible = false;
-                    this.dataGridView1.Columns[12].Visible = false;
-                    this.dataGridView1.Columns[13].Visible = false;
+                    DataTable dt = this.ctrlr.LoadResult(patient_id, workid);
+                    dataGridView1.DataSource = dt;
+                    dataGridView1.Enabled = false;
+                    btnsave.Visible = false;
                 }
                 if (flag == "1")
                 {
-                    btnsave.Visible = false;
-                }
+                    DataTable dt = this.ctrlr.LoadResult(patient_id, workid);
+                    dataGridView1.DataSource = dt;
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                           
+                            this.dataGridView1.Columns[11].Visible = false;
+                            this.dataGridView1.Columns[12].Visible = false;
+                            this.dataGridView1.Columns[13].Visible = false;
+                            dataGridView1.Rows[i].Cells[8].Value = "Enter Result";
+                        }
+                    }
                 dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
                 dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                 dataGridView1.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Regular);

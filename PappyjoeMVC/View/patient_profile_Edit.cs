@@ -92,7 +92,7 @@ namespace PappyjoeMVC.View
                 {
                     if (txtPrimaryMobNbr.Text != "")
                     {
-                        i = this.cntrl.update(txtPatientName.Text, txtPatientId.Text, txtAdhaarId.Text,gender, txtAge.Text, DateTimePickerDob.Value.ToString("yyyy-MM-dd"), cmbBloodGroup.Text, txtAccompaniedBy.Text, txtPrimaryMobNbr.Text, txtSecondaryMobNbr.Text, txtLandLineNbr.Text, txtEmail.Text,txtStreetAddress.Text,txtLocality.Text,txtCity.Text,txtPin.Text,txtReferredBy.Text, txtFileNo.Text, DateTimePickerAdmitDate.Value.ToString("yyyy/MM/dd"),txtOccupation.Text, cmbDoctorName.Text,patient_id);
+                        i = this.cntrl.update(txtPatientName.Text, txtPatientId.Text, txtAdhaarId.Text,gender, txtAge.Text, DateTimePickerDob.Value.ToString("yyyy-MM-dd"), cmbBloodGroup.Text, txtAccompaniedBy.Text, txtPrimaryMobNbr.Text, txtSecondaryMobNbr.Text, txtLandLineNbr.Text, txtEmail.Text,txtStreetAddress.Text,txtLocality.Text,txtCity.Text,txtPin.Text,txtReferredBy.Text, txtFileNo.Text, DateTimePickerAdmitDate.Value.ToString("yyyy/MM/dd"),txtOccupation.Text, cmbDoctorName.Text,txtnationality.Text,txtpassport.Text,patient_id);
                         if (i > 0)
                         {
                             if (pictureBox_PatientPhoto.Image == null)
@@ -470,6 +470,8 @@ namespace PappyjoeMVC.View
                 txtLocality.Text = dt7.Rows[0]["locality"].ToString();
                 txtCity.Text = dt7.Rows[0]["city"].ToString();
                 txtPin.Text = dt7.Rows[0]["pincode"].ToString();
+                txtnationality.Text = dt7.Rows[0]["nationality"].ToString();
+                txtpassport.Text = dt7.Rows[0]["passport_no"].ToString();
                 txtReferredBy.Text = dt7.Rows[0]["refferedby"].ToString();
                 txtFileNo.Text = dt7.Rows[0]["Opticket"].ToString();
                 string bb = dt7.Rows[0]["Visited"].ToString();

@@ -132,7 +132,6 @@ namespace PappyjoeMVC.View
         }
         private void dgv_sales_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
             if (e.RowIndex >= 0)
             {
                 PappyjoeMVC.Model.Connection.MyGlobals.global_Flag = true;
@@ -151,7 +150,6 @@ namespace PappyjoeMVC.View
                     form2.Dispose();
                 }
             }
-
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {

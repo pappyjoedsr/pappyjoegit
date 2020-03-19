@@ -11,8 +11,6 @@ namespace PappyjoeMVC.View
     public partial class Procedure_Catalog : Form
     {
         Procedure_Catalog_controller cntrl=new Procedure_Catalog_controller();
-        OpenFileDialog op1 = new OpenFileDialog();
-        OpenFileDialog op2 = new OpenFileDialog();
         int refresh;
         public Procedure_Catalog()
         {
@@ -27,9 +25,6 @@ namespace PappyjoeMVC.View
             buttonSaveCategory.Hide();
             buttonrefresh.Show();
             btnAddNewCategory.Hide();
-            button1.Enabled = false;
-            button2.Enabled = false;
-            
             if (checkaddunder.Checked == true)
             {
                 comboaddunder.Show();
@@ -435,48 +430,6 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        private void chbtooth_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chbtooth.Checked == true)
-            {
-                button1.Enabled = true;
-                button2.Enabled = false;
-            }
-            else
-            {
-                button1.Enabled = false;
-                button2.Enabled = false;
-            }
-        }
-        private void chbsrface_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chbsrface.Checked == true)
-            {
-                button2.Enabled = true;
-                button1.Enabled = false;
-            }
-            else
-            {
-                button1.Enabled = false;
-                button2.Enabled = false;
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            op1.ShowDialog();
-            string ext = Path.GetExtension(op1.FileName);
-            if (ext.ToLower() == ".jpeg" || ext.ToLower() == ".jpg" || ext.ToLower() == ".gif" || ext.ToLower() == ".png")
-            {
-                string file = Path.GetFileName(op1.FileName);
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            op2.ShowDialog();
         }
     }
 }

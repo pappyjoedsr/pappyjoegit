@@ -1,4 +1,5 @@
-﻿using PappyjoeMVC.Controller;
+﻿using Microsoft.Office.Interop.Excel;
+using PappyjoeMVC.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +15,12 @@ namespace PappyjoeMVC.View
 {
     public partial class Purchase_Report : Form
     {
-        Purchase_Report_controller ctrlr;
+        Purchase_Report_controller ctrlr=new Purchase_Report_controller();
         public static int pur_id = 0;
         public static DateTime from, to;
         int total_pur = 0, slno = 0, c = 0;
         decimal cost = 0, cost1 = 0, grandtotal = 0, grandtotal1 = 0;
-        public string fdate="", tdate="",strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "", checkStr = "0", PathName = "";
+        public string fdate="", tdate="",strclinicname = "", clinicn = "", strStreet = "", stremail = "", strwebsite = "", strphone = "", checkStr = "0", PathName = "",logo_name="";
         private void dgvPurchase_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -126,7 +127,17 @@ namespace PappyjoeMVC.View
                     result = MessageBox.Show(message, caption, buttons);
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        this.ctrlr.practicedetails();
+                        System.Data.DataTable dtp =this.ctrlr.practicedetails();
+                            if (dtp.Rows.Count > 0)
+                            {
+                                clinicn = dtp.Rows[0]["name"].ToString();
+                                strclinicname = clinicn.Replace("¤", "'");
+                                strphone = dtp.Rows[0]["contact_no"].ToString();
+                                strStreet = dtp.Rows[0]["street_address"].ToString();
+                                stremail = dtp.Rows[0]["email"].ToString();
+                                strwebsite = dtp.Rows[0]["website"].ToString();
+                                logo_name= dtp.Rows[0]["path"].ToString();
+                        }
                     }
                     string Apppath = System.IO.Directory.GetCurrentDirectory();
                     StreamWriter sWrite = new StreamWriter(Apppath + "\\PurchaseReport.html");
@@ -138,23 +149,38 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("</style>");
                     sWrite.WriteLine("</head>");
                     sWrite.WriteLine("<body >");
-                    sWrite.WriteLine("<br><br><br>");
                     sWrite.WriteLine("<div>");
                     sWrite.WriteLine("<table align=center width=900>");
-                    sWrite.WriteLine("<col width=500>");
+                    sWrite.WriteLine("<col >");
+                    sWrite.WriteLine("<br>");
+                    string Appath = System.IO.Directory.GetCurrentDirectory();
+                    if (File.Exists(Appath + "\\" + logo_name))
+                    {
+                        sWrite.WriteLine("<table align='center' style='width:900px;border: 1px ;border-collapse: collapse;'>");
+                        sWrite.WriteLine("<tr>");
+                        sWrite.WriteLine("<td width='30px' height='50px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "'style='width:70px;height:70px;' ></td>  ");
+                        sWrite.WriteLine("<td width='870px' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=4><b>&nbsp;" + strclinicname + "</font> <br><FONT  COLOR=black  face='Segoe UI' SIZE=2>&nbsp;" + strStreet + "<br>&nbsp;" + strphone + " </b></td></tr>");
+                        sWrite.WriteLine("</table>");
+                    }
+                    else
+                    {
+                        sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
+                        sWrite.WriteLine("<tr>");
+                        sWrite.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + strclinicname + "</font></td></tr>");
+                        sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;" + strStreet + "</font></td></tr>");
+                        sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + strphone + "</font></td></tr>");
+
+                        sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
+
+                        sWrite.WriteLine("</table>");
+                    }
+                    sWrite.WriteLine("<table align='center' style='width:900px;border: 1px ;border-collapse: collapse;'>");
+                    sWrite.WriteLine("<tr><td align='left'  ><hr/></td></tr>");
+                    sWrite.WriteLine("</table>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<th colspan=7> <center><FONT COLOR=black FACE='Segoe UI' SIZE=5>  <b> PURCHASE REPORT </b> </font></center></th>");
+                    sWrite.WriteLine("<th colspan=11><center><b><FONT COLOR=black FACE='Segoe UI'  SIZE=3> PURCHASE REPORT  </font></center></b></td>");
                     sWrite.WriteLine("</tr>");
-                    sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<th colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b> " + strclinicname + "</b> </font></th>");
-                    sWrite.WriteLine("</tr>");
-                    sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b> " + strStreet + "</b> </font></left></td>");
-                    sWrite.WriteLine("</tr>");
-                    sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<th colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=3>  <b> " + strphone + "</b> </font></th>");
-                    sWrite.WriteLine("</tr>");
-                    sWrite.WriteLine("<tr><td align='left' colspan='8'><hr/></td></tr>");
+                    sWrite.WriteLine("<table align='center' style='width:900px;border: 1px ;border-collapse: collapse;'>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td colspan=7 align='left'><FONT COLOR=black FACE='Segoe UI' SIZE=2> <b>From :  </b> " + dptMonthly_From.Value.ToString("dd-MM-yyyy") + " </font></td>");
                     sWrite.WriteLine("</tr>");
@@ -266,9 +292,10 @@ namespace PappyjoeMVC.View
             total_pur = 0; cost1 = 0; grandtotal1 = 0;
             Lab_Msg.Visible = false;
             dgvPurchase.Rows.Clear();
-            this.ctrlr.purchdtls(fdate,tdate);
+            System.Data.DataTable dt =this.ctrlr.purchdtls(fdate,tdate);
+            purchdtls(dt);
         }
-        public void purchdtls(DataTable dt)
+        public void purchdtls(System.Data.DataTable dt)
         {
             try{
                 if (dt.Rows.Count > 0)
@@ -277,13 +304,13 @@ namespace PappyjoeMVC.View
                     {
                         slno = i + 1; 
                         dgvPurchase.Rows.Add();
-                        dgvPurchase.Rows[i].Cells["SLNO"].Value = slno.ToString();
+                        dgvPurchase.Rows[i].Cells["sl"].Value = slno.ToString();
                         dgvPurchase.Rows[i].Cells["PurchNumber"].Value = dt.Rows[i]["PurchNumber"].ToString();
                         dgvPurchase.Rows[i].Cells["PurchDate"].Value = Convert.ToDateTime(dt.Rows[i]["PurchDate"].ToString()).ToString("dd-MM-yyyy");
                         dgvPurchase.Rows[i].Cells["Sup_name"].Value = dt.Rows[i]["Supplier_Name"].ToString();
                         dgvPurchase.Rows[i].Cells["TotalAmount"].Value = dt.Rows[i]["TotalAmount"].ToString();
                         dgvPurchase.Rows[i].Cells["DiscAmount"].Value = dt.Rows[i]["DiscAmount"].ToString();
-                        dgvPurchase.Rows[i].Cells["GrandTotal"].Value = dt.Rows[i]["GrandTotal"].ToString();
+                        dgvPurchase.Rows[i].Cells["grandtotl"].Value = dt.Rows[i]["GrandTotal"].ToString();
                         cost = Convert.ToDecimal(dt.Rows[i]["TotalAmount"].ToString());
                         cost1 = cost1 + cost;
                         grandtotal = Convert.ToDecimal(dt.Rows[i]["GrandTotal"].ToString());
@@ -297,7 +324,7 @@ namespace PappyjoeMVC.View
                 else
                 {
                     int x = (panel2.Size.Width - Lab_Msg.Size.Width) / 2;
-                    Lab_Msg.Location = new Point(x, Lab_Msg.Location.Y);
+                    Lab_Msg.Location = new System.Drawing.Point(x, Lab_Msg.Location.Y);
                     Lab_Msg.Visible = true;
                     dgvPurchase.Rows.Clear();
                     Txt_totalPurchase.Text = "0";
@@ -308,16 +335,6 @@ namespace PappyjoeMVC.View
             catch(Exception ex)
             { MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-        public void practicedetails(DataTable dtp)
-        {
-            if (dtp.Rows.Count > 0) {
-                clinicn = dtp.Rows[0]["name"].ToString();
-                strclinicname = clinicn.Replace("¤", "'");
-                strphone = dtp.Rows[0]["contact_no"].ToString();
-                strStreet = dtp.Rows[0]["street_address"].ToString();
-                stremail = dtp.Rows[0]["email"].ToString();
-                strwebsite = dtp.Rows[0]["website"].ToString();
-            }
-        }
+        
     }
 }

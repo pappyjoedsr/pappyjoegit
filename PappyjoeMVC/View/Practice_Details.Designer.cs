@@ -114,6 +114,7 @@
             this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.backuprestore = new System.Windows.Forms.Button();
+            this.btnPrescriptionLang = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -732,7 +733,7 @@
             // 
             this.panel_main.AutoSize = true;
             this.panel_main.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel_main.Location = new System.Drawing.Point(196, 44);
+            this.panel_main.Location = new System.Drawing.Point(197, 44);
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(864, 623);
             this.panel_main.TabIndex = 143;
@@ -1032,9 +1033,9 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 613);
+            this.button1.Location = new System.Drawing.Point(1, 686);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 129);
+            this.button1.Size = new System.Drawing.Size(192, 55);
             this.button1.TabIndex = 149;
             this.button1.UseVisualStyleBackColor = false;
             // 
@@ -1099,13 +1100,27 @@
             this.backuprestore.Cursor = System.Windows.Forms.Cursors.Hand;
             this.backuprestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backuprestore.ForeColor = System.Drawing.Color.White;
-            this.backuprestore.Location = new System.Drawing.Point(2, 613);
+            this.backuprestore.Location = new System.Drawing.Point(1, 615);
             this.backuprestore.Name = "backuprestore";
             this.backuprestore.Size = new System.Drawing.Size(192, 37);
             this.backuprestore.TabIndex = 300;
             this.backuprestore.Text = "Backup and Restore";
             this.backuprestore.UseVisualStyleBackColor = false;
             this.backuprestore.Click += new System.EventHandler(this.backuprestore_Click);
+            // 
+            // btnPrescriptionLang
+            // 
+            this.btnPrescriptionLang.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnPrescriptionLang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrescriptionLang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrescriptionLang.ForeColor = System.Drawing.Color.White;
+            this.btnPrescriptionLang.Location = new System.Drawing.Point(1, 651);
+            this.btnPrescriptionLang.Name = "btnPrescriptionLang";
+            this.btnPrescriptionLang.Size = new System.Drawing.Size(192, 37);
+            this.btnPrescriptionLang.TabIndex = 300;
+            this.btnPrescriptionLang.Text = "Prescription Lang";
+            this.btnPrescriptionLang.UseVisualStyleBackColor = false;
+            this.btnPrescriptionLang.Click += new System.EventHandler(this.btnPrescriptionLang_Click);
             // 
             // Practice_Details
             // 
@@ -1114,6 +1129,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1370, 741);
+            this.Controls.Add(this.btnPrescriptionLang);
             this.Controls.Add(this.backuprestore);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.btnLab_dental);
@@ -1276,5 +1292,6 @@
         private System.Windows.Forms.ListBox listpatientsearch;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
         private System.Windows.Forms.Button backuprestore;
+        private System.Windows.Forms.Button btnPrescriptionLang;
     }
 }

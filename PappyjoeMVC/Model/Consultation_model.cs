@@ -95,9 +95,9 @@ namespace PappyjoeMVC.Model
             string dt = db.scalar("select MAX(id) from tbl_prescription_main");
             return dt;
         }
-        public void save_prescription(int presid, string patient_id, string dr_name, string dr_id, string drug_name, string strength, string strength_gr, string duration_period, string morning, string noon, string night, string food, string add_instruction, string drug_type, string status, string drug_id)
+        public void save_prescription(int presid, string patient_id, string dr_name, string dr_id, string drug_name, string strength, string strength_gr,string duration_unit, string duration_period, string morning, string noon, string night, string food, string add_instruction, string drug_type, string status, string drug_id)
         {
-            db.execute("insert into tbl_prescription (pres_id,pt_id,dr_name,dr_id,date,drug_name,strength,strength_gr,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,status,drug_id) values('" + presid + "','" + patient_id + "','" + dr_name + "','" + dr_id + "','" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "','" + drug_name + "','" + strength + "','" + strength_gr + "','','" + duration_period + "','" + morning + "','" + noon + "','" + night + "','" + food + "','" + add_instruction + "','" + drug_type + "'," + status + ",'" + drug_id + "')");
+            db.execute("insert into tbl_prescription (pres_id,pt_id,dr_name,dr_id,date,drug_name,strength,strength_gr,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,status,drug_id) values('" + presid + "','" + patient_id + "','" + dr_name + "','" + dr_id + "','" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "','" + drug_name + "','" + strength + "','" + strength_gr + "','"+ duration_unit + "','" + duration_period + "','" + morning + "','" + noon + "','" + night + "','" + food + "','" + add_instruction + "','" + drug_type + "'," + status + ",'" + drug_id + "')");
         }
         public void save_completedid(string patient_id)
         {
@@ -132,7 +132,7 @@ namespace PappyjoeMVC.Model
         }
         public void save_receipt(string receipt,decimal advance,string amount_paid,string invoice,string procedure_name, string patient_id,string dr_id,string total,string cost,string pt_name,long Invoice_main_id)
         {
-            db.execute("insert into tbl_payment(receipt_no,advance,amount_paid,invoice_no,procedure_name,pt_id,payment_date,dr_id,total,cost,pt_name,mode_of_payment,payment_due)values('" + receipt + "','" + advance + "','" + amount_paid + "','" + invoice + "','" + procedure_name + "','" + patient_id + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + dr_id + "','" + total + "','" + total + "','" + pt_name + "','Cash','" + Invoice_main_id + "')");
+            db.execute("insert into tbl_payment(receipt_no,advance,amount_paid,invoice_no,procedure_name,pt_id,payment_date,dr_id,total,cost,pt_name,mode_of_payment,payment_due)values('" + receipt + "','" + advance + "','" + amount_paid + "','" + invoice + "','" + procedure_name + "','" + patient_id + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + dr_id + "','" + total + "','" + cost + "','" + pt_name + "','Cash','" + Invoice_main_id + "')");
         }
         public DataTable get_receipt_details(string payment_date, string patient_id, string receipt)
         {
@@ -213,7 +213,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable get_practicedtls()
         {
-            DataTable dt = db.table("select name,street_address,locality,pincode,contact_no,email,website from tbl_practice_details");
+            DataTable dt = db.table("select * from tbl_practice_details");
             return dt;
         }
         public DataTable pt_details(string ptid)

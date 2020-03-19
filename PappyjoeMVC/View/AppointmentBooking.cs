@@ -22,6 +22,7 @@ namespace PappyjoeMVC.View
         string app_Doctor_id = "0";
         public string patient_id = "0";
         public string patient_name;
+        public string gender;
         public int status1 = 0;
         Booking_controller cntrl =new Booking_controller();
         private System.Windows.Forms.Label lblShowTimeAs;
@@ -220,9 +221,10 @@ namespace PappyjoeMVC.View
             {
                 txt_p_name.Text = dt_p.Rows[0][0].ToString();
                 lab_p_name.Text = dt_p.Rows[0][0].ToString() + "(" + dt_p.Rows[0][1].ToString() + ")";
-                lab_p_ph.Text = dt_p.Rows[0][2].ToString();
+                lab_p_gndr.Text= dt_p.Rows[0][2].ToString();
+                lab_p_ph.Text = dt_p.Rows[0][3].ToString();
                 patient_name = dt_p.Rows[0][0].ToString();
-                lab_p_email.Text = dt_p.Rows[0][3].ToString();
+                lab_p_email.Text = dt_p.Rows[0][4].ToString();
                 panel1.Hide();
             }
         }
@@ -659,8 +661,9 @@ namespace PappyjoeMVC.View
             if (dt_p.Rows.Count > 0)
             {
                 lab_p_name.Text = dt_p.Rows[0][0].ToString() + "(" + dt_p.Rows[0][1].ToString() + ")";
-                lab_p_ph.Text = dt_p.Rows[0][2].ToString();
-                lab_p_email.Text = dt_p.Rows[0][3].ToString();
+                lab_p_gndr.Text= dt_p.Rows[0][2].ToString();
+                lab_p_ph.Text = dt_p.Rows[0][3].ToString();
+                lab_p_email.Text = dt_p.Rows[0][4].ToString();
             }
         }
         public void SetStartEnd(DateTime BeginSelection, DateTime EndSelection, Boolean AllDay)
@@ -718,9 +721,21 @@ namespace PappyjoeMVC.View
                             txt_p_email.Focus();
                             txt_p_email.BackColor = Color.Coral;
                         }
+                        else if(radMale.Checked!=true&&radfemale.Checked!=true)
+                        {
+                            MessageBox.Show("Please select gender", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                         else
                         {
-                            this.cntrl.Save_patient( txt_p_name.Text , patid_ ,"", "", "" ,"", "", "",  txt_p_mobile.Text , "", "",  "","", "", "", "",   "","",DateTime.Now.ToString("yyyy-MM-dd") , combodoctor.Text ,"");
+                            if(radMale.Checked==true)
+                            {
+                                gender = "Male";
+                            }
+                            else if(radfemale.Checked==true)
+                            {
+                                gender = "Female";
+                            }
+                            this.cntrl.Save_patient( txt_p_name.Text , patid_ ,"", gender, "" ,"", "", "",  txt_p_mobile.Text , "", "",  "","", "", "", "",   "","",DateTime.Now.ToString("yyyy-MM-dd") , combodoctor.Text ,"","","");
                             DataTable rs_patient = this.cntrl.get_max_patid();
                             patient_name = txt_p_name.Text;
                             patient_id = rs_patient.Rows[0][0].ToString();
@@ -791,5 +806,6 @@ namespace PappyjoeMVC.View
             Main_Calendar.Instance.ContextEvent = null;
             this.Close();
         }
+
     }
 }

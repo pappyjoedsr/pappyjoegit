@@ -45,12 +45,11 @@
       <HintPath>C:\Users\user\Downloads\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data">
+      <HintPath>C:\Users\User\Downloads\MySqlBackup.NET_v2.3\.net 4.5\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySqlBackup">
-      <HintPath>C:\MySqlBackup.dll</HintPath>
+      <HintPath>C:\Users\User\Downloads\MySqlBackup.NET_v2.3\.net 4.5\MySqlBackup.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -649,6 +648,12 @@
     </Compile>
     <Compile Include="View\OpenRecurringItem.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Prescription_Lang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Prescription_Lang.Designer.cs">
+      <DependentUpon>Prescription_Lang.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Purchase.cs">
       <SubType>Form</SubType>
@@ -1289,6 +1294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\OpenRecurringItem.resx">
       <DependentUpon>OpenRecurringItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Prescription_Lang.resx">
+      <DependentUpon>Prescription_Lang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Purchase.resx">
       <DependentUpon>Purchase.cs</DependentUpon>

@@ -37,10 +37,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Procedure_Catalog));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.chbsrface = new System.Windows.Forms.CheckBox();
-            this.chbtooth = new System.Windows.Forms.CheckBox();
             this.Dgv_Procedure = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,10 +76,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.chbsrface);
-            this.panel1.Controls.Add(this.chbtooth);
             this.panel1.Controls.Add(this.Dgv_Procedure);
             this.panel1.Controls.Add(this.textsearch);
             this.panel1.Controls.Add(this.buttonrefresh);
@@ -112,48 +104,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1335, 652);
             this.panel1.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(728, 98);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(61, 23);
-            this.button2.TabIndex = 153;
-            this.button2.Text = "Browse";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(726, 62);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 23);
-            this.button1.TabIndex = 152;
-            this.button1.Text = "Browse";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // chbsrface
-            // 
-            this.chbsrface.AutoSize = true;
-            this.chbsrface.Location = new System.Drawing.Point(627, 102);
-            this.chbsrface.Name = "chbsrface";
-            this.chbsrface.Size = new System.Drawing.Size(95, 17);
-            this.chbsrface.TabIndex = 151;
-            this.chbsrface.Text = "Surface Image";
-            this.chbsrface.UseVisualStyleBackColor = true;
-            this.chbsrface.CheckedChanged += new System.EventHandler(this.chbsrface_CheckedChanged);
-            // 
-            // chbtooth
-            // 
-            this.chbtooth.AutoSize = true;
-            this.chbtooth.Location = new System.Drawing.Point(627, 66);
-            this.chbtooth.Name = "chbtooth";
-            this.chbtooth.Size = new System.Drawing.Size(86, 17);
-            this.chbtooth.TabIndex = 150;
-            this.chbtooth.Text = "Tooth Image";
-            this.chbtooth.UseVisualStyleBackColor = true;
-            this.chbtooth.CheckedChanged += new System.EventHandler(this.chbtooth_CheckedChanged);
             // 
             // Dgv_Procedure
             // 
@@ -612,9 +562,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewImageColumn delete;
-        private System.Windows.Forms.CheckBox chbsrface;
-        private System.Windows.Forms.CheckBox chbtooth;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
     }
 }

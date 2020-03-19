@@ -56,7 +56,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable companydetails()
         {
-            DataTable dtp = db.table("select name,contact_no,street_address,email,website  from tbl_practice_details");
+            DataTable dtp = db.table("select name,contact_no,street_address,email,website,path  from tbl_practice_details");
             return dtp;
         }
         //sales order list
