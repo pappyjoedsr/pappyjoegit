@@ -126,7 +126,7 @@
             this.button_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save.ForeColor = System.Drawing.Color.White;
-            this.button_save.Location = new System.Drawing.Point(165, 146);
+            this.button_save.Location = new System.Drawing.Point(165, 140);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(75, 28);
             this.button_save.TabIndex = 4;
@@ -267,7 +267,7 @@
             this.button_invoice_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_invoice_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_invoice_save.ForeColor = System.Drawing.Color.White;
-            this.button_invoice_save.Location = new System.Drawing.Point(165, 146);
+            this.button_invoice_save.Location = new System.Drawing.Point(165, 138);
             this.button_invoice_save.Name = "button_invoice_save";
             this.button_invoice_save.Size = new System.Drawing.Size(75, 28);
             this.button_invoice_save.TabIndex = 13;

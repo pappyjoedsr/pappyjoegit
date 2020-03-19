@@ -126,20 +126,6 @@
             this.txt_ItemCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_SalesItem = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPacking = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hsn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFree = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUnitcost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgv_BatchSale = new System.Windows.Forms.DataGridView();
             this.ColinvNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -174,13 +160,27 @@
             this.rad_CreditSale = new System.Windows.Forms.RadioButton();
             this.rad_CashSale = new System.Windows.Forms.RadioButton();
             this.pnlprescription = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.dgrid_prescription = new System.Windows.Forms.DataGridView();
             this.colDrug = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Colduration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coldirection = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colremarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPacking = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hsn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFree = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUnitcost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -1404,127 +1404,6 @@
             this.dgv_SalesItem.TabIndex = 0;
             this.dgv_SalesItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SalesItem_CellClick);
             // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // colItemCode
-            // 
-            this.colItemCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colItemCode.FillWeight = 60F;
-            this.colItemCode.HeaderText = "Item Code";
-            this.colItemCode.Name = "colItemCode";
-            this.colItemCode.ReadOnly = true;
-            // 
-            // colDiscription
-            // 
-            this.colDiscription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDiscription.FillWeight = 120F;
-            this.colDiscription.HeaderText = "Description";
-            this.colDiscription.Name = "colDiscription";
-            this.colDiscription.ReadOnly = true;
-            // 
-            // ColPacking
-            // 
-            this.ColPacking.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColPacking.FillWeight = 40F;
-            this.ColPacking.HeaderText = "Packing";
-            this.ColPacking.Name = "ColPacking";
-            this.ColPacking.ReadOnly = true;
-            // 
-            // hsn
-            // 
-            this.hsn.HeaderText = "HSN Number";
-            this.hsn.Name = "hsn";
-            this.hsn.ReadOnly = true;
-            // 
-            // ColUnit
-            // 
-            this.ColUnit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColUnit.FillWeight = 50F;
-            this.ColUnit.HeaderText = "Unit";
-            this.ColUnit.Name = "ColUnit";
-            this.ColUnit.ReadOnly = true;
-            this.ColUnit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColUnit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ColGST
-            // 
-            this.ColGST.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColGST.FillWeight = 50F;
-            this.ColGST.HeaderText = "GST";
-            this.ColGST.Name = "ColGST";
-            this.ColGST.ReadOnly = true;
-            this.ColGST.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColGST.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colIGST
-            // 
-            this.colIGST.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colIGST.FillWeight = 50F;
-            this.colIGST.HeaderText = "IGST";
-            this.colIGST.Name = "colIGST";
-            this.colIGST.ReadOnly = true;
-            this.colIGST.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colIGST.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ColQty
-            // 
-            this.ColQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColQty.FillWeight = 60F;
-            this.ColQty.HeaderText = "Qty";
-            this.ColQty.Name = "ColQty";
-            this.ColQty.ReadOnly = true;
-            this.ColQty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColQty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ColFree
-            // 
-            this.ColFree.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColFree.FillWeight = 60F;
-            this.ColFree.HeaderText = "Free";
-            this.ColFree.Name = "ColFree";
-            this.ColFree.ReadOnly = true;
-            this.ColFree.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColFree.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colUnitcost
-            // 
-            this.colUnitcost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colUnitcost.FillWeight = 60F;
-            this.colUnitcost.HeaderText = "Unit Cost";
-            this.colUnitcost.Name = "colUnitcost";
-            this.colUnitcost.ReadOnly = true;
-            this.colUnitcost.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colUnitcost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colAmount
-            // 
-            this.colAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colAmount.FillWeight = 70F;
-            this.colAmount.HeaderText = "Amount";
-            this.colAmount.Name = "colAmount";
-            this.colAmount.ReadOnly = true;
-            this.colAmount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colAmount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colEdit
-            // 
-            this.colEdit.HeaderText = "";
-            this.colEdit.Name = "colEdit";
-            this.colEdit.ReadOnly = true;
-            this.colEdit.Width = 29;
-            // 
-            // colDelete
-            // 
-            this.colDelete.HeaderText = "";
-            this.colDelete.Name = "colDelete";
-            this.colDelete.ReadOnly = true;
-            this.colDelete.Width = 29;
-            // 
             // panel5
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -1553,12 +1432,11 @@
             this.prddate,
             this.expdate,
             this.unit});
-            this.dgv_BatchSale.Location = new System.Drawing.Point(1004, 531);
+            this.dgv_BatchSale.Location = new System.Drawing.Point(146, 531);
             this.dgv_BatchSale.Name = "dgv_BatchSale";
             this.dgv_BatchSale.RowHeadersVisible = false;
-            this.dgv_BatchSale.Size = new System.Drawing.Size(260, 112);
+            this.dgv_BatchSale.Size = new System.Drawing.Size(414, 112);
             this.dgv_BatchSale.TabIndex = 314;
-            this.dgv_BatchSale.Visible = false;
             // 
             // ColinvNum
             // 
@@ -1877,14 +1755,25 @@
             // pnlprescription
             // 
             this.pnlprescription.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnlprescription.Controls.Add(this.label21);
             this.pnlprescription.Controls.Add(this.label20);
+            this.pnlprescription.Controls.Add(this.label21);
             this.pnlprescription.Controls.Add(this.dgrid_prescription);
             this.pnlprescription.Location = new System.Drawing.Point(1, 532);
             this.pnlprescription.Name = "pnlprescription";
             this.pnlprescription.Size = new System.Drawing.Size(418, 113);
             this.pnlprescription.TabIndex = 334;
             this.pnlprescription.Visible = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label20.Location = new System.Drawing.Point(4, 3);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(124, 17);
+            this.label20.TabIndex = 301;
+            this.label20.Text = "Prescription Details";
             // 
             // label21
             // 
@@ -1897,17 +1786,6 @@
             this.label21.TabIndex = 303;
             this.label21.Text = "Status";
             this.label21.Visible = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label20.Location = new System.Drawing.Point(4, 3);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(124, 17);
-            this.label20.TabIndex = 301;
-            this.label20.Text = "Prescription Details";
             // 
             // dgrid_prescription
             // 
@@ -1955,12 +1833,134 @@
             this.colremarks.HeaderText = "Remarks";
             this.colremarks.Name = "colremarks";
             // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // colItemCode
+            // 
+            this.colItemCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colItemCode.FillWeight = 60F;
+            this.colItemCode.HeaderText = "Item Code";
+            this.colItemCode.Name = "colItemCode";
+            this.colItemCode.ReadOnly = true;
+            // 
+            // colDiscription
+            // 
+            this.colDiscription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDiscription.FillWeight = 120F;
+            this.colDiscription.HeaderText = "Description";
+            this.colDiscription.Name = "colDiscription";
+            this.colDiscription.ReadOnly = true;
+            // 
+            // ColPacking
+            // 
+            this.ColPacking.FillWeight = 40F;
+            this.ColPacking.HeaderText = "Packing";
+            this.ColPacking.Name = "ColPacking";
+            this.ColPacking.ReadOnly = true;
+            this.ColPacking.Width = 90;
+            // 
+            // hsn
+            // 
+            this.hsn.HeaderText = "HSN No";
+            this.hsn.Name = "hsn";
+            this.hsn.ReadOnly = true;
+            this.hsn.Width = 70;
+            // 
+            // ColUnit
+            // 
+            this.ColUnit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColUnit.FillWeight = 50F;
+            this.ColUnit.HeaderText = "Unit";
+            this.ColUnit.Name = "ColUnit";
+            this.ColUnit.ReadOnly = true;
+            this.ColUnit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColUnit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ColGST
+            // 
+            this.ColGST.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColGST.FillWeight = 50F;
+            this.ColGST.HeaderText = "GST";
+            this.ColGST.Name = "ColGST";
+            this.ColGST.ReadOnly = true;
+            this.ColGST.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColGST.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colIGST
+            // 
+            this.colIGST.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colIGST.FillWeight = 50F;
+            this.colIGST.HeaderText = "IGST";
+            this.colIGST.Name = "colIGST";
+            this.colIGST.ReadOnly = true;
+            this.colIGST.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colIGST.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ColQty
+            // 
+            this.ColQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColQty.FillWeight = 60F;
+            this.ColQty.HeaderText = "Qty";
+            this.ColQty.Name = "ColQty";
+            this.ColQty.ReadOnly = true;
+            this.ColQty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColQty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ColFree
+            // 
+            this.ColFree.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColFree.FillWeight = 60F;
+            this.ColFree.HeaderText = "Free";
+            this.ColFree.Name = "ColFree";
+            this.ColFree.ReadOnly = true;
+            this.ColFree.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColFree.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colUnitcost
+            // 
+            this.colUnitcost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colUnitcost.FillWeight = 60F;
+            this.colUnitcost.HeaderText = "Unit Cost";
+            this.colUnitcost.Name = "colUnitcost";
+            this.colUnitcost.ReadOnly = true;
+            this.colUnitcost.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colUnitcost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colAmount
+            // 
+            this.colAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colAmount.FillWeight = 70F;
+            this.colAmount.HeaderText = "Amount";
+            this.colAmount.Name = "colAmount";
+            this.colAmount.ReadOnly = true;
+            this.colAmount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colAmount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colEdit
+            // 
+            this.colEdit.HeaderText = "";
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Width = 29;
+            // 
+            // colDelete
+            // 
+            this.colDelete.HeaderText = "";
+            this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Width = 29;
+            // 
             // Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1276, 651);
+            this.Controls.Add(this.dgv_BatchSale);
             this.Controls.Add(this.pnlprescription);
             this.Controls.Add(this.presgrid);
             this.Controls.Add(this.rad_CreditSale);
@@ -1984,7 +1984,6 @@
             this.Controls.Add(this.label42);
             this.Controls.Add(this.txt_SGST);
             this.Controls.Add(this.label43);
-            this.Controls.Add(this.dgv_BatchSale);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -2136,6 +2135,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Colduration;
         private System.Windows.Forms.DataGridViewTextBoxColumn coldirection;
         private System.Windows.Forms.DataGridViewTextBoxColumn colremarks;
+        private System.Windows.Forms.Panel panl_mode_payment;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label Lab_Last4Digit;
+        private System.Windows.Forms.Label Lab_Numbr;
+        private System.Windows.Forms.TextBox txt_BankNAme;
+        private System.Windows.Forms.Label Lab_CardNo;
+        private System.Windows.Forms.TextBox txt_4Digit;
+        private System.Windows.Forms.ComboBox Cmb_ModeOfPaymnt;
+        private System.Windows.Forms.TextBox txt_Number;
+        private System.Windows.Forms.Label Bank;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn colItemCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDiscription;
@@ -2150,16 +2160,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
         private System.Windows.Forms.DataGridViewImageColumn colEdit;
         private System.Windows.Forms.DataGridViewImageColumn colDelete;
-        private System.Windows.Forms.Panel panl_mode_payment;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label Lab_Last4Digit;
-        private System.Windows.Forms.Label Lab_Numbr;
-        private System.Windows.Forms.TextBox txt_BankNAme;
-        private System.Windows.Forms.Label Lab_CardNo;
-        private System.Windows.Forms.TextBox txt_4Digit;
-        private System.Windows.Forms.ComboBox Cmb_ModeOfPaymnt;
-        private System.Windows.Forms.TextBox txt_Number;
-        private System.Windows.Forms.Label Bank;
     }
 }

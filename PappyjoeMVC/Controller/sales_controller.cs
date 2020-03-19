@@ -133,6 +133,26 @@ namespace PappyjoeMVC.Controller
           int i=   _model.Save_salesMaster(DocNo, Docdate, sales_, ordeNo, Date_, doctor_, lrno, lr_date, throuhg, ptid, ptname, street__, locality, city, phone, payMethod, totalAmnt, disount, gst, igst, gTotal);
             return i;
         }
+        public int update_salesMaster(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        {
+            int i = _model.update_salesMaster(DocNo, Docdate, sales_, ordeNo, Date_, doctor_, lrno, lr_date, throuhg, ptid, ptname, street__, locality, city, phone, payMethod, totalAmnt, disount, gst, igst, gTotal);
+            return i;
+        }
+        public int update_salesMaster_cheque(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, string Bank, string Number, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        {
+            int i = _model.update_salesMaster_cheque(DocNo, Docdate, sales_, ordeNo, Date_, doctor_, lrno, lr_date, throuhg, ptid, ptname, street__, locality, city, phone, payMethod, Bank, Number, totalAmnt, disount, gst, igst, gTotal);
+            return i;
+        }
+        public int update_salesMaster_card(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, string cardnumber, string fourdigitnumber, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        {
+            int i = _model.update_salesMaster_card(DocNo, Docdate, sales_, ordeNo, Date_, doctor_, lrno, lr_date, throuhg, ptid, ptname, street__, locality, city, phone, payMethod, cardnumber, fourdigitnumber, totalAmnt, disount, gst, igst, gTotal);
+            return i;
+        }
+        public int update_salesMaster_DD(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, string Bank, string DDnumber, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        {
+            int i = _model.update_salesMaster_DD(DocNo, Docdate, sales_, ordeNo, Date_, doctor_, lrno, lr_date, throuhg, ptid, ptname, street__, locality, city, phone, payMethod, Bank, DDnumber, totalAmnt, disount, gst, igst, gTotal);
+            return i;
+        }
         public DataTable get_costbase(string itemcode)
         {
             DataTable dtb = _model.get_costbase(itemcode);
@@ -143,6 +163,11 @@ namespace PappyjoeMVC.Controller
           int i= _model.Save_itemdetails(DocNo, Docdate,Item_Code, Description, Packing, Unit, GST, IGST, Qty, FreeQty, Rate, TotalAmount, UNIT2, UnitMF, CostBase);
             return i;
         }
+        public int update_itemdetails(int DocNo, string Docdate, string Item_Code, string Packing, string Unit, decimal GST, decimal IGST, int Qty, int FreeQty, decimal Rate, decimal TotalAmount, string UNIT2, decimal UnitMF, decimal CostBase)
+        {
+            int i = _model.update_itemdetails(DocNo, Docdate, Item_Code,Packing, Unit, GST, IGST, Qty, FreeQty, Rate, TotalAmount, UNIT2, UnitMF, CostBase);
+            return i;
+        }
         public void update_batchnumber(decimal currentStock, string BatchEntry)
         {
             _model.update_batchnumber(currentStock, BatchEntry);
@@ -150,6 +175,10 @@ namespace PappyjoeMVC.Controller
         public void save_batchsale(int InvNumber, string InvDate, string Item_Code, string BatchNumber, decimal Qty, string BatchEntry)
         {
             _model.save_batchsale(InvNumber, InvDate, Item_Code, BatchNumber, Qty, BatchEntry);
+        }
+        public void update_batchsale(int InvNumber, string InvDate, string Item_Code, string BatchNumber, decimal Qty, string BatchEntry)
+        {
+            _model.update_batchsale(InvNumber, InvDate,Item_Code, BatchNumber, Qty, BatchEntry);
         }
         public void update_salesorder(string invnum_order)
         {

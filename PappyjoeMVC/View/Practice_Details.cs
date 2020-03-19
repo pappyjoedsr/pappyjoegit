@@ -34,7 +34,7 @@ namespace PappyjoeMVC.View
         Export_Data exprt = new Export_Data();
         LabMedical labmedical = new LabMedical();
         LabDental dental = new LabDental();
-        Backup_and_Restore bckres = new Backup_and_Restore();
+        //Backup_and_Restore bckres = new Backup_and_Restore();
         private void btnaddstate_Click(object sender, EventArgs e)
         {
             if (cmb_country.Items.Count > 0)
@@ -409,7 +409,7 @@ namespace PappyjoeMVC.View
             button_calendar.BackColor = Color.DodgerBlue;
             button_communication.BackColor = Color.DodgerBlue;
             button_practicestaff.BackColor = Color.DodgerBlue;
-            button_procedurecatalog.BackColor = Color.DodgerBlue;
+            button_procedurecatalog.BackColor = Color.DodgerBlue;  
             button_billing.BackColor = Color.DodgerBlue;
             button_contacts.BackColor = Color.DodgerBlue;
             button_emr.BackColor = Color.DodgerBlue;
@@ -437,7 +437,6 @@ namespace PappyjoeMVC.View
             staff.Hide();
             labmedical.Hide();
             dental.Hide();
-            bckres.Hide();
             panel_main.Show(); 
         }
 
@@ -505,7 +504,6 @@ namespace PappyjoeMVC.View
             prescription.TopLevel = false;
             panel_main.Controls.Add(prescription);
             prescription.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //prescription_setting_controller controller = new prescription_setting_controller(prescription);
             prescription.Show();
         }
 
@@ -518,7 +516,6 @@ namespace PappyjoeMVC.View
             medical.TopLevel = false;
             panel_main.Controls.Add(medical);
             medical.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //medical_history_controller controller = new medical_history_controller(medical);
             medical.Show();
         }
 
@@ -531,7 +528,6 @@ namespace PappyjoeMVC.View
             atuoid.TopLevel = false;
             panel_main.Controls.Add(atuoid);
             atuoid.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //autoid_generation_controller controller = new autoid_generation_controller(atuoid);
             atuoid.Show();
         }
 
@@ -580,7 +576,6 @@ namespace PappyjoeMVC.View
             exprt.TopLevel = false;
             exprt.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             panel_main.Controls.Add(exprt);
-            //export_controller cntroller = new export_controller(exprt);
             exprt.Show();
         }
 
@@ -720,14 +715,12 @@ namespace PappyjoeMVC.View
 
         private void txtname_Enter(object sender, EventArgs e)
         {
-            //focus = true;
-            //this.Refresh();
+           
         }
 
         private void txtname_Leave(object sender, EventArgs e)
         {
-            //focus = false;
-            //this.Refresh();
+           
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
@@ -835,38 +828,15 @@ namespace PappyjoeMVC.View
 
         private void backuprestore_Click(object sender, EventArgs e)
         {
-            errorProvider1.Dispose();
-            backColor_change();
-            button_importexport.BackColor = Color.SteelBlue;
-            form_hide();
-            bckres.TopLevel = false;
-            bckres.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            panel_main.Controls.Add(bckres);
-            bckres.Show();
+            //errorProvider1.Dispose();
+            //backColor_change();
+            //button_importexport.BackColor = Color.SteelBlue;
+            //form_hide();
+            //bckres.TopLevel = false;
+            //bckres.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //panel_main.Controls.Add(bckres);
+            //bckres.Show();
         }
-
-
-
-        //private void label1_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void label3_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void label2_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void label4_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
             var form2 = new Expense();

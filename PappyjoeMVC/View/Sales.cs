@@ -369,13 +369,13 @@ namespace PappyjoeMVC.View
                 if (cmb_Unit.Text == dtb.Rows[0]["Unit2"].ToString())
                 {
                     {
-                        unitcost = Convert.ToDecimal(dtb.Rows[0]["Sales_Rate_Max"].ToString()) / unitMf;
+                        //unitcost = Convert.ToDecimal(dtb.Rows[0]["Sales_Rate_Max"].ToString()) / unitMf;
                         txt_UnitCost.Text = unitcost.ToString("##.00");
                     }
                 }
                 else
                 {
-                    txt_UnitCost.Text = dtb.Rows[0]["Sales_Rate_Max"].ToString();
+                    //txt_UnitCost.Text = dtb.Rows[0]["Sales_Rate_Max"].ToString();
                     if (decimal.TryParse(txt_UnitCost.Text, out d))
                     {
                         unitcost = Convert.ToDecimal(txt_UnitCost.Text);
@@ -400,7 +400,7 @@ namespace PappyjoeMVC.View
                 gst_Amount = (Amount * gst) / 100;
                 TotalAmount = Amount + gst_Amount;
                 txt_Amount.Text = TotalAmount.ToString("##.00");
-            }
+            }  
             else if (Convert.ToDecimal(txt_IGST.Text) > 0)
             {
                 Amount = qty * unitcost;
@@ -598,14 +598,14 @@ namespace PappyjoeMVC.View
         }
         private void txt_UnitCost_Click(object sender, EventArgs e)
         {
-            if (txt_UnitCost.Text == "0.00")
-            {
-                txt_UnitCost.Text = "";
-            }
+            //if (txt_UnitCost.Text == "0.00")
+            //{
+            //    txt_UnitCost.Text = "";
+            //}
         }
         private void txt_UnitCost_KeyPress(object sender, KeyPressEventArgs e)
         {
-            onlynumwithsinglepoint(sender, e);
+            //onlynumwithsinglepoint(sender, e);
         }
         private void txt_UnitCost_KeyUp(object sender, KeyEventArgs e)
         {
@@ -616,10 +616,10 @@ namespace PappyjoeMVC.View
         }
         private void txt_UnitCost_Leave(object sender, EventArgs e)
         {
-            if (txt_UnitCost.Text == "")
-            {
-                txt_UnitCost.Text = "0.00"; 
-            }
+            //if (txt_UnitCost.Text == "")
+            //{
+            //    txt_UnitCost.Text = "0.00"; 
+            //}
         }
         private void txt_Amount_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -668,7 +668,7 @@ namespace PappyjoeMVC.View
                                 }
                             }
                             else
-                            {
+                            { 
                                 Stock = qty;
                             }
                         }
@@ -733,6 +733,7 @@ namespace PappyjoeMVC.View
                                         }
                                     }
                                 }
+                                dgv_SalesItem.Rows[rowindex].Cells["id"].Value = itemId;
                                 dgv_SalesItem.Rows[rowindex].Cells["colItemCode"].Value = txt_ItemCode.Text;
                                 dgv_SalesItem.Rows[rowindex].Cells["colDiscription"].Value = txt_Discription.Text;
                                 dgv_SalesItem.Rows[rowindex].Cells["ColPacking"].Value = txt_Packing.Text;
@@ -777,7 +778,7 @@ namespace PappyjoeMVC.View
                                 btn_AddtoGrid.Text = "Add"; btn_cancel.Visible = false;
                             }
                             else
-                            { 
+                            {
                                 FrmBatchsale_edit.Rows.Clear();
                                 FrmBatchsale_edit.Columns.Clear();
                                 createTempTable();
@@ -788,8 +789,9 @@ namespace PappyjoeMVC.View
                                         var form2 = new Batch_Sale(item_Code, qty, FrmBatchsale_edit, unit);
                                         form2.ShowDialog();
                                         form2.Dispose();
-                                        if (rowindex > 0)
+                                        if (rowindex >= 0)
                                         {
+                                            dgv_SalesItem.Rows[rowindex].Cells["id"].Value = itemId;
                                             dgv_SalesItem.Rows[rowindex].Cells["colItemCode"].Value = txt_ItemCode.Text;
                                             dgv_SalesItem.Rows[rowindex].Cells["colDiscription"].Value = txt_Discription.Text;
                                             dgv_SalesItem.Rows[rowindex].Cells["ColPacking"].Value = txt_Packing.Text;
@@ -930,7 +932,7 @@ namespace PappyjoeMVC.View
                     dgv_BatchSale.Rows.Add();
                     dgv_BatchSale.Rows[rowindex].Cells["ColinvNum"].Value = txtDocumentNumber.Text;
                     dgv_BatchSale.Rows[rowindex].Cells["ColInvDate"].Value = dtpDocumentDate.Value.ToShortDateString();
-                    dgv_BatchSale.Rows[rowindex].Cells["coiltem_code"].Value = txt_ItemCode.Text;
+                    dgv_BatchSale.Rows[rowindex].Cells["coiltem_code"].Value = itemId;
                     dgv_BatchSale.Rows[rowindex].Cells["colQuantity"].Value = dtFor_CurrentStockUpdate.Rows[j]["ColQty"].ToString();
                     dgv_BatchSale.Rows[rowindex].Cells["colBatchnumber"].Value = dtFor_CurrentStockUpdate.Rows[j]["colbatchNo"].ToString();
                     dgv_BatchSale.Rows[rowindex].Cells["colBatchEntry"].Value = dtFor_CurrentStockUpdate.Rows[j]["colentryNo"].ToString();
@@ -950,7 +952,7 @@ namespace PappyjoeMVC.View
                 rowindex++;
             }
         }
-        public void update_Grid()
+        public void update_Grid()//update casae, create table for remaining items in the batch sale grid except the updated item 
         {
             DataTable dt_Update = new DataTable();
             dt_Update.Columns.Clear();
@@ -971,13 +973,13 @@ namespace PappyjoeMVC.View
             {
                 for (int i = 0; i < dgv_BatchSale.Rows.Count; i++)
                 {
-                    if (dgv_BatchSale.Rows[i].Cells["coiltem_code"].Value.ToString() != txt_ItemCode.Text)
+                    if (dgv_BatchSale.Rows[i].Cells["coiltem_code"].Value.ToString() != itemId)
                     {
                         dt_Update.Rows.Add(dgv_BatchSale.Rows[i].Cells["ColinvNum"].Value.ToString(), dgv_BatchSale.Rows[i].Cells["ColInvDate"].Value.ToString(), dgv_BatchSale.Rows[i].Cells["coiltem_code"].Value.ToString(), dgv_BatchSale.Rows[i].Cells["colBatchnumber"].Value.ToString(), dgv_BatchSale.Rows[i].Cells["colQuantity"].Value.ToString(), dgv_BatchSale.Rows[i].Cells["colStock"].Value.ToString(), dgv_BatchSale.Rows[i].Cells["currentStock"].Value.ToString(), dgv_BatchSale.Rows[i].Cells["colIsExp"].Value.ToString(), dgv_BatchSale.Rows[i].Cells["colBatchEntry"].Value.ToString(), dgv_BatchSale.Rows[i].Cells["prddate"].Value.ToString(), dgv_BatchSale.Rows[i].Cells["expdate"].Value.ToString(), dgv_BatchSale.Rows[i].Cells["unit"].Value.ToString());
                     }
                 }
             }
-            if (dt_Update.Rows.Count > 0)
+            if (dt_Update.Rows.Count > 0)//refill the batch sale grid only the remaining items in the table except the updated item 
             {
                 dgv_BatchSale.Rows.Clear();
                 foreach (DataRow dr in dt_Update.Rows)
@@ -986,7 +988,7 @@ namespace PappyjoeMVC.View
                 }
             }
         }
-        public void Fiil_BatchSale_Grid()
+        public void Fiil_BatchSale_Grid()// fill the update item to the batch sale grid
         {
             int row = dgv_BatchSale.Rows.Count;
             if (dtFor_CurrentStockUpdate.Rows.Count > 0)
@@ -1238,12 +1240,13 @@ namespace PappyjoeMVC.View
                 if (sales_Edit == true)
                 {
                     clear_All_Data();
-                    DisabledAllControlls();
+                    //DisabledAllControlls();
                     btnReport.Visible = true;
                     if (invnum_Edit > 0)
                     {
                         DataTable dtb = this.cntrl.sales_details(invnum_Edit);
                         Load_masterdetails(dtb);
+                        btnSave.Text = "UPDATE";
                         //this.cntrl.sales_items_details(invnum_Edit);
                     }
                 }
@@ -1410,6 +1413,7 @@ namespace PappyjoeMVC.View
                 {
                     dgv_SalesItem.Rows.Add();
                     DataTable dtb_hsn = this.cntrl.get_hsn(dtb_sales.Rows[i]["Item_Code"].ToString());
+                    dgv_SalesItem.Rows[i].Cells["id"].Value = dtb_hsn.Rows[0]["id"].ToString();
                     dgv_SalesItem.Rows[i].Cells["colItemCode"].Value = dtb_hsn.Rows[0]["Item_Code"].ToString();
                     dgv_SalesItem.Rows[i].Cells["colDiscription"].Value = dtb_sales.Rows[i]["Description"].ToString();
                     dgv_SalesItem.Rows[i].Cells["ColPacking"].Value = dtb_sales.Rows[i]["Packing"].ToString();
@@ -1490,14 +1494,14 @@ namespace PappyjoeMVC.View
                 if (dtb_BatchSale.Rows.Count > 0)
                 {
                     dgv_BatchSale.Rows.Clear();
-                    for (int i = 0; i < dtb_BatchSale.Rows.Count; i++)
+                    for (int i = 0; i < dtb_BatchSale.Rows.Count; i++) 
                     {
-                        dgv_BatchSale.Rows.Add(dtb_BatchSale.Rows[i]["InvNumber"].ToString(), dtb_BatchSale.Rows[i]["InvDate"].ToString(), dtb_BatchSale.Rows[i]["Item_Code"].ToString(), dtb_BatchSale.Rows[i]["BatchNumber"].ToString(), dtb_BatchSale.Rows[i]["Qty"].ToString(),"","", dtb_BatchSale.Rows[i]["IsExpDate"].ToString(), dtb_BatchSale.Rows[i]["BatchEntry"].ToString(), dtb_BatchSale.Rows[i]["prddate"].ToString(),dtb_BatchSale.Rows[i]["expdate"].ToString());
+                        dgv_BatchSale.Rows.Add(dtb_BatchSale.Rows[i]["InvNumber"].ToString(), dtb_BatchSale.Rows[i]["InvDate"].ToString(), dtb_BatchSale.Rows[i]["Item_Code"].ToString(), dtb_BatchSale.Rows[i]["BatchNumber"].ToString(), dtb_BatchSale.Rows[i]["Qty"].ToString(), dtb_BatchSale.Rows[i]["stock"].ToString(), "0", dtb_BatchSale.Rows[i]["IsExpDate"].ToString(), dtb_BatchSale.Rows[i]["BatchEntry"].ToString(), dtb_BatchSale.Rows[i]["prddate"].ToString(),dtb_BatchSale.Rows[i]["expdate"].ToString(), dtb_BatchSale.Rows[i]["Unit2"].ToString());
                     }
                 }
             }
             catch (Exception ex)
-            {
+            { 
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -1632,21 +1636,44 @@ namespace PappyjoeMVC.View
                 Sgst = Convert.ToDecimal(txt_SGST.Text);
                 GST = Convert.ToDecimal(Cgst + Sgst);
                 int i = 0, j = 0;
-                if(Cmb_ModeOfPaymnt.SelectedIndex==0)
+                if(btnSave.Text=="SAVE")
                 {
-                    i = this.cntrl.Save_salesMaster_cheque(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, txt_BankNAme.Text, txt_Number.Text, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                    if (Cmb_ModeOfPaymnt.SelectedIndex == 0)
+                    {
+                        i = this.cntrl.Save_salesMaster_cheque(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, txt_BankNAme.Text, txt_Number.Text, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                    }
+                    else if (Cmb_ModeOfPaymnt.SelectedIndex == 1)
+                    {
+                        i = this.cntrl.Save_salesMaster_card(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, txt_BankNAme.Text, txt_4Digit.Text, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                    }
+                    else if (Cmb_ModeOfPaymnt.SelectedIndex == 2)
+                    {
+                        i = this.cntrl.Save_salesMaster_DD(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, txt_BankNAme.Text, txt_Number.Text, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                    }
+                    else
+                    {
+                        i = this.cntrl.Save_salesMaster(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                    }
+                   
                 }
-                else if(Cmb_ModeOfPaymnt.SelectedIndex==1)
+                else if (btnSave.Text == "UPDATE")
                 {
-                    i = this.cntrl.Save_salesMaster_card(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, txt_BankNAme.Text,txt_4Digit.Text, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
-                }
-                else if(Cmb_ModeOfPaymnt.SelectedIndex==2)
-                {
-                    i = this.cntrl.Save_salesMaster_DD(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, txt_BankNAme.Text, txt_Number.Text,Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
-                }
-                else
-                {
-                    i = this.cntrl.Save_salesMaster(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                    if (Cmb_ModeOfPaymnt.SelectedIndex == 0)
+                    {
+                        i = this.cntrl.update_salesMaster_cheque(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, txt_BankNAme.Text, txt_Number.Text, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                    }
+                    else if (Cmb_ModeOfPaymnt.SelectedIndex == 1)
+                    {
+                        i = this.cntrl.update_salesMaster_card(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, txt_BankNAme.Text, txt_4Digit.Text, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                    }
+                    else if (Cmb_ModeOfPaymnt.SelectedIndex == 2)
+                    {
+                        i = this.cntrl.update_salesMaster_DD(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, txt_BankNAme.Text, txt_Number.Text, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                    }
+                    else
+                    {
+                        i = this.cntrl.update_salesMaster(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
+                    }
                 }
                 if (i > 0)
                 {
@@ -1667,7 +1694,15 @@ namespace PappyjoeMVC.View
                                 unit2 = "No";
                                 unitMf = 0;
                             }
-                            j = this.cntrl.Save_itemdetails(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), dr.Cells["id"].Value.ToString(), dr.Cells["colDiscription"].Value.ToString(), dr.Cells["ColPacking"].Value.ToString(), dr.Cells["ColUnit"].Value.ToString(), Convert.ToDecimal(dr.Cells["ColGST"].Value.ToString()), Convert.ToDecimal(dr.Cells["colIGST"].Value.ToString()), Convert.ToInt32(dr.Cells["ColQty"].Value.ToString()), Convert.ToInt32(dr.Cells["ColFree"].Value.ToString()), Convert.ToDecimal(dr.Cells["colUnitcost"].Value.ToString()), Convert.ToDecimal(dr.Cells["colAmount"].Value.ToString()), unit2, unitMf, Convert.ToDecimal(dt_Unit2.Rows[0]["CostBase"].ToString()));
+                            if(btnSave.Text=="SAVE")
+                            {
+                                j = this.cntrl.Save_itemdetails(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), dr.Cells["id"].Value.ToString(), dr.Cells["colDiscription"].Value.ToString(), dr.Cells["ColPacking"].Value.ToString(), dr.Cells["ColUnit"].Value.ToString(), Convert.ToDecimal(dr.Cells["ColGST"].Value.ToString()), Convert.ToDecimal(dr.Cells["colIGST"].Value.ToString()), Convert.ToInt32(dr.Cells["ColQty"].Value.ToString()), Convert.ToInt32(dr.Cells["ColFree"].Value.ToString()), Convert.ToDecimal(dr.Cells["colUnitcost"].Value.ToString()), Convert.ToDecimal(dr.Cells["colAmount"].Value.ToString()), unit2, unitMf, Convert.ToDecimal(dt_Unit2.Rows[0]["CostBase"].ToString()));
+                            }
+                            else if(btnSave.Text=="UPDATE")
+                            {
+                                j = this.cntrl.update_itemdetails(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), dr.Cells["id"].Value.ToString(),  dr.Cells["ColPacking"].Value.ToString(), dr.Cells["ColUnit"].Value.ToString(), Convert.ToDecimal(dr.Cells["ColGST"].Value.ToString()), Convert.ToDecimal(dr.Cells["colIGST"].Value.ToString()), Convert.ToInt32(dr.Cells["ColQty"].Value.ToString()), Convert.ToInt32(dr.Cells["ColFree"].Value.ToString()), Convert.ToDecimal(dr.Cells["colUnitcost"].Value.ToString()), Convert.ToDecimal(dr.Cells["colAmount"].Value.ToString()), unit2, unitMf, Convert.ToDecimal(dt_Unit2.Rows[0]["CostBase"].ToString()));
+                            }
+                           
                         }
                     }
                     if (j > 0)
@@ -1678,9 +1713,17 @@ namespace PappyjoeMVC.View
                             {
                                 this.cntrl.update_batchnumber(Convert.ToDecimal(dr.Cells["currentStock"].Value.ToString()),
                                     dr.Cells["colBatchEntry"].Value.ToString());
-                                this.cntrl.save_batchsale(Convert.ToInt32(dr.Cells["ColinvNum"].Value.ToString()), Convert.ToDateTime(dr.Cells["ColInvDate"].Value.ToString()).ToString("yyyy-MM-dd"), dr.Cells["coiltem_code"].Value.ToString(), dr.Cells["colBatchnumber"].Value.ToString(), Convert.ToDecimal(dr.Cells["colQuantity"].Value.ToString()), dr.Cells["colBatchEntry"].Value.ToString());
+                                if (btnSave.Text == "UPDATE")
+                                {
+                                    this.cntrl.update_batchsale(Convert.ToInt32(dr.Cells["ColinvNum"].Value.ToString()), Convert.ToDateTime(dr.Cells["ColInvDate"].Value.ToString()).ToString("yyyy-MM-dd"), dr.Cells["coiltem_code"].Value.ToString(), dr.Cells["colBatchnumber"].Value.ToString(), Convert.ToDecimal(dr.Cells["colQuantity"].Value.ToString()), dr.Cells["colBatchEntry"].Value.ToString());
+                                }
+                                else
+                                {
+                                    this.cntrl.save_batchsale(Convert.ToInt32(dr.Cells["ColinvNum"].Value.ToString()), Convert.ToDateTime(dr.Cells["ColInvDate"].Value.ToString()).ToString("yyyy-MM-dd"), dr.Cells["coiltem_code"].Value.ToString(), dr.Cells["colBatchnumber"].Value.ToString(), Convert.ToDecimal(dr.Cells["colQuantity"].Value.ToString()), dr.Cells["colBatchEntry"].Value.ToString());
+                                }
+                                
                             }
-                            if (salesOrder_flag == true)
+                            if (salesOrder_flag == true) 
                             {
                                 this.cntrl.update_salesorder(invnum_order);
                             }
@@ -1698,20 +1741,35 @@ namespace PappyjoeMVC.View
                             DocNumber_increment();
                             panl_mode_payment.Visible = false;
                             rad_CreditSale.Checked = false;
-                            rad_CashSale.Checked = true;
+                            rad_CashSale.Checked = true; btnSave.Text = "SAVE";
                         }
+                    }
+                    else
+                    {
+                        if (btnSave.Text == "UPDATE")
+                        {
+                            MessageBox.Show("Updation failed !....", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Insertion failed !....", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                          
+                    }
+                }
+                else
+                {
+                    if (btnSave.Text == "UPDATE")
+                    {
+                        MessageBox.Show("Updation failed !....", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
                         MessageBox.Show("Insertion failed !....", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Insertion failed !....", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

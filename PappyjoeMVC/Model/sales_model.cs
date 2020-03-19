@@ -66,7 +66,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable get_batchsale(int invnum_Edit)
         {
-            DataTable dtb_BatchSale = db.table("select InvNumber,InvDate,s.Item_Code,s.BatchNumber,s.Qty,s.IsExpDate,BatchEntry,PrdDate,ExpDate from tbl_BatchSale s inner join tbl_batchnumber b on b.BatchNumber=s.BatchNumber where InvNumber='" + invnum_Edit + "'");
+            DataTable dtb_BatchSale = db.table("select InvNumber,InvDate,s.Item_Code,s.BatchNumber,s.Qty,(select sum(qty) Stock from tbl_BatchNumber where item_code=b.Item_Code) stock,s.IsExpDate,BatchEntry,PrdDate,ExpDate,b.Unit2	 from tbl_BatchSale s inner join tbl_batchnumber b on b.BatchNumber=s.BatchNumber where InvNumber='" + invnum_Edit + "'");
             return dtb_BatchSale;
         }
         public DataTable load_prescription()
@@ -125,6 +125,34 @@ namespace PappyjoeMVC.Model
                                   "'" + locality + "','" + city + "','" + phone + "','" + payMethod + "','" + Bank + "','" + DDnumber + "','" + totalAmnt + "','" + disount + "','1','1','1','" + Convert.ToDecimal(gst) + "','" + igst + "','" + gTotal + "')");
             return i;
         }
+        public int update_salesMaster(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        {
+            int i = db.execute("update  tbl_SALES set InvDate='" + Docdate + "',SalesmanCode='" + sales_ + "',OrderNumber='" + ordeNo + "',Orderdate='" + Date_ + "',Prescribedby='" + doctor_ + "',LRNo='" + lrno + "',LRDate='" + lr_date + "',Through='" + throuhg + "',cust_number='" + ptid + "',cust_name='" + ptname + "',adr1='" + locality + "',adr2='" + city + "',adr3='" + street__ + "',phone1='" + phone + "',PayMethod='" + payMethod + "'," +
+                                  "Paid='" + totalAmnt + "',Discount='" + disount + "',GST='" + Convert.ToDecimal(gst) + "',IGST='" + igst + "',TotalAmount='" + gTotal + "'" +
+                                  " where InvNumber='"+ DocNo + "' ");
+            return i;
+        }
+        public int update_salesMaster_cheque(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, string Bank, string Number, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        {
+            int i = db.execute("update into tbl_SALES  set InvDate='" + Docdate + "',SalesmanCode='" + sales_ + "',OrderNumber='" + ordeNo + "',Orderdate='" + Date_ + "',Prescribedby='" + doctor_ + "',LRNo='" + lrno + "',LRDate='" + lr_date + "',Through='" + throuhg + "',cust_number='" + ptid + "',cust_name='" + ptname + "',adr1='" + locality + "',adr2='" + city + "',adr3='" + street__ + "',phone1='" + phone + "',PayMethod='" + payMethod + "',Number='" + Number + "',Bank='" + Bank + "'," +
+                                  "Paid='" + totalAmnt + "',Discount='" + disount + "',GST='" + Convert.ToDecimal(gst) + "',IGST='" + igst + "',TotalAmount='" + gTotal + "'" +
+                                  " where InvNumber='" + DocNo + "' "); 
+            return i;
+        }
+        public int update_salesMaster_card(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, string cardnumber, string fourdigitnumber, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        {
+            int i = db.execute("update tbl_SALES set InvDate='" + Docdate + "',SalesmanCode='" + sales_ + "',OrderNumber='" + ordeNo + "',Orderdate='" + Date_ + "',Prescribedby='" + doctor_ + "',LRNo='" + lrno + "',LRDate='" + lr_date + "',Through='" + throuhg + "',cust_number='" + ptid + "',cust_name='" + ptname + "',adr1='" + locality + "',adr2='" + city + "',adr3='" + street__ + "',phone1='" + phone + "',PayMethod='" + payMethod + "',cardnumber='" + cardnumber + "',fourdigitnumber='" + fourdigitnumber + "'," +
+                                  "Paid='" + totalAmnt + "',Discount='" + disount + "',GST='" + Convert.ToDecimal(gst) + "',IGST='" + igst + "',TotalAmount='" + gTotal + "'" +
+                                  " where InvNumber='" + DocNo + "' ");
+            return i;
+        }
+        public int update_salesMaster_DD(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod, string Bank, string DDnumber, decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
+        {
+            int i = db.execute("update tbl_SALES set InvDate='" + Docdate + "',SalesmanCode='" + sales_ + "',OrderNumber='" + ordeNo + "',Orderdate='" + Date_ + "',Prescribedby='" + doctor_ + "',LRNo='" + lrno + "',LRDate='" + lr_date + "',Through='" + throuhg + "',cust_number='" + ptid + "',cust_name='" + ptname + "',adr1='" + locality + "',adr2='" + city + "',adr3='" + street__ + "',phone1='" + phone + "',PayMethod='" + payMethod + "',Bank='" + Bank + "',DDnumber='" + DDnumber + "'," +
+                                  "Paid='" + totalAmnt + "',Discount='" + disount + "',GST='" + Convert.ToDecimal(gst) + "',IGST='" + igst + "',TotalAmount='" + gTotal + "'" +
+                                  " where InvNumber='" + DocNo + "' ");
+            return i;
+        }
         public DataTable get_costbase(string itemcode)
         {
             DataTable dt_Unit2 = db.table("select Unit2,UnitMF,CostBase from tbl_ITEMS where item_code='" + itemcode + "' ");
@@ -136,6 +164,11 @@ namespace PappyjoeMVC.Model
                              "'" + Packing + "','" + Unit + "','" + GST + "','" + IGST + "','" + Qty + "'," + "'" + FreeQty + "','" + Rate + "','" + TotalAmount + "','" + UNIT2 + "','" + UnitMF + "','" + CostBase + "','Yes','0')");
             return j;
         }
+        public int update_itemdetails(int DocNo, string Docdate, string Item_Code, string Packing, string Unit, decimal GST, decimal IGST, int Qty, int FreeQty, decimal Rate, decimal TotalAmount, string UNIT2, decimal UnitMF, decimal CostBase)
+        {
+            int j = db.execute("update  tbl_SALEIT set InvDate='" + Docdate + "',Packing='" + Packing + "',Unit='" + Unit + "',GST='" + GST + "',IGST='" + IGST + "',Qty='" + Qty + "',FreeQty='" + FreeQty + "',Rate='" + Rate + "',TotalAmount='" + TotalAmount + "',UNIT2='" + UNIT2 + "',UnitMF='" + UnitMF + "',CostBase='" + CostBase + "' where  InvNumber='" + DocNo + "' and Item_Code='" + Item_Code + "'");
+            return j;
+        }
         public void update_batchnumber(decimal currentStock,string BatchEntry)
         {
             db.execute("update tbl_BatchNumber set Qty='" +currentStock + "' where  Entry_No='" + BatchEntry + "'");
@@ -143,6 +176,10 @@ namespace PappyjoeMVC.Model
         public void save_batchsale(int InvNumber, string InvDate, string Item_Code, string BatchNumber, decimal Qty, string BatchEntry)
         {
             db.execute("insert into tbl_BatchSale (InvNumber,InvDate,Item_Code,BatchNumber,Qty,IsExpDate,BatchEntry,WsInv,RetQty) values('" + InvNumber + "','" + InvDate + "','" + Item_Code + "','" + BatchNumber + "','" + Qty + "','True','" + BatchEntry + "','1',0)");
+        }
+        public void update_batchsale(int InvNumber, string InvDate, string Item_Code, string BatchNumber, decimal Qty, string BatchEntry)
+        {
+            db.execute("update tbl_BatchSale set InvDate='" + InvDate + "',BatchNumber='" + BatchNumber + "',Qty='" + Qty + "',BatchEntry='" + BatchEntry + "' where InvNumber='" + InvNumber + "' and Item_Code='" + Item_Code + "'");
         }
         public void update_salesorder(string invnum_order)
         {
