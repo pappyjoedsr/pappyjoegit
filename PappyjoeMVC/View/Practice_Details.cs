@@ -35,6 +35,7 @@ namespace PappyjoeMVC.View
         LabMedical labmedical = new LabMedical();
         LabDental dental = new LabDental();
         //Backup_and_Restore bckres = new Backup_and_Restore();
+        Prescription_Lang prescr_lang = new Prescription_Lang();
         private void btnaddstate_Click(object sender, EventArgs e)
         {
             if (cmb_country.Items.Count > 0)
@@ -838,6 +839,18 @@ namespace PappyjoeMVC.View
             //bckres.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             //panel_main.Controls.Add(bckres);
             //bckres.Show();
+        }
+
+        private void btnPrescriptionLang_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Dispose();
+            backColor_change();
+            btnPrescriptionLang.BackColor = Color.SteelBlue;
+            form_hide();
+            prescr_lang.TopLevel = false;
+            panel_main.Controls.Add(prescr_lang);
+            prescr_lang.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            prescr_lang.Show();
         }
 
 
