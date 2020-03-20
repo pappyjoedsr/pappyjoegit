@@ -43,6 +43,11 @@ namespace PappyjoeMVC.View
             if(cmbLanguage.Text!="")
             {
                 this.cntrl.presc_lang(lang);
+                MessageBox.Show("Language changed successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Please select a language", "Language not selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

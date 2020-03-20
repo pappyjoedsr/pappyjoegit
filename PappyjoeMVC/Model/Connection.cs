@@ -54,7 +54,7 @@ namespace PappyjoeMVC.Model
             else
             { password = EncryptDecrypt(password_ency, 50); }
             string connectionString;
-            connectionString = "SERVER=" + serve + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            connectionString = "SERVER=" + serve + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + "; Charset=utf8;";
             con = new MySqlConnection(connectionString);
             conSP = new MySqlConnection(connectionString);
         }

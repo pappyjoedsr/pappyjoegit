@@ -908,11 +908,27 @@ namespace PappyjoeMVC.View
                 InputLanguage.CurrentInputLanguage = language;
             else
                 InputLanguage.CurrentInputLanguage = InputLanguage.DefaultInputLanguage;
-
-            // Application.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("hi-IN"));
         }
 
         private void richTxtInsrtuction_Leave(object sender, EventArgs e)
+        {
+            InputLanguage.CurrentInputLanguage = original;
+        }
+
+        private void Txtnote_Enter(object sender, EventArgs e)
+        {
+            DataTable dt = this.cntrl.Get_CompanyNAme();
+            string lang = dt.Rows[0]["Prescription_lang"].ToString();
+            original = InputLanguage.CurrentInputLanguage;
+            var culture = System.Globalization.CultureInfo.GetCultureInfo(lang);
+            var language = InputLanguage.FromCulture(culture);
+            if (InputLanguage.InstalledInputLanguages.IndexOf(language) >= 0)
+                InputLanguage.CurrentInputLanguage = language;
+            else
+                InputLanguage.CurrentInputLanguage = InputLanguage.DefaultInputLanguage;
+        }
+
+        private void Txtnote_Leave(object sender, EventArgs e)
         {
             InputLanguage.CurrentInputLanguage = original;
         }
