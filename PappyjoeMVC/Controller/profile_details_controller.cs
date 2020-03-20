@@ -72,6 +72,11 @@ namespace PappyjoeMVC.Controller
         {
             string ret = db.server();
             return ret;
+       }
+        public DataTable IP_patentid()
+        {
+            DataTable dtb = _model.IP_patentid();
+            return dtb;
         }
     }
 }

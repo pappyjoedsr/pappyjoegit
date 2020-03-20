@@ -30,5 +30,10 @@ namespace PappyjoeMVC.Model
             DataTable cunsultaionview = db.table("select name,status from Tbl_main_Settings where status='1' and name='Con'");
             return cunsultaionview;
         }
+        public DataTable IP_patentid()
+        {
+            DataTable ip_id = db.table("select IP_number,IP_prefix,IP_automation from tbl_patient_automaticid");
+            return ip_id;
+        }
     }
 }
