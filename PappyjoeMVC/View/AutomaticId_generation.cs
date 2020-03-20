@@ -97,7 +97,7 @@ namespace PappyjoeMVC.View
         }
         private void button_save_Click(object sender, EventArgs e)//patient
         {
-            string cmd = this.cntrl.patient_prefix();
+            string cmd = "";// this.cntrl.patient_prefix();
             if (text_number.Text == "")
             {
                 errorProvider1.SetError(text_number, "error");
@@ -114,22 +114,52 @@ namespace PappyjoeMVC.View
                 {
                     ptcheck = "No";
                 }
-                if (cmd == "0")
+                if (chk_ip_patient.Checked==true)
                 {
-                    int i = this.cntrl.save_patientid(text_number.Text, text_prefix.Text, ptcheck);
-                    if (i > 0)
+                    cmd = this.cntrl.IP_patient_prefix();
+                    if(cmd=="0")
                     {
-                        MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        int i = this.cntrl.save_IP_patientid(text_number.Text, text_prefix.Text, ptcheck);
+                        if (i > 0)
+                        {
+                            MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            chk_ip_patient.Checked = false;
+                        }
+                    }
+                    else
+                    {
+                        int i = this.cntrl.update_IP_patientid(text_number.Text, text_prefix.Text, ptcheck);
+                        if (i > 0)
+                        {
+                            MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
                 else
                 {
-                    int i = this.cntrl.update_patientid(text_number.Text, text_prefix.Text, ptcheck);
-                    if (i > 0)
+                    cmd = this.cntrl.patient_prefix();
+                    if (cmd == "0")
                     {
-                        MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        int i = this.cntrl.save_patientid(text_number.Text, text_prefix.Text, ptcheck);
+                        if (i > 0)
+                        {
+                            MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else
+                    {
+                        int i = this.cntrl.update_patientid(text_number.Text, text_prefix.Text, ptcheck);
+                        if (i > 0)
+                        {
+                            MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
+
+
+                //////
+               
+                
             }
         }
         private void button_invoice_save_Click(object sender, EventArgs e)

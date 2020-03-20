@@ -1179,7 +1179,13 @@ namespace PappyjoeMVC.View
 
         private void btn_convertip_Click(object sender, EventArgs e)
         {
-
+            panl_IP_Patient.Visible = true;
+            panl_IP_Patient.Location = new Point(359, 37);
+            DataTable dtb = this.cntrl.IP_patentid();
+            if(dtb.Rows.Count>0)
+            {
+                  
+            }
         }
 
         private void labelprescription_Click(object sender, EventArgs e)
@@ -1192,4 +1198,4 @@ namespace PappyjoeMVC.View
             form2.Show();
         }
     }
-}
+} 

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patient_Profile_Details));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -86,6 +86,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btn_convertip = new System.Windows.Forms.Button();
             this.btnprint = new System.Windows.Forms.Button();
             this.BtnCard = new System.Windows.Forms.Button();
             this.editpatient = new System.Windows.Forms.Button();
@@ -95,6 +96,17 @@
             this.BTNCunsultation = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.panl_IP_Patient = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.text_prefix = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtpassport = new System.Windows.Forms.TextBox();
+            this.labpassport = new System.Windows.Forms.Label();
+            this.txtnationality = new System.Windows.Forms.TextBox();
+            this.labnationality = new System.Windows.Forms.Label();
             this.pictureBox_PatientPhoto = new System.Windows.Forms.PictureBox();
             this.labDob = new System.Windows.Forms.Label();
             this.labRefferedBy = new System.Windows.Forms.Label();
@@ -153,11 +165,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.labelallpatient = new System.Windows.Forms.Label();
-            this.labnationality = new System.Windows.Forms.Label();
-            this.txtnationality = new System.Windows.Forms.TextBox();
-            this.labpassport = new System.Windows.Forms.Label();
-            this.txtpassport = new System.Windows.Forms.TextBox();
-            this.btn_convertip = new System.Windows.Forms.Button();
+            this.button_save = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).BeginInit();
@@ -166,6 +174,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panl_IP_Patient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PatientPhoto)).BeginInit();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridgroups)).BeginInit();
@@ -827,6 +836,22 @@
             this.panel7.Size = new System.Drawing.Size(896, 36);
             this.panel7.TabIndex = 292;
             // 
+            // btn_convertip
+            // 
+            this.btn_convertip.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_convertip.BackColor = System.Drawing.Color.Gray;
+            this.btn_convertip.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_convertip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_convertip.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_convertip.ForeColor = System.Drawing.Color.White;
+            this.btn_convertip.Location = new System.Drawing.Point(3, 5);
+            this.btn_convertip.Name = "btn_convertip";
+            this.btn_convertip.Size = new System.Drawing.Size(165, 27);
+            this.btn_convertip.TabIndex = 270;
+            this.btn_convertip.Text = "Convert to IP Patient";
+            this.btn_convertip.UseVisualStyleBackColor = false;
+            this.btn_convertip.Click += new System.EventHandler(this.btn_convertip_Click);
+            // 
             // btnprint
             // 
             this.btnprint.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -958,6 +983,7 @@
             // 
             this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel12.Controls.Add(this.panl_IP_Patient);
             this.panel12.Controls.Add(this.txtpassport);
             this.panel12.Controls.Add(this.labpassport);
             this.panel12.Controls.Add(this.txtnationality);
@@ -1010,6 +1036,127 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(898, 612);
             this.panel12.TabIndex = 295;
+            // 
+            // panl_IP_Patient
+            // 
+            this.panl_IP_Patient.Controls.Add(this.button_save);
+            this.panl_IP_Patient.Controls.Add(this.textBox2);
+            this.panl_IP_Patient.Controls.Add(this.label6);
+            this.panl_IP_Patient.Controls.Add(this.textBox1);
+            this.panl_IP_Patient.Controls.Add(this.label5);
+            this.panl_IP_Patient.Controls.Add(this.text_prefix);
+            this.panl_IP_Patient.Controls.Add(this.label4);
+            this.panl_IP_Patient.Location = new System.Drawing.Point(359, 37);
+            this.panl_IP_Patient.Name = "panl_IP_Patient";
+            this.panl_IP_Patient.Size = new System.Drawing.Size(302, 160);
+            this.panl_IP_Patient.TabIndex = 267;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Location = new System.Drawing.Point(116, 117);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(165, 20);
+            this.textBox2.TabIndex = 207;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label6.Location = new System.Drawing.Point(6, 116);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 21);
+            this.label6.TabIndex = 206;
+            this.label6.Text = "Room No";
+            this.label6.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(116, 82);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(165, 20);
+            this.textBox1.TabIndex = 205;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label5.Location = new System.Drawing.Point(6, 81);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 21);
+            this.label5.TabIndex = 204;
+            this.label5.Text = "Patient Name";
+            this.label5.Visible = false;
+            // 
+            // text_prefix
+            // 
+            this.text_prefix.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.text_prefix.Location = new System.Drawing.Point(116, 49);
+            this.text_prefix.Name = "text_prefix";
+            this.text_prefix.Size = new System.Drawing.Size(165, 20);
+            this.text_prefix.TabIndex = 203;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label4.Location = new System.Drawing.Point(6, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 21);
+            this.label4.TabIndex = 202;
+            this.label4.Text = "IP Patient Id";
+            // 
+            // txtpassport
+            // 
+            this.txtpassport.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtpassport.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpassport.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtpassport.Location = new System.Drawing.Point(298, 578);
+            this.txtpassport.Name = "txtpassport";
+            this.txtpassport.ReadOnly = true;
+            this.txtpassport.Size = new System.Drawing.Size(207, 22);
+            this.txtpassport.TabIndex = 266;
+            this.txtpassport.Visible = false;
+            // 
+            // labpassport
+            // 
+            this.labpassport.AutoSize = true;
+            this.labpassport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labpassport.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.labpassport.Location = new System.Drawing.Point(180, 580);
+            this.labpassport.Name = "labpassport";
+            this.labpassport.Size = new System.Drawing.Size(97, 21);
+            this.labpassport.TabIndex = 265;
+            this.labpassport.Text = "Passport No:";
+            this.labpassport.Visible = false;
+            // 
+            // txtnationality
+            // 
+            this.txtnationality.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtnationality.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnationality.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtnationality.Location = new System.Drawing.Point(299, 549);
+            this.txtnationality.Name = "txtnationality";
+            this.txtnationality.ReadOnly = true;
+            this.txtnationality.Size = new System.Drawing.Size(207, 22);
+            this.txtnationality.TabIndex = 264;
+            this.txtnationality.Visible = false;
+            // 
+            // labnationality
+            // 
+            this.labnationality.AutoSize = true;
+            this.labnationality.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labnationality.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.labnationality.Location = new System.Drawing.Point(188, 550);
+            this.labnationality.Name = "labnationality";
+            this.labnationality.Size = new System.Drawing.Size(89, 21);
+            this.labnationality.TabIndex = 263;
+            this.labnationality.Text = "Nationality:";
+            this.labnationality.Visible = false;
             // 
             // pictureBox_PatientPhoto
             // 
@@ -1557,20 +1704,20 @@
             this.gridgroups.ColumnHeadersVisible = false;
             this.gridgroups.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column4});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridgroups.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridgroups.DefaultCellStyle = dataGridViewCellStyle6;
             this.gridgroups.Location = new System.Drawing.Point(10, 52);
             this.gridgroups.Name = "gridgroups";
             this.gridgroups.ReadOnly = true;
             this.gridgroups.RowHeadersVisible = false;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridgroups.RowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridgroups.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.gridgroups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridgroups.Size = new System.Drawing.Size(248, 200);
             this.gridgroups.TabIndex = 242;
@@ -1614,34 +1761,34 @@
             this.grmedical.BackgroundColor = System.Drawing.Color.White;
             this.grmedical.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grmedical.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grmedical.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grmedical.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.grmedical.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grmedical.ColumnHeadersVisible = false;
             this.grmedical.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grmedical.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grmedical.DefaultCellStyle = dataGridViewCellStyle9;
             this.grmedical.GridColor = System.Drawing.Color.White;
             this.grmedical.Location = new System.Drawing.Point(10, 52);
             this.grmedical.Name = "grmedical";
             this.grmedical.ReadOnly = true;
             this.grmedical.RowHeadersVisible = false;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.grmedical.RowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.grmedical.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.grmedical.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grmedical.Size = new System.Drawing.Size(249, 201);
             this.grmedical.TabIndex = 241;
@@ -1723,69 +1870,18 @@
             this.labelallpatient.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelallpatient.Click += new System.EventHandler(this.labelallpatient_Click);
             // 
-            // labnationality
+            // button_save
             // 
-            this.labnationality.AutoSize = true;
-            this.labnationality.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labnationality.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.labnationality.Location = new System.Drawing.Point(188, 550);
-            this.labnationality.Name = "labnationality";
-            this.labnationality.Size = new System.Drawing.Size(89, 21);
-            this.labnationality.TabIndex = 263;
-            this.labnationality.Text = "Nationality:";
-            this.labnationality.Visible = false;
-            // 
-            // txtnationality
-            // 
-            this.txtnationality.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtnationality.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnationality.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtnationality.Location = new System.Drawing.Point(299, 549);
-            this.txtnationality.Name = "txtnationality";
-            this.txtnationality.ReadOnly = true;
-            this.txtnationality.Size = new System.Drawing.Size(207, 22);
-            this.txtnationality.TabIndex = 264;
-            this.txtnationality.Visible = false;
-            // 
-            // labpassport
-            // 
-            this.labpassport.AutoSize = true;
-            this.labpassport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labpassport.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.labpassport.Location = new System.Drawing.Point(180, 580);
-            this.labpassport.Name = "labpassport";
-            this.labpassport.Size = new System.Drawing.Size(97, 21);
-            this.labpassport.TabIndex = 265;
-            this.labpassport.Text = "Passport No:";
-            this.labpassport.Visible = false;
-            // 
-            // txtpassport
-            // 
-            this.txtpassport.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtpassport.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpassport.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtpassport.Location = new System.Drawing.Point(298, 578);
-            this.txtpassport.Name = "txtpassport";
-            this.txtpassport.ReadOnly = true;
-            this.txtpassport.Size = new System.Drawing.Size(207, 22);
-            this.txtpassport.TabIndex = 266;
-            this.txtpassport.Visible = false;
-            // 
-            // btn_convertip
-            // 
-            this.btn_convertip.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_convertip.BackColor = System.Drawing.Color.Gray;
-            this.btn_convertip.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_convertip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_convertip.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_convertip.ForeColor = System.Drawing.Color.White;
-            this.btn_convertip.Location = new System.Drawing.Point(3, 5);
-            this.btn_convertip.Name = "btn_convertip";
-            this.btn_convertip.Size = new System.Drawing.Size(165, 27);
-            this.btn_convertip.TabIndex = 270;
-            this.btn_convertip.Text = "Convert to IP Patient";
-            this.btn_convertip.UseVisualStyleBackColor = false;
-            this.btn_convertip.Click += new System.EventHandler(this.btn_convertip_Click);
+            this.button_save.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_save.ForeColor = System.Drawing.Color.White;
+            this.button_save.Location = new System.Drawing.Point(206, 15);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(75, 28);
+            this.button_save.TabIndex = 208;
+            this.button_save.Text = "Save";
+            this.button_save.UseVisualStyleBackColor = false;
             // 
             // Patient_Profile_Details
             // 
@@ -1827,6 +1923,8 @@
             this.panel7.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.panl_IP_Patient.ResumeLayout(false);
+            this.panl_IP_Patient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PatientPhoto)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
@@ -1965,5 +2063,13 @@
         private System.Windows.Forms.Label labpassport;
         public System.Windows.Forms.TextBox txtnationality;
         private System.Windows.Forms.Label labnationality;
+        private System.Windows.Forms.Panel panl_IP_Patient;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox text_prefix;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button_save;
     }
 }

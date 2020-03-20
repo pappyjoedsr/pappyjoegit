@@ -66,6 +66,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.text_receipt_number = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chk_ip_patient = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -103,6 +104,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.chk_ip_patient);
             this.tabPage1.Controls.Add(this.button_save);
             this.tabPage1.Controls.Add(this.check_patient);
             this.tabPage1.Controls.Add(this.text_prefix);
@@ -126,7 +128,7 @@
             this.button_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save.ForeColor = System.Drawing.Color.White;
-            this.button_save.Location = new System.Drawing.Point(165, 140);
+            this.button_save.Location = new System.Drawing.Point(165, 184);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(75, 28);
             this.button_save.TabIndex = 4;
@@ -140,7 +142,7 @@
             this.check_patient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.check_patient.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_patient.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.check_patient.Location = new System.Drawing.Point(495, 110);
+            this.check_patient.Location = new System.Drawing.Point(495, 154);
             this.check_patient.Name = "check_patient";
             this.check_patient.Size = new System.Drawing.Size(212, 21);
             this.check_patient.TabIndex = 3;
@@ -150,7 +152,7 @@
             // text_prefix
             // 
             this.text_prefix.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.text_prefix.Location = new System.Drawing.Point(165, 108);
+            this.text_prefix.Location = new System.Drawing.Point(165, 152);
             this.text_prefix.Name = "text_prefix";
             this.text_prefix.Size = new System.Drawing.Size(165, 22);
             this.text_prefix.TabIndex = 2;
@@ -160,7 +162,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(162, 81);
+            this.label3.Location = new System.Drawing.Point(162, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(191, 17);
             this.label3.TabIndex = 1;
@@ -170,7 +172,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(459, 82);
+            this.label16.Location = new System.Drawing.Point(459, 126);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(12, 13);
             this.label16.TabIndex = 1;
@@ -180,7 +182,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(361, 133);
+            this.label5.Location = new System.Drawing.Point(361, 177);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 1;
@@ -191,7 +193,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(369, 82);
+            this.label4.Location = new System.Drawing.Point(369, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 17);
             this.label4.TabIndex = 1;
@@ -202,7 +204,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(15, 111);
+            this.label2.Location = new System.Drawing.Point(15, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 17);
             this.label2.TabIndex = 1;
@@ -224,7 +226,7 @@
             // text_number
             // 
             this.text_number.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.text_number.Location = new System.Drawing.Point(364, 108);
+            this.text_number.Location = new System.Drawing.Point(364, 152);
             this.text_number.Name = "text_number";
             this.text_number.Size = new System.Drawing.Size(102, 22);
             this.text_number.TabIndex = 2;
@@ -497,6 +499,19 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // chk_ip_patient
+            // 
+            this.chk_ip_patient.AutoSize = true;
+            this.chk_ip_patient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chk_ip_patient.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_ip_patient.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk_ip_patient.Location = new System.Drawing.Point(11, 88);
+            this.chk_ip_patient.Name = "chk_ip_patient";
+            this.chk_ip_patient.Size = new System.Drawing.Size(77, 21);
+            this.chk_ip_patient.TabIndex = 5;
+            this.chk_ip_patient.Text = "IP Patient";
+            this.chk_ip_patient.UseVisualStyleBackColor = true;
+            // 
             // AutomaticId_generation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -561,5 +576,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox text_receipt_number;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.CheckBox chk_ip_patient;
     }
 }
