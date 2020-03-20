@@ -46,10 +46,10 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="MySql.Data">
-      <HintPath>C:\Users\User\Downloads\MySqlBackup.NET_v2.3\.net 4.5\MySql.Data.dll</HintPath>
+      <HintPath>C:\MySql.Data.DLL</HintPath>
     </Reference>
     <Reference Include="MySqlBackup">
-      <HintPath>C:\Users\User\Downloads\MySqlBackup.NET_v2.3\.net 4.5\MySqlBackup.dll</HintPath>
+      <HintPath>C:\MySqlBackup.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
