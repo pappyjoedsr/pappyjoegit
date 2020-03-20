@@ -24,14 +24,29 @@ namespace PappyjoeMVC.Model
             string cmd = db.scalar("select patient_prefix from tbl_patient_automaticid");
             return cmd;
         }
+        public string IP_patient_prefix()
+        {
+            string cmd = db.scalar("select IP_prefix from tbl_patient_automaticid");
+            return cmd;
+        }
         public int save_patientid(string _pt_num, string _pt_prefix, string _ptCheck)
         {
             int i = db.execute("insert into tbl_patient_automaticid (patient_number,patient_prefix,patient_automation) values ('" + _pt_num + "','" + _pt_prefix + "','" + _ptCheck + "')");
             return i;
         }
+        public int save_IP_patientid(string _pt_num, string _pt_prefix, string _ptCheck)
+        {
+            int i = db.execute("insert into tbl_patient_automaticid (IP_number,IP_prefix,IP_automation) values ('" + _pt_num + "','" + _pt_prefix + "','" + _ptCheck + "')");
+            return i;
+        }
         public int update_patientid(string _pt_num, string _pt_prefix, string _ptCheck)
         {
             int i = db.execute("update tbl_patient_automaticid set patient_number='" + _pt_num + "', patient_prefix='" + _pt_prefix + "',patient_automation='" + _ptCheck + "'");
+            return i;
+        }
+        public int update_IP_patientid(string _pt_num, string _pt_prefix, string _ptCheck)
+        {
+            int i = db.execute("update tbl_patient_automaticid set IP_number='" + _pt_num + "', IP_prefix='" + _pt_prefix + "',IP_automation='" + _ptCheck + "'");
             return i;
         }
         public int save_invoice(string _InvNumber, string _InvPrefix, string _invCheck)

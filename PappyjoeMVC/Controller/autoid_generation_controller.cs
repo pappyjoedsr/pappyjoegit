@@ -25,14 +25,29 @@ namespace PappyjoeMVC.Controller
             string dtb = _model.patient_prefix();
             return dtb;
         }
+        public string IP_patient_prefix()
+        {
+            string dtb = _model.IP_patient_prefix();
+            return dtb;
+        }
         public int save_patientid(string _pt_num, string _pt_prefix, string Check)
         {
             int i = _model.save_patientid(_pt_num, _pt_prefix, Check);
             return i;
         }
+        public int save_IP_patientid(string _pt_num, string _pt_prefix, string _ptCheck)
+        {
+            int i = _model.save_IP_patientid(_pt_num, _pt_prefix, _ptCheck);
+            return i;
+        }
         public int update_patientid(string _pt_num, string _pt_prefix, string Check)
         {
             int i = _model.update_patientid(_pt_num, _pt_prefix, Check);
+            return i;
+        }
+        public int update_IP_patientid(string _pt_num, string _pt_prefix, string _ptCheck)
+        {
+            int i = _model.update_IP_patientid(_pt_num, _pt_prefix, _ptCheck);
             return i;
         }
         public DataTable Invoice_prefix()
