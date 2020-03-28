@@ -141,11 +141,20 @@ namespace PappyjoeMVC.Controller
         {
             _model.update_appointment( StartT,  diff1,  note, procedure, patient_id,  patient_name,  dr_id,  mobile_no,  email,  gpl_app_id);
         }
-
         public DataTable get_appointment_procedure(string id)
         {
             DataTable dtb = _model.get_appointment_procedure(id);
             return dtb;
+        }
+        public DataTable sms_lang()
+        {
+            DataTable dt = cmodel.sms_language();
+            return dt;
+        }
+        public DataTable smstemplate(string language, string patientname, string procedure, string date, string time, string docname, string clinic, string contactno)
+        {
+            DataTable dt = _model.smstemplate_Appointmnt(language, patientname, procedure, date, time, docname, clinic, contactno);
+            return dt;
         }
     }
 }

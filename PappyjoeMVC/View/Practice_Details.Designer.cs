@@ -603,7 +603,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(300, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 17);
+            this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 109;
             this.label2.Text = " Tagline";
             // 
@@ -678,7 +678,7 @@
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label12.Location = new System.Drawing.Point(295, 533);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 17);
+            this.label12.Size = new System.Drawing.Size(59, 17);
             this.label12.TabIndex = 134;
             this.label12.Text = " Website";
             // 
@@ -763,7 +763,7 @@
             this.toolStripldoc});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1370, 40);
+            this.toolStrip1.Size = new System.Drawing.Size(1362, 40);
             this.toolStrip1.TabIndex = 144;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -1002,7 +1002,7 @@
             this.label19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(304, 611);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(49, 17);
+            this.label19.Size = new System.Drawing.Size(50, 17);
             this.label19.TabIndex = 148;
             this.label19.Text = "Tax No";
             // 
@@ -1118,7 +1118,7 @@
             this.btnPrescriptionLang.Name = "btnPrescriptionLang";
             this.btnPrescriptionLang.Size = new System.Drawing.Size(192, 37);
             this.btnPrescriptionLang.TabIndex = 300;
-            this.btnPrescriptionLang.Text = "Prescription Lang";
+            this.btnPrescriptionLang.Text = "Prescription and Appointment SMS Language";
             this.btnPrescriptionLang.UseVisualStyleBackColor = false;
             this.btnPrescriptionLang.Click += new System.EventHandler(this.btnPrescriptionLang_Click);
             // 
@@ -1128,7 +1128,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 741);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.btnPrescriptionLang);
             this.Controls.Add(this.backuprestore);
             this.Controls.Add(this.listpatientsearch);

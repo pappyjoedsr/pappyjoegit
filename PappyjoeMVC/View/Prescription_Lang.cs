@@ -21,6 +21,11 @@ namespace PappyjoeMVC.View
 
         private void Prescription_Lang_Load(object sender, EventArgs e)
         {
+            DataTable language = this.cntrl.Get_CompanyNAme();
+            if (language.Rows.Count>0)
+            {
+                cmbLanguage.Text = language.Rows[0]["Prescription_lang"].ToString();
+            }
             foreach (InputLanguage lng in InputLanguage.InstalledInputLanguages)
             {
                 cmbLanguage.Items.Add(lng.Culture.DisplayName);
