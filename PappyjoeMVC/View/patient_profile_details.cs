@@ -1187,7 +1187,14 @@ namespace PappyjoeMVC.View
                   
             }
         }
-
+        private void BtnCaseSheetIP_Click(object sender, EventArgs e)
+        {
+            var dlg = new CaseSheet_Of_IP_Patients();
+            dlg.patient_id = patient_id;
+            dlg.doctor_id = doctor_id;
+            dlg.ShowDialog();
+            dlg.Dispose();
+        }
         private void labelprescription_Click(object sender, EventArgs e)
         {
             var form2 = new Prescription_Show();

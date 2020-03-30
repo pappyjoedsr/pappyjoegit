@@ -388,6 +388,12 @@
     <Compile Include="View\Add_Clinical_Notes.designer.cs">
       <DependentUpon>Add_Clinical_Notes.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\CaseSheet_Of_IP_Patients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CaseSheet_Of_IP_Patients.Designer.cs">
+      <DependentUpon>CaseSheet_Of_IP_Patients.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ChangeStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1159,6 +1165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Add_Clinical_Notes.resx">
       <DependentUpon>Add_Clinical_Notes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CaseSheet_Of_IP_Patients.resx">
+      <DependentUpon>CaseSheet_Of_IP_Patients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChangeStatus.resx">
       <DependentUpon>ChangeStatus.cs</DependentUpon>
