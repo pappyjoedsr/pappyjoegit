@@ -92,5 +92,10 @@ namespace PappyjoeMVC.Controller
             int pr = Pmdl.presc_lang(lang);
             return pr;
         }
+        public DataTable Get_CompanyNAme()
+        {
+            DataTable dt = mdl.Get_CompanyNAme();
+            return dt;
+        }
     }
 }
