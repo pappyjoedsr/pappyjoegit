@@ -104,6 +104,11 @@ namespace PappyjoeMVC.Controller
         {
             _model.save_invoice_main(patient_id, name, billno);
         }
+        public int save_log(string log_usrid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = _model.save_log(log_usrid, log_type, log_descriptn, log_stage);
+            return j;
+        }
         public string get_invoiceMain_maxid()
         {
             string dt1 = _model.get_invoiceMain_maxid();

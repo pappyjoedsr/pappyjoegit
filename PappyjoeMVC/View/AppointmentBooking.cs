@@ -384,10 +384,12 @@ namespace PappyjoeMVC.View
                             if (dtpSearch.Rows.Count <= 0)
                             {
                                 this.cntrl.insappointment(Convert.ToDateTime(Dateonly).ToString("yyyy-MM-dd"), Convert.ToDateTime(StartT).ToString("yyyy-MM-dd HH:mm"), diff1, txtDescription.Text, patient_id, txt_p_name.Text, dr_id, txt_p_mobile.Text, txt_p_email.Text, compoprocedure.Text, Name);
+                                this.cntrl.save_log(doctor_id, "Appointment", "logged user adds new appointment", "Add");
                             }
                             else
                             {
                                 this.cntrl.insappointment(Convert.ToDateTime(Dateonly).ToString("yyyy-MM-dd"), Convert.ToDateTime(StartT).ToString("yyyy-MM-dd HH:mm"), diff1, txtDescription.Text, patient_id, patient_name, dr_id, lab_p_ph.Text, lab_p_email.Text, compoprocedure.Text, Name);
+                                this.cntrl.save_log(doctor_id, "Appointment", "logged user adds new appointment", "Add");
                             }
 
                             DataTable dt_a = this.cntrl.appointmentId();

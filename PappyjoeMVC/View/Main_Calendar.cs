@@ -2169,7 +2169,7 @@ namespace PappyjoeMVC.View
             this.label11.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label11.Location = new System.Drawing.Point(7, 77);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 13);
+            this.label11.Size = new System.Drawing.Size(62, 13);
             this.label11.TabIndex = 3;
             this.label11.Text = "Booked By";
             // 
@@ -3105,6 +3105,7 @@ namespace PappyjoeMVC.View
                     }
                 }
                 bk.ModifyEvent(ContextEvent);
+                this.cntrl.save_log(doctor_id, "Appointment", "logged user edits appointment", "Edit");
                 bk.ShowDialog(this);
                 bk.Dispose();
             }
@@ -3142,6 +3143,7 @@ namespace PappyjoeMVC.View
                     wndCalendarControl.DataProvider.DeleteEvent(ContextEvent);
                     this.cntrl.delete_appointment(ContextEvent.Body);
                     listAppointment("0");
+                    this.cntrl.save_log(doctor_id, "Appointment", "logged user deletes appointment", "Delete");
                 }
                 wndCalendarControl.Populate();
                 wndCalendarControl.RedrawControl();

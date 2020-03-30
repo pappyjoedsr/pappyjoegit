@@ -95,6 +95,7 @@ namespace PappyjoeMVC.View
                         i = this.cntrl.update(txtPatientName.Text, txtPatientId.Text, txtAdhaarId.Text,gender, txtAge.Text, DateTimePickerDob.Value.ToString("yyyy-MM-dd"), cmbBloodGroup.Text, txtAccompaniedBy.Text, txtPrimaryMobNbr.Text, txtSecondaryMobNbr.Text, txtLandLineNbr.Text, txtEmail.Text,txtStreetAddress.Text,txtLocality.Text,txtCity.Text,txtPin.Text,txtReferredBy.Text, txtFileNo.Text, DateTimePickerAdmitDate.Value.ToString("yyyy/MM/dd"),txtOccupation.Text, cmbDoctorName.Text,txtnationality.Text,txtpassport.Text,patient_id);
                         if (i > 0)
                         {
+                            this.cntrl.save_log(doctor_id, "Patient", "logged user edits patient", "Edit");
                             if (pictureBox_PatientPhoto.Image == null)
                             {
                                 pictureBox_PatientPhoto.Image = PappyjoeMVC.Properties.Resources.nophoto;
@@ -191,6 +192,7 @@ namespace PappyjoeMVC.View
                     i = this.cntrl.delete_patient(id);
                     if (i > 0)
                     {
+                        this.cntrl.save_log(doctor_id, "Patient", "logged user deletes patient", "Delete");
                         MessageBox.Show("Patient Deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         var form2 = new Patients();
                         form2.doctor_id = doctor_id;

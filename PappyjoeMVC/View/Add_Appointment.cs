@@ -561,10 +561,12 @@ namespace PappyjoeMVC.View
                         if (appointment_id !="")
                         {
                             j = this.ctrlr.apntupdate(Convert.ToDateTime(StartT1).ToString("yyyy-MM-dd HH:mm"), diff1, txtDescription.Text, dr_id, compoprocedure.Text,name, appointment_id);
+                            this.ctrlr.save_log(doctor_id, "Appointment", "logged user edits appointment", "Edit");
                         }
                         else
                         {
                             j = this.ctrlr.insappointment(Convert.ToDateTime(Dateonly).ToString("yyyy-MM-dd"), Convert.ToDateTime(StartT1).ToString("yyyy-MM-dd H:mm:ss"), diff1, txtDescription.Text, patient_id,linkLabel_Name.Text,dr_id,p_mobile,p_email,compoprocedure.Text,name);
+                            this.ctrlr.save_log(doctor_id, "Appointment", "logged user adds new appointment", "Add");
                         }
                         if (checkBox1.Checked)
                         {

@@ -96,6 +96,11 @@ namespace PappyjoeMVC.Controller
         {
             _model.update_purchaseorder(Pur_order_no1);
         }
+        public int save_log(string log_usrid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = _model.save_log(log_usrid, log_type, log_descriptn, log_stage);
+            return j;
+        }
         public DataTable incrementDocnumber()
         {
             DataTable dtb = _model.incrementDocnumber();

@@ -57,7 +57,11 @@ namespace PappyjoeMVC.Controller
             string dtb = _model.patient_group(idd, grpid);
             return dtb;
         }
-
+        public int save_log(string log_usrid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = _model.save_log(log_usrid, log_type, log_descriptn, log_stage);
+            return j;
+        }
         public int update(string patname,string patId,string aadhar,string Gender,string age,string Dob,string blood,string family,string Pmob,string Smob,string Landline,string email,string street,string locality,string city,string pin,string refferedby,string opticket,string Visited,string occupation,string doctername, string nationality, string passport,string pt_id)
         {
             int i = _model.update( patname,  patId,  aadhar,  Gender,  age,  Dob,  blood,  family,  Pmob,  Smob,  Landline,  email,  street,  locality,  city,  pin,  refferedby,  opticket,  Visited,  occupation,  doctername,nationality, passport, pt_id);

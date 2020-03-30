@@ -98,6 +98,11 @@ namespace PappyjoeMVC.Model
                                "'" + locality + "','" + city + "','" + phone + "','" + payMethod + "','" + totalAmnt + "','" + disount + "','1','1','1','" + Convert.ToDecimal(gst) + "','" + igst + "','" + gTotal + "')");
             return i;
         }
+        public int save_log(string log_userid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = db.execute("insert into tbl_log(log_user_id,log_type,log_description,log_stage)values('" + log_userid + "','" + log_type + "','" + log_descriptn + "','" + log_stage + "')");
+            return j;
+        }
         public int Save_salesMaster_cheque(int DocNo, string Docdate, string sales_, string ordeNo, string Date_, string doctor_, string lrno, string lr_date, string throuhg, string ptid, string ptname, string street__, string locality, string city, string phone, string payMethod,string Bank ,string Number,decimal totalAmnt, decimal disount, decimal gst, decimal igst, decimal gTotal)
         {
             int i = db.execute("insert into tbl_SALES(InvNumber,InvDate,Dep_Number,SalesmanCode,OrderNumber,Orderdate,Prescribedby,LRNo,LRDate,Through,cust_number,cust_name,adr1,adr2,adr3,phone1,PayMethod,Number,Bank," +

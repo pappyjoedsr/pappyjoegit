@@ -24,6 +24,7 @@ namespace PappyjoeMVC.View
         public static DataTable batch1;
         public static decimal retqty11;
         public static bool flagBatch = false;
+        public string doctor_id = "0";
         private void txt_pur_no_Click(object sender, EventArgs e)
         {
             list_Pur_no.Hide();
@@ -390,6 +391,7 @@ namespace PappyjoeMVC.View
                     this.cntrl.update_batchpurchase(batchNewQty, txt_pur_no.Text, rw.Cells["tempItem_code"].Value.ToString(), rw.Cells["Branch_No"].Value.ToString());
                 }
             }
+            this.cntrl.save_log(doctor_id, "Purchase Return", "logged user adds new purchase return", "Add");
             DialogResult res = MessageBox.Show("Data inserted Successfully,Do you want to print ?", "Success",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
@@ -602,6 +604,7 @@ namespace PappyjoeMVC.View
                         decimal totalamount = Convert.ToDecimal(txtTotalCost.Text);
                         decimal total = (totalamount - amount);
                         txtTotalCost.Text = total.ToString();
+                        this.cntrl.save_log(doctor_id, "Purchase Return", "logged user deletes purchase return", "Delete");
                         foreach (DataGridViewRow row in dgvGridData.Rows)
                         {
                             if (row.Cells["tempItem_code"].Value.ToString() != itemcode)

@@ -168,7 +168,7 @@ namespace PappyjoeMVC.View
                         string smsName1 = PappyjoeMVC.Model.GlobalVariables.smsName.ToString();
                         string smsPass1 = PappyjoeMVC.Model.GlobalVariables.smsPass.ToString();
                         i = this.cntrl.Save(txtPatName.Text, txtPatientId.Text, txtAadhar.Text, gender,dob, txtxAge.Text, cmdBloodbroup.Text, txtAccompained.Text, txtPMobNumber.Text, txtSMobileNumber.Text, txtLandline.Text, txtEmail.Text, txtxStreet.Text, txtLocality.Text, txtCity.Text, txtPincode.Text, txtReferedby.Text, txtFileNo.Text, visited, ddldoctor.Text, txtOccupation.Text,txtnationality.Text,txtpassportno.Text);
-                        this.cntrl.save_log(doctor_id, "patient", " ", "add");
+                        this.cntrl.save_log(doctor_id, "Patient", "logged user adds new patient", "Add");
                         DataTable cmd = this.cntrl.automaticid();
                         if (cmd.Rows.Count > 0)
                         {

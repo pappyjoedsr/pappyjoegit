@@ -98,6 +98,11 @@ namespace PappyjoeMVC.Controller
             int i = addmodel.insappointment(book_datetime.ToString(), start_datetime.ToString(), duration, note, pt_id, pt_name, dr_id, mobile_no, email_id, plan_new_procedure, booked_by);
             return i;
         }
+        public int save_log(string log_usrid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = addmodel.save_log(log_usrid, log_type, log_descriptn, log_stage);
+            return j;
+        }
         public DataTable appointmentId()
         {
             DataTable dt_a = _model.appointmentId();

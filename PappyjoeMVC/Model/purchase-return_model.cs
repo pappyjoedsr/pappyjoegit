@@ -15,6 +15,11 @@ namespace PappyjoeMVC.Model
            DataTable  dt = db.table("select PT.item_code,I.item_name,P.PurchNumber,P.PurchDate,P.Sup_Code,S.Supplier_Name,PT.FreeQty,PT.Qty,PT.Rate,PT.Gst,PT.Igst,PT.UNIT2,P.TotalCost,P.TotalAmount from tbl_PRETURN P inner join tbl_Supplier S  on S.Supplier_Code=P.Sup_Code inner join tbl_PRETIT PT on PT.RetNumber=P.RetNumber inner join tbl_ITEMS I on I.id=PT.item_code where P.RetNumber='" + purchRetNo1 + "'");
             return dt;
         }
+        public int save_log(string log_userid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = db.execute("insert into tbl_log(log_user_id,log_type,log_description,log_stage)values('" + log_userid + "','" + log_type + "','" + log_descriptn + "','" + log_stage + "')");
+            return j;
+        }
         public string get_packing(string item_code,string PurchNumber)
         {
             string packing=  db.scalar(" select Packing from tbl_PURCHIT where Item_Code='" + item_code + "' and  PurchNumber='" + PurchNumber + "'");

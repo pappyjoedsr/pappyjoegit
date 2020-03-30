@@ -82,6 +82,11 @@ namespace PappyjoeMVC.Controller
         {
             _model.Save_advancetable(Pt_id, Date, Amount, PaymentMethod, Credit_Debit);
         }
+        public int save_log(string log_usrid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = _model.save_log(log_usrid, log_type, log_descriptn, log_stage);
+            return j;
+        }
         public DataTable Get_All_paymenttbl_details(string ReceiptNo)
         {
             DataTable dtb = _model.Get_All_paymenttbl_details(ReceiptNo);

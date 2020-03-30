@@ -374,11 +374,16 @@ namespace PappyjoeMVC.View
                     else
                     {
                         dlt_privilage();
+                        this.cntrl.save_log(doctor_id, "Invoice", "logged user deletes invoice", "Delete");
+
+
                     }
                 }
                 else
                 {
                     dlt_privilage();
+                    this.cntrl.save_log(doctor_id, "patient", "logged user deletes invoice", "Delete");
+
                 }
             }
             catch (Exception ex)

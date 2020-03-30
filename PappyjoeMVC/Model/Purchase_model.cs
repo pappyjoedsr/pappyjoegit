@@ -68,6 +68,11 @@ namespace PappyjoeMVC.Model
         {
             db.execute("Update tbl_Purchase_order_master set status='P' where Pur_order_no= '" + Pur_order_no1 + "'");
         }
+        public int save_log(string log_userid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = db.execute("insert into tbl_log(log_user_id,log_type,log_description,log_stage)values('" + log_userid + "','" + log_type + "','" + log_descriptn + "','" + log_stage + "')");
+            return j;
+        }
         public DataTable incrementDocnumber()
         {
             DataTable Document_Number = db.table("SELECT max(cast(PurchNumber as UNSIGNED))AS 'Doc_Number' FROM tbl_PURCHASE");

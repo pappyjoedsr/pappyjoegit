@@ -74,5 +74,10 @@ namespace PappyjoeMVC.Controller
             int j = mdl.delete(apntid);
             return j;
         }
+        public int save_log(string log_usrid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = am.save_log(log_usrid, log_type, log_descriptn, log_stage);
+            return j;
+        }
     }
 }

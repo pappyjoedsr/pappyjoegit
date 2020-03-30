@@ -108,6 +108,11 @@ namespace PappyjoeMVC.Controller
             int i = mdl.apntupdate(strtdatetime, duratn, note, dr_id, procedure, bookedby, appointmentid);
             return i;
         }
+        public int save_log(string log_usrid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = mdl.save_log(log_usrid, log_type, log_descriptn, log_stage);
+            return j;
+        }
         public int insappointment(string book_datetime, string start_datetime, string duration, string note, string pt_id, string pt_name, string dr_id, string mob_no, string email_id, string procedure, string booked_by)
         {
             int j = mdl.insappointment(book_datetime, start_datetime, duration, note, pt_id, pt_name, dr_id, mob_no, email_id, procedure, booked_by);

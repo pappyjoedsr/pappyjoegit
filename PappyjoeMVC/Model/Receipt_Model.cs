@@ -58,7 +58,11 @@ namespace PappyjoeMVC.Model
             DataTable dtb = db.table("select Date,Amount,PaymentMethod from tbl_advance where Pt_id	='" + pt_id + "'");
             return dtb;
         }
-
+        public int save_log(string log_userid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = db.execute("insert into tbl_log(log_user_id,log_type,log_description,log_stage)values('" + log_userid + "','" + log_type + "','" + log_descriptn + "','" + log_stage + "')");
+            return j;
+        }
         public DataTable gt_pt_advance(string pt_id)
         {
             DataTable dtb = db.table("select advance from tbl_payment where Pt_id ='" + pt_id + "'");

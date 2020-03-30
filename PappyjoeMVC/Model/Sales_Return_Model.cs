@@ -102,6 +102,11 @@ namespace PappyjoeMVC.Model
           int  rowaffected = db.execute("update tbl_BatchNumber set qty='" + Convert.ToDecimal(qty) + "' where Entry_No='" + Convert.ToInt32(Entry_No) + "'");
             return rowaffected;
         }
+        public int save_log(string log_userid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = db.execute("insert into tbl_log(log_user_id,log_type,log_description,log_stage)values('" + log_userid + "','" + log_type + "','" + log_descriptn + "','" + log_stage + "')");
+            return j;
+        }
         public DataTable get_details_from_items(string itemid)
         {
             DataTable dtb = db.table("select Sales_Rate_Max,Unit1,Unit2,OneUnitOnly,UnitMF from tbl_ITEMS where item_code='" + itemid + "' ");
