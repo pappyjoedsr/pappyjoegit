@@ -3188,7 +3188,7 @@ namespace PappyjoeMVC.View
                     {
                         smsName = sms.Rows[0]["smsName"].ToString();
                         smsPass = sms.Rows[0]["smsPass"].ToString();
-
+                        string type = "LNG";
                         DataTable tl_appoitment = this.cntrl.get_patient_details(ContextEvent.Body);
                         if (tl_appoitment.Rows.Count > 0)
                         {
@@ -3198,7 +3198,7 @@ namespace PappyjoeMVC.View
                             {
                                 string number = "91" + tl_appoitment.Rows[0]["mobile_no"].ToString();
                                 string text = "Dear " + tl_appoitment.Rows[0]["pt_name"].ToString() + " " + ", Your appointment for " + tl_appoitment.Rows[0]["plan_new_procedure"].ToString() + " has been cancelled..  Regards " + toolStripButton1.Text + "," + contact_no;
-                                a.SendSMS(smsName, smsPass, number, text);
+                                a.SendSMS(smsName, smsPass, number, text,type);
                                 this.cntrl.insert_sms(tl_appoitment.Rows[0]["pt_id"].ToString(), tl_appoitment.Rows[0]["pt_name"].ToString(), tl_appoitment.Rows[0]["plan_new_procedure"].ToString(), toolStripButton1.Text);
                             }
                         }

@@ -19,9 +19,9 @@ namespace PappyjoeMVC.Controller
             string server = db.server();
             return server;
         }
-        public string SendSMS(string User, string password, string Mobile_Number, string Message)
+        public string SendSMS(string User, string password, string Mobile_Number, string Message,string type)
         {
-            string val = s.SendSMS(User, password, Mobile_Number, Message);
+            string val = s.SendSMS(User, password, Mobile_Number, Message,type);
             return val;
         }
         public DataTable Get_patient_details(string name)

@@ -273,9 +273,10 @@ namespace PappyjoeMVC.View
                 if (txt_mob.Text != "" && smsName != "" && smsPass != "")
                 {
                     SMS_model a = new SMS_model();
+                    string type = "LNG";
                     string text = "Dear " + txt_Ptname.Text + ", Prescription. Drug Name:" + strPriscription + "Regards With " + clinic + "," + contact_no;
                     string number = "91" + txt_mob.Text;
-                    a.SendSMS(smsName, smsPass, number, text);
+                    a.SendSMS(smsName, smsPass, number, text, type);
                     this.cntrl.inssms(patient_id, text);
                 }
             }
