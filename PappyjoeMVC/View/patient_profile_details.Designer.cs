@@ -209,7 +209,7 @@
             this.toolStripldoc});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1370, 40);
+            this.toolStrip1.Size = new System.Drawing.Size(1362, 40);
             this.toolStrip1.TabIndex = 39;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -819,7 +819,7 @@
             this.panel5.BackColor = System.Drawing.Color.DarkGray;
             this.panel5.Location = new System.Drawing.Point(-1, 90);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1405, 1);
+            this.panel5.Size = new System.Drawing.Size(1397, 1);
             this.panel5.TabIndex = 272;
             // 
             // panel7
@@ -833,7 +833,7 @@
             this.panel7.Controls.Add(this.medicalcertificate);
             this.panel7.Controls.Add(this.BtnCaseSheet);
             this.panel7.Controls.Add(this.BtnConsent);
-            this.panel7.Location = new System.Drawing.Point(197, 93);
+            this.panel7.Location = new System.Drawing.Point(193, 93);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(896, 36);
             this.panel7.TabIndex = 292;
@@ -980,7 +980,7 @@
             this.BTNCunsultation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNCunsultation.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNCunsultation.ForeColor = System.Drawing.Color.White;
-            this.BTNCunsultation.Location = new System.Drawing.Point(860, 40);
+            this.BTNCunsultation.Location = new System.Drawing.Point(856, 40);
             this.BTNCunsultation.Name = "BTNCunsultation";
             this.BTNCunsultation.Size = new System.Drawing.Size(123, 27);
             this.BTNCunsultation.TabIndex = 264;
@@ -994,7 +994,7 @@
             this.panel8.BackColor = System.Drawing.Color.DarkGray;
             this.panel8.Location = new System.Drawing.Point(194, 133);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1213, 1);
+            this.panel8.Size = new System.Drawing.Size(1205, 1);
             this.panel8.TabIndex = 293;
             // 
             // panel12
@@ -1117,7 +1117,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(6, 81);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 21);
+            this.label5.Size = new System.Drawing.Size(104, 21);
             this.label5.TabIndex = 204;
             this.label5.Text = "Patient Name";
             this.label5.Visible = false;
@@ -1137,7 +1137,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(6, 48);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 21);
+            this.label4.Size = new System.Drawing.Size(92, 21);
             this.label4.TabIndex = 202;
             this.label4.Text = "IP Patient Id";
             // 
@@ -1160,7 +1160,7 @@
             this.labpassport.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labpassport.Location = new System.Drawing.Point(180, 580);
             this.labpassport.Name = "labpassport";
-            this.labpassport.Size = new System.Drawing.Size(97, 21);
+            this.labpassport.Size = new System.Drawing.Size(98, 21);
             this.labpassport.TabIndex = 265;
             this.labpassport.Text = "Passport No:";
             this.labpassport.Visible = false;
@@ -1314,7 +1314,7 @@
             this.labhead.ForeColor = System.Drawing.Color.OliveDrab;
             this.labhead.Location = new System.Drawing.Point(137, 274);
             this.labhead.Name = "labhead";
-            this.labhead.Size = new System.Drawing.Size(188, 30);
+            this.labhead.Size = new System.Drawing.Size(191, 30);
             this.labhead.TabIndex = 205;
             this.labhead.Text = "CONTACT DETAILS";
             // 
@@ -1433,7 +1433,7 @@
             this.labStreetAddress.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labStreetAddress.Location = new System.Drawing.Point(164, 432);
             this.labStreetAddress.Name = "labStreetAddress";
-            this.labStreetAddress.Size = new System.Drawing.Size(117, 21);
+            this.labStreetAddress.Size = new System.Drawing.Size(118, 21);
             this.labStreetAddress.TabIndex = 210;
             this.labStreetAddress.Text = "Street Address: ";
             this.labStreetAddress.Visible = false;
@@ -1684,7 +1684,7 @@
             this.labPatientId.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labPatientId.Location = new System.Drawing.Point(201, 50);
             this.labPatientId.Name = "labPatientId";
-            this.labPatientId.Size = new System.Drawing.Size(79, 21);
+            this.labPatientId.Size = new System.Drawing.Size(80, 21);
             this.labPatientId.TabIndex = 225;
             this.labPatientId.Text = "Patient ID:";
             this.labPatientId.Visible = false;
@@ -1708,7 +1708,7 @@
             this.lab_PatientName.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lab_PatientName.Location = new System.Drawing.Point(174, 15);
             this.lab_PatientName.Name = "lab_PatientName";
-            this.lab_PatientName.Size = new System.Drawing.Size(106, 21);
+            this.lab_PatientName.Size = new System.Drawing.Size(107, 21);
             this.lab_PatientName.TabIndex = 224;
             this.lab_PatientName.Text = "Patient Name:";
             // 
@@ -1717,7 +1717,7 @@
             this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel11.Controls.Add(this.gridgroups);
             this.panel11.Controls.Add(this.label34);
-            this.panel11.Location = new System.Drawing.Point(1103, 420);
+            this.panel11.Location = new System.Drawing.Point(1099, 420);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(267, 321);
             this.panel11.TabIndex = 297;
@@ -1778,7 +1778,7 @@
             this.panel10.BackColor = System.Drawing.Color.White;
             this.panel10.Controls.Add(this.grmedical);
             this.panel10.Controls.Add(this.label24);
-            this.panel10.Location = new System.Drawing.Point(1102, 141);
+            this.panel10.Location = new System.Drawing.Point(1098, 141);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(268, 270);
             this.panel10.TabIndex = 296;
@@ -1851,7 +1851,7 @@
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
             this.listpatientsearch.ItemHeight = 20;
-            this.listpatientsearch.Location = new System.Drawing.Point(1023, 34);
+            this.listpatientsearch.Location = new System.Drawing.Point(1015, 34);
             this.listpatientsearch.Name = "listpatientsearch";
             this.listpatientsearch.Size = new System.Drawing.Size(249, 82);
             this.listpatientsearch.TabIndex = 298;
@@ -1862,7 +1862,7 @@
             // 
             this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel14.BackColor = System.Drawing.Color.Gray;
-            this.panel14.Location = new System.Drawing.Point(1098, 133);
+            this.panel14.Location = new System.Drawing.Point(1094, 133);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(1, 771);
             this.panel14.TabIndex = 274;
@@ -1906,7 +1906,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 741);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.panel14);
             this.Controls.Add(this.panel11);
