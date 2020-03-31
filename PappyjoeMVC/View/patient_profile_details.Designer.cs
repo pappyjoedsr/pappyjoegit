@@ -86,7 +86,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.BtnCaseSheetIP = new System.Windows.Forms.Button();
+            //this.BtnCaseSheetIP = new System.Windows.Forms.Button();
             this.btn_convertip = new System.Windows.Forms.Button();
             this.btnprint = new System.Windows.Forms.Button();
             this.BtnCard = new System.Windows.Forms.Button();
@@ -826,7 +826,7 @@
             // panel7
             // 
             this.panel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel7.Controls.Add(this.BtnCaseSheetIP);
+            //this.panel7.Controls.Add(this.BtnCaseSheetIP);
             this.panel7.Controls.Add(this.btn_convertip);
             this.panel7.Controls.Add(this.btnprint);
             this.panel7.Controls.Add(this.BtnCard);
@@ -841,19 +841,19 @@
             // 
             // BtnCaseSheetIP
             // 
-            this.BtnCaseSheetIP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnCaseSheetIP.BackColor = System.Drawing.Color.Gray;
-            this.BtnCaseSheetIP.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCaseSheetIP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCaseSheetIP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCaseSheetIP.ForeColor = System.Drawing.Color.White;
-            this.BtnCaseSheetIP.Location = new System.Drawing.Point(342, 4);
-            this.BtnCaseSheetIP.Name = "BtnCaseSheetIP";
-            this.BtnCaseSheetIP.Size = new System.Drawing.Size(158, 27);
-            this.BtnCaseSheetIP.TabIndex = 271;
-            this.BtnCaseSheetIP.Text = "Case Sheet Of IP Patient";
-            this.BtnCaseSheetIP.UseVisualStyleBackColor = false;
-            this.BtnCaseSheetIP.Click += new System.EventHandler(this.BtnCaseSheetIP_Click);
+            //this.BtnCaseSheetIP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            //this.BtnCaseSheetIP.BackColor = System.Drawing.Color.Gray;
+            //this.BtnCaseSheetIP.Cursor = System.Windows.Forms.Cursors.Hand;
+            //this.BtnCaseSheetIP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            //this.BtnCaseSheetIP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.BtnCaseSheetIP.ForeColor = System.Drawing.Color.White;
+            //this.BtnCaseSheetIP.Location = new System.Drawing.Point(342, 4);
+            //this.BtnCaseSheetIP.Name = "BtnCaseSheetIP";
+            //this.BtnCaseSheetIP.Size = new System.Drawing.Size(158, 27);
+            //this.BtnCaseSheetIP.TabIndex = 271;
+            //this.BtnCaseSheetIP.Text = "Case Sheet Of IP Patient";
+            //this.BtnCaseSheetIP.UseVisualStyleBackColor = false;
+            //this.BtnCaseSheetIP.Click += new System.EventHandler(this.BtnCaseSheetIP_Click);
             // 
             // btn_convertip
             // 
@@ -1075,16 +1075,16 @@
             // 
             // button_save
             // 
-            this.button_save.BackColor = System.Drawing.Color.LimeGreen;
-            this.button_save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_save.ForeColor = System.Drawing.Color.White;
-            this.button_save.Location = new System.Drawing.Point(206, 15);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(75, 28);
-            this.button_save.TabIndex = 208;
-            this.button_save.Text = "Save";
-            this.button_save.UseVisualStyleBackColor = false;
+            //this.button_save.BackColor = System.Drawing.Color.LimeGreen;
+            //this.button_save.Cursor = System.Windows.Forms.Cursors.Hand;
+            //this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            //this.button_save.ForeColor = System.Drawing.Color.White;
+            //this.button_save.Location = new System.Drawing.Point(206, 15);
+            //this.button_save.Name = "button_save";
+            //this.button_save.Size = new System.Drawing.Size(75, 28);
+            //this.button_save.TabIndex = 208;
+            //this.button_save.Text = "Save";
+            //this.button_save.UseVisualStyleBackColor = false;
             // 
             // textBox2
             // 
