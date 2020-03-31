@@ -33,12 +33,13 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                string itemid = this.cntrl.get_itemid(Item_Code);
+                //
                 if (Form_Name == "Sales")
                 {
                     if (Item_Code != "")
                     {
-                      DataTable dtb=this.cntrl.Load_items_wit_itemcode(itemid);
+                        string itemid = this.cntrl.get_itemid(Item_Code);
+                        DataTable dtb=this.cntrl.Load_items_wit_itemcode(itemid);
                       fill_Grid(dtb);
                     }
                     else
@@ -51,6 +52,7 @@ namespace PappyjoeMVC.View
                 {
                     if (Item_Code != "")
                     {
+                        string itemid = this.cntrl.get_itemid(Item_Code);
                         DataTable dtb = this.cntrl.Load_items_wit_itemcode(itemid);
                         fill_Grid(dtb);
                     }

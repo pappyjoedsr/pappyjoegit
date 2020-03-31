@@ -76,6 +76,9 @@ namespace PappyjoeMVC.View
                     {
                         Chk_Taxable.Checked = false;
                     }
+                    txt_unit2Retailmin2.Visible = false; textBox9.Visible = false; txt_Unit2Dealer2.Visible = false;
+                    textBox6.Visible = false; txt_SalesRate2.Visible = false; txt_SalesRateMin.Visible = false;
+                    txt_SalesRateMin2.Visible = false;
                     txt_reorderStockQty.Text = dt_ForEditItems.Rows[0]["ReorderQty"].ToString();
                     txt_minimumStockforSale.Text = dt_ForEditItems.Rows[0]["MinimumStock"].ToString();
                     txt_PurchaseRate.Text = Convert.ToDecimal(dt_ForEditItems.Rows[0]["Purch_Rate"].ToString()).ToString("##.00");
@@ -306,15 +309,15 @@ namespace PappyjoeMVC.View
                 LabAvg.Visible = true;
                 txt_unit2Avg_PurchRate.Visible = true;
                 txt_PurchRate2.Visible = true;
-                txt_SalesRate2.Visible = true;
-                txt_Unit2Dealer2.Visible = true;
-                txt_SalesRateMin2.Visible = true;
-                txt_unit2Retailmin2.Visible = true;
+                //txt_SalesRate2.Visible = true;
+                //txt_Unit2Dealer2.Visible = true;
+                //txt_SalesRateMin2.Visible = true;
+                //txt_unit2Retailmin2.Visible = true;
                 txt_SalesRateMax2.Visible = true;
                 txt_unit2Retailmax2.Visible = true;
                 btn_Addunit1.Visible = true;
-                textBox6.Visible = true;
-                textBox9.Visible = true;
+                //textBox6.Visible = true;
+                //textBox9.Visible = true;
                 textBox10.Visible = true;
             }
         }
@@ -509,45 +512,45 @@ namespace PappyjoeMVC.View
 
         private void txt_SalesRate_TextChanged(object sender, EventArgs e)
         {
-            if (txt_SalesRate.Text != ".")
-            {
-                decimal value1 = 0, value2 = 0;
-                if (cal_flag == true)
-                {
-                    if (txt_CostBase.Text != "")
-                    {
-                        value1 = Convert.ToDecimal(txt_CostBase.Text);
-                    }
-                }
-                if (!string.IsNullOrWhiteSpace(txt_PurchaseRate.Text) && !string.IsNullOrWhiteSpace(txt_SalesRate.Text))
-                {
-                    value1 = Convert.ToDecimal(txt_SalesRate.Text) - Convert.ToDecimal(txt_PurchaseRate.Text);
-                    value2 = (value1 / Convert.ToDecimal(txt_PurchaseRate.Text)) * 100;
-                    txt_Unit1Dealer2.Text = value2.ToString("##.00");
-                }
-                else
-                {
-                    txt_Unit1Dealer2.Text = "";
-                }
-            }
+            //if (txt_SalesRate.Text != ".")
+            //{
+            //    decimal value1 = 0, value2 = 0;
+            //    if (cal_flag == true)
+            //    {
+            //        if (txt_CostBase.Text != "")
+            //        {
+            //            value1 = Convert.ToDecimal(txt_CostBase.Text);
+            //        }
+            //    }
+            //    if (!string.IsNullOrWhiteSpace(txt_PurchaseRate.Text) && !string.IsNullOrWhiteSpace(txt_SalesRate.Text))
+            //    {
+            //        value1 = Convert.ToDecimal(txt_SalesRate.Text) - Convert.ToDecimal(txt_PurchaseRate.Text);
+            //        value2 = (value1 / Convert.ToDecimal(txt_PurchaseRate.Text)) * 100;
+            //        txt_Unit1Dealer2.Text = value2.ToString("##.00");
+            //    }
+            //    else
+            //    {
+            //        txt_Unit1Dealer2.Text = "";
+            //    }
+            //}
         }
 
         private void txt_SalesRateMin_TextChanged(object sender, EventArgs e)
         {
-            if (txt_SalesRateMin.Text != ".")
-            {
-                decimal value1 = 0, value2 = 0;
-                if (!string.IsNullOrWhiteSpace(txt_PurchaseRate.Text) && !string.IsNullOrWhiteSpace(txt_SalesRateMin.Text))
-                {
-                    value1 = Convert.ToDecimal(txt_SalesRateMin.Text) - Convert.ToDecimal(txt_PurchaseRate.Text);
-                    value2 = (value1 / Convert.ToDecimal(txt_PurchaseRate.Text)) * 100;
-                    txt_unit1Retailmin2.Text = value2.ToString("##.00");
-                }
-                else
-                {
-                    txt_unit1Retailmin2.Text = "";
-                }
-            }
+            //if (txt_SalesRateMin.Text != ".")
+            //{
+            //    decimal value1 = 0, value2 = 0;
+            //    if (!string.IsNullOrWhiteSpace(txt_PurchaseRate.Text) && !string.IsNullOrWhiteSpace(txt_SalesRateMin.Text))
+            //    {
+            //        value1 = Convert.ToDecimal(txt_SalesRateMin.Text) - Convert.ToDecimal(txt_PurchaseRate.Text);
+            //        value2 = (value1 / Convert.ToDecimal(txt_PurchaseRate.Text)) * 100;
+            //        txt_unit1Retailmin2.Text = value2.ToString("##.00");
+            //    }
+            //    else
+            //    {
+            //        txt_unit1Retailmin2.Text = "";
+            //    }
+            //}
         }
 
         private void txt_SalesRateMax_Leave(object sender, EventArgs e)
@@ -811,7 +814,7 @@ namespace PappyjoeMVC.View
             checkNull();
             if (txt_ItemCode.Text != "" && txt_ItemName.Text != "" && Cmb_Manufacture.Items.Count != 0)
             {
-                if (txt_PurchaseRate.Text == "" || txt_SalesRate.Text == "" || txt_SalesRateMin.Text == "" || txt_SalesRateMax.Text == "")
+                if (txt_PurchaseRate.Text == "" || txt_SalesRateMax.Text == "")// txt_SalesRate.Text == "" || txt_SalesRateMin.Text == "" ||
                 {
                     MessageBox.Show("Must add Purchase/Sales rate...", "Data not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;

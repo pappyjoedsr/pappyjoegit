@@ -1184,8 +1184,42 @@ namespace PappyjoeMVC.View
             DataTable dtb = this.cntrl.IP_patentid();
             if(dtb.Rows.Count>0)
             {
-                  
+                txt_ipId.Text = dtb.Rows[0]["IP_number"].ToString();
+                txt_IPname.Text = txtPatientName.Text;// linkLabel_Name.Text;
             }
+        }
+
+        private void button_IPsave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (button_IPsave.Text == "Save")
+                {
+                    //DataTable dt_pat_id=
+                    if (txt_ipId.Text != "")
+                    {
+                        int j = this.cntrl.update_ipPatient(txtPatientId.Text, txt_ipId.Text, patient_id, txt_room.Text);
+                        if(j>0)
+                        {
+                            txt_ipId.Text = "";
+                            txt_IPname.Text = "";
+                            txt_room.Text = "";
+                            MessageBox.Show("IP ID saved successfully","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                            panl_IP_Patient.Visible = false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Patient IP ID is missing","Data not found ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+           
         }
         private void BtnCaseSheetIP_Click(object sender, EventArgs e)
         {

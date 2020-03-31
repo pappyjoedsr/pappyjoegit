@@ -462,20 +462,20 @@ namespace PappyjoeMVC.View
                         }
                         if (cmb_advane_type.SelectedIndex == 1)
                         {
-                            this.cntrl.Save_advancetable_cheque(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, txt_adv_bankname.Text, txt_adv_number.Text, "Debit");
+                            this.cntrl.Save_advancetable_cheque(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, txt_adv_bankname.Text, txt_adv_number.Text, "Debit", "Add Receipt");
                             
                         }
                         else if (cmb_advane_type.SelectedIndex == 2)
                         {
-                            this.cntrl.Save_advancetable_card(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, txt_adv_bankname.Text, txt_adv_4digit.Text, "Debit");
+                            this.cntrl.Save_advancetable_card(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, txt_adv_bankname.Text, txt_adv_4digit.Text, "Debit", "Add Receipt");
                         }
                         else if(cmb_advane_type.SelectedIndex == 3)
                         {
-                            this.cntrl.Save_advancetable_DD(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, txt_adv_bankname.Text, txt_adv_number.Text, "Debit");
+                            this.cntrl.Save_advancetable_DD(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, txt_adv_bankname.Text, txt_adv_number.Text, "Debit", "Add Receipt");
                         }
                         else
                         {
-                            this.cntrl.Save_advancetable(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, "Debit");
+                            this.cntrl.Save_advancetable(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, "Debit","Add Receipt");
                         }
                         if (adv > 0)
                         {

@@ -51,9 +51,9 @@ namespace PappyjoeMVC.Controller
         {
             Model.update_advance(adv, patient_id);
         }
-        public void Save_advancetable(string Pt_id, string Date, string Amount, string PaymentMethod, string Credit_Debit)
+        public void Save_advancetable(string Pt_id, string Date, string Amount, string PaymentMethod, string Credit_Debit,string form)
         {
-            Model.Save_advancetable(Pt_id, Date, Amount, PaymentMethod, Credit_Debit);
+            Model.Save_advancetable(Pt_id, Date, Amount, PaymentMethod, Credit_Debit,form);
         }
         public DataTable gt_pt_advance(string pt_id)
         {

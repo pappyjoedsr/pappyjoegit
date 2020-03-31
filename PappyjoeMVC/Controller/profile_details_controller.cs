@@ -78,5 +78,10 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.IP_patentid();
             return dtb;
         }
+        public int update_ipPatient(string patid, string ipid, string id, string room)
+        {
+            int i = _model.update_ipPatient(patid,ipid,id,room);
+            return i;
+        }
     }
 }

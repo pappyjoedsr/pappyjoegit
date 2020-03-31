@@ -33,6 +33,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.chk_ip_patient = new System.Windows.Forms.CheckBox();
             this.button_save = new System.Windows.Forms.Button();
             this.check_patient = new System.Windows.Forms.CheckBox();
             this.text_prefix = new System.Windows.Forms.TextBox();
@@ -66,7 +67,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.text_receipt_number = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.chk_ip_patient = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -121,6 +121,20 @@
             this.tabPage1.Size = new System.Drawing.Size(1004, 482);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Patient ";
+            // 
+            // chk_ip_patient
+            // 
+            this.chk_ip_patient.AutoSize = true;
+            this.chk_ip_patient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chk_ip_patient.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_ip_patient.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chk_ip_patient.Location = new System.Drawing.Point(11, 88);
+            this.chk_ip_patient.Name = "chk_ip_patient";
+            this.chk_ip_patient.Size = new System.Drawing.Size(77, 21);
+            this.chk_ip_patient.TabIndex = 5;
+            this.chk_ip_patient.Text = "IP Patient";
+            this.chk_ip_patient.UseVisualStyleBackColor = true;
+            this.chk_ip_patient.Click += new System.EventHandler(this.chk_ip_patient_Click);
             // 
             // button_save
             // 
@@ -498,19 +512,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // chk_ip_patient
-            // 
-            this.chk_ip_patient.AutoSize = true;
-            this.chk_ip_patient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chk_ip_patient.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_ip_patient.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chk_ip_patient.Location = new System.Drawing.Point(11, 88);
-            this.chk_ip_patient.Name = "chk_ip_patient";
-            this.chk_ip_patient.Size = new System.Drawing.Size(77, 21);
-            this.chk_ip_patient.TabIndex = 5;
-            this.chk_ip_patient.Text = "IP Patient";
-            this.chk_ip_patient.UseVisualStyleBackColor = true;
             // 
             // AutomaticId_generation
             // 

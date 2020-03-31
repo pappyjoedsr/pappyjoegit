@@ -33,6 +33,11 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.patients(name);
             return dtb;
         }
+        public DataTable Get_Advance(string patient_id)
+        {
+            DataTable dtb = _model.Get_Advance(patient_id);
+            return dtb;
+        }
         public DataTable patient_keydown(string value)
         {
             DataTable dtb = _model.patient_keydown(value);
@@ -219,6 +224,28 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.get_batchdetails(item_Code);
             return dtb;
         }
-      
+        public DataTable batchrate(string itemid, string batch, string Unit)
+        {
+            DataTable dtb = _model.batchrate(itemid, batch, Unit);
+            return dtb;
+        }
+        public DataTable get_item_salesrate(string itemid)
+        {
+            DataTable dtb = _model.get_item_salesrate(itemid);
+            return dtb;
+        }
+        public DataTable get_item_salesrate_minimun(string itemid)
+        {
+            DataTable dtb = _model.get_item_salesrate_minimun(itemid);
+            return dtb;
+        }
+        public void Save_advancetable(string Pt_id, string Date, string Amount, string PaymentMethod, string Credit_Debit, string form)
+        {
+            _model.Save_advancetable(Pt_id,  Date,  Amount,  PaymentMethod,  Credit_Debit,  form);
+        }
+        public void update_advance(decimal adv, string patient_id)
+        {
+            _model.update_advance(adv, patient_id);
+        }
     }
 }

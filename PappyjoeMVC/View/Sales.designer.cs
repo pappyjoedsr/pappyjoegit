@@ -181,6 +181,8 @@
             this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblAdvance = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -200,6 +202,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.label23);
+            this.panel1.Controls.Add(this.lblAdvance);
             this.panel1.Controls.Add(this.BTN_CLEAR);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.btnSave);
@@ -955,7 +959,7 @@
             this.Bank.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Bank.Location = new System.Drawing.Point(73, 72);
             this.Bank.Name = "Bank";
-            this.Bank.Size = new System.Drawing.Size(32, 13);
+            this.Bank.Size = new System.Drawing.Size(33, 13);
             this.Bank.TabIndex = 350;
             this.Bank.Text = "Bank";
             // 
@@ -1437,6 +1441,7 @@
             this.dgv_BatchSale.RowHeadersVisible = false;
             this.dgv_BatchSale.Size = new System.Drawing.Size(414, 112);
             this.dgv_BatchSale.TabIndex = 314;
+            this.dgv_BatchSale.Visible = false;
             // 
             // ColinvNum
             // 
@@ -1838,6 +1843,7 @@
             this.id.HeaderText = "id";
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // colItemCode
             // 
@@ -1953,6 +1959,30 @@
             this.colDelete.Name = "colDelete";
             this.colDelete.ReadOnly = true;
             this.colDelete.Width = 29;
+            // 
+            // lblAdvance
+            // 
+            this.lblAdvance.AutoSize = true;
+            this.lblAdvance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdvance.ForeColor = System.Drawing.Color.Red;
+            this.lblAdvance.Location = new System.Drawing.Point(407, 8);
+            this.lblAdvance.Name = "lblAdvance";
+            this.lblAdvance.Size = new System.Drawing.Size(56, 17);
+            this.lblAdvance.TabIndex = 293;
+            this.lblAdvance.Text = "advance";
+            this.lblAdvance.Visible = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Red;
+            this.label23.Location = new System.Drawing.Point(283, 8);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(120, 17);
+            this.label23.TabIndex = 294;
+            this.label23.Text = "Available Advance :";
+            this.label23.Visible = false;
             // 
             // Sales
             // 
@@ -2160,5 +2190,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
         private System.Windows.Forms.DataGridViewImageColumn colEdit;
         private System.Windows.Forms.DataGridViewImageColumn colDelete;
+        private System.Windows.Forms.Label lblAdvance;
+        private System.Windows.Forms.Label label23;
     }
 }

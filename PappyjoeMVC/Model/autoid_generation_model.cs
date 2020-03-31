@@ -6,7 +6,7 @@ namespace PappyjoeMVC.Model
         Connection db = new Connection();
         public DataTable load_patientid()
         {
-            DataTable patient = db.table("select * from tbl_patient_automaticid");
+            DataTable patient = db.table("select id,patient_number,patient_prefix,patient_automation from tbl_patient_automaticid");
             return patient;
         }
         public DataTable load_Invoiceid()
@@ -28,6 +28,11 @@ namespace PappyjoeMVC.Model
         {
             string cmd = db.scalar("select IP_prefix from tbl_patient_automaticid");
             return cmd;
+        }
+        public DataTable load_ippatient_id()
+        {
+            DataTable dtb = db.table("select IP_number,IP_prefix,IP_automation  from tbl_patient_automaticid");
+            return dtb;
         }
         public int save_patientid(string _pt_num, string _pt_prefix, string _ptCheck)
         {

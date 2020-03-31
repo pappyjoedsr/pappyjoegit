@@ -44,24 +44,28 @@
             this.label49 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.txt_SalesRate2 = new System.Windows.Forms.TextBox();
+            this.txt_Unit2Dealer2 = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_SalesRate = new System.Windows.Forms.TextBox();
+            this.txt_Unit1Dealer2 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.txt_SalesRateMax = new System.Windows.Forms.TextBox();
+            this.txt_unit1Retailmax2 = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.Lab_Unit2_1 = new System.Windows.Forms.Label();
             this.LabAvg = new System.Windows.Forms.Label();
@@ -73,16 +77,11 @@
             this.label44 = new System.Windows.Forms.Label();
             this.txt_SalesRateMin = new System.Windows.Forms.TextBox();
             this.txt_CostBase = new System.Windows.Forms.TextBox();
-            this.txt_unit1Retailmax2 = new System.Windows.Forms.TextBox();
             this.txt_PurchaseRate = new System.Windows.Forms.TextBox();
             this.txt_unit2Avg_PurchRate = new System.Windows.Forms.TextBox();
             this.txt_unit2Retailmin2 = new System.Windows.Forms.TextBox();
             this.txt_PurchRate2 = new System.Windows.Forms.TextBox();
             this.txt_SalesRateMin2 = new System.Windows.Forms.TextBox();
-            this.txt_SalesRate = new System.Windows.Forms.TextBox();
-            this.txt_Unit2Dealer2 = new System.Windows.Forms.TextBox();
-            this.txt_Unit1Dealer2 = new System.Windows.Forms.TextBox();
-            this.txt_SalesRate2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_HSN = new System.Windows.Forms.TextBox();
@@ -230,24 +229,28 @@
             // 
             this.groupBox2.Controls.Add(this.pnltax);
             this.groupBox2.Controls.Add(this.label43);
-            this.groupBox2.Controls.Add(this.panel9);
             this.groupBox2.Controls.Add(this.panel13);
             this.groupBox2.Controls.Add(this.panel12);
+            this.groupBox2.Controls.Add(this.txt_SalesRate2);
+            this.groupBox2.Controls.Add(this.txt_Unit2Dealer2);
             this.groupBox2.Controls.Add(this.panel11);
             this.groupBox2.Controls.Add(this.panel10);
+            this.groupBox2.Controls.Add(this.textBox6);
             this.groupBox2.Controls.Add(this.panel8);
             this.groupBox2.Controls.Add(this.textBox10);
             this.groupBox2.Controls.Add(this.textBox9);
+            this.groupBox2.Controls.Add(this.label37);
+            this.groupBox2.Controls.Add(this.label38);
             this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.txt_SalesRate);
+            this.groupBox2.Controls.Add(this.txt_Unit1Dealer2);
             this.groupBox2.Controls.Add(this.textBox5);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.txt_SalesRateMax);
+            this.groupBox2.Controls.Add(this.txt_unit1Retailmax2);
             this.groupBox2.Controls.Add(this.label34);
             this.groupBox2.Controls.Add(this.label35);
             this.groupBox2.Controls.Add(this.label36);
-            this.groupBox2.Controls.Add(this.label37);
-            this.groupBox2.Controls.Add(this.label38);
             this.groupBox2.Controls.Add(this.label39);
             this.groupBox2.Controls.Add(this.Lab_Unit2_1);
             this.groupBox2.Controls.Add(this.LabAvg);
@@ -259,21 +262,16 @@
             this.groupBox2.Controls.Add(this.label44);
             this.groupBox2.Controls.Add(this.txt_SalesRateMin);
             this.groupBox2.Controls.Add(this.txt_CostBase);
-            this.groupBox2.Controls.Add(this.txt_unit1Retailmax2);
             this.groupBox2.Controls.Add(this.txt_PurchaseRate);
             this.groupBox2.Controls.Add(this.txt_unit2Avg_PurchRate);
             this.groupBox2.Controls.Add(this.txt_unit2Retailmin2);
             this.groupBox2.Controls.Add(this.txt_PurchRate2);
             this.groupBox2.Controls.Add(this.txt_SalesRateMin2);
-            this.groupBox2.Controls.Add(this.txt_SalesRate);
-            this.groupBox2.Controls.Add(this.txt_Unit2Dealer2);
-            this.groupBox2.Controls.Add(this.txt_Unit1Dealer2);
-            this.groupBox2.Controls.Add(this.txt_SalesRate2);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.groupBox2.Location = new System.Drawing.Point(4, 138);
+            this.groupBox2.Location = new System.Drawing.Point(4, 169);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(795, 133);
+            this.groupBox2.Size = new System.Drawing.Size(795, 168);
             this.groupBox2.TabIndex = 122;
             this.groupBox2.TabStop = false;
             // 
@@ -284,9 +282,9 @@
             this.pnltax.Controls.Add(this.btngenerate);
             this.pnltax.Controls.Add(this.label49);
             this.pnltax.Controls.Add(this.label48);
-            this.pnltax.Location = new System.Drawing.Point(563, 39);
+            this.pnltax.Location = new System.Drawing.Point(427, 39);
             this.pnltax.Name = "pnltax";
-            this.pnltax.Size = new System.Drawing.Size(221, 82);
+            this.pnltax.Size = new System.Drawing.Size(225, 82);
             this.pnltax.TabIndex = 129;
             this.pnltax.Visible = false;
             // 
@@ -357,36 +355,61 @@
             this.label43.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label43.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.ForeColor = System.Drawing.Color.Blue;
-            this.label43.Location = new System.Drawing.Point(717, 60);
+            this.label43.Location = new System.Drawing.Point(424, 17);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(73, 13);
+            this.label43.Size = new System.Drawing.Size(72, 13);
             this.label43.TabIndex = 112;
             this.label43.Text = "TAX Extractor";
             this.label43.Click += new System.EventHandler(this.label43_Click);
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.LightGray;
-            this.panel9.Location = new System.Drawing.Point(389, 35);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1, 160);
-            this.panel9.TabIndex = 106;
             // 
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.LightGray;
             this.panel13.Location = new System.Drawing.Point(233, 55);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(560, 1);
+            this.panel13.Size = new System.Drawing.Size(186, 1);
             this.panel13.TabIndex = 110;
             // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.LightGray;
-            this.panel12.Location = new System.Drawing.Point(1, 125);
+            this.panel12.Location = new System.Drawing.Point(1, 122);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(791, 1);
+            this.panel12.Size = new System.Drawing.Size(418, 1);
             this.panel12.TabIndex = 109;
+            // 
+            // txt_SalesRate2
+            // 
+            this.txt_SalesRate2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_SalesRate2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SalesRate2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_SalesRate2.Location = new System.Drawing.Point(562, 134);
+            this.txt_SalesRate2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_SalesRate2.Multiline = true;
+            this.txt_SalesRate2.Name = "txt_SalesRate2";
+            this.txt_SalesRate2.Size = new System.Drawing.Size(116, 26);
+            this.txt_SalesRate2.TabIndex = 17;
+            this.txt_SalesRate2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_SalesRate2.Visible = false;
+            this.txt_SalesRate2.TextChanged += new System.EventHandler(this.txt_SalesRate2_TextChanged);
+            this.txt_SalesRate2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SalesRate2_KeyPress);
+            this.txt_SalesRate2.Leave += new System.EventHandler(this.txt_SalesRate2_Leave);
+            // 
+            // txt_Unit2Dealer2
+            // 
+            this.txt_Unit2Dealer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_Unit2Dealer2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Unit2Dealer2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_Unit2Dealer2.Location = new System.Drawing.Point(562, 161);
+            this.txt_Unit2Dealer2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_Unit2Dealer2.Multiline = true;
+            this.txt_Unit2Dealer2.Name = "txt_Unit2Dealer2";
+            this.txt_Unit2Dealer2.ReadOnly = true;
+            this.txt_Unit2Dealer2.Size = new System.Drawing.Size(87, 26);
+            this.txt_Unit2Dealer2.TabIndex = 27;
+            this.txt_Unit2Dealer2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_Unit2Dealer2.Visible = false;
+            this.txt_Unit2Dealer2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Unit2Dealer2_KeyPress);
             // 
             // panel11
             // 
@@ -399,10 +422,25 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.LightGray;
-            this.panel10.Location = new System.Drawing.Point(560, 35);
+            this.panel10.Location = new System.Drawing.Point(419, 9);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1, 160);
+            this.panel10.Size = new System.Drawing.Size(1, 197);
             this.panel10.TabIndex = 107;
+            // 
+            // textBox6
+            // 
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.textBox6.Location = new System.Drawing.Point(650, 161);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(28, 26);
+            this.textBox6.TabIndex = 100;
+            this.textBox6.Text = "%";
+            this.textBox6.Visible = false;
             // 
             // panel8
             // 
@@ -417,7 +455,7 @@
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox10.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.textBox10.Location = new System.Drawing.Point(677, 161);
+            this.textBox10.Location = new System.Drawing.Point(331, 163);
             this.textBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
@@ -442,12 +480,36 @@
             this.textBox9.Text = "%";
             this.textBox9.Visible = false;
             // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label37.Location = new System.Drawing.Point(539, 16);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(98, 17);
+            this.label37.TabIndex = 90;
+            this.label37.Text = "Retail Minimum";
+            this.label37.Visible = false;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label38.Location = new System.Drawing.Point(510, 17);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(46, 17);
+            this.label38.TabIndex = 91;
+            this.label38.Text = "Dealer";
+            this.label38.Visible = false;
+            // 
             // textBox7
             // 
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.textBox7.Location = new System.Drawing.Point(677, 90);
+            this.textBox7.Location = new System.Drawing.Point(331, 90);
             this.textBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
@@ -456,27 +518,45 @@
             this.textBox7.TabIndex = 101;
             this.textBox7.Text = "%";
             // 
-            // textBox6
+            // txt_SalesRate
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.textBox6.Location = new System.Drawing.Point(339, 161);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(28, 26);
-            this.textBox6.TabIndex = 100;
-            this.textBox6.Text = "%";
-            this.textBox6.Visible = false;
+            this.txt_SalesRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_SalesRate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SalesRate.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_SalesRate.Location = new System.Drawing.Point(666, 9);
+            this.txt_SalesRate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_SalesRate.Multiline = true;
+            this.txt_SalesRate.Name = "txt_SalesRate";
+            this.txt_SalesRate.Size = new System.Drawing.Size(116, 26);
+            this.txt_SalesRate.TabIndex = 13;
+            this.txt_SalesRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_SalesRate.Visible = false;
+            this.txt_SalesRate.TextChanged += new System.EventHandler(this.txt_SalesRate_TextChanged);
+            this.txt_SalesRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SalesRate_KeyPress);
+            this.txt_SalesRate.Leave += new System.EventHandler(this.txt_SalesRate_Leave);
+            // 
+            // txt_Unit1Dealer2
+            // 
+            this.txt_Unit1Dealer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_Unit1Dealer2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Unit1Dealer2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_Unit1Dealer2.Location = new System.Drawing.Point(666, 36);
+            this.txt_Unit1Dealer2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_Unit1Dealer2.Multiline = true;
+            this.txt_Unit1Dealer2.Name = "txt_Unit1Dealer2";
+            this.txt_Unit1Dealer2.ReadOnly = true;
+            this.txt_Unit1Dealer2.Size = new System.Drawing.Size(87, 26);
+            this.txt_Unit1Dealer2.TabIndex = 19;
+            this.txt_Unit1Dealer2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_Unit1Dealer2.Visible = false;
+            this.txt_Unit1Dealer2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Unit1Dealer2_KeyPress);
             // 
             // textBox5
             // 
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.textBox5.Location = new System.Drawing.Point(513, 90);
+            this.textBox5.Location = new System.Drawing.Point(754, 90);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
@@ -484,13 +564,14 @@
             this.textBox5.Size = new System.Drawing.Size(28, 26);
             this.textBox5.TabIndex = 99;
             this.textBox5.Text = "%";
+            this.textBox5.Visible = false;
             // 
             // textBox4
             // 
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.textBox4.Location = new System.Drawing.Point(339, 90);
+            this.textBox4.Location = new System.Drawing.Point(754, 36);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
@@ -498,13 +579,14 @@
             this.textBox4.Size = new System.Drawing.Size(28, 26);
             this.textBox4.TabIndex = 98;
             this.textBox4.Text = "%";
+            this.textBox4.Visible = false;
             // 
             // txt_SalesRateMax
             // 
             this.txt_SalesRateMax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_SalesRateMax.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SalesRateMax.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_SalesRateMax.Location = new System.Drawing.Point(589, 63);
+            this.txt_SalesRateMax.Location = new System.Drawing.Point(243, 63);
             this.txt_SalesRateMax.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_SalesRateMax.Multiline = true;
             this.txt_SalesRateMax.Name = "txt_SalesRateMax";
@@ -514,6 +596,21 @@
             this.txt_SalesRateMax.TextChanged += new System.EventHandler(this.txt_SalesRateMax_TextChanged);
             this.txt_SalesRateMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SalesRateMax_KeyPress);
             this.txt_SalesRateMax.Leave += new System.EventHandler(this.txt_SalesRateMax_Leave);
+            // 
+            // txt_unit1Retailmax2
+            // 
+            this.txt_unit1Retailmax2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_unit1Retailmax2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_unit1Retailmax2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_unit1Retailmax2.Location = new System.Drawing.Point(243, 90);
+            this.txt_unit1Retailmax2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_unit1Retailmax2.Multiline = true;
+            this.txt_unit1Retailmax2.Name = "txt_unit1Retailmax2";
+            this.txt_unit1Retailmax2.ReadOnly = true;
+            this.txt_unit1Retailmax2.Size = new System.Drawing.Size(87, 26);
+            this.txt_unit1Retailmax2.TabIndex = 21;
+            this.txt_unit1Retailmax2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_unit1Retailmax2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_unit1Retailmax2_KeyPress);
             // 
             // label34
             // 
@@ -531,7 +628,7 @@
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label35.Location = new System.Drawing.Point(438, 12);
+            this.label35.Location = new System.Drawing.Point(271, 12);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(77, 20);
             this.label35.TabIndex = 88;
@@ -542,33 +639,11 @@
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label36.Location = new System.Drawing.Point(600, 39);
+            this.label36.Location = new System.Drawing.Point(243, 36);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(101, 17);
             this.label36.TabIndex = 89;
             this.label36.Text = "Retail Maximum";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label37.Location = new System.Drawing.Point(437, 39);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(98, 17);
-            this.label37.TabIndex = 90;
-            this.label37.Text = "Retail Minimum";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label38.Location = new System.Drawing.Point(272, 39);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(46, 17);
-            this.label38.TabIndex = 91;
-            this.label38.Text = "Dealer";
             // 
             // label39
             // 
@@ -610,7 +685,7 @@
             this.txt_unit2Retailmax2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_unit2Retailmax2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_unit2Retailmax2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_unit2Retailmax2.Location = new System.Drawing.Point(589, 161);
+            this.txt_unit2Retailmax2.Location = new System.Drawing.Point(243, 163);
             this.txt_unit2Retailmax2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_unit2Retailmax2.Multiline = true;
             this.txt_unit2Retailmax2.Name = "txt_unit2Retailmax2";
@@ -637,7 +712,7 @@
             this.txt_SalesRateMax2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_SalesRateMax2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SalesRateMax2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_SalesRateMax2.Location = new System.Drawing.Point(589, 134);
+            this.txt_SalesRateMax2.Location = new System.Drawing.Point(243, 136);
             this.txt_SalesRateMax2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_SalesRateMax2.Multiline = true;
             this.txt_SalesRateMax2.Name = "txt_SalesRateMax2";
@@ -666,7 +741,7 @@
             this.txt_unit1Retailmin2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_unit1Retailmin2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_unit1Retailmin2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_unit1Retailmin2.Location = new System.Drawing.Point(425, 90);
+            this.txt_unit1Retailmin2.Location = new System.Drawing.Point(666, 90);
             this.txt_unit1Retailmin2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_unit1Retailmin2.Multiline = true;
             this.txt_unit1Retailmin2.Name = "txt_unit1Retailmin2";
@@ -674,6 +749,7 @@
             this.txt_unit1Retailmin2.Size = new System.Drawing.Size(87, 26);
             this.txt_unit1Retailmin2.TabIndex = 20;
             this.txt_unit1Retailmin2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_unit1Retailmin2.Visible = false;
             this.txt_unit1Retailmin2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_unit1Retailmin2_KeyPress);
             // 
             // label44
@@ -692,13 +768,14 @@
             this.txt_SalesRateMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_SalesRateMin.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SalesRateMin.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_SalesRateMin.Location = new System.Drawing.Point(425, 63);
+            this.txt_SalesRateMin.Location = new System.Drawing.Point(666, 63);
             this.txt_SalesRateMin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_SalesRateMin.Multiline = true;
             this.txt_SalesRateMin.Name = "txt_SalesRateMin";
             this.txt_SalesRateMin.Size = new System.Drawing.Size(116, 26);
             this.txt_SalesRateMin.TabIndex = 14;
             this.txt_SalesRateMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_SalesRateMin.Visible = false;
             this.txt_SalesRateMin.TextChanged += new System.EventHandler(this.txt_SalesRateMin_TextChanged);
             this.txt_SalesRateMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SalesRateMin_KeyPress);
             // 
@@ -716,21 +793,6 @@
             this.txt_CostBase.TabIndex = 11;
             this.txt_CostBase.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_CostBase.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CostBase_KeyPress);
-            // 
-            // txt_unit1Retailmax2
-            // 
-            this.txt_unit1Retailmax2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_unit1Retailmax2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_unit1Retailmax2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_unit1Retailmax2.Location = new System.Drawing.Point(589, 90);
-            this.txt_unit1Retailmax2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_unit1Retailmax2.Multiline = true;
-            this.txt_unit1Retailmax2.Name = "txt_unit1Retailmax2";
-            this.txt_unit1Retailmax2.ReadOnly = true;
-            this.txt_unit1Retailmax2.Size = new System.Drawing.Size(87, 26);
-            this.txt_unit1Retailmax2.TabIndex = 21;
-            this.txt_unit1Retailmax2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_unit1Retailmax2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_unit1Retailmax2_KeyPress);
             // 
             // txt_PurchaseRate
             // 
@@ -811,70 +873,6 @@
             this.txt_SalesRateMin2.TextChanged += new System.EventHandler(this.txt_SalesRateMin2_TextChanged);
             this.txt_SalesRateMin2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SalesRateMin2_KeyPress);
             this.txt_SalesRateMin2.Leave += new System.EventHandler(this.txt_SalesRateMin2_Leave);
-            // 
-            // txt_SalesRate
-            // 
-            this.txt_SalesRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_SalesRate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SalesRate.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_SalesRate.Location = new System.Drawing.Point(251, 63);
-            this.txt_SalesRate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_SalesRate.Multiline = true;
-            this.txt_SalesRate.Name = "txt_SalesRate";
-            this.txt_SalesRate.Size = new System.Drawing.Size(116, 26);
-            this.txt_SalesRate.TabIndex = 13;
-            this.txt_SalesRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_SalesRate.TextChanged += new System.EventHandler(this.txt_SalesRate_TextChanged);
-            this.txt_SalesRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SalesRate_KeyPress);
-            this.txt_SalesRate.Leave += new System.EventHandler(this.txt_SalesRate_Leave);
-            // 
-            // txt_Unit2Dealer2
-            // 
-            this.txt_Unit2Dealer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_Unit2Dealer2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Unit2Dealer2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_Unit2Dealer2.Location = new System.Drawing.Point(251, 161);
-            this.txt_Unit2Dealer2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_Unit2Dealer2.Multiline = true;
-            this.txt_Unit2Dealer2.Name = "txt_Unit2Dealer2";
-            this.txt_Unit2Dealer2.ReadOnly = true;
-            this.txt_Unit2Dealer2.Size = new System.Drawing.Size(87, 26);
-            this.txt_Unit2Dealer2.TabIndex = 27;
-            this.txt_Unit2Dealer2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_Unit2Dealer2.Visible = false;
-            this.txt_Unit2Dealer2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Unit2Dealer2_KeyPress);
-            // 
-            // txt_Unit1Dealer2
-            // 
-            this.txt_Unit1Dealer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_Unit1Dealer2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Unit1Dealer2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_Unit1Dealer2.Location = new System.Drawing.Point(251, 90);
-            this.txt_Unit1Dealer2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_Unit1Dealer2.Multiline = true;
-            this.txt_Unit1Dealer2.Name = "txt_Unit1Dealer2";
-            this.txt_Unit1Dealer2.ReadOnly = true;
-            this.txt_Unit1Dealer2.Size = new System.Drawing.Size(87, 26);
-            this.txt_Unit1Dealer2.TabIndex = 19;
-            this.txt_Unit1Dealer2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_Unit1Dealer2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Unit1Dealer2_KeyPress);
-            // 
-            // txt_SalesRate2
-            // 
-            this.txt_SalesRate2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_SalesRate2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SalesRate2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_SalesRate2.Location = new System.Drawing.Point(251, 134);
-            this.txt_SalesRate2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_SalesRate2.Multiline = true;
-            this.txt_SalesRate2.Name = "txt_SalesRate2";
-            this.txt_SalesRate2.Size = new System.Drawing.Size(116, 26);
-            this.txt_SalesRate2.TabIndex = 17;
-            this.txt_SalesRate2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_SalesRate2.Visible = false;
-            this.txt_SalesRate2.TextChanged += new System.EventHandler(this.txt_SalesRate2_TextChanged);
-            this.txt_SalesRate2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SalesRate2_KeyPress);
-            this.txt_SalesRate2.Leave += new System.EventHandler(this.txt_SalesRate2_Leave);
             // 
             // groupBox1
             // 
@@ -1213,7 +1211,7 @@
             this.Lab_isunit1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Lab_isunit1.Location = new System.Drawing.Point(467, 137);
             this.Lab_isunit1.Name = "Lab_isunit1";
-            this.Lab_isunit1.Size = new System.Drawing.Size(95, 15);
+            this.Lab_isunit1.Size = new System.Drawing.Size(96, 15);
             this.Lab_isunit1.TabIndex = 86;
             this.Lab_isunit1.Text = "Times Sales Unit ";
             this.Lab_isunit1.Visible = false;
@@ -1279,7 +1277,7 @@
             this.pnlbottom.Controls.Add(this.label45);
             this.pnlbottom.Controls.Add(this.Chk_HavebatchNo);
             this.pnlbottom.Controls.Add(this.pnlprescription);
-            this.pnlbottom.Location = new System.Drawing.Point(4, 277);
+            this.pnlbottom.Location = new System.Drawing.Point(2, 291);
             this.pnlbottom.Name = "pnlbottom";
             this.pnlbottom.Size = new System.Drawing.Size(798, 155);
             this.pnlbottom.TabIndex = 123;
@@ -1537,7 +1535,6 @@
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel11;

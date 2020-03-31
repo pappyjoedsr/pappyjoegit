@@ -42,10 +42,11 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel">
-      <HintPath>C:\Users\user\Downloads\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <HintPath>Properties\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="MySql.Data">
+    <Reference Include="MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\MySql.Data.DLL</HintPath>
     </Reference>
     <Reference Include="MySqlBackup">

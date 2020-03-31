@@ -1071,7 +1071,9 @@ namespace PappyjoeMVC.View
                         decimal refund = 0;
                         refund = adv - Convert.ToDecimal(txt_adv_refund.Text);
                         this.cntrl.update_advance(refund, patient_id);
-                        this.cntrl.Save_advancetable(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), txt_adv_refund.Text, "cash", "credit");
+                        this.cntrl.Save_advancetable(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), txt_adv_refund.Text, "cash", "credit","Receipt");
+                        //lblAdvance.Show(); adv_refund.Visible = true;
+                        lblAdvance.Text = "Available advance: " + string.Format("{0:C}", decimal.Parse(refund.ToString()));
                         txt_adv_refund.Text = "";
                         MessageBox.Show("Advance is refunded..","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
