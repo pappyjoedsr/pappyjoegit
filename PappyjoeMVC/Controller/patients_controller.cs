@@ -44,6 +44,11 @@ namespace PappyjoeMVC.Controller
             DataTable rs_patients = _model.Patient_details(ptid);
             return rs_patients;
         }
+        public DataTable log_details()
+        {
+            DataTable rs_log = _model.log_details();
+            return rs_log;
+        }
         public DataTable clinic_findings(DateTime startDateTime, DateTime startDateTime1)
         {
             DataTable dtb = _model.clinic_findings(startDateTime, startDateTime1);
