@@ -32,6 +32,11 @@ namespace PappyjoeMVC.Model
             DataTable rs_patients = db.table("select pt_id,pt_name,gender from tbl_patient where id='" + pt_id + "'");
             return rs_patients;
         }
+        public DataTable log_details()
+        {
+            DataTable rs_log = db.table("select  * from tbl_log ORDER BY log_type");
+            return rs_log;
+        }
         public DataTable clinic_findings(DateTime startDateTime, DateTime startDateTime1)
         {
             DataTable dt_pt_main = db.table("SELECT tbl_clinical_findings.id,tbl_clinical_findings.pt_id,tbl_clinical_findings.date,tbl_doctor.doctor_name FROM tbl_clinical_findings join tbl_doctor on tbl_clinical_findings.dr_id=tbl_doctor.id  where tbl_clinical_findings.date between  '" + startDateTime.ToString("yyyy-MM-dd") + "' AND '" + startDateTime1.ToString("yyyy-MM-dd") + "'  ORDER BY tbl_clinical_findings.date DESC");
