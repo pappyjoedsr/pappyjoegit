@@ -50,9 +50,9 @@
             this.label19.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline);
             this.label19.Location = new System.Drawing.Point(26, 18);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(201, 25);
+            this.label19.Size = new System.Drawing.Size(395, 25);
             this.label19.TabIndex = 154;
-            this.label19.Text = "Prescription Language";
+            this.label19.Text = "Prescription and Appointment SMS Language";
             // 
             // label1
             // 
@@ -89,7 +89,7 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.cmbLanguage);
             this.Name = "Prescription_Lang";
-            this.Text = "Prescription_Lang";
+            this.Text = "Prescription Lang";
             this.Load += new System.EventHandler(this.Prescription_Lang_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

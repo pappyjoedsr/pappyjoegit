@@ -19,6 +19,11 @@ namespace PappyjoeMVC.Model
           DataTable dtb= db.table( "SELECT id,pt_name,start_datetime,plan_New_procedure ,status,EHR_status FROM tbl_appointment where start_datetime between  '" + Convert.ToDateTime(startDateTime).ToString("yyyy-MM-dd HH:mm") + "' AND '" + Convert.ToDateTime(startDateTime1).ToString("yyyy-MM-dd HH:mm") + "' ORDER BY start_datetime");
             return dtb;
         }
+        public int save_log(string log_userid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = db.execute("insert into tbl_log(log_user_id,log_type,log_description,log_stage)values('" + log_userid + "','" + log_type + "','" + log_descriptn + "','" + log_stage + "')");
+            return j;
+        }
         public DataTable doctor_appointments(DateTime startDateTime, DateTime startDateTime1, string doctor_id)
         {
           DataTable dtb =db.table("SELECT id,pt_name,start_datetime,plan_New_procedure ,status,EHR_status FROM tbl_appointment where start_datetime between  '" + Convert.ToDateTime(startDateTime).ToString("yyyy-MM-dd HH:mm") + "' AND '" + Convert.ToDateTime(startDateTime1).ToString("yyyy-MM-dd HH:mm") + "' AND dr_id='" + doctor_id + "' ORDER BY start_datetime");

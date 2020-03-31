@@ -102,8 +102,8 @@ namespace PappyjoeMVC.View
                 }
                 if (smsName != "" && smsPass != "")
                 {
-                    
-                    string res = this.ctrlr.SendSMS(smsName, smsPass, mob_number, "Dear " + strPatientName + ", Your dental lab work [Tooth:" + txttooth.Text + "]  deliver  on " + Convert.ToDateTime(dateTimePickerdue.Text).ToString("dd MMM yyyy") + " @ " + strclinic + "," + contact_no);
+                    string type = "LNG";
+                    string res = this.ctrlr.SendSMS(smsName, smsPass, mob_number, "Dear " + strPatientName + ", Your dental lab work [Tooth:" + txttooth.Text + "]  deliver  on " + Convert.ToDateTime(dateTimePickerdue.Text).ToString("dd MMM yyyy") + " @ " + strclinic + "," + contact_no,type);
                     if (res == "SMS message(s) sent")
                     { MessageBox.Show("SMS send successfully", "success", MessageBoxButtons.OK, MessageBoxIcon.None); }
                 }

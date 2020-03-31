@@ -85,6 +85,11 @@ namespace PappyjoeMVC.Model
         {
             db.execute("insert into tbl_invoices_main (date,pt_id,pt_name,invoice,status,type) values('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + patient_id + "','" + name + "','" + billno + "','1','service')");
         }
+        public int save_log(string log_userid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = db.execute("insert into tbl_log(log_user_id,log_type,log_description,log_stage)values('" + log_userid + "','" + log_type + "','" + log_descriptn + "','" + log_stage + "')");
+            return j;
+        }
         public string get_invoiceMain_maxid()
         {
             string dt1 = db.scalar("select MAX(id) from tbl_invoices_main");

@@ -49,9 +49,9 @@ namespace PappyjoeMVC.Controller
             int j = mdl.labupdate(labname,assign_date,duedate,patid,id);
             return j;
         }
-        public string SendSMS(string User, string password, string Mobile_Number, string Message)
+        public string SendSMS(string User, string password, string Mobile_Number, string Message,string type)
         {
-            string val = s.SendSMS(User, password, Mobile_Number, Message);
+            string val = s.SendSMS(User, password, Mobile_Number, Message,type);
             return val;
         }
     }

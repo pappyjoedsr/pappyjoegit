@@ -483,6 +483,7 @@ namespace PappyjoeMVC.View
                             Lab_advance_Available.Text = string.Format("{0:C}", decimal.Parse(adv.ToString()));
                         }
                         txt_PayNow.Clear();
+                        this.cntrl.save_log(doctor_id, "Receipt", "logged user adds new receipt", "Add");
                         DialogResult rslt = MessageBox.Show("Advance Payment Saved...! Do you want print receipt...? ", "Print As...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (rslt == DialogResult.Yes)
                         {

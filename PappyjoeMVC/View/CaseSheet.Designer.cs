@@ -682,7 +682,7 @@
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label10.Location = new System.Drawing.Point(419, 502);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 13);
+            this.label10.Size = new System.Drawing.Size(31, 13);
             this.label10.TabIndex = 238;
             this.label10.Text = "TIME";
             // 

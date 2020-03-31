@@ -18,6 +18,11 @@ namespace PappyjoeMVC.Controller
             string s = cmodel.privilge_for_inventory(doctor_id);
             return s;
         }
+        public int save_log(string log_usrid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = Add_inv_model.save_log(log_usrid, log_type, log_descriptn, log_stage);
+            return j;
+        }
         public string check_delete_privillege(string doctor_id)
         {
             string privid = Add_inv_model.check_delete_privillege(doctor_id);

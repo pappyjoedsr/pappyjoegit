@@ -103,6 +103,11 @@ namespace PappyjoeMVC.Controller
             int i = model.update_batchnumber(qty,Entry_No);
             return i;
         }
+        public int save_log(string log_usrid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = model.save_log(log_usrid, log_type, log_descriptn, log_stage);
+            return j;
+        }
         public DataTable get_details_from_items(string itemid)
         {
             DataTable dtb = model.get_details_from_items(itemid);

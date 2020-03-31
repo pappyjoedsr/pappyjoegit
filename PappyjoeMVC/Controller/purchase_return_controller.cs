@@ -17,6 +17,11 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = model.load_return_details(purchRetNo1);
             return dtb;
         }
+        public int save_log(string log_usrid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = model.save_log(log_usrid, log_type, log_descriptn, log_stage);
+            return j;
+        }
         public string get_packing(string item_code, string PurchNumber)
         {
             string packing = model.get_packing(item_code,PurchNumber);

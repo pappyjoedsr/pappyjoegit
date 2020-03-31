@@ -39,6 +39,11 @@ namespace PappyjoeMVC.Model
             int i = db.execute("update tbl_patient set pt_name='" + patname + "',pt_id='" + patId + "',aadhar_id='" + aadhar + "',gender='" + Gender + "',age='" + age + "',date_of_birth='" + Dob + "',blood_group='" + blood + "',family='" + family + "',primary_mobile_number='" + Pmob + "',secondary_mobile_number='" + Smob + "',landline_number='" + Landline + "',email_address='" + email + "',street_address='" + street + "',locality='" + locality + "',city='" + city + "',pincode='" + pin + "',group_id='',refferedby='" + refferedby + "',Opticket='" + opticket + "',Visited='" + Visited + "',Occupation='" + occupation + "',doctorname='" + doctername + "',nationality='"+nationality+"',passport_no='"+passport+"'  where id='" + pt_id + "'");
             return i;
         }
+        public int save_log(string log_userid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = db.execute("insert into tbl_log(log_user_id,log_type,log_description,log_stage)values('" + log_userid + "','" + log_type + "','" + log_descriptn + "','" + log_stage + "')");
+            return j;
+        }
         public int delete_patient(string pt_id)
         {
             int i = db.execute("update tbl_patient set Profile_Status='Cancelled' where id='" + pt_id + "'");

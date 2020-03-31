@@ -16,6 +16,11 @@ namespace PappyjoeMVC.Controller
             string id = model.appoinmt_permission(doctor_id);
             return id;
         }
+        public int save_log(string log_usrid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = model.save_log(log_usrid, log_type, log_descriptn, log_stage);
+            return j;
+        }
         public DataTable admin_appointments(DateTime startDateTime, DateTime startDateTime1)
         {
             DataTable dtb = model.admin_appointments(startDateTime, startDateTime1);

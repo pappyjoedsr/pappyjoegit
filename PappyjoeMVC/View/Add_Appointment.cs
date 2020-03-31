@@ -442,8 +442,9 @@ namespace PappyjoeMVC.View
                 if (pat.Rows.Count > 0)
                 {
                     string number = "91" + pat.Rows[0]["primary_mobile_number"].ToString();
+                    string type = "LNG";
                     text = "Dear " + pat.Rows[0]["pt_name"].ToString() + " " + "Your appointment for " + compoprocedure.Text + " has been confirmed at " + StartT1.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " with " + "Dr " + Cmb_doctor.Text + " Regards " + clinicn + "," + contact_no;
-                    string smspatnt=this.ctrlr.SendSMS(smsName, smsPass, number, text);
+                    string smspatnt=this.ctrlr.SendSMS(smsName, smsPass, number, text, type);
                     string txt = "Dear " + pat.Rows[0]["pt_name"].ToString() + " " + "Your appointment for " + compoprocedure.Text + " has been confirmed at " + StartT1.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " with " + "Dr " + Cmb_doctor.Text + "Regards";
                     this.ctrlr.inssms(patient_id, DateTime.Now.ToString("yyyy-MM-dd hh:mm"), txt);
                     //For Remainder SMS
@@ -561,10 +562,12 @@ namespace PappyjoeMVC.View
                         if (appointment_id !="")
                         {
                             j = this.ctrlr.apntupdate(Convert.ToDateTime(StartT1).ToString("yyyy-MM-dd HH:mm"), diff1, txtDescription.Text, dr_id, compoprocedure.Text,name, appointment_id);
+                            this.ctrlr.save_log(doctor_id, "Appointment", "logged user edits appointment", "Edit");
                         }
                         else
                         {
                             j = this.ctrlr.insappointment(Convert.ToDateTime(Dateonly).ToString("yyyy-MM-dd"), Convert.ToDateTime(StartT1).ToString("yyyy-MM-dd H:mm:ss"), diff1, txtDescription.Text, patient_id,linkLabel_Name.Text,dr_id,p_mobile,p_email,compoprocedure.Text,name);
+                            this.ctrlr.save_log(doctor_id, "Appointment", "logged user adds new appointment", "Add");
                         }
                         if (checkBox1.Checked)
                         {
@@ -580,8 +583,9 @@ namespace PappyjoeMVC.View
                             if (dr_mobile != "0")
                             {
                                 string number = "91" + dr_mobile;
+                                string type = "LNG";
                                 text = "You have an appointment on " + dpStartTimeDate.Value.ToShortDateString() + " " + cmbStartTime.Text + " With " + patient_name + " for " + compoprocedure.Text + " at " + clinicn + "," + contact_no;
-                                string smsdctr=this.ctrlr.SendSMS(smsName, smsPass, number, text);
+                                string smsdctr=this.ctrlr.SendSMS(smsName, smsPass, number, text, type);
                                 //For Remainder SMS
                                 if (day_time != null)
                                 {

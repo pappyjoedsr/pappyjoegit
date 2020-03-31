@@ -39,6 +39,11 @@ namespace PappyjoeMVC.Model
             int i = db.execute("update  tbl_appointment SET start_datetime='" + strtdatetime + "',duration='" + duratn + "',note='" + note + "',dr_id ='" + dr_id + "',plan_new_procedure='" + procedure + "',booked_by='" + bookedby + "' WHERE id='" + appointmentid + "'");
             return i;
         }
+        public int save_log(string log_userid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = db.execute("insert into tbl_log(log_user_id,log_type,log_description,log_stage)values('" + log_userid + "','" + log_type + "','" + log_descriptn + "','" + log_stage + "')");
+            return j;
+        }
         public int insappointment(string book_datetime, string start_datetime, string duration, string note, string pt_id, string pt_name, string dr_id, string mob_no, string email_id, string procedure, string booked_by)
         {
             int i = db.execute("insert into tbl_appointment (book_datetime,start_datetime,duration,note,pt_id,pt_name,dr_id,mobile_no,email_id,notify_patient,notify_doctor,plan_new_procedure,status,booked_by ) values('" + book_datetime + "','" + start_datetime + "','" + duration + "','" + note + "','" + pt_id + "','" + pt_name + "','" + dr_id + "','" + mob_no + "','" + email_id + "','yes','yes','" + procedure + "','scheduled','" + booked_by + "')");

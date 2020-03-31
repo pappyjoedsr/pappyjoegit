@@ -497,6 +497,7 @@ namespace PappyjoeMVC.View
                         }
                         if (rowaffected > 0)
                         {
+                            this.cntrl.save_log(doctor_id, "Sales Return", "logged user adds new sales return", "Add");
                             DialogResult res = MessageBox.Show("Data inserted Successfully,Do you want to print ?", "",
                          MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (res == DialogResult.Yes)
@@ -767,6 +768,7 @@ namespace PappyjoeMVC.View
                         }
                         dgv_SalesItem.Rows.RemoveAt(index);
                         fill_Batch_delete(itmCode, quantity);
+                        this.cntrl.save_log(doctor_id, "Sales Return", "logged user deletes sales return", "Delete");
                     }
                 }
             }

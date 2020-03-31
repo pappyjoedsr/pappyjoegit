@@ -545,6 +545,7 @@ namespace PappyjoeMVC.View
                             string app_id = "0";
                             app_id = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
                             this.ctrlr.delete(app_id);
+                            this.ctrlr.save_log(doctor_id, "Appointment", "logged user deletes appointment", "Delete");
                             dataGridView2.RowCount = 0;
                             dataGridView2.Height = 404;
                             dataGridView2.ColumnCount = 12;

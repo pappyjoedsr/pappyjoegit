@@ -2038,6 +2038,7 @@ namespace PappyjoeMVC.View
                             int j = 1;
                             this.cntrl.save_invoice_main(patient_id, linkL_Name.Text.ToString(), text_billno.Text.ToString());
                             string dt1 = this.cntrl.get_invoiceMain_maxid();
+                            this.cntrl.save_log(doctor_id, "Invoice", "logged user adds new invoice", "Add");
                             int invoice_main_id = 0;
                             try
                             {
@@ -2213,6 +2214,7 @@ namespace PappyjoeMVC.View
                         }
 
                     }
+
                     btn_SaveInvoice.Text = "SAVE";
                     var form2 = new Invoice();
                     form2.doctor_id = doctor_id;

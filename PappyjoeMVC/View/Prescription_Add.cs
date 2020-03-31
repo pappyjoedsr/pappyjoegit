@@ -997,9 +997,9 @@ namespace PappyjoeMVC.View
 
         private void PrescriptionAdd_Load(object sender, EventArgs e)
         {
-
             try
             {
+                this.ControlBox = false;
                 toolStripButton18.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
                 DataTable clinicname = this.cntrl.Get_CompanyNAme();
                 if (clinicname.Rows.Count > 0)

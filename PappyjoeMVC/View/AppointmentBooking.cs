@@ -384,10 +384,12 @@ namespace PappyjoeMVC.View
                             if (dtpSearch.Rows.Count <= 0)
                             {
                                 this.cntrl.insappointment(Convert.ToDateTime(Dateonly).ToString("yyyy-MM-dd"), Convert.ToDateTime(StartT).ToString("yyyy-MM-dd HH:mm"), diff1, txtDescription.Text, patient_id, txt_p_name.Text, dr_id, txt_p_mobile.Text, txt_p_email.Text, compoprocedure.Text, Name);
+                                this.cntrl.save_log(doctor_id, "Appointment", "logged user adds new appointment", "Add");
                             }
                             else
                             {
                                 this.cntrl.insappointment(Convert.ToDateTime(Dateonly).ToString("yyyy-MM-dd"), Convert.ToDateTime(StartT).ToString("yyyy-MM-dd HH:mm"), diff1, txtDescription.Text, patient_id, patient_name, dr_id, lab_p_ph.Text, lab_p_email.Text, compoprocedure.Text, Name);
+                                this.cntrl.save_log(doctor_id, "Appointment", "logged user adds new appointment", "Add");
                             }
 
                             DataTable dt_a = this.cntrl.appointmentId();
@@ -416,6 +418,8 @@ namespace PappyjoeMVC.View
                             string clinic = "", locality = "", contact_no = "";
 
                             System.Data.DataTable clinicname = this.cntrl.clinicdetails();
+                            clinic = clinicname.Rows[0]["name"].ToString();
+                            contact_no= clinicname.Rows[0]["contact_no"].ToString();
                             if (checkBox1.Checked)
                             {
                                 string text = "";
@@ -429,6 +433,7 @@ namespace PappyjoeMVC.View
                                 SMS_model a = new SMS_model();
                                 DataTable pat = this.cntrl.Get_Patient_Details(patient_id);
                                 DataTable smsreminder = this.cntrl.Get_reminderSmS();
+                                DataTable smslanguage = this.cntrl.sms_lang();
                                 if (smsreminder.Rows.Count > 0)
                                 {
                                     send_on_day = smsreminder.Rows[0]["send_on_day"].ToString();
@@ -439,16 +444,26 @@ namespace PappyjoeMVC.View
                                 if (pat.Rows.Count > 0)
                                 {
                                     string number = "91" + pat.Rows[0]["primary_mobile_number"].ToString();
+                                    string type = "LNG";
                                     if (neworold == "1")
                                     {
-
-                                        a.SendSMS(smsName, smsPass, number, "Dear " + pat.Rows[0]["pt_name"].ToString() + " welcome to " + clinic + "," + contact_no);
+                                        a.SendSMS(smsName, smsPass, number, "Dear " + pat.Rows[0]["pt_name"].ToString() + " welcome to " + clinic + "," + contact_no, type);
                                     }
-
-                                    text = "Dear " + pat.Rows[0]["pt_name"].ToString() + " " + "Your appointment for " + compoprocedure.Text + " has been confirmed at " + StartT.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " with " + "Dr " + combodoctor.Text + " Regards " + clinic + "," + contact_no;
-                                    a.SendSMS(smsName, smsPass, number, text);
-                                    this.cntrl.save_Pt_SMS(patient_id, pat.Rows[0]["pt_name"].ToString(), compoprocedure.Text, StartT.ToString("dd/MM/yyyy"), cmbStartTime.Text, combodoctor.Text);
-                                    //For Remainder SMS
+                                    if(smslanguage.Rows.Count>0)
+                                    {
+                                        string smslang = smslanguage.Rows[0]["Prescription_lang"].ToString();
+                                        DataTable smstemplate = this.cntrl.smstemplate(smslang,  pat.Rows[0]["pt_name"].ToString(), compoprocedure.Text, StartT.ToString("dd/MM/yyyy"), cmbStartTime.Text, combodoctor.Text, clinic, contact_no);
+                                        if (smstemplate.Rows.Count>0)
+                                        {
+                                            text = smstemplate.Rows[0]["Template"].ToString();
+                                            a.SendSMS(smsName, smsPass, number, text, type);
+                                            this.cntrl.save_Pt_SMS(patient_id, pat.Rows[0]["pt_name"].ToString(), compoprocedure.Text, StartT.ToString("dd/MM/yyyy"), cmbStartTime.Text, combodoctor.Text);
+                                        }
+                                    }
+                                    //text = "Dear " + pat.Rows[0]["pt_name"].ToString() + " " + "Your appointment for " + compoprocedure.Text + " has been confirmed at " + StartT.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " with " + "Dr " + combodoctor.Text + " Regards " + clinic + "," + contact_no;
+                                    //a.SendSMS(smsName, smsPass, number, text);
+                                    //this.cntrl.save_Pt_SMS(patient_id, pat.Rows[0]["pt_name"].ToString(), compoprocedure.Text, StartT.ToString("dd/MM/yyyy"), cmbStartTime.Text, combodoctor.Text);
+                                    ////For Reminder SMS-----
                                     if (day_time != null)
                                     {
                                         if (dpStartTimeDate.Value > DateTime.Now.Date)
@@ -461,7 +476,6 @@ namespace PappyjoeMVC.View
                                     {
                                         if (dpStartTimeDate.Value > DateTime.Now.Date)
                                         {
-
                                             text = "Dear " + pat.Rows[0]["pt_name"].ToString() + ", " + "Today you have an appointment at " + clinic + " on " + StartT.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " for " + compoprocedure.Text + " .Regards  " + clinic + "," + contact_no;
                                             a.SendSMS(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT.ToString("dd/MM/yyyy") + before_time, DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
                                         }
@@ -477,14 +491,14 @@ namespace PappyjoeMVC.View
                                     string smsName = "", smsPass = "";
                                     SMS_model a = new SMS_model();
                                     string number = "91" + dr_mobile;
+                                    string type = "LNG";
                                     text = "You have an appointment on " + dpStartTimeDate.Value.ToShortDateString() + " " + cmbStartTime.Text + " With " + txt_p_name.Text + " for " + compoprocedure.Text + " at " + clinic + "," + contact_no;
-                                    a.SendSMS(smsName, smsPass, number, text);
+                                    a.SendSMS(smsName, smsPass, number, text,type);
                                     //For Remainder SMS
                                     if (day_time != null)
                                     {
                                         if (dpStartTimeDate.Value > DateTime.Now.Date)
                                         {
-
                                             text = "You have an appointment on " + dpStartTimeDate.Value.ToShortDateString() + " " + cmbStartTime.Text + " With " + txt_p_name.Text + " for " + compoprocedure.Text + " at " + clinic + "," + contact_no;
                                             // a.SendSMS(smsName, smsPass, number, text);
                                             a.SendSMS(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT.ToString("dd/MM/yyyy") + " 09:10:00 am", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));

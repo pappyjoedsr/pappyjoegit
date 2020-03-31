@@ -60,6 +60,7 @@ namespace PappyjoeMVC.View
             if (purchase == null || purchase.IsDisposed)
                 purchase = new Purchase();
             purchase.TopLevel = false;
+            purchase.doctor_id = doctor_id;
             panel_main.Controls.Add(purchase);
             purchase.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             purchase.Show();
@@ -1181,6 +1182,7 @@ namespace PappyjoeMVC.View
             if (pur_return == null || pur_return.IsDisposed)
                 pur_return = new Purchase_Return();
             pur_return.TopLevel = false;
+            pur_return.doctor_id = doctor_id;
             panel_main.Controls.Add(pur_return);
             pur_return.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             pur_return.Show();
@@ -1196,6 +1198,7 @@ namespace PappyjoeMVC.View
             if (salesreturn == null || salesreturn.IsDisposed)
                 salesreturn = new Sales_Return();
             salesreturn.TopLevel = false;
+            salesreturn.doctor_id = doctor_id;
             panel_main.Controls.Add(salesreturn);
             salesreturn.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             salesreturn.Show();

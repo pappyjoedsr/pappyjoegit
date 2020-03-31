@@ -23,9 +23,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = cmdl.smsdetails();
             return dt;
         }
-        public string SendSMS(string User, string password, string Mobile_Number, string Message)
+        public string SendSMS(string User, string password, string Mobile_Number, string Message,string type)
         {
-            string val = s.SendSMS(User, password, Mobile_Number, Message);
+            string val = s.SendSMS(User, password, Mobile_Number, Message, type);
             return val;
         }
         public string SendSMS(string User, string password, string Mobile_Number, string Message, string SID, string Sname, string scheduledDate, string systemdate)
@@ -107,6 +107,11 @@ namespace PappyjoeMVC.Controller
         {
             int i = mdl.apntupdate(strtdatetime, duratn, note, dr_id, procedure, bookedby, appointmentid);
             return i;
+        }
+        public int save_log(string log_usrid, string log_type, string log_descriptn, string log_stage)
+        {
+            int j = mdl.save_log(log_usrid, log_type, log_descriptn, log_stage);
+            return j;
         }
         public int insappointment(string book_datetime, string start_datetime, string duration, string note, string pt_id, string pt_name, string dr_id, string mob_no, string email_id, string procedure, string booked_by)
         {

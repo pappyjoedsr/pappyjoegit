@@ -182,5 +182,10 @@ namespace PappyjoeMVC.Model
             DataTable dtb = db.table("select * from tbl_tax order by id");
             return dtb;
         }
+        public DataTable sms_language()
+        {
+            DataTable d = db.table("select Prescription_lang from tbl_practice_details");
+            return d;
+        }
     }
 }

@@ -84,5 +84,10 @@ namespace PappyjoeMVC.Model
             DataTable dt_a = db.table("select pt_id,dr_id,note,plan_new_procedure from tbl_appointment where  id=" + id + " ORDER BY id");
             return dt_a;
         }
+        public DataTable smstemplate_Appointmnt(string language,string patientname,string procedure,string date,string time,string docname,string clinic,string contactno)
+        {
+            DataTable dt = db.table("SELECT REPLACE( REPLACE( REPLACE( REPLACE( REPLACE( REPLACE( REPLACE( Template, 'contactno', '"+ contactno + ". ' ), 'clinic', '"+ clinic + ", ' ), 'doctorname', '"+ docname + ". ' ), 'time', '"+ time + "' ), 'date', '"+ date + "'), 'procedure', '"+ procedure + " ' ), 'patientname', '"+ patientname + ", ' )  as Template    FROM tbl_sms_language where Language = '"+ language + "' and Type = 'Appointment'");
+            return dt;
+        }
     }
 }

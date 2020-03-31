@@ -15,6 +15,7 @@ namespace PappyjoeMVC.View
         public DataTable data_from_purchase1 = new DataTable();
         decimal amtUntchange = 0;
         decimal ttlamt = 0;
+        public string doctor_id = "0";
         public static string itemCode;
         public static string Item_id;
         public static bool Item_flag = false;
@@ -918,6 +919,7 @@ namespace PappyjoeMVC.View
                                 txtIgst.Text = dgvItemData.Rows[Rowindex].Cells["igst"].Value.ToString();
                                 Btn_Add.Text = "Update";
                                 txt_qty.Focus();
+                                this.cntrl.save_log(doctor_id, "Purchase", "logged user edits purchase", "Edit");
                                 Item_id = dgvItemData.Rows[Rowindex].Cells["id"].Value.ToString();
                                 DataTable dtitems = this.cntrl.Get_unites(Item_id);
                                 unitload(dtitems);
@@ -960,6 +962,7 @@ namespace PappyjoeMVC.View
                                     dt_for_delete.Columns.Add("Prd_Date");
                                     dt_for_delete.Columns.Add("Exp_Date");
                                     dt_for_delete.Columns.Add("period");
+                                    this.cntrl.save_log(doctor_id, "Purchase", "logged user deletes purchase", "Delete");
                                     string itemid = dgvItemData.CurrentRow.Cells["id"].Value.ToString();
                                     string itemcode = dgvItemData.CurrentRow.Cells["itemid"].Value.ToString();
                                     decimal amount = Convert.ToDecimal(dgvItemData.CurrentRow.Cells["Amount"].Value.ToString());
@@ -1183,6 +1186,7 @@ namespace PappyjoeMVC.View
                                 }
                             }
                             clear();
+                            this.cntrl.save_log(doctor_id, "Purchase", "logged user adds new purchase", "Add");
                             DialogResult res = MessageBox.Show("Data inserted Successfully,Do you want to print ?", "Success ",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (res == DialogResult.Yes)

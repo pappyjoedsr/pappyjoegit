@@ -2169,7 +2169,7 @@ namespace PappyjoeMVC.View
             this.label11.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label11.Location = new System.Drawing.Point(7, 77);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 13);
+            this.label11.Size = new System.Drawing.Size(62, 13);
             this.label11.TabIndex = 3;
             this.label11.Text = "Booked By";
             // 
@@ -3105,6 +3105,7 @@ namespace PappyjoeMVC.View
                     }
                 }
                 bk.ModifyEvent(ContextEvent);
+                this.cntrl.save_log(doctor_id, "Appointment", "logged user edits appointment", "Edit");
                 bk.ShowDialog(this);
                 bk.Dispose();
             }
@@ -3142,6 +3143,7 @@ namespace PappyjoeMVC.View
                     wndCalendarControl.DataProvider.DeleteEvent(ContextEvent);
                     this.cntrl.delete_appointment(ContextEvent.Body);
                     listAppointment("0");
+                    this.cntrl.save_log(doctor_id, "Appointment", "logged user deletes appointment", "Delete");
                 }
                 wndCalendarControl.Populate();
                 wndCalendarControl.RedrawControl();
@@ -3186,7 +3188,7 @@ namespace PappyjoeMVC.View
                     {
                         smsName = sms.Rows[0]["smsName"].ToString();
                         smsPass = sms.Rows[0]["smsPass"].ToString();
-
+                        string type = "LNG";
                         DataTable tl_appoitment = this.cntrl.get_patient_details(ContextEvent.Body);
                         if (tl_appoitment.Rows.Count > 0)
                         {
@@ -3196,7 +3198,7 @@ namespace PappyjoeMVC.View
                             {
                                 string number = "91" + tl_appoitment.Rows[0]["mobile_no"].ToString();
                                 string text = "Dear " + tl_appoitment.Rows[0]["pt_name"].ToString() + " " + ", Your appointment for " + tl_appoitment.Rows[0]["plan_new_procedure"].ToString() + " has been cancelled..  Regards " + toolStripButton1.Text + "," + contact_no;
-                                a.SendSMS(smsName, smsPass, number, text);
+                                a.SendSMS(smsName, smsPass, number, text,type);
                                 this.cntrl.insert_sms(tl_appoitment.Rows[0]["pt_id"].ToString(), tl_appoitment.Rows[0]["pt_name"].ToString(), tl_appoitment.Rows[0]["plan_new_procedure"].ToString(), toolStripButton1.Text);
                             }
                         }

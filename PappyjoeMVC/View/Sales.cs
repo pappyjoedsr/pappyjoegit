@@ -1199,6 +1199,7 @@ namespace PappyjoeMVC.View
                         txt_Qty.Text = dgv_SalesItem.Rows[rowindex].Cells["ColQty"].Value.ToString();
                         txt_Free.Text = dgv_SalesItem.Rows[rowindex].Cells["ColFree"].Value.ToString();
                         itemId = dgv_SalesItem.Rows[rowindex].Cells["id"].Value.ToString();
+                        this.cntrl.save_log(doctor_id, "Sales", "logged user edits sales", "Edit");
                         if (salesOrder_flag == true)
                         {
                             cmb_Unit.Items.Clear();
@@ -1276,6 +1277,7 @@ namespace PappyjoeMVC.View
                             }
                             dgv_SalesItem.Rows.RemoveAt(index);
                             fill_Batch_delete(itmCode,quantity);
+                            this.cntrl.save_log(doctor_id, "Sales", "logged user deletes sales", "Delete");
                         }
                     }
                 }
@@ -1827,7 +1829,7 @@ namespace PappyjoeMVC.View
                     {
                         i = this.cntrl.Save_salesMaster(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
                     }
-                   
+                    this.cntrl.save_log(doctor_id, "Sales", "logged user adds new sales", "add");
                 }
                 else if (btnSave.Text == "UPDATE")
                 {
@@ -1847,6 +1849,7 @@ namespace PappyjoeMVC.View
                     {
                         i = this.cntrl.update_salesMaster(Convert.ToInt32(txtDocumentNumber.Text), dtpDocumentDate.Value.ToString("yyyy-MM-dd"), txtSales.Text, txt_OrderNo.Text, DTP_OrderDate.Value.ToString("yyyy-MM-dd"), txtBdoctor.Text, txt_LRNO.Text, DTP_LRDate.Value.ToString("yyyy-MM-dd"), txt_Through.Text, txtPatientID.Text, txtPatient.Text, txt_Street.Text, txt_Locality.Text, txt_City.Text, txt_PhoneNo.Text, Payment_method, Convert.ToDecimal(Txt_TotalAmount.Text), Convert.ToDecimal(txt_Discount.Text), GST, Convert.ToDecimal(Txt_TotalIGST.Text), Convert.ToDecimal(txt_GrandTotal.Text));
                     }
+                    
                 }
                 if (i > 0)
                 {
