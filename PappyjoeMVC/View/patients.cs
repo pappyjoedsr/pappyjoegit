@@ -2515,6 +2515,49 @@ namespace PappyjoeMVC.View
 
         }
 
+        private void labellog_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                panellog.Visible = true;
+                panellog.Location = new Point(23, 100);
+                DGV_Log.Visible = true;
+                labellog.BackColor = Color.DodgerBlue;
+                labellog.ForeColor = Color.White;
+                DataTable rs_log = this.cntrl.log_details();
+                DGV_Log.DataSource = rs_log;
+                if (DGV_Log.Columns.Count > 0)
+                {
+                    DGV_Log.Columns[0].Width = 30;
+                    DGV_Log.Columns[1].Width = 50;
+                    DGV_Log.Columns[2].Width = 70;
+                    DGV_Log.Columns[3].Width = 120;
+                    DGV_Log.Columns[4].Width = 90;
+                }
+                DGV_Log.EnableHeadersVisualStyles = false;
+                DGV_Log.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkGray;
+                DGV_Log.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                DGV_Log.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                DGV_Log.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+                DGV_Log.ColumnHeadersVisible = true;
+                DGV_Log.ScrollBars = ScrollBars.Vertical;
+                foreach (DataGridViewColumn column in DGV_Log.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            panellog.Visible = false;
+        }
+
         private void txt_Search_Click(object sender, EventArgs e)
         {
             txt_Search.Text = "";
@@ -2639,6 +2682,7 @@ namespace PappyjoeMVC.View
                 {
                     lab_7.Location = new Point(73, 7);
                     lab_7.Text = dtb.Rows.Count.ToString() + " Patient(s)";
+                    panellog.Visible = false;
                 }
                 else
                 {

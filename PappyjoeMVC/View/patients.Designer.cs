@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patients));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -58,6 +60,7 @@
             this.labelallpatient = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel_Sidebar = new System.Windows.Forms.Panel();
+            this.labellog = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.labelremaindersms = new System.Windows.Forms.Label();
             this.LabVitalSign = new System.Windows.Forms.Label();
@@ -100,9 +103,12 @@
             this.btn_AllPatient = new System.Windows.Forms.Button();
             this.lab_filterPatient = new System.Windows.Forms.Label();
             this.panl_grid = new System.Windows.Forms.Panel();
+            this.panellog = new System.Windows.Forms.Panel();
+            this.DGV_Log = new System.Windows.Forms.DataGridView();
             this.lab_LongMsg = new System.Windows.Forms.Label();
             this.DGV_Patients = new System.Windows.Forms.DataGridView();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.panel_titile.SuspendLayout();
             this.panel_Sidebar.SuspendLayout();
@@ -113,6 +119,8 @@
             this.panl_FilterPatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grgroup)).BeginInit();
             this.panl_grid.SuspendLayout();
+            this.panellog.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Log)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Patients)).BeginInit();
             this.SuspendLayout();
             // 
@@ -409,6 +417,7 @@
             // 
             this.panel_Sidebar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel_Sidebar.Controls.Add(this.labellog);
             this.panel_Sidebar.Controls.Add(this.label5);
             this.panel_Sidebar.Controls.Add(this.labelremaindersms);
             this.panel_Sidebar.Controls.Add(this.LabVitalSign);
@@ -427,6 +436,21 @@
             this.panel_Sidebar.Name = "panel_Sidebar";
             this.panel_Sidebar.Size = new System.Drawing.Size(197, 552);
             this.panel_Sidebar.TabIndex = 61;
+            // 
+            // labellog
+            // 
+            this.labellog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labellog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labellog.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labellog.ForeColor = System.Drawing.Color.DimGray;
+            this.labellog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labellog.Location = new System.Drawing.Point(17, 455);
+            this.labellog.Name = "labellog";
+            this.labellog.Size = new System.Drawing.Size(173, 32);
+            this.labellog.TabIndex = 57;
+            this.labellog.Text = "Log";
+            this.labellog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labellog.Click += new System.EventHandler(this.labellog_Click);
             // 
             // label5
             // 
@@ -863,20 +887,20 @@
             this.grgroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grgroup.ColumnHeadersVisible = false;
             this.grgroup.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grgroup.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grgroup.DefaultCellStyle = dataGridViewCellStyle1;
             this.grgroup.Location = new System.Drawing.Point(10, 356);
             this.grgroup.Name = "grgroup";
             this.grgroup.ReadOnly = true;
             this.grgroup.RowHeadersVisible = false;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grgroup.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grgroup.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.grgroup.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.grgroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grgroup.Size = new System.Drawing.Size(248, 154);
@@ -1049,12 +1073,61 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panl_grid.BackColor = System.Drawing.Color.White;
+            this.panl_grid.Controls.Add(this.panellog);
             this.panl_grid.Controls.Add(this.lab_LongMsg);
             this.panl_grid.Controls.Add(this.DGV_Patients);
             this.panl_grid.Location = new System.Drawing.Point(5, 90);
             this.panl_grid.Name = "panl_grid";
             this.panl_grid.Size = new System.Drawing.Size(822, 514);
             this.panl_grid.TabIndex = 53;
+            // 
+            // panellog
+            // 
+            this.panellog.Controls.Add(this.DGV_Log);
+            this.panellog.Controls.Add(this.btnCancel);
+            this.panellog.Location = new System.Drawing.Point(6, 60);
+            this.panellog.Name = "panellog";
+            this.panellog.Size = new System.Drawing.Size(807, 269);
+            this.panellog.TabIndex = 54;
+            // 
+            // DGV_Log
+            // 
+            this.DGV_Log.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.DGV_Log.AllowUserToAddRows = false;
+            this.DGV_Log.AllowUserToDeleteRows = false;
+            this.DGV_Log.AllowUserToResizeColumns = false;
+            this.DGV_Log.AllowUserToResizeRows = false;
+            this.DGV_Log.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV_Log.BackgroundColor = System.Drawing.Color.White;
+            this.DGV_Log.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DGV_Log.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.DGV_Log.ColumnHeadersHeight = 25;
+            this.DGV_Log.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Log.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DGV_Log.GridColor = System.Drawing.Color.White;
+            this.DGV_Log.Location = new System.Drawing.Point(11, 23);
+            this.DGV_Log.Name = "DGV_Log";
+            this.DGV_Log.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Log.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.DGV_Log.RowHeadersVisible = false;
+            this.DGV_Log.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.DGV_Log.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.DGV_Log.Size = new System.Drawing.Size(781, 200);
+            this.DGV_Log.TabIndex = 53;
             // 
             // lab_LongMsg
             // 
@@ -1083,27 +1156,27 @@
             this.DGV_Patients.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DGV_Patients.ColumnHeadersHeight = 25;
             this.DGV_Patients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Patients.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Patients.DefaultCellStyle = dataGridViewCellStyle5;
             this.DGV_Patients.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGV_Patients.GridColor = System.Drawing.Color.White;
             this.DGV_Patients.Location = new System.Drawing.Point(0, 0);
             this.DGV_Patients.Name = "DGV_Patients";
             this.DGV_Patients.ReadOnly = true;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Patients.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Patients.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DGV_Patients.RowHeadersVisible = false;
             this.DGV_Patients.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DGV_Patients.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -1126,6 +1199,21 @@
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
             this.listpatientsearch.SelectedIndexChanged += new System.EventHandler(this.listpatientsearch_SelectedIndexChanged);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Gray;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(679, 229);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(95, 30);
+            this.btnCancel.TabIndex = 194;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // Patients
             // 
@@ -1160,6 +1248,8 @@
             this.panl_FilterPatient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grgroup)).EndInit();
             this.panl_grid.ResumeLayout(false);
+            this.panellog.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Log)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Patients)).EndInit();
             this.ResumeLayout(false);
 
@@ -1237,5 +1327,9 @@
         private System.Windows.Forms.ToolStripButton toolStripButton13;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelremaindersms;
+        private System.Windows.Forms.Label labellog;
+        private System.Windows.Forms.Panel panellog;
+        internal System.Windows.Forms.DataGridView DGV_Log;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
