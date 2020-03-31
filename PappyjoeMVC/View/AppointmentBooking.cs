@@ -460,6 +460,7 @@ namespace PappyjoeMVC.View
                                             this.cntrl.save_Pt_SMS(patient_id, pat.Rows[0]["pt_name"].ToString(), compoprocedure.Text, StartT.ToString("dd/MM/yyyy"), cmbStartTime.Text, combodoctor.Text);
                                         }//
                                     }
+                                    string sddsds = "";
                                     //text = "Dear " + pat.Rows[0]["pt_name"].ToString() + " " + "Your appointment for " + compoprocedure.Text + " has been confirmed at " + StartT.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " with " + "Dr " + combodoctor.Text + " Regards " + clinic + "," + contact_no;
                                     //a.SendSMS(smsName, smsPass, number, text);
                                     //this.cntrl.save_Pt_SMS(patient_id, pat.Rows[0]["pt_name"].ToString(), compoprocedure.Text, StartT.ToString("dd/MM/yyyy"), cmbStartTime.Text, combodoctor.Text);
