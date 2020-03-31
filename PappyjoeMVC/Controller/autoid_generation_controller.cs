@@ -80,5 +80,11 @@ namespace PappyjoeMVC.Controller
             int i = _model.update_receipt(ReciptNumber, ReciptPrefix, check);
             return i;
         }
+        public DataTable load_ippatient_id()
+        {
+            DataTable dtb = _model.load_ippatient_id();
+            return dtb;
+        }
+
     }
 }

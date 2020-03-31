@@ -314,6 +314,7 @@ namespace PappyjoeMVC.View
                 lbPatient.Hide();
             }
         }
+        public string patient_id = "";
         private void lbPatient_MouseClick(object sender, MouseEventArgs e)
         {
             if (lbPatient.SelectedItems.Count > 0)
@@ -322,6 +323,19 @@ namespace PappyjoeMVC.View
                 DataTable dtb= this.cntrl.patients(value);
                 fill_patientdetails(dtb);
                 lbPatient.Visible = false;
+                patient_id = dtb.Rows[0]["id"].ToString();
+                DataTable dtadvance = this.cntrl.Get_Advance(dtb.Rows[0]["id"].ToString());
+                if (dtadvance.Rows.Count > 0)
+                {
+                    label23.Visible = true;
+                    lblAdvance.Show(); //adv_refund.Visible = true;
+                    lblAdvance.Text =   decimal.Parse(dtadvance.Rows[0][0].ToString()).ToString();//string.Format("{0:C}",
+                }
+                else
+                {
+                    label23.Visible = true;
+                    lblAdvance.Text = "0.00"; //string.Format("{0:C}", 0);
+                }
             }
         }
         private void txt_ItemCode_KeyDown(object sender, KeyEventArgs e)
@@ -349,11 +363,32 @@ namespace PappyjoeMVC.View
         }
         private void cmb_Unit_SelectedIndexChanged(object sender, EventArgs e)
         {
+            decimal unitcost = 0, unitMf = 0; decimal d;
             if (cmb_Unit.SelectedIndex >= 0)
             {
                 if (btn_AddtoGrid.Text == "Update" && salesOrder_flag == false)
                 {
                     txt_Qty.Focus();
+                }
+                DataTable dtb = this.cntrl.itemdetails(itemId);
+                if(dtb.Rows.Count>0)
+                {
+                    unitMf = Convert.ToDecimal(dtb.Rows[0]["UnitMF"].ToString());
+                    if (cmb_Unit.Text == dtb.Rows[0]["Unit2"].ToString())
+                    {
+                        {
+                            unitcost = Convert.ToDecimal(dtb.Rows[0]["Sales_Rate_Max"].ToString()) / unitMf;
+                            txt_UnitCost.Text = unitcost.ToString("##.00");
+                        }
+                    }
+                    else
+                    {
+                        txt_UnitCost.Text = dtb.Rows[0]["Sales_Rate_Max"].ToString();
+                        if (decimal.TryParse(txt_UnitCost.Text, out d))
+                        {
+                            unitcost = Convert.ToDecimal(txt_UnitCost.Text);
+                        }
+                    }
                 }
                 TotalAmount_Calculation();
             }
@@ -362,26 +397,26 @@ namespace PappyjoeMVC.View
         {
             Decimal gst = 0, gst_Amount = 0, igst_Amount = 0, igst = 0, qty = 0, unitMf = 0, unitcost = 0, Amount = 0,TotalAmount = 0;
             decimal d;
-            DataTable dtb = this.cntrl.itemdetails(itemId);
-            if (dtb.Rows.Count > 0)
-            {
-                unitMf = Convert.ToDecimal(dtb.Rows[0]["UnitMF"].ToString());
-                if (cmb_Unit.Text == dtb.Rows[0]["Unit2"].ToString())
-                {
-                    {
+            //DataTable dtb = this.cntrl.itemdetails(itemId);
+            //if (dtb.Rows.Count > 0)
+            //{
+            //    unitMf = Convert.ToDecimal(dtb.Rows[0]["UnitMF"].ToString());
+            //    if (cmb_Unit.Text == dtb.Rows[0]["Unit2"].ToString())
+            //    {
+            //        {
                         //unitcost = Convert.ToDecimal(dtb.Rows[0]["Sales_Rate_Max"].ToString()) / unitMf;
-                        txt_UnitCost.Text = unitcost.ToString("##.00");
-                    }
-                }
-                else
-                {
-                    //txt_UnitCost.Text = dtb.Rows[0]["Sales_Rate_Max"].ToString();
-                    if (decimal.TryParse(txt_UnitCost.Text, out d))
-                    {
+                //        txt_UnitCost.Text = unitcost.ToString("##.00");
+                //    }
+                //}
+                //else
+                //{
+                //    //txt_UnitCost.Text = dtb.Rows[0]["Sales_Rate_Max"].ToString();
+                //    if (decimal.TryParse(txt_UnitCost.Text, out d))
+                //    {
                         unitcost = Convert.ToDecimal(txt_UnitCost.Text);
-                    }
-                }
-            }
+            //        }
+            //    }
+            //}
             if (decimal.TryParse(txt_GST.Text, out d))
             {
                 gst = Convert.ToDecimal(txt_GST.Text);
@@ -609,8 +644,19 @@ namespace PappyjoeMVC.View
         }
         private void txt_UnitCost_KeyUp(object sender, KeyEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txt_UnitCost.Text))
+            //if (!string.IsNullOrWhiteSpace(txt_UnitCost.Text))
+            //{
+            //    TotalAmount_Calculation();
+            //}
+
+            decimal d;
+            if (decimal.TryParse(txt_UnitCost.Text, out d))
             {
+                TotalAmount_Calculation();
+            }
+            else
+            {
+                txt_UnitCost.Text = "0";
                 TotalAmount_Calculation();
             }
         }
@@ -692,7 +738,7 @@ namespace PappyjoeMVC.View
                             else
                             {
                                 MessageBox.Show("Quantity is greater than the stock", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
+                                return; 
                             }
                         }
                         else
@@ -990,18 +1036,21 @@ namespace PappyjoeMVC.View
         }
         public void Fiil_BatchSale_Grid()// fill the update item to the batch sale grid
         {
-            int row = dgv_BatchSale.Rows.Count;
+            int row = dgv_BatchSale.Rows.Count;string batchno = "",unit="";
             if (dtFor_CurrentStockUpdate.Rows.Count > 0)
             {
+                
                 foreach (DataRow dr in dtFor_CurrentStockUpdate.Rows)
                 {
                     if (dr["ColQty"].ToString() != "")
                     {
+                      
                         dgv_BatchSale.Rows.Add();
                         dgv_BatchSale.Rows[row].Cells["ColinvNum"].Value = txtDocumentNumber.Text;
                         dgv_BatchSale.Rows[row].Cells["ColInvDate"].Value = dtpDocumentDate.Value.ToShortDateString();
                         dgv_BatchSale.Rows[row].Cells["coiltem_code"].Value = itemId;
                         dgv_BatchSale.Rows[row].Cells["colBatchnumber"].Value = dr["colbatchNo"].ToString();
+                        batchno= dr["colbatchNo"].ToString();
                         dgv_BatchSale.Rows[row].Cells["colQuantity"].Value = dr["ColQty"].ToString();
                         dgv_BatchSale.Rows[row].Cells["colStock"].Value = dr["ColStock"].ToString();
                         dgv_BatchSale.Rows[row].Cells["colBatchEntry"].Value = dr["colentryNo"].ToString();
@@ -1009,15 +1058,108 @@ namespace PappyjoeMVC.View
                         dgv_BatchSale.Rows[row].Cells["prddate"].Value = dr["ColPrd_Date"].ToString();
                         dgv_BatchSale.Rows[row].Cells["expdate"].Value = dr["colExpDate"].ToString();
                         dgv_BatchSale.Rows[row].Cells["unit"].Value = dr["clUnit"].ToString();
+                        unit= dr["clUnit"].ToString();
                         if (dr["colCurrentStock"].ToString() != "")
                         {
                             dgv_BatchSale.Rows[row].Cells["currentStock"].Value = dr["colCurrentStock"].ToString();
                         }
                         else
                             dgv_BatchSale.Rows[row].Cells["currentStock"].Value = dr["ColStock"].ToString();
+
+                       
+                       
                     }
                     row++;
+                    
                 }
+
+                //if (dtb.Rows.Count > 0)
+                //{
+                //    unitMf = Convert.ToDecimal(dtb.Rows[0]["UnitMF"].ToString());
+                //    if (cmb_Unit.Text == dtb.Rows[0]["Unit2"].ToString())
+                //    {
+                //        {
+                //            unitcost = Convert.ToDecimal(dtb.Rows[0]["Sales_Rate_Max"].ToString()) / unitMf;
+                //            txt_UnitCost.Text = unitcost.ToString("##.00");
+                //        }
+                //    }
+                //    else
+                //    {
+                //        txt_UnitCost.Text = dtb.Rows[0]["Sales_Rate_Max"].ToString();
+                //        if (decimal.TryParse(txt_UnitCost.Text, out d))
+                //        {
+                //            unitcost = Convert.ToDecimal(txt_UnitCost.Text);
+                //        }
+                //    }
+                //}
+
+
+                ////
+                DataTable dtb1 = this.cntrl.itemdetails(itemId);
+                DataTable dt_salesrate = new DataTable();// this.cntrl.get_item_salesrate(itemId);
+                DataTable dtb = this.cntrl.batchrate(itemId, batchno, unit);
+                //batch wise selling rate
+                if (dtb.Rows.Count > 0)
+                {
+                    if (Convert.ToDecimal(dtb.Rows[0]["rate"].ToString()) > 0)
+                    {
+                        decimal percnt_amt = 0, total_cost = 0, value1 = 0, value2 = 0, percentage = 0, unitMf=0,cost=0;
+                        unitMf = Convert.ToDecimal(dtb1.Rows[0]["UnitMF"].ToString());
+                        if (cmb_Unit.Text == dtb1.Rows[0]["Unit2"].ToString())
+                        {
+                            dt_salesrate = this.cntrl.get_item_salesrate_minimun(itemId); 
+                        }
+                        else
+                        {
+                             dt_salesrate = this.cntrl.get_item_salesrate(itemId);
+                        }
+                         value1 = Convert.ToDecimal(dt_salesrate.Rows[0][0].ToString()) - Convert.ToDecimal(dt_salesrate.Rows[0][1].ToString());
+                        value2 = (value1 / Convert.ToDecimal(dt_salesrate.Rows[0][1].ToString())) * 100;
+                        percentage = Convert.ToDecimal(value2.ToString("##.00"));
+                        if(cmb_Unit.Text== dtb.Rows[0]["Unit"].ToString())
+                        {
+                            percnt_amt = (Convert.ToDecimal(dtb.Rows[0]["rate"].ToString()) * percentage) / 100;
+                            total_cost = percnt_amt + Convert.ToDecimal(dtb.Rows[0]["rate"].ToString());
+                        }
+                        else //if(cmb_Unit.Text == dtb.Rows[0]["Unit"].ToString())
+                        {
+                            if (cmb_Unit.Text == dtb1.Rows[0]["Unit2"].ToString())
+                            {
+                                cost = Convert.ToDecimal(dtb.Rows[0]["rate"].ToString()) / unitMf;
+                                //txt_UnitCost.Text = percnt_amt.ToString("##.00");
+
+                                //percnt_amt = (Convert.ToDecimal(dt_salesrate.Rows[0][1].ToString()) * percentage) / 100;
+                                //percnt_amt = (Convert.ToDecimal(cost) * percentage) / 100;
+                                total_cost = cost;// percnt_amt + Convert.ToDecimal(dt_salesrate.Rows[0][1].ToString());
+                            }
+                            else
+                            {
+                                percnt_amt = (Convert.ToDecimal(dt_salesrate.Rows[0][1].ToString()) * percentage) / 100;
+                                //percnt_amt = (Convert.ToDecimal(cost) * percentage) / 100;
+                                total_cost = percnt_amt + Convert.ToDecimal(dt_salesrate.Rows[0][1].ToString());
+                            }
+                        }
+                        if (Convert.ToDecimal(txt_UnitCost.Text) == total_cost)
+                        {
+
+                        }
+                        else
+                        {
+                            DialogResult res = MessageBox.Show("Do you want to change the cost ?", "Cost Changed",
+                   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (res == DialogResult.Yes)
+                            {
+                                
+                            }
+                            else
+                            {
+                                txt_UnitCost.Text = total_cost.ToString("##.00");
+                            }
+                        }
+                    }
+                }
+
+
             }
         }
         public void clear_itemdetails()
@@ -1075,7 +1217,7 @@ namespace PappyjoeMVC.View
                     if (dgv_SalesItem.CurrentCell.OwningColumn.Name == "colDelete")
                     {
                         int index = dgv_SalesItem.CurrentRow.Index;
-                        itmCode = dgv_SalesItem.CurrentRow.Cells["colItemCode"].Value.ToString();
+                        itmCode = dgv_SalesItem.CurrentRow.Cells["id"].Value.ToString();
                         quantity = dgv_SalesItem.CurrentRow.Cells["ColQty"].Value.ToString();
                         DialogResult res = MessageBox.Show("Are you sure you want to delete?", "Delete confirmation",
                           MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -1634,6 +1776,35 @@ namespace PappyjoeMVC.View
                         return;
                     }
                 }
+                decimal adv_amt = 0, new_adv=0,adv=0;
+                if(Convert.ToDecimal(lblAdvance.Text)>0)
+                {
+                    DialogResult res = MessageBox.Show("Do you want to pay from the advance payment...?", "",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (res == DialogResult.Yes)
+                    {
+                        if(Convert.ToDecimal(txt_GrandTotal.Text)>Convert.ToDecimal(lblAdvance.Text))
+                        {
+                            adv_amt = Convert.ToDecimal(txt_GrandTotal.Text) - Convert.ToDecimal(lblAdvance.Text);
+                            //txt_GrandTotal.Text = adv_amt.ToString();
+                            new_adv = 0; adv = Convert.ToDecimal(lblAdvance.Text);
+                        }
+                        else
+                        {
+                            adv_amt = Convert.ToDecimal(lblAdvance.Text)- Convert.ToDecimal(txt_GrandTotal.Text);
+                            //txt_GrandTotal.Text = adv_amt.ToString();
+                            new_adv = adv_amt;
+                            adv = Convert.ToDecimal(txt_GrandTotal.Text);
+
+                        }
+                        this.cntrl.update_advance(new_adv, patient_id);
+                        this.cntrl.Save_advancetable(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), adv.ToString(), "cash", "credit", "Sales");
+
+                    }
+                    else
+                    {
+                    }
+                }
                 Cgst = Convert.ToDecimal(txt_CGST.Text);
                 Sgst = Convert.ToDecimal(txt_SGST.Text);
                 GST = Convert.ToDecimal(Cgst + Sgst);
@@ -1743,7 +1914,8 @@ namespace PappyjoeMVC.View
                             DocNumber_increment();
                             panl_mode_payment.Visible = false;
                             rad_CreditSale.Checked = false;
-                            rad_CashSale.Checked = true; btnSave.Text = "SAVE";
+                            rad_CashSale.Checked = true; btnSave.Text = "SAVE"; label23.Visible = false;
+                            lblAdvance.Visible = false;
                         }
                     }
                     else

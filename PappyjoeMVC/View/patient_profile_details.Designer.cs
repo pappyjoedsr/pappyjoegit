@@ -97,11 +97,12 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panl_IP_Patient = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button_IPsave = new System.Windows.Forms.Button();
+            this.txt_room = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_IPname = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.text_prefix = new System.Windows.Forms.TextBox();
+            this.txt_ipId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtpassport = new System.Windows.Forms.TextBox();
             this.labpassport = new System.Windows.Forms.Label();
@@ -165,7 +166,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.labelallpatient = new System.Windows.Forms.Label();
-            this.button_save = new System.Windows.Forms.Button();
+            this.BTnClose = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).BeginInit();
@@ -1039,25 +1040,42 @@
             // 
             // panl_IP_Patient
             // 
-            this.panl_IP_Patient.Controls.Add(this.button_save);
-            this.panl_IP_Patient.Controls.Add(this.textBox2);
+            this.panl_IP_Patient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panl_IP_Patient.Controls.Add(this.BTnClose);
+            this.panl_IP_Patient.Controls.Add(this.button_IPsave);
+            this.panl_IP_Patient.Controls.Add(this.txt_room);
             this.panl_IP_Patient.Controls.Add(this.label6);
-            this.panl_IP_Patient.Controls.Add(this.textBox1);
+            this.panl_IP_Patient.Controls.Add(this.txt_IPname);
             this.panl_IP_Patient.Controls.Add(this.label5);
-            this.panl_IP_Patient.Controls.Add(this.text_prefix);
+            this.panl_IP_Patient.Controls.Add(this.txt_ipId);
             this.panl_IP_Patient.Controls.Add(this.label4);
             this.panl_IP_Patient.Location = new System.Drawing.Point(359, 37);
             this.panl_IP_Patient.Name = "panl_IP_Patient";
             this.panl_IP_Patient.Size = new System.Drawing.Size(302, 160);
             this.panl_IP_Patient.TabIndex = 267;
+            this.panl_IP_Patient.Visible = false;
             // 
-            // textBox2
+            // button_IPsave
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(116, 117);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(165, 20);
-            this.textBox2.TabIndex = 207;
+            this.button_IPsave.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_IPsave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_IPsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_IPsave.ForeColor = System.Drawing.Color.White;
+            this.button_IPsave.Location = new System.Drawing.Point(145, 5);
+            this.button_IPsave.Name = "button_IPsave";
+            this.button_IPsave.Size = new System.Drawing.Size(75, 28);
+            this.button_IPsave.TabIndex = 208;
+            this.button_IPsave.Text = "Save";
+            this.button_IPsave.UseVisualStyleBackColor = false;
+            this.button_IPsave.Click += new System.EventHandler(this.button_IPsave_Click);
+            // 
+            // txt_room
+            // 
+            this.txt_room.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_room.Location = new System.Drawing.Point(116, 117);
+            this.txt_room.Name = "txt_room";
+            this.txt_room.Size = new System.Drawing.Size(165, 20);
+            this.txt_room.TabIndex = 207;
             // 
             // label6
             // 
@@ -1069,15 +1087,14 @@
             this.label6.Size = new System.Drawing.Size(77, 21);
             this.label6.TabIndex = 206;
             this.label6.Text = "Room No";
-            this.label6.Visible = false;
             // 
-            // textBox1
+            // txt_IPname
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(116, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 20);
-            this.textBox1.TabIndex = 205;
+            this.txt_IPname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_IPname.Location = new System.Drawing.Point(116, 82);
+            this.txt_IPname.Name = "txt_IPname";
+            this.txt_IPname.Size = new System.Drawing.Size(165, 20);
+            this.txt_IPname.TabIndex = 205;
             // 
             // label5
             // 
@@ -1089,15 +1106,14 @@
             this.label5.Size = new System.Drawing.Size(103, 21);
             this.label5.TabIndex = 204;
             this.label5.Text = "Patient Name";
-            this.label5.Visible = false;
             // 
-            // text_prefix
+            // txt_ipId
             // 
-            this.text_prefix.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.text_prefix.Location = new System.Drawing.Point(116, 49);
-            this.text_prefix.Name = "text_prefix";
-            this.text_prefix.Size = new System.Drawing.Size(165, 20);
-            this.text_prefix.TabIndex = 203;
+            this.txt_ipId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_ipId.Location = new System.Drawing.Point(116, 49);
+            this.txt_ipId.Name = "txt_ipId";
+            this.txt_ipId.Size = new System.Drawing.Size(165, 20);
+            this.txt_ipId.TabIndex = 203;
             // 
             // label4
             // 
@@ -1870,18 +1886,22 @@
             this.labelallpatient.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelallpatient.Click += new System.EventHandler(this.labelallpatient_Click);
             // 
-            // button_save
+            // BTnClose
             // 
-            this.button_save.BackColor = System.Drawing.Color.LimeGreen;
-            this.button_save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_save.ForeColor = System.Drawing.Color.White;
-            this.button_save.Location = new System.Drawing.Point(206, 15);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(75, 28);
-            this.button_save.TabIndex = 208;
-            this.button_save.Text = "Save";
-            this.button_save.UseVisualStyleBackColor = false;
+            this.BTnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTnClose.BackColor = System.Drawing.Color.Tomato;
+            this.BTnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BTnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTnClose.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTnClose.ForeColor = System.Drawing.Color.White;
+            this.BTnClose.Location = new System.Drawing.Point(222, 5);
+            this.BTnClose.Name = "BTnClose";
+            this.BTnClose.Size = new System.Drawing.Size(75, 30);
+            this.BTnClose.TabIndex = 209;
+            this.BTnClose.Text = "CANCEL";
+            this.BTnClose.UseVisualStyleBackColor = false;
+            this.BTnClose.Visible = false;
             // 
             // Patient_Profile_Details
             // 
@@ -2065,11 +2085,12 @@
         private System.Windows.Forms.Label labnationality;
         private System.Windows.Forms.Panel panl_IP_Patient;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox text_prefix;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_ipId;
+        private System.Windows.Forms.TextBox txt_room;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_IPname;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.Button button_IPsave;
+        private System.Windows.Forms.Button BTnClose;
     }
 }

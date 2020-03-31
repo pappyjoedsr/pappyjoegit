@@ -26,8 +26,13 @@ namespace PappyjoeMVC.Model
         }
         public DataTable patients(string value)
         {
-            DataTable dtdr = db.table("select pt_id,pt_name,street_address,locality,city,primary_mobile_number from tbl_patient where  pt_id='" + value + "' ");
+            DataTable dtdr = db.table("select id,pt_id,pt_name,street_address,locality,city,primary_mobile_number from tbl_patient where  pt_id='" + value + "' ");
             return dtdr;
+        }
+        public DataTable Get_Advance(string patient_id)
+        {
+            DataTable dtadvance = db.table("select distinct(advance) from tbl_payment where pt_id='" + patient_id + "'");
+            return dtadvance;
         }
         public DataTable patient_keydown(string name)
         {
@@ -250,6 +255,29 @@ namespace PappyjoeMVC.Model
         {
             System.Data.DataTable tb_doctor = db.table("select id,doctor_name from tbl_doctor where (login_type='doctor' or login_type='admin') and activate_login='yes'and  id='" + doctor_id + "'");
             return tb_doctor;
+        }
+        public DataTable batchrate(string itemid,string batch,string Unit)
+        {
+            DataTable dtb=db.table("SELECT i.item_code,i.rate,i.Unit,p.batchentry,b.entry_no,b.batchnumber FROM `tbl_purchit` i inner join tbl_batchpurchase p on p.item_code = i.item_code inner join tbl_batchpurchase b on p.batchentry = b.Entry_No WHERE i.item_code = '" + itemid+"'  and b.batchnumber = '"+batch+ "' and i.Unit='" + Unit + "'");
+            return dtb;
+        }
+        public DataTable get_item_salesrate(string itemid)
+        {
+            DataTable dtb = db.table("select Sales_Rate_Max,Purch_Rate from tbl_items where id='" + itemid + "'");
+            return dtb;
+        }
+        public DataTable get_item_salesrate_minimun(string itemid)
+        {
+            DataTable dtb = db.table("select Sales_Rate_Max2,Purch_Rate2 from tbl_items where id='" + itemid + "'");
+            return dtb;
+        }
+        public void Save_advancetable(string Pt_id, string Date, string Amount, string PaymentMethod, string Credit_Debit,string form)
+        {
+            db.execute("insert into tbl_advance(Pt_id,Date,Amount,PaymentMethod,Credit_Debit,form) values('" + Pt_id + "','" + Date + "','" + Amount + "','" + PaymentMethod + "','" + Credit_Debit + "','"+ form + "')");
+        }
+        public void update_advance(decimal adv, string patient_id)
+        {
+            db.execute("update tbl_payment set advance='" + adv + "' where pt_id='" + patient_id + "'");
         }
     } 
 }

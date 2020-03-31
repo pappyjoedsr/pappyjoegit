@@ -35,5 +35,12 @@ namespace PappyjoeMVC.Model
             DataTable ip_id = db.table("select IP_number,IP_prefix,IP_automation from tbl_patient_automaticid");
             return ip_id;
         }
+
+        public int update_ipPatient(string patid,string ipid ,string id,string room)
+        {
+            int i = db.execute("update tbl_patient set   pt_id='" + ipid + "',op_id='"+patid+"', Room_no='" + room+"' where id='"+id+"'");
+            return i;
+        }
+        //public void save_opid(string )
     }
 }

@@ -67,7 +67,7 @@ namespace PappyjoeMVC
                     Application.SetCompatibleTextRenderingDefault(false);
                     Application.Run(new Login());
                 }
-                catch (MySqlException ex)
+                catch (MySqlException  ex)
                 {
                     MessageBox.Show("An error occurred trying to access the server computer... ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     string strComutername = ""; ;

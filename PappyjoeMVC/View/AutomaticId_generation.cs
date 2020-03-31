@@ -35,9 +35,9 @@ namespace PappyjoeMVC.View
         {
             if (patient.Rows.Count > 0)
             {
-                text_prefix.Text = patient.Rows[0][2].ToString();
-                text_number.Text = patient.Rows[0][1].ToString();
-                string pat_generate = patient.Rows[0][3].ToString();
+                text_prefix.Text = patient.Rows[0]["patient_prefix"].ToString();
+                text_number.Text = patient.Rows[0]["patient_number"].ToString();
+                string pat_generate = patient.Rows[0]["patient_automation"].ToString();
                 if (pat_generate == "Yes")
                 {
                     check_patient.Checked = true;
@@ -269,6 +269,45 @@ namespace PappyjoeMVC.View
             errorProvider1.Dispose();
             label7.Hide();
         }
+
+        private void chk_ip_patient_Click(object sender, EventArgs e)
+        {
+            if(chk_ip_patient.Checked==true)
+            {
+                DataTable dtb = this.cntrl.load_ippatient_id();
+                if(dtb.Rows.Count>0)
+                {
+                    text_prefix.Text = dtb.Rows[0]["IP_prefix"].ToString();
+                    text_number.Text = dtb.Rows[0]["IP_number"].ToString();
+                    if(dtb.Rows[0]["IP_automation"].ToString()== "Yes")
+                    {
+                        check_patient.Checked = true;
+                    }
+                    else
+                    {
+                        check_patient.Checked = false;
+                    }
+                }
+            }
+            else 
+            {
+                DataTable dtb = this.cntrl.load_patientid();
+                if (dtb.Rows.Count > 0)
+                {
+                    text_prefix.Text = dtb.Rows[0]["patient_prefix"].ToString();
+                    text_number.Text = dtb.Rows[0]["patient_number"].ToString();
+                    if (dtb.Rows[0]["patient_automation"].ToString() == "Yes")
+                    {
+                        check_patient.Checked = true;
+                    }
+                    else
+                    {
+                        check_patient.Checked = false;
+                    }
+                }
+            }
+        }
+
         private void text_receipt_number_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back))

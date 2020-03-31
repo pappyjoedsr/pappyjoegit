@@ -37,21 +37,21 @@ namespace PappyjoeMVC.Model
         {
             db.execute("insert into tbl_payment(advance,pt_id) values('" + adv + "','" + patient_id + "')");
         }
-        public void Save_advancetable_DD(string Pt_id, string Date, string Amount, string PaymentMethod, string BankName, string Number,  string Credit_Debit)
+        public void Save_advancetable_DD(string Pt_id, string Date, string Amount, string PaymentMethod, string BankName, string Number,  string Credit_Debit, string form)
         {
-            db.execute("insert into tbl_advance(Pt_id,Date,Amount,PaymentMethod,BankName,DDNumber,Credit_Debit) values('" + Pt_id + "','" + Date + "','" + Amount + "','" + PaymentMethod + "','" + BankName + "','" + Number + "','" + Credit_Debit + "')");
+            db.execute("insert into tbl_advance(Pt_id,Date,Amount,PaymentMethod,BankName,DDNumber,Credit_Debit,form) values('" + Pt_id + "','" + Date + "','" + Amount + "','" + PaymentMethod + "','" + BankName + "','" + Number + "','" + Credit_Debit + "','" + form + "')");
         }
-        public void Save_advancetable_card(string Pt_id, string Date, string Amount, string PaymentMethod, string BankName, string fourdigitNo, string Credit_Debit)
+        public void Save_advancetable_card(string Pt_id, string Date, string Amount, string PaymentMethod, string BankName, string fourdigitNo, string Credit_Debit, string form)
         {
-            db.execute("insert into tbl_advance(Pt_id,Date,Amount,PaymentMethod,CardNo,fourDigitNo,Credit_Debit) values('" + Pt_id + "','" + Date + "','" + Amount + "','" + PaymentMethod + "','" + BankName + "','" + fourdigitNo + "','" + Credit_Debit + "')");
+            db.execute("insert into tbl_advance(Pt_id,Date,Amount,PaymentMethod,CardNo,fourDigitNo,Credit_Debit,form) values('" + Pt_id + "','" + Date + "','" + Amount + "','" + PaymentMethod + "','" + BankName + "','" + fourdigitNo + "','" + Credit_Debit + "','" + form + "')");
         }
-        public void Save_advancetable_cheque(string Pt_id, string Date, string Amount, string PaymentMethod, string BankName, string fourdigitNo, string Credit_Debit)
+        public void Save_advancetable_cheque(string Pt_id, string Date, string Amount, string PaymentMethod, string BankName, string fourdigitNo, string Credit_Debit, string form)
         {
-            db.execute("insert into tbl_advance(Pt_id,Date,Amount,PaymentMethod,BankName,Number,Credit_Debit) values('" + Pt_id + "','" + Date + "','" + Amount + "','" + PaymentMethod + "','" + BankName + "','" + fourdigitNo + "','" + Credit_Debit + "')");
+            db.execute("insert into tbl_advance(Pt_id,Date,Amount,PaymentMethod,BankName,Number,Credit_Debit,form) values('" + Pt_id + "','" + Date + "','" + Amount + "','" + PaymentMethod + "','" + BankName + "','" + fourdigitNo + "','" + Credit_Debit + "','" + form + "')");
         }
-        public void Save_advancetable(string Pt_id, string Date, string Amount, string PaymentMethod, string Credit_Debit)
+        public void Save_advancetable(string Pt_id, string Date, string Amount, string PaymentMethod, string Credit_Debit,string form)
         {
-            db.execute("insert into tbl_advance(Pt_id,Date,Amount,PaymentMethod,Credit_Debit) values('" + Pt_id + "','" + Date + "','" + Amount + "','" + PaymentMethod + "','" + Credit_Debit + "')");
+            db.execute("insert into tbl_advance(Pt_id,Date,Amount,PaymentMethod,Credit_Debit,form) values('" + Pt_id + "','" + Date + "','" + Amount + "','" + PaymentMethod + "','" + Credit_Debit + "','" + form + "')");
         }
         public DataTable getall_advance(string pt_id)
         {
