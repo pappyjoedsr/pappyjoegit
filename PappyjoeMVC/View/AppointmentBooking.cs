@@ -458,7 +458,7 @@ namespace PappyjoeMVC.View
                                             text = smstemplate.Rows[0]["Template"].ToString();
                                             a.SendSMS(smsName, smsPass, number, text, type);
                                             this.cntrl.save_Pt_SMS(patient_id, pat.Rows[0]["pt_name"].ToString(), compoprocedure.Text, StartT.ToString("dd/MM/yyyy"), cmbStartTime.Text, combodoctor.Text);
-                                        }
+                                        }//
                                     }
                                     //text = "Dear " + pat.Rows[0]["pt_name"].ToString() + " " + "Your appointment for " + compoprocedure.Text + " has been confirmed at " + StartT.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " with " + "Dr " + combodoctor.Text + " Regards " + clinic + "," + contact_no;
                                     //a.SendSMS(smsName, smsPass, number, text);
