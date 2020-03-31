@@ -365,7 +365,7 @@ namespace PappyjoeMVC.View
                         text = text + " [" + dt.Rows[i][1].ToString() + "]  TEST --  RESULT/ UNITS --  NV --";
                         for (int j = 0; j < tbshade.Rows.Count; j++)
                         {
-
+                            string type = "LNG";
                             if (dt.Rows[i][1].ToString() == tbshade.Rows[j][0].ToString())
                             {
 
@@ -373,7 +373,7 @@ namespace PappyjoeMVC.View
                             }
                             DataTable dtp = this.ctrlr.practicedetails();
                             practicedetails(dtp);
-                            string res = this.ctrlr.SendSMS(smsName, smsPass, mob_number, "Dear " + strPatientName + ",  Your Lab Test Result : " + text + "--- Regards " + toolStripButton1.Text + "," + strphone);
+                            string res = this.ctrlr.SendSMS(smsName, smsPass, mob_number, "Dear " + strPatientName + ",  Your Lab Test Result : " + text + "--- Regards " + toolStripButton1.Text + "," + strphone,type);
                             if (res == "SMS message(s) sent")
                             { MessageBox.Show("Laboratory Result  send successfully", "success", MessageBoxButtons.OK, MessageBoxIcon.None); }
                         }

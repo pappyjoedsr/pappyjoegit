@@ -1394,9 +1394,10 @@ namespace PappyjoeMVC.View
                         p++;
                     }
                     //end prescription msg
+                    string type = "LNG";
                     text = "Dear " + pat.Rows[0]["pt_name"].ToString() + ","+"\n"+ "Prescription:"+"\n" +"\n"+"Drug Name:" + strPriscription + "Regards With " + clinic + "," + contact_no;
                     string number = "91" + pat.Rows[0]["primary_mobile_number"].ToString();
-                    a.SendSMS(smsName, smsPass, number, text);
+                    a.SendSMS(smsName, smsPass, number, text, type);
                     this.cntrl.savecommunication(patient_id, text);
                     MessageBox.Show("The Prescription Details Containing  Message Sent Successfully to " + pat.Rows[0]["pt_name"].ToString(),"Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

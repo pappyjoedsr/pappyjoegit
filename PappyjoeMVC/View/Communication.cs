@@ -105,10 +105,11 @@ namespace PappyjoeMVC.View
                             {
                                 if (Convert.ToBoolean(DGV_Patient.Rows[i].Cells[3].Value) == true)
                                 {
+                                    string type = "LNG";
                                     string number = "91" + DGV_Patient.Rows[i].Cells[2].Value.ToString();
                                     string text = "Dear " + DGV_Patient.Rows[i].Cells[1].Value.ToString() + ", " + txt_SMS.Text.ToString();
                                     msg.Text = text;
-                                    this.ctrlr.SendSMS(smsName, smsPass, number, text);
+                                    this.ctrlr.SendSMS(smsName, smsPass, number, text, type);
                                     this.ctrlr.inssms(patient_id, DateTime.Now.ToString("yyyy-MM-dd"), text);
                                 }
                             }
@@ -123,7 +124,8 @@ namespace PappyjoeMVC.View
                                 {
                                     DataTable grp = this.ctrlr.selgrp();
                                     selgrp(grp);
-                                    this.ctrlr.SendSMS(smsName, smsPass, no.Text, msg.Text);
+                                    string type = "LNG";
+                                    this.ctrlr.SendSMS(smsName, smsPass, no.Text, msg.Text, type);
                                     this.ctrlr.inssmsgrp(patient_id, msg.Text);
                                 }
                             }
@@ -136,10 +138,11 @@ namespace PappyjoeMVC.View
                             {
                                 if (Convert.ToBoolean(DGV_Staff.Rows[y].Cells[3].Value) == true)
                                 {
+                                    string type = "LNG";
                                     string n = "91" + DGV_Staff.Rows[y].Cells[2].Value.ToString();
                                     string t = "Dear " + DGV_Staff.Rows[y].Cells[1].Value.ToString() + ", " + txt_SMS.Text.ToString();
                                     msg.Text = t;
-                                    this.ctrlr.SendSMS(smsName, smsPass, n, msg.Text.ToString());
+                                    this.ctrlr.SendSMS(smsName, smsPass, n, msg.Text.ToString(),type);
                                     this.ctrlr.insmsstaff(patient_id, msg.Text.ToString());
                                 }
                             }
@@ -161,12 +164,13 @@ namespace PappyjoeMVC.View
                             {
                                 if (Convert.ToBoolean(DGV_upcoming_birthday.Rows[i].Cells[4].Value) == true)
                                 {
+                                    string type = "LNG";
                                     string pid = DGV_upcoming_birthday.Rows[i].Cells[0].Value.ToString();
                                     string number = "91" + DGV_upcoming_birthday.Rows[i].Cells[2].Value.ToString();
                                     string ptName = DGV_upcoming_birthday.Rows[i].Cells[1].Value.ToString();
                                     string text = "Dear " + ptName + ", " + template.ToString();
                                     msg.Text = text;
-                                    this.ctrlr.SendSMS(smsName, smsPass, number, msg.Text);
+                                    this.ctrlr.SendSMS(smsName, smsPass, number, msg.Text, type);
                                     this.ctrlr.insbrthsms(patient_id, msg.Text);
                                 }
                                 flag = true;

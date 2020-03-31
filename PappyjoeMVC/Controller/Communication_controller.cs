@@ -14,9 +14,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = cmdl.Get_CompanyNAme();
             return dt;
         }
-        public string SendSMS(string User, string password, string Mobile_Number, string Message)
+        public string SendSMS(string User, string password, string Mobile_Number, string Message,string type)
         {
-            string val = s.SendSMS(User, password, Mobile_Number, Message);
+            string val = s.SendSMS(User, password, Mobile_Number, Message,type);
             return val;
         }
         public string SendSMS(string User, string password, string Mobile_Number, string Message, string SID, string Sname, string scheduledDate, string systemdate)

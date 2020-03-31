@@ -444,9 +444,10 @@ namespace PappyjoeMVC.View
                                 if (pat.Rows.Count > 0)
                                 {
                                     string number = "91" + pat.Rows[0]["primary_mobile_number"].ToString();
+                                    string type = "LNG";
                                     if (neworold == "1")
                                     {
-                                        a.SendSMS(smsName, smsPass, number, "Dear " + pat.Rows[0]["pt_name"].ToString() + " welcome to " + clinic + "," + contact_no);
+                                        a.SendSMS(smsName, smsPass, number, "Dear " + pat.Rows[0]["pt_name"].ToString() + " welcome to " + clinic + "," + contact_no, type);
                                     }
                                     if(smslanguage.Rows.Count>0)
                                     {
@@ -455,7 +456,7 @@ namespace PappyjoeMVC.View
                                         if (smstemplate.Rows.Count>0)
                                         {
                                             text = smstemplate.Rows[0]["Template"].ToString();
-                                            a.SendSMS(smsName, smsPass, number, text);
+                                            a.SendSMS(smsName, smsPass, number, text, type);
                                             this.cntrl.save_Pt_SMS(patient_id, pat.Rows[0]["pt_name"].ToString(), compoprocedure.Text, StartT.ToString("dd/MM/yyyy"), cmbStartTime.Text, combodoctor.Text);
                                         }
                                     }
@@ -490,8 +491,9 @@ namespace PappyjoeMVC.View
                                     string smsName = "", smsPass = "";
                                     SMS_model a = new SMS_model();
                                     string number = "91" + dr_mobile;
+                                    string type = "LNG";
                                     text = "You have an appointment on " + dpStartTimeDate.Value.ToShortDateString() + " " + cmbStartTime.Text + " With " + txt_p_name.Text + " for " + compoprocedure.Text + " at " + clinic + "," + contact_no;
-                                    a.SendSMS(smsName, smsPass, number, text);
+                                    a.SendSMS(smsName, smsPass, number, text,type);
                                     //For Remainder SMS
                                     if (day_time != null)
                                     {

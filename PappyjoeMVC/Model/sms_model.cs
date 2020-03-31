@@ -7,10 +7,11 @@ namespace PappyjoeMVC.Model
     public class SMS_model
     {
         private WebProxy objProxy1 = null;
-        public string SendSMS(string User, string password, string Mobile_Number, string Message)
+        public string SendSMS(string User, string password, string Mobile_Number, string Message,string type)
         {
+            //type = "&Mtype=LNG";
             string stringpost = null;
-            stringpost = "User=" + User + "&passwd=" + password + "&mobilenumber=" + Mobile_Number + "&message=" + Message;
+            stringpost = "User=" + User + "&passwd=" + password + "&mobilenumber=" + Mobile_Number + "&message=" + Message + "&Mtype=" + type ;
             HttpWebRequest objWebRequest = null;
             HttpWebResponse objWebResponse = null;
             StreamWriter objStreamWriter = null;
