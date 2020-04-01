@@ -87,6 +87,7 @@
             this.chkReminder = new System.Windows.Forms.CheckBox();
             this.chkMeeting = new System.Windows.Forms.CheckBox();
             this.lab_p_gndr = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -123,6 +124,7 @@
             this.panel1.Controls.Add(this.radfemale);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.radMale);
+            this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label14);
@@ -204,7 +206,7 @@
             this.label14.ForeColor = System.Drawing.Color.Red;
             this.label14.Location = new System.Drawing.Point(150, 122);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(255, 13);
+            this.label14.Size = new System.Drawing.Size(256, 13);
             this.label14.TabIndex = 69;
             this.label14.Text = "You must enter a value in the  Patient Name field";
             this.label14.Visible = false;
@@ -256,7 +258,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(5, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 21);
+            this.label2.Size = new System.Drawing.Size(104, 21);
             this.label2.TabIndex = 41;
             this.label2.Text = "Patient Name";
             // 
@@ -266,7 +268,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(5, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 21);
+            this.label3.Size = new System.Drawing.Size(77, 21);
             this.label3.TabIndex = 42;
             this.label3.Text = "Patient ID";
             // 
@@ -339,7 +341,7 @@
             this.label13.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label13.Location = new System.Drawing.Point(12, 68);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(103, 21);
+            this.label13.Size = new System.Drawing.Size(104, 21);
             this.label13.TabIndex = 95;
             this.label13.Text = "Patient Name";
             // 
@@ -599,7 +601,7 @@
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label6.Location = new System.Drawing.Point(12, 257);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 21);
+            this.label6.Size = new System.Drawing.Size(105, 21);
             this.label6.TabIndex = 75;
             this.label6.Text = "Notify Patient";
             // 
@@ -761,6 +763,17 @@
             this.lab_p_gndr.TabIndex = 108;
             this.lab_p_gndr.Text = "male";
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Red;
+            this.label18.Location = new System.Drawing.Point(123, 69);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(17, 21);
+            this.label18.TabIndex = 72;
+            this.label18.Text = "*";
+            // 
             // AppointmentBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -885,5 +898,6 @@
         private System.Windows.Forms.RadioButton radMale;
         private System.Windows.Forms.RadioButton radfemale;
         private System.Windows.Forms.Label lab_p_gndr;
+        private System.Windows.Forms.Label label18;
     }
 }
