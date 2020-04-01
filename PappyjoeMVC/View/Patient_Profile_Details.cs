@@ -1229,6 +1229,7 @@ namespace PappyjoeMVC.View
             dlg.ShowDialog();
             dlg.Dispose();
         }
+
         private void labelprescription_Click(object sender, EventArgs e)
         {
             var form2 = new Prescription_Show();
