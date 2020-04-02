@@ -24,6 +24,11 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.Get_all_Patients();
             return dtb;
         }
+        public DataTable get_few_patients()
+        {
+            DataTable dt = _model.get_few_patients();
+            return dt;
+        }
         public DataTable group()
         {
             DataTable dtb = _model.group();
