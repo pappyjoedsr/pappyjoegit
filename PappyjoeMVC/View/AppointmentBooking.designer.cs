@@ -35,6 +35,7 @@
             this.radfemale = new System.Windows.Forms.RadioButton();
             this.label17 = new System.Windows.Forms.Label();
             this.radMale = new System.Windows.Forms.RadioButton();
+            this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -87,7 +88,6 @@
             this.chkReminder = new System.Windows.Forms.CheckBox();
             this.chkMeeting = new System.Windows.Forms.CheckBox();
             this.lab_p_gndr = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -177,6 +177,17 @@
             this.radMale.Text = "Male";
             this.radMale.UseVisualStyleBackColor = true;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Red;
+            this.label18.Location = new System.Drawing.Point(123, 69);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(17, 21);
+            this.label18.TabIndex = 72;
+            this.label18.Text = "*";
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -215,7 +226,7 @@
             // 
             this.txt_p_email.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_p_email.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_p_email.Location = new System.Drawing.Point(144, 142);
+            this.txt_p_email.Location = new System.Drawing.Point(147, 142);
             this.txt_p_email.Name = "txt_p_email";
             this.txt_p_email.Size = new System.Drawing.Size(315, 22);
             this.txt_p_email.TabIndex = 48;
@@ -224,13 +235,12 @@
             // 
             this.txt_p_mobile.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_p_mobile.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txt_p_mobile.Location = new System.Drawing.Point(145, 97);
+            this.txt_p_mobile.Location = new System.Drawing.Point(147, 97);
             this.txt_p_mobile.MaxLength = 10;
             this.txt_p_mobile.Name = "txt_p_mobile";
             this.txt_p_mobile.Size = new System.Drawing.Size(315, 22);
             this.txt_p_mobile.TabIndex = 47;
             this.txt_p_mobile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_p_mobile_KeyPress);
-            this.txt_p_mobile.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_p_mobile_KeyUp);
             // 
             // txt_p_id
             // 
@@ -300,7 +310,7 @@
             this.list_p_details.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.list_p_details.FormattingEnabled = true;
             this.list_p_details.ItemHeight = 17;
-            this.list_p_details.Location = new System.Drawing.Point(156, 201);
+            this.list_p_details.Location = new System.Drawing.Point(163, 83);
             this.list_p_details.Name = "list_p_details";
             this.list_p_details.Size = new System.Drawing.Size(315, 87);
             this.list_p_details.TabIndex = 49;
@@ -763,17 +773,6 @@
             this.lab_p_gndr.TabIndex = 108;
             this.lab_p_gndr.Text = "male";
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(123, 69);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(17, 21);
-            this.label18.TabIndex = 72;
-            this.label18.Text = "*";
-            // 
             // AppointmentBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -823,6 +822,8 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(562, 582);
+            this.MinimumSize = new System.Drawing.Size(562, 582);
             this.Name = "AppointmentBooking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Appointment";
