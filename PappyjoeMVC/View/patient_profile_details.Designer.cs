@@ -86,7 +86,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            //this.BtnCaseSheetIP = new System.Windows.Forms.Button();
+            this.BtnCaseSheetIP = new System.Windows.Forms.Button();
             this.btn_convertip = new System.Windows.Forms.Button();
             this.btnprint = new System.Windows.Forms.Button();
             this.BtnCard = new System.Windows.Forms.Button();
@@ -98,6 +98,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panl_IP_Patient = new System.Windows.Forms.Panel();
+            this.BTnClose = new System.Windows.Forms.Button();
             this.button_IPsave = new System.Windows.Forms.Button();
             this.txt_room = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -167,7 +168,6 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.labelallpatient = new System.Windows.Forms.Label();
-            this.BTnClose = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).BeginInit();
@@ -210,7 +210,7 @@
             this.toolStripldoc});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1370, 40);
+            this.toolStrip1.Size = new System.Drawing.Size(1362, 40);
             this.toolStrip1.TabIndex = 39;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -820,13 +820,13 @@
             this.panel5.BackColor = System.Drawing.Color.DarkGray;
             this.panel5.Location = new System.Drawing.Point(-1, 90);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1405, 1);
+            this.panel5.Size = new System.Drawing.Size(1397, 1);
             this.panel5.TabIndex = 272;
             // 
             // panel7
             // 
             this.panel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            //this.panel7.Controls.Add(this.BtnCaseSheetIP);
+            this.panel7.Controls.Add(this.BtnCaseSheetIP);
             this.panel7.Controls.Add(this.btn_convertip);
             this.panel7.Controls.Add(this.btnprint);
             this.panel7.Controls.Add(this.BtnCard);
@@ -834,26 +834,26 @@
             this.panel7.Controls.Add(this.medicalcertificate);
             this.panel7.Controls.Add(this.BtnCaseSheet);
             this.panel7.Controls.Add(this.BtnConsent);
-            this.panel7.Location = new System.Drawing.Point(197, 93);
+            this.panel7.Location = new System.Drawing.Point(193, 93);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(896, 36);
             this.panel7.TabIndex = 292;
             // 
             // BtnCaseSheetIP
             // 
-            //this.BtnCaseSheetIP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            //this.BtnCaseSheetIP.BackColor = System.Drawing.Color.Gray;
-            //this.BtnCaseSheetIP.Cursor = System.Windows.Forms.Cursors.Hand;
-            //this.BtnCaseSheetIP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            //this.BtnCaseSheetIP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.BtnCaseSheetIP.ForeColor = System.Drawing.Color.White;
-            //this.BtnCaseSheetIP.Location = new System.Drawing.Point(342, 4);
-            //this.BtnCaseSheetIP.Name = "BtnCaseSheetIP";
-            //this.BtnCaseSheetIP.Size = new System.Drawing.Size(158, 27);
-            //this.BtnCaseSheetIP.TabIndex = 271;
-            //this.BtnCaseSheetIP.Text = "Case Sheet Of IP Patient";
-            //this.BtnCaseSheetIP.UseVisualStyleBackColor = false;
-            //this.BtnCaseSheetIP.Click += new System.EventHandler(this.BtnCaseSheetIP_Click);
+            this.BtnCaseSheetIP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnCaseSheetIP.BackColor = System.Drawing.Color.Gray;
+            this.BtnCaseSheetIP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCaseSheetIP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCaseSheetIP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCaseSheetIP.ForeColor = System.Drawing.Color.White;
+            this.BtnCaseSheetIP.Location = new System.Drawing.Point(342, 5);
+            this.BtnCaseSheetIP.Name = "BtnCaseSheetIP";
+            this.BtnCaseSheetIP.Size = new System.Drawing.Size(158, 27);
+            this.BtnCaseSheetIP.TabIndex = 272;
+            this.BtnCaseSheetIP.Text = "Case Sheet Of IP Patient";
+            this.BtnCaseSheetIP.UseVisualStyleBackColor = false;
+            this.BtnCaseSheetIP.Click += new System.EventHandler(this.BtnCaseSheetIP_Click);
             // 
             // btn_convertip
             // 
@@ -981,7 +981,7 @@
             this.BTNCunsultation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNCunsultation.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNCunsultation.ForeColor = System.Drawing.Color.White;
-            this.BTNCunsultation.Location = new System.Drawing.Point(860, 40);
+            this.BTNCunsultation.Location = new System.Drawing.Point(856, 40);
             this.BTNCunsultation.Name = "BTNCunsultation";
             this.BTNCunsultation.Size = new System.Drawing.Size(123, 27);
             this.BTNCunsultation.TabIndex = 264;
@@ -995,7 +995,7 @@
             this.panel8.BackColor = System.Drawing.Color.DarkGray;
             this.panel8.Location = new System.Drawing.Point(194, 133);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1213, 1);
+            this.panel8.Size = new System.Drawing.Size(1205, 1);
             this.panel8.TabIndex = 293;
             // 
             // panel12
@@ -1073,20 +1073,24 @@
             this.panl_IP_Patient.TabIndex = 267;
             this.panl_IP_Patient.Visible = false;
             // 
-            // button_save
+            // BTnClose
             // 
-            //this.button_save.BackColor = System.Drawing.Color.LimeGreen;
-            //this.button_save.Cursor = System.Windows.Forms.Cursors.Hand;
-            //this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            //this.button_save.ForeColor = System.Drawing.Color.White;
-            //this.button_save.Location = new System.Drawing.Point(206, 15);
-            //this.button_save.Name = "button_save";
-            //this.button_save.Size = new System.Drawing.Size(75, 28);
-            //this.button_save.TabIndex = 208;
-            //this.button_save.Text = "Save";
-            //this.button_save.UseVisualStyleBackColor = false;
+            this.BTnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTnClose.BackColor = System.Drawing.Color.Tomato;
+            this.BTnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BTnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTnClose.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTnClose.ForeColor = System.Drawing.Color.White;
+            this.BTnClose.Location = new System.Drawing.Point(222, 5);
+            this.BTnClose.Name = "BTnClose";
+            this.BTnClose.Size = new System.Drawing.Size(75, 30);
+            this.BTnClose.TabIndex = 209;
+            this.BTnClose.Text = "CANCEL";
+            this.BTnClose.UseVisualStyleBackColor = false;
+            this.BTnClose.Visible = false;
             // 
-            // textBox2
+            // button_IPsave
             // 
             this.button_IPsave.BackColor = System.Drawing.Color.LimeGreen;
             this.button_IPsave.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1134,7 +1138,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(6, 81);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 21);
+            this.label5.Size = new System.Drawing.Size(104, 21);
             this.label5.TabIndex = 204;
             this.label5.Text = "Patient Name";
             // 
@@ -1153,7 +1157,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(6, 48);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 21);
+            this.label4.Size = new System.Drawing.Size(92, 21);
             this.label4.TabIndex = 202;
             this.label4.Text = "IP Patient Id";
             // 
@@ -1176,7 +1180,7 @@
             this.labpassport.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labpassport.Location = new System.Drawing.Point(180, 580);
             this.labpassport.Name = "labpassport";
-            this.labpassport.Size = new System.Drawing.Size(97, 21);
+            this.labpassport.Size = new System.Drawing.Size(98, 21);
             this.labpassport.TabIndex = 265;
             this.labpassport.Text = "Passport No:";
             this.labpassport.Visible = false;
@@ -1330,7 +1334,7 @@
             this.labhead.ForeColor = System.Drawing.Color.OliveDrab;
             this.labhead.Location = new System.Drawing.Point(137, 274);
             this.labhead.Name = "labhead";
-            this.labhead.Size = new System.Drawing.Size(188, 30);
+            this.labhead.Size = new System.Drawing.Size(191, 30);
             this.labhead.TabIndex = 205;
             this.labhead.Text = "CONTACT DETAILS";
             // 
@@ -1449,7 +1453,7 @@
             this.labStreetAddress.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labStreetAddress.Location = new System.Drawing.Point(164, 432);
             this.labStreetAddress.Name = "labStreetAddress";
-            this.labStreetAddress.Size = new System.Drawing.Size(117, 21);
+            this.labStreetAddress.Size = new System.Drawing.Size(118, 21);
             this.labStreetAddress.TabIndex = 210;
             this.labStreetAddress.Text = "Street Address: ";
             this.labStreetAddress.Visible = false;
@@ -1700,7 +1704,7 @@
             this.labPatientId.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labPatientId.Location = new System.Drawing.Point(201, 50);
             this.labPatientId.Name = "labPatientId";
-            this.labPatientId.Size = new System.Drawing.Size(79, 21);
+            this.labPatientId.Size = new System.Drawing.Size(80, 21);
             this.labPatientId.TabIndex = 225;
             this.labPatientId.Text = "Patient ID:";
             this.labPatientId.Visible = false;
@@ -1724,7 +1728,7 @@
             this.lab_PatientName.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lab_PatientName.Location = new System.Drawing.Point(174, 15);
             this.lab_PatientName.Name = "lab_PatientName";
-            this.lab_PatientName.Size = new System.Drawing.Size(106, 21);
+            this.lab_PatientName.Size = new System.Drawing.Size(107, 21);
             this.lab_PatientName.TabIndex = 224;
             this.lab_PatientName.Text = "Patient Name:";
             // 
@@ -1733,7 +1737,7 @@
             this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel11.Controls.Add(this.gridgroups);
             this.panel11.Controls.Add(this.label34);
-            this.panel11.Location = new System.Drawing.Point(1103, 420);
+            this.panel11.Location = new System.Drawing.Point(1099, 420);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(267, 321);
             this.panel11.TabIndex = 297;
@@ -1794,7 +1798,7 @@
             this.panel10.BackColor = System.Drawing.Color.White;
             this.panel10.Controls.Add(this.grmedical);
             this.panel10.Controls.Add(this.label24);
-            this.panel10.Location = new System.Drawing.Point(1102, 141);
+            this.panel10.Location = new System.Drawing.Point(1098, 141);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(268, 270);
             this.panel10.TabIndex = 296;
@@ -1867,7 +1871,7 @@
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
             this.listpatientsearch.ItemHeight = 20;
-            this.listpatientsearch.Location = new System.Drawing.Point(1023, 34);
+            this.listpatientsearch.Location = new System.Drawing.Point(1015, 34);
             this.listpatientsearch.Name = "listpatientsearch";
             this.listpatientsearch.Size = new System.Drawing.Size(249, 82);
             this.listpatientsearch.TabIndex = 298;
@@ -1878,7 +1882,7 @@
             // 
             this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel14.BackColor = System.Drawing.Color.Gray;
-            this.panel14.Location = new System.Drawing.Point(1098, 133);
+            this.panel14.Location = new System.Drawing.Point(1094, 133);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(1, 771);
             this.panel14.TabIndex = 274;
@@ -1917,29 +1921,12 @@
             this.labelallpatient.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelallpatient.Click += new System.EventHandler(this.labelallpatient_Click);
             // 
-            // BTnClose
-            // 
-            this.BTnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BTnClose.BackColor = System.Drawing.Color.Tomato;
-            this.BTnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BTnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTnClose.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTnClose.ForeColor = System.Drawing.Color.White;
-            this.BTnClose.Location = new System.Drawing.Point(222, 5);
-            this.BTnClose.Name = "BTnClose";
-            this.BTnClose.Size = new System.Drawing.Size(75, 30);
-            this.BTnClose.TabIndex = 209;
-            this.BTnClose.Text = "CANCEL";
-            this.BTnClose.UseVisualStyleBackColor = false;
-            this.BTnClose.Visible = false;
-            // 
             // Patient_Profile_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 741);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.panel14);
             this.Controls.Add(this.panel11);
@@ -2123,5 +2110,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button_IPsave;
         private System.Windows.Forms.Button BTnClose;
+        private System.Windows.Forms.Button BtnCaseSheetIP;
     }
 }

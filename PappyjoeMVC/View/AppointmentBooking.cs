@@ -164,7 +164,7 @@ namespace PappyjoeMVC.View
             list_p_details.DisplayMember = "pt_name";
             list_p_details.ValueMember = "id";
             list_p_details.DataSource = dt;
-            list_p_details.Location = new Point(146, 39);
+            //list_p_details.Location = new Point(146, 45);
             list_p_details.Show();
             patient_id = "0";
             if (e.KeyCode == Keys.Down && list_p_details.Items.Count > 0)
@@ -229,49 +229,49 @@ namespace PappyjoeMVC.View
             }
         }
 
-        private void txt_p_mobile_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-            if (!char.IsDigit(ch) && ch != 8)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
-        }
+        //private void txt_p_mobile_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    char ch = e.KeyChar;
+        //    if (!char.IsDigit(ch) && ch != 8)
+        //    {
+        //        e.Handled = true;
+        //    }
+        //    else
+        //    {
+        //        e.Handled = false;
+        //    }
+        //}
 
-        private void txt_p_mobile_KeyUp(object sender, KeyEventArgs e)
-        {
-            label14.Visible = false;
-            patient_id = "0";
-            DataTable dt = this.cntrl.search_ptid(txt_p_mobile.Text);
-            list_p_details.DisplayMember = "pt_name";
-            list_p_details.ValueMember = "id";
-            list_p_details.DataSource = dt;
-            list_p_details.Location = new Point(146, 109);
-            list_p_details.Show();
-            if (e.KeyCode == Keys.Down && list_p_details.Items.Count > 0)
-            {
-                list_p_details.Focus();
-            }
-            else if (e.KeyCode == Keys.Enter && list_p_details.Items.Count > 0)
-            {
-                patient_id = list_p_details.GetItemText(list_p_details.SelectedValue);
-               DataTable dt_p = this.cntrl.Getpat_MobNamme(patient_id);
-                Fill_search_patient(dt_p);
-                list_p_details.Hide();
-            }
-            if (dt.Rows.Count <= 0)
-            {
-                list_p_details.Hide();
-            }
-            else
-            {
-                list_p_details.Show();
-            }
-        }
+        //private void txt_p_mobile_KeyUp(object sender, KeyEventArgs e)
+        //{
+        //    label14.Visible = false;
+        //    patient_id = "0";
+        //    DataTable dt = this.cntrl.search_ptid(txt_p_mobile.Text);
+        //    list_p_details.DisplayMember = "pt_name";
+        //    list_p_details.ValueMember = "id";
+        //    list_p_details.DataSource = dt;
+        //    list_p_details.Location = new Point(146, 109);
+        //    list_p_details.Show();
+        //    if (e.KeyCode == Keys.Down && list_p_details.Items.Count > 0)
+        //    {
+        //        list_p_details.Focus();
+        //    }
+        //    else if (e.KeyCode == Keys.Enter && list_p_details.Items.Count > 0)
+        //    {
+        //        patient_id = list_p_details.GetItemText(list_p_details.SelectedValue);
+        //       DataTable dt_p = this.cntrl.Getpat_MobNamme(patient_id);
+        //        Fill_search_patient(dt_p);
+        //        list_p_details.Hide();
+        //    }
+        //    if (dt.Rows.Count <= 0)
+        //    {
+        //        list_p_details.Hide();
+        //    }
+        //    else
+        //    {
+        //        list_p_details.Show();
+        //    }
+        //}
 
         private void list_p_details_KeyUp(object sender, KeyEventArgs e)
         {
@@ -822,5 +822,17 @@ namespace PappyjoeMVC.View
             this.Close();
         }
 
+        private void txt_p_mobile_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
     }
 }

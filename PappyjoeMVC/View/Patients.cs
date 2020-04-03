@@ -2558,6 +2558,12 @@ namespace PappyjoeMVC.View
             panellog.Visible = false;
         }
 
+        private void lb_showall_Click(object sender, EventArgs e)
+        {
+            griddata(dtb);
+            Design_Datagrid();
+        }
+
         private void txt_Search_Click(object sender, EventArgs e)
         {
             txt_Search.Text = "";
@@ -2576,9 +2582,10 @@ namespace PappyjoeMVC.View
         {
 
         }
-
+        DataTable dtb;
         private void patients_Load(object sender, EventArgs e)
         {
+            lb_showall.Visible = false;
             toolStripButton3.BackColor = Color.SkyBlue;
             toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
             string docnam = mdl.Get_DoctorName(doctor_id);
@@ -2603,8 +2610,8 @@ namespace PappyjoeMVC.View
                 //string sqlstr = "";
                 DGV_Patients.RowTemplate.Height = 25;
                 DGV_Patients.Visible = true;
-                DataTable dtb= this.cntrl.Get_all_Patients();
-                if (dtb.Rows.Count < 0)
+                dtb= this.cntrl.Get_all_Patients();
+                if ( dtb.Rows.Count < 0)
                 {
                     lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
@@ -2643,7 +2650,7 @@ namespace PappyjoeMVC.View
                 DGV_Patients.RowTemplate.Height = 25;
                 DGV_Patients.Visible = true;
                 ClearAll_grid2_Properties();
-                DataTable dtb= this.cntrl.Get_all_Patients();
+                dtb= this.cntrl.Get_all_Patients();
                 Create_Datagrid(dtb);
                 Design_Datagrid();
                 //-----Group Add------
@@ -2676,6 +2683,10 @@ namespace PappyjoeMVC.View
         }
         public void Create_Datagrid(DataTable dtb)
         {
+            if (dtb.Rows.Count > 18)
+            {
+                lb_showall.Visible = true;
+            }
             if (dtb.Columns.Count > 0)
             {
                 if (dtb.Rows.Count > 0)
@@ -2697,18 +2708,78 @@ namespace PappyjoeMVC.View
                 DGV_Patients.ColumnHeadersVisible = true;
                 DGV_Patients.Columns.Clear();
                 DGV_Patients.Rows.Clear();
-                foreach (DataColumn column in dtb.Columns)
+                DataTable data = this.cntrl.get_few_patients();
+                foreach (DataColumn column in data.Columns)
                 {
                     DGV_Patients.Columns.Add(column.ColumnName, column.ColumnName);
                 }
                 if (DGV_Patients.Columns.Count > 0)
                 {
-                    for (int j = 0; j < dtb.Rows.Count; j++)
+                    for (int j = 0; j < data.Rows.Count; j++)
                     {
                         DGV_Patients.Rows.Add();
-                        for (int i = 0; i < dtb.Columns.Count; i++)
+                        for (int i = 0; i < data.Columns.Count; i++)
                         {
-                            DGV_Patients.Rows[j].Cells[i].Value = dtb.Rows[j][i].ToString();
+                            DGV_Patients.Rows[j].Cells[i].Value = data.Rows[j][i].ToString();
+                            DGV_Patients.RowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
+                            DGV_Patients.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                            DGV_Patients.SelectionMode = DataGridViewSelectionMode.CellSelect;
+                            DGV_Patients.AllowUserToResizeColumns = false;
+                            DGV_Patients.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+                            DGV_Patients.Rows[j].Cells[i].Style.Font = new System.Drawing.Font("Segoe UI", 8, FontStyle.Regular);
+                            DGV_Patients.CellBorderStyle = DataGridViewCellBorderStyle.None;
+                        }
+                    }
+                    DGV_Patients.Columns[0].Visible = false;
+                }
+            }
+            else
+            {
+                lab_LongMsg.Show();
+                lab_LongMsg.Location = new Point(91, 177);
+                lab_7.Visible = true;
+                lab_7.Location = new Point(4, 5);
+                lab_7.Text = " 0 Patient(s)";
+                lab_Displaying.Visible = false;
+            }
+        }
+        public void griddata(DataTable dtb)
+        {
+            lb_showall.Visible = false;
+            if (dtb.Columns.Count > 0)
+            {
+                if (dtb.Rows.Count > 0)
+                {
+                    lab_7.Location = new Point(73, 7);
+                    lab_7.Text = dtb.Rows.Count.ToString() + " Patient(s)";
+                    panellog.Visible = false;
+                }
+                else
+                {
+                    lab_LongMsg.Show();
+                    lab_LongMsg.Location = new Point(350, 350);
+                    lab_7.Visible = true;
+                    lab_7.Location = new Point(4, 5);
+                    lab_7.Text = "0 Patient(s)";
+                    lab_Displaying.Visible = false;
+                }
+                lab_LongMsg.Hide();
+                DGV_Patients.ColumnHeadersVisible = true;
+                DGV_Patients.Columns.Clear();
+                DGV_Patients.Rows.Clear();
+                DataTable pat = this.cntrl.Get_all_Patients();
+                foreach (DataColumn column in pat.Columns)
+                {
+                    DGV_Patients.Columns.Add(column.ColumnName, column.ColumnName);
+                }
+                if (DGV_Patients.Columns.Count > 0)
+                {
+                    for (int j = 0; j < pat.Rows.Count; j++)
+                    {
+                        DGV_Patients.Rows.Add();
+                        for (int i = 0; i < pat.Columns.Count; i++)
+                        {
+                            DGV_Patients.Rows[j].Cells[i].Value = pat.Rows[j][i].ToString();
                             DGV_Patients.RowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
                             DGV_Patients.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                             DGV_Patients.SelectionMode = DataGridViewSelectionMode.CellSelect;
