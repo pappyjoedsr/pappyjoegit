@@ -1072,28 +1072,7 @@ namespace PappyjoeMVC.View
                     row++;
                     
                 }
-
-                //if (dtb.Rows.Count > 0)
-                //{
-                //    unitMf = Convert.ToDecimal(dtb.Rows[0]["UnitMF"].ToString());
-                //    if (cmb_Unit.Text == dtb.Rows[0]["Unit2"].ToString())
-                //    {
-                //        {
-                //            unitcost = Convert.ToDecimal(dtb.Rows[0]["Sales_Rate_Max"].ToString()) / unitMf;
-                //            txt_UnitCost.Text = unitcost.ToString("##.00");
-                //        }
-                //    }
-                //    else
-                //    {
-                //        txt_UnitCost.Text = dtb.Rows[0]["Sales_Rate_Max"].ToString();
-                //        if (decimal.TryParse(txt_UnitCost.Text, out d))
-                //        {
-                //            unitcost = Convert.ToDecimal(txt_UnitCost.Text);
-                //        }
-                //    }
-                //}
-
-
+               
                 ////
                 DataTable dtb1 = this.cntrl.itemdetails(itemId);
                 DataTable dt_salesrate = new DataTable();// this.cntrl.get_item_salesrate(itemId);
