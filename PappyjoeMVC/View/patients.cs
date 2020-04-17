@@ -32,6 +32,7 @@ namespace PappyjoeMVC.View
                 labelappointment.BackColor = Color.DodgerBlue;
                 labelappointment.ForeColor = Color.White;
                 panel_Search.Visible = false;
+                lb_showall.Visible = false;
                 lab_Change_AppoinmtName.Visible = true;
                 panel_Appmnt.Visible = true;
                 var dateFrom = dateTimePickefrom.Value.ToShortDateString();
@@ -216,6 +217,7 @@ namespace PappyjoeMVC.View
                 b_normal();
                 LabVitalSign.BackColor = Color.DodgerBlue;
                 LabVitalSign.ForeColor = Color.White;
+                lb_showall.Visible = false;
                 lab_Change_AppoinmtName.Text = "VITAL SIGNS";
                 left_button_click = 9;
                 panl_DisplayingPatient.Visible = true;
@@ -453,6 +455,7 @@ namespace PappyjoeMVC.View
                 b_normal();
                 labelclinical.BackColor = Color.DodgerBlue;
                 labelclinical.ForeColor = Color.White;
+                lb_showall.Visible = false;
                 lab_Change_AppoinmtName.Text = "CLINICAL FINDINGS";
                 left_button_click = 2;
                 panl_DisplayingPatient.Visible = true;
@@ -701,6 +704,7 @@ namespace PappyjoeMVC.View
                 labeltreatment.BackColor = Color.DodgerBlue;
                 labeltreatment.ForeColor = Color.White;
                 left_button_click = 3;
+                lb_showall.Visible = false;
                 panl_DisplayingPatient.Visible = true;
                 lab_Change_AppoinmtName.Text = "TREATMENT PLANS";
                 check_visiblecontrolls();
@@ -855,6 +859,7 @@ namespace PappyjoeMVC.View
                 labelfinished.BackColor = Color.DodgerBlue;
                 labelfinished.ForeColor = Color.White;
                 left_button_click = 4;
+                lb_showall.Visible = false;
                 lab_Change_AppoinmtName.Text = "FINISHED TREATMENTS";
                 check_visiblecontrolls();
                 panl_DisplayingPatient.Visible = true;
@@ -997,6 +1002,7 @@ namespace PappyjoeMVC.View
                 b_normal();
                 labelprescription.BackColor = Color.DodgerBlue;
                 labelprescription.ForeColor = Color.White;
+                lb_showall.Visible = false;
                 lab_Change_AppoinmtName.Text = "PRESCRIPTIONS";
                 left_button_click = 5;
                 ClearAll_grid2_Properties();
@@ -1039,6 +1045,7 @@ namespace PappyjoeMVC.View
                 b_normal();
                 labelinvoice.BackColor = Color.DodgerBlue;
                 labelinvoice.ForeColor = Color.White;
+                lb_showall.Visible = false;
                 lab_Change_AppoinmtName.Text = "INVOICE/BILL";
                 left_button_click = 6;
                 check_visiblecontrolls();
@@ -1325,6 +1332,7 @@ namespace PappyjoeMVC.View
                 labelpayment.BackColor = Color.DodgerBlue;
                 labelpayment.ForeColor = Color.White;
                 left_button_click = 7;
+                lb_showall.Visible = false;
                 check_visiblecontrolls();
                 lab_7.Visible = false;
                 panl_DisplayingPatient.Visible = true;
@@ -1455,7 +1463,7 @@ namespace PappyjoeMVC.View
                     txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
                     SetPatient_SearchControlls();
                     DataTable drtb=  this.cntrl.Get_all_Patients();
-                    Create_Datagrid(drtb);
+                    griddata(drtb);
                     Design_Datagrid();
                 }
                 else
@@ -1464,7 +1472,7 @@ namespace PappyjoeMVC.View
                     txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
                     SetPatient_SearchControlls();
                     DataTable dtb= this.cntrl.Get_all_Patients();
-                    Create_Datagrid(dtb);
+                    griddata(dtb);
                     Design_Datagrid();
                 }
                 grgroup.ClearSelection();
@@ -1511,7 +1519,7 @@ namespace PappyjoeMVC.View
                 DateTime todate = DateTime.Now;
                 ClearAll_grid2_Properties();
                 DataTable dtb= this.cntrl.recently_visited(d, todate);
-                Create_Datagrid(dtb);
+                griddata(dtb);
                 Design_Datagrid();
             }
             catch (Exception ex)
@@ -1542,7 +1550,7 @@ namespace PappyjoeMVC.View
                 d = d.AddMonths(-1);
                 string todate = DateTime.Now.ToString("yyyy/MM/dd");
                 DataTable dtb= this.cntrl.Recently_added(Convert.ToDateTime( d).ToString("yyyy/MM/dd"), todate);
-                Create_Datagrid(dtb);
+                griddata(dtb);
                 Design_Datagrid();
             }
             catch (Exception ex)
@@ -1572,7 +1580,7 @@ namespace PappyjoeMVC.View
                 left_button_click = 8;
                 DateTime startDateTime = Convert.ToDateTime(DateTime.Today.ToString("d") + " " + DateTime.Now.ToString("hh:mm:ss tt"));
                 DataTable dtb= this.cntrl.upcomming_appointments(startDateTime);
-                Create_Datagrid(dtb);
+                griddata(dtb);
                 Design_Datagrid();
             }
             catch (Exception ex)
@@ -1601,7 +1609,7 @@ namespace PappyjoeMVC.View
                 ClearAll_grid2_Properties();
                 left_button_click = 8;
                 DataTable dtb= this.cntrl.birthday();
-                Create_Datagrid(dtb);
+                griddata(dtb);
                 Design_Datagrid();
             }
             catch (Exception ex)
@@ -1629,7 +1637,7 @@ namespace PappyjoeMVC.View
                 txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
                 left_button_click = 8;
                 DataTable dtb= this.cntrl.cancelled_appointment();
-                Create_Datagrid(dtb);
+                griddata(dtb);
                 Design_Datagrid();
             }
             catch (Exception ex)
@@ -1656,7 +1664,7 @@ namespace PappyjoeMVC.View
                 SetPatient_SearchControlls();
                 txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
                 DataTable dtb=  this.cntrl.innactive_patients();
-                Create_Datagrid(dtb);
+                griddata(dtb);
                 Design_Datagrid();
             }
             catch (Exception ex)
@@ -1672,7 +1680,6 @@ namespace PappyjoeMVC.View
             {
                 if (grgroup.Rows.Count > 0)
                 {
-
                     AllPatient_Flag = false;
                     Recently_Visited_Flag = false;
                     RecentalyAdded_flag = false;
@@ -1690,7 +1697,7 @@ namespace PappyjoeMVC.View
                     int g = e.RowIndex;
                     id4 = grgroup.Rows[g].Cells[1].Value.ToString();
                     DataTable dtb= this.cntrl.patients_wit_group(id4);
-                    Create_Datagrid(dtb);
+                    griddata(dtb);
                     Design_Datagrid();
                     lab_Displaying.Visible = true;
                 }
@@ -2259,12 +2266,12 @@ namespace PappyjoeMVC.View
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
                   DataTable dtb=  this.cntrl.Get_all_Patients();
-                    Create_Datagrid(dtb);
+                    griddata(dtb); //Create_Datagrid(dtb);
                 }
                 else
                 {
                   DataTable dtb= this.cntrl.allpatient_search(txt_Search.Text);//
-                    Create_Datagrid(dtb);
+                    griddata(dtb);//Create_Datagrid(dtb);
                 }
             }
             else if (RecentalyAdded_flag == true)
@@ -2522,6 +2529,7 @@ namespace PappyjoeMVC.View
                 panellog.Visible = true;
                 panellog.Location = new Point(23, 100);
                 DGV_Log.Visible = true;
+                lb_showall.Visible = false;
                 labellog.BackColor = Color.DodgerBlue;
                 labellog.ForeColor = Color.White;
                 DataTable rs_log = this.cntrl.log_details();
@@ -2545,7 +2553,6 @@ namespace PappyjoeMVC.View
                 {
                     column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
-
             }
             catch (Exception ex)
             {
@@ -2767,19 +2774,18 @@ namespace PappyjoeMVC.View
                 DGV_Patients.ColumnHeadersVisible = true;
                 DGV_Patients.Columns.Clear();
                 DGV_Patients.Rows.Clear();
-                DataTable pat = this.cntrl.Get_all_Patients();
-                foreach (DataColumn column in pat.Columns)
+                foreach (DataColumn column in dtb.Columns)
                 {
                     DGV_Patients.Columns.Add(column.ColumnName, column.ColumnName);
                 }
                 if (DGV_Patients.Columns.Count > 0)
                 {
-                    for (int j = 0; j < pat.Rows.Count; j++)
+                    for (int j = 0; j < dtb.Rows.Count; j++)
                     {
                         DGV_Patients.Rows.Add();
-                        for (int i = 0; i < pat.Columns.Count; i++)
+                        for (int i = 0; i < dtb.Columns.Count; i++)
                         {
-                            DGV_Patients.Rows[j].Cells[i].Value = pat.Rows[j][i].ToString();
+                            DGV_Patients.Rows[j].Cells[i].Value = dtb.Rows[j][i].ToString();
                             DGV_Patients.RowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
                             DGV_Patients.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                             DGV_Patients.SelectionMode = DataGridViewSelectionMode.CellSelect;
