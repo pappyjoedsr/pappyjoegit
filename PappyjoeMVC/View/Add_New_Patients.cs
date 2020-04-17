@@ -44,7 +44,7 @@ namespace PappyjoeMVC.View
             else
             {
                 Lab_InvalidNumber.Visible = false;
-                validatenumber();
+                //validatenumber();
             }
 
         }

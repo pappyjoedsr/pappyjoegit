@@ -933,6 +933,11 @@ namespace PappyjoeMVC.View
             InputLanguage.CurrentInputLanguage = original;
         }
 
+        private void panel_adddrug_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void searchtext2_Click(object sender, EventArgs e)
         {
             searchtext2.Clear();

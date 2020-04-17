@@ -160,7 +160,7 @@ namespace PappyjoeMVC.Model
 
         public DataTable allpatient_search(string name)
         {
-            DataTable dtb = db.table("SELECT id Pid, pt_id 'Id',pt_name 'Patient Name', gender Gender,age Age, primary_mobile_number Mobile,street_address 'Street Address',locality Locality,Visited, Opticket as 'File No' FROM tbl_patient where (pt_id like '%" + name + "%' or pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') and  Profile_Status='Active' ORDER BY id DESC");
+            DataTable dtb = db.table("SELECT id Pid, pt_id 'Id',pt_name 'Patient Name', gender Gender,age Age, primary_mobile_number Mobile,street_address 'Street Address',locality Locality,DATE_FORMAT(Visited,'%d/%m/%y') as Visited, Opticket as 'File No' FROM tbl_patient where (pt_id like '%" + name + "%' or pt_name like '%" + name + "%' or primary_mobile_number like '%" + name + "%' or email_address like '%" + name + "%' or Opticket like '%" + name + "%' or street_address like '%" + name + "%') and  Profile_Status='Active' ORDER BY id DESC");
             return dtb;
         }
         public DataTable recently_visited_search(DateTime d, DateTime todate, string name)

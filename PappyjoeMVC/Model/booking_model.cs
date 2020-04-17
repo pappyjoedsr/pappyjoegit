@@ -28,7 +28,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable search_patient(string search)
         {
-            DataTable dt = db.table("select CONCAT (pt_name,' ', primary_mobile_number)  pt_name,id from tbl_patient where (pt_name like '%" + search + "%'  or pt_id like '%" + search + "%' or primary_mobile_number like '%" + search + "%' or email_address like '%" + search + "%' or street_address  like '%" + search + "%' or locality like '%" + search + "%' or city like '%" + search + "%') and Profile_Status='Active'  order by pt_name");
+            DataTable dt = db.table("select CONCAT(pt_name, ', ', substring(gender,1,1), ', ',primary_mobile_number) pt_name,id from tbl_patient where (pt_name like '%" + search + "%'  or pt_id like '%" + search + "%' or primary_mobile_number like '%" + search + "%' or email_address like '%" + search + "%' or street_address  like '%" + search + "%' or locality like '%" + search + "%' or city like '%" + search + "%') and Profile_Status='Active'  order by pt_name");
             return dt;
         }
         public DataTable Getpat_MobNamme(string patient_id)

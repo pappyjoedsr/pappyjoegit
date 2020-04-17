@@ -19,7 +19,7 @@ namespace PappyjoeMVC.Controller
         Connection db = new Connection();
         public DataTable search_patient(string search)
         {
-            DataTable dtb = model.search_patient(search);
+            DataTable dtb = cmodel.Patient_search(search); //model.search_patient(search);
             return dtb;
         }
         public DataTable get_prescriptn()
@@ -37,9 +37,9 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = model.get_unit();
             return dtb;
         }
-        public DataTable srch_patient(string ptname, string mobno)
+        public DataTable srch_patient(string ptname/*, string mobno*/)
         {
-            DataTable dtb = model.srch_patient(ptname, mobno);
+            DataTable dtb = cmodel.Patient_search(ptname);//model.srch_patient(ptname, mobno);
             return dtb;
         }
         public DataTable patient_details(string value)

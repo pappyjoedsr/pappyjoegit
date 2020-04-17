@@ -1,4 +1,5 @@
 ﻿using PappyjoeMVC.Controller;
+using PappyjoeMVC.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,7 +11,8 @@ namespace PappyjoeMVC.View
 {
     public partial class Procedure_Catalog : Form
     {
-        Procedure_Catalog_controller cntrl=new Procedure_Catalog_controller();
+        Connection db = new Connection();
+        Procedure_Catalog_controller cntrl = new Procedure_Catalog_controller();
         int refresh;
         public Procedure_Catalog()
         {
@@ -59,7 +61,7 @@ namespace PappyjoeMVC.View
                 {
                     taxname = null;
                 }
-                else 
+                else
                 {
                     taxname = dt.Rows[j]["tax_name"].ToString();
                 }
@@ -121,7 +123,7 @@ namespace PappyjoeMVC.View
                 comboaddunder.Show();
                 DataTable dtb = this.cntrl.get_procedure_category_value();
                 AddCategory(dtb);
-                btnAddNewCategory.Show();  
+                btnAddNewCategory.Show();
             }
             else
             {
@@ -168,7 +170,7 @@ namespace PappyjoeMVC.View
         {
             if (txt_AddCategory.Text != "")
             {
-                DataTable dt = this.cntrl.Get_category_name(txt_AddCategory.Text);  
+                DataTable dt = this.cntrl.Get_category_name(txt_AddCategory.Text);
                 if (dt.Rows.Count <= 0)
                 {
                     this.cntrl.save(txt_AddCategory.Text);
@@ -210,7 +212,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    DataTable dtb= this.cntrl.get_procedureName(txt_procedurename.Text);
+                    DataTable dtb = this.cntrl.get_procedureName(txt_procedurename.Text);
                     GetProcedureName(dtb);
                     DataTable dt = this.cntrl.FormLoad();
                     FormLoad(dt);
@@ -415,8 +417,8 @@ namespace PappyjoeMVC.View
                         if (res == DialogResult.Yes)
                         {
                             int i = this.cntrl.delproceduretax(procedureid);
-                            int ii= this.cntrl.delprocdresetngs(procedureid);
-                            if (i > 0 &&ii>0)
+                            int ii = this.cntrl.delprocdresetngs(procedureid);
+                            if (i > 0 && ii > 0)
                             {
                                 Dgv_Procedure.Rows.RemoveAt(Dgv_Procedure.CurrentRow.Index);
                                 DataTable dt = this.cntrl.FormLoad();
@@ -430,6 +432,53 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+        Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+        Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+        string FileName;
+        private void btn_import_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Excel File to Edit";
+            ofd.FileName = "";
+            ofd.Filter = "Excel File|*.xlsx;*.xls";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                FileName = ofd.FileName;
+                if (FileName.Trim() != "")
+                {
+                    ImportfromExcel(FileName);
+                }
+            }
+        }
+        private void ImportfromExcel(string sFile)
+        {
+            xlApp = new Microsoft.Office.Interop.Excel.Application();
+            xlWorkBook = xlApp.Workbooks.Open(sFile);               
+            xlWorkSheet = xlWorkBook.Worksheets["Sheet1"];          
+            int iRow;
+            for (iRow = 2; iRow <= xlWorkSheet.Rows.Count; iRow++)
+            {
+                if (xlWorkSheet.Cells[iRow, 1].value == null)
+                {
+                    break;      
+                }
+                else
+                {
+                    string procedure_name = xlWorkSheet.Cells[iRow, 1].value;
+                    string procedure_cost = xlWorkSheet.Cells[iRow, 2].value.ToString();
+                    int i = this.cntrl.save_addprocedure(procedure_name, procedure_cost, comboaddunder.Text, richnotes.Text);
+                    DataTable dt = this.cntrl.FormLoad();
+                    FormLoad(dt);
+                }
+            }
+            xlWorkBook.Close();
+            xlApp.Quit();
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkBook);
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkSheet);
         }
     }
 }
