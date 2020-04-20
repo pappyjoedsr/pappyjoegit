@@ -203,6 +203,8 @@
             this.numericUpDownDuration = new System.Windows.Forms.NumericUpDown();
             this.txtStrengthno = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label20 = new System.Windows.Forms.Label();
+            this.txt_generic = new System.Windows.Forms.TextBox();
             this.toolStrip2.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -961,13 +963,15 @@
             this.panel_adddrug.Controls.Add(this.textinstructions);
             this.panel_adddrug.Controls.Add(this.strengthgrcombo);
             this.panel_adddrug.Controls.Add(this.drugtypecombo);
+            this.panel_adddrug.Controls.Add(this.label20);
             this.panel_adddrug.Controls.Add(this.label34);
             this.panel_adddrug.Controls.Add(this.label33);
             this.panel_adddrug.Controls.Add(this.strengthnot);
+            this.panel_adddrug.Controls.Add(this.txt_generic);
             this.panel_adddrug.Controls.Add(this.drugnametextbox);
             this.panel_adddrug.Controls.Add(this.BtnSaveDrug);
             this.panel_adddrug.Controls.Add(this.BtnAddDrug);
-            this.panel_adddrug.Location = new System.Drawing.Point(1009, 192);
+            this.panel_adddrug.Location = new System.Drawing.Point(1007, 163);
             this.panel_adddrug.Name = "panel_adddrug";
             this.panel_adddrug.Size = new System.Drawing.Size(334, 103);
             this.panel_adddrug.TabIndex = 2;
@@ -976,7 +980,7 @@
             // searchtext1
             // 
             this.searchtext1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.searchtext1.Location = new System.Drawing.Point(5, 75);
+            this.searchtext1.Location = new System.Drawing.Point(5, 81);
             this.searchtext1.Name = "searchtext1";
             this.searchtext1.Size = new System.Drawing.Size(321, 20);
             this.searchtext1.TabIndex = 13;
@@ -988,7 +992,7 @@
             // 
             this.labelinstructions.AutoSize = true;
             this.labelinstructions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.labelinstructions.Location = new System.Drawing.Point(5, 61);
+            this.labelinstructions.Location = new System.Drawing.Point(5, 68);
             this.labelinstructions.Name = "labelinstructions";
             this.labelinstructions.Size = new System.Drawing.Size(88, 13);
             this.labelinstructions.TabIndex = 23;
@@ -998,7 +1002,7 @@
             // textinstructions
             // 
             this.textinstructions.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.textinstructions.Location = new System.Drawing.Point(5, 75);
+            this.textinstructions.Location = new System.Drawing.Point(5, 81);
             this.textinstructions.Name = "textinstructions";
             this.textinstructions.Size = new System.Drawing.Size(321, 20);
             this.textinstructions.TabIndex = 22;
@@ -1016,7 +1020,7 @@
             "mg",
             "mcg",
             "gm"});
-            this.strengthgrcombo.Location = new System.Drawing.Point(183, 34);
+            this.strengthgrcombo.Location = new System.Drawing.Point(183, 45);
             this.strengthgrcombo.Name = "strengthgrcombo";
             this.strengthgrcombo.Size = new System.Drawing.Size(67, 21);
             this.strengthgrcombo.TabIndex = 20;
@@ -1031,7 +1035,7 @@
             "Cream",
             "Drops",
             "Foam"});
-            this.drugtypecombo.Location = new System.Drawing.Point(184, 4);
+            this.drugtypecombo.Location = new System.Drawing.Point(184, 2);
             this.drugtypecombo.Name = "drugtypecombo";
             this.drugtypecombo.Size = new System.Drawing.Size(67, 21);
             this.drugtypecombo.TabIndex = 19;
@@ -1040,7 +1044,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label34.Location = new System.Drawing.Point(2, 12);
+            this.label34.Location = new System.Drawing.Point(2, 6);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(73, 13);
             this.label34.TabIndex = 18;
@@ -1050,7 +1054,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label33.Location = new System.Drawing.Point(4, 37);
+            this.label33.Location = new System.Drawing.Point(4, 49);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(67, 13);
             this.label33.TabIndex = 17;
@@ -1059,7 +1063,7 @@
             // strengthnot
             // 
             this.strengthnot.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.strengthnot.Location = new System.Drawing.Point(78, 35);
+            this.strengthnot.Location = new System.Drawing.Point(78, 46);
             this.strengthnot.Name = "strengthnot";
             this.strengthnot.Size = new System.Drawing.Size(100, 20);
             this.strengthnot.TabIndex = 16;
@@ -1067,7 +1071,7 @@
             // drugnametextbox
             // 
             this.drugnametextbox.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.drugnametextbox.Location = new System.Drawing.Point(78, 5);
+            this.drugnametextbox.Location = new System.Drawing.Point(78, 2);
             this.drugnametextbox.Name = "drugnametextbox";
             this.drugnametextbox.Size = new System.Drawing.Size(100, 20);
             this.drugnametextbox.TabIndex = 15;
@@ -1078,7 +1082,7 @@
             this.BtnSaveDrug.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnSaveDrug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSaveDrug.ForeColor = System.Drawing.Color.White;
-            this.BtnSaveDrug.Location = new System.Drawing.Point(256, 6);
+            this.BtnSaveDrug.Location = new System.Drawing.Point(256, 2);
             this.BtnSaveDrug.Name = "BtnSaveDrug";
             this.BtnSaveDrug.Size = new System.Drawing.Size(69, 24);
             this.BtnSaveDrug.TabIndex = 21;
@@ -1092,7 +1096,7 @@
             this.BtnAddDrug.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnAddDrug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAddDrug.ForeColor = System.Drawing.Color.White;
-            this.BtnAddDrug.Location = new System.Drawing.Point(256, 5);
+            this.BtnAddDrug.Location = new System.Drawing.Point(256, 2);
             this.BtnAddDrug.Name = "BtnAddDrug";
             this.BtnAddDrug.Size = new System.Drawing.Size(69, 24);
             this.BtnAddDrug.TabIndex = 14;
@@ -2105,6 +2109,24 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label20.Location = new System.Drawing.Point(2, 29);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(89, 13);
+            this.label20.TabIndex = 18;
+            this.label20.Text = "GENERIC NAME";
+            // 
+            // txt_generic
+            // 
+            this.txt_generic.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_generic.Location = new System.Drawing.Point(95, 24);
+            this.txt_generic.Name = "txt_generic";
+            this.txt_generic.Size = new System.Drawing.Size(100, 20);
+            this.txt_generic.TabIndex = 15;
+            // 
             // Prescription_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2322,5 +2344,7 @@
         private System.Windows.Forms.CheckBox cb30days;
         private System.Windows.Forms.CheckBox cb15days;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txt_generic;
     }
 }

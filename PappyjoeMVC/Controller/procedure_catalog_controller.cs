@@ -62,7 +62,6 @@ namespace PappyjoeMVC.Controller
         {
            int i=_model.delproceduretax(procid);
            return i;
-
         }
         public int delprocdresetngs(int procid)
         {

@@ -113,9 +113,9 @@
             this.btn_import.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_import.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_import.ForeColor = System.Drawing.Color.White;
-            this.btn_import.Location = new System.Drawing.Point(941, 32);
+            this.btn_import.Location = new System.Drawing.Point(941, 11);
             this.btn_import.Name = "btn_import";
-            this.btn_import.Size = new System.Drawing.Size(115, 35);
+            this.btn_import.Size = new System.Drawing.Size(115, 25);
             this.btn_import.TabIndex = 150;
             this.btn_import.Text = "Import from Excel";
             this.btn_import.UseVisualStyleBackColor = false;

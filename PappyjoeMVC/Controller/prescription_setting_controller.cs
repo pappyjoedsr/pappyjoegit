@@ -45,9 +45,9 @@ namespace PappyjoeMVC.Controller
             string dtb = _model.check_drugname(name);
             return dtb;
         }
-        public int Save_Drug(string _drugname, string _strtype, string _strunit, string _strengthgr, string _intstructuion)
+        public int Save_Drug(string _drugname, string generic, string _strtype, string _strunit, string _strengthgr, string _intstructuion)
         {
-            int i = _model.Save_Drug(_drugname, _strtype, _strunit, _strengthgr, _intstructuion);
+            int i = _model.Save_Drug(_drugname, generic, _strtype, _strunit, _strengthgr, _intstructuion);
             return i;
         }
         public string check_exists_drug(string id)
@@ -55,9 +55,9 @@ namespace PappyjoeMVC.Controller
             string dtb = _model.check_exists_drug(id);
             return dtb;
         }
-        public int Update_drug(string id, string _drugname, string _strtype, string _strunit, string _strengthgr, string _intstructuion)
+        public int Update_drug(string id, string _drugname, string generic, string _strtype, string _strunit, string _strengthgr, string _intstructuion)
         {
-            int i = _model.Update_drug(id, _drugname, _strtype, _strunit, _strengthgr, _intstructuion);
+            int i = _model.Update_drug(id, _drugname, generic, _strtype, _strunit, _strengthgr, _intstructuion);
             return i;
         }
         public int delete_drug(string id)

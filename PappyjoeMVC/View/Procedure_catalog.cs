@@ -418,7 +418,7 @@ namespace PappyjoeMVC.View
                         {
                             int i = this.cntrl.delproceduretax(procedureid);
                             int ii = this.cntrl.delprocdresetngs(procedureid);
-                            if (i > 0 && ii > 0)
+                            if (i > 0 || ii > 0)
                             {
                                 Dgv_Procedure.Rows.RemoveAt(Dgv_Procedure.CurrentRow.Index);
                                 DataTable dt = this.cntrl.FormLoad();
@@ -440,45 +440,64 @@ namespace PappyjoeMVC.View
         string FileName;
         private void btn_import_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Title = "Excel File to Edit";
-            ofd.FileName = "";
-            ofd.Filter = "Excel File|*.xlsx;*.xls";
-            if (ofd.ShowDialog() == DialogResult.OK)
+            try
             {
-                FileName = ofd.FileName;
-                if (FileName.Trim() != "")
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Title = "Excel File to Import";
+                ofd.FileName = "";
+                ofd.Filter = "Excel File|*.xlsx;*.xls";
+                if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    ImportfromExcel(FileName);
+                    FileName = ofd.FileName;
+                    if (FileName.Trim() != "")
+                    {
+                        xlApp = new Microsoft.Office.Interop.Excel.Application();
+                        xlWorkBook = xlApp.Workbooks.Open(FileName);
+                        xlWorkSheet = xlWorkBook.Worksheets["Sheet1"];
+                        int iRow;
+                        if (xlWorkSheet.Cells[1, 1].value == "Procedure Name" && xlWorkSheet.Cells[1, 2].value == "Procedure Cost")
+                        {
+                            for (iRow = 2; iRow <= xlWorkSheet.Rows.Count; iRow++)
+                            {
+                                if (xlWorkSheet.Cells[iRow, 1].value == null)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    string procedure_name = "";
+                                    string procedure_cost = "";
+                                    string comboadd = "";
+                                    string notes = "";
+                                    procedure_name = xlWorkSheet.Cells[iRow, 1].value;
+                                    procedure_cost = xlWorkSheet.Cells[iRow, 2].value.ToString();
+                                    DataTable dtb = this.cntrl.get_procedureName(procedure_name);
+                                    if (dtb.Rows.Count == 0)
+                                    {
+                                        int i = this.cntrl.save_addprocedure(procedure_name, procedure_cost, comboadd, notes);
+                                    }
+                                }
+                            }
+                            DataTable dt = this.cntrl.FormLoad();
+                            FormLoad(dt);
+                            xlWorkBook.Close();
+                            xlApp.Quit();
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkBook);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkSheet);
+                            MessageBox.Show("Successfully Imported !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("The Excel sheet data is not in the standard format", "Format mismatch", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                 }
             }
-        }
-        private void ImportfromExcel(string sFile)
-        {
-            xlApp = new Microsoft.Office.Interop.Excel.Application();
-            xlWorkBook = xlApp.Workbooks.Open(sFile);               
-            xlWorkSheet = xlWorkBook.Worksheets["Sheet1"];          
-            int iRow;
-            for (iRow = 2; iRow <= xlWorkSheet.Rows.Count; iRow++)
+            catch (Exception ex)
             {
-                if (xlWorkSheet.Cells[iRow, 1].value == null)
-                {
-                    break;      
-                }
-                else
-                {
-                    string procedure_name = xlWorkSheet.Cells[iRow, 1].value;
-                    string procedure_cost = xlWorkSheet.Cells[iRow, 2].value.ToString();
-                    int i = this.cntrl.save_addprocedure(procedure_name, procedure_cost, comboaddunder.Text, richnotes.Text);
-                    DataTable dt = this.cntrl.FormLoad();
-                    FormLoad(dt);
-                }
+                MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            xlWorkBook.Close();
-            xlApp.Quit();
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkBook);
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkSheet);
         }
     }
 }

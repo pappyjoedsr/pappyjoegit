@@ -37,8 +37,10 @@ namespace PappyjoeMVC.View
             drugbutton.BackColor = Color.FromArgb(224, 224, 224);
             templatebutton.BackColor = Color.White;
             label34.Visible = false;
+            label20.Visible = false;
             label33.Visible = false;
             drugnametextbox.Visible = false;
+            txt_generic.Visible = false;
             drugtypecombo.Visible = false;
             strengthnot.Visible = false;
             strengthgrcombo.Visible = false;
@@ -72,8 +74,10 @@ namespace PappyjoeMVC.View
             if (BtnAddDrug.Text == "Add Drug")
             {
                 label34.Visible = true;
+                label20.Visible = true;
                 label33.Visible = true;
                 drugnametextbox.Visible = true;
+                txt_generic.Visible = true;
                 drugtypecombo.Visible = true;
                 strengthnot.Visible = true;
                 strengthgrcombo.Visible = true;
@@ -89,8 +93,10 @@ namespace PappyjoeMVC.View
             else
             {
                 label34.Visible = false;
+                label20.Visible = false;
                 label33.Visible = false;
                 drugnametextbox.Visible = false;
+                txt_generic.Visible = false;
                 drugtypecombo.Visible = false;
                 strengthnot.Visible = false;
                 strengthgrcombo.Visible = false;
@@ -122,7 +128,7 @@ namespace PappyjoeMVC.View
                 {
                     if (drugnametextbox.Text != "")
                     {
-                        this.cntrl.Save_Drug(drugnametextbox.Text, drugtypecombo.Text, strengthgrcombo.Text, strengthnot.Text, textinstructions.Text);
+                        this.cntrl.Save_Drug(drugnametextbox.Text, txt_generic.Text, drugtypecombo.Text, strengthgrcombo.Text, strengthnot.Text, textinstructions.Text);
                         DataTable dt4 = this.cntrl.drug_load();
                         string strstock = "";
                         presdruggrid.ColumnCount = 3;
@@ -162,8 +168,10 @@ namespace PappyjoeMVC.View
                         // End
                         panel9.Visible = true;
                         label34.Visible = false;
+                        label20.Visible = false;
                         label33.Visible = false;
                         drugnametextbox.Visible = false;
+                        txt_generic.Visible = false;
                         drugtypecombo.Visible = false;
                         strengthnot.Visible = false;
                         strengthgrcombo.Visible = false;
@@ -178,6 +186,7 @@ namespace PappyjoeMVC.View
                         presdruggrid.Height = 437;
                         presdruggrid.Visible = true;
                         drugnametextbox.Text = "";
+                        txt_generic.Text = "";
                         drugtypecombo.Text = "";
                         strengthnot.Text = "";
                         strengthgrcombo.Text = "";
@@ -1107,9 +1116,11 @@ namespace PappyjoeMVC.View
                     buttoncaption = "SAVE PRESCRIPTION";
                 }
                 templatepanel1.Visible = false;
-                  label34.Visible = false;
+                label34.Visible = false;
+                label20.Visible = false;
                 label33.Visible = false;
                 drugnametextbox.Visible = false;
+                txt_generic.Visible = false;
                 drugtypecombo.Visible = false;
                 strengthnot.Visible = false;
                 strengthgrcombo.Visible = false;

@@ -44,6 +44,7 @@ namespace PappyjoeMVC.View
             dataGridView_prescription.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridView_prescription.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -51,6 +52,7 @@ namespace PappyjoeMVC.View
             dataGridView_prescription.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridView_prescription.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
         }
         public void FillTypeCombo(DataTable dtb)
         {
@@ -131,7 +133,7 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            int i = this.cntrl.Save_Drug(txtitemname.Text, StrType, text_strength.Text, StrUnit, rich_instruction.Text);
+                            int i = this.cntrl.Save_Drug(txtitemname.Text, txt_generic.Text, StrType, text_strength.Text, StrUnit, rich_instruction.Text);
                             if (i > 0)
                             {
                                 MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -147,7 +149,7 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            int i = this.cntrl.Update_drug(id, txtitemname.Text, StrType, StrUnit, text_strength.Text, rich_instruction.Text);
+                            int i = this.cntrl.Update_drug(id, txtitemname.Text, txt_generic.Text, StrType, StrUnit, text_strength.Text, rich_instruction.Text);
                         }
                     }
                     DataTable dt = this.cntrl.get_drug();
@@ -156,6 +158,7 @@ namespace PappyjoeMVC.View
                     txtitemname.Clear();
                     text_type.Clear();
                     combo_unit.Text = "";
+                    txt_generic.Text = "";
                     combotype.Text = "";
                     text_unit.Clear();
                     rich_instruction.Clear();
@@ -207,6 +210,7 @@ namespace PappyjoeMVC.View
                     if (dataGridView_prescription.CurrentCell.OwningColumn.Name == "edit")
                     {
                         txtitemname.Text = dataGridView_prescription.CurrentRow.Cells["pname"].Value.ToString();
+                        txt_generic.Text = dataGridView_prescription.CurrentRow.Cells["pgeneric"].Value.ToString();
                         combotype.Text = dataGridView_prescription.CurrentRow.Cells["ptype"].Value.ToString();
                         text_strength.Text = dataGridView_prescription.CurrentRow.Cells["pstrength"].Value.ToString();
                         combo_unit.Text = dataGridView_prescription.CurrentRow.Cells["punit"].Value.ToString();
@@ -297,6 +301,7 @@ namespace PappyjoeMVC.View
         {
             txtitemname.Clear();
             text_type.Clear();
+            txt_generic.Clear();
             combo_unit.Text = "";
             combotype.Text = "";
             text_unit.Clear();
@@ -314,6 +319,91 @@ namespace PappyjoeMVC.View
             linkLabel3.Hide();
             text_unit.Hide();
             button_cancel.Visible = false;
+        }
+
+        Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+        Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+        Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+        string FileName;
+        private void btn_import_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Title = "Excel File to Import";
+                ofd.FileName = "";
+                ofd.Filter = "Excel File|*.xlsx;*.xls";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    FileName = ofd.FileName;
+                    if (FileName.Trim() != "")
+                    {
+                        xlApp = new Microsoft.Office.Interop.Excel.Application();
+                        xlWorkBook = xlApp.Workbooks.Open(FileName);
+                        xlWorkSheet = xlWorkBook.Worksheets["Sheet1"];
+                        int iRow;
+                        if (xlWorkSheet.Cells[1, 1].value == "Name" && xlWorkSheet.Cells[1, 2].value == "Generic" && xlWorkSheet.Cells[1, 3].value == "Type" && xlWorkSheet.Cells[1, 4].value == "Strength" && xlWorkSheet.Cells[1, 5].value == "Unit" && xlWorkSheet.Cells[1, 6].value == "Instructions")
+                        {
+                            for (iRow = 2; iRow <= xlWorkSheet.Rows.Count; iRow++)
+                            {
+                                if (xlWorkSheet.Cells[iRow, 1].value == null)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    string Name = "";
+                                    string Generic = "";
+                                    string Type = "";
+                                    string Strength = "";
+                                    string Unit = "";
+                                    string Instructions = "";
+                                    Name = xlWorkSheet.Cells[iRow, 1].value;
+                                    Generic = xlWorkSheet.Cells[iRow, 2].value.ToString();
+                                    Type = xlWorkSheet.Cells[iRow, 3].value.ToString();
+                                    Strength = xlWorkSheet.Cells[iRow, 4].value.ToString();
+                                    Unit = xlWorkSheet.Cells[iRow, 5].value.ToString();
+                                    Instructions = xlWorkSheet.Cells[iRow, 6].value.ToString();
+
+                                    DataTable dt_drug_type = this.cntrl.get_value_from_drugtype(Type);
+                                    if (dt_drug_type.Rows.Count == 0)
+                                    {
+                                        this.cntrl.SaveDrug(Type);
+                                    }
+
+                                    DataTable dt_drug_unit = this.cntrl.check_unit(Unit);
+                                    if (dt_drug_unit.Rows.Count == 0)
+                                    {
+                                        this.cntrl.save_unit(Unit);
+                                    }
+
+                                    string name = this.cntrl.check_drugname(Name);
+                                    if (name != Name)
+                                    {
+                                        int i = this.cntrl.Save_Drug(Name, Generic, Type, Strength, Unit, Instructions);
+                                    }
+                                }
+                            }
+                            DataTable dt = this.cntrl.get_drug();
+                            dataGridView_prescription.DataSource = dt;
+                            xlWorkBook.Close();
+                            xlApp.Quit();
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkBook);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkSheet);
+                            MessageBox.Show("Successfully Imported !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("The Excel sheet data is not in the standard format", "Format mismatch", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
