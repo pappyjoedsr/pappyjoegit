@@ -218,5 +218,10 @@ namespace PappyjoeMVC.Model
             DataTable sqlstring =db.table( "SELECT id,pt_name,start_datetime,plan_New_procedure ,status,EHR_status,start_datetime FROM tbl_appointment where start_datetime between  '" + Convert.ToDateTime(startDateTime).ToString("yyyy-MM-dd HH:mm") + "' AND '" + Convert.ToDateTime(startDateTime1).ToString("yyyy-MM-dd HH:mm") + "' AND dr_id='" + dr_id + "' ORDER BY start_datetime");
             return sqlstring;
         }
+        //public int insert_excelimported()
+        //{
+        //    int i = db.execute("insert into tbl_patient ");
+        //    return i;
+        //}
     }
 }
