@@ -391,7 +391,7 @@
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label12.Location = new System.Drawing.Point(8, 19);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(134, 15);
+            this.label12.Size = new System.Drawing.Size(136, 15);
             this.label12.TabIndex = 23;
             this.label12.Text = "DENTAL LAB WORK LIST";
             // 
@@ -2118,7 +2118,7 @@
             this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label11.Location = new System.Drawing.Point(14, 19);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(132, 15);
+            this.label11.Size = new System.Drawing.Size(135, 15);
             this.label11.TabIndex = 23;
             this.label11.Text = "MEDICAL LAB TEST LIST";
             // 

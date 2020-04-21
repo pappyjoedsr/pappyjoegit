@@ -1600,7 +1600,6 @@ namespace PappyjoeMVC.View
                         dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Height = 30;
                         img.ImageLayout = DataGridViewImageCellLayout.Normal;
                         dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Cells[13].Value = dt.Rows[i]["status"].ToString();
-
                     }
                 }
                 catch (Exception ex)

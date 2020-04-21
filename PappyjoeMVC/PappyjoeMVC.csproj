@@ -45,12 +45,11 @@
       <HintPath>Properties\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\MySql.Data.DLL</HintPath>
+    <Reference Include="MySql.Data">
+      <HintPath>F:\vandana\MySqlBackup.NET_v2.3\.net 4.5\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySqlBackup">
-      <HintPath>C:\MySqlBackup.dll</HintPath>
+      <HintPath>F:\vandana\MySqlBackup.NET_v2.3\.net 4.5\MySqlBackup.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -81,6 +80,7 @@
     <Compile Include="Controller\Appointment_for_each_patient_group_controller.cs" />
     <Compile Include="Controller\Attachments_controller.cs" />
     <Compile Include="Controller\Autoid_Generation_controller.cs" />
+    <Compile Include="Controller\Backup_and_Restore_controller.cs" />
     <Compile Include="Controller\batchsale_controller.cs" />
     <Compile Include="Controller\Billing_controller.cs" />
     <Compile Include="Controller\Booking_controller.cs" />
@@ -358,6 +358,12 @@
     </Compile>
     <Compile Include="View\AutomaticId_generation.Designer.cs">
       <DependentUpon>AutomaticId_generation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Backup_and_Restore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Backup_and_Restore.Designer.cs">
+      <DependentUpon>Backup_and_Restore.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Batch_Sale.cs">
       <SubType>Form</SubType>
@@ -1151,6 +1157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AutomaticId_generation.resx">
       <DependentUpon>AutomaticId_generation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Backup_and_Restore.resx">
+      <DependentUpon>Backup_and_Restore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Batch_Sale.resx">
       <DependentUpon>Batch_Sale.cs</DependentUpon>

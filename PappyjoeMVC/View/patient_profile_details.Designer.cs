@@ -851,7 +851,7 @@
             this.BtnCaseSheetIP.Name = "BtnCaseSheetIP";
             this.BtnCaseSheetIP.Size = new System.Drawing.Size(158, 27);
             this.BtnCaseSheetIP.TabIndex = 272;
-            this.BtnCaseSheetIP.Text = "Case Sheet Of IP Patient";
+            this.BtnCaseSheetIP.Text = "Case Sheet of IP Patient";
             this.BtnCaseSheetIP.UseVisualStyleBackColor = false;
             this.BtnCaseSheetIP.Click += new System.EventHandler(this.BtnCaseSheetIP_Click);
             // 
@@ -1138,7 +1138,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(6, 81);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 21);
+            this.label5.Size = new System.Drawing.Size(103, 21);
             this.label5.TabIndex = 204;
             this.label5.Text = "Patient Name";
             // 
@@ -1157,7 +1157,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(6, 48);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 21);
+            this.label4.Size = new System.Drawing.Size(91, 21);
             this.label4.TabIndex = 202;
             this.label4.Text = "IP Patient Id";
             // 
@@ -1180,7 +1180,7 @@
             this.labpassport.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labpassport.Location = new System.Drawing.Point(180, 580);
             this.labpassport.Name = "labpassport";
-            this.labpassport.Size = new System.Drawing.Size(98, 21);
+            this.labpassport.Size = new System.Drawing.Size(97, 21);
             this.labpassport.TabIndex = 265;
             this.labpassport.Text = "Passport No:";
             this.labpassport.Visible = false;
@@ -1334,7 +1334,7 @@
             this.labhead.ForeColor = System.Drawing.Color.OliveDrab;
             this.labhead.Location = new System.Drawing.Point(137, 274);
             this.labhead.Name = "labhead";
-            this.labhead.Size = new System.Drawing.Size(191, 30);
+            this.labhead.Size = new System.Drawing.Size(188, 30);
             this.labhead.TabIndex = 205;
             this.labhead.Text = "CONTACT DETAILS";
             // 
@@ -1453,7 +1453,7 @@
             this.labStreetAddress.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labStreetAddress.Location = new System.Drawing.Point(164, 432);
             this.labStreetAddress.Name = "labStreetAddress";
-            this.labStreetAddress.Size = new System.Drawing.Size(118, 21);
+            this.labStreetAddress.Size = new System.Drawing.Size(117, 21);
             this.labStreetAddress.TabIndex = 210;
             this.labStreetAddress.Text = "Street Address: ";
             this.labStreetAddress.Visible = false;
@@ -1704,7 +1704,7 @@
             this.labPatientId.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labPatientId.Location = new System.Drawing.Point(201, 50);
             this.labPatientId.Name = "labPatientId";
-            this.labPatientId.Size = new System.Drawing.Size(80, 21);
+            this.labPatientId.Size = new System.Drawing.Size(79, 21);
             this.labPatientId.TabIndex = 225;
             this.labPatientId.Text = "Patient ID:";
             this.labPatientId.Visible = false;
@@ -1728,7 +1728,7 @@
             this.lab_PatientName.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lab_PatientName.Location = new System.Drawing.Point(174, 15);
             this.lab_PatientName.Name = "lab_PatientName";
-            this.lab_PatientName.Size = new System.Drawing.Size(107, 21);
+            this.lab_PatientName.Size = new System.Drawing.Size(106, 21);
             this.lab_PatientName.TabIndex = 224;
             this.lab_PatientName.Text = "Patient Name:";
             // 

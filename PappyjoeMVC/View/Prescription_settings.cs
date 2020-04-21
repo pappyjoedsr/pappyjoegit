@@ -1,8 +1,9 @@
 ﻿using PappyjoeMVC.Controller;
 using System;
-using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.OleDb;
 
 namespace PappyjoeMVC.View
 {
@@ -25,9 +26,9 @@ namespace PappyjoeMVC.View
             label30.Hide();
             text_unit.Hide();
             text_type.Hide();
-            DataTable dtb = this.cntrl.fill_type_combo();
+            System.Data.DataTable dtb = this.cntrl.fill_type_combo();
             FillTypeCombo(dtb);
-            DataTable dtb_unit= this.cntrl.fill_unit_combo();
+            System.Data.DataTable dtb_unit = this.cntrl.fill_unit_combo();
             FillUnitCombo(dtb_unit);
             dataGridView_prescription.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             dataGridView_prescription.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -52,7 +53,7 @@ namespace PappyjoeMVC.View
             dataGridView_prescription.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
         }
-        public void FillTypeCombo(DataTable dtb)
+        public void FillTypeCombo(System.Data.DataTable dtb)
         {
             if (dtb.Rows.Count > 0)
             {
@@ -61,7 +62,7 @@ namespace PappyjoeMVC.View
                 combotype.DataSource = dtb;
             }
         }
-        public void FillUnitCombo(DataTable dtb)
+        public void FillUnitCombo(System.Data.DataTable dtb)
         {
             if (dtb.Rows.Count > 0)
             {
@@ -99,7 +100,7 @@ namespace PappyjoeMVC.View
                         errorProvider1.SetError(text_type, "error");
                         label34.Show();
                     }
-                    DataTable dt_drug_type = this.cntrl.get_value_from_drugtype(text_type.Text);
+                    System.Data.DataTable dt_drug_type = this.cntrl.get_value_from_drugtype(text_type.Text);
                     if (dt_drug_type.Rows.Count == 0)
                     {
                         this.cntrl.SaveDrug(text_type.Text);
@@ -112,7 +113,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                   DataTable dt_drug_unit = this.cntrl.check_unit(StrUnit);
+                    System.Data.DataTable dt_drug_unit = this.cntrl.check_unit(StrUnit);
                     if (dt_drug_unit.Rows.Count == 0)
                     {
                         this.cntrl.save_unit(text_unit.Text);
@@ -150,7 +151,7 @@ namespace PappyjoeMVC.View
                             int i = this.cntrl.Update_drug(id,txtitemname.Text, StrType, StrUnit, text_strength.Text, rich_instruction.Text);
                         }
                     }
-                    DataTable dt = this.cntrl.get_drug();
+                    System.Data.DataTable dt = this.cntrl.get_drug();
                     dataGridView_prescription.DataSource = dt;
                     button_cancel.Visible = false;
                     txtitemname.Clear();
@@ -171,9 +172,9 @@ namespace PappyjoeMVC.View
                     combo_unit.Show();
                     linkLabel3.Hide();
                     text_unit.Hide();
-                    DataTable dtb_typr = this.cntrl.fill_type_combo();
+                    System.Data.DataTable dtb_typr = this.cntrl.fill_type_combo();
                     FillTypeCombo(dtb_typr);
-                    DataTable dtb_unit = this.cntrl.fill_unit_combo();
+                    System.Data.DataTable dtb_unit = this.cntrl.fill_unit_combo();
                     FillUnitCombo(dtb_unit);
                 }
             }
@@ -233,7 +234,7 @@ namespace PappyjoeMVC.View
                                 int i = this.cntrl.delete_drug(id);
                                 if (i > 0)
                                 {
-                                    DataTable dt = this.cntrl.get_drug();
+                                    System.Data.DataTable dt = this.cntrl.get_drug();
                                     dataGridView_prescription.DataSource = dt;
                                 }
                             }
@@ -289,7 +290,7 @@ namespace PappyjoeMVC.View
 
         private void text_presc_search_KeyUp(object sender, KeyEventArgs e)
         {
-            DataTable dtb = this.cntrl.drug_search(text_presc_search.Text);
+            System.Data.DataTable dtb = this.cntrl.drug_search(text_presc_search.Text);
             dataGridView_prescription.DataSource = dtb;
         }
 

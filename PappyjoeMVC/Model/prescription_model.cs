@@ -130,7 +130,7 @@ namespace PappyjoeMVC.Model
             return dt_pre_main;
         }
       
-        public DataTable prescription_details(string id)
+        public DataTable prescription_detoails(string id)
         {
             System.Data.DataTable dt_prescription = db.table("SELECT drug_name,strength,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,strength_gr,status FROM tbl_prescription WHERE pres_id='" + id + "' ORDER BY id");
             return dt_prescription;

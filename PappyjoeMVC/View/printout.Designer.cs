@@ -862,6 +862,7 @@
             this.radio_logo_yes.TabStop = true;
             this.radio_logo_yes.Text = "Yes";
             this.radio_logo_yes.UseVisualStyleBackColor = true;
+            this.radio_logo_yes.CheckedChanged += new System.EventHandler(this.radio_logo_yes_CheckedChanged);
             // 
             // text_header
             // 
@@ -2087,6 +2088,7 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "Preview";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // printPreviewControl1
             // 
@@ -2578,6 +2580,7 @@
             this.radio_logo_yes1.TabStop = true;
             this.radio_logo_yes1.Text = "Yes";
             this.radio_logo_yes1.UseVisualStyleBackColor = true;
+            this.radio_logo_yes1.CheckedChanged += new System.EventHandler(this.radio_logo_yes_CheckedChanged);
             // 
             // text_header1
             // 

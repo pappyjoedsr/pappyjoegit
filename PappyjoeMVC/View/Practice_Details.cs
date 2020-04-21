@@ -34,7 +34,7 @@ namespace PappyjoeMVC.View
         Export_Data exprt = new Export_Data();
         LabMedical labmedical = new LabMedical();
         LabDental dental = new LabDental();
-        //Backup_and_Restore bckres = new Backup_and_Restore();
+        Backup_and_Restore bckres = new Backup_and_Restore();
         Prescription_Lang prescr_lang = new Prescription_Lang();
         private void btnaddstate_Click(object sender, EventArgs e)
         {
@@ -831,14 +831,14 @@ namespace PappyjoeMVC.View
 
         private void backuprestore_Click(object sender, EventArgs e)
         {
-            //errorProvider1.Dispose();
-            //backColor_change();
-            //button_importexport.BackColor = Color.SteelBlue;
-            //form_hide();
-            //bckres.TopLevel = false;
-            //bckres.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //panel_main.Controls.Add(bckres);
-            //bckres.Show();
+            errorProvider1.Dispose();
+            backColor_change();
+            backuprestore.BackColor = Color.SteelBlue;
+            form_hide();
+            bckres.TopLevel = false;
+            bckres.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            panel_main.Controls.Add(bckres);
+            bckres.Show();
         }
 
         private void btnPrescriptionLang_Click(object sender, EventArgs e)

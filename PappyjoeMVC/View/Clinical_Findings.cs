@@ -2297,7 +2297,7 @@ namespace PappyjoeMVC.View
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Are you sure you want copy this prescription..??", "Copy...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult res = MessageBox.Show("Are you sure you want copy this clinical findings..??", "Copy...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res==DialogResult.Yes)
             {
                 int treat;

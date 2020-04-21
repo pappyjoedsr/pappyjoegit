@@ -65,7 +65,7 @@ namespace PappyjoeMVC.Controller
 
         public DataTable prescription_details(string id)
         {
-            System.Data.DataTable dt_prescription = _model.prescription_details(id);
+            System.Data.DataTable dt_prescription = _model.prescription_detoails(id);
             return dt_prescription;
         }
         public DataTable printsettings()

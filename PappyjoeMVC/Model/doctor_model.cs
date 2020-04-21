@@ -146,16 +146,16 @@ namespace PappyjoeMVC.Model
             return dt;
         }
      
-        public int update_doctor(string doctor_id, string _drname, string _number, string _email, string _gender, string _year, string _about, string _path)
+        public int update_doctor(string doctor_id, string _drname, string _number, string _email, string _gender, string _year, string _about, string _path,string _logtype)
         {
             int update;
             if (_path == "")
             {
-                update = db.execute("update tbl_doctor set doctor_name='" + _drname + "',mobile_number='" + _number + "',email_id='" + _email + "',gender='" + _gender + "',experience='" + _year + "',about='" + _about + "',image= null where id='" + doctor_id + "'");
+                update = db.execute("update tbl_doctor set doctor_name='" + _drname + "',mobile_number='" + _number + "',email_id='" + _email + "',gender='" + _gender + "',experience='" + _year + "',about='" + _about + "',image= null,login_type='"+_logtype+"' where id='" + doctor_id + "'");
             }
             else
             {
-                update = db.execute("update tbl_doctor set doctor_name='" + _drname + "',mobile_number='" + _number + "',email_id='" + _email + "',gender='" + _gender + "',experience='" + _year + "',about='" + _about + "',image='" + _path + "' where id='" + doctor_id + "'");
+                update = db.execute("update tbl_doctor set doctor_name='" + _drname + "',mobile_number='" + _number + "',email_id='" + _email + "',gender='" + _gender + "',experience='" + _year + "',about='" + _about + "',image='" + _path + "',login_type='" + _logtype + "' where id='" + doctor_id + "'");
             }
             return update;
         }
@@ -175,7 +175,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable get_doctor_details(string doctor_id)
         {
-            DataTable dtb = db.table("select doctor_name,gender,experience,about,mobile_number,email_id,password,path from tbl_doctor where id='" + doctor_id + "'");
+            DataTable dtb = db.table("select doctor_name,gender,experience,about,mobile_number,email_id,password,path,login_type from tbl_doctor where id='" + doctor_id + "'");
             return dtb;
         }
        

@@ -17,7 +17,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable getattachment(string patntid)
         {
-            DataTable dt = c.table("select dr_id,patient_id,CategoryName,date,photo_name,id,path from tbl_attachments where patient_id='" + patntid + "' order by date");
+            DataTable dt = c.table("select dr_id,patient_id,CategoryName,date,photo_name,id,path from tbl_attachments where patient_id='" + patntid + "' order by date,id DESC");
             return dt;
         }
         public int inscatgry(string catgryname)

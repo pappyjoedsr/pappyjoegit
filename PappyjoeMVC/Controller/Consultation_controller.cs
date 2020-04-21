@@ -279,7 +279,7 @@ namespace PappyjoeMVC.Controller
         }
         public DataTable prescription_details(string id)
         {
-            DataTable dt_prescription = pmodel.prescription_details(id);
+            DataTable dt_prescription = pmodel.prescription_detoails(id);
             return dt_prescription;
         }
         public DataTable pt_details(string ptid)
