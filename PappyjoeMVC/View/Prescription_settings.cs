@@ -8,13 +8,13 @@ namespace PappyjoeMVC.View
 {
     public partial class Prescription_Settings : Form
     {
-        Prescription_Setting_controller cntrl=new Prescription_Setting_controller();
+        Prescription_Setting_controller cntrl = new Prescription_Setting_controller();
         public string id = "";
         public Prescription_Settings()
         {
             InitializeComponent();
         }
-          private void Prescription_settings_Load(object sender, EventArgs e)
+        private void Prescription_settings_Load(object sender, EventArgs e)
         {
             DataTable dt = this.cntrl.get_drug();
             dataGridView_prescription.DataSource = dt;
@@ -27,7 +27,7 @@ namespace PappyjoeMVC.View
             text_type.Hide();
             DataTable dtb = this.cntrl.fill_type_combo();
             FillTypeCombo(dtb);
-            DataTable dtb_unit= this.cntrl.fill_unit_combo();
+            DataTable dtb_unit = this.cntrl.fill_unit_combo();
             FillUnitCombo(dtb_unit);
             dataGridView_prescription.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
             dataGridView_prescription.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -44,6 +44,7 @@ namespace PappyjoeMVC.View
             dataGridView_prescription.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridView_prescription.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -51,6 +52,7 @@ namespace PappyjoeMVC.View
             dataGridView_prescription.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView_prescription.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridView_prescription.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
         }
         public void FillTypeCombo(DataTable dtb)
         {
@@ -70,12 +72,12 @@ namespace PappyjoeMVC.View
                 combo_unit.DataSource = dtb;
             }
         }
-   
+
         private void button_save_Click(object sender, EventArgs e)
         {
             try
             {
-                string StrUnit = "", StrType="";
+                string StrUnit = "", StrType = "";
                 if (String.IsNullOrWhiteSpace(txtitemname.Text))
                 {
                     errorProvider1.SetError(txtitemname, "error");
@@ -112,7 +114,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                   DataTable dt_drug_unit = this.cntrl.check_unit(StrUnit);
+                    DataTable dt_drug_unit = this.cntrl.check_unit(StrUnit);
                     if (dt_drug_unit.Rows.Count == 0)
                     {
                         this.cntrl.save_unit(text_unit.Text);
@@ -124,14 +126,14 @@ namespace PappyjoeMVC.View
                     if (button_save.Text == "Save")
                     {
                         string name = this.cntrl.check_drugname(txtitemname.Text);
-                        if (name==txtitemname.Text)
+                        if (name == txtitemname.Text)
                         {
                             MessageBox.Show("Drug " + txtitemname.Text + "' already existed", "Duplication Encountered", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
                         else
                         {
-                            int i = this.cntrl.Save_Drug(txtitemname.Text, StrType, StrUnit, text_strength.Text, rich_instruction.Text);
+                            int i = this.cntrl.Save_Drug(txtitemname.Text, txt_generic.Text, StrType, text_strength.Text, StrUnit, rich_instruction.Text);
                             if (i > 0)
                             {
                                 MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -141,13 +143,13 @@ namespace PappyjoeMVC.View
                     else
                     {
                         string dtb = this.cntrl.check_exists_drug(id);
-                        if (Convert.ToInt32(dtb)>0)
+                        if (Convert.ToInt32(dtb) > 0)
                         {
                             MessageBox.Show("Cannot edit this drug, It is used in prescriptions...", "Edit Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
-                            int i = this.cntrl.Update_drug(id,txtitemname.Text, StrType, StrUnit, text_strength.Text, rich_instruction.Text);
+                            int i = this.cntrl.Update_drug(id, txtitemname.Text, txt_generic.Text, StrType, StrUnit, text_strength.Text, rich_instruction.Text);
                         }
                     }
                     DataTable dt = this.cntrl.get_drug();
@@ -156,6 +158,7 @@ namespace PappyjoeMVC.View
                     txtitemname.Clear();
                     text_type.Clear();
                     combo_unit.Text = "";
+                    txt_generic.Text = "";
                     combotype.Text = "";
                     text_unit.Clear();
                     rich_instruction.Clear();
@@ -182,7 +185,7 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-      
+
         private void txtitemname_TextChanged(object sender, EventArgs e)
         {
             errorProvider1.Dispose();
@@ -195,7 +198,7 @@ namespace PappyjoeMVC.View
             label34.Hide();
             errorProvider1.Dispose();
         }
-       
+
         private void dataGridView_prescription_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -207,9 +210,10 @@ namespace PappyjoeMVC.View
                     if (dataGridView_prescription.CurrentCell.OwningColumn.Name == "edit")
                     {
                         txtitemname.Text = dataGridView_prescription.CurrentRow.Cells["pname"].Value.ToString();
+                        txt_generic.Text = dataGridView_prescription.CurrentRow.Cells["pgeneric"].Value.ToString();
                         combotype.Text = dataGridView_prescription.CurrentRow.Cells["ptype"].Value.ToString();
-                        text_strength.Text = dataGridView_prescription.CurrentRow.Cells["punit"].Value.ToString();
-                        combo_unit.Text = dataGridView_prescription.CurrentRow.Cells["pstrength"].Value.ToString();
+                        text_strength.Text = dataGridView_prescription.CurrentRow.Cells["pstrength"].Value.ToString();
+                        combo_unit.Text = dataGridView_prescription.CurrentRow.Cells["punit"].Value.ToString();
                         rich_instruction.Text = dataGridView_prescription.CurrentRow.Cells["pinstruction"].Value.ToString();
                         button_save.Text = "Update"; button_cancel.Visible = true;
                     }
@@ -224,7 +228,7 @@ namespace PappyjoeMVC.View
                         else
                         {
                             string dtb = this.cntrl.check_exists_drug(id);
-                            if (Convert.ToInt32(dtb)>0)
+                            if (Convert.ToInt32(dtb) > 0)
                             {
                                 MessageBox.Show("Cannot edit this drug, It is used in prescriptions...", "Edit Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
@@ -264,7 +268,7 @@ namespace PappyjoeMVC.View
         {
             combotype.Hide();
             button_addtype.Hide();
-            text_type.Focus(); 
+            text_type.Focus();
             text_type.Show();
             linkLabel2.Show();
         }
@@ -297,6 +301,7 @@ namespace PappyjoeMVC.View
         {
             txtitemname.Clear();
             text_type.Clear();
+            txt_generic.Clear();
             combo_unit.Text = "";
             combotype.Text = "";
             text_unit.Clear();
@@ -314,6 +319,91 @@ namespace PappyjoeMVC.View
             linkLabel3.Hide();
             text_unit.Hide();
             button_cancel.Visible = false;
+        }
+
+        Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+        Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+        Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+        string FileName;
+        private void btn_import_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Title = "Excel File to Import";
+                ofd.FileName = "";
+                ofd.Filter = "Excel File|*.xlsx;*.xls";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    FileName = ofd.FileName;
+                    if (FileName.Trim() != "")
+                    {
+                        xlApp = new Microsoft.Office.Interop.Excel.Application();
+                        xlWorkBook = xlApp.Workbooks.Open(FileName);
+                        xlWorkSheet = xlWorkBook.Worksheets["Sheet1"];
+                        int iRow;
+                        if (xlWorkSheet.Cells[1, 1].value == "Name" && xlWorkSheet.Cells[1, 2].value == "Generic" && xlWorkSheet.Cells[1, 3].value == "Type" && xlWorkSheet.Cells[1, 4].value == "Strength" && xlWorkSheet.Cells[1, 5].value == "Unit" && xlWorkSheet.Cells[1, 6].value == "Instructions")
+                        {
+                            for (iRow = 2; iRow <= xlWorkSheet.Rows.Count; iRow++)
+                            {
+                                if (xlWorkSheet.Cells[iRow, 1].value == null)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    string Name = "";
+                                    string Generic = "";
+                                    string Type = "";
+                                    string Strength = "";
+                                    string Unit = "";
+                                    string Instructions = "";
+                                    Name = xlWorkSheet.Cells[iRow, 1].value;
+                                    Generic = xlWorkSheet.Cells[iRow, 2].value.ToString();
+                                    Type = xlWorkSheet.Cells[iRow, 3].value.ToString();
+                                    Strength = xlWorkSheet.Cells[iRow, 4].value.ToString();
+                                    Unit = xlWorkSheet.Cells[iRow, 5].value.ToString();
+                                    Instructions = xlWorkSheet.Cells[iRow, 6].value.ToString();
+
+                                    DataTable dt_drug_type = this.cntrl.get_value_from_drugtype(Type);
+                                    if (dt_drug_type.Rows.Count == 0)
+                                    {
+                                        this.cntrl.SaveDrug(Type);
+                                    }
+
+                                    DataTable dt_drug_unit = this.cntrl.check_unit(Unit);
+                                    if (dt_drug_unit.Rows.Count == 0)
+                                    {
+                                        this.cntrl.save_unit(Unit);
+                                    }
+
+                                    string name = this.cntrl.check_drugname(Name);
+                                    if (name != Name)
+                                    {
+                                        int i = this.cntrl.Save_Drug(Name, Generic, Type, Strength, Unit, Instructions);
+                                    }
+                                }
+                            }
+                            DataTable dt = this.cntrl.get_drug();
+                            dataGridView_prescription.DataSource = dt;
+                            xlWorkBook.Close();
+                            xlApp.Quit();
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkBook);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkSheet);
+                            MessageBox.Show("Successfully Imported !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("The Excel sheet data is not in the standard format", "Format mismatch", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

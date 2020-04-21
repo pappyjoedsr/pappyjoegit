@@ -72,8 +72,8 @@
             this.txt_Prescrptn = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.template = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drugspanel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.drugnametext = new System.Windows.Forms.Label();
@@ -129,19 +129,19 @@
             this.txt_Pt_search = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drugname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.strength = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.strengthgr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.period = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.morning = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.night = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.food = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instruction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drugtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drugid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.img = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -418,19 +418,19 @@
             this.dataGridView_drugnew.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_drugnew.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_drugnew.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column11,
-            this.Column12,
-            this.Column18,
-            this.Column13,
-            this.Column19,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17,
-            this.Column20,
-            this.Column39,
+            this.drugname,
+            this.strength,
+            this.strengthgr,
+            this.duration,
+            this.period,
+            this.morning,
+            this.noon,
+            this.night,
+            this.food,
+            this.instruction,
+            this.drugtype,
             this.status,
-            this.Column10,
+            this.drugid,
             this.img});
             this.dataGridView_drugnew.Location = new System.Drawing.Point(6, 308);
             this.dataGridView_drugnew.Name = "dataGridView_drugnew";
@@ -577,8 +577,8 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.ColumnHeadersVisible = false;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column3,
-            this.Column4});
+            this.tempid,
+            this.template});
             this.dataGridView2.Location = new System.Drawing.Point(5, 6);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
@@ -589,21 +589,21 @@
             this.dataGridView2.TabIndex = 29;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
-            // Column3
+            // tempid
             // 
-            this.Column3.DataPropertyName = "id";
-            this.Column3.HeaderText = "id";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Visible = false;
+            this.tempid.DataPropertyName = "id";
+            this.tempid.HeaderText = "id";
+            this.tempid.Name = "tempid";
+            this.tempid.ReadOnly = true;
+            this.tempid.Visible = false;
             // 
-            // Column4
+            // template
             // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.DataPropertyName = "templates";
-            this.Column4.HeaderText = "Template";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.template.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.template.DataPropertyName = "templates";
+            this.template.HeaderText = "Template";
+            this.template.Name = "template";
+            this.template.ReadOnly = true;
             // 
             // drugspanel
             // 
@@ -969,7 +969,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(31, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 21);
+            this.label3.Size = new System.Drawing.Size(75, 21);
             this.label3.TabIndex = 406;
             this.label3.Text = "Patient Id";
             // 
@@ -980,7 +980,7 @@
             this.checkBoxReview.ForeColor = System.Drawing.Color.Black;
             this.checkBoxReview.Location = new System.Drawing.Point(49, 547);
             this.checkBoxReview.Name = "checkBoxReview";
-            this.checkBoxReview.Size = new System.Drawing.Size(91, 19);
+            this.checkBoxReview.Size = new System.Drawing.Size(90, 19);
             this.checkBoxReview.TabIndex = 405;
             this.checkBoxReview.Text = "Next Review";
             this.checkBoxReview.UseVisualStyleBackColor = true;
@@ -1016,7 +1016,7 @@
             this.label19.ForeColor = System.Drawing.Color.Black;
             this.label19.Location = new System.Drawing.Point(550, 142);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(42, 21);
+            this.label19.Size = new System.Drawing.Size(44, 21);
             this.label19.TabIndex = 313;
             this.label19.Text = "Total";
             // 
@@ -1081,7 +1081,7 @@
             // 
             this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtTotal.Location = new System.Drawing.Point(592, 138);
+            this.txtTotal.Location = new System.Drawing.Point(594, 138);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(72, 29);
             this.txtTotal.TabIndex = 308;
@@ -1191,7 +1191,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(390, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 21);
+            this.label4.Size = new System.Drawing.Size(74, 21);
             this.label4.TabIndex = 293;
             this.label4.Text = "Template";
             this.label4.Visible = false;
@@ -1227,7 +1227,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(2, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 21);
+            this.label1.Size = new System.Drawing.Size(104, 21);
             this.label1.TabIndex = 288;
             this.label1.Text = "Patient Name";
             // 
@@ -1239,98 +1239,98 @@
             this.panel3.Size = new System.Drawing.Size(960, 1);
             this.panel3.TabIndex = 305;
             // 
-            // Column11
+            // drugname
             // 
-            this.Column11.HeaderText = "DRUG NAME";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Width = 150;
+            this.drugname.HeaderText = "DRUG NAME";
+            this.drugname.Name = "drugname";
+            this.drugname.ReadOnly = true;
+            this.drugname.Width = 150;
             // 
-            // Column12
+            // strength
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column12.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column12.HeaderText = "STRENGTH";
-            this.Column12.MinimumWidth = 20;
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Width = 50;
+            this.strength.DefaultCellStyle = dataGridViewCellStyle2;
+            this.strength.HeaderText = "STRENGTH";
+            this.strength.MinimumWidth = 20;
+            this.strength.Name = "strength";
+            this.strength.ReadOnly = true;
+            this.strength.Width = 50;
             // 
-            // Column18
+            // strengthgr
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column18.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column18.HeaderText = "";
-            this.Column18.Name = "Column18";
-            this.Column18.ReadOnly = true;
-            this.Column18.Visible = false;
-            this.Column18.Width = 30;
+            this.strengthgr.DefaultCellStyle = dataGridViewCellStyle3;
+            this.strengthgr.HeaderText = "";
+            this.strengthgr.Name = "strengthgr";
+            this.strengthgr.ReadOnly = true;
+            this.strengthgr.Visible = false;
+            this.strengthgr.Width = 30;
             // 
-            // Column13
+            // duration
             // 
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column13.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column13.HeaderText = "DURATION";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Width = 50;
+            this.duration.DefaultCellStyle = dataGridViewCellStyle4;
+            this.duration.HeaderText = "DURATION";
+            this.duration.Name = "duration";
+            this.duration.ReadOnly = true;
+            this.duration.Width = 50;
             // 
-            // Column19
+            // period
             // 
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column19.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column19.HeaderText = "PERIOD";
-            this.Column19.Name = "Column19";
-            this.Column19.ReadOnly = true;
-            this.Column19.Visible = false;
-            this.Column19.Width = 50;
+            this.period.DefaultCellStyle = dataGridViewCellStyle5;
+            this.period.HeaderText = "PERIOD";
+            this.period.Name = "period";
+            this.period.ReadOnly = true;
+            this.period.Visible = false;
+            this.period.Width = 50;
             // 
-            // Column14
+            // morning
             // 
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column14.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column14.HeaderText = "MORNING";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Width = 50;
+            this.morning.DefaultCellStyle = dataGridViewCellStyle6;
+            this.morning.HeaderText = "MORNING";
+            this.morning.Name = "morning";
+            this.morning.ReadOnly = true;
+            this.morning.Width = 50;
             // 
-            // Column15
+            // noon
             // 
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column15.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Column15.HeaderText = "NOON";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            this.Column15.Width = 50;
+            this.noon.DefaultCellStyle = dataGridViewCellStyle7;
+            this.noon.HeaderText = "NOON";
+            this.noon.Name = "noon";
+            this.noon.ReadOnly = true;
+            this.noon.Width = 50;
             // 
-            // Column16
+            // night
             // 
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column16.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Column16.HeaderText = "NIGHT";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            this.Column16.Width = 50;
+            this.night.DefaultCellStyle = dataGridViewCellStyle8;
+            this.night.HeaderText = "NIGHT";
+            this.night.Name = "night";
+            this.night.ReadOnly = true;
+            this.night.Width = 50;
             // 
-            // Column17
+            // food
             // 
-            this.Column17.HeaderText = "FOOD";
-            this.Column17.Name = "Column17";
-            this.Column17.ReadOnly = true;
-            this.Column17.Width = 70;
+            this.food.HeaderText = "FOOD";
+            this.food.Name = "food";
+            this.food.ReadOnly = true;
+            this.food.Width = 70;
             // 
-            // Column20
+            // instruction
             // 
-            this.Column20.HeaderText = "INSTRUCTION";
-            this.Column20.Name = "Column20";
-            this.Column20.ReadOnly = true;
+            this.instruction.HeaderText = "INSTRUCTION";
+            this.instruction.Name = "instruction";
+            this.instruction.ReadOnly = true;
             // 
-            // Column39
+            // drugtype
             // 
-            this.Column39.HeaderText = "drug type";
-            this.Column39.Name = "Column39";
-            this.Column39.ReadOnly = true;
-            this.Column39.Visible = false;
+            this.drugtype.HeaderText = "drug type";
+            this.drugtype.Name = "drugtype";
+            this.drugtype.ReadOnly = true;
+            this.drugtype.Visible = false;
             // 
             // status
             // 
@@ -1340,12 +1340,12 @@
             this.status.Visible = false;
             this.status.Width = 30;
             // 
-            // Column10
+            // drugid
             // 
-            this.Column10.HeaderText = "drugid";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Visible = false;
+            this.drugid.HeaderText = "drugid";
+            this.drugid.Name = "drugid";
+            this.drugid.ReadOnly = true;
+            this.drugid.Visible = false;
             // 
             // img
             // 
@@ -1462,8 +1462,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.CheckBox chkprescription;
         private System.Windows.Forms.DataGridView dgv_treatment;
         private System.Windows.Forms.Button btn_addtrtmnt;
@@ -1481,19 +1479,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn Note;
         private System.Windows.Forms.DataGridViewTextBoxColumn Del;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column39;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tempid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn template;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drugname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn strength;
+        private System.Windows.Forms.DataGridViewTextBoxColumn strengthgr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn period;
+        private System.Windows.Forms.DataGridViewTextBoxColumn morning;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn night;
+        private System.Windows.Forms.DataGridViewTextBoxColumn food;
+        private System.Windows.Forms.DataGridViewTextBoxColumn instruction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drugtype;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drugid;
         private System.Windows.Forms.DataGridViewImageColumn img;
     }
 }

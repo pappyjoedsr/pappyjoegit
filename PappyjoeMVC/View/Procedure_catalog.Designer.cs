@@ -37,6 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Procedure_Catalog));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_import = new System.Windows.Forms.Button();
             this.Dgv_Procedure = new System.Windows.Forms.DataGridView();
             this.textsearch = new System.Windows.Forms.TextBox();
             this.buttonrefresh = new System.Windows.Forms.Button();
@@ -77,6 +78,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_import);
             this.panel1.Controls.Add(this.Dgv_Procedure);
             this.panel1.Controls.Add(this.textsearch);
             this.panel1.Controls.Add(this.buttonrefresh);
@@ -105,6 +107,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1335, 652);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_import
+            // 
+            this.btn_import.BackColor = System.Drawing.Color.DimGray;
+            this.btn_import.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_import.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_import.ForeColor = System.Drawing.Color.White;
+            this.btn_import.Location = new System.Drawing.Point(941, 11);
+            this.btn_import.Name = "btn_import";
+            this.btn_import.Size = new System.Drawing.Size(115, 25);
+            this.btn_import.TabIndex = 150;
+            this.btn_import.Text = "Import from Excel";
+            this.btn_import.UseVisualStyleBackColor = false;
+            this.btn_import.Click += new System.EventHandler(this.btn_import_Click);
             // 
             // Dgv_Procedure
             // 
@@ -574,5 +590,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn category;
         private System.Windows.Forms.DataGridViewImageColumn col_edit;
         private System.Windows.Forms.DataGridViewImageColumn delete;
+        private System.Windows.Forms.Button btn_import;
     }
 }

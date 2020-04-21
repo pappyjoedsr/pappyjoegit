@@ -43,9 +43,9 @@ namespace PappyjoeMVC.Model
             string checkdataname = db.scalar("Select name from tbl_adddrug where name ='" + name + "'");
             return checkdataname;
         }
-        public int Save_Drug(string _drugname, string _strtype, string _strunit, string _strengthgr, string _intstructuion)
+        public int Save_Drug(string _drugname, string generic, string _strtype, string _strunit, string _strengthgr, string _intstructuion)
         {
-            int i = db.execute("insert into tbl_adddrug (name,type,strength,strength_gr,instructions,display_status,inventory_id) values('" + _drugname + "','" + _strtype + "','" + _strunit + "','" + _strengthgr + "','" + _intstructuion + "','Yes','0')");
+            int i = db.execute("insert into tbl_adddrug (name,generic,type,strength,strength_gr,instructions,display_status,inventory_id) values('" + _drugname + "',' " + generic + " ','" + _strtype + "','" + _strunit + "','" + _strengthgr + "','" + _intstructuion + "','Yes','0')");
             return i;
         }
         public string check_exists_drug(string id)
@@ -53,9 +53,9 @@ namespace PappyjoeMVC.Model
             string dt_drug = db.scalar("select id from tbl_prescription where drug_id='" + id + "'");
             return dt_drug;
         }
-        public int Update_drug(string id, string _drugname, string _strtype, string _strunit, string _strengthgr, string _intstructuion)
+        public int Update_drug(string id, string _drugname, string generic, string _strtype, string _strunit, string _strengthgr, string _intstructuion)
         {
-            int i = db.execute("update tbl_adddrug set name='" + _drugname + "',type='" + _strtype + "',strength='" + _strunit + "',strength_gr='" + _strengthgr + "',instructions='" + _intstructuion + "',display_status='Yes',inventory_id='0' where id='" + id + "'");
+            int i = db.execute("update tbl_adddrug set name='" + _drugname + "',generic='" + generic + "',type='" + _strtype + "',strength='" + _strunit + "',strength_gr='" + _strengthgr + "',instructions='" + _intstructuion + "',display_status='Yes',inventory_id='0' where id='" + id + "'");
             return i;
         }
         public int delete_drug(string id)

@@ -1,4 +1,5 @@
 ﻿using PappyjoeMVC.Controller;
+using PappyjoeMVC.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,7 +11,8 @@ namespace PappyjoeMVC.View
 {
     public partial class Procedure_Catalog : Form
     {
-        Procedure_Catalog_controller cntrl=new Procedure_Catalog_controller();
+        Connection db = new Connection();
+        Procedure_Catalog_controller cntrl = new Procedure_Catalog_controller();
         int refresh;
         public Procedure_Catalog()
         {
@@ -59,7 +61,7 @@ namespace PappyjoeMVC.View
                 {
                     taxname = null;
                 }
-                else 
+                else
                 {
                     taxname = dt.Rows[j]["tax_name"].ToString();
                 }
@@ -121,7 +123,7 @@ namespace PappyjoeMVC.View
                 comboaddunder.Show();
                 DataTable dtb = this.cntrl.get_procedure_category_value();
                 AddCategory(dtb);
-                btnAddNewCategory.Show();  
+                btnAddNewCategory.Show();
             }
             else
             {
@@ -168,7 +170,7 @@ namespace PappyjoeMVC.View
         {
             if (txt_AddCategory.Text != "")
             {
-                DataTable dt = this.cntrl.Get_category_name(txt_AddCategory.Text);  
+                DataTable dt = this.cntrl.Get_category_name(txt_AddCategory.Text);
                 if (dt.Rows.Count <= 0)
                 {
                     this.cntrl.save(txt_AddCategory.Text);
@@ -471,55 +473,87 @@ namespace PappyjoeMVC.View
                         DialogResult res = MessageBox.Show("Are you sure you want to delete..?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (res == DialogResult.Yes)
                         {
-                            DataTable dtb_id = this.cntrl.check_procedureid(procedureid.ToString());
-                            if (dtb_id.Rows.Count > 0)
+                            int i = this.cntrl.delproceduretax(procedureid);
+                            int ii= this.cntrl.delprocdresetngs(procedureid);
+                            if (i > 0 &&ii>0)
                             {
-                                MessageBox.Show("Cannot edit this procedure, It is used in treatments...", "Edit Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            else
-                            {
-                                int i = this.cntrl.delproceduretax(procedureid);
-                                int ii = this.cntrl.delprocdresetngs(procedureid);
-                                if (i > 0 && ii > 0)
-                                {
-                                    Dgv_Procedure.Rows.RemoveAt(Dgv_Procedure.CurrentRow.Index);
-                                    DataTable dt = this.cntrl.FormLoad();
-                                    FormLoad(dt);
-                                }
+                                Dgv_Procedure.Rows.RemoveAt(Dgv_Procedure.CurrentRow.Index);
+                                DataTable dt = this.cntrl.FormLoad();
+                                FormLoad(dt);
                             }
                         }
                     }
-                    else if(Dgv_Procedure.CurrentCell.OwningColumn.Name == "col_edit")//  
-                    {
-                        procedure_id = Dgv_Procedure.CurrentRow.Cells["proid"].Value.ToString();
-                        txt_procedurename.Text = Dgv_Procedure.CurrentRow.Cells["procedurename"].Value.ToString();
-                        txt_procedurecost.Text = Dgv_Procedure.CurrentRow.Cells["cost"].Value.ToString();
-                        richnotes.Text = Dgv_Procedure.CurrentRow.Cells["notes"].Value.ToString();
-                        if (Dgv_Procedure.CurrentRow.Cells["tax"].Value.ToString()=="GST")
-                        {
-                            chk_gst.Checked = true;
-                        }
-                        else if (Dgv_Procedure.CurrentRow.Cells["tax"].Value.ToString() == "IGST")
-                        {
-                            chk_igst.Checked=true;
-                        }
-                        if (Dgv_Procedure.CurrentRow.Cells["category"].Value.ToString() != "")
-                        {
-                            checkaddunder.Checked = true;
-                            comboaddunder.Text = Dgv_Procedure.CurrentRow.Cells["category"].Value.ToString();
-                        }
-                        buttonsave.Text = "Update";
-                    }
-
-
-
-
-
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error !..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+        Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+        Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+        string FileName;
+        private void btn_import_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Title = "Excel File to Import";
+                ofd.FileName = "";
+                ofd.Filter = "Excel File|*.xlsx;*.xls";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    FileName = ofd.FileName;
+                    if (FileName.Trim() != "")
+                    {
+                        xlApp = new Microsoft.Office.Interop.Excel.Application();
+                        xlWorkBook = xlApp.Workbooks.Open(FileName);
+                        xlWorkSheet = xlWorkBook.Worksheets["Sheet1"];
+                        int iRow;
+                        if (xlWorkSheet.Cells[1, 1].value == "Procedure Name" && xlWorkSheet.Cells[1, 2].value == "Procedure Cost")
+                        {
+                            for (iRow = 2; iRow <= xlWorkSheet.Rows.Count; iRow++)
+                            {
+                                if (xlWorkSheet.Cells[iRow, 1].value == null)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    string procedure_name = "";
+                                    string procedure_cost = "";
+                                    string comboadd = "";
+                                    string notes = "";
+                                    procedure_name = xlWorkSheet.Cells[iRow, 1].value;
+                                    procedure_cost = xlWorkSheet.Cells[iRow, 2].value.ToString();
+                                    DataTable dtb = this.cntrl.get_procedureName(procedure_name);
+                                    if (dtb.Rows.Count == 0)
+                                    {
+                                        int i = this.cntrl.save_addprocedure(procedure_name, procedure_cost, comboadd, notes);
+                                    }
+                                }
+                            }
+                            DataTable dt = this.cntrl.FormLoad();
+                            FormLoad(dt);
+                            xlWorkBook.Close();
+                            xlApp.Quit();
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkBook);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkSheet);
+                            MessageBox.Show("Successfully Imported !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("The Excel sheet data is not in the standard format", "Format mismatch", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

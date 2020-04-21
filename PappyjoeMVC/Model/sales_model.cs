@@ -36,7 +36,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable patient_keydown(string name)
         {
-            DataTable supplier = db.table("select pt_name,pt_id from tbl_patient where  pt_name like '%" + name + "%' or pt_id like '" + name + "%'");
+            DataTable supplier = db.table("select pt_name,pt_id,primary_mobile_number from tbl_patient where  pt_name like '%" + name + "%' or pt_id like '%" + name + "%' or primary_mobile_number like '%"+ name + "%'");
             return supplier;
         }
         public DataTable itemdetails(string itemid)

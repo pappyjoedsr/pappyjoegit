@@ -103,7 +103,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable expense_search4(string date1, string date2)
         {
-            DataTable dt_templates = db.table("select id,date,Type,nameofperson,expense_type,amount+amountincome as amountbind,amount,description,amountincome from tbl_expense where date between '" + date1 + "' and '" + date2 + "' "); ///aswini
+            DataTable dt_templates = db.table("select id,date,Type,nameofperson,expense_type,amount+amountincome as amountbind,amount,description,amountincome from tbl_expense where date between '" + date1 + "' and '" + date2 + "' order by field(Type,'Income') desc"); ///aswini
             return dt_templates;
         }
         public DataTable print()

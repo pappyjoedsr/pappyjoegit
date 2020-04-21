@@ -8,14 +8,14 @@ namespace PappyjoeMVC.View
 {
     public partial class Add_Clinical_Notes : Form
     {
-        Clinical_Notes_Add_controller cntrl=new Clinical_Notes_Add_controller();
+        Clinical_Notes_Add_controller cntrl = new Clinical_Notes_Add_controller();
         public string doctor_id = "";
         public string staff_id = "";
         public string clinic_id = "";
         string idcomp, iddiag, idobs, idinv, idnote = "";
         public string patient_id = "";
         static int rowvalue;
-       public  bool caledr_edit_flag = false;
+        public bool caledr_edit_flag = false;
         public Add_Clinical_Notes()
         {
             InitializeComponent();
@@ -308,6 +308,7 @@ namespace PappyjoeMVC.View
                         lab_investSearch.Show();
                         investsearchtext.Show();
                         investadd.Show();
+                        btn_imprt_investgtn.Show();
                         lab_investSearch.Location = new Point(6, 13);
                         investsearchtext.Location = new Point(62, 8);
                         investigationgrid.Location = new Point(3, 37);
@@ -349,6 +350,7 @@ namespace PappyjoeMVC.View
                         Lab_Diag_Search.Show();
                         diagsearchtext.Show();
                         diagadd.Show();
+                        btn_imprt_diagno.Show();
                         Lab_Diag_Search.Location = new Point(6, 13);
                         diagsearchtext.Location = new Point(62, 8);
                         diagnosisgrid.Location = new Point(3, 37);
@@ -392,6 +394,7 @@ namespace PappyjoeMVC.View
                             lab_compSearch.Show();
                             compsearchtext.Show();
                             compadd.Show();
+                            btn_imprt_complnt.Show();
                             lab_compSearch.Location = new Point(6, 13);
                             compsearchtext.Location = new Point(62, 8);
                             complaintgrid.Location = new Point(3, 37);
@@ -408,13 +411,14 @@ namespace PappyjoeMVC.View
                     if (comptextbox.Text != "")
                     {
                         int i = 0;
-                        this.cntrl.Update_compl(comptextbox.Text,rowvalue);
+                        this.cntrl.Update_compl(comptextbox.Text, rowvalue);
                         if (i > 0)
                         {
                             DataTable dt = this.cntrl.show_compl();
                             complaintgrid.DataSource = dt;
                             compsave.Text = "Save";
                             compadd.Visible = true;
+                            btn_imprt_complnt.Visible = true;
                             compsearchtext.Visible = true;
                             compcancel.Visible = false;
                             compsave.Visible = false;
@@ -456,6 +460,7 @@ namespace PappyjoeMVC.View
                         lab_NotesSearch.Show();
                         notesearchtext.Show();
                         noteadd.Show();
+                        btn_imprt_notes.Show();
                         lab_NotesSearch.Location = new Point(6, 13);
                         notesearchtext.Location = new Point(62, 8);
                         notegrid.Location = new Point(3, 37);
@@ -497,6 +502,7 @@ namespace PappyjoeMVC.View
                         lab_observeSearch.Show();
                         obsersearchtext.Show();
                         obseradd.Show();
+                        btn_imprt_obsrvtn.Show();
                         lab_observeSearch.Location = new Point(6, 13);
                         obsersearchtext.Location = new Point(62, 8);
                         observationgrid.Location = new Point(3, 37);
@@ -731,6 +737,7 @@ namespace PappyjoeMVC.View
             lab_compSearch.Hide();
             compsearchtext.Hide();
             compadd.Hide();
+            btn_imprt_complnt.Hide();
             complaintgrid.Location = new Point(3, 65);
         }
 
@@ -743,6 +750,7 @@ namespace PappyjoeMVC.View
             lab_compSearch.Show();
             compsearchtext.Show();
             compadd.Show();
+            btn_imprt_complnt.Show();
             lab_compSearch.Location = new Point(6, 13);
             compsearchtext.Location = new Point(62, 8);
             complaintgrid.Location = new Point(3, 37);
@@ -758,6 +766,7 @@ namespace PappyjoeMVC.View
             lab_observeSearch.Hide();
             obsersearchtext.Hide();
             obseradd.Hide();
+            btn_imprt_obsrvtn.Hide();
             observationgrid.Location = new Point(3, 65);
         }
 
@@ -771,6 +780,7 @@ namespace PappyjoeMVC.View
             Lab_Diag_Search.Hide();
             diagsearchtext.Hide();
             diagadd.Hide();
+            btn_imprt_diagno.Hide();
             diagnosisgrid.Location = new Point(3, 65);
         }
 
@@ -784,6 +794,7 @@ namespace PappyjoeMVC.View
             lab_NotesSearch.Hide();
             notesearchtext.Hide();
             noteadd.Hide();
+            btn_imprt_notes.Hide();
             notegrid.Location = new Point(3, 65);
         }
 
@@ -797,6 +808,7 @@ namespace PappyjoeMVC.View
             lab_investSearch.Hide();
             investsearchtext.Hide();
             investadd.Hide();
+            btn_imprt_investgtn.Hide();
             investigationgrid.Location = new Point(3, 65);
         }
 
@@ -810,6 +822,7 @@ namespace PappyjoeMVC.View
             lab_observeSearch.Show();
             obsersearchtext.Show();
             obseradd.Show();
+            btn_imprt_obsrvtn.Show();
             lab_observeSearch.Location = new Point(6, 13);
             obsersearchtext.Location = new Point(62, 8);
             observationgrid.Location = new Point(3, 37);
@@ -825,6 +838,7 @@ namespace PappyjoeMVC.View
             lab_investSearch.Show();
             investsearchtext.Show();
             investadd.Show();
+            btn_imprt_investgtn.Show();
             lab_investSearch.Location = new Point(6, 13);
             investsearchtext.Location = new Point(62, 8);
             investigationgrid.Location = new Point(3, 37);
@@ -840,6 +854,7 @@ namespace PappyjoeMVC.View
             Lab_Diag_Search.Show();
             diagsearchtext.Show();
             diagadd.Show();
+            btn_imprt_diagno.Show();
             Lab_Diag_Search.Location = new Point(6, 13);
             diagsearchtext.Location = new Point(62, 8);
             diagnosisgrid.Location = new Point(3, 37);
@@ -855,6 +870,7 @@ namespace PappyjoeMVC.View
             lab_NotesSearch.Show();
             notesearchtext.Show();
             noteadd.Show();
+            btn_imprt_notes.Show();
             lab_NotesSearch.Location = new Point(6, 13);
             notesearchtext.Location = new Point(62, 8);
             notegrid.Location = new Point(3, 37);
@@ -1064,10 +1080,10 @@ namespace PappyjoeMVC.View
                 {
                     linkLabel_id.Text = dt.Rows[0]["pt_id"].ToString();
                 }
-                if(caledr_edit_flag==true)
+                if (caledr_edit_flag == true)
                 {
                     string clin_id = this.cntrl.get_clinicId(patient_id);
-                    if(clin_id!="")
+                    if (clin_id != "")
                     {
                         clinic_id = clin_id;
                     }
@@ -1155,6 +1171,7 @@ namespace PappyjoeMVC.View
                 lab_compSearch.Show();
                 compsearchtext.Show();
                 compadd.Show();
+                btn_imprt_complnt.Show();
                 lab_compSearch.Location = new Point(6, 13);
                 compsearchtext.Location = new Point(62, 8);
                 complaintgrid.Location = new Point(3, 37);
@@ -1201,6 +1218,7 @@ namespace PappyjoeMVC.View
                     lab_investSearch.Show();
                     investsearchtext.Show();
                     investadd.Show();
+                    btn_imprt_investgtn.Show();
                     lab_investSearch.Location = new Point(6, 13);
                     investsearchtext.Location = new Point(62, 8);
                     investigationgrid.Location = new Point(3, 37);
@@ -1218,6 +1236,7 @@ namespace PappyjoeMVC.View
                     lab_observeSearch.Show();
                     obsersearchtext.Show();
                     obseradd.Show();
+                    btn_imprt_obsrvtn.Show();
                     lab_observeSearch.Location = new Point(6, 13);
                     obsersearchtext.Location = new Point(62, 8);
                     observationgrid.Location = new Point(3, 37);
@@ -1239,6 +1258,7 @@ namespace PappyjoeMVC.View
                     Lab_Diag_Search.Show();
                     diagsearchtext.Show();
                     diagadd.Show();
+                    btn_imprt_diagno.Show();
                     Lab_Diag_Search.Location = new Point(6, 13);
                     diagsearchtext.Location = new Point(62, 8);
                     diagnosisgrid.Location = new Point(3, 37);
@@ -1258,6 +1278,7 @@ namespace PappyjoeMVC.View
                     lab_compSearch.Show();
                     compsearchtext.Show();
                     compadd.Show();
+                    btn_imprt_complnt.Show();
                     lab_compSearch.Location = new Point(6, 13);
                     compsearchtext.Location = new Point(62, 8);
                     complaintgrid.Location = new Point(3, 37);
@@ -1277,6 +1298,7 @@ namespace PappyjoeMVC.View
                     lab_NotesSearch.Show();
                     notesearchtext.Show();
                     noteadd.Show();
+                    btn_imprt_notes.Show();
                     lab_NotesSearch.Location = new Point(6, 13);
                     notesearchtext.Location = new Point(62, 8);
                     notegrid.Location = new Point(3, 37);
@@ -1327,6 +1349,300 @@ namespace PappyjoeMVC.View
             form2.Dispose();
         }
 
+        Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+        Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+        Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+        string FileName;
+        private void btn_imprt_complnt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Title = "Excel File to Import";
+                ofd.FileName = "";
+                ofd.Filter = "Excel File|*.xlsx;*.xls";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    FileName = ofd.FileName;
+                    if (FileName.Trim() != "")
+                    {
+                        xlApp = new Microsoft.Office.Interop.Excel.Application();
+                        xlWorkBook = xlApp.Workbooks.Open(FileName);
+                        xlWorkSheet = xlWorkBook.Worksheets["Sheet1"];
+                        int iRow;
+                        if (xlWorkSheet.Cells[1, 1].value == "Complaints")
+                        {
+                            for (iRow = 2; iRow <= xlWorkSheet.Rows.Count; iRow++)
+                            {
+                                if (xlWorkSheet.Cells[iRow, 1].value == null)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    string complaints = "";
+                                    complaints = xlWorkSheet.Cells[iRow, 1].value;
+                                    DataTable checkdatacc = this.cntrl.checkdataAcc(complaints);
+                                    if (checkdatacc.Rows.Count == 0)
+                                    {
+                                        this.cntrl.insert_compl(complaints);
+                                    }
+                                }
+                            }
+                            DataTable dt = this.cntrl.show_compl();
+                            complaintgrid.DataSource = dt;
+                            xlWorkBook.Close();
+                            xlApp.Quit();
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkBook);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkSheet);
+                            MessageBox.Show("Successfully Imported !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("The Excel sheet data is not in the standard format", "Format mismatch", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_imprt_obsrvtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Title = "Excel File to Import";
+                ofd.FileName = "";
+                ofd.Filter = "Excel File|*.xlsx;*.xls";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    FileName = ofd.FileName;
+                    if (FileName.Trim() != "")
+                    {
+                        xlApp = new Microsoft.Office.Interop.Excel.Application();
+                        xlWorkBook = xlApp.Workbooks.Open(FileName);
+                        xlWorkSheet = xlWorkBook.Worksheets["Sheet1"];
+                        int iRow;
+                        if (xlWorkSheet.Cells[1, 1].value == "Observations")
+                        {
+                            for (iRow = 2; iRow <= xlWorkSheet.Rows.Count; iRow++)
+                            {
+                                if (xlWorkSheet.Cells[iRow, 1].value == null)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    string obser = "";
+                                    obser = xlWorkSheet.Cells[iRow, 1].value;
+                                    DataTable checkdataOB = this.cntrl.checkdataOB(obser);
+                                    if (checkdataOB.Rows.Count == 0)
+                                    {
+                                        this.cntrl.insert_Observ(obser);
+                                    }
+                                }
+                            }
+                            DataTable dt1 = this.cntrl.show_observation();
+                            observationgrid.DataSource = dt1;
+                            xlWorkBook.Close();
+                            xlApp.Quit();
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkBook);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkSheet);
+                            MessageBox.Show("Successfully Imported !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("The Excel sheet data is not in the standard format", "Format mismatch", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_imprt_investgtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Title = "Excel File to Import";
+                ofd.FileName = "";
+                ofd.Filter = "Excel File|*.xlsx;*.xls";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    FileName = ofd.FileName;
+                    if (FileName.Trim() != "")
+                    {
+                        xlApp = new Microsoft.Office.Interop.Excel.Application();
+                        xlWorkBook = xlApp.Workbooks.Open(FileName);
+                        xlWorkSheet = xlWorkBook.Worksheets["Sheet1"];
+                        int iRow;
+                        if (xlWorkSheet.Cells[1, 1].value == "Investigations")
+                        {
+                            for (iRow = 2; iRow <= xlWorkSheet.Rows.Count; iRow++)
+                            {
+                                if (xlWorkSheet.Cells[iRow, 1].value == null)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    string invest = "";
+                                    invest = xlWorkSheet.Cells[iRow, 1].value;
+                                    DataTable checkdataINVEST = this.cntrl.CheckInvest(invest);
+                                    if (checkdataINVEST.Rows.Count == 0)
+                                    {
+                                        this.cntrl.investigation_insert(invest);
+                                    }
+                                }
+                            }
+                            DataTable dt2 = this.cntrl.Show_investigation();
+                            investigationgrid.DataSource = dt2;
+                            xlWorkBook.Close();
+                            xlApp.Quit();
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkBook);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkSheet);
+                            MessageBox.Show("Successfully Imported !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("The Excel sheet data is not in the standard format", "Format mismatch", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_imprt_diagno_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Title = "Excel File to Import";
+                ofd.FileName = "";
+                ofd.Filter = "Excel File|*.xlsx;*.xls";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    FileName = ofd.FileName;
+                    if (FileName.Trim() != "")
+                    {
+                        xlApp = new Microsoft.Office.Interop.Excel.Application();
+                        xlWorkBook = xlApp.Workbooks.Open(FileName);
+                        xlWorkSheet = xlWorkBook.Worksheets["Sheet1"];
+                        int iRow;
+                        if (xlWorkSheet.Cells[1, 1].value == "Diagnosis")
+                        {
+                            for (iRow = 2; iRow <= xlWorkSheet.Rows.Count; iRow++)
+                            {
+                                if (xlWorkSheet.Cells[iRow, 1].value == null)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    string diag = "";
+                                    diag = xlWorkSheet.Cells[iRow, 1].value;
+                                    DataTable checkdataDIAG = this.cntrl.CheckdataDiag(diag);
+                                    if (checkdataDIAG.Rows.Count == 0)
+                                    {
+                                        this.cntrl.Insert_diagno(diag);
+                                    }
+                                }
+                            }
+                            DataTable dt3 = this.cntrl.show_diagno();
+                            diagnosisgrid.DataSource = dt3;
+                            xlWorkBook.Close();
+                            xlApp.Quit();
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkBook);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkSheet);
+                            MessageBox.Show("Successfully Imported !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("The Excel sheet data is not in the standard format", "Format mismatch", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_imprt_notes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Title = "Excel File to Import";
+                ofd.FileName = "";
+                ofd.Filter = "Excel File|*.xlsx;*.xls";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    FileName = ofd.FileName;
+                    if (FileName.Trim() != "")
+                    {
+                        xlApp = new Microsoft.Office.Interop.Excel.Application();
+                        xlWorkBook = xlApp.Workbooks.Open(FileName);
+                        xlWorkSheet = xlWorkBook.Worksheets["Sheet1"];
+                        int iRow;
+                        if (xlWorkSheet.Cells[1, 1].value == "Notes")
+                        {
+                            for (iRow = 2; iRow <= xlWorkSheet.Rows.Count; iRow++)
+                            {
+                                if (xlWorkSheet.Cells[iRow, 1].value == null)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    string note = "";
+                                    note = xlWorkSheet.Cells[iRow, 1].value;
+                                    DataTable checkdataNOTE = this.cntrl.checkdataNote(note);
+                                    if (checkdataNOTE.Rows.Count == 0)
+                                    {
+                                        this.cntrl.insert_note(note);
+                                    }
+                                }
+                            }
+                            DataTable dt4 = this.cntrl.show_note();
+                            notegrid.DataSource = dt4;
+                            xlWorkBook.Close();
+                            xlApp.Quit();
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkBook);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkSheet);
+                            MessageBox.Show("Successfully Imported !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("The Excel sheet data is not in the standard format", "Format mismatch", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -1343,7 +1659,7 @@ namespace PappyjoeMVC.View
                         {
                             this.cntrl.insertInto_clinical_findings(patient_id, dt.ToString(), dateTimePicker1.Value.ToString("yyyy-MM-dd"));
                             string treatment = this.cntrl.MaxId_clinic_findings();
-                            if (Convert.ToInt32( treatment)>0)
+                            if (Convert.ToInt32(treatment) > 0)
                             {
                                 treat = int.Parse(treatment);
                             }
@@ -1416,7 +1732,7 @@ namespace PappyjoeMVC.View
                                 this.Hide();
                                 form2.Show();
                             }
-                            catch{}
+                            catch { }
                         }
                         else
                         {
@@ -1558,6 +1874,7 @@ namespace PappyjoeMVC.View
                             compcancel.Visible = true;
                             comptextbox.Visible = true;
                             compadd.Visible = false;
+                            btn_imprt_complnt.Visible = false;
                             compsearchtext.Visible = false;
                             lab_compSearch.Visible = false;
                             compsave.Text = "Update";

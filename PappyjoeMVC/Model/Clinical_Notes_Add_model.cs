@@ -56,7 +56,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable CheckInvest(string investtextbox)
         {
-            DataTable checkdataINVEST = db.table("Select * from tbl_investigation where investigation ='" + investtextbox);
+            DataTable checkdataINVEST = db.table("Select * from tbl_investigation where investigation ='" + investtextbox + "'");
             return checkdataINVEST;
         }
         public int investigation_insert(string investtextbox)

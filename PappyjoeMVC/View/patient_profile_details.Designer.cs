@@ -851,7 +851,7 @@
             this.BtnCaseSheetIP.Name = "BtnCaseSheetIP";
             this.BtnCaseSheetIP.Size = new System.Drawing.Size(158, 27);
             this.BtnCaseSheetIP.TabIndex = 272;
-            this.BtnCaseSheetIP.Text = "Case Sheet Of IP Patient";
+            this.BtnCaseSheetIP.Text = "Case Sheet of IP Patient";
             this.BtnCaseSheetIP.UseVisualStyleBackColor = false;
             this.BtnCaseSheetIP.Click += new System.EventHandler(this.BtnCaseSheetIP_Click);
             // 
