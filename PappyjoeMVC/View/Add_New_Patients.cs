@@ -1,6 +1,4 @@
-﻿using Microsoft.Win32;
-using PappyjoeMVC.Controller;
-using PappyjoeMVC.Model;
+﻿using PappyjoeMVC.Controller;
 using System;
 using System.Data;
 using System.Drawing;

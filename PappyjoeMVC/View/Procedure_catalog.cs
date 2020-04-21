@@ -191,30 +191,86 @@ namespace PappyjoeMVC.View
         private void buttonsave_Click(object sender, EventArgs e)
         {
             buttonrefresh.Show();
-            if (buttonsave.Text == "Save New Procedure")
+            //if (buttonsave.Text == "Save New Procedure")
+            //{
+            if (txt_procedurename.Text.Trim() == "" || txt_procedurecost.Text.Trim() == "")
             {
-                if (txt_procedurename.Text.Trim() == "" || txt_procedurecost.Text.Trim() == "")
+                if (txt_procedurename.Text.Trim() == "")
                 {
-                    if (txt_procedurename.Text.Trim() == "")
-                    {
-                        lab_Pro_nameError.Show();
-                        errorProvider1.SetError(txt_procedurename, "error");
-                        return;
-                    }
-                    if (txt_procedurecost.Text.Trim() == "")
-                    {
-                        lab_ProCost.Show();
-                        errorProvider1.SetError(txt_procedurecost, "error");
-                        return;
-                    }
+                    lab_Pro_nameError.Show();
+                    errorProvider1.SetError(txt_procedurename, "error");
+                    return;
                 }
-                else
+                if (txt_procedurecost.Text.Trim() == "")
                 {
-                    DataTable dtb= this.cntrl.get_procedureName(txt_procedurename.Text);
-                    GetProcedureName(dtb);
-                    DataTable dt = this.cntrl.FormLoad();
-                    FormLoad(dt);
+                    lab_ProCost.Show();
+                    errorProvider1.SetError(txt_procedurecost, "error");
+                    return;
                 }
+            }
+            else if (buttonsave.Text == "Save New Procedure")
+            {
+                DataTable dtb = this.cntrl.get_procedureName(txt_procedurename.Text);
+                GetProcedureName(dtb);
+                DataTable dt = this.cntrl.FormLoad();
+                FormLoad(dt);
+            }
+            else
+            {
+                DataTable dtb = this.cntrl.get_procedureName(txt_procedurename.Text);
+                update_ProcedureName(dtb);
+                DataTable dt = this.cntrl.FormLoad();
+                FormLoad(dt);
+            }
+        }
+        public void update_ProcedureName(DataTable checkdatacc)
+        {
+            try
+            {
+                //if (checkdatacc.Rows.Count > 0)
+                //{
+                //    MessageBox.Show("Procedure " + txt_procedurename.Text + " already exist...", "Exist", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //}
+                //else
+                //{
+                    DataTable dtb_id = this.cntrl.check_procedureid(procedure_id);
+                    if(dtb_id.Rows.Count>0)
+                    {
+                        MessageBox.Show("Cannot edit this procedure, It is used in treatments...", "Edit Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        int i = this.cntrl.update_addprocedure(txt_procedurename.Text, txt_procedurecost.Text, comboaddunder.Text, richnotes.Text, procedure_id);
+                        DataTable dtb = this.cntrl.get_procedureid(txt_procedurename.Text);
+                        string p = dtb.Rows[0]["id"].ToString();
+                        int pid = int.Parse(p);
+                        if (chk_gst.Checked == true)
+                        {
+                            string s = this.cntrl.Get_GST_id();
+                            int id1 = int.Parse(s);
+                            this.cntrl.update_proceduretax(id1, pid);
+                        }
+                        if (chk_igst.Checked == true)
+                        {
+                            string s = this.cntrl.Get_IGST_id();
+                            int id1 = int.Parse(s);
+                            this.cntrl.update_proceduretax(id1, pid);
+                        }
+                        txt_procedurename.Clear();
+                        txt_procedurecost.Clear();
+                        comboaddunder.Text = null;
+                        richnotes.Clear();
+                        chk_igst.Checked = false;
+                        chk_gst.Checked = false;
+                        buttonsave.Text = "Save New Procedure";
+                    }
+
+                   
+                //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void GetProcedureName(DataTable checkdatacc)
@@ -402,6 +458,7 @@ namespace PappyjoeMVC.View
                 Dgv_Procedure.Rows[dict[items[0]]].Cells[5].Value += "";
             }
         }
+        public string procedure_id = "";
         private void Dgv_Procedure_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -414,16 +471,50 @@ namespace PappyjoeMVC.View
                         DialogResult res = MessageBox.Show("Are you sure you want to delete..?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (res == DialogResult.Yes)
                         {
-                            int i = this.cntrl.delproceduretax(procedureid);
-                            int ii= this.cntrl.delprocdresetngs(procedureid);
-                            if (i > 0 &&ii>0)
+                            DataTable dtb_id = this.cntrl.check_procedureid(procedureid.ToString());
+                            if (dtb_id.Rows.Count > 0)
                             {
-                                Dgv_Procedure.Rows.RemoveAt(Dgv_Procedure.CurrentRow.Index);
-                                DataTable dt = this.cntrl.FormLoad();
-                                FormLoad(dt);
+                                MessageBox.Show("Cannot edit this procedure, It is used in treatments...", "Edit Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                            {
+                                int i = this.cntrl.delproceduretax(procedureid);
+                                int ii = this.cntrl.delprocdresetngs(procedureid);
+                                if (i > 0 && ii > 0)
+                                {
+                                    Dgv_Procedure.Rows.RemoveAt(Dgv_Procedure.CurrentRow.Index);
+                                    DataTable dt = this.cntrl.FormLoad();
+                                    FormLoad(dt);
+                                }
                             }
                         }
                     }
+                    else if(Dgv_Procedure.CurrentCell.OwningColumn.Name == "col_edit")//  
+                    {
+                        procedure_id = Dgv_Procedure.CurrentRow.Cells["proid"].Value.ToString();
+                        txt_procedurename.Text = Dgv_Procedure.CurrentRow.Cells["procedurename"].Value.ToString();
+                        txt_procedurecost.Text = Dgv_Procedure.CurrentRow.Cells["cost"].Value.ToString();
+                        richnotes.Text = Dgv_Procedure.CurrentRow.Cells["notes"].Value.ToString();
+                        if (Dgv_Procedure.CurrentRow.Cells["tax"].Value.ToString()=="GST")
+                        {
+                            chk_gst.Checked = true;
+                        }
+                        else if (Dgv_Procedure.CurrentRow.Cells["tax"].Value.ToString() == "IGST")
+                        {
+                            chk_igst.Checked=true;
+                        }
+                        if (Dgv_Procedure.CurrentRow.Cells["category"].Value.ToString() != "")
+                        {
+                            checkaddunder.Checked = true;
+                            comboaddunder.Text = Dgv_Procedure.CurrentRow.Cells["category"].Value.ToString();
+                        }
+                        buttonsave.Text = "Update";
+                    }
+
+
+
+
+
                 }
             }
             catch (Exception ex)

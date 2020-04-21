@@ -83,5 +83,19 @@ namespace PappyjoeMVC.Controller
             int i = _model.update_ipPatient(patid,ipid,id,room);
             return i;
         }
+        public DataTable automaticIPid()
+        {
+            DataTable dtb = _model.automaticIPid();
+            return dtb;
+        }
+        public void update_autogenerateIPid(int n)
+        {
+            _model.update_autogenerateIPid(n);
+        }
+        public DataTable get_opid(string id)
+        {
+            DataTable dtb = _model.get_opid(id);
+            return dtb;
+        }
     }
 }

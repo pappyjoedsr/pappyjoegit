@@ -356,11 +356,11 @@ namespace PappyjoeMVC.View
 
                         DateTime Dateonly1 = DateTime.Now;
 
-                        if (Dateonly1 > StartTime1)
-                        {
-                            MessageBox.Show("Appointment Date should be greater than Current Date...", "Appointment", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
+                        //if (Dateonly1 > StartTime1)
+                        //{
+                        //    MessageBox.Show("Appointment Date should be greater than Current Date...", "Appointment", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //    return;
+                        //}
                         if (IsNewEvent)
                         {
                             DateTime StartT;

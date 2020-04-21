@@ -1107,9 +1107,9 @@ namespace PappyjoeMVC.View
                                 cost = Convert.ToDecimal(dtb.Rows[0]["rate"].ToString()) / unitMf;
                                 //txt_UnitCost.Text = percnt_amt.ToString("##.00");
 
-                                //percnt_amt = (Convert.ToDecimal(dt_salesrate.Rows[0][1].ToString()) * percentage) / 100;
-                                //percnt_amt = (Convert.ToDecimal(cost) * percentage) / 100;
-                                total_cost = cost;// percnt_amt + Convert.ToDecimal(dt_salesrate.Rows[0][1].ToString());
+                                //percnt_amt = (Convert.ToDecimal(dtb.Rows[0]["rate"].ToString()) * percentage) / 100;// percnt_amt = (Convert.ToDecimal(dt_salesrate.Rows[0][1].ToString()) * percentage) / 100;
+                                percnt_amt = (Convert.ToDecimal(cost) * percentage) / 100;
+                                total_cost = cost+percnt_amt;// percnt_amt + Convert.ToDecimal(dt_salesrate.Rows[0][1].ToString());
                             }
                             else
                             {
@@ -1128,11 +1128,11 @@ namespace PappyjoeMVC.View
                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (res == DialogResult.Yes)
                             {
-                                
+                                txt_UnitCost.Text = total_cost.ToString("##.00");
                             }
                             else
                             {
-                                txt_UnitCost.Text = total_cost.ToString("##.00");
+                                //txt_UnitCost.Text = total_cost.ToString("##.00");
                             }
                         }
                     }
@@ -2027,9 +2027,9 @@ namespace PappyjoeMVC.View
                                             call_Item_Batch(dtb.Rows[0]["id"].ToString(), qty, unit);
                                             if (dtFor_CurrentStockUpdate_Bill != null)
                                             {
-                                                Fiil_BatchSale_Grid_Prescription_bill();
+                                                Fiil_BatchSale_Grid_Prescription_bill();//HSN_Number
                                                 TotalAmount_Calculation();
-                                                dgv_SalesItem.Rows.Add(txt_ItemCode.Text, dtb.Rows[0]["item_code"].ToString(), txt_Discription.Text, txt_Packing.Text, cmb_Unit.Text, txt_GST.Text, txt_IGST.Text, txt_Qty.Text, txt_Free.Text, txt_UnitCost.Text, txt_Amount.Text, PappyjoeMVC.Properties.Resources.editicon, PappyjoeMVC.Properties.Resources.deleteicon);
+                                                dgv_SalesItem.Rows.Add(txt_ItemCode.Text, dtb.Rows[0]["item_code"].ToString(), txt_Discription.Text, txt_Packing.Text, dtb.Rows[0]["HSN_Number"].ToString(), cmb_Unit.Text, txt_GST.Text, txt_IGST.Text, txt_Qty.Text, txt_Free.Text, txt_UnitCost.Text, txt_Amount.Text, PappyjoeMVC.Properties.Resources.editicon, PappyjoeMVC.Properties.Resources.deleteicon);
                                                 clear_itemdetails();
                                                 Decimal TotalGst = 0;
                                                 Decimal Total_Igst = 0; 
@@ -2446,6 +2446,11 @@ namespace PappyjoeMVC.View
             panl_mode_payment.Visible = false;
             rad_CreditSale.Checked = false;
             rad_CashSale.Checked = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panl_mode_payment.Visible = false;
         }
 
         public void call_Item_Batch(string item_Code, decimal qty, string unit)

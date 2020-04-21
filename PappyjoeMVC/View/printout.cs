@@ -34,15 +34,31 @@ namespace PappyjoeMVC.View
         {
             try
             {
+                int topmargin = 0, bottommargin=0, leftmargin=0, rightmargin=0;
                 string top = combo_topmargin.Text;
-                int topmargin = int.Parse(top.Substring(0, top.IndexOf("m")));
-                topmargin1 = topmargin;
+                if(top!="")
+                {
+                     topmargin = int.Parse(top.Substring(0, top.IndexOf("m")));
+                    topmargin1 = topmargin;
+                }
+               
                 string bottom = combo_bottommargin.Text;
-                int bottommargin = int.Parse(bottom.Substring(0, bottom.IndexOf("m")));
+                if(bottom!="")
+                {
+                     bottommargin = int.Parse(bottom.Substring(0, bottom.IndexOf("m")));
+                }
+               
                 string left = combo_leftmargin.Text;
-                int leftmargin = int.Parse(left.Substring(0, left.IndexOf("m")));
+                if(left!="")
+                {
+                     leftmargin = int.Parse(left.Substring(0, left.IndexOf("m")));
+                }
+                
                 string right = combo_rightmargin.Text;
-                int rightmargin = int.Parse(right.Substring(0, right.IndexOf("m")));
+                if(right!="")
+                {
+                     rightmargin = int.Parse(right.Substring(0, right.IndexOf("m")));
+                }
                 printDocument1.DefaultPageSettings.Margins.Top = topmargin;
                 printDocument1.DefaultPageSettings.Margins.Left = leftmargin + 20;
                 printDocument1.DefaultPageSettings.Margins.Bottom = bottommargin;

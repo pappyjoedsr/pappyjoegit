@@ -1184,9 +1184,30 @@ namespace PappyjoeMVC.View
             DataTable dtb = this.cntrl.IP_patentid();
             if(dtb.Rows.Count>0)
             {
-                txt_ipId.Text = dtb.Rows[0]["IP_number"].ToString();
-                txt_IPname.Text = txtPatientName.Text;// linkLabel_Name.Text;
+                if (dtb.Rows[0]["IP_automation"].ToString() == "Yes")
+                {
+                    txt_ipId.Text = dtb.Rows[0]["IP_prefix"].ToString() + dtb.Rows[0]["IP_number"].ToString();
+                    txt_ipId.ReadOnly = true;
+                    txt_IPname.Text = txtPatientName.Text;
+
+                }
+                else
+                {
+
+                }
+                //txt_ipId.Text = dtb.Rows[0]["IP_number"].ToString();
+                //txt_IPname.Text = txtPatientName.Text;// linkLabel_Name.Text;
             }
+
+            //DataTable auto = this.cntrl.data_from_automaticid();   IP_number,IP_prefix,IP_automation
+            //if (auto.Rows.Count > 0)
+            //{
+            //    if (auto.Rows[0]["patient_automation"].ToString() == "Yes")
+            //    {
+            //        txtPatientId.Text = auto.Rows[0]["patient_prefix"].ToString() + auto.Rows[0]["patient_number"].ToString();
+            //        txtPatientId.ReadOnly = true;
+            //    }
+            //}
         }
 
         private void button_IPsave_Click(object sender, EventArgs e)
@@ -1197,16 +1218,36 @@ namespace PappyjoeMVC.View
                 {
                     //DataTable dt_pat_id=
                     if (txt_ipId.Text != "")
-                    {
-                        int j = this.cntrl.update_ipPatient(txtPatientId.Text, txt_ipId.Text, patient_id, txt_room.Text);
-                        if(j>0)
+                    {   
+                        DataTable dtb = this.cntrl.get_opid(patient_id);
+                        if(dtb.Rows[0]["op_id"].ToString()!="")
                         {
-                            txt_ipId.Text = "";
-                            txt_IPname.Text = "";
-                            txt_room.Text = "";
-                            MessageBox.Show("IP ID saved successfully","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                            panl_IP_Patient.Visible = false;
+                            MessageBox.Show("IP ID already existed", "Exist", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
+                        else
+                        {
+                            int j = this.cntrl.update_ipPatient(txtPatientId.Text, txt_ipId.Text, patient_id, txt_room.Text);
+                            if (j > 0)
+                            {
+                                DataTable cmd = this.cntrl.automaticIPid();
+                                if (cmd.Rows.Count > 0)
+                                {
+                                    int n = 0;
+                                    n = int.Parse(cmd.Rows[0]["IP_number"].ToString()) + 1;
+                                    if (n != 0)
+                                    {
+                                        this.cntrl.update_autogenerateIPid(n);
+                                    }
+                                }
+
+                                txt_ipId.Text = "";
+                                txt_IPname.Text = "";
+                                txt_room.Text = "";
+                                MessageBox.Show("IP ID saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                panl_IP_Patient.Visible = false;
+                            }
+                        }
+                       
                     }
                     else
                     {
@@ -1228,6 +1269,11 @@ namespace PappyjoeMVC.View
             dlg.doctor_id = doctor_id;
             dlg.ShowDialog();
             dlg.Dispose();
+        }
+
+        private void BTnClose_Click(object sender, EventArgs e)
+        {
+            panl_IP_Patient.Visible = false;
         }
 
         private void labelprescription_Click(object sender, EventArgs e)

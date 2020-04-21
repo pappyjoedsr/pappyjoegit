@@ -536,7 +536,7 @@ namespace PappyjoeMVC.View
                         double g_Paid = 0;
                         double g_Est = 0;
                         double Total_Advance = 0;
-                        double Total_paid = 0;
+                        double Total_paid = 0;decimal enteramnt=0,balanceamnt=0;
                         while (iii < DGV_MainGrid.Rows.Count)
                         {
                             g_Advance = Convert.ToDouble(DGV_MainGrid[3, iii].Value);
@@ -547,13 +547,53 @@ namespace PappyjoeMVC.View
                             g_Est = Convert.ToDouble(DGV_MainGrid[9, iii].Value);
                             if (g_Est < (g_Advance + g_Paid))
                             {
-                                MessageBox.Show("Entered Amount is greater than from Treatment Amount ", "Wrong Amount ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //      DialogResult res = MessageBox.Show("Entered Amount is greater than from Treatment Amount,Do you want to keep this balance amount as advance amount ?", " confirmation",
+                                //MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                //      if (res == DialogResult.No)
+                                //      {
+
+                                //      }
+                                //      else
+                                //      {
+                                //          decimal advance1 = 0;
+                                //          enteramnt= Convert.ToDecimal(DGV_MainGrid[4, iii].Value);
+                                //          balanceamnt = enteramnt - Convert.ToDecimal(g_Est);
+                                //          DataTable cmd22 = this.cntrl.Get_Advance(patient_id);
+                                //          //decimal abcde1 = Convert.ToInt32(txt_PayNow.Text);
+                                //          if (cmd22.Rows.Count > 0)
+                                //          {
+                                //              if (cmd22.Rows[0]["advance"].ToString() == null)
+                                //              {
+                                //                  advance1 = 0;
+                                //              }
+                                //              else if (cmd22.Rows[0]["advance"].ToString() == "")
+                                //              {
+                                //                  advance1 = 0;
+                                //              }
+                                //              else if (cmd22.Rows[0]["advance"].ToString() == "0")
+                                //              {
+                                //                  advance1 = 0;
+                                //              }
+                                //              else
+                                //              {
+                                //                  advance1 = decimal.Parse(cmd22.Rows[0]["advance"].ToString());
+                                //              }
+                                //              adv = advance1 + balanceamnt;
+                                //              this.cntrl.update_advance(adv, patient_id);
+                                //          }
+                                //          else
+                                //          {
+                                //              adv = balanceamnt;
+                                //              this.cntrl.save_advance(adv, patient_id);
+                                //          }
+                                //          this.cntrl.Save_advancetable(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), balanceamnt.ToString(), cmb_advane_type.Text, "Debit", "Add Receipt");
+                                //          //this.cntrl.save_advance(adv, patient_id);
+                                //      }
+                                MessageBox.Show("Entered Amount is greater than from Treatment Amount", "Wrong Amount ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 return;
                             }
                             if (g_Advance == 0)
-                            {
-                                DGV_MainGrid[3, iii].Value = "0";
-                            }
+                            {                            }
                             if (g_Paid == 0)
                             {
                                 DGV_MainGrid[4, iii].Value = "0";

@@ -33,6 +33,11 @@ namespace PappyjoeMVC.Model
             int i = db.execute("insert into tbl_addproceduresettings (name,cost,category,notes) values('" + _procName + "','" + _procost + "','" + _comboCategory + "','" + _notes + "')");
             return i;
         }
+        public int update_addprocedure(string _procName, string _procost, string _comboCategory, string _notes,string pro_id)
+        {
+            int i = db.execute("update  tbl_addproceduresettings set name='" + _procName + "',cost='" + _procost + "',category='" + _comboCategory + "',notes='" + _notes + "' where id='"+pro_id+"'");
+            return i;
+        }
         public string Get_GST_id()
         {
             string s = db.scalar("select id from tbl_tax where tax_name= 'GST' ");
@@ -41,6 +46,10 @@ namespace PappyjoeMVC.Model
         public void save_proceduretax(int id1, int pid)
         {
             int j = db.execute("insert into tbl_proceduretax (tax_id,procedure_id) values('" + id1 + "','" + pid + "')");
+        }
+        public void update_proceduretax(int id1, int pid)
+        {
+            int j = db.execute("update  tbl_proceduretax set tax_id='" + id1 + "' where procedure_id='" + pid + "'");
         }
         public string Get_IGST_id()
         {
@@ -61,6 +70,11 @@ namespace PappyjoeMVC.Model
         {
             int ii = db.execute("delete from tbl_addproceduresettings where id='" + procid + "'");
             return ii;
+        }
+        public DataTable check_procedureid(string procid)
+        {
+            DataTable dtb = db.table("select id,procedure_id from tbl_completed_procedures where procedure_id='" + procid + "'");
+            return dtb;
         }
     }
 }
