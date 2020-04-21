@@ -65,7 +65,6 @@
             this.linkLabel_Name = new System.Windows.Forms.LinkLabel();
             this.Lab_PtName = new System.Windows.Forms.Label();
             this.Lab_PtId = new System.Windows.Forms.Label();
-            this.Lab_AllPatients = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labl_Lab = new System.Windows.Forms.Label();
             this.Lab_VitalSigns = new System.Windows.Forms.Label();
@@ -117,12 +116,14 @@
             this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.printAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adv_refund = new System.Windows.Forms.Button();
             this.lblAdvance = new System.Windows.Forms.Label();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showAdvanceDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refundAdvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
+            this.Adv_details = new System.Windows.Forms.Label();
+            this.Lab_AllPatients = new System.Windows.Forms.Label();
+            this.adv_refund = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -514,22 +515,6 @@
             this.Lab_PtId.Size = new System.Drawing.Size(63, 13);
             this.Lab_PtId.TabIndex = 68;
             this.Lab_PtId.Text = "Patient ID :";
-            // 
-            // Lab_AllPatients
-            // 
-            this.Lab_AllPatients.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Lab_AllPatients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Lab_AllPatients.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lab_AllPatients.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Lab_AllPatients.Image = global::PappyjoeMVC.Properties.Resources.SP;
-            this.Lab_AllPatients.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lab_AllPatients.Location = new System.Drawing.Point(4, 43);
-            this.Lab_AllPatients.Name = "Lab_AllPatients";
-            this.Lab_AllPatients.Size = new System.Drawing.Size(106, 38);
-            this.Lab_AllPatients.TabIndex = 263;
-            this.Lab_AllPatients.Text = "All Patients";
-            this.Lab_AllPatients.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Lab_AllPatients.Click += new System.EventHandler(this.Lab_AllPatients_Click);
             // 
             // panel1
             // 
@@ -1157,24 +1142,6 @@
             this.printAllToolStripMenuItem.Text = "Print All ";
             this.printAllToolStripMenuItem.Click += new System.EventHandler(this.printAllToolStripMenuItem_Click);
             // 
-            // adv_refund
-            // 
-            this.adv_refund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.adv_refund.BackColor = System.Drawing.Color.LimeGreen;
-            this.adv_refund.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("adv_refund.BackgroundImage")));
-            this.adv_refund.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.adv_refund.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adv_refund.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adv_refund.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adv_refund.ForeColor = System.Drawing.Color.White;
-            this.adv_refund.Location = new System.Drawing.Point(846, 43);
-            this.adv_refund.Name = "adv_refund";
-            this.adv_refund.Size = new System.Drawing.Size(19, 16);
-            this.adv_refund.TabIndex = 273;
-            this.adv_refund.UseVisualStyleBackColor = false;
-            this.adv_refund.Visible = false;
-            this.adv_refund.Click += new System.EventHandler(this.adv_refund_Click);
-            // 
             // lblAdvance
             // 
             this.lblAdvance.AutoSize = true;
@@ -1222,12 +1189,59 @@
             this.label4.Text = "advance";
             this.label4.Visible = false;
             // 
+            // Adv_details
+            // 
+            this.Adv_details.AutoSize = true;
+            this.Adv_details.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Adv_details.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Adv_details.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Adv_details.Location = new System.Drawing.Point(862, 42);
+            this.Adv_details.Name = "Adv_details";
+            this.Adv_details.Size = new System.Drawing.Size(100, 17);
+            this.Adv_details.TabIndex = 276;
+            this.Adv_details.Text = "Advance Details";
+            this.Adv_details.Click += new System.EventHandler(this.Adv_details_Click);
+            // 
+            // Lab_AllPatients
+            // 
+            this.Lab_AllPatients.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Lab_AllPatients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Lab_AllPatients.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lab_AllPatients.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.Lab_AllPatients.Image = global::PappyjoeMVC.Properties.Resources.SP;
+            this.Lab_AllPatients.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Lab_AllPatients.Location = new System.Drawing.Point(4, 43);
+            this.Lab_AllPatients.Name = "Lab_AllPatients";
+            this.Lab_AllPatients.Size = new System.Drawing.Size(106, 38);
+            this.Lab_AllPatients.TabIndex = 263;
+            this.Lab_AllPatients.Text = "All Patients";
+            this.Lab_AllPatients.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Lab_AllPatients.Click += new System.EventHandler(this.Lab_AllPatients_Click);
+            // 
+            // adv_refund
+            // 
+            this.adv_refund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.adv_refund.BackColor = System.Drawing.Color.LimeGreen;
+            this.adv_refund.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("adv_refund.BackgroundImage")));
+            this.adv_refund.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.adv_refund.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.adv_refund.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adv_refund.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adv_refund.ForeColor = System.Drawing.Color.White;
+            this.adv_refund.Location = new System.Drawing.Point(959, 43);
+            this.adv_refund.Name = "adv_refund";
+            this.adv_refund.Size = new System.Drawing.Size(19, 16);
+            this.adv_refund.TabIndex = 273;
+            this.adv_refund.UseVisualStyleBackColor = false;
+            this.adv_refund.Visible = false;
+            // 
             // Receipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1362, 703);
+            this.Controls.Add(this.Adv_details);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblAdvance);
             this.Controls.Add(this.adv_refund);
@@ -1342,7 +1356,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem printAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
-        private System.Windows.Forms.Button adv_refund;
         private System.Windows.Forms.Label lblAdvance;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem showAdvanceDetailsToolStripMenuItem;
@@ -1364,5 +1377,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Adv_details;
+        private System.Windows.Forms.Button adv_refund;
     }
 }

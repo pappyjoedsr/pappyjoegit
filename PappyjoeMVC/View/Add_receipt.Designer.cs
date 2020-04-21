@@ -470,7 +470,7 @@
             this.label24.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(631, 22);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(80, 13);
+            this.label24.Size = new System.Drawing.Size(79, 13);
             this.label24.TabIndex = 14;
             this.label24.Text = "Total Payable :";
             // 
@@ -714,7 +714,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(44, 49);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 13);
+            this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Total Payable";
             // 
@@ -888,7 +888,7 @@
             this.Bank.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bank.Location = new System.Drawing.Point(397, 83);
             this.Bank.Name = "Bank";
-            this.Bank.Size = new System.Drawing.Size(32, 13);
+            this.Bank.Size = new System.Drawing.Size(33, 13);
             this.Bank.TabIndex = 7;
             this.Bank.Text = "Bank";
             // 
@@ -991,7 +991,7 @@
             this.lab_adv_bank.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_adv_bank.Location = new System.Drawing.Point(371, 81);
             this.lab_adv_bank.Name = "lab_adv_bank";
-            this.lab_adv_bank.Size = new System.Drawing.Size(32, 13);
+            this.lab_adv_bank.Size = new System.Drawing.Size(33, 13);
             this.lab_adv_bank.TabIndex = 88;
             this.lab_adv_bank.Text = "Bank";
             // 
@@ -1080,7 +1080,7 @@
             this.Lab_ThiswillAdva_MSg.ForeColor = System.Drawing.Color.Coral;
             this.Lab_ThiswillAdva_MSg.Location = new System.Drawing.Point(69, 77);
             this.Lab_ThiswillAdva_MSg.Name = "Lab_ThiswillAdva_MSg";
-            this.Lab_ThiswillAdva_MSg.Size = new System.Drawing.Size(179, 13);
+            this.Lab_ThiswillAdva_MSg.Size = new System.Drawing.Size(178, 13);
             this.Lab_ThiswillAdva_MSg.TabIndex = 3;
             this.Lab_ThiswillAdva_MSg.Text = "This will be an advanced Payment";
             // 

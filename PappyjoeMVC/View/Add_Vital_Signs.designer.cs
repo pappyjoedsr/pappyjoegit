@@ -158,7 +158,7 @@
             this.label18.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label18.Location = new System.Drawing.Point(84, 20);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(55, 13);
+            this.label18.Size = new System.Drawing.Size(56, 13);
             this.label18.TabIndex = 287;
             this.label18.Text = "By doctor";
             // 
@@ -168,7 +168,7 @@
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label10.Location = new System.Drawing.Point(461, 305);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 13);
+            this.label10.Size = new System.Drawing.Size(62, 13);
             this.label10.TabIndex = 295;
             this.label10.Text = "BMI Status";
             this.label10.Visible = false;
@@ -192,9 +192,9 @@
             this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label9.Location = new System.Drawing.Point(93, 298);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 17);
+            this.label9.Size = new System.Drawing.Size(145, 17);
             this.label9.TabIndex = 293;
-            this.label9.Text = "BMI(Body Mass Index)";
+            this.label9.Text = "BMI( Body Mass Index )";
             // 
             // Txtheight
             // 
@@ -225,9 +225,9 @@
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label8.Location = new System.Drawing.Point(146, 172);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 17);
+            this.label8.Size = new System.Drawing.Size(91, 17);
             this.label8.TabIndex = 290;
-            this.label8.Text = "HEIGHT ( Cm)";
+            this.label8.Text = "HEIGHT ( Cm )";
             // 
             // label7
             // 
@@ -336,7 +336,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(113, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 17);
+            this.label2.Size = new System.Drawing.Size(121, 17);
             this.label2.TabIndex = 277;
             this.label2.Text = "TEMPERATURE ( F )";
             // 
@@ -396,7 +396,7 @@
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label6.Location = new System.Drawing.Point(67, 256);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(162, 17);
+            this.label6.Size = new System.Drawing.Size(163, 17);
             this.label6.TabIndex = 277;
             this.label6.Text = "RESP. RATE ( Breaths/min )";
             // 

@@ -39,16 +39,16 @@ namespace PappyjoeMVC.View
                 {
                     // lbPatient.Show();
                     lbPatient.Location = new Point(txt_Pt_search.Location.X, 49);
-                    DataTable dtdr = this.ctrlr.srch_patient(txt_Pt_search.Text, txt_Pt_search.Text);
+                    DataTable dtdr = this.ctrlr.srch_patient(txt_Pt_search.Text);//srch_patient(txt_Pt_search.Text, txt_Pt_search.Text);
                     lbPatient.DataSource = dtdr;
-                    lbPatient.DisplayMember = "pt_name";
+                    lbPatient.DisplayMember = "patient";
                     lbPatient.ValueMember = "id";
                 }
                 else
                 {
                     DataTable dtdr = this.ctrlr.search_patient(txt_Pt_search.Text);
                     lbPatient.DataSource = dtdr;
-                    lbPatient.DisplayMember = "pt_name";
+                    lbPatient.DisplayMember = "patient";
                     lbPatient.ValueMember = "id";
                 }
                 if (lbPatient.Items.Count > 0)
@@ -232,9 +232,9 @@ namespace PappyjoeMVC.View
                         {
                             string strstatus = "";
                             if (dataGridView_drugnew[11, i].Value.ToString() != "")
-                            { strstatus = dataGridView_drugnew[11, i].Value.ToString(); }
+                            { strstatus = dataGridView_drugnew["status", i].Value.ToString(); }
 
-                            this.ctrlr.save_prescription(presid, patient_id, cmbdoctor.Text, d_id.ToString(), dataGridView_drugnew[0, i].Value.ToString(), dataGridView_drugnew[1, i].Value.ToString(), dataGridView_drugnew[2, i].Value.ToString(), dataGridView_drugnew[3, i].Value.ToString(), dataGridView_drugnew[4, i].Value.ToString(), dataGridView_drugnew[5, i].Value.ToString(), dataGridView_drugnew[6, i].Value.ToString(), dataGridView_drugnew[7, i].Value.ToString(), dataGridView_drugnew[8, i].Value.ToString(), dataGridView_drugnew[9, i].Value.ToString(), dataGridView_drugnew[10, i].Value.ToString(), strstatus, dataGridView_drugnew[12, i].Value.ToString());
+                            this.ctrlr.save_prescription(presid, patient_id, cmbdoctor.Text, d_id.ToString(), dataGridView_drugnew["drugname", i].Value.ToString(), dataGridView_drugnew["strength", i].Value.ToString(), dataGridView_drugnew["strengthgr", i].Value.ToString(), dataGridView_drugnew["duration", i].Value.ToString(), dataGridView_drugnew["period", i].Value.ToString(), dataGridView_drugnew["morning", i].Value.ToString(), dataGridView_drugnew["noon", i].Value.ToString(), dataGridView_drugnew["night", i].Value.ToString(), dataGridView_drugnew["food", i].Value.ToString(), dataGridView_drugnew["instruction", i].Value.ToString(), dataGridView_drugnew["drugtype", i].Value.ToString(), strstatus, dataGridView_drugnew["drugid", i].Value.ToString());
                         }
                     }
                     //completed id
@@ -261,7 +261,7 @@ namespace PappyjoeMVC.View
                     j1 = completed_id;
                     for (int i = 0; i < dgv_treatment.Rows.Count; i++)
                     {
-                        this.ctrlr.save_completed_details(j1, patient_id, dgv_treatment.Rows[i].Cells[0].Value.ToString(), dgv_treatment.Rows[i].Cells[1].Value.ToString(), dgv_treatment.Rows[i].Cells[3].Value.ToString(), dgv_treatment.Rows[i].Cells[4].Value.ToString(), dgv_treatment.Rows[i].Cells[5].Value.ToString(), cmbdoctor.SelectedValue.ToString());
+                        this.ctrlr.save_completed_details(j1, patient_id, dgv_treatment.Rows[i].Cells["tid"].Value.ToString(), dgv_treatment.Rows[i].Cells["Procedure"].Value.ToString(), dgv_treatment.Rows[i].Cells["Cost"].Value.ToString(), dgv_treatment.Rows[i].Cells["Total"].Value.ToString(), dgv_treatment.Rows[i].Cells["Note"].Value.ToString(), cmbdoctor.SelectedValue.ToString());
                     }
                     string dt_Compl_proce = this.ctrlr.max_completeProcedure();
                     long completed_procedures_id = 0;
@@ -326,7 +326,7 @@ namespace PappyjoeMVC.View
                     }
                     for (int i = 0; i < dgv_treatment.Rows.Count; i++)
                     {
-                        this.ctrlr.save_invoice_details(invoice, txt_Pt_search.Text, patient_id, dgv_treatment.Rows[i].Cells[0].Value.ToString(), dgv_treatment.Rows[i].Cells[1].Value.ToString(), dgv_treatment.Rows[i].Cells[3].Value.ToString(), dgv_treatment.Rows[i].Cells[4].Value.ToString(), cmbdoctor.SelectedValue.ToString(), Invoice_main_id, completed_procedures_id);
+                        this.ctrlr.save_invoice_details(invoice, txt_Pt_search.Text, patient_id, dgv_treatment.Rows[i].Cells["tid"].Value.ToString(), dgv_treatment.Rows[i].Cells["Procedure"].Value.ToString(), dgv_treatment.Rows[i].Cells["Cost"].Value.ToString(), "0", cmbdoctor.SelectedValue.ToString(), Invoice_main_id, completed_procedures_id);
                     }
                     string invoauto = this.ctrlr.get_invoicenumber();
                     int invoautoup = int.Parse(invoauto) + 1;
@@ -357,7 +357,7 @@ namespace PappyjoeMVC.View
                     }
                     for (int i = 0; i < dgv_treatment.Rows.Count; i++)
                     {
-                        this.ctrlr.save_receipt(receipt, advance, dgv_treatment.Rows[i].Cells[4].Value.ToString(), invoice, dgv_treatment.Rows[i].Cells[1].Value.ToString(), patient_id, cmbdoctor.SelectedValue.ToString(), dgv_treatment.Rows[i].Cells[4].Value.ToString(), dgv_treatment.Rows[i].Cells[3].Value.ToString(), txt_Pt_search.Text, Invoice_main_id);
+                        this.ctrlr.save_receipt(receipt, advance, dgv_treatment.Rows[i].Cells["Total"].Value.ToString(), invoice, dgv_treatment.Rows[i].Cells["Procedure"].Value.ToString(), patient_id, cmbdoctor.SelectedValue.ToString(), dgv_treatment.Rows[i].Cells["Total"].Value.ToString(), dgv_treatment.Rows[i].Cells["Cost"].Value.ToString(), txt_Pt_search.Text, Invoice_main_id);
                     }
                     string rec = this.ctrlr.receipt_autoid();
                     int receip = int.Parse(rec) + 1;
@@ -382,6 +382,7 @@ namespace PappyjoeMVC.View
                     Consultation_load();
                     dataGridView_drugnew.Rows.Clear();
                     tabControl1.SelectedIndex = 0;
+                    dgv_treatment.Rows.Clear();
                 }
                 else
                 {
@@ -1084,7 +1085,7 @@ namespace PappyjoeMVC.View
                     int count = dataGridView_drugnew.Rows.Count;
                     for (int i = 0; i < count; i++)
                     {
-                        DataTable dt4 = this.ctrlr.get_invid(dataGridView_drugnew[10, i].Value.ToString());
+                        DataTable dt4 = this.ctrlr.get_invid(dataGridView_drugnew["drugid", i].Value.ToString());
                         if (dt4.Rows.Count > 0)
                         {
                             Prescription_bill_status = "Yes";
@@ -1467,11 +1468,11 @@ namespace PappyjoeMVC.View
             if (txt_procedure.Text != "" && txtQuantity.Text != "")
             {
                 Decimal total = 0;
-
                 dgv_treatment.Rows.Add(txtID.Text, txt_procedure.Text, txtQuantity.Text, txt_cost.Text, txtTotal.Text, txt_instruction.Text, "DEL");
+                dgv_treatment.Columns["Del"].DefaultCellStyle.ForeColor = Color.Red;
                 for (int i = 0; i < dgv_treatment.Rows.Count; i++)
                 {
-                    total = total + Convert.ToDecimal(dgv_treatment.Rows[i].Cells[4].Value.ToString());
+                    total = total + Convert.ToDecimal(dgv_treatment.Rows[i].Cells["Total"].Value.ToString());
                 }
                 lb_total.Text = total.ToString();
                 txtQuantity.Text = "";
@@ -1501,7 +1502,7 @@ namespace PappyjoeMVC.View
         }
         private void dgv_treatment_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex == 6)
             {
                 if (MessageBox.Show("Delete this Treatment.. Confirm?", "Remove Treatment", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -1511,7 +1512,7 @@ namespace PappyjoeMVC.View
                     //dgv_treatment.Rows.Add(txt_procedure.Text, txtQuantity.Text, txt_cost.Text, txtTotal.Text, txt_instruction.Text, "DEL");
                     for (int i = 0; i < dgv_treatment.Rows.Count; i++)
                     {
-                        total = total + Convert.ToDecimal(dgv_treatment.Rows[i].Cells[3].Value.ToString());
+                        total = total + Convert.ToDecimal(dgv_treatment.Rows[i].Cells["Cost"].Value.ToString());
                     }
                     lb_total.Text = total.ToString();
                 }
@@ -1556,13 +1557,13 @@ namespace PappyjoeMVC.View
                     string NoteData = "";
                     NoteData = richTxtInsrtuction.Text;
                     Note = NoteData.Replace("'", " ");
-                    dataGridView_drugnew.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                    dataGridView_drugnew.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    dataGridView_drugnew.Columns["strength"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    dataGridView_drugnew.Columns["duration"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     dataGridView_drugnew.Rows.Add(drugnametext.Text, txtStrengthno.Text, strengthcombo.Text, numericUpDownDuration.Value, dur, numericUpDownMorning.Value, numericUpDownNoon.Value, numericUpDownNight.Value, food, Note, drug_type, strstatus, id1);
-                    dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Cells[13].Value = PappyjoeMVC.Properties.Resources.deleteicon;
+                    dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Cells["img"].Value = PappyjoeMVC.Properties.Resources.deleteicon;
                     dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Height = 30;
                     img.ImageLayout = DataGridViewImageCellLayout.Normal;
-                    dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Cells[11].Value = strstatus;
+                    dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Cells["status"].Value = strstatus;
                     richTxtInsrtuction.Text = "";
                     radioButtonAftrFood.Checked = false;
                     radioButtonBfrFood.Checked = false;
@@ -1591,15 +1592,15 @@ namespace PappyjoeMVC.View
                     dataGridView_drugnew.Visible = true;
                     dataGridView_drugnew.Rows.Clear();
                     int r = e.RowIndex;
-                    string idtemp = dataGridView2.Rows[r].Cells[0].Value.ToString();
+                    string idtemp = dataGridView2.Rows[r].Cells["tempid"].Value.ToString();
                     DataTable dt = this.ctrlr.get_template(idtemp);
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        dataGridView_drugnew.Rows.Add(dt.Rows[i]["drug_name"].ToString(), dt.Rows[i]["strength"].ToString(), dt.Rows[i]["strength_gr"].ToString(), dt.Rows[i]["duration"].ToString(), dt.Rows[i]["duration_period"].ToString(), dt.Rows[i]["morning"].ToString(), dt.Rows[i]["noon"].ToString(), dt.Rows[i]["night"].ToString(), dt.Rows[i]["food"].ToString(), dt.Rows[i]["add_instruction"].ToString(), dt.Rows[i]["drug_id"].ToString(), dt.Rows[i]["drug_type"].ToString());
-                        dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Cells[12].Value = PappyjoeMVC.Properties.Resources.deleteicon;
+                        dataGridView_drugnew.Rows.Add(dt.Rows[i]["drug_name"].ToString(), dt.Rows[i]["strength"].ToString(), dt.Rows[i]["strength_gr"].ToString(), dt.Rows[i]["duration"].ToString(), dt.Rows[i]["duration_period"].ToString(), dt.Rows[i]["morning"].ToString(), dt.Rows[i]["noon"].ToString(), dt.Rows[i]["night"].ToString(), dt.Rows[i]["food"].ToString(), dt.Rows[i]["add_instruction"].ToString(), dt.Rows[i]["drug_type"].ToString(), dt.Rows[i]["status"].ToString(),dt.Rows[i]["drug_id"].ToString());
+                        dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Cells["img"].Value = PappyjoeMVC.Properties.Resources.deleteicon;
                         dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Height = 30;
                         img.ImageLayout = DataGridViewImageCellLayout.Normal;
-                        dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Cells[13].Value = dt.Rows[i]["status"].ToString();
+                        //dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Cells["status"].Value = dt.Rows[i]["status"].ToString();
                     }
                 }
                 catch (Exception ex)
@@ -1616,7 +1617,7 @@ namespace PappyjoeMVC.View
             {
                 if (dataGridView_drugnew.Rows.Count > 0)
                 {
-                    if (e.ColumnIndex == 12)
+                    if (e.ColumnIndex == 13)
                     {
                         DialogResult res = MessageBox.Show("Are you sure you want to delete..?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (res == DialogResult.Yes)

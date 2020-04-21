@@ -62,6 +62,7 @@
             this.dataGridView_prescription = new System.Windows.Forms.DataGridView();
             this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pgeneric = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ptype = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pstrength = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.punit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +74,9 @@
             this.button_invetory = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label34 = new System.Windows.Forms.Label();
+            this.btn_import = new System.Windows.Forms.Button();
+            this.lb_generic = new System.Windows.Forms.Label();
+            this.txt_generic = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_prescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -84,7 +88,7 @@
             this.button_addunit.FlatAppearance.BorderSize = 0;
             this.button_addunit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_addunit.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.button_addunit.Location = new System.Drawing.Point(284, 126);
+            this.button_addunit.Location = new System.Drawing.Point(284, 148);
             this.button_addunit.Name = "button_addunit";
             this.button_addunit.Size = new System.Drawing.Size(83, 23);
             this.button_addunit.TabIndex = 127;
@@ -96,7 +100,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.ForeColor = System.Drawing.Color.Red;
-            this.label39.Location = new System.Drawing.Point(286, 81);
+            this.label39.Location = new System.Drawing.Point(286, 109);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(86, 13);
             this.label39.TabIndex = 136;
@@ -131,7 +135,7 @@
             this.text_strength.BackColor = System.Drawing.Color.White;
             this.text_strength.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_strength.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_strength.Location = new System.Drawing.Point(110, 126);
+            this.text_strength.Location = new System.Drawing.Point(110, 148);
             this.text_strength.Name = "text_strength";
             this.text_strength.Size = new System.Drawing.Size(77, 22);
             this.text_strength.TabIndex = 12;
@@ -141,9 +145,9 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label19.Location = new System.Drawing.Point(60, 91);
+            this.label19.Location = new System.Drawing.Point(60, 117);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(35, 17);
+            this.label19.Size = new System.Drawing.Size(36, 17);
             this.label19.TabIndex = 132;
             this.label19.Text = "Type";
             // 
@@ -152,7 +156,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label22.Location = new System.Drawing.Point(38, 129);
+            this.label22.Location = new System.Drawing.Point(38, 151);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(57, 17);
             this.label22.TabIndex = 133;
@@ -165,7 +169,7 @@
             this.combo_unit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_unit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combo_unit.FormattingEnabled = true;
-            this.combo_unit.Location = new System.Drawing.Point(196, 126);
+            this.combo_unit.Location = new System.Drawing.Point(194, 148);
             this.combo_unit.Name = "combo_unit";
             this.combo_unit.Size = new System.Drawing.Size(81, 23);
             this.combo_unit.TabIndex = 135;
@@ -175,7 +179,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label23.Location = new System.Drawing.Point(21, 167);
+            this.label23.Location = new System.Drawing.Point(21, 188);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(74, 17);
             this.label23.TabIndex = 134;
@@ -185,7 +189,7 @@
             // 
             this.rich_instruction.BackColor = System.Drawing.Color.White;
             this.rich_instruction.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rich_instruction.Location = new System.Drawing.Point(111, 161);
+            this.rich_instruction.Location = new System.Drawing.Point(111, 181);
             this.rich_instruction.Name = "rich_instruction";
             this.rich_instruction.Size = new System.Drawing.Size(164, 28);
             this.rich_instruction.TabIndex = 128;
@@ -197,7 +201,7 @@
             this.button_cancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_cancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_cancel.Location = new System.Drawing.Point(212, 203);
+            this.button_cancel.Location = new System.Drawing.Point(212, 214);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(63, 25);
             this.button_cancel.TabIndex = 130;
@@ -210,7 +214,7 @@
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel2.Location = new System.Drawing.Point(377, 93);
+            this.linkLabel2.Location = new System.Drawing.Point(377, 121);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(33, 13);
             this.linkLabel2.TabIndex = 137;
@@ -224,7 +228,7 @@
             this.button_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save.ForeColor = System.Drawing.Color.White;
-            this.button_save.Location = new System.Drawing.Point(151, 203);
+            this.button_save.Location = new System.Drawing.Point(151, 214);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(60, 25);
             this.button_save.TabIndex = 129;
@@ -248,7 +252,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(92, 90);
+            this.label2.Location = new System.Drawing.Point(92, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(14, 18);
             this.label2.TabIndex = 140;
@@ -261,7 +265,7 @@
             this.combotype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combotype.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combotype.FormattingEnabled = true;
-            this.combotype.Location = new System.Drawing.Point(111, 88);
+            this.combotype.Location = new System.Drawing.Point(111, 114);
             this.combotype.Name = "combotype";
             this.combotype.Size = new System.Drawing.Size(164, 23);
             this.combotype.TabIndex = 123;
@@ -282,7 +286,7 @@
             // 
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel3.Location = new System.Drawing.Point(377, 131);
+            this.linkLabel3.Location = new System.Drawing.Point(377, 153);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(33, 13);
             this.linkLabel3.TabIndex = 138;
@@ -294,7 +298,7 @@
             // 
             this.text_unit.BackColor = System.Drawing.Color.White;
             this.text_unit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_unit.Location = new System.Drawing.Point(196, 128);
+            this.text_unit.Location = new System.Drawing.Point(196, 148);
             this.text_unit.Name = "text_unit";
             this.text_unit.Size = new System.Drawing.Size(79, 22);
             this.text_unit.TabIndex = 126;
@@ -319,7 +323,7 @@
             this.button_addtype.FlatAppearance.BorderSize = 0;
             this.button_addtype.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_addtype.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.button_addtype.Location = new System.Drawing.Point(284, 88);
+            this.button_addtype.Location = new System.Drawing.Point(284, 116);
             this.button_addtype.Name = "button_addtype";
             this.button_addtype.Size = new System.Drawing.Size(88, 23);
             this.button_addtype.TabIndex = 124;
@@ -332,7 +336,7 @@
             this.text_type.BackColor = System.Drawing.Color.White;
             this.text_type.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_type.Location = new System.Drawing.Point(111, 92);
+            this.text_type.Location = new System.Drawing.Point(111, 115);
             this.text_type.Name = "text_type";
             this.text_type.Size = new System.Drawing.Size(164, 20);
             this.text_type.TabIndex = 131;
@@ -343,7 +347,7 @@
             this.text_presc_search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_presc_search.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_presc_search.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_presc_search.Location = new System.Drawing.Point(111, 238);
+            this.text_presc_search.Location = new System.Drawing.Point(111, 248);
             this.text_presc_search.Name = "text_presc_search";
             this.text_presc_search.Size = new System.Drawing.Size(338, 22);
             this.text_presc_search.TabIndex = 145;
@@ -354,7 +358,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(48, 238);
+            this.label3.Location = new System.Drawing.Point(48, 251);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 17);
             this.label3.TabIndex = 148;
@@ -384,6 +388,7 @@
             this.dataGridView_prescription.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pid,
             this.pname,
+            this.pgeneric,
             this.ptype,
             this.pstrength,
             this.punit,
@@ -400,7 +405,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_prescription.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView_prescription.Location = new System.Drawing.Point(111, 283);
+            this.dataGridView_prescription.Location = new System.Drawing.Point(51, 283);
             this.dataGridView_prescription.MultiSelect = false;
             this.dataGridView_prescription.Name = "dataGridView_prescription";
             this.dataGridView_prescription.ReadOnly = true;
@@ -416,7 +421,7 @@
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView_prescription.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_prescription.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_prescription.Size = new System.Drawing.Size(816, 371);
+            this.dataGridView_prescription.Size = new System.Drawing.Size(964, 371);
             this.dataGridView_prescription.TabIndex = 144;
             this.dataGridView_prescription.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_prescription_CellClick);
             // 
@@ -437,6 +442,14 @@
             this.pname.ReadOnly = true;
             this.pname.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.pname.Width = 203;
+            // 
+            // pgeneric
+            // 
+            this.pgeneric.DataPropertyName = "generic";
+            this.pgeneric.HeaderText = "Generic";
+            this.pgeneric.Name = "pgeneric";
+            this.pgeneric.ReadOnly = true;
+            this.pgeneric.Width = 150;
             // 
             // ptype
             // 
@@ -537,12 +550,48 @@
             this.label34.TabIndex = 151;
             this.label34.Text = "It can\'t be Empty";
             // 
+            // btn_import
+            // 
+            this.btn_import.BackColor = System.Drawing.Color.DimGray;
+            this.btn_import.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_import.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_import.ForeColor = System.Drawing.Color.White;
+            this.btn_import.Location = new System.Drawing.Point(744, 19);
+            this.btn_import.Name = "btn_import";
+            this.btn_import.Size = new System.Drawing.Size(115, 27);
+            this.btn_import.TabIndex = 152;
+            this.btn_import.Text = "Import from Excel";
+            this.btn_import.UseVisualStyleBackColor = false;
+            this.btn_import.Click += new System.EventHandler(this.btn_import_Click);
+            // 
+            // lb_generic
+            // 
+            this.lb_generic.AutoSize = true;
+            this.lb_generic.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_generic.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lb_generic.Location = new System.Drawing.Point(4, 85);
+            this.lb_generic.Name = "lb_generic";
+            this.lb_generic.Size = new System.Drawing.Size(91, 17);
+            this.lb_generic.TabIndex = 153;
+            this.lb_generic.Text = "Generic Name";
+            // 
+            // txt_generic
+            // 
+            this.txt_generic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_generic.Location = new System.Drawing.Point(110, 83);
+            this.txt_generic.Name = "txt_generic";
+            this.txt_generic.Size = new System.Drawing.Size(164, 20);
+            this.txt_generic.TabIndex = 154;
+            // 
             // Prescription_Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1146, 698);
+            this.Controls.Add(this.txt_generic);
+            this.Controls.Add(this.lb_generic);
+            this.Controls.Add(this.btn_import);
             this.Controls.Add(this.label34);
             this.Controls.Add(this.text_presc_search);
             this.Controls.Add(this.label3);
@@ -612,8 +661,10 @@
         private System.Windows.Forms.Button button_invetory;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button btn_import;
         private System.Windows.Forms.DataGridViewTextBoxColumn pid;
         private System.Windows.Forms.DataGridViewTextBoxColumn pname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pgeneric;
         private System.Windows.Forms.DataGridViewTextBoxColumn ptype;
         private System.Windows.Forms.DataGridViewTextBoxColumn pstrength;
         private System.Windows.Forms.DataGridViewTextBoxColumn punit;
@@ -622,5 +673,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn inventory_id;
         private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn delete;
+        private System.Windows.Forms.TextBox txt_generic;
+        private System.Windows.Forms.Label lb_generic;
     }
 }

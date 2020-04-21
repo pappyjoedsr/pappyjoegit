@@ -36,7 +36,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable patient_keydown(string name)
         {
-            DataTable supplier = db.table("select pt_name,pt_id from tbl_patient where  pt_name like '%" + name + "%' or pt_id like '" + name + "%'");
+            DataTable supplier = db.table("select pt_name,pt_id,primary_mobile_number from tbl_patient where  pt_name like '%" + name + "%' or pt_id like '%" + name + "%' or primary_mobile_number like '%"+ name + "%'");
             return supplier;
         }
         public DataTable itemdetails(string itemid)
@@ -217,7 +217,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable Get_itemdetails(string inventory_id)
         {
-            DataTable dtb = db.table(" select i.id,i.Sales_Rate_Max,i.Packing,i.Unit1,i.Unit2,i.OneUnitOnly,p.GST,p.IGST,i.item_name,i.item_code,i.OneUnitOnly,i.Unit1,i.Unit2 from tbl_ITEMS i inner join tbl_PURCHIT p on p.Item_Code = i.id where i.id='" +inventory_id + "'");
+            DataTable dtb = db.table(" select i.id,i.Sales_Rate_Max,i.Packing,i.Unit1,i.Unit2,i.OneUnitOnly,i.HSN_Number,p.GST,p.IGST,i.item_name,i.item_code,i.OneUnitOnly,i.Unit1,i.Unit2 from tbl_ITEMS i inner join tbl_PURCHIT p on p.Item_Code = i.id where i.id='" + inventory_id + "'");
             return dtb;
         }
         public DataTable get_batchdetails(string item_Code)
@@ -263,7 +263,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable batchrate(string itemid,string batch,string Unit)
         {
-            DataTable dtb=db.table("SELECT i.item_code,i.rate,i.Unit,p.batchentry,b.entry_no,b.batchnumber FROM `tbl_purchit` i inner join tbl_batchpurchase p on p.item_code = i.item_code inner join tbl_batchpurchase b on p.batchentry = b.Entry_No WHERE i.item_code = '" + itemid+"'  and b.batchnumber = '"+batch+ "' and i.Unit='" + Unit + "'");
+            DataTable dtb=db.table("SELECT i.item_code,i.rate,i.Unit,p.batchentry,b.entry_no,b.batchnumber FROM `tbl_purchit` i inner join tbl_batchpurchase p on p.item_code = i.item_code inner join tbl_batchpurchase b on p.batchentry = b.Entry_No WHERE i.item_code = '" + itemid+"'  and b.batchnumber = '"+batch+ "'");// and i.Unit='" + Unit + "'
             return dtb;
         }
         public DataTable get_item_salesrate(string itemid)

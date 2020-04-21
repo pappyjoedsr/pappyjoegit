@@ -3252,16 +3252,16 @@ namespace PappyjoeMVC.View
                     if (APTAdd == true)
                     {
 
-                        DateTime curr_Date_Time = DateTime.Now;
-                           DateTime cal_Date_Time = Convert.ToDateTime(HitTest.HitDateTime.ToString());
-                        if (cal_Date_Time < curr_Date_Time)
-                        {
-                            MessageBox.Show("Appointment Date should be greater than Current Date...", "Appointment", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
+                        //DateTime curr_Date_Time = DateTime.Now;
+                        //   DateTime cal_Date_Time = Convert.ToDateTime(HitTest.HitDateTime.ToString());
+                        //if (cal_Date_Time < curr_Date_Time)
+                        //{
+                        //    MessageBox.Show("Appointment Date should be greater than Current Date...", "Appointment", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //}
+                        //else
+                        //{
                             mnuContextNewEvent_Click(this, new System.EventArgs());
-                        }
+                        //}
                     }
                     else
                     {

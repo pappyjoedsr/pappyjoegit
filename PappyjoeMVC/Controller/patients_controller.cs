@@ -5,7 +5,6 @@ namespace PappyjoeMVC.Controller
 {
     public class Patients_controller
     {
-        
         Patients_model _model = new Patients_model();
         Common_model cmodel = new Common_model();
         Show_Appointment_model appmodel = new Show_Appointment_model();
@@ -249,5 +248,10 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.get_reminder_sms_details(startDateTime, startDateTime1, dr_id);
             return dtb;
         }
+        //public int insert_excelimported()
+        //{
+        //    int i = _model.insert_excelimported();
+        //    return i;
+        //}
     }
 }

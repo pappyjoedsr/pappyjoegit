@@ -13,7 +13,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable srch_patient(string ptname,string mobno)
         {
-            DataTable dtdr = db.table("select id,pt_name from tbl_patient where pt_name like '%" + ptname + "%'  or primary_mobile_number like '%" + mobno + "%'");
+            DataTable dtdr = db.table("select id,pt_name from tbl_patient where pt_name like '%" + ptname + "%'  or primary_mobile_number like '%" + mobno + "%' ");
             return dtdr;
         }
         public DataTable get_tmplates()

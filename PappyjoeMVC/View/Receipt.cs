@@ -119,12 +119,12 @@ namespace PappyjoeMVC.View
                 if (dtadvance.Rows.Count > 0)
                 {
                     //adv_refund.Visible = true;
-                    lblAdvance.Show(); adv_refund.Visible = true;
+                    lblAdvance.Show(); Adv_details.Visible = true; adv_refund.Visible = true;
                     lblAdvance.Text = "Available advance: " + string.Format("{0:C}", decimal.Parse(dtadvance.Rows[0][0].ToString()));
                 }
                 else
                 {
-                    adv_refund.Visible = false;
+                    Adv_details.Visible = false; adv_refund.Visible = false;
                     lblAdvance.Text = "Available advance: " + string.Format("{0:C}", 0);
                 }
                 Dgv_payment.Rows.Clear();
@@ -1020,12 +1020,6 @@ namespace PappyjoeMVC.View
             form2.Dispose();
         }
 
-        private void adv_refund_Click(object sender, EventArgs e)
-        {
-            contextMenuStrip2.Show(new System.Drawing.Point(866, 83));
-            
-        }
-
         private void showAdvanceDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panl_advance.Visible = true;
@@ -1092,6 +1086,11 @@ namespace PappyjoeMVC.View
         private void btn_refund_calcel_Click(object sender, EventArgs e)
         {
             panl_refund.Visible = false;
+        }
+
+        private void Adv_details_Click(object sender, EventArgs e)
+        {
+            contextMenuStrip2.Show(new System.Drawing.Point(866, 83));
         }
 
         static String NumWordsWrapper(double n)

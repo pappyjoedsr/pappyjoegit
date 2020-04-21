@@ -73,9 +73,9 @@ namespace PappyjoeMVC.Controller
             string dtb = pmodel.check_drugname(name);
             return dtb;
         }
-        public void Save_Drug(string name, string type, string unit, string strength, string instruction)
+        public void Save_Drug(string name, string generic, string type, string unit, string strength, string instruction)
         {
-            pmodel.Save_Drug(name, type, unit, strength, instruction);
+            pmodel.Save_Drug(name, generic, type, unit, strength, instruction);
         }
         public DataTable Get_Stock(string id)
         {
