@@ -483,6 +483,27 @@ namespace PappyjoeMVC.View
                             }
                         }
                     }
+                    else if (Dgv_Procedure.CurrentCell.OwningColumn.Name == "col_edit")
+                    {
+                        procedure_id= Dgv_Procedure.CurrentRow.Cells["proid"].Value.ToString();
+                        txt_procedurename.Text = Dgv_Procedure.CurrentRow.Cells["procedurename"].Value.ToString();
+                        txt_procedurecost.Text = Dgv_Procedure.CurrentRow.Cells["cost"].Value.ToString();
+                        richnotes.Text = Dgv_Procedure.CurrentRow.Cells["notes"].Value.ToString();
+                        if (Dgv_Procedure.CurrentRow.Cells["tax"].Value.ToString()=="GST")
+                        {
+                            chk_gst.Checked = true;
+                        }
+                        else if(Dgv_Procedure.CurrentRow.Cells["tax"].Value.ToString() == "IGST") 
+                        {
+                            chk_igst.Checked = true;
+                        }
+                        if (Dgv_Procedure.CurrentRow.Cells["category"].Value.ToString() != "")
+                        {
+                            comboaddunder.Text = Dgv_Procedure.CurrentRow.Cells["category"].Value.ToString();
+                            checkaddunder.Checked = true;
+                        }
+                        buttonsave.Text = "Update"; 
+                    }
                 }
             }
             catch (Exception ex)
@@ -555,6 +576,11 @@ namespace PappyjoeMVC.View
             {
                 MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void chk_igst_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

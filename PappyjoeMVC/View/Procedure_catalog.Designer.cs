@@ -39,6 +39,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_import = new System.Windows.Forms.Button();
             this.Dgv_Procedure = new System.Windows.Forms.DataGridView();
+            this.proid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.procedurename = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.textsearch = new System.Windows.Forms.TextBox();
             this.buttonrefresh = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -63,14 +71,6 @@
             this.lab_Pro_nameError = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.proid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.procedurename = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Procedure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -186,6 +186,75 @@
             this.Dgv_Procedure.Size = new System.Drawing.Size(822, 279);
             this.Dgv_Procedure.TabIndex = 149;
             this.Dgv_Procedure.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Procedure_CellClick);
+            // 
+            // proid
+            // 
+            this.proid.DataPropertyName = "id";
+            this.proid.HeaderText = "Procedureid";
+            this.proid.Name = "proid";
+            this.proid.ReadOnly = true;
+            this.proid.Visible = false;
+            // 
+            // procedurename
+            // 
+            this.procedurename.DataPropertyName = "category";
+            this.procedurename.HeaderText = "Procedure Name";
+            this.procedurename.Name = "procedurename";
+            this.procedurename.ReadOnly = true;
+            this.procedurename.Width = 219;
+            // 
+            // cost
+            // 
+            this.cost.DataPropertyName = "cost";
+            this.cost.HeaderText = "Procedure Cost";
+            this.cost.Name = "cost";
+            this.cost.ReadOnly = true;
+            this.cost.Width = 150;
+            // 
+            // tax
+            // 
+            this.tax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tax.DataPropertyName = "name";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.tax.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tax.HeaderText = "Tax";
+            this.tax.Name = "tax";
+            this.tax.ReadOnly = true;
+            // 
+            // notes
+            // 
+            this.notes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.notes.DataPropertyName = "notes";
+            this.notes.HeaderText = "Notes";
+            this.notes.Name = "notes";
+            this.notes.ReadOnly = true;
+            this.notes.Width = 150;
+            // 
+            // category
+            // 
+            this.category.DataPropertyName = "tax_name";
+            this.category.HeaderText = "Category";
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            this.category.Width = 150;
+            // 
+            // col_edit
+            // 
+            this.col_edit.HeaderText = "";
+            this.col_edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.col_edit.Name = "col_edit";
+            this.col_edit.ReadOnly = true;
+            this.col_edit.Width = 30;
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "";
+            this.delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.delete.Width = 19;
             // 
             // textsearch
             // 
@@ -344,6 +413,7 @@
             this.chk_igst.TabIndex = 139;
             this.chk_igst.Text = "IGST";
             this.chk_igst.UseVisualStyleBackColor = true;
+            this.chk_igst.CheckedChanged += new System.EventHandler(this.chk_igst_CheckedChanged);
             // 
             // label1
             // 
@@ -464,75 +534,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // proid
-            // 
-            this.proid.DataPropertyName = "id";
-            this.proid.HeaderText = "Procedureid";
-            this.proid.Name = "proid";
-            this.proid.ReadOnly = true;
-            this.proid.Visible = false;
-            // 
-            // procedurename
-            // 
-            this.procedurename.DataPropertyName = "category";
-            this.procedurename.HeaderText = "Procedure Name";
-            this.procedurename.Name = "procedurename";
-            this.procedurename.ReadOnly = true;
-            this.procedurename.Width = 219;
-            // 
-            // cost
-            // 
-            this.cost.DataPropertyName = "cost";
-            this.cost.HeaderText = "Procedure Cost";
-            this.cost.Name = "cost";
-            this.cost.ReadOnly = true;
-            this.cost.Width = 150;
-            // 
-            // tax
-            // 
-            this.tax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tax.DataPropertyName = "name";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.tax.DefaultCellStyle = dataGridViewCellStyle3;
-            this.tax.HeaderText = "Tax";
-            this.tax.Name = "tax";
-            this.tax.ReadOnly = true;
-            // 
-            // notes
-            // 
-            this.notes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.notes.DataPropertyName = "notes";
-            this.notes.HeaderText = "Notes";
-            this.notes.Name = "notes";
-            this.notes.ReadOnly = true;
-            this.notes.Width = 150;
-            // 
-            // category
-            // 
-            this.category.DataPropertyName = "tax_name";
-            this.category.HeaderText = "Category";
-            this.category.Name = "category";
-            this.category.ReadOnly = true;
-            this.category.Width = 150;
-            // 
-            // col_edit
-            // 
-            this.col_edit.HeaderText = "";
-            this.col_edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.col_edit.Name = "col_edit";
-            this.col_edit.ReadOnly = true;
-            this.col_edit.Width = 30;
-            // 
-            // delete
-            // 
-            this.delete.HeaderText = "";
-            this.delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.delete.Width = 19;
             // 
             // Procedure_Catalog
             // 
