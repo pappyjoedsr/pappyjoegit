@@ -11,6 +11,7 @@ namespace PappyjoeMVC.View
     {
         public string doctor_id = "";
         Patients_controller cntrl=new Patients_controller(); public int i;
+        Add_New_patient_controller contr = new Add_New_patient_controller();
         Common_model mdl = new Common_model();
         Connection db = new Connection();
         Contacts ad = new Contacts();
@@ -2580,6 +2581,78 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
         }
+
+        Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+        Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+        Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+        string FileName;
+        private void lbl_imprt_patients_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    OpenFileDialog ofd = new OpenFileDialog();
+            //    ofd.Title = "Excel File to Import";
+            //    ofd.FileName = "";
+            //    ofd.Filter = "Excel File|*.xlsx;*.xls";
+            //    if (ofd.ShowDialog() == DialogResult.OK)
+            //    {
+            //        FileName = ofd.FileName;
+            //        if (FileName.Trim() != "")
+            //        {
+            //            xlApp = new Microsoft.Office.Interop.Excel.Application();
+            //            xlWorkBook = xlApp.Workbooks.Open(FileName);
+            //            xlWorkSheet = xlWorkBook.Worksheets["Sheet1"];
+            //            int iRow;//						
+
+            //            if (xlWorkSheet.Cells[1, 1].value == "Patient Name" && xlWorkSheet.Cells[1, 2].value == "Gender" && xlWorkSheet.Cells[1, 3].value == "Age" && xlWorkSheet.Cells[1, 4].value == "Mobile" && xlWorkSheet.Cells[1, 5].value == "Street Address" && xlWorkSheet.Cells[1, 6].value == "Locality" && xlWorkSheet.Cells[1, 7].value == "File")
+            //            {
+            //                for (iRow = 2; iRow <= xlWorkSheet.Rows.Count; iRow++)
+            //                {
+            //                    if (xlWorkSheet.Cells[iRow, 1].value == null)
+            //                    {
+            //                        break;
+            //                    }
+            //                    else
+            //                    {
+            //                        string patientname = ""; string gender = "";string age = ""; string mobile = "";string street = "";string locality = "";string file = "";
+            //                        //string patid = "";string adhar = "";string dob="";string bldgrp = "";string accmpnied = "";string secmob = "";string landno = "";string mail= "";string city = "";string pin = "";string referdby = "";string visited = "";string doctor = "";string occupation = "";string nation = "";string passport = "";
+            //                        patientname = xlWorkSheet.Cells[iRow, 1].value;
+            //                        gender = xlWorkSheet.Cells[iRow, 2].value;
+            //                        age = xlWorkSheet.Cells[iRow, 3].value;
+            //                        mobile = xlWorkSheet.Cells[iRow, 4].value;
+            //                        street = xlWorkSheet.Cells[iRow, 5].value;
+            //                        locality = xlWorkSheet.Cells[iRow, 6].value;
+            //                        file = xlWorkSheet.Cells[iRow, 7].value;
+            //                        DataTable patSearch = this.contr.Get_patient_details(patientname);
+            //                        if (dtb.Rows.Count == 0)
+            //                        {
+            //                            this.cntrl.insert_excelimported(patientname,patid, gender, age, mobile,street, locality, file);
+            //                            //i = this.contr.Save(patientname, patid, adhar, gender, dob, age, bldgrp, accmpnied, mobile, secmob, landno, mail, street, locality, city, pin, referdby, file, visited, doctor, occupation, nation, passport);
+            //                        }
+            //                    }
+            //                }
+            //                DataTable dt = this.cntrl.FormLoad();
+            //                FormLoad(dt);
+            //                xlWorkBook.Close();
+            //                xlApp.Quit();
+            //                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+            //                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkBook);
+            //                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkSheet);
+            //                MessageBox.Show("Successfully Imported !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            }
+            //            else
+            //            {
+            //                MessageBox.Show("The Excel sheet data is not in the standard format", "Format mismatch", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            }
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+        }
+
         public void Setcontroller(Patients_controller controller)
         {
             cntrl = controller;
