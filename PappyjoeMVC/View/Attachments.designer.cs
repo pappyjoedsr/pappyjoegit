@@ -1048,6 +1048,7 @@
             this.label8.Size = new System.Drawing.Size(124, 17);
             this.label8.TabIndex = 284;
             this.label8.Text = "INR 1,05,182.65 due";
+            this.label8.Visible = false;
             // 
             // panel4
             // 

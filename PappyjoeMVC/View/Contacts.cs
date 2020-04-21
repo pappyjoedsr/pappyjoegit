@@ -24,11 +24,16 @@ namespace PappyjoeMVC.View
 
         private void buttonsave_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(text_contact.Text))
+            if (!string.IsNullOrWhiteSpace(text_contact.Text)&&txtMobNumber.Text!="")
             {
-                if(buttonsave.Text=="Save")
+                if(txtMobNumber.TextLength != 10)
                 {
-                    int i =this.cntrl.Save(text_contact.Text);
+                    MessageBox.Show("Enter the mobile number.. !!", "Data not found.. ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (buttonsave.Text=="Save")
+                {
+                    int i =this.cntrl.Save(text_contact.Text,txtMobNumber.Text);
                     if(i>0)
                     {
                         MessageBox.Show("Successfully Saved !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -36,14 +41,15 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    int i = this.cntrl.Update(ContactId, text_contact.Text);
+                    int i = this.cntrl.Update(ContactId, text_contact.Text,txtMobNumber.Text);
                     if (i > 0)
                     {
                         MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 text_contact.Clear();
-               DataTable dtb= this.cntrl.FillGrid();
+                txtMobNumber.Clear();
+                DataTable dtb= this.cntrl.FillGrid();
                 Fill_ContactGrid(dtb);
             }
             else
@@ -63,6 +69,7 @@ namespace PappyjoeMVC.View
                     dgv_Contact.Rows.Add();
                     dgv_Contact.Rows[i].Cells[0].Value = dr["id"].ToString();
                     dgv_Contact.Rows[i].Cells[1].Value = dr["contact"].ToString();
+                    dgv_Contact.Rows[i].Cells[2].Value= dr["Mobile_no"].ToString();
                     i++;
                 }
             }
@@ -80,6 +87,7 @@ namespace PappyjoeMVC.View
                     if (dgv_Contact.CurrentCell.OwningColumn.Name == "edit")
                     {
                         text_contact.Text = dgv_Contact.CurrentRow.Cells[1].Value.ToString();
+                        txtMobNumber.Text= dgv_Contact.CurrentRow.Cells[2].Value.ToString();
                         buttonsave.Text = "Update";
                     }
                     else if (dgv_Contact.CurrentCell.OwningColumn.Name == "delete")
@@ -108,12 +116,15 @@ namespace PappyjoeMVC.View
         {
             buttonsave.Text = "Save";
             text_contact.Text = "";
+            txtMobNumber.Text = "";
             btn_Cancel.Visible = false;
         }
 
         private void buttonclear_Click(object sender, EventArgs e)
         {
             text_contact.Clear();
+            txtMobNumber.Clear();
+            Lab_InvalidNumber.Visible = false;
             buttonsave.Text = "Save";
         }
 
@@ -129,12 +140,25 @@ namespace PappyjoeMVC.View
             {
                 cl.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+            Lab_InvalidNumber.Visible = false;
         }
-
         private void text_search_KeyUp(object sender, KeyEventArgs e)
         {
           DataTable dtb= this.cntrl.search(text_search.Text);
           Fill_ContactGrid(dtb);
+        }
+
+        private void txtMobNumber_Leave(object sender, EventArgs e)
+        {
+                if (txtMobNumber.TextLength != 10)
+                {
+                    Lab_InvalidNumber.Visible = true;
+                    return;
+                }
+                else
+                {
+                    Lab_InvalidNumber.Visible = false;
+                }
         }
     }
 }

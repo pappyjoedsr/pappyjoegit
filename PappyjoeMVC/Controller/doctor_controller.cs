@@ -28,6 +28,11 @@ namespace PappyjoeMVC.Controller
             string dt = cmdl.Get_DoctorName(dridd);
             return dt;
         }
+        public DataTable Load_Logintype(string drid)
+        {
+            DataTable dtb = cmdl.Load_Logintype(drid);
+            return dtb;
+        }
         public string Load_CompanyName()
         {
             string dtb = cmdl.Load_CompanyName();
@@ -214,9 +219,9 @@ namespace PappyjoeMVC.Controller
             return dtb;
         }
         //
-        public int update_doctor(string doctor_id, string _drname, string _number, string _email, string _gender, string _year, string _about, string _path)
+        public int update_doctor(string doctor_id, string _drname, string _number, string _email, string _gender, string _year, string _about, string _path,string _logtype)
         {
-            int i = _model.update_doctor(doctor_id, _drname, _number, _email, _gender, _year, _about, _path);
+            int i = _model.update_doctor(doctor_id, _drname, _number, _email, _gender, _year, _about, _path,_logtype);
             return i;
         }
         public DataTable get_dr_password(string doctor_id)

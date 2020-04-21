@@ -20,12 +20,13 @@ namespace PappyjoeMVC.View
         int j;
         LabResultEntry_controller ctrlr=new LabResultEntry_controller();
         public string patient_id = "", doctor_id = "", workid = "",flag="",flagup="";
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void LabResultEntry_Shown(object sender, EventArgs e)
         {
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                dataGridView1.Rows[i].Cells[8].Value="";
+                dataGridView1.CurrentCell = dataGridView1.Rows[i].Cells[8];
+                dataGridView1.CurrentCell.Selected = true;
+                dataGridView1.BeginEdit(true);
             }
         }
         private void btnsave_Click(object sender, EventArgs e)
@@ -56,6 +57,13 @@ namespace PappyjoeMVC.View
                     dataGridView1.DataSource = dt;
                     dataGridView1.Enabled = false;
                     btnsave.Visible = false;
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        dataGridView1.CurrentCell = dataGridView1.Rows[i].Cells[8];
+                        dataGridView1.CurrentCell.Selected = false;
+                        dataGridView1.Rows[i].Cells[8].Style.BackColor = Color.White;
+                        dataGridView1.Rows[i].Cells[8].Style.ForeColor = Color.Black;
+                    }
                 }
                 if (flag == "1")
                 {
@@ -63,13 +71,12 @@ namespace PappyjoeMVC.View
                     dataGridView1.DataSource = dt;
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
-                           
                             this.dataGridView1.Columns[11].Visible = false;
                             this.dataGridView1.Columns[12].Visible = false;
                             this.dataGridView1.Columns[13].Visible = false;
-                            dataGridView1.Rows[i].Cells[8].Value = "Enter Result";
-                        }
+                            dataGridView1.Rows[i].Cells[8].Value = "";
                     }
+                }
                 dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
                 dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                 dataGridView1.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Regular);

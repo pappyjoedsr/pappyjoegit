@@ -493,6 +493,8 @@ namespace PappyjoeMVC.View
         }
         private void dataGridView1_treatment_paln_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+
             try
             {
                 if (e.ColumnIndex == 0 && e.RowIndex > -1)

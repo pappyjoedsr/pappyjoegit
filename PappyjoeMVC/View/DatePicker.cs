@@ -70,27 +70,27 @@ namespace PappyjoeMVC.View
             ((System.ComponentModel.ISupportInitialize)(this.Date_Picker)).BeginInit();
             this.SuspendLayout();
             // 
-            // DatePicker
+            // Date_Picker
             // 
             this.Date_Picker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Date_Picker.Location = new System.Drawing.Point(0, 0);
-            this.Date_Picker.Name = "DatePicker";
-            this.Date_Picker.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("DatePicker.OcxState")));
+            this.Date_Picker.Name = "Date_Picker";
+            this.Date_Picker.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Date_Picker.OcxState")));
             this.Date_Picker.Size = new System.Drawing.Size(346, 322);
             this.Date_Picker.TabIndex = 0;
-            //this.Date_Picker.SelectionChanged += new System.EventHandler(this.DatePicker_SelectionChanged);
             // 
-            // frmDatePicker
+            // DatePicker
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(346, 322);
             this.Controls.Add(this.Date_Picker);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmDatePicker";
+            this.Name = "DatePicker";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Date Picker";
             this.Closed += new System.EventHandler(this.frmDatePicker_Closed);
+            this.Load += new System.EventHandler(this.DatePicker_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Date_Picker)).EndInit();
             this.ResumeLayout(false);
 
@@ -105,5 +105,10 @@ namespace PappyjoeMVC.View
 			}
             Main_Calendar.Instance.frmDatePicker = null;
 		}
+
+        private void DatePicker_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

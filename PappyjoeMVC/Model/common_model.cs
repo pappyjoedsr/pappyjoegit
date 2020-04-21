@@ -33,6 +33,11 @@ namespace PappyjoeMVC.Model
             string docnam = db.scalar("select doctor_name from tbl_doctor Where id='" + doctor_id + "'");
             return docnam;
         }
+        public DataTable Load_Logintype(string doctor_id)
+        {
+            DataTable lgtype = db.table("select doctor_name,login_type from tbl_doctor Where id='" + doctor_id + "'");
+            return lgtype;
+        }
         public DataTable get_company_details()
         {
             DataTable docnam = db.table("select * from tbl_practice_details");

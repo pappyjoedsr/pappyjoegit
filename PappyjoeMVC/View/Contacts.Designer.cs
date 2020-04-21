@@ -41,6 +41,7 @@
             this.dgv_Contact = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.text_search = new System.Windows.Forms.TextBox();
@@ -48,6 +49,9 @@
             this.buttonsave = new System.Windows.Forms.Button();
             this.text_contact = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.Lab_InvalidNumber = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtMobNumber = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Contact)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +61,7 @@
             this.btn_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancel.ForeColor = System.Drawing.Color.White;
-            this.btn_Cancel.Location = new System.Drawing.Point(231, 90);
+            this.btn_Cancel.Location = new System.Drawing.Point(231, 113);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 28);
             this.btn_Cancel.TabIndex = 289;
@@ -80,7 +84,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(94, 142);
+            this.label2.Location = new System.Drawing.Point(94, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 17);
             this.label2.TabIndex = 285;
@@ -91,7 +95,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(59, 63);
+            this.label1.Location = new System.Drawing.Point(57, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 17);
             this.label1.TabIndex = 286;
@@ -119,6 +123,7 @@
             this.dgv_Contact.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
+            this.Column3,
             this.edit,
             this.delete});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -145,7 +150,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgv_Contact.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_Contact.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Contact.Size = new System.Drawing.Size(399, 364);
+            this.dgv_Contact.Size = new System.Drawing.Size(404, 385);
             this.dgv_Contact.TabIndex = 284;
             this.dgv_Contact.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Contact_CellClick);
             // 
@@ -167,7 +172,13 @@
             this.Column2.HeaderText = "Contact Name";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 324;
+            this.Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Mobile No";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // edit
             // 
@@ -192,7 +203,7 @@
             // text_search
             // 
             this.text_search.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_search.Location = new System.Drawing.Point(154, 140);
+            this.text_search.Location = new System.Drawing.Point(154, 150);
             this.text_search.Name = "text_search";
             this.text_search.Size = new System.Drawing.Size(328, 20);
             this.text_search.TabIndex = 283;
@@ -204,7 +215,7 @@
             this.buttonclear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonclear.ForeColor = System.Drawing.Color.White;
-            this.buttonclear.Location = new System.Drawing.Point(488, 60);
+            this.buttonclear.Location = new System.Drawing.Point(488, 49);
             this.buttonclear.Name = "buttonclear";
             this.buttonclear.Size = new System.Drawing.Size(67, 22);
             this.buttonclear.TabIndex = 281;
@@ -218,7 +229,7 @@
             this.buttonsave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonsave.ForeColor = System.Drawing.Color.White;
-            this.buttonsave.Location = new System.Drawing.Point(154, 90);
+            this.buttonsave.Location = new System.Drawing.Point(154, 113);
             this.buttonsave.Name = "buttonsave";
             this.buttonsave.Size = new System.Drawing.Size(75, 28);
             this.buttonsave.TabIndex = 282;
@@ -229,7 +240,7 @@
             // text_contact
             // 
             this.text_contact.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_contact.Location = new System.Drawing.Point(154, 61);
+            this.text_contact.Location = new System.Drawing.Point(154, 49);
             this.text_contact.Name = "text_contact";
             this.text_contact.Size = new System.Drawing.Size(328, 20);
             this.text_contact.TabIndex = 280;
@@ -245,12 +256,48 @@
             this.label3.TabIndex = 290;
             this.label3.Text = "Contacts";
             // 
+            // Lab_InvalidNumber
+            // 
+            this.Lab_InvalidNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lab_InvalidNumber.ForeColor = System.Drawing.Color.Red;
+            this.Lab_InvalidNumber.Location = new System.Drawing.Point(485, 85);
+            this.Lab_InvalidNumber.Name = "Lab_InvalidNumber";
+            this.Lab_InvalidNumber.Size = new System.Drawing.Size(103, 18);
+            this.Lab_InvalidNumber.TabIndex = 293;
+            this.Lab_InvalidNumber.Text = "Invalid number";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label5.Location = new System.Drawing.Point(57, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 17);
+            this.label5.TabIndex = 294;
+            this.label5.Text = "Mobile No";
+            // 
+            // txtMobNumber
+            // 
+            this.txtMobNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMobNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtMobNumber.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtMobNumber.Location = new System.Drawing.Point(154, 81);
+            this.txtMobNumber.MaxLength = 10;
+            this.txtMobNumber.Name = "txtMobNumber";
+            this.txtMobNumber.Size = new System.Drawing.Size(328, 20);
+            this.txtMobNumber.TabIndex = 291;
+            this.txtMobNumber.Leave += new System.EventHandler(this.txtMobNumber_Leave);
+            // 
             // Contacts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(967, 575);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.Lab_InvalidNumber);
+            this.Controls.Add(this.txtMobNumber);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.label4);
@@ -283,8 +330,12 @@
         private System.Windows.Forms.Button buttonsave;
         private System.Windows.Forms.TextBox text_contact;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Lab_InvalidNumber;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtMobNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn delete;
     }

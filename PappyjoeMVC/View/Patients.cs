@@ -173,6 +173,8 @@ namespace PappyjoeMVC.View
             LabVitalSign.ForeColor = Color.DimGray;
             labelremaindersms.BackColor = Color.White;
             labelremaindersms.ForeColor = Color.DimGray;
+            labellog.BackColor = Color.White;
+            labellog.ForeColor = Color.DimGray;
         }
 
         private void butt_Go_Click(object sender, EventArgs e)
@@ -2030,31 +2032,36 @@ namespace PappyjoeMVC.View
 
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
-            if (doctor_id != "1")
-            {
-                string id;
-                id = this.cntrl.doctr_privillage_for_addnewPatient(doctor_id);
-                if (int.Parse(id) > 0)
-                {
-                    MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                else
-                {
-                    var form2 = new Add_New_Patients();
-                    form2.doctor_id = doctor_id;
-                    form2.Closed += (sender1, args) => this.Close();
-                    this.Hide();
-                    form2.Show();
-                }
-            }
-            else
-            {
-                var form2 = new Add_New_Patients();
-                form2.doctor_id = doctor_id;
-                form2.Closed += (sender1, args) => this.Close();
-                this.Hide();
-                form2.Show();
-            }
+            //if (doctor_id != "1")
+            //{
+            //    string id;
+            //    id = this.cntrl.doctr_privillage_for_addnewPatient(doctor_id);
+            //    if (int.Parse(id) > 0)
+            //    {
+            //        MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            //    }
+            //    else
+            //    {
+            //        var form2 = new Add_New_Patients();
+            //        form2.doctor_id = doctor_id;
+            //        form2.Closed += (sender1, args) => this.Close();
+            //        this.Hide();
+            //        form2.Show();
+            //    }
+            //}
+            //else
+            //{
+            //    var form2 = new Add_New_Patients();
+            //    form2.doctor_id = doctor_id;
+            //    form2.Closed += (sender1, args) => this.Close();
+            //    this.Hide();
+            //    form2.Show();
+            //}
+            var form2 = new Practice_Details();
+            form2.doctor_id = doctor_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.Show();
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2527,21 +2534,27 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                panellog.Visible = true;
-                panellog.Location = new Point(23, 100);
-                DGV_Log.Visible = true;
-                lb_showall.Visible = false;
+                b_normal();
                 labellog.BackColor = Color.DodgerBlue;
                 labellog.ForeColor = Color.White;
                 DataTable rs_log = this.cntrl.log_details();
                 DGV_Log.DataSource = rs_log;
-                if (DGV_Log.Columns.Count > 0)
+                if(rs_log.Rows.Count>0)
                 {
                     DGV_Log.Columns[0].Width = 30;
                     DGV_Log.Columns[1].Width = 50;
                     DGV_Log.Columns[2].Width = 70;
                     DGV_Log.Columns[3].Width = 120;
                     DGV_Log.Columns[4].Width = 90;
+                    panellog.Visible = true;
+                    btnCancel.Visible = true;
+                    panellog.Location = new Point(23, 100);
+                    DGV_Log.Visible = true;
+                }
+                else
+                {
+                    panellog.Visible = false;
+                    btnCancel.Visible = false;
                 }
                 DGV_Log.EnableHeadersVisualStyles = false;
                 DGV_Log.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkGray;

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using PappyjoeMVC.Controller;
 using PappyjoeMVC.Model;
 using System.Drawing.Printing;
-
+using System.IO;
 
 namespace PappyjoeMVC.View
 {
@@ -168,6 +168,24 @@ namespace PappyjoeMVC.View
             paddedBounds.Offset(1, yOffset);
             TextRenderer.DrawText(e.Graphics, page.Text, Font, paddedBounds, page.ForeColor);
         }
+
+        private void radio_logo_yes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radio_logo_yes.Checked == true)
+            {
+                panel_logo.Show();
+            }
+            else
+            {
+                panel_logo.Hide();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             try
@@ -186,10 +204,10 @@ namespace PappyjoeMVC.View
                             if (dtp.Rows.Count > 0)
                             {
                                 string path = dtp.Rows[0]["path"].ToString();
-                                string curFile = this.cntrl.getserver() + "\\Pappyjoe_utilities\\Logo\\" + path;
-                                if (System.IO.File.Exists(curFile))
+                                //string curFile = this.cntrl.getserver() + "\\Pappyjoe_utilities\\Logo\\" + path;
+                                if (File.Exists(pathimage + "\\" + path))
                                 {
-                                    logo = System.Drawing.Image.FromFile(curFile);
+                                    logo = System.Drawing.Image.FromFile(path);
                                     e.Graphics.DrawImage(logo, 30, 50, 100, 100);
                                     xx = 150;
                                 }
@@ -910,10 +928,10 @@ namespace PappyjoeMVC.View
                             if (dtp.Rows.Count > 0)
                             {
                                 string path = dtp.Rows[0]["path"].ToString();
-                                string curFile = this.cntrl.getserver() + "\\Pappyjoe_utilities\\Logo\\" + path;
-                                if (System.IO.File.Exists(curFile))
+                                //string curFile = this.cntrl.getserver() + "\\Pappyjoe_utilities\\Logo\\" + path;
+                                if (File.Exists(pathimage + "\\" + path))
                                 {
-                                    logo = System.Drawing.Image.FromFile(curFile);
+                                    logo = System.Drawing.Image.FromFile(path);
                                     e.Graphics.DrawImage(logo, 30, 50, 100, 100);
                                     xx = 150;
                                 }
@@ -1569,15 +1587,13 @@ namespace PappyjoeMVC.View
                             if (dtp.Rows.Count > 0)
                             {
                                 string path = dtp.Rows[0]["path"].ToString();
-                                string curFile = this.cntrl.getserver() + "\\Pappyjoe_utilities\\Logo\\" + path;
-                                if (System.IO.File.Exists(curFile))
+                                //string curFile = this.cntrl.getserver() + "\\Pappyjoe_utilities\\Logo\\" + path;
+                                if (File.Exists(pathimage + "\\" + path))
                                 {
-                                    logo = System.Drawing.Image.FromFile(curFile);
+                                    logo = System.Drawing.Image.FromFile(path);
                                     e.Graphics.DrawImage(logo, 30, 50, 100, 100);
                                     xx = 150;
                                 }
-
-                                
                             }
                         }
                         catch (Exception ex)
