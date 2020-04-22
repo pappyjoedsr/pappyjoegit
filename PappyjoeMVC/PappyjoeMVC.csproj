@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>pappy icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxInterop.XtremeCalendarControl">
       <HintPath>C:\AxInterop.XtremeCalendarControl.dll</HintPath>
@@ -1639,6 +1642,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Pappy ion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pappy icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
