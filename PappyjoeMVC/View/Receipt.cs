@@ -112,7 +112,7 @@ namespace PappyjoeMVC.View
                 System.Data.DataTable pay = this.cntrl.get_total_payment(patient_id);
                 if (pay.Rows.Count > 0)
                 {
-                    Lab_Due.Visible = true;
+                    //Lab_Due.Visible = true;
                     Lab_Due.Text = pay.Rows[0]["total_payment"].ToString() + " due";
                 }
                 DataTable dtadvance = this.cntrl.Get_Advance(patient_id);
@@ -253,7 +253,30 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                print_setting();
+                System.Data.DataTable print = this.cntrl.get_printSettings();
+                if (print.Rows.Count > 0)
+                {
+                    combo_topmargin = print.Rows[0][4].ToString();
+                    combo_leftmargin = print.Rows[0][5].ToString();
+                    combo_bottommargin = print.Rows[0][6].ToString();
+                    combo_rightmargin = print.Rows[0][7].ToString();
+                    combo_paper_size = print.Rows[0][1].ToString();
+                    combo_footer_topmargin = print.Rows[0][22].ToString();
+                    rich_fullwidth = print.Rows[0][23].ToString();
+                    rich_leftsign = print.Rows[0][24].ToString();
+                    rich_rightsign = print.Rows[0][25].ToString();
+                    patient_details = print.Rows[0][14].ToString();
+                    med = print.Rows[0][15].ToString();
+                    patient = print.Rows[0][16].ToString();
+                    address = print.Rows[0][17].ToString();
+                    phone = print.Rows[0][18].ToString();
+                    blood = print.Rows[0][20].ToString();
+                    gender = print.Rows[0][21].ToString();
+                    orientation = print.Rows[0][2].ToString();
+                    includeheader = print.Rows[0]["include_header"].ToString();
+                    includelogo = print.Rows[0]["include_logo"].ToString();
+                }
+
                 printall = "NO";
                 print_html();
             }
@@ -262,53 +285,14 @@ namespace PappyjoeMVC.View
                 MessageBox.Show("Printing Error..", "Print error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
-        public void print_setting()
-        {
-            System.Data.DataTable print = this.cntrl.get_printSettings();
-            if (print.Rows.Count > 0)
-            {
-                combo_topmargin = print.Rows[0][4].ToString();
-                combo_leftmargin = print.Rows[0][5].ToString();
-                combo_bottommargin = print.Rows[0][6].ToString();
-                combo_rightmargin = print.Rows[0][7].ToString();
-                combo_paper_size = print.Rows[0][1].ToString();
-                combo_footer_topmargin = print.Rows[0][22].ToString();
-                rich_fullwidth = print.Rows[0][23].ToString();
-                rich_leftsign = print.Rows[0][24].ToString();
-                rich_rightsign = print.Rows[0][25].ToString();
-
-                patient_details = print.Rows[0][14].ToString();
-                med = print.Rows[0][15].ToString();
-                patient = print.Rows[0][16].ToString();
-                address = print.Rows[0][17].ToString();
-                phone = print.Rows[0][18].ToString();
-                blood = print.Rows[0][20].ToString();
-                gender = print.Rows[0][21].ToString();
-                orientation = print.Rows[0][2].ToString();
-                includeheader = print.Rows[0]["include_header"].ToString();
-                includelogo = print.Rows[0]["include_logo"].ToString();
-            }
-        }
-        private void btn_Add_Click(object sender, EventArgs e)
-        {
-            var form2 = new Add_Receipt();
-            form2.doctor_id = doctor_id;
-            form2.patient_id = patient_id;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.ShowDialog();
-            form2.Dispose();
-        }
         private void print_html()
         {
             try
             {
-
                 System.Data.DataTable dtp = this.cntrl.get_company_details();
                 System.Data.DataTable dt1 = this.cntrl.Get_Patient_Details(patient_id);
                 string clinicn = "";
                 string Clinic = "";
-                string path = "";
                 clinicn = dtp.Rows[0][1].ToString();
                 Clinic = clinicn.Replace("¤", "'");
                 string doctorName = "";
@@ -328,9 +312,8 @@ namespace PappyjoeMVC.View
                     str_pincode = dtp.Rows[0]["pincode"].ToString();
                     str_email = dtp.Rows[0]["email"].ToString();
                     str_website = dtp.Rows[0]["website"].ToString();
-                    path= dtp.Rows[0]["path"].ToString();
-                    logo_name = path;
-                }//
+                    logo_name= dtp.Rows[0]["path"].ToString();
+                }
                 string strfooter1 = "";
                 string strfooter2 = "";
                 string strfooter3 = "";
@@ -353,13 +336,6 @@ namespace PappyjoeMVC.View
                 sWrite.WriteLine("<head>");
                 sWrite.WriteLine("</head>");
                 sWrite.WriteLine("<body >");
-                sWrite.WriteLine("<br>");//style='width:100px;height:100px;'
-                //sWrite.WriteLine("<table align='center'   style='width:700px;border: 1px ;border-collapse: collapse;' >");
-                //sWrite.WriteLine("<tr>");
-                //sWrite.WriteLine("<th align='center'><FONT COLOR=black FACE='Segoe UI' SIZE=5><b>Receipt<b></FONT></th>");
-                ////sWrite.WriteLine("<td width=450px></td>");
-                //sWrite.WriteLine("</tr>");
-                //sWrite.WriteLine("</table>");
                 sWrite.WriteLine("<br>");
                 if (includeheader == "1")
                 {
@@ -372,23 +348,21 @@ namespace PappyjoeMVC.View
                             {
                                 sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                                 sWrite.WriteLine("<tr>");
-                                sWrite.WriteLine("<td width='30px' height='50px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "'style='width:70px;height:70px;' ></td>  ");
-                                sWrite.WriteLine("<td width='870px' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=4><b>&nbsp;" + header1 + "</font> <br><FONT  COLOR=black  face='Segoe UI' SIZE=2>&nbsp;" + header2 + "<br>&nbsp;" + header3 + " </b></td></tr>");
-                                //sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;&nbsp;" + header2 + "</b></font></td></tr>");
-                                //sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=3><b>&nbsp;&nbsp;" + header3 + "</b></font></td></tr>");
-                                //sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
+                                sWrite.WriteLine("<td width='100' height='75px' align='left' rowspan='3'><img src='" + Appath + "\\" + logo_name + "' width='77' height='78' style='width:100px;height:100px;'></td>  ");
+                                sWrite.WriteLine("<td width='588' align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
+                                sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;&nbsp;" + header2 + "</font></td></tr>");
+                                sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" + header3 + "</font></td></tr>");
+                                sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
                                 sWrite.WriteLine("</table>");
                             }
                             else
                             {
                                 sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                                 sWrite.WriteLine("<tr>");
-                                sWrite.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
-                                sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;" + header2 + "</font></td></tr>");
-                                sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + header3 + "</font></td></tr>");
-
+                                sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
+                                sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;&nbsp;" + header2 + "</font></td></tr>");
+                                sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" + header3 + "</font></td></tr>");
                                 sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
-
                                 sWrite.WriteLine("</table>");
                             }
                         }
@@ -396,12 +370,10 @@ namespace PappyjoeMVC.View
                         {
                             sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                             sWrite.WriteLine("<tr>");
-                            sWrite.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
-                            sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;" + header2 + "</font></td></tr>");
-                            sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + header3 + "</font></td></tr>");
-
+                            sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
+                            sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;&nbsp;" + header2 + "</font></td></tr>");
+                            sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" + header3 + "</font></td></tr>");
                             sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
-
                             sWrite.WriteLine("</table>");
                         }
                     }
@@ -409,27 +381,23 @@ namespace PappyjoeMVC.View
                     {
                         sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
-                        sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;" + header2 + "</font></td></tr>");
-                        sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + header3 + "</font></td></tr>");
+                        sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5>&nbsp;" + header1 + "</font></td></tr>");
+                        sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;&nbsp;" + header2 + "</font></td></tr>");
+                        sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;&nbsp;" + header3 + "</font></td></tr>");
                         sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
                         sWrite.WriteLine("</table>");
                     }
-                }//
+                }
                 else
                 {
                     sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td  align='left' height='20px'><FONT  COLOR=black  face='Segoe UI' SIZE=5></font></td></tr>");
-                    sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3></font></td></tr>");
-                    sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td></tr>");
+                    sWrite.WriteLine("<td  align='left' height='25px'><FONT  COLOR=black  face='Segoe UI' SIZE=5></font></td></tr>");
+                    sWrite.WriteLine("<tr><td  align='left' height='25px'><FONT COLOR=black FACE='Segoe UI' SIZE=3></font></td></tr>");
+                    sWrite.WriteLine("<tr><td align='left' height='40' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td></tr>");
                     sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
-
                     sWrite.WriteLine("</table>");
                 }
-                sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
-                sWrite.WriteLine("<tr><td align='left'  ><hr/></td></tr>");
-                sWrite.WriteLine("</table>");
                 string sexage = "";
                 int Dexist = 0;
                 string address = "";
@@ -451,10 +419,10 @@ namespace PappyjoeMVC.View
                         sexage = dt1.Rows[0]["age"].ToString() + " Years";
                     }
                 }
-                sWrite.WriteLine(" <td align='left' height=25><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + dt1.Rows[0]["pt_name"].ToString() + "</b><i> (" + sexage + ")</i></font></td>");
+                sWrite.WriteLine(" <td align='left' height=25><FONT COLOR=black FACE='Geneva, Arial' SIZE=2><b>" + dt1.Rows[0]["pt_name"].ToString() + "</b><i> (" + sexage + ")</i></font></td>");
                 sWrite.WriteLine(" </tr>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>Patient Id:&nbsp;" + dt1.Rows[0]["pt_id"].ToString() + " </font></td>");
+                sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>Patient Id:" + dt1.Rows[0]["pt_id"].ToString() + " </font></td>");
                 sWrite.WriteLine(" </tr>");
                 Dexist = 0;
                 if (dt1.Rows[0]["street_address"].ToString() != "")
@@ -492,22 +460,21 @@ namespace PappyjoeMVC.View
                 if (address != "")
                 {
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + address + " </font></td>");
+                    sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>" + address + " </font></td>");
                     sWrite.WriteLine(" </tr>");
                 }
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dt1.Rows[0]["primary_mobile_number"].ToString() + " </font></td>");
+                sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>" + dt1.Rows[0]["primary_mobile_number"].ToString() + " </font></td>");
                 sWrite.WriteLine(" </tr>");
                 if (dt1.Rows[0]["email_address"].ToString() != "")
                 {
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + dt1.Rows[0]["email_address"].ToString() + " </font></td>");
+                    sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>" + dt1.Rows[0]["email_address"].ToString() + " </font></td>");
                     sWrite.WriteLine(" </tr>");
                 }
                 sWrite.WriteLine("<tr><td colspan=2><hr></td></tr>");
                 sWrite.WriteLine("</table>");
                 string strsql = "";
-
                 if (printall == "YES")
                 {
                     strsql = "select * from tbl_payment where pt_id='" + patient_id + "'";
@@ -525,29 +492,28 @@ namespace PappyjoeMVC.View
                     { tdate = dt_cf.Rows[0]["payment_date"].ToString(); }
                     else
                         tdate = null;
+                    sWrite.WriteLine("<br>");
                     sWrite.WriteLine("<table align='center'   style='width:700px;border: 1px ;border-collapse: collapse;' >");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td><FONT COLOR=black FACE='Segoe UI' SIZE=5><b>Receipt<b></FONT></td>");
+                    sWrite.WriteLine("<td><FONT COLOR=black FACE='Geneva, Arial' SIZE=5>Payment</FONT></td>");
                     sWrite.WriteLine("<td width=450px></td>");
-
                     if (printall == "YES")
                     {
-                        sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> <FONT COLOR=black>Date : </FONT>" + DateTime.Now.ToString("dd MMM yyyy") + "</font></td>");
+                        sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2> <FONT COLOR=black>Date : </FONT>" + DateTime.Now.ToString("dd MMM yyyy") + "</font></td>");
                     }
                     else
                     {
-                        sWrite.WriteLine("<td align='left' ><FONT COLOR=black FACE='Segoe UI' SIZE=2> <FONT COLOR=black>Date : </FONT>" + Convert.ToDateTime(tdate).ToString("dd MMM yyyy") + "</font></td>");
+                        sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2> <FONT COLOR=black>Date : </FONT>" + Convert.ToDateTime(tdate).ToString("dd MMM yyyy") + "</font></td>");
                     }
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("</table>");
-                    sWrite.WriteLine("<br>");
                     sWrite.WriteLine("<table   align='center' style='width:700px;border: 1px ;border-collapse: collapse;' >");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td width='40' height='30' align='left'  bgcolor='#dcdcdc'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Sl</b></font></td>");
-                    sWrite.WriteLine("<td width='165' align='left'  bgcolor='#dcdcdc' height='30'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Receipt Number</b></font></td>");
-                    sWrite.WriteLine("<td width='165' align='left' bgcolor='#dcdcdc'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Invoice Number</b></font></td>");
-                    sWrite.WriteLine("<td width='165' align='left' bgcolor='#dcdcdc'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Procedure Name</b></font></td>");
-                    sWrite.WriteLine("<td width='165' align='right' bgcolor='#dcdcdc'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Amount Paid</b></font></td>");
+                    sWrite.WriteLine("<td width='36' height='30' align='center'  bgcolor='#dcdcdc'><FONT COLOR=black FACE=' Arial' SIZE=3>Sl</font></td>");
+                    sWrite.WriteLine("<td width='135' align='center'  bgcolor='#dcdcdc' height='30'><FONT COLOR=black FACE=' Arial' SIZE=3>Receipt Number</font></td>");
+                    sWrite.WriteLine("<td width='147' align='center' bgcolor='#dcdcdc'><FONT COLOR=black FACE='Geneva, Arial' SIZE=3>Invoice Number</font></td>");
+                    sWrite.WriteLine("<td width='259' align='left' bgcolor='#dcdcdc'><FONT COLOR=black FACE='Geneva, Arial' SIZE=3>Procedure Name</font></td>");
+                    sWrite.WriteLine("<td width='99' align='right' bgcolor='#dcdcdc'><FONT COLOR=black FACE='Geneva, Arial' SIZE=3>Amount Paid</font></td>");
                     sWrite.WriteLine("</tr>");
                     strsql = "";
                     if (printall == "YES")
@@ -563,11 +529,11 @@ namespace PappyjoeMVC.View
                     for (int i = 0; i < dt_payment.Rows.Count; i++)
                     {
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td align='left' width='40 height='30'><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + (i + 1) + " </font></td>");
-                        sWrite.WriteLine("<td align='left' width='165'  ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dt_payment.Rows[i]["receipt_no"].ToString() + " </font></td>");  
-                        sWrite.WriteLine("<td align='left' width='165'><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dt_payment.Rows[i]["invoice_no"].ToString() + " </font></td>");
-                        sWrite.WriteLine("<td align='left' width='165'><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + dt_payment.Rows[i]["procedure_name"].ToString() + " </font></td>");
-                        sWrite.WriteLine("<td align='right'   width='165'><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + String.Format("{0:C}", decimal.Parse(dt_payment.Rows[i]["amount_paid"].ToString())) + " </font></td>");
+                        sWrite.WriteLine("<td align='center'  height='30'><FONT COLOR=black FACE=' Arial' SIZE=2>" + (i + 1) + " </font></td>");
+                        sWrite.WriteLine("<td align='center'   width='135'  ><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>&nbsp;" + dt_payment.Rows[i]["receipt_no"].ToString() + " </font></td>");
+                        sWrite.WriteLine("<td align='center'   width='147'><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>&nbsp;" + dt_payment.Rows[i]["invoice_no"].ToString() + " </font></td>");
+                        sWrite.WriteLine("<td align='left'   width='259'><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>&nbsp;" + dt_payment.Rows[i]["procedure_name"].ToString() + " </font></td>");
+                        sWrite.WriteLine("<td align='right'   width='99'><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>&nbsp;" + String.Format("{0:C}", decimal.Parse(dt_payment.Rows[i]["amount_paid"].ToString())) + " </font></td>");
                         sWrite.WriteLine("</tr>");
                         total = total + decimal.Parse(dt_payment.Rows[i]["amount_paid"].ToString());
                     }
@@ -577,34 +543,45 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<td></td>");
                     sWrite.WriteLine("<td></td>");
                     sWrite.WriteLine("<td></td>");
-                    sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>" + String.Format("{0:C}", decimal.Parse(total.ToString())) + " </b></font></td>");
+                    sWrite.WriteLine("<td align='right' ><FONT COLOR=black FACE='Geneva, Arial' SIZE=3><b>" + String.Format("{0:C}", decimal.Parse(total.ToString())) + " </b></font></td>");
                     sWrite.WriteLine("</tr>");
-                    sWrite.WriteLine("<tr><td align='right' colspan=5><FONT COLOR=black FACE='Segoe UI' SIZE=2>(<i>" + NumWordsWrapper(double.Parse(total.ToString())) + "</i>)</fount> </td></tr>");
+                    sWrite.WriteLine("<tr><td align='right' colspan=5><FONT COLOR=black FACE='Geneva, Arial' SIZE=2>(<i>" + NumWordsWrapper(double.Parse(total.ToString())) + "</i>)</fount> </td></tr>");
                     sWrite.WriteLine("</table>");
                 }
-                sWrite.WriteLine("<br>");
-                sWrite.WriteLine("<br>");
+
+                //footer
                 sWrite.WriteLine("<table align='center'   style='width:700px;border: 1px ;border-collapse: collapse;' >");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td align='center' height='22'  ><FONT COLOR=black FACE='Segoe UI' SIZE=1><b>&nbsp;" + strfooter1 + "</b></font></td>");
+                sWrite.WriteLine("<td align='center' height='22'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + strfooter1 + "</font></td>");
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td align='center' height='22'  ><FONT COLOR=black FACE='Segoe UI' SIZE=1><b>&nbsp;" + strfooter2 + "</b></font></td>");
+                sWrite.WriteLine("<td align='center' height='22'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + strfooter2 + "</font></td>");
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("<tr>");
-                sWrite.WriteLine("<td align='center' height='22'  ><FONT COLOR=black FACE='Segoe UI' SIZE=1><b>&nbsp;" + strfooter3 + "</b></font></td>");
+                sWrite.WriteLine("<td align='center' height='22'  ><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2>&nbsp;" + strfooter3 + "</font></td>");
                 sWrite.WriteLine("</tr>");
                 sWrite.WriteLine("</table>");
                 sWrite.WriteLine("<script>window.print();</script>");
                 sWrite.WriteLine("</body>");
-                sWrite.WriteLine("</html>");  
+                sWrite.WriteLine("</html>");
                 sWrite.Close();
                 System.Diagnostics.Process.Start(Apppath + "\\Receipt.html");
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Printing Error..", "Print error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-        }  
+        }
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            var form2 = new Add_Receipt();
+            form2.doctor_id = doctor_id;
+            form2.patient_id = patient_id;
+            form2.Closed += (sender1, args) => this.Close();
+            this.Hide();
+            form2.ShowDialog();
+            form2.Dispose();
+        }
         private void Dgv_payment_MouseClick(object sender, MouseEventArgs e)
         {
             int currentMouseOverRow = Dgv_payment.HitTest(e.X, e.Y).RowIndex;
@@ -951,9 +928,31 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                print_setting();
-                printall = "YES";
-                print_html();
+                    System.Data.DataTable print = this.cntrl.get_printSettings();
+                    if (print.Rows.Count > 0)
+                    {
+                        combo_topmargin = print.Rows[0][4].ToString();
+                        combo_leftmargin = print.Rows[0][5].ToString();
+                        combo_bottommargin = print.Rows[0][6].ToString();
+                        combo_rightmargin = print.Rows[0][7].ToString();
+                        combo_paper_size = print.Rows[0][1].ToString();
+                        combo_footer_topmargin = print.Rows[0][22].ToString();
+                        rich_fullwidth = print.Rows[0][23].ToString();
+                        rich_leftsign = print.Rows[0][24].ToString();
+                        rich_rightsign = print.Rows[0][25].ToString();
+                        patient_details = print.Rows[0][14].ToString();
+                        med = print.Rows[0][15].ToString();
+                        patient = print.Rows[0][16].ToString();
+                        address = print.Rows[0][17].ToString();
+                        phone = print.Rows[0][18].ToString();
+                        blood = print.Rows[0][20].ToString();
+                        gender = print.Rows[0][21].ToString();
+                        orientation = print.Rows[0][2].ToString();
+                        includeheader = print.Rows[0]["include_header"].ToString();
+                        includelogo = print.Rows[0]["include_logo"].ToString();
+                    }
+                    printall = "YES";
+                    print_html();
             }
             catch
             {

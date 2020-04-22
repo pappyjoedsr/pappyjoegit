@@ -481,7 +481,7 @@ namespace PappyjoeMVC.View
                 {
                     //string path = "C:\\Users\\";
                     string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                    MessageBox.Show("Successfully Exported to " + path + "Documents as Excel File", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Successfully Exported to " + path + " as Excel File", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

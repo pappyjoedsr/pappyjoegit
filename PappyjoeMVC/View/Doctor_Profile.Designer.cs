@@ -261,6 +261,8 @@
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_clinic_specialdelete = new System.Windows.Forms.Button();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.lblStaffType = new System.Windows.Forms.Label();
+            this.cmbStaffType = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             this.panel_edit_dr.SuspendLayout();
             this.panel_DoctorProfile_Add.SuspendLayout();
@@ -546,6 +548,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_edit_dr.BackColor = System.Drawing.Color.White;
+            this.panel_edit_dr.Controls.Add(this.lblStaffType);
+            this.panel_edit_dr.Controls.Add(this.cmbStaffType);
             this.panel_edit_dr.Controls.Add(this.listpatientsearch);
             this.panel_edit_dr.Controls.Add(this.txtPic);
             this.panel_edit_dr.Controls.Add(this.panel8);
@@ -978,7 +982,7 @@
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(142, 6);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(19, 15);
+            this.label25.Size = new System.Drawing.Size(20, 15);
             this.label25.TabIndex = 4;
             this.label25.Text = "To";
             // 
@@ -1412,16 +1416,16 @@
             // 
             this.rich_about.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rich_about.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.rich_about.Location = new System.Drawing.Point(509, 51);
+            this.rich_about.Location = new System.Drawing.Point(380, 78);
             this.rich_about.Name = "rich_about";
-            this.rich_about.Size = new System.Drawing.Size(210, 44);
+            this.rich_about.Size = new System.Drawing.Size(232, 23);
             this.rich_about.TabIndex = 28;
             this.rich_about.Text = "";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(412, 53);
+            this.label6.Location = new System.Drawing.Point(327, 79);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 15);
             this.label6.TabIndex = 27;
@@ -1430,9 +1434,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(230, 71);
+            this.label5.Location = new System.Drawing.Point(228, 78);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 15);
+            this.label5.Size = new System.Drawing.Size(93, 15);
             this.label5.TabIndex = 27;
             this.label5.Text = "years experience";
             // 
@@ -1520,7 +1524,7 @@
             "58",
             "59",
             "60"});
-            this.combo_year.Location = new System.Drawing.Point(160, 67);
+            this.combo_year.Location = new System.Drawing.Point(160, 75);
             this.combo_year.Name = "combo_year";
             this.combo_year.Size = new System.Drawing.Size(58, 23);
             this.combo_year.TabIndex = 26;
@@ -1528,7 +1532,7 @@
             // radio_female
             // 
             this.radio_female.AutoSize = true;
-            this.radio_female.Location = new System.Drawing.Point(235, 42);
+            this.radio_female.Location = new System.Drawing.Point(233, 45);
             this.radio_female.Name = "radio_female";
             this.radio_female.Size = new System.Drawing.Size(63, 19);
             this.radio_female.TabIndex = 24;
@@ -1539,7 +1543,7 @@
             // radio_male
             // 
             this.radio_male.AutoSize = true;
-            this.radio_male.Location = new System.Drawing.Point(160, 42);
+            this.radio_male.Location = new System.Drawing.Point(160, 45);
             this.radio_male.Name = "radio_male";
             this.radio_male.Size = new System.Drawing.Size(51, 19);
             this.radio_male.TabIndex = 24;
@@ -1553,7 +1557,7 @@
             this.text_drname.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.text_drname.Location = new System.Drawing.Point(160, 13);
             this.text_drname.Name = "text_drname";
-            this.text_drname.Size = new System.Drawing.Size(236, 23);
+            this.text_drname.Size = new System.Drawing.Size(268, 23);
             this.text_drname.TabIndex = 23;
             // 
             // textPassword
@@ -1579,10 +1583,10 @@
             // 
             this.text_phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_phone.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.text_phone.Location = new System.Drawing.Point(509, 13);
+            this.text_phone.Location = new System.Drawing.Point(432, 49);
             this.text_phone.MaxLength = 25;
             this.text_phone.Name = "text_phone";
-            this.text_phone.Size = new System.Drawing.Size(210, 23);
+            this.text_phone.Size = new System.Drawing.Size(180, 23);
             this.text_phone.TabIndex = 10;
             // 
             // button_GoToClinic
@@ -2283,7 +2287,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(412, 18);
+            this.label19.Location = new System.Drawing.Point(323, 49);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(91, 15);
             this.label19.TabIndex = 2;
@@ -2838,12 +2842,37 @@
             // 
             this.openFileDialog2.FileName = "openFileDialog2";
             // 
+            // lblStaffType
+            // 
+            this.lblStaffType.AutoSize = true;
+            this.lblStaffType.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblStaffType.Location = new System.Drawing.Point(441, 15);
+            this.lblStaffType.Name = "lblStaffType";
+            this.lblStaffType.Size = new System.Drawing.Size(59, 15);
+            this.lblStaffType.TabIndex = 73;
+            this.lblStaffType.Text = "Staff Type";
+            this.lblStaffType.Visible = false;
+            // 
+            // cmbStaffType
+            // 
+            this.cmbStaffType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStaffType.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbStaffType.FormattingEnabled = true;
+            this.cmbStaffType.Items.AddRange(new object[] {
+            "DOCTOR",
+            "STAFF"});
+            this.cmbStaffType.Location = new System.Drawing.Point(506, 12);
+            this.cmbStaffType.Name = "cmbStaffType";
+            this.cmbStaffType.Size = new System.Drawing.Size(106, 23);
+            this.cmbStaffType.TabIndex = 72;
+            this.cmbStaffType.Visible = false;
+            // 
             // Doctor_Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1362, 742);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.panel_clinicaldetails);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel_edit_dr);
@@ -3095,5 +3124,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_member;
         private System.Windows.Forms.DataGridViewImageColumn Del_Mebr;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.Label lblStaffType;
+        private System.Windows.Forms.ComboBox cmbStaffType;
     }
 }

@@ -13,21 +13,6 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>20.04.0.0</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,49 +33,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>pappy icon.ico</ApplicationIcon>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxInterop.XtremeCalendarControl">
       <HintPath>C:\AxInterop.XtremeCalendarControl.dll</HintPath>
@@ -99,16 +41,16 @@
       <HintPath>C:\Interop.XtremeCalendarControl.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel %282%29">
-      <HintPath>C:\Microsoft.Office.Interop.Excel (2).dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\MySql.Data.DLL</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>F:\vandana\MySqlBackup.NET_v2.3\.net 4.5\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySqlBackup">
-      <HintPath>C:\MySqlBackup.dll</HintPath>
+      <HintPath>F:\vandana\MySqlBackup.NET_v2.3\.net 4.5\MySqlBackup.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -139,6 +81,7 @@
     <Compile Include="Controller\Appointment_for_each_patient_group_controller.cs" />
     <Compile Include="Controller\Attachments_controller.cs" />
     <Compile Include="Controller\Autoid_Generation_controller.cs" />
+    <Compile Include="Controller\Backup_and_Restore_controller.cs" />
     <Compile Include="Controller\batchsale_controller.cs" />
     <Compile Include="Controller\Billing_controller.cs" />
     <Compile Include="Controller\Booking_controller.cs" />
@@ -416,6 +359,12 @@
     </Compile>
     <Compile Include="View\AutomaticId_generation.Designer.cs">
       <DependentUpon>AutomaticId_generation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Backup_and_Restore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Backup_and_Restore.Designer.cs">
+      <DependentUpon>Backup_and_Restore.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Batch_Sale.cs">
       <SubType>Form</SubType>
@@ -1014,9 +963,7 @@
     <Compile Include="View\New_Debit_Account.designer.cs">
       <DependentUpon>New_Debit_Account.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Patients.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="View\Patients.cs" />
     <Compile Include="View\Patients.Designer.cs">
       <DependentUpon>Patients.cs</DependentUpon>
     </Compile>
@@ -1209,6 +1156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AutomaticId_generation.resx">
       <DependentUpon>AutomaticId_generation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Backup_and_Restore.resx">
+      <DependentUpon>Backup_and_Restore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Batch_Sale.resx">
       <DependentUpon>Batch_Sale.cs</DependentUpon>
@@ -1687,19 +1637,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Pappy ion.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ArrowRight.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="pappy icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

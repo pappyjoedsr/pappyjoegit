@@ -12,7 +12,7 @@ namespace PappyjoeMVC.View
         public string idd = "";
         int status_pre = 0;
         DataTable dt_mail = new DataTable();
-        public string dr_id = "1"; string userid = "";
+        public string doctor_id = "1"; string userid = "";
         public bool flag_mail = false; string id = "";
         public string status = "No";
         string calendrcolor = "0";
@@ -76,7 +76,7 @@ namespace PappyjoeMVC.View
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
-                DataTable d1 = this.cntrl.Get_DoctorId(dr_id);
+                DataTable d1 = this.cntrl.Get_DoctorId(doctor_id);
                 if (d1.Rows.Count > 0)
                 {
                     if (d1.Rows[0]["login_type"].ToString() == "admin")
@@ -174,7 +174,7 @@ namespace PappyjoeMVC.View
                     {
                         id = dataGridView_Staff.Rows[e.RowIndex].Cells[0].Value.ToString();
                         var form2 = new Doctor_Profile();
-                        form2.doctor_id = id;
+                        form2.doctor_id = doctor_id;
                         form2.doc = id;
                         form2.Show();
                     }

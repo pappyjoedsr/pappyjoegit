@@ -178,42 +178,42 @@ namespace PappyjoeMVC.Model
 
             return dt;
         }
-        //public void backupdb(string file)
-        //{
-        //    try
-        //    {
-        //        if (this.OpenConnection() == true)
-        //        {
-        //            MySqlCommand cmd = new MySqlCommand();
-        //            MySqlBackup mb = new MySqlBackup(cmd);
-        //            cmd.Connection = con;
-        //            mb.ExportToFile(file);
-        //            this.CloseConnection();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
-        //}
-        //public void restoredb(string file)
-        //{
-        //    try
-        //    {
-        //        if (this.OpenConnection() == true)
-        //        {
-        //            MySqlCommand cmd = new MySqlCommand();
-        //            MySqlBackup mb = new MySqlBackup(cmd);
-        //            cmd.Connection = con;
-        //            mb.ImportFromFile(file);
-        //            this.CloseConnection();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
-        //}
+        public void backupdb(string file)
+        {
+            try
+            {
+                if (this.OpenConnection() == true)
+                {
+                    MySqlCommand cmd = new MySqlCommand();
+                    MySqlBackup mb = new MySqlBackup(cmd);
+                    cmd.Connection = con;
+                    mb.ExportToFile(file);
+                    this.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        public void restoredb(string file)
+        {
+            try
+            {
+                if (this.OpenConnection() == true)
+                {
+                    MySqlCommand cmd = new MySqlCommand();
+                    MySqlBackup mb = new MySqlBackup(cmd);
+                    cmd.Connection = con;
+                    mb.ImportFromFile(file);
+                    this.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
         public static bool checkforemail(string email)
         {
             bool isvalid = false;

@@ -341,7 +341,7 @@
             this.panel7.BackColor = System.Drawing.Color.DarkGray;
             this.panel7.Location = new System.Drawing.Point(1045, 106);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1, 804);
+            this.panel7.Size = new System.Drawing.Size(1, 796);
             this.panel7.TabIndex = 279;
             // 
             // panel5
@@ -586,7 +586,7 @@
             this.panel4.Controls.Add(this.panelappointments);
             this.panel4.Location = new System.Drawing.Point(1048, 109);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(315, 643);
+            this.panel4.Size = new System.Drawing.Size(315, 635);
             this.panel4.TabIndex = 277;
             // 
             // paneltreatments
@@ -910,7 +910,7 @@
             this.label46.Controls.Add(this.Lab_AmountPaid);
             this.label46.Controls.Add(this.Lab_TotalCost);
             this.label46.Controls.Add(this.Lab_DueAftrPaymnt);
-            this.label46.Location = new System.Drawing.Point(2, 654);
+            this.label46.Location = new System.Drawing.Point(2, 646);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(1037, 74);
             this.label46.TabIndex = 272;
@@ -1013,7 +1013,7 @@
             this.Lab_Msg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.Lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lab_Msg.Location = new System.Drawing.Point(214, 216);
+            this.Lab_Msg.Location = new System.Drawing.Point(214, 212);
             this.Lab_Msg.Name = "Lab_Msg";
             this.Lab_Msg.Size = new System.Drawing.Size(568, 25);
             this.Lab_Msg.TabIndex = 278;
@@ -1038,7 +1038,7 @@
             this.panel2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.panel2.Location = new System.Drawing.Point(4, 110);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1037, 543);
+            this.panel2.Size = new System.Drawing.Size(1037, 535);
             this.panel2.TabIndex = 281;
             // 
             // dateTimePickerrepo2
@@ -1136,7 +1136,7 @@
             this.Grvreports.RowHeadersVisible = false;
             this.Grvreports.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Grvreports.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grvreports.Size = new System.Drawing.Size(1034, 452);
+            this.Grvreports.Size = new System.Drawing.Size(1034, 444);
             this.Grvreports.TabIndex = 137;
             // 
             // btnprint
@@ -1396,7 +1396,6 @@
             this.toolStripButton9.Size = new System.Drawing.Size(29, 37);
             this.toolStripButton9.Text = "toolStripButton9";
             this.toolStripButton9.ToolTipText = "Pappyjoe Version 16.2";
-            //this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
             // 
             // toolStripDropDownButton1
             // 
@@ -1429,7 +1428,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1361, 749);
+            this.ClientSize = new System.Drawing.Size(1361, 741);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel7);

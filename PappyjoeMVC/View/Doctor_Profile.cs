@@ -21,7 +21,7 @@ namespace PappyjoeMVC.View
         public string patient_id = "0";
         public string doc = "0";
         Connection db = new Connection();
-        string clinicpath; 
+        public string clinicpath,strlogin_type=""; 
         string  clinicservice, clinicspecial;
         public Doctor_Profile()
         {
@@ -483,9 +483,15 @@ namespace PappyjoeMVC.View
             cmbDrProfile.Text = "Select values";
             toolStripButton7.BackColor = Color.SkyBlue;
             toolStripButton9.ToolTipText = PappyjoeMVC.Model.GlobalVariables.Version;
-
             if (PappyjoeMVC.Model.Connection.MyGlobals.loginType != "staff")
             {
+                toolStripButton1.Text = this.cntrl.Load_CompanyName();
+                DataTable docnam = this.cntrl.Load_Logintype(doctor_id);
+                if (docnam.Rows.Count > 0)
+                {
+                    toolStripTextDoctor.Text = "Logged In As : " + docnam.Rows[0][0].ToString();
+                    strlogin_type = docnam.Rows[0]["login_type"].ToString();
+                }
                 if (doc != "0")
                 {
                     this.FormBorderStyle = FormBorderStyle.None;
@@ -497,13 +503,6 @@ namespace PappyjoeMVC.View
                 else
                 {
                     tempId = doctor_id;
-                }
-               
-                    toolStripButton1.Text = this.cntrl.Load_CompanyName();
-                string docnam = this.cntrl.Get_DoctorName(doctor_id);
-                if (docnam != "")
-                {
-                    toolStripTextDoctor.Text = "Logged In As : " + docnam;
                 }
                 //listpatientsearch.Hide();
                 panel_clinicaldetails.Visible = false;
@@ -531,6 +530,17 @@ namespace PappyjoeMVC.View
                 text_phone.Text = name.Rows[0]["mobile_number"].ToString();
                 text_email.Text = name.Rows[0]["email_id"].ToString();
                 textPassword.Text = name.Rows[0]["password"].ToString();
+                if ((name.Rows[0]["login_type"].ToString() != "admin") && strlogin_type == "admin")
+                {
+                    cmbStaffType.Visible = true;
+                    lblStaffType.Visible = true;
+                    if (name.Rows[0]["login_type"].ToString() == "doctor")
+                    {
+                        cmbStaffType.SelectedIndex = 0;
+                    }
+                    else
+                    { cmbStaffType.SelectedIndex = 1; }
+                }
                 try
                 {
                     string curFile = db.server() + "\\Pappyjoe_utilities\\doctor_image\\" + doctor_id;
@@ -978,11 +988,11 @@ namespace PappyjoeMVC.View
                                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-                        this.cntrl.update_doctor(doctor_id, text_drname.Text,text_phone.Text, text_email.Text, gender, combo_year.Text, rich_about.Text, txtPic.Text);
+                        this.cntrl.update_doctor(doctor_id, text_drname.Text,text_phone.Text, text_email.Text, gender, combo_year.Text, rich_about.Text, txtPic.Text,cmbStaffType.Text);
                     }
                     else
                     {
-                        this.cntrl.update_doctor(doctor_id, text_drname.Text, text_phone.Text, text_email.Text, gender, combo_year.Text, rich_about.Text, txtPic.Text); 
+                        this.cntrl.update_doctor(doctor_id, text_drname.Text, text_phone.Text, text_email.Text, gender, combo_year.Text, rich_about.Text, txtPic.Text,cmbStaffType.Text); 
                         MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }

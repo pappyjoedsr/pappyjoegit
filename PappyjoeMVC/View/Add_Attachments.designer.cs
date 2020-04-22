@@ -934,6 +934,7 @@
             this.Lab_due.Size = new System.Drawing.Size(124, 17);
             this.Lab_due.TabIndex = 280;
             this.Lab_due.Text = "INR 1,05,182.65 due";
+            this.Lab_due.Visible = false;
             // 
             // panel8
             // 
