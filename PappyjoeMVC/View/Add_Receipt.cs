@@ -547,50 +547,53 @@ namespace PappyjoeMVC.View
                             g_Est = Convert.ToDouble(DGV_MainGrid[9, iii].Value);
                             if (g_Est < (g_Advance + g_Paid))
                             {
-                                //      DialogResult res = MessageBox.Show("Entered Amount is greater than from Treatment Amount,Do you want to keep this balance amount as advance amount ?", " confirmation",
-                                //MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                                //      if (res == DialogResult.No)
-                                //      {
-
-                                //      }
-                                //      else
-                                //      {
-                                //          decimal advance1 = 0;
-                                //          enteramnt= Convert.ToDecimal(DGV_MainGrid[4, iii].Value);
-                                //          balanceamnt = enteramnt - Convert.ToDecimal(g_Est);
-                                //          DataTable cmd22 = this.cntrl.Get_Advance(patient_id);
-                                //          //decimal abcde1 = Convert.ToInt32(txt_PayNow.Text);
-                                //          if (cmd22.Rows.Count > 0)
-                                //          {
-                                //              if (cmd22.Rows[0]["advance"].ToString() == null)
-                                //              {
-                                //                  advance1 = 0;
-                                //              }
-                                //              else if (cmd22.Rows[0]["advance"].ToString() == "")
-                                //              {
-                                //                  advance1 = 0;
-                                //              }
-                                //              else if (cmd22.Rows[0]["advance"].ToString() == "0")
-                                //              {
-                                //                  advance1 = 0;
-                                //              }
-                                //              else
-                                //              {
-                                //                  advance1 = decimal.Parse(cmd22.Rows[0]["advance"].ToString());
-                                //              }
-                                //              adv = advance1 + balanceamnt;
-                                //              this.cntrl.update_advance(adv, patient_id);
-                                //          }
-                                //          else
-                                //          {
-                                //              adv = balanceamnt;
-                                //              this.cntrl.save_advance(adv, patient_id);
-                                //          }
-                                //          this.cntrl.Save_advancetable(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), balanceamnt.ToString(), cmb_advane_type.Text, "Debit", "Add Receipt");
-                                //          //this.cntrl.save_advance(adv, patient_id);
-                                //      }
-                                MessageBox.Show("Entered Amount is greater than from Treatment Amount", "Wrong Amount ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                return;
+                                DialogResult res = MessageBox.Show("Entered Amount is greater than from Treatment Amount,Do you want to keep this balance amount as advance amount ?", " confirmation",
+                          MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (res == DialogResult.No)
+                                {
+                                    DGV_MainGrid.Rows[iii].Cells[4].Value = "";
+                                    DGV_MainGrid.Rows[iii].Cells[4].Selected = true;//[4, iii]
+                                    return;
+                                }
+                                else
+                                {
+                                    decimal advance1 = 0;
+                                    enteramnt = Convert.ToDecimal(DGV_MainGrid[4, iii].Value);
+                                    balanceamnt = enteramnt - Convert.ToDecimal(g_Est);
+                                    DataTable cmd22 = this.cntrl.Get_Advance(patient_id);
+                                    //decimal abcde1 = Convert.ToInt32(txt_PayNow.Text);
+                                    if (cmd22.Rows.Count > 0)
+                                    {
+                                        if (cmd22.Rows[0]["advance"].ToString() == null)
+                                        {
+                                            advance1 = 0;
+                                        }
+                                        else if (cmd22.Rows[0]["advance"].ToString() == "")
+                                        {
+                                            advance1 = 0;
+                                        }
+                                        else if (cmd22.Rows[0]["advance"].ToString() == "0")
+                                        {
+                                            advance1 = 0;
+                                        }
+                                        else
+                                        {
+                                            advance1 = decimal.Parse(cmd22.Rows[0]["advance"].ToString());
+                                        }
+                                        adv = advance1 + balanceamnt;
+                                        this.cntrl.update_advance(adv, patient_id);
+                                    }
+                                    else
+                                    {
+                                        adv = balanceamnt;
+                                        this.cntrl.save_advance(adv, patient_id);
+                                    }
+                                    this.cntrl.Save_advancetable(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), balanceamnt.ToString(), cmb_advane_type.Text, "Debit", "Add Receipt");
+                                    g_Paid = g_Est;
+                                    DGV_MainGrid[4, iii].Value = g_Est;
+                                }
+                                //MessageBox.Show("Entered Amount is greater than from Treatment Amount", "Wrong Amount ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //return;
                             }
                             if (g_Advance == 0)
                             {                            }
@@ -695,8 +698,8 @@ namespace PappyjoeMVC.View
                                         int updateinvoice = this.cntrl.updatetotal(total, DGV_MainGrid[7, i].Value.ToString(), patient_id, DGV_MainGrid[8, i].Value.ToString());
                                         if (updateinvoice > 0)
                                         {
-                                            int inv1 = this.cntrl.save_payment(DGV_MainGrid[3, i].Value.ToString(), txt_ReceiptNo.Text.ToString(), totalPaid, DGV_MainGrid[7, i].Value.ToString(), DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text, patient_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), Doctor_Name, totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString(), totalinv.Rows[0]["cost"].ToString(), totalinv.Rows[0]["pt_name"].ToString());
-                                            if (inv1 > 0)
+                                            int inv1 = this.cntrl.save_payment(adv.ToString(), txt_ReceiptNo.Text.ToString(), totalPaid, DGV_MainGrid[7, i].Value.ToString(), DGV_MainGrid[8, i].Value.ToString(), Cmb_ModeOfPaymnt.Text, patient_id, dateTimePicker1.Value.ToString("yyyy-MM-dd"), Doctor_Name, totalinv.Rows[0]["invoice_main_id"].ToString(), totalinv.Rows[0]["total"].ToString(), totalinv.Rows[0]["cost"].ToString(), totalinv.Rows[0]["pt_name"].ToString());
+                                            if (inv1 > 0)//DGV_MainGrid[3, i].Value.ToString(),
                                             {
                                                 int ii = 0;
                                                 decimal invoicepaymenttotal = 1;
@@ -731,8 +734,16 @@ namespace PappyjoeMVC.View
                         if (status == 1)
                         {
                             decimal a = 0;
-                            a = decimal.Parse(advanceamt) - advance;
-                            this.cntrl.update_advance(a, patient_id);
+                            if(adv>0)
+                            {
+
+                            }
+                            else
+                            {
+                                a = decimal.Parse(advanceamt) - advance;
+                                this.cntrl.update_advance(a, patient_id);
+                            }
+                            
                             string rec = this.cntrl.receipt_autoid();
                             int receip = int.Parse(rec) + 1;
                             this.cntrl.update_receiptAutoid(receip);
