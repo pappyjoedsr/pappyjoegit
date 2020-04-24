@@ -192,9 +192,9 @@
             this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label9.Location = new System.Drawing.Point(93, 298);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(145, 17);
+            this.label9.Size = new System.Drawing.Size(149, 17);
             this.label9.TabIndex = 293;
-            this.label9.Text = "BMI( Body Mass Index )";
+            this.label9.Text = "BMI ( Body Mass Index )";
             // 
             // Txtheight
             // 
