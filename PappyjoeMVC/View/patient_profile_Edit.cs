@@ -425,8 +425,9 @@ namespace PappyjoeMVC.View
                     if (gt == "0")
                     {
                         gridgroups.Rows.Add(dt9.Rows[j][0].ToString());
+
                     }
-                }
+                }                ///
                 DataTable dt7 = this.cntrl.Get_Patient_Details(patient_id);
                 txtPatientName.Text = dt7.Rows[0]["pt_name"].ToString();
                 txtPatientId.Text = dt7.Rows[0]["pt_id"].ToString();
@@ -522,6 +523,5 @@ namespace PappyjoeMVC.View
             int a = e.RowIndex;
             aa = gridgroups.Rows[a].Cells[0].Value.ToString();
         }
-
     }
 }
