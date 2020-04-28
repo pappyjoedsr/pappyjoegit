@@ -138,7 +138,7 @@
             this.toolStripTextDoctor});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1362, 40);
+            this.toolStrip1.Size = new System.Drawing.Size(1354, 40);
             this.toolStrip1.TabIndex = 41;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -447,7 +447,7 @@
             this.panel5.BackColor = System.Drawing.Color.DarkGray;
             this.panel5.Location = new System.Drawing.Point(-12, 86);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1386, 1);
+            this.panel5.Size = new System.Drawing.Size(1378, 1);
             this.panel5.TabIndex = 56;
             // 
             // panel1
@@ -715,7 +715,7 @@
             this.panel3.Controls.Add(this.btn_InvoiceSelectTemnt);
             this.panel3.Location = new System.Drawing.Point(194, 89);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1166, 40);
+            this.panel3.Size = new System.Drawing.Size(1158, 40);
             this.panel3.TabIndex = 269;
             // 
             // label41
@@ -735,7 +735,7 @@
             this.btn_Add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Add.ForeColor = System.Drawing.Color.White;
-            this.btn_Add.Location = new System.Drawing.Point(1090, 5);
+            this.btn_Add.Location = new System.Drawing.Point(1082, 5);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 29);
             this.btn_Add.TabIndex = 248;
@@ -751,7 +751,7 @@
             this.btn_InvoiceSelectTemnt.Enabled = false;
             this.btn_InvoiceSelectTemnt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_InvoiceSelectTemnt.ForeColor = System.Drawing.Color.White;
-            this.btn_InvoiceSelectTemnt.Location = new System.Drawing.Point(928, 5);
+            this.btn_InvoiceSelectTemnt.Location = new System.Drawing.Point(920, 5);
             this.btn_InvoiceSelectTemnt.Name = "btn_InvoiceSelectTemnt";
             this.btn_InvoiceSelectTemnt.Size = new System.Drawing.Size(162, 29);
             this.btn_InvoiceSelectTemnt.TabIndex = 249;
@@ -768,7 +768,7 @@
             this.panel7.Controls.Add(this.dgv_treatment_paln);
             this.panel7.Location = new System.Drawing.Point(195, 137);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1167, 601);
+            this.panel7.Size = new System.Drawing.Size(1159, 601);
             this.panel7.TabIndex = 271;
             // 
             // lab_Msg
@@ -777,7 +777,7 @@
             this.lab_Msg.BackColor = System.Drawing.Color.Wheat;
             this.lab_Msg.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_Msg.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lab_Msg.Location = new System.Drawing.Point(131, 232);
+            this.lab_Msg.Location = new System.Drawing.Point(127, 232);
             this.lab_Msg.Name = "lab_Msg";
             this.lab_Msg.Size = new System.Drawing.Size(677, 25);
             this.lab_Msg.TabIndex = 267;
@@ -911,7 +911,7 @@
             this.panel8.BackColor = System.Drawing.Color.DarkGray;
             this.panel8.Location = new System.Drawing.Point(192, 132);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1186, 1);
+            this.panel8.Size = new System.Drawing.Size(1178, 1);
             this.panel8.TabIndex = 270;
             // 
             // contextMenuStrip1
@@ -961,7 +961,7 @@
             this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.listpatientsearch.FormattingEnabled = true;
             this.listpatientsearch.ItemHeight = 20;
-            this.listpatientsearch.Location = new System.Drawing.Point(1011, 38);
+            this.listpatientsearch.Location = new System.Drawing.Point(1003, 38);
             this.listpatientsearch.Name = "listpatientsearch";
             this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
             this.listpatientsearch.TabIndex = 272;
@@ -973,7 +973,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1362, 703);
+            this.ClientSize = new System.Drawing.Size(1354, 703);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel8);

@@ -526,9 +526,9 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
                     sWrite.WriteLine("</table>");
                 }
-                sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
-                sWrite.WriteLine("<tr><td align='left'  ><hr/></td></tr>");
-                sWrite.WriteLine("</table>");
+                //sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
+                //sWrite.WriteLine("<tr><td align='left'  ><hr/></td></tr>");
+                //sWrite.WriteLine("</table>");
                 string sexage = "";
                 int Dexist = 0;
                 string address = "";

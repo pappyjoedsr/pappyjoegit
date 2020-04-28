@@ -248,10 +248,10 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.get_reminder_sms_details(startDateTime, startDateTime1, dr_id);
             return dtb;
         }
-        //public int insert_excelimported()
-        //{
-        //    int i = _model.insert_excelimported();
-        //    return i;
-        //}
+        public int insert_excelimported(string name, string id, string gender, string age, string mob, string street, string localty, string file)
+        {
+            int i = _model.insert_excelimported( name,  id,  gender, age, mob,  street,  localty,  file);
+            return i;
+        }
     }
 }

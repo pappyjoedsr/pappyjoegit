@@ -189,6 +189,7 @@
             this.Cmb_Discount = new System.Windows.Forms.ComboBox();
             this.servicetext = new System.Windows.Forms.Label();
             this.proceduretreatgrid1 = new System.Windows.Forms.DataGridView();
+            this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -205,7 +206,6 @@
             this.tooth1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.t_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listpatientsearch = new System.Windows.Forms.ListBox();
             this.toolStrip1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -247,7 +247,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.MinimumSize = new System.Drawing.Size(1308, 40);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1370, 40);
+            this.toolStrip1.Size = new System.Drawing.Size(1354, 40);
             this.toolStrip1.TabIndex = 69;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -489,7 +489,7 @@
             this.panel1.BackColor = System.Drawing.Color.DarkGray;
             this.panel1.Location = new System.Drawing.Point(-3, 95);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1370, 1);
+            this.panel1.Size = new System.Drawing.Size(1354, 1);
             this.panel1.TabIndex = 255;
             // 
             // panel5
@@ -582,7 +582,7 @@
             this.savebut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.savebut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.savebut.ForeColor = System.Drawing.Color.White;
-            this.savebut.Location = new System.Drawing.Point(1075, 100);
+            this.savebut.Location = new System.Drawing.Point(1059, 100);
             this.savebut.Name = "savebut";
             this.savebut.Size = new System.Drawing.Size(197, 30);
             this.savebut.TabIndex = 258;
@@ -597,7 +597,7 @@
             this.btn_FormCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_FormCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_FormCancel.ForeColor = System.Drawing.Color.White;
-            this.btn_FormCancel.Location = new System.Drawing.Point(1273, 100);
+            this.btn_FormCancel.Location = new System.Drawing.Point(1257, 100);
             this.btn_FormCancel.Name = "btn_FormCancel";
             this.btn_FormCancel.Size = new System.Drawing.Size(94, 30);
             this.btn_FormCancel.TabIndex = 257;
@@ -612,7 +612,7 @@
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
             this.panel3.Location = new System.Drawing.Point(-1, 134);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1372, 1);
+            this.panel3.Size = new System.Drawing.Size(1356, 1);
             this.panel3.TabIndex = 259;
             // 
             // panel6
@@ -620,7 +620,7 @@
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.DarkGray;
-            this.panel6.Location = new System.Drawing.Point(947, 135);
+            this.panel6.Location = new System.Drawing.Point(931, 135);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1, 598);
             this.panel6.TabIndex = 262;
@@ -640,7 +640,7 @@
             this.Panl_RightSidePanel.Controls.Add(this.txtProcedure);
             this.Panl_RightSidePanel.Controls.Add(this.txtcost);
             this.Panl_RightSidePanel.Controls.Add(this.saveadd);
-            this.Panl_RightSidePanel.Location = new System.Drawing.Point(951, 137);
+            this.Panl_RightSidePanel.Location = new System.Drawing.Point(935, 137);
             this.Panl_RightSidePanel.Name = "Panl_RightSidePanel";
             this.Panl_RightSidePanel.Size = new System.Drawing.Size(417, 550);
             this.Panl_RightSidePanel.TabIndex = 261;
@@ -866,7 +866,7 @@
             this.panel2.Controls.Add(this.proceduretreatgrid1);
             this.panel2.Location = new System.Drawing.Point(2, 137);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(945, 542);
+            this.panel2.Size = new System.Drawing.Size(929, 542);
             this.panel2.TabIndex = 263;
             this.panel2.Visible = false;
             // 
@@ -881,7 +881,7 @@
             this.panel7.Controls.Add(this.DTP_Date);
             this.panel7.Location = new System.Drawing.Point(1, 488);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(944, 45);
+            this.panel7.Size = new System.Drawing.Size(928, 45);
             this.panel7.TabIndex = 250;
             // 
             // label172
@@ -918,7 +918,7 @@
             this.lab_By.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lab_By.Location = new System.Drawing.Point(11, 14);
             this.lab_By.Name = "lab_By";
-            this.lab_By.Size = new System.Drawing.Size(18, 13);
+            this.lab_By.Size = new System.Drawing.Size(19, 13);
             this.lab_By.TabIndex = 17;
             this.lab_By.Text = "By";
             // 
@@ -1726,7 +1726,7 @@
             this.label26.Controls.Add(this.lab_INR1);
             this.label26.Location = new System.Drawing.Point(1, 438);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(944, 49);
+            this.label26.Size = new System.Drawing.Size(928, 49);
             this.label26.TabIndex = 249;
             // 
             // TOTALCOST
@@ -1737,7 +1737,7 @@
             this.TOTALCOST.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.TOTALCOST.Location = new System.Drawing.Point(218, 9);
             this.TOTALCOST.Name = "TOTALCOST";
-            this.TOTALCOST.Size = new System.Drawing.Size(71, 15);
+            this.TOTALCOST.Size = new System.Drawing.Size(77, 15);
             this.TOTALCOST.TabIndex = 9;
             this.TOTALCOST.Text = "TOTAL COST";
             // 
@@ -1823,7 +1823,7 @@
             this.lab_GrantTotal.ForeColor = System.Drawing.Color.LimeGreen;
             this.lab_GrantTotal.Location = new System.Drawing.Point(469, 6);
             this.lab_GrantTotal.Name = "lab_GrantTotal";
-            this.lab_GrantTotal.Size = new System.Drawing.Size(80, 15);
+            this.lab_GrantTotal.Size = new System.Drawing.Size(86, 15);
             this.lab_GrantTotal.TabIndex = 14;
             this.lab_GrantTotal.Text = "GRANT TOTAL";
             // 
@@ -1847,7 +1847,7 @@
             this.lab_TotalDiscount.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lab_TotalDiscount.Location = new System.Drawing.Point(334, 6);
             this.lab_TotalDiscount.Name = "lab_TotalDiscount";
-            this.lab_TotalDiscount.Size = new System.Drawing.Size(99, 15);
+            this.lab_TotalDiscount.Size = new System.Drawing.Size(105, 15);
             this.lab_TotalDiscount.TabIndex = 12;
             this.lab_TotalDiscount.Text = "TOTAL DISCOUNT";
             // 
@@ -1893,7 +1893,7 @@
             this.Panl_Serviceadd.Controls.Add(this.servicetext);
             this.Panl_Serviceadd.Location = new System.Drawing.Point(1, 1);
             this.Panl_Serviceadd.Name = "Panl_Serviceadd";
-            this.Panl_Serviceadd.Size = new System.Drawing.Size(944, 146);
+            this.Panl_Serviceadd.Size = new System.Drawing.Size(928, 146);
             this.Panl_Serviceadd.TabIndex = 248;
             // 
             // dateTimeReview
@@ -1947,7 +1947,7 @@
             this.Btn_Addservices.BackColor = System.Drawing.Color.LimeGreen;
             this.Btn_Addservices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Addservices.ForeColor = System.Drawing.Color.White;
-            this.Btn_Addservices.Location = new System.Drawing.Point(853, 39);
+            this.Btn_Addservices.Location = new System.Drawing.Point(837, 39);
             this.Btn_Addservices.Name = "Btn_Addservices";
             this.Btn_Addservices.Size = new System.Drawing.Size(60, 24);
             this.Btn_Addservices.TabIndex = 247;
@@ -1984,7 +1984,7 @@
             this.panel8.BackColor = System.Drawing.Color.DarkGray;
             this.panel8.Location = new System.Drawing.Point(1, 32);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(942, 1);
+            this.panel8.Size = new System.Drawing.Size(926, 1);
             this.panel8.TabIndex = 246;
             // 
             // qtylabel
@@ -1995,7 +1995,7 @@
             this.qtylabel.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.qtylabel.Location = new System.Drawing.Point(272, 12);
             this.qtylabel.Name = "qtylabel";
-            this.qtylabel.Size = new System.Drawing.Size(63, 15);
+            this.qtylabel.Size = new System.Drawing.Size(65, 15);
             this.qtylabel.TabIndex = 1;
             this.qtylabel.Text = "QUANTITY";
             // 
@@ -2053,7 +2053,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(399, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 15);
+            this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "COST";
             // 
@@ -2075,7 +2075,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(555, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 15);
+            this.label5.Size = new System.Drawing.Size(65, 15);
             this.label5.TabIndex = 4;
             this.label5.Text = "DISCOUNT";
             // 
@@ -2216,9 +2216,22 @@
             this.proceduretreatgrid1.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.proceduretreatgrid1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.proceduretreatgrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.proceduretreatgrid1.Size = new System.Drawing.Size(944, 280);
+            this.proceduretreatgrid1.Size = new System.Drawing.Size(928, 280);
             this.proceduretreatgrid1.TabIndex = 70;
             this.proceduretreatgrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.proceduretreatgrid1_CellContentClick);
+            // 
+            // listpatientsearch
+            // 
+            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.listpatientsearch.FormattingEnabled = true;
+            this.listpatientsearch.ItemHeight = 20;
+            this.listpatientsearch.Location = new System.Drawing.Point(886, 42);
+            this.listpatientsearch.Name = "listpatientsearch";
+            this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
+            this.listpatientsearch.TabIndex = 264;
+            this.listpatientsearch.Visible = false;
             // 
             // Column8
             // 
@@ -2333,25 +2346,12 @@
             this.t_date.ReadOnly = true;
             this.t_date.Visible = false;
             // 
-            // listpatientsearch
-            // 
-            this.listpatientsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listpatientsearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listpatientsearch.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.listpatientsearch.FormattingEnabled = true;
-            this.listpatientsearch.ItemHeight = 20;
-            this.listpatientsearch.Location = new System.Drawing.Point(886, 42);
-            this.listpatientsearch.Name = "listpatientsearch";
-            this.listpatientsearch.Size = new System.Drawing.Size(250, 80);
-            this.listpatientsearch.TabIndex = 264;
-            this.listpatientsearch.Visible = false;
-            // 
             // Add_Finished_Procedure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 684);
+            this.ClientSize = new System.Drawing.Size(1354, 684);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel6);
@@ -2545,6 +2545,9 @@
         private System.Windows.Forms.ComboBox Cmb_Discount;
         private System.Windows.Forms.Label servicetext;
         private System.Windows.Forms.DataGridView proceduretreatgrid1;
+        private System.Windows.Forms.ListBox listpatientsearch;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
@@ -2561,8 +2564,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tooth1;
         private System.Windows.Forms.DataGridViewTextBoxColumn pl_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn t_date;
-        private System.Windows.Forms.ListBox listpatientsearch;
-        private System.Windows.Forms.ToolStripButton toolStripButton12;
-        private System.Windows.Forms.ToolStripButton toolStripButton13;
     }
 }
