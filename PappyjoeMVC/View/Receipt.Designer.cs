@@ -123,7 +123,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Adv_details = new System.Windows.Forms.Label();
             this.Lab_AllPatients = new System.Windows.Forms.Label();
-            this.adv_refund = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -1192,9 +1191,11 @@
             // Adv_details
             // 
             this.Adv_details.AutoSize = true;
+            this.Adv_details.BackColor = System.Drawing.Color.DarkRed;
             this.Adv_details.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Adv_details.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Adv_details.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Adv_details.ForeColor = System.Drawing.Color.White;
+            this.Adv_details.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Adv_details.Location = new System.Drawing.Point(862, 42);
             this.Adv_details.Name = "Adv_details";
             this.Adv_details.Size = new System.Drawing.Size(100, 17);
@@ -1218,23 +1219,6 @@
             this.Lab_AllPatients.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Lab_AllPatients.Click += new System.EventHandler(this.Lab_AllPatients_Click);
             // 
-            // adv_refund
-            // 
-            this.adv_refund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.adv_refund.BackColor = System.Drawing.Color.LimeGreen;
-            this.adv_refund.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("adv_refund.BackgroundImage")));
-            this.adv_refund.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.adv_refund.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.adv_refund.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adv_refund.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adv_refund.ForeColor = System.Drawing.Color.White;
-            this.adv_refund.Location = new System.Drawing.Point(959, 43);
-            this.adv_refund.Name = "adv_refund";
-            this.adv_refund.Size = new System.Drawing.Size(19, 16);
-            this.adv_refund.TabIndex = 273;
-            this.adv_refund.UseVisualStyleBackColor = false;
-            this.adv_refund.Visible = false;
-            // 
             // Receipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1244,7 +1228,6 @@
             this.Controls.Add(this.Adv_details);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblAdvance);
-            this.Controls.Add(this.adv_refund);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.Lab_Due);
             this.Controls.Add(this.panel9);
@@ -1378,6 +1361,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label Adv_details;
-        private System.Windows.Forms.Button adv_refund;
     }
 }

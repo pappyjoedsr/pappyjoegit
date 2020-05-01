@@ -367,7 +367,7 @@ namespace PappyjoeMVC.View
                     if (print_yesno == System.Windows.Forms.DialogResult.Yes)
                     {
                         printhtml();
-                        if (chkprescription.Checked == true || presid > 0)
+                        if (chkprescription.Checked == true && presid > 0)
                         {
                             printprescriptionhtml(presid);
                         }
@@ -396,7 +396,7 @@ namespace PappyjoeMVC.View
                         MessageBox.Show("Procedure Details Not Found...", "Procedure Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txt_procedure.Focus();
                     }
-                    else if (dgv_treatment.Rows.Count== 0)
+                    else if (dgv_treatment.Rows.Count == 0)
                     {
                         DialogResult di = MessageBox.Show("You missed to Click on 'Add' button under treatment. Please click 'Add' button to proceed..", "Treatment Not Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txt_procedure.Focus();
@@ -1596,7 +1596,7 @@ namespace PappyjoeMVC.View
                     DataTable dt = this.ctrlr.get_template(idtemp);
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        dataGridView_drugnew.Rows.Add(dt.Rows[i]["drug_name"].ToString(), dt.Rows[i]["strength"].ToString(), dt.Rows[i]["strength_gr"].ToString(), dt.Rows[i]["duration"].ToString(), dt.Rows[i]["duration_period"].ToString(), dt.Rows[i]["morning"].ToString(), dt.Rows[i]["noon"].ToString(), dt.Rows[i]["night"].ToString(), dt.Rows[i]["food"].ToString(), dt.Rows[i]["add_instruction"].ToString(), dt.Rows[i]["drug_type"].ToString(), dt.Rows[i]["status"].ToString(),dt.Rows[i]["drug_id"].ToString());
+                        dataGridView_drugnew.Rows.Add(dt.Rows[i]["drug_name"].ToString(), dt.Rows[i]["strength"].ToString(), dt.Rows[i]["strength_gr"].ToString(), dt.Rows[i]["duration"].ToString(), dt.Rows[i]["duration_period"].ToString(), dt.Rows[i]["morning"].ToString(), dt.Rows[i]["noon"].ToString(), dt.Rows[i]["night"].ToString(), dt.Rows[i]["food"].ToString(), dt.Rows[i]["add_instruction"].ToString(), dt.Rows[i]["drug_type"].ToString(), dt.Rows[i]["status"].ToString(), dt.Rows[i]["drug_id"].ToString());
                         dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Cells["img"].Value = PappyjoeMVC.Properties.Resources.deleteicon;
                         dataGridView_drugnew.Rows[dataGridView_drugnew.Rows.Count - 1].Height = 30;
                         img.ImageLayout = DataGridViewImageCellLayout.Normal;
