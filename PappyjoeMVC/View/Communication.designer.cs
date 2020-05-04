@@ -72,6 +72,10 @@
             this.btn_save_template = new System.Windows.Forms.Button();
             this.btn_TemplateCancel = new System.Windows.Forms.Button();
             this.DGV_SMSTemplates = new System.Windows.Forms.DataGridView();
+            this.col1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_add_template = new System.Windows.Forms.Button();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -189,10 +193,6 @@
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
-            this.col1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel19.SuspendLayout();
             this.panl_templates.SuspendLayout();
             this.Panl_AddTemplate.SuspendLayout();
@@ -491,6 +491,37 @@
             this.DGV_SMSTemplates.Size = new System.Drawing.Size(450, 506);
             this.DGV_SMSTemplates.TabIndex = 15;
             this.DGV_SMSTemplates.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_SMSTemplates_CellClick);
+            // 
+            // col1
+            // 
+            this.col1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col1.HeaderText = "id";
+            this.col1.Name = "col1";
+            this.col1.Visible = false;
+            // 
+            // colName
+            // 
+            this.colName.HeaderText = "TEMPLATES";
+            this.colName.Name = "colName";
+            this.colName.Width = 410;
+            // 
+            // edit
+            // 
+            this.edit.HeaderText = "";
+            this.edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.edit.Name = "edit";
+            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.edit.Width = 20;
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "";
+            this.delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
+            this.delete.Name = "delete";
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.delete.Width = 20;
             // 
             // btn_add_template
             // 
@@ -2045,37 +2076,6 @@
             this.toolStripButton12.Size = new System.Drawing.Size(87, 37);
             this.toolStripButton12.Text = "Lab Tracking";
             this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
-            // 
-            // col1
-            // 
-            this.col1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col1.HeaderText = "id";
-            this.col1.Name = "col1";
-            this.col1.Visible = false;
-            // 
-            // colName
-            // 
-            this.colName.HeaderText = "TEMPLATES";
-            this.colName.Name = "colName";
-            this.colName.Width = 410;
-            // 
-            // edit
-            // 
-            this.edit.HeaderText = "";
-            this.edit.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.edit.Name = "edit";
-            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.edit.Width = 20;
-            // 
-            // delete
-            // 
-            this.delete.HeaderText = "";
-            this.delete.Image = global::PappyjoeMVC.Properties.Resources.deleteicon;
-            this.delete.Name = "delete";
-            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.delete.Width = 20;
             // 
             // Communication
             // 

@@ -898,59 +898,59 @@
             this.dotMatricToolStripMenuItem,
             this.sentSMSToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 186);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(175, 164);
             // 
             // editToolStripMenuItem1
             // 
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
             this.editToolStripMenuItem1.Text = "Edit";
             this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
             // deleteToolStripMenuItem1
             // 
             this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
-            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
             this.deleteToolStripMenuItem1.Text = "Delete";
             this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(171, 6);
             // 
             // emailToolStripMenuItem1
             // 
             this.emailToolStripMenuItem1.Name = "emailToolStripMenuItem1";
-            this.emailToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.emailToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
             this.emailToolStripMenuItem1.Text = "Email";
             this.emailToolStripMenuItem1.Click += new System.EventHandler(this.emailToolStripMenuItem1_Click);
             // 
             // printToolStripMenuItem1
             // 
             this.printToolStripMenuItem1.Name = "printToolStripMenuItem1";
-            this.printToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.printToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
             this.printToolStripMenuItem1.Text = "Print";
             this.printToolStripMenuItem1.Click += new System.EventHandler(this.printToolStripMenuItem1_Click);
             // 
             // dotMatricToolStripMenuItem
             // 
             this.dotMatricToolStripMenuItem.Name = "dotMatricToolStripMenuItem";
-            this.dotMatricToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dotMatricToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.dotMatricToolStripMenuItem.Text = "Dot matrix Print";
             this.dotMatricToolStripMenuItem.Visible = false;
             // 
             // sentSMSToolStripMenuItem
             // 
             this.sentSMSToolStripMenuItem.Name = "sentSMSToolStripMenuItem";
-            this.sentSMSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sentSMSToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.sentSMSToolStripMenuItem.Text = "Sent SMS";
             this.sentSMSToolStripMenuItem.Click += new System.EventHandler(this.sentSMSToolStripMenuItem_Click);
             // 
@@ -990,7 +990,7 @@
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Prescription_Show";
-            this.Text = "ooooooooPrescription";
+            this.Text = "Prescription";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.prescriptionShow_Load);
             this.toolStrip2.ResumeLayout(false);
