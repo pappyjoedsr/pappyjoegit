@@ -117,6 +117,20 @@ namespace PappyjoeMVC.View
                         return;
                     }
                 }
+                else
+                {
+                    DataTable cmd = this.cntrl.automaticid_when_automation_No();
+                    if (cmd.Rows.Count > 0)
+                    {
+                        //int n = 0;
+                        //n = int.Parse(cmd.Rows[0]["patient_number"].ToString()) + 1;
+                        //if (n != 0)
+                        //{
+                            txtPatientId.Text = cmd.Rows[0]["patient_number"].ToString();
+                            //this.cntrl.update_autogenerateid(n);
+                        //}
+                    }
+                }
                 if (String.IsNullOrWhiteSpace(txtPatName.Text))
                 {
                     txtPatName.Focus();
@@ -141,6 +155,23 @@ namespace PappyjoeMVC.View
                     }
                     if (txtPMobNumber.Text != "")
                     {
+                        DataTable dtb_phone = this.cntrl.Get_patient_phoneno(txtPMobNumber.Text, txtPatName.Text);
+                        if(dtb_phone.Rows.Count>0)
+                        {
+                            DialogResult res = MessageBox.Show(" This patient already exists,Do you really want to save this number?", " confirmation",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (res == DialogResult.No)
+                            {
+                                txtPMobNumber.Text = "";
+                                txtPatName.Text = "";
+                                return;
+                            }
+                            
+                        }
+                        //else
+                        //{
+
+                        //}
                         int i = 0;
                         if (radMale.Checked == true)
                             gender= "Male";
@@ -831,6 +862,12 @@ namespace PappyjoeMVC.View
             this.Hide();
             form2.Show();
         }
+
+        private void Lab_UsernameAvailable_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void toolStripButton13_Click(object sender, EventArgs e)
         {
             var form2 = new Consultation();

@@ -83,7 +83,6 @@
             this.txt_PurchRate2 = new System.Windows.Forms.TextBox();
             this.txt_SalesRateMin2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txt_HSN = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Cmb_Manufacture = new System.Windows.Forms.ComboBox();
@@ -876,7 +875,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txt_HSN);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.Cmb_Manufacture);
@@ -912,17 +910,6 @@
             this.groupBox1.Size = new System.Drawing.Size(795, 161);
             this.groupBox1.TabIndex = 121;
             this.groupBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(639, 47);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(12, 13);
-            this.label5.TabIndex = 116;
-            this.label5.Text = "*";
             // 
             // txt_HSN
             // 
@@ -1620,7 +1607,6 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_HSN;
         private System.Windows.Forms.Label label4;
     }

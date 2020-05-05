@@ -124,21 +124,21 @@
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGV_MainGrid = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPayNow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.invoice1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.services1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_ReceiptNo = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_PayPreService = new System.Windows.Forms.Button();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.balancedue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pay_fromadvance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPayNow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.due_afterpaymnt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoice1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.services1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -1209,10 +1209,10 @@
             this.DGV_MainGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
+            this.balancedue,
+            this.pay_fromadvance,
             this.ColPayNow,
-            this.dataGridViewTextBoxColumn6,
+            this.due_afterpaymnt,
             this.Column13,
             this.invoice1,
             this.services1,
@@ -1238,85 +1238,6 @@
             this.DGV_MainGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_MainGrid_CellEndEdit);
             this.DGV_MainGrid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_MainGrid_CellValueChanged);
             this.DGV_MainGrid.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.DGV_MainGrid_EditingControlShowing);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn1.HeaderText = "INVOICE NUMBER";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewTextBoxColumn2.HeaderText = "SERVICES";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 164;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewTextBoxColumn3.HeaderText = "BALANCE DUE";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewTextBoxColumn4.HeaderText = "PAY FROM ADVANCE";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 150;
-            // 
-            // ColPayNow
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ColPayNow.DefaultCellStyle = dataGridViewCellStyle9;
-            this.ColPayNow.HeaderText = "PAY NOW";
-            this.ColPayNow.Name = "ColPayNow";
-            this.ColPayNow.ReadOnly = true;
-            this.ColPayNow.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewTextBoxColumn6.HeaderText = "DUE AFTER PAYMENT";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 150;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "rowindex";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Visible = false;
-            this.Column13.Width = 5;
-            // 
-            // invoice1
-            // 
-            this.invoice1.HeaderText = "invoice1";
-            this.invoice1.Name = "invoice1";
-            this.invoice1.Visible = false;
-            // 
-            // services1
-            // 
-            this.services1.HeaderText = "services1";
-            this.services1.Name = "services1";
-            this.services1.Visible = false;
-            // 
-            // Total1
-            // 
-            this.Total1.HeaderText = "Total1";
-            this.Total1.Name = "Total1";
             // 
             // txt_ReceiptNo
             // 
@@ -1382,6 +1303,85 @@
             this.listpatientsearch.TabIndex = 82;
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn1.HeaderText = "INVOICE NUMBER";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewTextBoxColumn2.HeaderText = "SERVICES";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 164;
+            // 
+            // balancedue
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.balancedue.DefaultCellStyle = dataGridViewCellStyle7;
+            this.balancedue.HeaderText = "BALANCE DUE";
+            this.balancedue.Name = "balancedue";
+            this.balancedue.Width = 150;
+            // 
+            // pay_fromadvance
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            this.pay_fromadvance.DefaultCellStyle = dataGridViewCellStyle8;
+            this.pay_fromadvance.HeaderText = "PAY FROM ADVANCE";
+            this.pay_fromadvance.Name = "pay_fromadvance";
+            this.pay_fromadvance.Width = 150;
+            // 
+            // ColPayNow
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ColPayNow.DefaultCellStyle = dataGridViewCellStyle9;
+            this.ColPayNow.HeaderText = "PAY NOW";
+            this.ColPayNow.Name = "ColPayNow";
+            this.ColPayNow.ReadOnly = true;
+            this.ColPayNow.Width = 150;
+            // 
+            // due_afterpaymnt
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.due_afterpaymnt.DefaultCellStyle = dataGridViewCellStyle10;
+            this.due_afterpaymnt.HeaderText = "DUE AFTER PAYMENT";
+            this.due_afterpaymnt.Name = "due_afterpaymnt";
+            this.due_afterpaymnt.Width = 150;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "rowindex";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            this.Column13.Visible = false;
+            this.Column13.Width = 5;
+            // 
+            // invoice1
+            // 
+            this.invoice1.HeaderText = "invoice1";
+            this.invoice1.Name = "invoice1";
+            this.invoice1.Visible = false;
+            // 
+            // services1
+            // 
+            this.services1.HeaderText = "services1";
+            this.services1.Name = "services1";
+            this.services1.Visible = false;
+            // 
+            // Total1
+            // 
+            this.Total1.HeaderText = "Total1";
+            this.Total1.Name = "Total1";
             // 
             // Add_Receipt
             // 
@@ -1510,10 +1510,10 @@
         private System.Windows.Forms.Label lab_adv_bank;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn balancedue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pay_fromadvance;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPayNow;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn due_afterpaymnt;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn invoice1;
         private System.Windows.Forms.DataGridViewTextBoxColumn services1;

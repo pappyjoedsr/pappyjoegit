@@ -11,6 +11,11 @@ namespace PappyjoeMVC.Model
             DataTable patSearch = db.table("select * from tbl_patient where pt_name ='" + name + "' and Profile_Status!='Cancelled' ");
             return patSearch;
         }
+        public DataTable Get_patient_phoneno(string no, string name)
+        {
+            DataTable patSearch = db.table("select primary_mobile_number,pt_name from tbl_patient where pt_name ='" + name + "'and primary_mobile_number ='" + no + "' and Profile_Status!='Cancelled' ");
+            return patSearch;
+        }
         public DataTable get_patientid(string id)
         {
             DataTable dtb = db.table("select pt_id from tbl_patient where pt_id='" + id + "'");
@@ -44,7 +49,12 @@ namespace PappyjoeMVC.Model
         }
         public DataTable automaticid()
         {
-            DataTable cmd = db.table("select patient_number from tbl_patient_automaticid where patient_automation='Yes'");
+            DataTable cmd = db.table("select patient_number from tbl_patient_automaticid");// where patient_automation='Yes'");
+            return cmd;
+        }
+        public DataTable automaticid_when_automation_No()
+        {
+            DataTable cmd = db.table("select patient_number from tbl_patient_automaticid");
             return cmd;
         }
         public void update_autogenerateid(int n)
