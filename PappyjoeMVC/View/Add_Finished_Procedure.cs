@@ -166,7 +166,7 @@ namespace PappyjoeMVC.View
         {
             if (rs_plan.Rows.Count > 0)
             {
-                  proceduretreatgrid1.Rows.Add(rs_plan.Rows[0]["procedure_id"].ToString(), rs_plan.Rows[0]["procedure_name"].ToString(), rs_plan.Rows[0]["quantity"].ToString(), rs_plan.Rows[0]["cost"].ToString(), rs_plan.Rows[0]["discount"].ToString(), rs_plan.Rows[0]["discount_type"].ToString(), rs_plan.Rows[0]["total"].ToString(), rs_plan.Rows[0]["discount_inrs"].ToString(), "", rs_plan.Rows[0]["dr_id"].ToString(), "discount", rs_plan.Rows[0]["note"].ToString(), "DEL", rs_plan.Rows[0]["tooth"].ToString(), rs_plan.Rows[0]["id"].ToString(), rs_plan.Rows[0]["date"].ToString());
+                  proceduretreatgrid1.Rows.Add(rs_plan.Rows[0]["procedure_id"].ToString(), rs_plan.Rows[0]["procedure_name"].ToString(), rs_plan.Rows[0]["quantity"].ToString(), rs_plan.Rows[0]["cost"].ToString(), rs_plan.Rows[0]["discount"].ToString(), rs_plan.Rows[0]["discount_type"].ToString(), rs_plan.Rows[0]["total"].ToString(), rs_plan.Rows[0]["discount_inrs"].ToString(), "", rs_plan.Rows[0]["dr_id"].ToString(), "discount", rs_plan.Rows[0]["note"].ToString(), "DEL", rs_plan.Rows[0]["tooth"].ToString(), rs_plan.Rows[0]["id"].ToString(),DateTime.Now.ToString("dd/MM/yyyy") /*rs_plan.Rows[0]["date"].ToString()*/);
             }
             panel2.Show();
             Cmb_Doctor.SelectedValue = Convert.ToInt32(rs_plan.Rows[0]["dr_id"].ToString());
