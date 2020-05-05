@@ -128,7 +128,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable payment_details(string date, string patient_id)
         {
-            DataTable Payments = db.table("select receipt_no,amount_paid,invoice_no,procedure_name from tbl_payment where payment_date='" + date + "' and pt_id='" + patient_id + "'");
+            DataTable Payments = db.table("select receipt_no,amount_paid,invoice_no,procedure_name,mode_of_payment from tbl_payment where payment_date='" + date + "' and pt_id='" + patient_id + "'");
             return Payments;
         }
         public DataTable receipt_printSettings()

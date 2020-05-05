@@ -172,11 +172,16 @@ namespace PappyjoeMVC.View
                 {
                     if (dataGridView_Staff.CurrentCell.OwningColumn.Name == "Edit")
                     {
-                        id = dataGridView_Staff.Rows[e.RowIndex].Cells[0].Value.ToString();
-                        var form2 = new Doctor_Profile();
-                        form2.doctor_id = doctor_id;
-                        form2.doc = id;
-                        form2.Show();
+                        string type= dataGridView_Staff.Rows[e.RowIndex].Cells["Role"].Value.ToString();
+                        if(type!="admin")
+                        {
+                            id = dataGridView_Staff.Rows[e.RowIndex].Cells[0].Value.ToString();
+                            var form2 = new Doctor_Profile();
+                            form2.doctor_id = doctor_id;
+                            form2.doc = id;
+                            form2.Show();
+                        }
+                       
                     }
                 }
             }

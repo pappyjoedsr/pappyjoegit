@@ -73,7 +73,7 @@ namespace PappyjoeMVC.Model
         }
         public void save_master(string OrerNo, string OrderDate, string Supplierid)
         {
-            db.execute("insert into tbl_Purchase_order_master (Pur_order_no,Purch_order_date,Supplier_id,status) values('" + OrerNo + "','" + OrderDate + "','" + Supplierid + "','O')");
+            db.execute("insert into tbl_Purchase_order_master (Pur_order_no,Purch_order_date,Suppleir_id,status) values('" + OrerNo + "','" + OrderDate + "','" + Supplierid + "','O')");
         }
         public void save_items(string OrerNo, string Item_Id, string description, string col_qty, string Unit_Cost, string Amount)
         {

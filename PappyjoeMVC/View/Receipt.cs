@@ -131,31 +131,33 @@ namespace PappyjoeMVC.View
                 System.Data.DataTable pat = this.cntrl.Get_pat_iDName(patient_id);
                 linkLabel_id.Text = pat.Rows[0]["pt_id"].ToString();
                 linkLabel_Name.Text = pat.Rows[0]["pt_name"].ToString();
-                Dgv_payment.ColumnCount = 6;
+                Dgv_payment.ColumnCount = 7;
                 Dgv_payment.RowCount = 0;
                 Dgv_payment.ColumnHeadersVisible = false;
                 Dgv_payment.RowHeadersVisible = false;
                 Dgv_payment.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 Dgv_payment.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 Dgv_payment.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                Dgv_payment.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                Dgv_payment.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                Dgv_payment.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                Dgv_payment.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                Dgv_payment.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 Dgv_payment.Columns[0].Width = 150;
                 Dgv_payment.Columns[1].Width = 150;
                 Dgv_payment.Columns[2].Width = 250;
-                Dgv_payment.Columns[3].Width = 250;
-                Dgv_payment.Columns[5].Width = 20;
+                Dgv_payment.Columns[3].Width = 200;
+                Dgv_payment.Columns[4].Width = 150;
+                Dgv_payment.Columns[6].Width = 20;
                 int j = 0;
                 System.Data.DataTable Payment = this.cntrl.get_paymentDate(patient_id);
                 for (int i = 0; i < Payment.Rows.Count; i++)
                 {
                     int l = 0;
-                    Dgv_payment.Rows.Add(String.Format("{0:dddd, MMMM d, yyyy}", Convert.ToDateTime(Payment.Rows[i]["payment_date"].ToString())), "", "", "", "0", "");
+                    Dgv_payment.Rows.Add(String.Format("{0:dddd, MMMM d, yyyy}", Convert.ToDateTime(Payment.Rows[i]["payment_date"].ToString())), "","", "", "", "0");
                     Dgv_payment.Rows[j].Cells[0].Style.Font = new System.Drawing.Font("Segoe UI", 7, FontStyle.Bold);
                     Dgv_payment.Rows[j].Cells[0].Style.ForeColor = Color.DarkGreen;
-                    Dgv_payment.Rows[j].Cells[5].Value = PappyjoeMVC.Properties.Resources.blank;
+                    Dgv_payment.Rows[j].Cells[6].Value = PappyjoeMVC.Properties.Resources.blank;
                     j = j + 1;
-                    Dgv_payment.Rows.Add("RECEIPT NUMBER", "INVOICES", "TREATMENTS", "AMOUNT PAID", "", "");
+                    Dgv_payment.Rows.Add("RECEIPT NUMBER", "INVOICES", "TREATMENTS","MODE OF PAYMENT", "AMOUNT PAID", "", "");
                     Dgv_payment.Rows[j].Cells[0].Style.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Bold);
                     Dgv_payment.Rows[j].Cells[0].Style.ForeColor = Color.White;
                     Dgv_payment.Rows[j].Cells[1].Style.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Bold);
@@ -164,11 +166,14 @@ namespace PappyjoeMVC.View
                     Dgv_payment.Rows[j].Cells[2].Style.ForeColor = Color.White;
                     Dgv_payment.Rows[j].Cells[3].Style.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Bold);
                     Dgv_payment.Rows[j].Cells[3].Style.ForeColor = Color.White;
+                    Dgv_payment.Rows[j].Cells[4].Style.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Bold);
+                    Dgv_payment.Rows[j].Cells[4].Style.ForeColor = Color.White;
                     Dgv_payment.Rows[j].Cells[0].Style.BackColor = Color.DarkGray;
                     Dgv_payment.Rows[j].Cells[1].Style.BackColor = Color.DarkGray;
                     Dgv_payment.Rows[j].Cells[2].Style.BackColor = Color.DarkGray;
                     Dgv_payment.Rows[j].Cells[3].Style.BackColor = Color.DarkGray;
-                    Dgv_payment.Rows[j].Cells[5].Value = PappyjoeMVC.Properties.Resources.blank;
+                    Dgv_payment.Rows[j].Cells[4].Style.BackColor = Color.DarkGray;
+                    Dgv_payment.Rows[j].Cells[6].Value = PappyjoeMVC.Properties.Resources.blank;
                     string receipt = "";
                     System.Data.DataTable Payments = this.cntrl.payment_details(Convert.ToDateTime (Payment.Rows[i]["payment_date"].ToString()).ToString("yyyy-MM-dd"), patient_id);
                     for (int k = 0; k < Payments.Rows.Count; k++)
@@ -178,44 +183,46 @@ namespace PappyjoeMVC.View
                             receipt = Payments.Rows[k]["receipt_no"].ToString();
                             if (receipt == Payments.Rows[k - 1]["receipt_no"].ToString())
                             {
-                                Dgv_payment.Rows.Add("", Payments.Rows[k]["invoice_no"].ToString(), Payments.Rows[k]["procedure_name"].ToString(), String.Format("{0:C}", Convert.ToDecimal(Payments.Rows[k]["amount_paid"].ToString())), "", "");
+                                Dgv_payment.Rows.Add("", Payments.Rows[k]["invoice_no"].ToString(), Payments.Rows[k]["procedure_name"].ToString(), Payments.Rows[k]["mode_of_payment"].ToString(), String.Format("{0:C}", Convert.ToDecimal(Payments.Rows[k]["amount_paid"].ToString())), "", "");
                                 j = j + 1;
                                 l = l + 1;
-                                Dgv_payment.Rows[j].Cells[3].Style.ForeColor = Color.Red;
-                                Dgv_payment.Rows[j].Cells[3].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
+                                Dgv_payment.Rows[j].Cells[4].Style.ForeColor = Color.Red;
+                                Dgv_payment.Rows[j].Cells[4].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
                                 Dgv_payment.Rows[j].Cells[2].Style.Font = new System.Drawing.Font("Segoe UI", 11, FontStyle.Regular);
                                 Dgv_payment.Rows[j].Cells[0].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
                                 Dgv_payment.Rows[j].Cells[1].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
+                                Dgv_payment.Rows[j].Cells[3].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
                                 Dgv_payment.Rows[j].Cells[2].Style.ForeColor = Color.Black;
                                 Dgv_payment.Rows[j].Cells[0].Style.ForeColor = Color.Red;
                                 Dgv_payment.Rows[j].Cells[1].Style.ForeColor = Color.DodgerBlue;
-                                Dgv_payment.Rows[j].Cells[5].Value = PappyjoeMVC.Properties.Resources.blank;
+                                Dgv_payment.Rows[j].Cells[6].Value = PappyjoeMVC.Properties.Resources.blank;
                             }
                             else
                             {
-                                Dgv_payment.Rows.Add("", "", "", "", "", "");
+                                Dgv_payment.Rows.Add("", "", "", "", "", "","");
                                 j = j + 1;
-                                Dgv_payment.Rows.Add(Payments.Rows[k]["receipt_no"].ToString(), Payments.Rows[k]["invoice_no"].ToString(), Payments.Rows[k]["procedure_name"].ToString(), String.Format("{0:C}", Convert.ToDecimal(Payments.Rows[k]["amount_paid"].ToString())), String.Format("{0:dddd, MMMM d, yyyy}", Convert.ToDateTime(Payment.Rows[i]["payment_date"].ToString())), "");
-                                Dgv_payment.Rows[j].Cells[5].Value = PappyjoeMVC.Properties.Resources.blank;
+                                Dgv_payment.Rows.Add(Payments.Rows[k]["receipt_no"].ToString(), Payments.Rows[k]["invoice_no"].ToString(), Payments.Rows[k]["procedure_name"].ToString(), Payments.Rows[k]["mode_of_payment"].ToString(), String.Format("{0:C}", Convert.ToDecimal(Payments.Rows[k]["amount_paid"].ToString())), String.Format("{0:dddd, MMMM d, yyyy}", Convert.ToDateTime(Payment.Rows[i]["payment_date"].ToString())), "");
+                                Dgv_payment.Rows[j].Cells[6].Value = PappyjoeMVC.Properties.Resources.blank;
                                 j = j + 1;
                                 l = l + 1;
-                                Dgv_payment.Rows[j].Cells[3].Style.ForeColor = Color.Red;
-                                Dgv_payment.Rows[j].Cells[3].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
+                                Dgv_payment.Rows[j].Cells[4].Style.ForeColor = Color.Red;
+                                Dgv_payment.Rows[j].Cells[4].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
                                 Dgv_payment.Rows[j].Cells[2].Style.Font = new System.Drawing.Font("Segoe UI", 11, FontStyle.Regular);
                                 Dgv_payment.Rows[j].Cells[0].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
                                 Dgv_payment.Rows[j].Cells[1].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
+                                Dgv_payment.Rows[j].Cells[3].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
                                 Dgv_payment.Rows[j].Cells[2].Style.ForeColor = Color.Black;
                                 Dgv_payment.Rows[j].Cells[0].Style.ForeColor = Color.Red;
                                 Dgv_payment.Rows[j].Cells[1].Style.ForeColor = Color.DodgerBlue;
-                                Dgv_payment.Rows[j].Cells[5].Value = PappyjoeMVC.Properties.Resources.Bill;
+                                Dgv_payment.Rows[j].Cells[6].Value = PappyjoeMVC.Properties.Resources.Bill;
                             }
                         }
                         else
                         {
-                            Dgv_payment.Rows.Add(Payments.Rows[k]["receipt_no"].ToString(), Payments.Rows[k]["invoice_no"].ToString(), Payments.Rows[k]["procedure_name"].ToString(), String.Format("{0:C}", Convert.ToDecimal(Payments.Rows[k]["amount_paid"].ToString())), String.Format("{0:dddd, MMMM d, yyyy}", Convert.ToDateTime(Payment.Rows[i]["payment_date"].ToString())), "");
+                            Dgv_payment.Rows.Add(Payments.Rows[k]["receipt_no"].ToString(), Payments.Rows[k]["invoice_no"].ToString(), Payments.Rows[k]["procedure_name"].ToString(), Payments.Rows[k]["mode_of_payment"].ToString(), String.Format("{0:C}", Convert.ToDecimal(Payments.Rows[k]["amount_paid"].ToString())), String.Format("{0:dddd, MMMM d, yyyy}", Convert.ToDateTime(Payment.Rows[i]["payment_date"].ToString())), "");
                             j = j + 1;
                             l = l + 1;
-                            Dgv_payment.Rows[j].Cells[3].Style.ForeColor = Color.Red;
+                            Dgv_payment.Rows[j].Cells[4].Style.ForeColor = Color.Red;
                             Dgv_payment.Rows[j].Cells[3].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
                             Dgv_payment.Rows[j].Cells[2].Style.Font = new System.Drawing.Font("Segoe UI", 11, FontStyle.Regular);
                             Dgv_payment.Rows[j].Cells[0].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
@@ -223,11 +230,11 @@ namespace PappyjoeMVC.View
                             Dgv_payment.Rows[j].Cells[2].Style.ForeColor = Color.Black;
                             Dgv_payment.Rows[j].Cells[0].Style.ForeColor = Color.Red;
                             Dgv_payment.Rows[j].Cells[1].Style.ForeColor = Color.DodgerBlue;
-                            Dgv_payment.Rows[j].Cells[5].Value = PappyjoeMVC.Properties.Resources.Bill;
+                            Dgv_payment.Rows[j].Cells[6].Value = PappyjoeMVC.Properties.Resources.Bill;
                         }
                     }
-                    Dgv_payment.Rows.Add("", "", "", "", "", "");
-                    Dgv_payment.Rows[j + 1].Cells[5].Value = PappyjoeMVC.Properties.Resources.blank;
+                    Dgv_payment.Rows.Add("", "", "", "", "", "","");
+                    Dgv_payment.Rows[j + 1].Cells[6].Value = PappyjoeMVC.Properties.Resources.blank;
                     j = j + 2;
                 }
 

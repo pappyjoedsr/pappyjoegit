@@ -537,6 +537,29 @@ namespace PappyjoeMVC.View
                         double g_Est = 0;
                         double Total_Advance = 0;
                         double Total_paid = 0;decimal enteramnt=0,balanceamnt=0;
+                        //checking advance exists
+                        DataTable cmd22 = this.cntrl.Get_Advance(patient_id);
+                        if (Convert.ToDecimal(cmd22.Rows[0][0].ToString())> 0)
+                        {
+                            if (Convert.ToDecimal(DGV_MainGrid.Rows[0].Cells["pay_fromadvance"].Value) == 0)
+                            {
+                                DialogResult res1 = MessageBox.Show("You have advance amount,Do you want to pay from advance amount?", " confirmation",
+                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (res1 == DialogResult.Yes)
+                                {
+
+                                    for (int k = 0; k < DGV_MainGrid.Rows.Count; k++)
+                                    {
+                                        DGV_MainGrid.Rows[k].Cells["due_afterpaymnt"].Value = 0;
+                                        DGV_MainGrid.Rows[k].Cells["ColPayNow"].Value = 0;
+                                        DGV_MainGrid.Rows[k].Cells["ColPayNow"].Value = DGV_MainGrid.Rows[k].Cells["balancedue"].Value;
+
+                                    }
+                                    DGV_MainGrid.Rows[0].Cells["pay_fromadvance"].Selected = true;
+                                    return;
+                                }
+                            }
+                        }
                         while (iii < DGV_MainGrid.Rows.Count)
                         {
                             g_Advance = Convert.ToDouble(DGV_MainGrid[3, iii].Value);
@@ -558,9 +581,10 @@ namespace PappyjoeMVC.View
                                 else
                                 {
                                     decimal advance1 = 0;
+                                    //remainng balance due save as advance 
                                     enteramnt = Convert.ToDecimal(DGV_MainGrid[4, iii].Value);
                                     balanceamnt = enteramnt - Convert.ToDecimal(g_Est);
-                                    DataTable cmd22 = this.cntrl.Get_Advance(patient_id);
+                                    //DataTable cmd22 = this.cntrl.Get_Advance(patient_id);
                                     //decimal abcde1 = Convert.ToInt32(txt_PayNow.Text);
                                     if (cmd22.Rows.Count > 0)
                                     {
@@ -596,7 +620,7 @@ namespace PappyjoeMVC.View
                                 //return;
                             }
                             if (g_Advance == 0)
-                            {                            }
+                            { }
                             if (g_Paid == 0)
                             {
                                 DGV_MainGrid[4, iii].Value = "0";
@@ -734,7 +758,7 @@ namespace PappyjoeMVC.View
                         if (status == 1)
                         {
                             decimal a = 0;
-                            if(adv>0)
+                            if (adv > 0)
                             {
 
                             }
@@ -743,7 +767,7 @@ namespace PappyjoeMVC.View
                                 a = decimal.Parse(advanceamt) - advance;
                                 this.cntrl.update_advance(a, patient_id);
                             }
-                            
+
                             string rec = this.cntrl.receipt_autoid();
                             int receip = int.Parse(rec) + 1;
                             this.cntrl.update_receiptAutoid(receip);

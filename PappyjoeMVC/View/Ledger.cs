@@ -119,7 +119,8 @@ namespace PappyjoeMVC.View
                     decimal unit = decimal.Parse(dt_invoice.Rows[z]["unit"].ToString());
                     decimal discount = decimal.Parse(dt_invoice.Rows[z]["discountin_rs"].ToString());
                     decimal tax = decimal.Parse(dt_invoice.Rows[z]["tax_inrs"].ToString());
-                    credit = (cost * unit) - (tax + discount);
+                    //credit = (cost * unit) - (tax + discount);
+                    credit =((cost * unit) + tax ) - discount;
                     totalcredit = totalcredit + credit;
                     DGV_Transaction.Rows.Add(day + ' ' + strMonthName + ' ' + year, invoiceno, details, String.Format("{0:C}", credit), String.Format("{0:C}", 0), String.Format("{0:C}", totalcredit));
                     DGV_Transaction.Rows[z].Cells[0].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
