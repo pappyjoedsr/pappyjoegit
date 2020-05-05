@@ -149,7 +149,7 @@ namespace PappyjoeMVC.View
                         }
                         else
                         {
-                            int i = this.cntrl.Update_drug(id, txtitemname.Text, txt_generic.Text, StrType, StrUnit, text_strength.Text, rich_instruction.Text);
+                            int i = this.cntrl.Update_drug(id, txtitemname.Text, txt_generic.Text, StrType, text_strength.Text, StrUnit, rich_instruction.Text);
                         }
                     }
                     DataTable dt = this.cntrl.get_drug();
@@ -358,12 +358,12 @@ namespace PappyjoeMVC.View
                                     string Strength = "";
                                     string Unit = "";
                                     string Instructions = "";
-                                    Name = xlWorkSheet.Cells[iRow, 1].value;
-                                    Generic = xlWorkSheet.Cells[iRow, 2].value.ToString();
-                                    Type = xlWorkSheet.Cells[iRow, 3].value.ToString();
-                                    Strength = xlWorkSheet.Cells[iRow, 4].value.ToString();
-                                    Unit = xlWorkSheet.Cells[iRow, 5].value.ToString();
-                                    Instructions = xlWorkSheet.Cells[iRow, 6].value.ToString();
+                                    Name = Convert.ToString(xlWorkSheet.Cells[iRow, 1].value);
+                                    Generic = Convert.ToString(xlWorkSheet.Cells[iRow, 2].value);
+                                    Type = Convert.ToString(xlWorkSheet.Cells[iRow, 3].value);
+                                    Strength = Convert.ToString(xlWorkSheet.Cells[iRow, 4].value);
+                                    Unit = Convert.ToString(xlWorkSheet.Cells[iRow, 5].value);
+                                    Instructions = Convert.ToString(xlWorkSheet.Cells[iRow, 6].value);
 
                                     DataTable dt_drug_type = this.cntrl.get_value_from_drugtype(Type);
                                     if (dt_drug_type.Rows.Count == 0)

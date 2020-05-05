@@ -218,10 +218,10 @@ namespace PappyjoeMVC.Model
             DataTable sqlstring =db.table( "SELECT id,pt_name,start_datetime,plan_New_procedure ,status,EHR_status,start_datetime FROM tbl_appointment where start_datetime between  '" + Convert.ToDateTime(startDateTime).ToString("yyyy-MM-dd HH:mm") + "' AND '" + Convert.ToDateTime(startDateTime1).ToString("yyyy-MM-dd HH:mm") + "' AND dr_id='" + dr_id + "' ORDER BY start_datetime");
             return sqlstring;
         }
-        //public int insert_excelimported()
-        //{
-        //    int i = db.execute("insert into tbl_patient ");
-        //    return i;
-        //}
+        public int insert_excelimported(string name,string id,string gender,string age, string mob,string street,string localty,string file)
+        {
+            int i = db.execute("insert into tbl_patient(pt_name,pt_id,gender,age,primary_mobile_number,street_address,locality,Opticket)values('"+name+"','"+id+"','"+gender+"','"+age+"','"+mob+"','"+street+"','"+localty+"','"+file+"') ");
+            return i;
+        }
     }
 }

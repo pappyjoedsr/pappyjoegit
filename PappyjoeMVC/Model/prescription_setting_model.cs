@@ -55,7 +55,7 @@ namespace PappyjoeMVC.Model
         }
         public int Update_drug(string id, string _drugname, string generic, string _strtype, string _strunit, string _strengthgr, string _intstructuion)
         {
-            int i = db.execute("update tbl_adddrug set name='" + _drugname + "',generic='" + generic + "',type='" + _strtype + "',strength='" + _strunit + "',strength_gr='" + _strengthgr + "',instructions='" + _intstructuion + "',display_status='Yes',inventory_id='0' where id='" + id + "'");
+            int i = db.execute("update tbl_adddrug set name='" + _drugname + "',generic='" + generic + "',type='" + _strtype + "',strength_gr='" + _strengthgr + "',strength='" + _strunit + "',instructions='" + _intstructuion + "',display_status='Yes',inventory_id='0' where id='" + id + "'");
             return i;
         }
         public int delete_drug(string id)

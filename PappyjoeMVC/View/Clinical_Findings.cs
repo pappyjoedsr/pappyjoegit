@@ -523,6 +523,10 @@ namespace PappyjoeMVC.View
                     {
                         e.Graphics.DrawString(dtp.Rows[0][9].ToString(), printFont, Brushes.Gray, 30, 130);
                     }
+                    using (System.Drawing.Font printFont = new System.Drawing.Font("Segoe UI", 14.0f))
+                    {
+                        e.Graphics.DrawString("CLINICAL FINDINGS", printFont, Brushes.Gray, 320, 175);
+                    }
                     Graphics g = e.Graphics;
                     Pen pen = new Pen(Color.Gray);
                     g.DrawLine(pen, new System.Drawing.Point(20, 200), new System.Drawing.Point(800, 200));
@@ -631,7 +635,7 @@ namespace PappyjoeMVC.View
                         System.Data.DataTable dt_cf = this.cntrl.dt_cf(clinic_id, patient_id);
                         if (dt_cf.Rows.Count > 0)
                         {
-                            e.Graphics.DrawString("by:", printFont, Brushes.Gray, 20, yy);
+                            e.Graphics.DrawString("By:", printFont, Brushes.Gray, 20, yy);
                             using (System.Drawing.Font printFont1 = new System.Drawing.Font("Segoe UI", 10.0f))
                             {
                                 e.Graphics.DrawString("Dr." + Convert.ToString(dt_cf.Rows[0]["doctor_name"].ToString()), printFont1, Brushes.Black, 40, yy);

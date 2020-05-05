@@ -111,11 +111,11 @@ namespace PappyjoeMVC.View
                             }
                             ///////update pt_group ////////   
                             this.cntrl.delete_pt_group(patient_id);
-                            for (int d = 0; d < gridgroups.Rows.Count; d++)
+                            for (int d = 0; d < dgvgroup.Rows.Count; d++)
                             {
-                                if (Convert.ToBoolean(gridgroups.Rows[d].Cells[1].Value) == true)
+                                if (Convert.ToBoolean(dgvgroup.Rows[d].Cells[1].Value) == true)
                                 {
-                                    this.cntrl.insert_pt_group(patient_id, gridgroups.Rows[d].Cells[0].Value.ToString());
+                                    this.cntrl.insert_pt_group(patient_id, dgvgroup.Rows[d].Cells[0].Value.ToString());
                                 }
                             }
                             if (path != "")
@@ -250,8 +250,8 @@ namespace PappyjoeMVC.View
             btnGroupsSave.Show();
             txtGroups.Show();
             btnGroupsAddNew.Hide();
-            gridgroups.Location = new Point(6,60);
-            gridgroups.Height = 168;
+            dgvgroup.Location = new Point(6,60);
+            dgvgroup.Height = 168;
         }
 
         private void btnGroupsSave_Click(object sender, EventArgs e)
@@ -259,15 +259,15 @@ namespace PappyjoeMVC.View
             if (!String.IsNullOrWhiteSpace(txtGroups.Text))
             {
                 this.cntrl.save_group(txtGroups.Text);
-                gridgroups.Rows.Add(txtGroups.Text);
+                dgvgroup.Rows.Add(txtGroups.Text);
             }
             btnGroupsCancel.Hide();
             btnGroupsSave.Hide();
             txtGroups.Hide();
             btnGroupsAddNew.Show();
             txtGroups.Text = "";
-            gridgroups.Location = new Point(6,30);
-            gridgroups.Height = 198;
+            dgvgroup.Location = new Point(6,30);
+            dgvgroup.Height = 198;
         }
 
         private void btnGroupsCancel_Click(object sender, EventArgs e)
@@ -276,8 +276,8 @@ namespace PappyjoeMVC.View
             btnGroupsSave.Hide();
             txtGroups.Hide();
             btnGroupsAddNew.Show();
-            gridgroups.Location = new Point(6,30);
-            gridgroups.Height = 198;
+            dgvgroup.Location = new Point(6,30);
+            dgvgroup.Height = 198;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -362,7 +362,7 @@ namespace PappyjoeMVC.View
                 //{
                 //    Name = "Check"
                 //};
-                //gridgroups.Columns.Add(checkgroup);
+                //dgvgroup.Columns.Add(checkgroup);
                 //checkgroup.Width = 100;
                 //checkgroup.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 //string dt9 = this.cntrl.groupname();
@@ -371,7 +371,7 @@ namespace PappyjoeMVC.View
                 //    string gt = this.cntrl.patient_group(patient_id, dt9);
                 //    if (gt != "")
                 //    {
-                //        gridgroups.Rows.Add(dt9);
+                //        dgvgroup.Rows.Add(dt9);
                 //    }
                 //}
 
@@ -379,6 +379,31 @@ namespace PappyjoeMVC.View
                 this.AutoSize = true;
                 this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
+                DataGridViewCheckBoxColumn checkgroup = new DataGridViewCheckBoxColumn()
+                {
+                    Name = "Check"
+                };
+                dgvgroup.Columns.Add(checkgroup);
+                checkgroup.Width = 100;
+                checkgroup.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DataTable group = this.cntrl.get_groupid(patient_id);
+                for (int j = 0; j < group.Rows.Count; j++)
+                {
+                    dgvgroup.Rows.Add(group.Rows[j][0].ToString());
+                    dgvgroup.Rows[j].Cells[1].Value = true;
+                    dgvgroup.Rows[j].Cells[0].Style.BackColor = Color.FromArgb(62, 165, 195);
+                    dgvgroup.Rows[j].Cells[1].Style.BackColor = Color.FromArgb(62, 165, 195);
+                }
+                DataTable dt9 = this.cntrl.groupname();
+                for (int k = 0; k < dt9.Rows.Count; k++)
+                {
+                    string gt = this.cntrl.patient_group(patient_id, dt9.Rows[k]["name"].ToString());
+                    if (gt == "0")
+                    {
+                        dgvgroup.Rows.Add(dt9.Rows[k]["name"].ToString());
+
+                    }
+                }
                 DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn()
                 {
                     Name = "Check"
@@ -403,30 +428,7 @@ namespace PappyjoeMVC.View
                         grmedical.Rows.Add(dt35.Rows[j][0].ToString());
                     }
                 }
-                DataGridViewCheckBoxColumn checkgroup = new DataGridViewCheckBoxColumn()
-                {
-                    Name = "Check"
-                };
-                gridgroups.Columns.Add(checkgroup);
-                checkgroup.Width = 100;
-                checkgroup.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DataTable group = this.cntrl.get_groupid(patient_id);
-                for (int j = 0; j < group.Rows.Count; j++)
-                {
-                    gridgroups.Rows.Add(group.Rows[j][0].ToString());
-                    gridgroups.Rows[j].Cells[1].Value = true;
-                    gridgroups.Rows[j].Cells[0].Style.BackColor = Color.FromArgb(62, 165, 195);
-                    gridgroups.Rows[j].Cells[1].Style.BackColor = Color.FromArgb(62, 165, 195);
-                }
-                DataTable dt9 = this.cntrl.groupname();
-                for (int j = 0; j < dt9.Rows.Count; j++)
-                {
-                    string gt = this.cntrl.patient_group(patient_id, dt9.Rows[j][0].ToString());
-                    if (gt == "0")
-                    {
-                        gridgroups.Rows.Add(dt9.Rows[j][0].ToString());
-                    }
-                }
+                                ///
                 DataTable dt7 = this.cntrl.Get_Patient_Details(patient_id);
                 txtPatientName.Text = dt7.Rows[0]["pt_name"].ToString();
                 txtPatientId.Text = dt7.Rows[0]["pt_id"].ToString();
@@ -517,11 +519,10 @@ namespace PappyjoeMVC.View
             
         }
 
-        private void gridgroups_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvgroup_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int a = e.RowIndex;
-            aa = gridgroups.Rows[a].Cells[0].Value.ToString();
+            aa = dgvgroup.Rows[a].Cells[0].Value.ToString();
         }
-
     }
 }

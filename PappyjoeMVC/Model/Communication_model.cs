@@ -109,6 +109,16 @@ namespace PappyjoeMVC.Model
             string id = db.scalar("select id from tbl_User_Privilege where UserID=" + doctor_id + " and Category='INVENTORY' and Permission='A'");
             return id;
         }
+        public int delete(string id)
+        {
+            int i = db.execute("delete from tbl_templates where id='" + id + "'");
+            return i;
+        }
+        public int update_temp(string id,string temp)
+        {
+            int i = db.execute("update tbl_templates set template='" + temp + "' where id='" + id + "'");
+            return i;
+        }
     }
 }
 

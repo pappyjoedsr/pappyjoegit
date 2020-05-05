@@ -1156,9 +1156,11 @@
             // Adv_details
             // 
             this.Adv_details.AutoSize = true;
+            this.Adv_details.BackColor = System.Drawing.Color.DarkRed;
             this.Adv_details.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Adv_details.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Adv_details.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Adv_details.ForeColor = System.Drawing.Color.White;
+            this.Adv_details.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Adv_details.Location = new System.Drawing.Point(862, 42);
             this.Adv_details.Name = "Adv_details";
             this.Adv_details.Size = new System.Drawing.Size(100, 17);
@@ -1252,7 +1254,6 @@
             this.Controls.Add(this.Adv_details);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblAdvance);
-            this.Controls.Add(this.adv_refund);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.Lab_Due);
             this.Controls.Add(this.panel9);

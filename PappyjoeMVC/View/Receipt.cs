@@ -119,12 +119,12 @@ namespace PappyjoeMVC.View
                 if (dtadvance.Rows.Count > 0)
                 {
                     //adv_refund.Visible = true;
-                    lblAdvance.Show(); Adv_details.Visible = true; adv_refund.Visible = true;
+                    lblAdvance.Show(); Adv_details.Visible = true; //adv_refund.Visible = true;
                     lblAdvance.Text = "Available advance: " + string.Format("{0:C}", decimal.Parse(dtadvance.Rows[0][0].ToString()));
                 }
                 else
                 {
-                    Adv_details.Visible = false; adv_refund.Visible = false;
+                    Adv_details.Visible = false; //adv_refund.Visible = false;
                     lblAdvance.Text = "Available advance: " + string.Format("{0:C}", 0);
                 }
                 Dgv_payment.Rows.Clear();
