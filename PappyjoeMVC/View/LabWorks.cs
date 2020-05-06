@@ -11,9 +11,11 @@ namespace PappyjoeMVC.View
 {
     public partial class LabWorks : Form
     {
+        public static LabWorks form;
         public LabWorks()
         {
             InitializeComponent();
+            form = this;
         }
         StreamWriter sWrite;
         public int k, Dexist = 0;
@@ -294,7 +296,9 @@ namespace PappyjoeMVC.View
             form.patient_id = patient_id;
             form.doctor_id = doctor_id;
             form.workid = workiddental;
-            form.Show();
+            form.ShowDialog();
+            DataTable dt = this.ctrlr.Getdata(patient_id);
+            Getdata(dt);
         }
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
@@ -493,8 +497,6 @@ namespace PappyjoeMVC.View
         }
         private void dataGridView1_treatment_paln_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-
             try
             {
                 if (e.ColumnIndex == 0 && e.RowIndex > -1)

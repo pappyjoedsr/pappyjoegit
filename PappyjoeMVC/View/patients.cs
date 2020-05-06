@@ -2032,36 +2032,31 @@ namespace PappyjoeMVC.View
 
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
-            //if (doctor_id != "1")
-            //{
-            //    string id;
-            //    id = this.cntrl.doctr_privillage_for_addnewPatient(doctor_id);
-            //    if (int.Parse(id) > 0)
-            //    {
-            //        MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            //    }
-            //    else
-            //    {
-            //        var form2 = new Add_New_Patients();
-            //        form2.doctor_id = doctor_id;
-            //        form2.Closed += (sender1, args) => this.Close();
-            //        this.Hide();
-            //        form2.Show();
-            //    }
-            //}
-            //else
-            //{
-            //    var form2 = new Add_New_Patients();
-            //    form2.doctor_id = doctor_id;
-            //    form2.Closed += (sender1, args) => this.Close();
-            //    this.Hide();
-            //    form2.Show();
-            //}
-            var form2 = new Practice_Details();
-            form2.doctor_id = doctor_id;
-            form2.Closed += (sender1, args) => this.Close();
-            this.Hide();
-            form2.Show();
+            if (doctor_id != "1")
+            {
+                string id;
+                id = this.cntrl.doctr_privillage_for_addnewPatient(doctor_id);
+                if (int.Parse(id) > 0)
+                {
+                    MessageBox.Show("There is No Privilege to Add Patient", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var form2 = new Add_New_Patients();
+                    form2.doctor_id = doctor_id;
+                    form2.Closed += (sender1, args) => this.Close();
+                    this.Hide();
+                    form2.Show();
+                }
+            }
+            else
+            {
+                var form2 = new Add_New_Patients();
+                form2.doctor_id = doctor_id;
+                form2.Closed += (sender1, args) => this.Close();
+                this.Hide();
+                form2.Show();
+            }
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)

@@ -39,8 +39,12 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                this.ctrlr.restoredb(filepath);
-                MessageBox.Show("restore complete", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(openFileDialog1.ShowDialog()==DialogResult.OK)
+                {
+                    filepath = openFileDialog1.FileName;
+                    this.ctrlr.restoredb(filepath);
+                    MessageBox.Show("restore complete", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {

@@ -60,6 +60,7 @@
             this.labelallpatient = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel_Sidebar = new System.Windows.Forms.Panel();
+            this.lbl_imprt_patients = new System.Windows.Forms.Label();
             this.labellog = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.labelremaindersms = new System.Windows.Forms.Label();
@@ -110,7 +111,6 @@
             this.lab_LongMsg = new System.Windows.Forms.Label();
             this.DGV_Patients = new System.Windows.Forms.DataGridView();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
-            this.lbl_imprt_patients = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.panel_titile.SuspendLayout();
             this.panel_Sidebar.SuspendLayout();
@@ -439,6 +439,21 @@
             this.panel_Sidebar.Name = "panel_Sidebar";
             this.panel_Sidebar.Size = new System.Drawing.Size(197, 552);
             this.panel_Sidebar.TabIndex = 61;
+            // 
+            // lbl_imprt_patients
+            // 
+            this.lbl_imprt_patients.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_imprt_patients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_imprt_patients.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_imprt_patients.ForeColor = System.Drawing.Color.DimGray;
+            this.lbl_imprt_patients.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_imprt_patients.Location = new System.Drawing.Point(17, 490);
+            this.lbl_imprt_patients.Name = "lbl_imprt_patients";
+            this.lbl_imprt_patients.Size = new System.Drawing.Size(173, 32);
+            this.lbl_imprt_patients.TabIndex = 57;
+            this.lbl_imprt_patients.Text = "Import Patients";
+            this.lbl_imprt_patients.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_imprt_patients.Click += new System.EventHandler(this.lbl_imprt_patients_Click);
             // 
             // labellog
             // 
@@ -1230,21 +1245,6 @@
             this.listpatientsearch.Visible = false;
             this.listpatientsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listpatientsearch_MouseClick);
             this.listpatientsearch.SelectedIndexChanged += new System.EventHandler(this.listpatientsearch_SelectedIndexChanged);
-            // 
-            // lbl_imprt_patients
-            // 
-            this.lbl_imprt_patients.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_imprt_patients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_imprt_patients.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_imprt_patients.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_imprt_patients.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_imprt_patients.Location = new System.Drawing.Point(17, 490);
-            this.lbl_imprt_patients.Name = "lbl_imprt_patients";
-            this.lbl_imprt_patients.Size = new System.Drawing.Size(173, 32);
-            this.lbl_imprt_patients.TabIndex = 57;
-            this.lbl_imprt_patients.Text = "Import Patients";
-            this.lbl_imprt_patients.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_imprt_patients.Click += new System.EventHandler(this.lbl_imprt_patients_Click);
             // 
             // Patients
             // 

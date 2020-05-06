@@ -30,13 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,6 +37,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consultation));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -64,6 +64,20 @@
             this.chkprescription = new System.Windows.Forms.CheckBox();
             this.btn_addtrtmnt = new System.Windows.Forms.Button();
             this.dataGridView_drugnew = new System.Windows.Forms.DataGridView();
+            this.drugname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.strength = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.strengthgr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.period = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.morning = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.night = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.food = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instruction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drugtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drugid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.img = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.presdruggrid = new System.Windows.Forms.DataGridView();
@@ -129,20 +143,6 @@
             this.txt_Pt_search = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.drugname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strength = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strengthgr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.period = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.morning = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.night = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.food = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instruction = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drugtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drugid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.img = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_treatment)).BeginInit();
@@ -374,11 +374,11 @@
             this.chkprescription.AutoSize = true;
             this.chkprescription.Checked = true;
             this.chkprescription.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkprescription.Location = new System.Drawing.Point(813, 548);
+            this.chkprescription.Location = new System.Drawing.Point(617, 547);
             this.chkprescription.Name = "chkprescription";
-            this.chkprescription.Size = new System.Drawing.Size(130, 17);
+            this.chkprescription.Size = new System.Drawing.Size(203, 17);
             this.chkprescription.TabIndex = 294;
-            this.chkprescription.Text = "Print With Prescription";
+            this.chkprescription.Text = "Print Both Procedure and Prescription";
             this.chkprescription.UseVisualStyleBackColor = true;
             // 
             // btn_addtrtmnt
@@ -443,6 +443,121 @@
             this.dataGridView_drugnew.Size = new System.Drawing.Size(605, 183);
             this.dataGridView_drugnew.TabIndex = 413;
             this.dataGridView_drugnew.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_drugnew_CellClick);
+            // 
+            // drugname
+            // 
+            this.drugname.HeaderText = "DRUG NAME";
+            this.drugname.Name = "drugname";
+            this.drugname.ReadOnly = true;
+            this.drugname.Width = 150;
+            // 
+            // strength
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.strength.DefaultCellStyle = dataGridViewCellStyle2;
+            this.strength.HeaderText = "STRENGTH";
+            this.strength.MinimumWidth = 20;
+            this.strength.Name = "strength";
+            this.strength.ReadOnly = true;
+            this.strength.Width = 50;
+            // 
+            // strengthgr
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.strengthgr.DefaultCellStyle = dataGridViewCellStyle3;
+            this.strengthgr.HeaderText = "";
+            this.strengthgr.Name = "strengthgr";
+            this.strengthgr.ReadOnly = true;
+            this.strengthgr.Visible = false;
+            this.strengthgr.Width = 30;
+            // 
+            // duration
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.duration.DefaultCellStyle = dataGridViewCellStyle4;
+            this.duration.HeaderText = "DURATION";
+            this.duration.Name = "duration";
+            this.duration.ReadOnly = true;
+            this.duration.Width = 50;
+            // 
+            // period
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.period.DefaultCellStyle = dataGridViewCellStyle5;
+            this.period.HeaderText = "PERIOD";
+            this.period.Name = "period";
+            this.period.ReadOnly = true;
+            this.period.Visible = false;
+            this.period.Width = 50;
+            // 
+            // morning
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.morning.DefaultCellStyle = dataGridViewCellStyle6;
+            this.morning.HeaderText = "MORNING";
+            this.morning.Name = "morning";
+            this.morning.ReadOnly = true;
+            this.morning.Width = 50;
+            // 
+            // noon
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.noon.DefaultCellStyle = dataGridViewCellStyle7;
+            this.noon.HeaderText = "NOON";
+            this.noon.Name = "noon";
+            this.noon.ReadOnly = true;
+            this.noon.Width = 50;
+            // 
+            // night
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.night.DefaultCellStyle = dataGridViewCellStyle8;
+            this.night.HeaderText = "NIGHT";
+            this.night.Name = "night";
+            this.night.ReadOnly = true;
+            this.night.Width = 50;
+            // 
+            // food
+            // 
+            this.food.HeaderText = "FOOD";
+            this.food.Name = "food";
+            this.food.ReadOnly = true;
+            this.food.Width = 70;
+            // 
+            // instruction
+            // 
+            this.instruction.HeaderText = "INSTRUCTION";
+            this.instruction.Name = "instruction";
+            this.instruction.ReadOnly = true;
+            // 
+            // drugtype
+            // 
+            this.drugtype.HeaderText = "drug type";
+            this.drugtype.Name = "drugtype";
+            this.drugtype.ReadOnly = true;
+            this.drugtype.Visible = false;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Visible = false;
+            this.status.Width = 30;
+            // 
+            // drugid
+            // 
+            this.drugid.HeaderText = "drugid";
+            this.drugid.Name = "drugid";
+            this.drugid.ReadOnly = true;
+            this.drugid.Visible = false;
+            // 
+            // img
+            // 
+            this.img.HeaderText = "DEL";
+            this.img.Name = "img";
+            this.img.ReadOnly = true;
+            this.img.Width = 30;
             // 
             // tabControl1
             // 
@@ -969,7 +1084,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(31, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 21);
+            this.label3.Size = new System.Drawing.Size(74, 21);
             this.label3.TabIndex = 406;
             this.label3.Text = "Patient Id";
             // 
@@ -1016,7 +1131,7 @@
             this.label19.ForeColor = System.Drawing.Color.Black;
             this.label19.Location = new System.Drawing.Point(550, 142);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(44, 21);
+            this.label19.Size = new System.Drawing.Size(42, 21);
             this.label19.TabIndex = 313;
             this.label19.Text = "Total";
             // 
@@ -1191,7 +1306,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(390, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 21);
+            this.label4.Size = new System.Drawing.Size(72, 21);
             this.label4.TabIndex = 293;
             this.label4.Text = "Template";
             this.label4.Visible = false;
@@ -1227,7 +1342,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(2, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 21);
+            this.label1.Size = new System.Drawing.Size(103, 21);
             this.label1.TabIndex = 288;
             this.label1.Text = "Patient Name";
             // 
@@ -1238,121 +1353,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(960, 1);
             this.panel3.TabIndex = 305;
-            // 
-            // drugname
-            // 
-            this.drugname.HeaderText = "DRUG NAME";
-            this.drugname.Name = "drugname";
-            this.drugname.ReadOnly = true;
-            this.drugname.Width = 150;
-            // 
-            // strength
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.strength.DefaultCellStyle = dataGridViewCellStyle2;
-            this.strength.HeaderText = "STRENGTH";
-            this.strength.MinimumWidth = 20;
-            this.strength.Name = "strength";
-            this.strength.ReadOnly = true;
-            this.strength.Width = 50;
-            // 
-            // strengthgr
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.strengthgr.DefaultCellStyle = dataGridViewCellStyle3;
-            this.strengthgr.HeaderText = "";
-            this.strengthgr.Name = "strengthgr";
-            this.strengthgr.ReadOnly = true;
-            this.strengthgr.Visible = false;
-            this.strengthgr.Width = 30;
-            // 
-            // duration
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.duration.DefaultCellStyle = dataGridViewCellStyle4;
-            this.duration.HeaderText = "DURATION";
-            this.duration.Name = "duration";
-            this.duration.ReadOnly = true;
-            this.duration.Width = 50;
-            // 
-            // period
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.period.DefaultCellStyle = dataGridViewCellStyle5;
-            this.period.HeaderText = "PERIOD";
-            this.period.Name = "period";
-            this.period.ReadOnly = true;
-            this.period.Visible = false;
-            this.period.Width = 50;
-            // 
-            // morning
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.morning.DefaultCellStyle = dataGridViewCellStyle6;
-            this.morning.HeaderText = "MORNING";
-            this.morning.Name = "morning";
-            this.morning.ReadOnly = true;
-            this.morning.Width = 50;
-            // 
-            // noon
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.noon.DefaultCellStyle = dataGridViewCellStyle7;
-            this.noon.HeaderText = "NOON";
-            this.noon.Name = "noon";
-            this.noon.ReadOnly = true;
-            this.noon.Width = 50;
-            // 
-            // night
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.night.DefaultCellStyle = dataGridViewCellStyle8;
-            this.night.HeaderText = "NIGHT";
-            this.night.Name = "night";
-            this.night.ReadOnly = true;
-            this.night.Width = 50;
-            // 
-            // food
-            // 
-            this.food.HeaderText = "FOOD";
-            this.food.Name = "food";
-            this.food.ReadOnly = true;
-            this.food.Width = 70;
-            // 
-            // instruction
-            // 
-            this.instruction.HeaderText = "INSTRUCTION";
-            this.instruction.Name = "instruction";
-            this.instruction.ReadOnly = true;
-            // 
-            // drugtype
-            // 
-            this.drugtype.HeaderText = "drug type";
-            this.drugtype.Name = "drugtype";
-            this.drugtype.ReadOnly = true;
-            this.drugtype.Visible = false;
-            // 
-            // status
-            // 
-            this.status.HeaderText = "status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Visible = false;
-            this.status.Width = 30;
-            // 
-            // drugid
-            // 
-            this.drugid.HeaderText = "drugid";
-            this.drugid.Name = "drugid";
-            this.drugid.ReadOnly = true;
-            this.drugid.Visible = false;
-            // 
-            // img
-            // 
-            this.img.HeaderText = "DEL";
-            this.img.Name = "img";
-            this.img.ReadOnly = true;
-            this.img.Width = 30;
             // 
             // Consultation
             // 
