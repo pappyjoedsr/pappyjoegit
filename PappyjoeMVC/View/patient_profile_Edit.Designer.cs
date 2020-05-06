@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patient_Profile_Edit));
             this.panel4 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.txtpassport = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtnationality = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -93,8 +96,6 @@
             this.btnGroupsCancel = new System.Windows.Forms.Button();
             this.btnGroupsSave = new System.Windows.Forms.Button();
             this.txtGroups = new System.Windows.Forms.TextBox();
-            this.gridgroups = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGroupsAddNew = new System.Windows.Forms.Button();
             this.label34 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -111,20 +112,18 @@
             this.label24 = new System.Windows.Forms.Label();
             this.btnMedicalHistoryAddnew = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtnationality = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtpassport = new System.Windows.Forms.TextBox();
+            this.dgvgroup = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PatientPhoto)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridgroups)).BeginInit();
             this.panel11.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grmedical)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvgroup)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -215,10 +214,50 @@
             this.panel9.Controls.Add(this.pictureBox_PatientPhoto);
             this.panel9.Controls.Add(this.txtPin);
             this.panel9.Controls.Add(this.txtAge);
-            this.panel9.Location = new System.Drawing.Point(3, 51);
+            this.panel9.Location = new System.Drawing.Point(3, 56);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(864, 616);
             this.panel9.TabIndex = 256;
+            // 
+            // txtpassport
+            // 
+            this.txtpassport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpassport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpassport.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtpassport.Location = new System.Drawing.Point(306, 561);
+            this.txtpassport.Name = "txtpassport";
+            this.txtpassport.Size = new System.Drawing.Size(207, 22);
+            this.txtpassport.TabIndex = 255;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(210, 566);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(84, 17);
+            this.label18.TabIndex = 254;
+            this.label18.Text = "Passport No:";
+            // 
+            // txtnationality
+            // 
+            this.txtnationality.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnationality.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnationality.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.txtnationality.Location = new System.Drawing.Point(306, 531);
+            this.txtnationality.Name = "txtnationality";
+            this.txtnationality.Size = new System.Drawing.Size(207, 22);
+            this.txtnationality.TabIndex = 253;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(224, 536);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.TabIndex = 252;
+            this.label2.Text = "Nationality:";
             // 
             // label7
             // 
@@ -762,8 +801,8 @@
             this.panel10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel10.Controls.Add(this.btnGroupsCancel);
             this.panel10.Controls.Add(this.btnGroupsSave);
+            this.panel10.Controls.Add(this.dgvgroup);
             this.panel10.Controls.Add(this.txtGroups);
-            this.panel10.Controls.Add(this.gridgroups);
             this.panel10.Location = new System.Drawing.Point(5, 44);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(334, 240);
@@ -775,7 +814,7 @@
             this.btnGroupsCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGroupsCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGroupsCancel.ForeColor = System.Drawing.Color.White;
-            this.btnGroupsCancel.Location = new System.Drawing.Point(153, 30);
+            this.btnGroupsCancel.Location = new System.Drawing.Point(152, 30);
             this.btnGroupsCancel.Name = "btnGroupsCancel";
             this.btnGroupsCancel.Size = new System.Drawing.Size(172, 26);
             this.btnGroupsCancel.TabIndex = 179;
@@ -790,7 +829,7 @@
             this.btnGroupsSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGroupsSave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGroupsSave.ForeColor = System.Drawing.Color.White;
-            this.btnGroupsSave.Location = new System.Drawing.Point(3, 30);
+            this.btnGroupsSave.Location = new System.Drawing.Point(5, 30);
             this.btnGroupsSave.Name = "btnGroupsSave";
             this.btnGroupsSave.Size = new System.Drawing.Size(144, 26);
             this.btnGroupsSave.TabIndex = 178;
@@ -808,44 +847,6 @@
             this.txtGroups.Size = new System.Drawing.Size(322, 20);
             this.txtGroups.TabIndex = 177;
             this.txtGroups.Visible = false;
-            // 
-            // gridgroups
-            // 
-            this.gridgroups.AllowUserToAddRows = false;
-            this.gridgroups.AllowUserToDeleteRows = false;
-            this.gridgroups.AllowUserToResizeColumns = false;
-            this.gridgroups.AllowUserToResizeRows = false;
-            this.gridgroups.BackgroundColor = System.Drawing.Color.White;
-            this.gridgroups.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gridgroups.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.gridgroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridgroups.ColumnHeadersVisible = false;
-            this.gridgroups.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridgroups.DefaultCellStyle = dataGridViewCellStyle1;
-            this.gridgroups.GridColor = System.Drawing.Color.Gainsboro;
-            this.gridgroups.Location = new System.Drawing.Point(6, 30);
-            this.gridgroups.Name = "gridgroups";
-            this.gridgroups.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridgroups.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridgroups.Size = new System.Drawing.Size(320, 198);
-            this.gridgroups.TabIndex = 175;
-            this.gridgroups.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridgroups_CellClick);
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.DataPropertyName = "name";
-            this.Column1.HeaderText = "Group";
-            this.Column1.Name = "Column1";
             // 
             // btnGroupsAddNew
             // 
@@ -1004,20 +1005,20 @@
             this.grmedical.ColumnHeadersVisible = false;
             this.grmedical.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(165)))), ((int)(((byte)(195)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grmedical.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(165)))), ((int)(((byte)(195)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grmedical.DefaultCellStyle = dataGridViewCellStyle2;
             this.grmedical.GridColor = System.Drawing.Color.Gainsboro;
             this.grmedical.Location = new System.Drawing.Point(6, 30);
             this.grmedical.Name = "grmedical";
             this.grmedical.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grmedical.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grmedical.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.grmedical.Size = new System.Drawing.Size(320, 207);
             this.grmedical.TabIndex = 109;
             this.grmedical.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grmedical_CellClick);
@@ -1059,45 +1060,35 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // label2
+            // dgvgroup
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(224, 536);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
-            this.label2.TabIndex = 252;
-            this.label2.Text = "Nationality:";
+            this.dgvgroup.AllowUserToAddRows = false;
+            this.dgvgroup.AllowUserToDeleteRows = false;
+            this.dgvgroup.AllowUserToResizeColumns = false;
+            this.dgvgroup.AllowUserToResizeRows = false;
+            this.dgvgroup.BackgroundColor = System.Drawing.Color.White;
+            this.dgvgroup.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvgroup.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvgroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvgroup.ColumnHeadersVisible = false;
+            this.dgvgroup.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.dgvgroup.GridColor = System.Drawing.Color.Gainsboro;
+            this.dgvgroup.Location = new System.Drawing.Point(6, 29);
+            this.dgvgroup.Name = "dgvgroup";
+            this.dgvgroup.RowHeadersVisible = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvgroup.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvgroup.Size = new System.Drawing.Size(321, 207);
+            this.dgvgroup.TabIndex = 180;
+            this.dgvgroup.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvgroup_CellClick);
             // 
-            // txtnationality
+            // Column1
             // 
-            this.txtnationality.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtnationality.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnationality.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtnationality.Location = new System.Drawing.Point(306, 531);
-            this.txtnationality.Name = "txtnationality";
-            this.txtnationality.Size = new System.Drawing.Size(207, 22);
-            this.txtnationality.TabIndex = 253;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(210, 566);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(84, 17);
-            this.label18.TabIndex = 254;
-            this.label18.Text = "Passport No:";
-            // 
-            // txtpassport
-            // 
-            this.txtpassport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtpassport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpassport.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtpassport.Location = new System.Drawing.Point(306, 561);
-            this.txtpassport.Name = "txtpassport";
-            this.txtpassport.Size = new System.Drawing.Size(207, 22);
-            this.txtpassport.TabIndex = 255;
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "name";
+            this.Column1.HeaderText = "Group";
+            this.Column1.Name = "Column1";
             // 
             // Patient_Profile_Edit
             // 
@@ -1127,13 +1118,13 @@
             this.panel8.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridgroups)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grmedical)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvgroup)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1199,8 +1190,6 @@
         private System.Windows.Forms.Button btnGroupsCancel;
         private System.Windows.Forms.Button btnGroupsSave;
         private System.Windows.Forms.TextBox txtGroups;
-        private System.Windows.Forms.DataGridView gridgroups;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Button btnGroupsAddNew;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Panel panel11;
@@ -1222,5 +1211,7 @@
         private System.Windows.Forms.Label label18;
         public System.Windows.Forms.TextBox txtnationality;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvgroup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

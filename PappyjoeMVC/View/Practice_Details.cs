@@ -442,6 +442,7 @@ namespace PappyjoeMVC.View
             dental.Hide();
             prescr_lang.Hide();
             panel_main.Show();
+            bckres.Hide();
         }
 
         private void button_practice_Click(object sender, EventArgs e)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -165,7 +166,7 @@ namespace PappyjoeMVC.View
         {
             if (rs_plan.Rows.Count > 0)
             {
-                  proceduretreatgrid1.Rows.Add(rs_plan.Rows[0]["procedure_id"].ToString(), rs_plan.Rows[0]["procedure_name"].ToString(), rs_plan.Rows[0]["quantity"].ToString(), rs_plan.Rows[0]["cost"].ToString(), rs_plan.Rows[0]["discount"].ToString(), rs_plan.Rows[0]["discount_type"].ToString(), rs_plan.Rows[0]["total"].ToString(), rs_plan.Rows[0]["discount_inrs"].ToString(), "", rs_plan.Rows[0]["dr_id"].ToString(), "discount", rs_plan.Rows[0]["note"].ToString(), "DEL", rs_plan.Rows[0]["tooth"].ToString(), rs_plan.Rows[0]["id"].ToString(), rs_plan.Rows[0]["date"].ToString());
+                  proceduretreatgrid1.Rows.Add(rs_plan.Rows[0]["procedure_id"].ToString(), rs_plan.Rows[0]["procedure_name"].ToString(), rs_plan.Rows[0]["quantity"].ToString(), rs_plan.Rows[0]["cost"].ToString(), rs_plan.Rows[0]["discount"].ToString(), rs_plan.Rows[0]["discount_type"].ToString(), rs_plan.Rows[0]["total"].ToString(), rs_plan.Rows[0]["discount_inrs"].ToString(), "", rs_plan.Rows[0]["dr_id"].ToString(), "discount", rs_plan.Rows[0]["note"].ToString(), "DEL", rs_plan.Rows[0]["tooth"].ToString(), rs_plan.Rows[0]["id"].ToString(),DateTime.Now.ToString("dd/MM/yyyy") /*rs_plan.Rows[0]["date"].ToString()*/);
             }
             panel2.Show();
             Cmb_Doctor.SelectedValue = Convert.ToInt32(rs_plan.Rows[0]["dr_id"].ToString());
@@ -460,7 +461,7 @@ namespace PappyjoeMVC.View
                         {
                             dis = Convert.ToDecimal(txt_Discount.Text);
                         }
-                        proceduretreatgrid1.Rows.Add(id, servicetext.Text, txt_qty.Text, txt_Cost.Text, dis, Cmb_Discount.Text, Lab_ToatlValue.Text, discounttotal, "", dr_id, Cmb_Discount.Text, RTB_Addnotes.Text, "DEL", lab_teethValues.Text, plan_p_id, DTP_Date.Value.ToString("MM/dd/yyyy"));
+                        proceduretreatgrid1.Rows.Add(id, servicetext.Text, txt_qty.Text, txt_Cost.Text, dis, Cmb_Discount.Text, Lab_ToatlValue.Text, discounttotal, "", dr_id, Cmb_Discount.Text, RTB_Addnotes.Text, "DEL", lab_teethValues.Text, plan_p_id, DTP_Date.Value.ToString("dd/MM/yyyy"));
                         Decimal totalcost = 0;
                         Decimal totaldiscount = 0;
                         Decimal totalgrand = 0;
@@ -1335,7 +1336,7 @@ namespace PappyjoeMVC.View
                         DataTable dt_pt = this.cntrl.get_completed_id(patient_id, DTP_Date.Value.ToString("yyyy-MM-dd"));
                         if (dt_pt.Rows.Count == 0)
                         {
-                            this.cntrl.save_completed_id(Convert.ToDateTime(proceduretreatgrid1[15, ii].Value.ToString()).ToString("yyyy-MM-dd"), patient_id);
+                            this.cntrl.save_completed_id(Convert.ToDateTime(proceduretreatgrid1["t_date", ii].Value.ToString()).ToString("yyyy-MM-dd"), patient_id);
                             string dt = this.cntrl.get_completedMaxid();
                             int completed_id;
                             try

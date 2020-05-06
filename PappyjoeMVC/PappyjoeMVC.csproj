@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>pappy icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxInterop.XtremeCalendarControl">
       <HintPath>C:\AxInterop.XtremeCalendarControl.dll</HintPath>
@@ -42,11 +45,12 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel">
-      <HintPath>Properties\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <HintPath>C:\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>F:\vandana\MySqlBackup.NET_v2.3\.net 4.5\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\MySql.Data.DLL</HintPath>
     </Reference>
     <Reference Include="MySqlBackup">
       <HintPath>F:\vandana\MySqlBackup.NET_v2.3\.net 4.5\MySqlBackup.dll</HintPath>
@@ -662,6 +666,12 @@
     <Compile Include="View\OpenRecurringItem.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\patients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\patients.designer.cs">
+      <DependentUpon>patients.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Prescription_Lang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -961,12 +971,6 @@
     </Compile>
     <Compile Include="View\New_Debit_Account.designer.cs">
       <DependentUpon>New_Debit_Account.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Patients.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Patients.Designer.cs">
-      <DependentUpon>Patients.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Patients_First_Appointment.cs">
       <SubType>Form</SubType>
@@ -1314,6 +1318,9 @@
     <EmbeddedResource Include="View\OpenRecurringItem.resx">
       <DependentUpon>OpenRecurringItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\patients.resx">
+      <DependentUpon>patients.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Prescription_Lang.resx">
       <DependentUpon>Prescription_Lang.cs</DependentUpon>
     </EmbeddedResource>
@@ -1463,9 +1470,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\New_Debit_Account.resx">
       <DependentUpon>New_Debit_Account.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Patients.resx">
-      <DependentUpon>Patients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Patients_First_Appointment.resx">
       <DependentUpon>Patients_First_Appointment.cs</DependentUpon>
@@ -1638,6 +1642,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Pappy ion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pappy icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -715,6 +715,8 @@ namespace PappyjoeMVC.View
             label13.Visible = false;
             txt_Recipients.Visible = false;
             txt_SMS.Visible = false;
+            label21.Visible = false;
+            btn_SendSMS.Visible = false;
             txt_AddTemplates.Show();
         }
         private void Btn_useTemplates_Click(object sender, EventArgs e)
@@ -736,6 +738,7 @@ namespace PappyjoeMVC.View
             btn_SendSMS.Visible = true;
             label12.Visible = true;
             label13.Visible = true;
+            label21.Visible = true;
         }
         private void btn_addtemplateCancel_Click(object sender, EventArgs e)
         {
@@ -748,19 +751,38 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                int i = 0;
-                if (txt_AddTemplates.Text != "")
+                if (btn_save_template.Text=="Save")
                 {
-                    i = this.ctrlr.Save(txt_AddTemplates.Text);
-                    if (i > 0)
+                    int i = 0;
+                    if (txt_AddTemplates.Text != "")
                     {
-                        txt_AddTemplates.Text = "";
-                        DataTable dtb = this.ctrlr.selecttemp();
-                        selecttemp(dtb);
+                        i = this.ctrlr.Save(txt_AddTemplates.Text);
+                        if (i > 0)
+                        {
+                            txt_AddTemplates.Text = "";
+                            DataTable dtb = this.ctrlr.selecttemp();
+                            selecttemp(dtb);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Enter templates", "Add templates ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                else
+                {
+                    int j;
+                    j = this.ctrlr.update_temp(temp_id, txt_AddTemplates.Text);
+                    if (j == 0)
+                    {
+                        MessageBox.Show("Updation Failed !..", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        MessageBox.Show("Enter templates", "Add templates ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btn_save_template.Text = "Save";
+                        txt_AddTemplates.Text = "";
+                        DataTable dtb = this.ctrlr.selecttemp();
+                        selecttemp(dtb);
                     }
                 }
             }
@@ -769,12 +791,48 @@ namespace PappyjoeMVC.View
                 MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        string temp_id = "";
         private void DGV_SMSTemplates_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > -1)
+            //if (e.RowIndex > -1)
+            //{
+            //    txt_SMS.Text = DGV_SMSTemplates.Rows[e.RowIndex].Cells["colName"].Value.ToString();
+            //}
+            if (e.RowIndex >= 0)
             {
-                txt_SMS.Text = DGV_SMSTemplates.Rows[e.RowIndex].Cells["colName"].Value.ToString();
+                int i = 0;
+                if (DGV_SMSTemplates.CurrentCell.OwningColumn.Name=="colName")
+                {
+                    txt_SMS.Text = DGV_SMSTemplates.Rows[e.RowIndex].Cells["colName"].Value.ToString();
+                }
+                if (DGV_SMSTemplates.CurrentCell.OwningColumn.Name == "edit")
+                {
+                    temp_id = DGV_SMSTemplates.CurrentRow.Cells["col1"].Value.ToString();
+                    txt_AddTemplates.Text = DGV_SMSTemplates.CurrentRow.Cells["colName"].Value.ToString();
+                    btn_save_template.Text = "Update";
+                    txt_SMS.Clear();
+                    Panl_AddTemplate.Visible = true;
+                    DGV_SMSTemplates.Visible = false;
+                    txt_AddTemplates.Focus();
+                }
+                if (DGV_SMSTemplates.CurrentCell.OwningColumn.Name == "delete")
+                {
+                    DialogResult res = MessageBox.Show("Are you sure you want to delete..?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (res == DialogResult.Yes)
+                    {
+                        temp_id = DGV_SMSTemplates.CurrentRow.Cells["col1"].Value.ToString();
+                        i = this.ctrlr.delete(temp_id);
+                        if (i > 0)
+                        {
+                            DataTable tmp = this.ctrlr.selecttemp();
+                            selecttemp(tmp);
+                            txt_SMS.Clear();
+                        }
+                    }
+                    else { }
+                }
             }
+
         }
         public void upfollowup(DataTable dt)
         {

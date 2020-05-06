@@ -547,8 +547,8 @@ namespace PappyjoeMVC.View
                                     string procedure_cost = "";
                                     string comboadd = "";
                                     string notes = "";
-                                    procedure_name = xlWorkSheet.Cells[iRow, 1].value;
-                                    procedure_cost = xlWorkSheet.Cells[iRow, 2].value.ToString();
+                                    procedure_name = Convert.ToString(xlWorkSheet.Cells[iRow, 1].value);
+                                    procedure_cost = Convert.ToString(xlWorkSheet.Cells[iRow, 2].value);
                                     DataTable dtb = this.cntrl.get_procedureName(procedure_name);
                                     if (dtb.Rows.Count == 0)
                                     {

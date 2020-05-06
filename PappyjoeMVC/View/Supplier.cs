@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PappyjoeMVC.Controller;
+using System.Text.RegularExpressions;
 namespace PappyjoeMVC.View
 {
     public partial class Supplier : Form
@@ -309,11 +310,21 @@ namespace PappyjoeMVC.View
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
-            if (!PappyjoeMVC.Model.Connection.checkforemail(txtEmail.Text.ToString()) && txtEmail.Text != "")
+            Regex r = new Regex(@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$", RegexOptions.IgnoreCase); ///Object initialization for Regex 
+            if (r.IsMatch(txtEmail.Text.ToString()))
             {
-                MessageBox.Show("invalid Email address...", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                MessageBox.Show("Invalid Email address...", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
             }
+            //if (!PappyjoeMVC.Model.Connection.checkforemail(txtEmail.Text.ToString()) && txtEmail.Text != "")
+            //{
+            //    MessageBox.Show("invalid Email address...", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    txtEmail.Focus();
+            //}
         }
 
         private void txtPhone_Leave(object sender, EventArgs e)

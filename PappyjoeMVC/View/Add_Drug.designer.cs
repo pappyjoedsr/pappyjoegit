@@ -83,7 +83,6 @@
             this.txt_PurchRate2 = new System.Windows.Forms.TextBox();
             this.txt_SalesRateMin2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txt_HSN = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Cmb_Manufacture = new System.Windows.Forms.ComboBox();
@@ -334,7 +333,7 @@
             this.label49.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label49.Location = new System.Drawing.Point(42, 33);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(27, 17);
+            this.label49.Size = new System.Drawing.Size(28, 17);
             this.label49.TabIndex = 113;
             this.label49.Text = "Tax";
             // 
@@ -357,7 +356,7 @@
             this.label43.ForeColor = System.Drawing.Color.Blue;
             this.label43.Location = new System.Drawing.Point(424, 17);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(72, 13);
+            this.label43.Size = new System.Drawing.Size(73, 13);
             this.label43.TabIndex = 112;
             this.label43.Text = "TAX Extractor";
             this.label43.Click += new System.EventHandler(this.label43_Click);
@@ -876,7 +875,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txt_HSN);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.Cmb_Manufacture);
@@ -912,17 +910,6 @@
             this.groupBox1.Size = new System.Drawing.Size(795, 161);
             this.groupBox1.TabIndex = 121;
             this.groupBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(639, 47);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(12, 13);
-            this.label5.TabIndex = 116;
-            this.label5.Text = "*";
             // 
             // txt_HSN
             // 
@@ -1347,9 +1334,9 @@
             this.Chk_Taxable.AutoSize = true;
             this.Chk_Taxable.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Chk_Taxable.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Chk_Taxable.Location = new System.Drawing.Point(166, 41);
+            this.Chk_Taxable.Location = new System.Drawing.Point(166, 53);
             this.Chk_Taxable.Name = "Chk_Taxable";
-            this.Chk_Taxable.Size = new System.Drawing.Size(71, 21);
+            this.Chk_Taxable.Size = new System.Drawing.Size(72, 21);
             this.Chk_Taxable.TabIndex = 22;
             this.Chk_Taxable.Text = "Taxable";
             this.Chk_Taxable.UseVisualStyleBackColor = true;
@@ -1372,7 +1359,7 @@
             this.Chk_HavebatchNo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.Chk_HavebatchNo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Chk_HavebatchNo.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Chk_HavebatchNo.Location = new System.Drawing.Point(15, 40);
+            this.Chk_HavebatchNo.Location = new System.Drawing.Point(15, 52);
             this.Chk_HavebatchNo.Name = "Chk_HavebatchNo";
             this.Chk_HavebatchNo.Size = new System.Drawing.Size(143, 21);
             this.Chk_HavebatchNo.TabIndex = 32;
@@ -1446,7 +1433,7 @@
             this.label41.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label41.Location = new System.Drawing.Point(6, 3);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(35, 17);
+            this.label41.Size = new System.Drawing.Size(36, 17);
             this.label41.TabIndex = 119;
             this.label41.Text = "Type";
             // 
@@ -1620,7 +1607,6 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_HSN;
         private System.Windows.Forms.Label label4;
     }

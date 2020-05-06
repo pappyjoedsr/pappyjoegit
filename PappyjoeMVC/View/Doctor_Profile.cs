@@ -989,10 +989,12 @@ namespace PappyjoeMVC.View
                             }
                         }
                         this.cntrl.update_doctor(doctor_id, text_drname.Text,text_phone.Text, text_email.Text, gender, combo_year.Text, rich_about.Text, txtPic.Text,cmbStaffType.Text);
+                        this.cntrl.update_login(doctor_id, text_email.Text);
                     }
                     else
                     {
-                        this.cntrl.update_doctor(doctor_id, text_drname.Text, text_phone.Text, text_email.Text, gender, combo_year.Text, rich_about.Text, txtPic.Text,cmbStaffType.Text); 
+                        this.cntrl.update_doctor(doctor_id, text_drname.Text, text_phone.Text, text_email.Text, gender, combo_year.Text, rich_about.Text, txtPic.Text,cmbStaffType.Text);
+                        this.cntrl.update_login(doctor_id, text_email.Text);
                         MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }

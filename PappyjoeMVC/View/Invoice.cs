@@ -340,7 +340,8 @@ namespace PappyjoeMVC.View
                     dgv_invoice.Rows[i].Cells[9].Value = PappyjoeMVC.Properties.Resources.blank;
                     i = i + 1;
                     Double gtotal = 0, paid = 0;
-                    gtotal = Convert.ToDouble(total_cost) - (Convert.ToDouble(total_discount) + Convert.ToDouble(total_tax));
+                    //gtotal = Convert.ToDouble(total_cost) - (Convert.ToDouble(total_discount) + Convert.ToDouble(total_tax));
+                    gtotal = (Convert.ToDouble(total_cost) - Convert.ToDouble(total_discount)) + Convert.ToDouble(total_tax);
                     paid = gtotal - totalEst;
                     dgv_invoice.Rows[row_no].Cells[2].Value = totalEst.ToString("F");
                     dgv_invoice.Rows[row_no + 3].Cells[2].Value = gtotal.ToString("F") + "                  " + paid.ToString("F");

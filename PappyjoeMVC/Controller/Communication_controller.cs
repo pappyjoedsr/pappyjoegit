@@ -154,5 +154,15 @@ namespace PappyjoeMVC.Controller
             string s = mdl.frmInventory(doctor_id);
             return s;
         }
+        public int delete(string id)
+        {
+            int i = mdl.delete(id);
+            return i;
+        }
+        public int update_temp(string id, string temp)
+        {
+            int i = mdl.update_temp(id,temp);
+            return i;
+        }
     }
 }

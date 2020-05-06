@@ -10,7 +10,7 @@ namespace PappyjoeMVC.View
     public partial class Patients : Form
     {
         public string doctor_id = "";
-        Patients_controller cntrl=new Patients_controller(); public int i;
+        Patients_controller cntrl = new Patients_controller(); public int i;
         Add_New_patient_controller contr = new Add_New_patient_controller();
         Common_model mdl = new Common_model();
         Connection db = new Connection();
@@ -85,7 +85,7 @@ namespace PappyjoeMVC.View
                 DateTime startDateTime = Convert.ToDateTime(dateTimePickefrom.Value.ToString("yyyy-MM-dd") + " 00:01");
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd") + " 23:59");
                 DataTable dt_pt5 = new DataTable();
-                DataTable dtb= this.cntrl.Get_appointment_data(startDateTime, startDateTime1);
+                DataTable dtb = this.cntrl.Get_appointment_data(startDateTime, startDateTime1);
                 Appointment_Data(dtb);
             }
             catch (Exception ex)
@@ -146,7 +146,7 @@ namespace PappyjoeMVC.View
             {
                 lab_LongMsg.Show();
                 lab_LongMsg.Location = new Point(91, 177);
-                lab_7.Location= new Point(4,5);
+                lab_7.Location = new Point(4, 5);
                 lab_7.Text = " 0 Patient(s)";
                 lab_Displaying.Visible = false;
             }
@@ -205,7 +205,7 @@ namespace PappyjoeMVC.View
             }
             else if (left_button_click == 7)
             {
-                labelpayment_Click(null, null);  
+                labelpayment_Click(null, null);
             }
             else if (left_button_click == 9)
             {
@@ -239,7 +239,7 @@ namespace PappyjoeMVC.View
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd"));
                 DGV_Patients.ScrollBars = ScrollBars.Vertical;
                 System.Data.DataTable dt_cf_main = new DataTable();
-               DataTable dtb=  this.cntrl.Get_vitalSigns(startDateTime, startDateTime1);
+                DataTable dtb = this.cntrl.Get_vitalSigns(startDateTime, startDateTime1);
                 VitalSigns(dtb);
             }
             catch (Exception ex)
@@ -417,7 +417,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    lab_LongMsg.Visible=true;
+                    lab_LongMsg.Visible = true;
                     lab_LongMsg.Location = new Point(91, 177);
                     lab_7.Location = new Point(4, 5);
                     lab_7.Text = " 0 Patient(s)";
@@ -482,7 +482,7 @@ namespace PappyjoeMVC.View
                 DateTime startDateTime = Convert.ToDateTime(dateTimePickefrom.Value.ToString("yyyy-MM-dd"));
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd"));
                 DGV_Patients.ScrollBars = ScrollBars.Vertical;
-               DataTable dtb= this.cntrl.clinic_findings(startDateTime, startDateTime1);
+                DataTable dtb = this.cntrl.clinic_findings(startDateTime, startDateTime1);
                 ClinicFindings(dtb);
             }
             catch (Exception ex)
@@ -733,7 +733,7 @@ namespace PappyjoeMVC.View
                 DGV_Patients.ScrollBars = ScrollBars.Vertical;
                 DateTime startDateTime = Convert.ToDateTime(dateTimePickefrom.Value.ToString("yyyy-MM-dd"));
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd"));
-                DataTable dtb= this.cntrl.treatmentPlan(startDateTime, startDateTime1);
+                DataTable dtb = this.cntrl.treatmentPlan(startDateTime, startDateTime1);
                 TreatmentPlan(dtb);
             }
             catch (Exception ex)
@@ -889,7 +889,7 @@ namespace PappyjoeMVC.View
                 DateTime startDateTime = Convert.ToDateTime(dateTimePickefrom.Value.ToString("yyyy-MM-dd"));
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd"));
                 DGV_Patients.ScrollBars = ScrollBars.Vertical;
-               DataTable dtb= this.cntrl.finishedprocedure(startDateTime, startDateTime1);
+                DataTable dtb = this.cntrl.finishedprocedure(startDateTime, startDateTime1);
                 FinishedProcedure(dtb);
             }
             catch (Exception ex)
@@ -1032,7 +1032,7 @@ namespace PappyjoeMVC.View
                 DateTime startDateTime = Convert.ToDateTime(dateTimePickefrom.Value.ToString("yyyy-MM-dd"));
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd"));
                 System.Data.DataTable dt_pre_main = new DataTable();
-               DataTable dtb= this.cntrl.Prescription(startDateTime, startDateTime1);
+                DataTable dtb = this.cntrl.Prescription(startDateTime, startDateTime1);
                 Prescription(dtb);
             }
             catch (Exception ex)
@@ -1077,7 +1077,7 @@ namespace PappyjoeMVC.View
                 DGV_Patients.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 DateTime startDateTime = Convert.ToDateTime(dateTimePickefrom.Value.ToString("yyyy-MM-dd"));
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd"));
-                DataTable dtb= this.cntrl.invoice(startDateTime, startDateTime1);
+                DataTable dtb = this.cntrl.invoice(startDateTime, startDateTime1);
                 Invoice(dtb);
             }
             catch (Exception ex)
@@ -1354,7 +1354,7 @@ namespace PappyjoeMVC.View
                 DGV_Patients.Columns[3].Width = 295;
                 DateTime startDateTime = Convert.ToDateTime(dateTimePickefrom.Value.ToString("yyyy-MM-dd"));
                 DateTime startDateTime1 = Convert.ToDateTime(dateTimePicketo.Value.ToString("yyyy-MM-dd"));
-               DataTable dtb= this.cntrl.Payment(startDateTime, startDateTime1);
+                DataTable dtb = this.cntrl.Payment(startDateTime, startDateTime1);
                 Payments(dtb);
             }
             catch (Exception ex)
@@ -1423,7 +1423,7 @@ namespace PappyjoeMVC.View
                     DGV_Patients.Rows[j].Cells[3].Style.BackColor = Color.WhiteSmoke;
                     j = j + 1;
                 }
-                if (Payment.Rows.Count >0)
+                if (Payment.Rows.Count > 0)
                 {
                     lab_Displaying.Visible = true; lab_7.Visible = true;
                     lab_7.Location = new Point(73, 7);
@@ -1465,7 +1465,7 @@ namespace PappyjoeMVC.View
                     left_button_click = 8;
                     txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
                     SetPatient_SearchControlls();
-                    DataTable drtb=  this.cntrl.Get_all_Patients();
+                    DataTable drtb = this.cntrl.Get_all_Patients();
                     griddata(drtb);
                     Design_Datagrid();
                 }
@@ -1474,7 +1474,7 @@ namespace PappyjoeMVC.View
                     ClearAll_grid2_Properties();
                     txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
                     SetPatient_SearchControlls();
-                    DataTable dtb= this.cntrl.Get_all_Patients();
+                    DataTable dtb = this.cntrl.Get_all_Patients();
                     griddata(dtb);
                     Design_Datagrid();
                 }
@@ -1521,7 +1521,7 @@ namespace PappyjoeMVC.View
                 d = d.AddMonths(-1);
                 DateTime todate = DateTime.Now;
                 ClearAll_grid2_Properties();
-                DataTable dtb= this.cntrl.recently_visited(d, todate);
+                DataTable dtb = this.cntrl.recently_visited(d, todate);
                 griddata(dtb);
                 Design_Datagrid();
             }
@@ -1552,7 +1552,7 @@ namespace PappyjoeMVC.View
                 DateTime d = DateTime.Now;
                 d = d.AddMonths(-1);
                 string todate = DateTime.Now.ToString("yyyy/MM/dd");
-                DataTable dtb= this.cntrl.Recently_added(Convert.ToDateTime( d).ToString("yyyy/MM/dd"), todate);
+                DataTable dtb = this.cntrl.Recently_added(Convert.ToDateTime(d).ToString("yyyy/MM/dd"), todate);
                 griddata(dtb);
                 Design_Datagrid();
             }
@@ -1582,7 +1582,7 @@ namespace PappyjoeMVC.View
                 ClearAll_grid2_Properties();
                 left_button_click = 8;
                 DateTime startDateTime = Convert.ToDateTime(DateTime.Today.ToString("d") + " " + DateTime.Now.ToString("hh:mm:ss tt"));
-                DataTable dtb= this.cntrl.upcomming_appointments(startDateTime);
+                DataTable dtb = this.cntrl.upcomming_appointments(startDateTime);
                 griddata(dtb);
                 Design_Datagrid();
             }
@@ -1611,7 +1611,7 @@ namespace PappyjoeMVC.View
                 txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
                 ClearAll_grid2_Properties();
                 left_button_click = 8;
-                DataTable dtb= this.cntrl.birthday();
+                DataTable dtb = this.cntrl.birthday();
                 griddata(dtb);
                 Design_Datagrid();
             }
@@ -1639,7 +1639,7 @@ namespace PappyjoeMVC.View
                 SetPatient_SearchControlls();
                 txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
                 left_button_click = 8;
-                DataTable dtb= this.cntrl.cancelled_appointment();
+                DataTable dtb = this.cntrl.cancelled_appointment();
                 griddata(dtb);
                 Design_Datagrid();
             }
@@ -1666,7 +1666,7 @@ namespace PappyjoeMVC.View
                 ClearAll_grid2_Properties();
                 SetPatient_SearchControlls();
                 txt_Search.Text = "Search Patient Id, Patient Name, Mobile No, Address";
-                DataTable dtb=  this.cntrl.innactive_patients();
+                DataTable dtb = this.cntrl.innactive_patients();
                 griddata(dtb);
                 Design_Datagrid();
             }
@@ -1699,7 +1699,7 @@ namespace PappyjoeMVC.View
                     lab_Displaying.Visible = true;
                     int g = e.RowIndex;
                     id4 = grgroup.Rows[g].Cells[1].Value.ToString();
-                    DataTable dtb= this.cntrl.patients_wit_group(id4);
+                    DataTable dtb = this.cntrl.patients_wit_group(id4);
                     griddata(dtb);
                     Design_Datagrid();
                     lab_Displaying.Visible = true;
@@ -1727,7 +1727,7 @@ namespace PappyjoeMVC.View
                     panl_DisplayingPatient.Visible = true;
                     ClearAll_grid2_Properties();
                     lab_LongMsg.Hide();
-                    DataTable dtb=  this.cntrl.Get_all_Patients();
+                    DataTable dtb = this.cntrl.Get_all_Patients();
                     Create_Datagrid(dtb);
                     Design_Datagrid();
                 }
@@ -1738,7 +1738,7 @@ namespace PappyjoeMVC.View
                     SetPatient_SearchControlls();
                     ClearAll_grid2_Properties();
                     panl_DisplayingPatient.Visible = true;
-                  DataTable dtb=  this.cntrl.Get_all_Patients();
+                    DataTable dtb = this.cntrl.Get_all_Patients();
                     Create_Datagrid(dtb);
                     Design_Datagrid();
                 }
@@ -1924,7 +1924,7 @@ namespace PappyjoeMVC.View
                         form2.Show();
                     }
                 }
-              else  if (left_button_click == 0 && Inactive_Flag == false)
+                else if (left_button_click == 0 && Inactive_Flag == false)
                 {
                     if (e.RowIndex >= 0)
                     {
@@ -2057,6 +2057,11 @@ namespace PappyjoeMVC.View
                 this.Hide();
                 form2.Show();
             }
+            //var form2 = new Practice_Details();
+            //form2.doctor_id = doctor_id;
+            //form2.Closed += (sender1, args) => this.Close();
+            //this.Hide();
+            //form2.Show();
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2092,7 +2097,7 @@ namespace PappyjoeMVC.View
         {
             if (doctor_id != "1")
             {
-                string id=this.cntrl.inventry_prevlage(doctor_id);
+                string id = this.cntrl.inventry_prevlage(doctor_id);
                 if (int.Parse(id) > 0)
                 {
                     MessageBox.Show("There is No Privilege to View the Inventory", "Security Role", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -2101,7 +2106,7 @@ namespace PappyjoeMVC.View
                 {
                     var form2 = new PappyjoeMVC.View.StockReport();
                     form2.doctor_id = doctor_id;
-                     form2.Closed += (sender1, args) => this.Close();
+                    form2.Closed += (sender1, args) => this.Close();
                     this.Hide();
                     form2.Show();
                 }
@@ -2268,12 +2273,12 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                  DataTable dtb=  this.cntrl.Get_all_Patients();
+                    DataTable dtb = this.cntrl.Get_all_Patients();
                     griddata(dtb); //Create_Datagrid(dtb);
                 }
                 else
                 {
-                  DataTable dtb= this.cntrl.allpatient_search(txt_Search.Text);//
+                    DataTable dtb = this.cntrl.allpatient_search(txt_Search.Text);//
                     griddata(dtb);//Create_Datagrid(dtb);
                 }
             }
@@ -2281,12 +2286,12 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                    DataTable dtb= this.cntrl.Recently_added(d.ToString("yyyy/MM/dd"), todate.ToString("yyyy/MM/dd"));
+                    DataTable dtb = this.cntrl.Recently_added(d.ToString("yyyy/MM/dd"), todate.ToString("yyyy/MM/dd"));
                     Create_Datagrid(dtb);
                 }
                 else
                 {
-                   DataTable dtb= this.cntrl.recently_added_search(d.ToString("yyyy/MM/dd"), todate.ToString("yyyy/MM/dd"), txt_Search.Text);
+                    DataTable dtb = this.cntrl.recently_added_search(d.ToString("yyyy/MM/dd"), todate.ToString("yyyy/MM/dd"), txt_Search.Text);
                     Create_Datagrid(dtb);
                 }
             }
@@ -2295,11 +2300,11 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                  DataTable dtb= this.cntrl.recently_visited(d, todate); Create_Datagrid(dtb);
+                    DataTable dtb = this.cntrl.recently_visited(d, todate); Create_Datagrid(dtb);
                 }
                 else
                 {
-                   DataTable dtb= this.cntrl.recently_visited_search(d, todate, txt_Search.Text);
+                    DataTable dtb = this.cntrl.recently_visited_search(d, todate, txt_Search.Text);
                     Create_Datagrid(dtb);
                 }
             }
@@ -2307,12 +2312,12 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                    DataTable dtb= this.cntrl.upcomming_appointments(startDateTime);
+                    DataTable dtb = this.cntrl.upcomming_appointments(startDateTime);
                     Create_Datagrid(dtb);
                 }
                 else
                 {
-                   DataTable dtb= this.cntrl.upcomming_appointments_search(startDateTime, txt_Search.Text);
+                    DataTable dtb = this.cntrl.upcomming_appointments_search(startDateTime, txt_Search.Text);
                     Create_Datagrid(dtb);
                 }
             }
@@ -2320,12 +2325,12 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                   DataTable dtb=  this.cntrl.birthday();
+                    DataTable dtb = this.cntrl.birthday();
                     Create_Datagrid(dtb);
                 }
                 else
                 {
-                   DataTable dtb= this.cntrl.birthday_search(txt_Search.Text);
+                    DataTable dtb = this.cntrl.birthday_search(txt_Search.Text);
                     Create_Datagrid(dtb);
                 }
             }
@@ -2333,12 +2338,12 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                   DataTable dtb=  this.cntrl.cancelled_appointment();
+                    DataTable dtb = this.cntrl.cancelled_appointment();
                     Create_Datagrid(dtb);
                 }
                 else
                 {
-                   DataTable dtb= this.cntrl.cancelled_appointmnt_search(txt_Search.Text);
+                    DataTable dtb = this.cntrl.cancelled_appointmnt_search(txt_Search.Text);
                     Create_Datagrid(dtb);
                 }
             }
@@ -2346,12 +2351,12 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                    DataTable dtb= this.cntrl.innactive_patients();
+                    DataTable dtb = this.cntrl.innactive_patients();
                     Create_Datagrid(dtb);
                 }
                 else
                 {
-                   DataTable dtb= this.cntrl.innactive_patients_search(txt_Search.Text);
+                    DataTable dtb = this.cntrl.innactive_patients_search(txt_Search.Text);
                     Create_Datagrid(dtb);
                 }
             }
@@ -2359,16 +2364,16 @@ namespace PappyjoeMVC.View
             {
                 if (String.IsNullOrWhiteSpace(txt_Search.Text))
                 {
-                  DataTable dtb=  this.cntrl.patients_wit_group(id4);
+                    DataTable dtb = this.cntrl.patients_wit_group(id4);
                     Create_Datagrid(dtb);
                 }
                 else
                 {
-                   DataTable dtb=  this.cntrl.patients_wit_group_search(id4, txt_Search.Text);
+                    DataTable dtb = this.cntrl.patients_wit_group_search(id4, txt_Search.Text);
                     Create_Datagrid(dtb);
                 }
             }
-                Design_Datagrid();
+            Design_Datagrid();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -2397,7 +2402,7 @@ namespace PappyjoeMVC.View
 
         private void labelallpatient_Click(object sender, EventArgs e)
         {
-            btn_AllPatient_Click(null,null);
+            btn_AllPatient_Click(null, null);
         }
 
         private void lab_Displaying_Click(object sender, EventArgs e)
@@ -2479,7 +2484,7 @@ namespace PappyjoeMVC.View
                             {
                                 SMS_model send_sms_class = new SMS_model();
                                 text = "Good Morning Dr. " + dt_dr.Rows[j]["doctor_name"].ToString() + ", You have " + long_app_count + " Appointment[s] today at " + clinic;
-                                send_sms_class.SendSMS(smsName, smsPass, mob_number, text, "DRTOMS", dt_dr.Rows[j]["id"].ToString(), startDateTime.ToString("dd/MM/yyyy") , DateTime.Now.ToString("dd/MM/yyyy"));
+                                send_sms_class.SendSMS(smsName, smsPass, mob_number, text, "DRTOMS", dt_dr.Rows[j]["id"].ToString(), startDateTime.ToString("dd/MM/yyyy"), DateTime.Now.ToString("dd/MM/yyyy"));
 
                                 if (emailName != "" && emailPass != "")
                                 {
@@ -2534,7 +2539,7 @@ namespace PappyjoeMVC.View
                 labellog.ForeColor = Color.White;
                 DataTable rs_log = this.cntrl.log_details();
                 DGV_Log.DataSource = rs_log;
-                if(rs_log.Rows.Count>0)
+                if (rs_log.Rows.Count > 0)
                 {
                     DGV_Log.Columns[0].Width = 30;
                     DGV_Log.Columns[1].Width = 50;
@@ -2596,69 +2601,111 @@ namespace PappyjoeMVC.View
         string FileName;
         private void lbl_imprt_patients_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    OpenFileDialog ofd = new OpenFileDialog();
-            //    ofd.Title = "Excel File to Import";
-            //    ofd.FileName = "";
-            //    ofd.Filter = "Excel File|*.xlsx;*.xls";
-            //    if (ofd.ShowDialog() == DialogResult.OK)
-            //    {
-            //        FileName = ofd.FileName;
-            //        if (FileName.Trim() != "")
-            //        {
-            //            xlApp = new Microsoft.Office.Interop.Excel.Application();
-            //            xlWorkBook = xlApp.Workbooks.Open(FileName);
-            //            xlWorkSheet = xlWorkBook.Worksheets["Sheet1"];
-            //            int iRow;//						
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Title = "Excel File to Import";
+                ofd.FileName = "";
+                ofd.Filter = "Excel File|*.xlsx;*.xls";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    FileName = ofd.FileName;
+                    if (FileName.Trim() != "")
+                    {
+                        xlApp = new Microsoft.Office.Interop.Excel.Application();
+                        xlWorkBook = xlApp.Workbooks.Open(FileName);
+                        xlWorkSheet = xlWorkBook.Worksheets["Sheet1"];
+                        int iRow;//						
 
-            //            if (xlWorkSheet.Cells[1, 1].value == "Patient Name" && xlWorkSheet.Cells[1, 2].value == "Gender" && xlWorkSheet.Cells[1, 3].value == "Age" && xlWorkSheet.Cells[1, 4].value == "Mobile" && xlWorkSheet.Cells[1, 5].value == "Street Address" && xlWorkSheet.Cells[1, 6].value == "Locality" && xlWorkSheet.Cells[1, 7].value == "File")
-            //            {
-            //                for (iRow = 2; iRow <= xlWorkSheet.Rows.Count; iRow++)
-            //                {
-            //                    if (xlWorkSheet.Cells[iRow, 1].value == null)
-            //                    {
-            //                        break;
-            //                    }
-            //                    else
-            //                    {
-            //                        string patientname = ""; string gender = "";string age = ""; string mobile = "";string street = "";string locality = "";string file = "";
-            //                        //string patid = "";string adhar = "";string dob="";string bldgrp = "";string accmpnied = "";string secmob = "";string landno = "";string mail= "";string city = "";string pin = "";string referdby = "";string visited = "";string doctor = "";string occupation = "";string nation = "";string passport = "";
-            //                        patientname = xlWorkSheet.Cells[iRow, 1].value;
-            //                        gender = xlWorkSheet.Cells[iRow, 2].value;
-            //                        age = xlWorkSheet.Cells[iRow, 3].value;
-            //                        mobile = xlWorkSheet.Cells[iRow, 4].value;
-            //                        street = xlWorkSheet.Cells[iRow, 5].value;
-            //                        locality = xlWorkSheet.Cells[iRow, 6].value;
-            //                        file = xlWorkSheet.Cells[iRow, 7].value;
-            //                        DataTable patSearch = this.contr.Get_patient_details(patientname);
-            //                        if (dtb.Rows.Count == 0)
-            //                        {
-            //                            this.cntrl.insert_excelimported(patientname,patid, gender, age, mobile,street, locality, file);
-            //                            //i = this.contr.Save(patientname, patid, adhar, gender, dob, age, bldgrp, accmpnied, mobile, secmob, landno, mail, street, locality, city, pin, referdby, file, visited, doctor, occupation, nation, passport);
-            //                        }
-            //                    }
-            //                }
-            //                DataTable dt = this.cntrl.FormLoad();
-            //                FormLoad(dt);
-            //                xlWorkBook.Close();
-            //                xlApp.Quit();
-            //                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
-            //                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkBook);
-            //                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkSheet);
-            //                MessageBox.Show("Successfully Imported !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            }
-            //            else
-            //            {
-            //                MessageBox.Show("The Excel sheet data is not in the standard format", "Format mismatch", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            }
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+                        if (xlWorkSheet.Cells[1, 1].value == "Patient Name" && xlWorkSheet.Cells[1, 2].value == "Gender" && xlWorkSheet.Cells[1, 3].value == "Age" && xlWorkSheet.Cells[1, 4].value == "Mobile" && xlWorkSheet.Cells[1, 5].value == "Street Address" && xlWorkSheet.Cells[1, 6].value == "Locality" && xlWorkSheet.Cells[1, 7].value == "File")
+                        {
+                            for (iRow = 2; iRow <= xlWorkSheet.Rows.Count; iRow++)
+                            {
+                                if (xlWorkSheet.Cells[iRow, 1].value == null)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    string patid = "";
+                                    DataTable auto = this.contr.data_from_automaticid();
+                                    if (auto.Rows.Count > 0)
+                                    {
+                                        if (auto.Rows[0]["patient_automation"].ToString() == "Yes")
+                                        {
+                                            patid = auto.Rows[0]["patient_prefix"].ToString() + auto.Rows[0]["patient_number"].ToString();
+                                        }
+                                    }
+                                    string patientname = ""; string gender = ""; string age = ""; string mobile = ""; string street = ""; string locality = ""; string file = "";
+                                    string adhar = ""; string dob = ""; string bldgrp = ""; string accmpnied = ""; string secmob = ""; string landno = ""; string mail = ""; string city = ""; string pin = ""; string referdby = ""; string visited = DateTime.Now.ToString(); string doctor = ""; string occupation = ""; string nation = ""; string passport = "";
+                                    patientname = Convert.ToString(xlWorkSheet.Cells[iRow, 1].value);
+                                    gender = Convert.ToString(xlWorkSheet.Cells[iRow, 2].value);
+                                    age = Convert.ToString(xlWorkSheet.Cells[iRow, 3].value);
+                                    mobile = Convert.ToString(xlWorkSheet.Cells[iRow, 4].value);
+                                    street = Convert.ToString(xlWorkSheet.Cells[iRow, 5].value);
+                                    locality = Convert.ToString(xlWorkSheet.Cells[iRow, 6].value);
+                                    file = Convert.ToString(xlWorkSheet.Cells[iRow, 7].value);
+                                    DataTable patSearch = this.contr.Get_patient_details(patientname);
+                                    if (patSearch.Rows.Count == 0)
+                                    {
+                                        i = this.contr.Save(patientname, patid, adhar, gender, dob, age, bldgrp, accmpnied, mobile, secmob, landno, mail, street, locality, city, pin, referdby, file, visited, doctor, occupation, nation, passport);
+
+                                    }
+                                    DataTable cmd = this.contr.automaticid();
+                                    if (cmd.Rows.Count > 0)
+                                    {
+                                        int n = 0;
+                                        n = int.Parse(cmd.Rows[0]["patient_number"].ToString()) + 1;
+                                        if (n != 0)
+                                        {
+                                            this.contr.update_autogenerateid(n);
+                                        }
+                                    }
+                                }
+                            }
+                            b_normal();
+                            if (doctor_id == "1")
+                            {
+                                SetPatient_SearchControlls();
+                                left_button_click = 0;
+                                labelprofile.BackColor = Color.DodgerBlue;
+                                labelprofile.ForeColor = Color.White;
+                                panl_DisplayingPatient.Visible = true;
+                                ClearAll_grid2_Properties();
+                                lab_LongMsg.Hide();
+                                DataTable dtb = this.cntrl.Get_all_Patients();
+                                Create_Datagrid(dtb);
+                                Design_Datagrid();
+                            }
+                            else
+                            {
+                                labelprofile.BackColor = Color.DodgerBlue;
+                                labelprofile.ForeColor = Color.White;
+                                SetPatient_SearchControlls();
+                                ClearAll_grid2_Properties();
+                                panl_DisplayingPatient.Visible = true;
+                                DataTable dtb = this.cntrl.Get_all_Patients();
+                                Create_Datagrid(dtb);
+                                Design_Datagrid();
+                            }
+                            xlWorkBook.Close();
+                            xlApp.Quit();
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkBook);
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkSheet);
+                            MessageBox.Show("Successfully Imported !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("The Excel sheet data is not in the standard format", "Format mismatch", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error !...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void Setcontroller(Patients_controller controller)
@@ -2698,8 +2745,8 @@ namespace PappyjoeMVC.View
                 //string sqlstr = "";
                 DGV_Patients.RowTemplate.Height = 25;
                 DGV_Patients.Visible = true;
-                dtb= this.cntrl.Get_all_Patients();
-                if ( dtb.Rows.Count < 0)
+                dtb = this.cntrl.Get_all_Patients();
+                if (dtb.Rows.Count < 0)
                 {
                     lab_LongMsg.Show();
                     lab_LongMsg.Location = new Point(350, 350);
@@ -2726,7 +2773,7 @@ namespace PappyjoeMVC.View
                 grgroup.Columns[1].Width = 250;
                 grgroup.Columns[0].Visible = false;
                 grgroup.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-               DataTable dt_grp=  this.cntrl.group();
+                DataTable dt_grp = this.cntrl.group();
                 Load_Group(dt_grp);
             }
             else
@@ -2738,7 +2785,7 @@ namespace PappyjoeMVC.View
                 DGV_Patients.RowTemplate.Height = 25;
                 DGV_Patients.Visible = true;
                 ClearAll_grid2_Properties();
-                dtb= this.cntrl.Get_all_Patients();
+                dtb = this.cntrl.Get_all_Patients();
                 Create_Datagrid(dtb);
                 Design_Datagrid();
                 //-----Group Add------

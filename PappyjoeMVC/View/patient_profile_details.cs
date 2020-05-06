@@ -1193,7 +1193,8 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-
+                    txt_IPname.Text = txtPatientName.Text;
+                    txt_ipId.ReadOnly = false;
                 }
                 //txt_ipId.Text = dtb.Rows[0]["IP_number"].ToString();
                 //txt_IPname.Text = txtPatientName.Text;// linkLabel_Name.Text;
@@ -1245,6 +1246,7 @@ namespace PappyjoeMVC.View
                                 txt_room.Text = "";
                                 MessageBox.Show("IP ID saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 panl_IP_Patient.Visible = false;
+                                patient_profile_details_Load(null,null);
                             }
                         }
                        

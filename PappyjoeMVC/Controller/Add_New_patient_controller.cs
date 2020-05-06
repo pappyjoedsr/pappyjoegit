@@ -29,6 +29,11 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = _model.Get_patient_details(name);
             return dtb;
         }
+        public DataTable Get_patient_phoneno(string no, string name)
+        {
+            DataTable dtb = _model.Get_patient_phoneno(no, name);
+            return dtb;
+        }
         public DataTable get_patientid(string id)
         {
             DataTable dtb = _model.get_patientid(id);
@@ -61,6 +66,11 @@ namespace PappyjoeMVC.Controller
         public DataTable automaticid()
         {
             DataTable dtb = _model.automaticid();
+            return dtb;
+        }
+        public DataTable automaticid_when_automation_No()
+        {
+            DataTable dtb = _model.automaticid_when_automation_No();
             return dtb;
         }
         public void update_autogenerateid(int n)

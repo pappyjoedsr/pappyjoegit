@@ -1381,7 +1381,7 @@ namespace PappyjoeMVC.View
                                 else
                                 {
                                     string complaints = "";
-                                    complaints = xlWorkSheet.Cells[iRow, 1].value;
+                                    complaints = Convert.ToString(xlWorkSheet.Cells[iRow, 1].value);
                                     DataTable checkdatacc = this.cntrl.checkdataAcc(complaints);
                                     if (checkdatacc.Rows.Count == 0)
                                     {
@@ -1439,7 +1439,7 @@ namespace PappyjoeMVC.View
                                 else
                                 {
                                     string obser = "";
-                                    obser = xlWorkSheet.Cells[iRow, 1].value;
+                                    obser = Convert.ToString(xlWorkSheet.Cells[iRow, 1].value);
                                     DataTable checkdataOB = this.cntrl.checkdataOB(obser);
                                     if (checkdataOB.Rows.Count == 0)
                                     {
@@ -1497,7 +1497,7 @@ namespace PappyjoeMVC.View
                                 else
                                 {
                                     string invest = "";
-                                    invest = xlWorkSheet.Cells[iRow, 1].value;
+                                    invest = Convert.ToString(xlWorkSheet.Cells[iRow, 1].value);
                                     DataTable checkdataINVEST = this.cntrl.CheckInvest(invest);
                                     if (checkdataINVEST.Rows.Count == 0)
                                     {
@@ -1555,7 +1555,7 @@ namespace PappyjoeMVC.View
                                 else
                                 {
                                     string diag = "";
-                                    diag = xlWorkSheet.Cells[iRow, 1].value;
+                                    diag = Convert.ToString(xlWorkSheet.Cells[iRow, 1].value);
                                     DataTable checkdataDIAG = this.cntrl.CheckdataDiag(diag);
                                     if (checkdataDIAG.Rows.Count == 0)
                                     {
@@ -1613,7 +1613,7 @@ namespace PappyjoeMVC.View
                                 else
                                 {
                                     string note = "";
-                                    note = xlWorkSheet.Cells[iRow, 1].value;
+                                    note = Convert.ToString(xlWorkSheet.Cells[iRow, 1].value);
                                     DataTable checkdataNOTE = this.cntrl.checkdataNote(note);
                                     if (checkdataNOTE.Rows.Count == 0)
                                     {
