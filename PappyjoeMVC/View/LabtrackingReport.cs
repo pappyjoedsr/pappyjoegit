@@ -129,7 +129,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(textBox2.Text, "^[a-zA-Z]+$"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(textBox2.Text, "^[0-9]+$"))
                 {
                     if (e.KeyChar == Convert.ToChar(Keys.Enter))
                     {
@@ -162,7 +162,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(textBox2.Text, "^[a-zA-Z]+$"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(textBox2.Text, "^[0-9]+$"))
                 {
                     if (String.IsNullOrWhiteSpace(textBox2.Text))
                     {
@@ -180,7 +180,7 @@ namespace PappyjoeMVC.View
                     if (textBox2.Text != "")
                     {
                         textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
-                        MessageBox.Show("Enter only Alphabets", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Enter only number", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -356,21 +356,27 @@ namespace PappyjoeMVC.View
             form2.Dispose();
         }
 
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "";
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 var senderGrid = (DataGridView)sender;
-                if (e.ColumnIndex == 0)
+                if (e.ColumnIndex >=0)
                 {
                     int k = e.RowIndex;
                     string jobno = dataGridView1.Rows[k].Cells[1].Value.ToString();
                     string patient = dataGridView1.Rows[k].Cells[2].Value.ToString();
-                    string doctor = dataGridView1.Rows[k].Cells[3].Value.ToString();
-                    string lab = dataGridView1.Rows[k].Cells[4].Value.ToString();
-                    string workname = dataGridView1.Rows[k].Cells[5].Value.ToString();
-                    string due = dataGridView1.Rows[k].Cells[6].Value.ToString();
-                    string status = dataGridView1.Rows[k].Cells[7].Value.ToString();
+                    string phoneno= dataGridView1.Rows[k].Cells[3].Value.ToString();
+                    string doctor = dataGridView1.Rows[k].Cells[4].Value.ToString();
+                    string lab = dataGridView1.Rows[k].Cells[5].Value.ToString();
+                    string workname = dataGridView1.Rows[k].Cells[6].Value.ToString();
+                    string due = dataGridView1.Rows[k].Cells[7].Value.ToString();
+                    string status = dataGridView1.Rows[k].Cells[8].Value.ToString();
                     ChangeStatus statuschange = new PappyjoeMVC.View.ChangeStatus(jobno, patient, doctor, lab, workname, due, status);
                     statuschange.ShowDialog();
                     DataTable dt = this.ctrlr.selectall(jobno);
@@ -378,7 +384,7 @@ namespace PappyjoeMVC.View
                     {
                         chstatus = dt.Rows[i][13].ToString();
                     }
-                    dataGridView1.Rows[k].Cells[7].Value = chstatus;
+                    dataGridView1.Rows[k].Cells[8].Value = chstatus;
                 }
             }
             catch (Exception ex)
