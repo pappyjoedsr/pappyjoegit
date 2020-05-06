@@ -3350,8 +3350,17 @@ namespace PappyjoeMVC.View
                         {
                             return;
                         }
-                        panel4.Location = new Point(e.x + wndCalendarControl.Left, e.y + wndCalendarControl.Top);
-                        panel4.Visible = true;
+                        if (e.y>500)
+                        {
+                            int s = e.y - 190;
+                            panel4.Location = new Point(e.x + wndCalendarControl.Left, s + wndCalendarControl.Top);
+                            panel4.Visible = true;
+                        }
+                        else
+                        {
+                            panel4.Location = new Point(e.x + wndCalendarControl.Left, e.y + wndCalendarControl.Top);
+                            panel4.Visible = true;
+                        }
                         value1 = HitTest.ViewEvent.Event.Subject;
                         ContextEvent = HitTest.ViewEvent.Event; //Bijeesh
                         DataTable dt = this.cntrl.get_appointment_details(HitTest.ViewEvent.Event.Body);
