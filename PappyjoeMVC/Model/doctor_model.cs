@@ -149,7 +149,7 @@ namespace PappyjoeMVC.Model
         public int update_doctor(string doctor_id, string _drname, string _number, string _email, string _gender, string _year, string _about, string _path,string _logtype)
         {
             int update;
-            if (_path == "")
+            if (_path == "")//llll
             {
                 update = db.execute("update tbl_doctor set doctor_name='" + _drname + "',mobile_number='" + _number + "',email_id='" + _email + "',gender='" + _gender + "',experience='" + _year + "',about='" + _about + "',image= null,login_type='"+_logtype+"' where id='" + doctor_id + "'");
             }

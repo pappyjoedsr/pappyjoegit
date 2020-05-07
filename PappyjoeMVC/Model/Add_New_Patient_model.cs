@@ -54,7 +54,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable automaticid_when_automation_No()
         {
-            DataTable cmd = db.table("select patient_number from tbl_patient_automaticid");
+            DataTable cmd = db.table("select patient_number,patient_prefix from tbl_patient_automaticid");
             return cmd;
         }
         public void update_autogenerateid(int n)

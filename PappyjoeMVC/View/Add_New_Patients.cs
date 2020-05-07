@@ -123,10 +123,10 @@ namespace PappyjoeMVC.View
                     if (cmd.Rows.Count > 0)
                     {
                         //int n = 0;
-                        //n = int.Parse(cmd.Rows[0]["patient_number"].ToString()) + 1;
+                        //n = int.Parse(cmd.Rows[0]["patient_number"].ToString()) + 1;patient_prefix
                         //if (n != 0)
                         //{
-                            txtPatientId.Text = cmd.Rows[0]["patient_number"].ToString();
+                        txtPatientId.Text = cmd.Rows[0]["patient_prefix"].ToString()+ cmd.Rows[0]["patient_number"].ToString();
                             //this.cntrl.update_autogenerateid(n);
                         //}
                     }
