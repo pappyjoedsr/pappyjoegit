@@ -24,9 +24,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = mdl.txtkeypress();
             return dt;
         }
-        public DataTable txtkeypress2(string pt_name)
+        public DataTable txtkeypress2(string phn_no)
         {
-            DataTable dt = mdl.txtkeypress2(pt_name);
+            DataTable dt = mdl.txtkeypress2(phn_no);
             return dt;
         }
         public DataTable txtkeyup()
@@ -34,9 +34,9 @@ namespace PappyjoeMVC.Controller
             DataTable dt = mdl.txtkeyup();
             return dt;
         }
-        public DataTable txtkeyup2(string pt_name)
+        public DataTable txtkeyup2(string phn_no)
         {
-            DataTable dt = mdl.txtkeyup2(pt_name);
+            DataTable dt = mdl.txtkeyup2(phn_no);
             return dt;
         }
         public DataTable stactive()

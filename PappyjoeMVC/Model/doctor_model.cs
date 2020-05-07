@@ -220,6 +220,10 @@ namespace PappyjoeMVC.Model
             int i = db.execute("insert into tbl_practice_details (name,tagline,contact_no,email,website,about)values('" + _PName + "','" + _ptag + "','" + _phone + "','" + _email + "','" + _website + "','" + _clinicAbout + "')");
             return i;
         }
-
+        public int update_login(string id,string email)
+        {
+            int i = db.execute("update tbl_login set username='" + email + "' where id='" + id + "'");
+            return i;
+        }
     }
 }

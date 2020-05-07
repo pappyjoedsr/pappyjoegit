@@ -299,5 +299,10 @@ namespace PappyjoeMVC.Controller
             string dtb = cmdl.permission_for_settings(doctor_id);
             return dtb;
         }
+        public int update_login(string id, string email)
+        {
+            int i = _model.update_login(id,email);
+            return i;
+        }
     }
 }

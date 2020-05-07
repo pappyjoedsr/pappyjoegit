@@ -608,7 +608,7 @@
             this.lblStaffType.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblStaffType.Location = new System.Drawing.Point(441, 15);
             this.lblStaffType.Name = "lblStaffType";
-            this.lblStaffType.Size = new System.Drawing.Size(59, 15);
+            this.lblStaffType.Size = new System.Drawing.Size(60, 15);
             this.lblStaffType.TabIndex = 73;
             this.lblStaffType.Text = "Staff Type";
             this.lblStaffType.Visible = false;
@@ -742,7 +742,7 @@
             this.label33.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.Location = new System.Drawing.Point(131, 6);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(29, 15);
+            this.label33.Size = new System.Drawing.Size(30, 15);
             this.label33.TabIndex = 4;
             this.label33.Text = "Year";
             // 
@@ -865,7 +865,7 @@
             this.label30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(251, 18);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(29, 15);
+            this.label30.Size = new System.Drawing.Size(30, 15);
             this.label30.TabIndex = 4;
             this.label30.Text = "Year";
             // 
@@ -1007,7 +1007,7 @@
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(142, 6);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(20, 15);
+            this.label25.Size = new System.Drawing.Size(21, 15);
             this.label25.TabIndex = 4;
             this.label25.Text = "To";
             // 
@@ -1174,7 +1174,7 @@
             this.label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(337, 37);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(29, 15);
+            this.label23.Size = new System.Drawing.Size(30, 15);
             this.label23.TabIndex = 4;
             this.label23.Text = "Year";
             // 
@@ -2215,7 +2215,7 @@
             this.label16.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label16.Location = new System.Drawing.Point(17, 563);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(94, 17);
+            this.label16.Size = new System.Drawing.Size(95, 17);
             this.label16.TabIndex = 4;
             this.label16.Text = "REGISTRATION";
             // 
@@ -2237,7 +2237,7 @@
             this.label14.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label14.Location = new System.Drawing.Point(53, 419);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 17);
+            this.label14.Size = new System.Drawing.Size(60, 17);
             this.label14.TabIndex = 4;
             this.label14.Text = "AWARDS";
             // 
@@ -2259,7 +2259,7 @@
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label12.Location = new System.Drawing.Point(33, 275);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 17);
+            this.label12.Size = new System.Drawing.Size(79, 17);
             this.label12.TabIndex = 4;
             this.label12.Text = "EDUCATION";
             // 
@@ -2270,7 +2270,7 @@
             this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label11.Location = new System.Drawing.Point(10, 203);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(101, 17);
+            this.label11.Size = new System.Drawing.Size(102, 17);
             this.label11.TabIndex = 4;
             this.label11.Text = "SPECIALIZATION";
             // 
@@ -2532,7 +2532,7 @@
             this.label44.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.Location = new System.Drawing.Point(59, 170);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(49, 17);
+            this.label44.Size = new System.Drawing.Size(50, 17);
             this.label44.TabIndex = 2;
             this.label44.Text = "Tagline";
             // 
@@ -2556,7 +2556,7 @@
             this.label45.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label45.Location = new System.Drawing.Point(54, 97);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(54, 17);
+            this.label45.Size = new System.Drawing.Size(55, 17);
             this.label45.TabIndex = 2;
             this.label45.Text = "Website";
             // 

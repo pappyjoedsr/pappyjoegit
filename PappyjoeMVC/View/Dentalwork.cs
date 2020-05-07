@@ -19,7 +19,7 @@ namespace PappyjoeMVC.View
             InitializeComponent();
         }
         Dentalwork_controller ctrlr=new Dentalwork_controller();
-        public string patient_id = "", doctor_id = "", workid = "", flag = "", strclinic = "", contact_no = "", clinicn = "", mob_number = "", strPatientName = "",smsName = "", smsPass = "";
+        public string patient_id = "", doctor_id = "", workid = "", flag = "", strclinic = "", contact_no = "", clinicn = "", mob_number = "", strPatientName = "",smsName = "", smsPass = "",status="";
         private void dentalwork_Load(object sender, EventArgs e)
         {
             try
@@ -71,6 +71,7 @@ namespace PappyjoeMVC.View
                 if (j > 0)
                 {
                     MessageBox.Show("Order sent Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LabWorks.form.Show();
                     this.Close();
                 }
             }
