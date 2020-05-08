@@ -173,7 +173,7 @@ namespace PappyjoeMVC.View
                     if (dataGridView_Staff.CurrentCell.OwningColumn.Name == "Edit")
                     {
                         string type= dataGridView_Staff.Rows[e.RowIndex].Cells["Role"].Value.ToString();
-                        if (type.TrimEnd() == "admin" || type.TrimEnd() == "ADMIN" || type.TrimEnd() == "Admin")// if (type!="admin")
+                        if (type.TrimEnd() != "admin" && type.TrimEnd() != "ADMIN" && type.TrimEnd() != "Admin")// if (type!="admin")
                         {
                             id = dataGridView_Staff.Rows[e.RowIndex].Cells[0].Value.ToString();
                             var form2 = new Doctor_Profile();
@@ -181,7 +181,10 @@ namespace PappyjoeMVC.View
                             form2.doc = id;
                             form2.Show();
                         }
-                       
+                        else
+                        {
+                            MessageBox.Show("Cannot edit admin details !!", "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }

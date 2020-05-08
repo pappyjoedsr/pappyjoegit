@@ -316,7 +316,7 @@
             this.toolStripTextDoctor});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1362, 46);
+            this.toolStrip1.Size = new System.Drawing.Size(1354, 46);
             this.toolStrip1.TabIndex = 30;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -2872,7 +2872,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.panel_clinicaldetails);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel_edit_dr);

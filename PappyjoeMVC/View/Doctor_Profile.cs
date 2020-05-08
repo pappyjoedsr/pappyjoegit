@@ -967,7 +967,7 @@ namespace PappyjoeMVC.View
                 string email = dt.Rows[0]["email_id"].ToString();//
                 try
                 {
-                    if (dt.Rows[0]["login_type"].ToString().TrimEnd() == "admin" || dt.Rows[0]["login_type"].ToString().TrimEnd() == "ADMIN" || dt.Rows[0]["login_type"].ToString().TrimEnd() == "Admin")//
+                    if (dt.Rows[0]["login_type"].ToString().TrimEnd() == "admin" && dt.Rows[0]["login_type"].ToString().TrimEnd() == "ADMIN" && dt.Rows[0]["login_type"].ToString().TrimEnd() == "Admin")//
                     {
                         if (txtPic.Text == openFileDialog1.FileName || txtPic.Text == "Image")
                         {
