@@ -964,44 +964,49 @@ namespace PappyjoeMVC.View
                     gender= "Female";
                 DataTable dt = this.cntrl.get_doctor_deteils(doctor_id);
                 string mobile = text_phone.Text;
-                string email = dt.Rows[0]["email_id"].ToString();
+                string email = dt.Rows[0]["email_id"].ToString();//
                 try
                 {
-                    if (txtPic.Text == openFileDialog1.FileName || txtPic.Text == "Image")
+                    if (dt.Rows[0]["login_type"].ToString().TrimEnd() == "admin" || dt.Rows[0]["login_type"].ToString().TrimEnd() == "ADMIN" || dt.Rows[0]["login_type"].ToString().TrimEnd() == "Admin")//
                     {
-                        RegistryKey regKeyAppRoot = Registry.CurrentUser.CreateSubKey("pappyjoe");
-                        string strWindowsState = (string)regKeyAppRoot.GetValue("Server");
-                        if (txtPic.Text != "")
+                        if (txtPic.Text == openFileDialog1.FileName || txtPic.Text == "Image")
                         {
-                            try
+                            RegistryKey regKeyAppRoot = Registry.CurrentUser.CreateSubKey("pappyjoe");
+                            string strWindowsState = (string)regKeyAppRoot.GetValue("Server");
+                            if (txtPic.Text != "")
                             {
-                                if (File.Exists(@"\\" + strWindowsState + "\\Pappyjoe_utilities\\doctor_image\\" + doctor_id))
+                                try
                                 {
+                                    if (File.Exists(@"\\" + strWindowsState + "\\Pappyjoe_utilities\\doctor_image\\" + doctor_id))
+                                    {
+                                    }
+                                    else
+                                    {
+                                        System.IO.File.Copy(txtPic.Text, @"\\" + strWindowsState + "\\Pappyjoe_utilities\\doctor_image\\" + doctor_id);
+                                    }
                                 }
-                                else
+                                catch (Exception ex)
                                 {
-                                    System.IO.File.Copy(txtPic.Text, @"\\" + strWindowsState + "\\Pappyjoe_utilities\\doctor_image\\" + doctor_id);
+                                    MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
+                            this.cntrl.update_doctor(doctor_id, text_drname.Text, text_phone.Text, text_email.Text, gender, combo_year.Text, rich_about.Text, txtPic.Text, cmbStaffType.Text);
                         }
-                        this.cntrl.update_doctor(doctor_id, text_drname.Text,text_phone.Text, text_email.Text, gender, combo_year.Text, rich_about.Text, txtPic.Text,cmbStaffType.Text);
-                        this.cntrl.update_login(doctor_id, text_email.Text);
+                        else
+                        {
+                            this.cntrl.update_doctor(doctor_id, text_drname.Text, text_phone.Text, text_email.Text, gender, combo_year.Text, rich_about.Text, txtPic.Text, cmbStaffType.Text);
+                            MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     else
                     {
-                        this.cntrl.update_doctor(doctor_id, text_drname.Text, text_phone.Text, text_email.Text, gender, combo_year.Text, rich_about.Text, txtPic.Text,cmbStaffType.Text);
-                        this.cntrl.update_login(doctor_id, text_email.Text);
-                        MessageBox.Show("Successfully Updated !!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Cannot edit admin details !!", "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Error!...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                } 
             }
         }
       

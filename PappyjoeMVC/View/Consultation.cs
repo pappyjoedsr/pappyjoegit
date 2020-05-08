@@ -375,6 +375,14 @@ namespace PappyjoeMVC.View
                             printhtml();
                             printprescriptionhtml(presid);
                         }
+                        else if (chkprescription.Checked == false && presid == 0)
+                        {
+                            printhtml();
+                        }
+                        else if (chkprescription.Checked == true && presid == 0)
+                        {
+                            printhtml();
+                        }
                     }
                     txt_Pt_search.Text = "";
                     txt_procedure.Text = "";
@@ -383,6 +391,7 @@ namespace PappyjoeMVC.View
                     txt_cost.Text = "";
                     txt_instruction.Text = "";
                     patient_mobile = "";
+                    lb_total.Hide();
                     Consultation_load();
                     dataGridView_drugnew.Rows.Clear();
                     tabControl1.SelectedIndex = 0;
@@ -1862,6 +1871,7 @@ namespace PappyjoeMVC.View
         {
             if (txt_procedure.Text != "" && txtQuantity.Text != "")
             {
+                lb_total.Show();
                 Decimal total = 0;
                 dgv_treatment.Rows.Add(txtID.Text, txt_procedure.Text, txtQuantity.Text, txt_cost.Text, txtTotal.Text, txt_instruction.Text, "DEL");
                 dgv_treatment.Columns["Del"].DefaultCellStyle.ForeColor = Color.Red;

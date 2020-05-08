@@ -55,7 +55,7 @@ namespace PappyjoeMVC.View
                 }
                 else
                 {
-                    MessageBox.Show("Error occured!...Please try again later", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No template available!..., Please add templates", "Sorry...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     DGV_SMSTemplates.Visible = false;
                     Panl_AddTemplate.Visible = true;
                 }

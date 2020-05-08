@@ -310,16 +310,20 @@ namespace PappyjoeMVC.View
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
-            Regex r = new Regex(@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$", RegexOptions.IgnoreCase); ///Object initialization for Regex 
-            if (r.IsMatch(txtEmail.Text.ToString()))
+            if (txtEmail.Text != "")
             {
+                Regex r = new Regex(@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$", RegexOptions.IgnoreCase); ///Object initialization for Regex 
+                if (r.IsMatch(txtEmail.Text.ToString()))
+                {
 
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Email address...", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEmail.Focus();
+                }
             }
-            else
-            {
-                MessageBox.Show("Invalid Email address...", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtEmail.Focus();
-            }
+               
             //if (!PappyjoeMVC.Model.Connection.checkforemail(txtEmail.Text.ToString()) && txtEmail.Text != "")
             //{
             //    MessageBox.Show("invalid Email address...", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);

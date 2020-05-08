@@ -1084,7 +1084,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(31, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 21);
+            this.label3.Size = new System.Drawing.Size(75, 21);
             this.label3.TabIndex = 406;
             this.label3.Text = "Patient Id";
             // 
@@ -1131,7 +1131,7 @@
             this.label19.ForeColor = System.Drawing.Color.Black;
             this.label19.Location = new System.Drawing.Point(550, 142);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(42, 21);
+            this.label19.Size = new System.Drawing.Size(44, 21);
             this.label19.TabIndex = 313;
             this.label19.Text = "Total";
             // 
@@ -1306,7 +1306,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(390, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 21);
+            this.label4.Size = new System.Drawing.Size(74, 21);
             this.label4.TabIndex = 293;
             this.label4.Text = "Template";
             this.label4.Visible = false;
@@ -1342,7 +1342,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(2, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 21);
+            this.label1.Size = new System.Drawing.Size(104, 21);
             this.label1.TabIndex = 288;
             this.label1.Text = "Patient Name";
             // 

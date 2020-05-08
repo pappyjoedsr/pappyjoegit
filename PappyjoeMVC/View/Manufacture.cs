@@ -182,16 +182,20 @@ namespace PappyjoeMVC.View
         }
         private void txt_Email_Validating(object sender, CancelEventArgs e)
         {
-            Regex r = new Regex(@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$", RegexOptions.IgnoreCase); ///Object initialization for Regex 
-            if (r.IsMatch(txt_Email.Text.ToString()))
+            if(txt_Email.Text!="")
             {
+                Regex r = new Regex(@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$", RegexOptions.IgnoreCase); ///Object initialization for Regex 
+                if (r.IsMatch(txt_Email.Text.ToString()))
+                {
 
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Email address...", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_Email.Focus();
+                }
             }
-            else
-            {
-                MessageBox.Show("Invalid Email address...", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_Email.Focus();
-            }
+           
             //if (!PappyjoeMVC.Model.Connection.checkforemail(txt_Email.Text.ToString()) && txt_Email.Text != "")
             //{
             //    MessageBox.Show("Invalid Email address...", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
