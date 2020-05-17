@@ -13,7 +13,7 @@ namespace PappyjoeMVC.Model
         //Sales Report
         public DataTable salesinv(string dateFrom,string dateTo)
         {
-            DataTable dt = db.table("select S.InvNumber, cast(S.InvDate as date) InvDate, S.cust_number, S.cust_name, Discount, cast(TotalAmount as decimal(18, 2)) TotalAmount from tbl_SALES S where S.InvDate between '" + dateFrom + "' and '" + dateTo + "'");
+            DataTable dt = db.table("select S.InvNumber, cast(S.InvDate as date) InvDate, S.cust_number, S.cust_name, Discount,PayMethod, cast(TotalAmount as decimal(18, 2)) TotalAmount from tbl_SALES S where S.InvDate between '" + dateFrom + "' and '" + dateTo + "'");
             return dt;
         }
         //Sales Report Items

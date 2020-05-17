@@ -55,7 +55,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable getall_advance(string pt_id)
         {
-            DataTable dtb = db.table("select Date,Amount,PaymentMethod from tbl_advance where Pt_id	='" + pt_id + "'");
+            DataTable dtb = db.table("select Date,Amount,PaymentMethod,form from tbl_advance where Pt_id	='" + pt_id + "'");
             return dtb;
         }
         public int save_log(string log_userid, string log_type, string log_descriptn, string log_stage)

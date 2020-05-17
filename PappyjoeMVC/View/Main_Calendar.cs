@@ -2169,7 +2169,7 @@ namespace PappyjoeMVC.View
             this.label11.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label11.Location = new System.Drawing.Point(7, 77);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 13);
+            this.label11.Size = new System.Drawing.Size(60, 13);
             this.label11.TabIndex = 3;
             this.label11.Text = "Booked By";
             // 
@@ -3140,10 +3140,95 @@ namespace PappyjoeMVC.View
                 }
                 if (!bDeleted)
                 {
+                    DataTable dtb_appointmt = this.cntrl.get_pat_for_simpleappoint(ContextEvent.Body);//
+                    DateTime StartT;
+                    StartT =Convert.ToDateTime(dtb_appointmt.Rows[0]["start_datetime"].ToString());
+                    StartT = StartT.AddHours(cmbStartTime.SelectedIndex / 12);
+                    int md = cmbStartTime.SelectedIndex % 12;
+                    StartT = StartT.AddMinutes(md * 5);
                     wndCalendarControl.DataProvider.DeleteEvent(ContextEvent);
                     this.cntrl.delete_appointment(ContextEvent.Body);
                     listAppointment("0");
                     this.cntrl.save_log(doctor_id, "Appointment", "logged user deletes appointment", "Delete");
+                    //sms sending
+                    string text = "";
+                    string smsName = "", smsPass = "";
+                    DataTable sms = this.cntrl.smsdetails();
+                    if (sms.Rows.Count > 0)
+                    {
+                        smsName = sms.Rows[0]["smsName"].ToString();
+                        smsPass = sms.Rows[0]["smsPass"].ToString();
+                    }
+                    SMS_model a = new SMS_model();
+                    if(dtb_appointmt.Rows.Count>0)
+                    {
+                        DataTable pat = this.cntrl.Get_Patient_Details(dtb_appointmt.Rows[0]["pt_id"].ToString());
+                        //DataTable smsreminder = this.cntrl.Get_reminderSmS();
+                        DataTable smslanguage = this.cntrl.sms_lang();
+                        if (pat.Rows.Count > 0)
+                        {
+                            string number = "91" + pat.Rows[0]["primary_mobile_number"].ToString();
+                            string type = "LNG";
+                            text = "Dear " + pat.Rows[0]["pt_name"].ToString() + ", " + "The appointment you boocked  on " + StartT.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + "has been cancelled! Regards  " + clinic + "," + contact_no;
+                            //a.SendSMS(smsName, smsPass, number, text, "DRTOMS", dtb_appointmt.Rows[0]["pt_id"].ToString, StartT.ToString("dd/MM/yyyy") + before_time, DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+                            a.SendSMS(smsName, smsPass, number, text, "DRTOMS", dtb_appointmt.Rows[0]["pt_id"].ToString(), StartT.ToString("dd/MM/yyyy") + " 09:10:00 am", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+                            //  this.cntrl.save_Pt_SMS(patient_id, pat.Rows[0]["pt_name"].ToString(), compoprocedure.Text, StartT.ToString("dd/MM/yyyy"), cmbStartTime.Text, combodoctor.Text);
+
+                        }
+                    }
+
+                    //
+                    //if (smsreminder.Rows.Count > 0)
+                    //{
+                    //    send_on_day = smsreminder.Rows[0]["send_on_day"].ToString();
+                    //    send_before_day = smsreminder.Rows[0]["send_before_day"].ToString();
+                    //    day_time = smsreminder.Rows[0]["day_time"].ToString();
+                    //    before_time = smsreminder.Rows[0]["day_time"].ToString();
+                    //}
+                    //if (pat.Rows.Count > 0)
+                    //{
+                    //    string number = "91" + pat.Rows[0]["primary_mobile_number"].ToString();
+                    //    string type = "LNG";
+                    //    if (neworold == "1")
+                    //    {
+                    //        a.SendSMS(smsName, smsPass, number, "Dear " + pat.Rows[0]["pt_name"].ToString() + " welcome to " + clinic + "," + contact_no, type);
+                    //    }
+                    //    if (smslanguage.Rows.Count > 0)
+                    //    {
+                    //        string smslang = smslanguage.Rows[0]["Prescription_lang"].ToString();
+                    //        DataTable smstemplate = this.cntrl.smstemplate(smslang, pat.Rows[0]["pt_name"].ToString(), compoprocedure.Text, StartT.ToString("dd/MM/yyyy"), cmbStartTime.Text, combodoctor.Text, clinic, contact_no);
+                    //        if (smstemplate.Rows.Count > 0)
+                    //        {
+                    //            text = smstemplate.Rows[0]["Template"].ToString();
+                    //            a.SendSMS(smsName, smsPass, number, text, type);
+                    //            this.cntrl.save_Pt_SMS(patient_id, pat.Rows[0]["pt_name"].ToString(), compoprocedure.Text, StartT.ToString("dd/MM/yyyy"), cmbStartTime.Text, combodoctor.Text);
+                    //        }//
+                    //    }
+                    //    string sddsds = "";
+                    //    //text = "Dear " + pat.Rows[0]["pt_name"].ToString() + " " + "Your appointment for " + compoprocedure.Text + " has been confirmed at " + StartT.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " with " + "Dr " + combodoctor.Text + " Regards " + clinic + "," + contact_no;
+                    //    //a.SendSMS(smsName, smsPass, number, text);
+                    //    //this.cntrl.save_Pt_SMS(patient_id, pat.Rows[0]["pt_name"].ToString(), compoprocedure.Text, StartT.ToString("dd/MM/yyyy"), cmbStartTime.Text, combodoctor.Text);
+                    //    ////For Reminder SMS-----
+                    //    if (day_time != null)
+                    //    {
+                    //        if (dpStartTimeDate.Value > DateTime.Now.Date)
+                    //        {
+                    //            text = "Dear " + pat.Rows[0]["pt_name"].ToString() + ", " + "Today you have an appointment at " + clinic + " on " + StartT.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " for " + compoprocedure.Text + " .Regards  " + clinic + "," + contact_no;
+                    //            a.SendSMS(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT.ToString("dd/MM/yyyy") + " 09:10:00 am", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+                    //        }
+                    //    }
+                    //    if (before_time != null)
+                    //    {
+                    //        if (dpStartTimeDate.Value > DateTime.Now.Date)
+                    //        {
+                    //            text = "Dear " + pat.Rows[0]["pt_name"].ToString() + ", " + "Today you have an appointment at " + clinic + " on " + StartT.ToString("dd/MM/yyyy") + " " + cmbStartTime.Text + " for " + compoprocedure.Text + " .Regards  " + clinic + "," + contact_no;
+                    //            a.SendSMS(smsName, smsPass, number, text, "DRTOMS", patient_id.ToString(), StartT.ToString("dd/MM/yyyy") + before_time, DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+                    //        }
+                    //    }
+                    //}
+
+                    ///////////
+                    ///
                 }
                 wndCalendarControl.Populate();
                 wndCalendarControl.RedrawControl();

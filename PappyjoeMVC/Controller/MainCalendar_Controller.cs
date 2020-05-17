@@ -169,6 +169,17 @@ namespace PappyjoeMVC.Controller
             DataTable dtb = model.get_pat_for_simpleappoint(id1);
             return dtb;
         }
+        //sms
+        public DataTable smsdetails()
+        {
+            DataTable dtb = cmodel.smsdetails();
+            return dtb;
+        }
+        public DataTable sms_lang()
+        {
+            DataTable dt = cmodel.sms_language();
+            return dt;
+        }
     }
 }
  

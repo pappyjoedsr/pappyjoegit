@@ -89,6 +89,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panl_mode_payment = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.Lab_Last4Digit = new System.Windows.Forms.Label();
@@ -183,7 +184,6 @@
             this.Colduration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coldirection = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colremarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -856,6 +856,22 @@
             this.panl_mode_payment.TabIndex = 2;
             this.panl_mode_payment.Visible = false;
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.LimeGreen;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(169, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(65, 25);
+            this.button2.TabIndex = 354;
+            this.button2.Text = "Ok";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -985,7 +1001,7 @@
             this.Bank.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Bank.Location = new System.Drawing.Point(73, 72);
             this.Bank.Name = "Bank";
-            this.Bank.Size = new System.Drawing.Size(33, 13);
+            this.Bank.Size = new System.Drawing.Size(32, 13);
             this.Bank.TabIndex = 350;
             this.Bank.Text = "Bank";
             // 
@@ -1584,7 +1600,7 @@
             this.prddate,
             this.expdate,
             this.unit});
-            this.dgv_BatchSale.Location = new System.Drawing.Point(146, 531);
+            this.dgv_BatchSale.Location = new System.Drawing.Point(24, 531);
             this.dgv_BatchSale.Name = "dgv_BatchSale";
             this.dgv_BatchSale.RowHeadersVisible = false;
             this.dgv_BatchSale.Size = new System.Drawing.Size(414, 112);
@@ -1985,22 +2001,6 @@
             this.colremarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colremarks.HeaderText = "Remarks";
             this.colremarks.Name = "colremarks";
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.LimeGreen;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(169, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 25);
-            this.button2.TabIndex = 354;
-            this.button2.Text = "Ok";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Sales
             // 

@@ -28,12 +28,12 @@ namespace PappyjoeMVC.Model
         }
         public DataTable getpay(string invdate)
         {
-            DataTable dt = db.table("select  tbl_payment.receipt_no,tbl_payment.total,tbl_payment.payment_date,tbl_payment.procedure_name,tbl_payment.invoice_no,tbl_payment.amount_paid,tbl_patient.pt_name,tbl_patient.pt_id,tbl_doctor.doctor_name from tbl_payment LEFT JOIN tbl_patient on tbl_payment.pt_id=tbl_patient.id LEFT JOIN tbl_doctor on tbl_payment.dr_id=tbl_doctor.id where tbl_patient.Profile_Status='Active' and tbl_payment.payment_date='" + Convert.ToDateTime(invdate).ToString("yyyy-MM-dd") + "' order by tbl_payment.payment_date desc");
+            DataTable dt = db.table("select  tbl_payment.receipt_no,tbl_payment.total,tbl_payment.payment_date,tbl_payment.procedure_name,tbl_payment.invoice_no,tbl_payment.amount_paid,tbl_patient.pt_name,tbl_patient.pt_id,tbl_doctor.doctor_name,tbl_payment.mode_of_payment from tbl_payment LEFT JOIN tbl_patient on tbl_payment.pt_id=tbl_patient.id LEFT JOIN tbl_doctor on tbl_payment.dr_id=tbl_doctor.id where tbl_patient.Profile_Status='Active' and tbl_payment.payment_date='" + Convert.ToDateTime(invdate).ToString("yyyy-MM-dd") + "' order by tbl_payment.payment_date desc");
             return dt;
         }
         public DataTable getpay2(string invdate, string doctrid)
         {
-            DataTable dt = db.table("select  tbl_payment.receipt_no,tbl_payment.total,tbl_payment.payment_date,tbl_payment.procedure_name,tbl_payment.invoice_no,tbl_payment.amount_paid,tbl_patient.pt_name,tbl_patient.pt_id,tbl_doctor.doctor_name from tbl_payment LEFT JOIN tbl_patient on tbl_payment.pt_id=tbl_patient.id LEFT JOIN tbl_doctor on tbl_payment.dr_id=tbl_doctor.id where tbl_patient.Profile_Status='Active' and tbl_payment.payment_date = '" + Convert.ToDateTime(invdate).ToString("yyyy-MM-dd") + "' and tbl_payment.dr_id='" + doctrid + "' order by tbl_payment.payment_date desc");
+            DataTable dt = db.table("select  tbl_payment.receipt_no,tbl_payment.total,tbl_payment.payment_date,tbl_payment.procedure_name,tbl_payment.invoice_no,tbl_payment.amount_paid,tbl_patient.pt_name,tbl_patient.pt_id,tbl_doctor.doctor_name,tbl_payment.mode_of_payment from tbl_payment LEFT JOIN tbl_patient on tbl_payment.pt_id=tbl_patient.id LEFT JOIN tbl_doctor on tbl_payment.dr_id=tbl_doctor.id where tbl_patient.Profile_Status='Active' and tbl_payment.payment_date = '" + Convert.ToDateTime(invdate).ToString("yyyy-MM-dd") + "' and tbl_payment.dr_id='" + doctrid + "' order by tbl_payment.payment_date desc");
             return dt;
         }
         //Monthly Invoice Report

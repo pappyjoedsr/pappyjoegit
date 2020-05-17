@@ -43,13 +43,6 @@
             this.BTNClose = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.DGV_SALES = new System.Windows.Forms.DataGridView();
-            this.SLNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cust_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cust_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Btn_Show = new System.Windows.Forms.Button();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.Txtgrandtotal = new System.Windows.Forms.TextBox();
@@ -66,6 +59,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Lab_Msg = new System.Windows.Forms.Label();
+            this.SLNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cust_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cust_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modeofpayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_SALES)).BeginInit();
@@ -190,6 +191,7 @@
             this.cust_name,
             this.InvNumber,
             this.InvDate,
+            this.modeofpayment,
             this.clDiscount,
             this.TotalAmount});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -213,54 +215,6 @@
             this.DGV_SALES.Size = new System.Drawing.Size(1370, 393);
             this.DGV_SALES.TabIndex = 0;
             this.DGV_SALES.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_SALES_CellDoubleClick);
-            // 
-            // SLNO
-            // 
-            this.SLNO.HeaderText = "SLNO";
-            this.SLNO.Name = "SLNO";
-            this.SLNO.ReadOnly = true;
-            this.SLNO.Width = 118;
-            // 
-            // cust_number
-            // 
-            this.cust_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cust_number.HeaderText = "CUSTOMER ID";
-            this.cust_number.Name = "cust_number";
-            this.cust_number.ReadOnly = true;
-            // 
-            // cust_name
-            // 
-            this.cust_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cust_name.HeaderText = "NAME";
-            this.cust_name.Name = "cust_name";
-            this.cust_name.ReadOnly = true;
-            // 
-            // InvNumber
-            // 
-            this.InvNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.InvNumber.HeaderText = "INVOICE NO";
-            this.InvNumber.Name = "InvNumber";
-            this.InvNumber.ReadOnly = true;
-            // 
-            // InvDate
-            // 
-            this.InvDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.InvDate.HeaderText = "INVOICE DATE";
-            this.InvDate.Name = "InvDate";
-            this.InvDate.ReadOnly = true;
-            // 
-            // clDiscount
-            // 
-            this.clDiscount.HeaderText = "DISCOUNT (%)";
-            this.clDiscount.Name = "clDiscount";
-            this.clDiscount.ReadOnly = true;
-            // 
-            // TotalAmount
-            // 
-            this.TotalAmount.HeaderText = "TOTAL  AMOUNT";
-            this.TotalAmount.Name = "TotalAmount";
-            this.TotalAmount.ReadOnly = true;
-            this.TotalAmount.Width = 118;
             // 
             // Btn_Show
             // 
@@ -465,6 +419,61 @@
             this.Lab_Msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lab_Msg.Visible = false;
             // 
+            // SLNO
+            // 
+            this.SLNO.HeaderText = "SLNO";
+            this.SLNO.Name = "SLNO";
+            this.SLNO.ReadOnly = true;
+            this.SLNO.Width = 118;
+            // 
+            // cust_number
+            // 
+            this.cust_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cust_number.HeaderText = "CUSTOMER ID";
+            this.cust_number.Name = "cust_number";
+            this.cust_number.ReadOnly = true;
+            // 
+            // cust_name
+            // 
+            this.cust_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cust_name.HeaderText = "NAME";
+            this.cust_name.Name = "cust_name";
+            this.cust_name.ReadOnly = true;
+            // 
+            // InvNumber
+            // 
+            this.InvNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.InvNumber.HeaderText = "INVOICE NO";
+            this.InvNumber.Name = "InvNumber";
+            this.InvNumber.ReadOnly = true;
+            // 
+            // InvDate
+            // 
+            this.InvDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.InvDate.HeaderText = "INVOICE DATE";
+            this.InvDate.Name = "InvDate";
+            this.InvDate.ReadOnly = true;
+            // 
+            // modeofpayment
+            // 
+            this.modeofpayment.HeaderText = "MODE OF PAYMENT";
+            this.modeofpayment.Name = "modeofpayment";
+            this.modeofpayment.ReadOnly = true;
+            this.modeofpayment.Width = 150;
+            // 
+            // clDiscount
+            // 
+            this.clDiscount.HeaderText = "DISCOUNT (%)";
+            this.clDiscount.Name = "clDiscount";
+            this.clDiscount.ReadOnly = true;
+            // 
+            // TotalAmount
+            // 
+            this.TotalAmount.HeaderText = "TOTAL  AMOUNT";
+            this.TotalAmount.Name = "TotalAmount";
+            this.TotalAmount.ReadOnly = true;
+            this.TotalAmount.Width = 118;
+            // 
             // Sales_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -526,6 +535,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cust_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn InvNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn InvDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modeofpayment;
         private System.Windows.Forms.DataGridViewTextBoxColumn clDiscount;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
     }

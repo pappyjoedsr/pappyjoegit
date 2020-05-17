@@ -20,6 +20,7 @@ namespace PappyjoeMVC.View
         {
             InitializeComponent();
             Form_Name = formName;
+            Item_Code = "";
         }
 
         public ItemListForSales(string formName, string text)
@@ -195,7 +196,7 @@ namespace PappyjoeMVC.View
                     {
                         string itemcode = dgv_item.CurrentRow.Cells["id"].Value.ToString();
                         string isbatch = this.cntrl.check_batch(itemcode);
-                        if (isbatch == "True")
+                        if ( isbatch == "true")
                         {
                             var form2 = new ItemBatchDetails(itemcode);
                             form2.ShowDialog();

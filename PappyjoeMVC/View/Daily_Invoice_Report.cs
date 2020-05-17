@@ -52,11 +52,11 @@ namespace PappyjoeMVC.View
                         credit = (cost * unit) - (tax + discount);
                         totalcredit = totalcredit + credit;
                         totalinvoice = totalinvoice + credit;
-                        Grvsummary.Rows.Add(slno, Patient, invoiceno, " ", details, doctor, String.Format("{0:C}", credit), "0.00", String.Format("{0:C}", totalcredit));
+                        Grvsummary.Rows.Add(slno, Patient, invoiceno, " ", details, doctor,"", String.Format("{0:C}", credit), "0.00", String.Format("{0:C}", totalcredit));
                         Grvsummary.Rows[z].Cells[1].Style.ForeColor = Color.Blue;
-                        Grvsummary.Rows[z].Cells[6].Style.ForeColor = Color.Blue;
-                        Grvsummary.Rows[z].Cells[8].Style.ForeColor = Color.Red;
-                        Grvsummary.Rows[z].Cells[8].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
+                        Grvsummary.Rows[z].Cells[7].Style.ForeColor = Color.Blue;
+                        Grvsummary.Rows[z].Cells[9].Style.ForeColor = Color.Red;
+                        Grvsummary.Rows[z].Cells[9].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
                         slno = slno + 1;
                         invcount = invMain.Rows.Count;
                     }
@@ -97,11 +97,11 @@ namespace PappyjoeMVC.View
                         credit = (cost * unit) - (tax + discount);
                         totalcredit = totalcredit + credit;
                         totalinvoice = totalinvoice + credit;
-                        Grvsummary.Rows.Add(slno, Patient, invoiceno, " ", details, doctor, String.Format("{0:C}", credit), "0.00", String.Format("{0:C}", totalcredit));
+                        Grvsummary.Rows.Add(slno, Patient, invoiceno, " ", details, doctor,"", String.Format("{0:C}", credit), "0.00", String.Format("{0:C}", totalcredit));
                         Grvsummary.Rows[z].Cells[1].Style.ForeColor = Color.Blue;
-                        Grvsummary.Rows[z].Cells[6].Style.ForeColor = Color.Blue;
-                        Grvsummary.Rows[z].Cells[8].Style.ForeColor = Color.Red;
-                        Grvsummary.Rows[z].Cells[8].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
+                        Grvsummary.Rows[z].Cells[7].Style.ForeColor = Color.Blue;
+                        Grvsummary.Rows[z].Cells[9].Style.ForeColor = Color.Red;
+                        Grvsummary.Rows[z].Cells[9].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
                         slno = slno + 1;
                         invcount = invMain.Rows.Count;
                     }
@@ -116,14 +116,17 @@ namespace PappyjoeMVC.View
         {
             try
             {
+                decimal cash = 0, cheque = 0, card = 0, dd = 0, PayTM=0,Tez=0, UPI=0,NEFT=0,IMPS=0,Netbanking=0, Wallets=0,CCAvenue=0;
                 for (int u = 0; u < payMain.Rows.Count; u++)
                 {
+                   
                     string Patient = payMain.Rows[u]["pt_name"].ToString();
                     string Patient_id = payMain.Rows[u]["pt_id"].ToString();
                     string recpno = payMain.Rows[u]["receipt_no"].ToString();
                     string date = payMain.Rows[u]["payment_date"].ToString();
                     string details = payMain.Rows[u]["procedure_name"].ToString();// +" (Qty:" + invMain.Rows[u]["unit"].ToString() + ")";
                     string doctor = payMain.Rows[u]["doctor_name"].ToString();
+                    string mode = payMain.Rows[u]["mode_of_payment"].ToString();
                     DateTime d = Convert.ToDateTime(date);
                     string day = d.Day.ToString();
                     string month = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(d.Month);
@@ -135,12 +138,145 @@ namespace PappyjoeMVC.View
                     totalpayment = totalpayment + total;
                     balance1 = Convert.ToDecimal(payMain.Rows[u]["total"].ToString());
                     balance = totalinvoice - totalpayment;
-                    Grvsummary.Rows.Add(slno, Patient, invoiceno, recpno, details, doctor, "0.00", Convert.ToDecimal(total).ToString("#0.00"), Convert.ToDecimal(balance).ToString("#0.00"));
-                    Grvsummary.Rows[invcount + u].Cells[8].Style.ForeColor = Color.Red;
-                    Grvsummary.Rows[invcount + u].Cells[7].Style.ForeColor = Color.ForestGreen;
-                    Grvsummary.Rows[invcount + u].Cells[8].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
+                    
+                    Grvsummary.Rows.Add(slno, Patient, invoiceno, recpno, details, doctor, mode, "0.00", Convert.ToDecimal(total).ToString("#0.00"), Convert.ToDecimal(balance).ToString("#0.00"));
+                    if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value!=null && Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString()!="")
+                    {
+                        if(Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString()== "Cash")
+                        {
+                            cash = cash + Convert.ToDecimal(total);
+                        }
+                        else if(Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "Cheque")
+                        {
+                            cheque= cheque+ Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "Card")
+                        {
+                            card = card + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "DD")
+                        {
+                            dd = dd + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "PayTM")
+                        {
+                            PayTM = PayTM + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "Tez")
+                        {
+                            Tez = Tez + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "UPI")
+                        {
+                            UPI = UPI + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "NEFT/RTGS/IMPS")
+                        {
+                            NEFT = NEFT + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "Netbanking")
+                        {
+                            Netbanking = Netbanking + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "Wallets")
+                        {
+                            Wallets = Wallets + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "CCAvenue")
+                        {
+                            CCAvenue = CCAvenue + Convert.ToDecimal(total);
+                        }
+                    }
+                        Grvsummary.Rows[invcount + u].Cells[9].Style.ForeColor = Color.Red;
+                    Grvsummary.Rows[invcount + u].Cells[8].Style.ForeColor = Color.ForestGreen;
+                    Grvsummary.Rows[invcount + u].Cells[9].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
                     Grvsummary.Rows[invcount + u].Cells[1].Style.ForeColor = Color.ForestGreen;
                     slno = slno + 1;
+                }
+
+                int rowcount = 0;
+                //Grvsummary.Rows[rowcount-1].Cells["TOTAL_COST"].Value = "SUBTOTAL";
+                Grvsummary.Rows.Add("", "", "", "", "", "", "", "SUBTOTAL", "", "");
+                rowcount = Grvsummary.Rows.Count;
+                Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.ForestGreen;
+                Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 12, FontStyle.Bold);
+
+                if (cash>0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "Cash", Convert.ToDecimal(cash).ToString("#0.00") , "");
+                    rowcount= Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (cheque>0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "Cheque", Convert.ToDecimal(cheque).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (card > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "Card", Convert.ToDecimal(card).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (dd > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "Demand Draft", Convert.ToDecimal(dd).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (PayTM > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "PayTM", Convert.ToDecimal(PayTM).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (Tez > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "Tez", Convert.ToDecimal(Tez).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (NEFT > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "NEFT/RTGS/IMPS", Convert.ToDecimal(NEFT).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (Netbanking > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "Netbanking", Convert.ToDecimal(Netbanking).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (Wallets > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "Wallets", Convert.ToDecimal(Wallets).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (CCAvenue > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "CCAvenue", Convert.ToDecimal(CCAvenue).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (UPI > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "UPI", Convert.ToDecimal(UPI).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
                 }
             }
             catch (Exception ex)
@@ -152,6 +288,7 @@ namespace PappyjoeMVC.View
         {
             try
             {
+                decimal cash = 0, cheque = 0, card = 0, dd = 0 , PayTM = 0,Tez = 0, UPI = 0,NEFT = 0,Netbanking = 0, Wallets = 0,CCAvenue = 0; ;
                 for (int u = 0; u < payMain.Rows.Count; u++)
                 {
                     string Patient = payMain.Rows[u]["pt_name"].ToString();
@@ -160,6 +297,7 @@ namespace PappyjoeMVC.View
                     string date = payMain.Rows[u]["payment_date"].ToString();
                     string details = payMain.Rows[u]["procedure_name"].ToString();// +" (Qty:" + invMain.Rows[u]["unit"].ToString() + ")";
                     string doctor = payMain.Rows[u]["doctor_name"].ToString();
+                    string mode = payMain.Rows[u]["mode_of_payment"].ToString();
                     DateTime d = Convert.ToDateTime(date);
                     string day = d.Day.ToString();
                     string month = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(d.Month);
@@ -171,12 +309,143 @@ namespace PappyjoeMVC.View
                     totalpayment = totalpayment + total;
                     balance1 = Convert.ToDecimal(payMain.Rows[u]["total"].ToString());
                     balance = totalinvoice - totalpayment;
-                    Grvsummary.Rows.Add(slno, Patient, invoiceno, recpno, details, doctor, "0.00", Convert.ToDecimal(total).ToString("#0.00"), Convert.ToDecimal(balance1).ToString("#0.00"));
-                    Grvsummary.Rows[invcount + u].Cells[8].Style.ForeColor = Color.Red;
-                    Grvsummary.Rows[invcount + u].Cells[7].Style.ForeColor = Color.ForestGreen;
-                    Grvsummary.Rows[invcount + u].Cells[8].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
+                    Grvsummary.Rows.Add(slno, Patient, invoiceno, recpno, details, doctor, mode, "0.00", Convert.ToDecimal(total).ToString("#0.00"), Convert.ToDecimal(balance1).ToString("#0.00"));
+                    if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value != null && Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() != "")
+                    {
+                        if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "Cash")
+                        {
+                            cash = cash + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "Cheque")
+                        {
+                            cheque = cheque + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "Card")
+                        {
+                            card = card + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "DD")
+                        {
+                            dd = dd + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "PayTM")
+                        {
+                            PayTM = PayTM + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "Tez")
+                        {
+                            Tez = Tez + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "UPI")
+                        {
+                            UPI = UPI + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "NEFT/RTGS/IMPS")
+                        {
+                            NEFT = NEFT + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "Netbanking")
+                        {
+                            Netbanking = Netbanking + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "Wallets")
+                        {
+                            Wallets = Wallets + Convert.ToDecimal(total);
+                        }
+                        else if (Grvsummary.Rows[invcount + u].Cells["modeofpayment"].Value.ToString() == "CCAvenue")
+                        {
+                            CCAvenue = CCAvenue + Convert.ToDecimal(total);
+                        }
+                    }
+                    Grvsummary.Rows[invcount + u].Cells[9].Style.ForeColor = Color.Red;
+                    Grvsummary.Rows[invcount + u].Cells[8].Style.ForeColor = Color.ForestGreen;
+                    Grvsummary.Rows[invcount + u].Cells[9].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular);
                     Grvsummary.Rows[invcount + u].Cells[1].Style.ForeColor = Color.ForestGreen;
                     slno = slno + 1;
+                }
+                int rowcount = 0;
+                //Grvsummary.Rows[rowcount-1].Cells["TOTAL_COST"].Value = "SUBTOTAL";
+                Grvsummary.Rows.Add("", "", "", "", "", "", "", "SUBTOTAL", "", "");
+                rowcount = Grvsummary.Rows.Count;
+                Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.ForestGreen;
+                Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 12, FontStyle.Bold);
+
+                if (cash > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "Cash", Convert.ToDecimal(cash).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (cheque > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "Cheque", Convert.ToDecimal(cheque).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (card > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "Card", Convert.ToDecimal(card).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (dd > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "Demand Draft", Convert.ToDecimal(dd).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (PayTM > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "PayTM", Convert.ToDecimal(PayTM).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (Tez > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "Tez", Convert.ToDecimal(Tez).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (NEFT > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "NEFT/RTGS/IMPS", Convert.ToDecimal(NEFT).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (Netbanking > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "Netbanking", Convert.ToDecimal(Netbanking).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (Wallets > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "Wallets", Convert.ToDecimal(Wallets).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (CCAvenue > 0) 
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "CCAvenue", Convert.ToDecimal(CCAvenue).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                if (UPI > 0)
+                {
+                    Grvsummary.Rows.Add("", "", "", "", "", "", "", "UPI", Convert.ToDecimal(UPI).ToString("#0.00"), "");
+                    rowcount = Grvsummary.Rows.Count;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.ForeColor = Color.DarkSlateGray;
+                    Grvsummary.Rows[rowcount - 1].Cells["TOTAL_COST"].Style.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
                 }
             }
             catch (Exception ex)
@@ -427,7 +696,7 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("<tr><td  align='left' height='20px'><FONT COLOR=black FACE='Segoe UI' SIZE=3>&nbsp;" + strStreet + "</font></td></tr>");
                         sWrite.WriteLine("<tr><td align='left' height='20px' valign='top'> <FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + strphone + "</font></td></tr>");
 
-                        sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
+                        //sWrite.WriteLine("<tr><td align='left' colspan='2'><hr/></td></tr>");
 
                         sWrite.WriteLine("</table>");
                     }
@@ -462,6 +731,7 @@ namespace PappyjoeMVC.View
                     }
                     DataTable invMain = new DataTable();
                     DataTable payMain = new DataTable();
+                    int ROWCOUNT = 0;
                     if (Grvsummary.Rows.Count > 0)
                     {
                         sWrite.WriteLine("<tr>");
@@ -471,6 +741,7 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("    <td align='left' width='15%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Receipt No</b></font></td>");
                         sWrite.WriteLine("    <td align='left' width='17%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Product and Service</b></font></td>");
                         sWrite.WriteLine("    <td align='left' width='10%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Doctor</b></font></td>");
+                        sWrite.WriteLine("    <td align='right' width='10%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Mode of payment</b></font></td>");
                         sWrite.WriteLine("    <td align='right' width='10%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Invoice</b></font></td>");
                         sWrite.WriteLine("    <td align='right ' width='10%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Receipt</b></font></td>");
                         sWrite.WriteLine("    <td align='right' width='11%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Amount Due</b></font></td>");
@@ -484,10 +755,20 @@ namespace PappyjoeMVC.View
                             sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + Grvsummary.Rows[c].Cells["RECEIPT"].Value.ToString() + "</font></td>");
                             sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + Grvsummary.Rows[c].Cells["PRODUCT_AND_SERVICE"].Value.ToString() + "</font></td>");
                             sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + Grvsummary.Rows[c].Cells["Doctor_name"].Value.ToString() + "</font></td>");
-                            sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + Grvsummary.Rows[c].Cells["TOTAL_COST"].Value.ToString() + "&nbsp;</font></td>");
-                            sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + Grvsummary.Rows[c].Cells["TOTALINCOME"].Value.ToString() + "&nbsp;</font></td>");
+                            sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + Grvsummary.Rows[c].Cells["modeofpayment"].Value.ToString() + "&nbsp;</font></td>");
+                            if (Grvsummary.Rows[c].Cells["TOTALINCOME"].Value.ToString() == "")
+                            {
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>" + Grvsummary.Rows[c].Cells["TOTAL_COST"].Value.ToString() + "&nbsp;</b></font></td>");
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>" + Grvsummary.Rows[c].Cells["TOTALINCOME"].Value.ToString() + "&nbsp;</b></font></td>");
+                            }
+                            else
+                            {
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + Grvsummary.Rows[c].Cells["TOTAL_COST"].Value.ToString() + "&nbsp;</font></td>");
+                                sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + Grvsummary.Rows[c].Cells["TOTALINCOME"].Value.ToString() + "&nbsp;</font></td>");
+                            }
                             sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + Grvsummary.Rows[c].Cells["TOTAL_AMOUT_DUE"].Value.ToString() + "&nbsp;</font></td>");
                             sWrite.WriteLine("</tr>");
+                           
                             c++;
                         }
                         string cost = "";
@@ -502,6 +783,7 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
                         sWrite.WriteLine("    <td align='center' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
                         sWrite.WriteLine("    <td align='center' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
+                        sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
                         sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2></font></td>");
                         sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>Total</b></font></td>");
                         sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b>" + cost + "</b>&nbsp;</font></td>");

@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receipt));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_Add = new System.Windows.Forms.Button();
@@ -96,12 +96,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.dgv_advance = new System.Windows.Forms.DataGridView();
-            this.Slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lab_Msg = new System.Windows.Forms.Label();
             this.Dgv_payment = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel8 = new System.Windows.Forms.Panel();
             this.Lab_Due = new System.Windows.Forms.Label();
             this.listpatientsearch = new System.Windows.Forms.ListBox();
@@ -118,13 +121,11 @@
             this.Adv_details = new System.Windows.Forms.Label();
             this.Lab_AllPatients = new System.Windows.Forms.Label();
             this.adv_refund = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Details = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -792,10 +793,11 @@
             this.panl_refund.Controls.Add(this.panel10);
             this.panl_refund.Controls.Add(this.label2);
             this.panl_refund.Controls.Add(this.btn_refund_calcel);
+            this.panl_refund.Controls.Add(this.label4);
             this.panl_refund.Controls.Add(this.btn_refund_amount);
             this.panl_refund.Controls.Add(this.label1);
             this.panl_refund.Controls.Add(this.txt_adv_refund);
-            this.panl_refund.Location = new System.Drawing.Point(299, 129);
+            this.panl_refund.Location = new System.Drawing.Point(360, 131);
             this.panl_refund.Name = "panl_refund";
             this.panl_refund.Size = new System.Drawing.Size(273, 105);
             this.panl_refund.TabIndex = 260;
@@ -883,7 +885,7 @@
             this.panl_advance.Controls.Add(this.dgv_advance);
             this.panl_advance.Location = new System.Drawing.Point(225, 58);
             this.panl_advance.Name = "panl_advance";
-            this.panl_advance.Size = new System.Drawing.Size(445, 311);
+            this.panl_advance.Size = new System.Drawing.Size(565, 311);
             this.panl_advance.TabIndex = 259;
             this.panl_advance.Visible = false;
             // 
@@ -892,7 +894,7 @@
             this.panel3.BackColor = System.Drawing.Color.LightGray;
             this.panel3.Location = new System.Drawing.Point(0, 39);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(444, 1);
+            this.panel3.Size = new System.Drawing.Size(570, 1);
             this.panel3.TabIndex = 261;
             // 
             // label3
@@ -914,7 +916,7 @@
             this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.ForeColor = System.Drawing.Color.White;
-            this.btn_Cancel.Location = new System.Drawing.Point(345, 5);
+            this.btn_Cancel.Location = new System.Drawing.Point(465, 5);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(91, 30);
             this.btn_Cancel.TabIndex = 5;
@@ -934,6 +936,7 @@
             this.Slno,
             this.Date,
             this.Payment,
+            this.Details,
             this.Amount});
             this.dgv_advance.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv_advance.Location = new System.Drawing.Point(0, 43);
@@ -942,32 +945,8 @@
             this.dgv_advance.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_advance.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgv_advance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_advance.Size = new System.Drawing.Size(443, 266);
+            this.dgv_advance.Size = new System.Drawing.Size(563, 266);
             this.dgv_advance.TabIndex = 0;
-            // 
-            // Slno
-            // 
-            this.Slno.HeaderText = "Slno";
-            this.Slno.Name = "Slno";
-            this.Slno.Width = 80;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.Width = 110;
-            // 
-            // Payment
-            // 
-            this.Payment.HeaderText = "Payment Method";
-            this.Payment.Name = "Payment";
-            this.Payment.Width = 125;
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Advance Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.Width = 150;
             // 
             // Lab_Msg
             // 
@@ -988,22 +967,22 @@
             this.Dgv_payment.AllowUserToDeleteRows = false;
             this.Dgv_payment.AllowUserToResizeColumns = false;
             this.Dgv_payment.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.Dgv_payment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.Dgv_payment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.Dgv_payment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.Dgv_payment.BackgroundColor = System.Drawing.Color.White;
             this.Dgv_payment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_payment.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Dgv_payment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_payment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_payment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.Dgv_payment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_payment.ColumnHeadersVisible = false;
             this.Dgv_payment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1014,14 +993,14 @@
             this.Column7,
             this.Column6,
             this.Column5});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Dgv_payment.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Dgv_payment.DefaultCellStyle = dataGridViewCellStyle6;
             this.Dgv_payment.Location = new System.Drawing.Point(0, 7);
             this.Dgv_payment.Name = "Dgv_payment";
             this.Dgv_payment.ReadOnly = true;
@@ -1032,6 +1011,50 @@
             this.Dgv_payment.TabIndex = 258;
             this.Dgv_payment.Visible = false;
             this.Dgv_payment.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Dgv_payment_MouseClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Column3";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Column7";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 20;
             // 
             // panel8
             // 
@@ -1146,7 +1169,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(637, 343);
+            this.label4.Location = new System.Drawing.Point(107, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 275;
@@ -1188,7 +1211,6 @@
             // 
             this.adv_refund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.adv_refund.BackColor = System.Drawing.Color.LimeGreen;
-            this.adv_refund.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("adv_refund.BackgroundImage")));
             this.adv_refund.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.adv_refund.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.adv_refund.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1201,49 +1223,35 @@
             this.adv_refund.UseVisualStyleBackColor = false;
             this.adv_refund.Visible = false;
             // 
-            // Column1
+            // Slno
             // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.Slno.HeaderText = "Slno";
+            this.Slno.Name = "Slno";
+            this.Slno.Width = 50;
             // 
-            // Column2
+            // Date
             // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.Width = 110;
             // 
-            // Column3
+            // Payment
             // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.Payment.HeaderText = "Payment Method";
+            this.Payment.Name = "Payment";
+            this.Payment.Width = 125;
             // 
-            // Column4
+            // Details
             // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.Details.HeaderText = "Details";
+            this.Details.Name = "Details";
+            this.Details.Width = 125;
             // 
-            // Column7
+            // Amount
             // 
-            this.Column7.HeaderText = "Column7";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 20;
+            this.Amount.HeaderText = "Advance Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.Width = 150;
             // 
             // Receipt
             // 
@@ -1252,7 +1260,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1362, 703);
             this.Controls.Add(this.Adv_details);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblAdvance);
             this.Controls.Add(this.listpatientsearch);
             this.Controls.Add(this.Lab_Due);
@@ -1366,10 +1373,6 @@
         private System.Windows.Forms.Panel panl_advance;
         private System.Windows.Forms.DataGridView dgv_advance;
         private System.Windows.Forms.Button btn_Cancel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Slno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Payment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.Panel panl_refund;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_refund_calcel;
@@ -1389,5 +1392,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewImageColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Slno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Payment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Details;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
     }
 }

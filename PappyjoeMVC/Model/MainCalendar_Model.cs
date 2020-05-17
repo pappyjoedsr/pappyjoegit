@@ -134,8 +134,13 @@ namespace PappyjoeMVC.Model
         }
         public DataTable get_pat_for_simpleappoint(string id1)
         {
-            DataTable dtdr = db.table("SELECT pt_id,pt_name,id,book_datetime from tbl_appointment where id='" + id1 + "'");
+            DataTable dtdr = db.table("SELECT pt_id,pt_name,id,book_datetime,start_datetime from tbl_appointment where id='" + id1 + "'");
             return dtdr;
         }
+        //sms
+        //public DataTable get_appointment_details()
+        //{
+
+        //}
     }
 }//select id from tbl_User_Privilege where UserID = " + doctor_id + " and Category='APT' and Permission='A'

@@ -462,20 +462,20 @@ namespace PappyjoeMVC.View
                         }
                         if (cmb_advane_type.SelectedIndex == 1)
                         {
-                            this.cntrl.Save_advancetable_cheque(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, txt_adv_bankname.Text, txt_adv_number.Text, "Debit", "Add Receipt");
+                            this.cntrl.Save_advancetable_cheque(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, txt_adv_bankname.Text, txt_adv_number.Text, "Debit", "Receipt");
                             
                         }
                         else if (cmb_advane_type.SelectedIndex == 2)
                         {
-                            this.cntrl.Save_advancetable_card(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, txt_adv_bankname.Text, txt_adv_4digit.Text, "Debit", "Add Receipt");
+                            this.cntrl.Save_advancetable_card(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, txt_adv_bankname.Text, txt_adv_4digit.Text, "Debit", "Receipt");
                         }
                         else if(cmb_advane_type.SelectedIndex == 3)
                         {
-                            this.cntrl.Save_advancetable_DD(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, txt_adv_bankname.Text, txt_adv_number.Text, "Debit", "Add Receipt");
+                            this.cntrl.Save_advancetable_DD(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, txt_adv_bankname.Text, txt_adv_number.Text, "Debit", "Receipt");
                         }
                         else
                         {
-                            this.cntrl.Save_advancetable(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, "Debit","Add Receipt");
+                            this.cntrl.Save_advancetable(patient_id, DateTime.Now.Date.ToString("yyyy-MM-dd"), abcde1.ToString(), cmb_advane_type.Text, "Debit","Receipt");
                         }
                         if (adv > 0)
                         {
@@ -539,27 +539,31 @@ namespace PappyjoeMVC.View
                         double Total_paid = 0;decimal enteramnt=0,balanceamnt=0;
                         //checking advance exists
                         DataTable cmd22 = this.cntrl.Get_Advance(patient_id);
-                        if (Convert.ToDecimal(cmd22.Rows[0][0].ToString())> 0)
+                        if(cmd22.Rows.Count>0)
                         {
-                            if (Convert.ToDecimal(DGV_MainGrid.Rows[0].Cells["pay_fromadvance"].Value) == 0)
+                            if (Convert.ToDecimal(cmd22.Rows[0][0].ToString()) > 0)
                             {
-                                DialogResult res1 = MessageBox.Show("You have advance amount,Do you want to pay from advance amount?", " confirmation",
-                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                                if (res1 == DialogResult.Yes)
+                                if (Convert.ToDecimal(DGV_MainGrid.Rows[0].Cells["pay_fromadvance"].Value) == 0)
                                 {
-
-                                    for (int k = 0; k < DGV_MainGrid.Rows.Count; k++)
+                                    DialogResult res1 = MessageBox.Show("You have advance amount,Do you want to pay from advance amount?", " confirmation",
+                                                         MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                    if (res1 == DialogResult.Yes)
                                     {
-                                        DGV_MainGrid.Rows[k].Cells["due_afterpaymnt"].Value = 0;
-                                        DGV_MainGrid.Rows[k].Cells["ColPayNow"].Value = 0;
-                                        DGV_MainGrid.Rows[k].Cells["ColPayNow"].Value = DGV_MainGrid.Rows[k].Cells["balancedue"].Value;
 
+                                        for (int k = 0; k < DGV_MainGrid.Rows.Count; k++)
+                                        {
+                                            DGV_MainGrid.Rows[k].Cells["due_afterpaymnt"].Value = 0;
+                                            DGV_MainGrid.Rows[k].Cells["ColPayNow"].Value = 0;
+                                            DGV_MainGrid.Rows[k].Cells["ColPayNow"].Value = DGV_MainGrid.Rows[k].Cells["balancedue"].Value;
+
+                                        }
+                                        DGV_MainGrid.Rows[0].Cells["pay_fromadvance"].Selected = true;
+                                        return;
                                     }
-                                    DGV_MainGrid.Rows[0].Cells["pay_fromadvance"].Selected = true;
-                                    return;
                                 }
                             }
                         }
+                        
                         while (iii < DGV_MainGrid.Rows.Count)
                         {
                             g_Advance = Convert.ToDouble(DGV_MainGrid[3, iii].Value);

@@ -1034,13 +1034,13 @@ namespace PappyjoeMVC.View
             int k =1;
             if(dtb.Rows.Count>0)
             {
-                dgv_advance.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgv_advance.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgv_advance.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgv_advance.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; 
                 dgv_advance.Rows.Clear();
                 for (int i = 0; i < dtb.Rows.Count; i++)
                 {
                    
-                    dgv_advance.Rows.Add(k,Convert.ToDateTime(dtb.Rows[i]["Date"].ToString()).ToString("MM/dd/yyy"),dtb.Rows[i]["PaymentMethod"].ToString(), string.Format("{0:C}", decimal.Parse(dtb.Rows[i]["Amount"].ToString())) );
+                    dgv_advance.Rows.Add(k,Convert.ToDateTime(dtb.Rows[i]["Date"].ToString()).ToString("MM/dd/yyy"),dtb.Rows[i]["PaymentMethod"].ToString(), dtb.Rows[i]["form"].ToString(), string.Format("{0:C}", decimal.Parse(dtb.Rows[i]["Amount"].ToString())) );
                     k++;
                 }
             }

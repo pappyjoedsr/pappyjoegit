@@ -144,7 +144,7 @@ namespace PappyjoeMVC.View
                 DGV_SALES.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_SALES.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_SALES.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_SALES.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_SALES.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                 DGV_SALES.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Sego UI", 9, FontStyle.Regular);
                 DGV_SALES.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 DGV_SALES.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -152,11 +152,11 @@ namespace PappyjoeMVC.View
                 DGV_SALES.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 DGV_SALES.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 DGV_SALES.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                DGV_SALES.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                DGV_SALES.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 foreach (DataGridViewColumn cl in DGV_SALES.Columns)
                 {
                     cl.SortMode = DataGridViewColumnSortMode.NotSortable;
-                    cl.Width = 110;
+                    //cl.Width = 110;
                 }
                 dptMonthly_From.Focus();
             }
@@ -236,10 +236,10 @@ namespace PappyjoeMVC.View
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<table align='center' style='width:700px;border: 1px ;border-collapse: collapse;'>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td colspan=7 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  " + "<b>From :</b>" + " " + dptMonthly_From.Value.ToString("dd/MM/yyyy") + " </font></left></td>");
+                    sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  " + "<b>From :</b>" + " " + dptMonthly_From.Value.ToString("dd/MM/yyyy") + " </font></left></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
-                    sWrite.WriteLine("<td colspan=7 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  " + "<b>To :</b>" + "   " + dptMonthly_To.Value.ToString("dd/MM/yyyy") + "</font></left></td>");
+                    sWrite.WriteLine("<td colspan=8 align=left><FONT COLOR=black FACE='Segoe UI' SIZE=2>  " + "<b>To :</b>" + "   " + dptMonthly_To.Value.ToString("dd/MM/yyyy") + "</font></left></td>");
                     sWrite.WriteLine("</tr>");
                     sWrite.WriteLine("<tr>");
                     sWrite.WriteLine("<td align='left' colspan=7><FONT COLOR=black FACE='Geneva, Segoe UI' SIZE=2><b>Printed Date:</b>" + " " + today + "" + "</font><left></td>");
@@ -252,6 +252,7 @@ namespace PappyjoeMVC.View
                         sWrite.WriteLine("    <td align='left' width='16%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Invoice Date</b></font></th>");
                         sWrite.WriteLine("    <td align='left' width='20%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Customer Id</b></font></th>");
                         sWrite.WriteLine("    <td align='left' width='20%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Customer Name</b></font></th>");
+                        sWrite.WriteLine("    <td align='left' width='20%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b>Mode of Payment</b></font></th>");
                         sWrite.WriteLine("    <td align='right' width='15%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3><b> Discount (%)</b></font></th>");
                         sWrite.WriteLine("    <td align='right' width='25%' style='border:1px solid #000;background:#999999'><FONT COLOR=black FACE='Segoe UI' SIZE=3> <b>Total Amount</b></font></th>");
                         sWrite.WriteLine("</tr>");
@@ -264,18 +265,19 @@ namespace PappyjoeMVC.View
                             sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + DGV_SALES.Rows[c].Cells["cust_number"].Value.ToString() + "</font></th>");
                             sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + DGV_SALES.Rows[c].Cells["cust_name"].Value.ToString() + "</font></th>");
                             {
+                                sWrite.WriteLine("    <td align='left' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>&nbsp;" + DGV_SALES.Rows[c].Cells["modeofpayment"].Value.ToString() + "</font></th>");
                                 sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_SALES.Rows[c].Cells["clDiscount"].Value.ToString() + "&nbsp</font></th>");
                             }
                             sWrite.WriteLine("    <td align='right' style='border:1px solid #000' ><FONT COLOR=black FACE='Segoe UI' SIZE=2>" + DGV_SALES.Rows[c].Cells["TotalAmount"].Value.ToString() + "&nbsp;</font></th>");
                         }
                         sWrite.WriteLine("</tr >");
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td align='right'  colspan=6 ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b> Total Items :</b></font><right'></td>");
-                        sWrite.WriteLine("<td align='right'  colspan=7 ><FONT COLOR=black FACE='Segoe UI' SIZE=3> " + Txt_totalInvoice.Text + " </font><right'></td>");
+                        sWrite.WriteLine("<td align='right'  colspan=7 ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b> Total Items :</b></font><right'></td>");
+                        sWrite.WriteLine("<td align='right'  colspan=8 ><FONT COLOR=black FACE='Segoe UI' SIZE=3> " + Txt_totalInvoice.Text + " </font><right'></td>");
                         sWrite.WriteLine("</tr>");
                         sWrite.WriteLine("<tr>");
-                        sWrite.WriteLine("<td align='right'  colspan=6 ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b> Grand Total :</b></font><right'></td>");
-                        sWrite.WriteLine("<td align='right'  colspan=7 ><FONT COLOR=black FACE='Segoe UI' SIZE=3>  " + Txtgrandtotal.Text + " </font><right'></td>");
+                        sWrite.WriteLine("<td align='right'  colspan=7 ><FONT COLOR=black FACE='Segoe UI' SIZE=2><b> Grand Total :</b></font><right'></td>");
+                        sWrite.WriteLine("<td align='right'  colspan=8 ><FONT COLOR=black FACE='Segoe UI' SIZE=3>  " + Txtgrandtotal.Text + " </font><right'></td>");
                         sWrite.WriteLine("</tr>");
                         sWrite.WriteLine("</table>");
                         sWrite.WriteLine("</div>");
@@ -299,7 +301,7 @@ namespace PappyjoeMVC.View
             try {
                 if (dtb.Rows.Count > 0){
                     DGV_SALES.Rows.Clear();
-                    total_disc = 0; Total_Amount = 0;
+                    total_disc = 0; Total_Amount = 0; 
                     for (int i = 0; i < dtb.Rows.Count; i++)
                     {
                         DGV_SALES.Rows.Add();
@@ -308,6 +310,7 @@ namespace PappyjoeMVC.View
                         DGV_SALES.Rows[i].Cells["InvDate"].Value = Convert.ToDateTime(dtb.Rows[i]["InvDate"].ToString()).ToString("dd-MM-yyyy");
                         DGV_SALES.Rows[i].Cells["cust_number"].Value = dtb.Rows[i]["cust_number"].ToString();
                         DGV_SALES.Rows[i].Cells["cust_name"].Value = dtb.Rows[i]["cust_name"].ToString();
+                        DGV_SALES.Rows[i].Cells["modeofpayment"].Value = dtb.Rows[i]["PayMethod"].ToString();
                         DGV_SALES.Rows[i].Cells["clDiscount"].Value = dtb.Rows[i]["Discount"].ToString();
                         DGV_SALES.Rows[i].Cells["TotalAmount"].Value = dtb.Rows[i]["TotalAmount"].ToString();
                         num = num + 1;
