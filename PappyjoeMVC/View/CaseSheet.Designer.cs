@@ -93,6 +93,7 @@
             this.richTxt_AdviceDischarge = new System.Windows.Forms.RichTextBox();
             this.richTxt_SurgicalNotes = new System.Windows.Forms.RichTextBox();
             this.richTxt_ConditionDischarge = new System.Windows.Forms.RichTextBox();
+            this.bTN_CLEAR = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panelprintpreview.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -102,6 +103,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.bTN_CLEAR);
             this.panel2.Controls.Add(this.ChkDate);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label17);
@@ -168,7 +170,7 @@
             this.BtnPrintPreview.BackColor = System.Drawing.Color.LimeGreen;
             this.BtnPrintPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPrintPreview.ForeColor = System.Drawing.Color.White;
-            this.BtnPrintPreview.Location = new System.Drawing.Point(571, 3);
+            this.BtnPrintPreview.Location = new System.Drawing.Point(571, 1);
             this.BtnPrintPreview.Name = "BtnPrintPreview";
             this.BtnPrintPreview.Size = new System.Drawing.Size(105, 30);
             this.BtnPrintPreview.TabIndex = 0;
@@ -227,22 +229,23 @@
             // 
             // panel4
             // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.btnCancel);
             this.panel4.Controls.Add(this.DGV_Previous);
-            this.panel4.Location = new System.Drawing.Point(266, 304);
+            this.panel4.Location = new System.Drawing.Point(50, 63);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(402, 232);
+            this.panel4.Size = new System.Drawing.Size(402, 339);
             this.panel4.TabIndex = 254;
             this.panel4.Visible = false;
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Gray;
+            this.btnCancel.BackColor = System.Drawing.Color.Tomato;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(283, 169);
+            this.btnCancel.Location = new System.Drawing.Point(300, 10);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(86, 31);
             this.btnCancel.TabIndex = 195;
@@ -277,7 +280,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGV_Previous.DefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Previous.GridColor = System.Drawing.Color.White;
-            this.DGV_Previous.Location = new System.Drawing.Point(6, 5);
+            this.DGV_Previous.Location = new System.Drawing.Point(5, 51);
             this.DGV_Previous.Name = "DGV_Previous";
             this.DGV_Previous.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -291,7 +294,7 @@
             this.DGV_Previous.RowHeadersVisible = false;
             this.DGV_Previous.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DGV_Previous.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.DGV_Previous.Size = new System.Drawing.Size(381, 158);
+            this.DGV_Previous.Size = new System.Drawing.Size(381, 283);
             this.DGV_Previous.TabIndex = 54;
             this.DGV_Previous.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Previous_CellClick);
             // 
@@ -820,7 +823,7 @@
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label10.Location = new System.Drawing.Point(419, 502);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.Size = new System.Drawing.Size(32, 13);
             this.label10.TabIndex = 238;
             this.label10.Text = "TIME";
             // 
@@ -886,6 +889,20 @@
             this.richTxt_ConditionDischarge.Size = new System.Drawing.Size(464, 56);
             this.richTxt_ConditionDischarge.TabIndex = 236;
             this.richTxt_ConditionDischarge.Text = "";
+            // 
+            // bTN_CLEAR
+            // 
+            this.bTN_CLEAR.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bTN_CLEAR.BackColor = System.Drawing.Color.LimeGreen;
+            this.bTN_CLEAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bTN_CLEAR.ForeColor = System.Drawing.Color.White;
+            this.bTN_CLEAR.Location = new System.Drawing.Point(579, 31);
+            this.bTN_CLEAR.Name = "bTN_CLEAR";
+            this.bTN_CLEAR.Size = new System.Drawing.Size(93, 22);
+            this.bTN_CLEAR.TabIndex = 253;
+            this.bTN_CLEAR.Text = "CLEAR ALL";
+            this.bTN_CLEAR.UseVisualStyleBackColor = false;
+            this.bTN_CLEAR.Click += new System.EventHandler(this.bTN_CLEAR_Click);
             // 
             // CaseSheet
             // 
@@ -979,5 +996,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn to_date;
         private System.Windows.Forms.DataGridViewImageColumn Column4;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button bTN_CLEAR;
     }
 }

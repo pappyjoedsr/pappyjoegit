@@ -151,7 +151,7 @@ namespace PappyjoeMVC.View
             DataTable dt = model.getdates(patient_id);
             if(dt.Rows.Count>0)
             {
-                panel4.Location = new Point(170, 340);
+                panel4.Location = new Point(50, 63);
                 panel4.Visible = true;
                 btnCancel.Visible = true;
                 int num = 1;
@@ -301,6 +301,7 @@ namespace PappyjoeMVC.View
                             }
                         }
                     }
+                    panel4.Visible = false;
                 }
             }
         }
@@ -308,6 +309,47 @@ namespace PappyjoeMVC.View
         private void btnCancel_Click(object sender, EventArgs e)
         {
             panel4.Visible = false;
+        }
+
+        private void bTN_CLEAR_Click(object sender, EventArgs e)
+        {
+            checkBoxcasesheet.Checked = false;
+            checkBoxclinicname.Checked = false;
+            checkBoxdocname.Checked = true;
+            checkBoxpatientdetails.Checked = false;
+            Chkbcheifcomp.Checked = false;
+            chkbdiagnosis.Checked = false;
+            chkBinvestigation.Checked = false;
+            chkbobservation.Checked = false;
+            chkBnote.Checked = false;
+            chkbvitalsign.Checked = false;
+
+            chkbcompleted.Checked = false;
+            chkprescription.Checked = false;
+            chkamount.Checked = false;
+            DtpDischargeDate.Value = DateTime.Now.Date;
+            txtDepartment.Text = "";
+            richTxt_PresentIllness.Text = "";
+            richTxt_LabInvestigations.Text = "";
+            richTxt_SurgicalNotes.Text = "";
+            richTxt_ConditionDischarge.Text = "";
+            richTxt_AdviceDischarge.Text = "";
+            DtpReview.Value = DateTime.Now.Date;
+            txtTime.Text = "";
+            string item = "";
+            //foreach (var i in checkedListBoxdoc.Ch
+            //    eckedItems)
+            //{
+            //    if (item == "")
+            //    {
+            //        item = i.ToString();
+            //    }
+            //    else
+            //    {
+            //        item = item + "," + i;
+            //    }
+
+            //}
         }
 
         private void fromdate()
