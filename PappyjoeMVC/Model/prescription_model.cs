@@ -17,7 +17,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable drug_load()
         {
-            DataTable dt4 = db.table("select id,CONCAT(name,' ', type ) as name, CONCAT(strength_gr ,' ' , strength ) as type,inventory_id from tbl_adddrug ORDER BY id DESC");
+            DataTable dt4 = db.table("select id,CONCAT(name,' ', type ) as name, CONCAT(strength_gr ,' ' , strength ) as type,inventory_id from tbl_adddrug ORDER BY name ASC");
             return dt4;
         }
         public DataTable drug_instock(string id)
@@ -132,7 +132,7 @@ namespace PappyjoeMVC.Model
       
         public DataTable prescription_detoails(string id)
         {
-            System.Data.DataTable dt_prescription = db.table("SELECT drug_name,strength,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,strength_gr,status FROM tbl_prescription WHERE pres_id='" + id + "' ORDER BY id");
+            System.Data.DataTable dt_prescription = db.table("SELECT drug_name,strength,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,strength_gr,status FROM tbl_prescription WHERE pres_id='" + id + "' ORDER BY drug_name ASC");
             return dt_prescription;
         }
         public DataTable printsettings()

@@ -250,6 +250,7 @@
             this.dgv_sales.Size = new System.Drawing.Size(895, 468);
             this.dgv_sales.TabIndex = 0;
             this.dgv_sales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sales_CellClick);
+            this.dgv_sales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sales_CellContentClick);
             // 
             // colslNo
             // 

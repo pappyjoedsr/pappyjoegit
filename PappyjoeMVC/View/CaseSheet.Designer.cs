@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CaseSheet));
             this.panel2 = new System.Windows.Forms.Panel();
             this.ChkDate = new System.Windows.Forms.CheckBox();
@@ -37,9 +39,15 @@
             this.dTPToDate = new System.Windows.Forms.DateTimePicker();
             this.BtnPrintPreview = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panelprintpreview = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.DGV_Previous = new System.Windows.Forms.DataGridView();
+            this.slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.from_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.to_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.chkbvitalsign = new System.Windows.Forms.CheckBox();
             this.txtDoctorSearch = new System.Windows.Forms.TextBox();
@@ -64,6 +72,8 @@
             this.chkBinvestigation = new System.Windows.Forms.CheckBox();
             this.chkbdiagnosis = new System.Windows.Forms.CheckBox();
             this.Chkbcheifcomp = new System.Windows.Forms.CheckBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.richTxt_PresentIllness = new System.Windows.Forms.RichTextBox();
             this.DtpDischargeDate = new System.Windows.Forms.DateTimePicker();
             this.checkBoxreview = new System.Windows.Forms.CheckBox();
@@ -84,8 +94,10 @@
             this.richTxt_SurgicalNotes = new System.Windows.Forms.RichTextBox();
             this.richTxt_ConditionDischarge = new System.Windows.Forms.RichTextBox();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panelprintpreview.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Previous)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -178,43 +190,10 @@
             this.btnback.UseVisualStyleBackColor = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DarkGray;
-            this.panel3.Location = new System.Drawing.Point(2, 64);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(682, 1);
-            this.panel3.TabIndex = 255;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panelprintpreview);
-            this.panel1.Controls.Add(this.richTxt_PresentIllness);
-            this.panel1.Controls.Add(this.DtpDischargeDate);
-            this.panel1.Controls.Add(this.checkBoxreview);
-            this.panel1.Controls.Add(this.txtDepartment);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.txtTime);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.DtpReview);
-            this.panel1.Controls.Add(this.richTxt_LabInvestigations);
-            this.panel1.Controls.Add(this.richTxt_AdviceDischarge);
-            this.panel1.Controls.Add(this.richTxt_SurgicalNotes);
-            this.panel1.Controls.Add(this.richTxt_ConditionDischarge);
-            this.panel1.Location = new System.Drawing.Point(0, 68);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(681, 545);
-            this.panel1.TabIndex = 254;
-            // 
             // panelprintpreview
             // 
+            this.panelprintpreview.Controls.Add(this.panel4);
+            this.panelprintpreview.Controls.Add(this.button1);
             this.panelprintpreview.Controls.Add(this.label16);
             this.panelprintpreview.Controls.Add(this.chkbvitalsign);
             this.panelprintpreview.Controls.Add(this.txtDoctorSearch);
@@ -241,10 +220,134 @@
             this.panelprintpreview.Controls.Add(this.Chkbcheifcomp);
             this.panelprintpreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelprintpreview.ForeColor = System.Drawing.Color.Black;
-            this.panelprintpreview.Location = new System.Drawing.Point(0, 3);
+            this.panelprintpreview.Location = new System.Drawing.Point(2, 0);
             this.panelprintpreview.Name = "panelprintpreview";
             this.panelprintpreview.Size = new System.Drawing.Size(678, 539);
             this.panelprintpreview.TabIndex = 240;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnCancel);
+            this.panel4.Controls.Add(this.DGV_Previous);
+            this.panel4.Location = new System.Drawing.Point(266, 304);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(402, 232);
+            this.panel4.TabIndex = 254;
+            this.panel4.Visible = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Gray;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(283, 169);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(86, 31);
+            this.btnCancel.TabIndex = 195;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // DGV_Previous
+            // 
+            this.DGV_Previous.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.DGV_Previous.AllowUserToAddRows = false;
+            this.DGV_Previous.AllowUserToDeleteRows = false;
+            this.DGV_Previous.AllowUserToResizeColumns = false;
+            this.DGV_Previous.AllowUserToResizeRows = false;
+            this.DGV_Previous.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV_Previous.BackgroundColor = System.Drawing.Color.White;
+            this.DGV_Previous.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DGV_Previous.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.DGV_Previous.ColumnHeadersHeight = 25;
+            this.DGV_Previous.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DGV_Previous.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.slno,
+            this.from_date,
+            this.to_date,
+            this.Column4});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Previous.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DGV_Previous.GridColor = System.Drawing.Color.White;
+            this.DGV_Previous.Location = new System.Drawing.Point(6, 5);
+            this.DGV_Previous.Name = "DGV_Previous";
+            this.DGV_Previous.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Previous.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DGV_Previous.RowHeadersVisible = false;
+            this.DGV_Previous.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.DGV_Previous.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.DGV_Previous.Size = new System.Drawing.Size(381, 158);
+            this.DGV_Previous.TabIndex = 54;
+            this.DGV_Previous.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Previous_CellClick);
+            // 
+            // slno
+            // 
+            this.slno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.slno.FillWeight = 20.30457F;
+            this.slno.HeaderText = "SlNo";
+            this.slno.Name = "slno";
+            this.slno.ReadOnly = true;
+            this.slno.Width = 60;
+            // 
+            // from_date
+            // 
+            this.from_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.from_date.FillWeight = 175.7501F;
+            this.from_date.HeaderText = "From Date";
+            this.from_date.Name = "from_date";
+            this.from_date.ReadOnly = true;
+            this.from_date.Width = 150;
+            // 
+            // to_date
+            // 
+            this.to_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.to_date.FillWeight = 176.3851F;
+            this.to_date.HeaderText = "To Date";
+            this.to_date.Name = "to_date";
+            this.to_date.ReadOnly = true;
+            this.to_date.Width = 150;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column4.FillWeight = 27.56018F;
+            this.Column4.HeaderText = "";
+            this.Column4.Image = global::PappyjoeMVC.Properties.Resources.editicon;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column4.Width = 20;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.LimeGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(488, 135);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 30);
+            this.button1.TabIndex = 253;
+            this.button1.Text = "Previous Discharge Summary";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label16
             // 
@@ -463,7 +566,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label11.Location = new System.Drawing.Point(86, 368);
+            this.label11.Location = new System.Drawing.Point(85, 368);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(94, 17);
             this.label11.TabIndex = 10;
@@ -544,6 +647,41 @@
             this.Chkbcheifcomp.TabIndex = 1;
             this.Chkbcheifcomp.Text = "Chief Complaints";
             this.Chkbcheifcomp.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DarkGray;
+            this.panel3.Location = new System.Drawing.Point(2, 64);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(682, 1);
+            this.panel3.TabIndex = 255;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panelprintpreview);
+            this.panel1.Controls.Add(this.richTxt_PresentIllness);
+            this.panel1.Controls.Add(this.DtpDischargeDate);
+            this.panel1.Controls.Add(this.checkBoxreview);
+            this.panel1.Controls.Add(this.txtDepartment);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.txtTime);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.DtpReview);
+            this.panel1.Controls.Add(this.richTxt_LabInvestigations);
+            this.panel1.Controls.Add(this.richTxt_AdviceDischarge);
+            this.panel1.Controls.Add(this.richTxt_SurgicalNotes);
+            this.panel1.Controls.Add(this.richTxt_ConditionDischarge);
+            this.panel1.Location = new System.Drawing.Point(0, 68);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(681, 545);
+            this.panel1.TabIndex = 254;
             // 
             // richTxt_PresentIllness
             // 
@@ -767,10 +905,12 @@
             this.Load += new System.EventHandler(this.CaseSheet_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panelprintpreview.ResumeLayout(false);
             this.panelprintpreview.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Previous)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -788,30 +928,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelprintpreview;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.CheckBox chkbvitalsign;
-        public System.Windows.Forms.TextBox txtDoctorSearch;
-        private System.Windows.Forms.CheckedListBox checkedListBoxdoc;
-        private System.Windows.Forms.CheckBox Ckbemail;
-        private System.Windows.Forms.CheckBox checkBoxpatientdetails;
-        private System.Windows.Forms.CheckBox checkBoxdocname;
-        private System.Windows.Forms.CheckBox checkBoxclinicname;
-        private System.Windows.Forms.CheckBox checkBoxcasesheet;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.CheckBox chkBnote;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox chkamount;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.CheckBox chkprescription;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.LinkLabel lnkladdmore;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox chkbcompleted;
-        private System.Windows.Forms.CheckBox chkbobservation;
-        private System.Windows.Forms.CheckBox chkBinvestigation;
-        private System.Windows.Forms.CheckBox chkbdiagnosis;
-        private System.Windows.Forms.CheckBox Chkbcheifcomp;
         private System.Windows.Forms.RichTextBox richTxt_PresentIllness;
         private System.Windows.Forms.DateTimePicker DtpDischargeDate;
         private System.Windows.Forms.CheckBox checkBoxreview;
@@ -831,5 +948,36 @@
         private System.Windows.Forms.RichTextBox richTxt_AdviceDischarge;
         private System.Windows.Forms.RichTextBox richTxt_SurgicalNotes;
         private System.Windows.Forms.RichTextBox richTxt_ConditionDischarge;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.CheckBox chkbvitalsign;
+        public System.Windows.Forms.TextBox txtDoctorSearch;
+        private System.Windows.Forms.CheckedListBox checkedListBoxdoc;
+        private System.Windows.Forms.CheckBox Ckbemail;
+        private System.Windows.Forms.CheckBox checkBoxpatientdetails;
+        private System.Windows.Forms.CheckBox checkBoxdocname;
+        private System.Windows.Forms.CheckBox checkBoxclinicname;
+        private System.Windows.Forms.CheckBox checkBoxcasesheet;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.CheckBox chkBnote;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox chkprescription;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.LinkLabel lnkladdmore;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox chkbcompleted;
+        private System.Windows.Forms.CheckBox chkbobservation;
+        private System.Windows.Forms.CheckBox chkBinvestigation;
+        private System.Windows.Forms.CheckBox chkbdiagnosis;
+        private System.Windows.Forms.CheckBox Chkbcheifcomp;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel4;
+        internal System.Windows.Forms.DataGridView DGV_Previous;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn from_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn to_date;
+        private System.Windows.Forms.DataGridViewImageColumn Column4;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

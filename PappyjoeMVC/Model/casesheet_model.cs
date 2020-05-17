@@ -99,5 +99,24 @@ namespace PappyjoeMVC.Model
             int i = db.execute("insert into tbl_Casesheetaddmore(PRESENTILLNESS,LabInvestigations,SurgicalNotes,richConditionDischarge,richAdviceDischarge,NEXTdateREVIEW,Time,dateofcasesheet,pt_id) values('" + richTxt_PresentIllness + "','" + richTxt_LabInvestigations + "','" + richTxt_SurgicalNotes + "','" + richTxt_ConditionDischarge + "','" + richTxt_AdviceDischarge + "','" + startDateTime1 + "','" + txtTime + "','" + startDateTime2 + "','" + patient_id + "')");
 
         }
+        public void save_casesheet(string patient_id,string frmdte,string todte,string casesheet,string clinic_name,string doctr_name,string ptnt_dtls,string chief_complants,string diagnosis,string investigatn,string observatn,string note,string vitalsign_dtls,string cmpleted,string prescriptn,string amnt_dtls,string doctr,string dischrg_date,string departmnt,string presnt_illness,string lab_investigatn,string surgical_notes,string dischrg_condn,string advice,string review_date,string time)
+        {
+            int i = db.execute("insert into tbl_casesheet(patient_id,from_date,to_date,casesheet,clinic_name,doctor_name,patient_dtls,chief_complaints,diagnosis,investigation,observation,note,vitalsign_details,completed,prescription,amount_details,doctor,dischrg_date,department,present_illness,lab_investigation,surgical_notes,dischrg_condition,advice,review_date,review_time)values('" + patient_id + "','" + frmdte + "','" + todte + "','"+casesheet+"','"+clinic_name+"','"+doctr_name+"','"+ptnt_dtls+"','"+chief_complants+"','"+diagnosis+"','"+investigatn+"','"+observatn+"','"+note+"','"+vitalsign_dtls+"','"+cmpleted+"','"+prescriptn+"','"+amnt_dtls+"','"+doctr+"','"+dischrg_date+"','"+departmnt+"','"+presnt_illness+"','"+lab_investigatn+"','"+surgical_notes+"','"+dischrg_condn+"','"+advice+"','"+review_date+"','"+time+"')");
+        }
+        public DataTable getdates(string patient_id)
+        {
+            DataTable dt = db.table("select from_date,to_date from tbl_casesheet where patient_id='" + patient_id + "'");
+            return dt;
+        }
+        public DataTable loaddata(string from_date,string to_date)
+        {
+            DataTable dtb = db.table("select * from tbl_casesheet where from_date='" + from_date + "' and to_date='" + to_date + "'");
+            return dtb;
+        }
+        public DataTable loadsummary(string patient_id)
+        {
+            DataTable dtb = db.table("select * from tbl_casesheet where patient_id='" + patient_id + "'");
+            return dtb;
+        }
     }
 }
