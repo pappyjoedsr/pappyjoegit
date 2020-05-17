@@ -112,7 +112,7 @@ namespace PappyjoeMVC.View
             else { note = "No"; }
             if(chkbvitalsign.Checked==true)
             {
-                vital_sign = "yes";
+                vital_sign = "Yes";
             }
             else { vital_sign = "No"; }
             if(chkbcompleted.Checked==true)
@@ -323,13 +323,16 @@ namespace PappyjoeMVC.View
 
         private void CaseSheet_Load(object sender, EventArgs e)
         {
-            DGV_Previous.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
-            DGV_Previous.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             DGV_Previous.EnableHeadersVisualStyles = false;
-            DGV_Previous.ColumnHeadersDefaultCellStyle.Font = new Font("Sego UI", 9, FontStyle.Regular);
-            foreach (DataGridViewColumn cl in DGV_Previous.Columns)
+            DGV_Previous.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkGray;
+            DGV_Previous.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            DGV_Previous.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+            DGV_Previous.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            DGV_Previous.ColumnHeadersVisible = true;
+            DGV_Previous.ScrollBars = ScrollBars.Vertical;
+            foreach (DataGridViewColumn column in DGV_Previous.Columns)
             {
-                cl.SortMode = DataGridViewColumnSortMode.NotSortable;
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             checkboxbind();
             DataTable dts = model.loadsummary(patient_id);

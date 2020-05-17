@@ -7,7 +7,7 @@ namespace PappyjoeMVC.Model
         Connection db = new Connection();
         public DataTable get_drug()
         {
-            DataTable dt = db.table("select * from tbl_adddrug ");
+            DataTable dt = db.table("select * from tbl_adddrug order by name ASC ");
             return dt;
         }
         public DataTable fill_type_combo()

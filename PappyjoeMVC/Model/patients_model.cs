@@ -98,7 +98,7 @@ namespace PappyjoeMVC.Model
         }
         public DataTable prescription_details(string id)
         {
-            System.Data.DataTable dt_prescription = db.table("SELECT drug_name,strength,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,strength_gr FROM tbl_prescription WHERE pres_id='" + id + "' ORDER BY id");
+            System.Data.DataTable dt_prescription = db.table("SELECT drug_name,strength,duration_unit,duration_period,morning,noon,night,food,add_instruction,drug_type,strength_gr FROM tbl_prescription WHERE pres_id='" + id + "' ORDER BY drug_name");
             return dt_prescription;
         }
         public DataTable invoice(DateTime startDateTime, DateTime startDateTime1)
