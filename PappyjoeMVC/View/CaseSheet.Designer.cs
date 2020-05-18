@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CaseSheet));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bTN_CLEAR = new System.Windows.Forms.Button();
             this.ChkDate = new System.Windows.Forms.CheckBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -43,10 +44,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.DGV_Previous = new System.Windows.Forms.DataGridView();
-            this.slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.from_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.to_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.chkbvitalsign = new System.Windows.Forms.CheckBox();
@@ -93,7 +90,9 @@
             this.richTxt_AdviceDischarge = new System.Windows.Forms.RichTextBox();
             this.richTxt_SurgicalNotes = new System.Windows.Forms.RichTextBox();
             this.richTxt_ConditionDischarge = new System.Windows.Forms.RichTextBox();
-            this.bTN_CLEAR = new System.Windows.Forms.Button();
+            this.slno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.from_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.to_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panelprintpreview.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -115,6 +114,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(679, 57);
             this.panel2.TabIndex = 252;
+            // 
+            // bTN_CLEAR
+            // 
+            this.bTN_CLEAR.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bTN_CLEAR.BackColor = System.Drawing.Color.LimeGreen;
+            this.bTN_CLEAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bTN_CLEAR.ForeColor = System.Drawing.Color.White;
+            this.bTN_CLEAR.Location = new System.Drawing.Point(579, 31);
+            this.bTN_CLEAR.Name = "bTN_CLEAR";
+            this.bTN_CLEAR.Size = new System.Drawing.Size(93, 22);
+            this.bTN_CLEAR.TabIndex = 253;
+            this.bTN_CLEAR.Text = "CLEAR ALL";
+            this.bTN_CLEAR.UseVisualStyleBackColor = false;
+            this.bTN_CLEAR.Click += new System.EventHandler(this.bTN_CLEAR_Click);
             // 
             // ChkDate
             // 
@@ -269,8 +282,7 @@
             this.DGV_Previous.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.slno,
             this.from_date,
-            this.to_date,
-            this.Column4});
+            this.to_date});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -297,45 +309,6 @@
             this.DGV_Previous.Size = new System.Drawing.Size(381, 283);
             this.DGV_Previous.TabIndex = 54;
             this.DGV_Previous.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Previous_CellClick);
-            // 
-            // slno
-            // 
-            this.slno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.slno.FillWeight = 20.30457F;
-            this.slno.HeaderText = "SlNo";
-            this.slno.Name = "slno";
-            this.slno.ReadOnly = true;
-            this.slno.Width = 60;
-            // 
-            // from_date
-            // 
-            this.from_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.from_date.FillWeight = 175.7501F;
-            this.from_date.HeaderText = "From Date";
-            this.from_date.Name = "from_date";
-            this.from_date.ReadOnly = true;
-            this.from_date.Width = 150;
-            // 
-            // to_date
-            // 
-            this.to_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.to_date.FillWeight = 176.3851F;
-            this.to_date.HeaderText = "To Date";
-            this.to_date.Name = "to_date";
-            this.to_date.ReadOnly = true;
-            this.to_date.Width = 150;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column4.FillWeight = 27.56018F;
-            this.Column4.HeaderText = "";
-            this.Column4.Image = global::PappyjoeMVC.Properties.Resources.editicon;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column4.Width = 20;
             // 
             // button1
             // 
@@ -823,7 +796,7 @@
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label10.Location = new System.Drawing.Point(419, 502);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 13);
+            this.label10.Size = new System.Drawing.Size(31, 13);
             this.label10.TabIndex = 238;
             this.label10.Text = "TIME";
             // 
@@ -890,19 +863,32 @@
             this.richTxt_ConditionDischarge.TabIndex = 236;
             this.richTxt_ConditionDischarge.Text = "";
             // 
-            // bTN_CLEAR
+            // slno
             // 
-            this.bTN_CLEAR.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bTN_CLEAR.BackColor = System.Drawing.Color.LimeGreen;
-            this.bTN_CLEAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bTN_CLEAR.ForeColor = System.Drawing.Color.White;
-            this.bTN_CLEAR.Location = new System.Drawing.Point(579, 31);
-            this.bTN_CLEAR.Name = "bTN_CLEAR";
-            this.bTN_CLEAR.Size = new System.Drawing.Size(93, 22);
-            this.bTN_CLEAR.TabIndex = 253;
-            this.bTN_CLEAR.Text = "CLEAR ALL";
-            this.bTN_CLEAR.UseVisualStyleBackColor = false;
-            this.bTN_CLEAR.Click += new System.EventHandler(this.bTN_CLEAR_Click);
+            this.slno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.slno.FillWeight = 20.30457F;
+            this.slno.HeaderText = "SlNo";
+            this.slno.Name = "slno";
+            this.slno.ReadOnly = true;
+            this.slno.Width = 60;
+            // 
+            // from_date
+            // 
+            this.from_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.from_date.FillWeight = 175.7501F;
+            this.from_date.HeaderText = "From Date";
+            this.from_date.Name = "from_date";
+            this.from_date.ReadOnly = true;
+            this.from_date.Width = 150;
+            // 
+            // to_date
+            // 
+            this.to_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.to_date.FillWeight = 176.3851F;
+            this.to_date.HeaderText = "To Date";
+            this.to_date.Name = "to_date";
+            this.to_date.ReadOnly = true;
+            this.to_date.Width = 150;
             // 
             // CaseSheet
             // 
@@ -991,11 +977,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel4;
         internal System.Windows.Forms.DataGridView DGV_Previous;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button bTN_CLEAR;
         private System.Windows.Forms.DataGridViewTextBoxColumn slno;
         private System.Windows.Forms.DataGridViewTextBoxColumn from_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn to_date;
-        private System.Windows.Forms.DataGridViewImageColumn Column4;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button bTN_CLEAR;
     }
 }
