@@ -155,6 +155,7 @@ namespace PappyjoeMVC.View
                 panel4.Visible = true;
                 btnCancel.Visible = true;
                 int num = 1;
+                DGV_Previous.Rows.Clear();
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     DGV_Previous.Rows.Add();
@@ -169,139 +170,142 @@ namespace PappyjoeMVC.View
 
         private void DGV_Previous_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            for (int i = 0; i < DGV_Previous.Rows.Count; i++)
+            if (e.RowIndex >= 0)
             {
-                DataTable dtb = model.loaddata(DGV_Previous.Rows[i].Cells["from_date"].Value.ToString(), DGV_Previous.Rows[i].Cells["to_date"].Value.ToString());
-                for (int j = 0; j < dtb.Rows.Count; j++)
+                for (int i = 0; i <= DGV_Previous.Rows.Count; i++)
                 {
-                    dtpfrom.Value = DateTime.Parse(dtb.Rows[i]["from_date"].ToString());
-                    dTPToDate.Value = DateTime.Parse(dtb.Rows[i]["to_date"].ToString());
-                    if (dtb.Rows[i]["casesheet"].ToString() == "Yes")
+                    DataTable dtb = model.loaddata(DGV_Previous.CurrentRow.Cells["from_date"].Value.ToString(), DGV_Previous.CurrentRow.Cells["to_date"].Value.ToString());
+                    for (int j = 0; j <dtb.Rows.Count; j++)
                     {
-                        checkBoxcasesheet.Checked = true;
-                    }
-                    else
-                    {
-                        checkBoxcasesheet.Checked = false;
-                    }
-                    if (dtb.Rows[i]["clinic_name"].ToString() == "Yes")
-                    {
-                        checkBoxclinicname.Checked = true;
-                    }
-                    else
-                    {
-                        checkBoxclinicname.Checked = false;
-                    }
-                    if (dtb.Rows[i]["doctor_name"].ToString() == "Yes")
-                    {
-                        checkBoxdocname.Checked = true;
-                    }
-                    else
-                    {
-                        checkBoxdocname.Checked = false;
-                    }
-                    if (dtb.Rows[i]["patient_dtls"].ToString() == "Yes")
-                    {
-                        checkBoxpatientdetails.Checked = true;
-                    }
-                    else
-                    {
-                        checkBoxpatientdetails.Checked = false;
-                    }
-                    if (dtb.Rows[i]["chief_complaints"].ToString() == "Yes")
-                    {
-                        Chkbcheifcomp.Checked = true;
-                    }
-                    else
-                    {
-                        Chkbcheifcomp.Checked = false;
-                    }
-                    if (dtb.Rows[i]["diagnosis"].ToString() == "Yes")
-                    {
-                        chkbdiagnosis.Checked = true;
-                    }
-                    else
-                    {
-                        chkbdiagnosis.Checked = false;
-                    }
-                    if (dtb.Rows[i]["investigation"].ToString() == "Yes")
-                    {
-                        chkBinvestigation.Checked = true;
-                    }
-                    else
-                    {
-                        chkBinvestigation.Checked = false;
-                    }
-                    if (dtb.Rows[i]["observation"].ToString() == "Yes")
-                    {
-                        chkbobservation.Checked = true;
-                    }
-                    else
-                    {
-                        chkbobservation.Checked = false;
-                    }
-                    if (dtb.Rows[i]["note"].ToString() == "Yes")
-                    {
-                        chkBnote.Checked = true;
-                    }
-                    else
-                    {
-                        chkBnote.Checked = false;
-                    }
-                    if (dtb.Rows[i]["vitalsign_details"].ToString() == "Yes")
-                    {
-                        chkbvitalsign.Checked = true;
-                    }
-                    else
-                    {
-                        chkbvitalsign.Checked = false;
-                    }
-                    if (dtb.Rows[i]["completed"].ToString() == "Yes")
-                    {
-                        chkbcompleted.Checked = true;
-                    }
-                    else
-                    {
-                        chkbcompleted.Checked = false;
-                    }
-                    if (dtb.Rows[i]["prescription"].ToString() == "Yes")
-                    {
-                        chkprescription.Checked = true;
-                    }
-                    else
-                    {
-                        chkprescription.Checked = false;
-                    }
-                    if (dtb.Rows[i]["amount_details"].ToString() == "Yes")
-                    {
-                        chkamount.Checked = true;
-                    }
-                    else
-                    {
-                        chkamount.Checked = false;
-                    }
-                    DtpDischargeDate.Value = DateTime.Parse(dtb.Rows[i]["dischrg_date"].ToString());
-                    txtDepartment.Text = dtb.Rows[i]["department"].ToString();
-                    richTxt_PresentIllness.Text = dtb.Rows[i]["present_illness"].ToString();
-                    richTxt_LabInvestigations.Text = dtb.Rows[i]["lab_investigation"].ToString();
-                    richTxt_SurgicalNotes.Text = dtb.Rows[i]["surgical_notes"].ToString();
-                    richTxt_ConditionDischarge.Text = dtb.Rows[i]["dischrg_condition"].ToString();
-                    richTxt_AdviceDischarge.Text = dtb.Rows[i]["advice"].ToString();
-                    DtpReview.Value = DateTime.Parse(dtb.Rows[i]["review_date"].ToString());
-                    txtTime.Text = dtb.Rows[i]["review_time"].ToString();
-                    string doctr = dtb.Rows[i]["doctor"].ToString();
-                    var items = doctr.Split(',');
-                    for (int k = 0; i < items.Length; i++)
-                    {
-                        for (int y = 0; y < checkedListBoxdoc.Items.Count; y++)
+                        dtpfrom.Value = DateTime.Parse(DGV_Previous.CurrentRow.Cells["from_date"].Value.ToString());
+                        dTPToDate.Value = DateTime.Parse(DGV_Previous.CurrentRow.Cells["from_date"].Value.ToString());
+                        if (dtb.Rows[j]["casesheet"].ToString() == "Yes")
                         {
-                            if (checkedListBoxdoc.Items[y].ToString() == items[i].ToString())
+                            checkBoxcasesheet.Checked = true;
+                        }
+                        else
+                        {
+                            checkBoxcasesheet.Checked = false;
+                        }
+                        if (dtb.Rows[j]["clinic_name"].ToString() == "Yes")
+                        {
+                            checkBoxclinicname.Checked = true;
+                        }
+                        else
+                        {
+                            checkBoxclinicname.Checked = false;
+                        }
+                        if (dtb.Rows[j]["doctor_name"].ToString() == "Yes")
+                        {
+                            checkBoxdocname.Checked = true;
+                        }
+                        else
+                        {
+                            checkBoxdocname.Checked = false;
+                        }
+                        if (dtb.Rows[j]["patient_dtls"].ToString() == "Yes")
+                        {
+                            checkBoxpatientdetails.Checked = true;
+                        }
+                        else
+                        {
+                            checkBoxpatientdetails.Checked = false;
+                        }
+                        if (dtb.Rows[j]["chief_complaints"].ToString() == "Yes")
+                        {
+                            Chkbcheifcomp.Checked = true;
+                        }
+                        else
+                        {
+                            Chkbcheifcomp.Checked = false;
+                        }
+                        if (dtb.Rows[j]["diagnosis"].ToString() == "Yes")
+                        {
+                            chkbdiagnosis.Checked = true;
+                        }
+                        else
+                        {
+                            chkbdiagnosis.Checked = false;
+                        }
+                        if (dtb.Rows[j]["investigation"].ToString() == "Yes")
+                        {
+                            chkBinvestigation.Checked = true;
+                        }
+                        else
+                        {
+                            chkBinvestigation.Checked = false;
+                        }
+                        if (dtb.Rows[j]["observation"].ToString() == "Yes")
+                        {
+                            chkbobservation.Checked = true;
+                        }
+                        else
+                        {
+                            chkbobservation.Checked = false;
+                        }
+                        if (dtb.Rows[j]["note"].ToString() == "Yes")
+                        {
+                            chkBnote.Checked = true;
+                        }
+                        else
+                        {
+                            chkBnote.Checked = false;
+                        }
+                        if (dtb.Rows[j]["vitalsign_details"].ToString() == "Yes")
+                        {
+                            chkbvitalsign.Checked = true;
+                        }
+                        else
+                        {
+                            chkbvitalsign.Checked = false;
+                        }
+                        if (dtb.Rows[j]["completed"].ToString() == "Yes")
+                        {
+                            chkbcompleted.Checked = true;
+                        }
+                        else
+                        {
+                            chkbcompleted.Checked = false;
+                        }
+                        if (dtb.Rows[j]["prescription"].ToString() == "Yes")
+                        {
+                            chkprescription.Checked = true;
+                        }
+                        else
+                        {
+                            chkprescription.Checked = false;
+                        }
+                        if (dtb.Rows[j]["amount_details"].ToString() == "Yes")
+                        {
+                            chkamount.Checked = true;
+                        }
+                        else
+                        {
+                            chkamount.Checked = false;
+                        }
+                        DtpDischargeDate.Value = DateTime.Parse(dtb.Rows[j]["dischrg_date"].ToString());
+                        txtDepartment.Text = dtb.Rows[j]["department"].ToString();
+                        richTxt_PresentIllness.Text = dtb.Rows[j]["present_illness"].ToString();
+                        richTxt_LabInvestigations.Text = dtb.Rows[j]["lab_investigation"].ToString();
+                        richTxt_SurgicalNotes.Text = dtb.Rows[j]["surgical_notes"].ToString();
+                        richTxt_ConditionDischarge.Text = dtb.Rows[j]["dischrg_condition"].ToString();
+                        richTxt_AdviceDischarge.Text = dtb.Rows[j]["advice"].ToString();
+                        DtpReview.Value = DateTime.Parse(dtb.Rows[j]["review_date"].ToString());
+                        txtTime.Text = dtb.Rows[j]["review_time"].ToString();
+                        string doctr = dtb.Rows[j]["doctor"].ToString();
+                        var items = doctr.Split(',');
+                        for (int k = 0; i < items.Length; i++)
+                        {
+                            for (int y = 0; y < checkedListBoxdoc.Items.Count; y++)
                             {
-                                checkedListBoxdoc.SetItemChecked(y, true);
+                                if (checkedListBoxdoc.Items[y].ToString() == items[j].ToString())
+                                {
+                                    checkedListBoxdoc.SetItemChecked(y, true);
+                                }
                             }
                         }
+                        panel4.Visible = false;
                     }
-                    panel4.Visible = false;
                 }
             }
         }
@@ -310,12 +314,11 @@ namespace PappyjoeMVC.View
         {
             panel4.Visible = false;
         }
-
-        private void bTN_CLEAR_Click(object sender, EventArgs e)
+        public void clear()
         {
             checkBoxcasesheet.Checked = false;
             checkBoxclinicname.Checked = false;
-            checkBoxdocname.Checked = true;
+            checkBoxdocname.Checked = false;
             checkBoxpatientdetails.Checked = false;
             Chkbcheifcomp.Checked = false;
             chkbdiagnosis.Checked = false;
@@ -323,7 +326,6 @@ namespace PappyjoeMVC.View
             chkbobservation.Checked = false;
             chkBnote.Checked = false;
             chkbvitalsign.Checked = false;
-
             chkbcompleted.Checked = false;
             chkprescription.Checked = false;
             chkamount.Checked = false;
@@ -337,19 +339,15 @@ namespace PappyjoeMVC.View
             DtpReview.Value = DateTime.Now.Date;
             txtTime.Text = "";
             string item = "";
-            //foreach (var i in checkedListBoxdoc.Ch
-            //    eckedItems)
-            //{
-            //    if (item == "")
-            //    {
-            //        item = i.ToString();
-            //    }
-            //    else
-            //    {
-            //        item = item + "," + i;
-            //    }
-
-            //}
+            for (int i = 0; i < checkedListBoxdoc.Items.Count; i++)
+            {
+                item = i.ToString();
+                checkedListBoxdoc.SetItemChecked(i, false);
+            }
+        }
+        private void bTN_CLEAR_Click(object sender, EventArgs e)
+        {
+            clear();
         }
 
         private void fromdate()
@@ -386,12 +384,11 @@ namespace PappyjoeMVC.View
                     {
                         dtpfrom.Value = DateTime.Parse(dts.Rows[p]["dischrg_date"].ToString());
                     }
-                    else
-                    {
-                        fromdate();
-                    }
                 }
-                
+            }
+            else
+            {
+                fromdate();
             }
         }
 
